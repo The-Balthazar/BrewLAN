@@ -1,4 +1,4 @@
-#summary List of downloads for BrewLAN
+#summary Installation guide and a list of downloads for BrewLAN
 #labels Phase-Deploy
 
 ==Installation==
