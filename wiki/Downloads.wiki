@@ -1,8 +1,8 @@
 #summary Installation guide and a list of downloads for BrewLAN
 #labels Phase-Deploy
-<img src=http://i916.photobucket.com/albums/ad8/BrewLAN/BrewLAN-T1-Shields.jpg align=right>
 ==Installation==
 A compilation of all the various BrewLAN downloads. They usually require installation in the same way; extract the archive into the SUPCOM:FA `mods` folder, deleting older versions first. Newer versions also require a .SCD part going into the `gamedata` folder and the other part going into the `mods` folder OR the entire thing going into the `gamedata` folder. If you don't have a `mods` folder make one; the file hierarchy, game installation dependant, should be along the lines of: "`C:\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`". Always remember to remove old versions first and that all versions require the Blackops Global Icon Support mod.
+<img src=http://i916.photobucket.com/albums/ad8/BrewLAN/BrewLAN-T1-Shields.jpg align=right>
 ==Beta downloads==
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-02-beta Version 0.2.0b] (ModDB mirror)
   * [http://supremecommander.filefront.com/file/BewLAN_Mod;105003 Version 0.2.0b] (Filefront mirror)
