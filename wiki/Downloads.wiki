@@ -8,9 +8,10 @@ A compilation of all the various BrewLAN downloads. They usually require install
   * [http://supremecommander.filefront.com/file/BewLAN_Mod;105003 Version 0.2.0b] (Filefront mirror)
 ==Alpha downloads==
 The alpha stage downloads either contain unfinished parts/units or are bugged in some way, although they are all generally playable, otherwise they wouldn't get uploaded. They also require the Blackops Global Icon Support mod like the beta's. I make no guarantees  for the alphas; information on installation and such may be incomplete, missing or outdated. All alphas are hosted on Mediafire.
-===Current alpha===
-  * [http://www.mediafire.com/file/t10ty4wz00w/BrewLAN_0-2-5a.7z Version 0.2.5a] (Split)
+===Current alpha===`
+  * [http://www.mediafire.com/file/y2hykvzewl2/BrewLAN_0.2.6a.7z Version 0.2.6a] (Split)
 ===Past alphas===
+  * [http://www.mediafire.com/file/t10ty4wz00w/BrewLAN_0-2-5a.7z Version 0.2.5a] (Split)
   * [http://www.mediafire.com/file/ond0zyt01zt/BrewLAN_0-2-4a.7z Version 0.2.4a] (Split)
   * [http://www.mediafire.com/file/nogvlujynck/BrewLAN_0-2-3a.7z Version 0.2.3a] (Split)
   * [http://www.mediafire.com/file/nim2km5yowt/BrewLAN_0-2-2a.7z Version 0.2.2a] (Split)
