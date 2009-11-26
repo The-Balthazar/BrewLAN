@@ -1,0 +1,18 @@
+Seraphim Translations
+
+Upper case first letter implys use at the start of words/names
+
+Iya/iya - Creator (Generorator/Fabricator/Engineer/Factory)
+Uya/uyal - Power
+Hyal/yal - Mass
+Vish - Storage of
+atoh - Extractor (Hydro/Mass)
+
+Heth - Land unit
+Ia - Air unit
+Uos - Above water naval
+Sou/sou - Below water naval
+
+Ioz - Missile
+thu - Anti?
+Atha/atha/Athan (Atha when at the end of a word otherwise Athan) - defence (Shields/defence weapons)

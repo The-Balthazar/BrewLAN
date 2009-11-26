@@ -1,0 +1,67 @@
+#UEF Buildings	----------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xeb2402",		##Experimental Satellite System
+    Categories = {
+        'PRODUCTFA',
+        'UEF',
+        'STRUCTURE',
+#	'BUILTBYTIER3COMMANDER',
+#	'BUILTBYTIER3ENGINEER',
+        'EXPERIMENTAL',
+        'ORBITALSYSTEM',
+        'SELECTABLE',
+        'LAND',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'DRAGBUILD',
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ueb2401",		##Mavor
+    Categories = {
+        'PRODUCTSC1',
+        'SELECTABLE',
+        'BUILTBYTIER3COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'UEF',
+        'STRUCTURE',
+        'STRATEGIC',
+        'EXPERIMENTAL',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'DRAGBUILD',
+        'SIZE16',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWATTACKRETICLE',
+        'DRAGBUILD',
+        'OVERLAYINDIRECTFIRE',
+        'SORTSTRATEGIC',		##Added
+    },
+}
+
+#UEF Units	----------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xel0209",# Field Engie 'Sparky'
+
+    Economy = {
+        BuildableCategory = {
+            'BUILTBYTIER2ENGINEER DEFENSE UEF',
+            'BUILTBYTIER2ENGINEER INDIRECTFIRE UEF',
+	    'BUILTBYTIER2FIELD UEF',	##New cat
+        },
+    },
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uel0101",		##snoop
+    Intel = {
+        OmniRadius = 2,			##Added
+    },
+}
