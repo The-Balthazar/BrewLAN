@@ -1,0 +1,61 @@
+#Seraphim Buildings	----------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsb4202", # T2 shield
+    General = {
+        UpgradesFrom = 'bsb4102',
+    },
+}
+
+#Seraphim Units	----------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsl0101",# selen, T1 land scout
+    Intel = {
+        OmniRadius = 2,
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsl0303", # T3 Siege tank
+    Defense = {
+        Health = 9000,
+        MaxHealth = 9000,
+        SubThreatLevel = 9,
+        SurfaceThreatLevel = 27,
+    },
+    Economy = {
+        BuildCostEnergy = 14000,
+        BuildCostMass = 1280,
+        BuildTime = 4800,
+    },
+    Intel = {
+        VisionRadius = 26,
+        WaterVisionRadius = 26,
+    },
+    Physics = {
+        StandUpright = false,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 2,
+        MaxSpeedReverse = 2.5,
+        TurnRate = 60,
+    },
+    Weapon = {
+        {
+            MaxRadius = 30,
+        },
+        {
+            Damage = 12
+        },
+        {
+            MaxRadius = 30,
+        },
+        {
+            MaxRadius = 30,
+        },
+    },
+}
