@@ -44,6 +44,48 @@ UnitBlueprint {
     },
 }
 
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ueb4301",		##HSD - Pulse
+    Display = {
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar7x_01_albedo',
+                Normal = 'Tarmacs/Tar7x_01_normals',
+                Length = 6.4,
+                Width = 6.4,
+            },
+        },
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ueb4202",		##SD - Pulse
+    Display = {
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar7x_01_albedo',
+                Normal = 'Tarmacs/Tar7x_01_normals',
+                Length = 6.4,
+                Width = 6.4,
+            },
+        },
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ueb4302",		##UEF antinuke
+    Display = {
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar7x_01_albedo',
+                Normal = 'Tarmacs/Tar7x_01_normals',
+            },
+        },
+    },
+}
 #UEF Units	----------------------------------#
 
 UnitBlueprint {
