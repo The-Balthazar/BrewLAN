@@ -1,16 +1,14 @@
 #summary Installation guide and a list of downloads for BrewLAN
 #labels Phase-Deploy
 ==Installation==
-A compilation of all the various BrewLAN downloads. They usually require installation in the same way; extract the archive into the SUPCOM:FA `mods` folder, deleting older versions first. Newer versions also require a .SCD part going into the `gamedata` folder and the other part going into the `mods` folder OR the entire thing going into the `gamedata` folder. The all .SCD version will be stopping, however, as they seem to cause desync errors during online play. If you don't have a `mods` folder make one; the file hierarchy, game installation dependant, should be along the lines of: "`C:\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`". Always remember to remove old versions first and that all versions require the Blackops Global Icon Support mod.
+A compilation of all the various BrewLAN downloads. They usually require installation in the same way; extract the archive into the SUPCOM:FA `mods` folder, deleting older versions first. Newer versions also require a .SCD part going into the `gamedata` folder and the other part going into the `mods` folder OR the entire thing going into the `gamedata` folder. The all .SCD version have stopped, however, as they seemed to cause desync errors during online play. If you don't have a `mods` folder make one; the file hierarchy, game installation dependant, should be along the lines of: "`C:\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`". Always remember to remove old versions first and that all versions require the Blackops Global Icon Support mod. The in-development SVN version is now up and running although I wouldn't advise its use over the individual download versions, as they aren't subject to change.
 <img src=http://i916.photobucket.com/albums/ad8/BrewLAN/BrewLAN-T1-Shields.jpg align=right>
 ==Beta downloads==
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-02-beta Version 0.2.0b] (ModDB mirror)
   * [http://supremecommander.filefront.com/file/BewLAN_Mod;105003 Version 0.2.0b] (Filefront mirror)
 ==Alpha downloads==
-The alpha stage downloads either contain unfinished parts/units or are bugged in some way, although they are all generally playable, otherwise they wouldn't get uploaded. They also require the Blackops Global Icon Support mod like the beta's. I make no guarantees  for the alphas; information on installation and such may be incomplete, missing or outdated. All alphas are hosted on Mediafire.
-===Current alpha===
+The alpha stage downloads either contain unfinished parts/units or are bugged in some way, although they are all generally playable, otherwise they wouldn't get uploaded. They also require the Blackops Global Icon Support mod like the beta's. I make no guarantees  for the alphas; information on installation and such may be incomplete, missing or outdated. All alphas are hosted on Mediafire. The very latest in-development version is only available on SVN.
   * [http://www.mediafire.com/file/yxygzjymyzn/BrewLAN_0.2.7a.7z Version 0.2.7a] (Split)
-===Past alphas===
   * [http://www.mediafire.com/file/y2hykvzewl2/BrewLAN_0.2.6a.7z Version 0.2.6a] (Split)
   * [http://www.mediafire.com/file/t10ty4wz00w/BrewLAN_0-2-5a.7z Version 0.2.5a] (Split)
   * [http://www.mediafire.com/file/ond0zyt01zt/BrewLAN_0-2-4a.7z Version 0.2.4a] (Split)
