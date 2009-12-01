@@ -11,6 +11,15 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2009-11-30|0.2.8a
+
+* Fixed the smoothing groups and replaced the icon of the UEF T2 Mass storage.
+* Created a propper LOD1 mesh for the UEF Mass storage.
+* Doubled the Adjecency bonus for T2 mass storages; an effective improvement from T1 storages on only T2 fabs and extractors.
+* Updated unit descriptions of T2 mass storages to align with the above.
+* Created a custom tarmac for the UEF T2 mass storage, T3 missile defence and shield gens.
+* Corrected the size of the UEF T3 heavy shield gens tarmac.
+__________.__________
 2009-11-17|0.2.7a
 
 * Fixed the spec map on the LOD1 mesh of the UEF proximity mine.

@@ -1,5 +1,5 @@
 UnitBlueprint {
-    Adjacency = 'T1MassStorageAdjacencyBuffs',
+    Adjacency = 'T2MassStorageAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
             Bank = 'UAB',
