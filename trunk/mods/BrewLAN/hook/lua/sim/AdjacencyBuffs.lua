@@ -26,7 +26,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.MassProductionBuffRemove,
     Affects = {
         MassProduction = {
-            Add = 0.125*2,
+            Add = 0.125,
             Mult = 1.0,
         },
     },
