@@ -11,7 +11,7 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
-2009-11-30|0.2.8a
+2009-11-30|0.2.8 SVN
 
 * Fixed the smoothing groups and replaced the icon of the UEF T2 Mass storage.
 * Created a propper LOD1 mesh for the UEF Mass storage.
@@ -19,6 +19,8 @@ __________.__________
 * Updated unit descriptions of T2 mass storages to align with the above.
 * Created a custom tarmac for the UEF T2 mass storage, T3 missile defence and shield gens.
 * Corrected the size of the UEF T3 heavy shield gens tarmac.
+* Nerf'd the T2 mass storages bonus on smaller buildings.
+* Modified version number, icon, and notes for this version (SVN).
 __________.__________
 2009-11-17|0.2.7a
 

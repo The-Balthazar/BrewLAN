@@ -1,8 +1,8 @@
-name = "BrewLAN 0.2.8a"
+name = "BrewLAN 0.2.8 SVN"
 uid = "25D57D85-7D84-27HT-A501-48F3488D85736"
-version = "0.2.8a"
+version = "0.2.8 SVN"
 copyright = "2009 Sean Wheeldon"
-description = "This mod attempts to balance Forged Alliance by filling in the gaps in tech trees for all factions, and by modifying some existing units."
+description = "This mod attempts to balance Forged Alliance by filling in the gaps in tech trees for all factions, and by modifying some existing units. Make sure to check all users are using the same revision in multiplayer games."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN/icon.dds"
 selectable = true
