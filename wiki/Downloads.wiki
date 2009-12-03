@@ -1,18 +1,32 @@
-#summary Installation guide and a list of downloads for BrewLAN
+#summary Download lists and installation guides for BrewLAN.
 #labels Phase-Deploy
+All versions of the mod require the [http://supremecommander.filefront.com/file/Global_Icon_Support;100370 Global Icon Support mod] by Blackops, so before continuing further download and install that.
+
 ==Installation==
-A compilation of all the various BrewLAN downloads. They usually require installation in the same way; extract the archive into the SUPCOM:FA `mods` folder, deleting older versions first. Newer versions also require a .SCD part going into the `gamedata` folder and the other part going into the `mods` folder OR the entire thing going into the `gamedata` folder. The all .SCD version have stopped, however, as they seemed to cause desync errors during online play. If you don't have a `mods` folder make one; the file hierarchy, game installation dependant, should be along the lines of: "`C:\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`" or alternatively in your documents folder "`C:\Documents and Settings\USERNAME\My Documents\My Games\Gas Powered Games\Supreme Commander Forged Alliance\mods`". Always remember to remove old versions first and that all versions require the [http://supremecommander.filefront.com/file/Global_Icon_Support;100370 Blackops Global Icon Support mod]. The in-development SVN version is now up and running although I wouldn't advise its use over the individual download versions, as they aren't subject to change.
+If you wish to use SVN skip this section. The general instructions for installation are:
+  # Remove old versions if applicable.
+  # Copy the /BrewLAN/ folder into your Forged Alliance /mods/ folder by default located at either one, or both, of these:
+   * "`...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`"
+   * "`...\My Documents\My Games\Gas Powered Games\Supreme Commander Forged Alliance\mods\`".
+  # Copy the "`brewlan.scd`" into the Forged Alliance /gamedata/ folder found by default at:
+   * "`...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\gamedata\`"
+Pre 0.2.2 releases don't require an SCD file. The 'SCD only' version of 0.2.2a doesn't require the /BrewLAN/ folder as its contained within the SCD file.
+
 ==SVN download==
-  * _This section of the guide assumes you have TortoiseSVN installed_
-The download of SVN version of the mod is done in two parts to prevent the SVN client messing with vanilla/other mods files. But first off remove any old versions of BrewLAN you may have.
-  # In one of your Forged Alliance mod folders create a folder called "BrewLAN" then right click it and select "SVN Checkout" and set the repository URL as "`http://brewlan.googlecode.com/svn/trunk/mods/BrewLAN/`", checkout directory should already be filled in. Checkout depth: fully recursive; head revision. Then click OK.
-  # Then download the [http://brewlan.googlecode.com/svn/trunk/gamedata/brewlan.scd brewlan.scd] and place it into your gamedata folder. There is no good was of doing this step with an SVN client, which means it needs manually updating for each change.
+ _This section of the guide assumes you have TortoiseSVN installed_
+
+The download of SVN version of the mod is done in two parts to prevent the SVN client messing with vanilla/other mods files. But first off remove any non-SVN versions of BrewLAN you may have.
+  # In your Forged Alliance mod folder (see [#Installation installation] above if you cant find it) create a folder called "BrewLAN" then right click it and select "SVN Checkout" and set the repository URL as "`http://brewlan.googlecode.com/svn/trunk/mods/BrewLAN/`", checkout directory should already be filled in. Checkout depth: fully recursive; head revision. Then click OK.
+  # Then download the [http://brewlan.googlecode.com/svn/trunk/gamedata/brewlan.scd brewlan.scd] and place it into your gamedata folder. There is no good way of doing this step with an SVN client, which means it needs manually updating for each change.
+To update your SVN version of BrewLAN simply right click the folder and click SVN update, updating the SCD file unfortunately requires manually re-downloading it, unless you have a better way of doing it.
 <img src=http://i916.photobucket.com/albums/ad8/BrewLAN/BrewLAN-T1-Shields.jpg align=right>
 ==Beta downloads==
+The public beta download links; the latest _clean_ versions. By which I mean that all unfinished and units and features have been cut from them. Installation instructions above.
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-02-beta Version 0.2.0b] (ModDB mirror)
   * [http://supremecommander.filefront.com/file/BewLAN_Mod;105003 Version 0.2.0b] (Filefront mirror)
+
 ==Alpha downloads==
-The alpha stage downloads either contain unfinished parts/units or are bugged in some way, although they are all generally playable, otherwise they wouldn't get uploaded. They also require the Blackops Global Icon Support mod like the beta's. I make no guarantees  for the alphas; information on installation and such may be incomplete, missing or outdated. All alphas are hosted on Mediafire. The very latest in-development version is only available on SVN.
+All previous alpha versions; since we now have SVN working this list is unlikely to get populated with further updates. Installation instructions above.
   * [http://www.mediafire.com/file/yxygzjymyzn/BrewLAN_0.2.7a.7z Version 0.2.7a] (Split)
   * [http://www.mediafire.com/file/y2hykvzewl2/BrewLAN_0.2.6a.7z Version 0.2.6a] (Split)
   * [http://www.mediafire.com/file/t10ty4wz00w/BrewLAN_0-2-5a.7z Version 0.2.5a] (Split)
