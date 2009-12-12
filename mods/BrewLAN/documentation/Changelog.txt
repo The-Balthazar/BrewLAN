@@ -21,6 +21,18 @@ __________.__________
 * Corrected the size of the UEF T3 heavy shield gens tarmac.
 * Nerf'd the T2 mass storages bonus on smaller buildings.
 * Modified version number, icon, and notes for this version (SVN).
+	__________
+	2009-12-12
+
+	* Various changes to the Restorer:
+		* Description changed to Heavy Gunship, from AA Gunship.
+		* Strategic icon changed to direct fire gunship.
+		* Health reduced to 5950, from 7200.
+		* Cost and build time increased to E35000, M1680 and T8400 from E20000, M1200 and T4800.
+		* Air to ground DPS increased to an aprox DPS of 300, from 160.
+		* AA weaponry damage reduced to an aprox DPS of 30, from 130.
+	* Increased the AA damage of the Broadsword 10 fold (to an aprox DPS of 30).
+	* Increased the AA damage of the Wailer by aprox 66% (to an aprox DPS of 30).
 __________.__________
 2009-11-17|0.2.7a
 

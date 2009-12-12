@@ -137,6 +137,7 @@ UnitBlueprint {
 }
 
 #Cybran Units		----------------------------------#
+
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="url0101",		##Mole
@@ -165,5 +166,19 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'DRAGBUILD',
         'OVERLAYINDIRECTFIRE',
+    },
+}
+
+#Cybran Aircraft	---------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xra0305"		##Wailer
+    Weapon = {
+        {
+        },
+        {
+            Damage = 10,	##AA, from 6
+        },
     },
 }
