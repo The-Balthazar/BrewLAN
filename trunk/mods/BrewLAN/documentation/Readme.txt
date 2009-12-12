@@ -7,9 +7,7 @@
  ___   ___   __   ___  __  __  ___ 			  by Sean Wheeldon
 (  ,) (  _) (  ) (   \(  \/  )(  _)
  )  \  ) _) /__\  ) ) ))    (  ) _)
-(_)\_)(___)(_)(_)(___/(_/\/\_)(___)			       0.2.4 alpha
-
-This mod requires the Blackops global icon support mod.
+(_)\_)(___)(_)(_)(___/(_/\/\_)(___)
 	.________
 	|Intro
 
@@ -17,26 +15,11 @@ The idea to create the BewLAN mod essentially came from two SUPCOM:FA matches, o
 	.________
 	|Installation
 
-* Remove any previous versions of BrewLAN
-* Copy the BrewLAN folder into your SUPCOM:FA mods folder most likely located at:
-	C:\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods
-* If you dont have a mods folder, create one.
-* Place 'BrewLAN.scd' into your gamedata folder found next to your mods folder.
-* Also install The Blackops global icon support mod, if you dont already have it. Link for your convenience:
-	http://supremecommander.filefront.com/file/Global_Icon_Support;100370
+For a detailed and up to date installation guide see:
+	http://code.google.com/p/brewlan/wiki/Downloads?tm=2
 	.________
 	|Changes
 
-For a detailed and up to date list of changes and additions see the Changelog.txt and the internet, the Unit Statuses.txt is out of date:
+For details regarding changes see the changelog and the unit statuses list (which also includes plans). Since I tend to forget to update this mostly redundant readme you will likely find more usefull and up to date information at the following websites:
 	http://code.google.com/p/brewlan/
 	http://www.moddb.com/mods/brewlan
-	.________
-	|Credits
-
-Contributers:
-* Sean Wheeldon (Bathazar) - Project lead.
-* Jonathon Butler (Bilmon) - Balance, maintaining factional interests.
-
-Playtesters:
-    * Adam Butler (Outy)
-    * Christopher Hicks (Burning Star)

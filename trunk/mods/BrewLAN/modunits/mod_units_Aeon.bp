@@ -136,3 +136,36 @@ UnitBlueprint {
         },
     },
 }
+
+#Aeon Aircrafts	----------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xaa0305",		##Restorer
+    Defense = {
+        AirThreatLevel = 5,
+        Health = 5950,
+        MaxHealth = 5950,
+        SurfaceThreatLevel = 18,
+    },
+    Description = '<LOC uea0305_desc>Heavy Gunship',
+    Economy = {
+        BuildCostEnergy = 35000,
+        BuildCostMass = 1680,
+        BuildTime = 8400,
+    },
+    StrategicIconName = 'icon_gunship3_directfire',
+    Weapon = {
+        {
+            Damage = 60,		#Air to ground
+        },
+        {
+            Damage = 15,		#AA1
+            MaxRadius = 40,
+        },
+        {
+            Damage = 15,		#AA1
+            MaxRadius = 40,
+        },
+    },
+}

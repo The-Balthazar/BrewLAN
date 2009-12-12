@@ -107,3 +107,17 @@ UnitBlueprint {
         OmniRadius = 2,			##Added
     },
 }
+
+#UEF Aircraft	---------------------------------#
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uea0305",		##Broadsword
+    Weapon = {
+        {
+        },
+        {
+            Damage = 20,		##AA, x10
+	},
+    },
+}

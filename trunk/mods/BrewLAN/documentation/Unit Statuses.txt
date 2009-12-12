@@ -18,38 +18,51 @@ _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
+	T1 landscout
+		* Gave omni at a range of 2, unlisted in game.
 	T3 Rapid Fire Artillery Installation
 		* Changed into an experimental (only effects menu position and categorisation)
 	T3 AA Gunship
-		* Pending: Make them not overpowered
+		* Now the Aeon Tech 3 Heavy Gunship
 	Paragon
 		* Changed build menu sorting.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
+	T1 landscout
+		* Gave omni at a range of 2, unlisted in game.
 	ED1	* Changed to Tech 1.
 	ED2	* Made creatable at Tech 2.
 	ED4	* Changed to, and made buildable at, Tech 3.
 	ED5	* Changed to Tech 3.
 
-	T3 Air Superioroty
+	T3 Air Superiority
 		* Auto activates stealth.
 
 	T3 Bomber
 		* Auto activates stealth.
+	T3 Gunship
+		* AA DPS increased
 	Scathis	* Replaced with immobile version, original removed from build menus.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
+	T1 landscout
+		* Gave omni at a range of 2, unlisted in game.
 	Experimental Satellite System
-		* Removed from build menus, replaced with the observation satelite.
+		* Removed from build menus, replaced with the tech 3 observation satelite.
 
 	Drones	* Pendig: Make unselectable, make engineering stations more like the Cybran and not exploitable.
 	Mavor	* Changed menu sorting.
+	T3 Gunship
+		* AA DPS increased
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
+	T1 landscout
+		* Gave omni at a range of 2, unlisted in game.
 	T2 Shield Genorator: Atha
 		* Added "UpgradesFrom" attribute to allow the T1 shield to upgrade to it.
 	T3 Siege Tank
 		* Set the allways upright attribute to false.
+		* Increased stats to match that of the brick.
 _______________________________________________________
 Added Units:
 -------------------------------------------------------
@@ -103,7 +116,6 @@ Tech 2:
   Aeon:
 	T2 Mass Storage
 		* Fully Funtioning.
-		* May requires adjecency bonuses fixing
 	Pending:
 		* T2 Bomber
 		* T2 Wall
@@ -113,7 +125,6 @@ Tech 2:
   Cybran:
 	T2 Mass Storage
 		* Fully Funtioning.
-		* May requires adjecency bonuses fixing
 
 	Pending:
 		* T2 Heavy Bot
@@ -125,12 +136,10 @@ Tech 2:
 		* Pending creation
 	T2 Mass Storage
 		* Fully Funtioning.
-		* May requires adjecency bonuses fixing
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
 	T2 Mass Storage
 		* Fully Funtioning.
-		* May requires adjecency bonuses fixing
 	Pending:
 		* T2 combat engineer
 		* T2 Wall
@@ -179,9 +188,9 @@ Tech 3:
 	T3 Gunship 'Vulthuum'
 		* Fully Functioning.
 	T3 Air Transport.
-		* Fully functioning.
+		* A-G weapon not-functioning.
 	T3 Heavy Assault Bot
-		* Needs mesh replacing.
+		* Uses a slightly modified T2 bot mesh
 	Pending:
 		* T3 Torp launchers.
 		* T3 Point Deffence.
@@ -214,7 +223,7 @@ UEF Experimental Assault Bot/tank
 UEF Experimental Point Deffence 'Doomsday Machine'
 	* Multiple levels of weapons, different damages and RoF's
 
-UEF experimental drone carrier/gunship
+UEF experimental transport/drone carrier/gunship
 	* Sript: http://forums.gaspowered.com/viewtopic.php?t=25920&sid=0a243c4305d93c4de8fb26192d215e19
 
 Aeon Experimental Mobile Factory
