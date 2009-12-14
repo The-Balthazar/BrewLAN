@@ -33,6 +33,18 @@ __________.__________
 		* AA weaponry damage reduced to an aprox DPS of 30, from 130.
 	* Increased the AA damage of the Broadsword 10 fold (to an aprox DPS of 30).
 	* Increased the AA damage of the Wailer by aprox 66% (to an aprox DPS of 30).
+	__________
+	2009-12-13
+
+	* Rebalanced the Restorers weapons, its an AA Gunship again but not the same as before.
+		* Air to ground DPS has been halved compared to the original
+		* AA DPS has been increased to 250, giving it an overall DPS of 330, a number shared with all gunships.
+	* Updated the unit statuses document.
+	__________
+	2009-12-14
+
+	* Changed the build description for T2 storages.
+	* Mostly created the UEF T2 energy storage, the normals, smoothing groups and icon came out wrong. Adjecency bonus still needs doing.
 __________.__________
 2009-11-17|0.2.7a
 
