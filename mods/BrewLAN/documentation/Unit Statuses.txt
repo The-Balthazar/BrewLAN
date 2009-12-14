@@ -23,7 +23,7 @@ Modded Units:
 	T3 Rapid Fire Artillery Installation
 		* Changed into an experimental (only effects menu position and categorisation)
 	T3 AA Gunship
-		* Now the Aeon Tech 3 Heavy Gunship
+		* Balanced to other gunships
 	Paragon
 		* Changed build menu sorting.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -205,7 +205,7 @@ Experimental Table
 ________________!_______________!_______________!_______________!_______________!
 Inderect Fire	|Mavor		|Salvation	|Scathis	|Yolona Oss	|
 Direct Fire 1	|*Assault Bot	|Galactic Col...|Mokeylord	|Ythotha	|
-Direct Fire 2	|Fatboy (F)	|*Mobile Factory|Megalith (F)	|*Mobile Factory|
+Direct Fire 2	|Fatboy (F)	|*Engineering...|Megalith (F)	|*Engineering...|
 Flying		|*Gunship	|CZAR (A)	|Soulripper	|Ahwassa	|
 Sea/Sub		|Atlantis (A)	|Tempest (F)	|*Stealth ship	|*?		|
 Static		|*Point Defence	|Paragon	|*Shield	|*?		|
@@ -226,11 +226,9 @@ UEF Experimental Point Deffence 'Doomsday Machine'
 UEF experimental transport/drone carrier/gunship
 	* Sript: http://forums.gaspowered.com/viewtopic.php?t=25920&sid=0a243c4305d93c4de8fb26192d215e19
 
-Aeon Experimental Mobile Factory
+Aeon Experimental Engineering Platform
 	* Possibly lacking weapons
-	* Possibly able to build while moving/build multiple at the same time
 	* Possibly hovering
-	* Possibly something more along the lines of a Monkeylord equivelant, since the they already have (sea based) mobile factory.
 
 Cybran Experimental Missile ship
 	* a cross between the Sea Shadow and a Houbei class missile boat
@@ -243,5 +241,15 @@ Cybran Experimental Shield Genorator
 	* Upgradable in a cycle to change effective range with the 'petals' opening in relation to the radius.
 	* Possibly including some form of stealth to coinside with radius, not cloaking.
 
-Seraphim Experimental Mobile Factory
-	* Possibly a large low lying hovering tank
+Seraphim Experimental Engineering Platform
+	* A stripped down fatboy, with less firepower and an engineering suite instead of a factory
+	* Shields possible/likely
+
+Other ideas to possibly implement
+
+UEF experimental Engineering Facility 'The Pound'
+	* A facility that houses a large number of Rover drones.
+	* Possibly just an expensive T3 unit.
+
+Seraphim Tech 1 Anti Naval Gunship
+	* A torpedo bomber/gunship cross
