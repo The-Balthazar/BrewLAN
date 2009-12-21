@@ -38,7 +38,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="urb4204",# ED2
+	BlueprintId="urb4204",		# ED2
     Categories = {
         'PRODUCTSC1',
         'SELECTABLE',
@@ -173,7 +173,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xra0305"		##Wailer
+	BlueprintId="xra0305",		##Wailer
     Weapon = {
         {
         },
