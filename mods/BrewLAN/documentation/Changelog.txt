@@ -10,6 +10,10 @@
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+__________._________
+2010-01-01|0.2.8 SVN
+
+* Named the UEF T2 Mass Storage 'CJ-00F4T-2'.
 __________.__________
 2009-11-30|0.2.8 SVN
 

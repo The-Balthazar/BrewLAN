@@ -187,6 +187,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
+        UnitName = '<LOC beb1206_name>CJ-00F4T-2',
         UnitWeight = 1,
     },
     Interface = {
