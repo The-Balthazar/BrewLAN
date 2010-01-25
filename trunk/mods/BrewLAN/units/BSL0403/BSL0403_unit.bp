@@ -124,7 +124,7 @@ UnitBlueprint {
         SubThreatLevel = 40,
         SurfaceThreatLevel = 100,
     },
-    Description = '<LOC bsl0403_desc>Experimental Field Engineer',
+    Description = '<LOC bsl0403_desc>Experimental Engineer',
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
@@ -262,16 +262,12 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Economy = {
-        BuildCostEnergy = 157500,
-        BuildCostMass = 12600,
-        BuildRate = 900,
-        BuildTime = 9450,
+        BuildCostEnergy = 307500,
+        BuildCostMass = 24600,
+        BuildRate = 750,
+        BuildTime = 18450,
         BuildableCategory = {
-            'BUILTBYTIER3ENGINEER EXPERIMENTAL SERAPHIM',
-            'BUILTBYTIER3ENGINEER DEFENSE SERAPHIM',
-            'BUILTBYTIER3ENGINEER INDIRECTFIRE SERAPHIM',
-	    'BUILTBYTIER3ENGINEER STRATEGIC SERAPHIM',
-	    'BUILTBYTIER3ENGINEER SORTSTRATEGIC SERAPHIM',
+            'BUILTBYTIER3ENGINEER SERAPHIM',
             'BUILTBYTIER2FIELD SERAPHIM',
         },
         MaintenanceConsumptionPerSecondEnergy = 500,
