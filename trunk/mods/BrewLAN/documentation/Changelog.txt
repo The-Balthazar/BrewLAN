@@ -14,6 +14,10 @@ __________._________
 2010-01-01|0.2.8 SVN
 
 * Named the UEF T2 Mass Storage 'CJ-00F4T-2'.
+	__________
+	2010-01-25
+
+	* Added an alpha version of the Seraphim Experimental Engineer 'Iyadesu'.
 __________.__________
 2009-11-30|0.2.8 SVN
 
