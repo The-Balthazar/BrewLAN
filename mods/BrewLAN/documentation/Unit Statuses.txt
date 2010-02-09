@@ -169,8 +169,11 @@ Tech 3:
 	T3 Sniper Bot.
 		* Requires finishing.
 
+	T3 Point Deffence.
+		* Requires a custom appearance.
+		* Possibly requiring a DPS reduction and or cooldown.
+
 	Pending:
-		* T3 Point Deffence.
 		* T3 Anti Shield.
 		* ##T3 Mobile Shield Gen. ##No cybran mobile shields
 		* T3 Mobile stealth Gen
