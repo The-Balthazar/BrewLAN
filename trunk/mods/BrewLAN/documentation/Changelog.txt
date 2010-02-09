@@ -21,7 +21,7 @@ __________._________
 	__________
 	2010-02-09
 
-	* Failed at adding 'Hades', Cybran T3 Point Defence.
+	* Added 'Hades' as an alpha unit; Cybran T3 Point Defence.
 __________.__________
 2009-11-30|0.2.8 SVN
 

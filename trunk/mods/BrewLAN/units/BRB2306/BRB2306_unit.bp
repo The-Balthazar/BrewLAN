@@ -27,7 +27,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 110,
     Categories = {
-        'PRODUCTSC1',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -203,10 +202,12 @@ UnitBlueprint {
             BeamLifetime = 0,
             CollideFriendly = false,
             ContinuousBeam = true,
-            Damage = 70,
+            Damage = 65,
             DamageFriendly = false,
             DamageType = 'Normal',
             DisplayName = 'Microwave Laser',
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 50,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
