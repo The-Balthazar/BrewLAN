@@ -22,6 +22,11 @@ __________._________
 	2010-02-09
 
 	* Added 'Hades' as an alpha unit; Cybran T3 Point Defence.
+	__________
+	2010-02-11
+
+	* Gave the Hades a temporary custom mesh, a build description and an icon.
+	* Removed unchanged and unneeded files from the Hades folder.
 __________.__________
 2009-11-30|0.2.8 SVN
 

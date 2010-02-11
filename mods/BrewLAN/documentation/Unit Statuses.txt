@@ -170,7 +170,7 @@ Tech 3:
 		* Requires finishing.
 
 	T3 Point Deffence.
-		* Requires a custom appearance.
+		* Requires complete a custom appearance.
 		* Possibly requiring a DPS reduction and or cooldown.
 
 	Pending:

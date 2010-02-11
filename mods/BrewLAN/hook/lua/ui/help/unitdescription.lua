@@ -37,3 +37,4 @@ Description['brb2401'] = "Experimental, rapid-fire artillery. Consumes massive a
 Description['beb2220'] = "An all-terrain medium damage proximity mine system. Visible only to Omni."
 Description['bra0307'] = "High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defences with large salvos."
 Description['bsl0311'] = "Shielded Siege assault bot. Armed with dual Aire-au Bolters."
+Description['brb2306'] = "Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
