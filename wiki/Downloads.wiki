@@ -22,6 +22,7 @@ To update your SVN version of BrewLAN simply right click the folder and click SV
 <img src=http://i916.photobucket.com/albums/ad8/BrewLAN/BrewLAN-T1-Shields.jpg align=right>
 ==Beta downloads==
 The public beta download links; the latest _clean_ versions. By which I mean that all unfinished and units and features have been cut from them. Installation instructions above.
+  * [http://www.moddb.com/mods/brewlan/downloads/brewlan-029-beta Version 0.2.9b] (ModDB mirror)
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-02-beta Version 0.2.0b] (ModDB mirror)
   * [http://supremecommander.filefront.com/file/BewLAN_Mod;105003 Version 0.2.0b] (Filefront mirror)
 
