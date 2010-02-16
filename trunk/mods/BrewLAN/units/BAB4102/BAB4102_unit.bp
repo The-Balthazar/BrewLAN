@@ -162,7 +162,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
-        Icon = 'land',
+        Icon = 'amph',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {
                 bitmapId = 'shield-dome',

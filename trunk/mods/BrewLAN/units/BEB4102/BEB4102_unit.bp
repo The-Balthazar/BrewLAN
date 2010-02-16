@@ -144,7 +144,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
-        Icon = 'land',
+        Icon = 'amph',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {
                 bitmapId = 'shield-dome',

@@ -11,6 +11,24 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________._________
+2010-02-16|0.2.9.1a
+
+# I'm saving V0.3 for something big.
+
+* Beta removals skipped out.
+* Fixed the icon background of the UEF and Aeon, changed to 'amph'.
+__________._________
+2010-02-14|0.2.9b
+
+* Static download changes:
+	* Removed svn client data.
+	* Removed the following unfinished units:
+			* Iyadesu Seraphim Experimental Engineer.
+			* Digger Cybran T3 Sniper Bot.
+			* Doomsday Machine UEF Experimental Point Defence.
+			* Unnamed UEF T2 Energy storage.
+	* Changed the icon back to its default blue colour.
+__________._________
 2010-01-01|0.2.8 SVN
 
 * Named the UEF T2 Mass Storage 'CJ-00F4T-2'.
