@@ -1,12 +1,11 @@
 #****************************************************************************
 #**
 #**	File	: /lua/AI/sorianlang.lua
-#**	Author	: Sean Wheeldon (Balthazar)
+#**	Author	: Balthazar
 #**
-#**	Summary	: Sorian AI language files for custom units. Needs hooking properly; I honestly have no idea what im doing with lua.
+#**	Summary	: This needs hooking propperly
 #**
 #****************************************************************************
-do
 AINames = {
 	#Scathis MK II
     brb2401 = {
@@ -21,6 +20,7 @@ AINames = {
         'Oleander',
         'Hemlock',
         'Toloache',
+	'Crimson Fangs of Eternity',
     },
 
 	#Doomsday Machine
@@ -91,4 +91,3 @@ AINames = {
 	'',
     },
 }
-end

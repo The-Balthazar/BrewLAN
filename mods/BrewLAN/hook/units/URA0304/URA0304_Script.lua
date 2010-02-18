@@ -1,29 +1,23 @@
+do
 #****************************************************************************
 #**
-#**  File     :  /cdimage/units/URA0304/URA0304_script.lua
-#**  Author(s):  John Comes, David Tomandl
+#**  File     :  /hook/units/URA0304/URA0304_script.lua
+#**  Author(s):  Sean Wheeldon (Balthazar)
 #**
-#**  Summary  :  Cybran Strategic Bomber Script
+#**  Summary  :   Auto activation of Cybran Strategic Bomber Script stealth
 #**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright © 2010 BrewLAN.  All rights reserved.
 #****************************************************************************
 
-local CAirUnit = import('/lua/cybranunits.lua').CAirUnit
-local CIFBombNeutronWeapon = import('/lua/cybranweapons.lua').CIFBombNeutronWeapon
-local CAAAutocannon = import('/lua/cybranweapons.lua').CAAAutocannon
+local CybranStratBomber = URA0304
 
-URA0304 = Class(CAirUnit) {
-    Weapons = {
-        Bomb = Class(CIFBombNeutronWeapon) {},
-        AAGun1 = Class(CAAAutocannon) {},
-        AAGun2 = Class(CAAAutocannon) {},
-    },
-    ContrailBones = {'Left_Exhaust','Center_Exhaust','Right_Exhaust'},
-    ExhaustBones = {'Left_Exhaust','Center_Exhaust','Right_Exhaust'},
-    
+URA0304 = Class(CybranStratBomber) {
+
     OnStopBeingBuilt = function(self,builder,layer)
         CAirUnit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()
     end,
 }
 TypeClass = URA0304
+
+end

@@ -23,6 +23,12 @@ __________._________
 	* Added adjecency buff table data for T2 energy storages.
 	* Changed the buff value of the UEF T2 Energy storage to T2 from T1.
 	* Removed the Iyadesu from the build lists; pending propper balancing.
+	__________
+	2010-02-18
+
+	* Propperly hooked the changes to the Cybran ASF and Strat bomber.
+	* Updated mod_info.lua to show the correct version.
+	* Fixed the off centre position of the Scathis MK II's cannon.
 __________._________
 2010-02-14|0.2.9b
 
