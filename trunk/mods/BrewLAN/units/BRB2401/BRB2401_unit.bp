@@ -84,7 +84,7 @@ UnitBlueprint {
     },
     Description = '<LOC brb2401_desc>Experimental Rapid-Fire Artillery',
     Display = {
-        AnimationOpen = '/units/URL0401/URL0401_aopen.sca', #slightly ofcenter for this new scathis; needs modifying
+        AnimationOpen = '/units/URL0401/URL0401_aopen.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
