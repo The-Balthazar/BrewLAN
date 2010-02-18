@@ -17,6 +17,12 @@ __________._________
 
 * Beta removals skipped out.
 * Fixed the icon background of the UEF and Aeon, changed to 'amph'.
+	__________
+	2010-02-17
+
+	* Added adjecency buff table data for T2 energy storages.
+	* Changed the buff value of the UEF T2 Energy storage to T2 from T1.
+	* Removed the Iyadesu from the build lists; pending propper balancing.
 __________._________
 2010-02-14|0.2.9b
 
