@@ -1,7 +1,11 @@
 #****************************************************************************
 #**
-#**  Summary  :  Aeon Assault Tank Script
+#**	File	: /units/BAL0311/BAL0311_Script.lua
+#**	Author	: Sean Wheeldon (Balthazar)
 #**
+#**	Summary	: Aeon Heavy Assault Tank Script
+#**
+#**	Copyright © 2010 BrewLAN.  All rights reserved.
 #****************************************************************************
 
 local ALandUnit = import('/lua/aeonunits.lua').ALandUnit
@@ -11,13 +15,8 @@ BAL0311 = Class(ALandUnit) {
 
     Weapons = {
         MainGun = Class(ADFCannonOblivionWeapon) {
-			FxMuzzleFlash = {
-				'/effects/emitters/oblivion_cannon_flash_04_emit.bp',
-				'/effects/emitters/oblivion_cannon_flash_05_emit.bp',				
-				'/effects/emitters/oblivion_cannon_flash_06_emit.bp',
-			},        
+    		FxChargeMuzzleFlashScale = 0.3,
 	}
     },
-    
 }
 TypeClass = BAL0311

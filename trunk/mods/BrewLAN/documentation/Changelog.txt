@@ -29,6 +29,12 @@ __________._________
 	* Propperly hooked the changes to the Cybran ASF and Strat bomber.
 	* Updated mod_info.lua to show the correct version.
 	* Fixed the off centre position of the Scathis MK II's cannon.
+	* Changed the mesh, texture, firing pattern, and emmitters of the Moldivite.
+	* Removed the unused custom emmitters for the UEF T1 Shield Gen.
+	__________
+	2010-02-19
+
+	* Finised the Aeon T3 Assault Tank.
 __________._________
 2010-02-14|0.2.9b
 
