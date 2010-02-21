@@ -1,124 +1,49 @@
 #Cybran Buildings	----------------------------------#
 
+
+
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="urb4202",		##ED1
-    Categories = {
-        'PRODUCTSC1',
-        'SELECTABLE',
-        'BUILTBYTIER1ENGINEER',		##Added
-        'BUILTBYTIER2ENGINEER',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER2COMMANDER',
-        'BUILTBYTIER3COMMANDER',
-        'CYBRAN',
-        'STRUCTURE',
-        'DEFENSE',
-        'TECH1',			## Changed from TECH2
-        'SHIELD',
-        'DRAGBUILD',
-        'SIZE12',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWQUEUE',
-        'OVERLAYDEFENSE',
-        'SORTDEFENSE',
-    },
     Defense = {
-        Health = 100,			##Reduced from 500
+        Health = 100,
         MaxHealth = 100,
-        #Shield = {			##Decided reducing the size of the ED1's range was a bad idea.
-        #    ShieldRechargeTime = 10, # lowered from 18
-        #    ShieldRegenRate = 55, # raised from 45
-        #    ShieldSize = 12, # lowered from 18
-        #},
     },
-    StrategicIconName = 'icon_structure1_shield',	## Changed from 'icon_structure2_shield'
+    StrategicIconName = 'icon_structure1_shield',
 }
 
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="urb4204",		# ED2
-    Categories = {
-        'PRODUCTSC1',
-        'SELECTABLE',
-        'BUILTBYTIER2ENGINEER',		##Added
-        'BUILTBYTIER3ENGINEER',		##Added
-        'BUILTBYTIER2COMMANDER',	##Added
-        'BUILTBYTIER3COMMANDER',	##Added
-        'CYBRAN',
-        'STRUCTURE',
-        'DEFENSE',
-        'TECH2',
-        'SHIELD',
-        'DRAGBUILD',
-        'SIZE12',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWQUEUE',
-        'OVERLAYDEFENSE',
-        'SORTDEFENSE',
-    },
     Defense = {
-        Health = 200,			##Reduced from 500
+        Health = 200,
         MaxHealth = 200,
     },
 }
+
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="urb4205",		##ED3
     Defense = {
-        Health = 300,			##Reduced from 500
+        Health = 300,
         MaxHealth = 300,
     },
 }
+
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="urb4206",		##ED4
-    Categories = {
-        'PRODUCTSC1',
-        'SELECTABLE',
-        'BUILTBYTIER3ENGINEER',		##Added
-        'BUILTBYTIER3COMMANDER',	##Added
-        'CYBRAN',
-        'STRUCTURE',
-        'DEFENSE',
-        'TECH3',			## Changed from TECH2
-        'SHIELD',
-        'DRAGBUILD',
-        'SIZE12',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWQUEUE',
-        'OVERLAYDEFENSE',
-        'SORTDEFENSE',
-    },
     Defense = {
-        Health = 400,			##Reduced from 500
+        Health = 400,
         MaxHealth = 400,
     },
-    StrategicIconName = 'icon_structure3_shield',	## Changed from 'icon_structure2_shield'
+    StrategicIconName = 'icon_structure3_shield',
 }
+
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="urb4207",		##ED5
-    Categories = {
-        'PRODUCTSC1',
-        'SELECTABLE',
-        'CYBRAN',
-        'STRUCTURE',
-        'DEFENSE',
-        'TECH3',			## Changed from TECH2
-        'SHIELD',
-        'DRAGBUILD',
-        'SIZE12',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWQUEUE',
-        'OVERLAYDEFENSE',
-        'SORTDEFENSE',
-    },
-    StrategicIconName = 'icon_structure3_shield',	## Changed from 'icon_structure2_shield'
+    StrategicIconName = 'icon_structure3_shield',
 }
 
 UnitBlueprint {
@@ -136,7 +61,11 @@ UnitBlueprint {
     },
 }
 
+
+
 #Cybran Units		----------------------------------#
+
+
 
 UnitBlueprint {
 	Merge = true,
@@ -169,7 +98,11 @@ UnitBlueprint {
     },
 }
 
+
+
 #Cybran Aircraft	---------------------------------#
+
+
 
 UnitBlueprint {
 	Merge = true,
