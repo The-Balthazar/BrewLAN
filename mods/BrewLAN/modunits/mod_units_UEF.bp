@@ -21,31 +21,6 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ueb2401",		##Mavor
-    Categories = {
-        'PRODUCTSC1',
-        'SELECTABLE',
-        'BUILTBYTIER3COMMANDER',
-        'BUILTBYTIER3ENGINEER',
-        'UEF',
-        'STRUCTURE',
-        'STRATEGIC',
-        'EXPERIMENTAL',
-        'INDIRECTFIRE',
-        'ARTILLERY',
-        'DRAGBUILD',
-        'SIZE16',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWATTACKRETICLE',
-        'DRAGBUILD',
-        'OVERLAYINDIRECTFIRE',
-        'SORTSTRATEGIC',		##Added
-    },
-}
-
-UnitBlueprint {
-	Merge = true,
 	BlueprintId="ueb4301",		##HSD - Pulse
     Display = {
         Tarmacs = {

@@ -3,23 +3,6 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="xab3301",		##T3 Quantum Optics
-    Categories = {
-        'PRODUCTFA',
-        'SELECTABLE',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER3COMMANDER',
-        'AEON',
-        'DRAGBUILD',			##Added
-        'INTELLIGENCE',
-        'STRUCTURE',
-        'TECH3',
-        'SIZE4',
-        'OPTICS',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'ABILITYBUTTON',
-        'SORTINTEL',
-    },
     Footprint = {
         SizeX = 3,
         SizeZ = 3,
@@ -45,48 +28,8 @@ UnitBlueprint {
         },
     },
     BuildIconSortPriority = 150,
-    Categories = {
-        'PRODUCTFA',
-        'SELECTABLE',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER3COMMANDER',
-        'AEON',
-        'STRUCTURE',
-        'STRATEGIC',
-        'EXPERIMENTAL',
-        'INDIRECTFIRE',
-        'ARTILLERY',
-        'DRAGBUILD',
-        'SIZE4',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYINDIRECTFIRE',
-        'SORTSTRATEGIC',
-    },
     Description = 'Experimental Rapid-Fire Artillery',  ##<LOC xab2307_desc>
     StrategicIconName = 'icon_experimental_generic',
-}
-UnitBlueprint {
-	Merge = true,
-	BlueprintId="xab1401",		##Paragon
-    Categories = {
-        'PRODUCTFA',
-        'SELECTABLE',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER3COMMANDER',
-        'AEON',
-        'STRUCTURE',
-        'ECONOMIC',
-        'EXPERIMENTAL',
-        'ENERGYPRODUCTION',
-        'MASSPRODUCTION',
-        'MASSFABRICATION',
-        'DRAGBUILD',
-        'SIZE12',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SORTSTRATEGIC',		##Added, need to L2 Lua table insert.
-    },
 }
 
 #Aeon Units	----------------------------------#
@@ -149,9 +92,9 @@ UnitBlueprint {
         SurfaceThreatLevel = 10,
     },
     Economy = {
-        BuildCostEnergy = 35000,
+        BuildCostEnergy = 28000,
         BuildCostMass = 1680,
-        BuildTime = 8400,
+        BuildTime = 6720,
     },
 #   StrategicIconName = 'icon_gunship3_directfire',
     Weapon = {
@@ -160,11 +103,11 @@ UnitBlueprint {
         },
         {
             Damage = 125,		#AA1
-            MaxRadius = 40,
+            MaxRadius = 60,
         },
         {
-            Damage = 125,		#AA1
-            MaxRadius = 40,
+            Damage = 125,		#AA2
+            MaxRadius = 60,
         },
     },
 }

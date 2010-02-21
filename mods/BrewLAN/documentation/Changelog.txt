@@ -35,6 +35,19 @@ __________._________
 	2010-02-19
 
 	* Finised the Aeon T3 Assault Tank.
+	__________
+	2010-02-20
+
+	* Re-rebalancing of the Restorer.
+	__________
+	2010-02-21
+
+	* Category table compatibility fixes for modded units. Effected units:
+		* Aeon Quantum Optics Facility
+		* Mavor
+		* Paragon
+		* Salvation
+		* ED1, ED2, ED4 and ED5
 __________._________
 2010-02-14|0.2.9b
 
