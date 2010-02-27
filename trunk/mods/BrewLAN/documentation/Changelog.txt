@@ -54,6 +54,11 @@ __________._________
 	* Added an early alpha of the T3 Seraphim point defence.
 	* Added a damage test unit, spawn only.
 	* Removed an unwanted line from the Aspis' blueprint.
+	__________
+	2010-02-27
+
+	* Icon file changes and moves.
+	* SCD update for the SVN; SVN has been behind on that since the last beta.
 __________._________
 2010-02-14|0.2.9b
 
