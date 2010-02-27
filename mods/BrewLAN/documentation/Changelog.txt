@@ -48,6 +48,12 @@ __________._________
 		* Paragon
 		* Salvation
 		* ED1, ED2, ED4 and ED5
+	__________
+	2010-02-26
+
+	* Added an early alpha of the T3 Seraphim point defence.
+	* Added a damage test unit, spawn only.
+	* Removed an unwanted line from the Aspis' blueprint.
 __________._________
 2010-02-14|0.2.9b
 
