@@ -145,7 +145,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 18,
     },
-    Description = '<LOC BAA0306_desc>Heavy Air Transport',
+    Description = '<LOC baa0306_desc>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -242,14 +242,14 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC BAA0306_name>Cirrus',
+        UnitName = '<LOC baa0306_name>Cirrus',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC BAA0306_help>Air Transport',
+        HelpText = '<LOC baa0306_help>Heavy Air Transport',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.5,

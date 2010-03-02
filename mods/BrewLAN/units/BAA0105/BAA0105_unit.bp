@@ -111,7 +111,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 2,
     },
-    Description = '<LOC baa0105_help>Light Gunship',
+    Description = '<LOC baa0105_desc>Light Gunship',
     Display = {
         LayerChangeEffects = {
             AirLand = {
