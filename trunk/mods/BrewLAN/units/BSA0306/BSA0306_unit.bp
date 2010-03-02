@@ -152,7 +152,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 18,
     },
-    Description = 'Heavy Air Transport',
+    Description = '<LOC bsa0306_desc>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -270,14 +270,14 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = 'Vishuum',
+        UnitName = '<LOC bsa0306_name>Vishuum',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC xea0306_help>Heavy Air Transport',
+        HelpText = '<LOC bsa0306_help>Heavy Air Transport',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 4.5,
