@@ -63,6 +63,11 @@ __________._________
 	2010-03-01
 
 	* Preparation for translation.
+	__________
+	2010-03-04
+
+	* Re-textured the Moldovite.
+	* Added additional nodes to the Moldovite's mesh.
 __________._________
 2010-02-14|0.2.9b
 
