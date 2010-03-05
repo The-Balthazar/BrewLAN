@@ -68,6 +68,11 @@ __________._________
 
 	* Re-textured the Moldovite.
 	* Added additional nodes to the Moldovite's mesh.
+	__________
+	2010-03-05
+
+	* Localisation data preparation.
+	* Fixed a bug which was giving T1 energy storage the T2 buffs.
 __________._________
 2010-02-14|0.2.9b
 

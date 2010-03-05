@@ -64,7 +64,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 25,
     },
-    Description = '<LOC bab2103_desc>Light Artillery Installation',
+    Description = '<LOC bbui2103>Light Artillery Installation',
     Display = {
         Mesh = {
             IconFadeInZoom = 130,
@@ -124,7 +124,7 @@ UnitBlueprint {
         VisionRadius = 24,
     },
     Interface = {
-        HelpText = '<LOC bab2103_help>Light Artillery Installation',
+        HelpText = '<LOC bbui2103>Light Artillery Installation',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
