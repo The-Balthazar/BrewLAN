@@ -64,7 +64,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 25,
     },
-    Description = '<LOC bsb2103_desc>Light Artillery Installation',
+    Description = '<LOC bbui2103>Light Artillery Installation',
     Display = {
         AnimationDeath = {
             {
@@ -130,14 +130,14 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC Bsb2303_name>Thaam-atha',
+        UnitName = '<LOC bsb2303_name>Thaam-atha',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,
     },
     Interface = {
-        HelpText = '<LOC bsb2103_help>Light Artillery Installation',
+        HelpText = '<LOC bbui2103>Light Artillery Installation',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,

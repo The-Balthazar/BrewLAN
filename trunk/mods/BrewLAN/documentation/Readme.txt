@@ -11,7 +11,9 @@
 	.________
 	|Intro
 
-The idea to create the BewLAN mod essentially came from two SUPCOM:FA matches, one T1 only match, one match using the Blackops mod. Both of which seemed horribly balanced. After which we vowed never to use the Blackops mod again, and not to do another T1 only match without first fixing the frustrating balance bugs and removing/creating ways of countering exploits. And so the T1 Balance Mod was born, which grew into the BrewLAN mod; named after Joshua Wilsons BrewLAN party where we first played a match with the first alpha.
+BrewLAN is a unitpack and balancing mod for Supreme Commander: Forged Alliance with a number of changes and additions at all tech levels for all factions, including Seraphim. The design goals for the mod are simple; to add new and interesting and visually aesthetic units which complement those already in existence and to maximise technical compatibility with other mods, even if said mods may be incompatible in concept.
+
+The name BrewLAN is taken from Joshua Wilsons infamous LAN party of the same name, where the mod in its earliest incarnation saw its first multiplayer usage.
 	.________
 	|Installation
 
@@ -21,5 +23,6 @@ For a detailed and up to date installation guide see:
 	|Changes
 
 For details regarding changes see the changelog and the unit statuses list (which also includes plans). Since I tend to forget to update this mostly redundant readme you will likely find more usefull and up to date information at the following websites:
+
 	http://code.google.com/p/brewlan/
 	http://www.moddb.com/mods/brewlan

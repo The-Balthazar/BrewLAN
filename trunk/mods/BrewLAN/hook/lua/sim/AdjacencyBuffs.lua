@@ -2,7 +2,7 @@
 ## TIER 2 ENERGY STORAGE
 ##################################################################
 
-T1EnergyStorageAdjacencyBuffs = {
+T2EnergyStorageAdjacencyBuffs = {
     'T2EnergyStorageEnergyProductionBonusSize4',
     'T2EnergyStorageEnergyProductionBonusSize8',
     'T2EnergyStorageEnergyProductionBonusSize12',
@@ -11,7 +11,7 @@ T1EnergyStorageAdjacencyBuffs = {
 }
 
 ##################################################################
-## ENERGY PRODUCTION BONUS - TIER 1 ENERGY STORAGE
+## ENERGY PRODUCTION BONUS - TIER 2 ENERGY STORAGE
 ##################################################################
 
 BuffBlueprint {

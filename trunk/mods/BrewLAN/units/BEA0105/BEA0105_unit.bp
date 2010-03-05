@@ -112,7 +112,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 2,
     },
-    Description = '<LOC bea0105_desc>Light Gunship',
+    Description = '<LOC bair0105>Light Gunship',
     Display = {
         Abilities = {
             '<LOC ability_transport>Transport',
@@ -214,7 +214,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC bea0105_help>Light Gunship',
+        HelpText = '<LOC bair0105>Light Gunship',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
