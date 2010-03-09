@@ -35,7 +35,7 @@ UnitBlueprint {
         'PRODUCTFA',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3COMMANDER',
         'SERAPHIM',
         'STRUCTURE',
         'DEFENSE',
