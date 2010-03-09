@@ -73,6 +73,11 @@ __________._________
 
 	* Localisation data preparation.
 	* Fixed a bug which was giving T1 energy storage the T2 buffs.
+	__________
+	2010-03-09
+
+	* Added the Seraphim T1 Gunship.
+	* Fixed build cats of the Seraphim T3 PD.
 __________._________
 2010-02-14|0.2.9b
 
