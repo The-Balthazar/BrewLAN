@@ -78,6 +78,10 @@ __________._________
 
 	* Added the Seraphim T1 Gunship.
 	* Fixed build cats of the Seraphim T3 PD.
+	__________
+	2010-03-18
+
+	* Added a lod1 mesh for the Moldovite.
 __________._________
 2010-02-14|0.2.9b
 
