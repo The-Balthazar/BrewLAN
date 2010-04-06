@@ -82,6 +82,10 @@ __________._________
 	2010-03-18
 
 	* Added a lod1 mesh for the Moldovite.
+	__________
+	2010-04-01
+
+	* Added the 'AC-500 Centurion', UEF Experimental Gunship. Early alpha state; using a converted slightly modified mesh from the Creation Matrix Total Annihilation unit Core flying fortress: Centurion. Final version will use a new mesh.
 __________._________
 2010-02-14|0.2.9b
 
