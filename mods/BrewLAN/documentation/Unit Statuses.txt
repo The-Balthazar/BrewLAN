@@ -50,7 +50,7 @@ Modded Units:
 	Experimental Satellite System
 		* Removed from build menus, replaced with the tech 3 observation satelite.
 
-	Drones	* Pendig: Make unselectable, make engineering stations more like the Cybran and not exploitable.
+	Drones	* Pending: Make unselectable, make engineering stations more like the Cybran and not exploitable.
 	Mavor	* Changed menu sorting.
 	T3 Gunship
 		* AA DPS increased
