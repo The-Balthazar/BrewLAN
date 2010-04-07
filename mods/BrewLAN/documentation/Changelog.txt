@@ -16,20 +16,22 @@ __________._________
 # I'm saving V0.3 for something big.
 
 * Beta removals skipped out.
-* Fixed the icon background of the UEF and Aeon, changed to 'amph'.
+* Fixed the icon background of the UEF and Aeon T1 Shield gens, changed to 'amph'.
 	__________
 	2010-02-17
 
 	* Added adjecency buff table data for T2 energy storages.
 	* Changed the buff value of the UEF T2 Energy storage to T2 from T1.
-	* Removed the Iyadesu from the build lists; pending propper balancing.
+	* Removed the Iyadesu from the build lists; pending propper
+	  balancing. Yes, it is that broken.
 	__________
 	2010-02-18
 
 	* Propperly hooked the changes to the Cybran ASF and Strat bomber.
 	* Updated mod_info.lua to show the correct version.
 	* Fixed the off centre position of the Scathis MK II's cannon.
-	* Changed the mesh, texture, firing pattern, and emmitters of the Moldivite.
+	* Changed the mesh, texture, firing pattern, and emmitters of the
+	  Moldivite.
 	* Removed the unused custom emmitters for the UEF T1 Shield Gen.
 	__________
 	2010-02-19
@@ -42,7 +44,8 @@ __________._________
 	__________
 	2010-02-21
 
-	* Category table compatibility fixes for modded units. Effected units:
+	* Category table compatibility fixes for modded units.
+	  Effected units:
 		* Aeon Quantum Optics Facility
 		* Mavor
 		* Paragon
@@ -85,7 +88,15 @@ __________._________
 	__________
 	2010-04-01
 
-	* Added the 'AC-500 Centurion', UEF Experimental Gunship. Early alpha state; using a converted slightly modified mesh from the Creation Matrix Total Annihilation unit Core flying fortress: Centurion. Final version will use a new mesh.
+	* Added the 'AC-500 Centurion', UEF Experimental Gunship. Early
+	  alpha state; using a converted slightly modified mesh from the
+	  Creation Matrix Total Annihilation unit Core flying fortress:
+	  Centurion. Final version will use a new mesh.
+	__________
+	2010-04-07
+
+	* Gave the alpha-mesh of the Centurion a 'propper' texture so it
+	  doesn't look like complete arse.
 __________._________
 2010-02-14|0.2.9b
 
