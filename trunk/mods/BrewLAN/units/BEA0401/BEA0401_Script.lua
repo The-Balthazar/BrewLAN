@@ -10,6 +10,7 @@
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TIFSmallYieldNuclearBombWeapon = import('/lua/terranweapons.lua').TIFSmallYieldNuclearBombWeapon
 local TAirToAirLinkedRailgun = import('/lua/terranweapons.lua').TAirToAirLinkedRailgun
+local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher
 
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local CreateUEFBuildSliceBeams = EffectUtil.CreateUEFBuildSliceBeams
@@ -19,6 +20,7 @@ BEA0401 = Class(TAirUnit) {
         Bomb = Class(TIFSmallYieldNuclearBombWeapon) {},
         LinkedRailGun1 = Class(TAirToAirLinkedRailgun) {},
         LinkedRailGun2 = Class(TAirToAirLinkedRailgun) {},
+        MissileRack01 = Class(TSAMLauncher) {},
     },
     DestructionPartsChassisToss = {'BEA0401',},
     DestroyNoFallRandomChance = 1.1,
