@@ -97,6 +97,10 @@ __________._________
 
 	* Gave the alpha-mesh of the Centurion a 'propper' texture so it
 	  doesn't look like complete arse.
+	__________
+	2010-04-17
+
+	* Changed the Centurions' scripts again.
 __________._________
 2010-02-14|0.2.9b
 
