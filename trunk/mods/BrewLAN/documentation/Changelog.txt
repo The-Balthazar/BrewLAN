@@ -105,6 +105,8 @@ __________._________
 	2010-05-27
 
 	* Finished the loc strings table, I think, now I just need to find someone to translate for me.
+	* Fixed the Cirrus' name after the last update.
+	* Added German compatibility.
 __________._________
 2010-02-14|0.2.9b
 
