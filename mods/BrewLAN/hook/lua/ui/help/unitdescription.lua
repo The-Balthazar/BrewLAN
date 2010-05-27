@@ -59,3 +59,6 @@ Description['beb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based o
 #Experimentals
 Description['beb2404'] = "<LOC Unit_Description_BrewLAN_T4B001>Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."
 Description['brb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
+Description['bsl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>"
+Description['bea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>"
+

@@ -124,7 +124,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 18,
     },
-    Description = '<LOC bra0306_desc>Heavy Air Transport',
+    Description = '<LOC bair0306>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -246,7 +246,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
-        UnitName = '<LOC bra0306_name>Night Skimmer',
+        UnitName = '<LOC bair0306>Night Skimmer',
         UnitWeight = 1,
     },
     Intel = {
@@ -256,7 +256,7 @@ UnitBlueprint {
         VisionRadius = 34,
     },
     Interface = {
-        HelpText = '<LOC bra0306_help>Heavy Air Transport',
+        HelpText = '<LOC bair0306>Heavy Air Transport',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.25,

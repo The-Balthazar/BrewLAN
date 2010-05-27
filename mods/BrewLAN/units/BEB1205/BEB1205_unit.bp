@@ -51,7 +51,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC beb1205_desc>Energy Storage',
+    Description = '<LOC ueb1105_desc>Energy Storage',
     Display = {
         Abilities = {
             '<LOC ability_deathaoe>Volatile',
@@ -169,7 +169,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Interface = {
-        HelpText = '<LOC beb1205_help>Energy Storage',
+        HelpText = '<LOC ueb1105_help>Energy Storage',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,

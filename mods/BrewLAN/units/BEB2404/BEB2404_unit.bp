@@ -71,7 +71,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 50,
     },
-    Description = '<LOC beb2404_help>Experimental Point Defense',
+    Description = '<LOC beb2404_desc>Experimental Point Defense',
     Display = {
         AnimationPermOpen = '/mods/BrewLAN/units/beb2404/beb2404_open.sca',
         Abilities = {
@@ -164,7 +164,7 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = 'Doomsday Machine',
+        UnitName = '<LOC beb2404_name>Doomsday Machine',
         UnitWeight = 1,
     },
     Intel = {
@@ -172,7 +172,7 @@ UnitBlueprint {
         OmniRadius = 64,
     },
     Interface = {
-        HelpText = '<LOC beb2404_help>Experimental Point Defense',
+        HelpText = '<LOC beb2404_desc>Experimental Point Defense',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.5,

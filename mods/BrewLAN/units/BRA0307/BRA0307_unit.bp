@@ -121,7 +121,8 @@ UnitBlueprint {
         SubThreatLevel = 18,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC Bra0307_desc>Torpedo Bomber',
+    Description = '<LOC ura0204_desc>Torpedo Bomber',
+#    Description = '<LOC bair0307>Torpedo Bomber',
     Display = {
         Abilities = {
             '<LOC ability_personalstealth>Personal Stealth',
@@ -248,7 +249,8 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC ura0204_help>Torpedo Bomber',
+	HelpText = '<LOC ura0204_help>Torpedo Bomber',
+#        HelpText = '<LOC bair0307>Torpedo Bomber',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.85,

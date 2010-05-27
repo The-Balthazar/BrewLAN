@@ -71,7 +71,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC bab4102_desc>Light Shield Generator',
+    Description = '<LOC bbui4102>Light Shield Generator',
     Display = {
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
@@ -85,7 +85,7 @@ UnitBlueprint {
                 Weight = 1,
             },
         },
-        AnimationOpen = '/mods/brewlan/units/uab4202/bab4102_aopen.sca',
+        AnimationOpen = '/mods/brewlan/units/uab4102/bab4102_aopen.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -173,14 +173,14 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC bab4202_name>Aspis',
+        UnitName = '<LOC bab4102_name>Aspis',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC bab4102_help>Shield Generator',
+        HelpText = '<LOC bbui4102>Light Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.9,

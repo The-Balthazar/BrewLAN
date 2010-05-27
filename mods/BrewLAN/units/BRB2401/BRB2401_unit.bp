@@ -164,7 +164,7 @@ UnitBlueprint {
         VisionRadius = 28,
     },
     Interface = {
-        HelpText = '<LOC brb2401_help>Experimental Rapid-Fire Artillery',
+        HelpText = '<LOC brb2401_desc>Experimental Rapid-Fire Artillery',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.7,

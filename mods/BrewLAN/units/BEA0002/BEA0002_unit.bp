@@ -153,7 +153,7 @@ UnitBlueprint {
         VisionRadius = 72,
     },
     Interface = {
-        HelpText = '<LOC bea0002_help>Observation Satellite',
+        HelpText = '<LOC bea0002_desc>Observation Satellite',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.2,
