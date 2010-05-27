@@ -246,7 +246,7 @@ UnitBlueprint {
         VisionRadius = 40,
     },
     Interface = {
-        HelpText = '<LOC bea0401_help>Siege Assault Gunship',
+        HelpText = '<LOC bea0401_desc>Siege Assault Gunship',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 5.25,

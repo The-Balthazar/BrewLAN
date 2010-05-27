@@ -66,7 +66,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC bsb5104_desc>Air Staging Beacon',
+    Description = '<LOC bbuisera5104>Air Staging Beacon',
     Display = {
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
@@ -157,7 +157,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Interface = {
-        HelpText = '<LOC bsb5104_help>Air Staging Beacon',
+        HelpText = '<LOC bbuisera5104>Air Staging Beacon',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = .45,

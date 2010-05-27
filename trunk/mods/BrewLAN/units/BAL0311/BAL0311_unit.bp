@@ -211,7 +211,7 @@ UnitBlueprint {
         WaterVisionRadius = 25,
     },
     Interface = {
-        HelpText = '<LOC bal0311_help>Heavy Tank',
+        HelpText = '<LOC bal0311_desc>Heavy Tank',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,

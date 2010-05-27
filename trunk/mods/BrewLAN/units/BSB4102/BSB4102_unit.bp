@@ -76,7 +76,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC bsb4102_desc>Light Shield Generator',
+    Description = '<LOC bbui4102>Light Shield Generator',
     Display = {
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
@@ -190,7 +190,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC bsb4102_help>Light Shield Generator',
+        HelpText = '<LOC bbui4102>Light Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.2,

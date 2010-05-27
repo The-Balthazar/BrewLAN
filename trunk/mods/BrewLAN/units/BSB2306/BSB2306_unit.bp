@@ -148,7 +148,7 @@ UnitBlueprint {
         VisionRadius = 24,
     },
     Interface = {
-        HelpText = '<LOC bsb2306_help>Heavy Point Defense',
+        HelpText = '<LOC xeb2306_help>Heavy Point Defense',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.75,
