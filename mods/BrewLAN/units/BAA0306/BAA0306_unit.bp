@@ -242,7 +242,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC bair0306>Cirrus',
+        UnitName = '<LOC baa0306_name>Cirrus',
         UnitWeight = 1,
     },
     Intel = {
