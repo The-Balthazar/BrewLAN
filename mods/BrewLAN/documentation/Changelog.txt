@@ -11,9 +11,15 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________._________
-2010-02-16|0.2.9.1a
+2010-05-29|0.3.1a
 
-# I'm saving V0.3 for something big.
+* Added the UEF Albatross; T3 Torpedo Bomber.
+__________._________
+2010-05-27|0.3 beta
+
+* Removed unfinished units, prepared for public beta release.
+__________._________
+2010-02-16|0.2.9.1a
 
 * Beta removals skipped out.
 * Fixed the icon background of the UEF and Aeon T1 Shield gens, changed to 'amph'.
