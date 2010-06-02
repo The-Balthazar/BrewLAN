@@ -1,6 +1,6 @@
 #summary Download lists and installation guides for BrewLAN.
 #labels Phase-Deploy
-All versions of the mod require the [http://supremecommander.filefront.com/file/Global_Icon_Support;100370 Global Icon Support mod] by Blackops, so before continuing further download and install that.
+All versions of the mod require the [http://supremecommander.filefront.com/file/Global_Icon_Support;100370 Global Icon Support mod] by Blackops, so before continuing further download and install that. Versions with multilingual support, version 0.3 and above, do not require special installation.
 
 ==Installation==
 If you wish to use SVN skip this section. The general instructions for installation are:
