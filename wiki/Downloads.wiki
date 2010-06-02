@@ -23,6 +23,7 @@ To update your SVN version of BrewLAN simply right click the folder and click SV
 ==Beta downloads==
 The public beta download links; the latest _clean_ versions. By which I mean that all unfinished and units and features have been cut from them. Installation instructions above.
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-03-beta Version 0.3.0b] (ModDB mirror)
+  * [http://www.strategyinformer.com/pc/supremecommanderforgedalliance/mod/36121.html Version 0.3.0b] (Strategy Informer mirror)
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-029-beta Version 0.2.9b] (ModDB mirror)
   * [http://supremecommander.filefront.com/file/BrewLAN;112721 Version 0.2.9b] (Filefront mirror)
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-02-beta Version 0.2.0b] (ModDB mirror)
