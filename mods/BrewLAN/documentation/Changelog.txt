@@ -14,6 +14,11 @@ __________._________
 2010-05-29|0.3.1a
 
 * Added the UEF Albatross; T3 Torpedo Bomber.
+	__________
+	2010-06-03
+
+	* Added the Cybran Experimental shield thing.
+	* Added generic icons for experimentals that still lack final meshes.
 __________._________
 2010-05-27|0.3 beta
 
