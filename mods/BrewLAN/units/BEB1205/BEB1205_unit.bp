@@ -29,6 +29,7 @@ UnitBlueprint {
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3COMMANDER',
         'UEF',
         'STRUCTURE',
         'ECONOMIC',
@@ -98,7 +99,6 @@ UnitBlueprint {
                     LODCutoff = 120,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/ueb1105/ueb1105_albedo.dds', 
-                    NormalsName = '/units/ueb1105/ueb1105_normalsts.dds', 
                     SpecularName = '/units/ueb1105/ueb1105_specteam.dds', 
                 },
                 {
