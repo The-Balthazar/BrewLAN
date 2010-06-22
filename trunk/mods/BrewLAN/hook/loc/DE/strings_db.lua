@@ -45,6 +45,7 @@ Unit_Description_BrewLAN_T1U001="Luftstufung Anlage. Reparaturen und Flugzeuge b
 
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
 beb1206_name="CJ-00F4T-2"
+beb1205_name="PW4TH12-ST Kondensator"
 Unit_Description_BrewLAN_T2R002="Speichert große Mengen an Masse. Konstrukt neben Auszieher oder Verarbeiter für adjacency Bonus."
 Unit_Description_BrewLAN_T2R001="Stores große Mengen von Energie. Konstrukt neben Energiegenerator für adjacency Bonus."
 
@@ -100,10 +101,10 @@ Unit_Description_BrewLAN_T3B002="Satelliten-basierte Beobachtung System. Hat ein
 bsl0403_desc="Experimentelles Techniker"
 bsl0403_help="Experimentelles Techniker"
 bsl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L00="Über powered experimentellen Ingenieur; aufbauen kann sich selbst und die Ressourcen zu tun, so in 20 Sekunden."
+Unit_Description_BrewLAN_T4L001="Über powered experimentellen Ingenieur; aufbauen kann sich selbst und die Ressourcen zu tun, so in 20 Sekunden."
 
 bea0401_desc="Experimentelles Kanonenboot"
-bea0401_name="AC-500 Centurion"
+bea0401_name="AC-500 Centurio"
 Unit_Description_BrewLAN_T4A001="Experimentelles Kanonenboot."
 
 beb2404_desc="Experimentelles Punktverteidigung"
@@ -113,3 +114,7 @@ Unit_Description_BrewLAN_T4B001="Leicht gebrochen experimentellen Punkt Verteidi
 brb2401_desc="Experimentelles Artilleriestellung"
 brb2401_name="Scathis Mark II"
 Unit_Description_BrewLAN_T4B002="Experimentelle Schnellfeuer-Artillerie. Verbraucht massive Mengen von Energie mit jedem Schuss."
+
+brb4401="Experimentelles Schildgenerator"
+brb4401_name="Eiserner Vorhang"
+Unit_Description_BrewLAN_T4B003="Experimentelle Schild-Generator. Schützt eine große Fläche, abgeschirmten Raum in der Größe reduziert, wie es Schaden nimmt."

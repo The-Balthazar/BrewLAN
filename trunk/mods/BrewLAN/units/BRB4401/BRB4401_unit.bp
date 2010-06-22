@@ -84,7 +84,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Insect',
-                    MeshName = '/units/urb4207/urb4207_lod0.scm',
+                   # MeshName = '/units/urb4207/urb4207_lod0.scm',
                     AlbedoName = '/units/urb4207/urb4207_albedo.dds', 
                     NormalsName = '/units/urb4207/urb4207_normalsTS.dds', 
                     SpecularName = '/units/urb4207/urb4207_specteam.dds',  
@@ -118,13 +118,16 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
-        UniformScale = 0.2,
+        UniformScale = 0.2*1.1,
     },
     Economy = {
         BuildCostEnergy = 400000,
         BuildCostMass = 24000,
         BuildTime = 16000,
         MaintenanceConsumptionPerSecondEnergy = 5000,
+        RebuildBonusIds = {
+            'brb4401',
+        },
     },
     Footprint = {
         SizeX = 5,
@@ -161,7 +164,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC brb4401_name>Erectile Dysfunction 6',
+        UnitName = '<LOC brb4401_name>Iron Curtain',
         UnitWeight = 1,
      #   UpgradesFrom = 'urb4206',
      #   UpgradesFromBase = 'urb4202',
@@ -175,8 +178,8 @@ UnitBlueprint {
         HelpText = '<LOC brb4401>Experimental Shield Generator',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 3.7,
-    LifeBarSize = 6.5,
+    LifeBarOffset = 2.7,
+    LifeBarSize = 5,
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
@@ -198,9 +201,10 @@ UnitBlueprint {
         SkirtSizeZ = 8,
         TurnRate = 0,
     },
-    SelectionSizeX = 4,
-    SelectionSizeZ = 4,
-    SelectionThickness = 0.25,
+    SelectionSizeX = 3.1,
+    SelectionSizeZ = 3.1,
+    SelectionThickness = 0.35,
+    SelectionCenterOffsetZ = 1,
     SizeX = 5,
     SizeY = 5,
     SizeZ = 5,

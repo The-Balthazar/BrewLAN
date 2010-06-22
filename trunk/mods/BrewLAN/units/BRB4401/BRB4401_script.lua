@@ -22,7 +22,7 @@ BRB4401 = Class(CShieldStructureUnit) {
     
     OnStopBeingBuilt = function(self,builder,layer)
         CShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
-        self.Rotator1 = CreateRotator(self, 'Shaft', 'z', nil, 30, 5, 30)
+        self.Rotator1 = CreateRotator(self, 'Shaft02', 'z', nil, 30, 10, 30)
         self.Trash:Add(self.Rotator1)
 		self.ShieldEffectsBag = {}
     end,
@@ -40,7 +40,7 @@ BRB4401 = Class(CShieldStructureUnit) {
 		    self.ShieldEffectsBag = {}
 		end
         for k, v in self.ShieldEffects do
-            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 'Shaft', self:GetArmy(), v ) )
+            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 'Shaft02', self:GetArmy(), v ):ScaleEmitter(1.4) )
         end
     end,
 

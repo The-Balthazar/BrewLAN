@@ -166,6 +166,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
+        UnitName = '<LOC beb1205_name>PW4TH12ST Capacitor',
         UnitWeight = 1,
     },
     Interface = {
