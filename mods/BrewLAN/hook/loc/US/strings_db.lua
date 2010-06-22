@@ -45,6 +45,7 @@ Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels
 
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
 beb1206_name="CJ-00F4T-2"
+beb1205_name="PW4TH12-ST Capacitor"
 Unit_Description_BrewLAN_T2R002="Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 Unit_Description_BrewLAN_T2R001="Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 
@@ -100,7 +101,7 @@ Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide 
 bsl0403_desc="Experimental Engineer"
 bsl0403_help="Experimental Engineer"
 bsl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L00="Overpowered experimental engineer; can build itself and the resources to do so in 20 seconds."
+Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; can build itself and the resources to do so in 20 seconds."
 
 bea0401_desc="Experimental Gunship"
 bea0401_name="AC-500 Centurion"
@@ -113,3 +114,7 @@ Unit_Description_BrewLAN_T4B001="Slightly broken experimental point defence. Eff
 brb2401_desc="Experimental Rapid-Fire Artillery"
 brb2401_name="Scathis Mark II"
 Unit_Description_BrewLAN_T4B002="Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
+
+brb4401="Experimental Shield Generator"
+brb4401_name="Iron Curtain"
+Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large area, shielded area reduces in size as it takes damage."

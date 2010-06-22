@@ -25,6 +25,18 @@ __________._________
 	* Created the LOD1 mesh, fixed the normals, buffs and icon for the UEF T2 Energy Storage.
 		* 8 T2 E-stores around a T3 power gen now double the power gens capacity.
 	* Fixed the normals for the UEF T2 Mass Storage.
+	__________
+	2010-06-22
+
+	* Gave the UEF T2 Energy Storage a name. A name which is totally not a Powerthirst reference.
+	* Cybran T4 Shield changes:
+		* Gave it a temporary semi-custom mesh and icon.
+		* Renamed it to the Iron Curtain, from Erectile Dysfunction 6.
+		* Fixed the lifebar and selection size and position.
+		* Added rebuild bonus for remaking.
+		* Updated the script for the new mesh.
+		* Added the unit to the string tables for localisation.
+	* Updated icons in the SCD file.
 __________._________
 2010-05-27|0.3 beta
 
