@@ -85,6 +85,17 @@ UnitBlueprint {
     },
     Description = '<LOC bea0002_desc>Observation Satellite',
     Display = {
+	AINames = {
+            'Skynet',
+	    'Silent Earth',
+	    'Rith',
+	    'The Observer',
+	    'Zircon',
+	    'Peeper',
+	    'Belgacom',
+	    'Telesat',
+	    'Telstar',
+	},
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
         },

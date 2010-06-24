@@ -1,6 +1,6 @@
-name = "BrewLAN 0.2.9.1 SVN"
+name = "BrewLAN 0.3.1 SVN"
 uid = "25D57D85-7D84-27HT-A501-48F3488D85740"
-version = "0.2.9.1 SVN"
+version = "0.3.1 SVN"
 copyright = "2009 - 2010 Sean Wheeldon"
 description = "This mod attempts to balance Forged Alliance by filling in the gaps in tech trees for all factions, and by modifying some existing units. SVN version."
 author = "Sean Wheeldon"

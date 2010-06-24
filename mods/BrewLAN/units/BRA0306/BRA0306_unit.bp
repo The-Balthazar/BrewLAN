@@ -246,7 +246,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
-        UnitName = '<LOC bair0306>Night Skimmer',
+        UnitName = '<LOC bra0306_name>Night Skimmer',
         UnitWeight = 1,
     },
     Intel = {

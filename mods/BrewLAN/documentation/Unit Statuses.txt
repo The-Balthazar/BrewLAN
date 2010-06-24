@@ -206,12 +206,13 @@ Experimental Table
 		._______________._______________._______________._______________.
 		|UEF		|Aeon		|Cybran		|Seraphim	|
 ________________!_______________!_______________!_______________!_______________!
-Inderect Fire	|Mavor		|Salvation	|Scathis	|Yolona Oss	|
-Direct Fire 1	|*Assault Bot	|Galactic Col...|Mokeylord	|Ythotha	|
-Direct Fire 2	|Fatboy (F)	|*Engineering...|Megalith (F)	|*Engineering...|
+Land 1		|*Assault Bot	|Galactic Col...|Mokeylord	|Ythotha	|
+Land 2		|Fatboy (F)	|*Tank thing	|Megalith (F)	|*Engineer	|
 Flying		|*Gunship	|CZAR (A)	|Soulripper	|Ahwassa	|
 Sea/Sub		|Atlantis (A)	|Tempest (F)	|*Stealth ship	|*?		|
-Static		|*Point Defence	|Paragon	|*Shield	|*?		|
+Indirect fire	|Mavor		|Salvation	|Scathis	|Yolona Oss	|
+Static 2	|*?		|Paragon	|*?		|*?		|
+Static 3	|*Point Defence	|*Shield proj...|*Shield gen	|*?		|
 ________________!_______________!_______________!_______________!_______________!
 
 	(A)	Aircraft Carrier
@@ -223,15 +224,21 @@ ________________!_______________!_______________!_______________!_______________
 UEF Experimental Assault Bot/tank
 	* Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
 
-UEF Experimental Point Deffence 'Doomsday Machine'
+UEF Experimental Point Deffence 'Doomsday Machine' or somethig better.
 	* Multiple levels of weapons, different damages and RoF's
 
-UEF experimental transport/drone carrier/gunship
-	* Sript: http://forums.gaspowered.com/viewtopic.php?t=25920&sid=0a243c4305d93c4de8fb26192d215e19
+UEF Experimental transport/drone carrier/gunship
+	* Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
 
-Aeon Experimental Engineering Platform
-	* Possibly lacking weapons
-	* Possibly hovering
+Aeon Experimental Tank thing
+	* Something like the Eldar Falcon hover tank.
+	* Possible engineering functions.
+
+Aeon Experimental Shield projection tower.
+	* Something between a shield gen and the eye of something or other in appearance.
+	* Creates individual shields around each unit within the radius, probably with a ghost unit attached.
+		* Shields should share an overall health, and need some way to scale with the unit it surrounds.
+	* Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
 
 Cybran Experimental Missile ship
 	* a cross between the Sea Shadow and a Houbei class missile boat
@@ -240,19 +247,19 @@ Cybran Experimental Missile ship
 	* Possible cloak, disabled during firing and or really high power cost.
 
 Cybran Experimental Shield Genorator
-	* Possible appearance: large amount of interlocking spike things that resemble a rose.
-	* Upgradable in a cycle to change effective range with the 'petals' opening in relation to the radius.
-	* Possibly including some form of stealth to coinside with radius, not cloaking.
+	* Need to work out a script for reducing the covered area as it recieves damage.
+	* I also want to give it a better mesh.
 
 Seraphim Experimental Engineering Platform
-	* A stripped down fatboy, with less firepower and an engineering suite instead of a factory
-	* Shields possible/likely
+	* Need to make it less OP, and probably completely different.
 
-Other ideas to possibly implement
 
-UEF experimental Engineering Facility 'The Pound'
+Other random ideas.
+
+UEF Engineering Facility 'The Pound'
 	* A facility that houses a large number of Rover drones.
 	* Possibly just an expensive T3 unit.
 
-Seraphim Tech 1 Anti Naval Gunship
-	* A torpedo bomber/gunship cross
+A anti-naval gunship.
+
+Rail gun: http://forums.gaspowered.com/viewtopic.php?t=27664#p473416
