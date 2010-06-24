@@ -37,6 +37,18 @@ __________._________
 		* Updated the script for the new mesh.
 		* Added the unit to the string tables for localisation.
 	* Updated icons in the SCD file.
+	__________
+	2010-06-24
+
+	* Iron Curtain changes:
+		* Created a LOD1 mesh
+		* Increased the length of time it takes to reactivate
+		* Reduced its regen rate.
+		* Made an attempt to fix the smoothing groups of the mesh, which failed.
+	* Moved the AINames strings from sorianlangs.lua to the individual units.
+	* Updated the version name in the mod_info.lua.
+	* Improved Sorian AI support.
+	* Fixed the LOC string link which was making the Night Skimmer appear as being called 'Heavy Air Transport'.
 __________._________
 2010-05-27|0.3 beta
 

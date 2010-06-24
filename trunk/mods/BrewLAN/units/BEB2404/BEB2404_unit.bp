@@ -73,6 +73,15 @@ UnitBlueprint {
     },
     Description = '<LOC beb2404_desc>Experimental Point Defense',
     Display = {
+	AINames = {
+	    'Demon',
+	    'Annihilator',
+	    'Punisher',
+	    'Defender',
+	    'Bain',
+	    'Apocalypse',
+	    'Nemesis',
+	},
         AnimationPermOpen = '/mods/BrewLAN/units/beb2404/beb2404_open.sca',
         Abilities = {
             '<LOC ability_omni>Omni Sensor',

@@ -16,7 +16,7 @@ function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
     DragBuildQuantumOptics(all_blueprints.Unit)
     ExperimentalStrategicSorting(all_blueprints.Unit)
-    SalvationTech3ToExperimental(all_blueprints.Unit)
+    SalvationBrewLANChanges(all_blueprints.Unit)
     ED1BrewLANChanges(all_blueprints.Unit)
     ED2BrewLANChanges(all_blueprints.Unit)
     ED4BrewLANChanges(all_blueprints.Unit)
@@ -57,7 +57,7 @@ function ExperimentalStrategicSorting(all_bps)
     end
 end
 
-function SalvationTech3ToExperimental(all_bps)
+function SalvationBrewLANChanges(all_bps)
 
     local AeonSalvation = {
         all_bps['xab2307'],
@@ -65,6 +65,15 @@ function SalvationTech3ToExperimental(all_bps)
     for arrayIndex, bp in AeonSalvation do
         table.remove(bp.Categories, 8)
         table.insert(bp.Categories, 'EXPERIMENTAL')
+
+        if not bp.Display.AINames then bp.Display.AINames = {} end
+        table.insert(bp.Display.AINames, 'Judgment')
+        table.insert(bp.Display.AINames, 'Reconciliation')
+        table.insert(bp.Display.AINames, 'Purgatory')
+        table.insert(bp.Display.AINames, 'Avatar')
+        table.insert(bp.Display.AINames, 'Spitter')
+        table.insert(bp.Display.AINames, 'Grassy Knoll')
+        table.insert(bp.Display.AINames, 'Giant Phallus Cannon')
     end
 end
 

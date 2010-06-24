@@ -84,6 +84,20 @@ UnitBlueprint {
     },
     Description = '<LOC brb2401_desc>Experimental Rapid-Fire Artillery',
     Display = {
+	AINames = {
+            'Base Pounder',
+            'Aconite',
+            'Adonis',
+            'Bloodflower',
+	    'Doom Blossom',
+            'Foxglove',
+            'Henbane',
+            'Larkspur',
+            'Oleander',
+            'Hemlock',
+            'Toloache',
+	    'Crimson Fangs of Eternity',
+	},
         AnimationOpen = '/units/URL0401/URL0401_aopen.sca',
         Mesh = {
             IconFadeInZoom = 130,
