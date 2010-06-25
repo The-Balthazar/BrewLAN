@@ -49,6 +49,10 @@ __________._________
 	* Updated the version name in the mod_info.lua.
 	* Improved Sorian AI support.
 	* Fixed the LOC string link which was making the Night Skimmer appear as being called 'Heavy Air Transport'.
+	__________
+	2010-06-25
+
+	* Changed the mesh and normal map for the Iron Curtain for better ingame smoothing.
 __________._________
 2010-05-27|0.3 beta
 
