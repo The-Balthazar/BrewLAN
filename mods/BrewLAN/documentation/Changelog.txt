@@ -53,6 +53,11 @@ __________._________
 	2010-06-25
 
 	* Changed the mesh and normal map for the Iron Curtain for better ingame smoothing.
+	* Changed the normal map of the Zenith for better smoothing.
+	__________
+	2010-06-28
+
+	* Updated the required UID for the Icon Support mod; they had made it to version 5 without me noticing.
 __________._________
 2010-05-27|0.3 beta
 
