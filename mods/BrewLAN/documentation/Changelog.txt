@@ -58,6 +58,10 @@ __________._________
 	2010-06-28
 
 	* Updated the required UID for the Icon Support mod; they had made it to version 5 without me noticing.
+	__________
+	2010-07-19
+
+	* Increased the rate of fire of the Scathis, resulting in a lower rate of fire without powerplant bonus.
 __________._________
 2010-05-27|0.3 beta
 
