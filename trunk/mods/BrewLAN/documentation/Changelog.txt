@@ -62,6 +62,10 @@ __________._________
 	2010-07-19
 
 	* Increased the rate of fire of the Scathis, resulting in a lower rate of fire without powerplant bonus.
+	__________
+	2010-07-27
+
+	* Bluebird corrected the German string tables.
 __________._________
 2010-05-27|0.3 beta
 
