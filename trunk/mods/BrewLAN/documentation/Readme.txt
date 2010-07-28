@@ -26,3 +26,19 @@ For details regarding changes see the changelog and the unit statuses list (whic
 
 	http://code.google.com/p/brewlan/
 	http://www.moddb.com/mods/brewlan
+	.________
+	|Credits
+
+* Sean Wheeldon (Balthazar)
+* Jonathan Butler (Bilmon)
+
+	Beta testers
+
+* Adam Butler (Outy)
+* Christopher Hicks (Burning Star IV)
+* John Williams (CyberJesus)
+
+	Additional
+
+* Simon (106.Bluebird) - German localisation
+* Zodius Infuser - Force Shield scripts

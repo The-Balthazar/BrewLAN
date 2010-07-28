@@ -114,3 +114,7 @@ Unit_Description_BrewLAN_T4B001="Leicht Beschädigte Punktverteidigung. Kommt ei
 brb2401_desc="Experimentelle Artilleriestellung"
 brb2401_name="Scathis Mark II"
 Unit_Description_BrewLAN_T4B002="Experimentelle Schnellfeuer-Artillerie. Verbraucht massive Mengen an Energie mit jedem Schuss."
+
+brb4401="Experimenteller Schildgenerator"
+brb4401_name="Eiserner Vorhang"
+Unit_Description_BrewLAN_T4B003="Experimenteller Schildgenerator. Deckt ein großes Gebiet ab. Schildgröße verringert sich bei Schaden."
