@@ -70,6 +70,7 @@ __________._________
 	2010-07-28
 
 	* Re-added the Iron Curtain to the German string tables.
+	* Fixed and cahnged the mesh, icon, textures, script and blueprint of the Cybran T2 Field Engineer.
 __________._________
 2010-05-27|0.3 beta
 
