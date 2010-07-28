@@ -43,6 +43,10 @@ Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels
 ## T2
 
 
+#Field Engineer
+brl0209_name="Wilson"
+Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture and reclamation unit. Armed with a heavy bolter and internal radar and stealth."
+
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
 beb1206_name="CJ-00F4T-2"
 beb1205_name="PW4TH12-ST Capacitor"

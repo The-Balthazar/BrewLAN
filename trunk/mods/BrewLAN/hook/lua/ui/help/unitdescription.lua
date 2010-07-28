@@ -41,6 +41,9 @@ Description['beb2220'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain me
 Description['urb4204'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded three times."
 Description['urb4206'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a heavy shield around units and structures within its radius."
 
+#Tech 2 land units
+Description['brb0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Wilson: Cybran T2 Field Engineer description."
+
 #Tech 3 aircraft
 Description['bsa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
 Description['bra0306'] = "<LOC Unit_Description_BrewLAN_T3A002>Heavy air transport. Armed with heavy anti-air defence, an EMP weapon and a stealth field. Can carry up to 16 units."
