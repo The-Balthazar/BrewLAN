@@ -66,6 +66,10 @@ __________._________
 	2010-07-27
 
 	* Bluebird corrected the German string tables.
+	__________
+	2010-07-28
+
+	* Re-added the Iron Curtain to the German string tables.
 __________._________
 2010-05-27|0.3 beta
 
