@@ -50,6 +50,9 @@ Description['bra0306'] = "<LOC Unit_Description_BrewLAN_T3A002>Heavy air transpo
 Description['bsa0306'] = "<LOC Unit_Description_BrewLAN_T3A003>Heavy air transport. Features 32 transportation clamps, heavy weaponry and a shield generator. Can carry up to 32 units."
 Description['baa0306'] = "<LOC Unit_Description_BrewLAN_T3A004>Heavy air transport. Feaures an all-targetting insta-kill lazor, 3000 unit clams and an engraving of your mother."
 Description['bra0307'] = "<LOC Unit_Description_BrewLAN_T3A005>High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defences with large salvos."
+Description['bea0310'] = "<LOC Unit_Description_BrewLAN_T3A006>UEF Decoy Plane; Vanguard description."
+Description['bea0307'] = "<LOC Unit_Description_BrewLAN_T3A007>Albatross desctiption."
+Description['bsa0307'] = "<LOC Unit_Description_BrewLAN_T3A008>Seraphim T3 torpedo bomber description."
 
 #Tech 3 land units
 Description['bsl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."

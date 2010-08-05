@@ -90,7 +90,7 @@ UnitBlueprint {
             Level5 = 15,
         },
     },
-    BuildIconSortPriority = 30,
+    BuildIconSortPriority = 45,
     Categories = {
         'PRODUCTSC1',
         'SELECTABLE',
@@ -153,7 +153,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 140,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0304/uea0304_albedo.dds', 
+                    #AlbedoName = '/units/uea0304/uea0304_albedo.dds', 
                     NormalsName = '/units/uea0304/uea0304_normalsTS.dds', 
                     SpecularName = '/units/uea0304/uea0304_specteam.dds',  
                 },

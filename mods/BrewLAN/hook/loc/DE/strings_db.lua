@@ -45,7 +45,7 @@ Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Rerpariert und Betankt kleine 
 
 #Field Engineer
 brl0209_name="Wilson"
-Unit_Description_BrewLAN_T2L001="Amphibisches Fahrzeug der Tech-Stufe 2, das bauen, reparieren, erobern und wiederverwerten kann. Bewaffnet mit einer Aufstandswaffe sowie internem Radar und Schläue."
+Unit_Description_BrewLAN_T2L001="Translation pending."
 
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
 beb1206_name="CJ-00F4T-2"
@@ -78,7 +78,15 @@ Unit_Description_BrewLAN_T3A004="Schwerer Lufttransporter. Eine Angemessene Besc
 
 #bair0307="Schweres Torpedobomber"
 bra0307_name="Zenith"
+bea0307_name="Albatross"
+bsa0307_name="Unnamed"
 Unit_Description_BrewLAN_T3A005="Stealth Torpedobomber. Entworfen um schwere Marineeinheiten anzugreifen und Torpedoverteidigungen mit großen Torpedosalven zu überwältigen."
+Unit_Description_BrewLAN_T3A007="Translation pending."
+Unit_Description_BrewLAN_T3A008="Translation pending."
+
+bair0310="Decoy Plane"
+bea0310_name="Vanguard"
+Unit_Description_BrewLAN_T3A006="Translation pending."
 
 bal0311_desc="Belagerungspanzer"
 bal0311_name="Moldavite"
@@ -91,7 +99,6 @@ Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit mächtig
 brb2306_name="Hades"
 bsb2306_name="Othuushala"
 Unit_Description_BrewLAN_T3B001="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
-
 
 beb3303_desc="Beobachtungs Satelliten System"
 bea0002_desc="Beobachtungs Satellit"
