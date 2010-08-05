@@ -74,8 +74,8 @@ UnitBlueprint {
     Categories = {
         'PRODUCTDL',
         'SELECTABLE',
-        'BUILTBYTIER2FACTORY',
-        'BUILTBYTIER3FACTORY',
+        'BUILTBYLANDTIER2FACTORY',
+        'BUILTBYLANDTIER3FACTORY',
         'CYBRAN',
         'MOBILE',
         'LAND',

@@ -70,7 +70,16 @@ __________._________
 	2010-07-28
 
 	* Re-added the Iron Curtain to the German string tables.
-	* Fixed and cahnged the mesh, icon, textures, script and blueprint of the Cybran T2 Field Engineer.
+	* Fixed and changed the mesh, icon, textures, script and blueprint of the Cybran T2 Field Engineer.
+	__________
+	2010-08-05
+
+	* Added strategic icons for counter intel aircraft.
+	* Added Vanguard, the UEF T3 Decoy plane.
+	* Removed the Wilson from the aircraft factory build lists.
+	* Changed the build sorting for the Solace, Albatross and Zenith.
+	* Added the Albatros and the uncreated seraphim equivelant to the string tables.
+	* Changed the normal map of the Cybran Field engy.
 __________._________
 2010-05-27|0.3 beta
 

@@ -76,9 +76,17 @@ Unit_Description_BrewLAN_T3A002="Heavy air transport. Armed with heavy anti-air 
 Unit_Description_BrewLAN_T3A003="Heavy air transport. Features 32 transportation clamps, heavy weaponry and a shield generator. Can carry up to 32 units."
 Unit_Description_BrewLAN_T3A004="Heavy air transport. Will be given a propper description once its finished."
 
-#bair0307="Torpedo Bomber"
+#bair0307="Heavy Torpedo Bomber"
 bra0307_name="Zenith"
+bea0307_name="Albatross"
+bsa0307_name="Unnamed"
 Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defences with large salvos."
+Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defence."
+Unit_Description_BrewLAN_T3A008="High-level torpedo bomber. Designed to engage powerful naval units."
+
+bair0310="Decoy Plane"
+bea0310_name="Vanguard"
+Unit_Description_BrewLAN_T3A006="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
 
 bal0311_desc="Armored Assault Tank"
 bal0311_name="Moldavite"
@@ -91,7 +99,6 @@ Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Air
 brb2306_name="Hades"
 bsb2306_name="Othuushala"
 Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
-
 
 beb3303_desc="Observation Satellite System"
 bea0002_desc="Observation Satellite"
