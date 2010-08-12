@@ -80,6 +80,10 @@ __________._________
 	* Changed the build sorting for the Solace, Albatross and Zenith.
 	* Added the Albatros and the uncreated seraphim equivelant to the string tables.
 	* Changed the normal map of the Cybran Field engy.
+	__________
+	2010-08-13
+
+	* Added a temp texture and icon for the Albatross.
 __________._________
 2010-05-27|0.3 beta
 
