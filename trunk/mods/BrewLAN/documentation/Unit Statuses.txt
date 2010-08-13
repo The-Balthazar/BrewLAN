@@ -5,6 +5,7 @@
  _____) )| |_/ ___ | | |_|___ |  | |_____| |___ | | |_ 
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
 
+This list is quite out of date.
 _______________________________________________________
 Total Annihilation units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -124,16 +125,17 @@ Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 	T2 Mass Storage
+	T2 field engineer
 		* Fully Funtioning.
-
+	
 	Pending:
 		* T2 Heavy Bot
-		* T2 combat engineer 'Wilson'
 		* T2 Wall 'Bulkhead'
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
 	T2 Wall.
 		* Pending creation
+
 	T2 Mass Storage
 		* Fully Funtioning.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -167,7 +169,7 @@ Tech 3:
 		* Fully Funtioning.
 
 	T3 Sniper Bot.
-		* Requires finishing.
+		* Requires remaking.
 
 	T3 Point Deffence.
 		* Requires complete a custom appearance.
@@ -180,23 +182,28 @@ Tech 3:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
+	T3 Torpedo Bomber.
+		* Requires texturing.
 	Pending:
 		* T3 Torp launchers.
 		* T3 Sniper Bot.
 		* T3 Mobile Shield Gen.
-		* T3 Torpedo Bomber.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
 	T3 Gunship 'Vulthuum'
 		* Fully Functioning.
+
 	T3 Air Transport.
-		* A-G weapon not-functioning.
+		* Fully functioning.
+
 	T3 Heavy Assault Bot
 		* Uses a slightly modified T2 bot mesh
+
+	T3 Point Defence
+		* Aplha state, probably needs a rethink.
 	Pending:
 		* T3 Torp launchers.
-		* T3 Point Deffence.
 		* T3 Anti Shield.
 		* T3 Torpedo Bomber.
 		* T3 observation building.

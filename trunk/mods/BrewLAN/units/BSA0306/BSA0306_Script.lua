@@ -15,7 +15,7 @@ local SeraphimWeapons = import('/lua/seraphimweapons.lua')
 local SAALosaareAutoCannonWeaponAirUnit = SeraphimWeapons.SAALosaareAutoCannonWeaponAirUnit
 local SDFHeavyPhasicAutoGunWeapon = SeraphimWeapons.SDFHeavyPhasicAutoGunWeapon
 
-XSA0104 = Class(SAirUnit) {
+BSA0306 = Class(SAirUnit) {
 
     AirDestructionEffectBones = { 'BSA0306','Left_Attachpoint08','Right_Attachpoint02'},
 
