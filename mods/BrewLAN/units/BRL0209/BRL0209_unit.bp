@@ -72,7 +72,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 15,
     Categories = {
-        'PRODUCTDL',
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYLANDTIER2FACTORY',
         'BUILTBYLANDTIER3FACTORY',

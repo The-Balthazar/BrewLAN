@@ -107,7 +107,7 @@ UnitBlueprint {
         },
     },
     Categories = {
-        'PRODUCTDL',
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'TRANSPORTBUILTBYTIER3FACTORY',
         'SERAPHIM',

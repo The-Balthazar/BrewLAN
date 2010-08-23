@@ -103,7 +103,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-        'PRODUCTSC1',
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'TRANSPORTBUILTBYTIER3FACTORY',
         'AEON',

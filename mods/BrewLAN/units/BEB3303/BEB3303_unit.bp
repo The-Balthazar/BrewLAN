@@ -27,6 +27,7 @@ UnitBlueprint {
         },
     },
     Categories = {
+        'PRODUCTBREWLAN',
         'UEF',
         'STRUCTURE',
         'BUILTBYTIER3COMMANDER',

@@ -27,7 +27,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 130,
     Categories = {
-        'PRODUCTDL',
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',

@@ -42,7 +42,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 15,
     Categories = {
-        'PRODUCTFA',
+        'PRODUCTBREWLAN',
         'SELECTABLE',
        # 'BUILTBYTIER3FACTORY',
         'CYBRAN',

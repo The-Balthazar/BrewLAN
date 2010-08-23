@@ -94,7 +94,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 28000,
         BuildCostMass = 1680,
-        BuildTime = 6720,
+        BuildTime = 6700,
     },
 #   StrategicIconName = 'icon_gunship3_directfire',
     Weapon = {
@@ -102,12 +102,12 @@ UnitBlueprint {
             Damage = 16,		#Air to ground
         },
         {
-            Damage = 125,		#AA1
-            MaxRadius = 60,
+            Damage = 199,		#AA1
+            MaxRadius = 80,
         },
         {
-            Damage = 125,		#AA2
-            MaxRadius = 60,
+            Damage = 199,		#AA2
+            MaxRadius = 80,
         },
     },
 }
