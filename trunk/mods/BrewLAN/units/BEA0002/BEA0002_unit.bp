@@ -58,6 +58,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 10,
     Categories = {
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'UEF',
         'MOBILE',

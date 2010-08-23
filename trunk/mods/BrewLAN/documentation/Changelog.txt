@@ -89,8 +89,16 @@ __________._________
 
 	* Partially textured the Albatross propperly.
 	* Fixed the AA guns of the Albatross.
-	* Fixed the script of the Seraphim T3 transport which was causing its weapons, and probably other things, to not work.`
+	* Fixed the script of the Seraphim T3 transport which was causing its weapons, and probably other things, to not work.
 	* Changed the UV map of the Albatross.
+	__________
+	2010-08-23
+
+	* Further texture changes for the Albatross.
+	* Removed unnessessary categories from the Vanguard.
+	* Created the category PRODUCTBREWLAN, for external referencing.
+	* Changed the threat level of the Decoy planes to be 1000x that of Spy planes.
+	* Altered the balance of the Aeon Restorer again.
 __________._________
 2010-05-27|0.3 beta
 
