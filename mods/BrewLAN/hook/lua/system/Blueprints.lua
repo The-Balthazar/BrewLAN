@@ -21,7 +21,40 @@ function ModBlueprints(all_blueprints)
     ED2BrewLANChanges(all_blueprints.Unit)
     ED4BrewLANChanges(all_blueprints.Unit)
     ED4and5BrewLANChanges(all_blueprints.Unit)
+    CybranBUILTBYLANDCat(all_blueprints.Unit)
 
+end
+
+
+
+# ---------------- Cybran Land factory categories for field engineer(s)
+
+
+
+function CybranBUILTBYLANDCat(all_bps)
+
+#    local cybrant1landfactory = {
+#        all_bps['urb0101'],
+#    }
+#    for arrayIndex, bp in cybrant1landfactory do
+#        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION')
+#    end
+
+
+    local cybrant2landfactory = {
+        all_bps['urb0201'],
+    }
+    for arrayIndex, bp in cybrant2landfactory do
+        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION')
+    end
+
+
+    local cybrant3landfactory = {
+        all_bps['urb0301'],
+    }
+    for arrayIndex, bp in cybrant3landfactory do
+        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY CYBRAN MOBILE CONSTRUCTION')
+    end
 end
 
 
