@@ -103,6 +103,7 @@ __________._________
 	2010-09-08
 
 	* Fixed the counter-intel fighter strategic icons, which had horrible artifacts on some states.
+	* Fixed the Wilson not appearing in any build menus after the last 'fix' which I never checked properly after changing.
 __________._________
 2010-05-27|0.3 beta
 
