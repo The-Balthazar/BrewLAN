@@ -99,6 +99,10 @@ __________._________
 	* Created the category PRODUCTBREWLAN, for external referencing.
 	* Changed the threat level of the Decoy planes to be 1000x that of Spy planes.
 	* Altered the balance of the Aeon Restorer again.
+	__________
+	2010-09-08
+
+	* Fixed the counter-intel fighter strategic icons, which had horrible artifacts on some states.
 __________._________
 2010-05-27|0.3 beta
 
