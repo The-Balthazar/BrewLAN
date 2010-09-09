@@ -104,6 +104,7 @@ __________._________
 
 	* Fixed the counter-intel fighter strategic icons, which had horrible artifacts on some states.
 	* Fixed the Wilson not appearing in any build menus after the last 'fix' which I never checked properly after changing.
+	* Fixed the Cybran T1 land factory being able to build the Megalith somehow after the last fix which never got individually uploaded.
 __________._________
 2010-05-27|0.3 beta
 
