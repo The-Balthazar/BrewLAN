@@ -44,6 +44,9 @@ Description['urb4206'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a heavy
 #Tech 2 land units
 Description['brb0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Wilson: Cybran T2 Field Engineer description."
 
+#Tech 2 aircraft
+Description['baa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Impaler: Aeon T2 Tactical Bomber description."
+
 #Tech 3 aircraft
 Description['bsa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
 Description['bra0306'] = "<LOC Unit_Description_BrewLAN_T3A002>Heavy air transport. Armed with heavy anti-air defence, an EMP weapon and a stealth field. Can carry up to 16 units."

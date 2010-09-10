@@ -43,6 +43,11 @@ Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Rerpariert und Betankt kleine 
 ## T2
 
 
+#Aeon T2 Bomber
+baa0211_name="Impaler"
+baa0211_desc="Tactical Bomber"
+Unit_Description_BrewLAN_T2A001="Translation pending."
+
 #Field Engineer
 brl0209_name="Wilson"
 Unit_Description_BrewLAN_T2L001="Translation pending."

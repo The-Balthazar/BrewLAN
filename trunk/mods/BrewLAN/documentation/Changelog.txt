@@ -105,6 +105,16 @@ __________._________
 	* Fixed the counter-intel fighter strategic icons, which had horrible artifacts on some states.
 	* Fixed the Wilson not appearing in any build menus after the last 'fix' which I never checked properly after changing.
 	* Fixed the Cybran T1 land factory being able to build the Megalith somehow after the last fix which never got individually uploaded.
+	__________
+	2010-09-09
+
+	* Slightly reduced the damage of the Restorers AA to accomadate for the fact that it has A-G weapons aw well as AA.
+	* Changed the partical effects from the Pigeons main weapon.
+	* Started creating and implementing the Aeon T2 Bomber.
+	__________
+	2010-09-10
+
+	* Did more work on the mesh, texture, and stats of the Aeon T2 Tactical Bomber, now called the Impaler, and added it to the string tables.
 __________._________
 2010-05-27|0.3 beta
 
