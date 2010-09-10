@@ -99,14 +99,14 @@ UnitBlueprint {
 #   StrategicIconName = 'icon_gunship3_directfire',
     Weapon = {
         {
-            Damage = 16,		#Air to ground
+            Damage = 14,		#Air to ground
         },
         {
-            Damage = 199,		#AA1
+            Damage = 170,		#AA1
             MaxRadius = 80,
         },
         {
-            Damage = 199,		#AA2
+            Damage = 170,		#AA2
             MaxRadius = 80,
         },
     },

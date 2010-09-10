@@ -45,6 +45,20 @@ UnitList = {
 	Seraphim = {'bsa0307', 100},
     },
 
+	##Tech 2 Air		*********************************************
+
+    T1AirBomber = {
+	Aeon = {'baa0211', 40},
+    },
+
+    T2FighterBomber = {
+	Aeon = {'baa0211', 20},
+    },
+
+    T3AirBomber = {
+	Aeon = {'baa0211', 20},
+    },
+
 	##Tech 1 Air		*********************************************
 
     T1Gunship = {

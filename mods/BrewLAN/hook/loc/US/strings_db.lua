@@ -43,6 +43,11 @@ Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels
 ## T2
 
 
+#Aeon T2 Bomber
+baa0211_name="Impaler"
+baa0211_desc="Tactical Bomber"
+Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
+
 #Field Engineer
 brl0209_name="Wilson"
 Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture and reclamation unit. Armed with a heavy bolter and internal radar and stealth."
@@ -57,7 +62,7 @@ bbui2220="Proximity Mine"
 beb2220_name="AM-12 Anti-Armor"
 Unit_Description_BrewLAN_T2D001="An all-terrain medium damage proximity mine system. Visible only to Omni."
 
-### Cybran T2 shields; they didn't have build description originally.
+### Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded three times."
 Unit_Description_BrewLAN_T2D002="Generates a heavy shield around units and structures within its radius."
 

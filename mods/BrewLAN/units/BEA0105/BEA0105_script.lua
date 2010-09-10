@@ -4,6 +4,7 @@
 #**
 #****************************************************************************
 
+local EffectTemplate = import('/lua/EffectTemplates.lua')
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TDFRiotWeapon = import('/lua/terranweapons.lua').TDFRiotWeapon
 
@@ -11,7 +12,10 @@ BEA0105 = Class(TAirUnit) {
     EngineRotateBones = {'Jet_Front', 'Jet_Back',},
 
     Weapons = {
-        Turret01 = Class(TDFRiotWeapon) {},
+        Turret01 = Class(TDFRiotWeapon) {
+            FxMuzzleFlash = EffectTemplate.TRiotGunMuzzleFxTank,
+            FxMuzzleFlashScale = 0.75,
+	},
     },
 
     OnStopBeingBuilt = function(self,builder,layer)
