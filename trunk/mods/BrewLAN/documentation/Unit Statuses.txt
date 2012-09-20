@@ -93,9 +93,9 @@ Tech 1
 	T1 Light Gunship
 	T1 Light Artillery
 	T1 Light Shield Gen
+	T1 Torpedo Bomber
 		* Fully functioning
 
-	T1 Torpedo Bomber ('Seagull')
 	T1 Air Staging
 		* Pending
 
@@ -105,9 +105,9 @@ Tech 1
 	T1 Light Artillery
 	T1 Shield Genorator
 	T1 Air Staging
+	T1 Light Gunship
 		* Fully functioning.
 
-	T1 Light Gunship ('Vul-esel')
 	T1 Torpedo Bomber ('Sou-ioz')
 		* Pending. 
 

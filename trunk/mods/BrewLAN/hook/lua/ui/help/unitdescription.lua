@@ -2,10 +2,10 @@
 Description['baa0105'] = "<LOC Unit_Description_BrewLAN_T1A001>Light Guship. Primary role is base defence. Effective against low-level ground units."
 Description['bea0105'] = "<LOC Unit_Description_BrewLAN_T1A002>Light Guship. Effective against low-level ground units. Equipped with a light transport hook."
 Description['bsa0105'] = "<LOC Unit_Description_BrewLAN_T1A003>Light Guship. Primary role is base defence. Effective against low-level ground units."
-Description['baa0108'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
-Description['bea0108'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
-Description['bra0108'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
-Description['bsa0108'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
+Description['baa0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
+Description['bea0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
+Description['bra0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
+Description['bsa0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
 
 #Tech 1 defence units
 Description['beb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
@@ -56,10 +56,14 @@ Description['bra0307'] = "<LOC Unit_Description_BrewLAN_T3A005>High-level stealt
 Description['bea0310'] = "<LOC Unit_Description_BrewLAN_T3A006>UEF Decoy Plane; Vanguard description."
 Description['bea0307'] = "<LOC Unit_Description_BrewLAN_T3A007>Albatross desctiption."
 Description['bsa0307'] = "<LOC Unit_Description_BrewLAN_T3A008>Seraphim T3 torpedo bomber description."
+Description['baa0310'] = "<LOC Unit_Description_BrewLAN_T3A009>Aeon Decoy Plane description."
+Description['bra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Cybran Decoy Plane description."
 
 #Tech 3 land units
 Description['bsl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."
 Description['bal0311'] = "<LOC Unit_Description_BrewLAN_T3L002>Heavily armored assault tank. Low rate of fire, designed as a heavy support unit."
+Description['bel0320'] = "<LOC Unit_Description_BrewLAN_T3L003>Satelite uplink description."
+Description['bel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Anti-Nuke Launcher description."
 
 #Tech 3 buildings
 Description['brb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
@@ -71,4 +75,4 @@ Description['brb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapi
 Description['brb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Iron Curtian description."
 Description['bsl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu description."
 Description['bea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
-
+Description['brs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
