@@ -10,6 +10,30 @@
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+
+
+__________._________
+2011-03-19|0.4.0
+
+* Added the UEF Mobile Satelite Uplink at about this date. (Changelog note added 2012-09-16)
+	__________
+	2011-03-20
+
+	* Added the UEF Mobile Strategic Defence at about this date. (Changelog note added 2012-09-16)
+	__________
+	2012-09-16
+
+	* Added a strategic icon for T3 antimissile vehicle.
+	* Added a strategic icon for T1 Anti naval fighter aircraft.
+	* Modified the mesh and textures of the Aeon T2 Bomber to finish the appearance of its rear end.
+	__________
+	2012-09-18
+
+	* Added the UEF T1 torpedo bomber.
+	__________
+	2012-09-20
+
+	* Made all torpedo bombers able to land on water. Funny story; it was the 'TRANSPORTATION' category all along.
 __________._________
 2010-05-29|0.3.1a
 

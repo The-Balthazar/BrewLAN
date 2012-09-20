@@ -22,6 +22,7 @@ function ModBlueprints(all_blueprints)
     ED4BrewLANChanges(all_blueprints.Unit)
     ED4and5BrewLANChanges(all_blueprints.Unit)
     CybranBUILTBYLANDCat(all_blueprints.Unit)
+    TorpedoBomberWaterLandCat(all_blueprints.Unit)
 
 end
 
@@ -162,6 +163,36 @@ function ED4and5BrewLANChanges(all_bps)
         table.remove(bp.Categories, 6)
         table.insert(bp.Categories, 'TECH3')
     end
+end
+
+
+
+# ---------------- Torpedo bomber cat so they land on water.
+
+
+
+function TorpedoBomberWaterLandCat(all_bps)
+
+    local TorpedoBombers = {
+	all_bps['bra0307'], #T3 Cybran
+	all_bps['bea0307'], #T3 UEF
+	all_bps['bsa0307'], #T3 Seraphim
+	all_bps['xaa0306'], #T3 Aeon
+
+	all_bps['ura0204'], #T2 Cybran
+	all_bps['uea0204'], #T2 UEF
+	all_bps['xsa0204'], #T2 Seraphim
+	all_bps['uaa0204'], #T2 Aeon
+
+	all_bps['bra0106'], #T1 Cybran
+	all_bps['bea0106'], #T1 UEF
+	all_bps['bsa0106'], #T1 Seraphim
+	all_bps['baa0106'], #T1 Aeon
+    }
+    for arrayIndex, bp in TorpedoBombers do
+        table.insert(bp.Categories, 'TRANSPORTATION')
+    end	
+
 end
 
 end

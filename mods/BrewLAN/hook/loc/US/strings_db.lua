@@ -90,8 +90,12 @@ Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage p
 Unit_Description_BrewLAN_T3A008="High-level torpedo bomber. Designed to engage powerful naval units."
 
 bair0310="Decoy Plane"
-bea0310_name="Vanguard"
+bea0310_name="Nark"
+baa0310_name="Beguiler"
+bra0310_name="Vanguard"
 Unit_Description_BrewLAN_T3A006="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
+Unit_Description_BrewLAN_T3A009="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
+Unit_Description_BrewLAN_T3A010="Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
 
 bal0311_desc="Armored Assault Tank"
 bal0311_name="Moldavite"
@@ -109,6 +113,14 @@ beb3303_desc="Observation Satellite System"
 bea0002_desc="Observation Satellite"
 bea0002_name="Burning Star"
 Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
+
+bel0320_desc="Mobile Satellite Uplink"
+bel0320_name="Archimedes"
+Unit_Description_BrewLAN_T3L003="A mobile satellite uplink vehicle. Marks targets for an orbital laser to fire upon."
+
+bel0321_desc="Mobile Strategic Missile Defense"
+bel0321_name="Aster"
+Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Protection is limited to the vehicle's operational area."
 
 
 ## T4
@@ -134,3 +146,7 @@ Unit_Description_BrewLAN_T4B002="Experimental rapid-fire artillery. Consumes mas
 brb4401="Experimental Shield Generator"
 brb4401_name="Iron Curtain"
 Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large area, shielded area reduces in size as it takes damage."
+
+brs0401="Experimental Dreadnought"
+brs0401_name="Abyssal Persecutor"
+Unit_Description_BrewLAN_T4S001="Experimental amphibious battleship."
