@@ -30,10 +30,10 @@ For details regarding changes see the changelog and the unit statuses list (whic
 	|Credits
 
 * Sean Wheeldon (Balthazar)
-* Jonathan Butler (Bilmon)
 
 	Beta testers
 
+* Jonathan Butler (Bilmon)
 * Adam Butler (Outy)
 * Christopher Hicks (Burning Star IV)
 * John Williams (CyberJesus)
