@@ -23,6 +23,7 @@ function ModBlueprints(all_blueprints)
     ED4and5BrewLANChanges(all_blueprints.Unit)
     CybranBUILTBYLANDCat(all_blueprints.Unit)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
+    AeonShieldUpgradeable(all_blueprints.Unit)
 
 end
 
@@ -163,6 +164,42 @@ function ED4and5BrewLANChanges(all_bps)
         table.remove(bp.Categories, 6)
         table.insert(bp.Categories, 'TECH3')
     end
+end
+
+
+
+# ---------------- 
+
+
+
+function AeonShieldUpgradeable(all_bps)
+
+    local AeonT2Shield = {
+        all_bps['uab4202'],
+    }
+    for arrayIndex, bp in AeonT2Shield do
+        table.insert(bp.Categories, 'SHOWQUEUE')
+        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
+        table.insert(bp.Economy.RebuildBonusIds, 'uab4301')
+
+        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
+        table.insert(bp.Economy.BuildableCategory, 'uab4301')
+    end
+
+
+#    local AeonT1Shield = {  #Cant upgrade to something with a different footprint
+#        all_bps['bab4102'],
+#    }
+#    for arrayIndex, bp in AeonT1Shield do
+#        table.insert(bp.Categories, 'SHOWQUEUE')
+#        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
+#        table.insert(bp.Economy.RebuildBonusIds, 'uab4202')
+#        table.insert(bp.Economy.RebuildBonusIds, 'uab4301')
+
+#        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
+#        table.insert(bp.Economy.BuildableCategory, 'uab4202')
+#    end
+
 end
 
 

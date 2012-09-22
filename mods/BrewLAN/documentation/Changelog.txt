@@ -34,6 +34,15 @@ __________._________
 	2012-09-20
 
 	* Made all torpedo bombers able to land on water. Funny story; it was the 'TRANSPORTATION' category all along.
+	__________
+	2012-09-21
+
+	* Added the UEF T1 Air staging platform.
+	__________
+	2012-09-22
+
+	* Finished the UEF T2 Air staging platform.
+	* Allowed the Aeon T2 shield to upgrade into the T3.
 __________._________
 2010-05-29|0.3.1a
 
