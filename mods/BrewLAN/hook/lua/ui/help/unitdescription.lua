@@ -58,6 +58,7 @@ Description['bea0307'] = "<LOC Unit_Description_BrewLAN_T3A007>Albatross desctip
 Description['bsa0307'] = "<LOC Unit_Description_BrewLAN_T3A008>Seraphim T3 torpedo bomber description."
 Description['baa0310'] = "<LOC Unit_Description_BrewLAN_T3A009>Aeon Decoy Plane description."
 Description['bra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Cybran Decoy Plane description."
+Description['bsa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Seraphim Decoy Plane description."
 
 #Tech 3 land units
 Description['bsl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."

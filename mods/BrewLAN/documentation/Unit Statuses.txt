@@ -21,49 +21,86 @@ Modded Units:
   Aeon:
 	T1 landscout
 		* Gave omni at a range of 2, unlisted in game.
+
+	T2 Shield Generator
+		* Allowed upgrade to the T3 shield gen.
+		* Allowed rebuild bonus on T2 and T3 wreckages.
+
+	T3 Shield generator
+		* Allowed T2 to upgrade into it.
+
+	T2 Torpedo Bomber
+	T3 Torpedo Bomber
+		* Gave the ability to land on water.
+
 	T3 Rapid Fire Artillery Installation
-		* Changed into an experimental (only effects menu position and categorisation)
+		* Recategorised as an experimental.
+		* Gave it the experimental level health regen.
+
 	T3 AA Gunship
 		* Balanced to other gunships
-	Paragon
-		* Changed build menu sorting.
+
+	T3 Quantum Optics
+		* Reduced build footprint.
+		* Enabled click-drag build.
+
+	Paragon	* Changed build menu sorting.
+
+	Galactic Collossus
+		* Increased health by 1.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 	T1 landscout
 		* Gave omni at a range of 2, unlisted in game.
+
 	ED1	* Changed to Tech 1.
 	ED2	* Made creatable at Tech 2.
 	ED4	* Changed to, and made buildable at, Tech 3.
 	ED5	* Changed to Tech 3.
+
+	T2 Torpedo Bomber
+		* Gave the ability to land on water.
 
 	T3 Air Superiority
 		* Auto activates stealth.
 
 	T3 Bomber
 		* Auto activates stealth.
+
 	T3 Gunship
 		* AA DPS increased
+
 	Scathis	* Replaced with immobile version, original removed from build menus.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
 	T1 landscout
 		* Gave omni at a range of 2, unlisted in game.
+
+	T2 Torpedo Bomber
+		* Gave the ability to land on water.
+
+	T3 Gunship
+		* AA DPS increased
+
 	Experimental Satellite System
 		* Removed from build menus, replaced with the tech 3 observation satelite.
 
-	Drones	* Pending: Make unselectable, make engineering stations more like the Cybran and not exploitable.
 	Mavor	* Changed menu sorting.
-	T3 Gunship
-		* AA DPS increased
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
 	T1 landscout
 		* Gave omni at a range of 2, unlisted in game.
+
 	T2 Shield Genorator: Atha
 		* Added "UpgradesFrom" attribute to allow the T1 shield to upgrade to it.
+
+	T2 Torpedo Bomber
+		* Gave the ability to land on water.
+
 	T3 Siege Tank
 		* Set the allways upright attribute to false.
-		* Increased stats to match that of the brick.
+		* Increased stats and cost to match that of the brick.
 _______________________________________________________
 Added Units:
 -------------------------------------------------------
@@ -94,10 +131,8 @@ Tech 1
 	T1 Light Artillery
 	T1 Light Shield Gen
 	T1 Torpedo Bomber
-		* Fully functioning
-
 	T1 Air Staging
-		* Pending
+		* Fully functioning
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
@@ -117,8 +152,8 @@ Tech 2:
   Aeon:
 	T2 Mass Storage
 		* Fully Funtioning.
-	Pending:
 		* T2 Bomber
+	Pending:
 		* T2 Wall
 		* T2 Defence Engineer
 		* T2 Restoration field genorator.
@@ -192,16 +227,15 @@ Tech 3:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
 	T3 Gunship 'Vulthuum'
-		* Fully Functioning.
-
 	T3 Air Transport.
-		* Fully functioning.
+		* Fully Functioning.
 
 	T3 Heavy Assault Bot
 		* Uses a slightly modified T2 bot mesh
 
 	T3 Point Defence
 		* Aplha state, probably needs a rethink.
+
 	Pending:
 		* T3 Torp launchers.
 		* T3 Anti Shield.

@@ -322,7 +322,7 @@ UnitBlueprint {
         WaterVisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC bsl0403_help>Experimental Field Engineer',
+        HelpText = '<LOC bsl0403_desc>Experimental Field Engineer',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.35,

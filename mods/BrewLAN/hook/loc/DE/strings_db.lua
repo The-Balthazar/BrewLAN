@@ -84,14 +84,20 @@ Unit_Description_BrewLAN_T3A004="Schwerer Lufttransporter. Eine Angemessene Besc
 #bair0307="Schweres Torpedobomber"
 bra0307_name="Zenith"
 bea0307_name="Albatross"
-bsa0307_name="Unnamed"
+bsa0307_name="Souioz"
 Unit_Description_BrewLAN_T3A005="Stealth Torpedobomber. Entworfen um schwere Marineeinheiten anzugreifen und Torpedoverteidigungen mit großen Torpedosalven zu überwältigen."
 Unit_Description_BrewLAN_T3A007="Translation pending."
 Unit_Description_BrewLAN_T3A008="Translation pending."
 
 bair0310="Decoy Plane"
+bea0310_name="Nark"
+baa0310_name="Beguiler"
 bea0310_name="Vanguard"
+bsa0310_name="Iathuselen"
 Unit_Description_BrewLAN_T3A006="Translation pending."
+Unit_Description_BrewLAN_T3A009="Translation pending."
+Unit_Description_BrewLAN_T3A010="Translation pending."
+Unit_Description_BrewLAN_T3A011="Translation pending."
 
 bal0311_desc="Belagerungspanzer"
 bal0311_name="Moldavite"
@@ -110,12 +116,19 @@ bea0002_desc="Beobachtungs Satellit"
 bea0002_name="Brennender Stern"
 Unit_Description_BrewLAN_T3B002="Satelliten-Beobachtungssystem. Hat eine große Sichtweite und Omnisensorausrüstung. Wenn seine Leitstelle zerstört wird, wird der Satellit sofort deaktiviert."
 
+bel0320_desc="Mobile Satellite Uplink"
+bel0320_name="Archimedes"
+Unit_Description_BrewLAN_T3L003="Translation pending."
+
+bel0321_desc="Mobile Strategic Missile Defense"
+bel0321_name="Aster"
+Unit_Description_BrewLAN_T3L004="Translation pending."
+
 
 ## T4
 
 
 bsl0403_desc="Experimenteller Techniker"
-bsl0403_help="Experimenteller Techniker"
 bsl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L00="Über powered experimentellen Ingenieur; aufbauen kann sich selbst und die Ressourcen zu tun, so in 20 Sekunden."
 
@@ -134,3 +147,7 @@ Unit_Description_BrewLAN_T4B002="Experimentelle Schnellfeuer-Artillerie. Verbrau
 brb4401="Experimenteller Schildgenerator"
 brb4401_name="Eiserner Vorhang"
 Unit_Description_BrewLAN_T4B003="Experimenteller Schildgenerator. Deckt ein großes Gebiet ab. Schildgröße verringert sich bei Schaden."
+
+brs0401="Experimental Dreadnought"
+brs0401_name="Höllischer Verfolger"
+Unit_Description_BrewLAN_T4S001="Translation pending."

@@ -43,6 +43,10 @@ __________._________
 
 	* Finished the UEF T2 Air staging platform.
 	* Allowed the Aeon T2 shield to upgrade into the T3.
+	* Updated 'Unit Statuses.txt' somewhat.
+	* Added localisation string for the Aeon T4 Artillery description.
+	* Updated entries in German string table. Translations still pending.
+	* Added French localisation; the names and nicknames are probably fine(ish) but the description text is probably pigeon French.
 __________._________
 2010-05-29|0.3.1a
 

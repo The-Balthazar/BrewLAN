@@ -84,7 +84,7 @@ Unit_Description_BrewLAN_T3A004="Heavy air transport. Will be given a propper de
 #bair0307="Heavy Torpedo Bomber"
 bra0307_name="Zenith"
 bea0307_name="Albatross"
-bsa0307_name="Unnamed"
+bsa0307_name="Souioz"
 Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defences with large salvos."
 Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defence."
 Unit_Description_BrewLAN_T3A008="High-level torpedo bomber. Designed to engage powerful naval units."
@@ -93,9 +93,11 @@ bair0310="Decoy Plane"
 bea0310_name="Nark"
 baa0310_name="Beguiler"
 bra0310_name="Vanguard"
-Unit_Description_BrewLAN_T3A006="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
-Unit_Description_BrewLAN_T3A009="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
-Unit_Description_BrewLAN_T3A010="Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals."
+bsa0310_name="Iathuselen"
+Unit_Description_BrewLAN_T3A006="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Unit_Description_BrewLAN_T3A009="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Unit_Description_BrewLAN_T3A010="Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Unit_Description_BrewLAN_T3A011="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 
 bal0311_desc="Armored Assault Tank"
 bal0311_name="Moldavite"
@@ -127,7 +129,6 @@ Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Protection is
 
 
 bsl0403_desc="Experimental Engineer"
-bsl0403_help="Experimental Engineer"
 bsl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; can build itself and the resources to do so in 20 seconds."
 
