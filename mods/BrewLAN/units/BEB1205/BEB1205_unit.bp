@@ -210,6 +210,7 @@ UnitBlueprint {
     Weapon = {
         {
             Damage = 3000,
+            DamageFull = 3000,
             DamageFriendly = true,
             DamageRadius = 7.5,
             DamageType = 'Normal',

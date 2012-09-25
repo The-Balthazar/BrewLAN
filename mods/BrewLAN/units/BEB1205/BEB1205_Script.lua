@@ -12,10 +12,16 @@ BEB1205 = Class(TEnergyStorageUnit) {
         self.Trash:Add(CreateStorageManip(self, 'B01', 'ENERGY', 0, 0, -0.6, 0, 0, 0))
     end,
 
-    Weapon = {
+    OnKilled = function(self, instigator, type, overkillRatio)
+
 	local curEnergy = aiBrain:GetEconomyStoredRatio('ENERGY')
-	Damage = math.floor(bp.weapon.damage * curEnergy)
-    },
+
+	self:GetBlueprint().Weapon.Damage = math.floor(self:GetBlueprint().Weapon.DamageFull * curEnergy)
+
+        self.Trash:Destroy()
+        self.Trash = TrashBag() 
+
+    end,
 	
 }
 

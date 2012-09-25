@@ -62,9 +62,9 @@ BRS0401 = Class(CSeaUnit) {
                 if( old == 'Stopped' ) then
                     if( self.SwitchAnims ) then
                         self.SwitchAnims = false
-                        self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationWalk, true):SetRate(self:GetBlueprint().Display.AnimationWalkRate or 1.1)
+                        self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationWalk, true):SetRate(self:GetBlueprint().Display.AnimationWalkRate or 0.4)
                     else
-                        self.AnimManip:SetRate(2.8)
+                        self.AnimManip:SetRate(0.8)
                     end
                 elseif( new == 'Stopped' ) then
                     self.AnimManip:SetRate(0)

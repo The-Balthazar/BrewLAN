@@ -47,6 +47,11 @@ __________._________
 	* Added localisation string for the Aeon T4 Artillery description.
 	* Updated entries in German string table. Translations still pending.
 	* Added French localisation; the names and nicknames are probably fine(ish) but the description text is probably pigeon French.
+	__________
+	2012-09-25
+	
+	* Fixed the Abyssal Persecutors occasional walk animation speed bugs.
+	* Flailed around blindly with the UEF T2 energy storage.
 __________._________
 2010-05-29|0.3.1a
 
