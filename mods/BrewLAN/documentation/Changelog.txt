@@ -52,6 +52,13 @@ __________._________
 	
 	* Fixed the Abyssal Persecutors occasional walk animation speed bugs.
 	* Flailed around blindly with the UEF T2 energy storage.
+	__________
+  2012-09-30
+  
+  * Minor changes to the UEF T1 shield gen for allowing it to upgrade.
+  * Disabled the UEF T1 shield from upgrading on land.   
+  * Added the UEF T3 Naval shield, only available as an upgrade from the UEF T1 light shield (which is aquatic).
+  * Added some ghetto german and french string tables for the UEF T3 Naval shield.    
 __________._________
 2010-05-29|0.3.1a
 

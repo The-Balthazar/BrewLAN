@@ -28,7 +28,7 @@ bab4102_name="Aspis"
 beb4102_name="LSD - Pulse"
 bsb4102_name="Atha-istle"
 Unit_Description_BrewLAN_T1P001="Generates a protective shield around units and structures within its radius."
-Unit_Description_BrewLAN_T1P002="Generates a protective shield around units and structures within its radius."
+Unit_Description_BrewLAN_T1P002="Generates a protective shield around units and structures within its radius. Can only be upgraded on water."
 Unit_Description_BrewLAN_T1P003="Generates a protective shield around units and structures within its radius. Upradable twice."
 
 bbui5104="Light Air Staging Facility"
@@ -123,6 +123,10 @@ Unit_Description_BrewLAN_T3L003="A mobile satellite uplink vehicle. Marks target
 bel0321_desc="Mobile Strategic Missile Defense"
 bel0321_name="Aster"
 Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Protection is limited to the vehicle's operational area."
+
+bbui4301="Naval Shield Generator"
+beb4301_name="SSD - Pulse"
+##No unit description. It can only be upgraded to.
 
 
 ## T4

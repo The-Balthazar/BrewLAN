@@ -28,7 +28,7 @@ bab4102_name="Aspis"
 beb4102_name="LSD - Puls"
 bsb4102_name="Atha-istle"
 Unit_Description_BrewLAN_T1P001="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
-Unit_Description_BrewLAN_T1P002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
+Unit_Description_BrewLAN_T1P002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann nur auf dem Wasser aufgerüstet werden."
 Unit_Description_BrewLAN_T1P003="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann zweimal erweitert werden."
 
 bbui5104="Start- und Landeeinrichtung"
@@ -65,6 +65,7 @@ Unit_Description_BrewLAN_T2D001="Eine Annäherungsmine für jedes Gelände. Geta
 ### Cybran T2 shields; they didn't have build description originally.
 Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann dreimal Aufgerüstet werden."
 Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
+
 
 ## T3
 
@@ -123,6 +124,10 @@ Unit_Description_BrewLAN_T3L003="Translation pending."
 bel0321_desc="Mobile Strategic Missile Defense"
 bel0321_name="Aster"
 Unit_Description_BrewLAN_T3L004="Translation pending."
+
+bbui4301="Schildgenerator naval"
+beb4301_name="SSD - Puls"
+##No unit description. It can only be upgraded to.
 
 
 ## T4

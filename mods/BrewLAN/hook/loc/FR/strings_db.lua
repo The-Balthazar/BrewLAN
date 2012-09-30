@@ -124,6 +124,10 @@ bel0321_desc = "Défense mobile de antimissiles stratégiques"
 bel0321_name = "Aster"
 Unit_Description_BrewLAN_T3L004 = "La protection mobile de défense antimissile stratégique. Se limite à la zone opérationnelle du véhicule."
 
+bbui4301="Générateur de bouclier naval"
+beb4301_name="SSD - Pulse"
+##No unit description. It can only be upgraded to.
+
 
 ## T4
 

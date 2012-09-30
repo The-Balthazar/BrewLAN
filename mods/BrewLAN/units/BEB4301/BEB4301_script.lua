@@ -10,9 +10,8 @@
 
 local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 
-BEB4102 = Class(TShieldStructureUnit) {
+BEB4301 = Class(TShieldStructureUnit) {
     
-
     ShieldEffects = {
         '/effects/emitters/terran_shield_generator_t2_01_emit.bp',
         '/effects/emitters/terran_shield_generator_t2_02_emit.bp',
@@ -39,7 +38,7 @@ BEB4102 = Class(TShieldStructureUnit) {
 		    self.ShieldEffectsBag = {}
 		end
         for k, v in self.ShieldEffects do
-            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 2, self:GetArmy(), v ):ScaleEmitter(0.8) )
+            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 2, self:GetArmy(), v ):ScaleEmitter(0.9) )
         end
     end,
 
@@ -55,17 +54,6 @@ BEB4102 = Class(TShieldStructureUnit) {
 		end
     end,
     
-    OnLayerChange = function(self, new, old)
-        TShieldStructureUnit.OnLayerChange(self, new, old)
-        if new == 'Land' then
-            self:AddBuildRestriction(categories.ALLUNITS)
-            self:RequestRefreshUI()
-        elseif new == 'Water' then
-            self:RestoreBuildRestrictions()
-            self:RequestRefreshUI()     
-        end
-    end,
-
     UpgradingState = State(TShieldStructureUnit.UpgradingState) {
         Main = function(self)
             self.Rotator1:SetTargetSpeed(90)
@@ -85,4 +73,4 @@ BEB4102 = Class(TShieldStructureUnit) {
     
 }
 
-TypeClass = BEB4102
+TypeClass = BEB4301
