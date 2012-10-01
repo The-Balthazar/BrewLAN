@@ -52,8 +52,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 200,
-        Health = 4250,
-        MaxHealth = 4250,
+        Health = 6950,
+        MaxHealth = 6950,
         RegenRate = 0,
         Shield = {
             ImpactEffects = 'CybranShieldHit01',
@@ -81,14 +81,9 @@ UnitBlueprint {
             'Protector',
             'Wraithguard',
             'Hedgehog',
-            '',
-            '',
-            '',
-            '',
 	},
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
-            '<LOC ability_stealthfield>Stealth Field',
         },
         #AnimationUpgrade = '/units/urb4207/urb4207_aopen.sca',
         Mesh = {
@@ -184,8 +179,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 30,
-        RadarStealthFieldRadius = 80,
-        SonarStealthFieldRadius = 80,
     },
     Interface = {
         HelpText = '<LOC brb4401>Experimental Shield Generator',

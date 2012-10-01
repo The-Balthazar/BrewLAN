@@ -19,6 +19,7 @@ function ModBlueprints(all_blueprints)
     SalvationBrewLANChanges(all_blueprints.Unit)
     ED1BrewLANChanges(all_blueprints.Unit)
     ED2BrewLANChanges(all_blueprints.Unit)
+    ED3BrewLANChanges(all_blueprints.Unit)
     ED4BrewLANChanges(all_blueprints.Unit)
     ED4and5BrewLANChanges(all_blueprints.Unit)
     CybranBUILTBYLANDCat(all_blueprints.Unit)
@@ -136,6 +137,17 @@ function ED2BrewLANChanges(all_bps)
         all_bps['urb4204'],
     }
     for arrayIndex, bp in ED2ShieldGen do
+        table.remove(bp.Categories, 6)
+        table.insert(bp.Categories, 'TECH1')
+    end
+end
+
+function ED3BrewLANChanges(all_bps)
+
+    local ED3ShieldGen = {
+        all_bps['urb4205'],
+    }
+    for arrayIndex, bp in ED3ShieldGen do
         table.insert(bp.Categories, 'BUILTBYTIER2ENGINEER')
         table.insert(bp.Categories, 'BUILTBYTIER3ENGINEER')
         table.insert(bp.Categories, 'BUILTBYTIER2COMMANDER')
