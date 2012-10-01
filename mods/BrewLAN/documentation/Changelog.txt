@@ -58,7 +58,32 @@ __________._________
   * Minor changes to the UEF T1 shield gen for allowing it to upgrade.
   * Disabled the UEF T1 shield from upgrading on land.   
   * Added the UEF T3 Naval shield, only available as an upgrade from the UEF T1 light shield (which is aquatic).
-  * Added some ghetto german and french string tables for the UEF T3 Naval shield.    
+  * Added some ghetto german and french string tables for the UEF T3 Naval shield.      
+	__________
+  2012-10-01
+               
+  * Increased the max health of the Scathis, to 17500 from 8750.
+  * Shield generator changes:     
+    * Fixed the adjacency bonuses of the T1 Aeon & UEF shields, and the UEF T3 Naval shield.
+    * Corrected the abilities list of the Iron Curtain.   
+    * Cybran shield balancing:
+      * Bumped the ED2 down to T1 and removed it from T2 build lists.
+      * Added the ED3 to T2 build lists.       
+      * Increased the max health of the Iron Curtain to 6950 from 4250.
+        * It now takes 3 hits from any T3 bomber directly to destroy it, instead of 1-2 (race dependand).
+      * Removed the unlisted radar and sonar from the Iron Curtain.       
+    * T1 UEF Shield gen balancing:
+      * Increased the build rate (for upgrading) from 7.5 to 10.
+      * Increased the power outage regen time to 5 sec from 3.
+      * Increased the damage outage regen time to 10 sec from 7.25.
+      * Increased regen rate to 110 from 80.   
+      * Increased shield size to 14 from 13.         
+    * Aeon T1 shield balancing:
+      * Increased regen to 120 from 69.
+      * Increased recharge time to 10 from 8.
+      * Increased shield strength to 6700 from 5500.
+      * Increased size to 11 from 10.
+      * Lowered build costs to 240m 2400e 240t from identical to the T2's.                                                                            
 __________._________
 2010-05-29|0.3.1a
 

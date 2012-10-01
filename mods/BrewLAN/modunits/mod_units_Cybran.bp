@@ -19,6 +19,7 @@ UnitBlueprint {
         Health = 200,
         MaxHealth = 200,
     },
+    StrategicIconName = 'icon_structure1_shield',
 }
 
 UnitBlueprint {
