@@ -2,7 +2,7 @@ UnitBlueprint {
     AI = {
         BeaconName = 'UAB5102',
         TargetBones = {
-            'UAA0104',
+            'BAA0306',
         },
     },
     Air = {
@@ -10,7 +10,7 @@ UnitBlueprint {
         BankFactor = 0.1,
         BankForward = false,
         CanFly = true,
-        CirclingDirChange = false,
+        CirclingDirChange = true,
         CirclingElevationChangeRatio = 0.25,
         CirclingFlightChangeFrequency = 15,
         CirclingRadiusChangeMaxRatio = 0.4,
@@ -122,11 +122,11 @@ UnitBlueprint {
     CollisionOffsetY = -1.5,
     CollisionOffsetZ = -1.5,
     Defense = {
-        AirThreatLevel = 1.5,
+        AirThreatLevel = 50,
         ArmorType = 'Light',
         EconomyThreatLevel = 0,
-        Health = 3200,
-        MaxHealth = 3200,
+        Health = 7200,
+        MaxHealth = 7200,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -134,16 +134,16 @@ UnitBlueprint {
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 5000,
+            ShieldMaxHealth = 5400,
             ShieldRechargeTime = 8,
-            ShieldRegenRate = 30,
+            ShieldRegenRate = 80,
             ShieldRegenStartTime = 1,
-            ShieldSize = 10,
+            ShieldSize = 12,
             ShieldVerticalOffset = -2,
         },
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 18,
+        SurfaceThreatLevel = 50,
     },
     Description = '<LOC bair0306>Heavy Air Transport',
     Display = {
@@ -152,14 +152,14 @@ UnitBlueprint {
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_transport>Transport',
         },
-        AnimationPermOpen = '/units/BAA0306/BAA0306_aopen01.sca',
+        AnimationPermOpen = '/mods/brewlan/units/BAA0306/BAA0306_Open.sca',
         ForcedBuildSpin = 90,
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
                     {
                         Bones = {
-                            'UAA0104',
+                            'BAA0306',
                         },
                         Type = 'Landing01',
                     },
@@ -169,7 +169,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAA0104',
+                            'BAA0306',
                         },
                         Type = 'TakeOff01',
                     },
@@ -183,9 +183,7 @@ UnitBlueprint {
                     LODCutoff = 200,
                     Scrolling = true,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/uaa0104/uaa0104_albedo.dds', 
-                    NormalsName = '/units/uaa0104/uaa0104_normalsts.dds', 
-                    SpecularName = '/units/uaa0104/uaa0104_specteam.dds',  
+                    AlbedoName = 'BAA0306_Albedo.dds', 
                 },
                 {
                     LODCutoff = 300,
@@ -198,17 +196,17 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = false,
-        UniformScale = 0.05,
+        UniformScale = 0.05*2.6,
     },
     Economy = {
-        BuildCostEnergy = 28125,
-        BuildCostMass = 2000,
+        BuildCostEnergy = 72000,
+        BuildCostMass = 5400,
         BuildTime = 7500,
-        MaintenanceConsumptionPerSecondEnergy = 250,
+        MaintenanceConsumptionPerSecondEnergy = 500,
     },
     Footprint = {
         MaxSlope = 0.25,
-        SizeX = 1,
+        SizeX = 6,
         SizeZ = 6,
     },
     General = {
@@ -242,7 +240,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC baa0306_name>Cirrus',
+        UnitName = '<LOC baa0306_name>Solaris',
         UnitWeight = 1,
     },
     Intel = {
@@ -268,15 +266,15 @@ UnitBlueprint {
         FuelUseTime = 800,
         MaxSpeed = 0.5,
         MeshExtentsX = 4,
-        MeshExtentsY = 0.5,
-        MeshExtentsZ = 2,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 4,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 2.75,
-    SelectionSizeZ = 3.8,
+    SelectionSizeX = 6,
+    SelectionSizeZ = 6,
     SelectionThickness = 0.26,
-    SizeX = 2.2,
-    SizeY = 2.5,
+    SizeX = 6,
+    SizeY = 4,
     SizeZ = 6,
     StrategicIconName = 'icon_gunship3_transport',
     StrategicIconSortPriority = 65,

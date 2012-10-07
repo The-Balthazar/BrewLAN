@@ -41,7 +41,7 @@ __________._________
 	__________
 	2012-09-22
 
-	* Finished the UEF T2 Air staging platform.
+	* Finished the UEF T1 Air staging platform.
 	* Allowed the Aeon T2 shield to upgrade into the T3.
 	* Updated 'Unit Statuses.txt' somewhat.
 	* Added localisation string for the Aeon T4 Artillery description.
@@ -83,7 +83,28 @@ __________._________
       * Increased recharge time to 10 from 8.
       * Increased shield strength to 6700 from 5500.
       * Increased size to 11 from 10.
-      * Lowered build costs to 240m 2400e 240t from identical to the T2's.                                                                            
+      * Lowered build costs to 240m 2400e 240t from identical to the T2's.       
+	__________
+  2012-10-02
+                  
+  * Part two of shield generator changes:     
+    * Seraphim T1 shield balancing.
+      * Increased health to 250 from 200.
+      * Increased shield strength to 8000 from 6500.
+      * Increased shield size to 17 from 16.
+      * Increased regen rate to 139 from 75.
+      * Increased recharge time to 12 from 10.
+      * Increased mass/energy/build time to 400/4000/400 from 350/3500/350.                        
+    * Cybran Iron Curtain changes.
+      * Halved mass/energy/time/maintenance costs to 1200/200000e/8000/2500eps.
+      * Halved the regen assist mult and energy drain regen values back to their original 60 and 5, like all other shields.
+      * Lowered shield rebuild time to 1:30 from 3:40.
+  __________
+  2012-10-06
+  
+  * More random flailing at the T2 Energy storage scaled explosions. Srsly, fuck them.
+  * Partially completed a new model for the Aeon T3 Transport. It came out bigger than expected.
+  * Rebalanced stats of the Aeon T3 Transport to accomadate for its new size.                                                                                                                              
 __________._________
 2010-05-29|0.3.1a
 

@@ -113,6 +113,17 @@ UnitBlueprint {
                         },
                         Type = 'GroundKickup03',
                     },
+                    {
+                        Bones = {
+                            'Turret',
+                        },
+                        Offset = {
+                            0,
+                            -0.05,
+                            0,
+                        },
+                        Type = 'AeonGroundFX01',
+                    },
                 },
                 Treads = {
                     ScrollTreads = true,
@@ -211,7 +222,7 @@ UnitBlueprint {
         WaterVisionRadius = 25,
     },
     Interface = {
-        HelpText = '<LOC bal0311_desc>Heavy Tank',
+        HelpText = '<LOC bal0311_desc>Armored Assault Tank',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,

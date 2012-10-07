@@ -4,6 +4,7 @@
 #**
 #****************************************************************************
 local TEnergyStorageUnit = import('/lua/terranunits.lua').TEnergyStorageUnit
+local BareBonesWeapon = import('/lua/sim/DefaultWeapons.lua').BareBonesWeapon
 
 BEB1205 = Class(TEnergyStorageUnit) {
 
@@ -12,17 +13,30 @@ BEB1205 = Class(TEnergyStorageUnit) {
         self.Trash:Add(CreateStorageManip(self, 'B01', 'ENERGY', 0, 0, -0.6, 0, 0, 0))
     end,
 
-    OnKilled = function(self, instigator, type, overkillRatio)
+    Weapons = {
+	DeathWeapon = Class(BareBonesWeapon) {
 
-	local curEnergy = aiBrain:GetEconomyStoredRatio('ENERGY')
+	    OnCreate = function(self)
+	        BareBonesWeapon.OnCreate(self)
+	        local myBlueprint = self:GetBlueprint()
+	        self.Data = {
+		    Damage = 5000,
+	        }
+	        self:SetWeaponEnabled(false)
+	    end,
 
-	self:GetBlueprint().Weapon.Damage = math.floor(self:GetBlueprint().Weapon.DamageFull * curEnergy)
+	    OnFire = function(self)
+	    end,
 
-        self.Trash:Destroy()
-        self.Trash = TrashBag() 
-
-    end,
-	
+	    Fire = function(self)
+	        local myBlueprint = self:GetBlueprint()
+	        local myProjectile = self.unit:CreateProjectile( myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
+	        if self.Data then
+	            myProjectile:PassData(self.Data)
+	        end
+	    end,
+	},
+    },	
 }
 
 TypeClass = BEB1205
