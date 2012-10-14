@@ -1,18 +1,10 @@
 #Aeon Buildings	----------------------------------#
 
-#UnitBlueprint {
-#	Merge = true,
-#	BlueprintId="bab4102", # T1 shield
-#    General = {
-#        UpgradesTo = 'uab4202',
-#    },
-#}
 
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="uab4202", # T2 shield
     General = {
-#        UpgradesFrom = 'bab4102',
         UpgradesTo = 'uab4301',
     },
 }
@@ -23,7 +15,6 @@ UnitBlueprint {
     General = {
         UpgradesFrom = 'uab4202',
         UpgradesFromBase = 'uab4202',
-#        UpgradesFromBase = 'uab4102',
     },
 }
 

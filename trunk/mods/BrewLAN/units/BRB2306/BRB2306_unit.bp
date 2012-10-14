@@ -63,14 +63,12 @@ UnitBlueprint {
                     LODCutoff = 120,
                     ShaderName = 'Insect',
                     AlbedoName = '/units/urb2301/urb2301_albedo.dds', 
-                    NormalsName = '/units/urb2301/urb2301_normalsTS.dds', 
                     SpecularName = '/units/urb2301/urb2301_specteam.dds',  
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
                     SpecularName = 'urb2301_lod1_specteam.dds',
-                    MeshName = '/units/urb2301/urb2301_lod1.scm',
                     AlbedoName = '/units/urb2301/urb2301_lod1_albedo.dds', 
                     NormalsName = '/units/urb2301/urb2301_lod1_normalsTS.dds', 
                     SpecularName = '/units/urb2301/urb2301_lod1_specteam.dds', 
@@ -102,6 +100,7 @@ UnitBlueprint {
         BuildCostEnergy = 16000,
         BuildCostMass = 1800,
         BuildTime = 1500,
+        BuildRate = 15,
         RebuildBonusIds = {
             'brb2306',
         },
@@ -132,6 +131,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC brb2306_name>Hades',
+#        UpgradesFrom = 'urb2301',
+#        UpgradesFromBase = 'urb2301',
         UnitWeight = 1,
     },
     Intel = {
