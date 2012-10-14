@@ -104,7 +104,18 @@ __________._________
   
   * More random flailing at the T2 Energy storage scaled explosions. Srsly, fuck them.
   * Partially completed a new model for the Aeon T3 Transport. It came out bigger than expected.
-  * Rebalanced stats of the Aeon T3 Transport to accomadate for its new size.                                                                                                                              
+  * Rebalanced stats of the Aeon T3 Transport to accomadate for its new size.
+  __________
+  2012-10-13
+  
+  * Fixed the Hades' cannon not rotating while firing.
+  * Fixed the Hades' inverted normals.  
+  * Allowed Cerberus to upgrade into Hades, then disallowed it. That shit was crazy OP.
+  __________
+  2012-10-14
+  
+  * Gave the Aeon T3 Transport shield active animations and effects, although the particles
+    are out of align, the shutter doors don't open yet, and it still has no weapons.                                                                                                                          
 __________._________
 2010-05-29|0.3.1a
 

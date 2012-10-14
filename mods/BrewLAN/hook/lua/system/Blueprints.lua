@@ -25,6 +25,7 @@ function ModBlueprints(all_blueprints)
     CybranBUILTBYLANDCat(all_blueprints.Unit)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
     AeonShieldUpgradeable(all_blueprints.Unit)
+#    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
 
 end
 
@@ -197,21 +198,31 @@ function AeonShieldUpgradeable(all_bps)
         if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
         table.insert(bp.Economy.BuildableCategory, 'uab4301')
     end
+end
 
 
-#    local AeonT1Shield = {  #Cant upgrade to something with a different footprint
-#        all_bps['bab4102'],
-#    }
-#    for arrayIndex, bp in AeonT1Shield do
-#        table.insert(bp.Categories, 'SHOWQUEUE')
-#        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
-#        table.insert(bp.Economy.RebuildBonusIds, 'uab4202')
-#        table.insert(bp.Economy.RebuildBonusIds, 'uab4301')
 
-#        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
-#        table.insert(bp.Economy.BuildableCategory, 'uab4202')
-#    end
+# ---------------- 
 
+
+
+function HadesUpgradeable(all_bps)
+
+    local CybranHades = {
+        all_bps['urb2301'],
+    }
+    for arrayIndex, bp in CybranHades do
+        table.insert(bp.Categories, 'SHOWQUEUE')
+
+        if not bp.Display.Abilities then bp.Display.Abilities = {} end
+        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
+
+        if not bp.Economy.RebuildBonusIds then bp.Economy.RebuildBonusIds = {} end
+        table.insert(bp.Economy.RebuildBonusIds, 'brb2306')
+
+        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
+        table.insert(bp.Economy.BuildableCategory, 'brb2306')
+    end
 end
 
 

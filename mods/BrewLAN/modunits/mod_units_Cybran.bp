@@ -62,6 +62,17 @@ UnitBlueprint {
     },
 }
 
+#UnitBlueprint {
+#	Merge = true,
+#	BlueprintId="urb2301", # T2 point defence
+#    General = {
+#        UpgradesTo = 'brb2306',
+#    },
+#    Economy = {
+#        BuildRate = 15,
+#    },
+#}
+
 
 
 #Cybran Units		----------------------------------#

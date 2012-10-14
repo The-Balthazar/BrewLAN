@@ -24,7 +24,7 @@ BRB4401 = Class(CShieldStructureUnit) {
         CShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
         self.Rotator1 = CreateRotator(self, 'Shaft02', 'z', nil, 30, 10, 30)
         self.Trash:Add(self.Rotator1)
-		self.ShieldEffectsBag = {}
+	self.ShieldEffectsBag = {}
     end,
 
     OnShieldEnabled = function(self)
@@ -52,8 +52,8 @@ BRB4401 = Class(CShieldStructureUnit) {
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-		    self.ShieldEffectsBag = {}
-		end
+	    self.ShieldEffectsBag = {}
+	end
     end,
     
 }
