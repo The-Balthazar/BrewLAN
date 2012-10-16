@@ -7,18 +7,20 @@
 #****************************************************************************
 
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
-local explosion = import('/lua/defaultexplosions.lua')
-local util = import('/lua/utilities.lua')
 local aWeapons = import('/lua/aeonweapons.lua')
-local AAASonicPulseBatteryWeapon = aWeapons.AAASonicPulseBatteryWeapon
+local util = import('/lua/utilities.lua')
+local AAATemporalFizzWeapon = aWeapons.AAATemporalFizzWeapon
+local explosion = import('/lua/defaultexplosions.lua')
 
 BAA0306 = Class(AAirUnit) {
 
     ShieldEffects = {
-        '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',
-#        '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',
-        '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
-        '/effects/emitters/aeon_shield_generator_t3_04_emit.bp',
+##		     '/effects/emitters/aeon_shield_generator_mobile_01_emit.bp',
+##		     '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',
+##		     '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',
+		     '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
+##	'/mods/BrewLAN/effects/emitters/aeon_shield_generator_mobile_air_01_emit.bp',	
+##		     '/effects/emitters/aeon_shield_generator_t3_04_emit.bp',
     },
 
     AirDestructionEffectBones = { 'Outer1', 'Outer002', 'Outer003', 'Outer004', 'Outer005', 'Outer006',
@@ -29,15 +31,23 @@ BAA0306 = Class(AAirUnit) {
 				  'Disk1', 'Disk2', },
 
     Weapons = {
-        SonicPulseBattery1 = Class(AAASonicPulseBatteryWeapon) {},
-        SonicPulseBattery2 = Class(AAASonicPulseBatteryWeapon) {},
-        SonicPulseBattery3 = Class(AAASonicPulseBatteryWeapon) {},
-        SonicPulseBattery4 = Class(AAASonicPulseBatteryWeapon) {},
+        AAFizz01 = Class(AAATemporalFizzWeapon) {},
+        AAFizz02 = Class(AAATemporalFizzWeapon) {},
+        AAFizz03 = Class(AAATemporalFizzWeapon) {},
+        AAFizz04 = Class(AAATemporalFizzWeapon) {},
+        AAFizz05 = Class(AAATemporalFizzWeapon) {},
+        AAFizz06 = Class(AAATemporalFizzWeapon) {},
     },
 
     OnStopBeingBuilt = function(self,builder,layer)
         AAirUnit.OnStopBeingBuilt(self,builder,layer)
 	self.ShieldEffectsBag = {}
+        self:HideBone('Shutter1', true)
+        self:HideBone('Shutter2', true)
+        self:HideBone('Shutter3', true)
+        self:HideBone('Shutter4', true)
+        self:HideBone('Shutter5', true)
+        self:HideBone('Shutter6', true)
     end,
 
     OnShieldEnabled = function(self)
@@ -72,7 +82,7 @@ BAA0306 = Class(AAirUnit) {
 	    self.ShieldEffectsBag = {}
 	end
         for k, v in self.ShieldEffects do
-            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(0.46) )
+            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(1):OffsetEmitter(0,-3,0) )
         end
     end,
 
