@@ -115,7 +115,11 @@ __________._________
   2012-10-14
   
   * Gave the Aeon T3 Transport shield active animations and effects, although the particles
-    are out of align, the shutter doors don't open yet, and it still has no weapons.                                                                                                                          
+    are out of align, the shutter doors don't open yet, and it still has no weapons.
+  __________
+  2012-10-16
+  
+  * Gave the Aeon T3 Transport weapons (AA only), fixed the partical effects, and made the shutters hide on built.                                                                                                                          
 __________._________
 2010-05-29|0.3.1a
 
