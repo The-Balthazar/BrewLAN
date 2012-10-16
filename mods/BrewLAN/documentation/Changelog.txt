@@ -119,7 +119,8 @@ __________._________
   __________
   2012-10-16
   
-  * Gave the Aeon T3 Transport weapons (AA only), fixed the partical effects, and made the shutters hide on built.                                                                                                                          
+  * Gave the Aeon T3 Transport weapons (AA only), fixed the partical effects, and made the shutters hide on built.
+  * Fixed the Aeon T3 Transport's rings and ball not starting up again on shield reset.                                                                                                                            
 __________._________
 2010-05-29|0.3.1a
 
