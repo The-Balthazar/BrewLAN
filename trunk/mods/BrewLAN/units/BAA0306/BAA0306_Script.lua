@@ -52,27 +52,25 @@ BAA0306 = Class(AAirUnit) {
 
     OnShieldEnabled = function(self)
         AAirUnit.OnShieldEnabled(self)
-        if not self.OrbManip1 then
+
             self.OrbManip1 = CreateRotator(self, 'Sphere', 'x', nil, 0, 45, -45)
             self.Trash:Add(self.OrbManip1)
-        end
+
         self.OrbManip1:SetTargetSpeed(-45)
-        if not self.OrbManip2 then
+
             self.OrbManip2 = CreateRotator(self, 'Sphere', 'z', nil, 0, 45, 45)
             self.Trash:Add(self.OrbManip2)
-        end
+
         self.OrbManip2:SetTargetSpeed(45)
 
-        if not self.DiskManip1 then
             self.DiskManip1 = CreateRotator(self, 'Disk1', 'x', nil, 0, 45, 45)
             self.Trash:Add(self.DiskManip1)
-        end
+
         self.DiskManip1:SetTargetSpeed(45)
 
-        if not self.DiskManip2 then
             self.DiskManip2 = CreateRotator(self, 'Disk2', 'y', nil, 0, 45, 45)
             self.Trash:Add(self.DiskManip2)
-        end
+
         self.DiskManip2:SetTargetSpeed(45)
 
         if self.ShieldEffectsBag then
@@ -88,22 +86,22 @@ BAA0306 = Class(AAirUnit) {
 
     OnShieldDisabled = function(self)
         AAirUnit.OnShieldDisabled(self)
-        if self.OrbManip1 then
+
             self.OrbManip1:SetSpinDown(true)
             self.OrbManip1:SetTargetSpeed(0)
-        end
-        if self.OrbManip2 then
+
+
             self.OrbManip2:SetSpinDown(true)
             self.OrbManip2:SetTargetSpeed(0)
-        end
-        if self.DiskManip1 then
+
+
             self.DiskManip1:SetSpinDown(true)
             self.DiskManip1:SetTargetSpeed(0)
-        end
-        if self.DiskManip2 then
+
+
             self.DiskManip2:SetSpinDown(true)
             self.DiskManip2:SetTargetSpeed(0)
-        end
+
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
@@ -119,22 +117,22 @@ BAA0306 = Class(AAirUnit) {
 
     OnKilled = function(self, instigator, type, overkillRatio)
         AAirUnit.OnKilled(self, instigator, type, overkillRatio)
-        if self.OrbManip1 then
+
             self.OrbManip1:Destroy()
             self.OrbManip1 = nil
-        end
-        if self.OrbManip2 then
+
+
             self.OrbManip2:Destroy()
             self.OrbManip2 = nil
-        end
-        if self.DiskManip1 then
+
+
             self.DiskManip1:Destroy()
             self.DiskManip1 = nil
-        end
-        if self.DiskManip2 then
+
+
             self.DiskManip2:Destroy()
             self.DiskManip2 = nil
-        end
+
         self:TransportDetachAllUnits(true)
     end,
 
