@@ -228,13 +228,11 @@ Tech 3:
   Seraphim:
 	T3 Gunship 'Vulthuum'
 	T3 Air Transport.
+	T3 Point Defence
 		* Fully Functioning.
 
-	T3 Heavy Assault Bot
+	T3 Heavy Assault Bot:
 		* Uses a slightly modified T2 bot mesh
-
-	T3 Point Defence
-		* Aplha state, probably needs a rethink.
 
 	Pending:
 		* T3 Torp launchers.

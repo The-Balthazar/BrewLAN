@@ -152,6 +152,6 @@ brb4401="Experimental Shield Generator"
 brb4401_name="Iron Curtain"
 Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large area, shielded area reduces in size as it takes damage."
 
-brs0401="Experimental Dreadnought"
+brs0401="Experimental Battleship"
 brs0401_name="Abyssal Persecutor"
 Unit_Description_BrewLAN_T4S001="Experimental amphibious battleship."
