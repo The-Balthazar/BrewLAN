@@ -15,12 +15,8 @@ local explosion = import('/lua/defaultexplosions.lua')
 BAA0306 = Class(AAirUnit) {
 
     ShieldEffects = {
-##		     '/effects/emitters/aeon_shield_generator_mobile_01_emit.bp',
-##		     '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',
-##		     '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',
 		     '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
 ##	'/mods/BrewLAN/effects/emitters/aeon_shield_generator_mobile_air_01_emit.bp',	
-##		     '/effects/emitters/aeon_shield_generator_t3_04_emit.bp',
     },
 
     AirDestructionEffectBones = { 'Outer1', 'Outer002', 'Outer003', 'Outer004', 'Outer005', 'Outer006',
@@ -118,22 +114,51 @@ BAA0306 = Class(AAirUnit) {
     OnKilled = function(self, instigator, type, overkillRatio)
         AAirUnit.OnKilled(self, instigator, type, overkillRatio)
 
-            self.OrbManip1:Destroy()
-            self.OrbManip1 = nil
+        self.detector = CreateCollisionDetector(self)
+        self.Trash:Add(self.detector)
+        self.detector:WatchBone('Attachpoint02')
+        self.detector:WatchBone('Attachpoint008')
+        self.detector:WatchBone('Attachpoint014')
+        self.detector:WatchBone('Attachpoint020')
+        self.detector:WatchBone('Attachpoint026')
+        self.detector:WatchBone('Attachpoint032')
+        self.detector:WatchBone('Attachpoint038')
+        self.detector:WatchBone('Attachpoint044')
+        self.detector:WatchBone('Attachpoint050')
+        self.detector:WatchBone('Attachpoint056')
+        self.detector:WatchBone('Attachpoint062')
+        self.detector:WatchBone('Attachpoint068')
+        self.detector:WatchBone('Attachpoint01')
+        self.detector:WatchBone('Attachpoint012')
+        self.detector:WatchBone('Attachpoint018')
+        self.detector:WatchBone('Attachpoint024')
+        self.detector:WatchBone('Attachpoint030')
+        self.detector:WatchBone('Attachpoint036')
+        self.detector:WatchBone('Attachpoint042')
+        self.detector:WatchBone('Attachpoint058')
+        self.detector:WatchBone('Attachpoint054')
+        self.detector:WatchBone('Attachpoint060')
+        self.detector:WatchBone('Attachpoint066')
+        self.detector:WatchBone('Attachpoint072')
+        self.detector:EnableTerrainCheck(true)
+        self.detector:Enable()
 
-
-            self.OrbManip2:Destroy()
-            self.OrbManip2 = nil
-
-
-            self.DiskManip1:Destroy()
-            self.DiskManip1 = nil
-
-
-            self.DiskManip2:Destroy()
-            self.DiskManip2 = nil
+        #self.OrbManip1:Destroy()
+        #self.OrbManip1 = nil
+        #self.OrbManip2:Destroy()
+        #self.OrbManip2 = nil
+        #self.DiskManip1:Destroy()
+        #self.DiskManip1 = nil
+        #self.DiskManip2:Destroy()
+        #self.DiskManip2 = nil
 
         self:TransportDetachAllUnits(true)
+    end,
+
+    OnAnimTerrainCollision = function(self, bone,x,y,z)
+        DamageArea(self, {x,y,z}, 5, 50, 'Default', true, false)
+        explosion.CreateDefaultHitExplosionAtBone( self, bone, 1.0 )
+        explosion.CreateDebrisProjectiles(self, explosion.GetAverageBoundingXYZRadius(self), {self:GetUnitSizes()})
     end,
 
     # Override air destruction effects so we can do something custom here

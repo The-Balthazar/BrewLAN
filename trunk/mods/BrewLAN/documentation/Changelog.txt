@@ -120,7 +120,19 @@ __________._________
   2012-10-16
   
   * Gave the Aeon T3 Transport weapons (AA only), fixed the partical effects, and made the shutters hide on built.
-  * Fixed the Aeon T3 Transport's rings and ball not starting up again on shield reset.                                                                                                                            
+  * Fixed the Aeon T3 Transport's rings and ball not starting up again on shield reset.
+  __________
+  2012-10-17
+  
+  * Increased the build time of the Aeon T3 Transport.
+  * Gave the Aeon T3 Transport a pretty death.
+  __________
+  2012-10-19
+  
+  * Reclassified the Abyssal Persecutor as 'Experimental Battleship' instead of 'Experimental Dreadnaught'.
+  * Fixed, and gave a slightly more unique appearance to, the Seraphim T3 Point Defence.
+  * Gave the damage test unit a mesh. Because that's important enough for the changelog.
+  * Cleaned up some un-needed files.                                           
 __________._________
 2010-05-29|0.3.1a
 

@@ -9,11 +9,12 @@
 #****************************************************************************
 
 local SStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
-local SDFUnstablePhasonBeam = import('/lua/seraphimweapons.lua').SDFUnstablePhasonBeam
+local WeaponsFile = import ('/lua/seraphimweapons.lua')
+local SDFAireauWeapon = WeaponsFile.SDFAireauWeapon
 
 BSB2306 = Class(SStructureUnit) {
     Weapons = {
-        MainGun = Class(SDFUnstablePhasonBeam) {},
+        MainGun = Class(SDFAireauWeapon) {},
     },
 }
 

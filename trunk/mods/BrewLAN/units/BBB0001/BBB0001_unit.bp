@@ -67,8 +67,7 @@ UnitBlueprint {
     Description = 'Damage Test Facility',
     Display = {
         Abilities = {
-            '<LOC ability_aquatic>Aquatic',
-#            '<LOC ability_shielddome>Shield Dome',
+            'Expendable',
         },
         AnimationDeath = {
             {
@@ -86,16 +85,16 @@ UnitBlueprint {
                     LODCutoff = 200,
                     Scrolling = true,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab4202/uab4202_albedo.dds', 
-                    NormalsName = '/units/uab4202/uab4202_normalsts.dds', 
-                    SpecularName = '/units/uab4202/uab4202_specteam.dds',  
+                    MeshName = '/units/xec1401/xec1401_lod0.scm', 
+                    AlbedoName = '/units/xec1401/xec1401_albedo.dds', 
+                    NormalsName = '/units/xec1401/xec1401_normalsts.dds', 
+                    SpecularName = '/units/xec1401/xec1401_specteam.dds',  
                 },
                 {
                     LODCutoff = 300,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab4202/uab4202_lod1_albedo.dds', 
-                    NormalsName = '/units/uab4202/uab4202_lod1_normalsTS.dds', 
-                    SpecularName = '/units/uab4202/uab4202_lod1_specteam.dds', 
+                    AlbedoName = '/units/xec1401/xec1401_lod1_albedo.dds',  
+                    SpecularName = '/units/xec1401/xec1401_lod1_specteam.dds', 
                 },
             },
         },
@@ -161,14 +160,14 @@ UnitBlueprint {
        # ToggleCaps = {
        #     RULEUTC_ShieldToggle = true,
        # },
-        UnitName = 'Spongémon',
+        UnitName = 'Sponge',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 5000000,
     },
     Interface = {
-        HelpText = '<LOC bab4102_help>Shield Generator',
+        HelpText = '<LOC bab4102_help>Damage Test Facility',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.9,

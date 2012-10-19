@@ -111,7 +111,7 @@ UnitBlueprint {
         SubThreatLevel = 500,
         SurfaceThreatLevel = 450,
     },
-    Description = '<LOC brs0401>',
+    Description = '<LOC brs0401>Experimental Battleship',
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
@@ -319,7 +319,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'amph',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC brs0401_name>',
+        UnitName = '<LOC brs0401_name>Abyssal Persecutor',
         UnitWeight = 1,
     },
     Intel = {
@@ -329,7 +329,7 @@ UnitBlueprint {
         WaterVisionRadius = 64,
     },
     Interface = {
-        HelpText = '<LOC brs0401>',
+        HelpText = '<LOC brs0401>Experimental Battleship',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.8 * 3,
