@@ -1,14 +1,16 @@
 #****************************************************************************
 #**
+#**  File     :  /cdimage/units/UAB4202/UAB4202_script.lua
+#**  Author(s):  David Tomandl
+#**
 #**  Summary  :  Aeon Shield Generator Script
 #**
+#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
-local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 
-BAB4102 = Class(AShieldStructureUnit) {
-
+BAB4301 = Class(AShieldStructureUnit) {
     ShieldEffects = {
         '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',
         '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',
@@ -16,15 +18,9 @@ BAB4102 = Class(AShieldStructureUnit) {
         '/effects/emitters/aeon_shield_generator_t3_04_emit.bp',
     },
     
-    OnCreate = function(self)
-        AShieldStructureUnit.OnCreate(self)
-        self:HideBone('Flap03', true)
-        self:HideBone('Flap04', true)
-    end,
-
     OnStopBeingBuilt = function(self,builder,layer)
         AShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
-	self.ShieldEffectsBag = {}
+		self.ShieldEffectsBag = {}
     end,
 
     OnShieldEnabled = function(self)
@@ -44,8 +40,8 @@ BAB4102 = Class(AShieldStructureUnit) {
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-	    self.ShieldEffectsBag = {}
-	end
+		    self.ShieldEffectsBag = {}
+		end
         for k, v in self.ShieldEffects do
             table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(0.46) )
         end
@@ -65,36 +61,10 @@ BAB4102 = Class(AShieldStructureUnit) {
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-	    self.ShieldEffectsBag = {}
-	end
-    end,
-
-    OnLayerChange = function(self, new, old)
-        AShieldStructureUnit.OnLayerChange(self, new, old)
-        if new == 'Land' then
-            self:AddBuildRestriction(categories.ALLUNITS)
-            self:RequestRefreshUI()
-        elseif new == 'Water' then
-            self:RestoreBuildRestrictions()
-            self:RequestRefreshUI()     
-        end
+		    self.ShieldEffectsBag = {}
+		end
     end,
     
-    UpgradingState = State(AShieldStructureUnit.UpgradingState) {
-        Main = function(self)
-            self:ShowBone('Flap03', true)
-            self:ShowBone('Flap04', true)
-            AShieldStructureUnit.UpgradingState.Main(self)
-        end,
-        EnableShield = function(self)
-            AShieldStructureUnit.EnableShield(self)
-        end,
-        
-        DisableShield = function(self)
-            AShieldStructureUnit.DisableShield(self)
-        end,   
-    },
-
     OnKilled = function(self, instigator, type, overkillRatio)
         AShieldStructureUnit.OnKilled(self, instigator, type, overkillRatio)
         if self.OrbManip1 then
@@ -108,5 +78,5 @@ BAB4102 = Class(AShieldStructureUnit) {
     end,    
 }
 
-TypeClass = BAB4102
+TypeClass = BAB4301
 

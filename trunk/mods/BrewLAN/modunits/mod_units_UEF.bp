@@ -46,18 +46,6 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xel0209",# Field Engie 'Sparky'
-
-    Economy = {
-        BuildableCategory = {
-            'BUILTBYTIER2ENGINEER DEFENSE UEF',
-            'BUILTBYTIER2ENGINEER INDIRECTFIRE UEF',
-	    'BUILTBYTIER2FIELD UEF',	##New cat
-        },
-    },
-}
-UnitBlueprint {
-	Merge = true,
 	BlueprintId="uel0101",		##snoop
     Intel = {
         OmniRadius = 2,			##Added

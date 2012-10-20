@@ -60,6 +60,18 @@ function CybranBUILTBYLANDCat(all_bps)
     for arrayIndex, bp in cybrant3landfactory do
         table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY CYBRAN MOBILE CONSTRUCTION')
     end
+
+
+
+    local SparkyComeHereYou = {
+        all_bps['xel0209'],
+    }
+    for arrayIndex, bp in SparkyComeHereYou do
+        table.insert(bp.Economy.BuildableCategory, 'BUILTBYTIER2FIELD UEF')
+    end
+
+
+
 end
 
 
