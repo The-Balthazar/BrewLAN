@@ -75,7 +75,7 @@ bsa0305_name="Vulthuum"
 Unit_Description_BrewLAN_T3A001="Schweres Kanonenboot. Mit starken Phasenautokannonen und kurzstrecken Luftabwehr ausgerüstet."
 
 bair0306="Schwerer Lufttransporter"
-baa0306_name="Cirrus"
+baa0306_name="Solaris"
 bra0306_name="Night Skimmer"
 bsa0306_name="Vishuum"
 Unit_Description_BrewLAN_T3A002="Schwerer Lufttransporter. Bewaffnet mit schwerer Luftabwehr, einer EMP Waffe und einem Stealth-Generator.Kann 16 T1, 8 T2 oder 4 T3 Einheiten Transportieren"
@@ -111,6 +111,7 @@ Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit mächtig
 brb2306_name="Hades"
 bsb2306_name="Othuushala"
 Unit_Description_BrewLAN_T3B001="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
+Unit_Description_BrewLAN_T3B003="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
 
 beb3303_desc="Beobachtungs Satelliten System"
 bea0002_desc="Beobachtungs Satellit"

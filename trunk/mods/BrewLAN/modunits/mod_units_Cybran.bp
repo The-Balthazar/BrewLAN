@@ -87,29 +87,6 @@ UnitBlueprint {
     },
 }
 
-UnitBlueprint {
-	Merge = true,
-	BlueprintId="url0401",		##Scathis
-    Categories = {
-        'PRODUCTSC1',
-        'SELECTABLE',
-       # 'BUILTBYTIER3COMMANDER',
-       # 'BUILTBYTIER3ENGINEER',
-        'CYBRAN',
-        'MOBILE',
-        'LAND',
-        'EXPERIMENTAL',
-        'INDIRECTFIRE',
-        'ARTILLERY',
-        'NEEDMOBILEBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWATTACKRETICLE',
-        'DRAGBUILD',
-        'OVERLAYINDIRECTFIRE',
-    },
-}
-
 
 
 #Cybran Aircraft	---------------------------------#
@@ -123,7 +100,7 @@ UnitBlueprint {
         {
         },
         {
-            Damage = 10,	##AA, from 6
+            Damage = 12,	##AA DOUBLED!
         },
     },
 }

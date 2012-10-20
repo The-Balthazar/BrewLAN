@@ -129,9 +129,3 @@ UnitBlueprint {
         },
     },
 }
-
-UnitBlueprint {
-	Merge = true,
-	BlueprintId="xaa0306",
-    BuildIconSortPriority = 45,
-}

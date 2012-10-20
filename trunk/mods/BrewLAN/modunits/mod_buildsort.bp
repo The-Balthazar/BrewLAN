@@ -33,3 +33,11 @@ UnitBlueprint {
 	BlueprintId="xsl0303",	#Seraphim#
     BuildIconSortPriority = 30,
 }
+
+#Aeon T3 Torpedo Bomber
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xaa0306",
+    BuildIconSortPriority = 45,
+}

@@ -2,25 +2,6 @@
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xeb2402",		##Experimental Satellite System
-    Categories = {
-        'PRODUCTFA',
-        'UEF',
-        'STRUCTURE',
-#	'BUILTBYTIER3COMMANDER',
-#	'BUILTBYTIER3ENGINEER',
-        'EXPERIMENTAL',
-        'ORBITALSYSTEM',
-        'SELECTABLE',
-        'LAND',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'DRAGBUILD',
-    },
-}
-
-UnitBlueprint {
-	Merge = true,
 	BlueprintId="ueb4301",		##HSD - Pulse
     Display = {
         Tarmacs = {
@@ -92,7 +73,7 @@ UnitBlueprint {
         {
         },
         {
-            Damage = 20,		##AA, x10
+            Damage = 4,		##AA DOUBLED!
 	},
     },
 }
