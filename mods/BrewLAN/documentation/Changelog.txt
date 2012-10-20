@@ -132,7 +132,20 @@ __________._________
   * Reclassified the Abyssal Persecutor as 'Experimental Battleship' instead of 'Experimental Dreadnaught'.
   * Fixed, and gave a slightly more unique appearance to, the Seraphim T3 Point Defence.
   * Gave the damage test unit a mesh. Because that's important enough for the changelog.
-  * Cleaned up some un-needed files.                                           
+  * Cleaned up some un-needed files.
+  __________
+  2012-10-20
+  
+  * Fixed the death animation link for the Seraphim T3 Point Defence.
+  * Corrected the Solaris' name on the French and German string tables.
+  * Added build descriptions for the Seraphim T3 Point Defence.
+    * German description is the same as the Hades.
+    * French description is probably terrible French.
+  * Updated Unit Statuses.txt.
+  * Moved the code that hides the Scathis and Novax Center to Blueprints.Lua.
+  * Hid the UEF T4 PD from the build menus.
+  * Changed the Cybran and UEF AA damage values to double their original values. (That's 12 and 6 damage per shot :O)
+  * Removed all the extra spaces from the French LOC, and capitalised some letters.           
 __________._________
 2010-05-29|0.3.1a
 

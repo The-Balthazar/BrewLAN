@@ -4,7 +4,7 @@
 #**
 #** Modded By: Balthazar
 #**
-#** Changes: Various unit category table changes
+#** Changes: Various unit changes
 #**   
 #*********************************************************************
 do
@@ -26,6 +26,7 @@ function ModBlueprints(all_blueprints)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
     AeonShieldUpgradeable(all_blueprints.Unit)
 #    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
+    UnitHidingBrewLAN(all_blueprints.Unit)
 
 end
 
@@ -114,7 +115,23 @@ function SalvationBrewLANChanges(all_bps)
     end
 end
 
+function UnitHidingBrewLAN(all_bps)
 
+    local CybranScathis = {
+        all_bps['url0401'],
+    }
+    local UEFNovax = {
+        all_bps['xeb2402'],
+    }
+    for arrayIndex, bp in CybranScathis do
+        table.remove(bp.Categories, 4)
+        table.remove(bp.Categories, 3)
+    end
+    for arrayIndex, bp in UEFNovax do
+        table.remove(bp.Categories, 5)
+        table.remove(bp.Categories, 4)
+    end
+end
 
 # ---------------- Cybran Shields
 

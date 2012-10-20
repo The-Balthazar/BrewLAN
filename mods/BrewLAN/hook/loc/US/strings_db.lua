@@ -110,6 +110,7 @@ Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Air
 brb2306_name="Hades"
 bsb2306_name="Othuushala"
 Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
+Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 
 beb3303_desc="Observation Satellite System"
 bea0002_desc="Observation Satellite"

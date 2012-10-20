@@ -63,7 +63,7 @@ UnitBlueprint {
     Display = {
         AnimationDeath = {
             {
-                Animation = '/units/xsb2301/xsb2301_ADeath.sca',
+                Animation = '/mods/brewlan/units/bsb2306/bsb2306_adeath.sca',
                 AnimationRateMax = 1,
                 AnimationRateMin = 1,
                 Weight = 100,

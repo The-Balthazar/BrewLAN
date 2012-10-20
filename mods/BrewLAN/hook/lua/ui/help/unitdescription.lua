@@ -69,6 +69,7 @@ Description['bel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Anti-Nuke Launche
 #Tech 3 buildings
 Description['brb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
 Description['beb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
+Description['bsb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 
 #Experimentals
 Description['beb2404'] = "<LOC Unit_Description_BrewLAN_T4B001>Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."
