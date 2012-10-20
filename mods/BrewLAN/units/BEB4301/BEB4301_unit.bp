@@ -30,7 +30,6 @@ UnitBlueprint {
         'DEFENSE',
         'TECH3',
         'SHIELD',
-        'DRAGBUILD',
         'SIZE4',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -42,8 +41,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 50,
-        Health = 550,
-        MaxHealth = 550,
+        Health = 1000,
+        MaxHealth = 1000,
         RegenRate = 0,
         Shield = {
             ImpactEffects = 'UEFShieldHit01',
@@ -109,15 +108,11 @@ UnitBlueprint {
         UniformScale = 0.39,
     },
     Economy = {
-        BuildCostEnergy = 5000,
+        BuildCostEnergy = 50000,
         BuildCostMass = 3000,
         BuildRate = 7.5,
         BuildTime = 3750,
         MaintenanceConsumptionPerSecondEnergy = 400,
-        RebuildBonusIds = {
-            'beb4102',
-            'beb4301',
-        },
     },
     Footprint = {
         SizeX = 3,

@@ -145,7 +145,15 @@ __________._________
   * Moved the code that hides the Scathis and Novax Center to Blueprints.Lua.
   * Hid the UEF T4 PD from the build menus.
   * Changed the Cybran and UEF AA damage values to double their original values. (That's 12 and 6 damage per shot :O)
-  * Removed all the extra spaces from the French LOC, and capitalised some letters.           
+  * Removed all the extra spaces from the French LOC, and capitalised some letters.
+  * Moved the code that gives Sparky the extra build cat to Blueprints.lua.
+  * Added the Aeon T2 Defence Engineer.
+  * Added the Aeon T3 Naval shield, which can only be aquired by upgrading the T1 on water.
+  * Fixed the energy cost of the UEF T3 Naval shield, which was missing a digit.
+  * Removed the rebuild bonuses from the UEF T3 Naval shield. You cant build it directly.
+  * Added the UEF Experimental Factory.
+  * Temporarily disabled the UEF T4 Factory from building aircraft.
+  * Failed attempt at making the T4 factory accept experimental units propperly.                               
 __________._________
 2010-05-29|0.3.1a
 

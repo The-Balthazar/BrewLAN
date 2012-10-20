@@ -171,11 +171,13 @@ Tech 2:
   	T2 Mass Storage
   	T2 Bomber
   		* Fully Funtioning.
-
+      
+  	T2 Defence Engineer
+      * Functioning but lacks a unique model.
+    
   	Pending:  
       * T2 Energy Storage
   		* T2 Wall
-  		* T2 Defence Engineer
   		* T2 Restoration field genorator.
       * T2 Proximity Mine
         * To be buildable by the defence engineer. 
@@ -227,7 +229,10 @@ Tech 3:
   	T3 Air Transport.
   	T3 Armoured Assult Tank
 		  * Fully Funtioning.
-
+                         
+    T3 Naval Shield.
+      * Open animation doesn't work yet. Unoticable problem.
+    
     T3 Decoy Plane.
       * Functional but unfinished.
       * Give a button to toggle between CZAR/ASF impersination.
@@ -238,7 +243,6 @@ Tech 3:
   		* T3 Point Deffence.
   		* T3 Mobile Shield Gen.
       * T3 Mobile strat defence.  
-      * T3 Naval Shield.
         * Only obtainable by upgrading the T1 shield on water.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
@@ -342,7 +346,8 @@ UEF Experimental Factory
     * Look into Megalith eggs for script ideas.
   * Potentially aquatic.
     * Look at UEF T1 shield for build restriction scripts.
-    * Look into floatation script and/or Solaris script for hiding the floor parts (If it gets any).      
+    * Look into floatation script and/or Solaris script for hiding the floor parts (If it gets any).
+  * Now mostly functional.          
 
 Aeon Experimental Tank thing
 	* Something inspired by the larger Eldar hover tanks.
