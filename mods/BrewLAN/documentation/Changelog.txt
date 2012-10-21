@@ -10,8 +10,6 @@
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
-
-
 __________._________
 2011-03-19|0.4.0
 
@@ -98,7 +96,7 @@ __________._________
     * Cybran Iron Curtain changes.
       * Halved mass/energy/time/maintenance costs to 1200/200000e/8000/2500eps.
       * Halved the regen assist mult and energy drain regen values back to their original 60 and 5, like all other shields.
-      * Lowered shield rebuild time to 1:30 from 3:40.
+      * Lowered shield rebuild time to 1:30 from 3:40.      
   __________
   2012-10-06
   
@@ -153,7 +151,22 @@ __________._________
   * Removed the rebuild bonuses from the UEF T3 Naval shield. You cant build it directly.
   * Added the UEF Experimental Factory.
   * Temporarily disabled the UEF T4 Factory from building aircraft.
-  * Failed attempt at making the T4 factory accept experimental units propperly.                               
+  * Temporarily disabled the UEF T4 Factory from building experimental naval units.
+    * The Atlantis gets stuck attached to it for some reason.    
+  * Failed attempt at making the T4 factory accept experimental units propperly.
+  __________
+  2012-10-21
+  * Added headers to the language string tables with cheesy ascii art.
+  * Minor change to the Sorian ai units table. It needs a propper update still.
+  * Removed the Restorer changes for breaking the 3603 balancing.
+  * Moved 1k health from the Harbingers shields to its health.       
+  * UEF Experimental Factory changes:
+    * Halved build time.
+      * It is now quicker to build than the Fatboy, instead of longer.  
+    * Increased build rate from 180 to 240.
+      * Its now faster than the Fatboy instead of the same speed.
+    * Gave it the name 'Gantry'.
+    * Increased the selection width.                                     
 __________._________
 2010-05-29|0.3.1a
 

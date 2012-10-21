@@ -1,7 +1,7 @@
 name = "BrewLAN 0.4"
 uid = "25D57D85-7D84-27HT-A501-BR3WL4N000040"
 version = "0.4"
-copyright = "2009 - 2011 Sean Wheeldon"
+copyright = "2009 - 2012 Sean Wheeldon"
 description = "The BrewLAN unitpack and balance mod."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN/documentation/icon.dds"
