@@ -73,10 +73,10 @@ UnitBlueprint {
 	Merge = true,
 	BlueprintId="ual0303",		##Harbinger
     Defense = {
-        Health = 1125,
-        MaxHealth = 1125,
+        Health = 2125,
+        MaxHealth = 2125,
         Shield = {
-            ShieldMaxHealth = 2200,
+            ShieldMaxHealth = 1200,
         },
         SurfaceThreatLevel = 9,
     },
@@ -100,32 +100,4 @@ UnitBlueprint {
 
 #Aeon Aircrafts	----------------------------------#
 
-UnitBlueprint {
-	Merge = true,
-	BlueprintId="xaa0305",		##Restorer
-    Defense = {
-        AirThreatLevel = 28,
-        Health = 5950,
-        MaxHealth = 5950,
-        SurfaceThreatLevel = 10,
-    },
-    Economy = {
-        BuildCostEnergy = 28000,
-        BuildCostMass = 1680,
-        BuildTime = 6700,
-    },
-#   StrategicIconName = 'icon_gunship3_directfire',
-    Weapon = {
-        {
-            Damage = 14,		#Air to ground
-        },
-        {
-            Damage = 170,		#AA1
-            MaxRadius = 80,
-        },
-        {
-            Damage = 170,		#AA2
-            MaxRadius = 80,
-        },
-    },
-}
+

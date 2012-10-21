@@ -53,7 +53,7 @@ UnitBlueprint {
         'FACTORY',
         'RALLYPOINT',
         'DRAGBUILD',
-        'SIZE16',
+        'SIZE20',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
@@ -144,8 +144,8 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 28350*3,
         BuildCostMass = 3150*3,
-        BuildRate = 60*3,
-        BuildTime = 8400*3,
+        BuildRate = 60*4,
+        BuildTime = 8400*1.5,
         BuildableCategory = {
             'BUILTBYTIER3FACTORY LAND UEF',
             'BUILTBYTIER3FACTORY NAVAL UEF',
@@ -193,6 +193,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
+        UnitName = '<LOC beb0401_name>Gantry',
         UnitWeight = 1,
     },
     Intel = {
@@ -241,7 +242,7 @@ UnitBlueprint {
         SkirtSizeZ = 12,
         TurnRate = 0,
     },
-    SelectionSizeX = 9.5,
+    SelectionSizeX = 10,
     SelectionSizeZ = 6.5,
     SelectionThickness = 0.1,
 
