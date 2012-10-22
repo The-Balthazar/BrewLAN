@@ -6,6 +6,14 @@
 ################################################################################
 
 
+## Tooltips
+
+
+#Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
+tooltipbrewlan0000="Toggle air production"
+tooltipbrewlan0001="Enables or disables production of air units"
+
+
 ## T1
 
 
@@ -57,8 +65,11 @@ baa0211_desc="Tactical Bomber"
 Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
 #Field Engineer
+bal0209_desc="Defence Engineer"
+bal0209_name="Butler"
 brl0209_name="Wilson"
 Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture and reclamation unit. Armed with a heavy bolter and internal radar and stealth."
+Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture and reclamation unit. Equipped a personal shield and radar."
 
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
 beb1206_name="CJ-00F4T-2"
@@ -72,7 +83,7 @@ Unit_Description_BrewLAN_T2D001="An all-terrain medium damage proximity mine sys
 
 ### Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded three times."
-Unit_Description_BrewLAN_T2D002="Generates a heavy shield around units and structures within its radius."
+Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
 
 ## T3
 
@@ -135,6 +146,7 @@ Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Protection is
 
 bbui4301="Naval Shield Generator"
 beb4301_name="SSD - Pulse"
+bab4301_name="Borealis"
 ##No unit description. It can only be upgraded to.
 
 
@@ -164,3 +176,7 @@ Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large
 brs0401="Experimental Battleship"
 brs0401_name="Abyssal Persecutor"
 Unit_Description_BrewLAN_T4S001="Experimental amphibious battleship."
+
+beb0401="Experimental Factory"
+beb0401_name="Gantry"
+Unit_Description_BrewLAN_T4B004="Experimental multi-purpose factory. Dynamically changes buildable units based on environment. Can be toggled to build aircraft in any environment."

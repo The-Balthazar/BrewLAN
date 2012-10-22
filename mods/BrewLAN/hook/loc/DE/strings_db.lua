@@ -5,6 +5,14 @@
 ################################################################################
 
 
+## Tooltips
+
+
+#Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
+tooltipbrewlan0000="Toggle air production"
+tooltipbrewlan0001="Enables or disables production of air units"
+
+
 ## T1
 
 
@@ -56,8 +64,11 @@ baa0211_desc="Tactical Bomber"
 Unit_Description_BrewLAN_T2A001="Translation pending."
 
 #Field Engineer
+bal0209_desc="Defence Engineer"
+bal0209_name="Butler"
 brl0209_name="Wilson"
 Unit_Description_BrewLAN_T2L001="Translation pending."
+Unit_Description_BrewLAN_T2L002="Translation pending."
 
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
 beb1206_name="CJ-00F4T-2"
@@ -71,7 +82,7 @@ Unit_Description_BrewLAN_T2D001="Eine Annäherungsmine für jedes Gelände. Geta
 
 ### Cybran T2 shields; they didn't have build description originally.
 Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann dreimal Aufgerüstet werden."
-Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
+Unit_Description_BrewLAN_T2D003="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
 
 
 ## T3
@@ -87,7 +98,7 @@ bra0306_name="Night Skimmer"
 bsa0306_name="Vishuum"
 Unit_Description_BrewLAN_T3A002="Schwerer Lufttransporter. Bewaffnet mit schwerer Luftabwehr, einer EMP Waffe und einem Stealth-Generator.Kann 16 T1, 8 T2 oder 4 T3 Einheiten Transportieren"
 Unit_Description_BrewLAN_T3A003="Schwerer Lufttransporter. Bietet 32 Transporthaken, schwere Kanonen, Raketenwerfer und einen Schildgenerator. Kann bis zu 32 Einheiten transportieren."
-Unit_Description_BrewLAN_T3A004="Schwerer Lufttransporter. Eine Angemessene Beschreibung folgt sobald sie fertig ist."
+Unit_Description_BrewLAN_T3A004="Schwerer Lufttransporter. Kann bis zu 72 Einheiten transportieren."
 
 #bair0307="Schweres Torpedobomber"
 bra0307_name="Zenith"
@@ -135,6 +146,7 @@ Unit_Description_BrewLAN_T3L004="Translation pending."
 
 bbui4301="Schildgenerator naval"
 beb4301_name="SSD - Puls"
+bab4301_name="Borealis"
 ##No unit description. It can only be upgraded to.
 
 
@@ -161,6 +173,10 @@ brb4401="Experimenteller Schildgenerator"
 brb4401_name="Eiserner Vorhang"
 Unit_Description_BrewLAN_T4B003="Experimenteller Schildgenerator. Deckt ein großes Gebiet ab. Schildgröße verringert sich bei Schaden."
 
-brs0401="Experimental Dreadnought"
+brs0401="Experimental Battleship"
 brs0401_name="Höllischer Verfolger"
 Unit_Description_BrewLAN_T4S001="Translation pending."
+
+beb0401="Experimental Factory"
+beb0401_name="Gantry"
+Unit_Description_BrewLAN_T4B004="Translation pending."

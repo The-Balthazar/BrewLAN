@@ -70,11 +70,12 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC beb0401_desc>Experimental Factory',
+    Description = '<LOC beb0401>Experimental Factory',
     Display = {
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
         },
+        AnimationBuild = '/mods/brewlan/units/beb0401/BEB0401_abuild.sca',
     #    BlinkingLights = {
      #       {
       #          BLBone = 'Foot_Right',
@@ -147,8 +148,11 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 8400*1.5,
         BuildableCategory = {
-            'BUILTBYTIER3FACTORY LAND UEF',
-            'BUILTBYTIER3FACTORY NAVAL UEF',
+            'BUILTBYTIER3FACTORY MOBILE CONSTRUCTION UEF',
+            'BUILTBYTIER3FACTORY MOBILE LAND UEF',
+            'BUILTBYTIER3FACTORY MOBILE NAVAL UEF',
+            'BUILTBYTIER3FACTORY MOBILE AIR UEF',
+            'TRANSPORTBUILTBYTIER3FACTORY UEF MOBILE AIR',
             'UEF MOBILE LAND EXPERIMENTAL',
         },
         StorageEnergy = 10000,
@@ -191,6 +195,15 @@ UnitBlueprint {
         ConstructionBar = true,
         FactionName = 'UEF',
         Icon = 'land',
+        ToggleCaps = {
+            RULEUTC_WeaponToggle= true,
+        },
+        OrderOverrides = {
+            RULEUTC_WeaponToggle= {
+                bitmapId = 'airsf',
+                helpText = 'buildair',
+            },
+        },
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC beb0401_name>Gantry',
@@ -200,7 +213,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC beb0401_desc>Experimental Factory',
+        HelpText = '<LOC beb0401>Experimental Factory',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 5,
@@ -223,16 +236,16 @@ UnitBlueprint {
         RollOffPoints = {
             {
                 UnitSpin = 0,
-                X = 2.37,
+                X = 0,
                 Y = 0,
-                Z = 0,
+                Z = 5,
             },
- #           {
-  #              UnitSpin = -90,
-   #             X = -3,
-    #            Y = 0,
-     #           Z = 0,
-      #      },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -5,
+            },
         },
 
         # height
