@@ -156,6 +156,7 @@ __________._________
   * Failed attempt at making the T4 factory accept experimental units propperly.
   __________
   2012-10-21
+  
   * Added headers to the language string tables with cheesy ascii art.
   * Minor change to the Sorian ai units table. It needs a propper update still.
   * Removed the Restorer changes for breaking the 3603 balancing.
@@ -166,7 +167,20 @@ __________._________
     * Increased build rate from 180 to 240.
       * Its now faster than the Fatboy instead of the same speed.
     * Gave it the name 'Gantry'.
-    * Increased the selection width.                                     
+    * Increased the selection width.
+  __________
+  2012-10-22
+  
+  * Fixed a number of errors in the foreign string tables.
+  * Added the Aeon T3 naval shield, T2 defence enginner and the Gantry to the string tables.           
+  * UEF Gantry changes:
+    * Gave build animations.
+    * Fixed unit rolloff.
+    * Made Air units buildable again.
+    * Created a toggle button for between building land/sea and air.
+      * Gave the toggle button custom tooltips.
+        * Added tooltips to the localisation string tables.           
+      * Gave the button a custom appearance.                                                   
 __________._________
 2010-05-29|0.3.1a
 

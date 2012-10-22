@@ -5,6 +5,14 @@
 ################################################################################
 
 
+## Tooltips
+
+
+#Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
+tooltipbrewlan0000="Toggle air production"
+tooltipbrewlan0001="Enables or disables production of air units"
+
+
 ## T1
 
 
@@ -56,8 +64,11 @@ baa0211_desc="Bombardier tactique"
 Unit_Description_BrewLAN_T2A001="Mid-level bombardier tactique. Equipé d'une bombe lumière Quark et le radar."
 
 #Field Engineer
+bal0209_desc="Ingénieur de la défense"
+bal0209_name="Butler"
 brl0209_name="Wilson"
 Unit_Description_BrewLAN_T2L001="Tech 2 amphibie de construction, la réparation, la remise en état de capture et de l'unité. Armé d'un bolter lourd et radar interne et la discrétion."
+Unit_Description_BrewLAN_T2L002="Construction amphibie Tech 2, la réparation, la remise en état de capture et de l'unité. Equipé d'un bouclier personnel et radar."
 
 ### Mass and energy storages use the default strings of their T1 counterparts.
 beb1206_name="CJ-00F4T-2"
@@ -71,7 +82,7 @@ Unit_Description_BrewLAN_T2D001="Un système tout-terrain moyen mine de dommages 
 
 ### Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Génère un bouclier protecteur autour des unités et des structures au sein de son rayon. Shield peut être mis à jour trois fois."
-UUnit_Description_BrewLAN_T2D002="Génère un bouclier lourd autour des unités et des structures au sein de son rayon."
+Unit_Description_BrewLAN_T2D003="Génère un bouclier lourd autour des unités et des structures au sein de son rayon."
 
 
 ## T3
@@ -135,6 +146,7 @@ Unit_Description_BrewLAN_T3L004="La protection mobile de défense antimissile str
 
 bbui4301="Générateur de bouclier naval"
 beb4301_name="SSD - Pulse"
+bab4301_name="Borealis"
 ##No unit description. It can only be upgraded to.
 
 
@@ -164,3 +176,7 @@ Unit_Description_BrewLAN_T4B003="Générateur de bouclier expérimentale. Protège u
 brs0401="Dreadnought expérimentale"
 brs0401_name="Persécuteur abyssal"
 Unit_Description_BrewLAN_T4S001="amphibie expérimental cuirassé."
+
+beb0401="Usine expérimentale"
+beb0401_name="Portique"
+Unit_Description_BrewLAN_T4B004="Expérimentale multi-usages usine. Change dynamiquement unités constructibles sur la base de l'environnement. Peut être activé à construire des avions dans n'importe quel environnement."

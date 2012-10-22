@@ -39,10 +39,11 @@ Description['beb2220'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain me
 
 #Tech 2 protection units
 Description['urb4204'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded three times."
-Description['urb4206'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a heavy shield around units and structures within its radius."
+Description['urb4206'] = "<LOC Unit_Description_BrewLAN_T2D003>Generates a heavy shield around units and structures within its radius."
 
 #Tech 2 land units
-Description['brb0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Wilson: Cybran T2 Field Engineer description."
+Description['brl0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Wilson: Cybran T2 Field Engineer description."
+Description['bal0209'] = "<LOC Unit_Description_BrewLAN_T2L002>Butler: Aeon T2 Defence Engineer description."
 
 #Tech 2 aircraft
 Description['baa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Impaler: Aeon T2 Tactical Bomber description."
@@ -75,6 +76,7 @@ Description['bsb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive t
 Description['beb2404'] = "<LOC Unit_Description_BrewLAN_T4B001>Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."
 Description['brb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['brb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Iron Curtian description."
+Description['beb0401'] = "<LOC Unit_Description_BrewLAN_T4B004>Gantry description."
 Description['bsl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu description."
 Description['bea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
 Description['brs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
