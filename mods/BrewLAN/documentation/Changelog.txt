@@ -180,7 +180,11 @@ __________._________
     * Created a toggle button for between building land/sea and air.
       * Gave the toggle button custom tooltips.
         * Added tooltips to the localisation string tables.           
-      * Gave the button a custom appearance.                                                   
+      * Gave the button a custom appearance.
+  __________
+  2012-10-23
+  
+  * Moved the Fatboy to be buildable only by the Gantry, for technical reasons.                                                         
 __________._________
 2010-05-29|0.3.1a
 

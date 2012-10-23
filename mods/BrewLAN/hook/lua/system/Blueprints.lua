@@ -27,6 +27,7 @@ function ModBlueprints(all_blueprints)
     AeonShieldUpgradeable(all_blueprints.Unit)
 #    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)
+    GantryExperimentalBuildOnly(all_blueprints.Unit)
 
 end
 
@@ -283,5 +284,29 @@ function TorpedoBomberWaterLandCat(all_bps)
     end	
 
 end
+
+
+
+# ---------------- Moving the Fatboy into the Gantry.
+
+
+
+function GantryExperimentalBuildOnly(all_bps)
+
+    local UEFExperimentals = {
+	all_bps['uel0401'],
+    }
+
+    for arrayIndex, bp in UEFExperimentals do
+    	table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
+    	table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
+    	table.removeByValue(bp.Categories, 'DRAGBUILD')
+    	table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
+        table.insert(bp.Categories, 'BUILTBYGANTRY')
+    end	
+end
+
+
+
 
 end
