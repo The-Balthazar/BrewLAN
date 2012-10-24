@@ -23,9 +23,9 @@ function ModBlueprints(all_blueprints)
     ED4BrewLANChanges(all_blueprints.Unit)
     ED4and5BrewLANChanges(all_blueprints.Unit)
     CybranBUILTBYLANDCat(all_blueprints.Unit)
-    TorpedoBomberWaterLandCat(all_blueprints.Unit)
+#--    TorpedoBomberWaterLandCat(all_blueprints.Unit)   ##Ends up in them getting shot by subs.
     AeonShieldUpgradeable(all_blueprints.Unit)
-#    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
+#--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)
     GantryExperimentalBuildOnly(all_blueprints.Unit)
 

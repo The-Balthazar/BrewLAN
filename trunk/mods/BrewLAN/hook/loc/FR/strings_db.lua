@@ -9,8 +9,15 @@
 
 
 #Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
-tooltipbrewlan0000="Toggle air production"
-tooltipbrewlan0001="Enables or disables production of air units"
+tooltipbrewlan0000="Production d'air bascule"
+tooltipbrewlan0001="Active ou désactive la production des unités aériennes"
+
+#--Toolttips for the T3 decoy planes.
+tooltipbrewlan0002="Basculer vitesse de l'air"
+tooltipbrewlan0003="Bascule l'usurpation d'identité d'une supériorité aérienne ou d'un aéronef expérimental"
+tooltipbrewlan0004="Bascule l'usurpation d'identité d'une supériorité aérienne ou d'un aéronef expérimental"
+tooltipbrewlan0005="Bascule l'usurpation d'identité d'une supériorité aérienne ou d'un aéronef expérimental"
+tooltipbrewlan0006="Bascule l'usurpation d'identité d'une supériorité aérienne ou d'un aéronef expérimental"
 
 
 ## T1

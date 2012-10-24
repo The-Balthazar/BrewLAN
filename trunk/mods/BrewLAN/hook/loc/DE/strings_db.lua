@@ -12,6 +12,13 @@
 tooltipbrewlan0000="Toggle air production"
 tooltipbrewlan0001="Enables or disables production of air units"
 
+#--Toolttips for the T3 decoy planes.
+tooltipbrewlan0002="Toggle air speed"
+tooltipbrewlan0003="Toggles impersonation of an air superiority or a CZAR"
+tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soulripper"
+tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
+tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
+
 
 ## T1
 

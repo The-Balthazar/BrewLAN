@@ -198,6 +198,13 @@ UnitBlueprint {
         Icon = 'air',
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
+            RULEUTC_GenericToggle = true,
+        },
+        OrderOverrides = {
+            RULEUTC_GenericToggle= {
+                bitmapId = 'airsf',
+                helpText = 'aeonairdecoy',
+            },
         },
         TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC baa0310_name>',

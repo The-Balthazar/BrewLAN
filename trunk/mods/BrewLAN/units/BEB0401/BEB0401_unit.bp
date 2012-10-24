@@ -156,6 +156,9 @@ UnitBlueprint {
             'BUILTBYGANTRY UEF',
             #'UEF MOBILE EXPERIMENTAL',
         },
+        RebuildBonusIds = {
+            'beb0401',
+        },
         StorageEnergy = 10000,
         StorageMass = 1000,
     },
