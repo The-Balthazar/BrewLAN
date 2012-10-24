@@ -188,7 +188,11 @@ __________._________
   * Added a fake Fatboy for engineers to build.
     * It has all the stats important during building of the real Fatboy.  
     * When it finishes building it gets replaced by the real one.
-      * I'll do the same for the Atlantis when I make a script to make it automatically dive, or otherwise not get stuck.                                                          
+      * I'll do the same for the Atlantis when I make a script to make it automatically dive, or otherwise not get stuck.
+  __________
+  2012-10-24
+  
+  * Fixed the engineer built Fatboy regaining all its health on completion.                                                                  
 __________._________
 2010-05-29|0.3.1a
 
