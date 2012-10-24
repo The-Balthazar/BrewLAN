@@ -12,7 +12,15 @@ local CConstructionEggUnit = import('/lua/cybranunits.lua').CConstructionEggUnit
 BELP001 = Class(CConstructionEggUnit) {
 
     OnStopBeingBuilt = function(self, builder, layer)
-        CConstructionEggUnit.OnStopBeingBuilt(self,builder,layer)
+        local bp = self:GetBlueprint()
+        local buildUnit = bp.Economy.BuildUnit
+        
+        local pos = self:GetPosition()
+        
+        local aiBrain = self:GetAIBrain()
+	local Fatboy = CreateUnitHPR(buildUnit,aiBrain.Name,pos[1], pos[2], pos[3],0, 0, 0)
+	local curHealth = self:GetHealth()
+	Fatboy:SetHealth(Fatboy,curHealth)
         self:Destroy()
     end,
 }
