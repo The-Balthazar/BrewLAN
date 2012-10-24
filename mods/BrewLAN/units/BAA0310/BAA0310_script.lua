@@ -11,5 +11,17 @@
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
 
 BAA0310 = Class(AAirUnit) {
+    OnScriptBitSet = function(self, bit)
+        AAirUnit.OnScriptBitSet(self, bit)
+        if bit == 6 then
+            local CZARmove = GetBlueprint(all_bps.Unit.uaa0310.Air)
+	    ##--Fuck, what do here.
+        end
+    end,
+    OnScriptBitClear = function(self, bit)
+        AAirUnit.OnScriptBitClear(self, bit)
+        if bit == 6 then
+        end
+    end,
 }
 TypeClass = BAA0310

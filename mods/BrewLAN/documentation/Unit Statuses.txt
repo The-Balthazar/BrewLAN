@@ -4,7 +4,7 @@
  \____ (_   _|____ (_   _)/___)  | |     | |/___|_   _)
  _____) )| |_/ ___ | | |_|___ |  | |_____| |___ | | |_ 
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
-                                     Updated 2012-10-20
+                                     Updated 2012-10-24
 _______________________________________________________
 Total Annihilation units/features that I'm considering adding:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -24,6 +24,7 @@ Modded Units:
   
   	Torpedo Bombers
   		* Gave the ability to land on water.
+  		  * Currently disabled until issues with not attacking things resolved.       
     
     Experimental Buildings
       * Changed build menu sorting (To strategic).
@@ -43,9 +44,6 @@ Modded Units:
   	T3 Rapid Fire Artillery Installation
   		* Recategorised as an experimental.
   		* Gave it the experimental level health regen.
-  
-  	T3 AA Gunship
-  		* Balance changes.
   
   	T3 Quantum Optics
   		* Reduced build footprint.
@@ -75,12 +73,6 @@ Modded Units:
   	ED5
     	* Changed to Tech 3.
     	* Health still 500.
-  
-  	T3 Air Superiority
-  		* Auto activates stealth.
-  
-  	T3 Bomber
-  		* Auto activates stealth.
   
   	T3 Gunship
   		* AA damage increased.
@@ -112,6 +104,14 @@ Modded Units:
   
   	Mavor
       * Changed menu sorting.
+    
+    Fatboy
+      * Made factory buildable only.
+      * Left a decoy for the engineers to build.
+        * Works in a similar way as the Megalith eggs.
+        * Passes any damage it recieves under construction to the eventual real Fatboy.
+        * Doing it the other way (Putting the fake in the Gantry) results in it losing the orders to leave the Gantry.       
+        * Most people wont notice the difference.                                  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
@@ -145,21 +145,21 @@ Tech 1
   		* Pending
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  UEF:
-  	T1 Light Gunship
-  	T1 Light Artillery
-  	T1 Light Shield Gen
-  	T1 Torpedo Bomber
-  	T1 Air Staging
-  		* Fully functioning
+  UEF: 
+  	Fully Funtioning:
+      * T1 Light Gunship
+      * T1 Light Artillery
+      * T1 Light Shield Gen
+      * T1 Torpedo Bomber
+      * T1 Air Staging
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
-  	T1 Light Artillery
-  	T1 Shield Genorator
-  	T1 Air Staging
-  	T1 Light Gunship
-  		* Fully functioning.
+  	Fully Funtioning:
+      * T1 Light Artillery
+      * T1 Shield Genorator
+      * T1 Air Staging
+      * T1 Light Gunship
   
   	T1 Torpedo Bomber ('Sou-ioz')
   		* Pending. 
@@ -168,12 +168,12 @@ Tech 1
 Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
-  	T2 Mass Storage
-  	T2 Bomber
-  		* Fully Funtioning.
+  	Fully Funtioning:
+      * T2 Mass Storage
+      * T2 Bomber
+      * T2 Defence Engineer
+        * Lacks a unique model.
       
-  	T2 Defence Engineer
-      * Functioning but lacks a unique model.
     
   	Pending:  
       * T2 Energy Storage
@@ -231,7 +231,8 @@ Tech 3:
 		  * Fully Funtioning.
                          
     T3 Naval Shield.
-      * Open animation doesn't work yet. Unoticable problem.
+      * Open animation doesn't work yet.
+      * Death animation slightly weird.      
     
     T3 Decoy Plane.
       * Functional but unfinished.
@@ -339,15 +340,18 @@ UEF Experimental Assault Bot/tank
 
 UEF Experimental transport/drone carrier/gunship
 	* Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
-    * Script might also be usefull for the decoy planes.   
+    * Script might also be usefull for the decoy planes.
+  * A messy barely started gunship only version exists, it uses a mesh from an old TA mod for now.       
 
-UEF Experimental Factory
-  * Potential for building experimentals
-    * Look into Megalith eggs for script ideas.
-  * Potentially aquatic.
-    * Look at UEF T1 shield for build restriction scripts.
-    * Look into floatation script and/or Solaris script for hiding the floor parts (If it gets any).
-  * Now mostly functional.          
+UEF Gantry: Experimental Factory
+  * Can now be considered fully funtional.
+    * Still possibly to do:
+      * Add some water stands like naval yards.
+      * Add some kind of pedistal effect area for aircraft, especially on water.
+        * Would need to wait for the current unit to be completed, especially if its a ship.               
+      * Add death animation.
+      * Find out why the Atlantis gets stuck in it.
+        * Alternatively, make the Atlantis submerge on completion so it can get out.             
 
 Aeon Experimental Tank thing
 	* Something inspired by the larger Eldar hover tanks.
@@ -360,25 +364,36 @@ Aeon Experimental Shield projection tower.
 	* Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
 
 Cybran Experimental Missile ship
-	* a cross between the Sea Shadow and a Houbei class missile boat.
-	* Stealth, and tac missiles.
-	* Possible strat missiles.
-	* Possible cloak, disabled during firing and or really high power cost.
-	* Probably going to end up closer to a battleship.  
+  * Initial ideas:
+  	* a cross between the Sea Shadow and a Houbei class missile boat.
+  	* Stealth, and tac missiles.
+  	* Possible strat missiles.
+  	* Possible cloak, disabled during firing and or really high power cost.
+	* Current implementation:
+	  * A Battleship with legs.
+	  * Currently no functioning weapons, but can stamp on things.         
 
-Cybran Experimental Shield Genorator
-	* Need to work out a script for reducing the covered area as it recieves damage.
-	* I also want to give it a better mesh.
+Cybran Iron Curtain: Experimental Shield Generator
+  * Funtions as a shield.
+	  * Need to adapt the force shield script to only effect this. 
+	* Possibly give it a better mesh.
+
+Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
+  * Uses most of the parts of the original.
+    * Is still buildable with 'No Game Enders' build restriction, ect.  
   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Abandonned Experimental Ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Seraphim Experimental Engineering Platform
-	* OP as all hell.
+Seraphim Iyadesu: Experimental Engineering Platform
+	* Massively overpowered, in all ways.
+	  * Removed, after a few Iyadesu dominated games.
+	  * Although it was fun so the source files still exist.      
 
-UEF Experimental Point Deffence 'Doomsday Machine' or somethig better.
-	* Like the one from TA, with multiple levels of weapons, different damages and RoF's.
-	* An uninteresting idea I have since given up on implementing well in lue of better ideas.  
+UEF Doomsday Machine: Experimental Point Defence
+	* Was supposed to be a callback to the old TA unit.
+	  * An uninteresting idea uninterestingly implemented. Removed.
+	  * Still in the source files as a reminder.      
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Other ideas:
@@ -386,7 +401,8 @@ Other ideas:
 UEF Engineering Facility 'The Pound'
 	* A facility that houses a large number of Rover drones.
 	* Possibly just an expensive T3 unit.
-	* Probably a bad idea.  
+	* Probably a bad idea.
+	  * Potential to have its idea merged in some way with the Gantry.
 
 Anti-naval gunship.
 

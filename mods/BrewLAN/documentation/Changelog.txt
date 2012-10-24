@@ -142,7 +142,7 @@ __________._________
   * Updated Unit Statuses.txt.
   * Moved the code that hides the Scathis and Novax Center to Blueprints.Lua.
   * Hid the UEF T4 PD from the build menus.
-  * Changed the Cybran and UEF AA damage values to double their original values. (That's 12 and 6 damage per shot :O)
+  * Changed the Cybran and UEF T3 Gunship AA damage values to double their original values. (That's 12 and 6 damage per shot :O)
   * Removed all the extra spaces from the French LOC, and capitalised some letters.
   * Moved the code that gives Sparky the extra build cat to Blueprints.lua.
   * Added the Aeon T2 Defence Engineer.
@@ -159,7 +159,7 @@ __________._________
   
   * Added headers to the language string tables with cheesy ascii art.
   * Minor change to the Sorian ai units table. It needs a propper update still.
-  * Removed the Restorer changes for breaking the 3603 balancing.
+  * Removed the Restorer changes for breaking FAF balancing.
   * Moved 1k health from the Harbingers shields to its health.       
   * UEF Experimental Factory changes:
     * Halved build time.
@@ -192,7 +192,15 @@ __________._________
   __________
   2012-10-24
   
-  * Fixed the engineer built Fatboy regaining all its health on completion.                                                                  
+  * Fixed the engineer built Fatboy regaining all its health on completion.
+  * Disabled torpedo bombers ability to land on water.
+    * While landed on water they wont retaliate automatically against submarines.
+  * Added rebuild bonus for the Gantry on the corpse of another.
+  * Removed the scripts I made that 'made the Cybran bomber and fighter' auto activate stealth.
+    * They weren't they were just activating the maintenance consupmtion.
+    * Also FAF already does what I was after with that.
+  * Added tooltips for the decoy planes ability to change their speed.
+  * Made a start on the script to change the speed of the Aeon Decoy plane.                                                                                        
 __________._________
 2010-05-29|0.3.1a
 
