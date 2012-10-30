@@ -48,20 +48,34 @@ function CybranBUILTBYLANDCat(all_bps)
 
 
     local cybrant2landfactory = {
-        all_bps['urb0201'],
-    }
+         all_bps['urb0201'],
+    } 
     for arrayIndex, bp in cybrant2landfactory do
         table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION')
-    end
-
+    end     
+      
+    local aeont2landfactory = {
+         all_bps['uab0201'],
+    }
+    for arrayIndex, bp in aeont2landfactory do
+        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER2FACTORY AEON MOBILE CONSTRUCTION')
+    end  
 
     local cybrant3landfactory = {
-        all_bps['urb0301'],
-    }
+         all_bps['urb0301'],
+    } 
+    
     for arrayIndex, bp in cybrant3landfactory do
         table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY CYBRAN MOBILE CONSTRUCTION')
     end
-
+     
+    local aeont3landfactory = {
+         all_bps['uab0301'],
+    } 
+    for arrayIndex, bp in aeont3landfactory do
+        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY AEON MOBILE CONSTRUCTION')
+    end
+          
 
 
     local SparkyComeHereYou = {

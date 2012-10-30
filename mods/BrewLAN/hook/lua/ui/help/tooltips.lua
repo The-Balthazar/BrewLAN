@@ -8,17 +8,17 @@ Tooltips.aeonairdecoy = {
       description = "<LOC tooltipbrewlan0003>Toggles impersonation of an air superioritiy or a CZAR",
       keyID = "aeonairdecoy",
    }
-Tooltips.aeonairdecoy = {
+Tooltips.cybranairdecoy = {
       title = "<LOC tooltipbrewlan0002>Toggle air speed",
       description = "<LOC tooltipbrewlan0004>Toggles impersonation of an air superiority or a Soulripper",
       keyID = "cybranairdecoy",
    }
-Tooltips.aeonairdecoy = {
+Tooltips.seraphimairdecoy = {
       title = "<LOC tooltipbrewlan0002>Toggle air speed",
       description = "<LOC tooltipbrewlan0005>Toggles impersonation of an air superiority or an Ahwassa",
       keyID = "seraphimairdecoy",
    }
-Tooltips.aeonairdecoy = {
+Tooltips.uefairdecoy = {
       title = "<LOC tooltipbrewlan0002>Toggle air speed",
       description = "<LOC tooltipbrewlan0006>Toggles impersonation of an air superiority or an AC-500 Centurion",
       keyID = "uefairdecoy",
