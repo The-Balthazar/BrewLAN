@@ -200,7 +200,22 @@ __________._________
     * They weren't they were just activating the maintenance consupmtion.
     * Also FAF already does what I was after with that.
   * Added tooltips for the decoy planes ability to change their speed.
-  * Made a start on the script to change the speed of the Aeon Decoy plane.                                                                                        
+  * Made a start on the script to change the speed of the Aeon Decoy plane.
+  __________
+  2012-10-30
+  
+  * Fixed the string tables for the decoy plane tooltips.
+  * Removed the Aster (UEF mobile anti-nuke) from build menus.
+    * It fires missiles it doesn't have, and goes into negative numbers. Forever.   
+  * Changes Archimedes to be listed as indirect fire.
+  * Changed stats of the Archimedes to be similar to the Seraphim sniper bot on slow.
+  * Gave the Beguiler (Aeon Decoy Plane) a mesh and icon.
+  * Removed the other two uncompleted decoy planes from the build menus.
+  * Increased the energy cost of the BrewLAN T3 air units to match that of the others.
+  * Fixed the Aeon T3 defence engineer being buildable by all aeon factories.
+  * Removed the Archimedes, AC-500 Centurion, and Abbysal Persecutor from build menus.
+    * All unfinished.
+  * Fixed the Gantry to be able to build Sparky. For reals this time.                                                                                                                  
 __________._________
 2010-05-29|0.3.1a
 
