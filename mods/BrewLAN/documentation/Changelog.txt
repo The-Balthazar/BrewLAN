@@ -196,8 +196,8 @@ __________._________
   * Disabled torpedo bombers ability to land on water.
     * While landed on water they wont retaliate automatically against submarines.
   * Added rebuild bonus for the Gantry on the corpse of another.
-  * Removed the scripts I made that 'made the Cybran bomber and fighter' auto activate stealth.
-    * They weren't they were just activating the maintenance consupmtion.
+  * Removed the scripts I made that 'made the Cybran bomber and fighter auto activate stealth'.
+    * They weren't; they were just activating the maintenance consupmtion.
     * Also FAF already does what I was after with that.
   * Added tooltips for the decoy planes ability to change their speed.
   * Made a start on the script to change the speed of the Aeon Decoy plane.
@@ -215,7 +215,20 @@ __________._________
   * Fixed the Aeon T3 defence engineer being buildable by all aeon factories.
   * Removed the Archimedes, AC-500 Centurion, and Abbysal Persecutor from build menus.
     * All unfinished.
-  * Fixed the Gantry to be able to build Sparky. For reals this time.                                                                                                                  
+  * Fixed the Gantry to be able to build Sparky. For reals this time.
+  __________
+  2012-10-31
+  
+  * Changed the icon of the Pigeon. Still not happy with it; its at the wrong angle.
+  * Archimedes changes:
+    * Fixed the strategic icon.
+      * It now actually has the same as the mobile artillery.
+    * Added a (lazy) custom mesh for the Archimedes.
+    * Set it to do a little under 5K damage per shot.
+    * Set its rate of fire to once every 30 seconds.
+    * Gave it an icon.
+    * Re-added it to the build menus.
+  * Re-arranged the build icon sort priorities for T3 land units.                                                                                                                                        
 __________._________
 2010-05-29|0.3.1a
 

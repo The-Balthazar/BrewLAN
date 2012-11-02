@@ -35,7 +35,7 @@ UnitBlueprint {
             Level5 = 15,
         },
     },
-    BuildIconSortPriority = 20,
+    BuildIconSortPriority = 15,
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',

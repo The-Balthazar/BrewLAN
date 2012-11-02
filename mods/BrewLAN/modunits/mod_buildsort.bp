@@ -1,5 +1,6 @@
 #Walls#
 
+
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="uab5101",	#Aeon#
@@ -21,20 +22,89 @@ UnitBlueprint {
     BuildIconSortPriority = 150,
 }
 
+
+#Heavy assault bots#
+
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="url0303",	#Cybran#
+    BuildIconSortPriority = 15,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uel0303",	#UEF#
+    BuildIconSortPriority = 15,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ual0303",	#aeon#
+    BuildIconSortPriority = 15,
+}
+
+
 #Armoured Assault Bots-Tanks#
+
 
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="xrl0305",	#Cybran#
-    BuildIconSortPriority = 25,
+    BuildIconSortPriority = 20,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xel0305",	#UEF#
+    BuildIconSortPriority = 20,
 }
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="xsl0303",	#Seraphim#
+    BuildIconSortPriority = 20,
+}
+
+
+#Mobile Heavy Artillery#
+
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="url0304",	#Cybran#
+    BuildIconSortPriority = 25,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uel0304",	#UEF#
+    BuildIconSortPriority = 25,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ual0304",	#aeon#
+    BuildIconSortPriority = 25,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsl0304",	#Seraphim#
+    BuildIconSortPriority = 25,
+}
+
+
+#Sniper bots#
+
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xal0305",	#aeon#
+    BuildIconSortPriority = 30,
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsl0305",	#Seraphim#
     BuildIconSortPriority = 30,
 }
 
+
 #Aeon T3 Torpedo Bomber
+
 
 UnitBlueprint {
 	Merge = true,

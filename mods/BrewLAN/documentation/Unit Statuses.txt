@@ -96,7 +96,7 @@ Modded Units:
       * Corrected the tarmac texture.
   
   	T3 Gunship
-  		* AA damage increased.
+  		* AA damage increased. Still token.
   
   	Novax Center
   		* Still in game but removed from build menus.
@@ -225,61 +225,55 @@ Tech 2:
 -------------------------------------------------------
 Tech 3:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Aeon:
-  	T3 Air Transport.
-  	T3 Armoured Assult Tank
-		  * Fully Funtioning.
-                         
-    T3 Naval Shield.
-      * Open animation doesn't work yet.
-      * Death animation slightly weird.      
-    
-    T3 Decoy Plane.
-      * Functional but unfinished.
-      * Give a button to toggle between CZAR/ASF impersination.
-        * Look into the Seraphim sniper bot for the script for this. 
+  Aeon: 
+		Fully Funtioning:
+    	* T3 Air Transport
+    	* T3 Armoured Assult Tank
+      * T3 Decoy Plane 
+      * T3 Naval Shield.
+          * Only obtainable by upgrading the T1 shield on water.  
+          * Open animation doesn't work yet.
+          * Death animation slightly weird.    
           
   	Pending:
   		* T3 Torp launchers.
   		* T3 Point Deffence.
   		* T3 Mobile Shield Gen.
       * T3 Mobile strat defence.  
-        * Only obtainable by upgrading the T1 shield on water.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
-  	T3 Air Transport.
-  	T3 Torpedo Bomber.
-  		* Fully Funtioning.
-  
-  	T3 Sniper Bot.
-  		* Requires remaking less shit.
-  
-  	T3 Point Deffence.
-  		* Probably requires complete a custom appearance.
-  		* May require a DPS reduction and or cooldown.
+		Fully Funtioning:
+    	* T3 Air Transport.
+    	* T3 Torpedo Bomber.  
+  	  * T3 Point Deffence.
+  		  * May eventually give a more unique appearance.
 
     T3 Decoy Plane.
       * Functional but unfinished.
       * Give a button to toggle between Soulripper/ASF impersination.
-        * Look into the Seraphim sniper bot for the script for this.            
+        * Aeon Decoy finished and has this function.            
   
   	Pending:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
       * T3 Mobile strat defence.
+  	  * T3 Sniper Bot.
+  	    * Requires total remake.      
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
-  	T3 Torpedo Bomber.
-  		* Requires more texturing work.
-                                                    
-    T3 Naval Shield.
-      * Only obtainable by upgrading the T1 shield on water.
-      
-  	T3 Sniper Bot.
-      * Exists as the unfinished 'Mobile Satelite Uplink'.
-        * This was to get use out of the now unused Novax Satelite beam.    
-  
+    Fully funtional:
+  	  * T3 Torpedo Bomber.
+  		  * Requires more texturing work.
+  		  * Probably needs remodelling to look less like the Ambassador.        
+      * T3 Naval Shield.
+      * T3 Mobile Satelite Uplink (UEF Sniper Bot alternative)
+        * May eventually give a more unique appearance.    
+      * T3 Novax Center
+        * As an observation satelite.
+          * Radar and omni range is spherical not cylindrical.
+            * Current effective omni range is similar to its old visual range.              
+
     T3 Decoy Plane.
       * Functional but unfinished.
       * When I give the UEF a T4 flyer will give a button to toggle between T4 flyer/ASF impersination.
@@ -288,11 +282,6 @@ Tech 3:
     T3 Mobile strat defence
       * "Functioning"
         * Is more than willing to exceed its stored number of missiles.      
-
-    Novax Center
-      * As an observation satelite.
-        * Radar and omni range is spherical not cylindrical.
-          * Current effective omni range is similar to its old visual range.              
                             
   	Pending:
   		* T3 Torp launchers.
@@ -321,7 +310,7 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault Bot   |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |Tank thing     |Megalith (F)   |*?             |
+Land 2          |Fatboy (F)     |*Tank thing    |Megalith (F)   |*?             |
 Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
