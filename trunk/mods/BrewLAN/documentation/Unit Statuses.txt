@@ -24,7 +24,7 @@ Modded Units:
   
   	Torpedo Bombers
   		* Gave the ability to land on water.
-  		  * Currently disabled until issues with not attacking things resolved.       
+  		  * Currently disabled because they get shot by submarines and not care.       
     
     Experimental Buildings
       * Changed build menu sorting (To strategic).
@@ -86,7 +86,7 @@ Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
     T2 Field Engineer
-      * Gave a unique buildable category specifically for proxy mines.
+      * Gave a unique buildable category specifically for mines.
             
     T2+T3 Shield Generators
       * Unified and normalised tarmacs.
@@ -106,7 +106,7 @@ Modded Units:
       * Changed menu sorting.
     
     Fatboy
-      * Made factory buildable only.
+      * Made Gantry buildable only.
       * Left a decoy for the engineers to build.
         * Works in a similar way as the Megalith eggs.
         * Passes any damage it recieves under construction to the eventual real Fatboy.
@@ -180,18 +180,20 @@ Tech 2:
   		* T2 Wall
   		* T2 Restoration field genorator.
       * T2 Proximity Mine
-        * To be buildable by the defence engineer. 
+        * To be buildable by the defence engineer.
+      * T2 Nuke Mine 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
   	T2 Mass Storage
-  	T2 field engineer
+  	T2 Field Engineer
   		* Fully Funtioning.  	
 
   	Pending:
       * T2 Energy Storage
   		* T2 Wall ('Bulkhead')
       * T2 Proximity Mine
-        * To be buildable by the field engineer. 
+        * To be buildable by the field engineer.
+      * T2 Nuke Mine  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
   	T2 Mass Storage
@@ -203,10 +205,12 @@ Tech 2:
         * Explosion damage doesnt scale with energy reserve yet.            
     
     T2 Proximity Mine
-      * Doesn't auto explode yet.
-      * Buildable by the field engineer.      
+      * Still blocks pathing.
+      * Lacks a unique water explosion.
+      * Doesn't leave behind a decent sized scorch mark yet.                        
     
   	T2 Wall.
+    T2 Nuke Mine 
   		* Pending creation  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
@@ -220,11 +224,25 @@ Tech 2:
   		* T2 Mobile Shield Gen.
   		* T2 Restoration field genorator.   
       * T2 Proximity Mine
-        * To be buildable by the field engineer. 
+        * To be buildable by the field engineer.
+      * T2 Nuke Mine  
             
 -------------------------------------------------------
 Tech 3:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<<<<<<< .mine
+  Aeon: 
+		Fully Funtioning:
+    	* T3 Air Transport
+    	* T3 Armoured Assult Tank
+      * T3 Decoy Plane 
+      * T3 Naval Shield.
+          * Only obtainable by upgrading the T1 shield on water.  
+          * Open animation doesn't work yet.
+          * Death animation slightly weird.
+  		* T3 Point Deffence.
+  		    * Colossus foot.           
+=======
   Aeon: 
 		Fully Funtioning:
     	* T3 Air Transport
@@ -234,10 +252,10 @@ Tech 3:
           * Only obtainable by upgrading the T1 shield on water.  
           * Open animation doesn't work yet.
           * Death animation slightly weird.    
+>>>>>>> .r119
           
   	Pending:
   		* T3 Torp launchers.
-  		* T3 Point Deffence.
   		* T3 Mobile Shield Gen.
       * T3 Mobile strat defence.  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -

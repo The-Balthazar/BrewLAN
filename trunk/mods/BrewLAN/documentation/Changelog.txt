@@ -11,53 +11,121 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________._________
+2012-11-04|0.4.1
+
+* Lowered the turning speed of the Archimedes.
+* Gave the Archimedes a pair of targetting lasers to telegraph where its firing, and where its firing from.
+* Lowered the build time of the Novax Center to 1000 from 2900, to be more inline with the Soothsayer and Eye of whats-her-face.
+* Fixed the Zenith and Night Skimmer auto enabling stealth on create.
+  * Not entirely sure my original code didn't work though, so meh.
+  __________
+  2012-11-07
+
+  * Added Orbos, the Aeon T3 Heavy Point Defence.
+  * AM-12 Anti-Armor: UEF Tech 2 Proximity Mine changes:  
+    * Increased damage from 1200 to 4500.
+    * Lowered the mass cost from 300 to 1000.
+    * Lowered the build time from 150, to 50. (5 seconds)
+  __________
+  2012-11-09
+
+  * Added the Orbos to the string tables.
+  * AM-12 Anti-Armor changes:
+    * Fixed it not firing.
+    * Changed the explosion effects to look more UEF.
+  __________
+  2012-11-10
+    
+  * AM-12 Anti-Armor changes:
+    * Changed the mesh to be more round.
+    * Made more of the mesh visible above ground (For on slopes).
+    * Added a submerging animation for while on water.
+    * Fixed its build icon background to display it as amphibious.               
+  * Fixed the slightly out of align build skirt of the pseudo Fatboy.
+  * Fixed the targetting beams of the Archimedes not being able to pass through allied shields.
+  * Added a LOD1 mesh for the Archimedes.
+  * Reclassified the Novax Center as an 'Observation Satelite Uplink'
+  * Added the seraphim proximity mine. Even though there isn't a Seraphim field engineer yet.
+  __________
+  2012-11-11
+    
+  * Jesus christ its been a year since Skyrim came out.
+  * Started the long slow process of changing the unit codes from B~~ to S~~.
+  * Added the Cybran T2 Energy Storage.
+  * Increased the explosion damage of T2 Energy Storages.
+  * Made the AC-500 less useless (Gave it some usable guns) and re-added it to the build menus.
+  * Created a lod1 mesh for the Solaris.
+  __________
+  2012-11-12
+    
+  * Fixed the Solaris only being able to fire its AA in one direction.
+    * This wasn't actually that noticable because it used to turn without
+      changing where it was flying, but it meant it could only really shoot
+      things one one side of it.
+  * Added the Cybran T2 Nuclear Mine.
+  * Added a manual detonate button for all the land mines.
+  * Added the Cybran T2 Proximity Mine.
+  * Lowered the radar/sonar range of the proxy mines to 1 less than the explosion range.
+  * Added 'Bulkhead' a T2 Cybran wall section. Buildable by field engineer.
+  __________
+  2012-11-13
+    
+  * Condenced and rewrote parts of blueprints.lua.
+  __________
+  2012-11-14
+    
+  * Changed the on killed explosion of the nuke mine to the damage category deathnuke from normal.
+    * Gives ACUs and structures a massive resistance to it.
+  * Changed the Scathis Mk2's armour class to structure, from experimental.
+    * It provides more relevant resistances.                                                          
+__________._________
 2011-03-19|0.4.0
 
 * Added the UEF Mobile Satelite Uplink at about this date. (Changelog note added 2012-09-16)
-	__________
-	2011-03-20
+  __________
+  2011-03-20
 
-	* Added the UEF Mobile Strategic Defence at about this date. (Changelog note added 2012-09-16)
-	__________
-	2012-09-16
+  * Added the UEF Mobile Strategic Defence at about this date. (Changelog note added 2012-09-16)
+  __________
+  2012-09-16
 
-	* Added a strategic icon for T3 antimissile vehicle.
-	* Added a strategic icon for T1 Anti naval fighter aircraft.
-	* Modified the mesh and textures of the Aeon T2 Bomber to finish the appearance of its rear end.
-	__________
-	2012-09-18
+  * Added a strategic icon for T3 antimissile vehicle.
+  * Added a strategic icon for T1 Anti naval fighter aircraft.
+  * Modified the mesh and textures of the Aeon T2 Bomber to finish the appearance of its rear end.
+  __________
+  2012-09-18
 
-	* Added the UEF T1 torpedo bomber.
-	__________
-	2012-09-20
+  * Added the UEF T1 torpedo bomber.
+  __________
+  2012-09-20
 
-	* Made all torpedo bombers able to land on water. Funny story; it was the 'TRANSPORTATION' category all along.
-	__________
-	2012-09-21
+  * Made all torpedo bombers able to land on water. Funny story; it was the 'TRANSPORTATION' category all along.
+  __________
+  2012-09-21
 
-	* Added the UEF T1 Air staging platform.
-	__________
-	2012-09-22
+  * Added the UEF T1 Air staging platform.
+  __________
+  2012-09-22
 
-	* Finished the UEF T1 Air staging platform.
-	* Allowed the Aeon T2 shield to upgrade into the T3.
-	* Updated 'Unit Statuses.txt' somewhat.
-	* Added localisation string for the Aeon T4 Artillery description.
-	* Updated entries in German string table. Translations still pending.
-	* Added French localisation; the names and nicknames are probably fine(ish) but the description text is probably pigeon French.
-	__________
-	2012-09-25
+  * Finished the UEF T1 Air staging platform.
+  * Allowed the Aeon T2 shield to upgrade into the T3.
+  * Updated 'Unit Statuses.txt' somewhat.
+  * Added localisation string for the Aeon T4 Artillery description.
+  * Updated entries in German string table. Translations still pending.
+  * Added French localisation; the names and nicknames are probably fine(ish) but the description text is probably pigeon French.
+  __________
+  2012-09-25
 	
-	* Fixed the Abyssal Persecutors occasional walk animation speed bugs.
-	* Flailed around blindly with the UEF T2 energy storage.
-	__________
+  * Fixed the Abyssal Persecutors occasional walk animation speed bugs.
+  * Flailed around blindly with the UEF T2 energy storage.
+  __________
   2012-09-30
   
   * Minor changes to the UEF T1 shield gen for allowing it to upgrade.
   * Disabled the UEF T1 shield from upgrading on land.   
   * Added the UEF T3 Naval shield, only available as an upgrade from the UEF T1 light shield (which is aquatic).
   * Added some ghetto german and french string tables for the UEF T3 Naval shield.      
-	__________
+  __________
   2012-10-01
                
   * Increased the max health of the Scathis, to 17500 from 8750.
@@ -82,7 +150,7 @@ __________._________
       * Increased shield strength to 6700 from 5500.
       * Increased size to 11 from 10.
       * Lowered build costs to 240m 2400e 240t from identical to the T2's.       
-	__________
+  __________
   2012-10-02
                   
   * Part two of shield generator changes:     
@@ -228,7 +296,11 @@ __________._________
     * Set its rate of fire to once every 30 seconds.
     * Gave it an icon.
     * Re-added it to the build menus.
-  * Re-arranged the build icon sort priorities for T3 land units.                                                                                                                                        
+  * Re-arranged the build icon sort priorities for T3 land units.
+  __________
+  2012-11-02
+
+  * Lowered the damage of the Aeon T2 bomber from 1925 to 1125.                                                                                                                                       
 __________._________
 2010-05-29|0.3.1a
 
