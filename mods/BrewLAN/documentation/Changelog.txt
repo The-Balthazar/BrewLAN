@@ -24,7 +24,7 @@ __________._________
   * Added Orbos, the Aeon T3 Heavy Point Defence.
   * AM-12 Anti-Armor: UEF Tech 2 Proximity Mine changes:  
     * Increased damage from 1200 to 4500.
-    * Lowered the mass cost from 300 to 1000.
+    * Lowered the mass cost from 300 to 100.
     * Lowered the build time from 150, to 50. (5 seconds)
   __________
   2012-11-09
@@ -77,7 +77,12 @@ __________._________
   * Changed the on killed explosion of the nuke mine to the damage category deathnuke from normal.
     * Gives ACUs and structures a massive resistance to it.
   * Changed the Scathis Mk2's armour class to structure, from experimental.
-    * It provides more relevant resistances.                                                          
+    * It provides more relevant resistances.
+  __________
+  2012-11-17
+    
+  * Fixed the shader and build animation of the Seraphim T2 proxy mine.
+  * Fixed an error in the unit statuses doc caused by the SVN being a retard, and updated it.                                                            
 __________._________
 2011-03-19|0.4.0
 
