@@ -70,14 +70,14 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 50,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsb1101/xsb1101_albedo.dds', 
                     NormalsName = '/units/xsb1101/xsb1101_normalsTS.dds', 
                     SpecularName = '/units/xsb1101/xsb1101_specteam.dds',
                 },
                 {
                     LODCutoff = 130,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsb1101/xsb1101_lod1_albedo.dds', 
                     NormalsName = '/units/xsb1101/xsb1101_lod1_normalsTS.dds', 
                     SpecularName = '/units/xsb1101/xsb1101_lod1_specteam.dds',
@@ -126,7 +126,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'UEF',
+        FactionName = 'Seraphim',
         Icon = 'amph',
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
