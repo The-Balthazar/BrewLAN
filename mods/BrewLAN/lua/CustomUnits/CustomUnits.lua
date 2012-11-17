@@ -14,23 +14,23 @@ UnitList = {
 
     T4ArtilleryStructure = {
 	Aeon = {'xab2307', 100},
-	Cybran = {'brb2401', 100},
+	Cybran = {'srb2401', 100},
     },
 
     T4ArtilleryStructureSorian = {
 	Aeon = {'xab2307', 100},
-	Cybran = {'brb2401', 100},
+	Cybran = {'srb2401', 100},
     },
 
     T4Artillery = {
 	Aeon = {'xab2307', 100},
-	Cybran = {'brb2401', 100},
+	Cybran = {'srb2401', 100},
     },
 
 	##Tech 3 Air		*********************************************
 
     T3AirTransport = {
-	Aeon = {'baa0306', 100},
+	Aeon = {'saa0306', 100},
 	Cyrban = {'bra0306', 100},
 	Seraphim = {'bsa0306', 100},
     },

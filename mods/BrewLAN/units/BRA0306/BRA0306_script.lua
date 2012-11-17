@@ -32,6 +32,7 @@ URA0104 = Class(CAirUnit) {
     OnCreate = function( self )
         CAirUnit.OnCreate(self)
         self:SetMaintenanceConsumptionActive()
+        self:EnableUnitIntel('RadarStealthField')
         if not self.OpenAnim then
             self.OpenAnim = CreateAnimator(self)
             self.OpenAnim:PlayAnim(self:GetBlueprint().Display.AnimationOpen, false):SetRate(0)

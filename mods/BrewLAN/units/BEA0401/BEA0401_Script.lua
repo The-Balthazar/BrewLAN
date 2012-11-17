@@ -8,16 +8,21 @@
 #****************************************************************************
 
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
-local TIFSmallYieldNuclearBombWeapon = import('/lua/terranweapons.lua').TIFSmallYieldNuclearBombWeapon
-local TAirToAirLinkedRailgun = import('/lua/terranweapons.lua').TAirToAirLinkedRailgun
-local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher
+local WeaponsFile = import('/lua/terranweapons.lua')
+local TIFSmallYieldNuclearBombWeapon = WeaponsFile.TIFSmallYieldNuclearBombWeapon
+local TAirToAirLinkedRailgun = WeaponsFile.TAirToAirLinkedRailgun
+local TSAMLauncher = WeaponsFile.TSAMLauncher
+local TDFHeavyPlasmaCannonWeapon = WeaponsFile.TDFHeavyPlasmaCannonWeapon
+local TDFGaussCannonWeapon = WeaponsFile.TDFGaussCannonWeapon
 
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local CreateUEFBuildSliceBeams = EffectUtil.CreateUEFBuildSliceBeams
 
 BEA0401 = Class(TAirUnit) {
     Weapons = {
-        Bomb = Class(TIFSmallYieldNuclearBombWeapon) {},
+        GaussTurret01 = Class(TDFHeavyPlasmaCannonWeapon) {},
+        GaussTurret02 = Class(TDFHeavyPlasmaCannonWeapon) {},
+        GaussTurret03 = Class(TDFHeavyPlasmaCannonWeapon) {},
         LinkedRailGun1 = Class(TAirToAirLinkedRailgun) {},
         LinkedRailGun2 = Class(TAirToAirLinkedRailgun) {},
         MissileRack01 = Class(TSAMLauncher) {},

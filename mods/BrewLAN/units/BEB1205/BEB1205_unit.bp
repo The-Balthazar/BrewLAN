@@ -61,27 +61,27 @@ UnitBlueprint {
             {
                 BLBone = 0,
                 BLOffsetX = 0,
-                BLOffsetY = 0.75,
+                BLOffsetY = 1,
                 BLOffsetZ = 0,
                 BLScale = 1,
             },
             {
                 BLBone = 0,
                 BLOffsetX = 0,
-                BLOffsetY = -0.75,
+                BLOffsetY = -1,
                 BLOffsetZ = 0,
                 BLScale = 1,
             },
             {
                 BLBone = 0,
-                BLOffsetX = 0.75,
+                BLOffsetX = 1,
                 BLOffsetY = 0,
                 BLOffsetZ = 0,
                 BLScale = 1,
             },
             {
                 BLBone = 0,
-                BLOffsetX = -0.75,
+                BLOffsetX = -1,
                 BLOffsetY = 0,
                 BLOffsetZ = 0,
                 BLScale = 1,
@@ -209,7 +209,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 250,
     Weapon = {
         {
-            Damage = 3000,
+            Damage = 5500,
             DamageFriendly = true,
             DamageRadius = 7.5,
             DamageType = 'Normal',

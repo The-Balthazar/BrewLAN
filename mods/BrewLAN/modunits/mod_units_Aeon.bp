@@ -46,7 +46,7 @@ UnitBlueprint {
         },
     },
     BuildIconSortPriority = 150,
-    Description = '<LOC brb2401_desc>Experimental Rapid-Fire Artillery',
+    Description = '<LOC srb2401_desc>Experimental Rapid-Fire Artillery',
     StrategicIconName = 'icon_experimental_generic',
 }
 

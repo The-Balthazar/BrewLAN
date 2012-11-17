@@ -17,6 +17,7 @@ BRA0307 = Class(CAirUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         CAirUnit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()
+        self:EnableUnitIntel('RadarStealth')
     end,
 }
 
