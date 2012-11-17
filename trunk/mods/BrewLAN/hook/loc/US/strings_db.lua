@@ -89,8 +89,9 @@ Unit_Description_BrewLAN_T2R001="Stores large amounts of energy. Construct next 
 
 sbui2220="Proximity Mine"
 seb2220_name="AM-12 Anti-Armor"
-ssb2220_name="Zhanasee"
 srb2220_name="Whisper"
+sab2220_name=""
+ssb2220_name="Zhanasee"
 Unit_Description_BrewLAN_T2D001="An all-terrain medium damage proximity mine system. Visible only to Omni."
 
 sbui2222="Nuclear Mine"

@@ -89,12 +89,15 @@ Unit_Description_BrewLAN_T2R001="Magasins grandes quantités d'énergie. Construir
 
 sbui2220="Mine de proximité"
 seb2220_name="AM-12 Anti-Armor"
+srb2220_name="Whisper"
+sab2220_name=""
 ssb2220_name="Zhanasee"
 Unit_Description_BrewLAN_T2D001="Un système tout-terrain moyen mine de dommages proximité. Visible uniquement Omni."
 
 sbui2222="Nuclear Mine"
 seb2222_name="AM-36 Fatman"
 srb2222_name="Silencer"
+sab2222_name=""
 ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="An all-terrain nuclear mine. Visible only to Omni."
 
