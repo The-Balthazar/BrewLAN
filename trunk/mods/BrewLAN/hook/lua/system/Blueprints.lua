@@ -4,7 +4,7 @@
 #**
 #** Modded By: Balthazar
 #**
-#** Changes: Various unit changes
+#** Changes: STUFF
 #**   
 #*********************************************************************
 do
@@ -12,17 +12,13 @@ do
 local OldModBlueprints = ModBlueprints
 
 function ModBlueprints(all_blueprints)
-
     OldModBlueprints(all_blueprints)
+    
+    BrewLANFieldEngineerChanges(all_blueprints.Unit)
+    BrewLANCybranShieldChanges(all_blueprints.Unit)
     DragBuildQuantumOptics(all_blueprints.Unit)
     ExperimentalStrategicSorting(all_blueprints.Unit)
     SalvationBrewLANChanges(all_blueprints.Unit)
-    ED1BrewLANChanges(all_blueprints.Unit)
-    ED2BrewLANChanges(all_blueprints.Unit)
-    ED3BrewLANChanges(all_blueprints.Unit)
-    ED4BrewLANChanges(all_blueprints.Unit)
-    ED4and5BrewLANChanges(all_blueprints.Unit)
-    CybranBUILTBYLANDCat(all_blueprints.Unit)
 #--    TorpedoBomberWaterLandCat(all_blueprints.Unit)   ##Ends up in them getting shot by subs.
     AeonShieldUpgradeable(all_blueprints.Unit)
 #--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
@@ -37,58 +33,97 @@ end
 
 
 
-function CybranBUILTBYLANDCat(all_bps)
+function BrewLANFieldEngineerChanges(all_bps)
 
-#    local cybrant1landfactory = {
-#        all_bps['urb0101'],
-#    }
-#    for arrayIndex, bp in cybrant1landfactory do
-#        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION')
-#    end
+    local units_buildcats = {
+        urb0101 = 'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',
+        urb0201 = 'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION',
+        urb0301 = 'BUILTBYLANDTIER3FACTORY CYBRAN MOBILE CONSTRUCTION',
+        uab0101 = 'BUILTBYLANDTIER1FACTORY AEON MOBILE CONSTRUCTION',
+        uab0201 = 'BUILTBYLANDTIER2FACTORY AEON MOBILE CONSTRUCTION',
+        uab0301 = 'BUILTBYLANDTIER3FACTORY AEON MOBILE CONSTRUCTION',
+        xsb0101 = 'BUILTBYLANDTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION',
+        xsb0201 = 'BUILTBYLANDTIER2FACTORY SERAPHIM MOBILE CONSTRUCTION',
+        xsb0301 = 'BUILTBYLANDTIER3FACTORY SERAPHIM MOBILE CONSTRUCTION',
+        xel0209 = 'BUILTBYTIER2FIELD UEF',
+    }     
 
-
-    local cybrant2landfactory = {
-         all_bps['urb0201'],
-    } 
-    for arrayIndex, bp in cybrant2landfactory do
-        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION')
-    end     
-      
-    local aeont2landfactory = {
-         all_bps['uab0201'],
-    }
-    for arrayIndex, bp in aeont2landfactory do
-        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER2FACTORY AEON MOBILE CONSTRUCTION')
-    end  
-
-    local cybrant3landfactory = {
-         all_bps['urb0301'],
-    } 
-    
-    for arrayIndex, bp in cybrant3landfactory do
-        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY CYBRAN MOBILE CONSTRUCTION')
+    for unitid, buildcat in units_buildcats do
+        if all_bps[unitid] then
+            table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat)
+        end
     end
-     
-    local aeont3landfactory = {
-         all_bps['uab0301'],
-    } 
-    for arrayIndex, bp in aeont3landfactory do
-        table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY AEON MOBILE CONSTRUCTION')
-    end
-          
-
-
-    local SparkyComeHereYou = {
-        all_bps['xel0209'],
-    }
-    for arrayIndex, bp in SparkyComeHereYou do
-        table.insert(bp.Economy.BuildableCategory, 'BUILTBYTIER2FIELD UEF')
-    end
-
-
 
 end
 
+
+
+# ---------------- Cybran Shields
+
+
+  
+function BrewLANCybranShieldChanges(all_bps)   
+
+    local CybranShields = {
+        urb4202 = 'TECH1',
+        urb4204 = 'TECH1',
+        urb4205 = 'TECH2',
+        urb4206 = 'TECH3',
+        urb4207 = 'TECH3',
+    }
+    
+    for shieldid, cat in CybranShields do
+        if all_bps[shieldid] then
+            table.removeByValue(all_bps[shieldid].Categories, 'TECH2')
+            table.insert(all_bps[shieldid].Categories, cat)
+        end
+    end
+    
+    local BuildableCybranShields = {
+        urb4202 = 'BUILTBYTIER1ENGINEER',
+        urb4205 = 'BUILTBYTIER2ENGINEER',
+        urb4206 = 'BUILTBYTIER3ENGINEER',
+    }
+    for shieldid, cat in BuildableCybranShields do
+        if all_bps[shieldid] then
+            table.insert(all_bps[shieldid].Categories, cat)
+        end
+    end
+     
+    local ED4 = {all_bps['urb4205'],}
+    local ED5 = {all_bps['urb4206'],}
+    
+    for arrayIndex, bp in ED4 do
+        table.insert(bp.Categories, 'BUILTBYTIER2COMMANDER')
+        table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
+        table.insert(bp.Categories, 'BUILTBYTIER3ENGINEER')
+    end
+    for arrayIndex, bp in ED5 do
+        table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
+    end
+end 
+
+
+
+--[[
+function BrewLANCybranShieldChanges(all_bps)   
+
+    local CybranShields = {
+        urb4202 = {'TECH1','BUILTBYTIER1ENGINEER',},
+        urb4204 = {'TECH1',},
+        urb4205 = {'TECH2','BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER',},
+        urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER',},
+        urb4207 = {'TECH3',},
+    }
+    
+    for unitid, cats in CybranShields do
+        table.removeByValue(bp.Categories, 'TECH2')
+        for k, cat in cats do
+            table.insert(bp.Categories, cat)
+        end
+    end
+end
+--]]
 
 
 # ---------------- Quantum optics
@@ -144,84 +179,37 @@ end
 
 function UnitHidingBrewLAN(all_bps)
 
-    local CybranScathis = {
+    local HidingExperimentals = {
         all_bps['url0401'],
-    }
-    local UEFNovax = {
         all_bps['xeb2402'],
     }
-    for arrayIndex, bp in CybranScathis do
-        table.remove(bp.Categories, 4)
-        table.remove(bp.Categories, 3)
-    end
-    for arrayIndex, bp in UEFNovax do
-        table.remove(bp.Categories, 5)
-        table.remove(bp.Categories, 4)
+        
+    for arrayIndex, bp in HidingExperimentals do
+        table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
+        table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
     end
 end
+     
+# ---------------- Moving the Fatboy into the Gantry.
 
-# ---------------- Cybran Shields
 
 
+function GantryExperimentalBuildOnly(all_bps)
 
-function ED1BrewLANChanges(all_bps)
-
-    local ED1ShieldGen = {
-        all_bps['urb4202'],
+    local UEFExperimentals = {
+	all_bps['uel0401'],
     }
-    for arrayIndex, bp in ED1ShieldGen do
-        table.remove(bp.Categories, 10)
-        table.insert(bp.Categories, 'TECH1')
-        table.insert(bp.Categories, 'BUILTBYTIER1ENGINEER')
-    end
+
+    for arrayIndex, bp in UEFExperimentals do
+    	table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
+    	table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
+    	table.removeByValue(bp.Categories, 'DRAGBUILD')
+    	table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
+        table.insert(bp.Categories, 'BUILTBYGANTRY')
+    end	
 end
 
-function ED2BrewLANChanges(all_bps)
 
-    local ED2ShieldGen = {
-        all_bps['urb4204'],
-    }
-    for arrayIndex, bp in ED2ShieldGen do
-        table.remove(bp.Categories, 6)
-        table.insert(bp.Categories, 'TECH1')
-    end
-end
-
-function ED3BrewLANChanges(all_bps)
-
-    local ED3ShieldGen = {
-        all_bps['urb4205'],
-    }
-    for arrayIndex, bp in ED3ShieldGen do
-        table.insert(bp.Categories, 'BUILTBYTIER2ENGINEER')
-        table.insert(bp.Categories, 'BUILTBYTIER3ENGINEER')
-        table.insert(bp.Categories, 'BUILTBYTIER2COMMANDER')
-        table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    end
-end
-
-function ED4BrewLANChanges(all_bps)
-
-    local ED4ShieldGen = {
-        all_bps['urb4206'],
-    }
-    for arrayIndex, bp in ED4ShieldGen do
-        table.insert(bp.Categories, 'BUILTBYTIER3ENGINEER')
-        table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    end
-end
-
-function ED4and5BrewLANChanges(all_bps)
-
-    local ED45ShieldGen = {
-        all_bps['urb4206'],
-        all_bps['urb4207'],
-    }
-    for arrayIndex, bp in ED45ShieldGen do
-        table.remove(bp.Categories, 6)
-        table.insert(bp.Categories, 'TECH3')
-    end
-end
 
 
 
@@ -299,26 +287,6 @@ function TorpedoBomberWaterLandCat(all_bps)
 
 end
 
-
-
-# ---------------- Moving the Fatboy into the Gantry.
-
-
-
-function GantryExperimentalBuildOnly(all_bps)
-
-    local UEFExperimentals = {
-	all_bps['uel0401'],
-    }
-
-    for arrayIndex, bp in UEFExperimentals do
-    	table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
-    	table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    	table.removeByValue(bp.Categories, 'DRAGBUILD')
-    	table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
-        table.insert(bp.Categories, 'BUILTBYGANTRY')
-    end	
-end
 
 
 

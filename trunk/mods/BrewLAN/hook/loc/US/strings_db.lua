@@ -20,6 +20,9 @@ tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soulripper"
 tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
 tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
 
+#--Toolttips for the landmines.
+tooltipbrewlan0007="Detonate"
+tooltipbrewlan0008="Immediately detonate the payload."
 
 ## T1
 
@@ -84,12 +87,21 @@ beb1205_name="PW4TH12-ST Capacitor"
 Unit_Description_BrewLAN_T2R002="Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 Unit_Description_BrewLAN_T2R001="Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 
-bbui2220="Proximity Mine"
-beb2220_name="AM-12 Anti-Armor"
+sbui2220="Proximity Mine"
+seb2220_name="AM-12 Anti-Armor"
+ssb2220_name="Zhanasee"
+srb2220_name="Whisper"
 Unit_Description_BrewLAN_T2D001="An all-terrain medium damage proximity mine system. Visible only to Omni."
 
+sbui2222="Nuclear Mine"
+seb2222_name="AM-36 Fatman"
+srb2222_name="Silencer"
+sab2222_name=""
+ssb2222_name="Inaino"
+Unit_Description_BrewLAN_T2D004="An all-terrain mine armed with a full-yield nuclear warhead. Visible only to Omni."
+
 #-- Cybran T2 shields; they didnt have build description originally.
-Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded three times."
+Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
 
 ## T3
@@ -100,7 +112,7 @@ bsa0305_name="Vulthuum"
 Unit_Description_BrewLAN_T3A001="Heavy gunship. Armed with Phasic autoguns and powerful but short range AA weaponry."
 
 bair0306="Heavy Air Transport"
-baa0306_name="Solaris"
+saa0306_name="Solaris"
 bra0306_name="Night Skimmer"
 bsa0306_name="Vishuum"
 Unit_Description_BrewLAN_T3A002="Heavy air transport. Armed with heavy anti-air defence, an EMP weapon and a stealth field. Can carry up to 16 units."
@@ -135,10 +147,12 @@ Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Air
 
 brb2306_name="Hades"
 bsb2306_name="Othuushala"
+sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
 Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
+Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 
-beb3303_desc="Observation Satellite System"
+beb3303_desc="Observation Satellite Uplink"
 bea0002_desc="Observation Satellite"
 bea0002_name="Burning Star"
 Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
@@ -172,8 +186,8 @@ beb2404_desc="Experimental Point Defense"
 beb2404_name="Doomsday Machine"
 Unit_Description_BrewLAN_T4B001="Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."
 
-brb2401_desc="Experimental Rapid-Fire Artillery"
-brb2401_name="Scathis Mark II"
+srb2401_desc="Experimental Rapid-Fire Artillery"
+srb2401_name="Scathis Mark II"
 Unit_Description_BrewLAN_T4B002="Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 
 brb4401="Experimental Shield Generator"

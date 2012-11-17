@@ -18,6 +18,10 @@ tooltipbrewlan0003="Toggles impersonation of an air superiority or a CZAR"
 tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soulripper"
 tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
 tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
+      
+#--Toolttips for the landmines.
+tooltipbrewlan0007="Detonate"
+tooltipbrewlan0008="Immediately detonate the payload."
 
 
 ## T1
@@ -83,9 +87,16 @@ beb1205_name="PW4TH12-ST Kondensator"
 Unit_Description_BrewLAN_T2R002="Speichert große Mengen an Masse. Gibt einen Nähebonus für Massefabrikatoren- und extraktoren."
 Unit_Description_BrewLAN_T2R001="Speichert große Mengen von Energie. Gibt einen Nähebonus für Energiegeneratoren und Kraftwerke."
 
-bbui2220="Annäherungsmine"
-beb2220_name="AM-12 Anti-Panzer"
+sbui2220="Annäherungsmine"
+seb2220_name="AM-12 Anti-Panzer"
+ssb2220_name="Zhanasee"
 Unit_Description_BrewLAN_T2D001="Eine Annäherungsmine für jedes Gelände. Getarnt"
+
+sbui2222="Nuclear Mine"
+seb2222_name="AM-36 Fatman"
+srb2222_name="Silencer"
+ssb2222_name="Inaino"
+Unit_Description_BrewLAN_T2D004="An all-terrain nuclear mine. Visible only to Omni."
 
 ### Cybran T2 shields; they didn't have build description originally.
 Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann dreimal Aufgerüstet werden."
@@ -100,7 +111,7 @@ bsa0305_name="Vulthuum"
 Unit_Description_BrewLAN_T3A001="Schweres Kanonenboot. Mit starken Phasenautokannonen und kurzstrecken Luftabwehr ausgerüstet."
 
 bair0306="Schwerer Lufttransporter"
-baa0306_name="Solaris"
+saa0306_name="Solaris"
 bra0306_name="Night Skimmer"
 bsa0306_name="Vishuum"
 Unit_Description_BrewLAN_T3A002="Schwerer Lufttransporter. Bewaffnet mit schwerer Luftabwehr, einer EMP Waffe und einem Stealth-Generator.Kann 16 T1, 8 T2 oder 4 T3 Einheiten Transportieren"
@@ -135,8 +146,10 @@ Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit mächtig
 
 brb2306_name="Hades"
 bsb2306_name="Othuushala"
+sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
 Unit_Description_BrewLAN_T3B003="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
+Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 
 beb3303_desc="Beobachtungs Satelliten System"
 bea0002_desc="Beobachtungs Satellit"
@@ -172,8 +185,8 @@ beb2404_desc="Experimentelle Punktverteidigung"
 beb2404_name="Weltvernichtungsmaschine"
 Unit_Description_BrewLAN_T4B001="Leicht Beschädigte Punktverteidigung. Kommt einem Immobilen FatBoy gleich. Feuert nicht nach Westen."
 
-brb2401_desc="Experimentelle Artilleriestellung"
-brb2401_name="Scathis Mark II"
+srb2401_desc="Experimentelle Artilleriestellung"
+srb2401_name="Scathis Mark II"
 Unit_Description_BrewLAN_T4B002="Experimentelle Schnellfeuer-Artillerie. Verbraucht massive Mengen an Energie mit jedem Schuss."
 
 brb4401="Experimenteller Schildgenerator"

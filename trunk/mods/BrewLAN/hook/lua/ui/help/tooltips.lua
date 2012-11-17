@@ -23,3 +23,8 @@ Tooltips.uefairdecoy = {
       description = "<LOC tooltipbrewlan0006>Toggles impersonation of an air superiority or an AC-500 Centurion",
       keyID = "uefairdecoy",
    }
+Tooltips.detonate = {
+      title = "<LOC tooltipbrewlan0007>Detonate",
+      description = "<LOC tooltipbrewlan0008>Immediately detonate the payload.",
+      keyID = "detonate",
+   }

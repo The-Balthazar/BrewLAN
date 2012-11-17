@@ -19,6 +19,10 @@ tooltipbrewlan0004="Bascule l'usurpation d'identité d'une supériorité aérienne o
 tooltipbrewlan0005="Bascule l'usurpation d'identité d'une supériorité aérienne ou d'un aéronef expérimental"
 tooltipbrewlan0006="Bascule l'usurpation d'identité d'une supériorité aérienne ou d'un aéronef expérimental"
 
+#--Toolttips for the landmines.
+tooltipbrewlan0007="Detonate"
+tooltipbrewlan0008="Immediately detonate the payload."
+
 
 ## T1
 
@@ -83,9 +87,16 @@ beb1205_name="PW4TH12-ST condensateur"
 Unit_Description_BrewLAN_T2R002="Magasins de grandes quantités de masse. Construire à côté extracteurs ou fabricants de bonus de contiguïté."
 Unit_Description_BrewLAN_T2R001="Magasins grandes quantités d'énergie. Construire à côté de générateurs électriques pour bonus de contiguïté."
 
-bbui2220="Mine de proximité"
-beb2220_name="AM-12 Anti-Armor"
+sbui2220="Mine de proximité"
+seb2220_name="AM-12 Anti-Armor"
+ssb2220_name="Zhanasee"
 Unit_Description_BrewLAN_T2D001="Un système tout-terrain moyen mine de dommages proximité. Visible uniquement Omni."
+
+sbui2222="Nuclear Mine"
+seb2222_name="AM-36 Fatman"
+srb2222_name="Silencer"
+ssb2222_name="Inaino"
+Unit_Description_BrewLAN_T2D004="An all-terrain nuclear mine. Visible only to Omni."
 
 ### Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Génère un bouclier protecteur autour des unités et des structures au sein de son rayon. Shield peut être mis à jour trois fois."
@@ -100,7 +111,7 @@ bsa0305_name="Vulthuum"
 Unit_Description_BrewLAN_T3A001="Hélicoptère de combat lourd. Armé de autoguns phasiques et puissant, mais à court d'armement AA gamme."
 
 bair0306="Transport aérien lourd"
-baa0306_name="Solaris"
+saa0306_name="Solaris"
 bra0306_name="Skimmer Nuit"
 bsa0306_name="Vishuum"
 Unit_Description_BrewLAN_T3A002="Transport aérien lourd. Armé de lourdes défense anti-aérienne, une arme EMP et un champ de furtivité. Peut contenir jusqu'à 16 unités."
@@ -135,8 +146,10 @@ Unit_Description_BrewLAN_T3L001="Bot blindé assaut de siège. Armé de deux Aire-a
 
 brb2306_name="Hadès"
 bsb2306_name="Othuushala"
+sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Tour défensive lourd. Attaques terrestres et maritimes unités avec un puissant laser de balayage. Ne s'engage pas des avions ou des unités immergées."
 Unit_Description_BrewLAN_T3B003="Lourde tour de défense. Les attaques des unités terrestres et maritimes avec un canon à plasma gatling. Ne s'engage pas des avions ou des unités immergées."
+Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 
 beb3303_desc="Système satellite d'observation"
 bea0002_desc="Satellite d'observation"
@@ -172,8 +185,8 @@ beb2404_desc="Pointe de défense expérimentale"
 beb2404_name="Doomsday Machine"
 Unit_Description_BrewLAN_T4B001="Un peu rompu la défense point expérimental. Effectivement un fatboy immobile. Wont tirer vers l'ouest."
 
-brb2401_desc="Artillerie tir rapide expérimentale"
-brb2401_name="Scathis Mark II"
+srb2401_desc="Artillerie tir rapide expérimentale"
+srb2401_name="Scathis Mark II"
 Unit_Description_BrewLAN_T4B002="Experimental rapide des tirs d'artillerie. Consomme des quantités massives de l'énergie à chaque tir."
 
 brb4401="Générateur de bouclier expérimental"
