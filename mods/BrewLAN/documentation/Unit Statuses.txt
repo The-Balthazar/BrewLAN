@@ -6,13 +6,13 @@
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
                                      Updated 2012-11-17
 _______________________________________________________
-Ideas that I'm considering adding:
+Generic ideas that I'm either considering or planning on adding:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * Mobile Radar Jammers
 * More aquatic buildings
 * Mines and mine layers (Land, Naval)
 * Mobile Strat Defence
-* Plasma Batteries (T2 rapid fire arty, at T3, or something like that.)
+* Plasma Batteries (T2 rapid fire arty, at T3, or more like battleship gauss cannons)
 * BARREL ROLL
 * Making energy storage scale their explosions based on current energy.
 _______________________________________________________
@@ -200,10 +200,10 @@ Tech 2:
       * T2 Proximity Mine
         * Still blocks pathing.
         * Lacks a unique water explosion.
-        * Doesn't leave behind a decent sized scorch mark yet.                        
+        * Doesn't leave behind a decent sized scorch mark yet.
+      * T2 Nuke Mine                         
     
   	T2 Wall.
-    T2 Nuke Mine 
   		* Pending creation  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:

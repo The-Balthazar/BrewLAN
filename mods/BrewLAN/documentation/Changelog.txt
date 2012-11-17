@@ -82,7 +82,10 @@ __________._________
   2012-11-17
     
   * Fixed the shader and build animation of the Seraphim T2 proxy mine.
-  * Fixed an error in the unit statuses doc caused by the SVN being a retard, and updated it.                                                            
+  * Fixed an error in the unit statuses doc caused by the SVN being a retard, and updated it.
+  * Added the UEF Nuke Mine.  
+  * Increased the health of proxy mines by 5 so they can just about survive the death explosions of SCUs and nuke mines.
+  * Made most of the cannons on the Centurion functional.                                                                 
 __________._________
 2011-03-19|0.4.0
 
