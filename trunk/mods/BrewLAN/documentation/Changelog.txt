@@ -85,7 +85,11 @@ __________._________
   * Fixed an error in the unit statuses doc caused by the SVN being a retard, and updated it.
   * Added the UEF Nuke Mine.  
   * Increased the health of proxy mines by 5 so they can just about survive the death explosions of SCUs and nuke mines.
-  * Made most of the cannons on the Centurion functional.                                                                 
+  * Made most of the cannons on the Centurion functional.
+  __________
+  2012-11-18
+    
+  * Fixed the massive bug which made Seraphim, Aeon, and Cybran T1 Land factories be able to build every engineer-capable unit for that faction. Including the Megalith, Iyadesu, and SCUs.                                                                  
 __________._________
 2011-03-19|0.4.0
 
