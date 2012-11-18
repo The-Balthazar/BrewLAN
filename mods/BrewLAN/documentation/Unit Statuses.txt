@@ -309,7 +309,7 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault Bot   |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |*Tank thing    |Megalith (F)   |*?             |
+Land 2          |Fatboy (F)     |*Absolution    |Megalith (F)   |*?             |
 Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
@@ -341,9 +341,9 @@ UEF Gantry: Experimental Factory
       * Find out why the Atlantis gets stuck in it.
         * Alternatively, make the Atlantis submerge on completion so it can get out.             
 
-Aeon Experimental Tank thing
-	* Something inspired by the larger Eldar hover tanks.
-	* Possible minor engineering functions.
+Aeon Experimental Assault Tank
+	* Unfinished mesh and token texture.
+	* Has only a single weapon, but hovers.
 
 Aeon Experimental Shield projection tower.
 	* Something between a shield gen and the eye of something or other in appearance.

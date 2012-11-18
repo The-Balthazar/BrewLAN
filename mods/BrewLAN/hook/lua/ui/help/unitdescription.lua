@@ -92,3 +92,4 @@ Description['bsl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu descripti
 Description['bea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
 Description['brs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
 Description['belp001'] = "<LOC Unit_Description_0037>Fake engineer fatboy."
+Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Totally-not-a-fire-prism description."
