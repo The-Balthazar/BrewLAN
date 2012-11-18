@@ -203,3 +203,7 @@ Unit_Description_BrewLAN_T4S001="Translation pending."
 beb0401="Experimental Factory"
 beb0401_name="Gantry"
 Unit_Description_BrewLAN_T4B004="Translation pending."
+
+sal0401="Experimental Assault Tank"
+sal0401_name="Absolution"
+Unit_Description_BrewLAN_T4L002="Experimental hovering assault tank. Equipped with a powerful oblivion cannon."

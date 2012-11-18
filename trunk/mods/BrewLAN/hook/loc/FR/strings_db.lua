@@ -203,3 +203,7 @@ Unit_Description_BrewLAN_T4S001="amphibie expérimental cuirassé."
 beb0401="Usine expérimentale"
 beb0401_name="Portique"
 Unit_Description_BrewLAN_T4B004="Expérimentale multi-usages usine. Change dynamiquement unités constructibles sur la base de l'environnement. Peut être activé à construire des avions dans n'importe quel environnement."
+
+sal0401="Experimental Assault Tank"
+sal0401_name="Absolution"
+Unit_Description_BrewLAN_T4L002="Experimental hovering assault tank. Equipped with a powerful oblivion cannon."

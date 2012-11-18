@@ -202,3 +202,7 @@ Unit_Description_BrewLAN_T4S001="Experimental amphibious battleship."
 beb0401="Experimental Factory"
 beb0401_name="Gantry"
 Unit_Description_BrewLAN_T4B004="Experimental multi-purpose factory. Dynamically changes buildable units based on environment. Can be toggled to build aircraft in any environment."
+
+sal0401="Experimental Assault Tank"
+sal0401_name="Absolution"
+Unit_Description_BrewLAN_T4L002="Experimental hovering assault tank. Equipped with a powerful oblivion cannon."
