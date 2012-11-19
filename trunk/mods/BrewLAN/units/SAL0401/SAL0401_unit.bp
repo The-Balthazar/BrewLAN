@@ -92,15 +92,13 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
+                    LODCutoff = 200,
+                    ShaderName = 'Aeon',
+                },
+                {
                     LODCutoff = 600,
                     ShaderName = 'Aeon',
                 },
-                #{
-                #    AlbedoName = 'dal0310_lod1_albedo.dds',
-                #    LODCutoff = 600,
-                #    ShaderName = 'Aeon',
-                #    SpecularName = 'dal0310_lod1_specteam.dds',
-                #},
             },
         },
         MovementEffects = {
