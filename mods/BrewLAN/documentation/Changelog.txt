@@ -92,9 +92,10 @@ __________._________
   * Fixed the massive bug which made Seraphim, Aeon, and Cybran T1 Land factories be able to build every engineer-capable unit for that faction. Including the Megalith, Iyadesu, and SCUs.                                                                  
   * Added the Aeon Experimental Assault Tank.
   __________
-  2012-11-18
+  2012-11-20
     
-  * Fixed the Absolution's armour class so it can't be stepped on by other experimentals.    
+  * Changed the unit codes of proximity mines to s~b2221 from s~b2220.
+  * Changed other mine stuff around.  
 __________._________
 2011-03-19|0.4.0
 
