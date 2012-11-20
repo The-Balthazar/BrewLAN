@@ -35,10 +35,15 @@ Description['brb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amou
 Description['bsb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 
 #Tech 2 defence units
-Description['seb2220'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
-Description['ssb2220'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
-Description['sab2220'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
-Description['srb2220'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
+Description['seb2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
+Description['ssb2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
+Description['sab2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
+Description['srb2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
+
+Description['seb2221'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
+Description['ssb2221'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
+Description['sab2221'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
+Description['srb2221'] = "<LOC Unit_Description_BrewLAN_T2D001>An all-terrain proximity mine system. Visible only to Omni."
  
 Description['srb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
 Description['seb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
