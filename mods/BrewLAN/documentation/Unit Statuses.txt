@@ -134,6 +134,7 @@ Tech 1
   		* Fully functioning.
   
   	T1 Torpedo Bomber
+    T1 Pressure Mine
   		* Pending.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -143,6 +144,7 @@ Tech 1
   
   	T1 Torpedo Bomber ('Gannet')
   	T1 Air Staging
+    T1 Pressure Mine
   		* Pending
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -152,8 +154,10 @@ Tech 1
       * T1 Light Artillery
       * T1 Light Shield Gen
       * T1 Torpedo Bomber
-      * T1 Air Staging
-
+      * T1 Air Staging 
+      
+    T1 Pressure Mine
+      * Needs to not block pathing, look into air pathing. 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	Fully Funtioning:
@@ -162,7 +166,8 @@ Tech 1
       * T1 Air Staging
       * T1 Light Gunship
   
-  	T1 Torpedo Bomber ('Sou-ioz')
+  	T1 Torpedo Bomber ('Sou-ioz') 
+    T1 Pressure Mine
   		* Pending. 
 
 -------------------------------------------------------
@@ -182,7 +187,8 @@ Tech 2:
   		* T2 Restoration field genorator.
       * T2 Proximity Mine
         * To be buildable by the defence engineer.
-      * T2 Nuke Mine 
+      * T2 Nuke Mine
+        * To be buildable by the defence engineer. 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
   	Fully Funtioning.
@@ -270,7 +276,7 @@ Tech 3:
         * May eventually give a more unique appearance.    
       * T3 Novax Center
         * As an observation satelite.
-          * Radar and omni range is spherical not cylindrical.
+          * Radar and omni range is spherical not cylindrical (Except on FAF).
             * Current effective omni range is similar to its old visual range.              
 
     T3 Decoy Plane.
@@ -342,8 +348,9 @@ UEF Gantry: Experimental Factory
         * Alternatively, make the Atlantis submerge on completion so it can get out.             
 
 Aeon Experimental Assault Tank
-	* Unfinished mesh and token texture.
-	* Has only a single weapon, but hovers.
+	* Unfinished texture.
+	* Has its big cannon and two TMD's.
+	* Totally isn't an eldar grav tank.  
 
 Aeon Experimental Shield projection tower.
 	* Something between a shield gen and the eye of something or other in appearance.

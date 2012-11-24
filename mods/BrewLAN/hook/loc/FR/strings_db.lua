@@ -95,7 +95,7 @@ ssb2221_name="Zhanasee"
 Unit_Description_BrewLAN_T2D001="Un système tout-terrain moyen mine de dommages proximité. Visible uniquement Omni."
 
 sbui2222="Nuclear Mine"
-seb2222_name="AM-36 Fatman"
+seb2222_name="AM-36 Trinity"
 srb2222_name="Silencer"
 sab2222_name=""
 ssb2222_name="Inaino"
