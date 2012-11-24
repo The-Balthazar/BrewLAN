@@ -95,7 +95,23 @@ __________._________
   2012-11-20
     
   * Changed the unit codes of proximity mines to s~b2221 from s~b2220.
-  * Changed other mine stuff around.  
+  * Changed other mine stuff around.
+  __________
+  2012-11-23
+    
+  * Aeon Experimental Assault Tank changes:
+    * Created a new mesh.
+    * Increased rate of fire once every 6 seconds from 10.
+  __________
+  2012-11-24
+    
+  * Aeon Experimental Assault Tank changes:
+    * Improved texture.
+    * Tactical Missile Defense added.
+    * Fixed footprint size and some particle effects.   
+  * Changed nuke mines to list as T3, but sort downwards so it stays where it is on the menus.
+  * Made a prototype version of the UEF T1 Pressure Mine.
+  * Renamed the UEF Nuke mine to AM-36 Trinity, from AM-36 Fatman.                 
 __________._________
 2011-03-19|0.4.0
 
