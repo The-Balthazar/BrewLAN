@@ -10,7 +10,7 @@ enabled = true
 exclusive = false
 ui_only = false
 requires = { "9e8ea941-c306-4751-b367-f00000000005" }
-requiresNames = { ["9e8ea941-c306-4751-b367-f00000000005"] = "Blackops Global icon support mod, version 5." }
+#requiresNames = { ["9e8ea941-c306-4751-b367-f00000000005"] = "Blackops Global icon support mod, version 5." }
 conflicts = {
     "25D57D85-7D84-27HT-A501-48F3488D85724", ##Previous versions
     "25D57D85-7D84-27HT-A501-48F3488D85725",

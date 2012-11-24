@@ -35,7 +35,8 @@ UnitBlueprint {
         'CYBRAN',
         'STRUCTURE',
         'DEFENSE',
-        'TECH2',
+        'TECH3',
+        'CONSTRUCTIONSORTDOWN',
         'NUKE',
         'MINE',
         'DRAGBUILD',
@@ -185,7 +186,7 @@ UnitBlueprint {
     SizeY = 0.2,
     SizeZ = .5,
     #StrategicIconName = '/textures/ui/common/game/unit-over/icon-nuke_bmp.dds',
-    StrategicIconName = 'icon_structure2_bomb',
+    StrategicIconName = 'icon_structure3_bomb',
     StrategicIconSortPriority = 210,
     Weapon = {
         {
