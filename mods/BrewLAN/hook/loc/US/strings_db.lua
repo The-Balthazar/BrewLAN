@@ -163,7 +163,7 @@ Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-ba
 beb3303_desc="Observation Satellite Uplink"
 bea0002_desc="Observation Satellite"
 bea0002_name="Burning Star"
-Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
+Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni sensors. If its control center is destroyed, the satelite is immediately disabled."
 
 bel0320_desc="Mobile Satellite Uplink"
 bel0320_name="Archimedes"
@@ -210,6 +210,6 @@ beb0401="Experimental Factory"
 beb0401_name="Gantry"
 Unit_Description_BrewLAN_T4B004="Experimental multi-purpose factory. Dynamically changes buildable units based on environment. Can be toggled to build aircraft in any environment."
 
-sal0401="Experimental Assault Tank"
+sal0401="Experimental Siege Tank"
 sal0401_name="Absolution"
-Unit_Description_BrewLAN_T4L002="Experimental hovering assault tank. Equipped with a powerful oblivion cannon."
+Unit_Description_BrewLAN_T4L002="Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defences."

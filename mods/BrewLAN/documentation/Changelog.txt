@@ -110,8 +110,32 @@ __________._________
     * Tactical Missile Defense added.
     * Fixed footprint size and some particle effects.   
   * Changed nuke mines to list as T3, but sort downwards so it stays where it is on the menus.
+    * This way it gets disabled in T2 only games.   
   * Made a prototype version of the UEF T1 Pressure Mine.
-  * Renamed the UEF Nuke mine to AM-36 Trinity, from AM-36 Fatman.                 
+  * Renamed the UEF Nuke mine to AM-36 Trinity, from AM-36 Fatman.
+  __________
+  2012-11-25
+    
+  * Corrected a typo in the Novax centre description.
+  __________
+  2012-11-26
+    
+  * Improved texture of the Aeon T4 Tank.
+  __________
+  2012-11-27
+                       
+  * Aeon Experimental Assault Tank changes:
+    * Improved the texture.
+    * Aligned some of the texture mapping.
+    * Added the Volatile warning to the abilities list.
+  __________
+  2012-12-01
+  
+  * Changed the Gantry roll off stats.                    
+  * Aeon Experimental Assault Tank changes:
+    * Made texture look complete.
+    * Created opening animation.
+    * Removed its mass & energy storage ability.                      
 __________._________
 2011-03-19|0.4.0
 

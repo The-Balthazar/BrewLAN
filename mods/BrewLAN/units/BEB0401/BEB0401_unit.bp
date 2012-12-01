@@ -161,6 +161,7 @@ UnitBlueprint {
         },
         StorageEnergy = 10000,
         StorageMass = 1000,
+        InitialRallyZ = 20,
     },
     Footprint = {
         SizeX = 15,
@@ -198,7 +199,7 @@ UnitBlueprint {
         },
         ConstructionBar = true,
         FactionName = 'UEF',
-        Icon = 'land',
+        Icon = 'amph',
         ToggleCaps = {
             RULEUTC_WeaponToggle= true,
         },
@@ -242,13 +243,13 @@ UnitBlueprint {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 5,
+                Z = 8,
             },
             {
                 UnitSpin = 180,
                 X = 0,
                 Y = 0,
-                Z = -5,
+                Z = -8,
             },
         },
 
