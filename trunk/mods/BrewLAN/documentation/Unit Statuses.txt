@@ -319,8 +319,8 @@ Land 2          |Fatboy (F)     |*Absolution    |Megalith (F)   |*?             
 Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
-Static 2        |*?             |Paragon        |*?             |*?             |
-Static 3        |*Factory       |*Shield proj...|*Iron Curtain  |*?             |
+Static 2        |*Transport     |Paragon        |*?             |*?             |
+Static 3        |*Gantry        |*Shield proj...|*Iron Curtain  |*?             |
 ________________!_______________!_______________!_______________!_______________!
 
 	(A)	Aircraft Carrier
@@ -341,6 +341,7 @@ UEF Gantry: Experimental Factory
   * Can now be considered fully funtional.
     * Still possibly to do:
       * Add some water stands like naval yards.
+      * Give it team colours!      
       * Add some kind of pedistal effect area for aircraft, especially on water.
         * Would need to wait for the current unit to be completed, especially if its a ship.               
       * Add death animation.

@@ -46,12 +46,12 @@ UnitBlueprint {
         'LAND',
         'EXPERIMENTAL',
         'DIRECTFIRE',
-        'VISIBLETORECON',
+        'ARTILLERY',
         'NEEDMOBILEBUILD',
-        'DRAGBUILD',
+        'VISIBLETORECON',
         'RECLAIMABLE',
+        'DRAGBUILD',
         'HOVER',
-        'TANK',
         'OVERLAYDIRECTFIRE',
         'OVERLAYCOUNTERMEASURE',
     },
@@ -68,9 +68,11 @@ UnitBlueprint {
     },
     Description = '<LOC sal0401>Experimental Assault Tank',
     Display = {
+        AnimationPermOpen = '/mods/brewlan/units/sal0401/sal0401_aopen.sca',
         Abilities = {
             '<LOC ability_hover>Hover',
             '<LOC ability_tacmissiledef>Tactical Missile Defense',
+            '<LOC ability_deathaoe>Volatile',
         },
         IdleEffects = {
             Land = {
@@ -117,7 +119,9 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 200,
-                    ShaderName = 'Aeon',
+                    Scrolling = true,
+                    SecondaryName = '/units/uaa0310/uaa0310_secondary.dds',
+                    ShaderName = 'AeonCZAR',
                 },
                 {
                     LODCutoff = 600,
@@ -196,15 +200,13 @@ UnitBlueprint {
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
-        StorageEnergy = 1000,
-        StorageMass = 200,
     },
     General = {
         Category = 'Experimental',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -274,7 +276,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 135,
     Transport = {
-        TransportClass = 4,
+        TransportClass = 10,
     },
     Veteran = {
         Level1 = 25,
@@ -339,7 +341,7 @@ UnitBlueprint {
                 },
             },
             RackFireTogether = false,
-            RackRecoilDistance = -6,
+            RackRecoilDistance = -8,
             RackReloadTimeout = 10,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
