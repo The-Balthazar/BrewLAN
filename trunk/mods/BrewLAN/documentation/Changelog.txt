@@ -135,7 +135,13 @@ __________._________
   * Aeon Experimental Assault Tank changes:
     * Made texture look complete.
     * Created opening animation.
-    * Removed its mass & energy storage ability.                      
+    * Removed its mass & energy storage ability.
+  __________
+  2012-12-02
+                 
+  * Aeon Experimental Assault Tank changes:
+    * Fixed the selection area.
+    * Updated the icon to the new model.                          
 __________._________
 2011-03-19|0.4.0
 

@@ -9,8 +9,10 @@ selectable = true
 enabled = true
 exclusive = false
 ui_only = false
-requires = { "9e8ea941-c306-4751-b367-f00000000005" }
-#requiresNames = { ["9e8ea941-c306-4751-b367-f00000000005"] = "Blackops Global icon support mod, version 5." }
+requires = {"9e8ea941-c306-4751-b367-f00000000005",}
+requiresNames = {
+    ["9e8ea941-c306-4751-b367-f00000000005"] = "Blackops: Global icon support mod, version 5.",
+}
 conflicts = {
     "25D57D85-7D84-27HT-A501-48F3488D85724", ##Previous versions
     "25D57D85-7D84-27HT-A501-48F3488D85725",
@@ -29,10 +31,8 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-48F3488D85738", ##0.2.9.1	SVN
     "25D57D85-7D84-27HT-A501-48F3488D85739", ##0.3	beta
     "25D57D85-7D84-27HT-A501-48F3488D85740", ##0.3.1    SVN
-    "25D57D85-7D84-27HT-A501-48F3488D85741", ##0.3.2    SVN
-    "25D57D85-7D84-27HT-A501-48F3488D85742", ##0.3.3    Indev
-    "25D57D85-7D84-27HT-A501-BR3WL4N000034", ##0.3.4	Indev, first with new UID style.
-    "25D57D85-7D84-27HT-A501-BR3WL4N000040"  ##0.4	beta & svn revisions ?? - ~120.
+    "25D57D85-7D84-27HT-A501-BR3WL4N000040", ##0.4	beta & svn revisions 93 - 120.
+    "9e8ea941-c306-4751-b367-a11000000600", 
 }
-before = { }
-after = { }
+before = {  }
+after = {  }
