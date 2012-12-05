@@ -31,5 +31,27 @@ SAB2306 = Class(AStructureUnit) {
             v.Beam:Disable()
         end     
     end,
+
+    OnStopBeingBuilt = function(self,builder,layer)
+
+        AStructureUnit.OnStopBeingBuilt(self, builder, layer)
+
+        local num = self:GetRandomDir()
+        self.HeadManip = CreateRotator(self, 'Head', 'y', nil, 0, 15, 10 + Random(0, 80) * num)
+        self.HeadManip2 = CreateRotator(self, 'Head', 'x', nil, 0, 15, 10 + Random(0, 80) * num)
+        self.HeadManip2 = CreateRotator(self, 'Head', 'z', nil, 0, 15, 10 + Random(0, 80) * num)
+        self.Trash:Add(self.HeadManip)
+        self.Trash:Add(self.HeadManip2)
+
+    end,
+
+    GetRandomDir = function(self)
+        local num = Random(0, 2)
+        if num > 1 then
+            return 1
+        end
+        return -1
+    end,
+
 }
 TypeClass = SAB2306

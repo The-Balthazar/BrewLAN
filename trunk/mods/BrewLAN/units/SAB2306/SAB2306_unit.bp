@@ -66,6 +66,29 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
         },
+        IdleEffects = {
+            Land = {
+                Effects = {
+                    {
+                        Bones = {
+                            'Effect',
+                        },
+                        Type = 'AeonGroundFXT1Engineer',
+                        Scale = 0.5,
+                    },
+                },
+            },
+            Water = {
+                Effects = {
+                    {
+                        Bones = {
+                            'Effect',
+                        },
+                        Type = 'AeonGroundFXT1Engineer',
+                    },
+                },
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -230,13 +253,13 @@ UnitBlueprint {
                 'MISSILE',
             },
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
-                Water = 'Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+                Seabed = 'Air|Land|Water|Seabed',
+                Water = 'Air|Land|Water|Seabed',
             },
             FiringTolerance = 2,
             Label = 'EyeWeapon',
-            MaxRadius = 60,
+            MaxRadius = 50,
             MinRadius = 1,
             MuzzleChargeDelay = 0,
             MuzzleSalvoDelay = 0,
@@ -269,17 +292,17 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR',
             TurretBoneMuzzle = 'Head_Muzzle',
             TurretBonePitch = 'Head',
-            TurretBoneYaw = 'Right_Leg_B02',
+            TurretBoneYaw = 'Head',
             TurretDualManipulators = false,
             TurretPitch = 0,
-            TurretPitchRange = 70,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 600,
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 70,
+            TurretYawSpeed = 600,
             Turreted = true,
             WeaponCategory = 'Direct Fire',
             WeaponRepackTimeout = 8.68,

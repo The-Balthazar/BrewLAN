@@ -198,6 +198,7 @@ function GantryExperimentalBuildOnly(all_bps)
 
     local UEFExperimentals = {
 	all_bps['uel0401'],
+	all_bps['brnt3doomsday'],
 	#all_bps['ues0401'],
     }
 
