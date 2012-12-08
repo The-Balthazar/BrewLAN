@@ -153,6 +153,7 @@ UnitBlueprint {
         SkirtSizeZ = 1,
         TurnRate = 0,
     },
+    SelectionCenterOffsetZ = -.05,
     SelectionSizeX = 0.55,
     SelectionSizeZ = 0.55,
     SelectionThickness = 0.71,

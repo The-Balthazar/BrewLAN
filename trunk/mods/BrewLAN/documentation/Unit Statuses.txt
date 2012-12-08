@@ -121,6 +121,9 @@ Modded Units:
   	T3 Siege Tank
   		* Set the allways upright attribute to false.
   		* Increased stats and cost to be comparable to that of Brick, Percival and Moldovite.
+
+  	T2 Sonar
+  		* Allowed it to upgrade into the new T3 sonar.
 _______________________________________________________
 Added and planned units:
 -------------------------------------------------------
@@ -157,7 +160,7 @@ Tech 1
       * T1 Air Staging 
       
     T1 Pressure Mine
-      * Needs to not block pathing, look into air pathing. 
+      * Needs to not block pathing. 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	Fully Funtioning:
@@ -176,13 +179,14 @@ Tech 2:
   Aeon:
   	Fully Funtioning:
       * T2 Mass Storage
+      * T2 Energy Storage
       * T2 Bomber
       * T2 Defence Engineer
         * Lacks a unique model.
+        * Need to mess with \lua\ui\game\avatars.lua to get the idle icon working entirely.        
       
     
   	Pending:  
-      * T2 Energy Storage
   		* T2 Wall
   		* T2 Restoration field genorator.
       * T2 Proximity Mine
@@ -193,7 +197,8 @@ Tech 2:
   Cybran:
   	Fully Funtioning.
       * T2 Mass Storage
-      * T2 Field Engineer
+      * T2 Field Engineer  
+        * Need to mess with \lua\ui\game\avatars.lua to get the idle icon working entirely.
       * T2 Proximity Mine
       * T2 Nuke Mine
       * T2 Energy Storage
@@ -213,16 +218,17 @@ Tech 2:
   		* Pending creation  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
-  	T2 Mass Storage
-  		* Fully Funtioning.
+  	Fully Funtioning:
+  		* T2 Mass Storage
+      * T2 Energy Storage
+      * T2 Proximity Mine
+        * No field engineer yet.       
 
   	Pending:
-      * T2 Energy Storage
   		* T2 Field engineer
   		* T2 Wall
   		* T2 Mobile Shield Gen.
   		* T2 Restoration field genorator.   
-      * T2 Proximity Mine
         * To be buildable by the field engineer.
       * T2 Nuke Mine  
             
@@ -239,7 +245,7 @@ Tech 3:
           * Open animation doesn't work yet.
           * Death animation slightly weird.
   		* T3 Point Deffence.
-  		    * Colossus foot.  
+  		    * Needs the passive animation disabling while it fires.  
           
   	Pending:
   		* T3 Torp launchers.
@@ -285,7 +291,7 @@ Tech 3:
         * Look into the Seraphim sniper bot for the script for this. 
 
     T3 Mobile strat defence
-      * "Functioning"
+      * "Functioning" Currently disabled.
         * Is more than willing to exceed its stored number of missiles.      
                             
   	Pending:
@@ -293,11 +299,14 @@ Tech 3:
   		* T3 Mobile Shield Gen.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Seraphim:
-  	T3 Gunship 'Vulthuum'
-  	T3 Air Transport.
-  	T3 Point Defence
-  		* Fully Functioning.
+  Seraphim:   
+    Fully funtional:
+    	* T3 Gunship 'Vulthuum'
+    	* T3 Air Transport.
+    	* T3 Point Defence                           
+    	  * Eventually want to give a better mesh.
+    	* T3 Sonar
+    	  * Eventually want to give a different mesh.             
   
   	T3 Heavy Assault Bot:
   		* Uses a slightly modified T2 bot mesh
@@ -307,6 +316,7 @@ Tech 3:
   		* T3 Anti Shield.
   		* T3 Torpedo Bomber.
   		* T3 observation building.
+  		  * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
   		* T3 Decoy Plane.
       * T3 Mobile strat defence.
 _______________________________________________________
@@ -339,7 +349,8 @@ UEF Experimental transport/drone carrier/gunship
 
 UEF Gantry: Experimental Factory
   * Can now be considered fully funtional.
-    * Still possibly to do:
+    * Still possibly to do:                 
+      * Mess with \lua\ui\game\avatars.lua and \lua\factions.lua to get the idle icon working.
       * Add some water stands like naval yards.
       * Give it team colours!      
       * Add some kind of pedistal effect area for aircraft, especially on water.
@@ -349,7 +360,7 @@ UEF Gantry: Experimental Factory
         * Alternatively, make the Atlantis submerge on completion so it can get out.             
 
 Aeon Experimental Assault Tank
-	* Unfinished texture.
+	* Mostly finished texture that needs more details.
 	* Has its big cannon and two TMD's.
 	* Totally isn't an eldar grav tank.  
 

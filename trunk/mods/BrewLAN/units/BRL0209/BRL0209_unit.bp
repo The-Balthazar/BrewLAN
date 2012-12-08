@@ -164,8 +164,8 @@ UnitBlueprint {
                         {
                             BoneName = 'BRL0209',
                             TreadMarks = 'tank_treads_albedo',
-                            TreadMarksInterval = 0.3,
-                            TreadMarksSizeX = 0.65,
+                            TreadMarksInterval = 0.27,
+                            TreadMarksSizeX = 0.75,
                             TreadMarksSizeZ = 0.4,
                             TreadOffset = {
                                 0,

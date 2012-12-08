@@ -10,7 +10,7 @@
 
 local AMassStorageUnit = import('/lua/aeonunits.lua').AMassStorageUnit
 
-UAB1106 = Class(AMassStorageUnit) {
+SAB1206 = Class(AMassStorageUnit) {
 
     OnStopBeingBuilt = function(self,builder,layer)
         AMassStorageUnit.OnStopBeingBuilt(self,builder,layer)
@@ -22,4 +22,4 @@ UAB1106 = Class(AMassStorageUnit) {
     end,
 }
 
-TypeClass = UAB1106
+TypeClass = SAB1206

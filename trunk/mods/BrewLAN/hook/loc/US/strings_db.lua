@@ -82,8 +82,8 @@ Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture
 Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture and reclamation unit. Equipped a personal shield and radar."
 
 #-- Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which have names.
-beb1206_name="CJ-00F4T-2"
-beb1205_name="PW4TH12-ST Capacitor"
+seb1206_name="CJ-00F4T-2"
+seb1205_name="PW4TH12-ST Capacitor"
 Unit_Description_BrewLAN_T2R002="Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 Unit_Description_BrewLAN_T2R001="Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 
@@ -177,6 +177,10 @@ bbui4301="Naval Shield Generator"
 beb4301_name="SSD - Pulse"
 bab4301_name="Borealis"
 #--No unit description. It can only be upgraded to.
+
+#--Seraphim T3 sonar platform
+sss0305_name="Aezhou"
+Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
 
 
 ## T4

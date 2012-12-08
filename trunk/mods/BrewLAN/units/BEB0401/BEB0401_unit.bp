@@ -50,6 +50,7 @@ UnitBlueprint {
         'LAND',
         'EXPERIMENTAL',
         'CONSTRUCTION',
+        'GANTRY',
         'FACTORY',
         'RALLYPOINT',
         'DRAGBUILD',
@@ -57,8 +58,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
- #       'SORTCONSTRUCTION',
-        'SORTSTRATEGIC',
+        'SORTCONSTRUCTION',
+ #       'SORTSTRATEGIC',
     },
     Defense = {
         AirThreatLevel = 0,

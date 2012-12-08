@@ -6,7 +6,7 @@
 local TEnergyStorageUnit = import('/lua/terranunits.lua').TEnergyStorageUnit
 local BareBonesWeapon = import('/lua/sim/DefaultWeapons.lua').BareBonesWeapon
 
-BEB1205 = Class(TEnergyStorageUnit) {
+SEB1205 = Class(TEnergyStorageUnit) {
 
     OnCreate = function(self)
         TEnergyStorageUnit.OnCreate(self)
@@ -39,4 +39,4 @@ BEB1205 = Class(TEnergyStorageUnit) {
     },	
 }
 
-TypeClass = BEB1205
+TypeClass = SEB1205

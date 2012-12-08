@@ -44,8 +44,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'OVERLAYDEFENSE',
         'OVERLAYCOUNTERINTEL',
-       #'SORTDEFENSE',
-        'SORTSTRATEGIC',
+        'SORTDEFENSE',
+        #'SORTSTRATEGIC',
     },
     CollisionOffsetY = -0.25,
     Defense = {
