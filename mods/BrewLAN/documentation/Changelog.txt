@@ -142,6 +142,10 @@ __________._________
     * Fixed the selection area.
     * Updated the icon to the new model.
   __________
+  2012-12-(3-4)
+  
+  <Section data missing>  
+  __________
   2012-12-05
                  
   * Aeon T3 Point Defence changes:
@@ -149,7 +153,30 @@ __________._________
     * Decreased its range slightly.
     * Gave it the ability to target low altitude aircraft (gunships and transports)
     * Gave it an idle animation.             
-  * Added a section of test script that moves the Total Mayhem unit Doomsday into the Gantry.                                         
+  * Added a section of test script that moves the Total Mayhem mod unit Doomsday into the Gantry.  
+  __________
+  2012-12-07
+                 
+  * Adjusted the tracks of the Wilson.
+  * Corrected the selection overlay for the Little Bertha.
+  * Fixed the pitch animation of the Little Bertha.
+  * Aligned the selection overlay for the Poker.
+  * Tightened the build effect overlay of the Poker.
+  * Aligned the selection overlay of the Charis. 
+  __________
+  2012-12-08
+                 
+  * Added the Seraphim T3 Sonar.
+    * Allowed the Seraphim T2 Sonar to upgrade into it.
+  * Fixed the blank icons on the idle engineers tab heading for Aeon and Cybran T2 when the field engineers are the only idle engineer.
+    * They still lack entries on the actual list.  
+  * Changed the build sorting of the Gantry to Construction.
+  * Changed the build sorting of the Paragon to Economy.
+  * Changed the build sorting of the Iron Curtain to Defence.
+  * Added the Seraphim T2 energy storage.
+  * Changed the unit codes of all T2 energy and mass storages to S- prefix from b- prefix.
+  * Added the Aeon T2 energy storage.
+  * Enabled Sorian AI to build and rename the Absolution.                                                              
 __________._________
 2011-03-19|0.4.0
 

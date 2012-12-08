@@ -27,6 +27,17 @@ UnitList = {
 	Cybran = {'srb2401', 100},
     },
 
+    T4LandExperimental1 = {
+	Aeon = {'sal0401', 50},
+    },
+    T4LandExperimental2 = {
+	Aeon = {'sal0401', 50},
+    },
+    T4SeaExperimental1 = {
+	Aeon = {'sal0401', 25},
+    },
+
+
 	##Tech 3 Air		*********************************************
 
     T3AirTransport = {
@@ -73,7 +84,7 @@ UnitList = {
    
 	##Tech 2 Land		*********************************************
    #
-   # T2Engineer = {
+   # T2EngineerSupport = {
 	#Cybrans = {'bea0105', 25},
    # },
    # 

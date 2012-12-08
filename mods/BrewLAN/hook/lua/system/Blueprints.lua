@@ -17,10 +17,10 @@ function ModBlueprints(all_blueprints)
     BrewLANFieldEngineerChanges(all_blueprints.Unit)
     BrewLANCybranShieldChanges(all_blueprints.Unit)
     DragBuildQuantumOptics(all_blueprints.Unit)
-    ExperimentalStrategicSorting(all_blueprints.Unit)
+    ExperimentalBuildSorting(all_blueprints.Unit)
     SalvationBrewLANChanges(all_blueprints.Unit)
 #--    TorpedoBomberWaterLandCat(all_blueprints.Unit)   ##Ends up in them getting shot by subs.
-    AeonShieldUpgradeable(all_blueprints.Unit)
+    UpgradeableToBrewLAN(all_blueprints.Unit)
 #--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)
     GantryExperimentalBuildOnly(all_blueprints.Unit)
@@ -146,14 +146,16 @@ end
 
 
 
-function ExperimentalStrategicSorting(all_bps)
+function ExperimentalBuildSorting(all_bps)
 
     local t4buildings = {
-        all_bps['xab1401'], #Paragon
-        all_bps['ueb2401'], #Mavor
+        xab1401 = 'SORTECONOMY',    #Paragon   
+        ueb2401 = 'SORTSTRATEGIC',  #Mavor
     }
-    for arrayIndex, bp in t4buildings do
-        table.insert(bp.Categories, 'SORTSTRATEGIC')
+    for experimentalid, cat in t4buildings do
+        if all_bps[experimentalid] then
+            table.insert(all_bps[experimentalid].Categories, cat)
+        end
     end
 end
 
@@ -219,7 +221,7 @@ end
 
 
 
-function AeonShieldUpgradeable(all_bps)
+function UpgradeableToBrewLAN(all_bps)
 
     local AeonT2Shield = {
         all_bps['uab4202'],
@@ -232,6 +234,22 @@ function AeonShieldUpgradeable(all_bps)
         if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
         table.insert(bp.Economy.BuildableCategory, 'uab4301')
     end
+    
+    local SeraphimT2Sonar = {
+        all_bps['xsb3202'],
+    }
+    for arrayIndex, bp in SeraphimT2Sonar do 
+        #--table.removeByValue(bp.Display, "AnimationUpgrade = '/units/uab3202/uab3202_aopen.sca'")
+        
+        bp.General.UpgradesTo = 'sss0305'
+        
+        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
+        
+        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
+        table.insert(bp.Economy.BuildableCategory, 'sss0305')
+    end
+    
+    
 end
 
 

@@ -158,7 +158,7 @@ UnitBlueprint {
         BuildCostMass = 3000,
         BuildTime = 3750,
         RebuildBonusIds = {
-            'beb1206',
+            'seb1206',
         },
         StorageMass = 12500,
     },
@@ -187,7 +187,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC beb1206_name>CJ-00F4T-2',
+        UnitName = '<LOC seb1206_name>CJ-00F4T-2',
         UnitWeight = 1,
     },
     Interface = {

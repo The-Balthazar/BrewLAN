@@ -25,14 +25,14 @@ Description['brb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging
 Description['bsb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 
 #Tech 2 resource units
-Description['beb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
+Description['seb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 Description['sab1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 Description['srb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 Description['ssb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
-Description['beb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
-Description['bab1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
-Description['brb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
-Description['bsb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
+Description['seb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
+Description['sab1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
+Description['srb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
+Description['ssb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 
 #Tech 2 defence units
 Description['seb2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
@@ -87,6 +87,9 @@ Description['brb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive t
 Description['beb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
 Description['bsb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Description['sab2306'] = "<LOC Unit_Description_BrewLAN_T3B004>Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
+
+#Tech 3 Naval units
+Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
 
 #Experimentals
 Description['beb2404'] = "<LOC Unit_Description_BrewLAN_T4B001>Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."

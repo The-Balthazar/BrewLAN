@@ -82,8 +82,8 @@ Unit_Description_BrewLAN_T2L001="Tech 2 amphibie de construction, la réparation,
 Unit_Description_BrewLAN_T2L002="Construction amphibie Tech 2, la réparation, la remise en état de capture et de l'unité. Equipé d'un bouclier personnel et radar."
 
 ### Mass and energy storages use the default strings of their T1 counterparts.
-beb1206_name="CJ-00F4T-2"
-beb1205_name="PW4TH12-ST condensateur"
+seb1206_name="CJ-00F4T-2"
+seb1205_name="PW4TH12-ST condensateur"
 Unit_Description_BrewLAN_T2R002="Magasins de grandes quantités de masse. Construire à côté extracteurs ou fabricants de bonus de contiguïté."
 Unit_Description_BrewLAN_T2R001="Magasins grandes quantités d'énergie. Construire à côté de générateurs électriques pour bonus de contiguïté."
 
@@ -171,6 +171,9 @@ bbui4301="Générateur de bouclier naval"
 beb4301_name="SSD - Pulse"
 bab4301_name="Borealis"
 ##No unit description. It can only be upgraded to.
+ 
+sss0305_name="Aezhou"
+Unit_Description_BrewLAN_T3S001="Système de sonar à portée exceptionnelle. Détecte et suit les unités navales. Equipé d'un téléporteur personnel."
 
 
 ## T4

@@ -42,17 +42,17 @@ UnitList = {
 	##Tech 2 Buildings	*********************************************
 
     MassStorage = {
-	UEF =		{'beb1206', 15},
-	Cybran =	{'brb1206', 15},
-	Aeon =		{'bab1206', 15},
-	Seraphim =	{'bsb1206', 15},
+	UEF =		{'seb1206', 15},
+	Cybran =	{'srb1206', 15},
+	Aeon =		{'sab1206', 15},
+	Seraphim =	{'ssb1206', 15},
     },
 
     EnergyStorage = {
-	UEF =		{'beb1205', 15},
-	Cybran =	{'brb1205', 15},
-	Aeon =		{'bab1205', 15},
-	Seraphim =	{'bsb1205', 15},
+	UEF =		{'seb1205', 15},
+	Cybran =	{'srb1205', 15},
+	Aeon =		{'sab1205', 15},
+	Seraphim =	{'ssb1205', 15},
     },
 
 	##Tech 1 Buildings	*********************************************

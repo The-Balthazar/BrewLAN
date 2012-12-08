@@ -82,8 +82,8 @@ Unit_Description_BrewLAN_T2L001="Translation pending."
 Unit_Description_BrewLAN_T2L002="Translation pending."
 
 ### Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which has a name.
-beb1206_name="CJ-00F4T-2"
-beb1205_name="PW4TH12-ST Kondensator"
+seb1206_name="CJ-00F4T-2"
+seb1205_name="PW4TH12-ST Kondensator"
 Unit_Description_BrewLAN_T2R002="Speichert große Mengen an Masse. Gibt einen Nähebonus für Massefabrikatoren- und extraktoren."
 Unit_Description_BrewLAN_T2R001="Speichert große Mengen von Energie. Gibt einen Nähebonus für Energiegeneratoren und Kraftwerke."
 
@@ -171,6 +171,9 @@ bbui4301="Schildgenerator naval"
 beb4301_name="SSD - Puls"
 bab4301_name="Borealis"
 ##No unit description. It can only be upgraded to.
+
+sss0305_name="Aezhou"
+Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
 
 
 ## T4
