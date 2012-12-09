@@ -203,8 +203,8 @@ brs0401="Experimental Battleship"
 brs0401_name="Höllischer Verfolger"
 Unit_Description_BrewLAN_T4S001="Translation pending."
 
-beb0401="Experimental Factory"
-beb0401_name="Gantry"
+seb0401="Experimental Factory"
+seb0401_name="Gantry"
 Unit_Description_BrewLAN_T4B004="Translation pending."
 
 sal0401="Experimental Assault Tank"
