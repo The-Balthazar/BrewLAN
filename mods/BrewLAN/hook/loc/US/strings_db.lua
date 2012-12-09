@@ -210,8 +210,8 @@ brs0401="Experimental Battleship"
 brs0401_name="Abyssal Persecutor"
 Unit_Description_BrewLAN_T4S001="Experimental amphibious battleship."
 
-beb0401="Experimental Factory"
-beb0401_name="Gantry"
+seb0401="Experimental Factory"
+seb0401_name="Gantry"
 Unit_Description_BrewLAN_T4B004="Experimental multi-purpose factory. Dynamically changes buildable units based on environment. Can be toggled to build aircraft in any environment."
 
 sal0401="Experimental Siege Tank"

@@ -3,7 +3,7 @@
 
 
 Factions[1].IdleGantryTextures = {
-		'/icons/units/beb0401_icon.dds',
+		'/icons/units/seb0401_icon.dds',
 }
 
 

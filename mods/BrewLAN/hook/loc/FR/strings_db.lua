@@ -203,8 +203,8 @@ brs0401="Dreadnought expérimentale"
 brs0401_name="Persécuteur abyssal"
 Unit_Description_BrewLAN_T4S001="amphibie expérimental cuirassé."
 
-beb0401="Usine expérimentale"
-beb0401_name="Portique"
+seb0401="Usine expérimentale"
+seb0401_name="Portique"
 Unit_Description_BrewLAN_T4B004="Expérimentale multi-usages usine. Change dynamiquement unités constructibles sur la base de l'environnement. Peut être activé à construire des avions dans n'importe quel environnement."
 
 sal0401="Experimental Assault Tank"

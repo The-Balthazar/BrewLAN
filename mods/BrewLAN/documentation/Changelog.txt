@@ -176,7 +176,16 @@ __________._________
   * Added the Seraphim T2 energy storage.
   * Changed the unit codes of all T2 energy and mass storages to S- prefix from b- prefix.
   * Added the Aeon T2 energy storage.
-  * Enabled Sorian AI to build and rename the Absolution.                                                              
+  * Enabled Sorian AI to build and rename the Absolution.
+  * Re-added all the old Sorian names I removed around rev71. 
+  __________
+  2012-12-09
+                 
+  * Gantry changes:
+    * Changed unit code to new prefix.
+    * Allowed it to build engineers while in naval & air modes.
+    * Gave it more underwater furniture (Legs, arms, pipes, ect.)
+    * Gave it a better texture, and team coloured areas.                                                                              
 __________._________
 2011-03-19|0.4.0
 
