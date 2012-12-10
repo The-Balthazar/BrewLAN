@@ -126,8 +126,8 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Right_Exhaust',
-                            'Left_Exhaust',
+                            'Emmitter02',
+                            'Emmitter03',
                         },
                         Type = 'GroundKickup03',
                     },

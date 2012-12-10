@@ -185,7 +185,13 @@ __________._________
     * Changed unit code to new prefix.
     * Allowed it to build engineers while in naval & air modes.
     * Gave it more underwater furniture (Legs, arms, pipes, ect.)
-    * Gave it a better texture, and team coloured areas.                                                                              
+    * Gave it a better texture, and team coloured areas.
+  __________
+  2012-12-10
+                 
+  * Fixed the dust emitters and partially inverted normal map for the Moldovite.
+  * Added a water ripple idle effect for the Absolution.
+  * Added a custom tarmac for the Gantry, one that is actually large enough for it.                                                                                  
 __________._________
 2011-03-19|0.4.0
 
