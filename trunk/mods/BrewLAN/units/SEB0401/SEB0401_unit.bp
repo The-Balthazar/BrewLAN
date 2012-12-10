@@ -146,16 +146,16 @@ UnitBlueprint {
         SpawnRandomRotation = false,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar12x_01_albedo',
+                Albedo = 'Tarmacs/Tar20x_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 12.8,
-                Normal = 'Tarmacs/Tar12x_01_normals',
+                Normal = 'Tarmacs/Tar20x_01_normals',
                 Orientations = {
                     0,
                 },
                 RemoveWhenDead = false,
-                Width = 12.8,
+                Width = 12.8*2,
             },
         },
         UniformScale = 0.28,
@@ -278,7 +278,7 @@ UnitBlueprint {
         SkirtSizeZ = 12,
         TurnRate = 0,
     },
-    SelectionSizeX = 10,
+    SelectionSizeX = 10.5,
     SelectionSizeZ = 6.5,
     SelectionThickness = 0.1,
 
