@@ -58,8 +58,8 @@ Unit_Description_BrewLAN_T1P002="Generates a protective shield around units and 
 Unit_Description_BrewLAN_T1P003="Generates a protective shield around units and structures within its radius. Upradable twice."
 
 bbui5104="Light Air Staging Facility"
-bbuisera5104="Light Air Staging Beacon"
-bsb5104_name="Iathu-uhthe"
+sbuisera5104="Light Air Staging Beacon"
+ssb5104_name="Iathu-uhthe"
 bab5104_name="Pedestal"
 beb5104_name="Resupply"
 brb5104_name="Ravitailler"
@@ -153,8 +153,8 @@ bsl0311_desc="Heavy Assault Bot"
 bsl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Aire-au Bolters."
 
-brb2306_name="Hades"
-bsb2306_name="Othuushala"
+srb2306_name="Hades"
+ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
 Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
@@ -186,8 +186,8 @@ Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects an
 ## T4
 
 
-bsl0403_desc="Experimental Engineer"
-bsl0403_name="Iyadesu"
+ssl0403_desc="Experimental Engineer"
+ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; can build itself and the resources to do so in 20 seconds."
 
 bea0401_desc="Experimental Gunship"

@@ -32,6 +32,7 @@ UnitBlueprint {
         'INTELLIGENCE',
         'TECH3',
         'SONAR',
+        'TELEPORT',
         'NEEDMOBILEBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',

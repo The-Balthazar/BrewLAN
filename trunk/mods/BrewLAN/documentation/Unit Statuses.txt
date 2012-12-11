@@ -329,7 +329,7 @@ Land 2          |Fatboy (F)     |*Absolution    |Megalith (F)   |*?             
 Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
-Static 2        |*Transport     |Paragon        |*?             |*?             |
+Static 2        |*Transport     |Paragon        |*?             |*Transport     |
 Static 3        |*Gantry        |*Shield proj...|*Iron Curtain  |*?             |
 ________________!_______________!_______________!_______________!_______________!
 
@@ -347,6 +347,14 @@ UEF Experimental transport/drone carrier/gunship
     * Script might also be usefull for the decoy planes.
   * A messy barely started gunship only version exists, it uses a mesh from an old TA mod for now.       
 
+UEF "Static 2 Transport" idea.
+  * "A Static transport?"
+    * Unit cannon-like thing.   
+                          
+Seraphim "Static 2 Transport" idea.
+  * "A Static transport?"
+    * Stargate-like thing.
+    
 UEF Gantry: Experimental Factory
   * Can now be considered fully funtional.
     * Still possibly to do:                 
@@ -398,7 +406,8 @@ Seraphim Iyadesu: Experimental Engineering Platform
 UEF Doomsday Machine: Experimental Point Defence
 	* Was supposed to be a callback to the old TA unit.
 	  * An uninteresting idea uninterestingly implemented. Removed.
-	  * Still in the source files as a reminder.      
+	  * Was only still in the source files for nostalgia.
+	    * Removed as of r146         
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Other ideas:

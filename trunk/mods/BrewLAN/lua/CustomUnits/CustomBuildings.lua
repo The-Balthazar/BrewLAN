@@ -28,15 +28,15 @@ UnitList = {
 	##Tech 3 Buildings	*********************************************
 
     T3AADefense = {
-	Cybran =	{'brb2306', 33},
-	Seraphim =	{'bsb2306', 33},
-	Aeon =		{'bab2306', 33},
+	Cybran =	{'srb2306', 33},
+	Seraphim =	{'ssb2306', 33},
+	Aeon =		{'sab2306', 33},
     },
 
     T2GroundDefense = {
-	Cybran =	{'brb2306', 33},
-	Seraphim =	{'bsb2306', 33},
-	Aeon =		{'bab2306', 33},
+	Cybran =	{'srb2306', 33},
+	Seraphim =	{'ssb2306', 33},
+	Aeon =		{'sab2306', 33},
     },
 
 	##Tech 2 Buildings	*********************************************
@@ -60,7 +60,7 @@ UnitList = {
     T2AirStagingPlatform = {
 	UEF =		{'beb5104', 15},
 	Cyrban =	{'brb5104', 15},
-	Seraphim =	{'bsb5104', 35},
+	Seraphim =	{'ssb5104', 35},
 	Aeon =		{'bab5104', 20},
     },
 

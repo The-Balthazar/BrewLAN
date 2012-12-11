@@ -58,8 +58,8 @@ Unit_Description_BrewLAN_T1P002="génère un écran de protection autour des unités
 Unit_Description_BrewLAN_T1P003="génère un écran de protection autour des unités et des structures à l'intérieur de son rayon. Upradable deux fois."
 
 bbui5104="Plate-forme d'aéro-lancement léger"
-bbuisera5104="Balise d'aéro-lancement léger"
-bsb5104_name="Iathu-uhthe"
+sbuisera5104="Balise d'aéro-lancement léger"
+ssb5104_name="Iathu-uhthe"
 bab5104_name="Piédestal"
 beb5104_name="Réapprovisionnement"
 brb5104_name="Ravitailler"
@@ -147,8 +147,8 @@ bsl0311_desc="Robot d'assaut lourd"
 bsl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Bot blindé assaut de siège. Armé de deux Aire-au Bolters."
 
-brb2306_name="Hadès"
-bsb2306_name="Othuushala"
+srb2306_name="Hadès"
+ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Tour défensive lourd. Attaques terrestres et maritimes unités avec un puissant laser de balayage. Ne s'engage pas des avions ou des unités immergées."
 Unit_Description_BrewLAN_T3B003="Lourde tour de défense. Les attaques des unités terrestres et maritimes avec un canon à plasma gatling. Ne s'engage pas des avions ou des unités immergées."
@@ -179,8 +179,8 @@ Unit_Description_BrewLAN_T3S001="Système de sonar à portée exceptionnelle. Détec
 ## T4
 
 
-bsl0403_desc="Ingénieur expérimentale"
-bsl0403_name="Iyadesu"
+ssl0403_desc="Ingénieur expérimentale"
+ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Overpowered ingénieur expérimentale; peut construire lui-même et les ressources pour le faire en 20 secondes."
 
 bea0401_desc="Vaisseau de combat expérimentale"

@@ -58,8 +58,8 @@ Unit_Description_BrewLAN_T1P002="Erzeugt einen schützenden Schild um Einheiten 
 Unit_Description_BrewLAN_T1P003="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann zweimal erweitert werden."
 
 bbui5104="Start- und Landeeinrichtung"
-bbuisera5104="Luftstützpunkt"
-bsb5104_name="Iathu-uhthe"
+sbuisera5104="Luftstützpunkt"
+ssb5104_name="Iathu-uhthe"
 bab5104_name="Pedestal"
 beb5104_name="Resupply"
 brb5104_name="Ravitailler"
@@ -147,8 +147,8 @@ bsl0311_desc="Schwerer Angriffsbot"
 bsl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit mächtigen Waffen und einem Schildgenerator."
 
-brb2306_name="Hades"
-bsb2306_name="Othuushala"
+srb2306_name="Hades"
+ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
 Unit_Description_BrewLAN_T3B003="Schweres Verteidigungsgeschütz. Geeignet um Land- und Marineeinheiten zu zerstören."
@@ -179,8 +179,8 @@ Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects an
 ## T4
 
 
-bsl0403_desc="Experimenteller Techniker"
-bsl0403_name="Iyadesu"
+ssl0403_desc="Experimenteller Techniker"
+ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L00="Über powered experimentellen Ingenieur; aufbauen kann sich selbst und die Ressourcen zu tun, so in 20 Sekunden."
 
 bea0401_desc="Experimentelles Kanonenboot"
