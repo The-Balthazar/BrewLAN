@@ -14,7 +14,7 @@ local SDFAireauBolter = WeaponsFile.SDFAireauBolterWeapon
 local SANUallCavitationTorpedo = WeaponsFile.SANUallCavitationTorpedo
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
-BSL0403 = Class(SConstructionUnit) {
+SSL0403 = Class(SConstructionUnit) {
     Weapons = {
         Torpedo01 = Class(SANUallCavitationTorpedo) {},
         LeftTurret = Class(SDFAireauBolter) {},
@@ -22,4 +22,4 @@ BSL0403 = Class(SConstructionUnit) {
     },
 }
 
-TypeClass = BSL0403
+TypeClass = SSL0403

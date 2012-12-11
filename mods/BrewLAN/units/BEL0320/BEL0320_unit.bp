@@ -231,7 +231,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
             },
-            FiringTolerance = .1,
+            FiringTolerance = 1,
             Label = 'OrbitalDeathLaserWeapon',
             MaxRadius = 80,
             MaximumBeamLength = 25000,

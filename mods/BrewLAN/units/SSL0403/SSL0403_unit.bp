@@ -125,7 +125,7 @@ UnitBlueprint {
         SubThreatLevel = 40,
         SurfaceThreatLevel = 100,
     },
-    Description = '<LOC bsl0403_desc>Experimental Engineer',
+    Description = '<LOC ssl0403_desc>Experimental Engineer',
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
@@ -314,7 +314,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC bsl0403_name>Iyadesu',
+        UnitName = '<LOC ssl0403_name>Iyadesu',
         UnitWeight = 1,
     },
     Intel = {
@@ -322,7 +322,7 @@ UnitBlueprint {
         WaterVisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC bsl0403_desc>Experimental Field Engineer',
+        HelpText = '<LOC ssl0403_desc>Experimental Field Engineer',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.35,

@@ -11,7 +11,7 @@ do
 
 local OldModBlueprints = ModBlueprints
 
-function ModBlueprints(all_blueprints)
+function ModBlueprints(all_blueprints)         
     OldModBlueprints(all_blueprints)
     
     BrewLANFieldEngineerChanges(all_blueprints.Unit)
@@ -199,8 +199,8 @@ end
 function GantryExperimentalBuildOnly(all_bps)
 
     local UEFExperimentals = {
-	all_bps['uel0401'],
-	all_bps['brnt3doomsday'],
+	all_bps['uel0401'],              #-- Fatboy
+	all_bps['brnt3doomsday'],        #-- Total Mayhem Doomsday (Compatibility test script)
 	#all_bps['ues0401'],
     }
 
@@ -270,10 +270,10 @@ function HadesUpgradeable(all_bps)
         table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
 
         if not bp.Economy.RebuildBonusIds then bp.Economy.RebuildBonusIds = {} end
-        table.insert(bp.Economy.RebuildBonusIds, 'brb2306')
+        table.insert(bp.Economy.RebuildBonusIds, 'srb2306')
 
         if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
-        table.insert(bp.Economy.BuildableCategory, 'brb2306')
+        table.insert(bp.Economy.BuildableCategory, 'srb2306')
     end
 end
 

@@ -22,7 +22,7 @@ Description['bsb4102'] = "<LOC Unit_Description_BrewLAN_T1P003>Generates a prote
 Description['bab5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 Description['beb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 Description['brb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
-Description['bsb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
+Description['ssb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 
 #Tech 2 resource units
 Description['seb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
@@ -83,9 +83,9 @@ Description['bel0320'] = "<LOC Unit_Description_BrewLAN_T3L003>Satelite uplink d
 Description['bel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Anti-Nuke Launcher description."
 
 #Tech 3 buildings
-Description['brb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
+Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
 Description['beb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
-Description['bsb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
+Description['ssb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Description['sab2306'] = "<LOC Unit_Description_BrewLAN_T3B004>Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 
 #Tech 3 Naval units
@@ -96,7 +96,7 @@ Description['beb2404'] = "<LOC Unit_Description_BrewLAN_T4B001>Slightly broken e
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['brb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Iron Curtian description."
 Description['seb0401'] = "<LOC Unit_Description_BrewLAN_T4B004>Gantry description."
-Description['bsl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu description."
+Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu description."
 Description['bea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
 Description['brs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
 Description['belp001'] = "<LOC Unit_Description_0037>Fake engineer fatboy."

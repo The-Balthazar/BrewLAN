@@ -12,7 +12,7 @@ local SAirStagingPlatformUnit = import('/lua/seraphimunits.lua').SAirStagingPlat
 local SeraphimAirStagePlat02 = import('/lua/EffectTemplates.lua').SeraphimAirStagePlat02
 local SeraphimAirStagePlat01 = import('/lua/EffectTemplates.lua').SeraphimAirStagePlat01
 
-BSB5104 = Class(SAirStagingPlatformUnit) {
+SSB5104 = Class(SAirStagingPlatformUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         for k, v in SeraphimAirStagePlat02 do
             CreateAttachedEmitter(self, 'BSB5104', self:GetArmy(), v):ScaleEmitter(0.3)
@@ -26,4 +26,4 @@ BSB5104 = Class(SAirStagingPlatformUnit) {
     end,
 }
 
-TypeClass = BSB5104
+TypeClass = SSB5104
