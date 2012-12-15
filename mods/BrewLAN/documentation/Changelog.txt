@@ -202,7 +202,12 @@ __________._________
     * Seraphim T4 Engineer (the one that's disabled anyway).
       * The units no longer conflict, but the mod scripts do.
   * Removed the Doomsday Machine completely. Aint no one want that shit.
-  * Increased the firing tolerance on the Archimedes to prevent it from occasionally not firing.                                                                                                     
+  * Increased the firing tolerance on the Archimedes to prevent it from occasionally not firing.
+  __________
+  2012-12-15
+                 
+  * Added scaled explosions to the T2 energy storages.
+    * With no power in storage they do next to nothing. Big boom when full.                                                                                                        
 __________._________
 2011-03-19|0.4.0
 
