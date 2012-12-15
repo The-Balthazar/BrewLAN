@@ -4,7 +4,8 @@
 #**
 #****************************************************************************
 local TEnergyStorageUnit = import('/lua/terranunits.lua').TEnergyStorageUnit
-local BareBonesWeapon = import('/lua/sim/DefaultWeapons.lua').BareBonesWeapon
+local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
+local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 SEB1205 = Class(TEnergyStorageUnit) {
 
@@ -14,29 +15,61 @@ SEB1205 = Class(TEnergyStorageUnit) {
     end,
 
     Weapons = {
-	DeathWeapon = Class(BareBonesWeapon) {
+        DeathWeapon0 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsSml01,
+        },
+        DeathWeapon1 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsSml01,
+        },
+        DeathWeapon2 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsMed01,
+        },
+        DeathWeapon3 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsMed01,
+        },
+        DeathWeapon4 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsLrg01,
+        },
+        DeathWeapon5 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsLrg01,
+        },
+        DeathWeapon6 = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.ExplosionEffectsLrg02,
+        },
+    },
 
-	    OnCreate = function(self)
-	        BareBonesWeapon.OnCreate(self)
-	        local myBlueprint = self:GetBlueprint()
-	        self.Data = {
-		    Damage = 5000,
-	        }
-	        self:SetWeaponEnabled(false)
-	    end,
+    OnKilled = function(self, instigator, type, overkillRatio)
 
-	    OnFire = function(self)
-	    end,
 
-	    Fire = function(self)
-	        local myBlueprint = self:GetBlueprint()
-	        local myProjectile = self.unit:CreateProjectile( myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
-	        if self.Data then
-	            myProjectile:PassData(self.Data)
-	        end
-	    end,
-	},
-    },	
+                local bp = self:GetBlueprint()
+                local aiBrain = GetArmyBrain(self:GetArmy())
+                local curEnergy = aiBrain:GetEconomyStoredRatio('ENERGY')
+
+                if self:IsBeingBuilt() then 
+                else
+                    if curEnergy < 0.2 then
+                        self:GetWeaponByLabel('DeathWeapon0'):FireWeapon()
+                        #LOG('Weapon0')
+                    elseif curEnergy < 0.4 then
+                        self:GetWeaponByLabel('DeathWeapon1'):FireWeapon()
+                        #LOG('Weapon1')
+                    elseif curEnergy < 0.6 then
+                        self:GetWeaponByLabel('DeathWeapon2'):FireWeapon()
+                        #LOG('Weapon2')
+                    elseif curEnergy < 0.8 then
+                        self:GetWeaponByLabel('DeathWeapon3'):FireWeapon()
+                        #LOG('Weapon3')
+                    elseif curEnergy < 0.9 then
+                        self:GetWeaponByLabel('DeathWeapon4'):FireWeapon()
+                        #LOG('Weapon4')
+                    elseif curEnergy <= 1.0 then
+                        self:GetWeaponByLabel('DeathWeapon5'):FireWeapon()
+                        #LOG('Weapon5')
+                    end
+                end
+
+        TEnergyStorageUnit.OnKilled(self)
+    end,
 }
 
 TypeClass = SEB1205
