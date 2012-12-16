@@ -1,16 +1,16 @@
 #****************************************************************************
 #**
-#**  File     :  /cdimage/units/UAB5202/UAB5202_script.lua
+#**  File     :  /cdimage/units/UEB5202/UEB5202_script.lua
 #**  Author(s):  John Comes, David Tomandl
 #**
-#**  Summary  :  Aeon Air Staging Platform
+#**  Summary  :  UEF Air Staging Platform
 #**
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local AAirStagingPlatformUnit = import('/lua/aeonunits.lua').AAirStagingPlatformUnit
+local TAirStagingPlatformUnit = import('/lua/terranunits.lua').TAirStagingPlatformUnit
 
-UAB5202 = Class(AAirStagingPlatformUnit) {
+SEB5104 = Class(TAirStagingPlatformUnit) {
 }
 
-TypeClass = UAB5202
+TypeClass = SEB5104

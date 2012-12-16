@@ -19,9 +19,9 @@ Description['beb4102'] = "<LOC Unit_Description_BrewLAN_T1P002>Generates a prote
 Description['bsb4102'] = "<LOC Unit_Description_BrewLAN_T1P003>Generates a protective shield around units and structures within its radius. Upradable twice."
 
 #Tech 1 utility units
-Description['bab5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
-Description['beb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
-Description['brb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
+Description['sab5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
+Description['seb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
+Description['srb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 Description['ssb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 
 #Tech 2 resource units

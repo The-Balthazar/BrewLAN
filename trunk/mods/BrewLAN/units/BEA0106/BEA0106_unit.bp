@@ -209,7 +209,6 @@ UnitBlueprint {
                     {
                         Bones = {
                             'Exhaust_Left',
-                            'Exhaust_Right',
                         },
                         Type = 'AirExhaust01',
                     },
@@ -218,7 +217,6 @@ UnitBlueprint {
             BeamExhaust = {
                 Bones = {
                     'Exhaust_Left',
-                    'Exhaust_Right',
                 },
                 Cruise = true,
                 Idle = false,

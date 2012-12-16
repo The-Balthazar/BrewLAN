@@ -57,12 +57,12 @@ Unit_Description_BrewLAN_T1P001="génère un écran de protection autour des unités
 Unit_Description_BrewLAN_T1P002="génère un écran de protection autour des unités et des structures à l'intérieur de son rayon."
 Unit_Description_BrewLAN_T1P003="génère un écran de protection autour des unités et des structures à l'intérieur de son rayon. Upradable deux fois."
 
-bbui5104="Plate-forme d'aéro-lancement léger"
+sbui5104="Plate-forme d'aéro-lancement léger"
 sbuisera5104="Balise d'aéro-lancement léger"
 ssb5104_name="Iathu-uhthe"
-bab5104_name="Piédestal"
-beb5104_name="Réapprovisionnement"
-brb5104_name="Ravitailler"
+sab5104_name="Piédestal"
+seb5104_name="Réapprovisionnement"
+srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Lumière installations étagement de l'air. Réparations et aéronefs avions fait le plein, une petite aire d'atterrissage."
 
 

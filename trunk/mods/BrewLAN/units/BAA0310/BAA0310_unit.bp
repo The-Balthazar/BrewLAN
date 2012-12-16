@@ -151,7 +151,6 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Exhaust_Left',
                             'Exhaust_Right',
                         },
                         Type = 'AirMoveExhaust01',

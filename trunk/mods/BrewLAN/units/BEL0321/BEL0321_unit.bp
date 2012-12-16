@@ -101,7 +101,7 @@ UnitBlueprint {
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                            BoneName = 'XEL0306',
+                            BoneName = 'BEL0321',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.6,
                             TreadMarksSizeX = 1.3,

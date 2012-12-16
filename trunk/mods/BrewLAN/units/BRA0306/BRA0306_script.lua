@@ -14,7 +14,7 @@ local CAAAutocannon = cWeapons.CAAAutocannon
 local CEMPAutoCannon = cWeapons.CEMPAutoCannon
 local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit
 
-URA0104 = Class(CAirUnit) {
+BRA0306 = Class(CAirUnit) {
     Weapons = {
         AAAutocannon = Class(CAAAutocannon) {},
         AAAutocannon2 = Class(CAAAutocannon) {},
@@ -106,5 +106,5 @@ URA0104 = Class(CAirUnit) {
     end,
 }
 
-TypeClass = URA0104
+TypeClass = BRA0306
 

@@ -58,10 +58,10 @@ UnitList = {
 	##Tech 1 Buildings	*********************************************
 
     T2AirStagingPlatform = {
-	UEF =		{'beb5104', 15},
-	Cyrban =	{'brb5104', 15},
+	UEF =		{'seb5104', 15},
+	Cyrban =	{'srb5104', 15},
 	Seraphim =	{'ssb5104', 35},
-	Aeon =		{'bab5104', 20},
+	Aeon =		{'sab5104', 20},
     },
 
     T1GroundDefense = {

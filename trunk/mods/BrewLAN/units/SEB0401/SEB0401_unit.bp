@@ -1,10 +1,14 @@
 UnitBlueprint {
     AI = {
         TargetBones = {
-            'Target01',
-            'Target02',
-            'Target03',
-            'UEB0301',
+            'Base_001',
+            'Base_002',
+            'Base_003',
+            'Base_004',
+            'Base_005',
+            'Base_006',
+            'Base_007',
+            'Base_008',
         },
     },
     Audio = {
@@ -77,34 +81,69 @@ UnitBlueprint {
             '<LOC ability_aquatic>Aquatic',
         },
         AnimationBuild = '/mods/brewlan/units/seb0401/SEB0401_abuild.sca',
-    #    BlinkingLights = {
-     #       {
-      #          BLBone = 'Foot_Right',
-       #         BLOffsetX = -0.4,
-        #        BLOffsetY = 0.8,
-         #       BLOffsetZ = -0.35,
-          #      BLScale = 1.5,
-           # },
-#            {
- #               BLBone = 'Foot_Left',
-  #              BLOffsetX = 0.4,
-   #             BLOffsetY = 0.8,
-    #            BLOffsetZ = -0.35,
-     #           BLScale = 1.5,
-      #      },
-       #     {
-        #        BLBone = 'Control_Tower',
-         #       BLOffsetX = 0,
-          #      BLOffsetY = 0,
-           #     BLOffsetZ = 0.5,
-            #    BLScale = 1.5,
-    #        },
-     #   },
-#        BlinkingLightsFx = {
- #           Green = '/effects/emitters/light_green_03_emit.bp',
-  #          Red = '/effects/emitters/light_red_03_emit.bp',
-   #         Yellow = '/effects/emitters/light_yellow_02_emit.bp',
-    #    },
+        BlinkingLights = {
+            {
+                BLBone = 'Base_001',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_002',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_003',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_004',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_005',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_006',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_007',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+            {
+                BLBone = 'Base_008',
+                BLOffsetX = .03,
+                BLOffsetY = 1.875,
+                BLOffsetZ = .34,
+                BLScale = 3,
+            },
+        },
+        BlinkingLightsFx = {
+            Green = '/effects/emitters/light_green_03_emit.bp',
+            Red = '/effects/emitters/light_red_03_emit.bp',
+            Yellow = '/effects/emitters/light_yellow_02_emit.bp',
+        },
         BuildAttachBone = 'Attachpoint',
         IdleEffects = {
             Water = {
