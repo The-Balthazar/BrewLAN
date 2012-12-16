@@ -57,12 +57,12 @@ Unit_Description_BrewLAN_T1P001="Erzeugt einen schützenden Schild um Einheiten 
 Unit_Description_BrewLAN_T1P002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann nur auf dem Wasser aufgerüstet werden."
 Unit_Description_BrewLAN_T1P003="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann zweimal erweitert werden."
 
-bbui5104="Start- und Landeeinrichtung"
+sbui5104="Start- und Landeeinrichtung"
 sbuisera5104="Luftstützpunkt"
 ssb5104_name="Iathu-uhthe"
-bab5104_name="Pedestal"
-beb5104_name="Resupply"
-brb5104_name="Ravitailler"
+sab5104_name="Pedestal"
+seb5104_name="Resupply"
+srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Rerpariert und Betankt kleine Flugzeuge, ein Landeplatz"
 
 

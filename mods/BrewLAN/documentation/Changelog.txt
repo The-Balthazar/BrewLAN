@@ -206,8 +206,18 @@ __________._________
   __________
   2012-12-15
                  
-  * Added scaled explosions to the T2 energy storages.
-    * With no power in storage they do next to nothing. Big boom when full.                                                                                                        
+  * Added scaled explosions to the T2 energy storages. Sucessfully this time.
+    * With no power in storage they do next to nothing. Big boom when full.
+  __________
+  2012-12-16
+                 
+  * Gantry changes:
+    * Added blinking lights.
+    * Fixed the targetting bones so things shoot it right.
+  * Changed the unit code prefixes of the UEF and Aeon T1 air staging, and fixed the script errors in them.
+  * Removed the reference to a non-existant bone on the Seagul.
+  * Removed the reference to a non-existant bone on the Aeon decoy plane.
+  * Fixed the treadmarks on the Aster.                                                                                                                         
 __________._________
 2011-03-19|0.4.0
 

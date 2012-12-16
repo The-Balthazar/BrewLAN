@@ -6,7 +6,7 @@
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
                                      Updated 2012-11-17
 _______________________________________________________
-Generic ideas that I'm either considering or planning on adding:
+General to-do list/ideas list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * Mobile Radar Jammers
 * More aquatic buildings
@@ -14,7 +14,18 @@ Generic ideas that I'm either considering or planning on adding:
 * Mobile Strat Defence
 * Plasma Batteries (T2 rapid fire arty, at T3, or more like battleship gauss cannons)
 * BARREL ROLL
-* Making energy storage scale their explosions based on current energy.
+* Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
+* Add unit orders to the blips of the Aeon Decoy plane.
+_______________________________________________________
+Errors list/the other to-do list.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* BRS0401 lacks weapons.
+* BEA0307 lacks the bone 'Exhaust_Left02'.
+* BRA0306 has an intel error. (line 32)
+* Wilson lacks treadmarks for its front tracks.
+* Zenith has unused bones.
+* The Gantry lacks a lod1 normal map.
+* The Absolution can't walk over walls and such.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -28,7 +39,7 @@ Modded Units:
   		  * Currently disabled because they get shot by submarines and not care.       
     
     Experimental Buildings
-      * Changed build menu sorting (To strategic).
+      * Added appropriate build menu sorting.
         * This seperates them from the mobile experimentals.        
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
@@ -180,6 +191,7 @@ Tech 2:
   	Fully Funtioning:
       * T2 Mass Storage
       * T2 Energy Storage
+        * Has explosion size that scales to the stored energy.
       * T2 Bomber
       * T2 Defence Engineer
         * Lacks a unique model.
@@ -202,12 +214,14 @@ Tech 2:
       * T2 Proximity Mine
       * T2 Nuke Mine
       * T2 Energy Storage
+        * Has explosion size that scales to the stored energy.       
   		* T2 Wall ('Bulkhead')
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
   	Fully Funtioning.
       * T2 Mass Storage
       * T2 Energy Storage
+        * Has explosion size that scales to the stored energy.
       * T2 Proximity Mine
         * Still blocks pathing.
         * Lacks a unique water explosion.
@@ -221,16 +235,18 @@ Tech 2:
   	Fully Funtioning:
   		* T2 Mass Storage
       * T2 Energy Storage
+        * Has explosion size that scales to the stored energy.
       * T2 Proximity Mine
         * No field engineer yet.       
 
   	Pending:
   		* T2 Field engineer
+        * Might give them a T1 & T3 field engineer instead.
   		* T2 Wall
   		* T2 Mobile Shield Gen.
   		* T2 Restoration field genorator.   
-        * To be buildable by the field engineer.
-      * T2 Nuke Mine  
+      * T2 Nuke Mine
+        * To be buildable by the field engineer.  
             
 -------------------------------------------------------
 Tech 3:
@@ -261,6 +277,7 @@ Tech 3:
 
     T3 Decoy Plane.
       * Functional but unfinished.
+        * Currently disabled.
       * Need to give a button to toggle between Soulripper/ASF impersination.
         * Aeon Decoy finished and has this function.            
   
@@ -287,6 +304,7 @@ Tech 3:
 
     T3 Decoy Plane.
       * Functional but unfinished.
+        * Currently disabled.       
       * When I give the UEF a T4 flyer will give a button to toggle between T4 flyer/ASF impersination.
         * Look into the Seraphim sniper bot for the script for this. 
 
@@ -307,17 +325,16 @@ Tech 3:
     	  * Eventually want to give a better mesh.
     	* T3 Sonar
     	  * Eventually want to give a different mesh.             
+      *T3 Heavy Assault Bot:
+  		  * Uses a slightly modified T2 bot mesh
   
-  	T3 Heavy Assault Bot:
-  		* Uses a slightly modified T2 bot mesh
-  
-  	Pending:
-  		* T3 Torp launchers.
-  		* T3 Anti Shield.
-  		* T3 Torpedo Bomber.
-  		* T3 observation building.
-  		  * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
-  		* T3 Decoy Plane.
+    Pending:
+      * T3 Torp launchers.
+      * T3 Anti Shield.
+      * T3 Torpedo Bomber.
+      * T3 observation building.
+        * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
+      * T3 Decoy Plane.
       * T3 Mobile strat defence.
 _______________________________________________________
 Experimental Table
@@ -330,20 +347,20 @@ Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
 Static 2        |*Transport     |Paragon        |*?             |*Transport     |
-Static 3        |*Gantry        |*Shield proj...|*Iron Curtain  |*?             |
+Static 3        |*Gantry (F)    |*Shield proj...|*Iron Curtain  |*?             |
 ________________!_______________!_______________!_______________!_______________!
 
-	(A)	Aircraft Carrier
-	(F)	Mobile factory
-	 *	Pending
-	 ?	???
-		PROFIT!
+  (A)  Aircraft Carrier
+  (F)  Mobile factory
+   *  Pending
+   ?  ???
+    PROFIT!
 
 UEF Experimental Assault Bot/tank
-	* Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
+  * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
 
 UEF Experimental transport/drone carrier/gunship
-	* Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
+  * Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
     * Script might also be usefull for the decoy planes.
   * A messy barely started gunship only version exists, it uses a mesh from an old TA mod for now.       
 
@@ -366,30 +383,30 @@ UEF Gantry: Experimental Factory
         * Alternatively, make the Atlantis submerge on completion so it can get out.             
 
 Aeon Experimental Assault Tank
-	* Mostly finished texture that needs more details.
-	* Has its big cannon and two TMD's.
-	* Totally isn't an eldar grav tank.  
+  * Mostly finished texture that needs more details.
+  * Has its big cannon and two TMD's.
+  * Totally isn't an eldar grav tank.  
 
 Aeon Experimental Shield projection tower.
-	* Something between a shield gen and the eye of something or other in appearance.
-	* Creates individual shields around each unit within the radius, probably with a ghost unit attached.
-		* Shields should share an overall health, and need some way to scale with the unit it surrounds.
-	* Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
+  * Something between a shield gen and the eye of something or other in appearance.
+  * Creates individual shields around each unit within the radius, probably with a ghost unit attached.
+    * Shields should share an overall health, and need some way to scale with the unit it surrounds.
+  * Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
 
 Cybran Experimental Missile ship
   * Initial ideas:
-  	* a cross between the Sea Shadow and a Houbei class missile boat.
-  	* Stealth, and tac missiles.
-  	* Possible strat missiles.
-  	* Possible cloak, disabled during firing and or really high power cost.
-	* Current implementation:
-	  * A Battleship with legs.
-	  * Currently no functioning weapons, but can stamp on things.         
+    * a cross between the Sea Shadow and a Houbei class missile boat.
+    * Stealth, and tac missiles.
+    * Possible strat missiles.
+    * Possible cloak, disabled during firing and or really high power cost.
+  * Current implementation:
+    * A Battleship with legs.
+    * Currently no functioning weapons, but can stamp on things.         
 
 Cybran Iron Curtain: Experimental Shield Generator
   * Funtions as a shield.
-	  * Need to adapt the force shield script to only effect this. 
-	* Possibly give it a better mesh.
+    * Need to adapt the force shield script to only effect this. 
+  * Possibly give it a better mesh.
 
 Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
   * Uses most of the parts of the original.
@@ -399,24 +416,24 @@ Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
 Abandonned Experimental Ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Seraphim Iyadesu: Experimental Engineering Platform
-	* Massively overpowered, in all ways.
-	  * Removed, after a few Iyadesu dominated games.
-	  * Although it was fun so the source files still exist.      
+  * Massively overpowered, in all ways.
+    * Removed, after a few Iyadesu dominated games.
+    * Although it was fun so the source files still exist.      
 
 UEF Doomsday Machine: Experimental Point Defence
-	* Was supposed to be a callback to the old TA unit.
-	  * An uninteresting idea uninterestingly implemented. Removed.
-	  * Was only still in the source files for nostalgia.
-	    * Removed as of r146         
+  * Was supposed to be a callback to the old TA unit.
+    * An uninteresting idea uninterestingly implemented. Removed.
+    * Was only still in the source files for nostalgia.
+      * Removed as of r146         
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Other ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 UEF Engineering Facility 'The Pound'
-	* A facility that houses a large number of Rover drones.
-	* Possibly just an expensive T3 unit.
-	* Probably a bad idea.
-	  * Potential to have its idea merged in some way with the Gantry.
+  * A facility that houses a large number of Rover drones.
+  * Possibly just an expensive T3 unit.
+  * Probably a bad idea.
+    * Potential to have its idea merged in some way with the Gantry.
 
 Anti-naval gunship.
 

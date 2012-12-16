@@ -57,12 +57,12 @@ Unit_Description_BrewLAN_T1P001="Generates a protective shield around units and 
 Unit_Description_BrewLAN_T1P002="Generates a protective shield around units and structures within its radius. Can only be upgraded on water."
 Unit_Description_BrewLAN_T1P003="Generates a protective shield around units and structures within its radius. Upradable twice."
 
-bbui5104="Light Air Staging Facility"
+sbui5104="Light Air Staging Facility"
 sbuisera5104="Light Air Staging Beacon"
 ssb5104_name="Iathu-uhthe"
-bab5104_name="Pedestal"
-beb5104_name="Resupply"
-brb5104_name="Ravitailler"
+sab5104_name="Pedestal"
+seb5104_name="Resupply"
+srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 
 
