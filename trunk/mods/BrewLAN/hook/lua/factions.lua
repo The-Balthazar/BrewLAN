@@ -12,7 +12,7 @@ Factions[1].IdleGantryTextures = {
 
 
 
-Factions[2].IdleEngTextures.T2F = '/icons/units/bal0209_icon.dds'
+Factions[2].IdleEngTextures.T2F = '/icons/units/sal0209_icon.dds'
 
 
 
@@ -20,4 +20,4 @@ Factions[2].IdleEngTextures.T2F = '/icons/units/bal0209_icon.dds'
 
 
 
-Factions[3].IdleEngTextures.T2F = '/icons/units/brl0209_icon.dds'
+Factions[3].IdleEngTextures.T2F = '/icons/units/srl0209_icon.dds'

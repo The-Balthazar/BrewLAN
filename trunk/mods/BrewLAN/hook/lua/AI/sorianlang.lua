@@ -34,7 +34,7 @@ AINames.seb0401 = {
 
 #-- Scathis MK II: Experimental Rapid-fire Artillery
 
-AINames.brb2401 = {
+AINames.srb2401 = {
         'Base Pounder',
         'Aconite',
         'Adonis',
@@ -53,7 +53,7 @@ AINames.brb2401 = {
 
 #-- Novax Satelite: Observation Satelite
 
-AINames.bea0002 = {
+AINames.sea0002 = {
         'Skynet',
 	'Silent Earth',
 	'Rith',

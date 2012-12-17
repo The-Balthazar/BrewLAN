@@ -13,16 +13,17 @@ UnitList = {
 	##Shields		*********************************************
 
     T3ShieldDefense = {
-	Cybran =	{'urb4206', 100}, #ED4
+	Cybran =	{'urb4206', 90}, #ED4
+	Cybran =	{'srb4401', 10}, #Iron Curtain
     },
 
     T2ShieldDefense = {
-	Cybran =	{'brb4401', 30}, #Iron Curtain
+	Cybran =	{'srb4401', 10}, #Iron Curtain
 	Cybran =	{'urb4206', 80}, #ED4
 	Cybran =	{'urb4205', 60}, #ED3
-	UEF =		{'beb4102', 10},
-	Aeon =		{'bab4102', 10},
-	Seraphim =	{'bsb4102', 10},
+	UEF =		{'seb4102', 10},
+	Aeon =		{'sab4102', 10},
+	Seraphim =	{'ssb4102', 10},
     },
 
 	##Tech 3 Buildings	*********************************************
@@ -58,16 +59,16 @@ UnitList = {
 	##Tech 1 Buildings	*********************************************
 
     T2AirStagingPlatform = {
-	UEF =		{'seb5104', 15},
+	UEF =		{'seb5104', 35},
 	Cyrban =	{'srb5104', 15},
 	Seraphim =	{'ssb5104', 35},
 	Aeon =		{'sab5104', 20},
     },
 
     T1GroundDefense = {
-	Aeon =		{'bab2103', 30},
-	Cybran =	{'brb2103', 30},
-	Seraphim =	{'bsb2103', 30},
-	UEF =		{'beb2103', 30},
+	Aeon =		{'sab2103', 30},
+	Cybran =	{'srb2103', 30},
+	Seraphim =	{'ssb2103', 30},
+	UEF =		{'seb2103', 30},
     },
 }

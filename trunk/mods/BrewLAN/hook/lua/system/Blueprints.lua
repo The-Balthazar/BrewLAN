@@ -286,9 +286,9 @@ end
 function TorpedoBomberWaterLandCat(all_bps)
 
     local TorpedoBombers = {
-	all_bps['bra0307'], #T3 Cybran
-	all_bps['bea0307'], #T3 UEF
-	all_bps['bsa0307'], #T3 Seraphim
+	all_bps['sra0307'], #T3 Cybran
+	all_bps['sea0307'], #T3 UEF
+	all_bps['ssa0307'], #T3 Seraphim
 	all_bps['xaa0306'], #T3 Aeon
 
 	all_bps['ura0204'], #T2 Cybran
@@ -296,10 +296,10 @@ function TorpedoBomberWaterLandCat(all_bps)
 	all_bps['xsa0204'], #T2 Seraphim
 	all_bps['uaa0204'], #T2 Aeon
 
-	all_bps['bra0106'], #T1 Cybran
-	all_bps['bea0106'], #T1 UEF
-	all_bps['bsa0106'], #T1 Seraphim
-	all_bps['baa0106'], #T1 Aeon
+	all_bps['sra0106'], #T1 Cybran
+	all_bps['sea0106'], #T1 UEF
+	all_bps['ssa0106'], #T1 Seraphim
+	all_bps['saa0106'], #T1 Aeon
     }
     for arrayIndex, bp in TorpedoBombers do
         table.insert(bp.Categories, 'TRANSPORTATION')
