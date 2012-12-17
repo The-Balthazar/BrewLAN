@@ -166,7 +166,7 @@ UnitBlueprint {
         },
         UnitName = '<LOC seb4102_name>LSD - Pulse',
         UnitWeight = 1,
-        UpgradesTo = 'beb4301',
+        UpgradesTo = 'seb4301',
     },
     Intel = {
         VisionRadius = 12,
