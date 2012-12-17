@@ -42,56 +42,56 @@ UnitList = {
 
     T3AirTransport = {
 	Aeon = {'saa0306', 100},
-	Cyrban = {'bra0306', 100},
-	Seraphim = {'bsa0306', 100},
+	Cyrban = {'sra0306', 100},
+	Seraphim = {'ssa0306', 100},
     },
 
     T3AirGunship = {
-	Seraphim = {'bsa0305', 100},
+	Seraphim = {'ssa0305', 100},
     },
 
     T3TorpedoBomber = {
-	Cybran = {'bra0307', 100},
-	UEF = {'bea0307', 100},
-	Seraphim = {'bsa0307', 100},
+	Cybran = {'sra0307', 100},
+	UEF = {'sea0307', 100},
+	Seraphim = {'ssa0307', 100},
     },
 
 	##Tech 2 Air		*********************************************
 
     T1AirBomber = {
-	Aeon = {'baa0211', 40},
+	Aeon = {'saa0211', 40},
     },
 
     T2FighterBomber = {
-	Aeon = {'baa0211', 20},
+	Aeon = {'saa0211', 20},
     },
 
     T3AirBomber = {
-	Aeon = {'baa0211', 20},
+	Aeon = {'saa0211', 20},
     },
 
 	##Tech 1 Air		*********************************************
 
     T1Gunship = {
-	Aeon = {'baa0105', 100},
-	Seraphim = {'bsa0105', 100},
-	UEF = {'bea0105', 100},
+	Aeon = {'saa0105', 100},
+	Seraphim = {'ssa0105', 100},
+	UEF = {'sea0105', 100},
     },
 
     T1AirTransport = {
-	UEF = {'bea0105', 25},
+	UEF = {'sea0105', 25},
     },
    
 	##Tech 2 Land		*********************************************
    #
    # T2EngineerSupport = {
-	#Cybrans = {'bea0105', 25},
+	#Cybrans = {'sea0105', 25},
    # },
    # 
 	##Tech 3 Land		*********************************************
 
     T3ArmoredAssaultSorian = {
-	Aeon = {'bal0311', 100},
+	Aeon = {'sal0311', 100},
 	Seraphim = {'xsl0303', 100},
     },
 }

@@ -19,13 +19,12 @@ General to-do list/ideas list.
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* BRS0401 lacks weapons.
-* BEA0307 lacks the bone 'Exhaust_Left02'.
-* BRA0306 has an intel error. (line 32)
+* SRS0401 lacks weapons.
+* SRA0306 has an intel error. (line 32)
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
 * The Gantry lacks a lod1 normal map.
-* The Absolution can't walk over walls and such.
+* The Absolution can't walk over walls and such
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
