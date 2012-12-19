@@ -61,7 +61,7 @@ UnitBlueprint {
         {
         },
         {
-            Damage = 4,		##AA DOUBLED!
+            Damage = 6,		##AA DOUBLED!
 	},
     },
 }

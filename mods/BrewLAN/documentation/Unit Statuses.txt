@@ -177,7 +177,7 @@ Tech 1
       * T1 Light Artillery
       * T1 Shield Genorator
       * T1 Air Staging
-      * T1 Light Gunship
+      * T1 Light Gunshi
   
   	T1 Torpedo Bomber ('Sou-ioz') 
     T1 Pressure Mine
@@ -194,16 +194,15 @@ Tech 2:
       * T2 Bomber
       * T2 Defence Engineer
         * Lacks a unique model.
-        * Need to mess with \lua\ui\game\avatars.lua to get the idle icon working entirely.        
+        * Need to mess with \lua\ui\game\avatars.lua to get the idle icon working entirely.
+      * T2 Proximity Mine
+        * Lacks a unique model.
+      * T2 Nuke Mine
+        * Lacks a unique model.         
       
-    
   	Pending:  
   		* T2 Wall
   		* T2 Restoration field genorator.
-      * T2 Proximity Mine
-        * To be buildable by the defence engineer.
-      * T2 Nuke Mine
-        * To be buildable by the defence engineer. 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
   	Fully Funtioning.
@@ -236,14 +235,14 @@ Tech 2:
       * T2 Energy Storage
         * Has explosion size that scales to the stored energy.
       * T2 Proximity Mine
-        * No field engineer yet.       
+        * No field engineer yet.    
+  		* T2 Engineering Station.      
 
   	Pending:
   		* T2 Field engineer
         * Might give them a T1 & T3 field engineer instead.
   		* T2 Wall
   		* T2 Mobile Shield Gen.
-  		* T2 Restoration field genorator.   
       * T2 Nuke Mine
         * To be buildable by the field engineer.  
             

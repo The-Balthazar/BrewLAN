@@ -6,18 +6,13 @@ UnitBlueprint {
     },
     Audio = {
         Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Med_Land',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DoneBeingBuilt = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB5101_Activate',
+            Bank = 'UALDestroy',
+            Cue = 'UAB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'UEF_Select_Structure',
+            Cue = 'Aeon_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -32,7 +27,7 @@ UnitBlueprint {
         'OVERLAYMISC',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
-        'UEF',
+        'AEON',
         'STRUCTURE',
         'DEFENSE',
         'TECH3',
@@ -71,22 +66,24 @@ UnitBlueprint {
                 {
                     LODCutoff = 50,
                     ShaderName = 'Insect',
-                    AlbedoName = '/units/ueb1301/ueb1301_albedo.dds', 
-                    NormalsName = '/units/ueb1301/ueb1301_normalsTS.dds', 
-                    SpecularName = '/units/ueb1301/ueb1301_specteam.dds',
+                    MeshName = '/units/uab1301/uab1301_lod0.scm', 
+                    AlbedoName = '/units/uab1301/uab1301_albedo.dds', 
+                    NormalsName = '/units/uab1301/uab1301_normalsTS.dds', 
+                    SpecularName = '/units/uab1301/uab1301_specteam.dds',
                 },
                 {
                     LODCutoff = 130,
                     ShaderName = 'Insect',
-                    AlbedoName = '/units/ueb1301/ueb1301_lod1_albedo.dds', 
-                    NormalsName = '/units/ueb1301/ueb1301_lod1_normalsTS.dds', 
-                    SpecularName = '/units/ueb1301/ueb1301_lod1_specteam.dds',
+                    MeshName = '/units/uab1301/uab1301_lod1.scm',
+                    AlbedoName = '/units/uab1301/uab1301_lod1_albedo.dds', 
+                    NormalsName = '/units/uab1301/uab1301_lod1_normalsTS.dds', 
+                    SpecularName = '/units/uab1301/uab1301_lod1_specteam.dds',
                 },
             },
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        UniformScale = 0.02,
+        UniformScale = 0.005,
     },
     DoNotCollideList = {
         'ALLUNITS',
@@ -125,7 +122,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'UEF',
+        FactionName = 'Aeon',
         Icon = 'amph',
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
@@ -138,7 +135,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC seb2222_name>Silencer',
+        UnitName = '<LOC sab2222_name>Silencer',
         UnitWeight = 1,
     },
     Intel = {
@@ -216,7 +213,7 @@ UnitBlueprint {
             NukeOuterRingTicks = 20,
             NukeOuterRingTotalTime = 0,
 
-            ProjectileId = '/effects/Entities/UEFNukeEffectController01/UEFNukeEffectController01_proj.bp',
+            ProjectileId = '/projectiles/AIFQuantumWarhead02/AIFQuantumWarhead02_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
