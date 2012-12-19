@@ -1,26 +1,24 @@
 #****************************************************************************
 #**
-#**  File     :  /data/units/XRL0302/XRL0302_script.lua
-#**  Author(s):  Jessica St. Croix, Gordon Duclos
+#**  Summary  :  UEF Stationary Explosive Script
 #**
-#**  Summary  :  Cybran Mobile Bomb Script
-#**
-#**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local TIFCommanderDeathWeapon = import('/lua/terranweapons.lua').TIFCommanderDeathWeapon
+local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
+local CMobileKamikazeBombDeathWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombDeathWeapon
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
-SAB2222 = Class(TStructureUnit) {
+SAB2221 = Class(TStructureUnit) {
     Weapons = {
 
-        DeathWeapon = Class(TIFCommanderDeathWeapon) {},
+        DeathWeapon = Class(CMobileKamikazeBombDeathWeapon) {},
         
-        Suicide = Class(TIFCommanderDeathWeapon) {       
+        Suicide = Class(CMobileKamikazeBombWeapon) {      
+   			FxDeath = EffectTemplate.AOblivionCannonHit02,  
 			OnFire = function(self)			
 				#disable death weapon
 				self.unit:SetDeathWeaponEnabled(false)
-				TIFCommanderDeathWeapon.OnFire(self)
+				CMobileKamikazeBombWeapon.OnFire(self)
 			end,
         },
     },
@@ -45,8 +43,8 @@ SAB2222 = Class(TStructureUnit) {
         TStructureUnit.OnScriptBitSet(self, bit)
         if bit == 1 then 
 
-            self:GetWeaponByLabel('Suicide'):Fire()
+            self:GetWeaponByLabel('Suicide'):FireWeapon()
         end
     end,
 }
-TypeClass = SAB2222
+TypeClass = SAB2221

@@ -4,7 +4,7 @@ UnitBlueprint {
 	Merge = true,
 	BlueprintId="xsb4202", # T2 shield
     General = {
-        UpgradesFrom = 'bsb4102',
+        UpgradesFrom = 'ssb4102',
     },
 }
 

@@ -222,7 +222,14 @@ __________._________
   2012-12-17
                  
   * Changed the unit code prefixes of ALL remaining units, fixing a number of errors along the way.
-  * Removed the horribly broken Cybran sniper bot.                                                                                                                             
+  * Removed the horribly broken Cybran sniper bot.
+  __________
+  2012-12-19
+                 
+  * Added the Aeon Proximity and Nuclear mines.
+  * Fixed the sound files for the UEF Nuclear mine.
+  * Fixed the Seraphim T1 shield not propperly upgrading.
+  * Added the Seraphim T2 engineering station line.                                                                                                                                   
 __________._________
 2011-03-19|0.4.0
 
