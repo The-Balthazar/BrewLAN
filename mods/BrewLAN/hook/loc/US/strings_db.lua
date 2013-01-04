@@ -194,8 +194,8 @@ sea0401_desc="Experimental Gunship"
 sea0401_name="AC-500 Centurion"
 Unit_Description_BrewLAN_T4A001="Unfinished experimental aircraft."
 
-seb2404_desc="Experimental Point Defense"
-seb2404_name="Doomsday Machine"
+seb2401_desc="Experimental Point Defense"
+seb2401_name="Doomsday Machine"
 Unit_Description_BrewLAN_T4B001="Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."
 
 srb2401_desc="Experimental Rapid-Fire Artillery"
@@ -217,3 +217,7 @@ Unit_Description_BrewLAN_T4B004="Experimental multi-purpose factory. Dynamically
 sal0401="Experimental Siege Tank"
 sal0401_name="Absolution"
 Unit_Description_BrewLAN_T4L002="Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defences."
+
+seb2404="Experimental Drop-Pod Artillery"
+seb2404_name="Ivan"
+Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."

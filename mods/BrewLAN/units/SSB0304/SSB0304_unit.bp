@@ -134,7 +134,7 @@ UnitBlueprint {
         BuildRate = 35,
         BuildTime = 2400,
         BuildableCategory = {
-            'ssb0304',
+            'ssb0104',
         },
         MaxBuildDistance = 25,
         RebuildBonusIds = {
@@ -187,7 +187,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        UnitName = '<LOC ssb0304_name>Iya',
+        UnitName = '<LOC xsl0208_name>Iya',
         UnitWeight = 1,
         UpgradesFrom = 'ssb0204',
     },

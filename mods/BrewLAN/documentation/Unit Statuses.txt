@@ -25,6 +25,8 @@ Errors list/the other to-do list.
 * Zenith has unused bones.
 * The Gantry lacks a lod1 normal map.
 * The Absolution can't walk over walls and such
+  * Currently experimenting with making it technically an aircraft.
+* Experiment with making a drop pod artillery.   
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -339,13 +341,13 @@ Experimental Table
                 ._______________._______________._______________._______________.
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
-Land 1          |*Assault Bot   |Galactic Col...|Mokeylord      |Ythotha        |
+Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
 Land 2          |Fatboy (F)     |*Absolution    |Megalith (F)   |*?             |
 Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
-Static 2        |*Transport     |Paragon        |*?             |*Transport     |
-Static 3        |*Gantry (F)    |*Shield proj...|*Iron Curtain  |*?             |
+Static 2        |*Ivan (F)      |*Teleporter    |*?             |*Gate portal   |
+Static 3        |*Gantry (F)    |Paragon        |*Iron Curtain  |*Shield proj...|
 ________________!_______________!_______________!_______________!_______________!
 
   (A)  Aircraft Carrier
@@ -362,9 +364,14 @@ UEF Experimental transport/drone carrier/gunship
     * Script might also be usefull for the decoy planes.
   * A messy barely started gunship only version exists, it uses a mesh from an old TA mod for now.       
 
-UEF "Static 2 Transport" idea.
-  * "A Static transport?"
-    * Unit cannon-like thing.   
+UEF Ivan: Experimental Drop-Pod Artillery
+  * Fires projectiles that look like drop pods and spawn mech marines on impact.
+    * Need a propper behaviour for impacting on shields.
+      * Possibly bouncing off.
+    * Eventually want a way to select what gets fired by it.
+      * Possibly have it switch weapons with a toggle.
+        * Bigger mech ammo should cost more energy, have a shorter range, and a lower rate of fire.
+          * If I allow it to fire Percivals it should only have the range to fire them similar to the Klink Hammer.                                    
                           
 Seraphim "Static 2 Transport" idea.
   * "A Static transport?"
