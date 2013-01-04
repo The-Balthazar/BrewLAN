@@ -229,7 +229,24 @@ __________._________
   * Added the Aeon Proximity and Nuclear mines.
   * Fixed the sound files for the UEF Nuclear mine.
   * Fixed the Seraphim T1 shield not propperly upgrading.
-  * Added the Seraphim T2 engineering station line.                                                                                                                                   
+  * Added the Seraphim T2 engineering station line.
+  __________
+  2012-12-23
+                 
+  * Added localisation data for the Seraphim engineering stations.
+  __________
+  2012-12-29
+                 
+  * Fixed the highest upgrade of Seraphim engy station being able to build itself.
+  __________
+  2013-01-02
+                 
+  * Experimented with classifying the Absolution as an aircraft engine side so it floats around better.
+  __________
+  2013-01-03
+                 
+  * Started work on the UEF Experimental Drop-Pod Artillery.
+    * Currently uses the model of the Mavor, and only fires Mech Marines.                                                                                                                                            
 __________._________
 2011-03-19|0.4.0
 

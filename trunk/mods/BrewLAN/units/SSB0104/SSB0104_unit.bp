@@ -191,7 +191,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        UnitName = '<LOC ssb0104_name>Iya',
+        UnitName = '<LOC xsl0208_name>Iya',
         UnitWeight = 1,
         UpgradesTo = 'ssb0204',
     },

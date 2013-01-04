@@ -51,6 +51,12 @@ Description['sab2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nu
 Description['ssb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
   
 Description['srb5201'] = "<LOC Unit_Description_0179>Restricts the movement of enemy units."
+    
+#Tech 2 construction units
+Description['ssb0104'] = "<LOC Unit_Description_0451> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['ssb0204'] = "<LOC Unit_Description_0324> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['ssb0304'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+
 
 #Tech 2 protection units
 Description['urb4205'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
@@ -95,8 +101,9 @@ Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['srb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Iron Curtian description."
 Description['seb0401'] = "<LOC Unit_Description_BrewLAN_T4B004>Gantry description."
+Description['seb2404'] = "<LOC Unit_Description_BrewLAN_T4B005>Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."
 Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu description."
 Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
 Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
-Description['selp001'] = "<LOC Unit_Description_0037>Experimental, amphibious mobile factory. Equipped with battleship-level weapons and armor. Its shield consumes Energy."
+Description['zelp001'] = "<LOC Unit_Description_0037>Experimental, amphibious mobile factory. Equipped with battleship-level weapons and armor. Its shield consumes Energy."
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Totally-not-a-fire-prism description."

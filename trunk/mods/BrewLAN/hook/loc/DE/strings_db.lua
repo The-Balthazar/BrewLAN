@@ -187,8 +187,8 @@ sea0401_desc="Experimentelles Kanonenboot"
 sea0401_name="AC-500 Centurion"
 Unit_Description_BrewLAN_T4A001="Experimentelles Kanonenboot."
 
-seb2404_desc="Experimentelle Punktverteidigung"
-seb2404_name="Weltvernichtungsmaschine"
+seb2401_desc="Experimentelle Punktverteidigung"
+seb2401_name="Weltvernichtungsmaschine"
 Unit_Description_BrewLAN_T4B001="Leicht Beschädigte Punktverteidigung. Kommt einem Immobilen FatBoy gleich. Feuert nicht nach Westen."
 
 srb2401_desc="Experimentelle Artilleriestellung"
@@ -210,3 +210,7 @@ Unit_Description_BrewLAN_T4B004="Translation pending."
 sal0401="Experimental Assault Tank"
 sal0401_name="Absolution"
 Unit_Description_BrewLAN_T4L002="Experimental hovering assault tank. Equipped with a powerful oblivion cannon."
+
+seb2404="Experimental Drop-Pod Artillery"
+seb2404_name="Ivan"
+Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."
