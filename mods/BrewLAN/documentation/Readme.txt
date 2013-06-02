@@ -41,4 +41,4 @@ For details regarding changes see the changelog and the unit statuses list (whic
 	Additional
 
 * Simon (106.Bluebird) - German localisation
-* Zodius Infuser - Force Shield scripts
+* Zodius Infuser - (currently unused) Force Shield scripts

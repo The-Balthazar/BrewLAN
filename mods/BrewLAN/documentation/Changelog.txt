@@ -10,6 +10,41 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________._________
+2013-06-01|0.4.2
+
+* The end of 5 months of silence.
+  __________
+  2013-06-02
+
+  * Asigned build mode key bindings for constructing from the Gantry.
+  * Added build mode key bindings for constructing all factory build units:
+    * Archimedes (UEF T3 Satelite uplink)
+    * Moldovite (Aeon T3 Armoured assault tank)
+    * Butler (Aeon T2 Defence engineer)
+    * Wilson (Cybran T2 Field engineer)
+    * Ilshatha (Seraphim T3 Assault bot)
+    * Albatros (UEF T3 Torpedo bomber)
+    * Zenith (Cybran T3 Torpedo bomber)
+    * The nonexistent Seraphim T3 torpedo bomber
+    * Solaris (Aeon T3 Transport)
+    * Night Skimmer (Cybran T3 Transport)
+    * Vishuum (Seraphim T3 Transport)
+    * Vulthuum (seraphim T3 Gunship)
+    * Beguiler (Aeon T3 Decoy plane)
+    * Respirer (Aeon T1 Gunship)
+    * Pigeon (UEF T1 Gunship)
+    * Vulesel (Seraphim T1 Gunship)
+    * Seagul (UEF T1 Torpedo bomber)
+    * Impaler (Aeon T2 Bomber)                                                    
+  * Changed build mode keys for Othuum.
+  * Added build mode key bindings for upgrading the following:
+    * Aspis (T1 shield)
+    * LSD - Pulse (T1 shield)
+    * Atha-istle (T1 shield)
+    * Iya (Seraphim engineering stations)
+  * Added build mode key bindings for building the following:
+    * All T2 storage                              
+__________._________
 2012-11-04|0.4.1
 
 * Lowered the turning speed of the Archimedes.
