@@ -31,28 +31,31 @@ ProjectileBlueprint {
             LODs = {
                 {
                     ShaderName = 'TMeshNoNormals',
+                    AlbedoName = '/mods/BrewLAN/projectiles/TIFDropPodArtilleryMechMarine/TIFDropPodArtilleryMechMarine_Albedo.dds',
+                    MeshName = '/mods/BrewLAN/projectiles/TIFDropPodArtilleryMechMarine/TIFDropPodArtilleryMechMarine_lod0.scm',
+                    SpecularName = '/mods/BrewLAN/projectiles/TIFDropPodArtilleryMechMarine/TIFDropPodArtilleryMechMarine_SpecTeam.dds',
                 },
             },
         },
-        StrategicIconName = 'icon_bot1_directfire',
+        StrategicIconName = 'icon_bot2_directfire',
         #StrategicIconName = '/textures/ui/common/game/strategicicons/icon_strategic_artillery.dds',
         StrategicIconSize = 3,
         UniformScale = .5,
     },
     Defense = {
-        Health = 75,
-        MaxHealth = 75,
+        Health = 650,
+        MaxHealth = 650,
     },
     Economy = {
-        BuildCostEnergy = 140,
-        BuildCostMass = 35,
+        BuildCostEnergy = 1000,
+        BuildCostMass = 200,
     },
     General = {
         Category = 'Artillery',
         Faction = 'UEF',
         TechLevel = 3,
         Weapon = 'Anti Matter Artillery',
-        DropUnit = 'uel0106',
+        DropUnit = 'del0204',
     },
     Interface = {
         HelpText = 0,
