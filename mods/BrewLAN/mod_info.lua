@@ -32,7 +32,7 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-48F3488D85739", ##0.3	beta
     "25D57D85-7D84-27HT-A501-48F3488D85740", ##0.3.1    SVN
     "25D57D85-7D84-27HT-A501-BR3WL4N000040", ##0.4	beta & svn revisions 93 - 120. 
-    "25D57D85-7D84-27HT-A501-BR3WL4N000041", ##0.4.1	beta & svn revisions 121 - ???.
+    "25D57D85-7D84-27HT-A501-BR3WL4N000041", ##0.4.1	beta & svn revisions 121 - 154.
     "9e8ea941-c306-4751-b367-a11000000600", 
 }
 before = {  }

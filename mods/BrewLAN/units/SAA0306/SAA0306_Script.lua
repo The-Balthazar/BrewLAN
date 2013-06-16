@@ -64,10 +64,10 @@ SAA0306 = Class(AAirUnit) {
 
         self.DiskManip1:SetTargetSpeed(45)
 
-            self.DiskManip2 = CreateRotator(self, 'Disk2', 'y', nil, 0, 45, 45)
+            self.DiskManip2 = CreateRotator(self, 'Disk2', 'y', nil, 0, 90, 90)
             self.Trash:Add(self.DiskManip2)
 
-        self.DiskManip2:SetTargetSpeed(45)
+        self.DiskManip2:SetTargetSpeed(90)
 
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
