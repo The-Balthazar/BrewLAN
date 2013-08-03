@@ -51,7 +51,11 @@ __________._________
   __________
   2013-06-16
 
-  * Doubled the adjacency buff for T2 energy storages.                              
+  * Doubled the adjacency buff for T2 energy storages.
+  __________
+  2013-08-03
+
+  * Applied the French language files update by Marc Tassetti.                              
 __________._________
 2012-11-04|0.4.1
 
