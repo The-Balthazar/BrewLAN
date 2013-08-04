@@ -41,4 +41,5 @@ For details regarding changes see the changelog and the unit statuses list (whic
 	Additional
 
 * Simon (106.Bluebird) - German localisation
+* Marc Tassetti (Explo) - French localisation
 * Zodius Infuser - (currently unused) Force Shield scripts
