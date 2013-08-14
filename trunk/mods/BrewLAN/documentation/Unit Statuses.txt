@@ -155,10 +155,10 @@ Tech 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
   	T1 Light Artillery
+  	T1 Air Staging
   		* Fully functioning.
   
   	T1 Torpedo Bomber ('Gannet')
-  	T1 Air Staging
     T1 Pressure Mine
   		* Pending
 
