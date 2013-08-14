@@ -59,7 +59,12 @@ __________._________
   __________
   2013-08-04
 
-  * Changed the textures of the UEF T1 Air Staging.                              
+  * Changed the textures of the UEF T1 Air Staging.
+  * Adjusted the texture mapping of the UEF T1 Air Staging.
+  __________
+  2013-08-14
+
+  * Added the Cybran T1 Air Staging platform.                               
 __________._________
 2012-11-04|0.4.1
 
