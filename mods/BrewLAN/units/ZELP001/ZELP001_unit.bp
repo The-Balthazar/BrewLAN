@@ -237,6 +237,7 @@ UnitBlueprint {
 	{
             MaxRadius = 45,
             RangeCategory = 'UWRC_AntiAir',
+            TargetRestrictDisallow = 'SATELLITE', 
 	},
 	{
             MaxRadius = 40,
