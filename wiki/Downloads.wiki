@@ -25,6 +25,7 @@ The public beta download links; the latest _clean_ versions. By which I mean tha
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-043-beta Version 0.4.3b] (ModDB mirror)
   * [http://supremecommander.filefront.com/developer/Balthazar;31947 All  Filefront versions] (0.4.3b Filefront mirror awaiting approval)
   * [http://www.strategyinformer.com/member/111762/files All Strategy Informer versions] (0.4.3b Strategy Informer mirror awaiting approval)
+  * [http://megagames.com/mods/brewlan-043 Version 0.4.3b] (Mega Games mirror)
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-04-beta Version 0.4.0b] (ModDB mirror)
   * [http://www.moddb.com/mods/brewlan/downloads/brewlan-03-beta Version 0.3.0b] (ModDB mirror)
   * [http://www.strategyinformer.com/pc/supremecommanderforgedalliance/mod/36121.html Version 0.3.0b] (Strategy Informer mirror)
