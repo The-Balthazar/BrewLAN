@@ -62,15 +62,6 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ual0401",		##Galactic Collosus
-    Defense = {
-        Health = 100000,		##Raised by 1
-        MaxHealth = 100000,
-    },
-}
-
-UnitBlueprint {
-	Merge = true,
 	BlueprintId="ual0303",		##Harbinger
     Defense = {
         Health = 2125,

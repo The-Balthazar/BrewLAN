@@ -24,6 +24,7 @@ function ModBlueprints(all_blueprints)
 #--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)
     GantryExperimentalBuildOnly(all_blueprints.Unit)
+    RoundGalacticCollosusHealth(all_blueprints.Unit)
 
 end
 
@@ -308,6 +309,22 @@ function TorpedoBomberWaterLandCat(all_bps)
 end
 
 
+
+# ---------------- Rounding Galactic Collosus health
+
+
+
+function RoundGalacticCollosusHealth(all_bps)
+
+    local GalacticCollosus = {
+        all_bps['ual0401'],
+    }
+    for arrayIndex, bp in GalacticCollosus do
+	if bp.Defense.Health == 99999 then bp.Defense.Health = 100000 end
+	if bp.Defense.MaxHealth == 99999 then bp.Defense.MaxHealth = 100000 end
+    end
+
+end
 
 
 
