@@ -10,6 +10,16 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________._________
+2013-08-17|0.4.4
+
+* Changed the implementation for the Galactic Collosus health increase so it doesn't conflict with other mods' GC health changes. 
+* Fixed the energy drain of the Seraphim and Aeon T3 point defences.
+* Added the Cybran T3 Cloaked Mobile Missile Launcher.
+  __________
+  2013-08-18
+
+  * Fixed the Cybran cloaked missile launcher and improved its texture.
+__________._________
 2013-06-01|0.4.2
 
 * The end of 5 months of silence.

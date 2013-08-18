@@ -212,7 +212,8 @@ UnitBlueprint {
             Damage = 100,
             DamageType = 'Normal',
             DisplayName = 'Gatling Plasma Cannon',
-            EnergyDrainPerSecond = 50,
+            EnergyDrainPerSecond = 60,
+            EnergyRequired = 10,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',

@@ -342,12 +342,12 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |*Absolution    |Megalith (F)   |*?             |
+Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*?             |
 Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
 Static 2        |*Ivan (F)      |*Teleporter    |*?             |*Gate portal   |
-Static 3        |*Gantry (F)    |Paragon        |*Iron Curtain  |*Shield proj...|
+Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield proj...|
 ________________!_______________!_______________!_______________!_______________!
 
   (A)  Aircraft Carrier
@@ -385,7 +385,8 @@ UEF Gantry: Experimental Factory
         * Would need to wait for the current unit to be completed, especially if its a ship.               
       * Add death animation.
       * Find out why the Atlantis gets stuck in it.
-        * Alternatively, make the Atlantis submerge on completion so it can get out.             
+        * Alternatively, make the Atlantis submerge on completion so it can get out.
+      * Use scripts from the Fatboy to quickly get small things out of the build area.                      
 
 Aeon Experimental Assault Tank
   * Mostly finished texture that needs more details.
@@ -409,7 +410,7 @@ Cybran Experimental Missile ship
     * Currently no functioning weapons, but can stamp on things.         
 
 Cybran Iron Curtain: Experimental Shield Generator
-  * Funtions as a shield.
+  * Functions as a shield.
     * Need to adapt the force shield script to only effect this. 
   * Possibly give it a better mesh.
 
