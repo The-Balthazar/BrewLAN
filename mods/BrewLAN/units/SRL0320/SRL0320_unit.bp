@@ -74,6 +74,8 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_cloak>Cloaking',
+            '<LOC ability_personalstealth>Personal Stealth',
+            '<LOC ability_jamming>Jamming',
         },
         AnimationOpen = '/units/URL0304/URL0304_Aactivate.sca',
         Mesh = {
@@ -161,6 +163,13 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
+        JamRadius = {
+            Max = 4,
+            Min = 1,
+        },
+        JammerBlips = 2,
+        RadarStealth = true,
+        SonarStealth = true,
         Cloak = true,
         VisionRadius = 26,
     },

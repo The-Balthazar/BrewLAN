@@ -19,6 +19,11 @@ __________._________
   2013-08-18
 
   * Fixed the Cybran cloaked missile launcher and improved its texture.
+  __________
+  2013-08-25
+
+  * Reduced the rate of fire of the Absolution.
+  * Added stealth and jamming to the Slink.  
 __________._________
 2013-06-01|0.4.2
 
