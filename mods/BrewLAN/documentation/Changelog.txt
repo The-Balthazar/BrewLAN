@@ -23,7 +23,11 @@ __________._________
   2013-08-25
 
   * Reduced the rate of fire of the Absolution.
-  * Added stealth and jamming to the Slink.  
+  * Added stealth and jamming to the Slink.
+  __________
+  2013-11-13
+
+  * Re-added the torpedo bomber ability to land on water, with a workaround preventing torpedos from targetting them.
 __________._________
 2013-06-01|0.4.2
 

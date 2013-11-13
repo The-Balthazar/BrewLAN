@@ -19,7 +19,7 @@ function ModBlueprints(all_blueprints)
     DragBuildQuantumOptics(all_blueprints.Unit)
     ExperimentalBuildSorting(all_blueprints.Unit)
     SalvationBrewLANChanges(all_blueprints.Unit)
-#--    TorpedoBomberWaterLandCat(all_blueprints.Unit)   ##Ends up in them getting shot by subs.
+    TorpedoBomberWaterLandCat(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
 #--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)
@@ -303,7 +303,8 @@ function TorpedoBomberWaterLandCat(all_bps)
 	all_bps['saa0106'], #T1 Aeon
     }
     for arrayIndex, bp in TorpedoBombers do
-        table.insert(bp.Categories, 'TRANSPORTATION')
+        table.insert(bp.Categories, 'TRANSPORTATION') ##transportation category allows aircraft to land on water.
+        table.insert(bp.Categories, 'HOVER') ##hover category stops torpedos from being fired upon them while landed.
     end	
 
 end

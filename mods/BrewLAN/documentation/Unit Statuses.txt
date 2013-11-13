@@ -11,6 +11,7 @@ General to-do list/ideas list.
 * Mobile Radar Jammers
 * More aquatic buildings
 * Mines and mine layers (Land, Naval)
+* Seraphim experimental mine releasing a residual energy signature as its thing.
 * Mobile Strat Defence
 * Plasma Batteries (T2 rapid fire arty, at T3, or more like battleship gauss cannons)
 * BARREL ROLL
@@ -24,8 +25,8 @@ Errors list/the other to-do list.
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
 * The Gantry lacks a lod1 normal map.
-* The Absolution can't walk over walls and such
-  * Currently experimenting with making it technically an aircraft.
+* The Absolution can't hover over walls and such
+  * Experiments with making it technically an aircraft had weird dalek-like side effects.
 * Experiment with making a drop pod artillery.   
 _______________________________________________________
 Modded Units:
@@ -37,7 +38,7 @@ Modded Units:
   
   	Torpedo Bombers
   		* Gave the ability to land on water.
-  		  * Currently disabled because they get shot by submarines and not care.       
+  		  * Given both TRANSPORTATION and HOVER categories so they dont get shot by torpedoes       
     
     Experimental Buildings
       * Added appropriate build menu sorting.
