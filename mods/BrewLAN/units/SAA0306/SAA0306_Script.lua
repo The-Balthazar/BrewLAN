@@ -14,6 +14,8 @@ local explosion = import('/lua/defaultexplosions.lua')
 
 SAA0306 = Class(AAirUnit) {
 
+    DestroyNoFallRandomChance = 1.1,
+
     ShieldEffects = {
 		     '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
 ##	'/mods/BrewLAN/effects/emitters/aeon_shield_generator_mobile_air_01_emit.bp',	
