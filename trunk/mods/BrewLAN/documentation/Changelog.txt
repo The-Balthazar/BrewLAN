@@ -28,6 +28,12 @@ __________._________
   2013-11-13
 
   * Re-added the torpedo bomber ability to land on water, with a workaround preventing torpedos from targetting them.
+  __________
+  2013-11-17
+
+  * Prevented the Solaris from not crash landing on death.
+  * Increased the Absolution rate of fire back to its original.
+  * Increased the costs of the Absolution slightly.    
 __________._________
 2013-06-01|0.4.2
 
