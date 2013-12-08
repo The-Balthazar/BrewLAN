@@ -33,7 +33,17 @@ __________._________
 
   * Prevented the Solaris from not crash landing on death.
   * Increased the Absolution rate of fire back to its original.
-  * Increased the costs of the Absolution slightly.    
+  * Increased the costs of the Absolution slightly.
+  __________
+  2013-12-01
+
+  * Started creating a new model for the Centurion.
+  __________
+  2013-12-08
+
+  * Centurion things.
+  * Model now propperly implemented, with a ghetto texture.
+  * No working weapons yet.    
 __________._________
 2013-06-01|0.4.2
 
