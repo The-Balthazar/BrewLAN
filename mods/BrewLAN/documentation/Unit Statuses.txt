@@ -89,7 +89,7 @@ Modded Units:
     	* Health still 500.
   
   	T3 Gunship
-  		* AA damage increased.
+  		* AA damage increased. Still token.
   
     T3 Anti nuke defence
       * Changed tarmac.
@@ -114,7 +114,7 @@ Modded Units:
   
   	Novax Center
   		* Still in game but removed from build menus.
-  		* Replaced with a tech 3 observation satelite.
+  		* Replaced with a tech 3 observation satelite & a T3 mobile uplink tank.
   
   	Mavor
       * Changed menu sorting.
@@ -125,7 +125,7 @@ Modded Units:
         * Works in a similar way as the Megalith eggs.
         * Passes any damage it recieves under construction to the eventual real Fatboy.
         * Doing it the other way (Putting the fake in the Gantry) results in it losing the orders to leave the Gantry.       
-        * Most people wont notice the difference.                                  
+        * Most people wont notice the difference.                                      
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
@@ -286,8 +286,7 @@ Tech 3:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
       * T3 Mobile strat defence.
-  	  * T3 Sniper Bot.
-  	    * Requires total remake.      
+  	  * T3 Sniper Bot.    
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
@@ -307,7 +306,7 @@ Tech 3:
       * Functional but unfinished.
         * Currently disabled.       
       * When I give the UEF a T4 flyer will give a button to toggle between T4 flyer/ASF impersination.
-        * Look into the Seraphim sniper bot for the script for this. 
+        * Aeon has this script. 
 
     T3 Mobile strat defence
       * "Functioning" Currently disabled.
@@ -344,7 +343,7 @@ Experimental Table
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
 Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*?             |
-Flying          |*Gunship       |CZAR (AF)      |Soulripper     |Ahwassa        |
+Flying          |*Centurion     |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
 Static 2        |*Ivan (F)      |*Teleporter    |*?             |*Gate portal   |
@@ -363,7 +362,7 @@ UEF Experimental Assault Bot/tank
 UEF Experimental transport/drone carrier/gunship
   * Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
     * Script might also be usefull for the decoy planes.
-  * A messy barely started gunship only version exists, it uses a mesh from an old TA mod for now.       
+  * Has the majority of a new custom model. No functioning weapons, but functioning animations.     
 
 UEF Ivan: Experimental Drop-Pod Artillery
   * Fires projectiles that look like drop pods and spawn mech marines on impact.
