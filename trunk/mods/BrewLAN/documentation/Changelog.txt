@@ -43,7 +43,11 @@ __________._________
 
   * Centurion things.
   * Model now propperly implemented, with a ghetto texture.
-  * No working weapons yet.    
+  * No working weapons yet.
+  __________
+  2013-12-16
+
+  * More Centurion things.
 __________._________
 2013-06-01|0.4.2
 
