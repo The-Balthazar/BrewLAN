@@ -13,6 +13,7 @@ UnitBlueprint {
         CanFly = true,
         CombatTurnSpeed = 0.5,
         EngageDistance = 75,
+	FlyInWater = 'true',
         KLift = 3,
         KLiftDamping = 2.5,
         KMove = 1,
