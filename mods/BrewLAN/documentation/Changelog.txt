@@ -51,7 +51,12 @@ __________._________
   __________
   2013-12-19
 
-  * More Centurion things.
+  * More Centurion things.  
+  __________
+  2013-12-20
+
+  * More work on the Centurion.
+  * Removed the long since removed Doomsday Machine from the string tables.  
 __________._________
 2013-06-01|0.4.2
 

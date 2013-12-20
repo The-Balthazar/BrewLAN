@@ -190,13 +190,9 @@ ssl0403_desc="Experimental Engineer"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; can build itself and the resources to do so in 20 seconds."
 
-sea0401_desc="Experimental Gunship"
+sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"
-Unit_Description_BrewLAN_T4A001="Unfinished experimental aircraft."
-
-seb2401_desc="Experimental Point Defense"
-seb2401_name="Doomsday Machine"
-Unit_Description_BrewLAN_T4B001="Slightly broken experimental point defence. Effectively an immobile fatboy. Wont fire westward."
+Unit_Description_BrewLAN_T4A001="Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
 
 srb2401_desc="Experimental Rapid-Fire Artillery"
 srb2401_name="Scathis Mark II"
