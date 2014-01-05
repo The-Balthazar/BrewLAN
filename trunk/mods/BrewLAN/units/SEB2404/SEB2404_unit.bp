@@ -42,8 +42,8 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER3COMMANDER',
+#        'BUILTBYTIER3ENGINEER',
+#        'BUILTBYTIER3COMMANDER',
         'UEF',
         'STRUCTURE',
         'STRATEGIC',
