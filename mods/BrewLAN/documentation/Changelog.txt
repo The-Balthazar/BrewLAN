@@ -60,7 +60,8 @@ __________._________
   __________
   2014-01-05
 
-  * More Centurion things.  
+  * More Centurion things.
+  * Added an engineer built Centurion.  
 __________._________
 2013-06-01|0.4.2
 
