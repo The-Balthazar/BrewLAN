@@ -9,6 +9,12 @@
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+__________.__________
+2014-01-06|0.4.5
+
+* Corrected problem with fake Centurion not referencing the model of the original propperly.
+* Added icon for fake Centurion.
+* Linked flavour text for the fake Centurion. 
 __________._________
 2013-08-17|0.4.4
 

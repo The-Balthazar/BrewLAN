@@ -156,13 +156,19 @@ UnitBlueprint {
                 {
                     LODCutoff = 240,
                     ShaderName = 'Unit',
+                    MeshName = '/mods/BrewLAN/units/sea0401/sea0401_lod0.scm',
+                    AlbedoName = '/mods/BrewLAN/units/sea0401/sea0401_albedo.dds',
+                    SpecularName = '/mods/BrewLAN/units/sea0401/sea0401_specteam.dds',
+                    NormalsName = '/mods/BrewLAN/units/sea0401/sea0401_normalts.dds',
                 },
-                {
-                    AlbedoName = 'uea0304_lod1_albedo.dds',
-                    LODCutoff = 550,
-                    ShaderName = 'Unit',
-                    SpecularName = 'uea0304_lod1_specteam.dds',
-                },
+       #         {
+       #             LODCutoff = 550,
+       #             ShaderName = 'Unit',
+       #             MeshName = '/mods/BrewLAN/units/sea0401/sea0401_lod1.scm',
+       #             AlbedoName = '/mods/BrewLAN/units/sea0401/sea0401_lod1_albedo.dds',
+       #             SpecularName = '/mods/BrewLAN/units/sea0401/sea0401_lod1_specteam.dds',
+       #             NormalsName = '/mods/BrewLAN/units/sea0401/sea0401_lod1_normalts.dds',
+       #         },
             },
         },
         MovementEffects = {
