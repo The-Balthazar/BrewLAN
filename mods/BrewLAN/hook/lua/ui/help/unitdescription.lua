@@ -106,4 +106,5 @@ Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu descripti
 Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
 Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
 Description['zelp001'] = "<LOC Unit_Description_0037>Experimental, amphibious mobile factory. Equipped with battleship-level weapons and armor. Its shield consumes Energy."
+Description['zeap001'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Totally-not-a-fire-prism description."
