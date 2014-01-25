@@ -25,7 +25,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        'BUILTBYTIER2FIELD',
+#        'BUILTBYTIER3FIELD',
         'BUILTBYTIER3FIELD',
         'OVERLAYRADAR',
         'OVERLAYDIRECTFIRE',
@@ -36,7 +36,7 @@ UnitBlueprint {
         'STRUCTURE',
         'DEFENSE',
         'TECH3',
-        'CONSTRUCTIONSORTDOWN',
+#        'CONSTRUCTIONSORTDOWN',
         'NUKE',
         'MINE',
         'DRAGBUILD',

@@ -14,7 +14,21 @@ __________.__________
 
 * Corrected problem with fake Centurion not referencing the model of the original propperly.
 * Added icon for fake Centurion.
-* Linked flavour text for the fake Centurion. 
+* Linked flavour text for the fake Centurion.     
+  __________
+  2014-01-18
+  
+  * Added the Guardian; A UEF Static Gauss Cannon. Still needs some work. Not in string tables yet.   
+  __________
+  2014-01-25
+  
+  * Moved the Guardian to be buildable only by the currently non existant T3 field engineer.
+  * Gave the Guardian a description and added it to the en string tables.
+  * Fixed the Guardian crashing the game when it tries to fire.
+  * Added A T3 Field engineer to build the Guardian.
+  * Made the UEF Nuke mine only buildable by the T3 field engineer.
+  * Increased the tarmac size, footprint size, and physics model size of the Guardian.
+  * Reclassified the Guardian as a Very Heavy Point Defense.        
 __________._________
 2013-08-17|0.4.4
 

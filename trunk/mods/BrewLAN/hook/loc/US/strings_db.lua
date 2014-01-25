@@ -65,6 +65,13 @@ seb5104_name="Resupply"
 srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 
+#--Field engineers
+sel0119_name="Zippo"    
+sal0119_name=""
+srl0119_name="Outy"
+ssl0119_name="Iyaz"
+
+
 
 ## T2
 
@@ -78,8 +85,9 @@ Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a ligh
 sal0209_desc="Defence Engineer"
 sal0209_name="Butler"
 srl0209_name="Wilson"
-Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture and reclamation unit. Armed with a heavy bolter and internal radar and stealth."
-Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture and reclamation unit. Equipped a personal shield and radar."
+ssl0209_name="Iyazyn"
+Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter and internal radar and stealth."
+Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Equipped a personal shield and radar."
 
 #-- Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which have names.
 seb1206_name="CJ-00F4T-2"
@@ -160,6 +168,10 @@ Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-ba
 Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 
+sbui2311_desc="Very Heavy Point Defense"
+seb2311_name="Guardian"
+Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade gauss cannon."                       
+
 seb3303_desc="Observation Satellite Uplink"
 sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
@@ -181,6 +193,14 @@ sab4301_name="Borealis"
 #--Seraphim T3 sonar platform
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
+
+#--Field engineer
+sel0319_name="Custodian"
+sal0319_name="Bilmon"
+srl0319_name="House"
+ssl0319_name="Iyazyne"
+Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
+
 
 
 ## T4
