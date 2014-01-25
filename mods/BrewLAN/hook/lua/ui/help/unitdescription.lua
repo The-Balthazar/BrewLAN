@@ -86,13 +86,15 @@ Description['ssa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Seraphim Decoy Pl
 Description['ssl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."
 Description['sal0311'] = "<LOC Unit_Description_BrewLAN_T3L002>Heavily armored assault tank. Low rate of fire, designed as a heavy support unit."
 Description['sel0320'] = "<LOC Unit_Description_BrewLAN_T3L003>Satelite uplink description."
-Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Anti-Nuke Launcher description."
+Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Anti-Nuke Launcher description." 
+Description['sel0319'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defences."
 
 #Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
 Description['seb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
 Description['ssb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Description['sab2306'] = "<LOC Unit_Description_BrewLAN_T3B004>Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
+Description['seb2311'] = "<LOC Unit_Description_BrewLAN_T3B005>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade gauss cannon."
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
