@@ -168,7 +168,7 @@ Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-ba
 Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 
-sbui2311_desc="Very Heavy Point Defense"
+sbui2311_desc="Anti-Armor Point Defense"
 seb2311_name="Guardian"
 Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade gauss cannon."                       
 
