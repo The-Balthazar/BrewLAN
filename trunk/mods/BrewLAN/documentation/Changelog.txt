@@ -28,7 +28,13 @@ __________.__________
   * Added A T3 Field engineer to build the Guardian.
   * Made the UEF Nuke mine only buildable by the T3 field engineer.
   * Increased the tarmac size, footprint size, and physics model size of the Guardian.
-  * Reclassified the Guardian as a Very Heavy Point Defense.        
+  * Reclassified the Guardian as a Anti-Armor Point Defense. 
+  __________
+  2014-01-26
+          
+  * Added a Cybran T3 Field Engineer. Called House.
+  * Made the Cybran Nuke Mine only buildable by House.
+  * Added a Cybran T1 Field Engineer. Called Outy.  
 __________._________
 2013-08-17|0.4.4
 
