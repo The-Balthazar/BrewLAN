@@ -67,10 +67,10 @@ Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels
 
 #--Field engineers
 sel0119_name="Zippo"    
-sal0119_name=""
+sal0119_name="Ostrich"
 srl0119_name="Outy"
 ssl0119_name="Iyaz"
-
+Unit_Description_BrewLAN_T1L001="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
 
 
 ## T2
