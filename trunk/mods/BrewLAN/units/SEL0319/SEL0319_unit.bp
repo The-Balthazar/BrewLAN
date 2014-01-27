@@ -272,8 +272,8 @@ UnitBlueprint {
         HelpText = '<LOC uel0209_help>Field Engineer',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.35,
-    LifeBarSize = 0.6,
+    LifeBarOffset = 0.35*1.25,
+    LifeBarSize = 0.6*1.25,
     Physics = {
         BackUpDistance = 4,
         BankingSlope = 0,

@@ -34,7 +34,9 @@ __________.__________
           
   * Added a Cybran T3 Field Engineer. Called House.
   * Made the Cybran Nuke Mine only buildable by House.
-  * Added a Cybran T1 Field Engineer. Called Outy.  
+  * Added a Cybran T1 Field Engineer. Called Outy.
+  * Increased the size and distance of the lifebar for the Custodian.
+  * Increased the damage and range of the Custodian, slightly.      
 __________._________
 2013-08-17|0.4.4
 
