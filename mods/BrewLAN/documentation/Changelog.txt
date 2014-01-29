@@ -36,7 +36,12 @@ __________.__________
   * Made the Cybran Nuke Mine only buildable by House.
   * Added a Cybran T1 Field Engineer. Called Outy.
   * Increased the size and distance of the lifebar for the Custodian.
-  * Increased the damage and range of the Custodian, slightly.      
+  * Increased the damage and range of the Custodian, slightly.
+  __________
+  2014-01-26
+          
+  * Fixed the Guardian not being able to fire directly north.
+  * Added a Seraphim T3 Torpedo Bomber.        
 __________._________
 2013-08-17|0.4.4
 
