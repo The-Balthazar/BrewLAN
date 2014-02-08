@@ -41,7 +41,14 @@ __________.__________
   2014-01-26
           
   * Fixed the Guardian not being able to fire directly north.
-  * Added a Seraphim T3 Torpedo Bomber.        
+  * Added a Seraphim T3 Torpedo Bomber.
+  __________
+  2014-02-08
+          
+  * Lowered the health of the Cybran T3 field engineer by 35.
+  * Increased the health of the Aeon T3 defence engineer by 5.
+  * Added a line of Seraphim fiend engineers. (T1, T2, & T3)
+    * The Seraphim now have a way of building their mine.           
 __________._________
 2013-08-17|0.4.4
 
