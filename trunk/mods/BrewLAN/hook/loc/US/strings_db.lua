@@ -71,6 +71,8 @@ sal0119_name="Ostrich"
 srl0119_name="Outy"
 ssl0119_name="Iyaz"
 Unit_Description_BrewLAN_T1L001="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
+Unit_Description_BrewLAN_T1L002="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth and can build specialist defences."
+Unit_Description_BrewLAN_T1L003="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
 
 
 ## T2
@@ -85,9 +87,10 @@ Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a ligh
 sal0209_desc="Defence Engineer"
 sal0209_name="Butler"
 srl0209_name="Wilson"
-ssl0209_name="Iyazyn"
-Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter and internal radar and stealth."
+ssl0219_name="Iyazyn"
+Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter, internal radar, and stealth."
 Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Equipped a personal shield and radar."
+Unit_Description_BrewLAN_T2L003="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
 
 #-- Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which have names.
 seb1206_name="CJ-00F4T-2"
@@ -200,7 +203,8 @@ sal0319_name="Bilmon"
 srl0319_name="House"
 ssl0319_name="Iyazyne"
 Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
-
+Unit_Description_BrewLAN_T3L006="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
+Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
 
 
 ## T4

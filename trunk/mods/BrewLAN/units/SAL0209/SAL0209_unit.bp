@@ -95,8 +95,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 0,
-        Health = 720,
-        MaxHealth = 720,
+        Health = 725,
+        MaxHealth = 725,
         RegenRate = 0,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
