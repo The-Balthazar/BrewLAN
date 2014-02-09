@@ -105,6 +105,7 @@ Description['seb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based o
 Description['ssb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Description['sab2306'] = "<LOC Unit_Description_BrewLAN_T3B004>Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
 Description['seb2311'] = "<LOC Unit_Description_BrewLAN_T3B005>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade gauss cannon."
+Description['ssb2311'] = "<LOC Unit_Description_BrewLAN_T3B006>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull energy weapon."
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
