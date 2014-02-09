@@ -173,7 +173,9 @@ Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-ba
 
 sbui2311_desc="Anti-Armor Point Defense"
 seb2311_name="Guardian"
-Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade gauss cannon."                       
+ssb2311_name="Sinn Unthe"
+Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship-grade gauss cannon."                       
+Unit_Description_BrewLAN_T3B006="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull energy weapon."
 
 seb3303_desc="Observation Satellite Uplink"
 sea0002_desc="Observation Satellite"
