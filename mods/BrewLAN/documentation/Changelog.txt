@@ -52,7 +52,21 @@ __________.__________
   __________
   2014-02-09
           
-  * Added a Seraphim T3 Anti-Armor Point Defence.            
+  * Added a Seraphim T3 Anti-Armor Point Defence.
+  * Fixed the BlackOps fake weapon crash from the fake Centurion.
+  __________
+  2014-02-17
+          
+  * Corrected the Night Skimmer not using default language string tables.
+  * Added Aeon T1 & T3 field engineers.
+  * Moved the Aeon Nuke mine to be T3 buildable only.
+  * Buffed the Seraphim T3 field engineer to have the same build speed as the regular T3 engineer for seraphim.
+  __________
+  2014-02-18
+          
+  * Changed the Gantry scripts to move all BlackOps and TotalMeyhem units that fit to be buildable by it.
+  * Added a script to change the costs of the BrewLAN T3 torp bombers, gunships, and transports based on the version of FA used.
+  * Added the UEF T1 fiend engineer.                         
 __________._________
 2013-08-17|0.4.4
 

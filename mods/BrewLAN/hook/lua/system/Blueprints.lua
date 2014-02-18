@@ -25,12 +25,13 @@ function ModBlueprints(all_blueprints)
     UnitHidingBrewLAN(all_blueprints.Unit)
     GantryExperimentalBuildOnly(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
+    BrewLANMatchBalancing(all_blueprints.Unit)
 
 end
 
 
 
-# ---------------- Cybran Land factory categories for field engineer(s)
+# ---------------- Additional buildable categories, related to field engineers
 
 
 
@@ -45,7 +46,9 @@ function BrewLANFieldEngineerChanges(all_bps)
         uab0301 = 'BUILTBYLANDTIER3FACTORY AEON MOBILE CONSTRUCTION',
         xsb0101 = 'BUILTBYLANDTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION',
         xsb0201 = 'BUILTBYLANDTIER2FACTORY SERAPHIM MOBILE CONSTRUCTION',
-        xsb0301 = 'BUILTBYLANDTIER3FACTORY SERAPHIM MOBILE CONSTRUCTION',
+        xsb0301 = 'BUILTBYLANDTIER3FACTORY SERAPHIM MOBILE CONSTRUCTION',  
+        ueb0101 = 'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',
+        ueb0301 = 'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         xel0209 = 'BUILTBYTIER2FIELD UEF',
     }     
 
@@ -193,16 +196,31 @@ function UnitHidingBrewLAN(all_bps)
     end
 end
      
-# ---------------- Moving the Fatboy into the Gantry.
+     
+     
+# ---------------- Moving units into the Gantry.
 
 
 
 function GantryExperimentalBuildOnly(all_bps)
 
     local UEFExperimentals = {
-	all_bps['uel0401'],              #-- Fatboy
-	all_bps['brnt3doomsday'],        #-- Total Mayhem Doomsday (Compatibility test script)
-	#all_bps['ues0401'],
+  #-- Vanilla
+	all_bps['uel0401'],              #-- Fatboy 
+#	all_bps['ues0401'],              #-- Atlantis (Disabled for getting stuck)
+  
+  #-- Total Mayhem units
+	all_bps['brnt3doomsday'],        #-- Doomsday
+	all_bps['brnt3argus'],           #-- Argus
+	all_bps['brnt3shbm2'],           #-- Mayhem Mk 4 
+	all_bps['brnt3shbm'],            #-- Mayhem Mk 2
+	all_bps['brnt3blasp'],           #-- Blood Asp 
+	all_bps['brnt3bat'],             #-- Rampart  
+  
+  #-- BlOps units 
+	all_bps['bes0402'],              #-- Conquest Class 
+	all_bps['bel0402'],              #-- Goliath MKII  
+#	all_bps['bea0402'],              #-- Citadel MKII (Disabled for being too big)
     }
 
     for arrayIndex, bp in UEFExperimentals do
@@ -327,6 +345,50 @@ function RoundGalacticCollosusHealth(all_bps)
 
 end
 
+
+
+# ----------------- Balance matching for between versions of FA that changes balancing
+
+
+
+function BrewLANMatchBalancing(all_bps)
+
+    local UnitsList = {
+# ------- T3 torpedo bombers to match Solace
+        sra0307 = 'xaa0306',
+        sea0307 = 'xaa0306',
+        ssa0307 = 'xaa0306',
+# ------- Sera T3 gunship to match Broadsword   
+        ssa0305 = 'uea0305',
+# ------- Air transports to be based  
+        ssa0306 = 'xea0306',
+        sra0306 = 'xea0306',
+        saa0306 = 'xea0306',
+    }   
+     
+    for unitid, targetid in UnitsList do
+        if all_bps[unitid] and all_bps[targetid] then
+            all_bps[unitid].Economy.BuildCostEnergy = all_bps[targetid].Economy.BuildCostEnergy
+            all_bps[unitid].Economy.BuildCostMass = all_bps[targetid].Economy.BuildCostMass     
+            all_bps[unitid].Economy.BuildTime = all_bps[targetid].Economy.BuildTime
+        end
+    end     
+ 
+    local UnitsListMult = {
+# ------- Air transport cost multipliers  
+        sra0306 = 0.95,
+        saa0306 = 2.7,
+    }      
+     
+    for unitid, mult in UnitsListMult do
+        if all_bps[unitid] then
+            all_bps[unitid].Economy.BuildCostEnergy = all_bps[unitid].Economy.BuildCostEnergy * mult
+            all_bps[unitid].Economy.BuildCostMass = all_bps[unitid].Economy.BuildCostMass * mult 
+            all_bps[unitid].Economy.BuildTime = all_bps[unitid].Economy.BuildTime * mult
+        end
+    end       
+
+end
 
 
 end

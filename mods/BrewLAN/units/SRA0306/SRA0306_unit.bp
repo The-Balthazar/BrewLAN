@@ -124,7 +124,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 18,
     },
-    Description = '<LOC sair0306>Heavy Air Transport',
+    Description = '<LOC xea0306_desc>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -256,7 +256,7 @@ UnitBlueprint {
         VisionRadius = 34,
     },
     Interface = {
-        HelpText = '<LOC sair0306>Heavy Air Transport',
+        HelpText = '<LOC xea0306_help>Heavy Air Transport',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.25,
