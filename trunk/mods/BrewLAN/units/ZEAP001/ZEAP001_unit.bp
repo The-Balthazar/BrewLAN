@@ -301,6 +301,7 @@ UnitBlueprint {
         {
             MaxRadius = 72,
             RangeCategory = 'UWRC_AntiAir',
+            TargetRestrictDisallow = 'SATELLITE', 
         },
         {
             AboveWaterTargetsOnly = true,
