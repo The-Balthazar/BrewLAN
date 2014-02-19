@@ -66,7 +66,11 @@ __________.__________
           
   * Changed the Gantry scripts to move all BlackOps and TotalMeyhem units that fit to be buildable by it.
   * Added a script to change the costs of the BrewLAN T3 torp bombers, gunships, and transports based on the version of FA used.
-  * Added the UEF T1 fiend engineer.                         
+  * Added the UEF T1 fiend engineer.
+  __________
+  2014-02-19
+          
+  * Added an icon for the UEF T1 field engineer, and temporary icons for the temporary Aeon T1 & T3 field engineers.                         
 __________._________
 2013-08-17|0.4.4
 

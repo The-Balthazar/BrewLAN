@@ -377,7 +377,7 @@ function BrewLANMatchBalancing(all_bps)
     local UnitsListMult = {
 # ------- Air transport cost multipliers  
         sra0306 = 0.95,
-        saa0306 = 2.7,
+        saa0306 = 2.75,
     }      
      
     for unitid, mult in UnitsListMult do
