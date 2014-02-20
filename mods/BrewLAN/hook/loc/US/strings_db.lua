@@ -122,7 +122,8 @@ Unit_Description_BrewLAN_T2D004="An all-terrain mine armed with a full-yield nuc
 #-- Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
-
+     
+     
 ## T3
 
 
@@ -173,9 +174,11 @@ Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-ba
 
 sbui2311_desc="Anti-Armor Point Defense"
 seb2311_name="Guardian"
-ssb2311_name="Sinn Unthe"
+ssb2311_name="Sinn Unthe"  
+srb2311_name="Punisher"
 Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship-grade gauss cannon."                       
 Unit_Description_BrewLAN_T3B006="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull energy weapon."
+Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade proton cannon."
 
 seb3303_desc="Observation Satellite Uplink"
 sea0002_desc="Observation Satellite"
@@ -214,7 +217,7 @@ Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture
 
 ssl0403_desc="Experimental Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; can build itself and the resources to do so in 20 seconds."
+Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; is kept around outside of build menus because it is funny."
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"

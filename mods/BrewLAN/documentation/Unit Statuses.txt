@@ -17,6 +17,7 @@ General to-do list/ideas list.
 * BARREL ROLL
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane.
+* Fix the issue with the UEF engineer built versions of gantry experimentals bugging out when at pop cap.
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -27,7 +28,8 @@ Errors list/the other to-do list.
 * The Gantry lacks a lod1 normal map.
 * The Absolution can't hover over walls and such
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
-* Experiment with making a drop pod artillery.   
+* Experiment with making a drop pod artillery.
+* Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.   
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -125,7 +127,8 @@ Modded Units:
         * Works in a similar way as the Megalith eggs.
         * Passes any damage it recieves under construction to the eventual real Fatboy.
         * Doing it the other way (Putting the fake in the Gantry) results in it losing the orders to leave the Gantry.       
-        * Most people wont notice the difference.                                      
+        * Most people wont notice the difference.
+        * Can cause issues while at pop cap.                                              
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
@@ -142,26 +145,28 @@ Added and planned units:
 -------------------------------------------------------
 Tech 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Aeon:
-  	T1 Light Gunship
-  	T1 Light Artillery
-  	T1 Shield Genorator
-  	T1 Air Staging
-  		* Fully functioning.
-  
-  	T1 Torpedo Bomber
-    T1 Pressure Mine
-  		* Pending.
+  Aeon:              
+  	Fully functioning:  
+  		* T1 Light Gunship
+  		* T1 Light Artillery
+  		* T1 Shield Genorator
+  		* T1 Air Staging
+  		* T1 Defence engineer
+                        
+  	Pending:
+  	  * T1 Torpedo Bomber
+      * T1 Pressure Mine
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Cybran:
-  	T1 Light Artillery
-  	T1 Air Staging
-  		* Fully functioning.
-  
-  	T1 Torpedo Bomber ('Gannet')
-    T1 Pressure Mine
-  		* Pending
+  Cybran:          
+  	Fully functioning:  
+  	  * T1 Light Artillery
+  	  * T1 Air Staging  
+  		* T1 Field engineer
+                        
+  	Pending:
+  	* T1 Torpedo Bomber ('Gannet')
+    * T1 Pressure Mine
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF: 
@@ -170,7 +175,8 @@ Tech 1
       * T1 Light Artillery
       * T1 Light Shield Gen
       * T1 Torpedo Bomber
-      * T1 Air Staging 
+      * T1 Air Staging        
+  		* T1 Field engineer
       
     T1 Pressure Mine
       * Needs to not block pathing. 
@@ -180,11 +186,12 @@ Tech 1
       * T1 Light Artillery
       * T1 Shield Genorator
       * T1 Air Staging
-      * T1 Light Gunshi
-  
-  	T1 Torpedo Bomber ('Sou-ioz') 
-    T1 Pressure Mine
-  		* Pending. 
+      * T1 Light Gunshi        
+  		* T1 Field engineer
+                        
+  	Pending:
+  	  * T1 Torpedo Bomber ('Sou-ioz') 
+      * T1 Pressure Mine
 
 -------------------------------------------------------
 Tech 2:
@@ -197,11 +204,8 @@ Tech 2:
       * T2 Bomber
       * T2 Defence Engineer
         * Lacks a unique model.
-        * Need to mess with \lua\ui\game\avatars.lua to get the idle icon working entirely.
       * T2 Proximity Mine
-        * Lacks a unique model.
-      * T2 Nuke Mine
-        * Lacks a unique model.         
+        * Lacks a unique model.     
       
   	Pending:  
   		* T2 Wall
@@ -211,9 +215,7 @@ Tech 2:
   	Fully Funtioning.
       * T2 Mass Storage
       * T2 Field Engineer  
-        * Need to mess with \lua\ui\game\avatars.lua to get the idle icon working entirely.
       * T2 Proximity Mine
-      * T2 Nuke Mine
       * T2 Energy Storage
         * Has explosion size that scales to the stored energy.       
   		* T2 Wall ('Bulkhead')
@@ -227,7 +229,6 @@ Tech 2:
         * Still blocks pathing.
         * Lacks a unique water explosion.
         * Doesn't leave behind a decent sized scorch mark yet.
-      * T2 Nuke Mine                         
     
   	T2 Wall.
   		* Pending creation  
@@ -238,16 +239,12 @@ Tech 2:
       * T2 Energy Storage
         * Has explosion size that scales to the stored energy.
       * T2 Proximity Mine
-        * No field engineer yet.    
-  		* T2 Engineering Station.      
+  		* T2 Engineering Station.     
+  		* T2 Field engineer
 
   	Pending:
-  		* T2 Field engineer
-        * Might give them a T1 & T3 field engineer instead.
   		* T2 Wall
   		* T2 Mobile Shield Gen.
-      * T2 Nuke Mine
-        * To be buildable by the field engineer.  
             
 -------------------------------------------------------
 Tech 3:
@@ -262,31 +259,44 @@ Tech 3:
           * Open animation doesn't work yet.
           * Death animation slightly weird.
   		* T3 Point Deffence.
-  		    * Needs the passive animation disabling while it fires.  
+  		    * Needs the passive animation disabling while it fires.    
+      * T3 Nuke Mine          
+        * Lacks a unique model.   
+  		* T3 Field engineer    
+        * Lacks a unique model.        
           
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
       * T3 Mobile strat defence.  
+      * T3 Anti-Armor Point Defence.  
+      * T3 Wall thing.        
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 		Fully Funtioning:
     	* T3 Air Transport.
     	* T3 Torpedo Bomber.  
   	  * T3 Point Deffence.
-  		  * May eventually give a more unique appearance.
+  		  * May eventually give a more unique appearance. 
+      * T3 Nuke Mine       
+  		* T3 Field engineer      
+      * T3 Anti-Armor Point Defence.   
+  	         
+  	T3 Stealth tank (Cybran sniper bot alternative)
+      * Unfinished appearance.
+      * Needs some more specific coding relating to the behaviour of the cloak.             
 
     T3 Decoy Plane.
       * Functional but unfinished.
         * Currently disabled.
       * Need to give a button to toggle between Soulripper/ASF impersination.
-        * Aeon Decoy finished and has this function.            
+        * Aeon decoy is finished and has this function.            
   
   	Pending:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
       * T3 Mobile strat defence.
-  	  * T3 Sniper Bot.    
+      * T3 Energy Fence.       
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
@@ -300,12 +310,15 @@ Tech 3:
       * T3 Novax Center
         * As an observation satelite.
           * Radar and omni range is spherical not cylindrical (Except on FAF).
-            * Current effective omni range is similar to its old visual range.              
+            * Current effective omni range is similar to its old visual range.
+      * T3 Nuke Mine      
+  		* T3 Field engineer       
+      * T3 Anti-Armor Point Defence.       
 
     T3 Decoy Plane.
       * Functional but unfinished.
         * Currently disabled.       
-      * When I give the UEF a T4 flyer will give a button to toggle between T4 flyer/ASF impersination.
+      * Needs a button to toggle between Centurion and Wasp.
         * Aeon has this script. 
 
     T3 Mobile strat defence
@@ -315,27 +328,32 @@ Tech 3:
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
+  		* T3 Storm defence wall.      
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   
-    Fully funtional:
+    Fully funtional:       
+      * T3 Torpedo Bomber.
     	* T3 Gunship 'Vulthuum'
     	* T3 Air Transport.
     	* T3 Point Defence                           
     	  * Eventually want to give a better mesh.
     	* T3 Sonar
     	  * Eventually want to give a different mesh.             
-      *T3 Heavy Assault Bot:
-  		  * Uses a slightly modified T2 bot mesh
+      * T3 Heavy Assault Bot:
+  		  * Uses a slightly modified T2 bot mesh       
+  		* T3 Field engineer  
+      * T3 Anti-Armor Point Defence. 
   
     Pending:
       * T3 Torp launchers.
       * T3 Anti Shield.
-      * T3 Torpedo Bomber.
       * T3 observation building.
         * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
       * T3 Decoy Plane.
       * T3 Mobile strat defence.
+      * T3 Nuke Mine.
+      * T3 Wall thing.      
 _______________________________________________________
 Experimental Table
                 ._______________._______________._______________._______________.
