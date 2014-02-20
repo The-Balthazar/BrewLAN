@@ -70,7 +70,15 @@ __________.__________
   __________
   2014-02-19
           
-  * Added an icon for the UEF T1 field engineer, and temporary icons for the temporary Aeon T1 & T3 field engineers.                         
+  * Added an icon for the UEF T1 field engineer, and temporary icons for the temporary Aeon T1 & T3 field engineers. 
+  * Added the Cybran: Punisher: Tech 3 Anti-Armor Point Defence.
+  * Reduced the damage radius and health of the Seraphim T3 AArmorPD.
+  * Increased the health of the UEF AArmorPD.
+  __________
+  2014-02-19
+          
+  * Moved the decal tarmac textures out of the gamedata folder into the mods folder.
+  * Changed the healthbar size and positions of the AArmorPDs.                                
 __________._________
 2013-08-17|0.4.4
 
