@@ -74,7 +74,7 @@ Description['sal0209'] = "<LOC Unit_Description_BrewLAN_T2L002>Tech 2 amphibious
 Description['ssl0219'] = "<LOC Unit_Description_BrewLAN_T2L003>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
 
 #Tech 2 aircraft
-Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Impaler: Aeon T2 Tactical Bomber description."
+Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
 #Tech 3 aircraft
 Description['ssa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
@@ -82,18 +82,18 @@ Description['sra0306'] = "<LOC Unit_Description_BrewLAN_T3A002>Heavy air transpo
 Description['ssa0306'] = "<LOC Unit_Description_BrewLAN_T3A003>Heavy air transport. Features 32 transportation clamps, heavy weaponry and a shield generator. Can carry up to 32 units."
 Description['saa0306'] = "<LOC Unit_Description_BrewLAN_T3A004>Heavy air transport. Feaures an all-targetting insta-kill lazor, 3000 unit clams and an engraving of your mother."
 Description['sra0307'] = "<LOC Unit_Description_BrewLAN_T3A005>High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defences with large salvos."
-Description['sea0310'] = "<LOC Unit_Description_BrewLAN_T3A006>UEF Decoy Plane; Vanguard description."
-Description['sea0307'] = "<LOC Unit_Description_BrewLAN_T3A007>Albatross desctiption."
-Description['ssa0307'] = "<LOC Unit_Description_BrewLAN_T3A008>Seraphim T3 torpedo bomber description."
-Description['saa0310'] = "<LOC Unit_Description_BrewLAN_T3A009>Aeon Decoy Plane description."
-Description['sra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Cybran Decoy Plane description."
-Description['ssa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Seraphim Decoy Plane description."
+Description['sea0310'] = "<LOC Unit_Description_BrewLAN_T3A006>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Description['sea0307'] = "<LOC Unit_Description_BrewLAN_T3A007>High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defence."
+Description['ssa0307'] = "<LOC Unit_Description_BrewLAN_T3A008>High-level torpedo bomber. Designed to engage powerful naval units."
+Description['saa0310'] = "<LOC Unit_Description_BrewLAN_T3A009>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Description['sra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Description['ssa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 
 #Tech 3 land units
 Description['ssl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."
 Description['sal0311'] = "<LOC Unit_Description_BrewLAN_T3L002>Heavily armored assault tank. Low rate of fire, designed as a heavy support unit."
-Description['sel0320'] = "<LOC Unit_Description_BrewLAN_T3L003>Satelite uplink description."
-Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Anti-Nuke Launcher description." 
+Description['sel0320'] = "<LOC Unit_Description_BrewLAN_T3L003>A mobile satellite uplink vehicle. Marks targets for an orbital laser to fire upon."
+Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L004>Mobile strategic missile defense. Protection is limited to the vehicle's operational area." 
 Description['sel0319'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defences."
 Description['srl0319'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defences."
 Description['ssl0319'] = "<LOC Unit_Description_BrewLAN_T3L006>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
@@ -113,12 +113,12 @@ Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with
 
 #Experimentals
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
-Description['srb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Iron Curtian description."
-Description['seb0401'] = "<LOC Unit_Description_BrewLAN_T4B004>Gantry description."
+Description['srb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Experimental shield generator. Protects a large area, shielded area reduces in size as it takes damage."
+Description['seb0401'] = "<LOC Unit_Description_BrewLAN_T4B004>Experimental multi-purpose factory. Dynamically changes buildable units based on environment. Can be toggled to build aircraft in any environment."
 Description['seb2404'] = "<LOC Unit_Description_BrewLAN_T4B005>Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."
-Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Iyadesu description."
-Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
-Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Abyssal Persecutor description."
+Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amphibious construction, repair, capture, reclamation, and mine layer unit. Has moderate combat and defence equipment, and can build specialist equipment."
+Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
+Description['zeap001'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
+Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amphibious battleship."
 Description['zelp001'] = "<LOC Unit_Description_0037>Experimental, amphibious mobile factory. Equipped with battleship-level weapons and armor. Its shield consumes Energy."
-Description['zeap001'] = "<LOC Unit_Description_BrewLAN_T4A001>Centurion description."
-Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Totally-not-a-fire-prism description."
+Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defences."

@@ -215,9 +215,9 @@ Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture
 ## T4
 
 
-ssl0403_desc="Experimental Engineer"
+ssl0403_desc="Experimental Field Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Overpowered experimental engineer; is kept around outside of build menus because it is funny."
+Unit_Description_BrewLAN_T4L001="Experimental amphibious construction, repair, capture, reclamation, and mine layer unit. Has moderate combat and defence equipment, and can build specialist equipment."
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"
