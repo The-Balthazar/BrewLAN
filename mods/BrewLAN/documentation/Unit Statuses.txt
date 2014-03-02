@@ -360,7 +360,7 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*?             |
+Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Field Engineer|
 Flying          |*Centurion     |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
@@ -376,25 +376,17 @@ ________________!_______________!_______________!_______________!_______________
 
 UEF Experimental Assault Bot/tank
   * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
+    * Possibly a two part splitting bot. Cain and Abel or something
 
-UEF Experimental transport/drone carrier/gunship
-  * Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
-    * Script might also be usefull for the decoy planes.
-  * Has the majority of a new custom model. No functioning weapons, but functioning animations.     
+UEF Centurion: Experimental AA gunship
+  * Texture unfinished. Could be better UV mapped.     
 
 UEF Ivan: Experimental Drop-Pod Artillery
   * Fires projectiles that look like drop pods and spawn mech marines on impact.
-    * Need a propper behaviour for impacting on shields.
-      * Possibly bouncing off.
-    * Eventually want a way to select what gets fired by it.
-      * Possibly have it switch weapons with a toggle.
-        * Bigger mech ammo should cost more energy, have a shorter range, and a lower rate of fire.
-          * If I allow it to fire Percivals it should only have the range to fire them similar to the Klink Hammer.                                    
-                          
-Seraphim "Static 2 Transport" idea.
-  * "A Static transport?"
-    * Stargate-like thing.
-    
+    * Bouncing script doesnt work on shields.
+    * Range should probably decrease for large ammos.
+    * Fucks up on aiming due to bone sharing.                                  
+        
 UEF Gantry: Experimental Factory
   * Can now be considered fully funtional.
     * Still possibly to do:                 
@@ -405,7 +397,24 @@ UEF Gantry: Experimental Factory
       * Find out why the Atlantis gets stuck in it.
         * Alternatively, make the Atlantis submerge on completion so it can get out.
       * Use scripts from the Fatboy to quickly get small things out of the build area.                      
+                  
+Seraphim "Static 2 Transport" idea.
+  * "A Static transport?"
+    * Stargate-like thing.
 
+Seraphim "totally not the second coming of the Iyadesu" Experimental Field Engineer.
+  * Prawn based, and T3 field engy based design.
+    * Possibly have it able to assist build multple things.
+    * Possibly have it able to build additional field engineers.
+      * Assuming this doesn't fuck up its ability to build field engineer buildings.            
+
+Seraphim Experimental Field Engineer
+  * The fabled return of the Iyadesu.
+
+Seraphim Experimental Mine.
+  * Bonus experimental for the field engy.
+    * Releases a residual energy signature.   
+    
 Aeon Experimental Assault Tank
   * Mostly finished texture that needs more details.
   * Has its big cannon and two TMD's.
@@ -442,11 +451,11 @@ Abandonned Experimental Ideas:
 Seraphim Iyadesu: Experimental Engineering Platform
   * Massively overpowered, in all ways.
     * Removed, after a few Iyadesu dominated games.
-    * Although it was fun so the source files still exist.      
+    * Although it was gamewarping, it was fun so the source files were left around for a long time.
 
 UEF Doomsday Machine: Experimental Point Defence
   * Was supposed to be a callback to the old TA unit.
-    * An uninteresting idea uninterestingly implemented. Removed.
+    * An uninteresting idea badly implemented. Removed.
     * Was only still in the source files for nostalgia.
       * Removed as of r146         
 
@@ -457,8 +466,10 @@ UEF Engineering Facility 'The Pound'
   * A facility that houses a large number of Rover drones.
   * Possibly just an expensive T3 unit.
   * Probably a bad idea.
-    * Potential to have its idea merged in some way with the Gantry.
+  * Potential to have its idea merged in some way with the Gantry.
 
 Anti-naval gunship.
 
-Rail gun: http://forums.gaspowered.com/viewtopic.php?t=27664#p473416
+Rail gun: http://forums.gaspowered.com/viewtopic.php?t=27664#p473416    
+Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
+    * Script might also be usefull for the decoy planes.

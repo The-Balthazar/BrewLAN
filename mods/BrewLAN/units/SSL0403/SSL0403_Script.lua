@@ -20,6 +20,10 @@ SSL0403 = Class(SConstructionUnit) {
         LeftTurret = Class(SDFAireauBolter) {},
         RightTurret = Class(SDFAireauBolter) {},
     },
+    StartBeingBuiltEffects = function(self, builder, layer)
+		SConstructionUnit.StartBeingBuiltEffects(self, builder, layer)
+		self:ForkThread( EffectUtil.CreateSeraphimExperimentalBuildBaseThread, builder, self.OnBeingBuiltEffectsBag )
+    end,    
 }
 
 TypeClass = SSL0403

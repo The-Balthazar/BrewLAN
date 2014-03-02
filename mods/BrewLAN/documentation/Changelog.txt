@@ -75,10 +75,22 @@ __________.__________
   * Reduced the damage radius and health of the Seraphim T3 AArmorPD.
   * Increased the health of the UEF AArmorPD.
   __________
-  2014-02-19
+  2014-02-20
           
   * Moved the decal tarmac textures out of the gamedata folder into the mods folder.
-  * Changed the healthbar size and positions of the AArmorPDs.                                
+  * Changed the healthbar size and positions of the AArmorPDs.
+  __________
+  2014-02-21
+          
+  * Added a LOD1 mesh for the Punisher.
+  __________
+  2014-02-28
+          
+  * Re-enabled the Iyadesu, with a total overhaul as an experimental field engineer.
+  __________
+  2014-03-02
+          
+  * Increased the tarmac of the T2 and T3 UEF shield generators.                                
 __________._________
 2013-08-17|0.4.4
 
