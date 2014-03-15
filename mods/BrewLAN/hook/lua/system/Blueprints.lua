@@ -347,7 +347,7 @@ end
 
 
 
-# ----------------- Balance matching for between versions of FA that changes balancing
+# ----------------- Cost balance matching for between versions of FA that changes balancing
 
 
 
