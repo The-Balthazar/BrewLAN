@@ -90,7 +90,30 @@ __________.__________
   __________
   2014-03-02
           
-  * Increased the tarmac of the T2 and T3 UEF shield generators.                                
+  * Increased the tarmac of the T2 and T3 UEF shield generators.
+  __________
+  2014-03-07
+          
+  * Added the Hedgehog: Cybran T3 Mobile strat defence. Showcasing my new balance plan for the unit: Build cost includes its only missile, and it is unable to make more unassisted.
+  * Adjusted the balance of Aster to match that of the Hedgehog. Specifically:
+    * Energy cost from 78750 to 391500.
+    * Mass cost from 5625 to 5850.
+    * Build time unchanged. (Technically it went from 5* the time of the static to an arbitrary 22500, which turned out to be the same.)
+    * Build rate of missile from 810 to 0.
+    * Maximun storage from 3 to 1.
+    * Innitial storage from 0 to 1.
+    * Build time of missile from 259200 to 25920.
+  __________
+  2014-03-10
+          
+  * Slightly increased the energy cost and slightly decreased the mass cost and build time of the mobile anti nuke launchers.
+  * Changed the description of the mobile ANLs slightly.
+  __________
+  2014-03-15
+          
+  * Added Scarab: Aeon Tech 3 Mobile Strategic Missile Defense.
+    * Not fully functioning yet; still lacks animation and bone setups. But it looks nice.  
+  * Listed the ability 'Strategic Missile Defense' for Scarab, Aster, and Hedghog.                                             
 __________._________
 2013-08-17|0.4.4
 

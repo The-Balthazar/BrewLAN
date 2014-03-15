@@ -191,7 +191,10 @@ Unit_Description_BrewLAN_T3L003="A mobile satellite uplink vehicle. Marks target
 
 sel0321_desc="Mobile Strategic Missile Defense"
 sel0321_name="Aster"
-Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Protection is limited to the vehicle's operational area."
+srl0321_name="Hedgehog"
+sal0321_name="Scarab"  
+ssl0321_name="Ythhu"
+Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Build costs include first missile, however the vehicle lacks a fabrication suite to produce additional missiles unassisted."
 
 sbui4301="Naval Shield Generator"
 seb4301_name="SSD - Pulse"

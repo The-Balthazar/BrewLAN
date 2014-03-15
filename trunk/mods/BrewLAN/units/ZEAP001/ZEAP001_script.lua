@@ -18,9 +18,17 @@ ZELP001 = Class(CConstructionEggUnit) {
         local pos = self:GetPosition()
         
         local aiBrain = self:GetAIBrain()
+#	local armyindex = self:GetArmyIndex()
+
+#        SetIgnoreArmyUnitCap(armyindex, true)
+
 	local Fatboy = CreateUnitHPR(buildUnit,aiBrain.Name,pos[1], pos[2], pos[3],0, 0, 0)
+
+#        SetIgnoreArmyUnitCap(armyindex, false)
+
 	local curHealth = self:GetHealth()
 	Fatboy:SetHealth(Fatboy,curHealth)
+
         self:Destroy()
     end,
 }

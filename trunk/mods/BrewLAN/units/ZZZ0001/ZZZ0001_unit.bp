@@ -82,6 +82,15 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
+                    LODCutoff = 5,
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                    MeshName = '/units/Cybran_Fence/Cybran_Fence_lod0.scm', 
+                    AlbedoName = '/units/Cybran_Fence/Cybran_Fence_albedo.dds', 
+                    NormalsName = '/units/Cybran_Fence/Cybran_Fence_normalsts.dds', 
+                    SpecularName = '/units/Cybran_Fence/Cybran_Fence_specteam.dds',  
+                },
+                {
                     LODCutoff = 200,
                     Scrolling = true,
                     ShaderName = 'Aeon',

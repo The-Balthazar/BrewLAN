@@ -13,11 +13,9 @@ General to-do list/ideas list.
 * Mines and mine layers (Land, Naval)
 * Seraphim experimental mine releasing a residual energy signature as its thing.
 * Mobile Strat Defence
-* Plasma Batteries (T2 rapid fire arty, at T3, or more like battleship gauss cannons)
 * BARREL ROLL
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane.
-* Fix the issue with the UEF engineer built versions of gantry experimentals bugging out when at pop cap.
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -29,7 +27,9 @@ Errors list/the other to-do list.
 * The Absolution can't hover over walls and such
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
 * Experiment with making a drop pod artillery.
-* Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.   
+* Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
+* UEF engineer built versions of gantry experimentals bug out when at pop cap.
+  * This issue also exists with Megalith built eggs, but is less pronounced.    
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -102,7 +102,7 @@ Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
     T2 Field Engineer
-      * Gave a unique buildable category specifically for mines.
+      * Gave a unique buildable category..
             
     T2+T3 Shield Generators
       * Unified and normalised tarmacs.
@@ -280,7 +280,9 @@ Tech 3:
   		  * May eventually give a more unique appearance. 
       * T3 Nuke Mine       
   		* T3 Field engineer      
-      * T3 Anti-Armor Point Defence.   
+      * T3 Anti-Armor Point Defence.
+      * T3 Mobile strat defence.
+        * Needs a unique model.          
   	         
   	T3 Stealth tank (Cybran sniper bot alternative)
       * Unfinished appearance.
@@ -295,7 +297,6 @@ Tech 3:
   	Pending:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
-      * T3 Mobile strat defence.
       * T3 Energy Fence.       
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -313,7 +314,9 @@ Tech 3:
             * Current effective omni range is similar to its old visual range.
       * T3 Nuke Mine      
   		* T3 Field engineer       
-      * T3 Anti-Armor Point Defence.       
+      * T3 Anti-Armor Point Defence.
+      * T3 Mobile strat defence.
+        * Needs a new model.              
 
     T3 Decoy Plane.
       * Functional but unfinished.
@@ -321,10 +324,6 @@ Tech 3:
       * Needs a button to toggle between Centurion and Wasp.
         * Aeon has this script. 
 
-    T3 Mobile strat defence
-      * "Functioning" Currently disabled.
-        * Is more than willing to exceed its stored number of missiles.      
-                            
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
@@ -369,7 +368,7 @@ Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield proj...
 ________________!_______________!_______________!_______________!_______________!
 
   (A)  Aircraft Carrier
-  (F)  Mobile factory
+  (F)  Fabrication cababilities
    *  Pending
    ?  ???
     PROFIT!
@@ -390,12 +389,12 @@ UEF Ivan: Experimental Drop-Pod Artillery
 UEF Gantry: Experimental Factory
   * Can now be considered fully funtional.
     * Still possibly to do:                 
-      * Mess with \lua\ui\game\avatars.lua and \lua\factions.lua to get the idle icon working.
+      * Mess with \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
       * Add some kind of pedistal effect area for aircraft, especially on water.
         * Would need to wait for the current unit to be completed, especially if its a ship.               
       * Add death animation.
-      * Find out why the Atlantis gets stuck in it.
-        * Alternatively, make the Atlantis submerge on completion so it can get out.
+      * The Atlantis gets stuck in it; looks like something to do with its oncreate scripts at first glance.
+        * It can be manually removed by making it submerge first.
       * Use scripts from the Fatboy to quickly get small things out of the build area.                      
                   
 Seraphim "Static 2 Transport" idea.
@@ -434,11 +433,15 @@ Cybran Experimental Missile ship
     * Possible cloak, disabled during firing and or really high power cost.
   * Current implementation:
     * A Battleship with legs.
-    * Currently no functioning weapons, but can stamp on things.         
+    * Currently no functioning weapons, but can stamp on things. 
+  * New idea:
+    * Carrier/battleship. With legs.
+    * Unique T3 fighter/bombers.               
 
 Cybran Iron Curtain: Experimental Shield Generator
   * Functions as a shield.
-    * Need to adapt the force shield script to only effect this. 
+  * Want the shield to shrink on damage.  
+    * Need to adapt the force shield script for this. 
   * Possibly give it a better mesh.
 
 Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
@@ -451,7 +454,8 @@ Abandonned Experimental Ideas:
 Seraphim Iyadesu: Experimental Engineering Platform
   * Massively overpowered, in all ways.
     * Removed, after a few Iyadesu dominated games.
-    * Although it was gamewarping, it was fun so the source files were left around for a long time.
+    * Although it was gamewarping, it was fun so the source files were left around.
+      * Changed as of r205     
 
 UEF Doomsday Machine: Experimental Point Defence
   * Was supposed to be a callback to the old TA unit.
