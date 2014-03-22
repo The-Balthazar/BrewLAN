@@ -263,12 +263,15 @@ Tech 3:
       * T3 Nuke Mine          
         * Lacks a unique model.   
   		* T3 Field engineer    
-        * Lacks a unique model.        
+        * Lacks a unique model. 
+              
+    T3 Mobile strat defence.
+      * Looks pretty.
+      * Needs propperly rigging.               
           
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
-      * T3 Mobile strat defence.  
       * T3 Anti-Armor Point Defence.  
       * T3 Wall thing.        
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
