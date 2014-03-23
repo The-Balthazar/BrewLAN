@@ -6,8 +6,8 @@ UnitBlueprint {
     Display = {
         Tarmacs = {
             {
-                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar8x_01_albedo.dds',
-                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar8x_01_normals.dds',
+                Albedo = '/env/Common/decals/Tarmacs/Tar8x_01_albedo.dds',
+                Normal = '/env/Common/decals/Tarmacs/Tar8x_01_normals.dds',
                 Length = 12.8,
                 Width = 12.8,
             },
@@ -21,8 +21,8 @@ UnitBlueprint {
     Display = {
         Tarmacs = {
             {
-                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar8x_01_albedo.dds',
-                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar8x_01_normals.dds',
+                Albedo = '/env/Common/decals/Tarmacs/Tar8x_01_albedo.dds',
+                Normal = '/env/Common/decals/Tarmacs/Tar8x_01_normals.dds',
                 Length = 12.8,
                 Width = 12.8,
             },
