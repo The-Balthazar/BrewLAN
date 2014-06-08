@@ -12,7 +12,6 @@ General to-do list/ideas list.
 * More aquatic buildings
 * Mines and mine layers (Land, Naval)
 * Seraphim experimental mine releasing a residual energy signature as its thing.
-* Mobile Strat Defence
 * BARREL ROLL
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane.
@@ -29,7 +28,9 @@ Errors list/the other to-do list.
 * Experiment with making a drop pod artillery.
 * Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
 * UEF engineer built versions of gantry experimentals bug out when at pop cap.
-  * This issue also exists with Megalith built eggs, but is less pronounced.    
+  * This issue also exists with Megalith built eggs, but is less visible.
+* Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
+  * The rate of fire of the mobile anti nukes also means that it fires both at the same target, making having two redundant unless its a seraphim exp. nuke.      
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -345,7 +346,8 @@ Tech 3:
       * T3 Heavy Assault Bot:
   		  * Uses a slightly modified T2 bot mesh       
   		* T3 Field engineer  
-      * T3 Anti-Armor Point Defence. 
+      * T3 Anti-Armor Point Defence.   
+      * T3 Mobile strat defence.
   
     Pending:
       * T3 Torp launchers.
@@ -353,7 +355,6 @@ Tech 3:
       * T3 observation building.
         * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
       * T3 Decoy Plane.
-      * T3 Mobile strat defence.
       * T3 Nuke Mine.
       * T3 Wall thing.      
 _______________________________________________________
@@ -412,6 +413,7 @@ Seraphim "totally not the second coming of the Iyadesu" Experimental Field Engin
 
 Seraphim Experimental Field Engineer
   * The fabled return of the Iyadesu.
+    * Dat sheets still OP.  
 
 Seraphim Experimental Mine.
   * Bonus experimental for the field engy.

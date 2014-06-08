@@ -10,6 +10,13 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2014-06-08|0.4.6
+          
+* Workaround for the bug that prevents things from propperly assisting a builder that has 0 build rate.
+  * Set the mobile anti-nukes to have a build rate of 1 so they are still completely inefectual on their own but can be assisted.
+* Added the Seraphim T3 Mobile Strat Defence.
+* Fixed the collision box of the Aeon T3 Heavy Point Defence.                    
+__________.__________
 2014-01-06|0.4.5
 
 * Corrected problem with fake Centurion not referencing the model of the original propperly.
@@ -113,7 +120,7 @@ __________.__________
           
   * Added Scarab: Aeon Tech 3 Mobile Strategic Missile Defense.
     * Not fully functioning yet; still lacks animation and bone setups. But it looks nice.  
-  * Listed the ability 'Strategic Missile Defense' for Scarab, Aster, and Hedghog.                                             
+  * Listed the ability 'Strategic Missile Defense' for Scarab, Aster, and Hedghog.       
 __________._________
 2013-08-17|0.4.4
 
