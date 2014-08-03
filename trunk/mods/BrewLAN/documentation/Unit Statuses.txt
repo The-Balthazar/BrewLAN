@@ -264,7 +264,9 @@ Tech 3:
       * T3 Nuke Mine          
         * Lacks a unique model.   
   		* T3 Field engineer    
-        * Lacks a unique model. 
+        * Lacks a unique model.  
+      * T3 Anti-Armor Point Defence. 
+        * Could have a more original model, but is probably fine.      
               
     T3 Mobile strat defence.
       * Looks pretty.
@@ -272,8 +274,7 @@ Tech 3:
           
   	Pending:
   		* T3 Torp launchers.
-  		* T3 Mobile Shield Gen.
-      * T3 Anti-Armor Point Defence.  
+  		* T3 Mobile Shield Gen. 
       * T3 Wall thing.        
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:

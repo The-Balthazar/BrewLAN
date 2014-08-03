@@ -15,7 +15,16 @@ __________.__________
 * Workaround for the bug that prevents things from propperly assisting a builder that has 0 build rate.
   * Set the mobile anti-nukes to have a build rate of 1 so they are still completely inefectual on their own but can be assisted.
 * Added the Seraphim T3 Mobile Strat Defence.
-* Fixed the collision box of the Aeon T3 Heavy Point Defence.                    
+* Fixed the collision box of the Aeon T3 Heavy Point Defence.  
+  __________
+  2014-06-28
+  
+  * Removed the footprint size from the Gantry built Centurion. It was preventing other things being built infront or behind the Gantry.
+  __________
+  2014-08-03
+  
+  * Reduced the build time of mobile anti nuke missles, so they take less engineering power than the units that get one for free.
+  * Added Nihiloid: Aeon Tech 3 Anti-Armour Point Defence.                    
 __________.__________
 2014-01-06|0.4.5
 
