@@ -8,7 +8,20 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
+__________.__________
+2014-08-08|0.4.7
+
+* Added a cloakable fusion.
+* Removed the Iyadesu again.
+  __________
+  2014-08-15
+  
+  * Cybran Tech 3 Cloakable Power Generator changes.
+    * Created a unique model for it.
+    * Gave it a name.      
+    * Changed its balancing.
+    * Added particle effects to its cloak.    
 __________.__________
 2014-06-08|0.4.6
           

@@ -110,7 +110,11 @@ Description['sab2306'] = "<LOC Unit_Description_BrewLAN_T3B004>Heavy defensive t
 Description['seb2311'] = "<LOC Unit_Description_BrewLAN_T3B005>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade gauss cannon."
 Description['ssb2311'] = "<LOC Unit_Description_BrewLAN_T3B006>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull energy weapon." 
 Description['srb2311'] = "<LOC Unit_Description_BrewLAN_T3B007>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade proton cannon."    
-Description['sab2311'] = "<LOC Unit_Description_BrewLAN_T3B008>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull oblivion cannon."
+Description['sab2311'] = "<LOC Unit_Description_BrewLAN_T3B008>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull oblivion cannon."    
+Description['sab1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output." 
+Description['seb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
+Description['srb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
+Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
