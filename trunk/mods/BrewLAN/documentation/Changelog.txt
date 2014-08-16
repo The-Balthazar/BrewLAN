@@ -21,7 +21,12 @@ __________.__________
     * Created a unique model for it.
     * Gave it a name.      
     * Changed its balancing.
-    * Added particle effects to its cloak.    
+    * Added particle effects to its cloak.
+  __________
+  2014-08-15
+  
+  * Added UEF Cloakable Power Gen.
+  * Added Cybran Cloakable Fab.   
 __________.__________
 2014-06-08|0.4.6
           
