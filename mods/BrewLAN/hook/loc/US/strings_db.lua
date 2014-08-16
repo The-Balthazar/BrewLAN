@@ -215,8 +215,8 @@ ssl0319_name="Iyazyne"
 Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
 Unit_Description_BrewLAN_T3L006="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
 Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
-
-bui1x01_desc="Cloakable Power Generator"
+      
+bui1x11_desc="Cloakable Power Generator"
 sab1111_name=""
 seb1111_name=""
 srb1111_name=""
@@ -226,10 +226,12 @@ seb1211_name=""
 srb1211_name=""
 ssb1211_name=""
 sab1311_name=""
-seb1311_name=""
+seb1311_name="Von Mayer Reactor"
 srb1311_name="Faraday Reactor"
 ssb1311_name=""
 Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
+  
+bui1x13_desc="Cloakable Mass Fabricator"
 
  
 ## T4
