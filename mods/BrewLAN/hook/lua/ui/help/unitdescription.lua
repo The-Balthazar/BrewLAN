@@ -114,7 +114,13 @@ Description['sab2311'] = "<LOC Unit_Description_BrewLAN_T3B008>Very heavy defens
 Description['sab1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output." 
 Description['seb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
 Description['srb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
-Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
+Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."   
+Description['sab1313'] = "<LOC Unit_Description_BrewLAN_T3B0010>Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power." 
+Description['seb1313'] = "<LOC Unit_Description_BrewLAN_T3B0010>Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
+Description['srb1313'] = "<LOC Unit_Description_BrewLAN_T3B0010>Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
+Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0010>Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
+Description['srb4313'] = "<LOC Unit_Description_BrewLAN_T3B0011>Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar. Only visible to omni."
+
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."

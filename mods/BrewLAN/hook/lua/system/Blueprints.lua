@@ -51,8 +51,29 @@ function BrewLANFieldEngineerChanges(all_bps)
         ueb0301 = 'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         xel0209 = 'BUILTBYTIER2FIELD UEF',
     }     
+    
+    local units_fieldengineers = {
+        sel0119 = 'BUILTBYTIER1ENGINEER UEF COUNTERINTELLIGENCE',
+        srl0119 = 'BUILTBYTIER1ENGINEER CYBRAN COUNTERINTELLIGENCE',
+        ssl0119 = 'BUILTBYTIER1ENGINEER SERAPHIM COUNTERINTELLIGENCE',
+        sal0119 = 'BUILTBYTIER1ENGINEER AEON COUNTERINTELLIGENCE',
+        srl0209 = 'BUILTBYTIER2ENGINEER CYBRAN COUNTERINTELLIGENCE',
+        ssl0219 = 'BUILTBYTIER2ENGINEER SERAPHIM COUNTERINTELLIGENCE',
+        xel0209 = 'BUILTBYTIER2ENGINEER UEF COUNTERINTELLIGENCE', 
+        sal0209 = 'BUILTBYTIER2ENGINEER AEON COUNTERINTELLIGENCE',
+        sel0319 = 'BUILTBYTIER3ENGINEER UEF COUNTERINTELLIGENCE',
+        srl0319 = 'BUILTBYTIER3ENGINEER CYBRAN COUNTERINTELLIGENCE',
+        ssl0319 = 'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE',
+        sal0319 = 'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE',
+    }
 
     for unitid, buildcat in units_buildcats do
+        if all_bps[unitid] then
+            table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat)
+        end
+    end 
+    
+    for unitid, buildcat in units_fieldengineers do
         if all_bps[unitid] then
             table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat)
         end

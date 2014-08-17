@@ -232,7 +232,12 @@ ssb1311_name=""
 Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
   
 bui1x13_desc="Cloakable Mass Fabricator"
-
+Unit_Description_BrewLAN_T3B0010="Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
+ 
+srb4313_desc="Cloakable Stealth Field Generator"
+srb4313_name="Nightshade" 
+Unit_Description_BrewLAN_T3B0011="Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar. Only visible to omni." 
+ 
  
 ## T4
 
