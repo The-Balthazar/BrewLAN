@@ -39,7 +39,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        'BUILTBYTIER3FIELD',
+        #'BUILTBYTIER3FIELD',
         'UEF',
         'STRUCTURE',
         'ECONOMIC',

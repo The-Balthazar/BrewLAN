@@ -25,7 +25,6 @@ Errors list/the other to-do list.
 * The Gantry lacks a lod1 normal map.
 * The Absolution can't hover over walls and such
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
-* Experiment with making a drop pod artillery.
 * Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
 * UEF engineer built versions of gantry experimentals bug out when at pop cap.
   * This issue also exists with Megalith built eggs, but is less visible.
@@ -286,6 +285,14 @@ Tech 3:
       * T3 Nuke Mine       
   		* T3 Field engineer      
       * T3 Anti-Armor Point Defence.
+      * T3 Cloakable Fusion Reactor.     
+        * Allow the no-cloakable to upgrade into it.
+      * T3 Cloakable Mass Fabricator.  
+        * Allow the no-cloakable to upgrade into it.
+      * T3 Cloakable Stealth Field Generator.
+        * Would like to seperate the Cloak/Stealth functions
+        * Have it re-increase its stealth range while cloak off.
+        * Allow the T2 to upgrade into it.                                         
       * T3 Mobile strat defence.
         * Needs a unique model.          
   	         

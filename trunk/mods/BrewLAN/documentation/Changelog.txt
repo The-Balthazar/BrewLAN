@@ -8,11 +8,18 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.    
+__________.__________
+2014-08-17|0.4.8
+                              
+* Fixed the Cybran T3 Cloakable Fabricator, gave it a custom model, and added it to the string tables.
+* Added Field Engineer capability to build counterintelligence buildings.
+* Removed the basic UEF Cloakable fusion.
+* Added Cybran T3 Cloakable Stealth Field Generator.     
 __________.__________
 2014-08-08|0.4.7
 
-* Added a cloakable fusion.
+* Added a basic Cybran cloakable fusion.
 * Removed the Iyadesu again.
   __________
   2014-08-15
@@ -23,10 +30,10 @@ __________.__________
     * Changed its balancing.
     * Added particle effects to its cloak.
   __________
-  2014-08-15
+  2014-08-16
   
-  * Added UEF Cloakable Power Gen.
-  * Added Cybran Cloakable Fab.   
+  * Added a basic UEF Cloakable Power Gen.
+  * Added a basic Cybran Cloakable Fab.
 __________.__________
 2014-06-08|0.4.6
           
