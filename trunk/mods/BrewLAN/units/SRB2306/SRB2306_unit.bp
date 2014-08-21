@@ -214,8 +214,10 @@ UnitBlueprint {
             DamageFriendly = false,
             DamageType = 'Normal',
             DisplayName = 'Microwave Laser',
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 50,
+            EnergyCumulativeUpkeepCost = 10,
+            EnergyConsumptionPerSecondMin = 10,             
+            EnergyConsumptionPerSecondMax = 1000,
+            EnergyDissipationPerSecond = 30,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',

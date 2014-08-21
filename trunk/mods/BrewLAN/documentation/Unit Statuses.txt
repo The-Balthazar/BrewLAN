@@ -258,8 +258,11 @@ Tech 3:
           * Only obtainable by upgrading the T1 shield on water.  
           * Open animation doesn't work yet.
           * Death animation slightly weird.
-  		* T3 Point Deffence.
-  		    * Needs the passive animation disabling while it fires.    
+  		* T3 Point Deffence.       
+  		    * Needs a new model.
+  		    * Needs the passive animation in pitch and yaw disabling while it fires.
+  		    * Want to somehow add a cost for snap aiming, so its first shot takes substantial power, but subsequent shots at the same target are reduced.
+  		      * Alternatively, have it change the cost from 1250 for the first shot to 125 for subequent shots within a cooldown.
       * T3 Nuke Mine          
         * Lacks a unique model.   
   		* T3 Field engineer    
@@ -281,7 +284,8 @@ Tech 3:
     	* T3 Air Transport.
     	* T3 Torpedo Bomber.  
   	  * T3 Point Deffence.
-  		  * May eventually give a more unique appearance. 
+  		  * May eventually give a more unique appearance.
+  		  * Needs visual effects for it overheating.         
       * T3 Nuke Mine       
   		* T3 Field engineer      
       * T3 Anti-Armor Point Defence.
@@ -349,6 +353,7 @@ Tech 3:
     	* T3 Air Transport.
     	* T3 Point Defence                           
     	  * Eventually want to give a better mesh.
+  		  * Firing cost needs changing to start low and increase slowly as an 'overheat' cost. 
     	* T3 Sonar
     	  * Eventually want to give a different mesh.             
       * T3 Heavy Assault Bot:
