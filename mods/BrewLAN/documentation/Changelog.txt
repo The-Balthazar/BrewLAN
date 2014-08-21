@@ -15,7 +15,18 @@ __________.__________
 * Fixed the Cybran T3 Cloakable Fabricator, gave it a custom model, and added it to the string tables.
 * Added Field Engineer capability to build counterintelligence buildings.
 * Removed the basic UEF Cloakable fusion.
-* Added Cybran T3 Cloakable Stealth Field Generator.     
+* Added Cybran T3 Cloakable Stealth Field Generator.
+  __________
+  2014-08-18
+  
+  * Changed the energy drain of T3 Point defences:
+    * Aeon Orbos to 500 per shot from 400.
+    * Seraphim Othuushala to 100 per shot from 10.
+    * Partial setup of a script for the Cybran Hades to have its energy drain per second increase by 10 for every half second its active and decrease by 30 for every half second its inactive. (It doesn't subtract correcrly, and currently breaks the economy.)
+  __________
+  2014-08-20
+  
+  * Re-created the script for the Hades cumulatively increasing and decreasing its firing upkeep cost, so it now works.                    
 __________.__________
 2014-08-08|0.4.7
 
