@@ -15,7 +15,6 @@ General to-do list/ideas list.
 * BARREL ROLL
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane.
-* Self replicating mines.
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -30,7 +29,10 @@ Errors list/the other to-do list.
 * UEF engineer built versions of gantry experimentals bug out when at pop cap.
   * This issue also exists with Megalith built eggs, but is less visible.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
-  * The rate of fire of the mobile anti nukes also means that it fires both at the same target, making having two redundant unless its a seraphim exp. nuke.      
+  * The rate of fire of the mobile anti nukes also means that it fires both at the same target, making having two redundant unless its a seraphim exp. nuke.
+* The two super secret naval shield generators need making more accessable, and less T3 only.
+* The UEF and Aeon T1 shield generators need increasing back to the size of all the others, with the coverage propportionally increasing along with them.
+* One race should get a T3 torpedo launcher that can be built on land.        
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -332,7 +334,8 @@ Tech 3:
         * Want to add an upkeep cost to the Omni.            
       * T3 Nuke Mine      
   		* T3 Field engineer
-  		* T3 Engineering Power Generator.             
+  		* T3 Engineering Power Generator.
+  		  * Only aims with one of its arms.                   
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
         * Needs a new model.              
@@ -380,7 +383,7 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Field Engineer|
+Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*?(F)          |
 Flying          |*Centurion     |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
@@ -396,7 +399,7 @@ ________________!_______________!_______________!_______________!_______________
 
 UEF Experimental Assault Bot/tank
   * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
-    * Possibly a two part splitting bot. Cain and Abel or something
+    * Possibly a two part splitting bot. Cain and Abel or something cool.
 
 UEF Centurion: Experimental AA gunship
   * Texture unfinished. Could be better UV mapped.     
@@ -405,7 +408,8 @@ UEF Ivan: Experimental Drop-Pod Artillery
   * Fires projectiles that look like drop pods and spawn mech marines on impact.
     * Bouncing script doesnt work on shields.
     * Range should probably decrease for large ammos.
-    * Fucks up on aiming due to bone sharing.                                  
+    * Fucks up on aiming due to bone sharing.
+    * Unfinished replacement model on an old un-connected HDD, from the computer upgrade.                                      
         
 UEF Gantry: Experimental Factory
   * Can now be considered fully funtional.
@@ -415,31 +419,22 @@ UEF Gantry: Experimental Factory
         * Would need to wait for the current unit to be completed, especially if its a ship.               
       * Add death animation.
       * The Atlantis gets stuck in it; looks like something to do with its oncreate scripts at first glance.
-        * It can be manually removed by making it submerge first.
+        * It can be manually removed by making it submerge first. (IssueDive maybe?)
       * Use scripts from the Fatboy to quickly get small things out of the build area.                      
                   
 Seraphim "Static 2 Transport" idea.
   * "A Static transport?"
-    * Stargate-like thing.
-
-Seraphim "totally not the second coming of the Iyadesu" Experimental Field Engineer.
-  * Prawn based, and T3 field engy based design.
-    * Possibly have it able to assist build multple things.
-    * Possibly have it able to build additional field engineers.
-      * Assuming this doesn't fuck up its ability to build field engineer buildings.            
-
-Seraphim Experimental Field Engineer
-  * The fabled return of the Iyadesu.
-    * Dat sheets still OP.  
+    * Stargate-like thing.        
 
 Seraphim Experimental Mine.
   * Bonus experimental for the field engy.
-    * Releases a residual energy signature.   
+    * Releases a residual energy signature.
+  * Possible self replicating mines.   
     
 Aeon Experimental Assault Tank
   * Mostly finished texture that needs more details.
   * Has its big cannon and two TMD's.
-  * Totally isn't an eldar grav tank.  
+  * Totally isn't an eldar grav tank. Nope nope nope. 
 
 Aeon Experimental Shield projection tower.
   * Something between a shield gen and the eye of something or other in appearance.
@@ -477,7 +472,8 @@ Seraphim Iyadesu: Experimental Engineering Platform
   * Massively overpowered, in all ways.
     * Removed, after a few Iyadesu dominated games.
     * Although it was gamewarping, it was fun so the source files were left around.
-      * Changed as of r205     
+      * Changed as of r205
+        * This nerfed Field Engineer version was also removed for still being OP on 2014-08-08.           
 
 UEF Doomsday Machine: Experimental Point Defence
   * Was supposed to be a callback to the old TA unit.

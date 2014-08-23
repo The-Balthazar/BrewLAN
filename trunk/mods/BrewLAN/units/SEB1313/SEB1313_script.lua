@@ -1,41 +1,52 @@
 #****************************************************************************
 #**
-#**  File     :  /cdimage/units/UEB1301/UEB1301_script.lua
-#**  Author(s):  John Comes, Dave Tomandl, Jessica St. Croix
+#**  File     :  /cdimage/units/UAB1303/UAB1303_script.lua
+#**  Author(s):  Jessica St. Croix, David Tomandl
 #**
-#**  Summary  :  UEF Tier 3 Power Generator Script
+#**  Summary  :  UEF T3 Mass Fabricator
 #**
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TEnergyCreationUnit = import('/lua/terranunits.lua').TEnergyCreationUnit    
+local TMassFabricationUnit = import('/lua/terranunits.lua').TMassFabricationUnit    
 local CConstructionStructureUnit = import('/lua/cybranunits.lua').CConstructionStructureUnit   
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
-SEB1311 = Class(CConstructionStructureUnit) {
+
+SEB1313 = Class(CConstructionStructureUnit) {
+
     OnStopBeingBuilt = function(self,builder,layer)
-        CConstructionStructureUnit.OnStopBeingBuilt(self,builder,layer)   
-        ChangeState(self, self.ActiveState)
+        CConstructionStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        self.Rotator = CreateRotator(self, 'Spinner', 'z')
+        self.Rotator:SetAccel(10)
+        self.Rotator:SetTargetSpeed(40)
+        self.Trash:Add(self.Rotator)
+		self.AmbientEffects = CreateEmitterAtEntity(self, self:GetArmy(), '/effects/emitters/uef_t3_massfab_ambient_01_emit.bp')
+		self.Trash:Add(self.AmbientEffects)   
+      ChangeState(self, self.ActiveState)     
+    
     end,
-
-    ActiveState = State {
-        Main = function(self)
-            # Play the "activate" sound
-            local myBlueprint = self:GetBlueprint()
-            if myBlueprint.Audio.Activate then
-                self:PlaySound(myBlueprint.Audio.ActiveLoop)
-            end
-        end,
-
-        OnInActive = function(self)
-            ChangeState(self, self.InActiveState)
-        end,
-    },
-          
+             
     CreateBuildEffects = function( self, unitBeingBuilt, order )
         EffectUtil.CreateUEFBuildSliceBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
     end,
-        
+    
+    OnProductionPaused = function(self)
+        CConstructionStructureUnit.OnProductionPaused(self)
+        self.Rotator:SetSpinDown(true)
+		if self.AmbientEffects then
+			self.AmbientEffects:Destroy()
+			self.AmbientEffects = nil
+		end            
+    end,
+    
+    OnProductionUnpaused = function(self)
+        CConstructionStructureUnit.OnProductionUnpaused(self)
+        self.Rotator:SetTargetSpeed(40)
+        self.Rotator:SetSpinDown(false)
+		self.AmbientEffects = CreateEmitterAtEntity(self, self:GetArmy(), '/effects/emitters/uef_t3_massfab_ambient_01_emit.bp')
+		self.Trash:Add(self.AmbientEffects)          
+    end,      
     OnDamage = function(self, instigator, amount, vector, damageType)
         CConstructionStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
                 
@@ -59,17 +70,17 @@ SEB1311 = Class(CConstructionStructureUnit) {
             
             local direction = math.random(4)
             if direction == 1 then
-                self.BuildGoalX = -5
-                self.BuildGoalY = math.random(-5,5)
+                self.BuildGoalX = -4
+                self.BuildGoalY = math.random(-4,4)
             elseif direction == 2 then
-                self.BuildGoalX = 5
-                self.BuildGoalY = math.random(-5,5)
+                self.BuildGoalX = 4
+                self.BuildGoalY = math.random(-4,4)
             elseif direction == 3 then
-                self.BuildGoalX = math.random(-5,5)
-                self.BuildGoalY = -5
+                self.BuildGoalX = math.random(-4,4)
+                self.BuildGoalY = -4
             elseif direction == 4 then
-                self.BuildGoalX = math.random(-5,5)
-                self.BuildGoalY = 5
+                self.BuildGoalX = math.random(-4,4)
+                self.BuildGoalY = 4
             end  
             --LOG("Direction: ", direction, " X: ", self.BuildGoalX, " Y: ", self.BuildGoalY)
             --if aiBrain:CanBuildStructureAt( 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalY, 0} ) then
@@ -83,8 +94,15 @@ SEB1311 = Class(CConstructionStructureUnit) {
             CConstructionStructureUnit.OnFailedToBuild(self)
             ChangeState(self, self.ActiveState)
         end,
-    },
-    
+    },        
+    ActiveState = State {       
+        Main = function(self)
+        end,
+
+        OnInActive = function(self)
+            ChangeState(self, self.InActiveState)
+        end,
+    },  
     InActiveState = State {
         Main = function(self)
         end,
@@ -95,4 +113,4 @@ SEB1311 = Class(CConstructionStructureUnit) {
     },      
 }
 
-TypeClass = SEB1311
+TypeClass = SEB1313
