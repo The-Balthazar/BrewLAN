@@ -20,7 +20,7 @@ UnitBlueprint {
             Bank = 'Interface',
             Cue = 'Cybran_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
-        },
+        },     
     },
     BuildIconSortPriority = 50,
     Categories = {

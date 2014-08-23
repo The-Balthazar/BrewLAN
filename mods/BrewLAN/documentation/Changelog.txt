@@ -32,7 +32,14 @@ __________.__________
   
   * Updated the descriptions of the Hades and Orbos.
   * Created the UEF Tech 3 Engineering Power Generator.
-  * Fixed a long standing bug with the Seraphim Shield Wall test unit, which was preventing it from loading.                        
+  * Fixed a long standing bug with the Seraphim Shield Wall test unit, which was preventing it from loading.
+  __________
+  2014-08-23
+  
+  * Experiments with giving the Aeon Decoy Plane the category 'SPECIALHIGHPRI' so it gets the shit shot out of it.
+  * Changed the Engineering Power Generator script to also check if the instigator was a submarine or dead, for making a torpedo, or nothing respectively.
+  * Gave the Engineering Power Generator a siren when it is attacked.
+  * Added the UEF T3 Engineering Mass Fabricator                              
 __________.__________
 2014-08-08|0.4.7
 

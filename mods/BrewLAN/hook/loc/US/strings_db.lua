@@ -218,10 +218,10 @@ Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture
       
 srb1311_desc="Cloakable Power Generator"
 seb1311_desc="Engineering Power Generator"
-sab1311_name=""
-seb1311_name="Von Mayer Reactor"
+sab1311_name="Von Mayer Reactor"
+seb1311_name="Bessemer Reactor"
 srb1311_name="Faraday Reactor"
-ssb1311_name=""
+ssb1311_name="Uya-iyathan"
 Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output." 
 Unit_Description_BrewLAN_T3B0012="Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged." 
 Unit_Description_BrewLAN_T3B0014="Large power generating structure. Does a thing." 
