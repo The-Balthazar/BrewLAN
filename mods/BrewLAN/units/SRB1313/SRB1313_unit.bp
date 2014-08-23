@@ -50,7 +50,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC bui1x13_desc>Cloakable Mass Fabricator',
+    Description = '<LOC srb1313_desc>Cloakable Mass Fabricator',
     Display = {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
@@ -150,7 +150,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC bui1x13_desc>Cloakable Mass Fabricator',
+        HelpText = '<LOC srb1313_desc>Cloakable Mass Fabricator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.95,

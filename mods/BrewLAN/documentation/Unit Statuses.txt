@@ -11,10 +11,11 @@ General to-do list/ideas list.
 * Mobile Radar Jammers
 * More aquatic buildings
 * Mines and mine layers (Land, Naval)
-* Seraphim experimental mine releasing a residual energy signature as its thing.
+* Seraphim experimental mine. (Possibly releasing a residual energy signature as its thing)
 * BARREL ROLL
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane.
+* Self replicating mines.
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -284,8 +285,8 @@ Tech 3:
     	* T3 Air Transport.
     	* T3 Torpedo Bomber.  
   	  * T3 Point Deffence.
-  		  * May eventually give a more unique appearance.
-  		  * Needs visual effects for it overheating.         
+  		  * Needs an appearance that looks less directly based on Cerberus.
+  		  * Currently lacks visual feedback for overheating; red glow, possibly setting on fire.         
       * T3 Nuke Mine       
   		* T3 Field engineer      
       * T3 Anti-Armor Point Defence.
@@ -328,8 +329,10 @@ Tech 3:
         * As an observation satelite.
           * Radar and omni range is spherical not cylindrical (Except on FAF).
             * Current effective omni range is similar to its old visual range.
+        * Want to add an upkeep cost to the Omni.            
       * T3 Nuke Mine      
-  		* T3 Field engineer       
+  		* T3 Field engineer
+  		* T3 Engineering Power Generator.             
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
         * Needs a new model.              
@@ -343,7 +346,8 @@ Tech 3:
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
-  		* T3 Storm defence wall.      
+  		* T3 Storm defence wall.
+  		* T3 Engineering Mass Fabricator.            
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   

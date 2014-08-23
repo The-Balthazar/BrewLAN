@@ -168,9 +168,9 @@ Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Air
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
-Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units."
+Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires increasing amounts of energy to fire for prolonged periods of time; will overheat if active for too long."
 Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
-Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land- and sea-based units with a powerful laser."
+Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land-based units, sea-based units, and low-altitude aircraft with a powerful laser. Does not engage high altitude aircraft, or submerged units."
 
 sbui2311_desc="Anti-Armor Point Defense"
 seb2311_name="Guardian"
@@ -179,7 +179,7 @@ srb2311_name="Punisher"
 sab2311_name="Nihiloid"
 Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship-grade gauss cannon."                       
 Unit_Description_BrewLAN_T3B006="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull energy weapon."
-Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship grade proton cannon."
+Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship-grade proton cannon."
 Unit_Description_BrewLAN_T3B008="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull oblivion cannon."
 
 seb3303_desc="Observation Satellite Uplink"
@@ -216,27 +216,31 @@ Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture
 Unit_Description_BrewLAN_T3L006="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
 Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
       
-bui1x11_desc="Cloakable Power Generator"
-sab1111_name=""
-seb1111_name=""
-srb1111_name=""
-ssb1111_name=""
-sab1211_name=""
-seb1211_name=""
-srb1211_name=""
-ssb1211_name=""
+srb1311_desc="Cloakable Power Generator"
+seb1311_desc="Engineering Power Generator"
 sab1311_name=""
 seb1311_name="Von Mayer Reactor"
 srb1311_name="Faraday Reactor"
 ssb1311_name=""
-Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
+Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output." 
+Unit_Description_BrewLAN_T3B0012="Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged." 
+Unit_Description_BrewLAN_T3B0014="Large power generating structure. Does a thing." 
+Unit_Description_BrewLAN_T3B0016="Large power generating structure. Does a thing." 
   
-bui1x13_desc="Cloakable Mass Fabricator"
-Unit_Description_BrewLAN_T3B0010="Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
+srb1313_desc="Cloakable Mass Fabricator" 
+seb1313_desc="Engineering Mass Fabricator"
+Unit_Description_BrewLAN_T3B0010="Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power." 
+Unit_Description_BrewLAN_T3B0013="Large mass fabrication structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
+Unit_Description_BrewLAN_T3B0015="Large mass fabrication structure. Does a thing."    
+Unit_Description_BrewLAN_T3B0017="Large mass fabrication structure. Does a thing."  
  
 srb4313_desc="Cloakable Stealth Field Generator"
 srb4313_name="Nightshade" 
 Unit_Description_BrewLAN_T3B0011="Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar. Only visible to omni." 
+
+ssb5301_desc="Shield Wall Section"
+ssb5301_name="Athahaas"
+Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a tiny shield dome above itself to offer additional protection from enemy fire."
  
  
 ## T4
@@ -256,7 +260,7 @@ Unit_Description_BrewLAN_T4B002="Experimental rapid-fire artillery. Consumes mas
 
 srb4401="Experimental Shield Generator"
 srb4401_name="Iron Curtain"
-Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large area, shielded area reduces in size as it takes damage."
+Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large area."
 
 srs0401="Experimental Battleship"
 srs0401_name="Abyssal Persecutor"
