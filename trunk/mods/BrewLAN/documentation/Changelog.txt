@@ -26,7 +26,13 @@ __________.__________
   __________
   2014-08-20
   
-  * Re-created the script for the Hades cumulatively increasing and decreasing its firing upkeep cost, so it now works.                    
+  * Re-created the script for the Hades cumulatively increasing and decreasing its firing upkeep cost, so it now works.
+  __________
+  2014-08-22
+  
+  * Updated the descriptions of the Hades and Orbos.
+  * Created the UEF Tech 3 Engineering Power Generator.
+  * Fixed a long standing bug with the Seraphim Shield Wall test unit, which was preventing it from loading.                        
 __________.__________
 2014-08-08|0.4.7
 

@@ -65,7 +65,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC bui1x11_desc>Cloakable Power Generator',
+    Description = '<LOC srb1311_desc>Cloakable Power Generator',
     Display = {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
@@ -156,7 +156,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC  bui1x11_desc>Cloakable Power Generator',
+        HelpText = '<LOC  srb1311_desc>Cloakable Power Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.25,
