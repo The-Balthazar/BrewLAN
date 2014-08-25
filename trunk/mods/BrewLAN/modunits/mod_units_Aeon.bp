@@ -4,7 +4,8 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId="uab4202", # T2 shield
-    General = {
+    General = {    
+        UpgradesFrom = 'sab4102',
         UpgradesTo = 'uab4301',
     },
 }
@@ -14,7 +15,7 @@ UnitBlueprint {
 	BlueprintId="uab4301", # T3 shield
     General = {
         UpgradesFrom = 'uab4202',
-        UpgradesFromBase = 'uab4202',
+        UpgradesFromBase = 'sab4102',
     },
 }
 

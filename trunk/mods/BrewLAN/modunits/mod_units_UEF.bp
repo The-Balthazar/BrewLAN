@@ -2,7 +2,7 @@
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ueb4301",		##HSD - Pulse
+	BlueprintId="ueb4301",		##HSD - Pulse     
     Display = {
         Tarmacs = {
             {
@@ -12,12 +12,15 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
+    },    
+    General = {    
+        UpgradesFromBase = 'seb4102',
     },
 }
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ueb4202",		##SD - Pulse
+	BlueprintId="ueb4202",		##SD - Pulse          
     Display = {
         Tarmacs = {
             {
@@ -27,6 +30,9 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
+    },       
+    General = {    
+        UpgradesFrom = 'seb4102',
     },
 }
 

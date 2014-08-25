@@ -116,10 +116,10 @@ Description['srb1313'] = "<LOC Unit_Description_BrewLAN_T3B0010>Large mass fabri
 Description['srb4313'] = "<LOC Unit_Description_BrewLAN_T3B0011>Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar. Only visible to omni." 
 Description['seb1311'] = "<LOC Unit_Description_BrewLAN_T3B0012>Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
 Description['seb1313'] = "<LOC Unit_Description_BrewLAN_T3B0013>Large mass fabrication structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."    
-Description['sab1311'] = "<LOC Unit_Description_BrewLAN_T3B0014>Large power generating structure. Does a thing." 
-Description['sab1313'] = "<LOC Unit_Description_BrewLAN_T3B0015>Large mass fabrication structure. Does a thing."
-Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B0016>Large power generating structure. Does a thing."    
-Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0017>Large mass fabrication structure. Does a thing."
+Description['sab1311'] = "<LOC Unit_Description_BrewLAN_T3B0014>Large power generating structure. Possesses a powerfull shield, which consumes a small portion of its operating output." 
+Description['sab1313'] = "<LOC Unit_Description_BrewLAN_T3B0015>Large mass fabrication structure. Possesses a powerfull shield, which consumes additional power."
+Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B0016>Large power generating structure. Possesses superior armor and has self regenerative capabilities."    
+Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0017>Large mass fabrication structure. Possesses superior armor and has self regenerative capabilities."
 Description['ssb5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a tiny shield dome above itself to offer additional protection from enemy fire."
 
 #Tech 3 Naval units

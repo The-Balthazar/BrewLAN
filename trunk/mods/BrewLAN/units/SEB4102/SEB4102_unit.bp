@@ -36,7 +36,7 @@ UnitBlueprint {
         'TECH1',
         'SHIELD',
         'DRAGBUILD',
-        'SIZE4',
+        'SIZE12',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYDEFENSE',
@@ -61,8 +61,8 @@ UnitBlueprint {
             ShieldRechargeTime = 10,
             ShieldRegenRate = 110,
             ShieldRegenStartTime = 1,
-            ShieldSize = 14,
-            ShieldVerticalOffset = -1,
+            ShieldSize = 15.2,
+            ShieldVerticalOffset = -2.2,
         },
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -70,11 +70,11 @@ UnitBlueprint {
     Description = '<LOC sbui4102>Light Shield Generator',
     Display = {
         Abilities = {
-            '<LOC ability_aquatic>Aquatic',
+           # '<LOC ability_aquatic>Aquatic',
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_upgradable>Upgradeable',
         },
-        AnimationUpgrade = '/mods/brewlan/units/seb4102/seb4102_upgrade.sca',
+        #AnimationUpgrade = '/mods/brewlan/units/seb4102/seb4102_upgrade.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -98,11 +98,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_albedo.dds',
                 DeathLifetime = 300,
                 FadeOut = 150,
-                Length = 6.4,
-                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_normals.dds',
+                Length = 12.8,
+                Albedo = '/env/Common/decals/Tarmacs/Tar8x_01_albedo.dds',
+                Normal = '/env/Common/decals/Tarmacs/Tar8x_01_normals.dds',
                 Orientations = {
                     0,
                     90,
@@ -110,7 +110,7 @@ UnitBlueprint {
                     270,
                 },
                 RemoveWhenDead = false,
-                Width = 6.4,
+                Width = 12.8,
             },
         },
         UniformScale = 0.39,
@@ -122,11 +122,13 @@ UnitBlueprint {
         BuildTime = 300,
         MaintenanceConsumptionPerSecondEnergy = 100,
         BuildableCategory = {
-            'seb4301',
+            'seb4301', 
+            'ueb4202',
         },
         RebuildBonusIds = {
-            'seb4102',
-            'seb4301',
+            'seb4102', 
+            'ueb4202',
+            'ueb4301',
         },
     },
     Footprint = {
@@ -152,7 +154,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
-        Icon = 'amph',
+        Icon = 'land',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {
                 bitmapId = 'shield-dome',
@@ -166,11 +168,11 @@ UnitBlueprint {
         },
         UnitName = '<LOC seb4102_name>LSD - Pulse',
         UnitWeight = 1,
-        UpgradesTo = 'seb4301',
+        UpgradesTo = 'ueb4202',
     },
     Intel = {
         VisionRadius = 12,
-	WaterVisionRadius = 12,
+	#WaterVisionRadius = 12,
     },
     Interface = {
         HelpText = '<LOC sbui4102>Light Shield Generator',
@@ -186,7 +188,7 @@ UnitBlueprint {
             LAYER_Orbit = false,
             LAYER_Seabed = false,
             LAYER_Sub = false,
-            LAYER_Water = true,
+            LAYER_Water = false,
         },
 	StandUpright = true,
         DragCoefficient = 0.2,
@@ -195,10 +197,10 @@ UnitBlueprint {
         MeshExtentsY = 4,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
-        SkirtSizeX = 3,
-        SkirtSizeZ = 3,
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
         TurnRate = 0,
     },
     SelectionSizeX = 1.5,
