@@ -72,7 +72,7 @@ SAB4102 = Class(AShieldStructureUnit) {
     OnLayerChange = function(self, new, old)
         AShieldStructureUnit.OnLayerChange(self, new, old)
         if new == 'Land' then
-            self:AddBuildRestriction(categories.ALLUNITS)
+            self:AddBuildRestriction(categories.sab4301)
             self:RequestRefreshUI()
         elseif new == 'Water' then
             self:RestoreBuildRestrictions()

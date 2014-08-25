@@ -8,7 +8,19 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.    
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
+__________.__________
+2014-08-24|0.4.9
+                              
+* Added the Aeon T3 Shielded Power Gen and Fabricator, neither has a unique model yet.
+  __________
+  2014-08-25
+  
+  * Changes to the Aeon and UEF T1 Shields:
+    * Footprint increased to 6x6.
+      * Coverage area proportionally increased.
+    * Temporarilly removed aquatic abilities pending new implementation of naval shields.
+    * Allowed to upgrade into their respective T2 shield.                    
 __________.__________
 2014-08-17|0.4.8
                               

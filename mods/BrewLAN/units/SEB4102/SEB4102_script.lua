@@ -58,7 +58,7 @@ SEB4102 = Class(TShieldStructureUnit) {
     OnLayerChange = function(self, new, old)
         TShieldStructureUnit.OnLayerChange(self, new, old)
         if new == 'Land' then
-            self:AddBuildRestriction(categories.ALLUNITS)
+            self:AddBuildRestriction(categories.seb4301)
             self:RequestRefreshUI()
         elseif new == 'Water' then
             self:RestoreBuildRestrictions()
