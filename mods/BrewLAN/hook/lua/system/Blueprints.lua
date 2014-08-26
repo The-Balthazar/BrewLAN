@@ -19,7 +19,7 @@ function ModBlueprints(all_blueprints)
     DragBuildQuantumOptics(all_blueprints.Unit)
     ExperimentalBuildSorting(all_blueprints.Unit)
     SalvationBrewLANChanges(all_blueprints.Unit)
-    TorpedoBomberWaterLandCat(all_blueprints.Unit)
+#--    TorpedoBomberWaterLandCat(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
 #--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)

@@ -103,9 +103,9 @@ UnitBlueprint {
         UniformScale = 0.04,
     },
     Economy = {
-        BuildCostEnergy = 54000*.25,
-        BuildCostMass = 9000*.25,
-        BuildTime = 18000*.125,
+        BuildCostEnergy = 54000*.55,
+        BuildCostMass = 9000*.3333334,
+        BuildTime = 18000*.15,
         RebuildBonusIds = {
             'sab2311',
         },
@@ -218,7 +218,9 @@ UnitBlueprint {
             Damage = 6000*.25,
             DamageRadius = 2.5,
             DamageType = 'Normal',
-            DisplayName = 'Oblivion Cannon',
+            DisplayName = 'Oblivion Cannon',           
+            EnergyDrainPerSecond = 2500/2,
+            EnergyRequired = 2500,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',

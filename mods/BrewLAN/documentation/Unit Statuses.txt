@@ -10,11 +10,11 @@ General to-do list/ideas list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * Mobile Radar Jammers
 * More aquatic buildings
-* Mines and mine layers (Land, Naval)
-* Seraphim experimental mine. (Possibly releasing a residual energy signature as its thing)
+* Naval mine layer units?
+* Seraphim experimental mine. (Possibly releasing a residual energy signature as its thing, or a semi-persistant d-o-t)
 * BARREL ROLL
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
-* Add unit orders to the blips of the Aeon Decoy plane.
+* Add unit orders to the blips of the Aeon Decoy plane. (IssueGuard)
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -23,15 +23,14 @@ Errors list/the other to-do list.
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
 * The Gantry lacks a lod1 normal map.
-* The Absolution can't hover over walls and such
+* The Absolution can't hover over walls and such.
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
 * Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
-* UEF engineer built versions of gantry experimentals bug out when at pop cap.
-  * This issue also exists with Megalith built eggs, but is less visible.
+* UEF engineer built versions of the Fatboy and Centurion bug out when at pop cap.
+  * This issue also exists with Megalith built eggs, and the UEF Satelite Uplink buildings, but is less visible.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
-  * The rate of fire of the mobile anti nukes also means that it fires both at the same target, making having two redundant unless its a seraphim exp. nuke.
-* The two super secret naval shield generators need making more accessable, and less T3 only.
-* The UEF and Aeon T1 shield generators need increasing back to the size of all the others, with the coverage propportionally increasing along with them.
+  * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
+* Planned new Naval shield implementation: All shields aquatic, and recieve radius and cost increases when built on water.
 * One race should get a T3 torpedo launcher that can be built on land.        
 _______________________________________________________
 Modded Units:
@@ -51,6 +50,7 @@ Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
   	T2 Shield Generator
+      * Allowed to upgrade from my T1 shield gen.
   		* Allowed upgrade to the T3 shield gen.
   		* Allowed rebuild bonus on T2 and T3 wreckages.
   
@@ -105,21 +105,22 @@ Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
     T2 Field Engineer
-      * Gave a unique buildable category..
+      * Gave a unique buildable category.
             
     T2+T3 Shield Generators
       * Unified and normalised tarmacs.
-        * For some reason the T2 had a huge tarmac and the T3 had a tiny tarmac.    
+        * For some reason the T2 had a huge tarmac and the T3 had a tiny tarmac.
+      * Allowed the T2 to upgrade from my T1.            
   
     T3 Nuke Defence Silo
-      * Corrected the tarmac texture.
+      * Changed the tarmac texture.
   
   	T3 Gunship
   		* AA damage increased. Still token.
   
   	Novax Center
   		* Still in game but removed from build menus.
-  		* Replaced with a tech 3 observation satelite & a T3 mobile uplink tank.
+  		* Replaced with a tech 3 observation satelite (that uses its models) & a T3 mobile uplink tank (that uses its weapon).
   
   	Mavor
       * Changed menu sorting.
@@ -127,11 +128,11 @@ Modded Units:
     Fatboy
       * Made Gantry buildable only.
       * Left a decoy for the engineers to build.
-        * Works in a similar way as the Megalith eggs.
-        * Passes any damage it recieves under construction to the eventual real Fatboy.
+        * Works in a similar way as the Megalith eggs: spawns the real one when its done.
+        * Passes any damage it recieves under construction to the eventual real Fatboy so it doesn't get a free heal when its finished.
         * Doing it the other way (Putting the fake in the Gantry) results in it losing the orders to leave the Gantry.       
         * Most people wont notice the difference.
-        * Can cause issues while at pop cap.                                              
+        * The script breaks while at the pop-cap.                                              
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
@@ -271,7 +272,11 @@ Tech 3:
   		* T3 Field engineer    
         * Lacks a unique model.  
       * T3 Anti-Armor Point Defence. 
-        * Could have a more original model, but is probably fine.      
+        * Could have a more original model, but is probably fine.
+      * T3 Shielded Mass Fabricator.  
+  		    * Lacks a unique model & icon.
+      * T3 Shielded Power Generator.
+  		    * Lacks a unique model & icon.                   
               
     T3 Mobile strat defence.
       * Looks pretty.
@@ -280,7 +285,8 @@ Tech 3:
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen. 
-      * T3 Wall thing.        
+      * T3 Shield wall.
+      * T3 Shielded Mass Extractor.             
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 		Fully Funtioning:
@@ -301,7 +307,9 @@ Tech 3:
         * Have it re-increase its stealth range while cloak off.
         * Allow the T2 to upgrade into it.                                         
       * T3 Mobile strat defence.
-        * Needs a unique model.          
+        * Lacks a unique model & icon.  
+      * T3 Cloakable Mass Fabricator.  
+      * T3 Cloakable Power Generator.                          
   	         
   	T3 Stealth tank (Cybran sniper bot alternative)
       * Unfinished appearance.
@@ -316,7 +324,8 @@ Tech 3:
   	Pending:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
-      * T3 Energy Fence.       
+      * T3 Energy Fence.
+      * T3 Cloakable Mass Extractor?             
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
@@ -335,7 +344,9 @@ Tech 3:
       * T3 Nuke Mine      
   		* T3 Field engineer
   		* T3 Engineering Power Generator.
-  		  * Only aims with one of its arms.                   
+  		  * Only aims with one of its arms.  
+  		* T3 Engineering Mass Fabricator.
+  		  * Lacks a unique model. Aims from nothing.                        
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
         * Needs a new model.              
@@ -349,8 +360,7 @@ Tech 3:
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
-  		* T3 Storm defence wall.
-  		* T3 Engineering Mass Fabricator.            
+  		* T3 Storm defence wall.           
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   
@@ -368,6 +378,7 @@ Tech 3:
   		* T3 Field engineer  
       * T3 Anti-Armor Point Defence.   
       * T3 Mobile strat defence.
+      * T3 Shield wall.   
   
     Pending:
       * T3 Torp launchers.
@@ -376,7 +387,9 @@ Tech 3:
         * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
       * T3 Decoy Plane.
       * T3 Nuke Mine.
-      * T3 Wall thing.      
+      * T3 Armored Mass Fabricator.
+      * T3 Armored Power Generator.
+      * T3 Armored Mass Extractor.                     
 _______________________________________________________
 Experimental Table
                 ._______________._______________._______________._______________.
@@ -457,7 +470,7 @@ Cybran Experimental Missile ship
 
 Cybran Iron Curtain: Experimental Shield Generator
   * Functions as a shield.
-  * Want the shield to shrink on damage.  
+  * Want the shield to shrink on damage, maybe.  
     * Need to adapt the force shield script for this. 
   * Possibly give it a better mesh.
 
@@ -466,7 +479,7 @@ Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
     * Is still buildable with 'No Game Enders' build restriction, ect.  
   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Abandonned Experimental Ideas:
+Abandonned Ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Seraphim Iyadesu: Experimental Engineering Platform
   * Massively overpowered, in all ways.
@@ -480,15 +493,13 @@ UEF Doomsday Machine: Experimental Point Defence
     * An uninteresting idea badly implemented. Removed.
     * Was only still in the source files for nostalgia.
       * Removed as of r146         
-
+                                
+UEF Engineering Facility 'The Pound'
+  * A facility that houses a large number of Rover drones.
+  * Do you want lag? Because this is how you get lag.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Other ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-UEF Engineering Facility 'The Pound'
-  * A facility that houses a large number of Rover drones.
-  * Possibly just an expensive T3 unit.
-  * Probably a bad idea.
-  * Potential to have its idea merged in some way with the Gantry.
 
 Anti-naval gunship.
 

@@ -104,9 +104,9 @@ UnitBlueprint {
         UniformScale = 0.13,
     },
     Economy = {
-        BuildCostEnergy = 54000*.25,
-        BuildCostMass = 9000*.25,
-        BuildTime = 18000*.125,
+        BuildCostEnergy = 54000*.55,
+        BuildCostMass = 9000*.3333334,
+        BuildTime = 18000*.15,
         RebuildBonusIds = {
             'seb2311',
         },
@@ -218,7 +218,9 @@ UnitBlueprint {
             Damage = 1000,
             DamageRadius = 3,
             DamageType = 'Normal',
-            DisplayName = 'Gauss Cannon',
+            DisplayName = 'Gauss Cannon',      
+            EnergyDrainPerSecond = 2500,
+            EnergyRequired = 5000,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
