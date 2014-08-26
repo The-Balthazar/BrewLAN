@@ -17,10 +17,21 @@ __________.__________
   2014-08-25
   
   * Changes to the Aeon and UEF T1 Shields:
-    * Footprint increased to 6x6.
-      * Coverage area proportionally increased.
+    * Footprint increased to 6x6:
+      * Coverage area proportionally increased for same effective coverage.
     * Temporarilly removed aquatic abilities pending new implementation of naval shields.
-    * Allowed to upgrade into their respective T2 shield.                    
+    * Allowed to upgrade into their respective T2 shield.
+  * Cost increases of the Armored Point Defences:
+    * Energy cost from 13500 to 29700.
+    * Mass cost from 2250 to 3000.
+    * Build time from 2250 to 2700.
+    * Energy per shot from 0:
+      * Aeon: 2500.
+      * UEF: 5000.
+      * Cybran: 1500.
+      * Seraphim: 2250.
+  * Added the attack reticle to the Seraphim Anti-Armor, and also removed its water vision.
+  * Disabled Torpedo Bombers from landing in the water again.                                                                
 __________.__________
 2014-08-17|0.4.8
                               

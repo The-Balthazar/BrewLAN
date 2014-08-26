@@ -39,7 +39,8 @@ UnitBlueprint {
         'DIRECTFIRE',
         'DRAGBUILD',
         'SIZE4',
-        'VISIBLETORECON',
+        'VISIBLETORECON',     
+        'SHOWATTACKRETICLE',
         'RECLAIMABLE',
         'OVERLAYDIRECTFIRE',
         'SORTDEFENSE',
@@ -92,9 +93,9 @@ UnitBlueprint {
         UniformScale = 0.05,
     },
     Economy = {
-        BuildCostEnergy = 54000*.25,
-        BuildCostMass = 9000*.25,
-        BuildTime = 18000*.125,
+        BuildCostEnergy = 54000*.55,
+        BuildCostMass = 9000*.3333334,
+        BuildTime = 18000*.15,
         RebuildBonusIds = {
             'ssb2311',
         },
@@ -129,7 +130,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 50,
-        WaterVisionradius = 50,
     },
     Interface = {
         HelpText = '<LOC sbui2311_desc>Anti-Armor Point Defense',
@@ -199,7 +199,9 @@ UnitBlueprint {
             Damage = 1200,
             DamageRadius = 2.5,
             DamageType = 'Normal',
-            DisplayName = 'Heavy Sinn Unthe Cannon',
+            DisplayName = 'Heavy Sinn Unthe Cannon',       
+            EnergyDrainPerSecond = 2250/2,
+            EnergyRequired = 2250,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',

@@ -103,9 +103,9 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Economy = {
-        BuildCostEnergy = 54000*.25,
-        BuildCostMass = 9000*.25,
-        BuildTime = 18000*.125,
+        BuildCostEnergy = 54000*.55,
+        BuildCostMass = 9000*.3333334,
+        BuildTime = 18000*.15,
         RebuildBonusIds = {
             'srb2311',
         },
@@ -212,7 +212,9 @@ UnitBlueprint {
             Damage = 900,
             DamageRadius = 2,
             DamageType = 'Normal',
-            DisplayName = 'Proton Cannon',
+            DisplayName = 'Proton Cannon',       
+            EnergyDrainPerSecond = 750,
+            EnergyRequired = 1500,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
