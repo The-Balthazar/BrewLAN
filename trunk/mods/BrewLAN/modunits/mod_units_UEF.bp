@@ -13,9 +13,6 @@ UnitBlueprint {
             },
         },
     },    
-    General = {    
-        UpgradesFromBase = 'seb4102',
-    },
 }
 
 UnitBlueprint {
@@ -30,10 +27,7 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
-    },       
-    General = {    
-        UpgradesFrom = 'seb4102',
-    },
+    },  
 }
 
 UnitBlueprint {

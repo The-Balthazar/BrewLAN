@@ -31,7 +31,37 @@ __________.__________
       * Cybran: 1500.
       * Seraphim: 2250.
   * Added the attack reticle to the Seraphim Anti-Armor, and also removed its water vision.
-  * Disabled Torpedo Bombers from landing in the water again.                                                                
+  * Disabled Torpedo Bombers from landing in the water again.
+  __________
+  2014-08-26
+  
+  * Changes to the Novax Observation Satelite:
+    * Intel changes:
+      * Radar added with range 80.
+      * Vision reduced from 72 to 65.
+      * Sonar added with range 50.
+      * Omni reduced from 50 to 35.
+      * Underwater vision added at 20.
+      * Added personal stealth.      
+    * Selection priority reduced to 4; after engineers but before buildings.
+    * Reduced impact damage to 10.
+    * Maintenence per second set to 2500.
+    * Vision reduces to similar levels as the old satelite when not powered.
+    * Fixed a bug preventing the Uplink Center from dying when the satelite dies.
+  * Allowed the Generic T3 resource generators to upgrade into the existing advanced resource buildings (6 units total).
+  * Allowed the Cybran T2 Stealth Field Generator to upgrade into the Cloakable Stealth Field Generator.
+  * Cleared up a lot of redundant code in the blueprints.lua file and the unitbp mods file.
+  * Did a work around fix for the Scathis MkII not being disabled when game enders are off.
+    * Changed my modded version to have the original code and replace it entirely. Will cause problemts with other mods that alter the Scathis.
+  * Created a ghetto work around for the Atlantis getting stuck in the Gantry. Very ghetto fix.
+  __________
+  2014-08-27
+  
+  * Created a script class for the UEF engineering resource generators, so there is less copied code.   
+    * Script now checks how far away the instigator is, and does nothing if its too far away, then checks the instigator layer instead of its categories when deciding what to build.
+      * Too far away is considered over *3 its visual range.
+      * If the units layer is water it alternates between trying to build a torpedo or point defence, incase it can't reach the water for a torpedo.
+  * The Engineering Power Generator now aims with all its arms, instead of just the first.                                                                                                     
 __________.__________
 2014-08-17|0.4.8
                               

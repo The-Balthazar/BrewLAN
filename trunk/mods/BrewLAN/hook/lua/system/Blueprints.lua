@@ -21,7 +21,6 @@ function ModBlueprints(all_blueprints)
     SalvationBrewLANChanges(all_blueprints.Unit)
 #--    TorpedoBomberWaterLandCat(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
-#--    HadesUpgradeable(all_blueprints.Unit)  ## That shit was mad crazy OP.
     UnitHidingBrewLAN(all_blueprints.Unit)
     GantryExperimentalBuildOnly(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
@@ -207,7 +206,7 @@ end
 function UnitHidingBrewLAN(all_bps)
 
     local HidingExperimentals = {
-        all_bps['url0401'],
+        --all_bps['url0401'],
         all_bps['xeb2402'],
     }
         
@@ -228,7 +227,7 @@ function GantryExperimentalBuildOnly(all_bps)
     local UEFExperimentals = {
   #-- Vanilla
 	all_bps['uel0401'],              #-- Fatboy 
-#	all_bps['ues0401'],              #-- Atlantis (Disabled for getting stuck)
+ 	all_bps['ues0401'],              #-- Atlantis (Disabled for getting stuck)
   
   #-- Total Mayhem units
 	all_bps['brnt3doomsday'],        #-- Doomsday
@@ -262,59 +261,45 @@ end
 
 
 function UpgradeableToBrewLAN(all_bps)
-
-    local AeonT2Shield = {
-        all_bps['uab4202'],
+         
+         
+    local VanillasToUpgrade = {
+        uab4202 = 'uab4301',--FromAeon T2 shield
+        xsb3202 = 'sss0305',--From Seraphim T2 sonar
+      --urb2301 = 'srb0306',--From Cybran T2 PD Cerberus to Hades. A little OP
+        urb1301 = 'srb1311',--To Cloakable Power
+        urb1303 = 'srb1313',--To Cloakable fab
+        urb4203 = 'srb4313',--To Cloakable stealth gen
+        ueb1301 = 'seb1311',--To engineering Power
+        ueb1303 = 'seb1313',--To engineering fab   
+        uab1301 = 'sab1311',--To shielded Power
+        uab1303 = 'sab1313',--To shielded fab
+        sab4102 = 'uab4202',--From Aeon T1 Shield
+        seb4102 = 'ueb4202',--From UEF T1 Shield
+        ssb4012 = 'xsb4202',--From Seraphim T1 Shield
     }
-    for arrayIndex, bp in AeonT2Shield do
-        table.insert(bp.Categories, 'SHOWQUEUE')
-        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
-        table.insert(bp.Economy.RebuildBonusIds, 'uab4301')
-
-        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
-        table.insert(bp.Economy.BuildableCategory, 'uab4301')
+    for unitid, upgradeid in VanillasToUpgrade do
+        if all_bps[unitid] then
+            table.insert(all_bps[unitid].Categories, 'SHOWQUEUE')   
+            
+            if not all_bps[unitid].Display.Abilities then all_bps[unitid].Display.Abilities = {} end
+            table.removeByValue(all_bps[unitid].Display.Abilities, '<LOC ability_upgradable>Upgradeable')--Preventing double ability in certain units.
+            table.insert(all_bps[unitid].Display.Abilities, '<LOC ability_upgradable>Upgradeable')
+            
+            if not all_bps[unitid].Economy.RebuildBonusIds then all_bps[unitid].Economy.RebuildBonusIds = {} end
+            table.insert(all_bps[unitid].Economy.RebuildBonusIds, upgradeid)
+              
+            if not all_bps[unitid].Economy.BuildableCategory then all_bps[unitid].Economy.BuildableCategory = {} end
+            table.insert(all_bps[unitid].Economy.BuildableCategory, upgradeid)
+               
+            all_bps[unitid].General.UpgradesTo = upgradeid  
+            all_bps[upgradeid].General.UpgradesFrom = unitid
+            
+            if not all_bps[unitid].Economy.BuildRate then all_bps[unitid].Economy.BuildRate = 15 end
+        end
     end
     
-    local SeraphimT2Sonar = {
-        all_bps['xsb3202'],
-    }
-    for arrayIndex, bp in SeraphimT2Sonar do 
-        #--table.removeByValue(bp.Display, "AnimationUpgrade = '/units/uab3202/uab3202_aopen.sca'")
-        
-        bp.General.UpgradesTo = 'sss0305'
-        
-        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
-        
-        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
-        table.insert(bp.Economy.BuildableCategory, 'sss0305')
-    end
     
-    
-end
-
-
-
-# ---------------- 
-
-
-
-function HadesUpgradeable(all_bps)
-
-    local CybranHades = {
-        all_bps['urb2301'],
-    }
-    for arrayIndex, bp in CybranHades do
-        table.insert(bp.Categories, 'SHOWQUEUE')
-
-        if not bp.Display.Abilities then bp.Display.Abilities = {} end
-        table.insert(bp.Display.Abilities, '<LOC ability_upgradable>Upgradeable')
-
-        if not bp.Economy.RebuildBonusIds then bp.Economy.RebuildBonusIds = {} end
-        table.insert(bp.Economy.RebuildBonusIds, 'srb2306')
-
-        if not bp.Economy.BuildableCategory then bp.Economy.BuildableCategory = {} end
-        table.insert(bp.Economy.BuildableCategory, 'srb2306')
-    end
 end
 
 
@@ -385,6 +370,9 @@ function BrewLANMatchBalancing(all_bps)
         ssa0306 = 'xea0306',
         sra0306 = 'xea0306',
         saa0306 = 'xea0306',
+        zelp001 = 'uel0401',
+        zesp001 = 'ues0401',
+        zeap001 = 'sea0401',
     }   
      
     for unitid, targetid in UnitsList do

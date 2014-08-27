@@ -72,6 +72,8 @@ UnitBlueprint {
         'UNTARGETABLE',
         'SORTINTEL',
         'OVERLAYOMNI',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
     },
     CollisionOffsetY = -0.65,
     Defense = {
@@ -98,7 +100,10 @@ UnitBlueprint {
 	    'Telstar',
 	},
         Abilities = {
+	    '<LOC ability_personalstealth>Personal Stealth',
             '<LOC ability_omni>Omni Sensor',
+	    '<LOC ability_radar>Radar',
+	    '<LOC ability_sonar>Sonar',
         },
         IconName = 'XEA0002', 
         Mesh = {
@@ -130,7 +135,7 @@ UnitBlueprint {
         BuildCostEnergy = 8000,
         BuildCostMass = 800,
         BuildTime = 400,
-        MaintenanceConsumptionPerSecondEnergy = 100,
+        MaintenanceConsumptionPerSecondEnergy = 2500,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -155,14 +160,28 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
+        SelectionPriority = 4,
         Icon = 'air',
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'omni',
+                helpText = 'toggle_omni',
+            },
+        },
         TechLevel = 'RULEUTL_Secret',
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         UnitName = '<LOC sea0002_name>Burning Star',
         UnitWeight = 1,
     },
     Intel = {
-        OmniRadius = 50,
-        VisionRadius = 72,
+        RadarStealth = true,
+	RadarRadius = 80,
+        VisionRadius = 65,
+        SonarRadius = 50,
+        OmniRadius = 35,
+        WaterVisionRadius = 20,
     },
     Interface = {
         HelpText = '<LOC sea0002_desc>Observation Satellite',
@@ -209,9 +228,9 @@ UnitBlueprint {
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
-            Damage = 300,
+            Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 2,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'Air Crash',
             DummyWeapon = true,
