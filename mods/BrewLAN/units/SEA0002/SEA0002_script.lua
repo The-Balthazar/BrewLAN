@@ -24,15 +24,8 @@ SEA0002 = Class(TAirUnit) {
         if self.IsDying then 
             return 
         end
-        
-        local wep = self:GetWeaponByLabel('OrbitalDeathLaserWeapon')
-        for k, v in wep.Beams do
-            v.Beam:Disable()
-        end      
-        
         self.IsDying = true
         self.Parent:Kill(instigator, type, 0)
-        
         TAirUnit.OnKilled(self, instigator, type, overkillRatio)        
     end,
     
@@ -41,7 +34,8 @@ SEA0002 = Class(TAirUnit) {
     end,
     
     OpenState = State() {
-        Main = function(self)
+        Main = function(self)  
+            self:SetMaintenanceConsumptionActive()
             self.OpenAnim = CreateAnimator(self)
             self.OpenAnim:PlayAnim( '/units/XEA0002/xea0002_aopen01.sca' )
             self.Trash:Add( self.OpenAnim )
@@ -53,10 +47,21 @@ SEA0002 = Class(TAirUnit) {
                 self:HideBone( v, true )
             end
         end,
-    },
+    },   
     
+    OnIntelEnabled = function(self)
+        TAirUnit.OnIntelEnabled(self)
+        self:SetIntelRadius('vision', self:GetBlueprint().Intel.VisionRadius)   
+        self:SetMaintenanceConsumptionActive()
+    end,
+            
+    OnIntelDisabled = function(self)
+        TAirUnit.OnIntelDisabled(self)      
+        self:SetIntelRadius('vision', 5)   
+        self:SetMaintenanceConsumptionInactive()
+    end,
     --Make this unit invulnerable
-   # OnDamage = function()
-   # end,
+   --OnDamage = function()
+   --end,
 }
 TypeClass = SEA0002

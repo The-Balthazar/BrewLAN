@@ -8,15 +8,9 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TEnergyCreationUnit = import('/lua/terranunits.lua').TEnergyCreationUnit    
-local CConstructionStructureUnit = import('/lua/cybranunits.lua').CConstructionStructureUnit   
-local EffectUtil = import('/lua/EffectUtilities.lua')
+local TEngineeringResourceStructureUnit = import('/mods/brewlan/lua/uefunits.lua').TEngineeringResourceStructureUnit    
 
-SEB1311 = Class(CConstructionStructureUnit) {
-    OnStopBeingBuilt = function(self,builder,layer)
-        CConstructionStructureUnit.OnStopBeingBuilt(self,builder,layer)   
-        ChangeState(self, self.ActiveState)
-    end,
+SEB1311 = Class(TEngineeringResourceStructureUnit) {
 
     ActiveState = State {
         Main = function(self)
@@ -26,73 +20,23 @@ SEB1311 = Class(CConstructionStructureUnit) {
                 self:PlaySound(myBlueprint.Audio.ActiveLoop)
             end
         end,
-
-        OnInActive = function(self)
-            ChangeState(self, self.InActiveState)
-        end,
-    },
-          
-    CreateBuildEffects = function( self, unitBeingBuilt, order )
-        EffectUtil.CreateUEFBuildSliceBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+    },         
+    SetupBuildBones = function(self)       
+        TEngineeringResourceStructureUnit.SetupBuildBones(self) 
+        local bp = self:GetBlueprint()
+        self.BuildArmManipulator2 = CreateBuilderArmController(self, bp.General.BuildBones2.YawBone or 0 , bp.General.BuildBones2.PitchBone or 0, bp.General.BuildBones2.AimBone or 0)
+        self.BuildArmManipulator3 = CreateBuilderArmController(self, bp.General.BuildBones3.YawBone or 0 , bp.General.BuildBones3.PitchBone or 0, bp.General.BuildBones3.AimBone or 0)
+        self.BuildArmManipulator4 = CreateBuilderArmController(self, bp.General.BuildBones4.YawBone or 0 , bp.General.BuildBones4.PitchBone or 0, bp.General.BuildBones4.AimBone or 0)
+        self.BuildArmManipulator2:SetAimingArc(-180, 180, 360, -90, 90, 360)
+        self.BuildArmManipulator3:SetAimingArc(-180, 180, 360, -90, 90, 360)
+        self.BuildArmManipulator4:SetAimingArc(-180, 180, 360, -90, 90, 360)
+        self.BuildArmManipulator2:SetPrecedence(5)
+        self.BuildArmManipulator3:SetPrecedence(5)
+        self.BuildArmManipulator4:SetPrecedence(5)
+        self.Trash:Add(self.BuildArmManipulator2)   
+        self.Trash:Add(self.BuildArmManipulator3)
+        self.Trash:Add(self.BuildArmManipulator4)
     end,
-        
-    OnDamage = function(self, instigator, amount, vector, damageType)
-        CConstructionStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
-                
-        self:PlaySound(self:GetBlueprint().Audio.PanicLoop)
-        if not instigator:IsDead() or false then
-            if EntityCategoryContains(categories.AIR, instigator) then
-                self.BuildThis = 'ueb2104'
-            elseif EntityCategoryContains(categories.SUBMERSIBLE, instigator) then
-                self.BuildThis = 'ueb2109'
-            else
-                self.BuildThis = 'ueb2101'
-            end
-            ChangeState(self, self.PanicState)
-        end
-    end,
-            
-    PanicState = State {
-        Main = function(self)
-            local pos = self:GetPosition()  
-            local aiBrain = self:GetAIBrain()
-            
-            local direction = math.random(4)
-            if direction == 1 then
-                self.BuildGoalX = -5
-                self.BuildGoalY = math.random(-5,5)
-            elseif direction == 2 then
-                self.BuildGoalX = 5
-                self.BuildGoalY = math.random(-5,5)
-            elseif direction == 3 then
-                self.BuildGoalX = math.random(-5,5)
-                self.BuildGoalY = -5
-            elseif direction == 4 then
-                self.BuildGoalX = math.random(-5,5)
-                self.BuildGoalY = 5
-            end  
-            --LOG("Direction: ", direction, " X: ", self.BuildGoalX, " Y: ", self.BuildGoalY)
-            --if aiBrain:CanBuildStructureAt( 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalY, 0} ) then
-            aiBrain:BuildStructure(self, self.BuildThis or 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalY, 0})
-        end,   
-        OnStopBuild = function(self, unitBuilding)
-            CConstructionStructureUnit.OnStopBuild(self, unitBuilding)
-            ChangeState(self, self.ActiveState)
-        end,
-        OnFailedToBuild = function(self)
-            CConstructionStructureUnit.OnFailedToBuild(self)
-            ChangeState(self, self.ActiveState)
-        end,
-    },
-    
-    InActiveState = State {
-        Main = function(self)
-        end,
-
-        OnActive = function(self)
-            ChangeState(self, self.ActiveState)
-        end,
-    },      
 }
 
 TypeClass = SEB1311

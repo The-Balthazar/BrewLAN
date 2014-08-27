@@ -1,12 +1,5 @@
 #Seraphim Buildings	----------------------------------#
 
-UnitBlueprint {
-	Merge = true,
-	BlueprintId="xsb4202", # T2 shield
-    General = {
-        UpgradesFrom = 'ssb4102',
-    },
-}
 
 #Seraphim Units	----------------------------------#
 

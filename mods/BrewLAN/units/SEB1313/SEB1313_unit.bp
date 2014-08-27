@@ -156,6 +156,9 @@ UnitBlueprint {
         },
         MaintenanceConsumptionPerSecondEnergy = 3500*.75,
         ProductionPerSecondMass = 12*.75,
+        BuildWhenAttackedByAir = 'ueb2104',
+        BuildWhenAttackedBySub = 'ueb2109',
+        BuildWhenAttackedByLand = 'ueb2101',
         RebuildBonusIds = {
             'ueb1303',
             'seb1313',
