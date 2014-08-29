@@ -122,7 +122,11 @@ Unit_Description_BrewLAN_T2D004="An all-terrain mine armed with a full-yield nuc
 #-- Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
-     
+  
+seb5210_desc="Heavy Wall Section"
+seb5210_name="General Destruction Impasse"
+Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage."
+   
      
 ## T3
 
@@ -240,13 +244,21 @@ Unit_Description_BrewLAN_T3B0017="Large mass fabrication structure. Possesses su
  
 srb4313_desc="Cloakable Stealth Field Generator"
 srb4313_name="Nightshade" 
-Unit_Description_BrewLAN_T3B0011="Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar. Only visible to omni." 
+Unit_Description_BrewLAN_T3B0011="Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar, but not from visual sensors, the generator itself is only visible to omni." 
 
 ssb5301_desc="Shield Wall Section"
 ssb5301_name="Athahaas"
-Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a tiny shield dome above itself to offer additional protection from enemy fire."
- 
- 
+Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
+        
+srb5310_desc="Armored Wall Section"
+srb5310_name="Procyon Defiance"
+Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage."
+    
+srb5311_desc="Armored Gate"        
+srb5311_name="Procyon Offering"
+Unit_Description_BrewLAN_T3B0020="Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
+
+
 ## T4
 
 

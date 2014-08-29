@@ -9,6 +9,50 @@
 #****************************************************************************
 local SShieldStructureUnit = import('/lua/seraphimunits.lua').SShieldStructureUnit
 
-SSB5301 = Class(SShieldStructureUnit) {}
+SSB5301 = Class(SShieldStructureUnit) {
+    ShieldEffects = {
+        '/effects/emitters/seraphim_shield_generator_t2_01_emit.bp',
+        
+     #   '/effects/emitters/seraphim_shield_generator_t3_03_emit.bp',
+     #   '/effects/emitters/seraphim_shield_generator_t2_03_emit.bp',
+    },
+    OnStopBeingBuilt = function(self,builder,layer)
+        SShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
+		self.ShieldEffectsBag = {}
+    end,
+
+    OnShieldEnabled = function(self)
+        SShieldStructureUnit.OnShieldEnabled(self)
+        if self.ShieldEffectsBag then
+            for k, v in self.ShieldEffectsBag do
+                v:Destroy()
+            end
+		    self.ShieldEffectsBag = {}
+		end
+        for k, v in self.ShieldEffects do
+            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(0.475) )
+        end
+        table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), '/effects/emitters/aeon_shield_generator_mobile_01_emit.bp' ):ScaleEmitter(1) )
+    end,
+
+    OnShieldDisabled = function(self)
+        SShieldStructureUnit.OnShieldDisabled(self)
+        if self.ShieldEffectsBag then
+            for k, v in self.ShieldEffectsBag do
+                v:Destroy()
+            end
+		    self.ShieldEffectsBag = {}
+		end
+    end,
+    
+    OnKilled = function(self, instigator, type, overkillRatio)
+        SShieldStructureUnit.OnKilled(self, instigator, type, overkillRatio)
+        if self.ShieldEffctsBag then
+            for k,v in self.ShieldEffectsBag do
+                v:Destroy()
+            end
+        end
+    end,    
+}
 
 TypeClass = SSB5301

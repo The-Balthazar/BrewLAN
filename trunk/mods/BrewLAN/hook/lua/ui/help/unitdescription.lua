@@ -113,14 +113,16 @@ Description['srb2311'] = "<LOC Unit_Description_BrewLAN_T3B007>Very heavy defens
 Description['sab2311'] = "<LOC Unit_Description_BrewLAN_T3B008>Very heavy defensive tower. Attacks land- and sea-based units with a powerfull oblivion cannon."    
 Description['srb1311'] = "<LOC Unit_Description_BrewLAN_T3B009>Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
 Description['srb1313'] = "<LOC Unit_Description_BrewLAN_T3B0010>Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
-Description['srb4313'] = "<LOC Unit_Description_BrewLAN_T3B0011>Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar. Only visible to omni." 
+Description['srb4313'] = "<LOC Unit_Description_BrewLAN_T3B0011>Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar, but not from visual sensors, the generator itself is only visible to omni." 
 Description['seb1311'] = "<LOC Unit_Description_BrewLAN_T3B0012>Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
 Description['seb1313'] = "<LOC Unit_Description_BrewLAN_T3B0013>Large mass fabrication structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."    
 Description['sab1311'] = "<LOC Unit_Description_BrewLAN_T3B0014>Large power generating structure. Possesses a powerfull shield, which consumes a small portion of its operating output." 
 Description['sab1313'] = "<LOC Unit_Description_BrewLAN_T3B0015>Large mass fabrication structure. Possesses a powerfull shield, which consumes additional power."
 Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B0016>Large power generating structure. Possesses superior armor and has self regenerative capabilities."    
 Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0017>Large mass fabrication structure. Possesses superior armor and has self regenerative capabilities."
-Description['ssb5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a tiny shield dome above itself to offer additional protection from enemy fire."
+Description['ssb5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
+Description['srb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage."
+Description['srb5311'] = "<LOC Unit_Description_BrewLAN_T3B0020>Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."

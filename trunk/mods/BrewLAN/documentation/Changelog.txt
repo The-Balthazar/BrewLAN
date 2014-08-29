@@ -61,7 +61,19 @@ __________.__________
     * Script now checks how far away the instigator is, and does nothing if its too far away, then checks the instigator layer instead of its categories when deciding what to build.
       * Too far away is considered over *3 its visual range.
       * If the units layer is water it alternates between trying to build a torpedo or point defence, incase it can't reach the water for a torpedo.
-  * The Engineering Power Generator now aims with all its arms, instead of just the first.                                                                                                     
+  * The Engineering Power Generator now aims with all its arms, instead of just the first.
+  * Fixed a long standing bug with the Gantry being able to have its costs reduced, through adjacency, to 0 of any one resource.
+  * Increased the physical size of the T1 UEF Shield so it matches the size of the T2, and doesn't look odd when upgrading to it.
+  * Applied a change to the Engineering resource building script by MrDeagle, which reduces total lines of code.  
+  __________
+  2014-08-28
+  
+  * Added Cybran Tech 3 Armored Wall Section.
+  __________
+  2014-08-29
+  
+  * Fixed the script of the Cybran Armored Wall, and otherwise finished it.
+  * Finished the Seraphim T3 Shield Wall.                                                                                                            
 __________.__________
 2014-08-17|0.4.8
                               

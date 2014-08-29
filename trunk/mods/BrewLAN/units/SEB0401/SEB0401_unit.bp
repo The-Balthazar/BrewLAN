@@ -58,12 +58,11 @@ UnitBlueprint {
         'FACTORY',
         'RALLYPOINT',
         'DRAGBUILD',
-        'SIZE20',
+        'SIZE30',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
- #       'SORTSTRATEGIC',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -211,7 +210,6 @@ UnitBlueprint {
             'BUILTBYTIER3FACTORY MOBILE AIR UEF',
             'TRANSPORTBUILTBYTIER3FACTORY UEF MOBILE AIR',
             'BUILTBYGANTRY UEF',
-            #'UEF MOBILE EXPERIMENTAL',
         },
         RebuildBonusIds = {
             'seb0401',
