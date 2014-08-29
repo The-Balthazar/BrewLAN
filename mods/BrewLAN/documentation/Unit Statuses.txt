@@ -31,7 +31,8 @@ Errors list/the other to-do list.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
 * Planned new Naval shield implementation: All shields aquatic, and recieve radius and cost increases when built on water.
-* One race should get a T3 torpedo launcher that can be built on land.        
+* One race should get a T3 torpedo launcher that can be built on land.
+* The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.        
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -298,14 +299,10 @@ Tech 3:
       * T3 Nuke Mine       
   		* T3 Field engineer      
       * T3 Anti-Armor Point Defence.
-      * T3 Cloakable Fusion Reactor.     
-        * Allow the no-cloakable to upgrade into it.
-      * T3 Cloakable Mass Fabricator.  
-        * Allow the no-cloakable to upgrade into it.
+      * T3 Armored Wall Section.       
       * T3 Cloakable Stealth Field Generator.
         * Would like to seperate the Cloak/Stealth functions
-        * Have it re-increase its stealth range while cloak off.
-        * Allow the T2 to upgrade into it.                                         
+        * Have it re-increase its stealth range while cloak off.                 
       * T3 Mobile strat defence.
         * Lacks a unique model & icon.  
       * T3 Cloakable Mass Fabricator.  

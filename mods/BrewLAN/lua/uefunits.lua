@@ -59,28 +59,22 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
             local pos = self:GetPosition()  
             local aiBrain = self:GetAIBrain()
             
-            local direction = math.random(4)
-            
             local bp = self:GetBlueprint()
-            local x = bp.Physics.SkirtSizeX/2+1
-            local y = bp.Physics.SkirtSizeZ/2+1
+            local x = bp.Physics.SkirtSizeX / 2 + 1
+            local z = bp.Physics.SkirtSizeZ / 2 + 1
+            local sign = -1 + 2 * math.random(0, 1)
             
-            if direction == 1 then
-                self.BuildGoalX = -x
-                self.BuildGoalY = math.random(-y,y)
-            elseif direction == 2 then
-                self.BuildGoalX = x
-                self.BuildGoalY = math.random(-y,y)
-            elseif direction == 3 then
-                self.BuildGoalX = math.random(-x,x)
-                self.BuildGoalY = -y
-            elseif direction == 4 then
-                self.BuildGoalX = math.random(-x,x)
-                self.BuildGoalY = y
+            if math.random(0, 1) > 0 then
+                self.BuildGoalX = sign * x
+                self.BuildGoalZ = math.random(-z, z)
+            else
+                self.BuildGoalX = math.random(-x, x)
+                self.BuildGoalZ = sign * z
             end
+
             local halp = "Help, help, I'm being repressed!"  
             LOG(halp)
-            aiBrain:BuildStructure(self, self.BuildThis or 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalY, 0})
+            aiBrain:BuildStructure(self, self.BuildThis or 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalZ, 0})
         end,   
         OnStopBuild = function(self, unitBuilding)
             CConstructionStructureUnit.OnStopBuild(self, unitBuilding)

@@ -29,6 +29,7 @@ SEB2221 = Class(TStructureUnit) {
         self:EnableIntel('Cloak')
         self:EnableIntel('RadarStealth')
         self:EnableIntel('SonarStealth')
+        self:SetCollisionShape('None')
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)

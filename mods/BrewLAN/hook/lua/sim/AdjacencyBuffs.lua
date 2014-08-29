@@ -209,3 +209,169 @@ BuffBlueprint {
         },
     },
 }
+
+
+##################################################################
+## GANTRY SIZE 30 PRODUCTION BONUSES
+##################################################################
+
+BuffBlueprint {
+    Name = 'T1PowerEnergyBuildBonusSize30',
+    DisplayName = 'T1PowerEnergyBuildBonus',
+    BuffType = 'ENERGYBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.EnergyBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.EnergyBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.EnergyBuildBuffRemove,
+    Affects = {
+        EnergyActive = {
+            Add = -0.0125/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'T2PowerEnergyBuildBonusSize30',
+    DisplayName = 'T2PowerEnergyBuildBonus',
+    BuffType = 'ENERGYBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.EnergyBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.EnergyBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.EnergyBuildBuffRemove,
+    Affects = {
+        EnergyActive = {
+            Add = -0.0125/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'T3PowerEnergyBuildBonusSize30',
+    DisplayName = 'T3PowerEnergyBuildBonus',
+    BuffType = 'ENERGYBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.EnergyBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.EnergyBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.EnergyBuildBuffRemove,
+    Affects = {
+        EnergyActive = {
+            Add = -0.1875/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'T1MEXMassBuildBonusSize30',
+    DisplayName = 'T1MEXMassBuildBonus',
+    BuffType = 'MASSBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.MassBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.MassBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
+    Affects = {
+        MassActive = {
+            Add = -0.02/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'T2MEXMassBuildBonusSize30',
+    DisplayName = 'T2MEXMassBuildBonus',
+    BuffType = 'MASSBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.MassBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.MassBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
+    Affects = {
+        MassActive = {
+            Add = -0.03/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+
+BuffBlueprint {
+    Name = 'T3MEXMassBuildBonusSize30',
+    DisplayName = 'T3MEXMassBuildBonus',
+    BuffType = 'MASSBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.MassBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.MassBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
+    Affects = {
+        MassActive = {
+            Add = -0.04/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'T1FabricatorMassBuildBonusSize30',
+    DisplayName = 'T1FabricatorMassBuildBonus',
+    BuffType = 'MASSBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.MassBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.MassBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
+    Affects = {
+        MassActive = {
+            Add = -0.005/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'T3FabricatorMassBuildBonusSize30',
+    DisplayName = 'T3FabricatorMassBuildBonus',
+    BuffType = 'MASSBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE SIZE30',
+    BuffCheckFunction = AdjBuffFuncs.MassBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.MassBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
+    Affects = {
+        MassActive = {
+            Add = -0.075/3*2,
+            Mult = 1.0,
+        },
+    },
+}
+
+
+do
+    table.insert(T1PowerGeneratorAdjacencyBuffs, 'T1PowerEnergyBuildBonusSize30')
+    table.insert(T2PowerGeneratorAdjacencyBuffs, 'T2PowerEnergyBuildBonusSize30')
+    table.insert(T3PowerGeneratorAdjacencyBuffs, 'T3PowerEnergyBuildBonusSize30')
+    
+    table.insert(HydrocarbonAdjacencyBuffs, 'T2PowerEnergyBuildBonusSize30')
+    
+    table.insert(T1MassExtractorAdjacencyBuffs, 'T1MEXMassBuildBonusSize30')
+    table.insert(T2MassExtractorAdjacencyBuffs, 'T2MEXMassBuildBonusSize30')
+    table.insert(T3MassExtractorAdjacencyBuffs, 'T3MEXMassBuildBonusSize30')  
+    
+    table.insert(T1MassFabricatorAdjacencyBuffs, 'T1FabricatorMassBuildBonusSize30') 
+    table.insert(T3MassFabricatorAdjacencyBuffs, 'T3FabricatorMassBuildBonusSize30')
+end
