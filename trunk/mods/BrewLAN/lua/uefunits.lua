@@ -28,29 +28,31 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
         CConstructionStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
                 
         self:PlaySound(self:GetBlueprint().Audio.PanicLoop)
-        if not instigator:IsDead() or false then
-            local layer = instigator:GetCurrentLayer()             
-            local bp = self:GetBlueprint()
-            local distance = Utilities.GetDistanceBetweenTwoEntities(self, instigator)
-            if distance > bp.Intel.VisionRadius * 3 then 
-                #LOG("Shit that's far: ".. distance)
-                return
-            elseif layer == 'Land' or self.AlternateWater  then
-                self.BuildThis = bp.Economy.BuildWhenAttackedByLand or 'ueb2101'
-            elseif layer == 'Air' then
-                self.BuildThis = bp.Economy.BuildWhenAttackedByAir or 'ueb2104'
-            elseif layer == 'Seabed' or layer == 'Sub' or layer == 'Water' then
-                self.BuildThis = bp.Economy.BuildWhenAttackedBySub or 'ueb2109'
-                if layer == 'Water' and not self.AlternateWater then
-                    self.AlternateWater = true
-                elseif layer == 'Water' then
-                    self.AlternateWater = false
-                end
-            else
-                return --what are we fighting here I dont even.
-            end   
-            #LOG("Instigator layer: ".. layer)
-            ChangeState(self, self.PanicState)
+        if instigator then
+            if not instigator:IsDead() then
+                local layer = instigator:GetCurrentLayer()             
+                local bp = self:GetBlueprint()
+                local distance = Utilities.GetDistanceBetweenTwoEntities(self, instigator)
+                if distance > bp.Intel.VisionRadius * 3 then 
+                    #LOG("Shit that's far: ".. distance)
+                    return
+                elseif layer == 'Land' or self.AlternateWater  then
+                    self.BuildThis = bp.Economy.BuildWhenAttackedByLand or 'ueb2101'
+                elseif layer == 'Air' then
+                    self.BuildThis = bp.Economy.BuildWhenAttackedByAir or 'ueb2104'
+                elseif layer == 'Seabed' or layer == 'Sub' or layer == 'Water' then
+                    self.BuildThis = bp.Economy.BuildWhenAttackedBySub or 'ueb2109'
+                    if layer == 'Water' and not self.AlternateWater then
+                        self.AlternateWater = true
+                    elseif layer == 'Water' then
+                        self.AlternateWater = false
+                    end
+                else
+                    return --what are we fighting here I dont even.
+                end   
+                #LOG("Instigator layer: ".. layer)
+                ChangeState(self, self.PanicState)
+            end
         end
     end,  
         

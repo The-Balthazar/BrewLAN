@@ -200,6 +200,7 @@ UnitBlueprint {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
             'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF', 
             'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',
+            'BUILTBYTIER1ENGINEER ENERGYSTORAGE UEF',
         },
         ProductionPerSecondEnergy = 2500*.75,
         BuildWhenAttackedByAir = 'ueb2104',

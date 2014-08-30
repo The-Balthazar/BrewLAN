@@ -73,7 +73,19 @@ __________.__________
   2014-08-29
   
   * Fixed the script of the Cybran Armored Wall, and otherwise finished it.
-  * Finished the Seraphim T3 Shield Wall.                                                                                                            
+  * Finished the Seraphim T3 Shield Wall.
+  * Made the Seraphim shield walls double-clickable.
+  * Fixed the cost of the UEF Engineering Mass Fabricator. (It was 10x cheaper than it should have been.)    
+  __________
+  2014-08-30
+  
+  * Added the Seraphim Armored Power Generator, Fabricator, and Extractor, allowed there T3 others to upgrade into them.
+  * Added adjacency buffs to the Paragon.
+  * Increased the cost to fire of the Orbos to 1500 from 500.
+  * corrected the distance model of the Centurion, so it doesn't look like the old version.
+  * Added a basic Aeon T3 Shielded Mass Extractor.
+  * Sorted an issue with some units not being able to que upgrade all the way up from the bottom.
+  * Fixed the normals linking on the UEF T3 Field engineer.                                                                                                                        
 __________.__________
 2014-08-17|0.4.8
                               
@@ -81,6 +93,7 @@ __________.__________
 * Added Field Engineer capability to build counterintelligence buildings.
 * Removed the basic UEF Cloakable fusion.
 * Added Cybran T3 Cloakable Stealth Field Generator.
+* Added the appropriate T1 storage to each T3 engineering resource buildings' buildable list.
   __________
   2014-08-18
   

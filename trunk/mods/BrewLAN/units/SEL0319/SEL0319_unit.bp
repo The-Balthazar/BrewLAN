@@ -137,7 +137,7 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                     AlbedoName = '/units/xel0209/xel0209_albedo.dds',
                     SpecularName = '/units/xel0209/xel0209_specteam.dds',
-                    NormalsName = '/units/xel0209/xel0209_normalts.dds',
+                    NormalsName = '/units/xel0209/xel0209_normalsts.dds',
                 },
                 {
                     LODCutoff = 215,
@@ -145,7 +145,7 @@ UnitBlueprint {
                     MeshName = '/units/xel0209/xel0209_lod1.scm',
                     AlbedoName = '/units/xel0209/xel0209_lod1_albedo.dds',
                     SpecularName = '/units/xel0209/xel0209_lod1_specteam.dds',
-                    NormalsName = '/units/xel0209/xel0209_lod1_normalts.dds',
+                    NormalsName = '/units/xel0209/xel0209_lod1_normalsts.dds',
                 },
             },
         },
