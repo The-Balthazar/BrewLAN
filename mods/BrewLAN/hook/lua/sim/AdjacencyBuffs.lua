@@ -210,7 +210,6 @@ BuffBlueprint {
     },
 }
 
-
 ##################################################################
 ## GANTRY SIZE 30 PRODUCTION BONUSES
 ##################################################################
@@ -375,3 +374,106 @@ do
     table.insert(T1MassFabricatorAdjacencyBuffs, 'T1FabricatorMassBuildBonusSize30') 
     table.insert(T3MassFabricatorAdjacencyBuffs, 'T3FabricatorMassBuildBonusSize30')
 end
+     
+##################################################################
+## PARAGON ADJACENCY BONUSES BECAUSE WHY NOT
+##################################################################
+
+ParagonAdjacencyBuffs = {
+    'ParagonEnergyBuildBonus',
+    'ParagonEnergyMaintenanceBonus',
+    'ParagonEnergyWeaponBonus',
+    'ParagonRateOfFireBonus',
+    'ParagonMassBuildBonus',
+}  
+   
+BuffBlueprint {
+    Name = 'ParagonEnergyBuildBonus',
+    DisplayName = 'ParagonEnergyBuildBonus',
+    BuffType = 'ENERGYBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE',
+    BuffCheckFunction = AdjBuffFuncs.EnergyBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.EnergyBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.EnergyBuildBuffRemove,
+    Affects = {
+        EnergyActive = {
+            Add = -1,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'ParagonEnergyMaintenanceBonus',
+    DisplayName = 'ParagonEnergyMaintenanceBonus',
+    BuffType = 'ENERGYMAINTENANCEBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE',
+    BuffCheckFunction = AdjBuffFuncs.EnergyMaintenanceBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.EnergyMaintenanceBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.EnergyMaintenanceBuffRemove,
+    Affects = {
+        EnergyMaintenance = {
+            Add = -1,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'ParagonEnergyWeaponBonus',
+    DisplayName = 'ParagonEnergyWeaponBonus',
+    BuffType = 'ENERGYWEAPONBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE',
+    BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
+    Affects = {
+        EnergyWeapon = {
+            Add = -1,
+            Mult = 1.0,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'ParagonRateOfFireBonus',
+    DisplayName = 'ParagonRateOfFireBonus',
+    BuffType = 'RATEOFFIREADJACENCY',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE',
+    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
+    Affects = {
+        RateOfFire = {
+            Add = -1,
+            Mult = 1.0,
+        },
+    },
+}
+    
+BuffBlueprint {
+    Name = 'ParagonMassBuildBonus',
+    DisplayName = 'ParagonMassBuildBonus',
+    BuffType = 'MASSBUILDBONUS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    EntityCategory = 'STRUCTURE',
+    BuffCheckFunction = AdjBuffFuncs.MassBuildBuffCheck,
+    OnBuffAffect = AdjBuffFuncs.MassBuildBuffAffect,
+    OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
+    Affects = {
+        MassActive = {
+            Add = -1,
+            Mult = 1.0,
+        },
+    },
+}
+

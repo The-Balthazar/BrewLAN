@@ -123,6 +123,10 @@ Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0017>Large mass fabri
 Description['ssb5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
 Description['srb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage."
 Description['srb5311'] = "<LOC Unit_Description_BrewLAN_T3B0020>Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
+Description['sab1312'] = "<LOC Unit_Description_BrewLAN_T3B0021>High-end Mass extractor. Must be constructed on Mass deposits. It generates a shield dome large enough to cover itself and 4 small storages."
+Description['seb1312'] = "<LOC Unit_Description_BrewLAN_T3B0022>High-end Mass extractor. Must be constructed on Mass deposits. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
+Description['srb1312'] = "<LOC Unit_Description_BrewLAN_T3B0023>High-end Mass extractor. Must be constructed on Mass deposits. It generates a cloak field and stealth field large enough to disguise itself and 4 small storages."
+Description['ssb1312'] = "<LOC Unit_Description_BrewLAN_T3B0024>High-end Mass extractor. Must be constructed on Mass deposits. It possesses superiour armor and generates a regeneration field large enough to effect itself and 4 small storages."
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."

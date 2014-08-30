@@ -32,6 +32,12 @@ UnitBlueprint {
     StrategicIconName = 'icon_experimental_generic',
 }
 
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xab1401",		##Paragon
+    Adjacency = 'ParagonAdjacencyBuffs',
+}
+
 #Aeon Units	----------------------------------#
 
 UnitBlueprint {

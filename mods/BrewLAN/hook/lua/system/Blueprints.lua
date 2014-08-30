@@ -244,10 +244,10 @@ function GantryExperimentalBuildOnly(all_bps)
     }
 
     for arrayIndex, bp in UEFExperimentals do
-    	table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
-    	table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    	table.removeByValue(bp.Categories, 'DRAGBUILD')
-    	table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
+    	  table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
+    	  table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
+    	  table.removeByValue(bp.Categories, 'DRAGBUILD')
+    	  table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
         table.insert(bp.Categories, 'BUILTBYGANTRY')
     end	
 end
@@ -267,19 +267,25 @@ function UpgradeableToBrewLAN(all_bps)
         uab4202 = 'uab4301',--FromAeon T2 shield
         xsb3202 = 'sss0305',--From Seraphim T2 sonar
       --urb2301 = 'srb0306',--From Cybran T2 PD Cerberus to Hades. A little OP
-        urb1301 = 'srb1311',--To Cloakable Power
-        urb1303 = 'srb1313',--To Cloakable fab
-        urb4203 = 'srb4313',--To Cloakable stealth gen
-        ueb1301 = 'seb1311',--To engineering Power
-        ueb1303 = 'seb1313',--To engineering fab   
-        uab1301 = 'sab1311',--To shielded Power
-        uab1303 = 'sab1313',--To shielded fab
+        urb1101 = 'srb1311',--To Cloakable Generator 
+        urb1102 = 'srb1312',--To Cloakable Extractor
+        urb1103 = 'srb1313',--To Cloakable Fabricator
+        urb4203 = 'srb4313',--To Cloakable stealth gen  
+        ueb1301 = 'seb1311',--To engineering Generator
+        ueb1302 = 'seb1312',--To engineering Extractor
+        ueb1303 = 'seb1313',--To engineering Fabricator   
+        uab1101 = 'sab1311',--To shielded Generator
+        uab1102 = 'sab1312',--To shielded Extractor
+        uab1103 = 'sab1313',--To shielded Fabricator
         sab4102 = 'uab4202',--From Aeon T1 Shield
         seb4102 = 'ueb4202',--From UEF T1 Shield
         ssb4012 = 'xsb4202',--From Seraphim T1 Shield
+        xsb1301 = 'ssb1311',--To Armored Generator
+        xsb1302 = 'ssb1312',--To Armored Extractor
+        xsb1303 = 'ssb1313',--To Armored Fabricator
     }
     for unitid, upgradeid in VanillasToUpgrade do
-        if all_bps[unitid] then
+        if all_bps[unitid] and all_bps[upgradeid] then
             table.insert(all_bps[unitid].Categories, 'SHOWQUEUE')   
             
             if not all_bps[unitid].Display.Abilities then all_bps[unitid].Display.Abilities = {} end
@@ -296,6 +302,27 @@ function UpgradeableToBrewLAN(all_bps)
             all_bps[upgradeid].General.UpgradesFrom = unitid
             
             if not all_bps[unitid].Economy.BuildRate then all_bps[unitid].Economy.BuildRate = 15 end
+        end
+    end
+    local UpgradesFromBase = {
+        sab4102 = 'uab4301',--FromAeon T2 shield
+        xsb3102 = 'sss0305',--From Seraphim T2 sonar
+        urb1101 = 'srb1311',--To Cloakable Generator 
+        urb1102 = 'srb1312',--To Cloakable Extractor
+        urb1103 = 'srb1313',--To Cloakable Fabricator
+        ueb1101 = 'seb1311',--To engineering Generator
+        ueb1102 = 'seb1312',--To engineering Extractor
+        ueb1103 = 'seb1313',--To engineering Fabricator   
+        uab1101 = 'sab1311',--To shielded Generator
+        uab1102 = 'sab1312',--To shielded Extractor
+        uab1103 = 'sab1313',--To shielded Fabricator
+        xsb1101 = 'ssb1311',--To Armored Generator
+        xsb1102 = 'ssb1312',--To Armored Extractor
+        xsb1103 = 'ssb1313',--To Armored Fabricator
+    } 
+    for unitid, upgradeid in VanillasToUpgrade do
+        if all_bps[upgradeid] then
+            all_bps[upgradeid].General.UpgradesFromBase = unitid
         end
     end
     

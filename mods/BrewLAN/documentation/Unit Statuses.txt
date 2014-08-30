@@ -121,7 +121,7 @@ Modded Units:
   
   	Novax Center
   		* Still in game but removed from build menus.
-  		* Replaced with a tech 3 observation satelite (that uses its models) & a T3 mobile uplink tank (that uses its weapon).
+  		* Replaced with a tech 3 observation satelite (that uses its models) & a T3 mobile uplink vehicle (that calls its weapon).
   
   	Mavor
       * Changed menu sorting.
@@ -375,7 +375,10 @@ Tech 3:
   		* T3 Field engineer  
       * T3 Anti-Armor Point Defence.   
       * T3 Mobile strat defence.
-      * T3 Shield wall.   
+      * T3 Shield wall.     
+      * T3 Armored Mass Fabricator.
+      * T3 Armored Power Generator.
+      * T3 Armored Mass Extractor.      
   
     Pending:
       * T3 Torp launchers.
@@ -383,10 +386,7 @@ Tech 3:
       * T3 observation building.
         * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
       * T3 Decoy Plane.
-      * T3 Nuke Mine.
-      * T3 Armored Mass Fabricator.
-      * T3 Armored Power Generator.
-      * T3 Armored Mass Extractor.                     
+      * T3 Nuke Mine.               
 _______________________________________________________
 Experimental Table
                 ._______________._______________._______________._______________.

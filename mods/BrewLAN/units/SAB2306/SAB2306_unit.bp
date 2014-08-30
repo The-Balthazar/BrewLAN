@@ -252,8 +252,8 @@ UnitBlueprint {
             DoNotCollideList = {
                 'MISSILE',
             },
-            EnergyDrainPerSecond = 500,
-            EnergyRequired = 500,
+            EnergyDrainPerSecond = 1500,
+            EnergyRequired = 1500,
             FireTargetLayerCapsTable = {
                 Land = 'Air|Land|Water|Seabed',
                 Seabed = 'Air|Land|Water|Seabed',
