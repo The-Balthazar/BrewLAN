@@ -262,7 +262,7 @@ Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a 
         
 srb5310_desc="Armored Wall Section"
 srb5310_name="Procyon Defiance"
-Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage."
+Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 
 srb5311_desc="Armored Gate"        
 srb5311_name="Procyon Offering"

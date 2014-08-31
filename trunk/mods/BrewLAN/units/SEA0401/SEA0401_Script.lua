@@ -66,16 +66,18 @@ SEA0401 = Class(TAirUnit) {
 
     OnLayerChange = function(self, new, old)
         TAirUnit.OnLayerChange(self, new, old)
-        if new == 'Land' then
-            self.Rotator1:SetTargetSpeed(0)
-            self.Rotator2:SetTargetSpeed(0)
-            self.Rotator3:SetTargetSpeed(0)
-            self.Rotator4:SetTargetSpeed(0)
-        elseif new == 'Air' then
-            self.Rotator1:SetTargetSpeed(1000)
-            self.Rotator2:SetTargetSpeed(1000)
-            self.Rotator3:SetTargetSpeed(-1000)
-            self.Rotator4:SetTargetSpeed(-1000)   
+        if self.Rotator1 then
+            if new == 'Land' then
+                self.Rotator1:SetTargetSpeed(0)
+                self.Rotator2:SetTargetSpeed(0)
+                self.Rotator3:SetTargetSpeed(0)
+                self.Rotator4:SetTargetSpeed(0)
+            elseif new == 'Air' then
+                self.Rotator1:SetTargetSpeed(1000)
+                self.Rotator2:SetTargetSpeed(1000)
+                self.Rotator3:SetTargetSpeed(-1000)
+                self.Rotator4:SetTargetSpeed(-1000)   
+            end
         end
     end,
 

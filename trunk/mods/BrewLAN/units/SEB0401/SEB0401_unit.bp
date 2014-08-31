@@ -175,7 +175,7 @@ UnitBlueprint {
                     LODCutoff = 500,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/uec1905/uec1905_lod1_albedo.dds',
-                    NormalsName = '/units/uec1905/uec1905_lod1_normalts.dds',
+                    NormalsName = '/units/uec1905/uec1905_lod1_normalsts.dds',
                     SpecularName = '/units/uec1905/uec1905_lod1_specteam.dds',
                 },
             },

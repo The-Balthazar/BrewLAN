@@ -14,9 +14,8 @@ local ATLANTIS = import('/units/ues0401/ues0401_script.lua').UES0401
 UES0401 = Class(ATLANTIS) {
     OnStopBeingBuilt = function(self,builder,layer)
         ATLANTIS.OnStopBeingBuilt(self,builder,layer)
+
 	    IssueDive({self})
-            local worldPos = self:CalculateWorldPositionFromRelative({0, 0, 30})
-            IssueMove({self}, worldPos)
     end,
 }
 
