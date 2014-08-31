@@ -13,26 +13,25 @@ General to-do list/ideas list.
 * Naval mine layer units?
 * Seraphim experimental mine. (Possibly releasing a residual energy signature as its thing, or a semi-persistant d-o-t)
 * BARREL ROLL
-* Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
-* Add unit orders to the blips of the Aeon Decoy plane. (IssueGuard)
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* The Atlantis ignores its rolloff orders from the Gantry.
 * SRS0401 lacks weapons.
 * SRA0306 has an intel error. (line 32)
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
-* The Gantry lacks a lod1 normal map.
 * The Absolution can't hover over walls and such.
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
 * Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
-* UEF engineer built versions of the Fatboy and Centurion bug out when at pop cap.
-  * This issue also exists with Megalith built eggs, and the UEF Satelite Uplink buildings, but is less visible.
+* Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
 * Planned new Naval shield implementation: All shields aquatic, and recieve radius and cost increases when built on water.
 * One race should get a T3 torpedo launcher that can be built on land.
-* The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.        
+* The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
+* Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
+* Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)        
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -43,7 +42,8 @@ Modded Units:
   
   	Torpedo Bombers
   		* Gave the ability to land on water.
-  		  * Given both TRANSPORTATION and HOVER categories so they dont get shot by torpedoes       
+  		  * Given both TRANSPORTATION and HOVER categories so they dont get shot by torpedoes.
+  		  * Currently disabled. Again.               
     
     Experimental Buildings
       * Added appropriate build menu sorting.
@@ -127,13 +127,11 @@ Modded Units:
       * Changed menu sorting.
     
     Fatboy
-      * Made Gantry buildable only.
-      * Left a decoy for the engineers to build.
-        * Works in a similar way as the Megalith eggs: spawns the real one when its done.
-        * Passes any damage it recieves under construction to the eventual real Fatboy so it doesn't get a free heal when its finished.
-        * Doing it the other way (Putting the fake in the Gantry) results in it losing the orders to leave the Gantry.       
-        * Most people wont notice the difference.
-        * The script breaks while at the pop-cap.                                              
+      * Made Gantry buildable.
+       
+    Atlantis
+      * Made Gantry buildable.
+        * Gets stuck and doesn't listen to roll of orders. But works.                                                    
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
@@ -260,14 +258,14 @@ Tech 3:
     	* T3 Armoured Assult Tank
       * T3 Decoy Plane 
       * T3 Naval Shield.
-          * Only obtainable by upgrading the T1 shield on water.  
-          * Open animation doesn't work yet.
-          * Death animation slightly weird.
+        * Only obtainable by upgrading the T1 shield on water.  
+        * Open animation doesn't work yet.
+        * Death animation slightly weird.
   		* T3 Point Deffence.       
-  		    * Needs a new model.
-  		    * Needs the passive animation in pitch and yaw disabling while it fires.
-  		    * Want to somehow add a cost for snap aiming, so its first shot takes substantial power, but subsequent shots at the same target are reduced.
-  		      * Alternatively, have it change the cost from 1250 for the first shot to 125 for subequent shots within a cooldown.
+		    * Needs a new model.
+		    * Needs the passive animation in pitch and yaw disabling while it fires.
+		    * Want to somehow add a cost for snap aiming, so its first shot takes substantial power, but subsequent shots at the same target are reduced.
+		      * Alternatively, have it change the cost from 1250 for the first shot to 125 for subequent shots within a cooldown.
       * T3 Nuke Mine          
         * Lacks a unique model.   
   		* T3 Field engineer    
@@ -275,9 +273,11 @@ Tech 3:
       * T3 Anti-Armor Point Defence. 
         * Could have a more original model, but is probably fine.
       * T3 Shielded Mass Fabricator.  
-  		    * Lacks a unique model & icon.
+  		  * Lacks a unique model & icon.
       * T3 Shielded Power Generator.
-  		    * Lacks a unique model & icon.                   
+  		  * Lacks a unique model & icon.  
+      * T3 Shielded Mass Extractor.
+  		  * Lacks a unique model & icon.                  
               
     T3 Mobile strat defence.
       * Looks pretty.
@@ -286,8 +286,7 @@ Tech 3:
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen. 
-      * T3 Shield wall.
-      * T3 Shielded Mass Extractor.             
+      * T3 Shield wall.             
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 		Fully Funtioning:
@@ -412,34 +411,36 @@ UEF Experimental Assault Bot/tank
     * Possibly a two part splitting bot. Cain and Abel or something cool.
 
 UEF Centurion: Experimental AA gunship
-  * Texture unfinished. Could be better UV mapped.     
+  * Texture unfinished. Could be more efficiently UV mapped.     
 
 UEF Ivan: Experimental Drop-Pod Artillery
   * Fires projectiles that look like drop pods and spawn mech marines on impact.
     * Bouncing script doesnt work on shields.
     * Range should probably decrease for large ammos.
     * Fucks up on aiming due to bone sharing.
-    * Unfinished replacement model on an old un-connected HDD, from the computer upgrade.                                      
+    * Unfinished replacement model is on an old un-connected HDD, from the computer upgrade.
+  * Might be able to get build things propperly, add them to storage, and attach them to the projectiles on fire.                                           
         
 UEF Gantry: Experimental Factory
-  * Can now be considered fully funtional.
+  * Fully funtional.
     * Still possibly to do:                 
       * Mess with \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
       * Add some kind of pedistal effect area for aircraft, especially on water.
         * Would need to wait for the current unit to be completed, especially if its a ship.               
       * Add death animation.
-      * The Atlantis gets stuck in it; looks like something to do with its oncreate scripts at first glance.
-        * It can be manually removed by making it submerge first. (IssueDive maybe?)
-      * Use scripts from the Fatboy to quickly get small things out of the build area.                      
+      * The Atlantis gets stuck in it. IssueDive is used to get it out, but it forgets/ignores its orders at some point.
+      * Maybe use scripts from the Fatboy to quickly get small things out of the build area.                      
                   
 Seraphim "Static 2 Transport" idea.
   * "A Static transport?"
     * Stargate-like thing.        
 
 Seraphim Experimental Mine.
-  * Bonus experimental for the field engy.
-    * Releases a residual energy signature.
-  * Possible self replicating mines.   
+  * To be an experimental for the field engy.
+  * Possibile functions:  
+    * Releasing a residual energy signature.
+    * Self replicating mines.
+    * Damage over time effect.       
     
 Aeon Experimental Assault Tank
   * Mostly finished texture that needs more details.
@@ -448,7 +449,7 @@ Aeon Experimental Assault Tank
 
 Aeon Experimental Shield projection tower.
   * Something between a shield gen and the eye of something or other in appearance.
-  * Creates individual shields around each unit within the radius, probably with a ghost unit attached.
+  * To create individual shields around each unit within the radius, probably with a ghost unit attached.
     * Shields should share an overall health, and need some way to scale with the unit it surrounds.
   * Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
 
@@ -468,8 +469,8 @@ Cybran Experimental Missile ship
 Cybran Iron Curtain: Experimental Shield Generator
   * Functions as a shield.
   * Want the shield to shrink on damage, maybe.  
-    * Need to adapt the force shield script for this. 
-  * Possibly give it a better mesh.
+    * Would need to adapt the force shield script for this. 
+  * Not 100% satisfied with the current mesh.
 
 Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
   * Uses most of the parts of the original.

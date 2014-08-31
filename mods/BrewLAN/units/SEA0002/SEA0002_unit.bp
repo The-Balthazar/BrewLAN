@@ -143,6 +143,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
+        CapCost = 0,
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {

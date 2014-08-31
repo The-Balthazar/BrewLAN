@@ -10,6 +10,20 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
 __________.__________
+2014-08-31|0.4.A
+                              
+* Changed the description of the cybran armored wall.
+* Modified the onlclick function of a buildmenu buttons to check if the unit clicked is buildable by the Gantry and one of the units selected is the Gantry.
+  * This allows units to both be Gantry built and Engineer built, without any wierdness with fake units that become the real thing.
+* Removed the fake Fatboy, Atlantis, and Centurion.
+* Made the real Centurion buildable by engineers.
+* Removed the part of the script that was making the Fatboy and Atlantis Gantry only. (Also effected experimentals from BlackOps and Total Meyhem)
+* Fixed the lod1 normal map link for the Gantry.
+* Set the population cap usage of the Novax Satelite to 0. Center itself still takes a slot.
+  * This prevents it from not spawning when at the population limit, and leaving useless centers.
+* Fixed a minor error in the Centurion script, relating to it attempting to set the speed of its rotors before they have been set up as.
+* Added additional compatability scripts for the Gantry building units with other mods enabled.         
+__________.__________
 2014-08-24|0.4.9
                               
 * Added the Aeon T3 Shielded Power Gen and Fabricator, neither has a unique model yet.

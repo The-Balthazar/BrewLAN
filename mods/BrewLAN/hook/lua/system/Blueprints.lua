@@ -227,27 +227,44 @@ function GantryExperimentalBuildOnly(all_bps)
     local UEFExperimentals = {
   #-- Vanilla
 	all_bps['uel0401'],              #-- Fatboy 
- 	all_bps['ues0401'],              #-- Atlantis (Disabled for getting stuck)
+ 	all_bps['ues0401'],              #-- Atlantis
   
-  #-- Total Mayhem units
+  #-- Total Mayhem T4's
 	all_bps['brnt3doomsday'],        #-- Doomsday
 	all_bps['brnt3argus'],           #-- Argus
 	all_bps['brnt3shbm2'],           #-- Mayhem Mk 4 
 	all_bps['brnt3shbm'],            #-- Mayhem Mk 2
 	all_bps['brnt3blasp'],           #-- Blood Asp 
-	all_bps['brnt3bat'],             #-- Rampart  
+	all_bps['brnt3bat'],             #-- Rampart
+  #-- Total Mayhem T3's     
+	all_bps['brnt3ow'],              #-- Owens
+	all_bps['brnt3advbtbot'],        #-- Hurricane
+	all_bps['brnat3bomber'],         #-- Havok
+  #-- Total Mayhem T2's
+	all_bps['brnt2bm'],              #-- Banshee
+	all_bps['brnt2exm2'],            #-- Tomahawk
+	all_bps['brnt2bat'],             #-- Rampart
+	all_bps['brnt2exm1'],            #-- Jackhammer mk.2 
+	all_bps['brnt2exlm'],            #-- Firestorm
+	all_bps['brnt2exmdf'],           #-- Horizon
+	all_bps['brnt2sniper'],          #-- Marksman
+  #-- Total Mayhem T1's             
+	all_bps['brnt1exm1'],            #-- Kruger mk2.             
+	all_bps['brnt1exmob'],           #-- UnderTaker             
+	all_bps['brnt1extk'],            #-- Thunderstrike              
+	all_bps['brnat1exgs'],           #-- Imperium
   
-  #-- BlOps units 
+  #-- BlackOps
 	all_bps['bes0402'],              #-- Conquest Class 
 	all_bps['bel0402'],              #-- Goliath MKII  
 #	all_bps['bea0402'],              #-- Citadel MKII (Disabled for being too big)
     }
 
     for arrayIndex, bp in UEFExperimentals do
-    	  table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
-    	  table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    	  table.removeByValue(bp.Categories, 'DRAGBUILD')
-    	  table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
+    	  --table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
+    	  --table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
+    	  --table.removeByValue(bp.Categories, 'DRAGBUILD')
+    	  --table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
         table.insert(bp.Categories, 'BUILTBYGANTRY')
     end	
 end
