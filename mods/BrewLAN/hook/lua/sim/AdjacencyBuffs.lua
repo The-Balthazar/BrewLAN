@@ -453,7 +453,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
     Affects = {
         RateOfFire = {
-            Add = -1,
+            Add = -.2,
             Mult = 1.0,
         },
     },
