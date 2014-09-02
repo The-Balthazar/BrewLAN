@@ -13,6 +13,8 @@ General to-do list/ideas list.
 * Naval mine layer units?
 * Seraphim experimental mine. (Possibly releasing a residual energy signature as its thing, or a semi-persistant d-o-t)
 * BARREL ROLL
+* Give cloaked/stealthed units omni detection in the form of a blinky beep effect on their model, so you know when stealth is broken.
+  * Might be easier to implement the other way round; the omni checks on detecting them. 
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -24,6 +26,7 @@ Errors list/the other to-do list.
 * The Absolution can't hover over walls and such.
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
 * Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
+  * Same also for all the field engineers.
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
@@ -256,7 +259,8 @@ Tech 3:
 		Fully Funtioning:
     	* T3 Air Transport
     	* T3 Armoured Assult Tank
-      * T3 Decoy Plane 
+      * T3 Decoy Plane.
+        * Would prefer with orders assigned to the blips.        
       * T3 Naval Shield.
         * Only obtainable by upgrading the T1 shield on water.  
         * Open animation doesn't work yet.
@@ -315,13 +319,15 @@ Tech 3:
       * Functional but unfinished.
         * Currently disabled.
       * Need to give a button to toggle between Soulripper/ASF impersination.
-        * Aeon decoy is finished and has this function.            
+        * Aeon decoy is finished and has this function.
+      * Might leave as a Aeon only unit.               
   
   	Pending:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
       * T3 Energy Fence.
-      * T3 Cloakable Mass Extractor?             
+      * T3 Cloakable Mass Extractor.
+        * Stealth field, and cloak field, or cloak itself and adjacent units.                    
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
@@ -337,12 +343,14 @@ Tech 3:
           * Radar and omni range is spherical not cylindrical (Except on FAF).
             * Current effective omni range is similar to its old visual range.
         * Want to add an upkeep cost to the Omni.            
-      * T3 Nuke Mine      
-  		* T3 Field engineer
+      * T3 Nuke Mine.
+        *             
+  		* T3 Field engineer.      
   		* T3 Engineering Power Generator.
-  		  * Only aims with one of its arms.  
   		* T3 Engineering Mass Fabricator.
-  		  * Lacks a unique model. Aims from nothing.                        
+  		  * Lacks a unique model. Aims from nothing.
+  		* T3 Engineering Mass Extractor.
+  		  * Lacks a unique model. Aims from nothing.                          
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
         * Needs a new model.              
@@ -351,7 +359,8 @@ Tech 3:
       * Functional but unfinished.
         * Currently disabled.       
       * Needs a button to toggle between Centurion and Wasp.
-        * Aeon has this script. 
+        * Aeon has this script.
+      * Might leave as a Aeon only unit.         
 
   	Pending:
   		* T3 Torp launchers.
@@ -370,14 +379,16 @@ Tech 3:
     	* T3 Sonar
     	  * Eventually want to give a different mesh.             
       * T3 Heavy Assault Bot:
-  		  * Uses a slightly modified T2 bot mesh       
+  		  * Uses a slightly modified T2 bot mesh.       
   		* T3 Field engineer  
       * T3 Anti-Armor Point Defence.   
       * T3 Mobile strat defence.
       * T3 Shield wall.     
       * T3 Armored Mass Fabricator.
       * T3 Armored Power Generator.
-      * T3 Armored Mass Extractor.      
+      * T3 Armored Mass Extractor.
+        * Doesn't have AOE restore yet.
+          * Maybe tie this to the adjacency script.                      
   
     Pending:
       * T3 Torp launchers.
@@ -385,6 +396,7 @@ Tech 3:
       * T3 observation building.
         * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
       * T3 Decoy Plane.
+        * Might leave as a Aeon only unit.   
       * T3 Nuke Mine.               
 _______________________________________________________
 Experimental Table
@@ -422,14 +434,15 @@ UEF Ivan: Experimental Drop-Pod Artillery
   * Might be able to get build things propperly, add them to storage, and attach them to the projectiles on fire.                                           
         
 UEF Gantry: Experimental Factory
-  * Fully funtional.
-    * Still possibly to do:                 
-      * Mess with \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
-      * Add some kind of pedistal effect area for aircraft, especially on water.
-        * Would need to wait for the current unit to be completed, especially if its a ship.               
-      * Add death animation.
+  * Almost completely 100% Fully funtional.
+    * Still to do:                 
+      * Hook \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
+      * Maybe add some kind of pedistal effect for building aircraft upon, especially on water.
+        * Would need to wait for the current unit to be completed, especially if its a ship.
+        * Would also need some visual justification for it while not there, or to maybe comprised of energy effects.                       
+      * Add a OnDamaged twitch animation. So it looks like its in pain.
       * The Atlantis gets stuck in it. IssueDive is used to get it out, but it forgets/ignores its orders at some point.
-      * Maybe use scripts from the Fatboy to quickly get small things out of the build area.                      
+      * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.                      
                   
 Seraphim "Static 2 Transport" idea.
   * "A Static transport?"

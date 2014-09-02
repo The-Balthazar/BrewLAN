@@ -8,7 +8,16 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated. 
+__________.__________
+2014-08-31|0.4.B
+                              
+* Lowered the rate of fire bonus given by the Paragon from -1 to -.2. P90 Mavor, while hilarious, is not on.
+  __________
+  2014-09-02
+  
+  * Added a death animation script to the Gantry. Complete with random exploding arms.
+  * Improved the LOD1 mesh of the Gantry, so the arms move at a distance, and the floatation legs also appear at a distance.     
 __________.__________
 2014-08-31|0.4.A
                               
