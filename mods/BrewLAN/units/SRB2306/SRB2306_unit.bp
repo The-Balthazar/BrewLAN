@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = '<LOC xeb2306_desc>Heavy Point Defense',
     Display = {
+        Abilities = {
+            '<LOC ability_deathaoe>Volatile',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

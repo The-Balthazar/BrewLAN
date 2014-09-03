@@ -17,7 +17,12 @@ __________.__________
   2014-09-02
   
   * Added a death animation script to the Gantry. Complete with random exploding arms.
-  * Improved the LOD1 mesh of the Gantry, so the arms move at a distance, and the floatation legs also appear at a distance.     
+  * Improved the LOD1 mesh of the Gantry, so the arms move at a distance, and the floatation legs also appear at a distance.
+  __________
+  2014-09-03
+  
+  * The Hades now has an overheat effect: A small explosion dealing 500 damage, usually only to itself, a small fire, and some smoke that lasts most of the 16 cooldown time.
+  * Hades now deals damage when it dies, equal to its power drain, or calculated power drain if its not firing, at a proportional radius of up to 3.       
 __________.__________
 2014-08-31|0.4.A
                               
@@ -48,7 +53,7 @@ __________.__________
     * Energy cost from 13500 to 29700.
     * Mass cost from 2250 to 3000.
     * Build time from 2250 to 2700.
-    * Energy per shot from 0:
+    * Energy per shot from 0 to:
       * Aeon: 2500.
       * UEF: 5000.
       * Cybran: 1500.
