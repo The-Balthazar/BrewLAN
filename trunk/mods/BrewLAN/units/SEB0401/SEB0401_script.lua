@@ -1,14 +1,11 @@
 #****************************************************************************
 #**
-#**  File     :  /cdimage/units/UEB0301/UEB0301_script.lua
-#**  Author(s):  David Tomandl
+#**  Summary  :  The Gantry script
 #**
-#**  Summary  :  Terran Unit Script
-#**
-#**  Copyright © 2006 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
+local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit 
+local explosion = import('/lua/defaultexplosions.lua')
 
 SEB0401 = Class(TLandFactoryUnit) {
 
@@ -115,16 +112,40 @@ SEB0401 = Class(TLandFactoryUnit) {
             rotator:SetGoal((a+a)*r)
             rotator:SetSpeed(f)
             if f > 1000 then
-                CreateEmitterAtBone(self, bone, self:GetArmy(), '/effects/emitters/terran_bomber_bomb_explosion_06_emit.bp')
-                CreateEmitterAtBone(self, bone, self:GetArmy(), '/effects/emitters/flash_05_emit.bp')
-                CreateEmitterAtBone(self, bone, self:GetArmy(), '/effects/emitters/destruction_explosion_fire_01_emit.bp') 
-                CreateEmitterAtBone(self, bone, self:GetArmy(), '/effects/emitters/destruction_explosion_fire_plume_01_emit.bp')          
-                self:HideBone(bone, true)
+                self.effects = {
+                    '/effects/emitters/terran_bomber_bomb_explosion_06_emit.bp',
+                    '/effects/emitters/flash_05_emit.bp',
+                    '/effects/emitters/destruction_explosion_fire_01_emit.bp',
+                    '/effects/emitters/destruction_explosion_fire_plume_01_emit.bp',
+                }
+                for k, v in self.effects do  
+                    CreateEmitterAtBone(self, bone, self:GetArmy(), v)
+                end    
+                self:Fling(bone, f) 
                 f = 0
             end
             WaitFor(rotator)
         end
     end,
+    
+    Fling = function(self, bone)
+        --[[
+        local spinner = CreateRotator()
+        self.detector = CreateCollisionDetector(self)
+        self.Trash:Add(self.detector)
+        self.detector:WatchBone(bone)
+        self.detector:EnableTerrainCheck(true)
+        self.detector:Enable()
+        --]]      
+        self:HideBone(bone, true)
+    end, 
+    --[[
+    OnAnimTerrainCollision = function(self, bone,x,y,z)
+        DamageArea(self, {x,y,z}, 1, 250, 'Default', true, false)
+        explosion.CreateDefaultHitExplosionAtBone( self, bone, 1.0 )
+        explosion.CreateDebrisProjectiles(self, explosion.GetAverageBoundingXYZRadius(self), {self:GetUnitSizes()})
+    end,
+    --]]
 }
 
 TypeClass = SEB0401

@@ -5,7 +5,8 @@
 #****************************************************************************
 
 local CStructureUnit = import('/lua/cybranunits.lua').CStructureUnit
-local CDFHeavyMicrowaveLaserGeneratorCom = import('/lua/cybranweapons.lua').CDFHeavyMicrowaveLaserGeneratorCom 
+local CDFHeavyMicrowaveLaserGeneratorCom = import('/lua/cybranweapons.lua').CDFHeavyMicrowaveLaserGeneratorCom
+local explosion = import('/lua/defaultexplosions.lua') 
 
 SRB2306 = Class(CStructureUnit) {   
     Weapons = {
@@ -18,7 +19,7 @@ SRB2306 = Class(CStructureUnit) {
                     self.EnergyDissRate = self:GetBlueprint().EnergyDissipationPerSecond or 30
                     self.EnergyCost = self.EnergyMin                 
                 end
-                self.TimeSinceLastFire = GetGameTimeSeconds() - (self.StopFireTime or GetGameTimeSeconds())
+                self.TimeSinceLastFire = GetGameTimeSeconds() - (self.unit.StopFireTime or GetGameTimeSeconds())
                 local aiBrain = self.unit:GetAIBrain()
                 local energyIncome = aiBrain:GetEconomyIncome( 'ENERGY' ) * 10 # per tick to per seconds
                 local energyStored = aiBrain:GetEconomyStored( 'ENERGY' )
@@ -26,8 +27,8 @@ SRB2306 = Class(CStructureUnit) {
                 local nrgDrain = self.EnergyCost
                 local nrgReqAlt = (math.max(self.EnergyMin, self.EnergyCost - math.floor((self.TimeSinceLastFire*self.EnergyDissRate)/10)*10)) * (self.AdjEnergyMod or 1)
                 local nrgDrainAlt = math.max(self.EnergyMin, self.EnergyCost - math.floor((self.TimeSinceLastFire*self.EnergyDissRate)/10)*10)
-                      
-                if self.PerformOnFireChecks then 
+                self.unit.deathdamage = nrgDrainAlt      
+                if self.unit.PerformOnFireChecks then 
                     if energyStored < nrgReqAlt and energyIncome < nrgDrainAlt then
                         return false
                     end      
@@ -37,7 +38,7 @@ SRB2306 = Class(CStructureUnit) {
                     end
                     if nrgDrain > self.EnergyMax then   
                         self.ForceCooldown = true
-                        -- Insert casual setting on fire effects here.
+                        self.unit:Overheat()
                         return false
                     end      
                 end
@@ -45,6 +46,7 @@ SRB2306 = Class(CStructureUnit) {
                     return false
                 else
                     self.ForceCooldown = false
+                    self.unit.isexploding = false
                 end
                 return true    
             end,  
@@ -62,9 +64,9 @@ SRB2306 = Class(CStructureUnit) {
                     
                     if self.PerformIdleChecks then
                         self.FirstShot = true
-                        self.StopFireTime = GetGameTimeSeconds()
+                        self.unit.StopFireTime = GetGameTimeSeconds()
                         self.PerformIdleChecks = false 
-                        self.PerformOnFireChecks = true
+                        self.unit.PerformOnFireChecks = true
                     end
                 end,    
             },
@@ -76,9 +78,9 @@ SRB2306 = Class(CStructureUnit) {
                 end
                 if self.FirstShot then return end  
                 if not self.EconDrain then               
-                    if self.PerformOnFireChecks then
+                    if self.unit.PerformOnFireChecks then
                         self.EnergyCost = math.max(self.EnergyMin, self.EnergyCost - math.floor((self.TimeSinceLastFire*self.EnergyDissRate)/10)*10)
-                        self.PerformOnFireChecks = false
+                        self.unit.PerformOnFireChecks = false
                     end  
                     local nrgReq = self.EnergyCost * (self.AdjEnergyMod or 1)
                     local nrgDrain = self.EnergyCost
@@ -110,6 +112,30 @@ SRB2306 = Class(CStructureUnit) {
             end,
         },
     },
+    Overheat = function(self)
+        if not self.isexploding then
+            self.isexploding = true
+            CreateEmitterAtBone(self, 'Turret_Muzzle01', self:GetArmy(),'/effects/emitters/destruction_explosion_fire_plume_02_emit.bp'):ScaleEmitter( 0.33 )
+            CreateEmitterAtBone(self, 'Turret_Muzzle01', self:GetArmy(),'/effects/emitters/destruction_damaged_smoke_01_emit.bp'):SetEmitterParam('LIFETIME', 150):ScaleEmitter( 0.6 )
+            CreateEmitterAtBone(self, 'Turret_Muzzle01', self:GetArmy(),'/effects/emitters/destruction_damaged_smoke_01_emit.bp'):SetEmitterParam('LIFETIME', 120)
+            
+            DamageArea(self, self:GetPosition(), 1, 500, 'Default', true, true)
+            explosion.CreateDefaultHitExplosionAtBone( self, 'Turret_Muzzle01', 1.0 )
+            explosion.CreateDebrisProjectiles(self, explosion.GetAverageBoundingXYZRadius(self), {self:GetUnitSizes()})
+        end
+    end,
+    
+    OnKilled = function(self, instigator, type, overkillRatio)
+        
+        if self.PerformOnFireChecks then
+            self.deathdamage = self.deathdamage - (GetGameTimeSeconds() - (self.StopFireTime or GetGameTimeSeconds()))*30
+        end
+        local radius = 3 * self.deathdamage/1000
+        DamageArea(self, self:GetPosition(), radius, self.deathdamage, 'Default', true, true)
+        explosion.CreateDefaultHitExplosionAtBone( self, 0, radius )
+        explosion.CreateDebrisProjectiles(self, explosion.GetAverageBoundingXYZRadius(self), {self:GetUnitSizes()})
+        CStructureUnit.OnKilled(self, instigator, type, overkillRatio)
+    end, 
 }
 
 TypeClass = SRB2306
