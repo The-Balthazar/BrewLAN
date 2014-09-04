@@ -100,16 +100,20 @@ SEB0401 = Class(TLandFactoryUnit) {
         local rotator = CreateRotator(self, bone, d) 
         self.Trash:Add(rotator)    
         rotator:SetGoal(a*r)
-        rotator:SetSpeed(math.random(a*5,a*15)) 
+        local b = a*5
+        local c = a*15
+        rotator:SetSpeed(math.random(b,c)) 
         WaitFor(rotator)
         local m = 1
-        while true do
-            local f = math.random(a*5*m,a*15*m)
-            m = m + (math.random(1,2)/10) 
-            rotator:SetGoal((a+a)*(r*-1))
+        local l = (a+a)*(r*-1)
+        local i = (a+a)*r
+        while true do          
+            m = m + (math.random(1,2)/10)
+            local f = math.random(b*m,c*m) 
+            rotator:SetGoal(l)
             rotator:SetSpeed(f)
-            WaitFor(rotator)    
-            rotator:SetGoal((a+a)*r)
+            WaitFor(rotator)   
+            rotator:SetGoal(i)
             rotator:SetSpeed(f)
             if f > 1000 then
                 self.effects = {
