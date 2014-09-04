@@ -22,7 +22,11 @@ __________.__________
   2014-09-03
   
   * The Hades now has an overheat effect: A small explosion dealing 500 damage, usually only to itself, a small fire, and some smoke that lasts most of the 16 cooldown time.
-  * Hades now deals damage when it dies, equal to its power drain, or calculated power drain if its not firing, at a proportional radius of up to 3.       
+  * Hades now deals damage when it dies, equal to its power drain, or calculated power drain if its not firing, at a proportional radius of up to 3.
+  __________
+  2014-09-04
+  
+  * Minor performance improvements for the Gantry whacky wailing inflatable arms flailing script.      
 __________.__________
 2014-08-31|0.4.A
                               
