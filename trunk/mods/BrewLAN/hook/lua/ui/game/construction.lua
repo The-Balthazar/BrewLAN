@@ -2,7 +2,7 @@ local OldOnClickHandler = import('/lua/ui/game/construction.lua').OnClickHandler
                                                           
 function OnClickHandler(button, modifiers)         
     local item = button.Data    
-    if EntityCategoryContains(categories.BUILTBYGANTRY, item.id) and EntityCategoryContains(categories.GANTRY, sortedOptions.selection[1]) then 
+    if EntityCategoryContains(categories.BUILTBYGANTRY, item.id) and EntityCategoryContains(categories.GANTRY, sortedOptions.selection[1]) or EntityCategoryContains(categories.HEAVYWALL, sortedOptions.selection[1]) then 
         PlaySound(Sound({Cue = "UI_MFD_Click", Bank = "Interface"}))
         ClearBuildTemplates()
         local blueprint = __blueprints[item.id]

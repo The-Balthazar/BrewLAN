@@ -48,6 +48,7 @@ function BrewLANFieldEngineerChanges(all_bps)
         xsb0301 = 'BUILTBYLANDTIER3FACTORY SERAPHIM MOBILE CONSTRUCTION',  
         ueb0101 = 'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',
         ueb0301 = 'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
+        uel0401 = 'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         xel0209 = 'BUILTBYTIER2FIELD UEF',
     }     
     
@@ -228,7 +229,6 @@ function GantryExperimentalBuildOnly(all_bps)
   #-- Vanilla
 	all_bps['uel0401'],              #-- Fatboy 
  	all_bps['ues0401'],              #-- Atlantis
-  
   #-- Total Mayhem T4's
 	all_bps['brnt3doomsday'],        #-- Doomsday
 	all_bps['brnt3argus'],           #-- Argus

@@ -30,12 +30,14 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'CYBRAN',
-        'STRUCTURE',
-        'DEFENSE',
+        'STRUCTURE',    
+        'CONSTRUCTION',
+        'FACTORY',
+        'DEFENSE',      
+        --'RALLYPOINT',
         'DRAGBUILD',
         'SIZE4',
         'TECH3',
-        'BENIGN',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
@@ -50,8 +52,9 @@ UnitBlueprint {
         MaxHealth = 40000,
         RegenRate = 0,
     },
-    Description = '<LOC srb5310_desc>Armored Wall Segment',
-    Display = {
+    Description = '<LOC srb5310_desc>Armored Wall Segment', 
+    Display = {            
+        BuildAttachBone = 'WallNode',
         DamageEffects = {
             {
                 Bone = 0,
@@ -65,7 +68,7 @@ UnitBlueprint {
                 OffsetY = 2.5,
                 OffsetZ = 0.25,
             },
-        },
+        },            
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -108,8 +111,14 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 500,
-        BuildCostMass = 50,
-        BuildTime = 50,       
+        BuildCostMass = 250,       
+        BuildRate = 1,
+        BuildTime = 50,          
+        BuildableCategory = {
+            'BUILTBYTIER3ENGINEER DEFENSE CYBRAN STRUCTURE SIZE4',
+            'BUILTBYTIER3ENGINEER INDIRECTFIRE CYBRAN STRUCTURE SIZE4',
+            'BUILTBYTIER3FIELD DEFENSE HEAVYWALL',
+        },
         RebuildBonusIds = {
             'sab5310',
             'seb5310',
@@ -121,10 +130,15 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 3,
     },
-    General = {                 
+    General = {     
+        BuildBones = {
+            BuildEffectBones = {
+                0,
+            },
+        },            
         CapCost = 0,
         Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
+        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
@@ -132,13 +146,15 @@ UnitBlueprint {
             RULEUCC_Guard = false,
             RULEUCC_Move = false,
             RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
+            RULEUCC_Patrol = false, 
+            RULEUCC_Pause = true,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
+            RULEUCC_Stop = true,
             RULEUCC_Transport = false,
-        },
+        },      
+        ConstructionBar = true,
         FactionName = 'Cybran',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',    

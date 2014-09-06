@@ -3,11 +3,13 @@
 #**  Cybran Wall: With cordinal scripting
 #** 
 #****************************************************************************
-local CStructureUnit = import('/lua/cybranunits.lua').CStructureUnit 
+local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
 
-SRB5310 = Class(CStructureUnit) {            
-    OnCreate = function(self,builder,layer)   
-        CStructureUnit.OnCreate(self,builder,layer) 
+SRB5310 = Class(CLandFactoryUnit) {        
+    BuildAttachBone = 'WallNode',    
+    OnCreate = function(self,builder,layer)             
+        self:AddBuildRestriction(categories.ANTINAVY)
+        CLandFactoryUnit.OnCreate(self,builder,layer) 
         self.Info = {
             ents = {
                 northUnit = {
@@ -188,7 +190,42 @@ SRB5310 = Class(CStructureUnit) {
                 self.Info.ents.southUnit.ent = adjacentUnit
             end
         end      
-        self:BoneCalculation()  
+        self:BoneCalculation() 
+        --CLandFactoryUnit.OnAdjacentTo(self,builder,layer)  
+    end,
+    
+    CreateBlinkingLights = function(self, color)
+    end, 
+      
+    FinishBuildThread = function(self, unitBeingBuilt, order )
+        self:SetBusy(true)
+        self:SetBlockCommandQueue(true)
+        local bp = self:GetBlueprint()
+        local bpAnim = bp.Display.AnimationFinishBuildLand
+        self:DestroyBuildRotator()
+        if order != 'Upgrade' then
+            ChangeState(self, self.RollingOffState)
+        else
+            self:SetBusy(false)
+            self:SetBlockCommandQueue(false)
+        end
+        self.AttachedUnit = unitBeingBuilt
+    end,
+         
+    StartBuildFx = function(self, unitBeingBuilt)
+    end,  
+    
+    OnDamage = function(self, instigator, amount, vector, damageType)    
+        CLandFactoryUnit.OnDamage(self, instigator, amount, vector, damageType)
+        if self.AttachedUnit and not self.AttachedUnit:IsDead() then
+            local amountR = amount * .5
+            self.AttachedUnit:OnDamage(instigator, amountR, vector, damageType)
+            if self.AttachedUnit:IsDead() then
+                self:DetachAll(self:GetBlueprint().Display.BuildAttachBone or 0)
+                self:DestroyBuildRotator()
+            end
+            --self:DoTakeDamage(instigator, amount, vector, damageType)
+        end
     end,
 }
 
