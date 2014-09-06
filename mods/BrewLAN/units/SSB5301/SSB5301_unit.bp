@@ -1,4 +1,9 @@
-UnitBlueprint {
+UnitBlueprint {          
+    AI = {
+        TargetBones = {
+            'Target',
+        },
+    },
     Audio = {
         Destroyed = Sound {
             Bank = 'XSL_Destroy',
@@ -56,7 +61,7 @@ UnitBlueprint {
             ShieldRegenRate = 139,
             ShieldRegenStartTime = 1,
             ShieldSize = 2.5,
-            ShieldVerticalOffset = 1.25,
+            ShieldVerticalOffset = 1.25-.6,
         },
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -201,7 +206,7 @@ UnitBlueprint {
         MaxGroundVariation = 50,
         MaxSteerForce = 0,
         MeshExtentsX = 1.5*1.2,
-        MeshExtentsY = 1*1.2,
+        MeshExtentsY = 1*1.6,
         MeshExtentsZ = 1.5*1.2,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
@@ -215,7 +220,7 @@ UnitBlueprint {
     SelectionSizeZ = 0.6*1.2,
     SelectionThickness = 0.66,
     SizeX = 1*1.2,
-    SizeY = 0.4*1.2,
+    SizeY = 0.4*4,
     SizeZ = 1*1.2,
     StrategicIconName = 'icon_structure_wall',
     StrategicIconSortPriority = 210,

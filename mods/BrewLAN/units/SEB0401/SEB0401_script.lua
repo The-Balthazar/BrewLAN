@@ -7,7 +7,7 @@
 local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit 
 local explosion = import('/lua/defaultexplosions.lua')
 
-SEB0401 = Class(TLandFactoryUnit) {
+SEB0401 = Class(TLandFactoryUnit) { 
 
     OnLayerChange = function(self, new, old)
         TLandFactoryUnit.OnLayerChange(self, new, old)
@@ -89,8 +89,8 @@ SEB0401 = Class(TLandFactoryUnit) {
             local c = 'ArmC_00' .. i
             local d = 'Nozzle_00' .. i
             self:ForkThread(self.Flailing, a, math.random(10,20), 'z', r)
-            self:ForkThread(self.Flailing, b, math.random(35,45), 'x', r)
-            self:ForkThread(self.Flailing, c, math.random(35,45), 'x', r)
+            self:ForkThread(self.Flailing, b, math.random(25,45), 'x', r)
+            self:ForkThread(self.Flailing, c, math.random(30,45), 'x', r)
             self:ForkThread(self.Flailing, d, math.random(35,45), 'x', r)
         end
         TLandFactoryUnit.DeathThread(self, overkillRatio, instigator)
@@ -107,9 +107,9 @@ SEB0401 = Class(TLandFactoryUnit) {
         local m = 1
         local l = (a+a)*(r*-1)
         local i = (a+a)*r
-        while true do          
+        while true do 
+            local f = math.random(b*m,c*m)          
             m = m + (math.random(1,2)/10)
-            local f = math.random(b*m,c*m) 
             rotator:SetGoal(l)
             rotator:SetSpeed(f)
             WaitFor(rotator)   

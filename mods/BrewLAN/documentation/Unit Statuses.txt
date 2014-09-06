@@ -34,7 +34,8 @@ Errors list/the other to-do list.
 * One race should get a T3 torpedo launcher that can be built on land.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
-* Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)        
+* Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
+* Nuke mines should have the option to auto explode, but be set to manual from the off.        
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -105,7 +106,6 @@ Modded Units:
   
   	Scathis
       * Replaced with immobile version for both balance and aesthetic purposes.
-        * Original still in game but removed from build menus.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
     T2 Field Engineer
@@ -131,6 +131,7 @@ Modded Units:
     
     Fatboy
       * Made Gantry buildable.
+      * Added build category so it can build the Custodian.      
        
     Atlantis
       * Made Gantry buildable.
@@ -517,3 +518,4 @@ Anti-naval gunship.
 Rail gun: http://forums.gaspowered.com/viewtopic.php?t=27664#p473416    
 Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
     * Script might also be usefull for the decoy planes.
+AttachBeamEntityToEntity could be a useful somewhere    
