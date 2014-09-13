@@ -62,7 +62,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.EnergyProductionBuffRemove,
     Affects = {
         EnergyProduction = {
-            Add = 0.041667*8,
+            Add = 0.041667*12,
             Mult = 1.0,
         },
     },
@@ -98,7 +98,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.EnergyProductionBuffRemove,
     Affects = {
         EnergyProduction = {
-            Add = 0.025*8,
+            Add = 0.025*10,
             Mult = 1.0,
         },
     },
@@ -168,7 +168,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.MassProductionBuffRemove,
     Affects = {
         MassProduction = {
-            Add = 0.041667*2,
+            Add = 0.041667*3,
             Mult = 1.0,
         },
     },
@@ -204,7 +204,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.MassProductionBuffRemove,
     Affects = {
         MassProduction = {
-            Add = 0.025*2,
+            Add = 0.025*2.5,
             Mult = 1.0,
         },
     },

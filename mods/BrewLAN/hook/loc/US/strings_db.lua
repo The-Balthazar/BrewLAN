@@ -23,7 +23,9 @@ tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Cen
 #--Toolttips for the landmines.
 tooltipbrewlan0007="Detonate"
 tooltipbrewlan0008="Immediately detonate the payload."
-
+                                                            
+tooltipbrewlan0009="Clear build area"
+tooltipbrewlan0010="Removes any structures or remains from the build area."
 ## T1
 
 
@@ -172,7 +174,7 @@ Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Air
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
-Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires increasing amounts of energy to fire for prolonged periods of time; will overheat if active for too long."
+Unit_Description_BrewLAN_T3B001="Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
 Unit_Description_BrewLAN_T3B003="Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land-based units, sea-based units, and low-altitude aircraft with a powerful laser. Does not engage high altitude aircraft, or submerged units."
 

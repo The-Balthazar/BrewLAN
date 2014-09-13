@@ -103,7 +103,7 @@ Description['ssl0319'] = "<LOC Unit_Description_BrewLAN_T3L006>Tech 3 amphibious
 Description['sal0319'] = "<LOC Unit_Description_BrewLAN_T3L007>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
 
 #Tech 3 buildings
-Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires increasing amounts of energy to fire for prolonged periods of time; will overheat if active for too long."
+Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
 Description['seb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
 Description['ssb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
 Description['sab2306'] = "<LOC Unit_Description_BrewLAN_T3B004>Heavy defensive tower. Attacks land-based units, sea-based units, and low-altitude aircraft with a powerful laser. Does not engage high altitude aircraft, or submerged units."
@@ -122,6 +122,7 @@ Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B0016>Large power gene
 Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0017>Large mass fabrication structure. Possesses superior armor and has self regenerative capabilities."
 Description['ssb5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
 Description['srb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
+Description['srb5312'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 Description['srb5311'] = "<LOC Unit_Description_BrewLAN_T3B0020>Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
 Description['sab1312'] = "<LOC Unit_Description_BrewLAN_T3B0021>High-end Mass extractor. Must be constructed on Mass deposits. It generates a shield dome large enough to cover itself and 4 small storages."
 Description['seb1312'] = "<LOC Unit_Description_BrewLAN_T3B0022>High-end Mass extractor. Must be constructed on Mass deposits. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."

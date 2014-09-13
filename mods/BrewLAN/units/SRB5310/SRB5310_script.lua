@@ -3,13 +3,13 @@
 #**  Cybran Wall: With cordinal scripting
 #** 
 #****************************************************************************
-local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
+local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit    
 
 SRB5310 = Class(CLandFactoryUnit) {        
     BuildAttachBone = 'WallNode',    
-    OnCreate = function(self,builder,layer)             
+    OnCreate = function(self,builder,layer)      
         self:AddBuildRestriction(categories.ANTINAVY)
-        CLandFactoryUnit.OnCreate(self,builder,layer) 
+        CLandFactoryUnit.OnCreate(self,builder,layer)    
         self.Info = {
             ents = {
                 northUnit = {
@@ -29,81 +29,16 @@ SRB5310 = Class(CLandFactoryUnit) {
                     val = false,
                 },
             },
-            bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',  
-                    bonetype = 'South',
-                    conflict = nil,
-                }, 
-                East = {
-                    visibility = 'hide',  
-                    bonetype = 'East',
-                    conflict = nil,
-                }, 
-                West = {
-                    visibility = 'hide',  
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                North_Buttress =  {
-                    visibility = 'hide',   
-                    bonetype = 'North',
-                    conflict = 'Tower',
-                },
-                South_Buttress = {
-                    visibility = 'hide',  
-                    bonetype = 'South',
-                    conflict = 'Tower',
-                },
-                East_Buttress = {
-                    visibility = 'hide',  
-                    bonetype = 'East',
-                    conflict = 'Tower',
-                },  
-                West_Buttress = {
-                    visibility = 'hide', 
-                    bonetype = 'West',
-                    conflict = 'Tower',
-                },
-                Tower = {
-                    visibility = 'show',  
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },    
-                TowerButtressN = {
-                    visibility = 'show', 
-                    bonetype = 'Tower',
-                    conflict = 'North',
-                },  
-                TowerButtressS = {
-                    visibility = 'show', 
-                    bonetype = 'Tower',
-                    conflict = 'South',
-                },  
-                TowerButtressE = {
-                    visibility = 'show', 
-                    bonetype = 'Tower',
-                    conflict = 'East',
-                },
-                TowerButtressW = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'West',
-                },
-            },
+            bones = self:GetBlueprint().Display.AdjacencyConnectionInfo.Bones
         }
         self:BoneUpdate(self.Info.bones)  
         self:CreateTarmac(true, true, true, false, false)
     end, 
           
-    BoneCalculation = function(self)
-        for k, v in self.Info.ents do
-            v.val = EntityCategoryContains(categories.srb5310, v.ent)
+    BoneCalculation = function(self)   
+        local cat = self:GetBlueprint().Display.AdjacencyConnection
+        for k, v in self.Info.ents do              
+            v.val = EntityCategoryContains(categories[cat], v.ent)
         end      
         local TowerCalc = 0
         if self.Info.ents.northUnit.val then
@@ -176,7 +111,8 @@ SRB5310 = Class(CLandFactoryUnit) {
     OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
         local MyX, MyY, MyZ = unpack(self:GetPosition())
         local AX, AY, AZ = unpack(adjacentUnit:GetPosition())
-        if EntityCategoryContains(categories.srb5310, adjacentUnit) then
+        local cat = self:GetBlueprint().Display.AdjacencyConnection
+        if EntityCategoryContains(categories[cat], adjacentUnit) then
             if MyX > AX then
                 self.Info.ents.westUnit.ent = adjacentUnit
             end
@@ -202,7 +138,7 @@ SRB5310 = Class(CLandFactoryUnit) {
         self:SetBlockCommandQueue(true)
         local bp = self:GetBlueprint()
         local bpAnim = bp.Display.AnimationFinishBuildLand
-        self:DestroyBuildRotator()
+        --self:DestroyBuildRotator()
         if order != 'Upgrade' then
             ChangeState(self, self.RollingOffState)
         else
@@ -220,11 +156,30 @@ SRB5310 = Class(CLandFactoryUnit) {
         if self.AttachedUnit and not self.AttachedUnit:IsDead() then
             local amountR = amount * .5
             self.AttachedUnit:OnDamage(instigator, amountR, vector, damageType)
-            if self.AttachedUnit:IsDead() then
-                self:DetachAll(self:GetBlueprint().Display.BuildAttachBone or 0)
-                self:DestroyBuildRotator()
-            end
+            --if self.AttachedUnit:IsDead() then
+            --    self:DetachAll(self:GetBlueprint().Display.BuildAttachBone or 0)
+            --    self:DestroyBuildRotator()
+            --end
             --self:DoTakeDamage(instigator, amount, vector, damageType)
+        end
+    end,     
+    
+    OnScriptBitSet = function(self, bit)
+        CLandFactoryUnit.OnScriptBitSet(self, bit)
+        if bit == 1 then
+            if self.AttachedUnit then
+                self.AttachedUnit:Destroy() 
+                self:SetScriptBit(bit,false)
+            end
+        end
+    end,        
+    OnScriptBitClear = function(self, bit)
+        CLandFactoryUnit.OnScriptBitClear(self, bit)
+        if bit == 1 then
+            if self.AttachedUnit then
+                self.AttachedUnit:Destroy() 
+                self:SetScriptBit(bit,false)
+            end
         end
     end,
 }
