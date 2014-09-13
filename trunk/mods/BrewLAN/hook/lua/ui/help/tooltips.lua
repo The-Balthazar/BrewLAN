@@ -27,4 +27,9 @@ Tooltips['detonate'] = {
       title = "<LOC tooltipbrewlan0007>Detonate",
       description = "<LOC tooltipbrewlan0008>Immediately detonate the payload.",
       keyID = "detonate",
+   }       
+Tooltips['removestorage'] = {
+      title = "<LOC tooltipbrewlan0009>Clear build area",
+      description = "<LOC tooltipbrewlan0010>Removes any structures or remains from the build area.",
+      keyID = "detonate",
    }

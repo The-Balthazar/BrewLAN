@@ -5,7 +5,7 @@
 #****************************************************************************
 local CLandFactoryUnit = import('/mods/BrewLAN/units/srb5310/srb5310_script.lua').SRB5310
 
-SRB5201 = Class(CLandFactoryUnit) {
+SRB5312 = Class(CLandFactoryUnit) {
 }
 
-TypeClass = SRB5201
+TypeClass = SRB5312

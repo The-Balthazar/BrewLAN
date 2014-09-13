@@ -10,6 +10,29 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated. 
 __________.__________
+2014-09-08|0.4.C
+                              
+* Updated factions.lua
+* Created BrewUI.
+  * A seperate UI mod for handling all the Field Engineers, seperate because its not coded well for compatibility. (Yet)
+  __________
+  2014-09-10
+  
+  * Made the Gantry not trigger the idle factories list.
+  __________
+  2014-09-11
+  
+  * Made the cybran armored wall not trigger the idle factories list.
+  __________
+  2014-09-12
+  
+  * Added a destroy turret button to the heavy walls. Just in case.
+  * Changed the build list for the Cybran T3 wall to have a different wall.
+    * This different wall has a smaller base and cant build.
+  * Fixed the distance mesh for the Iron Curtain, that has been misslinked since the B-S unit code change.
+  * Changed the T2 adjacency buffs from T2 storage with size 12 and size 20 buildings, to account for the gaps they will always leave. Although there are no size 20 buildings that care anyway.
+  * Changed the Cybran T2 wall to be larger, and use the cardinal directions code. Currently uses the stripped down T3 mesh.            
+__________.__________
 2014-08-31|0.4.B
                               
 * Lowered the rate of fire bonus given by the Paragon from -1 to -.2. P90 Mavor, while hilarious, is not on.
@@ -39,7 +62,7 @@ __________.__________
   __________
   2014-09-06
   
-  * Removed torpedo launchers from the heavy wall build lists.                
+  * Removed torpedo launchers from the heavy wall build lists.                  
 __________.__________
 2014-08-31|0.4.A
                               

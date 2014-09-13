@@ -63,6 +63,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
+        'GATE',
     },
     Defense = {
         AirThreatLevel = 0,
