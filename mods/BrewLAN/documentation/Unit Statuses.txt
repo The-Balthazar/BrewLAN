@@ -354,7 +354,9 @@ Tech 3:
   		  * Lacks a unique model. Aims from nothing.                          
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
-        * Needs a new model.              
+        * Needs a new model.  
+  		* T3 Torpedo launcher.
+  		  * Has an issue with its floatation on maps where the sea level isn't 17.5.                   
 
     T3 Decoy Plane.
       * Functional but unfinished.
@@ -364,7 +366,6 @@ Tech 3:
       * Might leave as a Aeon only unit.         
 
   	Pending:
-  		* T3 Torp launchers.
   		* T3 Mobile Shield Gen.
   		* T3 Storm defence wall.           
 
