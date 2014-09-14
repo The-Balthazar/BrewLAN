@@ -270,6 +270,9 @@ srb5311_desc="Armored Gate"
 srb5311_name="Procyon Offering"
 Unit_Description_BrewLAN_T3B0020="Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
 
+seb2308_name="Harpoon"
+Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."
+
 
 ## T4
 
