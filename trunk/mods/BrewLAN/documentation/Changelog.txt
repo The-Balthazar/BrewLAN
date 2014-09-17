@@ -12,7 +12,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
 2014-09-14|0.4.D
 
-* Added Harpoon: UEF T3 torpedo launcher.                            
+* Added Harpoon: UEF T3 torpedo launcher.
+  __________
+  2014-09-15
+  
+  * Created a new model for the Cybran T2 wall.
+  __________
+  2014-09-17
+  
+  * Created a texture for the Cybran T2 wall's new texture.                           
 __________.__________
 2014-09-08|0.4.C
                               

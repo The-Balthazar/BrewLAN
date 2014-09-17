@@ -54,6 +54,7 @@ UnitBlueprint {
     Description = '<LOC sbui5201_desc>Heavy Wall Segment', 
     Display = {      
         AdjacencyConnection = 'MEDIUMWALL',
+        AdjacencyBeamConnections = true,
         AdjacencyConnectionInfo = {  
             Bones = {
                 North = {
@@ -76,11 +77,43 @@ UnitBlueprint {
                     bonetype = 'West',
                     conflict = nil,
                 },
-                Tower = {
+                N1 = {
+                    visibility = 'show',  
+                    bonetype = 'Beam',
+                    conflict = nil,
+                    beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
+                },
+                N2 = {
+                    visibility = 'show',  
+                    bonetype = 'Beam',
+                    conflict = nil,
+                    beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
+                },
+                --[[Tower = {
                     visibility = 'show',  
                     bonetype = 'Tower',
                     conflict = nil,
-                },    
+                },
+                North_TB = {
+                    visibility = 'show',
+                    bonetype = 'Tower',
+                    conflict = 'North',
+                },
+                South_TB = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'South',
+                }, 
+                East_TB = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'East',
+                }, 
+                West_TB = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'West',
+                },--]]    
             },
         },                       
         DamageEffects = {
@@ -103,10 +136,10 @@ UnitBlueprint {
                 {
                     LODCutoff = 120,
                     ShaderName = 'Unit',
-                    MeshName = '/mods/BrewLAN/units/srb5312/srb5312_lod0.scm',
-                    AlbedoName = '/units/XRC8001/XRC8001_albedo.dds',
-                    NormalsName = '/units/XRC8001/XRC8001_normalsts.dds',
-                    SpecularName = '/units/XRC8001/XRC8001_specteam.dds',
+                    --MeshName = '/mods/BrewLAN/units/srb5312/srb5312_lod0.scm',
+                    --AlbedoName = '/units/XRC8001/XRC8001_albedo.dds',
+                    --NormalsName = '/units/XRC8001/XRC8001_normalsts.dds',
+                    --SpecularName = '/units/XRC8001/XRC8001_specteam.dds',
                 },
                 {
                     LODCutoff = 300,
