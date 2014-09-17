@@ -78,7 +78,47 @@ UnitBlueprint {
                     visibility = 'show',  
                     bonetype = 'Tower',
                     conflict = nil,
+                },  
+                North_Buttress =  {
+                    visibility = 'hide',   
+                    bonetype = 'North',
+                    conflict = 'Tower',
+                },
+                South_Buttress = {
+                    visibility = 'hide',  
+                    bonetype = 'South',
+                    conflict = 'Tower',
+                },
+                East_Buttress = {
+                    visibility = 'hide',  
+                    bonetype = 'East',
+                    conflict = 'Tower',
+                },  
+                West_Buttress = {
+                    visibility = 'hide', 
+                    bonetype = 'West',
+                    conflict = 'Tower',
                 },    
+                TowerButtressN = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'North',
+                },  
+                TowerButtressS = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'South',
+                },  
+                TowerButtressE = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'East',
+                },
+                TowerButtressW = {
+                    visibility = 'show',
+                    bonetype = 'Tower',
+                    conflict = 'West',
+                },  
             },
         },                    
         BuildAttachBone = 'WallNode',
