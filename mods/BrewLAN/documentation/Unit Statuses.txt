@@ -355,8 +355,8 @@ Tech 3:
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
         * Needs a new model.  
-  		* T3 Torpedo launcher.
-  		  * Has an issue with its floatation on maps where the sea level isn't 17.5.                   
+      * T3 Torpedo launcher.
+        * Has an issue with its floatation on maps where the sea level isn't 17.5.                   
 
     T3 Decoy Plane.
       * Functional but unfinished.

@@ -83,6 +83,19 @@ SRB5310 = Class(CLandFactoryUnit) {
                 self:SetAllBones('conflict', 'West', 'hide')   
             end
         end
+        if self:GetBlueprint().Display.AdjacencyBeamConnections then
+            for k1, v1 in self.Info.ents do
+                if v1.val then
+                    --if not v1.ent:isDead() then 
+                        for k, v in self.Info.bones do
+                            if v.bonetype == 'Beam' then
+                                AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype)
+                            end
+                        end
+                    --end
+                end
+            end
+        end
         self:BoneUpdate(self.Info.bones)  
     end,
     
