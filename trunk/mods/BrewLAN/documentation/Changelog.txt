@@ -20,7 +20,9 @@ __________.__________
   __________
   2014-09-17
   
-  * Created a texture for the Cybran T2 wall's new texture.                           
+  * Created a texture for the Cybran T2 wall's new texture.
+  * Added a laser fence effect to the Cynran T2 wall.
+  * Added decals to the second layer version of the Cybran T3 wall.                               
 __________.__________
 2014-09-08|0.4.C
                               
