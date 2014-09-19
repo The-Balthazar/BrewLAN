@@ -25,11 +25,16 @@ Tooltips['uefairdecoy'] = {
    }
 Tooltips['detonate'] = {
       title = "<LOC tooltipbrewlan0007>Detonate",
-      description = "<LOC tooltipbrewlan0008>Immediately detonate the payload.",
+      description = "<LOC tooltipbrewlan0008>Immediately detonate the payload",
       keyID = "detonate",
    }       
 Tooltips['removestorage'] = {
       title = "<LOC tooltipbrewlan0009>Clear build area",
-      description = "<LOC tooltipbrewlan0010>Removes any structures or remains from the build area.",
-      keyID = "detonate",
+      description = "<LOC tooltipbrewlan0010>Removes any structures or remains from the build area",
+      keyID = "removestorage",
+   }       
+Tooltips['scry_spy_target'] = {
+      title = "<LOC tooltipbrewlan0011>Scry",
+      description = "<LOC tooltipbrewlan0012>Choose a unit to spy on",
+      keyID = "scry_spy_target",
    }

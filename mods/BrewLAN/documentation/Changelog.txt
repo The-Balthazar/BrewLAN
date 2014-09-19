@@ -22,7 +22,21 @@ __________.__________
   
   * Created a texture for the Cybran T2 wall's new texture.
   * Added a laser fence effect to the Cynran T2 wall.
-  * Added decals to the second layer version of the Cybran T3 wall.                               
+  * Added decals to the second layer version of the Cybran T3 wall.
+  __________
+  2014-09-18
+  
+  * Added a seraphim quantum optics variant.
+    * Currently not very varient-y. That is a word now.  
+  * Fixed the size category for the Aeon Quantum Optics. It was set to size 4, so you could make it free with T1 power plants, but if you did it broke it..
+  __________
+  2014-09-19
+  
+  * Changes to the Seraphim quantum optics variant:
+    * Reclassified as a 'Optics Tracking Facility'.
+    * Renamed and given unique text strings.
+    * Changed functionality to target radar blips/units and spy on them.
+    * Can no longer target open space.                                                     
 __________.__________
 2014-09-08|0.4.C
                               

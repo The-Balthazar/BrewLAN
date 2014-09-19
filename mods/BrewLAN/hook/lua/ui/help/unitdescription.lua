@@ -129,6 +129,7 @@ Description['seb1312'] = "<LOC Unit_Description_BrewLAN_T3B0022>High-end Mass ex
 Description['srb1312'] = "<LOC Unit_Description_BrewLAN_T3B0023>High-end Mass extractor. Must be constructed on Mass deposits. It generates a cloak field and stealth field large enough to disguise itself and 4 small storages."
 Description['ssb1312'] = "<LOC Unit_Description_BrewLAN_T3B0024>High-end Mass extractor. Must be constructed on Mass deposits. It possesses superiour armor and generates a regeneration field large enough to effect itself and 4 small storages."
 Description['seb2308'] = "<LOC Unit_Description_BrewLAN_T3B0025>Heavy torpedo launching tower. Can be built on land and on the seabed."
+Description['ssb3301'] = "<LOC Unit_Description_BrewLAN_T3B0026>Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips."
 
 #Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
