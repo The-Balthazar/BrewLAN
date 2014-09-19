@@ -23,14 +23,20 @@ tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Cen
 #--Toolttips for the landmines.
 tooltipbrewlan0007="Detonate"
 tooltipbrewlan0008="Immediately detonate the payload."
-                                                            
+
+#--Tooltips for the builderwalls                                                            
 tooltipbrewlan0009="Clear build area"
 tooltipbrewlan0010="Removes any structures or remains from the build area."         
 
+#--Tooltops for the Seraphim spy facility
 tooltipbrewlan0011="Scry"
 tooltipbrewlan0012="Choose a unit to spy on"
       
-      
+#--Tooltips for the open/closeable kind of gate.      
+tooltipbrewlan0013="Open/Close"
+tooltipbrewlan0014="Toggle gate open or closed"
+
+
 ## T1
 
 
@@ -271,7 +277,7 @@ srb5310_desc="Armored Wall Section"
 srb5310_name="Procyon Defiance"
 Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 
-srb5311_desc="Armored Gate"        
+srb5311_desc="Armored Gate Section"        
 srb5311_name="Procyon Offering"
 Unit_Description_BrewLAN_T3B0020="Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
 

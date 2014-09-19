@@ -37,4 +37,9 @@ Tooltips['scry_spy_target'] = {
       title = "<LOC tooltipbrewlan0011>Scry",
       description = "<LOC tooltipbrewlan0012>Choose a unit to spy on",
       keyID = "scry_spy_target",
+   }       
+Tooltips['toggle_gate'] = {
+      title = "<LOC tooltipbrewlan0013>Open/Close",
+      description = "<LOC tooltipbrewlan0014>Toggle gate open or closed.",
+      keyID = "toggle_gate",
    }

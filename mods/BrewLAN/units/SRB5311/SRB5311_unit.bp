@@ -26,7 +26,8 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 150,
     Categories = {
-        'PRODUCTBREWLAN',
+        'PRODUCTBREWLAN',    
+        'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'CYBRAN',
         'STRUCTURE',
@@ -38,8 +39,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'HEAVYWALL',
-        'GATE',
+        'HEAVYWALLGATE',
+        'HEAVYGATEOPEN'
     },
     CollisionOffsetX = 0,
     CollisionOffsetY = 0,
@@ -51,7 +52,52 @@ UnitBlueprint {
         RegenRate = 0,
     },
     Description = '<LOC srb5311_desc>Armored Gate Segment',
-    Display = {
+    Display = {      
+        AdjacencyConnection = 'HEAVYWALLGATE',    
+        AdjacencyConnectionInfo = {  
+            Bones = {
+                North = {
+                    visibility = 'hide',
+                    bonetype = 'North',
+                    conflict = nil,
+                },
+                South = {
+                    visibility = 'hide',  
+                    bonetype = 'South',
+                    conflict = nil,
+                }, 
+                East = {
+                    visibility = 'hide',  
+                    bonetype = 'East',
+                    conflict = nil,
+                }, 
+                West = {
+                    visibility = 'hide',  
+                    bonetype = 'West',
+                    conflict = nil,
+                },  
+                North_TB = {
+                    visibility = 'show',
+                    bonetype = 'Tower',
+                    conflict = 'North',
+                },
+                South_TB = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'South',
+                }, 
+                East_TB = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'East',
+                }, 
+                West_TB = {
+                    visibility = 'show', 
+                    bonetype = 'Tower',
+                    conflict = 'West',
+                },
+            },
+        }, 
         DamageEffects = {
             {
                 Bone = 0,
@@ -71,10 +117,11 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 120,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/XRC8001/XRC8001_albedo.dds',
-                    NormalsName = '/units/XRC8001/XRC8001_normalsts.dds',
-                    SpecularName = '/units/XRC8001/XRC8001_specteam.dds',
+                    ShaderName = 'Unit',                                            
+                    MeshName = '/mods/brewlan/units/srb5201/srb5201_lod0.scm',
+                    AlbedoName = '/mods/brewlan/units/srb5201/srb5201_albedo.dds',
+                    NormalsName = '/mods/brewlan/units/srb5201/srb5201_normalsts.dds',
+                    SpecularName = '/mods/brewlan/units/srb5201/srb5201_specteam.dds',
                 },
                 {
                     LODCutoff = 300,
@@ -118,8 +165,8 @@ UnitBlueprint {
         },
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {                 
         CapCost = 0,
@@ -141,8 +188,17 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',    
-        UnitName = '<LOC srb5311_name>Procyon Offering',
+        TechLevel = 'RULEUTL_Secret', 
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = {
+                bitmapId = 'dive',
+                helpText = 'toggle_gate',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_WeaponToggle = true,
+        },   
+        --UnitName = '<LOC srb5311_name>Procyon Offering',
         UnitWeight = 1,
     },
     Intel = {
@@ -172,14 +228,14 @@ UnitBlueprint {
         MeshExtentsZ = 3.2,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
+        SkirtOffsetX = -1,
+        SkirtOffsetZ = -1,
+        SkirtSizeX = 3,
+        SkirtSizeZ = 3,
         TurnRate = 0,
     },
-    SelectionSizeX = 1.7,
-    SelectionSizeZ = 2.15,
+    SelectionSizeX = 1.8,
+    SelectionSizeZ = 1.8,
     SelectionThickness = 0.31,
     SizeX = 3,
     SizeY = 3,

@@ -36,7 +36,9 @@ __________.__________
     * Reclassified as a 'Optics Tracking Facility'.
     * Renamed and given unique text strings.
     * Changed functionality to target radar blips/units and spy on them.
-    * Can no longer target open space.                                                     
+    * Can no longer target open space.
+  * Fixed the selection sizes of the Cybran walls.
+  * Added Cybran heavy gate sections.                                                              
 __________.__________
 2014-09-08|0.4.C
                               
