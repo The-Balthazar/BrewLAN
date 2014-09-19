@@ -155,9 +155,11 @@ Tech 1
   Aeon:              
   	Fully functioning:  
   		* T1 Light Gunship
+  		  * Would like to give a more unique appearance.       
   		* T1 Light Artillery
   		* T1 Shield Genorator
   		* T1 Air Staging
+  		  * Currently the only one that can't handle T3 aircraft.       
   		* T1 Defence engineer
                         
   	Pending:
@@ -178,7 +180,8 @@ Tech 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF: 
   	Fully Funtioning:
-      * T1 Light Gunship
+      * T1 Light Gunship    
+  		  * Would like to give a more unique appearance.    
       * T1 Light Artillery
       * T1 Light Shield Gen
       * T1 Torpedo Bomber
@@ -193,7 +196,8 @@ Tech 1
       * T1 Light Artillery
       * T1 Shield Genorator
       * T1 Air Staging
-      * T1 Light Gunshi        
+      * T1 Light Gunship
+  		  * Would like to give a more unique appearance.            
   		* T1 Field engineer
                         
   	Pending:
@@ -207,7 +211,6 @@ Tech 2:
   	Fully Funtioning:
       * T2 Mass Storage
       * T2 Energy Storage
-        * Has explosion size that scales to the stored energy.
       * T2 Bomber
       * T2 Defence Engineer
         * Lacks a unique model.
@@ -223,15 +226,13 @@ Tech 2:
       * T2 Mass Storage
       * T2 Field Engineer  
       * T2 Proximity Mine
-      * T2 Energy Storage
-        * Has explosion size that scales to the stored energy.       
-  		* T2 Wall ('Bulkhead')
+      * T2 Energy Storage      
+  		* T2 Wall
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
   	Fully Funtioning.
       * T2 Mass Storage
       * T2 Energy Storage
-        * Has explosion size that scales to the stored energy.
       * T2 Proximity Mine
         * Still blocks pathing.
         * Lacks a unique water explosion.
@@ -242,12 +243,11 @@ Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	Fully Funtioning:
-  		* T2 Mass Storage
-      * T2 Energy Storage
-        * Has explosion size that scales to the stored energy.
-      * T2 Proximity Mine
+  		* T2 Mass Storage.
+      * T2 Energy Storage.
+      * T2 Proximity Mine.
   		* T2 Engineering Station.     
-  		* T2 Field engineer
+  		* T2 Field engineer.
 
   	Pending:
   		* T2 Wall
@@ -261,17 +261,11 @@ Tech 3:
     	* T3 Air Transport
     	* T3 Armoured Assult Tank
       * T3 Decoy Plane.
-        * Would prefer with orders assigned to the blips.        
-      * T3 Naval Shield.
-        * Only obtainable by upgrading the T1 shield on water.  
-        * Open animation doesn't work yet.
-        * Death animation slightly weird.
+        * Would prefer with orders assigned to the blips.   
   		* T3 Point Deffence.       
 		    * Needs a new model.
 		    * Needs the passive animation in pitch and yaw disabling while it fires.
-		      * Maybe. It is kinda funny it being the only beam weapon that can miss.         
-		    * Want to somehow add a cost for snap aiming, so its first shot takes substantial power, but subsequent shots at the same target are reduced.
-		      * Alternatively, have it change the cost from 1250 for the first shot to 125 for subequent shots within a cooldown.
+		      * Maybe. It is kinda funny it being the only beam weapon that can miss.
       * T3 Nuke Mine          
         * Lacks a unique model.   
   		* T3 Field engineer    
@@ -288,7 +282,7 @@ Tech 3:
     T3 Mobile strat defence.
       * Looks pretty.
       * Needs propperly rigging.               
-          
+            
   	Pending:
   		* T3 Torp launchers.
   		* T3 Mobile Shield Gen. 
@@ -310,7 +304,8 @@ Tech 3:
       * T3 Mobile strat defence.
         * Lacks a unique model & icon.  
       * T3 Cloakable Mass Fabricator.  
-      * T3 Cloakable Power Generator.                          
+      * T3 Cloakable Power Generator.
+      * T3 Armored Wall Section.                                
   	         
   	T3 Stealth tank (Cybran sniper bot alternative)
       * Unfinished appearance.
@@ -326,7 +321,6 @@ Tech 3:
   	Pending:
   		* T3 Anti Shield.
   		* T3 Mobile stealth Gen
-      * T3 Energy Fence.
       * T3 Cloakable Mass Extractor.
         * Stealth field, and cloak field, or cloak itself and adjacent units.                    
 
@@ -341,11 +335,9 @@ Tech 3:
         * May eventually give a more unique appearance.    
       * T3 Novax Center
         * As an observation satelite.
-          * Radar and omni range is spherical not cylindrical (Except on FAF).
-            * Current effective omni range is similar to its old visual range.
-        * Want to add an upkeep cost to the Omni.            
+          * Engine related bug: Radar and omni range is spherical not cylindrical (Except on FAF).
       * T3 Nuke Mine.
-        *             
+        * Needs a unique model.            
   		* T3 Field engineer.      
   		* T3 Engineering Power Generator.
   		* T3 Engineering Mass Fabricator.
@@ -366,8 +358,8 @@ Tech 3:
       * Might leave as a Aeon only unit.         
 
   	Pending:
-  		* T3 Mobile Shield Gen.
-  		* T3 Storm defence wall.           
+  		* T3 Mobile Shield Gen.   
+      * T3 Armored Wall Section.         
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   
@@ -377,7 +369,6 @@ Tech 3:
     	* T3 Air Transport.
     	* T3 Point Defence                           
     	  * Eventually want to give a better mesh.
-  		  * Firing cost needs changing to start low and increase slowly as an 'overheat' cost, like the Cybran one, but not quite. 
     	* T3 Sonar
     	  * Eventually want to give a different mesh.             
       * T3 Heavy Assault Bot:
@@ -390,13 +381,12 @@ Tech 3:
       * T3 Armored Power Generator.
       * T3 Armored Mass Extractor.
         * Doesn't have AOE restore yet.
-          * Maybe tie this to the adjacency script.                      
+          * Maybe tie this to the adjacency script.
+      * T3 Optics Tracking Facility.                      
   
     Pending:
       * T3 Torp launchers.
-      * T3 Anti Shield.
-      * T3 observation building.
-        * Posibly superceded by the seraphim T3 sonar and its teleport ability.       
+      * T3 Anti Shield. 
       * T3 Decoy Plane.
         * Might leave as a Aeon only unit.   
       * T3 Nuke Mine.               

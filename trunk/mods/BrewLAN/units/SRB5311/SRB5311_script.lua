@@ -3,193 +3,56 @@
 #**  Cybran Wall: With cordinal scripting
 #** 
 #****************************************************************************
-local CStructureUnit = import('/lua/cybranunits.lua').CStructureUnit 
+local CStructureUnit = import('/mods/BrewLAN/units/srb5310/srb5310_script.lua').SRB5310
 
-SRB5310 = Class(CStructureUnit) {            
-    OnCreate = function(self,builder,layer)   
-        CStructureUnit.OnCreate(self,builder,layer) 
-        self.Info = {
-            ents = {
-                northUnit = {
-                    ent = {},
-                    val = false,
-                },
-                southUnit = {
-                    ent = {},
-                    val = false,
-                },
-                eastUnit = {
-                    ent = {},
-                    val = false,
-                },
-                westUnit = {
-                    ent = {},
-                    val = false,
-                },
-            },
-            bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',  
-                    bonetype = 'South',
-                    conflict = nil,
-                }, 
-                East = {
-                    visibility = 'hide',  
-                    bonetype = 'East',
-                    conflict = nil,
-                }, 
-                West = {
-                    visibility = 'hide',  
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                North_Buttress =  {
-                    visibility = 'hide',   
-                    bonetype = 'North',
-                    conflict = 'Tower',
-                },
-                South_Buttress = {
-                    visibility = 'hide',  
-                    bonetype = 'South',
-                    conflict = 'Tower',
-                },
-                East_Buttress = {
-                    visibility = 'hide',  
-                    bonetype = 'East',
-                    conflict = 'Tower',
-                },  
-                West_Buttress = {
-                    visibility = 'hide', 
-                    bonetype = 'West',
-                    conflict = 'Tower',
-                },
-                Tower = {
-                    visibility = 'show',  
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },    
-                TowerButtressN = {
-                    visibility = 'show', 
-                    bonetype = 'Tower',
-                    conflict = 'North',
-                },  
-                TowerButtressS = {
-                    visibility = 'show', 
-                    bonetype = 'Tower',
-                    conflict = 'South',
-                },  
-                TowerButtressE = {
-                    visibility = 'show', 
-                    bonetype = 'Tower',
-                    conflict = 'East',
-                },
-                TowerButtressW = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'West',
-                },
-            },
-        }
-        self:BoneUpdate(self.Info.bones)  
-        self:CreateTarmac(true, true, true, false, false)
-    end, 
-          
-    BoneCalculation = function(self)
-        for k, v in self.Info.ents do
-            v.val = EntityCategoryContains(categories.srb5310, v.ent)
-        end      
-        local TowerCalc = 0
-        if self.Info.ents.northUnit.val then
-            self:SetAllBones('bonetype', 'North', 'show')
-            TowerCalc = TowerCalc + 99
-        else
-            self:SetAllBones('bonetype', 'North', 'hide')
-        end 
-        if self.Info.ents.southUnit.val then     
-            self:SetAllBones('bonetype', 'South', 'show')
-            TowerCalc = TowerCalc + 101 
-        else
-            self:SetAllBones('bonetype', 'South', 'hide')
-        end 
-        if self.Info.ents.eastUnit.val then     
-            self:SetAllBones('bonetype', 'East', 'show')
-            TowerCalc = TowerCalc + 97 
-        else
-            self:SetAllBones('bonetype', 'East', 'hide')
-        end   
-        if self.Info.ents.westUnit.val then     
-            self:SetAllBones('bonetype', 'West', 'show')
-            TowerCalc = TowerCalc + 103 
-        else
-            self:SetAllBones('bonetype', 'West', 'hide')
-        end
-        if TowerCalc == 200 then
-            self:SetAllBones('bonetype', 'Tower', 'hide')
-        else
-            self:SetAllBones('bonetype', 'Tower', 'show')
-            self:SetAllBones('conflict', 'Tower', 'hide')
-            if self.Info.ents.northUnit.val then
-                self:SetAllBones('conflict', 'North', 'hide')
-            end 
-            if self.Info.ents.southUnit.val then     
-                self:SetAllBones('conflict', 'South', 'hide') 
-            end 
-            if self.Info.ents.eastUnit.val then     
-                self:SetAllBones('conflict', 'East', 'hide') 
-            end   
-            if self.Info.ents.westUnit.val then     
-                self:SetAllBones('conflict', 'West', 'hide')   
-            end
-        end
-        self:BoneUpdate(self.Info.bones)  
+SRB5311 = Class(CStructureUnit) {  
+    OnCreate = function(self)
+        CStructureUnit.OnCreate(self)  
+        self.Slider = CreateSlider(self, 0)   
+        self:ToggleGate('open')
     end,
     
-    SetAllBones = function(self, check, bonetype, action)
-        for k, v in self.Info.bones do
-            if v[check] == bonetype then
-                v.visibility = action
-            end
-        end                                                
-    end,   
-             
-    BoneUpdate = function(self, bones)
-        for k, v in bones do
-            if v.visibility == 'show' then   
-                if self:IsValidBone(k) then
-                    self:ShowBone(k, true)
-                end
-            else
-                if self:IsValidBone(k) then   
-                    self:HideBone(k, true) 
-                end
-            end
-        end                                               
-    end,   
+    ToggleGate = function(self, order)
+        LOG(order)
+        if order == 'open' then  
+            self.Slider:SetGoal(0, -40, 0)   
+            self.Slider:SetSpeed(120)
+            if self.blocker then
+               self.blocker:Destroy()
+               self.blocker = nil
+            end      
+        end
+        if order == 'close' then  
+            self.Slider:SetGoal(0, 0, 0)      
+            self.Slider:SetSpeed(120)
+            if not self.blocker then
+               local pos = self:GetPosition()
+               self.blocker = CreateUnitHPR('ZZZ5301',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
+               self.Trash:Add(self.blocker)
+            end      
+        end
+    end,      
     
-    OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
-        local MyX, MyY, MyZ = unpack(self:GetPosition())
-        local AX, AY, AZ = unpack(adjacentUnit:GetPosition())
-        if EntityCategoryContains(categories.srb5310, adjacentUnit) then
-            if MyX > AX then
-                self.Info.ents.westUnit.ent = adjacentUnit
-            end
-            if MyX < AX then         
-                self.Info.ents.eastUnit.ent = adjacentUnit
-            end
-            if MyZ > AZ then         
-                self.Info.ents.northUnit.ent = adjacentUnit
-            end
-            if MyZ < AZ then   
-                self.Info.ents.southUnit.ent = adjacentUnit
-            end
+    OnScriptBitSet = function(self, bit)
+        CStructureUnit.OnScriptBitSet(self, bit)
+        if bit == 1 then              
+            self:ToggleGate('close')
+        end
+    end,  
+      
+    OnScriptBitClear = function(self, bit)
+        CStructureUnit.OnScriptBitClear(self, bit)
+        if bit == 1 then      
+            self:ToggleGate('open')
+        end
+    end,  
+        
+    OnKilled = function(self, instigator, type, overkillRatio)
+        CStructureUnit.OnKilled(self, instigator, type, overkillRatio)
+        if self.blocker then
+           self.blocker:Destroy()
         end      
-        self:BoneCalculation()  
     end,
 }
 
-TypeClass = SRB5310
+TypeClass = SRB5311
