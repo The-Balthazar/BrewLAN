@@ -19,13 +19,12 @@ function ModBlueprints(all_blueprints)
     DragBuildQuantumOptics(all_blueprints.Unit)
     ExperimentalBuildSorting(all_blueprints.Unit)
     SalvationBrewLANChanges(all_blueprints.Unit)
-#--    TorpedoBomberWaterLandCat(all_blueprints.Unit)
+    --TorpedoBomberWaterLandCat(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
     UnitHidingBrewLAN(all_blueprints.Unit)
     GantryExperimentalBuildOnly(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
     BrewLANMatchBalancing(all_blueprints.Unit)
-
 end
 
 
@@ -86,7 +85,7 @@ end
 # ---------------- Cybran Shields
 
 
-  
+       
 function BrewLANCybranShieldChanges(all_bps)   
 
     local CybranShields = {
@@ -126,11 +125,11 @@ function BrewLANCybranShieldChanges(all_bps)
     for arrayIndex, bp in ED5 do
         table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
     end
-end 
+end   
 
 
-
---[[
+       
+--[[ 
 function BrewLANCybranShieldChanges(all_bps)   
 
     local CybranShields = {
@@ -141,14 +140,14 @@ function BrewLANCybranShieldChanges(all_bps)
         urb4207 = {'TECH3',},
     }
     
-    for unitid, cats in CybranShields do
+    for unitid, cattable in CybranShields do
         table.removeByValue(bp.Categories, 'TECH2')
-        for k, cat in cats do
-            table.insert(bp.Categories, cat)
+        for k, v in unitid do
+            table.insert(bp.Categories, k)
         end
     end
-end
---]]
+end  
+--]]  
 
 
 # ---------------- Quantum optics
@@ -160,8 +159,10 @@ function DragBuildQuantumOptics(all_bps)
     local quantumoptics = {
         all_bps['xab3301'],
     }
-    for arrayIndex, bp in quantumoptics do
+    for arrayIndex, bp in quantumoptics do    
+        table.removeByValue(bp.Categories, 'SIZE4')
         table.insert(bp.Categories, 'DRAGBUILD')
+        table.insert(bp.Categories, 'SIZE16')
     end
 end
 
@@ -190,7 +191,7 @@ function SalvationBrewLANChanges(all_bps)
         all_bps['xab2307'],
     }
     for arrayIndex, bp in AeonSalvation do
-        table.remove(bp.Categories, 8)
+        table.removeByValue(bp.Categories, 'TECH3')
         table.insert(bp.Categories, 'EXPERIMENTAL')
 
         if not bp.Display.AINames then bp.Display.AINames = {} end
@@ -226,38 +227,38 @@ end
 function GantryExperimentalBuildOnly(all_bps)
 
     local UEFExperimentals = {
-  #-- Vanilla
-	all_bps['uel0401'],              #-- Fatboy 
- 	all_bps['ues0401'],              #-- Atlantis
-  #-- Total Mayhem T4's
-	all_bps['brnt3doomsday'],        #-- Doomsday
-	all_bps['brnt3argus'],           #-- Argus
-	all_bps['brnt3shbm2'],           #-- Mayhem Mk 4 
-	all_bps['brnt3shbm'],            #-- Mayhem Mk 2
-	all_bps['brnt3blasp'],           #-- Blood Asp 
-	all_bps['brnt3bat'],             #-- Rampart
-  #-- Total Mayhem T3's     
-	all_bps['brnt3ow'],              #-- Owens
-	all_bps['brnt3advbtbot'],        #-- Hurricane
-	all_bps['brnat3bomber'],         #-- Havok
-  #-- Total Mayhem T2's
-	all_bps['brnt2bm'],              #-- Banshee
-	all_bps['brnt2exm2'],            #-- Tomahawk
-	all_bps['brnt2bat'],             #-- Rampart
-	all_bps['brnt2exm1'],            #-- Jackhammer mk.2 
-	all_bps['brnt2exlm'],            #-- Firestorm
-	all_bps['brnt2exmdf'],           #-- Horizon
-	all_bps['brnt2sniper'],          #-- Marksman
-  #-- Total Mayhem T1's             
-	all_bps['brnt1exm1'],            #-- Kruger mk2.             
-	all_bps['brnt1exmob'],           #-- UnderTaker             
-	all_bps['brnt1extk'],            #-- Thunderstrike              
-	all_bps['brnat1exgs'],           #-- Imperium
-  
-  #-- BlackOps
-	all_bps['bes0402'],              #-- Conquest Class 
-	all_bps['bel0402'],              #-- Goliath MKII  
-#	all_bps['bea0402'],              #-- Citadel MKII (Disabled for being too big)
+        #-- Vanilla
+        all_bps['uel0401'],              #-- Fatboy 
+        all_bps['ues0401'],              #-- Atlantis
+        #-- Total Mayhem T4's
+        all_bps['brnt3doomsday'],        #-- Doomsday
+        all_bps['brnt3argus'],           #-- Argus
+        all_bps['brnt3shbm2'],           #-- Mayhem Mk 4 
+        all_bps['brnt3shbm'],            #-- Mayhem Mk 2
+        all_bps['brnt3blasp'],           #-- Blood Asp 
+        all_bps['brnt3bat'],             #-- Rampart
+        #-- Total Mayhem T3's     
+        all_bps['brnt3ow'],              #-- Owens
+        all_bps['brnt3advbtbot'],        #-- Hurricane
+        all_bps['brnat3bomber'],         #-- Havok
+        #-- Total Mayhem T2's
+        all_bps['brnt2bm'],              #-- Banshee
+        all_bps['brnt2exm2'],            #-- Tomahawk
+        all_bps['brnt2bat'],             #-- Rampart
+        all_bps['brnt2exm1'],            #-- Jackhammer mk.2 
+        all_bps['brnt2exlm'],            #-- Firestorm
+        all_bps['brnt2exmdf'],           #-- Horizon
+        all_bps['brnt2sniper'],          #-- Marksman
+        #-- Total Mayhem T1's             
+        all_bps['brnt1exm1'],            #-- Kruger mk2.             
+        all_bps['brnt1exmob'],           #-- UnderTaker             
+        all_bps['brnt1extk'],            #-- Thunderstrike              
+        all_bps['brnat1exgs'],           #-- Imperium
+        
+        #-- BlackOps
+        all_bps['bes0402'],              #-- Conquest Class 
+        all_bps['bel0402'],              #-- Goliath MKII  
+        --all_bps['bea0402'],              #-- Citadel MKII (Disabled for being too big)
     }
 
     for arrayIndex, bp in UEFExperimentals do
@@ -342,8 +343,6 @@ function UpgradeableToBrewLAN(all_bps)
             all_bps[upgradeid].General.UpgradesFromBase = unitid
         end
     end
-    
-    
 end
 
 
@@ -355,26 +354,25 @@ end
 function TorpedoBomberWaterLandCat(all_bps)
 
     local TorpedoBombers = {
-	all_bps['sra0307'], #T3 Cybran
-	all_bps['sea0307'], #T3 UEF
-	all_bps['ssa0307'], #T3 Seraphim
-	all_bps['xaa0306'], #T3 Aeon
-
-	all_bps['ura0204'], #T2 Cybran
-	all_bps['uea0204'], #T2 UEF
-	all_bps['xsa0204'], #T2 Seraphim
-	all_bps['uaa0204'], #T2 Aeon
-
-	all_bps['sra0106'], #T1 Cybran
-	all_bps['sea0106'], #T1 UEF
-	all_bps['ssa0106'], #T1 Seraphim
-	all_bps['saa0106'], #T1 Aeon
+        all_bps['sra0307'], #T3 Cybran
+        all_bps['sea0307'], #T3 UEF
+        all_bps['ssa0307'], #T3 Seraphim
+        all_bps['xaa0306'], #T3 Aeon
+        
+        all_bps['ura0204'], #T2 Cybran
+        all_bps['uea0204'], #T2 UEF
+        all_bps['xsa0204'], #T2 Seraphim
+        all_bps['uaa0204'], #T2 Aeon
+        
+        all_bps['sra0106'], #T1 Cybran
+        all_bps['sea0106'], #T1 UEF
+        all_bps['ssa0106'], #T1 Seraphim
+        all_bps['saa0106'], #T1 Aeon
     }
     for arrayIndex, bp in TorpedoBombers do
         table.insert(bp.Categories, 'TRANSPORTATION') ##transportation category allows aircraft to land on water.
         table.insert(bp.Categories, 'HOVER') ##hover category stops torpedos from being fired upon them while landed.
     end	
-
 end
 
 
@@ -389,10 +387,9 @@ function RoundGalacticCollosusHealth(all_bps)
         all_bps['ual0401'],
     }
     for arrayIndex, bp in GalacticCollosus do
-	if bp.Defense.Health == 99999 then bp.Defense.Health = 100000 end
-	if bp.Defense.MaxHealth == 99999 then bp.Defense.MaxHealth = 100000 end
+        if bp.Defense.Health == 99999 then bp.Defense.Health = 100000 end
+        if bp.Defense.MaxHealth == 99999 then bp.Defense.MaxHealth = 100000 end
     end
-
 end
 
 
@@ -439,8 +436,7 @@ function BrewLANMatchBalancing(all_bps)
             all_bps[unitid].Economy.BuildCostMass = all_bps[unitid].Economy.BuildCostMass * mult 
             all_bps[unitid].Economy.BuildTime = all_bps[unitid].Economy.BuildTime * mult
         end
-    end       
-
+    end   
 end
 
 

@@ -25,7 +25,12 @@ tooltipbrewlan0007="Detonate"
 tooltipbrewlan0008="Immediately detonate the payload."
                                                             
 tooltipbrewlan0009="Clear build area"
-tooltipbrewlan0010="Removes any structures or remains from the build area."
+tooltipbrewlan0010="Removes any structures or remains from the build area."         
+
+tooltipbrewlan0011="Scry"
+tooltipbrewlan0012="Choose a unit to spy on"
+      
+      
 ## T1
 
 
@@ -272,6 +277,10 @@ Unit_Description_BrewLAN_T3B0020="Manual control gate, to allow entrance and exi
 
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."
+
+ssb3301_desc="Optics Tracking Facility"
+ssb3301_name="Aezselen"
+Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips."
 
 
 ## T4
