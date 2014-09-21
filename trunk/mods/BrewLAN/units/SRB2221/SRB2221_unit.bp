@@ -117,6 +117,10 @@ UnitBlueprint {
                 bitmapId = 'Nuke',
                 helpText = 'detonate',
             },
+            --RULEUCC_Attack = {
+            --    bitmapId = 'Nuke',
+            --    helpText = 'detonate',
+            --},
         },
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',

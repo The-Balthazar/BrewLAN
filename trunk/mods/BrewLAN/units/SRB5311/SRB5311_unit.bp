@@ -40,7 +40,8 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTECONOMY',
         'HEAVYWALLGATE',
-        'HEAVYGATEOPEN'
+        'HEAVYGATEOPEN',
+        'WALL',
     },
     CollisionOffsetX = 0,
     CollisionOffsetY = 0,
@@ -52,7 +53,8 @@ UnitBlueprint {
         RegenRate = 0,
     },
     Description = '<LOC srb5311_desc>Armored Gate Segment',
-    Display = {      
+    Display = {
+        GateOpenHeight = -65,      
         AdjacencyConnection = 'HEAVYWALLGATE',    
         AdjacencyConnectionInfo = {  
             Bones = {
@@ -116,19 +118,19 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 120,
+                    LODCutoff = 200,
                     ShaderName = 'Unit',                                            
-                    MeshName = '/mods/brewlan/units/srb5201/srb5201_lod0.scm',
-                    AlbedoName = '/mods/brewlan/units/srb5201/srb5201_albedo.dds',
-                    NormalsName = '/mods/brewlan/units/srb5201/srb5201_normalsts.dds',
-                    SpecularName = '/mods/brewlan/units/srb5201/srb5201_specteam.dds',
+                    --MeshName = '/mods/brewlan/units/XRC8104/XRC8104_lod0.scm',
+                    AlbedoName = '/units/XRC8104/XRC8104_albedo.dds',
+                    NormalsName = '/units/XRC8104/XRC8104_normalsts.dds',
+                    SpecularName = '/units/XRC8104/XRC8104_specteam.dds',
                 },
                 {
-                    LODCutoff = 300,
+                    LODCutoff = 400,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/XRC8001/XRC8001_lod1_albedo.dds',
-                    NormalsName = '/units/XRC8001/XRC8001_lod1_normalsts.dds',
-                    SpecularName = '/units/XRC8001/XRC8001_lod1_specteam.dds',
+                    AlbedoName = '/units/XRC8104/XRC8104_lod1_albedo.dds',
+                    NormalsName = '/units/XRC8104/XRC8104_lod1_normalsts.dds',
+                    SpecularName = '/units/XRC8104/XRC8104_lod1_specteam.dds',
                 },
             },
         },
@@ -191,17 +193,19 @@ UnitBlueprint {
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret', 
         OrderOverrides = {
-            RULEUTC_GenericToggle = {
+            RULEUTC_WeaponToggle = {
                 bitmapId = 'dive',
                 helpText = 'toggle_gate',
             },
-            #RULEUCC_Dive = {
+            --[[
+            RULEUCC_Dive = {
                 bitmapId = 'dive',
                 helpText = 'toggle_gate',
             },
+            --]]
         },
         ToggleCaps = {
-            RULEUTC_GenericToggle = true,
+            RULEUTC_WeaponToggle = true,
         },   
         --UnitName = '<LOC srb5311_name>Procyon Offering',
         UnitWeight = 1,

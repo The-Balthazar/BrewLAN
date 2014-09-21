@@ -44,7 +44,9 @@ __________.__________
   
   * Fixed the construction button onclick changes so it now cares about things other than building more, and removing things on the questack.
   * Set the armored wall to upgrade into the armored gate.
-  * Had the armored wall destroy whatever was ontop of it when the upgrade finishes.                                                                  
+  * Had the armored wall destroy whatever was ontop of it when the upgrade finishes.
+  * Set the gate sections to pass their orders to adjacent gate sections.
+  * Created a model for the Cybran armored gate sections.                                                                      
 __________.__________
 2014-09-08|0.4.C
                               
