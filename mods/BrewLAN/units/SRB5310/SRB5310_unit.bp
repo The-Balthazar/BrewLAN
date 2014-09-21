@@ -146,14 +146,14 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 120,
+                    LODCutoff = 200,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/XRC8001/XRC8001_albedo.dds',
                     NormalsName = '/units/XRC8001/XRC8001_normalsts.dds',
                     SpecularName = '/units/XRC8001/XRC8001_specteam.dds',
                 },
                 {
-                    LODCutoff = 300,
+                    LODCutoff = 400,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/XRC8001/XRC8001_lod1_albedo.dds',
                     NormalsName = '/units/XRC8001/XRC8001_lod1_normalsts.dds',

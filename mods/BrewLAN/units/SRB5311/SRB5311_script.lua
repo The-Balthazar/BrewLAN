@@ -13,7 +13,7 @@ SRB5311 = Class(CStructureUnit) {
     end,
     
     ToggleGate = function(self, order)
-        LOG(order)
+        --LOG(order)
         if order == 'open' then  
             self.Slider:SetGoal(0, -40, 0)   
             self.Slider:SetSpeed(120)
@@ -35,14 +35,14 @@ SRB5311 = Class(CStructureUnit) {
     
     OnScriptBitSet = function(self, bit)
         CStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then              
+        if bit == 6 then              
             self:ToggleGate('close')
         end
     end,  
       
     OnScriptBitClear = function(self, bit)
         CStructureUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then      
+        if bit == 6 then      
             self:ToggleGate('open')
         end
     end,  

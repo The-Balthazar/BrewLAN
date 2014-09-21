@@ -27,7 +27,7 @@ UnitBlueprint {
     BuildIconSortPriority = 150,
     Categories = {
         'PRODUCTBREWLAN',    
-        'BUILTBYTIER3FIELD',
+        --'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'CYBRAN',
         'STRUCTURE',
@@ -38,7 +38,7 @@ UnitBlueprint {
         'BENIGN',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SORTDEFENSE',
+        'SORTECONOMY',
         'HEAVYWALLGATE',
         'HEAVYGATEOPEN'
     },
@@ -156,7 +156,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 500,
         BuildCostMass = 50,
-        BuildTime = 50,       
+        BuildTime = 1,       
         RebuildBonusIds = {
             'sab5311',
             'seb5311',
@@ -185,18 +185,23 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
+            --RULEUCC_Dive = true,
         },
         FactionName = 'Cybran',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret', 
         OrderOverrides = {
-            RULEUTC_WeaponToggle = {
+            RULEUTC_GenericToggle = {
+                bitmapId = 'dive',
+                helpText = 'toggle_gate',
+            },
+            #RULEUCC_Dive = {
                 bitmapId = 'dive',
                 helpText = 'toggle_gate',
             },
         },
         ToggleCaps = {
-            RULEUTC_WeaponToggle = true,
+            RULEUTC_GenericToggle = true,
         },   
         --UnitName = '<LOC srb5311_name>Procyon Offering',
         UnitWeight = 1,

@@ -182,19 +182,38 @@ SRB5310 = Class(CLandFactoryUnit) {
         if bit == 1 then
             if self.AttachedUnit then
                 self.AttachedUnit:Destroy() 
-                self:SetScriptBit(bit,false)
-            end
+            end   
+            self:SetScriptBit('RULEUTC_WeaponToggle',false) 
+            IssueClearCommands({self})
         end
-    end,        
+    end,
+            
     OnScriptBitClear = function(self, bit)
         CLandFactoryUnit.OnScriptBitClear(self, bit)
         if bit == 1 then
             if self.AttachedUnit then
                 self.AttachedUnit:Destroy() 
-                self:SetScriptBit(bit,false)
-            end
+            end 
+            IssueClearCommands({self})
         end
-    end,
+    end, 
+      
+    UpgradingState = State(CLandFactoryUnit.UpgradingState) {
+        Main = function(self)
+            CLandFactoryUnit.UpgradingState.Main(self)
+        end,
+        
+        OnStopBuild = function(self, unitBuilding)
+            if unitBuilding:GetFractionComplete() == 1 then
+                if self.AttachedUnit then
+                    self.AttachedUnit:Destroy() 
+                end
+            end
+            CLandFactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding) 
+                --unitBuilding.Info.ents = self.Info.ents
+                --unitBuilding:BoneCalculation()  
+        end,
+    }
 }
 
 TypeClass = SRB5310
