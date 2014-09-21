@@ -179,24 +179,24 @@ SRB5310 = Class(CLandFactoryUnit) {
     
     OnScriptBitSet = function(self, bit)
         CLandFactoryUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then
+        if bit == 7 then
             if self.AttachedUnit then
                 self.AttachedUnit:Destroy() 
             end   
-            self:SetScriptBit('RULEUTC_WeaponToggle',false) 
+            self:SetScriptBit('RULEUTC_SpecialToggle',false) 
             IssueClearCommands({self})
         end
     end,
             
-    OnScriptBitClear = function(self, bit)
+    --[[OnScriptBitClear = function(self, bit)
         CLandFactoryUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then
+        if bit == 7 then
             if self.AttachedUnit then
                 self.AttachedUnit:Destroy() 
             end 
             IssueClearCommands({self})
         end
-    end, 
+    end,--]] 
       
     UpgradingState = State(CLandFactoryUnit.UpgradingState) {
         Main = function(self)

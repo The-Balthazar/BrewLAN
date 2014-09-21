@@ -35,7 +35,8 @@ Errors list/the other to-do list.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
-* Nuke mines should have the option to auto explode, but be set to manual from the off.        
+* Nuke mines should have the option to auto explode, but be set to manual from the off.
+* Armored walls (and probably other walls) need to be repaired slower.        
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -305,7 +306,10 @@ Tech 3:
         * Lacks a unique model & icon.  
       * T3 Cloakable Mass Fabricator.  
       * T3 Cloakable Power Generator.
-      * T3 Armored Wall Section.                                
+      * T3 Armored Wall Section.
+      * T3 Armored Gate Section.
+        * Needs a custom model.
+        * Order to close should also be passed to adjacent units.                                                    
   	         
   	T3 Stealth tank (Cybran sniper bot alternative)
       * Unfinished appearance.
@@ -397,15 +401,15 @@ Experimental Table
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
 Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*?(F)          |
-Flying          |*Centurion     |CZAR (AF)      |Soulripper     |Ahwassa        |
+Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
-Static 2        |*Ivan (F)      |*Teleporter    |*?             |*Gate portal   |
+Static 2        |*Ivan (F)      |*Tele/CZAR fab |Omni Jammer    |*Gate portal   |
 Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield proj...|
 ________________!_______________!_______________!_______________!_______________!
 
   (A)  Aircraft Carrier
-  (F)  Fabrication cababilities
+  (F)  Engineering or psudo engineering cababilities
    *  Pending
    ?  ???
     PROFIT!

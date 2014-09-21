@@ -230,10 +230,10 @@ UnitBlueprint {
         ConstructionBar = true,
         FactionName = 'Cybran',      
         ToggleCaps = {
-            RULEUTC_WeaponToggle= true,
+            RULEUTC_SpecialToggle= true,
         },
         OrderOverrides = {
-            RULEUTC_WeaponToggle= {
+            RULEUTC_SpecialToggle= {
                 bitmapId = 'Nuke',
                 helpText = 'removestorage',
             },
