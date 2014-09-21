@@ -28,7 +28,7 @@ __________.__________
   
   * Added a seraphim quantum optics variant.
     * Currently not very varient-y. That is a word now.  
-  * Fixed the size category for the Aeon Quantum Optics. It was set to size 4, so you could make it free with T1 power plants, but if you did it broke it..
+  * Fixed the size category for the Aeon Quantum Optics. It was set to size 4, so you could make it free with T1 power plants, but if you did it broke it.
   __________
   2014-09-19
   
@@ -38,7 +38,13 @@ __________.__________
     * Changed functionality to target radar blips/units and spy on them.
     * Can no longer target open space.
   * Fixed the selection sizes of the Cybran walls.
-  * Added Cybran heavy gate sections.                                                              
+  * Added Cybran heavy gate sections.
+  __________
+  2014-09-21
+  
+  * Fixed the construction button onclick changes so it now cares about things other than building more, and removing things on the questack.
+  * Set the armored wall to upgrade into the armored gate.
+  * Had the armored wall destroy whatever was ontop of it when the upgrade finishes.                                                                  
 __________.__________
 2014-09-08|0.4.C
                               

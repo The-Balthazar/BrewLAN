@@ -301,6 +301,7 @@ function UpgradeableToBrewLAN(all_bps)
         xsb1301 = 'ssb1311',--To Armored Generator
         xsb1302 = 'ssb1312',--To Armored Extractor
         xsb1303 = 'ssb1313',--To Armored Fabricator
+        srb5310 = 'srb5311',--Cybran wall into cybran gate
     }
     for unitid, upgradeid in VanillasToUpgrade do
         if all_bps[unitid] and all_bps[upgradeid] then

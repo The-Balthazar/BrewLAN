@@ -48,6 +48,9 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },      
+    },
+    Intel = {
+        VisionRadius = 5,
     },       
     LifeBarHeight = 0.0000001,
     LifeBarOffset = 0.000000,

@@ -39,7 +39,12 @@ Tooltips['scry_spy_target'] = {
       keyID = "scry_spy_target",
    }       
 Tooltips['toggle_gate'] = {
-      title = "<LOC tooltipbrewlan0013>Open/Close",
+      title = "<LOC tooltipbrewlan0013>Open/Close (D)",
       description = "<LOC tooltipbrewlan0014>Toggle gate open or closed.",
+      keyID = "toggle_gate",
+   }       
+Tooltips['toggle_gate_auto'] = {
+      title = "<LOC tooltipbrewlan0013>Open/Close (D)",
+      description = "<LOC tooltipbrewlan0015>Auto open enabled.",
       keyID = "toggle_gate",
    }

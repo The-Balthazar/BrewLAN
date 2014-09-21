@@ -33,9 +33,9 @@ tooltipbrewlan0011="Scry"
 tooltipbrewlan0012="Choose a unit to spy on"
       
 #--Tooltips for the open/closeable kind of gate.      
-tooltipbrewlan0013="Open/Close"
+tooltipbrewlan0013="Open/Close (D)"
 tooltipbrewlan0014="Toggle gate open or closed"
-
+tooltipbrewlan0015="Auto open enabled."
 
 ## T1
 
@@ -279,7 +279,7 @@ Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain
 
 srb5311_desc="Armored Gate Section"        
 srb5311_name="Procyon Offering"
-Unit_Description_BrewLAN_T3B0020="Manual control gate, to allow entrance and exit through walls. Can sustain extreme amounts of damage."
+Unit_Description_BrewLAN_T3B0020="Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
 
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."
