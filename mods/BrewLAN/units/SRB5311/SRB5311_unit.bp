@@ -24,10 +24,10 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    BuildIconSortPriority = 150,
+    BuildIconSortPriority = 151,
     Categories = {
         'PRODUCTBREWLAN',    
-        --'BUILTBYTIER3FIELD',
+        'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'CYBRAN',
         'STRUCTURE',
@@ -38,7 +38,7 @@ UnitBlueprint {
         'BENIGN',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SORTECONOMY',
+        'SORTDEFENSE',
         'HEAVYWALLGATE',
         'HEAVYGATEOPEN',
         'WALL',
@@ -156,9 +156,9 @@ UnitBlueprint {
         UniformScale = 0.05,
     },
     Economy = {
-        BuildCostEnergy = 500,
-        BuildCostMass = 50,
-        BuildTime = 1,       
+        BuildCostEnergy = 750,
+        BuildCostMass = 250,
+        BuildTime = 50,       
         RebuildBonusIds = {
             'sab5311',
             'seb5311',
@@ -166,7 +166,7 @@ UnitBlueprint {
             'ssb5311',
         },
     },
-    Footprint = {
+    Footprint = {   
         SizeX = 1,
         SizeZ = 1,
     },
@@ -229,7 +229,8 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        DragCoefficient = 0.2,
+        DragCoefficient = 0.2,   
+        MaxGroundVariation = 2,
         FlattenSkirt = false,
         MaxSteerForce = 0,
         MeshExtentsX = 3.2,

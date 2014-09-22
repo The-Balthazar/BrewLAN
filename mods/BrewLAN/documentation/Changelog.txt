@@ -10,6 +10,20 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
 __________.__________
+2014-09-22|0.4.E
+
+* Changed the gate sections to be a seperate building to the wall sections instead of an upgrade of the afforementioned.
+  * As much as I prefered the lack of UI clutter it being an upgrade came with, it had two unfortunate side effects:
+    * It ocasionally broke adjacency script for them.
+    * You couldn't have them in templates.
+    * It made the gate sections be repaired far too quickly. (They both still repair to fast.)    
+* Altered the costs of the T3 walls.
+* Increased the animation speed of the gates.
+* Increased the max slope that T2 & T3 walls can be built on.
+* Increased the depth of the wall models so they dont leave gaps when on uneven land.
+* Created a distance model for the Cybran T3 gate.
+* Removed the distance model reference for the Cybran T2 wall. Its simple enough to not matter.                 
+__________.__________
 2014-09-14|0.4.D
 
 * Added Harpoon: UEF T3 torpedo launcher.

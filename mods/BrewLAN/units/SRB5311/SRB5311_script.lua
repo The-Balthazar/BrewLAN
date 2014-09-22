@@ -8,7 +8,7 @@ local CStructureUnit = import('/mods/BrewLAN/units/srb5310/srb5310_script.lua').
 SRB5311 = Class(CStructureUnit) {  
     OnCreate = function(self)
         CStructureUnit.OnCreate(self)  
-        self.Slider = CreateSlider(self, 0)  
+        self.Slider = CreateSlider(self, 0)    
     end,
          
     OnStopBeingBuilt = function(self,builder,layer)
@@ -20,7 +20,7 @@ SRB5311 = Class(CStructureUnit) {
         --LOG(order)
         if order == 'open' then  
             self.Slider:SetGoal(0, depth, 0)   
-            self.Slider:SetSpeed(120)
+            self.Slider:SetSpeed(200)
             if self.blocker then
                self.blocker:Destroy()
                self.blocker = nil
@@ -28,7 +28,7 @@ SRB5311 = Class(CStructureUnit) {
         end
         if order == 'close' then  
             self.Slider:SetGoal(0, 0, 0)      
-            self.Slider:SetSpeed(120)
+            self.Slider:SetSpeed(200)
             if not self.blocker then
                local pos = self:GetPosition()
                self.blocker = CreateUnitHPR('ZZZ5301',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
@@ -39,7 +39,13 @@ SRB5311 = Class(CStructureUnit) {
     
     OnScriptBitSet = function(self, bit)
         CStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then   
+        if bit == 1 then                      
+            --[[if self.Time then
+                if self.Time + .5 > GetGameTimeSeconds() then
+                    return
+                end
+            end
+            self.Time = GetGameTimeSeconds()--]]
             self:ToggleGate('close')
             for k, v in self.Info.ents do
                 if v.val then
@@ -51,7 +57,13 @@ SRB5311 = Class(CStructureUnit) {
       
     OnScriptBitClear = function(self, bit)
         CStructureUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then     
+        if bit == 1 then   
+            --[[if self.Time then
+                if self.Time + .5 > GetGameTimeSeconds() then
+                    return
+                end
+            end
+            self.Time = GetGameTimeSeconds()--]]     
             self:ToggleGate('open')
             for k, v in self.Info.ents do
                 if v.val then

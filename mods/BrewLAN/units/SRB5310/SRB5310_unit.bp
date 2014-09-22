@@ -184,7 +184,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 500,
-        BuildCostMass = 250,       
+        BuildCostMass = 500,       
         BuildRate = 1,
         BuildTime = 50,          
         BuildableCategory = {
@@ -199,7 +199,7 @@ UnitBlueprint {
             'ssb5310',
         },
     },
-    Footprint = {
+    Footprint = {     
         SizeX = 3,
         SizeZ = 3,
     },
@@ -262,7 +262,8 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        DragCoefficient = 0.2,
+        DragCoefficient = 0.2,   
+        MaxGroundVariation = 2,
         FlattenSkirt = false,
         MaxSteerForce = 0,
         MeshExtentsX = 3.2,
