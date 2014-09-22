@@ -284,7 +284,7 @@ function UpgradeableToBrewLAN(all_bps)
     local VanillasToUpgrade = {
         uab4202 = 'uab4301',--FromAeon T2 shield
         xsb3202 = 'sss0305',--From Seraphim T2 sonar
-      --urb2301 = 'srb0306',--From Cybran T2 PD Cerberus to Hades. A little OP
+        --urb2301 = 'srb0306',--From Cybran T2 PD Cerberus to Hades. A little OP
         urb1301 = 'srb1311',--To Cloakable Generator 
         urb1302 = 'srb1312',--To Cloakable Extractor
         urb1303 = 'srb1313',--To Cloakable Fabricator
@@ -301,7 +301,7 @@ function UpgradeableToBrewLAN(all_bps)
         xsb1301 = 'ssb1311',--To Armored Generator
         xsb1302 = 'ssb1312',--To Armored Extractor
         xsb1303 = 'ssb1313',--To Armored Fabricator
-        srb5310 = 'srb5311',--Cybran wall into cybran gate
+        --srb5310 = 'srb5311',--Cybran wall into cybran gate
     }
     for unitid, upgradeid in VanillasToUpgrade do
         if all_bps[unitid] and all_bps[upgradeid] then
