@@ -14,27 +14,21 @@ local OldModBlueprints = ModBlueprints
 function ModBlueprints(all_blueprints)         
     OldModBlueprints(all_blueprints)
     
-    BrewLANFieldEngineerChanges(all_blueprints.Unit)
-    BrewLANCybranShieldChanges(all_blueprints.Unit)
-    DragBuildQuantumOptics(all_blueprints.Unit)
-    ExperimentalBuildSorting(all_blueprints.Unit)
-    SalvationBrewLANChanges(all_blueprints.Unit)
-    --TorpedoBomberWaterLandCat(all_blueprints.Unit)
+    BrewLANBuildCatChanges(all_blueprints.Unit)
+    BrewLANCategoryChanges(all_blueprints.Unit) 
+    BrewLANNameCalling(all_blueprints.Unit)  
+    BuiltByGantry(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
-    UnitHidingBrewLAN(all_blueprints.Unit)
-    GantryExperimentalBuildOnly(all_blueprints.Unit)
+    --TorpedoBomberWaterLandCat(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
     BrewLANMatchBalancing(all_blueprints.Unit)
 end
 
+--------------------------------------------------------------------------------
+-- Additional buildable categories
+--------------------------------------------------------------------------------
 
-
-# ---------------- Additional buildable categories, related to field engineers
-
-
-
-function BrewLANFieldEngineerChanges(all_bps)
-
+function BrewLANBuildCatChanges(all_bps)
     local units_buildcats = {
         urb0101 = 'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',
         urb0201 = 'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION',
@@ -49,9 +43,6 @@ function BrewLANFieldEngineerChanges(all_bps)
         ueb0301 = 'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         uel0401 = 'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         xel0209 = 'BUILTBYTIER2FIELD UEF',
-    }     
-    
-    local units_fieldengineers = {
         sel0119 = 'BUILTBYTIER1ENGINEER UEF COUNTERINTELLIGENCE',
         srl0119 = 'BUILTBYTIER1ENGINEER CYBRAN COUNTERINTELLIGENCE',
         ssl0119 = 'BUILTBYTIER1ENGINEER SERAPHIM COUNTERINTELLIGENCE',
@@ -65,167 +56,91 @@ function BrewLANFieldEngineerChanges(all_bps)
         ssl0319 = 'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE',
         sal0319 = 'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE',
     }
-
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] then
             table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat)
         end
     end 
-    
-    for unitid, buildcat in units_fieldengineers do
-        if all_bps[unitid] then
-            table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat)
-        end
-    end
-
 end
 
-
-
-# ---------------- Cybran Shields
-
-
-       
-function BrewLANCybranShieldChanges(all_bps)   
-
-    local CybranShields = {
-        urb4202 = 'TECH1',
-        urb4204 = 'TECH1',
-        urb4205 = 'TECH2',
-        urb4206 = 'TECH3',
-        urb4207 = 'TECH3',
+--------------------------------------------------------------------------------
+-- Unit category changes
+--------------------------------------------------------------------------------
+   
+function BrewLANCategoryChanges(all_bps) 
+    local Units = {
+        --Cybran Shields
+        urb4202 = {'TECH1','BUILTBYTIER1ENGINEER','BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = {'TECH2', }, },
+        urb4204 = {'TECH1', r = {'TECH2', }, },
+        urb4205 = {'BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER',},
+        urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = {'TECH2', }, },
+        urb4207 = {'TECH3', r = {'TECH2', }, },
+        --Tech 3 units
+        xab3301 = {'DRAGBUILD', 'SIZE16', r = {'SIZE4', }, },--Aeon Quantum Optics
+        xeb2306 = {'SIZE4', r = {'SIZE12', }, },---------------Ravager
+        --Experimental units
+        xab1401 = {'SORTECONOMY',},----------------------------Paragon
+        ueb2401 = {'SORTSTRATEGIC',}, -------------------------Mavor
+        xab2307 = {'EXPERIMENTAL', r = {'TECH3', }, },---------Salvation
+        --url0401 = {NoBuild = true, }, -----------------------Scathis MkII currently using this ID
+        xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
     }
-    
-    for shieldid, cat in CybranShields do
-        if all_bps[shieldid] then
-            table.removeByValue(all_bps[shieldid].Categories, 'TECH2')
-            table.insert(all_bps[shieldid].Categories, cat)
-        end
-    end
-    
-    local BuildableCybranShields = {
-        urb4202 = 'BUILTBYTIER1ENGINEER',
-        urb4205 = 'BUILTBYTIER2ENGINEER',
-        urb4206 = 'BUILTBYTIER3ENGINEER',
+    local buildcats = {  
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER1COMMANDER',
+        'BUILTBYTIER1FIELD',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER2FIELD',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',  
+        'BUILTBYTIER3FIELD',  
+        'BUILTBYGANTRY',
     }
-    for shieldid, cat in BuildableCybranShields do
-        if all_bps[shieldid] then
-            table.insert(all_bps[shieldid].Categories, cat)
+    for k, v in Units do   
+        if all_bps[k] then
+            if not v.NoBuild then
+                for i in v do
+                    if v.r then
+                        for i in v.r do
+                            table.removeByValue(all_bps[k].Categories, v.r[i])
+                        end
+                    end
+                    table.insert(all_bps[k].Categories, v[i])
+                end
+            else
+                for i in buildcats do
+                    table.removeByValue(all_bps[k].Categories, buildcats[i])
+                end 
+            end
         end
-    end
-     
-    local ED4 = {all_bps['urb4205'],}
-    local ED5 = {all_bps['urb4206'],}
-    
-    for arrayIndex, bp in ED4 do
-        table.insert(bp.Categories, 'BUILTBYTIER2COMMANDER')
-        table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
-        table.insert(bp.Categories, 'BUILTBYTIER3ENGINEER')
-    end
-    for arrayIndex, bp in ED5 do
-        table.insert(bp.Categories, 'BUILTBYTIER3COMMANDER')
     end
 end   
 
-
-       
---[[ 
-function BrewLANCybranShieldChanges(all_bps)   
-
-    local CybranShields = {
-        urb4202 = {'TECH1','BUILTBYTIER1ENGINEER',},
-        urb4204 = {'TECH1',},
-        urb4205 = {'TECH2','BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER',},
-        urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER',},
-        urb4207 = {'TECH3',},
+--------------------------------------------------------------------------------
+-- Adding AI names (Not sure if this actually does anything for Sorian)
+--------------------------------------------------------------------------------
+  
+function BrewLANNameCalling(all_bps)
+    local Units = {
+        --Salvation
+        xab2307 = {'Judgment', 'Reconciliation', 'Purgatory', 'Avatar', 'Spitter', 'Grassy Knoll', 'Giant Phallus Cannon', },
     }
-    
-    for unitid, cattable in CybranShields do
-        table.removeByValue(bp.Categories, 'TECH2')
-        for k, v in unitid do
-            table.insert(bp.Categories, k)
-        end
-    end
-end  
---]]  
-
-
-# ---------------- Quantum optics
-
-
-
-function DragBuildQuantumOptics(all_bps)
-
-    local quantumoptics = {
-        all_bps['xab3301'],
-    }
-    for arrayIndex, bp in quantumoptics do    
-        table.removeByValue(bp.Categories, 'SIZE4')
-        table.insert(bp.Categories, 'DRAGBUILD')
-        table.insert(bp.Categories, 'SIZE16')
-    end
-end
-
-
-
-# ---------------- Experimental
-
-
-
-function ExperimentalBuildSorting(all_bps)
-
-    local t4buildings = {
-        xab1401 = 'SORTECONOMY',    #Paragon   
-        ueb2401 = 'SORTSTRATEGIC',  #Mavor
-    }
-    for experimentalid, cat in t4buildings do
-        if all_bps[experimentalid] then
-            table.insert(all_bps[experimentalid].Categories, cat)
+    for k, v in Units do   
+        if all_bps[k] then
+            for i in v do  
+                if not all_bps[k].Display.AINames then all_bps[k].Display.AINames = {} end
+                table.insert(all_bps[k].Display.AINames, v[i])
+            end 
         end
     end
 end
 
-function SalvationBrewLANChanges(all_bps)
-
-    local AeonSalvation = {
-        all_bps['xab2307'],
-    }
-    for arrayIndex, bp in AeonSalvation do
-        table.removeByValue(bp.Categories, 'TECH3')
-        table.insert(bp.Categories, 'EXPERIMENTAL')
-
-        if not bp.Display.AINames then bp.Display.AINames = {} end
-        table.insert(bp.Display.AINames, 'Judgment')
-        table.insert(bp.Display.AINames, 'Reconciliation')
-        table.insert(bp.Display.AINames, 'Purgatory')
-        table.insert(bp.Display.AINames, 'Avatar')
-        table.insert(bp.Display.AINames, 'Spitter')
-        table.insert(bp.Display.AINames, 'Grassy Knoll')
-        table.insert(bp.Display.AINames, 'Giant Phallus Cannon')
-    end
-end
-
-function UnitHidingBrewLAN(all_bps)
-
-    local HidingExperimentals = {
-        --all_bps['url0401'],
-        all_bps['xeb2402'],
-    }
-        
-    for arrayIndex, bp in HidingExperimentals do
-        table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
-        table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    end
-end
-     
-     
-     
-# ---------------- Moving units into the Gantry.
-
-
-
-function GantryExperimentalBuildOnly(all_bps)
-
+--------------------------------------------------------------------------------
+-- Allowing Vanillas and specific other mod units to be build by the Gantry
+--------------------------------------------------------------------------------
+  
+function BuiltByGantry(all_bps)
     local UEFExperimentals = {
         #-- Vanilla
         all_bps['uel0401'],              #-- Fatboy 
@@ -260,27 +175,16 @@ function GantryExperimentalBuildOnly(all_bps)
         all_bps['bel0402'],              #-- Goliath MKII  
         --all_bps['bea0402'],              #-- Citadel MKII (Disabled for being too big)
     }
-
     for arrayIndex, bp in UEFExperimentals do
-    	  --table.removeByValue(bp.Categories, 'BUILTBYTIER3ENGINEER')
-    	  --table.removeByValue(bp.Categories, 'BUILTBYTIER3COMMANDER')
-    	  --table.removeByValue(bp.Categories, 'DRAGBUILD')
-    	  --table.removeByValue(bp.Categories, 'NEEDMOBILEBUILD')
         table.insert(bp.Categories, 'BUILTBYGANTRY')
     end	
 end
 
-
-
-
-
-# ---------------- 
-
-
-
+--------------------------------------------------------------------------------
+-- Specifying units to be upgradable into eachother
+--------------------------------------------------------------------------------
+  
 function UpgradeableToBrewLAN(all_bps)
-         
-         
     local VanillasToUpgrade = {
         uab4202 = 'uab4301',--FromAeon T2 shield
         xsb3202 = 'sss0305',--From Seraphim T2 sonar
@@ -346,12 +250,10 @@ function UpgradeableToBrewLAN(all_bps)
     end
 end
 
-
-
-# ---------------- Torpedo bomber cat so they land on water.
-
-
-
+--------------------------------------------------------------------------------
+-- Specifying units to be upgradable into eachother
+--------------------------------------------------------------------------------
+ 
 function TorpedoBomberWaterLandCat(all_bps)
 
     local TorpedoBombers = {
@@ -376,12 +278,10 @@ function TorpedoBomberWaterLandCat(all_bps)
     end	
 end
 
-
-
-# ---------------- Rounding Galactic Collosus health
-
-
-
+--------------------------------------------------------------------------------
+-- My OCD GC health change change
+--------------------------------------------------------------------------------
+ 
 function RoundGalacticCollosusHealth(all_bps)
 
     local GalacticCollosus = {
@@ -393,28 +293,23 @@ function RoundGalacticCollosusHealth(all_bps)
     end
 end
 
-
-
-# ----------------- Cost balance matching for between versions of FA that changes costs
-
-
+--------------------------------------------------------------------------------
+-- Cost balance matching for between FAF and Steam versions of Forged Alliance
+--------------------------------------------------------------------------------
 
 function BrewLANMatchBalancing(all_bps)
 
     local UnitsList = {
-# ------- T3 torpedo bombers to match Solace
+------- T3 torpedo bombers to match Solace
         sra0307 = 'xaa0306',
         sea0307 = 'xaa0306',
         ssa0307 = 'xaa0306',
-# ------- Sera T3 gunship to match Broadsword   
+------- Sera T3 gunship to match Broadsword   
         ssa0305 = 'uea0305',
-# ------- Air transports to be based  
+------- Air transports to be based  
         ssa0306 = 'xea0306',
         sra0306 = 'xea0306',
         saa0306 = 'xea0306',
-        zelp001 = 'uel0401',
-        zesp001 = 'ues0401',
-        zeap001 = 'sea0401',
     }   
      
     for unitid, targetid in UnitsList do
@@ -426,7 +321,7 @@ function BrewLANMatchBalancing(all_bps)
     end     
  
     local UnitsListMult = {
-# ------- Air transport cost multipliers  
+------- Air transport cost multipliers  
         sra0306 = 0.95,
         saa0306 = 2.75,
     }      

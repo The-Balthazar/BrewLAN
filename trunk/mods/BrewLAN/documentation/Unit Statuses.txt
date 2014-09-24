@@ -36,7 +36,7 @@ Errors list/the other to-do list.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
-* Armored walls (and probably other walls) need to be repaired slower.        
+* Armored walls (and probably other walls) need to be repaired slower.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
