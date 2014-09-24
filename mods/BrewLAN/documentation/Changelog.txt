@@ -22,7 +22,19 @@ __________.__________
 * Increased the max slope that T2 & T3 walls can be built on.
 * Increased the depth of the wall models so they dont leave gaps when on uneven land.
 * Created a distance model for the Cybran T3 gate.
-* Removed the distance model reference for the Cybran T2 wall. Its simple enough to not matter.                 
+* Removed the distance model reference for the Cybran T2 wall. Its simple enough to not matter.
+* Added the UEF T3 Armored Wall Section.
+  __________
+  2014-09-23
+  
+  * Added an icon and description to the UEF T3 wall.
+  __________
+  2014-09-24
+  
+  * Did a complete blitz of the blueprints.lua. (Over 100 lines shorter, with the same+ function.)
+  * Made the Ravager buildable by the armored walls.
+  * Set the Ravager to be Size4 instead of Size12.
+  * Created a base unit for the Cybran Experimental Omni Disrupting Facility. No script yet.                       
 __________.__________
 2014-09-14|0.4.D
 

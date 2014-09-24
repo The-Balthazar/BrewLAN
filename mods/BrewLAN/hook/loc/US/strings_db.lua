@@ -33,7 +33,7 @@ tooltipbrewlan0011="Scry"
 tooltipbrewlan0012="Choose a unit to spy on"
       
 #--Tooltips for the open/closeable kind of gate.      
-tooltipbrewlan0013="Open/Close (D)"
+tooltipbrewlan0013="Open/Close"
 tooltipbrewlan0014="Toggle gate open or closed"
 tooltipbrewlan0015="Auto open enabled."
 
@@ -275,6 +275,7 @@ Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a 
         
 srb5310_desc="Armored Wall Section"
 srb5310_name="Procyon Defiance"
+seb5310_name="Citadel"
 Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 
 srb5311_desc="Armored Gate Section"        
@@ -323,3 +324,7 @@ Unit_Description_BrewLAN_T4L002="Experimental hovering siege assault tank. Equip
 seb2404="Experimental Drop-Pod Artillery"
 seb2404_name="Ivan"
 Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."
+
+srb4402_desc="Omni Disrupting Facility"
+srb4402_name="Darkness"
+Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Disables the omni of structures within its operational radius."
