@@ -1,4 +1,8 @@
-UnitBlueprint {
+UnitBlueprint {           
+    AI = {
+        GuardScanRadius = 2000,
+        StagingPlatformScanRadius = 2000,
+    },
     Audio = {
         ActiveLoop = Sound {
             Bank = 'URB',
@@ -36,7 +40,7 @@ UnitBlueprint {
         'SIZE20',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'OVERLAYCOUNTERINTEL',
+        'OVERLAYMISC',
         'SORTINTEL',
     },
     CollisionOffsetY = -0.25,
@@ -50,14 +54,14 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC srb4402_desc>Omni Disrupting Facility',
+    Description = '<LOC srb4402_desc>Experimental Omni Disrupting Facility',
     Display = {
         AnimationDeath = {
             {
                 Animation = '/units/XRC2201/XRC2201_Adeath1.sca',
                 AnimationRateMax = 1,
                 AnimationRateMin = 1,
-                Weight = 100,
+                Weight = 1,
             },
         },
         DamageEffects = {
@@ -121,8 +125,6 @@ UnitBlueprint {
         BuildCostMass = 82000,
         BuildTime = 27000,
         MaintenanceConsumptionPerSecondEnergy = 10000,
-        --MaintenanceConsumptionPerSecondEnergyStealth = 100,
-        --MaintenanceConsumptionPerSecondEnergyCloak = 875,
         RebuildBonusIds = {
             'srb4402',
         },
@@ -158,24 +160,20 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
-        ToggleCaps = {
+        TechLevel = 'RULEUTL_Advanced',   
+        ToggleCaps = {      
+            RULEUTC_WeaponToggle = true,
             RULEUTC_StealthToggle = true,
-   --         RULEUTC_CloakToggle = true,
         },
-        UnitName = '<LOC srb4402_name>Darkness',
+        UnitName = '<LOC srb4402_name>Oscuras',
         UnitWeight = 1,
     },
     Intel = {
-        --Cloak = true,
-        --RadarStealthFieldRadius = 40,
-        --ReactivateTime = 5,
-        --SonarStealthFieldRadius = 40,
         VisionRadius = 20,
         OmniJammingRadius = 2000,
     },
     Interface = {
-        HelpText = '<LOC srb4402_desc>Omni Disrupting Facility',
+        HelpText = '<LOC srb4402_desc>Experimental Omni Disrupting Facility',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3,
@@ -213,6 +211,21 @@ UnitBlueprint {
     SizeZ = 2.5,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 200,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'UAAWeapon',
+                    Cue = 'UAA0103_Bomb_Graviton',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },  
+            DisplayName = 'Omni Gamma Pulse',
+            Label = 'PulseWeapon',
+            MaxRadius = 2000,
+            WeaponCategory = 'Defense',
+        },
+    },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,

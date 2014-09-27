@@ -145,4 +145,4 @@ Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amph
 Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
 Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amphibious battleship."
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defences."
-Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Disables the omni of structures within its operational radius."
+Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of all active Omni sensors. Distant sensors are affected slower."
