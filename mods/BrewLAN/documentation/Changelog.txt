@@ -34,7 +34,11 @@ __________.__________
   * Did a complete blitz of the blueprints.lua. (Over 100 lines shorter, with the same+ function.)
   * Made the Ravager buildable by the armored walls.
   * Set the Ravager to be Size4 instead of Size12.
-  * Created a base unit for the Cybran Experimental Omni Disrupting Facility. No script yet.                       
+  * Created a base unit for the Cybran Experimental Omni Disrupting Facility. No script yet.
+  __________
+  2014-09-27
+  
+  * Made the Omni Disrupter almost fully functional.                       
 __________.__________
 2014-09-14|0.4.D
 
