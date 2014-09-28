@@ -1,44 +1,49 @@
-################################################################################
-##'-,_  ¦ ¦ _,-'¯##                                                               
-##------+ +------##   BrewLAN English strings table
-##------+ +------##   Author: Balthassar
-##_,-'¯ ¦ ¦  ¯'-,##
-################################################################################
+--##############################################################################
+--##'-,_  ¦ ¦ _,-'¯##                                                               
+--##------+ +------##   BrewLAN English strings table
+--##------+ +------##   Author: Balthassar
+--##_,-'¯ ¦ ¦  ¯'-,##
+--##############################################################################
 
+--------------------------------------------------------------------------------
+-- Tooltips
+-------------------------------------------------------------------------------- 
 
-## Tooltips
-
-
-#--Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
+--Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
 tooltipbrewlan0000="Toggle air production"
 tooltipbrewlan0001="Enables or disables production of air units"
 
-#--Toolttips for the T3 decoy planes.
+--Toolttips for the T3 decoy planes.
 tooltipbrewlan0002="Toggle air speed"
 tooltipbrewlan0003="Toggles impersonation of an air superiority or a CZAR"
 tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soulripper"
 tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
 tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
 
-#--Toolttips for the landmines.
+--Toolttips for the landmines.
 tooltipbrewlan0007="Detonate"
 tooltipbrewlan0008="Immediately detonate the payload."
 
-#--Tooltips for the builderwalls                                                            
+--Tooltips for the builderwalls                                                            
 tooltipbrewlan0009="Clear build area"
 tooltipbrewlan0010="Removes any structures or remains from the build area."         
 
-#--Tooltops for the Seraphim spy facility
+--Tooltops for the Seraphim spy facility
 tooltipbrewlan0011="Scry"
 tooltipbrewlan0012="Choose a unit to spy on"
       
-#--Tooltips for the open/closeable kind of gate.      
+--Tooltips for the open/closeable kind of gate.      
 tooltipbrewlan0013="Open/Close"
 tooltipbrewlan0014="Toggle gate open or closed"
 tooltipbrewlan0015="Auto open enabled."
 
-## T1
+--Tooltips for the Omni disrupter.
+tooltipbrewlan0016="Disruption pulse toggle"
+tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
 
+--------------------------------------------------------------------------------
+-- Tech 1
+-------------------------------------------------------------------------------- 
 
 sair0105="Light Gunship"
 saa0105_name="Respirer"
@@ -78,7 +83,7 @@ seb5104_name="Resupply"
 srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
 
-#--Field engineers
+--Field engineers
 sel0119_name="Wally"    
 sal0119_name="Vivifier"
 srl0119_name="Outy"
@@ -87,16 +92,15 @@ Unit_Description_BrewLAN_T1L001="Tech 1 amphibious construction, repair, capture
 Unit_Description_BrewLAN_T1L002="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth and can build specialist defences."
 Unit_Description_BrewLAN_T1L003="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
 
+--------------------------------------------------------------------------------
+-- Tech 2
+-------------------------------------------------------------------------------- 
 
-## T2
-
-
-#Aeon T2 Bomber
 saa0211_name="Impaler"
 saa0211_desc="Tactical Bomber"
 Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
-#Field Engineer
+--Field Engineers
 sal0209_desc="Defence Engineer"
 sal0209_name="Butler"
 srl0209_name="Wilson"
@@ -105,7 +109,7 @@ Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture
 Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Equipped a personal shield and radar."
 Unit_Description_BrewLAN_T2L003="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
 
-#-- Mass and energy storages use the default strings of their T1 counterparts, except the UEF T2 which have names.
+--Mass and energy storages
 seb1206_name="CJ-00F4T-2"
 seb1205_name="PW4TH12-ST Capacitor"
 Unit_Description_BrewLAN_T2R002="Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
@@ -132,17 +136,17 @@ sab2222_name="Mountain"
 ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="An all-terrain mine armed with a full-yield nuclear warhead. Manual detonation required. Visible only to Omni."
 
-#-- Cybran T2 shields; they didnt have build description originally.
+-- Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
   
 seb5210_desc="Heavy Wall Section"
 seb5210_name="General Destruction Impasse"
 Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage."
-   
-     
-## T3
-
+  
+--------------------------------------------------------------------------------
+-- Tech 3
+-------------------------------------------------------------------------------- 
 
 sair0305="Heavy Gunship"
 ssa0305_name="Vulthuum"
@@ -218,13 +222,12 @@ Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Build costs i
 sbui4301="Naval Shield Generator"
 seb4301_name="SSD - Pulse"
 sab4301_name="Borealis"
-#--No unit description. It can only be upgraded to.
 
-#--Seraphim T3 sonar platform
+--Seraphim T3 sonar platform
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
 
-#--Field engineer
+--Field engineers
 sel0319_name="Custodian"
 sal0319_name="Bilmon"
 srl0319_name="House"
@@ -289,9 +292,9 @@ ssb3301_desc="Optics Tracking Facility"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips."
 
-
-## T4
-
+--------------------------------------------------------------------------------
+-- Experimentals
+-------------------------------------------------------------------------------- 
 
 ssl0403_desc="Experimental Field Engineer"
 ssl0403_name="Iyadesu"
@@ -326,5 +329,5 @@ seb2404_name="Ivan"
 Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."
 
 srb4402_desc="Experimental Omni Disrupting Facility"
-srb4402_name="Oscuras"
+srb4402_name="Darkness"
 Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of active Omni sensors. Distant sensors are affected slower."

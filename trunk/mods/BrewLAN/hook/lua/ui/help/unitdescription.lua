@@ -125,6 +125,7 @@ Description['srb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts moveme
 Description['seb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 Description['srb5312'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 Description['srb5311'] = "<LOC Unit_Description_BrewLAN_T3B0020>Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
+Description['seb5311'] = "<LOC Unit_Description_BrewLAN_T3B0020>Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
 Description['sab1312'] = "<LOC Unit_Description_BrewLAN_T3B0021>High-end Mass extractor. Must be constructed on Mass deposits. It generates a shield dome large enough to cover itself and 4 small storages."
 Description['seb1312'] = "<LOC Unit_Description_BrewLAN_T3B0022>High-end Mass extractor. Must be constructed on Mass deposits. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
 Description['srb1312'] = "<LOC Unit_Description_BrewLAN_T3B0023>High-end Mass extractor. Must be constructed on Mass deposits. It generates a cloak field and stealth field large enough to disguise itself and 4 small storages."

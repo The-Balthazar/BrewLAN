@@ -75,21 +75,3 @@ UnitBlueprint {
         OmniRadius = 2,			##Added
     },
 }
-
-
-
-#Cybran Aircraft	---------------------------------#
-
-
-
-UnitBlueprint {
-	Merge = true,
-	BlueprintId="xra0305",		##Wailer
-    Weapon = {
-        {
-        },
-        {
-            Damage = 12,	##AA DOUBLED!
-        },
-    },
-}

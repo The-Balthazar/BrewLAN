@@ -156,21 +156,19 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUTC_StealthToggle = {
                 bitmapId = 'stealth-field',
-                helpText = 'toggle_stealth_field',
+                helpText = 'toggle_omni_distruption',
             },
         },
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',   
         ToggleCaps = {      
-            RULEUTC_WeaponToggle = true,
             RULEUTC_StealthToggle = true,
         },
-        UnitName = '<LOC srb4402_name>Oscuras',
+        UnitName = '<LOC srb4402_name>Darkness',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,
-        OmniJammingRadius = 2000,
     },
     Interface = {
         HelpText = '<LOC srb4402_desc>Experimental Omni Disrupting Facility',
@@ -215,8 +213,8 @@ UnitBlueprint {
         {
             Audio = {
                 Fire = Sound {
-                    Bank = 'UAAWeapon',
-                    Cue = 'UAA0103_Bomb_Graviton',
+                    Bank = 'XSL_Destroy',
+                    Cue = 'XSL0402_Death',
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },  
