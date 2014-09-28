@@ -17,8 +17,9 @@ SRL0320 = Class(CLandUnit) {
     },
     OnStopBeingBuilt = function(self,builder,layer)
         CLandUnit.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
-        self:EnableUnitIntel('Cloak')
+        self:SetMaintenanceConsumptionInactive()
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:RequestRefreshUI()
     end,
 }
 

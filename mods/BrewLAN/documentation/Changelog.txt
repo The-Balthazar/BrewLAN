@@ -10,6 +10,13 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
 __________.__________
+2014-09-28|0.4.F
+
+* Finished the Omni Disrupter.
+* Set the Slink to not have its cloak active on creation.
+* Removed my AA damage change for the Broadsword and Wailer.
+* Created the UEF T3 Gate section.   
+__________.__________
 2014-09-22|0.4.E
 
 * Changed the gate sections to be a seperate building to the wall sections instead of an upgrade of the afforementioned.
@@ -38,7 +45,7 @@ __________.__________
   __________
   2014-09-27
   
-  * Made the Omni Disrupter almost fully functional.                       
+  * Made the Omni Disrupter almost fully functional.
 __________.__________
 2014-09-14|0.4.D
 

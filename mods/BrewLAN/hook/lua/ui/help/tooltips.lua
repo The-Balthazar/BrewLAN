@@ -39,12 +39,17 @@ Tooltips['scry_spy_target'] = {
       keyID = "scry_spy_target",
    }       
 Tooltips['toggle_gate'] = {
-      title = "<LOC tooltipbrewlan0013>Open/Close (D)",
+      title = "<LOC tooltipbrewlan0013>Open/Close",
       description = "<LOC tooltipbrewlan0014>Toggle gate open or closed.",
       keyID = "toggle_gate",
    }       
 Tooltips['toggle_gate_auto'] = {
-      title = "<LOC tooltipbrewlan0013>Open/Close (D)",
+      title = "<LOC tooltipbrewlan0013>Open/Close",
       description = "<LOC tooltipbrewlan0015>Auto open enabled.",
       keyID = "toggle_gate",
-   }
+   }  
+Tooltips['toggle_omni_distruption'] = {
+      title = "<LOC tooltipbrewlan0016>Disruption pulse toggle",
+      description = "<LOC tooltipbrewlan0017>Toggle the Omni disruption pulse on or off.",
+      keyID = "toggle_omni_distruption",
+   } 
