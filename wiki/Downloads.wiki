@@ -1,24 +1,26 @@
 #summary Download lists and installation guides for BrewLAN.
 #labels Phase-Deploy
-The latest versions of BrewLAN require the [http://forums.gaspowered.com/viewtopic.php?t=36996 Global Icon Support mod v5] by Blackops, so before continuing further download and install that. Versions 0.3 and below require the Global Icon Support mod v2, available [http://supremecommander.filefront.com/file/Global_Icon_Support;100370 here]. Versions with multilingual support, version 0.3 and above, do not require special installation.
+Pre 0.4.4 versions of BrewLAN require the [http://forums.gaspowered.com/viewtopic.php?t=36996 Global Icon Support mod v5] by Blackops. Versions 0.3 and below require the Global Icon Support mod v2, available [http://supremecommander.filefront.com/file/Global_Icon_Support;100370 here]. Most versions of BrewLAN only used BOGIS as a double redundancy, so the hard requirement has been removed in the latest versions.
 
 ==Installation==
 If you wish to use SVN skip this section. The general instructions for installation are:
   # Remove old versions if applicable.
-  # Copy the /BrewLAN/ folder into your Forged Alliance /mods/ folder by default located at either one, or both, of the following; if neither exists then create one:
+  # Copy the /BrewLAN/ folder into your Forged Alliance /mods/ folder. You may have to create one if you have not installed any mods before. Possible default locations are:
+   * "`...\Steam\SteamApps\common\supreme commander forged alliance\mods\`".
    * "`...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`"
-   * "`...\My Documents\My Games\Gas Powered Games\Supreme Commander Forged Alliance\mods\`".
+   * "`...\My Documents\My Games\Gas Powered Games\Supreme Commander Forged Alliance\mods\`"
   # Copy the "`brewlan.scd`" into the Forged Alliance /gamedata/ folder found by default at:
+   * "`...\Steam\SteamApps\common\supreme commander forged alliance\gamedata\`"
    * "`...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\gamedata\`"
-Pre 0.2.2 releases don't require an SCD file. The 'SCD only' version of 0.2.2a doesn't require the /BrewLAN/ folder as its contained within the SCD file.
+*If you are experiencing missing icons, textures the SCD file isn't installed correctly.*
 
 ==SVN download==
  _This section of the guide assumes you have TortoiseSVN installed_
 
 The download of SVN version of the mod is done in two parts to prevent the SVN client messing with vanilla/other mods files. But first off remove any non-SVN versions of BrewLAN you may have.
   # In your Forged Alliance mod folder (see [#Installation installation] above if you cant find it) create a folder called "BrewLAN", the name is important for everything to work, then right click it and select "SVN Checkout" and set the repository URL as "`http://brewlan.googlecode.com/svn/trunk/mods/BrewLAN/`", checkout directory should already be filled in. Checkout depth: fully recursive; head revision. Then click OK.
-  # Then download the [http://brewlan.googlecode.com/svn/trunk/gamedata/brewlan.scd brewlan.scd] and place it into your gamedata folder. There is no good way of doing this step with an SVN client, which means it needs manually updating for each change.
-To update your SVN version of BrewLAN simply right click the folder and click SVN update, updating the SCD file unfortunately requires manually re-downloading it, unless you have a better way of doing it.
+  # Then download the [http://brewlan.googlecode.com/svn/trunk/gamedata/brewlan.scd brewlan.scd] and place it into your gamedata folder. 
+To update your SVN version of BrewLAN simply right click the folder and click SVN update, updating the SCD file unfortunately requires manually re-downloading it, unless you set up the gamedata folder in a similar way to the BrewLAN folder.
 <img src=http://i916.photobucket.com/albums/ad8/BrewLAN/BrewLAN-T1-Shields.jpg align=right>
 ==Beta downloads==
 The public beta download links; the latest _clean_ versions. By which I mean that all unfinished and units and features have been cut from them. Installation instructions above.
