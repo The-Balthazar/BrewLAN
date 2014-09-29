@@ -31,7 +31,6 @@ Errors list/the other to-do list.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
 * Planned new Naval shield implementation: All shields aquatic, and recieve radius and cost increases when built on water.
-* One race should get a T3 torpedo launcher that can be built on land.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
@@ -99,9 +98,6 @@ Modded Units:
     	* Changed to Tech 3.
     	* Health still 500.
   
-  	T3 Gunship
-  		* AA damage increased. Still token.
-  
     T3 Anti nuke defence
       * Changed tarmac.
   
@@ -113,15 +109,12 @@ Modded Units:
       * Gave a unique buildable category.
             
     T2+T3 Shield Generators
-      * Unified and normalised tarmacs.
+      * Unified tarmacs textures.
         * For some reason the T2 had a huge tarmac and the T3 had a tiny tarmac.
       * Allowed the T2 to upgrade from my T1.            
   
     T3 Nuke Defence Silo
       * Changed the tarmac texture.
-  
-  	T3 Gunship
-  		* AA damage increased. Still token.
   
   	Novax Center
   		* Still in game but removed from build menus.
@@ -188,9 +181,7 @@ Tech 1
       * T1 Torpedo Bomber
       * T1 Air Staging        
   		* T1 Field engineer
-      
-    T1 Pressure Mine
-      * Needs to not block pathing. 
+  		* T1 Pressure Mine      
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	Fully Funtioning:
@@ -235,7 +226,6 @@ Tech 2:
       * T2 Mass Storage
       * T2 Energy Storage
       * T2 Proximity Mine
-        * Still blocks pathing.
         * Lacks a unique water explosion.
         * Doesn't leave behind a decent sized scorch mark yet.
     
@@ -307,9 +297,7 @@ Tech 3:
       * T3 Cloakable Mass Fabricator.  
       * T3 Cloakable Power Generator.
       * T3 Armored Wall Section.
-      * T3 Armored Gate Section.
-        * Needs a custom model.
-        * Order to close should also be passed to adjacent units.                                                    
+      * T3 Armored Gate Section.                                                
   	         
   	T3 Stealth tank (Cybran sniper bot alternative)
       * Unfinished appearance.

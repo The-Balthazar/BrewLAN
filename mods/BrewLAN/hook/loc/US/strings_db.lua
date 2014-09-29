@@ -49,9 +49,9 @@ sair0105="Light Gunship"
 saa0105_name="Respirer"
 sea0105_name="Pigeon"
 ssa0105_name="Vulesel"
-Unit_Description_BrewLAN_T1A001="Light Guship. Primary role is base defence. Effective against low-level ground units."
+Unit_Description_BrewLAN_T1A001="Light Guship. Primary role is base defense. Effective against low-level ground units."
 Unit_Description_BrewLAN_T1A002="Light Guship. Effective against low-level ground units. Equipped with a light transport hook."
-Unit_Description_BrewLAN_T1A003="Light Guship. Primary role is base defence. Effective against low-level ground units."
+Unit_Description_BrewLAN_T1A003="Light Guship. Primary role is base defense. Effective against low-level ground units."
 
 sair0106="Light Torpedo Bomber"
 saa0106_name="Saksinokka"
@@ -88,9 +88,9 @@ sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
 ssl0119_name="Iyaz"
-Unit_Description_BrewLAN_T1L001="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
-Unit_Description_BrewLAN_T1L002="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth and can build specialist defences."
-Unit_Description_BrewLAN_T1L003="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
+Unit_Description_BrewLAN_T1L001="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defenses."
+Unit_Description_BrewLAN_T1L002="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth and can build specialist defenses."
+Unit_Description_BrewLAN_T1L003="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
 --------------------------------------------------------------------------------
 -- Tech 2
@@ -101,13 +101,13 @@ saa0211_desc="Tactical Bomber"
 Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
 --Field Engineers
-sal0209_desc="Defence Engineer"
+sal0209_desc="Defense Engineer"
 sal0209_name="Butler"
 srl0209_name="Wilson"
 ssl0219_name="Iyazyn"
 Unit_Description_BrewLAN_T2L001="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter, internal radar, and stealth."
 Unit_Description_BrewLAN_T2L002="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Equipped a personal shield and radar."
-Unit_Description_BrewLAN_T2L003="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
+Unit_Description_BrewLAN_T2L003="Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 
 --Mass and energy storages
 seb1206_name="CJ-00F4T-2"
@@ -156,7 +156,7 @@ sair0306="Heavy Air Transport"
 saa0306_name="Solaris"
 sra0306_name="Night Skimmer"
 ssa0306_name="Vishuum"
-Unit_Description_BrewLAN_T3A002="Heavy air transport. Armed with heavy anti-air defence, an EMP weapon and a stealth field. Can carry up to 16 units."
+Unit_Description_BrewLAN_T3A002="Heavy air transport. Armed with heavy anti-air defense, an EMP weapon and a stealth field. Can carry up to 16 units."
 Unit_Description_BrewLAN_T3A003="Heavy air transport. Features 32 transportation clamps, heavy weaponry and a shield generator. Can carry up to 32 units."
 Unit_Description_BrewLAN_T3A004="Heavy air transport. Armed with a powerful shield and heavy anti-air weapons. Can carry up to 72 units."
 
@@ -164,8 +164,8 @@ Unit_Description_BrewLAN_T3A004="Heavy air transport. Armed with a powerful shie
 sra0307_name="Zenith"
 sea0307_name="Albatross"
 ssa0307_name="Souioz"
-Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defences with large salvos."
-Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defence."
+Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defenses with large salvos."
+Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defense."
 Unit_Description_BrewLAN_T3A008="High-level torpedo bomber. Designed to engage powerful naval units."
 
 sair0310="Decoy Plane"
@@ -232,9 +232,9 @@ sel0319_name="Custodian"
 sal0319_name="Bilmon"
 srl0319_name="House"
 ssl0319_name="Iyazyne"
-Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defences."
-Unit_Description_BrewLAN_T3L006="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defences."
-Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defences."
+Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defenses."
+Unit_Description_BrewLAN_T3L006="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
+Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
       
 srb1311_desc="Cloakable Power Generator"
 seb1311_desc="Engineering Power Generator"
@@ -298,7 +298,7 @@ Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly o
 
 ssl0403_desc="Experimental Field Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Experimental amphibious construction, repair, capture, reclamation, and mine layer unit. Has moderate combat and defence equipment, and can build specialist equipment."
+Unit_Description_BrewLAN_T4L001="Experimental amphibious construction, repair, capture, reclamation, and mine layer unit. Has moderate combat and defense equipment, and can build specialist equipment."
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"
@@ -322,7 +322,7 @@ Unit_Description_BrewLAN_T4B004="Experimental multi-purpose factory. Dynamically
 
 sal0401="Experimental Siege Tank"
 sal0401_name="Absolution"
-Unit_Description_BrewLAN_T4L002="Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defences."
+Unit_Description_BrewLAN_T4L002="Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
 
 seb2404="Experimental Drop-Pod Artillery"
 seb2404_name="Ivan"
