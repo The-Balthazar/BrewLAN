@@ -15,7 +15,16 @@ __________.__________
 * Finished the Omni Disrupter.
 * Set the Slink to not have its cloak active on creation.
 * Removed my AA damage change for the Broadsword and Wailer.
-* Created the UEF T3 Gate section.   
+* Created the UEF T3 Gate section.
+  __________
+  2014-09-29
+  
+  * Fixed the bug with the Sparky mine build cat, which had accidentally gotten overwritten by the counterintel cat.
+  * Unified spellings of 'Defence' to match the American spellings of 'Defense' already found throughout the game. Even if it feels wrong.
+  * Set all land mines to link back to the same script, instead of being almost exact copies of said script.  
+  * Allowed all units to walk over land mines.
+  * Fixed the normals link for the UEF T1 Field Engineer.
+  * Gave the UEF T1 mine a unique appearance, and finished it.           
 __________.__________
 2014-09-22|0.4.E
 

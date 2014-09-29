@@ -32,7 +32,6 @@ UnitBlueprint {
         'TECH2',
         'MINE',
         'DRAGBUILD',
-        #'BENIGN',
         'VISIBLETORECON',
         'RECLAIMABLE',
     },
@@ -48,7 +47,6 @@ UnitBlueprint {
     },
     Description = '<LOC sbui2221>Proximity Mine',
     Display = {
-        AnimationOpen = '/mods/brewlan/units/seb2221/seb2221_aopen.sca',
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
             '<LOC ability_cloak>Cloaking',
@@ -84,8 +82,8 @@ UnitBlueprint {
         BuildTime = 50,
     },
     Footprint = {
-        SizeX = 0,
-        SizeZ = 0,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         CapCost = 0.1,
