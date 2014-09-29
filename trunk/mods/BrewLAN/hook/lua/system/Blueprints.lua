@@ -17,13 +17,49 @@ function ModBlueprints(all_blueprints)
     BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANCategoryChanges(all_blueprints.Unit) 
     BrewLANNameCalling(all_blueprints.Unit)  
-    BuiltByGantry(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
     --TorpedoBomberWaterLandCat(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
     BrewLANMatchBalancing(all_blueprints.Unit)
+    BrewLANNavalShields(all_blueprints.Unit)
 end
 
+--------------------------------------------------------------------------------
+-- Unit category changes
+--------------------------------------------------------------------------------
+   
+function BrewLANNavalShields(all_bps) 
+    local Units = {
+        --Cybran Shields
+        urb4202 = {},
+        urb4204 = {},
+        urb4205 = {},
+        urb4206 = {},
+        urb4207 = {},   
+        --UEF Shields
+        seb4102 = {},
+        ueb4202 = {},
+        ueb4301 = {},
+        --Aeon Shields
+        sab4102 = {},
+        uab4202 = {},
+        uab4301 = {},
+        --Seraphim Shields
+        ssb4102 = {},
+        xsb4202 = {},
+        xsb4301 = {}, 
+    }
+    for k, v in Units do   
+        if all_bps[k] then
+            all_bps[k].General.Icon = 'amph'
+            all_bps[k].Physics.BuildOnLayerCaps.LAYER_Water = true
+            all_bps[k].Wreckage.WreckageLayers.Water = true
+            if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end
+            table.removeByValue(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')--Preventing double ability in certain units.
+            table.insert(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')
+        end
+    end
+end
 --------------------------------------------------------------------------------
 -- Additional buildable categories
 --------------------------------------------------------------------------------
@@ -85,6 +121,39 @@ function BrewLANCategoryChanges(all_bps)
         xab2307 = {'EXPERIMENTAL', r = {'TECH3', }, },---------Salvation
         --url0401 = {NoBuild = true, }, -----------------------Scathis MkII currently using this ID
         xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
+--------------------------------------------------------------------------------
+-- Allowing Vanillas and specific other mod units to be build by the Gantry
+--------------------------------------------------------------------------------
+        -- Vanilla
+        uel0401 = {'BUILTBYGANTRY',},              -- Fatboy 
+        ues0401 = {'BUILTBYGANTRY',},              -- Atlantis
+        -- Total Mayhem T4's
+        brnt3doomsday = {'BUILTBYGANTRY',},        -- Doomsday
+        brnt3argus = {'BUILTBYGANTRY',},           -- Argus
+        brnt3shbm2 = {'BUILTBYGANTRY',},           -- Mayhem Mk 4 
+        brnt3shbm = {'BUILTBYGANTRY',},            -- Mayhem Mk 2
+        brnt3blasp = {'BUILTBYGANTRY',},           -- Blood Asp 
+        brnt3bat = {'BUILTBYGANTRY',},             -- Rampart
+        -- Total Mayhem T3's     
+        brnt3ow = {'BUILTBYGANTRY',},              -- Owens
+        brnt3advbtbot = {'BUILTBYGANTRY',},        -- Hurricane
+        brnat3bomber = {'BUILTBYGANTRY',},         -- Havok
+        -- Total Mayhem T2's
+        brnt2bm = {'BUILTBYGANTRY',},              -- Banshee
+        brnt2exm2 = {'BUILTBYGANTRY',},            -- Tomahawk
+        brnt2bat = {'BUILTBYGANTRY',},             -- Rampart
+        brnt2exm1 = {'BUILTBYGANTRY',},            -- Jackhammer mk.2 
+        brnt2exlm = {'BUILTBYGANTRY',},            -- Firestorm
+        brnt2exmdf = {'BUILTBYGANTRY',},           -- Horizon
+        brnt2sniper = {'BUILTBYGANTRY',},          -- Marksman
+        -- Total Mayhem T1's             
+        brnt1exm1 = {'BUILTBYGANTRY',},            -- Kruger mk2.             
+        brnt1exmob = {'BUILTBYGANTRY',},           -- UnderTaker             
+        brnt1extk = {'BUILTBYGANTRY',},            -- Thunderstrike              
+        brnat1exgs = {'BUILTBYGANTRY',},           -- Imperium
+        -- BlackOps
+        bes0402 = {'BUILTBYGANTRY',},              -- Conquest Class 
+        bel0402 = {'BUILTBYGANTRY',},              -- Goliath MKII  
     }
     local buildcats = {  
         'BUILTBYTIER1ENGINEER',
@@ -109,6 +178,8 @@ function BrewLANCategoryChanges(all_bps)
                     end
                     table.insert(all_bps[k].Categories, v[i])
                 end
+            elseif v.Gantry then  
+                table.insert(all_bps[k].Categories, 'BUILTBYGANTRY')
             else
                 for i in buildcats do
                     table.removeByValue(all_bps[k].Categories, buildcats[i])
@@ -136,51 +207,7 @@ function BrewLANNameCalling(all_bps)
         end
     end
 end
-
---------------------------------------------------------------------------------
--- Allowing Vanillas and specific other mod units to be build by the Gantry
---------------------------------------------------------------------------------
   
-function BuiltByGantry(all_bps)
-    local UEFExperimentals = {
-        #-- Vanilla
-        all_bps['uel0401'],              #-- Fatboy 
-        all_bps['ues0401'],              #-- Atlantis
-        #-- Total Mayhem T4's
-        all_bps['brnt3doomsday'],        #-- Doomsday
-        all_bps['brnt3argus'],           #-- Argus
-        all_bps['brnt3shbm2'],           #-- Mayhem Mk 4 
-        all_bps['brnt3shbm'],            #-- Mayhem Mk 2
-        all_bps['brnt3blasp'],           #-- Blood Asp 
-        all_bps['brnt3bat'],             #-- Rampart
-        #-- Total Mayhem T3's     
-        all_bps['brnt3ow'],              #-- Owens
-        all_bps['brnt3advbtbot'],        #-- Hurricane
-        all_bps['brnat3bomber'],         #-- Havok
-        #-- Total Mayhem T2's
-        all_bps['brnt2bm'],              #-- Banshee
-        all_bps['brnt2exm2'],            #-- Tomahawk
-        all_bps['brnt2bat'],             #-- Rampart
-        all_bps['brnt2exm1'],            #-- Jackhammer mk.2 
-        all_bps['brnt2exlm'],            #-- Firestorm
-        all_bps['brnt2exmdf'],           #-- Horizon
-        all_bps['brnt2sniper'],          #-- Marksman
-        #-- Total Mayhem T1's             
-        all_bps['brnt1exm1'],            #-- Kruger mk2.             
-        all_bps['brnt1exmob'],           #-- UnderTaker             
-        all_bps['brnt1extk'],            #-- Thunderstrike              
-        all_bps['brnat1exgs'],           #-- Imperium
-        
-        #-- BlackOps
-        all_bps['bes0402'],              #-- Conquest Class 
-        all_bps['bel0402'],              #-- Goliath MKII  
-        --all_bps['bea0402'],              #-- Citadel MKII (Disabled for being too big)
-    }
-    for arrayIndex, bp in UEFExperimentals do
-        table.insert(bp.Categories, 'BUILTBYGANTRY')
-    end	
-end
-
 --------------------------------------------------------------------------------
 -- Specifying units to be upgradable into eachother
 --------------------------------------------------------------------------------

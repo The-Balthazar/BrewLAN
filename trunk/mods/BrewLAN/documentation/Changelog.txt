@@ -24,7 +24,12 @@ __________.__________
   * Set all land mines to link back to the same script, instead of being almost exact copies of said script.  
   * Allowed all units to walk over land mines.
   * Fixed the normals link for the UEF T1 Field Engineer.
-  * Gave the UEF T1 mine a unique appearance, fixed, and finished it.           
+  * Gave the UEF T1 mine a unique appearance, fixed, and finished it.
+  * Allowed all non-Iron Curtain shields to be built on water.
+  * Removed the last traces of the old naval only shields.
+  * Fixed the error in the script for the Night Skimmer, and made it be closed on creation.
+  * Gave the Aeon T1 air staging its large node. Like the others have always had.
+  * Finished the Aeon T3 Shielded Mass Extractor.                     
 __________.__________
 2014-09-22|0.4.E
 
