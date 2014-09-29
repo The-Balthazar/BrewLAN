@@ -28,11 +28,24 @@ SRA0306 = Class(CAirUnit) {
 
     BeamExhaustIdle = '/effects/emitters/missile_exhaust_fire_beam_05_emit.bp',
     BeamExhaustCruise = '/effects/emitters/missile_exhaust_fire_beam_04_emit.bp',
+     
+    IntelEffects = {
+        {
+            Bones = {
+                'Char01',
+            },
+                Offset = {
+                0,
+                0.3,
+                0,
+            },
+            Scale = 2,
+            Type = 'Jammer01',
+        },
+    },
     
     OnCreate = function( self )
         CAirUnit.OnCreate(self)
-        self:SetMaintenanceConsumptionActive()
-        self:EnableUnitIntel('RadarStealthField')
         if not self.OpenAnim then
             self.OpenAnim = CreateAnimator(self)
             self.OpenAnim:PlayAnim(self:GetBlueprint().Display.AnimationOpen, false):SetRate(0)
@@ -40,7 +53,7 @@ SRA0306 = Class(CAirUnit) {
         end
     end,
 
-    OnStopBeingBuilt = function(self,builder,layer)
+    OnStopBeingBuilt = function(self,builder,layer) 
         CAirUnit.OnStopBeingBuilt(self,builder,layer)
         self.AnimManip = CreateAnimator(self)
         self.Trash:Add(self.AnimManip)
@@ -50,22 +63,14 @@ SRA0306 = Class(CAirUnit) {
             self.Trash:Add(self.OpenAnim)
         end
         self.OpenAnim:PlayAnim(self:GetBlueprint().Display.AnimationOpen, false):SetRate(1)
+        
+        self:SetScriptBit('RULEUTC_StealthToggle', false)
+        self:SetMaintenanceConsumptionActive()
+        self:EnableUnitIntel('RadarStealthField')
+        self:EnableUnitIntel('SonarStealthField')
+        self.OnIntelEnabled(self)
+        self:RequestRefreshUI()
     end,
-
-    IntelEffects = {
-		{
-			Bones = {
-				'Char01',
-			},
-			Offset = {
-				0,
-				0.3,
-				0,
-			},
-			Scale = 2,
-			Type = 'Jammer01',
-		},
-    },
 
     # When one of our attached units gets killed, detach it
     OnAttachedKilled = function(self, attached)
@@ -78,7 +83,21 @@ SRA0306 = Class(CAirUnit) {
         # units, otherwise successfully detaches all.
         self:TransportDetachAllUnits(true)
     end,
-
+    
+    OnIntelEnabled = function(self)
+        CAirUnit.OnIntelEnabled(self)
+        if self.IntelEffects and not self.IntelFxOn then
+            self.IntelEffectsBag = {}
+            self.CreateTerrainTypeEffects( self, self.IntelEffects, 'FXIdle',  self:GetCurrentLayer(), nil, self.IntelEffectsBag )
+            self.IntelFxOn = true
+        end
+    end,
+    
+    OnIntelDisabled = function(self)
+        CAirUnit.OnIntelDisabled(self)
+        EffectUtil.CleanupEffectBag(self,'IntelEffectsBag')
+        self.IntelFxOn = false
+    end,   
     OnMotionVertEventChange = function(self, new, old)
         #LOG( 'OnMotionVertEventChange, new = ', new, ', old = ', old )
         CAirUnit.OnMotionVertEventChange(self, new, old)

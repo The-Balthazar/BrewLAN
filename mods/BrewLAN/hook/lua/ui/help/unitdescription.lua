@@ -14,15 +14,15 @@ Description['srb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary 
 Description['ssb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 
 #Tech 1 protection units
-Description['sab4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius."
-Description['seb4102'] = "<LOC Unit_Description_BrewLAN_T1P002>Generates a protective shield around units and structures within its radius."
-Description['ssb4102'] = "<LOC Unit_Description_BrewLAN_T1P003>Generates a protective shield around units and structures within its radius. Upradable twice."
+Description['sab4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upradable twice."
+Description['seb4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upradable twice."
+Description['ssb4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upradable twice."
 
 #Tech 1 utility units
-Description['sab5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
-Description['seb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
-Description['srb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
-Description['ssb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels aircraft small aircraft, one landing pad."
+Description['sab5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
+Description['seb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
+Description['srb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
+Description['ssb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
 
 #Tech 1 land units
 Description['srl0119'] = "<LOC Unit_Description_BrewLAN_T1L001>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defenses."    

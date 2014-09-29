@@ -20,7 +20,6 @@ Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * The Atlantis ignores its rolloff orders from the Gantry.
 * SRS0401 lacks weapons.
-* SRA0306 has an intel error. (line 32)
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
 * The Absolution can't hover over walls and such.
@@ -30,7 +29,7 @@ Errors list/the other to-do list.
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
-* Planned new Naval shield implementation: All shields aquatic, and recieve radius and cost increases when built on water.
+* Shields need a floatation when on water (easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
@@ -507,4 +506,3 @@ Anti-naval gunship.
 Rail gun: http://forums.gaspowered.com/viewtopic.php?t=27664#p473416    
 Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
     * Script might also be usefull for the decoy planes.
-AttachBeamEntityToEntity could be a useful somewhere    
