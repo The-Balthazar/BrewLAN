@@ -55,17 +55,6 @@ SEB4102 = Class(TShieldStructureUnit) {
 		end
     end,
     
-    OnLayerChange = function(self, new, old)
-        TShieldStructureUnit.OnLayerChange(self, new, old)
-        if new == 'Land' then
-            self:AddBuildRestriction(categories.seb4301)
-            self:RequestRefreshUI()
-        elseif new == 'Water' then
-            self:RestoreBuildRestrictions()
-            self:RequestRefreshUI()     
-        end
-    end,
-
     UpgradingState = State(TShieldStructureUnit.UpgradingState) {
         Main = function(self)
             self.Rotator1:SetTargetSpeed(90)

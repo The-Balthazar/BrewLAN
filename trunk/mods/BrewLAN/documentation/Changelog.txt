@@ -29,7 +29,15 @@ __________.__________
   * Removed the last traces of the old naval only shields.
   * Fixed the error in the script for the Night Skimmer, and made it be closed on creation.
   * Gave the Aeon T1 air staging its large node. Like the others have always had.
-  * Finished the Aeon T3 Shielded Mass Extractor.                     
+  * Finished the Aeon T3 Shielded Mass Extractor.
+  __________
+  2014-09-30
+  
+  * Sorian AI will now build most new BrewLAN units, including the Centurion, Archimedes, Field Engineers, Mobile Strat Defences, and others. (Also the Gantry, but they don't use it well.)
+  * Allowed AI to cheat with field engineer exclusive units, and be able to build them with regular engineers, allowing them to build the alternate resource buildings and anti-armor point defences.
+  * Removed the Aeon and UEF T1 shield references to the non-existant naval shields.
+  * Fixed the normals reference of the Orbos.
+  * Fixed the particle effects of the Aeon decoy.                             
 __________.__________
 2014-09-22|0.4.E
 

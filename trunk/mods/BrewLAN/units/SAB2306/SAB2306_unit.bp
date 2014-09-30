@@ -96,7 +96,7 @@ UnitBlueprint {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/ual0401/ual0401_albedo.dds',
-                    NormalsName = '/units/ual0401/ual0401_normalts.dds',
+                    NormalsName = '/units/ual0401/ual0401_normalsts.dds',
                     SpecularName = '/units/ual0401/ual0401_specteam.dds',
                 },
                 {
@@ -104,7 +104,7 @@ UnitBlueprint {
                     Scrolling = true,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/ual0401/ual0401_lod1_albedo.dds',
-                    NormalsName = '/units/ual0401/ual0401_lod1_normalts.dds',
+                    NormalsName = '/units/ual0401/ual0401_lod1_normalsts.dds',
                     SpecularName = '/units/ual0401/ual0401_lod1_specteam.dds',
                 },
             },

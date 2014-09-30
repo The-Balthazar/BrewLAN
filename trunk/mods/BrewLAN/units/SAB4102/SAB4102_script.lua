@@ -69,17 +69,6 @@ SAB4102 = Class(AShieldStructureUnit) {
 	end
     end,
 
-    OnLayerChange = function(self, new, old)
-        AShieldStructureUnit.OnLayerChange(self, new, old)
-        if new == 'Land' then
-            self:AddBuildRestriction(categories.sab4301)
-            self:RequestRefreshUI()
-        elseif new == 'Water' then
-            self:RestoreBuildRestrictions()
-            self:RequestRefreshUI()     
-        end
-    end,
-    
     UpgradingState = State(AShieldStructureUnit.UpgradingState) {
         Main = function(self)
             self:ShowBone('Flap03', true)

@@ -1,12 +1,8 @@
-#****************************************************************************
-#**
-#** Hook File: /lua/system/blueprints.lua
-#**
-#** Modded By: Balthazar
-#**
-#** Changes: STUFF
-#**   
-#*********************************************************************
+--------------------------------------------------------------------------------
+-- Hook File: /lua/system/blueprints.lua
+--------------------------------------------------------------------------------
+-- Modded By: Balthazar
+--------------------------------------------------------------------------------
 do
 
 local OldModBlueprints = ModBlueprints
@@ -24,42 +20,6 @@ function ModBlueprints(all_blueprints)
     BrewLANNavalShields(all_blueprints.Unit)
 end
 
---------------------------------------------------------------------------------
--- Unit category changes
---------------------------------------------------------------------------------
-   
-function BrewLANNavalShields(all_bps) 
-    local Units = {
-        --Cybran Shields
-        urb4202 = {},
-        urb4204 = {},
-        urb4205 = {},
-        urb4206 = {},
-        urb4207 = {},   
-        --UEF Shields
-        seb4102 = {},
-        ueb4202 = {},
-        ueb4301 = {},
-        --Aeon Shields
-        sab4102 = {},
-        uab4202 = {},
-        uab4301 = {},
-        --Seraphim Shields
-        ssb4102 = {},
-        xsb4202 = {},
-        xsb4301 = {}, 
-    }
-    for k, v in Units do   
-        if all_bps[k] then
-            all_bps[k].General.Icon = 'amph'
-            all_bps[k].Physics.BuildOnLayerCaps.LAYER_Water = true
-            all_bps[k].Wreckage.WreckageLayers.Water = true
-            if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end
-            table.removeByValue(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')--Preventing double ability in certain units.
-            table.insert(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')
-        end
-    end
-end
 --------------------------------------------------------------------------------
 -- Additional buildable categories
 --------------------------------------------------------------------------------
@@ -90,6 +50,19 @@ function BrewLANBuildCatChanges(all_bps)
         srl0319 = {'BUILTBYTIER3ENGINEER CYBRAN COUNTERINTELLIGENCE',},
         ssl0319 = {'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE',},
         sal0319 = {'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE',},
+        --These categories are removed if controlled by a human on the hooked unit scripts
+        ual0105 = {'BUILTBYTIER1FIELD AEON',},
+        ual0208 = {'BUILTBYTIER2FIELD AEON',},
+        ual0309 = {'BUILTBYTIER3FIELD AEON',},
+        uel0105 = {'BUILTBYTIER1FIELD UEF',},
+        uel0208 = {'BUILTBYTIER2FIELD UEF',},
+        uel0309 = {'BUILTBYTIER3FIELD UEF',},
+        url0105 = {'BUILTBYTIER1FIELD CYBRAN',},
+        url0208 = {'BUILTBYTIER2FIELD CYBRAN',},
+        url0309 = {'BUILTBYTIER3FIELD CYBRAN',},
+        xsl0105 = {'BUILTBYTIER1FIELD SERAPHIM',},
+        xsl0208 = {'BUILTBYTIER2FIELD SERAPHIM',},
+        xsl0309 = {'BUILTBYTIER3FIELD SERAPHIM',},
     }
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] then
@@ -363,5 +336,41 @@ function BrewLANMatchBalancing(all_bps)
     end   
 end
 
+--------------------------------------------------------------------------------
+-- Shield changes
+--------------------------------------------------------------------------------
+   
+function BrewLANNavalShields(all_bps) 
+    local Units = {
+        --Cybran Shields
+        urb4202 = {},
+        urb4204 = {},
+        urb4205 = {},
+        urb4206 = {},
+        urb4207 = {},   
+        --UEF Shields
+        seb4102 = {},
+        ueb4202 = {},
+        ueb4301 = {},
+        --Aeon Shields
+        sab4102 = {},
+        uab4202 = {},
+        uab4301 = {},
+        --Seraphim Shields
+        ssb4102 = {},
+        xsb4202 = {},
+        xsb4301 = {}, 
+    }
+    for k, v in Units do   
+        if all_bps[k] then
+            all_bps[k].General.Icon = 'amph'
+            all_bps[k].Physics.BuildOnLayerCaps.LAYER_Water = true
+            all_bps[k].Wreckage.WreckageLayers.Water = true
+            if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end
+            table.removeByValue(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')--Preventing double ability in certain units.
+            table.insert(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')
+        end
+    end
+end
 
 end

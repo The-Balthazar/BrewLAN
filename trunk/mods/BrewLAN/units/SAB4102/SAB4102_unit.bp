@@ -135,7 +135,6 @@ UnitBlueprint {
         BuildTime = 240,
         MaintenanceConsumptionPerSecondEnergy = 75,
         BuildableCategory = {
-            'sab4301',
             'uab4202',
         },
         RebuildBonusIds = {
