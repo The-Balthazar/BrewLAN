@@ -1,11 +1,7 @@
 #****************************************************************************
 #**
-#**  File     :  /cdimage/units/UAB1202/UAB1202_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
+#**  Summary  :  Aeon Shielded Mass Extractor Script
 #**
-#**  Summary  :  Aeon Tier 2 Mass Extractor Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local AMassCollectionUnit = import('/lua/aeonunits.lua').AMassCollectionUnit

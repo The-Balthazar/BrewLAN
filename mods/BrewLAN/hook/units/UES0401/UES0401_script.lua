@@ -8,7 +8,7 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TSubUnit = import('/lua/terranunits.lua').TSubUnit
+--local TSubUnit = import('/lua/terranunits.lua').TSubUnit
 local ATLANTIS = import('/units/ues0401/ues0401_script.lua').UES0401
 
 UES0401 = Class(ATLANTIS) {

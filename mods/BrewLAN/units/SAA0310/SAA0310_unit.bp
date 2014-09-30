@@ -110,7 +110,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAA0302',
+                            0,
                         },
                         Type = 'Landing01',
                     },
@@ -120,7 +120,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAA0302',
+                            0,
                         },
                         Type = 'TakeOff01',
                     },
@@ -149,10 +149,17 @@ UnitBlueprint {
         },
         MovementEffects = {
             Air = {
+                Contrails = {
+                    Bones = {
+                        'Left_Contrail',
+                        'Right_Contrail',
+                    },
+                    ZOffset = 0,
+                },
                 Effects = {
                     {
                         Bones = {
-                            'Exhaust_Right',
+                            0,
                         },
                         Type = 'AirMoveExhaust01',
                     },

@@ -24,8 +24,6 @@ Errors list/the other to-do list.
 * Zenith has unused bones.
 * The Absolution can't hover over walls and such.
   * Experiments with making it technically an aircraft had weird dalek-like side effects.
-* Need to mess with \lua\ui\game\avatars.lua to get the idle icons of the field engineers and gantry working propperly.
-  * Same also for all the field engineers.
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
@@ -260,14 +258,12 @@ Tech 3:
         * Lacks a unique model.   
   		* T3 Field engineer    
         * Lacks a unique model.  
-      * T3 Anti-Armor Point Defence. 
-        * Could have a more original model, but is probably fine.
+      * T3 Anti-Armor Point Defence.
       * T3 Shielded Mass Fabricator.  
   		  * Lacks a unique model & icon.
       * T3 Shielded Power Generator.
   		  * Lacks a unique model & icon.  
-      * T3 Shielded Mass Extractor.
-  		  * Lacks a unique model & icon.                  
+      * T3 Shielded Mass Extractor.                 
               
     T3 Mobile strat defence.
       * Looks pretty.
