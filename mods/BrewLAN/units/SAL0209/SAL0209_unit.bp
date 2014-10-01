@@ -110,8 +110,8 @@ UnitBlueprint {
             ShieldRechargeTime = 60,
             ShieldRegenRate = 9,
             ShieldRegenStartTime = 3,
-            ShieldSize = 1.2,
-            ShieldVerticalOffset = -.4,
+            ShieldSize = 1.1,
+            ShieldVerticalOffset = -.1,
         },
         SubThreatLevel = 0,
         SurfaceThreatLevel = 1,
@@ -131,7 +131,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAL0208',
+                            0,
                         },
                         Type = 'AeonGroundFXT2Engineer',
                     },
@@ -141,13 +141,13 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAL0208',
+                            0,
                         },
                         Type = 'AeonGroundFXT2Engineer',
                     },
                     {
                         Bones = {
-                            'UAL0208',
+                            0,
                         },
                         Scale = 1.2,
                         Type = 'SeaIdle02',
@@ -161,18 +161,18 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/ual0208/ual0208_lod0.scm', 
-#                    AlbedoName = '/units/ual0208/ual0208_albedo.dds', 
-                    NormalsName = '/units/ual0208/ual0208_normalsts.dds', 
-                    SpecularName = '/units/ual0208/ual0208_specteam.dds',  
+                    MeshName = '/mods/brewlan/units/sal0319/sal0319_lod0.scm', 
+                    AlbedoName = '/mods/brewlan/units/sal0319/sal0319_albedo.dds', 
+                    NormalsName = '/mods/brewlan/units/sal0319/sal0319_normalsts.dds', 
+                    SpecularName = '/mods/brewlan/units/sal0319/sal0319_specteam.dds',  
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/ual0208/ual0208_lod1.scm', 
-                    AlbedoName = '/units/ual0208/ual0208_lod1_albedo.dds', 
-                    NormalsName = '/units/ual0208/ual0208_lod1_normalsts.dds', 
-                    SpecularName = '/units/ual0208/ual0208_lod1_specteam.dds',
+                    MeshName = '/units/UAL0105/UAL0105_lod1.scm', 
+                    AlbedoName = '/units/UAL0105/UAL0105_lod1_albedo.dds', 
+                    NormalsName = '/units/UAL0105/UAL0105_lod1_normalsTS.dds', 
+                    SpecularName = '/units/UAL0105/UAL0105_lod1_specteam.dds', 
                 },
             },
         },
@@ -187,7 +187,7 @@ UnitBlueprint {
                     },
                     {
                         Bones = {
-                            'UAL0208',
+                            0,
                         },
                         Type = 'AeonGroundFXT2Engineer',
                     },
@@ -197,15 +197,15 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Front_Left_Wake',
-                            'Front_Right_Wake',
+                            0,
+                            0,
                         },
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
                     {
                         Bones = {
-                            'UAL0208',
+                            0,
                         },
                         Type = 'AeonGroundFXT2Engineer',
                     },
@@ -213,7 +213,7 @@ UnitBlueprint {
             },
         },
         SpawnRandomRotation = false,
-        UniformScale = 0.08,
+        UniformScale = 0.07,
     },
     Economy = {
         BuildCostEnergy = 1025,

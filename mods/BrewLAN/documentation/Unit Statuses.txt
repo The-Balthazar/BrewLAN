@@ -149,8 +149,7 @@ Tech 1
   		  * Would like to give a more unique appearance.       
   		* T1 Light Artillery
   		* T1 Shield Genorator
-  		* T1 Air Staging
-  		  * Currently the only one that can't handle T3 aircraft.       
+  		* T1 Air Staging     
   		* T1 Defence engineer
                         
   	Pending:
@@ -202,7 +201,6 @@ Tech 2:
       * T2 Energy Storage
       * T2 Bomber
       * T2 Defence Engineer
-        * Lacks a unique model.
       * T2 Proximity Mine
         * Lacks a unique model.     
       
@@ -250,14 +248,10 @@ Tech 3:
     	* T3 Armoured Assult Tank
       * T3 Decoy Plane.
         * Would prefer with orders assigned to the blips.   
-  		* T3 Point Deffence.       
-		    * Needs a new model.
-		    * Needs the passive animation in pitch and yaw disabling while it fires.
-		      * Maybe. It is kinda funny it being the only beam weapon that can miss.
+  		* T3 Heavy Point Deffence.   
       * T3 Nuke Mine          
         * Lacks a unique model.   
   		* T3 Field engineer    
-        * Lacks a unique model.  
       * T3 Anti-Armor Point Defence.
       * T3 Shielded Mass Fabricator.  
   		  * Lacks a unique model & icon.
@@ -278,8 +272,8 @@ Tech 3:
 		Fully Funtioning:
     	* T3 Air Transport.
     	* T3 Torpedo Bomber.  
-  	  * T3 Point Deffence.
-  		  * Needs an appearance that looks less directly based on Cerberus.       
+  	  * T3 Heavy Point Deffence.
+  		  * Would like to give it a more unique appearance.       
       * T3 Nuke Mine       
   		* T3 Field engineer      
       * T3 Anti-Armor Point Defence.

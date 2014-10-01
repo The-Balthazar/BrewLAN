@@ -7,7 +7,7 @@
 local NukeMineStructureUnit = import('/mods/brewlan/lua/defaultunits.lua').NukeMineStructureUnit
 local CIFCommanderDeathWeapon = import('/lua/cybranweapons.lua').CIFCommanderDeathWeapon
 
-SRB2222 = Class(CStructureUnit) {
+SRB2222 = Class(NukeMineStructureUnit) {
     Weapons = {
         DeathWeapon = Class(CIFCommanderDeathWeapon) {},
         Suicide = Class(CIFCommanderDeathWeapon) {},

@@ -53,7 +53,6 @@ UnitBlueprint {
     },
     Description = '<LOC sbui2222>Nuke Mine',
     Display = {
-        AnimationOpen = '/mods/brewlan/units/seb2220/seb2220_aopen.sca',
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
             '<LOC ability_cloak>Cloaking',

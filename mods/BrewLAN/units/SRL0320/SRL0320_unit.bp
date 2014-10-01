@@ -87,10 +87,10 @@ UnitBlueprint {
                     ShaderName = 'Insect',
                 },
                 {
-                    AlbedoName = 'url0304_lod1_albedo.dds',
+                    --AlbedoName = 'url0304_lod1_albedo.dds',
                     LODCutoff = 215,
                     ShaderName = 'Insect',
-                    SpecularName = 'url0304_lod1_specteam.dds',
+                    --SpecularName = 'url0304_lod1_specteam.dds',
                 },
             },
         },

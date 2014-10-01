@@ -53,9 +53,9 @@ MineStructureUnit = Class(TStructureUnit) {
 NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
         DeathWeapon = Class(TIFCommanderDeathWeapon) {},
-        Suicide = Class(TIFCommanderDeathWeapon) {      
+        Suicide = Class(TIFCommanderDeathWeapon) {
             OnFire = function(self)			
-                self.unit:SetDeathWeaponEnabled(false)
+                self.unit:SetWeaponEnabledByLabel('DeathWeapon', false)
                 TIFCommanderDeathWeapon.OnFire(self)
             end,
         },

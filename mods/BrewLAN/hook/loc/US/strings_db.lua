@@ -113,11 +113,12 @@ seb1205_name="PW4TH12-ST Capacitor"
 Unit_Description_BrewLAN_T2R002="Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 Unit_Description_BrewLAN_T2R001="Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 
+--Mines
 sbui2220="Pressure Mine"
 seb2220_name="AP-12 Trapper"
 srb2220_name="??"
 sab2220_name="Molehill"
-ssb2220_name="??"
+ssb2220_name="Othe"
 Unit_Description_BrewLAN_T2D001="An all-terrain, low damage, pressure detonated, mine system. Visible only to Omni."
 
 sbui2221="Proximity Mine"
