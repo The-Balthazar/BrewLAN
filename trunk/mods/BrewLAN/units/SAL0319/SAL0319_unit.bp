@@ -120,7 +120,7 @@ UnitBlueprint {
             ShieldRegenRate = 9,
             ShieldRegenStartTime = 3,
             ShieldSize = 1.2,
-            ShieldVerticalOffset = -.4,
+            ShieldVerticalOffset = -.1,
         },
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -140,7 +140,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAL0309',
+                            0,
                         },
                         Type = 'AeonGroundFXT1Engineer',
                     },
@@ -150,13 +150,13 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UAL0309',
+                            0,
                         },
                         Type = 'AeonGroundFXT1Engineer',
                     },
                     {
                         Bones = {
-                            'UAL0309',
+                            0,
                         },
                         Scale = 1.4,
                         Type = 'SeaIdle02',
@@ -170,18 +170,14 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/ual0309/ual0309_lod0.scm', 
-                    AlbedoName = '/units/ual0309/ual0309_albedo.dds', 
-                    NormalsName = '/units/ual0309/ual0309_normalsts.dds', 
-                    SpecularName = '/units/ual0309/ual0309_specteam.dds',  
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/ual0309/ual0309_lod1.scm', 
-                    AlbedoName = '/units/ual0309/ual0309_lod1_albedo.dds', 
-                    NormalsName = '/units/ual0309/ual0309_lod1_normalsts.dds', 
-                    SpecularName = '/units/ual0309/ual0309_lod1_specteam.dds',
+                    MeshName = '/units/UAL0105/UAL0105_lod1.scm', 
+                    AlbedoName = '/units/UAL0105/UAL0105_lod1_albedo.dds', 
+                    NormalsName = '/units/UAL0105/UAL0105_lod1_normalsTS.dds', 
+                    SpecularName = '/units/UAL0105/UAL0105_lod1_specteam.dds', 
                 },
             },
         },
@@ -196,7 +192,7 @@ UnitBlueprint {
                     },
                     {
                         Bones = {
-                            'UAL0309',
+                            'Dummy001',
                         },
                         Type = 'AeonGroundFXT1Engineer',
                     },
@@ -213,7 +209,7 @@ UnitBlueprint {
                     },
                     {
                         Bones = {
-                            'UAL0309',
+                            0,
                         },
                         Type = 'AeonGroundFXT1Engineer',
                     },

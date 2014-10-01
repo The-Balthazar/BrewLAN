@@ -315,7 +315,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_land3_engineer',
     StrategicIconSortPriority = 95,
     Transport = {
-        TransportClass = 2,
+        TransportClass = 3,
     },
     Veteran = {
         Level1 = 6*1.5,

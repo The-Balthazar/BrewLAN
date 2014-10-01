@@ -5,20 +5,25 @@ UnitBlueprint {
         StagingPlatformScanRadius = 40,
     },
     Audio = {
-        Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Med_Land',
+        DoneBeingBuilt = Sound {
+            Bank = 'XSB',
+            Cue = 'XSB5101_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-        DoneBeingBuilt = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB5101_Activate',
+        Killed = Sound {
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Structure',
+            Bank = 'SeraphimSelect',
+            Cue = 'Seraphim_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
+        }, 
+        NukeExplosion = Sound {
+            Bank = 'Impacts',
+            Cue = 'XSB2305_Impact',
+            LodCutoff = 'Weapon_LodCutoff',
         },
     },
     BuildIconSortPriority = 150,
@@ -31,7 +36,7 @@ UnitBlueprint {
         'OVERLAYMISC',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
-        'UEF',
+        'SERAPHIM',
         'STRUCTURE',
         'DEFENSE',
         'TECH3',
@@ -66,24 +71,28 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 50,
-                    ShaderName = 'Insect',
-                    AlbedoName = '/units/ueb1301/ueb1301_albedo.dds', 
-                    NormalsName = '/units/ueb1301/ueb1301_normalsTS.dds', 
-                    SpecularName = '/units/ueb1301/ueb1301_specteam.dds',
+                    LODCutoff = 100,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                    AlbedoName = '/units/XSC2201/XSC2201_albedo.dds', 
+                    NormalsName = '/units/XSC2201/XSC2201_normalsTS.dds', 
+                    SpecularName = '/units/XSC2201/XSC2201_specteam.dds',
                 },
                 {
                     LODCutoff = 130,
-                    ShaderName = 'Insect',
-                    AlbedoName = '/units/ueb1301/ueb1301_lod1_albedo.dds', 
-                    NormalsName = '/units/ueb1301/ueb1301_lod1_normalsTS.dds', 
-                    SpecularName = '/units/ueb1301/ueb1301_lod1_specteam.dds',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    MeshName = '/mods/BrewLAN/units/ssb2220/ssb2220_lod1.scm', 
+                    AlbedoName = '/units/XSC2201/XSC2201_lod1_albedo.dds', 
+                    NormalsName = '/units/XSC2201/XSC2201_lod1_normalsTS.dds', 
+                    SpecularName = '/units/XSC2201/XSC2201_lod1_specteam.dds',
                 },
             },
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        UniformScale = 0.02,
+        UniformScale = 0.05,
     },
     DoNotCollideList = {
         'ALLUNITS',
@@ -93,9 +102,9 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 600,
         RebuildBonusIds = {
-            'seb2220',
-            'seb2221',
-            'seb2222',
+            'ssb2220',
+            'ssb2221',
+            'ssb2222',
         },
     },
     Footprint = {
@@ -122,7 +131,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'UEF',
+        FactionName = 'Seraphim',
         Icon = 'amph',
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
@@ -135,7 +144,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC seb2222_name>Silencer',
+        UnitName = '<LOC ssb2222_name>Inaino',
         UnitWeight = 1,
     },
     Intel = {
@@ -150,8 +159,8 @@ UnitBlueprint {
         HelpText = '<LOC sbui2222>Nuke Mine',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.2,
-    LifeBarSize = 0.8,
+    LifeBarOffset = 0.10,
+    LifeBarSize = 0.6,
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
@@ -186,7 +195,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure3_bomb',
     StrategicIconSortPriority = 210,
     Weapon = {
-        {
+        {       
             CollideFriendly = false,
             Damage = 0,
             DamageFriendly = true,
@@ -213,7 +222,8 @@ UnitBlueprint {
             NukeOuterRingTicks = 20,
             NukeOuterRingTotalTime = 0,
 
-            ProjectileId = '/effects/Entities/UEFNukeEffectController01/UEFNukeEffectController01_proj.bp',
+            --ProjectileId = '/projectiles/SIFInainoStrategicMissile02/SIFInainoStrategicMissile02_proj.bp',
+            ProjectileId = '/effects/entities/InainoEffectController01/InainoEffectController01_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

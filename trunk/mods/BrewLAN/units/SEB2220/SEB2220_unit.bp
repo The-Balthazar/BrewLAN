@@ -23,7 +23,7 @@ UnitBlueprint {
         'BUILTBYTIER1FIELD',
         'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
-        'OVERLAYRADAR',
+        'OVERLAYOMNI',
         'OVERLAYDIRECTFIRE',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
@@ -50,15 +50,12 @@ UnitBlueprint {
     },
     Description = '<LOC sbui2220>Pressure Mine',
     Display = {
-        AnimationOpen = '/mods/brewlan/units/seb2220/seb2220_aopen.sca',
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
             '<LOC ability_cloak>Cloaking',
+            '<LOC ability_omni>Omni Sensor',
             '<LOC ability_personalstealth>Personal Stealth',
-            '<LOC ability_radar>Radar',
-            '<LOC ability_sonar>Sonar',
             '<LOC ability_suicideweapon>Suicide Weapon',
-            #'<LOC ability_deathaoe>Volatile',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -132,8 +129,7 @@ UnitBlueprint {
         RadarStealth = true,
         SonarStealth = true,
         VisionRadius = 0,
-        RadarRadius = 1,
-        SonarRadius = 1,
+        OmniRadius = 1,
     },
     Interface = {
         HelpText = '<LOC sbui2220>Pressure Mine',

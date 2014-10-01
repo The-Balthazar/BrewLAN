@@ -8,9 +8,14 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local AConstructionUnit = import('/lua/aeonunits.lua').AConstructionUnit
+local AConstructionUnit = import('/mods/brewlan/units/sal0319/sal0319_script.lua').SAL0319
 
-UAL0105 = Class(AConstructionUnit) {
+SAL0119 = Class(AConstructionUnit) { 
+    OnCreate = function( self ) 
+        AConstructionUnit.OnCreate(self)
+        self:HideBone('Tube002', true)
+        self:HideBone('Tube003', true)
+    end,
 }
 
-TypeClass = UAL0105
+TypeClass = SAL0119

@@ -54,7 +54,6 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
             '<LOC ability_suicideweapon>Suicide Weapon',
-            #'<LOC ability_deathaoe>Volatile',
         },
         Mesh = {
             IconFadeInZoom = 130,

@@ -20,7 +20,6 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-#        'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
         'OVERLAYRADAR',
         'OVERLAYDIRECTFIRE',
@@ -31,7 +30,6 @@ UnitBlueprint {
         'STRUCTURE',
         'DEFENSE',
         'TECH3',
-#        'CONSTRUCTIONSORTDOWN',
         'NUKE',
         'MINE',
         'DRAGBUILD',
@@ -50,7 +48,6 @@ UnitBlueprint {
     },
     Description = '<LOC sbui2222>Nuke Mine',
     Display = {
-        AnimationOpen = '/mods/brewlan/units/seb2220/seb2220_aopen.sca',
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
             '<LOC ability_cloak>Cloaking',
