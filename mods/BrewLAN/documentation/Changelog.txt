@@ -46,15 +46,30 @@ __________.__________
   * Created a new model for the Orbos.
   * Enabled flatten skirt for the Orbos (also enables tarmac).
   * Created a new model for the Aeon Field Engineers.
-  * Fixed the transport class of the Cybran T3 engineer.                                       
+  * Fixed the transport class of the Cybran T3 engineer.
+  __________
+  2014-10-02
+  
+  * Brightened the distance lights of the Aeon Field engineers.
+  * Added the Aeon T1 mine.
+  * Fixed the shader types of several mines.
+  * Improved the AI asignment in overlapping types.
+  * Disabled AI building T1 shields until I can make them upgrade them.
+  * Set the Slink to auto activate its Cloak if controlled by an AI.
+  * Set the Slink to disable its Cloak on fire.
+  __________
+  2014-10-03
+  
+  * Slink now decloaks to fire, and recloaks afterwards.
+    * Added sound effects and particle effects for some audio and visual feedback on its cloak status.                                                        
 __________.__________
 2014-09-22|0.4.E
 
 * Changed the gate sections to be a seperate building to the wall sections instead of an upgrade of the afforementioned.
-  * As much as I prefered the lack of UI clutter it being an upgrade came with, it had two unfortunate side effects:
+  * As much as I prefered the lack of UI clutter it being an upgrade came with, it had three unfortunate side effects:
     * It ocasionally broke adjacency script for them.
     * You couldn't have them in templates.
-    * It made the gate sections be repaired far too quickly. (They both still repair to fast.)    
+    * It made the gate sections be repaired virtually instantly by anything. (They both still repair to fast anyway.)    
 * Altered the costs of the T3 walls.
 * Increased the animation speed of the gates.
 * Increased the max slope that T2 & T3 walls can be built on.

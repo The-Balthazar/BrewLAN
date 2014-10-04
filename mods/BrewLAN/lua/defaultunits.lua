@@ -38,6 +38,8 @@ MineStructureUnit = Class(TStructureUnit) {
             self.Trash:Add(CreateSlider(self, 0, 0, -20, 0, 5))
         end
         if self.blocker then
+           --This tricks the engine into thinking the area is clear:
+           --Removing a building with an overlapping footprint from the same layer.
            self.blocker:Destroy()
         end      
     end,

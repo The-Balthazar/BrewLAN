@@ -1,4 +1,4 @@
-#Tech 1 aircraft
+--Tech 1 aircraft
 Description['saa0105'] = "<LOC Unit_Description_BrewLAN_T1A001>Light Guship. Primary role is base defense. Effective against low-level ground units."
 Description['sea0105'] = "<LOC Unit_Description_BrewLAN_T1A002>Light Guship. Effective against low-level ground units. Equipped with a light transport hook."
 Description['ssa0105'] = "<LOC Unit_Description_BrewLAN_T1A003>Light Guship. Primary role is base defense. Effective against low-level ground units."
@@ -7,30 +7,30 @@ Description['sea0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. D
 Description['sra0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
 Description['ssa0106'] = "<LOC Unit_Description_BrewLAN_T1A004>Torpedo bomber. Designed to engage low-level naval units."
 
-#Tech 1 defense units
+--Tech 1 defense units
 Description['seb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 Description['sab2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 Description['srb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 Description['ssb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 
-#Tech 1 protection units
+--Tech 1 protection units
 Description['sab4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upradable twice."
 Description['seb4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upradable twice."
 Description['ssb4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upradable twice."
 
-#Tech 1 utility units
+--Tech 1 utility units
 Description['sab5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
 Description['seb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
 Description['srb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
 Description['ssb5104'] = "<LOC Unit_Description_BrewLAN_T1U001>Light air staging facility. Repairs and refuels individual aircrafts."
 
-#Tech 1 land units
+--Tech 1 land units
 Description['srl0119'] = "<LOC Unit_Description_BrewLAN_T1L001>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defenses."    
 Description['sel0119'] = "<LOC Unit_Description_BrewLAN_T1L001>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defenses."
 Description['ssl0119'] = "<LOC Unit_Description_BrewLAN_T1L002>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Description['sal0119'] = "<LOC Unit_Description_BrewLAN_T1L003>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
-#Tech 2 resource units
+--Tech 2 resource units
 Description['seb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 Description['sab1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 Description['srb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
@@ -40,7 +40,7 @@ Description['sab1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amou
 Description['srb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 Description['ssb1206'] = "<LOC Unit_Description_BrewLAN_T2R002>Stores large amounts of mass. Construct next to extractors or fabricators for adjacency bonus."
 
-#Tech 2 defense units
+--Tech 2 defense units
 Description['seb2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
 Description['ssb2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
 Description['sab2220'] = "<LOC Unit_Description_BrewLAN_T2D005>An all-terrain pressure mine system. Visible only to Omni."
@@ -58,25 +58,25 @@ Description['ssb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nu
   
 Description['srb5201'] = "<LOC Unit_Description_0179>Restricts the movement of enemy units."
     
-#Tech 2 construction units
+--Tech 2 construction units
 Description['ssb0104'] = "<LOC Unit_Description_0451> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 Description['ssb0204'] = "<LOC Unit_Description_0324> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 Description['ssb0304'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 
 
-#Tech 2 protection units
+--Tech 2 protection units
 Description['urb4205'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Description['urb4206'] = "<LOC Unit_Description_BrewLAN_T2D003>Generates a heavy shield around units and structures within its radius."
 
-#Tech 2 land units
+--Tech 2 land units
 Description['srl0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter, internal radar, and stealth."
 Description['sal0209'] = "<LOC Unit_Description_BrewLAN_T2L002>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Equipped a personal shield and radar."
 Description['ssl0219'] = "<LOC Unit_Description_BrewLAN_T2L003>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 
-#Tech 2 aircraft
+--Tech 2 aircraft
 Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
-#Tech 3 aircraft
+--Tech 3 aircraft
 Description['ssa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
 Description['sra0306'] = "<LOC Unit_Description_BrewLAN_T3A002>Heavy air transport. Armed with heavy anti-air defense, an EMP weapon and a stealth field. Can carry up to 16 units."
 Description['ssa0306'] = "<LOC Unit_Description_BrewLAN_T3A003>Heavy air transport. Features 32 transportation clamps, heavy weaponry and a shield generator. Can carry up to 32 units."
@@ -89,7 +89,7 @@ Description['saa0310'] = "<LOC Unit_Description_BrewLAN_T3A009>Lightly armored d
 Description['sra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Description['ssa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 
-#Tech 3 land units
+--Tech 3 land units
 Description['ssl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."
 Description['sal0311'] = "<LOC Unit_Description_BrewLAN_T3L002>Heavily armored assault tank. Low rate of fire, designed as a heavy support unit."
 Description['sel0320'] = "<LOC Unit_Description_BrewLAN_T3L003>A mobile satellite uplink vehicle. Marks targets for an orbital laser to fire upon."
@@ -102,7 +102,7 @@ Description['srl0319'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious
 Description['ssl0319'] = "<LOC Unit_Description_BrewLAN_T3L006>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Description['sal0319'] = "<LOC Unit_Description_BrewLAN_T3L007>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
-#Tech 3 buildings
+--Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
 Description['seb3303'] = "<LOC Unit_Description_BrewLAN_T3B002>Satellite-based observation system. Has a wide line-of-sight and omni censors. If its control center is destroyed, the satelite is immediately disabled."
 Description['ssb2306'] = "<LOC Unit_Description_BrewLAN_T3B003>Heavy defensive tower. Attacks land- and sea-based units with a gatling plasma cannon. Does not engage aircraft or submerged units."
@@ -133,10 +133,10 @@ Description['ssb1312'] = "<LOC Unit_Description_BrewLAN_T3B0024>High-end Mass ex
 Description['seb2308'] = "<LOC Unit_Description_BrewLAN_T3B0025>Heavy torpedo launching tower. Can be built on land and on the seabed."
 Description['ssb3301'] = "<LOC Unit_Description_BrewLAN_T3B0026>Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips."
 
-#Tech 3 Naval units
+--Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
 
-#Experimentals
+--Experimentals
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['url0401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['srb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Experimental shield generator. Protects a large area."

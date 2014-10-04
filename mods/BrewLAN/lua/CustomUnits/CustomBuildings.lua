@@ -34,16 +34,13 @@ T3SeaFactory = {
 -- Shields
 --------------------------------------------------------------------------------
 T3ShieldDefense = {
-    Cybran =	{'urb4206', 90}, #ED4
-    Cybran =	{'srb4401', 20}, #Iron Curtain
+    Cybran =	{'srb4401', 50}, #Iron Curtain
 },
 T2ShieldDefense = {
-    Cybran =	{'srb4401', 20}, #Iron Curtain
-    Cybran =	{'urb4206', 80}, #ED4
-    Cybran =	{'urb4205', 50}, #ED3
-    UEF =		{'seb4102', 10},
-    Aeon =		{'sab4102', 10},
-    Seraphim =	{'ssb4102', 10},
+    Cybran =	{'urb4205', 75}, #ED3
+    --UEF =		{'seb4102', 10},
+    --Aeon =		{'sab4102', 10},
+    --Seraphim =	{'ssb4102', 10},
 },
 --------------------------------------------------------------------------------
 -- Tech 3 Buildings
@@ -66,7 +63,6 @@ T2Artillery = {
 },
 T2RadarJammer = {
     Cybran =	{'srb4402', 5},
-    Cybran =	{'srb4313', 45},
 },
 T2NavalDefense = {
     UEF =		{'seb2308', 50},
@@ -75,8 +71,8 @@ T2NavalDefense = {
 -- Tech 3 Resource Buildings
 --------------------------------------------------------------------------------
 T3EnergyProduction = {
-    UEF =		{'seb1311', 90},
-    Cybran =	{'srb1311', 60},
+    UEF =		{'seb1311', 80},
+    Cybran =	{'srb1311', 50},
     Aeon =		{'sab1311', 80},
     Seraphim =	{'ssb1311', 80},
 },
@@ -128,6 +124,15 @@ T1GroundDefense = {
     Seraphim =	{'ssb2103', 30},
     UEF =		{'seb2103', 30},
 },
+--------------------------------------------------------------------------------
+-- Units from the other because overlap fucks it up
+--------------------------------------------------------------------------------
+T3LandArtillery = {
+    Aeon = 		{'sal0321', 5},
+    Seraphim =	{'ssl0321', 5},
+    Cybran =	{'srl0321', 5},
+    UEF =		{'sel0321', 5},
+},  
 --------------------------------------------------------------------------------
 -- End
 --------------------------------------------------------------------------------
