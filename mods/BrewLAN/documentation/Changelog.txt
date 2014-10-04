@@ -69,7 +69,10 @@ __________.__________
   * Added the Aeon T2 Wall.
   * Added a build restriction so walls can't build Hydrocarbon plants. (This only effected a total Meyhem unit to my knowledge.)
   * Transfered cardinal wall and gates scripts into the BrewLAN default units lua doc.
-  * Added a check to the wall script for creating beams, to check both bone ends are legit.                                                                
+  * Added a check to the wall script for creating beams, to check both bone ends are legit.
+  * Created a custom model for the Aeon Shielded power gen.
+  * Added the Cybran T1 mine.
+  * Added the Cybran T3 Cloakable Extractor.                                                                      
 __________.__________
 2014-09-22|0.4.E
 

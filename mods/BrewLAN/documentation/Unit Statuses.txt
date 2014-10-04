@@ -33,6 +33,7 @@ Errors list/the other to-do list.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
+* Gantry doesn't pause propperly.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -150,22 +151,22 @@ Tech 1
   		* T1 Light Artillery
   		* T1 Shield Genorator
   		* T1 Air Staging     
-  		* T1 Defence engineer
+  		* T1 Defence engineer 
+      * T1 Pressure Mine
                         
   	Pending:
   	  * T1 Torpedo Bomber
-      * T1 Pressure Mine
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:          
   	Fully functioning:  
   	  * T1 Light Artillery
   	  * T1 Air Staging  
-  		* T1 Field engineer
+  		* T1 Field engineer 
+      * T1 Pressure Mine
                         
   	Pending:
-  	* T1 Torpedo Bomber ('Gannet')
-    * T1 Pressure Mine
+  	  * T1 Torpedo Bomber ('Gannet')
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF: 
@@ -186,11 +187,11 @@ Tech 1
       * T1 Air Staging
       * T1 Light Gunship
   		  * Would like to give a more unique appearance.            
-  		* T1 Field engineer
+  		* T1 Field engineer     
+      * T1 Pressure Mine
                         
   	Pending:
-  	  * T1 Torpedo Bomber ('Sou-ioz') 
-      * T1 Pressure Mine
+  	  * T1 Torpedo Bomber ('Sou-ioz')
 
 -------------------------------------------------------
 Tech 2:
@@ -202,10 +203,10 @@ Tech 2:
       * T2 Bomber
       * T2 Defence Engineer
       * T2 Proximity Mine
-        * Lacks a unique model.     
+        * Lacks a unique model.
+  		* T2 Wall     
       
   	Pending:  
-  		* T2 Wall
   		* T2 Restoration field genorator.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
@@ -256,7 +257,6 @@ Tech 3:
       * T3 Shielded Mass Fabricator.  
   		  * Lacks a unique model & icon.
       * T3 Shielded Power Generator.
-  		  * Lacks a unique model & icon.  
       * T3 Shielded Mass Extractor.                 
               
     T3 Mobile strat defence.
@@ -286,7 +286,8 @@ Tech 3:
       * T3 Cloakable Mass Fabricator.  
       * T3 Cloakable Power Generator.
       * T3 Armored Wall Section.
-      * T3 Armored Gate Section.                                                
+      * T3 Armored Gate Section. 
+      * T3 Cloakable Mass Extractor.                                               
   	         
   	T3 Stealth tank (Cybran sniper bot alternative)
       * Unfinished appearance.
@@ -301,9 +302,7 @@ Tech 3:
   
   	Pending:
   		* T3 Anti Shield.
-  		* T3 Mobile stealth Gen
-      * T3 Cloakable Mass Extractor.
-        * Stealth field, and cloak field, or cloak itself and adjacent units.                    
+  		* T3 Mobile stealth Gen                 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
@@ -329,7 +328,8 @@ Tech 3:
       * T3 Mobile strat defence.
         * Needs a new model.  
       * T3 Torpedo launcher.
-        * Has an issue with its floatation on maps where the sea level isn't 17.5.                   
+        * Has an issue with its floatation on maps where the sea level isn't 17.5.
+      * T3 Armored Wall Section.                     
 
     T3 Decoy Plane.
       * Functional but unfinished.
@@ -339,8 +339,7 @@ Tech 3:
       * Might leave as a Aeon only unit.         
 
   	Pending:
-  		* T3 Mobile Shield Gen.   
-      * T3 Armored Wall Section.         
+  		* T3 Mobile Shield Gen.          
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   
@@ -363,14 +362,14 @@ Tech 3:
       * T3 Armored Mass Extractor.
         * Doesn't have AOE restore yet.
           * Maybe tie this to the adjacency script.
-      * T3 Optics Tracking Facility.                      
+      * T3 Optics Tracking Facility.
+      * T3 Nuke Mine.                                  
   
     Pending:
-      * T3 Torp launchers.
+      * T3 Torp launcher.
       * T3 Anti Shield. 
       * T3 Decoy Plane.
         * Might leave as a Aeon only unit.   
-      * T3 Nuke Mine.               
 _______________________________________________________
 Experimental Table
                 ._______________._______________._______________._______________.
