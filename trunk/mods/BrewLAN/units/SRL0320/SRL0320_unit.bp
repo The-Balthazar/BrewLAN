@@ -29,8 +29,18 @@ UnitBlueprint {
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'Cybran_Select_Vehicle',
+            Cue = 'Cybran_Select_Tank',
             LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Cloak = Sound {
+            Bank = 'XSL_Destroy',
+            Cue = 'XSL0402_Death',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        Decloak = Sound {
+            Bank = 'XSL',
+            Cue = 'XSL0402_Spawn',
+            LodCutoff = 'Weapon_LodCutoff',
         },
     },
     Buffs = {

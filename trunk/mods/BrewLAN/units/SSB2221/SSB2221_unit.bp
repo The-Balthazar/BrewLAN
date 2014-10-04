@@ -68,6 +68,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 50,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsb1101/xsb1101_albedo.dds', 
                     NormalsName = '/units/xsb1101/xsb1101_normalsTS.dds', 
@@ -75,6 +76,7 @@ UnitBlueprint {
                 },
                 {
                     LODCutoff = 130,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsb1101/xsb1101_lod1_albedo.dds', 
                     NormalsName = '/units/xsb1101/xsb1101_lod1_normalsTS.dds', 

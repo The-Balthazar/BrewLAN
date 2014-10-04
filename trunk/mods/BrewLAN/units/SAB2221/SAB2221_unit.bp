@@ -55,15 +55,16 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 50,
-                    ShaderName = 'Unit',
-                    MeshName = '/units/uab1101/uab1101_lod0.scm', 
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                    --MeshName = '/units/uab1101/uab1101_lod0.scm', 
                     AlbedoName = '/units/uab1101/uab1101_albedo.dds', 
                     NormalsName = '/units/uab1101/uab1101_normalsTS.dds', 
                     SpecularName = '/units/uab1101/uab1101_specteam.dds', 
                 },
                 {
                     LODCutoff = 130,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Aeon',
                     MeshName = '/units/uab1101/uab1101_lod1.scm', 
                     AlbedoName = '/units/uab1101/uab1101_lod1_albedo.dds', 
                     NormalsName = '/units/uab1101/uab1101_lod1_normalsTS.dds', 
