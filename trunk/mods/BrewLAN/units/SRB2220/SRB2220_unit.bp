@@ -5,9 +5,14 @@ UnitBlueprint {
             Cue = 'XSB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
+        DoneBeingBuilt = Sound {
+            Bank = 'URB',
+            Cue = 'URB5101_Activate',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'Aeon_Select_Structure',
+            Cue = 'Cybran_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
