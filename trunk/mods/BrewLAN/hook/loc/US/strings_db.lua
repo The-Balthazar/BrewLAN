@@ -256,7 +256,7 @@ seb1312_name="Mass Pump 3E"
 Unit_Description_BrewLAN_T3B0021="High-end Mass extractor. Must be constructed on Mass deposits. It generates a shield dome large enough to cover itself and 4 small storages."
 Unit_Description_BrewLAN_T3B0022="High-end Mass extractor. Must be constructed on Mass deposits. It possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
 Unit_Description_BrewLAN_T3B0023="High-end Mass extractor. Must be constructed on Mass deposits. Visible only to Omni."
-Unit_Description_BrewLAN_T3B0024="High-end Mass extractor. Must be constructed on Mass deposits. It possesses superiour armor and generates a regeneration field large enough to effect itself and 4 small storages."
+Unit_Description_BrewLAN_T3B0024="High-end Mass extractor. Must be constructed on Mass deposits. It possesses superiour armor and has self regenerative capabilities."
   
 srb1313_desc="Cloakable Mass Fabricator" 
 seb1313_desc="Engineering Mass Fabricator"  
