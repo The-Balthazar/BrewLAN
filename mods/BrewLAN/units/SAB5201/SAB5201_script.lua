@@ -4,8 +4,8 @@
 #** 
 #****************************************************************************
 
-local CardinalGateScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalGateScript
+local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript
 
-SEB5311 = Class(CardinalGateScript) {}
+SAB5201 = Class(CardinalWallScript) {}
 
-TypeClass = SEB5311
+TypeClass = SAB5201

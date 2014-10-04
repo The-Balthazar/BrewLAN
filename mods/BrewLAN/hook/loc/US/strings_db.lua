@@ -116,7 +116,7 @@ Unit_Description_BrewLAN_T2R001="Stores large amounts of energy. Construct next 
 --Mines
 sbui2220="Pressure Mine"
 seb2220_name="AP-12 Trapper"
-srb2220_name="??"
+srb2220_name="Mutter"
 sab2220_name="Molehill"
 ssb2220_name="Othe"
 Unit_Description_BrewLAN_T2D001="An all-terrain, low damage, pressure detonated, mine system. Visible only to Omni."
@@ -255,7 +255,7 @@ ssb1312_desc="Armored Mass Extractor"
 seb1312_name="Mass Pump 3E" 
 Unit_Description_BrewLAN_T3B0021="High-end Mass extractor. Must be constructed on Mass deposits. It generates a shield dome large enough to cover itself and 4 small storages."
 Unit_Description_BrewLAN_T3B0022="High-end Mass extractor. Must be constructed on Mass deposits. It possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
-Unit_Description_BrewLAN_T3B0023="High-end Mass extractor. Must be constructed on Mass deposits. It generates a cloak field and stealth field large enough to disguise itself and 4 small storages."
+Unit_Description_BrewLAN_T3B0023="High-end Mass extractor. Must be constructed on Mass deposits. Visible only to Omni."
 Unit_Description_BrewLAN_T3B0024="High-end Mass extractor. Must be constructed on Mass deposits. It possesses superiour armor and generates a regeneration field large enough to effect itself and 4 small storages."
   
 srb1313_desc="Cloakable Mass Fabricator" 

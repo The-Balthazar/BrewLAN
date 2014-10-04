@@ -120,7 +120,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC ssa2220_name>Othe',
+        UnitName = '<LOC sab2220_name>Molehill',
         UnitWeight = 1,
     },
     Intel = {

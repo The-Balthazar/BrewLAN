@@ -3,9 +3,9 @@
 #**  Cybran Wall: With cordinal scripting
 #** 
 #****************************************************************************
-local CLandFactoryUnit = import('/mods/BrewLAN/units/srb5310/srb5310_script.lua').SRB5310
 
-SEB5310 = Class(CLandFactoryUnit) {
-}
+local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript
+
+SEB5310 = Class(CardinalWallScript) {}
 
 TypeClass = SEB5310
