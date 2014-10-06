@@ -70,12 +70,12 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
     
     OnPaused = function(self)
-        LandFactoryUnit.OnPaused(self)
+        TLandFactoryUnit.OnPaused(self)
         self:StopBuildFx(self:GetFocusUnit())
     end,
 
     OnUnpaused = function(self)
-        LandFactoryUnit.OnUnpaused(self)
+        TLandFactoryUnit.OnUnpaused(self)
         if self:IsUnitState('Building') then
             self:StartBuildFx(self:GetFocusUnit())
         end

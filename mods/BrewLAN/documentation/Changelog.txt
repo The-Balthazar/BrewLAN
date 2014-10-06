@@ -8,7 +8,28 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.  
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+__________.__________
+2014-10-05|0.5
+
+* Re-enabled torpedo bombers to land in/on water, and modified their target layer caps table to allow targetting while in/on the water.
+* Fixed the Gantry not stopping its resource drain on pause.
+* Aster: UEF Mobile Anti-Nuke changes:
+  * Increased the mass cost and health by 40% (not counting cost of starting missiles).
+  * Set the starting storage/max storage to 3/6 (from 1/1).
+  * Decreased the cost and damage of its missiles by 3 times.
+  * Increased its build rate to 10.
+  __________
+  2014-09-06
+  
+  * Fixed the maintenance cost not auto-activating on the UEF E-MEX.
+  * Increased the animation speed of the Aster.
+  * Added the pause function to all units that can upgrade.
+  * Added the stop function to all units that can upgrade.
+  * Removed the icons for the old removed naval shields.
+  * Finally fixed the ANSI/UTF-8 encoding error on the french localisation files.
+  * Fixed the localisation errors for the string 'Field Engineer' on 6 of the field engineers.
+  * Updated the strings for the German localisation. Pending actual translation.                        
 __________.__________
 2014-09-28|0.4.F
 

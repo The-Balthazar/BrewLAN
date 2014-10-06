@@ -33,7 +33,6 @@ Errors list/the other to-do list.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
-* Gantry doesn't pause propperly.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -43,9 +42,7 @@ Modded Units:
   		  * Allows T1 scouts that 'walk into' cloaked & stealthed units to see them.    
   
   	Torpedo Bombers
-  		* Gave the ability to land on water.
-  		  * Given both TRANSPORTATION and HOVER categories so they dont get shot by torpedoes.
-  		  * Currently disabled. Again.               
+  		* Gave the ability to land on water.                  
     
     Experimental Buildings
       * Added appropriate build menu sorting.
@@ -326,7 +323,6 @@ Tech 3:
   		  * Lacks a unique model. Aims from nothing.                          
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
-        * Needs a new model.  
       * T3 Torpedo launcher.
         * Has an issue with its floatation on maps where the sea level isn't 17.5.
       * T3 Armored Wall Section.                     
@@ -360,8 +356,6 @@ Tech 3:
       * T3 Armored Mass Fabricator.
       * T3 Armored Power Generator.
       * T3 Armored Mass Extractor.
-        * Doesn't have AOE restore yet.
-          * Maybe tie this to the adjacency script.
       * T3 Optics Tracking Facility.
       * T3 Nuke Mine.                                  
   

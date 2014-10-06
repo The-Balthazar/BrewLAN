@@ -10,38 +10,41 @@
 
 local TLandUnit = import('/lua/terranunits.lua').TLandUnit
 local TAMInterceptorWeapon = import('/lua/terranweapons.lua').TAMInterceptorWeapon
-local nukeFiredOnGotTarget = false
+--local nukeFiredOnGotTarget = false
 
 SEL0321 = Class(TLandUnit) {
     Weapons = {
         AntiNuke = Class(TAMInterceptorWeapon) {
-            IdleState = State(TAMInterceptorWeapon.IdleState) {
-                OnGotTarget = function(self)
-                    local bp = self:GetBlueprint()
-                    #only say we've fired if the parent fire conditions are met
-                    if (bp.WeaponUnpackLockMotion != true or (bp.WeaponUnpackLocksMotion == true and not self.unit:IsUnitState('Moving'))) then
-                        if (bp.CountedProjectile == false) or self:CanFire() then
-                             nukeFiredOnGotTarget = true
-                        end
+            RackSalvoFireReadyState = State(TAMInterceptorWeapon.RackSalvoFireReadyState) {
+                Main = function(self)
+                    if self.unit:GetTacticalSiloAmmoCount() < 3 then
+                        self:ForkThread(
+                            function(self)
+                                WaitTicks(1)
+                                if self.unit:GetTacticalSiloAmmoCount() > 2 then
+                                    --Last minute panic check, not sure if it will actually work, very hard to test chance to test it
+                                    TAMInterceptorWeapon.RackSalvoFireReadyState.Main(self)
+                                end
+                            end
+                        ) 
+                        return
+                    else
+                        TAMInterceptorWeapon.RackSalvoFireReadyState.Main(self)
                     end
-                    TAMInterceptorWeapon.IdleState.OnGotTarget(self)
-                end,
-                # uses OnGotTarget, so we shouldn't do this.
-                OnFire = function(self)
-                    if not nukeFiredOnGotTarget then
-                        TAMInterceptorWeapon.IdleState.OnFire(self)
-                    end
-                    nukeFiredOnGotTarget = false
-                    
-                    self:ForkThread(function()
-                        self.unit:SetBusy(true)
-                        WaitSeconds(1/self.unit:GetBlueprint().Weapon[1].RateOfFire + .2)
-                        self.unit:SetBusy(false)
-                    end)
-                end,
-            },    
+                end,    
+            },
         },
     },
+    
+    --[[OnStopBeingBuilt = function(self,builder,layer)
+        TLandUnit.OnStopBeingBuilt(self,builder,layer)
+        self:ForkThread(
+            function(self)
+                WaitSeconds(1)
+                LOG(self:GetTacticalSiloAmmoCount())
+            end
+        )
+    end,]]--
 }
 
 TypeClass = SEL0321

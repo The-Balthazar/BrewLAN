@@ -159,7 +159,7 @@ Unit_Description_BrewLAN_T3A002="Heavy air transport. Armed with heavy anti-air 
 Unit_Description_BrewLAN_T3A003="Heavy air transport. Features 32 transportation clamps, heavy weaponry and a shield generator. Can carry up to 32 units."
 Unit_Description_BrewLAN_T3A004="Heavy air transport. Armed with a powerful shield and heavy anti-air weapons. Can carry up to 72 units."
 
-#bair0307="Heavy Torpedo Bomber"
+sair0307="Heavy Torpedo Bomber"
 sra0307_name="Zenith"
 sea0307_name="Albatross"
 ssa0307_name="Souioz"
@@ -217,10 +217,7 @@ srl0321_name="Hedgehog"
 sal0321_name="Scarab"  
 ssl0321_name="Ythhu"
 Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Build costs include first missile, however the vehicle lacks a fabrication suite to produce additional missiles unassisted."
-
-sbui4301="Naval Shield Generator"
-seb4301_name="SSD - Pulse"
-sab4301_name="Borealis"
+Unit_Description_BrewLAN_T3L008="Mobile strategic missile defense. Fires a salvo of three missiles at each target. Build costs include first salvo."
 
 --Seraphim T3 sonar platform
 sss0305_name="Aezhou"
@@ -289,7 +286,7 @@ Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on
 
 ssb3301_desc="Optics Tracking Facility"
 ssb3301_name="Aezselen"
-Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips."
+Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips. Cannot target empty space."
 
 --------------------------------------------------------------------------------
 -- Experimentals
