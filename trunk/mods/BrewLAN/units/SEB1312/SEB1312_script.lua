@@ -40,6 +40,11 @@ SEB1312 = Class(TEngineeringResourceStructureUnit) {
         TEngineeringResourceStructureUnit.OnProductionUnpaused(self)
         if not self.AnimationManipulator then return end
         self.AnimationManipulator:SetRate(1)
+    end, 
+      
+    OnStopBeingBuilt = function(self,builder,layer)
+        TEngineeringResourceStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        self:SetMaintenanceConsumptionActive()
     end,
 }
 

@@ -14,7 +14,7 @@ function ModBlueprints(all_blueprints)
     BrewLANCategoryChanges(all_blueprints.Unit) 
     BrewLANNameCalling(all_blueprints.Unit)  
     UpgradeableToBrewLAN(all_blueprints.Unit)
-    --TorpedoBomberWaterLandCat(all_blueprints.Unit)
+    TorpedoBomberWaterLandCat(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
     BrewLANMatchBalancing(all_blueprints.Unit)
     BrewLANNavalShields(all_blueprints.Unit)
@@ -226,6 +226,28 @@ function UpgradeableToBrewLAN(all_bps)
             all_bps[upgradeid].General.UpgradesFrom = unitid
             
             if not all_bps[unitid].Economy.BuildRate then all_bps[unitid].Economy.BuildRate = 15 end
+            
+            all_bps[unitid].General.CommandCaps.RULEUCC_Pause = true
+            
+            all_bps[unitid].General.CommandCaps.RULEUCC_Stop = true
+        --[[This one should really be implemented unit script side in this manner:
+            
+            OnStartBuild = function(self, unitbuilding, order)
+                CLASSTYPE.OnStartBuild(self, unitbuilding, order)
+                if not self:GetBlueprint().General.CommandCaps.RULEUCC_Stop then
+                    self:AddCommandCap('RULEUCC_Stop')
+                    self.CouldntStop = true
+                end
+            end,
+        
+            OnStopBuild = function(self, unitbuilding, order)
+                CLASSTYPE.OnStopBuild(self, unitbuilding, order)
+                if self.CouldntStop then
+                    self:RemoveCommandCap('RULEUCC_Stop')
+                    self.CouldntStop = false
+                end
+            end,
+        ]]--
         end
     end
     local UpgradesFromBase = {
@@ -276,6 +298,13 @@ function TorpedoBomberWaterLandCat(all_bps)
     for arrayIndex, bp in TorpedoBombers do
         table.insert(bp.Categories, 'TRANSPORTATION') ##transportation category allows aircraft to land on water.
         table.insert(bp.Categories, 'HOVER') ##hover category stops torpedos from being fired upon them while landed.
+        for i, v in bp.Weapon do
+            if v.WeaponCategory == "Anti Navy" then
+                v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
+                v.FireTargetLayerCapsTable.Sub = 'Seabed|Sub|Water'
+                v.FireTargetLayerCapsTable.Water = 'Seabed|Sub|Water'
+            end
+        end
     end	
 end
 
