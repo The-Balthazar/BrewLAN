@@ -1,0 +1,14 @@
+name = "BrewUI 0.1"
+uid = "25D57D85-7D84-27HT-A501-BR3WUI0000001"
+version = "0.1"
+copyright = "2009 - 2014 Sean Wheeldon"
+description = "The interface changes specific to BrewLAN. Probably conflicts with any mod that changes /lua/ui/game/avatars.lua. Will cause issues without BrewLAN."
+author = "Sean Wheeldon"
+icon = "/mods/BrewLAN/documentation/icon.dds"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = true
+conflicts = {  }
+before = {  }
+after = {  }
