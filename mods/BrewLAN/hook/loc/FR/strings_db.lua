@@ -1,7 +1,7 @@
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒    ░░░░¦--¦   BrewLAN French strings table
 --¦▒▒▒▒    ░░░░¦--¦   Author: Balthassar
---¦▒▒▒▒    ░░░░¦--¦   Translator: Explo, Vincent 'MalaTheKoala'
+--¦▒▒▒▒    ░░░░¦--¦   Translator: Marc 'Explo' Tassetti, Vincent 'MalaTheKoala'
 --+------------+--+-------------------------------------------------------------
 
 

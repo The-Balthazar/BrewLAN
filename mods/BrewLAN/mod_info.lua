@@ -1,6 +1,6 @@
-name = "BrewLAN 0.4.F"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N00004F"
-version = "0.4.F"
+name = "BrewLAN 0.4.G"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N00004G"
+version = "0.4.G"
 copyright = "2009 - 2014 Sean Wheeldon"
 description = "The BrewLAN unitpack and balance mod."
 author = "Sean Wheeldon"
@@ -42,6 +42,7 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N00004C", ##0.4.C	alpha   
     "25D57D85-7D84-27HT-A501-BR3WL4N00004D", ##THE D.
     "25D57D85-7D84-27HT-A501-BR3WL4N00004E", ##0.4.E	alpha
+    "25D57D85-7D84-27HT-A501-BR3WL4N00004F", ##0.4.F	alpha
 }
 before = {  }
 after = {  }
