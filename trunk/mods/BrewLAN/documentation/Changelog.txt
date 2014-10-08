@@ -10,7 +10,7 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
-2014-10-05|0.5
+2014-10-05|0.4.G
 
 * Re-enabled torpedo bombers to land in/on water, and modified their target layer caps table to allow targetting while in/on the water.
 * Fixed the Gantry not stopping its resource drain on pause.
@@ -29,7 +29,11 @@ __________.__________
   * Removed the icons for the old removed naval shields.
   * Finally fixed the ANSI/UTF-8 encoding error on the french localisation files.
   * Fixed the localisation errors for the string 'Field Engineer' on 6 of the field engineers.
-  * Updated the strings for the German localisation. Pending actual translation.                        
+  * Updated the strings for the German localisation. Pending actual translation.
+  __________
+  2014-09-08
+  
+  * Updated German translation provided by Simon Jenner (106.Bluebird).                           
 __________.__________
 2014-09-28|0.4.F
 
@@ -1112,7 +1116,7 @@ __________._________
 	__________
 	2010-07-27
 
-	* Bluebird corrected the German string tables.
+	* Simon Jenner (106.Bluebird) corrected the German string tables.
 	__________
 	2010-07-28
 

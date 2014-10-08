@@ -16,8 +16,9 @@ The name BrewLAN is taken from Joshua Wilsons infamous LAN party of the same nam
 	.________
 	|Installation
 
-For a detailed and up to date installation guide see:
-	http://code.google.com/p/brewlan/wiki/Downloads?tm=2
+Place the brewlan.scd file in the /gamedata/ folder. Place the /brewlan/ folder inside the /mods/ folder. If there isn't a mods folder, create one on the same level as the gamedata folder.
+
+For additional help, see: http://code.google.com/p/brewlan/wiki/Downloads?tm=2
 	.________
 	|Changes
 
@@ -36,11 +37,11 @@ For details regarding changes see the changelog and the unit statuses list (whic
 * Adam Butler (Outy)
 * Christopher Hicks (Burning Star IV)
 * John Williams (CyberJesus)
-* 'Mr.Deagle' – Additional code
+* Daniel <redacted> (Mr.Deagle) – Code critique
 * 'Dagordae'
 * 'Wrsaith'
 
 	Additional
 
-* Simon (106.Bluebird) - German localisation
+* Simon Jenner (106.Bluebird) - German localisation
 * Marc Tassetti (Explo) - French localisation
