@@ -10,7 +10,7 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
-2014-10-05|0.4.G
+2014-10-05|0.5
 
 * Re-enabled torpedo bombers to land in/on water, and modified their target layer caps table to allow targetting while in/on the water.
 * Fixed the Gantry not stopping its resource drain on pause.
@@ -20,7 +20,7 @@ __________.__________
   * Decreased the cost and damage of its missiles by 3 times.
   * Increased its build rate to 10.
   __________
-  2014-09-06
+  2014-10-06
   
   * Fixed the maintenance cost not auto-activating on the UEF E-MEX.
   * Increased the animation speed of the Aster.
@@ -31,9 +31,26 @@ __________.__________
   * Fixed the localisation errors for the string 'Field Engineer' on 6 of the field engineers.
   * Updated the strings for the German localisation. Pending actual translation.
   __________
-  2014-09-08
+  2014-10-08
   
-  * Updated German translation provided by Simon Jenner (106.Bluebird).                           
+  * Updated German translation provided by Simon Jenner (106.Bluebird).
+  __________
+  2014-10-09
+  
+  * New French translation provided by asdrubaelvect29.
+  * AI related changes to the Gantry.
+  __________
+  2014-10-10
+  
+  * Slightly improved AI handling for Gantry; they no longer have the air/other ui build restrictions.
+  __________
+  2014-10-11
+  
+  * Finished the Scarab.
+  * Fixed the script of the Aeon shielded fab.
+  * Increased the size of the Hedgehog.
+  * Created icons for all units missing icons.
+  * Created a Russian translation with GOOGLE.                                    
 __________.__________
 2014-09-28|0.4.F
 

@@ -8,10 +8,10 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
+local AWalkingLandUnit = import('/lua/aeonunits.lua').AWalkingLandUnit
 local CAMEMPMissileWeapon = import('/lua/cybranweapons.lua').CAMEMPMissileWeapon
 
-SAL0321 = Class(CLandUnit) {
+SAL0321 = Class(AWalkingLandUnit) {
     Weapons = {
         MissileRack = Class(CAMEMPMissileWeapon) {},
     },
