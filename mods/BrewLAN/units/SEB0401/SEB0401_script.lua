@@ -8,44 +8,52 @@ local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 local explosion = import('/lua/defaultexplosions.lua')
 
 SEB0401 = Class(TLandFactoryUnit) { 
-
+    
+    OnStopBeingBuilt = function(self, builder, layer)
+        TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
+    end,
+           
     OnLayerChange = function(self, new, old)
         TLandFactoryUnit.OnLayerChange(self, new, old)
-        if new == 'Land' then
-            self:AddBuildRestriction(categories.NAVAL)
-            self:AddBuildRestriction(categories.AIR)
-            self:RequestRefreshUI()
-        elseif new == 'Water' then
-            self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
-            self:AddBuildRestriction(categories.AIR)
-            self:RequestRefreshUI()     
-        end
+        self.BuildModeChange(self)
     end,
 
     OnScriptBitSet = function(self, bit)
         TLandFactoryUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
-            self:RestoreBuildRestrictions()
-            self:AddBuildRestriction(categories.NAVAL)
-            self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+            self.BuildModeChange(self, 'Air')
         end
     end,
 
     OnScriptBitClear = function(self, bit)
         TLandFactoryUnit.OnScriptBitClear(self, bit)
         if bit == 1 then	    
-            if self:GetCurrentLayer() == 'Land' then
-                self:RestoreBuildRestrictions()
-                self:AddBuildRestriction(categories.NAVAL)
-                self:AddBuildRestriction(categories.AIR)
-                self:RequestRefreshUI()
-            elseif self:GetCurrentLayer() == 'Water' then
-                self:RestoreBuildRestrictions()
-                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
-                self:AddBuildRestriction(categories.AIR)
-                self:RequestRefreshUI()     
-            end
+            self.BuildModeChange(self)
         end
+    end,
+
+    BuildModeChange = function(self, mode)
+        self:RestoreBuildRestrictions()
+        if self:GetAIBrain().BrainType == 'Human' then --Player UI changes.
+            if mode == 'Air' then
+                self:AddBuildRestriction(categories.NAVAL)
+                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+            else   
+                if self:GetCurrentLayer() == 'Land' then
+                    self:AddBuildRestriction(categories.NAVAL)
+                elseif self:GetCurrentLayer() == 'Water' then
+                    self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+                end  
+                self:AddBuildRestriction(categories.AIR)
+            end
+        else --AI's dont need the restrictions that are only there for the sake of a clean UI.
+            if self:GetCurrentLayer() == 'Land' then
+                self:AddBuildRestriction(categories.NAVAL)
+            elseif self:GetCurrentLayer() == 'Water' then
+                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+            end  
+        end 
+        self:RequestRefreshUI()
     end,
 
     StartBuildFx = function(self, unitBeingBuilt)

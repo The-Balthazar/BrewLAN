@@ -22,8 +22,9 @@ Errors list/the other to-do list.
 * SRS0401 lacks weapons.
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
-* The Absolution can't hover over walls and such.
-  * Experiments with making it technically an aircraft had weird dalek-like side effects.
+* The Absolution can't hover over units.
+* Other experimentals walk through armored walls.
+* AI's dont propperly utilise their Gantries. 
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
@@ -255,10 +256,7 @@ Tech 3:
   		  * Lacks a unique model & icon.
       * T3 Shielded Power Generator.
       * T3 Shielded Mass Extractor.                 
-              
-    T3 Mobile strat defence.
-      * Looks pretty.
-      * Needs propperly rigging.               
+      * T3 Mobile strat defence.          
             
   	Pending:
   		* T3 Torp launchers.
@@ -410,23 +408,24 @@ UEF Gantry: Experimental Factory
       * The Atlantis gets stuck in it. IssueDive is used to get it out, but it forgets/ignores its orders at some point.
       * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.                      
                   
-Seraphim "Static 2 Transport" idea.
-  * "A Static transport?"
-    * Stargate-like thing.        
+Seraphim totally not a stargate
+  * Will require two to be functional.
+  * Use the script order interface, like the spy facilities.
+  * Either mess with ferry orders, or use a trick similar to mines to let things walk through.            
 
-Seraphim Experimental Mine.
+Seraphim Experimental Mine?
   * To be an experimental for the field engy.
   * Possibile functions:  
     * Releasing a residual energy signature.
     * Self replicating mines.
     * Damage over time effect.       
     
-Aeon Experimental Assault Tank
+Aeon Experimental Siege Tank
   * Mostly finished texture that needs more details.
   * Has its big cannon and two TMD's.
   * Totally isn't an eldar grav tank. Nope nope nope. 
 
-Aeon Experimental Shield projection tower.
+Aeon Experimental Shield projection facility.
   * Something between a shield gen and the eye of something or other in appearance.
   * To create individual shields around each unit within the radius, probably with a ghost unit attached.
     * Shields should share an overall health, and need some way to scale with the unit it surrounds.

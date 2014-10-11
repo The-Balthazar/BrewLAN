@@ -11,8 +11,16 @@
 local AMassFabricationUnit = import('/lua/aeonunits.lua').AMassFabricationUnit
 
 SAB1313 = Class(AMassFabricationUnit) {
-
-    OnStopBeingBuilt = function(self, builder, layer)
+         
+    ShieldEffects = {
+        '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',
+        --'/effects/emitters/aeon_shield_generator_t2_02_emit.bp',
+        '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
+        '/effects/emitters/aeon_shield_generator_t3_04_emit.bp',
+    },
+    
+    OnStopBeingBuilt = function(self, builder, layer)  
+	     self.ShieldEffectsBag = {}
         AMassFabricationUnit.OnStopBeingBuilt(self, builder, layer)  
         self.Prodon = true
         self.Shield = true  
@@ -55,6 +63,7 @@ SAB1313 = Class(AMassFabricationUnit) {
           	self:SetMaintenanceConsumptionActive()
         else
         	   self:SetEnergyMaintenanceConsumptionOverride(0)
+            self:SetMaintenanceConsumptionInactive()  
         end
     end,
     
@@ -80,35 +89,44 @@ SAB1313 = Class(AMassFabricationUnit) {
             
     OnShieldEnabled = function(self)
         AMassFabricationUnit.OnIntelEnabled(self)
-        if self.IntelEffects and not self.IntelFxOn then
-			self.IntelEffectsBag = {}
-			self.CreateTerrainTypeEffects( self, self.IntelEffects, 'FXIdle',  self:GetCurrentLayer(), nil, self.IntelEffectsBag )
-			self.IntelFxOn = true
-         self.Shield = true
-		end
-		if self.Prodon then
-			self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyFab + self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyShield or 3000)
-			self:SetProductionPerSecondMass((self:GetBlueprint().Economy.ProductionPerSecondMass or 0) * (self.MassProdAdjMod or 1))
-			self:SetMaintenanceConsumptionActive()  
-		else
-			self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyCloak or 375)
-			self:SetProductionPerSecondMass(0)
-			self:SetMaintenanceConsumptionActive()  
-		end
+        self.Shield = true
+        if self.ShieldEffectsBag then
+            for k, v in self.ShieldEffectsBag do
+                v:Destroy()
+            end
+            self.ShieldEffectsBag = {}
+        end
+        for k, v in self.ShieldEffects do
+            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(0.4) )
+        end
+        if self.Prodon then
+            self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyFab + self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyShield or 3000)
+            self:SetProductionPerSecondMass((self:GetBlueprint().Economy.ProductionPerSecondMass or 0) * (self.MassProdAdjMod or 1))
+            self:SetMaintenanceConsumptionActive()  
+        else
+            self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyShield or 375)
+            self:SetProductionPerSecondMass(0)
+            self:SetMaintenanceConsumptionActive()  
+        end
     end,
 
     OnShieldDisabled = function(self)
         AMassFabricationUnit.OnIntelDisabled(self)
-        EffectUtil.CleanupEffectBag(self,'IntelEffectsBag')
-        self.IntelFxOn = false   
-         self.Shield = false
-		if self.Prodon then
-			self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyFab or 2625)
-			self:SetProductionPerSecondMass((self:GetBlueprint().Economy.ProductionPerSecondMass or 0) * (self.MassProdAdjMod or 1))
-			self:SetMaintenanceConsumptionActive()  
-		else
-			self:SetEnergyMaintenanceConsumptionOverride(0)
-		end
+        self.Shield = false   
+        if self.ShieldEffectsBag then
+            for k, v in self.ShieldEffectsBag do
+                v:Destroy()
+            end
+            self.ShieldEffectsBag = {}
+        end
+        if self.Prodon then
+            self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergyFab or 2625)
+            self:SetProductionPerSecondMass((self:GetBlueprint().Economy.ProductionPerSecondMass or 0) * (self.MassProdAdjMod or 1))
+            self:SetMaintenanceConsumptionActive()  
+        else
+            self:SetEnergyMaintenanceConsumptionOverride(0) 
+            self:SetMaintenanceConsumptionInactive()  
+        end
     end,    
 
     GetRandomDir = function(self)

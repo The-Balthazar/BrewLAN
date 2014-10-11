@@ -1,3 +1,9 @@
+--+-----------------------------------------------------------------------------
+--¦                                                                
+--¦   Summary: Allows the Gantry and heavy walls to build units built like buildings usually.
+--¦   Author: Balthassar
+--¦
+--+-----------------------------------------------------------------------------
 local OldOnClickHandler = import('/lua/ui/game/construction.lua').OnClickHandler
                                                           
 function OnClickHandler(button, modifiers)         
