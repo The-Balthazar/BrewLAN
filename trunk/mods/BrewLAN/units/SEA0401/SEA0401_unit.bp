@@ -223,8 +223,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.25,
-        SizeX = 10,
-        SizeZ = 14,
+        SizeX = 7,
+        SizeZ = 15,
     },
     General = {
         Category = 'Gunship',
@@ -279,8 +279,8 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Air',
         SkirtOffsetX = -.5,
         SkirtOffsetZ = -.5,
-        SkirtSizeX = 11,
-        SkirtSizeZ = 15,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 16,
     },
     SelectionSizeX = 4,
     SelectionSizeZ = 8,

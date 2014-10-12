@@ -9,6 +9,11 @@ local explosion = import('/lua/defaultexplosions.lua')
 
 SEB0401 = Class(TLandFactoryUnit) { 
     
+    OnCreate = function(self)
+        TLandFactoryUnit.OnCreate(self) 
+        self.BuildModeChange(self)
+    end,
+    
     OnStopBeingBuilt = function(self, builder, layer)
         TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
     end,
@@ -21,21 +26,51 @@ SEB0401 = Class(TLandFactoryUnit) {
     OnScriptBitSet = function(self, bit)
         TLandFactoryUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
-            self.BuildModeChange(self, 'Air')
+            self.airmode = true
+            self.BuildModeChange(self)
         end
     end,
-
+             
+    OnStartBuild = function(self, unitBeingBuilt, order)
+        TLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
+        self.BuildModeChange(self)
+    end,
+    
     OnScriptBitClear = function(self, bit)
         TLandFactoryUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then	    
+        if bit == 1 then	
+            self.airmode = false    
             self.BuildModeChange(self)
         end
     end,
 
-    BuildModeChange = function(self, mode)
+    BuildModeChange = function(self, mode)   
+        local aiBrain = self:GetAIBrain()
+        
         self:RestoreBuildRestrictions()
-        if self:GetAIBrain().BrainType == 'Human' then --Player UI changes.
-            if mode == 'Air' then
+        
+        local engineers = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, self:GetPosition(), 30, 'Ally' )
+        local stolentech = {}
+        stolentech.CYBRAN = false
+        stolentech.AEON = false
+        stolentech.SERAPHIM = false
+        for k, v in engineers do
+            if EntityCategoryContains(categories.TECH3, v) then
+                for race, val in stolentech do
+                    if EntityCategoryContains(ParseEntityCategory(race), v) then
+                        stolentech[race] = true
+                    end
+                end
+            end 
+        end
+        for race, val in stolentech do
+            if not val then
+                self:AddBuildRestriction(categories[race])
+            end
+        end
+        
+        if aiBrain.BrainType == 'Human' then --Player UI changes.
+            if self.airmode then
                 self:AddBuildRestriction(categories.NAVAL)
                 self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
             else   

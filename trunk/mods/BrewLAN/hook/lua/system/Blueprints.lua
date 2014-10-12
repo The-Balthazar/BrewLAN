@@ -11,7 +11,8 @@ function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
     
     BrewLANBuildCatChanges(all_blueprints.Unit)
-    BrewLANCategoryChanges(all_blueprints.Unit) 
+    BrewLANCategoryChanges(all_blueprints.Unit)
+    BrewLANGantryBuildList(all_blueprints.Unit) 
     BrewLANNameCalling(all_blueprints.Unit)  
     UpgradeableToBrewLAN(all_blueprints.Unit)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
@@ -50,7 +51,7 @@ function BrewLANBuildCatChanges(all_bps)
         srl0319 = {'BUILTBYTIER3ENGINEER CYBRAN COUNTERINTELLIGENCE',},
         ssl0319 = {'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE',},
         sal0319 = {'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE',},
-        --These categories are removed if controlled by a human on the hooked unit scripts
+        --These categories are removed if controlled by a human in the hooked unit scripts
         ual0105 = {'BUILTBYTIER1FIELD AEON',},
         ual0208 = {'BUILTBYTIER2FIELD AEON',},
         ual0309 = {'BUILTBYTIER3FIELD AEON',},
@@ -94,39 +95,6 @@ function BrewLANCategoryChanges(all_bps)
         xab2307 = {'EXPERIMENTAL', r = {'TECH3', }, },---------Salvation
         --url0401 = {NoBuild = true, }, -----------------------Scathis MkII currently using this ID
         xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
---------------------------------------------------------------------------------
--- Allowing Vanillas and specific other mod units to be build by the Gantry
---------------------------------------------------------------------------------
-        -- Vanilla
-        uel0401 = {'BUILTBYGANTRY',},              -- Fatboy 
-        ues0401 = {'BUILTBYGANTRY',},              -- Atlantis
-        -- Total Mayhem T4's
-        brnt3doomsday = {'BUILTBYGANTRY',},        -- Doomsday
-        brnt3argus = {'BUILTBYGANTRY',},           -- Argus
-        brnt3shbm2 = {'BUILTBYGANTRY',},           -- Mayhem Mk 4 
-        brnt3shbm = {'BUILTBYGANTRY',},            -- Mayhem Mk 2
-        brnt3blasp = {'BUILTBYGANTRY',},           -- Blood Asp 
-        brnt3bat = {'BUILTBYGANTRY',},             -- Rampart
-        -- Total Mayhem T3's     
-        brnt3ow = {'BUILTBYGANTRY',},              -- Owens
-        brnt3advbtbot = {'BUILTBYGANTRY',},        -- Hurricane
-        brnat3bomber = {'BUILTBYGANTRY',},         -- Havok
-        -- Total Mayhem T2's
-        brnt2bm = {'BUILTBYGANTRY',},              -- Banshee
-        brnt2exm2 = {'BUILTBYGANTRY',},            -- Tomahawk
-        brnt2bat = {'BUILTBYGANTRY',},             -- Rampart
-        brnt2exm1 = {'BUILTBYGANTRY',},            -- Jackhammer mk.2 
-        brnt2exlm = {'BUILTBYGANTRY',},            -- Firestorm
-        brnt2exmdf = {'BUILTBYGANTRY',},           -- Horizon
-        brnt2sniper = {'BUILTBYGANTRY',},          -- Marksman
-        -- Total Mayhem T1's             
-        brnt1exm1 = {'BUILTBYGANTRY',},            -- Kruger mk2.             
-        brnt1exmob = {'BUILTBYGANTRY',},           -- UnderTaker             
-        brnt1extk = {'BUILTBYGANTRY',},            -- Thunderstrike              
-        brnat1exgs = {'BUILTBYGANTRY',},           -- Imperium
-        -- BlackOps
-        bes0402 = {'BUILTBYGANTRY',},              -- Conquest Class 
-        bel0402 = {'BUILTBYGANTRY',},              -- Goliath MKII  
     }
     local buildcats = {  
         'BUILTBYTIER1ENGINEER',
@@ -151,8 +119,6 @@ function BrewLANCategoryChanges(all_bps)
                     end
                     table.insert(all_bps[k].Categories, v[i])
                 end
-            elseif v.Gantry then  
-                table.insert(all_bps[k].Categories, 'BUILTBYGANTRY')
             else
                 for i in buildcats do
                     table.removeByValue(all_bps[k].Categories, buildcats[i])
@@ -161,6 +127,35 @@ function BrewLANCategoryChanges(all_bps)
         end
     end
 end   
+ 
+--------------------------------------------------------------------------------
+-- Allowing other experimentals that look like they fit to be gantry buildable
+--------------------------------------------------------------------------------
+
+function BrewLANGantryBuildList(all_bps)
+    for id, bp in all_bps do
+        --Check the Gantry can't already build it, and that its a mobile experimental
+        if not table.find(bp.Categories, 'BUILTBYGANTRY')
+        and table.find(bp.Categories, 'EXPERIMENTAL')
+        and table.find(bp.Categories, 'MOBILE')
+        then
+            --Check it should actually be buildable
+            if table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
+            or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+            --For BlOps, they have this as a thing.
+            or table.find(bp.Categories, 'BUILTBYTIER4COMMANDER')
+            or table.find(bp.Categories, 'BUILTBYTIER4ENGINEER')
+            then
+                --Check it wouldn't be bigger than the Gantry hole
+                if bp.Physics.SkirtSizeX < 13
+                --or bp.Footprint.SizeX < 9
+                then
+                    table.insert(bp.Categories, 'BUILTBYGANTRY')
+                end
+            end 
+        end
+    end
+end
 
 --------------------------------------------------------------------------------
 -- Adding AI names (Not sure if this actually does anything for Sorian)
@@ -228,26 +223,6 @@ function UpgradeableToBrewLAN(all_bps)
             if not all_bps[unitid].Economy.BuildRate then all_bps[unitid].Economy.BuildRate = 15 end
             
             all_bps[unitid].General.CommandCaps.RULEUCC_Pause = true
-            
-            all_bps[unitid].General.CommandCaps.RULEUCC_Stop = true
-        --[[This one should really be implemented unit script side in this manner:
-            
-            OnStartBuild = function(self, unitbuilding, order)
-                CLASSTYPE.OnStartBuild(self, unitbuilding, order)
-                if not self:GetBlueprint().General.CommandCaps.RULEUCC_Stop then
-                    self:AddCommandCap('RULEUCC_Stop')
-                    self.CouldntStop = true
-                end
-            end,
-        
-            OnStopBuild = function(self, unitbuilding, order)
-                CLASSTYPE.OnStopBuild(self, unitbuilding, order)
-                if self.CouldntStop then
-                    self:RemoveCommandCap('RULEUCC_Stop')
-                    self.CouldntStop = false
-                end
-            end,
-        ]]--
         end
     end
     local UpgradesFromBase = {
