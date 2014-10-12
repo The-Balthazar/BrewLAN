@@ -50,7 +50,14 @@ __________.__________
   * Fixed the script of the Aeon shielded fab.
   * Increased the size of the Hedgehog.
   * Created icons for all units missing icons.
-  * Created a Russian translation with GOOGLE.                                    
+  * Created a Russian translation with GOOGLE.
+  __________
+  2014-10-12
+  
+  * Moved the upgrade stop button function to the unit script, so that it only appears when it needs to.
+  * Gantry now picks buildable experimentals based on their footprint width to be buildable.  
+  * Made the Gantry to be able to build other races experimentals if you control a T3 engineer (or anything that has the categories 'engineer' and 'tech3') of that race next to it.
+  * Fixed an FX error with the Aeon T1 Gunship.                                        
 __________.__________
 2014-09-28|0.4.F
 
