@@ -10,6 +10,21 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2014-10-15|0.5.1
+
+* Fixed some issues in the French and Russian string tables.
+* Fixed a typo in the long descriptions of tech 1 gunships.
+  __________
+  2014-10-17
+  
+  * Fixed the remaining issues with the Russian string tables.
+  * Fixed the string reference for the description of the engineering mass extractor.
+  * Fixed the string reference for the long description of the tech 1 mines.
+  * Fixed the conflict with Extreme Wars. (Caused by BrewLAN asuming the Fatboy could build.)
+  * Changed the way the armored walls pick their turrets. Its now based on footprint, not size cat.
+  * Fixed the conflict with TotalVeterency. (Caused by TotalVeterency asuming all units have health.)
+  * Allowed the Absolution to move backwards.          
+__________.__________
 2014-10-05|0.5
 
 * Re-enabled torpedo bombers to land in/on water, and modified their target layer caps table to allow targetting while in/on the water.

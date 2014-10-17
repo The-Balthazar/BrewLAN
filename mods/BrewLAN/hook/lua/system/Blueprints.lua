@@ -12,7 +12,8 @@ function ModBlueprints(all_blueprints)
     
     BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANCategoryChanges(all_blueprints.Unit)
-    BrewLANGantryBuildList(all_blueprints.Unit) 
+    BrewLANGantryBuildList(all_blueprints.Unit)
+    BrewLANHeavyWallBuildList(all_blueprints.Unit)
     BrewLANNameCalling(all_blueprints.Unit)  
     UpgradeableToBrewLAN(all_blueprints.Unit)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
@@ -68,7 +69,9 @@ function BrewLANBuildCatChanges(all_bps)
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] then
             for i in buildcat do
-                table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
+                if all_bps[unitid].Economy.BuildableCategory then --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
+                    table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
+                end
             end
         end
     end 
@@ -156,7 +159,30 @@ function BrewLANGantryBuildList(all_bps)
         end
     end
 end
+  
+--------------------------------------------------------------------------------
+-- Propperly choosing what should be buildable by the heavy walls.
+--------------------------------------------------------------------------------
 
+function BrewLANHeavyWallBuildList(all_bps)
+    for id, bp in all_bps do
+        --Check its not hard coded to be buildable, then check it meets the standard requirements.
+        if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
+        and table.find(bp.Categories, 'STRUCTURE')
+        and table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')  
+        then
+            if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
+                --Check it wouldn't overlap badly with the wall
+                if bp.Physics.SkirtSizeX < 3 then
+                    table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                elseif bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 then
+                    table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                end
+            end
+        end
+    end
+end
+ 
 --------------------------------------------------------------------------------
 -- Adding AI names (Not sure if this actually does anything for Sorian)
 --------------------------------------------------------------------------------

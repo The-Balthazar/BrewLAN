@@ -168,9 +168,7 @@ UnitBlueprint {
         BuildRate = 1,
         BuildTime = 50,          
         BuildableCategory = {
-            'BUILTBYTIER3ENGINEER DEFENSE UEF STRUCTURE SIZE4',
-            'BUILTBYTIER3ENGINEER INDIRECTFIRE UEF STRUCTURE SIZE4',
-            'BUILTBYHEAVYWALL TECH3 UEF',
+            'BUILTBYHEAVYWALL UEF',
         },
         RebuildBonusIds = {
             'sab5310',

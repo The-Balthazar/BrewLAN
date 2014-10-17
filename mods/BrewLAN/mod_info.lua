@@ -1,6 +1,6 @@
-name = "BrewLAN 0.5"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000050"
-version = "0.5"
+name = "BrewLAN 0.5.1"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N000051"
+version = "0.5.1"
 copyright = "2009 - 2014 Sean Wheeldon"
 description = "2009-2014: BrewLANniversary edition."
 author = "Sean Wheeldon"
@@ -10,7 +10,6 @@ enabled = true
 exclusive = false
 ui_only = false
 conflicts = {
-    "77775cf2-9b8b-11dc-8314-0800200c9a66", --Total Veterency
     "25D57D85-7D84-27HT-A501-48F3488D85724", --Previous versions
     "25D57D85-7D84-27HT-A501-48F3488D85725",
     "25D57D85-7D84-27HT-A501-48F3488D85726",
@@ -45,7 +44,8 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N00004E", --0.4.E	alpha
     "25D57D85-7D84-27HT-A501-BR3WL4N00004F", --0.4.F	alpha
     "25D57D85-7D84-27HT-A501-BR3WL4N00004G", --0.4.G	alpha
-    "25D57D85-7D84-27HT-A501-BR3WL4N00004H", --0.4.H	alpha
+    "25D57D85-7D84-27HT-A501-BR3WL4N00004H", --0.4.H	alpha 
+    "25D57D85-7D84-27HT-A501-BR3WL4N000050", --0.4.H	alpha
 }
 before = {  }
 after = {  }
