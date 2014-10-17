@@ -188,9 +188,7 @@ UnitBlueprint {
         BuildRate = 1,
         BuildTime = 50,          
         BuildableCategory = {
-            'BUILTBYTIER3ENGINEER DEFENSE CYBRAN STRUCTURE SIZE4',
-            'BUILTBYTIER3ENGINEER INDIRECTFIRE CYBRAN STRUCTURE SIZE4',
-            'BUILTBYHEAVYWALL TECH3 CYBRAN',
+            'BUILTBYHEAVYWALL CYBRAN',
         },
         RebuildBonusIds = {
             'sab5310',

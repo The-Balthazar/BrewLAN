@@ -119,7 +119,7 @@ seb2220_name="AP-12 Trapper"
 srb2220_name="Mutter"
 sab2220_name="Molehill"
 ssb2220_name="Othe"
-Unit_Description_BrewLAN_T2D001="Pour tous les terrains, dégâts légers, explose à pression, mine. Visible uniquement avec capteur omni."
+Unit_Description_BrewLAN_T2D005="Pour tous les terrains, dégâts légers, explose à pression, mine. Visible uniquement avec capteur omni."
 
 sbui2221="Mine de proximité"
 seb2221_name="AM-24 Anti-Armor"
@@ -133,7 +133,7 @@ seb2222_name="AM-36 Trinity"
 srb2222_name="Silencer"
 sab2222_name="Mountain"
 ssb2222_name="Inaino"
-Unit_Description_BrewLAN_T2D004=Pour tous les terrains, cette mine est équipée du charge nucléaire. Détonation manuelle requise. Visible uniquement avec capteur omni."
+Unit_Description_BrewLAN_T2D004="Pour tous les terrains, cette mine est équipée du charge nucléaire. Détonation manuelle requise. Visible uniquement avec capteur omni."
 
 -- Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Génère un bouclier qui protège les unités dans un rayon limité. Améliorable deux fois."
@@ -205,7 +205,7 @@ Unit_Description_BrewLAN_T3B008="Tourelle de défense très lourde. Attaque les 
 seb3303_desc="Centre de contrôle de satellite"
 sea0002_desc="Centre de contrôle de satellite"
 sea0002_name="Burning Star"
-Unit_Description_BrewLAN_T3B002="Centre de contrôle de satellite. Détecteur longue portée omni. Si le Centre de contrôle est détruit le satellite est désactivé.»
+Unit_Description_BrewLAN_T3B002="Centre de contrôle de satellite. Détecteur longue portée omni. Si le Centre de contrôle est détruit le satellite est désactivé."
 
 sel0320_desc="Véhicule de liaison satellite."
 sel0320_name="Archimède"

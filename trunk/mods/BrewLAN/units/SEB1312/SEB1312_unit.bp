@@ -68,7 +68,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC Seb1312_desc>Engineering Mass Extractor',
+    Description = '<LOC seb1312_desc>Engineering Mass Extractor',
     Display = {
         Abilities = {        
             '<LOC ability_engineeringsuite>Engineering Suite',

@@ -120,7 +120,7 @@ seb2220_name="AP-12 Trapper"
 srb2220_name="Mutter"
 sab2220_name="Molehill"
 ssb2220_name="Othe"
-Unit_Description_BrewLAN_T2D001="Eine Annäherungsmine für jedes Terrain. Getarnt."
+Unit_Description_BrewLAN_T2D005="Eine Annäherungsmine für jedes Terrain. Getarnt."
 
 sbui2221="Annäherungsmine"
 seb2221_name="AM-12 Anti-Panzer"
