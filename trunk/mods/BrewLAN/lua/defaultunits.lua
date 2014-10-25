@@ -43,9 +43,9 @@ MineStructureUnit = Class(TStructureUnit) {
             self.Trash:Add(CreateSlider(self, 0, 0, -20, 0, 5))
         end
         if self.blocker then
-           --This tricks the engine into thinking the area is clear:
-           --Removing a building with an overlapping footprint from the same layer.
-           self.blocker:Destroy()
+            --This tricks the engine into thinking the area is clear:
+            --Removing a building with an overlapping footprint from the same layer.
+            self.blocker:Destroy()
         end      
     end,
 
@@ -110,7 +110,8 @@ CardinalWallScript = Class(CLandFactoryUnit) {
                 },
             },
             bones = self:GetBlueprint().Display.AdjacencyConnectionInfo.Bones
-        }
+        } 
+        self.Trash:Add(self.Info)
         self:BoneUpdate(self.Info.bones)  
         self:CreateTarmac(true, true, true, false, false)
     end, 
@@ -170,7 +171,7 @@ CardinalWallScript = Class(CLandFactoryUnit) {
                         for k, v in self.Info.bones do
                             if v.bonetype == 'Beam' then
                                 if self:IsValidBone(k) and v1.ent:IsValidBone(k) then
-                                    AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype)
+                                    v1.ent.Trash:Add(AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype))
                                 end
                             end
                         end
@@ -303,7 +304,8 @@ CardinalWallScript = Class(CLandFactoryUnit) {
 CardinalGateScript = Class(CardinalWallScript) {  
     OnCreate = function(self)
         CardinalWallScript.OnCreate(self)  
-        self.Slider = CreateSlider(self, 0)    
+        self.Slider = CreateSlider(self, 0)   
+        self.Trash:Add(self.Slider) 
     end,
          
     OnStopBeingBuilt = function(self,builder,layer)

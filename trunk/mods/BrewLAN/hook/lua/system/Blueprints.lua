@@ -138,8 +138,13 @@ end
 function BrewLANGantryBuildList(all_bps)
     for id, bp in all_bps do
         --Check the Gantry can't already build it, and that its a mobile experimental
-        if not table.find(bp.Categories, 'BUILTBYGANTRY')
-        and table.find(bp.Categories, 'EXPERIMENTAL')
+        if table.find(bp.Categories, 'BUILTBYGANTRY') and table.find(bp.Categories, 'EXPERIMENTAL') then
+            if table.find(bp.Categories, 'AIR') then
+                table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
+            else
+                table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
+            end
+        elseif table.find(bp.Categories, 'EXPERIMENTAL')
         and table.find(bp.Categories, 'MOBILE')
         then
             --Check it should actually be buildable
@@ -154,6 +159,11 @@ function BrewLANGantryBuildList(all_bps)
                 --or bp.Footprint.SizeX < 9
                 then
                     table.insert(bp.Categories, 'BUILTBYGANTRY')
+                    if table.find(bp.Categories, 'AIR') then
+                        table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
+                    else
+                        table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
+                    end
                 end
             end 
         end
@@ -396,9 +406,10 @@ function BrewLANNavalShields(all_bps)
             all_bps[k].General.Icon = 'amph'
             all_bps[k].Physics.BuildOnLayerCaps.LAYER_Water = true
             all_bps[k].Wreckage.WreckageLayers.Water = true
-            if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end
-            table.removeByValue(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')--Preventing double ability in certain units.
-            table.insert(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')
+            if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end 
+            if not table.find(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic') then
+                table.insert(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')
+            end
         end
     end
 end

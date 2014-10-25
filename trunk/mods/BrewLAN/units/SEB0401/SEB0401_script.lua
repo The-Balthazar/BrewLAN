@@ -1,39 +1,55 @@
-#****************************************************************************
-#**
-#**  Summary  :  The Gantry script
-#**
-#****************************************************************************
+--------------------------------------------------------------------------------
+--  Summary:  The Gantry script
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 
 local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit 
 local explosion = import('/lua/defaultexplosions.lua')
+local Utilities = import('/lua/utilities.lua')    
+local Buff = import('/lua/sim/Buff.lua')   
 
-SEB0401 = Class(TLandFactoryUnit) { 
-    
+SEB0401 = Class(TLandFactoryUnit) {     
+
+--------------------------------------------------------------------------------
+-- Function triggers
+--------------------------------------------------------------------------------   
+
     OnCreate = function(self)
         TLandFactoryUnit.OnCreate(self) 
         self.BuildModeChange(self)
     end,
-    
+           
     OnStopBeingBuilt = function(self, builder, layer)
         TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
+        self.AIStartOrders(self)        
     end,
-           
+     
     OnLayerChange = function(self, new, old)
         TLandFactoryUnit.OnLayerChange(self, new, old)
         self.BuildModeChange(self)
     end,
-
+    
+    OnStartBuild = function(self, unitBeingBuilt, order)                    
+        TLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)   
+        self.BuildModeChange(self)  
+        self.AIxCheats(self)      
+    end,      
+           
+    OnStopBuild = function(self, unitBeingBuilt)     
+        TLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)    
+        self.AIControl(self, unitBeingBuilt)      
+    end,      
+        
+--------------------------------------------------------------------------------
+-- Button controls
+--------------------------------------------------------------------------------  
+          
     OnScriptBitSet = function(self, bit)
         TLandFactoryUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
             self.airmode = true
             self.BuildModeChange(self)
         end
-    end,
-             
-    OnStartBuild = function(self, unitBeingBuilt, order)
-        TLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
-        self.BuildModeChange(self)
     end,
     
     OnScriptBitClear = function(self, bit)
@@ -43,12 +59,221 @@ SEB0401 = Class(TLandFactoryUnit) {
             self.BuildModeChange(self)
         end
     end,
+              
+    OnPaused = function(self)
+        TLandFactoryUnit.OnPaused(self)
+        self:StopBuildFx(self:GetFocusUnit())
+    end,
 
-    BuildModeChange = function(self, mode)   
+    OnUnpaused = function(self)
+        TLandFactoryUnit.OnUnpaused(self)
+        if self:IsUnitState('Building') then
+            self:StartBuildFx(self:GetFocusUnit())
+        end
+    end,
+      
+--------------------------------------------------------------------------------
+-- AI control
+--------------------------------------------------------------------------------   
+    
+    AIStartOrders = function(self)    
         local aiBrain = self:GetAIBrain()
+        self.Time = GetGameTimeSeconds()       
+        if aiBrain.BrainType != 'Human' then     
+            --self.engineers = {} 
+            self.BuildModeChange(self)         
+            aiBrain:BuildUnit(self, 'uel0309', 5)   
+            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+            aiBrain:BuildUnit(self, 'uel0309', 5)       
+            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+        end 
+    end,
+      
+    AIControl = function(self, unitBeingBuilt)     
+        local aiBrain = self:GetAIBrain()   
+        if aiBrain.BrainType != 'Human' then   
+            if unitBeingBuilt:GetUnitId() == 'uel0309' then
+                --table.insert(self.engineers, unitBeingBuilt)
+                self:ForkThread(
+                    function()
+                        for i = 1, 40 do
+                            if i == 1 then
+                                IssueClearCommands({unitBeingBuilt})
+                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
+                            elseif i != 40 then
+                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0104')
+                            else
+                                IssueGuard({unitBeingBuilt}, self)
+                            end
+                        end
+                    end
+                )
+            elseif unitBeingBuilt:GetUnitId() == 'sea0401' then  
+                local ACUS = aiBrain:GetUnitsAroundPoint(categories.COMMAND, self:GetPosition(), 8000, 'Enemy' )
+                local Paragon = aiBrain:GetUnitsAroundPoint(categories.xab1401, self:GetPosition(), 8000, 'Enemy' )
+                if Paragon[1] then
+                    if IsUnit(Paragon[1]) then
+                        local Pancake = unitBeingBuilt
+                        self:ForkThread(
+                            function()
+                                while not Paragon[1]:IsDead() do
+                                    if Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1]) < 50 then
+                                        Pancake:SetSpeedMult(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)
+                                        --LOG(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)   
+                                        IssueClearCommands({Pancake})
+                                    end   
+                                    IssueMove({Pancake}, Paragon[1]:GetPosition())
+                                    WaitTicks(5)
+                                end
+                            end
+                        )
+                    end
+                elseif ACUS[1] then
+                    if IsUnit(ACUS[1]) then
+                        IssueAttack({unitBeingBuilt}, ACUS[1])
+                    end
+                else
+                    local Anything = aiBrain:GetUnitsAroundPoint(categories.ALLUNITS, self:GetPosition(), 8000, 'Enemy' )
+                    if Anything[1] then
+                        IssueAttack({unitBeingBuilt}, Anything[1])
+                    end
+                end
+            end
+            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+        end
+    end,
+    
+    --The AI ignores this bit when it is important. Or rather, cancels the orders.
+    MookBuild = function(self, aiBrain, mook, building)   
+        local pos = self:GetPosition()  
+        local bp = self:GetBlueprint()
         
-        self:RestoreBuildRestrictions()
-        
+        local x = bp.Physics.SkirtSizeX / 2 + (math.random(1,5)*2)
+        local z = bp.Physics.SkirtSizeZ / 2 + (math.random(1,5)*2)
+        local sign = -1 + 2 * math.random(0, 1)     
+        local BuildGoalX = 0
+        local BuildGoalZ = 0       
+        if math.random(0, 1) > 0 then
+            BuildGoalX = sign * x
+            BuildGoalZ = math.random(math.ceil(-z/2),math.ceil(z/2))*2
+        else
+            BuildGoalX = math.random(math.ceil(-x/2),math.ceil(x/2))*2
+            BuildGoalZ = sign * z
+        end 
+        aiBrain:BuildStructure(mook, building, {pos[1]+BuildGoalX, pos[3]+BuildGoalZ, 0})
+    end,
+    
+    ChooseExpimental = function(self)  
+        local bpAirExp = self:GetBlueprint().AI.Experimentals.Air
+        local bpOtherExp = self:GetBlueprint().AI.Experimentals.Other
+        if not self.ExpIndex then self.ExpIndex = {1,1,} end
+    
+        if not self.togglebuild then
+            for i=1,2 do
+                for i, v in bpAirExp do
+                    if self.ExpIndex[1] <= i then
+                        LOG('Current cycle = ', v[1])  
+                        if not bpAirExp[i+1] then
+                            self.ExpIndex[1] = 1
+                        else
+                            self.ExpIndex[1] = i + 1
+                        end
+                        if self:CanBuild(v[1]) then   
+                            self.togglebuild = true
+                            self.Lastbuilt = v[1]    
+                            LOG('Returning air chosen = ', v[1])  
+                            return v[1]
+                        end
+                    end
+                end
+            end
+            --only reaches here if it can't build any air experimentals   
+            self.togglebuild = true
+            LOG('Gantry failed to find experimental fliers')
+        end
+        if self.togglebuild then          
+            for i=1,2 do
+                for i, v in bpOtherExp do
+                    if self.ExpIndex[2] <= i then   
+                        LOG('Current cycle = ', v[1])  
+                        if not bpOtherExp[i+1] then
+                            self.ExpIndex[2] = 1
+                        else
+                            self.ExpIndex[2] = i + 1
+                        end
+                        if self:CanBuild(v[1]) then   
+                            self.togglebuild = false
+                            self.Lastbuilt = v[1]       
+                            LOG('Returning land chosen= ', v[1])  
+                            return v[1]
+                        end
+                    end
+                end
+            end 
+            --Only reaches this if it can't build any non-fliers
+            self.togglebuild = false    
+            LOG('Gantry failed to find non-flying experimentals')  
+        end
+        --Attempts last successfull experimental, probably air at this point
+        if self.Lastbuilt then       
+            LOG('Returning last built = ', self.Lastbuilt)  
+            return self.Lastbuilt   
+        --If nothing else works, flip a coin and build an ASF or a bomber
+        elseif self:CanBuild('uea0303') and self:CanBuild('uea0304') then
+            if math.random(1,2) == 1 then
+                return 'uea0303'
+            else
+                return 'uea0304'
+            end 
+        --Are air and experimentals off?
+        elseif self:CanBuild('XEL0305') then
+            return 'XEL0305'
+        --Is T3 off? Fuck it. Mech Marines.
+        elseif self:CanBuild('UEL0106') then
+            return 'UEL0106'
+        end
+    end,
+    
+--------------------------------------------------------------------------------
+-- AI Cheats
+--------------------------------------------------------------------------------   
+                   
+    AIxCheats = function(self)       
+        local aiBrain = self:GetAIBrain()
+        ------------------------------------------------------------------------
+        -- AIX cheats
+        ------------------------------------------------------------------------    
+        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then       
+            self:ForkThread(
+                function()
+                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (2.5+(GetGameTimeSeconds()/120-self.Time/120)) )
+                    while aiBrain:GetEconomyIncome( 'MASS' ) > 0 and aiBrain:GetEconomyIncome( 'ENERGY' ) > 0 do
+                        if aiBrain:GetEconomyIncome( 'MASS' ) < aiBrain:GetEconomyRequested('MASS') or aiBrain:GetEconomyIncome( 'ENERGY' ) < aiBrain:GetEconomyRequested('ENERGY') then
+                            aiBrain:GiveResource('Mass',100)
+                            aiBrain:GiveResource('Energy',1000)
+                        end    
+                        WaitSeconds(1)
+                    end
+                end
+            )               
+        ------------------------------------------------------------------------
+        -- Regular AI minor cheats
+        ------------------------------------------------------------------------
+        elseif aiBrain.BrainType != 'Human' and not aiBrain.CheatEnabled then
+            self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * 2.5 )  
+        end
+    end,
+    
+--------------------------------------------------------------------------------
+-- UI buildmode change function
+-------------------------------------------------------------------------------- 
+ 
+    BuildModeChange = function(self, mode)   
+        self:RestoreBuildRestrictions()                                                               
+        ------------------------------------------------------------------------
+        -- The "Stolen tech" clause
+        ------------------------------------------------------------------------     
+        local aiBrain = self:GetAIBrain()        
         local engineers = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, self:GetPosition(), 30, 'Ally' )
         local stolentech = {}
         stolentech.CYBRAN = false
@@ -67,9 +292,11 @@ SEB0401 = Class(TLandFactoryUnit) {
             if not val then
                 self:AddBuildRestriction(categories[race])
             end
-        end
-        
-        if aiBrain.BrainType == 'Human' then --Player UI changes.
+        end                                                    
+        ------------------------------------------------------------------------
+        -- Human UI air/other switch
+        ------------------------------------------------------------------------
+        if aiBrain.BrainType == 'Human' then
             if self.airmode then
                 self:AddBuildRestriction(categories.NAVAL)
                 self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
@@ -81,7 +308,10 @@ SEB0401 = Class(TLandFactoryUnit) {
                 end  
                 self:AddBuildRestriction(categories.AIR)
             end
-        else --AI's dont need the restrictions that are only there for the sake of a clean UI.
+        ------------------------------------------------------------------------
+        -- AI functional restrictions (allows easier AI control)
+        ------------------------------------------------------------------------
+        else
             if self:GetCurrentLayer() == 'Land' then
                 self:AddBuildRestriction(categories.NAVAL)
             elseif self:GetCurrentLayer() == 'Water' then
@@ -90,19 +320,21 @@ SEB0401 = Class(TLandFactoryUnit) {
         end 
         self:RequestRefreshUI()
     end,
+    
+--------------------------------------------------------------------------------
+-- Animations
+--------------------------------------------------------------------------------  
 
     StartBuildFx = function(self, unitBeingBuilt)
         if not unitBeingBuilt then
             unitBeingBuilt = self:GetFocusUnit()
         end
-        
-        # Start build process
+        --Start build process
         if not self.BuildAnimManip then
             self.BuildAnimManip = CreateAnimator(self)
             self.BuildAnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild, true):SetRate(0)
             self.Trash:Add(self.BuildAnimManip)
         end
-
         self.BuildAnimManip:SetRate(1)
     end,
     
@@ -112,17 +344,6 @@ SEB0401 = Class(TLandFactoryUnit) {
         end
     end,
     
-    OnPaused = function(self)
-        TLandFactoryUnit.OnPaused(self)
-        self:StopBuildFx(self:GetFocusUnit())
-    end,
-
-    OnUnpaused = function(self)
-        TLandFactoryUnit.OnUnpaused(self)
-        if self:IsUnitState('Building') then
-            self:StartBuildFx(self:GetFocusUnit())
-        end
-    end,
     
     DeathThread = function(self, overkillRatio, instigator) 
         for i = 1, 8 do

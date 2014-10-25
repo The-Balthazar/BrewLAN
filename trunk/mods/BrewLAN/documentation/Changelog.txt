@@ -10,6 +10,30 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2014-10-19|0.5.2
+
+* Added strings to the table for the soon to exist seraphim experimentals.
+  __________
+  2014-10-20
+  
+  * Changed the AI behaviour with a Gantry.
+    * It will now have it build 5 engineers.     
+    * It will then build a Centurion.
+    * It will then repeat the two preceding steps before infinite building Centurions.
+  __________
+  2014-10-23
+  
+  * Fixed an issue with beams on the walls not removing propperly when a section dies.
+  __________
+  2014-10-24
+  
+  * Changed the AI use of the Gantry. Involves hax. Lots of hax.
+  __________
+  2014-10-25
+  
+  * Created a propper function for the Gantry choosing which experimental to build while AI controlled.
+    * It now cycles through all air experimentals detected by the launch script, and builds one, then does the same for land experimentals, and then sequentially cycles through all of them in that pattern.                                                 
+__________.__________
 2014-10-15|0.5.1
 
 * Fixed some issues in the French and Russian string tables.
