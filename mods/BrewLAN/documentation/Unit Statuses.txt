@@ -4,17 +4,7 @@
  \____ (_   _|____ (_   _)/___)  | |     | |/___|_   _)
  _____) )| |_/ ___ | | |_|___ |  | |_____| |___ | | |_ 
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
-                                     Updated 2012-11-17
-_______________________________________________________
-General to-do list/ideas list.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* Mobile Radar Jammers
-* More aquatic buildings
-* Naval mine layer units?
-* Seraphim experimental mine. (Possibly releasing a residual energy signature as its thing, or a semi-persistant d-o-t)
-* BARREL ROLL
-* Give cloaked/stealthed units omni detection in the form of a blinky beep effect on their model, so you know when stealth is broken.
-  * Might be easier to implement the other way round; the omni checks on detecting them. 
+                                     Updated 2012-11-17 
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -368,12 +358,12 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ________________!_______________!_______________!_______________!_______________!
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*?(F)          |
+Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Necro bot     |
 Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona Oss     |
 Static 2        |*Ivan (F)      |*Tele/CZAR fab |Darkness       |*Gate portal   |
-Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield proj...|
+Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ________________!_______________!_______________!_______________!_______________!
 
   (A)  Aircraft Carrier
@@ -419,17 +409,23 @@ Seraphim Experimental Mine?
     * Releasing a residual energy signature.
     * Self replicating mines.
     * Damage over time effect.       
-    
-Aeon Experimental Siege Tank
-  * Mostly finished texture that needs more details.
-  * Has its big cannon and two TMD's.
-  * Totally isn't an eldar grav tank. Nope nope nope. 
 
-Aeon Experimental Shield projection facility.
+Seraphim Experimental Shield projection facility.
   * Something between a shield gen and the eye of something or other in appearance.
   * To create individual shields around each unit within the radius, probably with a ghost unit attached.
     * Shields should share an overall health, and need some way to scale with the unit it surrounds.
   * Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
+
+Seraphim Iyadesu
+  Formerly Experimental Engineer (Prior to r205)
+  Formerly Experimental Field Engineer (As of r205, removed as 2014-08-08)
+  Experimental Ressurection Unit
+    * Need to destroy either the repair, or reclaim functions.         
+
+Aeon Absolution: Experimental Siege Tank
+  * Mostly finished texture that needs more details.
+  * Has its big cannon and two TMD's.
+  * Totally isn't an eldar grav tank. Nope nope nope. 
 
 Cybran Experimental Missile ship
   * Initial ideas:
@@ -446,8 +442,8 @@ Cybran Experimental Missile ship
 
 Cybran Iron Curtain: Experimental Shield Generator
   * Functions as a shield.
-  * Want the shield to shrink on damage, maybe.  
-    * Would need to adapt the force shield script for this. 
+  * Used to want the shield to shrink on damage. Not sure anymore.  
+    * Would need to adapt the force shield script for this.       
   * Not 100% satisfied with the current mesh.
 
 Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
@@ -458,18 +454,11 @@ Cybran Darkness: Experimental Omni Disruption Facility
   * Uses the model of the QAI Mainframe from the campaign.
   * One of its arms doesn't move, for some unknown reason.
   * Was briefly called Oscuras before reverting back to Darkness.
-    * I realised that any unit for which I try to avoid refering to it by name, has a bad name.       
+    * I realised that any unit for which I try to avoid refering to it by name, has a bad name. Sorry Kris.      
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Abandonned Ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Seraphim Iyadesu: Experimental Engineering Platform
-  * Massively overpowered, in all ways.
-    * Removed, after a few Iyadesu dominated games.
-    * Although it was gamewarping, it was fun so the source files were left around.
-      * Changed as of r205
-        * This nerfed Field Engineer version was also removed for still being OP on 2014-08-08.           
-
 UEF Doomsday Machine: Experimental Point Defence
   * Was supposed to be a callback to the old TA unit.
     * An uninteresting idea badly implemented. Removed.
@@ -480,11 +469,23 @@ UEF Engineering Facility 'The Pound'
   * A facility that houses a large number of Rover drones.
   * Do you want lag? Because this is how you get lag.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Other ideas:
+Other unit ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 Anti-naval gunship.
 
 Rail gun: http://forums.gaspowered.com/viewtopic.php?t=27664#p473416    
 Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
     * Script might also be usefull for the decoy planes.
+
+Naval mine layer units and/or other better ways to deploy mines.
+_______________________________________________________
+Other mod ideas
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* Aircraft barrel roll.
+* Random asteroid showers.
+* Have cloaked/stealthed units able to detect when they are detected.
+  * Might be easier to implement the other way round; the omni checks on detecting them.
+* Swap mass & energy.
+* Team colour lasers.
+* MetalWorld
+  * Have the AI cheat.    

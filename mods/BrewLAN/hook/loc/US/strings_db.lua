@@ -327,3 +327,7 @@ Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-p
 srb4402_desc="Experimental Omni Disrupting Facility"
 srb4402_name="Darkness"
 Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of active Omni sensors. Distant sensors are affected slower."
+
+ssb5401_desc="Experimental Quantum Gateway"
+ssb5401_name="Chappa'ai"
+Unit_Description_BrewLAN_T4B007="Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."

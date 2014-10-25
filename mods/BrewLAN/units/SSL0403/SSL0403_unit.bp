@@ -230,14 +230,8 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 150000,
         BuildCostMass = 6000,
-        BuildRate = 200,
+        BuildRate = 50,
         BuildTime = 2400*3,
-        BuildableCategory = {
-            'BUILTBYTIER3ENGINEER DEFENSE SERAPHIM',
-            'BUILTBYTIER3ENGINEER INDIRECTFIRE SERAPHIM',
-            'BUILTBYTIER3FIELD SERAPHIM',
-            'BUILTBYTIER3ENGINEER NUKE SILO SERAPHIM',
-        },
         MaintenanceConsumptionPerSecondEnergy = 500,
         StorageEnergy = 10000,
         StorageMass = 1000,

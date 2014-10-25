@@ -10,6 +10,11 @@ UnitBlueprint {
             'Base_007',
             'Base_008',
         },
+        --This list is populated on game launch
+        Experimentals = {
+            Air = {},
+            Other = {},
+        },
     },
     Audio = {
         Construct = Sound {

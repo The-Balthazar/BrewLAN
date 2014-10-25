@@ -147,3 +147,4 @@ Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental guns
 Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amphibious battleship."
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
 Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of all active Omni sensors. Distant sensors are affected slower."
+Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
