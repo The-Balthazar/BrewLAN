@@ -86,6 +86,11 @@ SEB0401 = Class(TLandFactoryUnit) {
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
             aiBrain:BuildUnit(self, 'uel0309', 5)       
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+            local AINames = import('/lua/AI/sorianlang.lua').AINames
+            if AINames.seb0401 then
+                local num = Random(1, table.getn(AINames.seb0401))
+                self:SetCustomName(AINames.seb0401[num])
+            end
         end 
     end,
       
@@ -116,10 +121,16 @@ SEB0401 = Class(TLandFactoryUnit) {
                         local Pancake = unitBeingBuilt
                         self:ForkThread(
                             function()
+                                local AINames = import('/lua/AI/sorianlang.lua').AINames
                                 while not Paragon[1]:IsDead() do
                                     if Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1]) < 50 then
                                         Pancake:SetSpeedMult(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)
-                                        --LOG(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)   
+                                        --LOG(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)     
+                                        if not Pancake.customname then 
+                                            local num = Random(1, table.getn(AINames.sea0401pancake))
+                                            Pancake:SetCustomName(AINames.sea0401pancake[num])
+                                            Pancake.customname = true
+                                        end
                                         IssueClearCommands({Pancake})
                                     end   
                                     IssueMove({Pancake}, Paragon[1]:GetPosition())
@@ -166,7 +177,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     ChooseExpimental = function(self)  
         local bpAirExp = self:GetBlueprint().AI.Experimentals.Air
         local bpOtherExp = self:GetBlueprint().AI.Experimentals.Other
-        if not self.ExpIndex then self.ExpIndex = {1,1,} end
+        if not self.ExpIndex then self.ExpIndex = {math.random(1, table.getn(bpAirExp)),math.random(1, table.getn(bpOtherExp)),} end
     
         if not self.togglebuild then
             for i=1,2 do
@@ -299,10 +310,12 @@ SEB0401 = Class(TLandFactoryUnit) {
         if aiBrain.BrainType == 'Human' then
             if self.airmode then
                 self:AddBuildRestriction(categories.NAVAL)
+                self:AddBuildRestriction(categories.MOBILESONAR)
                 self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
             else   
                 if self:GetCurrentLayer() == 'Land' then
-                    self:AddBuildRestriction(categories.NAVAL)
+                    self:AddBuildRestriction(categories.NAVAL)    
+                    self:AddBuildRestriction(categories.MOBILESONAR)
                 elseif self:GetCurrentLayer() == 'Water' then
                     self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
                 end  
@@ -313,9 +326,11 @@ SEB0401 = Class(TLandFactoryUnit) {
         ------------------------------------------------------------------------
         else
             if self:GetCurrentLayer() == 'Land' then
-                self:AddBuildRestriction(categories.NAVAL)
+                self:AddBuildRestriction(categories.NAVAL) 
+                self:AddBuildRestriction(categories.MOBILESONAR)
             elseif self:GetCurrentLayer() == 'Water' then
                 self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+                self:AddBuildRestriction(categories.ues0401)
             end  
         end 
         self:RequestRefreshUI()

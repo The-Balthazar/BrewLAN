@@ -13,7 +13,7 @@ local utilities = import('/lua/utilities.lua')
 
 SAB2306 = Class(AStructureUnit) {
     Weapons = {
-        EyeWeapon = Class(ADFPhasonLaser) {},
+        EyeWeapon = Class(ADFPhasonLaser) {},     
     },
     
 

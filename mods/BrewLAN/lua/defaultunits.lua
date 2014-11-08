@@ -111,7 +111,7 @@ CardinalWallScript = Class(CLandFactoryUnit) {
             },
             bones = self:GetBlueprint().Display.AdjacencyConnectionInfo.Bones
         } 
-        self.Trash:Add(self.Info)
+        --self.Trash:Add(self.Info)
         self:BoneUpdate(self.Info.bones)  
         self:CreateTarmac(true, true, true, false, false)
     end, 

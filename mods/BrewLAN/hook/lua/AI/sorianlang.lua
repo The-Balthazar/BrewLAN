@@ -26,6 +26,11 @@ AINames.seb0401 = {
 	'Craneyard',
 	'Foundry',
 	'Octavius',
+   'Legion HQ',
+   'Forge',
+   'Factory',
+   'Legion Academy',
+	'Robots \'R\' Us',
 }
 --------------------------------------------------------------------------------
 -- Scathis MK II: Experimental Rapid-fire Artillery
@@ -128,6 +133,23 @@ AINames.sea0401 = {
     'Dipper',
     'Karma',
     'Fireball',
+}
+AINames.sea0401pancake = {
+    'Pancake',
+    'Kamakaze',
+    'Accidents Happen',
+    'Troll',
+    'Opperation: Paragon',
+    'The Anvil',
+    'Sector 7',
+    'Crusher of Hope',
+    'Dream Flattener',
+    'Penny',
+    'Foot',
+    '\'The Beat\'',
+    'Bass',
+    'Dorayaki',
+    'Crepe',
 }
 --------------------------------------------------------------------------------
 -- Darkness: Experimental Omni Disrupting Facility

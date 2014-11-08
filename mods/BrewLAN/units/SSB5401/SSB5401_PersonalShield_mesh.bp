@@ -1,0 +1,26 @@
+MeshBlueprint {
+    IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = 'SSB5401_PersonalShield_mesh.scm',
+            LODCutoff = 195,
+
+            --LookupName = '/effects/entities/PhaseShield/PhaseShieldLookup.dds',
+            LookupName = '/effects/Entities/SeraphimShield01/ramp_yellow_to_purple_01.dds',
+
+            AlbedoName = 'Shield01_Albedo.dds',
+            --AlbedoName = 'SeraphimShield01_Albedo.dds',
+
+            --NormalsName = 'Shield01_Secondary.dds',
+            NormalsName = 'SeraphimShield01_Normals3.dds',
+
+            --SpecularName = 'Shield01_Specular.dds',
+            SpecularName = 'SeraphimShield01_Specular2.dds',
+
+            --ShaderName = 'ShieldSeraphim',
+            ShaderName = 'ShieldCybran',
+            --ShaderName = 'ShieldUEF',
+            --ShaderName = 'NukeEMP',
+        },
+    },
+}
