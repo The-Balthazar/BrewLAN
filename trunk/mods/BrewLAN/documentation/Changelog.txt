@@ -10,6 +10,20 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2014-10-26|0.5.3
+
+* Fixed an error with the wall script.
+* Changed the Gantry code to be more inclusive with what it selects to be buildable.
+  * Side effect: The Gantry can now build T3 Sonar.
+* Added a restriction for the Atlantis on AI controlled Gantries.
+* AI now names its Gantries.
+* AI now names its pancake Centurions differently.
+  __________
+  2014-10-31
+  
+  * The AI Gantry experimental picker now starts at with a random experimental instead of the first on its list (it still cycles linearly from there).
+  * Field engineers can now build air staging platforms.     
+__________.__________
 2014-10-19|0.5.2
 
 * Added strings to the table for the soon to exist seraphim experimentals.

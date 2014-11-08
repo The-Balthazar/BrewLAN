@@ -215,7 +215,8 @@ UnitBlueprint {
             'BUILTBYTIER3FACTORY MOBILE NAVAL UEF',
             'BUILTBYTIER3FACTORY MOBILE AIR UEF',
             'TRANSPORTBUILTBYTIER3FACTORY UEF MOBILE AIR',
-            'BUILTBYGANTRY',
+            'BUILTBYGANTRY UEF',
+            'BUILTBYGANTRY EXPERIMENTAL',
         },
         RebuildBonusIds = {
             'seb0401',

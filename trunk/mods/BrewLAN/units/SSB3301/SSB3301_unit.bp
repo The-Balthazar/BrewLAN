@@ -187,7 +187,6 @@ UnitBlueprint {
         },
         UnitName = '<LOC ssb3301_name>Aezselen',
         UnitWeight = 1,
-        UpgradesFrom = 'uab3201',
     },
     Intel = {
         ReactivateTime = 10,

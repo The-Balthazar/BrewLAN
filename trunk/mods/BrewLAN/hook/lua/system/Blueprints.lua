@@ -40,19 +40,22 @@ function BrewLANBuildCatChanges(all_bps)
         ueb0101 = {'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',},
         ueb0301 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',},
         uel0401 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',},
-        sel0119 = {'BUILTBYTIER1ENGINEER UEF COUNTERINTELLIGENCE',},
-        srl0119 = {'BUILTBYTIER1ENGINEER CYBRAN COUNTERINTELLIGENCE',},
-        ssl0119 = {'BUILTBYTIER1ENGINEER SERAPHIM COUNTERINTELLIGENCE',},
-        sal0119 = {'BUILTBYTIER1ENGINEER AEON COUNTERINTELLIGENCE',},
-        srl0209 = {'BUILTBYTIER2ENGINEER CYBRAN COUNTERINTELLIGENCE',},
-        ssl0219 = {'BUILTBYTIER2ENGINEER SERAPHIM COUNTERINTELLIGENCE',},
-        xel0209 = {'BUILTBYTIER2FIELD UEF', 'BUILTBYTIER2ENGINEER UEF COUNTERINTELLIGENCE',}, 
-        sal0209 = {'BUILTBYTIER2ENGINEER AEON COUNTERINTELLIGENCE',},
-        sel0319 = {'BUILTBYTIER3ENGINEER UEF COUNTERINTELLIGENCE',},
-        srl0319 = {'BUILTBYTIER3ENGINEER CYBRAN COUNTERINTELLIGENCE',},
-        ssl0319 = {'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE',},
-        sal0319 = {'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE',},
-        --These categories are removed if controlled by a human in the hooked unit scripts
+        --Tech 1 Field Engineers
+        sel0119 = {'BUILTBYTIER1ENGINEER UEF COUNTERINTELLIGENCE','BUILTBYTIER1ENGINEER UEF AIRSTAGINGPLATFORM',},
+        srl0119 = {'BUILTBYTIER1ENGINEER CYBRAN COUNTERINTELLIGENCE','BUILTBYTIER1ENGINEER CYBRAN AIRSTAGINGPLATFORM',},
+        ssl0119 = {'BUILTBYTIER1ENGINEER SERAPHIM COUNTERINTELLIGENCE','BUILTBYTIER1ENGINEER SERAPHIM AIRSTAGINGPLATFORM',},
+        sal0119 = {'BUILTBYTIER1ENGINEER AEON COUNTERINTELLIGENCE','BUILTBYTIER1ENGINEER AEON AIRSTAGINGPLATFORM',},
+        --Tech 2 Field Engineers
+        srl0209 = {'BUILTBYTIER2ENGINEER CYBRAN COUNTERINTELLIGENCE','BUILTBYTIER2ENGINEER CYBRAN AIRSTAGINGPLATFORM',},
+        ssl0219 = {'BUILTBYTIER2ENGINEER SERAPHIM COUNTERINTELLIGENCE','BUILTBYTIER2ENGINEER SERAPHIM AIRSTAGINGPLATFORM',},
+        xel0209 = {'BUILTBYTIER2ENGINEER UEF COUNTERINTELLIGENCE','BUILTBYTIER2ENGINEER UEF AIRSTAGINGPLATFORM','BUILTBYTIER2FIELD UEF',}, 
+        sal0209 = {'BUILTBYTIER2ENGINEER AEON COUNTERINTELLIGENCE','BUILTBYTIER2ENGINEER AEON AIRSTAGINGPLATFORM',},
+        --Tech 3 Field Engineers
+        sel0319 = {'BUILTBYTIER3ENGINEER UEF COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER UEF AIRSTAGINGPLATFORM',},
+        srl0319 = {'BUILTBYTIER3ENGINEER CYBRAN COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER CYBRAN AIRSTAGINGPLATFORM',},
+        ssl0319 = {'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER SERAPHIM AIRSTAGINGPLATFORM',},
+        sal0319 = {'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER AEON AIRSTAGINGPLATFORM',},
+        --These categories are restricted if controlled by a human in the hooked unit scripts
         ual0105 = {'BUILTBYTIER1FIELD AEON',},
         ual0208 = {'BUILTBYTIER2FIELD AEON',},
         ual0309 = {'BUILTBYTIER3FIELD AEON',},
@@ -110,6 +113,7 @@ function BrewLANCategoryChanges(all_bps)
         'BUILTBYTIER3COMMANDER',  
         'BUILTBYTIER3FIELD',  
         'BUILTBYGANTRY',
+        'BUILTBYHEAVYWALL',
     }
     for k, v in Units do   
         if all_bps[k] then
@@ -144,11 +148,16 @@ function BrewLANGantryBuildList(all_bps)
             else
                 table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
             end
-        elseif table.find(bp.Categories, 'EXPERIMENTAL')
-        and table.find(bp.Categories, 'MOBILE')
+        elseif --table.find(bp.Categories, 'MOBILE')
+        --and table.find(bp.Categories, 'EXPERIMENTAL') or
+        table.find(bp.Categories, 'NEEDMOBILEBUILD') 
         then
             --Check it should actually be buildable
-            if table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
+            if table.find(bp.Categories, 'BUILTBYTIER1COMMANDER')
+            or table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
+            or table.find(bp.Categories, 'BUILTBYTIER2COMMANDER')
+            or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')   
+            or table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
             or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
             --For BlOps, they have this as a thing.
             or table.find(bp.Categories, 'BUILTBYTIER4COMMANDER')
@@ -156,12 +165,13 @@ function BrewLANGantryBuildList(all_bps)
             then
                 --Check it wouldn't be bigger than the Gantry hole
                 if bp.Physics.SkirtSizeX < 13
+                or not bp.Physics.SkirtSizeX
                 --or bp.Footprint.SizeX < 9
                 then
                     table.insert(bp.Categories, 'BUILTBYGANTRY')
-                    if table.find(bp.Categories, 'AIR') then
+                    if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'EXPERIMENTAL') then
                         table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
-                    else
+                    elseif table.find(bp.Categories, 'EXPERIMENTAL') then
                         table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
                     end
                 end
@@ -179,14 +189,18 @@ function BrewLANHeavyWallBuildList(all_bps)
         --Check its not hard coded to be buildable, then check it meets the standard requirements.
         if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
         and table.find(bp.Categories, 'STRUCTURE')
-        and table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')  
         then
-            if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
-                --Check it wouldn't overlap badly with the wall
-                if bp.Physics.SkirtSizeX < 3 then
-                    table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
-                elseif bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 then
-                    table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+            if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
+            or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
+            or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+            then
+                if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
+                    --Check it wouldn't overlap badly with the wall
+                    if bp.Physics.SkirtSizeX < 3 then
+                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                    elseif bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 then
+                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                    end
                 end
             end
         end
@@ -220,7 +234,7 @@ function UpgradeableToBrewLAN(all_bps)
     local VanillasToUpgrade = {
         uab4202 = 'uab4301',--FromAeon T2 shield
         xsb3202 = 'sss0305',--From Seraphim T2 sonar
-        --urb2301 = 'srb0306',--From Cybran T2 PD Cerberus to Hades. A little OP
+        --urb2301 = 'srb0306',--From Cybran T2 PD Cerberus to Hades. A little OP.
         urb1301 = 'srb1311',--To Cloakable Generator 
         urb1302 = 'srb1312',--To Cloakable Extractor
         urb1303 = 'srb1313',--To Cloakable Fabricator
@@ -237,7 +251,7 @@ function UpgradeableToBrewLAN(all_bps)
         xsb1301 = 'ssb1311',--To Armored Generator
         xsb1302 = 'ssb1312',--To Armored Extractor
         xsb1303 = 'ssb1313',--To Armored Fabricator
-        --srb5310 = 'srb5311',--Cybran wall into cybran gate
+        --srb5310 = 'srb5311',--Cybran wall into cybran gate. Caused issues.
     }
     for unitid, upgradeid in VanillasToUpgrade do
         if all_bps[unitid] and all_bps[upgradeid] then
@@ -408,7 +422,7 @@ function BrewLANNavalShields(all_bps)
             all_bps[k].Wreckage.WreckageLayers.Water = true
             if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end 
             if not table.find(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic') then
-                table.insert(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic')
+                table.insert(all_bps[k].Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
             end
         end
     end
