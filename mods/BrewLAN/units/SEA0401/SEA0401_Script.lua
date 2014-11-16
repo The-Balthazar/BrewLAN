@@ -9,7 +9,8 @@
 
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TAAFlakArtilleryCannon = import('/lua/terranweapons.lua').TAAFlakArtilleryCannon
-local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher
+local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher             
+local TDFHiroPlasmaCannon = import('/lua/terranweapons.lua').TDFHiroPlasmaCannon
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local CreateUEFBuildSliceBeams = EffectUtil.CreateUEFBuildSliceBeams
 
@@ -22,7 +23,8 @@ SEA0401 = Class(TAirUnit) {
         HeadAAGun = Class(TAAFlakArtilleryCannon) {},
         RearAAGun = Class(TAAFlakArtilleryCannon) {},
         SAM1 = Class(TSAMLauncher) {},
-        SAM2 = Class(TSAMLauncher) {},
+        SAM2 = Class(TSAMLauncher) {},   
+        RearASFBeam = Class(TDFHiroPlasmaCannon) {},
     },
 
     DestructionPartsChassisToss = {'SEA0401',},

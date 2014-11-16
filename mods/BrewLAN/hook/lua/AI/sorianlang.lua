@@ -139,7 +139,7 @@ AINames.sea0401pancake = {
     'Kamakaze',
     'Accidents Happen',
     'Troll',
-    'Opperation: Paragon',
+    'Operation: Paragon',
     'The Anvil',
     'Sector 7',
     'Crusher of Hope',
