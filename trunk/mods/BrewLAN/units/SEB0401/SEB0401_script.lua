@@ -123,18 +123,38 @@ SEB0401 = Class(TLandFactoryUnit) {
                             function()
                                 local AINames = import('/lua/AI/sorianlang.lua').AINames
                                 while not Paragon[1]:IsDead() do
-                                    if Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1]) < 50 then
-                                        Pancake:SetSpeedMult(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)
-                                        --LOG(Utilities.GetDistanceBetweenTwoEntities(Pancake, Paragon[1])/50)     
-                                        if not Pancake.customname then 
-                                            local num = Random(1, table.getn(AINames.sea0401pancake))
-                                            Pancake:SetCustomName(AINames.sea0401pancake[num])
-                                            Pancake.customname = true
+                                    local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), Paragon[1]:GetPosition())
+                                    local hightdist = Pancake:GetPosition()[2] - Paragon[1]:GetPosition()[2]    
+                                    self:ForkThread(
+                                        function()         
+                                            while not Pancake:IsDead() do
+                                                WaitTicks(50)          
+                                                if not Pancake.customname then 
+                                                    local num = Random(1, table.getn(AINames.sea0401pancake))
+                                                    Pancake:SetCustomName(AINames.sea0401pancake[num])
+                                                    Pancake.customname = true
+                                                end
+                                            end                                    
                                         end
-                                        IssueClearCommands({Pancake})
-                                    end   
+                                    )           
+                                    if distance < hightdist * 2.5 and distance > hightdist * 2.25 and distance > 20 and not Paragon[1].TriedOnce then
+                                        Pancake:Kill()
+                                        Paragon[1].TriedOnce = true   
+                                    elseif distance < 20 then
+                                        Pancake:SetSpeedMult(distance/20)
+                                        if distance < .5 and not Pancake.Killthread then
+                                            Pancake.Killthread = true
+                                            self:ForkThread(
+                                                function()         
+                                                    WaitTicks(25)
+                                                    Pancake:Kill()
+                                                end
+                                            )
+                                        end
+                                    end    
                                     IssueMove({Pancake}, Paragon[1]:GetPosition())
-                                    WaitTicks(5)
+                                    WaitTicks(5)  
+                                    IssueClearCommands({Pancake})
                                 end
                             end
                         )
