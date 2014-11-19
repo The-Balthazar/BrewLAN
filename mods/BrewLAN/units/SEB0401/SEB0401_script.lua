@@ -124,19 +124,19 @@ SEB0401 = Class(TLandFactoryUnit) {
                                 local AINames = import('/lua/AI/sorianlang.lua').AINames
                                 while not Paragon[1]:IsDead() do
                                     local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), Paragon[1]:GetPosition())
-                                    local hightdist = Pancake:GetPosition()[2] - Paragon[1]:GetPosition()[2]    
-                                    self:ForkThread(
-                                        function()         
-                                            while not Pancake:IsDead() do
-                                                WaitTicks(50)          
-                                                if not Pancake.customname then 
+                                    local hightdist = Pancake:GetPosition()[2] - Paragon[1]:GetPosition()[2]   
+                                    if not Pancake.customname then  
+                                        self:ForkThread(
+                                            function()         
+                                                WaitTicks(50)                
+                                                if not Pancake:IsDead() then
                                                     local num = Random(1, table.getn(AINames.sea0401pancake))
                                                     Pancake:SetCustomName(AINames.sea0401pancake[num])
                                                     Pancake.customname = true
-                                                end
-                                            end                                    
-                                        end
-                                    )           
+                                                end                                    
+                                            end
+                                        )     
+                                    end      
                                     if distance < hightdist * 2.5 and distance > hightdist * 2.25 and distance > 20 and not Paragon[1].TriedOnce then
                                         Pancake:Kill()
                                         Paragon[1].TriedOnce = true   
