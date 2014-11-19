@@ -18,6 +18,10 @@ __________.__________
   2014-11-18
   
   * Fixed the Gantry build pancake Centurion name threads issue.
+  __________
+  2014-11-19
+  
+  * Fixed the Gantry-built pancake-Centurion name threads re-issue. For reals this time.
 __________.__________
 2014-11-16|0.5.4
 

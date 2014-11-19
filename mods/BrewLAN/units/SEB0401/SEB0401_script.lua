@@ -125,14 +125,14 @@ SEB0401 = Class(TLandFactoryUnit) {
                                 while not Paragon[1]:IsDead() do
                                     local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), Paragon[1]:GetPosition())
                                     local hightdist = Pancake:GetPosition()[2] - Paragon[1]:GetPosition()[2]   
-                                    if not Pancake.customname then  
+                                    if not Pancake.customname then    
+                                        Pancake.customname = true     
                                         self:ForkThread(
-                                            function()         
+                                            function()    
                                                 WaitTicks(50)                
                                                 if not Pancake:IsDead() then
                                                     local num = Random(1, table.getn(AINames.sea0401pancake))
                                                     Pancake:SetCustomName(AINames.sea0401pancake[num])
-                                                    Pancake.customname = true
                                                 end                                    
                                             end
                                         )     
