@@ -67,7 +67,12 @@ function BrewLANBuildCatChanges(all_bps)
         url0309 = {'BUILTBYTIER3FIELD CYBRAN',},
         xsl0105 = {'BUILTBYTIER1FIELD SERAPHIM',},
         xsl0208 = {'BUILTBYTIER2FIELD SERAPHIM',},
-        xsl0309 = {'BUILTBYTIER3FIELD SERAPHIM',},
+        xsl0309 = {'BUILTBYTIER3FIELD SERAPHIM',},    
+        --Support Commanders                                           
+        ual0301 = {'BUILTBYTIER3FIELD AEON',},    
+        uel0301 = {'BUILTBYTIER3FIELD UEF',},
+        url0301 = {'BUILTBYTIER3FIELD CYBRAN',},
+        xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
     }
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] then
