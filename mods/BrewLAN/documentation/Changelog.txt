@@ -22,6 +22,14 @@ __________.__________
   2014-11-19
   
   * Fixed the Gantry-built pancake-Centurion name threads re-issue. For reals this time.
+  * Paragon Adjacency buffs change.
+    * This change includes a work around for an issue with things requiring maintenence energy breaking next to the paragon.
+  __________
+  2014-11-21
+  
+  * Changed the Paragon buffs again.
+  * Fixed an issue with some hooked scripts hard linking back to the originals.
+  * Added an enhancement to the SACUs to enable field engineer buildings for them.               
 __________.__________
 2014-11-16|0.5.4
 

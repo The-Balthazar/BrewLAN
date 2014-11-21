@@ -1,0 +1,135 @@
+--UEF
+UnitBlueprint {
+    Merge = true,
+    BlueprintId="uel0301",
+    Enhancements = {     
+        Field = {
+            BuildCostEnergy = 3950,
+            BuildCostMass = 625,
+            BuildTime = 2400,
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
+            ShowBones = {
+                'Jetpack',
+            },
+            Slot = 'Back',
+            UpgradeEffectBones = {
+                'Jetpack',
+            },
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        FieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,      
+            HideBones = {
+                'Jetpack',
+            },
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
+            Prerequisite = 'Field',
+            RemoveEnhancements = {
+                'Field',
+                'FieldRemove',
+            },
+            Slot = 'Back',
+        },  
+    }, 
+}
+--Aeon
+UnitBlueprint {
+    Merge = true,
+    BlueprintId="ual0301",
+    Enhancements = {     
+        Field = {
+            BuildCostEnergy = 3950,
+            BuildCostMass = 625,
+            BuildTime = 2400,
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {
+                'UAL0301',
+            },
+        },
+        FieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,     
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
+            Prerequisite = 'Field',
+            RemoveEnhancements = {
+                'Field',
+                'FieldRemove',
+            },
+            Slot = 'LCH',
+        },  
+    }, 
+}       
+--Cybran
+UnitBlueprint {
+    Merge = true,
+    BlueprintId="url0301",
+    Enhancements = {     
+        Field = {
+            BuildCostEnergy = 3950,
+            BuildCostMass = 625,
+            BuildTime = 2400,
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {
+                'URL0301',
+            },
+        },
+        FieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,   
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
+            Prerequisite = 'Field',
+            RemoveEnhancements = {
+                'Field',
+                'FieldRemove',
+            },
+            Slot = 'LCH',
+        },  
+    }, 
+}   
+--Seraphim
+UnitBlueprint {
+    Merge = true,
+    BlueprintId="xsl0301",
+    Enhancements = {     
+        Field = {
+            BuildCostEnergy = 3950,
+            BuildCostMass = 625,
+            BuildTime = 2400,
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {
+                'XSL0301',
+            },
+        },
+        FieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,   
+            Icon = 'ees',
+            Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
+            Prerequisite = 'Field',
+            RemoveEnhancements = {
+                'Field',
+                'FieldRemove',
+            },
+            Slot = 'LCH',
+        },  
+    }, 
+}
+
+

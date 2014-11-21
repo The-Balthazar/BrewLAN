@@ -42,6 +42,14 @@ tooltipbrewlan0016="Disruption pulse toggle"
 tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
 
 --------------------------------------------------------------------------------
+-- Support commander enchancements 
+-------------------------------------------------------------------------------- 
+
+Unit_Description_BrewLAN_E001="Adds field engineer build capabilities to the SACU."
+brewlan_enhancements_1="Field Engineering Suite"
+brewlan_enhancements_2="Remove Field Engineering Suite"
+
+--------------------------------------------------------------------------------
 -- Tech 1
 -------------------------------------------------------------------------------- 
 

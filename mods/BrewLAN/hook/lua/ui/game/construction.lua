@@ -4,7 +4,7 @@
 --¦   Author: Balthassar
 --¦
 --+-----------------------------------------------------------------------------
-local OldOnClickHandler = import('/lua/ui/game/construction.lua').OnClickHandler
+local OldOnClickHandler = OnClickHandler
                                                           
 function OnClickHandler(button, modifiers)         
     local item = button.Data
