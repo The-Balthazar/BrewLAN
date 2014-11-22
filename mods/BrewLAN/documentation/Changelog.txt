@@ -29,7 +29,11 @@ __________.__________
   
   * Changed the Paragon buffs again.
   * Fixed an issue with some hooked scripts hard linking back to the originals.
-  * Added an enhancement to the SACUs to enable field engineer buildings for them.               
+  * Added an enhancement to the SACUs to enable field engineer buildings for them.
+  __________
+  2014-11-22
+  
+  * Center of the Gantry no longer blocks pathing.               
 __________.__________
 2014-11-16|0.5.4
 
