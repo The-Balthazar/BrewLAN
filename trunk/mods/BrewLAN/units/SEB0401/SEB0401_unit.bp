@@ -299,7 +299,19 @@ UnitBlueprint {
         FlattenSkirt = true,
         MaxSteerForce = 0,
         MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',
+        MotionType = 'RULEUMT_None',   
+        OccupyRects = {
+
+            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
+            -6,
+            0,
+            2.5,
+            5.5,
+            6,
+            0,
+            2.5,
+            5.5,
+        },
         RollOffPoints = {
             {
                 UnitSpin = 0,
