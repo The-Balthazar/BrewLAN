@@ -7,7 +7,7 @@ UnitBlueprint {
             BuildCostEnergy = 3950,
             BuildCostMass = 625,
             BuildTime = 2400,
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
             ShowBones = {
                 'Jetpack',
@@ -27,7 +27,7 @@ UnitBlueprint {
             HideBones = {
                 'Jetpack',
             },
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
             Prerequisite = 'Field',
             RemoveEnhancements = {
@@ -47,7 +47,7 @@ UnitBlueprint {
             BuildCostEnergy = 3950,
             BuildCostMass = 625,
             BuildTime = 2400,
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
             Slot = 'LCH',
             UpgradeUnitAmbientBones = {
@@ -58,7 +58,7 @@ UnitBlueprint {
             BuildCostEnergy = 1,
             BuildCostMass = 1,
             BuildTime = 0.1,     
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
             Prerequisite = 'Field',
             RemoveEnhancements = {
@@ -78,7 +78,7 @@ UnitBlueprint {
             BuildCostEnergy = 3950,
             BuildCostMass = 625,
             BuildTime = 2400,
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
             Slot = 'LCH',
             UpgradeUnitAmbientBones = {
@@ -89,7 +89,7 @@ UnitBlueprint {
             BuildCostEnergy = 1,
             BuildCostMass = 1,
             BuildTime = 0.1,   
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
             Prerequisite = 'Field',
             RemoveEnhancements = {
@@ -109,7 +109,7 @@ UnitBlueprint {
             BuildCostEnergy = 3950,
             BuildCostMass = 625,
             BuildTime = 2400,
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_1>Field Engineering Suite',
             Slot = 'LCH',
             UpgradeUnitAmbientBones = {
@@ -120,7 +120,7 @@ UnitBlueprint {
             BuildCostEnergy = 1,
             BuildCostMass = 1,
             BuildTime = 0.1,   
-            Icon = 'ees',
+            Icon = 'eesup',
             Name = '<LOC brewlan_enhancements_2>Remove Field Engineering Suite',
             Prerequisite = 'Field',
             RemoveEnhancements = {

@@ -1,8 +1,8 @@
-name = "BrewLAN 0.5.5"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000055"
+name = "BrewLAN 0.5.6"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N000056"
 version = "0.5.5"
 copyright = "2009 - 2014 Sean Wheeldon"
-description = "2009-2014: BrewLANniversary edition."
+description = "Adds a large number of units and changes a number of existing units."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN/documentation/icon.dds"
 selectable = true
@@ -49,7 +49,8 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N000051", --0.5.1 beta
     "25D57D85-7D84-27HT-A501-BR3WL4N000052", 
     "25D57D85-7D84-27HT-A501-BR3WL4N000053",
-    "25D57D85-7D84-27HT-A501-BR3WL4N000054",  
+    "25D57D85-7D84-27HT-A501-BR3WL4N000054", 
+    "25D57D85-7D84-27HT-A501-BR3WL4N000055",   
 }
 before = {  }
 after = {  }
