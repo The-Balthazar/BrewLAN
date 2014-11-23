@@ -150,7 +150,7 @@ Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental coun
 Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
 
 --Support commander upgrades
-Description['uel0301-ees'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU." 
-Description['ual0301-ees'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."
-Description['url0301-ees'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."
-Description['xsl0301-ees'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."
+Description['uel0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU." 
+Description['ual0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."
+Description['url0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."
+Description['xsl0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."

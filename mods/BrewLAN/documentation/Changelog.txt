@@ -8,7 +8,11 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.   
+__________.__________
+2014-11-17|0.5.6
+
+* Created a new icon for the field tech enhancement.
 __________.__________
 2014-11-17|0.5.5
 

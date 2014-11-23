@@ -18,7 +18,7 @@ Errors list/the other to-do list.
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
-* Shields need a floatation when on water (easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
+* Shields need a floatation when on water (Possibly easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
@@ -37,7 +37,10 @@ Modded Units:
     
     Experimental Buildings
       * Added appropriate build menu sorting.
-        * This seperates them from the mobile experimentals.        
+        * This seperates them from the mobile experimentals.
+
+    Support Commanders
+      * Added an enhancement for field engineer tech.                
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
   	T2 Shield Generator
