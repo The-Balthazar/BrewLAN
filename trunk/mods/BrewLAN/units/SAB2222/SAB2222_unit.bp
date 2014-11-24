@@ -151,7 +151,8 @@ UnitBlueprint {
     LifeBarOffset = 0.2,
     LifeBarSize = 0.8,
     Physics = {
-        BankingSlope = 0,
+        BankingSlope = 0,     
+        --BlockPath = false,
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,

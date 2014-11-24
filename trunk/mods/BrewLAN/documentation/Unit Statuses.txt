@@ -38,6 +38,7 @@ Modded Units:
     Experimental Buildings
       * Added appropriate build menu sorting.
         * This seperates them from the mobile experimentals.
+          * Seraphim already did this.        
 
     Support Commanders
       * Added an enhancement for field engineer tech.                
@@ -423,7 +424,8 @@ Seraphim Iyadesu
   Formerly Experimental Engineer (Prior to r205)
   Formerly Experimental Field Engineer (As of r205, removed as 2014-08-08)
   Experimental Ressurection Unit
-    * Need to destroy either the repair, or reclaim functions.         
+    * Script attached to the reclaim command.
+    * Had to totally overwrite the old CreateWreckageProp function for it to work.                 
 
 Aeon Absolution: Experimental Siege Tank
   * Mostly finished texture that needs more details.
