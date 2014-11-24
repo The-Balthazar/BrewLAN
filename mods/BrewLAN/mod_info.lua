@@ -1,6 +1,6 @@
 name = "BrewLAN 0.5.6"
 uid = "25D57D85-7D84-27HT-A501-BR3WL4N000056"
-version = "0.5.5"
+version = "0.5.6"
 copyright = "2009 - 2014 Sean Wheeldon"
 description = "Adds a large number of units and changes a number of existing units."
 author = "Sean Wheeldon"
