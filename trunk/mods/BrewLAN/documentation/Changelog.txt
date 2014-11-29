@@ -34,8 +34,7 @@ __________.__________
   
   * Fixed a typo in 3 of the tech 1 shield generator descriptions.
   * Fixed a typo in the anti-armor point defense descriptions.
-  * Fixed a typo in the Novax description.
-  * Seperated the AIx superhax for the Gantry into a disablable module.                  
+  * Fixed a typo in the Novax description.             
 __________.__________
 2014-11-17|0.5.5
 
