@@ -1,89 +1,53 @@
-#****************************************************************************
-#**
-#** Hook File: /lua/system/blueprints.lua
-#**
-#** Modded By: Balthazar
-#**
-#** Changes: Various unit category table changes
-#**   
-#*********************************************************************
+--------------------------------------------------------------------------------
+-- Hook File: /lua/system/blueprints.lua
+--------------------------------------------------------------------------------
+-- Modded By: Balthazar
+--------------------------------------------------------------------------------
 do
 
 local OldModBlueprints = ModBlueprints
 
-function ModBlueprints(all_blueprints)
-
+function ModBlueprints(all_blueprints)         
     OldModBlueprints(all_blueprints)
-    WaterlagBasicAmphib(all_blueprints.Unit)
-
+    
+    Waterlag(all_blueprints.Unit)
 end
 
+--------------------------------------------------------------------------------
+-- Allowing many buildings to be buildable in/on the water
+--------------------------------------------------------------------------------
 
-
-function WaterlagBasicAmphib(all_bps)
-
-    local WaterlagBasicUnits = {
-#-=-=-=-=-=-=-=-# T1 Point Defences #-=-=-=-=-=-=-=-#
-        all_bps['ueb2101'],
-        all_bps['uab2101'],
-        all_bps['urb2101'],
-        all_bps['xsb2101'],
-#-=-=-=-=-=-=-=-# T2 Point Defences #-=-=-=-=-=-=-=-#
-        all_bps['ueb2301'],
-        all_bps['uab2301'],
-        all_bps['urb2301'],
-        all_bps['xsb2301'],
-#-=-=-=-=-=-=-=-# T3 Point Defences #-=-=-=-=-=-=-=-#
-        all_bps['xeb2306'],
-	#-=-=-=-#    BrewLAN        #-=-=-=-#
-        all_bps['bab2306'],
-        all_bps['brb2306'],
-        all_bps['bsb2306'],
-	#-=-=-=-#    BlackOps       #-=-=-=-#
-        all_bps['xab2306'],
-        all_bps['xrb2306'],
-        all_bps['xsb2306'],
-	#-=-=-=-#    4thDimension   #-=-=-=-#
-        all_bps['ueb2306'],
-        all_bps['uab2306'],
-        all_bps['urb2306'],
-#-=-=-=-=-=-=-=-# Walls             #-=-=-=-=-=-=-=-#
-        all_bps['uab5101'],
-        all_bps['ueb5101'],
-        all_bps['urb5101'],
-        all_bps['xsb5101'],
-#-=-=-=-=-=-=-=-# Cybran Shields    #-=-=-=-=-=-=-=-#
-        all_bps['urb4202'],
-        all_bps['urb4204'],
-        all_bps['urb4205'],
-        all_bps['urb4206'],
-        all_bps['urb4207'],
-#-=-=-=-=-=-=-=-# UEF Shields       #-=-=-=-=-=-=-=-#
-#        all_bps['beb4102'],
-        all_bps['ueb4202'],
-        all_bps['ueb4301'],
-#-=-=-=-=-=-=-=-# Aeon Shields      #-=-=-=-=-=-=-=-#
-#        all_bps['bab4102'],
-        all_bps['uab4202'],
-        all_bps['uab4301'],
-#-=-=-=-=-=-=-=-# Seraphim Shields  #-=-=-=-=-=-=-=-#
-        all_bps['bsb4102'],
-        all_bps['xsb4202'],
-        all_bps['xsb4301'],
-    }
-
-    for arrayIndex, bp in WaterlagBasicUnits do
-
-        if not bp.Display.Abilities then bp.Display.Abilities = {} end
-
-        table.insert(bp.Display.Abilities, '<LOC ability_aquatic>Aquatic')
-
-        bp.General.Icon = 'amph'
-
-        bp.Physics.BuildOnLayerCaps.LAYER_Water = true
-
+function Waterlag(all_bps)
+    for id, bp in all_bps do
+        if table.find(bp.Categories, 'STRUCTURE')
+        and table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+        then
+            if not table.find(bp.Categories, 'FACTORY')
+            and not table.find(bp.Categories, 'WALL')
+            and not table.find(bp.Categories, 'HEAVYWALL')
+            and not table.find(bp.Categories, 'MEDIUMWALL') 
+            and not table.find(bp.Categories, 'SILO')
+            and not table.find(bp.Categories, 'EXPERIMENTAL')
+            then      
+                if bp.Physics.BuildOnLayerCaps.LAYER_Land then
+                    if not bp.Physics.BuildOnLayerCaps.LAYER_Water
+                    and not bp.Physics.BuildOnLayerCaps.LAYER_Seabed
+                    and not bp.Physics.BuildOnLayerCaps.LAYER_Sub
+                    then
+                        if not bp.Display.Abilities then bp.Display.Abilities = {} end 
+                        if not table.find(bp.Display.Abilities, '<LOC ability_aquatic>Aquatic') then
+                            table.insert(bp.Display.Abilities, '<LOC ability_aquatic>Aquatic')
+                        end
+                        if bp.General.Icon == 'land' then bp.General.Icon = 'amph' end     
+                        bp.Physics.BuildOnLayerCaps.LAYER_Water = true
+                        if bp.Wreckage.WreckageLayers.Land then
+                            bp.Wreckage.WreckageLayers.Water = true
+                        end
+                    end
+                end
+            end
+        end
     end
-
 end
 
 end
