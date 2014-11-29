@@ -40,6 +40,10 @@ tooltipbrewlan0015="Auto open enabled."
 --Tooltips for the Omni disrupter.
 tooltipbrewlan0016="Disruption pulse toggle"
 tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
+ 
+--Tooltips for the Rez/reclaim command.                    
+tooltipbrewlan0018="Resurrect/Reclaim (E)"
+tooltipbrewlan0019="Clears and resurrects a wreckage, or reclaims a living unit."
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements 
@@ -79,7 +83,7 @@ sbui4102="Light Shield Generator"
 sab4102_name="Aspis"
 seb4102_name="LSD - Pulse"
 ssb4102_name="Atha-istle"
-Unit_Description_BrewLAN_T1P001="Generates a protective shield around units and structures within its radius. Upradable twice."
+Unit_Description_BrewLAN_T1P001="Generates a protective shield around units and structures within its radius. Upgradable twice."
 
 sbui5104="Light Air Staging Facility"
 sbuisera5104="Light Air Staging Beacon"
@@ -205,15 +209,15 @@ seb2311_name="Guardian"
 ssb2311_name="Sinn Unthe"  
 srb2311_name="Punisher"
 sab2311_name="Nihiloid"
-Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship-grade gauss cannon."                       
-Unit_Description_BrewLAN_T3B006="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull energy weapon."
-Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull battleship-grade proton cannon."
-Unit_Description_BrewLAN_T3B008="Very heavy defensive tower. Attacks land- and sea-based units with a powerfull oblivion cannon."
+Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerful battleship-grade gauss cannon."                       
+Unit_Description_BrewLAN_T3B006="Very heavy defensive tower. Attacks land- and sea-based units with a powerful energy weapon."
+Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and sea-based units with a powerful battleship-grade proton cannon."
+Unit_Description_BrewLAN_T3B008="Very heavy defensive tower. Attacks land- and sea-based units with a powerful oblivion cannon."
 
 seb3303_desc="Observation Satellite Uplink"
 sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
-Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni sensors. If its control center is destroyed, the satelite is immediately disabled."
+Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni sensors. If its control center is destroyed, the satellite is immediately disabled."
 
 sel0320_desc="Mobile Satellite Uplink"
 sel0320_name="Archimedes"

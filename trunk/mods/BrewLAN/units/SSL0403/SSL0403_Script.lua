@@ -21,8 +21,8 @@ SSL0403 = Class(SConstructionUnit) {
         RightTurret = Class(SDFAireauBolter) {},
     },
     StartBeingBuiltEffects = function(self, builder, layer)
-		SConstructionUnit.StartBeingBuiltEffects(self, builder, layer)
-		self:ForkThread( EffectUtil.CreateSeraphimExperimentalBuildBaseThread, builder, self.OnBeingBuiltEffectsBag )
+        SConstructionUnit.StartBeingBuiltEffects(self, builder, layer)
+        self:ForkThread( EffectUtil.CreateSeraphimExperimentalBuildBaseThread, builder, self.OnBeingBuiltEffectsBag )
     end,     
           
     OnStartReclaim = function(self, target)
@@ -31,19 +31,32 @@ SSL0403 = Class(SConstructionUnit) {
             id = target.OldId,
             pos = target:GetPosition(),
             ori = target:GetOrientation(),
+            entid = target:GetEntityId(),
         }
         --self:tprint(target:GetBlueprint())
         --LOG(target.OldId)
     end,
 
     OnStopReclaim = function(self, target)      
-		  SConstructionUnit.OnStopReclaim(self, target)         
-        if not target and self.RezTarget.id then
-            local pos = self.RezTarget.pos   
+		  SConstructionUnit.OnStopReclaim(self, target)    
+        local pos = self.RezTarget.pos   
+        local wreckageID = self.RezTarget.entid  
+        local dupecheck = self:GetAIBrain():GetUnitsAroundPoint( categories[self.RezTarget.id], pos, 10)
+        local ABORT = false    
+        if dupecheck and table.getn(dupecheck) > 0 then
+            for i, v in dupecheck do
+                if v.OldWreckageID == wreckageID then
+                    ABORT = true
+                end
+            end
+        end       
+        if not target and self.RezTarget.id and not ABORT then
             local ori = self.RezTarget.ori
-            local rezzedGuy = CreateUnitHPR(self.RezTarget.id, self:GetArmy(), pos[1], pos[2], pos[3], ori[1], ori[2], ori[2])
+            local rezzedGuy = CreateUnit(self.RezTarget.id, self:GetArmy(), pos[1], pos[2], pos[3], ori[1], ori[2], ori[3], ori[4])
             rezzedGuy:SetHealth(self, 1 )
-            rezzedGuy.IsRezzedGuy = 0
+            rezzedGuy.WreckMassMult = 0.01
+            rezzedGuy.OldWreckageID = wreckageID
+            rezzedGuy:SetStunned(10)
             IssueRepair({self},rezzedGuy)
         end 
     end,

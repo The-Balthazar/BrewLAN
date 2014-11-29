@@ -10,13 +10,32 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.   
 __________.__________
-2014-11-17|0.5.6
+2014-11-23|0.5.6
 
 * Created a new icon for the field tech enhancement.
   __________
-  2014-11-18
+  2014-11-24
   
-  * Re-enabled the Iyadesu as a RezBot.  
+  * Re-enabled the Iyadesu as a RezBot.
+  __________
+  2014-11-26
+  
+  * New icon for the rez/reclaim ability.
+  * Rezzing now causes the resurrected thing to become stunned for 10 seconds.
+  * The Iyadesu now has only mass storage instead of mass storage and energy storage, and its shield now only costs 50 energy per second.
+  __________
+  2014-11-28
+  
+  * Fixed the rezbot duplication bug.
+  * Changed some of the rezcode variables to be better named.
+  * Fixed the orientation issue of the rezed units.
+  __________
+  2014-11-29
+  
+  * Fixed a typo in 3 of the tech 1 shield generator descriptions.
+  * Fixed a typo in the anti-armor point defense descriptions.
+  * Fixed a typo in the Novax description.
+  * Seperated the AIx superhax for the Gantry into a disablable module.                  
 __________.__________
 2014-11-17|0.5.5
 

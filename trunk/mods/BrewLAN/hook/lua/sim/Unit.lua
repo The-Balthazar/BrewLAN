@@ -8,11 +8,11 @@ Unit = Class(UnitOld) {
                 self:AddCommandCap('RULEUCC_Stop')
                 self.CouldntStop = true
             end
-        end                                               
-        if order == 'Repair' and unitBeingBuilt.IsRezzedGuy then
+        end
+        if order == 'Repair' and unitBeingBuilt.WreckMassMult then
             self.Rezrepairing = true
-        else      
-            self.Rezrepairing = false
+        elseif self.Rezrepairing then      
+            self.Rezrepairing = false        
         end       
 		  UnitOld.OnStartBuild(self, unitBeingBuilt, order)
     end,
@@ -23,7 +23,8 @@ Unit = Class(UnitOld) {
             self.CouldntStop = false
         end                      
         if self.Rezrepairing then
-            unitBeingBuilt.IsRezzedGuy = 0.9 * unitBeingBuilt:GetHealthPercent()
+            unitBeingBuilt.WreckMassMult = 0.9 * unitBeingBuilt:GetHealthPercent()
+            LOG('Thing is: ',unitBeingBuilt.WreckMassMult)
         end           
         UnitOld.OnStopBuild(self, unitBeingBuilt)
     end,
@@ -32,10 +33,7 @@ Unit = Class(UnitOld) {
         if self.CouldntStop then
             self:RemoveCommandCap('RULEUCC_Stop')
             self.CouldntStop = false
-        end                       
-        if self.Rezrepairing then
-            unitBeingBuilt.IsRezzedGuy = 0.9 * unitBeingBuilt:GetHealthPercent()
-        end   
+        end       
         UnitOld.OnFailedToBuild(self)
     end,
     
@@ -65,8 +63,8 @@ Unit = Class(UnitOld) {
             prop:SetPropCollision('Box', bp.CollisionOffsetX, bp.CollisionOffsetY, bp.CollisionOffsetZ, bp.SizeX* 0.5, bp.SizeY* 0.5, bp.SizeZ * 0.5)
             prop:SetMaxReclaimValues(time, time, mass, energy)
             mass = (mass - (mass * (overkillRatio or 1))) * self:GetFractionComplete()     
-            if self.IsRezzedGuy then
-            mass = mass * self.IsRezzedGuy
+            if self.WreckMassMult then
+            mass = mass * self.WreckMassMult
             end
             energy = (energy - (energy * (overkillRatio or 1))) * self:GetFractionComplete()
             time = time - (time * (overkillRatio or 1))

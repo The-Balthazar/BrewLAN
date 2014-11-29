@@ -52,4 +52,9 @@ Tooltips['toggle_omni_distruption'] = {
       title = "<LOC tooltipbrewlan0016>Disruption pulse toggle",
       description = "<LOC tooltipbrewlan0017>Toggle the Omni disruption pulse on or off.",
       keyID = "toggle_omni_distruption",
-   } 
+   }
+Tooltips['rez_reclaim'] = {
+      title = "<LOC tooltipbrewlan0018>Resurrect/Reclaim (E)",
+      description = "<LOC tooltipbrewlan0019>Clears and resurrects a wreckage, or reclaims a living unit.",
+      keyID = "rez_reclaim",
+   }  

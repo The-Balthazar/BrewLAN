@@ -271,9 +271,6 @@ SEB0401 = Class(TLandFactoryUnit) {
                    
     AIxCheats = function(self)       
         local aiBrain = self:GetAIBrain()
-        ------------------------------------------------------------------------
-        -- AIX cheats
-        ------------------------------------------------------------------------    
         if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then       
             self:ForkThread(
                 function()
@@ -287,9 +284,6 @@ SEB0401 = Class(TLandFactoryUnit) {
                     end
                 end
             )               
-        ------------------------------------------------------------------------
-        -- Regular AI minor cheats
-        ------------------------------------------------------------------------
         elseif aiBrain.BrainType != 'Human' and not aiBrain.CheatEnabled then
             self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * 2.5 )  
         end
