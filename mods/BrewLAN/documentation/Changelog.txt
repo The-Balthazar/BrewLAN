@@ -8,7 +8,11 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.   
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.     
+__________.__________
+2014-11-30|0.5.7
+
+* Seperated the AIx Gantry hax into its own module.
 __________.__________
 2014-11-23|0.5.6
 
