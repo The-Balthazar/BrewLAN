@@ -137,10 +137,10 @@ SEB0401 = Class(TLandFactoryUnit) {
                                             end
                                         )     
                                     end      
-                                    if distance < hightdist * 2.5 and distance > hightdist * 2.25 and distance > 20 and not Paragon[1].TriedOnce then
+                                    if distance < hightdist * 1.66 and distance > hightdist * 1.5 and distance > 13 and not Paragon[1].TriedOnce then
                                         Pancake:Kill()
                                         Paragon[1].TriedOnce = true   
-                                    elseif distance < 20 then
+                                    elseif distance < 13 then
                                         Pancake:SetSpeedMult(distance/20)
                                         if distance < .5 and not Pancake.Killthread then
                                             Pancake.Killthread = true
