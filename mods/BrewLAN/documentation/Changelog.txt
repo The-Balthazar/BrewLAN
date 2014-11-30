@@ -13,6 +13,8 @@ __________.__________
 2014-11-30|0.5.7
 
 * Seperated the AIx Gantry hax into its own module.
+* Lowered the crash damage and movement speed of the Centurion by a third each.
+* Re-adjusted the AIx pancake code to accomadate the new Centurion speed.
 __________.__________
 2014-11-23|0.5.6
 

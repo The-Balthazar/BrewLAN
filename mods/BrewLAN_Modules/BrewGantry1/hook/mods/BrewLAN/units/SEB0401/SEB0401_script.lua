@@ -11,10 +11,12 @@ SEB0401 = Class(TLandFactoryUnit) {
 --------------------------------------------------------------------------------
 -- AI Cheats -- This script is triggered each time it starts building
 --------------------------------------------------------------------------------   
-    AIxCheats = function(self)
-        TLandFactoryUnit.AIxCheats(self)       
-        LOG('this module triggers, honest')
-        local aiBrain = self:GetAIBrain()
+    AIxCheats = function(self)               
+        local aiBrain = self:GetAIBrain()    
+        ------------------------------------------------------------------------
+        -- Default hax, from BrewLAN actual
+        ------------------------------------------------------------------------   
+        TLandFactoryUnit.AIxCheats(self)     
         ------------------------------------------------------------------------
         -- AIX cheats
         ------------------------------------------------------------------------    

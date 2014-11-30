@@ -27,7 +27,7 @@ UnitBlueprint {
         KTurn = 0.8,
         KTurnDamping = 1.5,
         LiftFactor = 7,
-        MaxAirspeed = 18,
+        MaxAirspeed = 12,
 #        MinAirspeed = 5,
 #        PredictAheadForBombDrop = 2,
 #        StartTurnDistance = 5,
@@ -829,7 +829,7 @@ UnitBlueprint {
 
         {
             AboveWaterTargetsOnly = true,
-            Damage = 7500,
+            Damage = 5000,
             DamageFriendly = true,
             DamageRadius = 8,
             DamageType = 'Normal',
