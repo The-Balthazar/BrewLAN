@@ -70,5 +70,13 @@ AIBrain = Class(AIBrain) {
 	    end
 
 	    self.PreBuilt = true
-    end
+    end,
+    
+    RestrictParagonUnits = function(self, strArmy)     
+          AddBuildRestriction(strArmy,categories.xab1401)
+          AddBuildRestriction(strArmy,categories.peb1401)
+          AddBuildRestriction(strArmy,categories.prb1401)
+          AddBuildRestriction(strArmy,categories.psb1401)   
+    end,
+    
 }

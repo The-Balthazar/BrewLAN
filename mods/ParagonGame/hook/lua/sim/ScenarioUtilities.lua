@@ -24,6 +24,8 @@ function CreateInitialArmyGroup(strArmy, createCommander)
         # spawn initial units for the game
         if strArmy == 'ARMY_8' then
             GetArmyBrain(strArmy):SpawnParagonUnits()
+        else       
+            GetArmyBrain(strArmy):RestrictParagonUnits(strArmy)
         end
     end
 
