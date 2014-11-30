@@ -21,6 +21,8 @@ function Waterlag(all_bps)
     for id, bp in all_bps do
         if table.find(bp.Categories, 'STRUCTURE')
         and table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+        or table.find(bp.Categories, 'BUILTBYTIER3FIELD')
+        and table.find(bp.Categories, 'STRUCTURE')
         then
             if not table.find(bp.Categories, 'FACTORY')
             and not table.find(bp.Categories, 'WALL')
