@@ -7,7 +7,7 @@
 #**
 #**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
-local AStructureUnit = import('/lua/cybranunits.lua').CStructureUnit
+local AStructureUnit = import('/lua/cybranunits.lua').CEnergyCreationUnit
 local FxAmbient = import('/lua/effecttemplates.lua').AResourceGenAmbient
 local AIFParagonDeathWeapon = import('/lua/aeonweapons.lua').AIFParagonDeathWeapon
 

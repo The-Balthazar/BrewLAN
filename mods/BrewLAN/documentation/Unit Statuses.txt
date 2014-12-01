@@ -491,6 +491,9 @@ Other mod ideas
 * Have cloaked/stealthed units able to detect when they are detected.
   * Might be easier to implement the other way round; the omni checks on detecting them.
 * Swap mass & energy.
-* Team colour lasers.
-* MetalWorld
-  * Have the AI cheat.    
+* Team colour lasers.                   
+_______________________________________________________
+Game-mode mod ideas
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* King of the Hill
+* Defend the (something or other)

@@ -1,8 +1,8 @@
-name = "Paragon Game 0.1"
-uid = "BREWLANS-22b4-4936-820e-PARAGON00001"
-version = "0.1"
+name = "Paragon Game"
+uid = "BREWLANS-22b4-4936-820e-PARAGON0005"
+version = 0.5
 copyright = "2012 - 2014 Sean Wheeldon"
-description = "Player 8 starts with a Paragon and a SACU. Adjust teams and maps appropriately."
+description = "Player 8 gets a Paragon and a SACU. Only they can build new Paragons and can always build one, regardless of race. Team up appropriately."
 author = "Sean Wheeldon"
 icon = "/mods/ParagonGame/mod_icon.dds"
 selectable = true

@@ -7,11 +7,12 @@
 #**
 #**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
-local AStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
+local AStructureUnit = import('/lua/seraphimunits.lua').SEnergyCreationUnit
 local FxAmbient = import('/lua/effecttemplates.lua').AResourceGenAmbient
 local AIFParagonDeathWeapon = import('/lua/aeonweapons.lua').AIFParagonDeathWeapon
 
 PSB1401 = Class(AStructureUnit) {
+    AmbientEffects = 'ST3PowerAmbient',
 
     Weapons = {
         DeathWeapon = Class(AIFParagonDeathWeapon) {},
