@@ -12,7 +12,7 @@ UnitBlueprint {
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'UEF_Select_Structure',
+            Cue = 'UEF_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },

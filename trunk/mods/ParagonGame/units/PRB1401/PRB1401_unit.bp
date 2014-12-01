@@ -12,7 +12,7 @@ UnitBlueprint {
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'Cybran_Select_Structure',
+            Cue = 'Cybran_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },

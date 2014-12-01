@@ -51,6 +51,7 @@ AIBrain = Class(AIBrain) {
 		        while count < u[2] do
                     local unit = self:CreateUnitNearSpot(u[1], posX, posY - 20)
                     count = count + 1
+                    unit:CreateTarmac(true,true,true,false,false)
                 end
                 
 		    end

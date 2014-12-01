@@ -19,17 +19,8 @@ PEB1401 = Class(AStructureUnit) {
 
     OnStopBeingBuilt = function(self, builder, layer)
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
-        
-        local num = self:GetRandomDir()
-        --self.BallManip = CreateRotator(self, 'Orb', 'y', nil, 0, 15, 80 + Random(0, 20) * num)
-        --self.Trash:Add(self.BallManip)
-        
         ChangeState( self, self.ResourceOn )
         self:ForkThread(self.ResourceMonitor)
-        
-        --for k, v in FxAmbient do
-        --    CreateAttachedEmitter( self, 'Orb', self:GetArmy(), v )
-        --end
     end,
 
     ResourceOn = State {
