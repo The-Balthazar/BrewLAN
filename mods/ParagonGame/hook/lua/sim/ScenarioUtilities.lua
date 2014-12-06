@@ -1,11 +1,3 @@
--- ScenarioUtilities.lua (hooked)--
--- Author      : Daniel Teh
--- Description :
---
--- Copyright © 2007 Gas Powered Games - All rights reserved
-
-#--[  CreateInitialArmyGroup                                                     ]--
-#--[                                                                             ]--
 function CreateInitialArmyGroup(strArmy, createCommander)
     local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')
     local cdrUnit = false
@@ -20,8 +12,6 @@ function CreateInitialArmyGroup(strArmy, createCommander)
                 ForkThread(CommanderWarpDelay, cdrUnit, 1)
             end
         end
-        
-        # spawn initial units for the game
         if strArmy == 'ARMY_8' then
             GetArmyBrain(strArmy):SpawnParagonUnits()
         else       

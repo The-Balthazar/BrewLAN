@@ -12,6 +12,15 @@ function _OnBeat()
         if remaining > 0 then   
             controls.time:SetText(LOCF('%02d:%02d:%02d', math.floor(remaining / 3600), math.floor(remaining/60), math.mod(remaining, 60)))
         end
+         
+        if remaining < (10 * 60) + 1 and remaining > (10 * 60) - 1 then
+            import('/lua/ui/game/announcement.lua').CreateAnnouncement(LOC("<LOC crystal_0005>10 minutes remaining."), controls.time)
+            Crystal.Ten = true
+        end
+        if remaining < 2.5 * 60 and not Crystal.Two then
+            import('/lua/ui/game/announcement.lua').CreateAnnouncement(LOC("<LOC crystal_0006>2:30 minutes remain."), controls.time)
+            Crystal.Two = true
+        end
     end   
     if Sync.Crystal.Victory == 1 then
         import('/lua/ui/game/announcement.lua').CreateAnnouncement(Sync.Crystal.PlayerName .. LOC("<LOC crystal_0002> and friends win with the crystal."), controls.time)

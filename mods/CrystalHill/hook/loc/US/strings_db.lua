@@ -1,5 +1,8 @@
 --[PLAYERNAME][Message]
 crystal_0001=" controls the crystal."
-crystal_0002=" and friends win with the crystal."
-crystal_0003=" and friend win with the crystal."
+crystal_0002=" and their allies win with the crystal."
+crystal_0003=" and their ally win with the crystal."
 crystal_0004=" wins with the crystal."
+
+crystal_0005="10 minutes remaining."
+crystal_0006="2:30 minutes remain."
