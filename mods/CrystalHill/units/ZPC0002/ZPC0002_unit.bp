@@ -1,10 +1,4 @@
-UnitBlueprint {         
-    AI = {
-
-        # this AI block is only added to make the construction preview work for the unit's vision range.
-        GuardScanRadius = 20,
-        StagingPlatformScanRadius = 20,
-    },
+UnitBlueprint {
     Audio = {
         DeathExplosion = Sound {
             Bank = 'XSL_Destroy',
@@ -44,7 +38,7 @@ UnitBlueprint {
         SurfaceThreatLevel = 0,
         AirThreatLevel = 0,
     },
-    Description = '<LOC ZPC0001_desc>Important Crystal',
+    Description = '<LOC ZPC0002_desc>Neutral Crystal',
     Display = {
         Mesh = {
             IconFadeInZoom = 130,
@@ -56,7 +50,7 @@ UnitBlueprint {
                     MeshName = '/units/XSC9002/XSC9002_lod0.scm',
                     AlbedoName = '/units/XSC9002/XSC9002_albedo.dds',
                     NormalsName = '/units/XSC9002/XSC9002_normalsts.dds',
-                    --SpecularName = '/units/XSC9002/XSC9002_specteam.dds',
+                    SpecularName = '/units/XSC9002/XSC9002_specteam.dds',
                 },
             },
         },
@@ -127,10 +121,6 @@ UnitBlueprint {
         MotionType = 'RULEUMT_None',
         TurnRadius = 0,
         TurnRate = 80,
-    },    
-    ScenarioInfo = {
-        WinTimeMinsReq = 20,
-        ResetTimeMinimum = 5,
     },
     SelectionSizeX = 0.3,
     SelectionSizeZ = 0.3,
@@ -138,7 +128,7 @@ UnitBlueprint {
     SizeX = 0.5,
     SizeY = 0.5,
     SizeZ = 0.5,
-    StrategicIconName = 'icon_crystal_generic',
+    StrategicIconName = 'icon_crystal_neutral',
     StrategicIconSortPriority = 0,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

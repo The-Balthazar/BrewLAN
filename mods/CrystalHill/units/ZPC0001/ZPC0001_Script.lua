@@ -1,73 +1,130 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/XSC9002/XSC9002_script.lua
-#**  Author   :  Greg Kohne
-#**  Summary  :  Jamming Crystal
-#**
-#**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
+--------------------------------------------------------------------------------
+--  Summary:  The victory crystal script
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 local SStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
 
-ZPC0001 = Class(SStructureUnit) {
-
+ZPC0001 = Class(SStructureUnit) { 
+             
     OnCreate = function(self, builder, layer)
-        self:ForkThread(self.TeamChange)
+        local aiBrain = self:GetAIBrain()
+        if ScenarioInfo.Crystal.FirstCapture then
+            --Sanitise no rush time        
+            local norushtime
+            if ScenarioInfo.Options.NoRushOption == 'Off' then
+               norushtime = 0
+            else
+               norushtime = tonumber(ScenarioInfo.Options.NoRushOption)
+            end
+            
+            ScenarioInfo.Crystal = self:GetBlueprint().ScenarioInfo
+            ScenarioInfo.Crystal.EndTimeMins = (GetGameTimeSeconds() + (ScenarioInfo.Crystal.WinTimeMinsReq * 60)) / 60
+            Sync.Crystal = {
+                EndTimeMins = ScenarioInfo.Crystal.EndTimeMins,
+                Player = self:GetArmy(),
+                PlayerName = aiBrain.Nickname,
+            }
+        else
+            ScenarioInfo.Crystal.EndTimeMins = math.max(ScenarioInfo.Crystal.EndTimeMins, (GetGameTimeSeconds() + (ScenarioInfo.Crystal.ResetTimeMinimum * 60)) / 60)     
+            Sync.Crystal = {
+                EndTimeMins = ScenarioInfo.Crystal.EndTimeMins,
+                Player = self:GetArmy(),
+                PlayerName = aiBrain.Nickname,
+            }
+        end       
+        --Announcement(, controls.objItems[objTag])
+        --print(aiBrain.Nickname .. " has the crystal. " .. math.floor((ScenarioInfo.Crystal.EndTimeMins * 60 - GetGameTimeSeconds())/60) .. " mins remaining.") 
+        self:ForkThread(self.TeamChange) 
         SStructureUnit.OnCreate(self)
     end,
-              
-    TeamChange = function(self)
+    
+    TeamChange = function(self)      
         local pos = self:GetPosition()   
         local aiBrain = self:GetAIBrain()
         local radius = self:GetBlueprint().Intel.VisionRadius or 20
-        while true do
-            if aiBrain:GetNoRushTicks() == 0 then   
-                --First check anyone is actually nearby   
-                local Units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius)
-                local UnitNo = self.Count(self, Units)
-                if UnitNo != 0 then
-                    --Then check there if there are no teammates
-                    Units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius, 'Ally' )
-                    UnitNo = self.Count(self, Units)
-                    if UnitNo == 0 then
-                        Units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius, 'Enemy' ) 
-                        --self.Winner(self, Units)
-                        if not Units[1]:IsDead() then
-                            --Award control to someone alive nearby. First one detected.     
-                            ChangeUnitArmy(self,Units[1]:GetArmy())
-                        end
+        while not self.WinnerMessage do
+            if self.Count(self) != 0 and self.Count(self, 'Ally' ) == 0 then
+                local Units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius, 'Enemy') 
+                if Units[1] and IsUnit(Units[1]) then
+                    ChangeUnitArmy(self,Units[1]:GetArmy())
+                end
+            end 
+            local remaining = (ScenarioInfo.Crystal.EndTimeMins * 60) - GetGameTimeSeconds()
+            if remaining < 0 then   
+                local allies = -1
+                for i, brain in ArmyBrains do
+                    if not IsAlly(self:GetArmy(), brain:GetArmyIndex()) then
+                        brain:OnDefeat()
+                    else
+                        allies = allies + 1
                     end
-                end     
+                end
+                if allies > 1 and not self.WinnerMessage then
+                    Sync.Crystal = {
+                        Player = self:GetArmy(),
+                        PlayerName = aiBrain.Nickname,
+                        Victory = 1,
+                    }      
+                    -- [Player] and their friends win with the crystal.
+                    self.WinnerMessage = true 
+                elseif allies == 1 and not self.WinnerMessage then     
+                    Sync.Crystal = {
+                        Player = self:GetArmy(),
+                        PlayerName = aiBrain.Nickname,
+                        Victory = 2,
+                    }       
+                    -- [Player] and their friend win with the crystal.
+                    self.WinnerMessage = true 
+                elseif not self.WinnerMessage then  
+                    Sync.Crystal = {
+                        Player = self:GetArmy(),
+                        PlayerName = aiBrain.Nickname,
+                        Victory = 3,
+                    }          
+                    -- [Player] has won with the crystal.
+                    self.WinnerMessage = true  
+                end
+            end
+            if remaining < 10 and not remaining < 0 then
+                --If we are in the last 10 seconds, but not after the end, check ALL THE TIME
+                WaitTicks(1)
+            else      
+                --Otherwise once a second
                 WaitSeconds(1)
-            else
-                WaitSeconds(10)
-            end          
+            end
         end
     end,
     
-    Count = function(self, units)    
+    Count = function(self, fealty) 
+        local pos = self:GetPosition()   
+        local aiBrain = self:GetAIBrain()
+        local radius = self:GetBlueprint().Intel.VisionRadius or 20   
+        local units
+        if fealty then
+            units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius, fealty)
+        else
+            units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius)
+        end
         local count = 0
         for k, v in units do
-            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL, v ) then
+            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL, v ) and not EntityCategoryContains( categories.SATELLITE, v ) then
                 count = count + 1
             end
         end
         return count
     end,
     
-    Winner = function(self, units)    
-        local count = {}
-        for k, v in units do
-            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL, v ) then
-                if not count[v:GetArmy()] then count[v:GetArmy()] = 0 end
-                count[v:GetArmy()] = count[v:GetArmy()] + 1
-                LOG(v:GetArmy()," ",count[v:GetArmy()]," ",v:GetAIBrain():GetArmyIndex())
+    OnDamage = function()
+    end,     
+    
+    OnKilled = function(self, instigator, type, overkillRatio)  
+        local pos = self:GetPosition()               
+        for i, brain in ArmyBrains do
+            if not brain:IsDefeated() then    
+                CreateUnitHPR('ZPC0002',brain:GetArmy(), pos[1],pos[2],pos[3],0,0,0)
+                self:Destroy()
             end
         end
-        --return count
-        --self.tprint(count)
-    end,  
-    
-    OnDamage = function()
-    end,   
+    end,
 }
 TypeClass = ZPC0001
