@@ -1,9 +1,3 @@
--- aibrain.lua (hooked)--
--- Author      : Daniel Teh
--- Description :
---
--- Copyright © 2007 Gas Powered Games - All rights reserved
-
 AIBrain = Class(AIBrain) {
     SpawnParagonUnits = function(self)
         local factionIndex = self:GetFactionIndex()

@@ -107,7 +107,7 @@ ZPC0001 = Class(SStructureUnit) {
         end
         local count = 0
         for k, v in units do
-            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL, v ) and not EntityCategoryContains( categories.SATELLITE, v ) then
+            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE, v ) then
                 count = count + 1
             end
         end
