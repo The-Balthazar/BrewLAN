@@ -1,10 +1,10 @@
 name = "Crystal Hill"
-uid = "BREWLANS-22b4-4936-820e-CRYSTAL0000"
-version = 0
+uid = "BREWLANS-22b4-4936-820e-CRYSTAL0001"
+version = 1
 copyright = "2014 Sean Wheeldon"
-description = "King of the Hill with crystals. Spawns crystals in in the middle of the map. Capture them and keep them to win."
+description = "King of the Hill with crystals. Spawns a crystal in the middle of the map. Capture it and keep it to win."
 author = "Sean Wheeldon"
-icon = "/mods/ParagonGame/mod_icon.dds"
+icon = "/mods/CrystalHill/mod_icon.dds"
 selectable = true
 enabled = true
 exclusive = false
