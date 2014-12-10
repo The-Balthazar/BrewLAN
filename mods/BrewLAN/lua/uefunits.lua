@@ -29,7 +29,7 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
                 
         self:PlaySound(self:GetBlueprint().Audio.PanicLoop)
         if instigator then
-            if not instigator:IsDead() then
+            if instigator and IsUnit(instigator) then
                 local layer = instigator:GetCurrentLayer()             
                 local bp = self:GetBlueprint()
                 local distance = Utilities.GetDistanceBetweenTwoEntities(self, instigator)

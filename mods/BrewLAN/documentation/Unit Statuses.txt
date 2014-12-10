@@ -452,8 +452,7 @@ Cybran Iron Curtain: Experimental Shield Generator
   * Not 100% satisfied with the current mesh.
 
 Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
-  * Uses most of the parts of the original.
-    * Is still buildable with 'No Game Enders' build restriction, ect.  
+  * Uses most of the parts of the original. 
 
 Cybran Darkness: Experimental Omni Disruption Facility
   * Uses the model of the QAI Mainframe from the campaign.
@@ -484,6 +483,24 @@ Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
 
 Naval mine layer units and/or other better ways to deploy mines.
 _______________________________________________________
+Side-mods
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* Crystal Hill (King of the Hill)
+  * Fully functional except where AI is conserened.
+  * Has the infastructure for translation, but only in english so far.   
+* Defend the (something or other)
+  * Unstarted
+* Paragon game
+  * Fully functional except for intelligent choice for who gets a Paragon.
+* Metal World
+  * Fully functional.
+    * Removes MEX position requirements, and MEXes
+    * AI gets some hardcore hax to prevent breaking them. (For sorian AI.)
+* Waterlag
+  * Fully functional.
+  * "Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental."
+  * Possibly still to do: Add floatations to things.                                 
+_______________________________________________________
 Other mod ideas
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * Aircraft barrel roll.
@@ -492,8 +509,3 @@ Other mod ideas
   * Might be easier to implement the other way round; the omni checks on detecting them.
 * Swap mass & energy.
 * Team colour lasers.                   
-_______________________________________________________
-Game-mode mod ideas
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* King of the Hill
-* Defend the (something or other)
