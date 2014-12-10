@@ -5,29 +5,28 @@ AIBrain = Class(AIBrain) {
         local myteam     
         local teams = {}
         for name,army in ScenarioInfo.ArmySetup do
+            if not teams[army.Team] then
+                teams[army.Team] = {}
+            end
+            table.insert(teams[army.Team],army.ArmyIndex)
+            if "ARMY_" .. army.ArmyIndex == strArmy then
+                myteam = army.Team
+            end 
             if army.Team > 1 then
-                if not teams[army.Team] then
-                    teams[army.Team] = {}
-                end
-                table.insert(teams[army.Team],army.ArmyIndex)
-                if "ARMY_" .. army.ArmyIndex == strArmy then
-                    myteam = army.Team
-                end
                 ScenarioInfo.TeamsDefined = true
             end
         end
         
-        -- Checks the smallest defined team size
+        -- Checks the smallest defined team size   
         local minTeamQuantity = 2147483647 -- Arbitrary large number definitely larger than the largest possible team. Not counting mods that allow for most of the population of the planet to play.  
         if ScenarioInfo.Options.TeamLock == 'locked' and ScenarioInfo.TeamsDefined then
             for i, v in teams do
-                minTeamQuantity = math.min(minTeamQuantity, table.getn(teams[i]))
-                LOG("minTeamQuantity" .. minTeamQuantity)
+                minTeamQuantity = math.min(minTeamQuantity, self:CountTeamSize(teams, i ))
             end
         end
         
         -- Spawn paragons for everyone if teams aren't locked or aren't defined, or for player(s) on the smallest team(s) if they are
-        if ScenarioInfo.Options.TeamLock != 'locked' or not ScenarioInfo.TeamsDefined or ScenarioInfo.TeamsDefined and table.getn(teams[myteam]) == minTeamQuantity then
+        if ScenarioInfo.Options.TeamLock != 'locked' or not ScenarioInfo.TeamsDefined or ScenarioInfo.TeamsDefined and self:CountTeamSize(teams, myteam) == minTeamQuantity then
             self:SpawnParagonUnits()
         else       
             self:RestrictParagonUnits(strArmy)
@@ -106,6 +105,14 @@ AIBrain = Class(AIBrain) {
         AddBuildRestriction(strArmy,categories.prb1401)
         AddBuildRestriction(strArmy,categories.psb1401)   
     end, 
+    
+    CountTeamSize = function(self, teams, myteam)
+        if myteam == 1 then
+            return 1
+        else
+            return table.getn(teams[myteam])
+        end    
+    end,
        
     tprint = function(self, tbl, indent)
         if not indent then indent = 0 end
