@@ -15,6 +15,18 @@ __________.__________
 * Seperated the AIx Gantry hax into its own module.
 * Lowered the crash damage and movement speed of the Centurion by a third each.
 * Re-adjusted the AIx pancake code to accomadate the new Centurion speed.
+  __________
+  2014-12-07
+  
+  * Fixed a minor error in the panic state script for UEF engineering resource buildings.
+  __________
+  2014-12-08
+  
+  * Sorted some things related to the assignment of units in the build restrictions list. Specifically:
+    * The Scathis MK 2 can't be built with no Game Enders.
+      * It is also back to its old unit code, for compatibility with other mods. This also fixed the bug whereby with BrewLAN disabled the Scathis icon was still the Scathis Mk 2.
+    * The Cybran Shields, and tech 1 shields are no longer buildable with no Bubbles (Asuming you are running a version for which no-bubbles isn't bugged.)
+    * Paragon Game: The Paragon is always buildable by the Paragon guy.              
 __________.__________
 2014-11-23|0.5.6
 
