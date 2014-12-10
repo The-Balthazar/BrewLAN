@@ -12,11 +12,7 @@ function CreateInitialArmyGroup(strArmy, createCommander)
                 ForkThread(CommanderWarpDelay, cdrUnit, 1)
             end
         end
-        if strArmy == 'ARMY_8' then
-            GetArmyBrain(strArmy):SpawnParagonUnits()
-        else       
-            GetArmyBrain(strArmy):RestrictParagonUnits(strArmy)
-        end
+        GetArmyBrain(strArmy):ParagonOrNotCheck(strArmy)
     end
 
     return tblGroup, cdrUnit

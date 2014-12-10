@@ -36,6 +36,15 @@ ZPC0001 = Class(SStructureUnit) {
         --print(aiBrain.Nickname .. " has the crystal. " .. math.floor((ScenarioInfo.Crystal.EndTimeMins * 60 - GetGameTimeSeconds())/60) .. " mins remaining.") 
         self:ForkThread(self.TeamChange) 
         SStructureUnit.OnCreate(self)
+        for i, brain in ArmyBrains do
+            VizMarker({
+                X = self:GetPosition()[1],
+                Z = self:GetPosition()[3],
+                Radius = self:GetBlueprint().Intel.VisionRadius or 20,
+                LifeTime = -1,
+                Army = brain:GetArmyIndex(),
+            })
+        end 
     end,
     
     TeamChange = function(self)      
@@ -107,7 +116,7 @@ ZPC0001 = Class(SStructureUnit) {
         end
         local count = 0
         for k, v in units do
-            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE, v ) then
+            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) then
                 count = count + 1
             end
         end

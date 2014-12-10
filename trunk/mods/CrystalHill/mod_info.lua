@@ -9,6 +9,6 @@ selectable = true
 enabled = true
 exclusive = false
 ui_only = false
-conflicts = { "6EAA2403-27A8-47ee-B4DF-5017E056E501", "BREWLANS-22b4-4936-820e-PARAGON0005", }
+conflicts = { "6EAA2403-27A8-47ee-B4DF-5017E056E501", "BREWLANS-22b4-4936-820e-PARAGON0010", }
 before = { }
 after = { }
