@@ -33,7 +33,11 @@ __________.__________
   2014-12-10
   
   * Sorian AI now treats the Absolution as if it was a Fatboy.
-  * Created the infastructure to move all the Gantry AI scripts, and Centurion pancake scripts into the actual AI files.                  
+  * Created the infastructure to move all the Gantry AI scripts, and Centurion pancake scripts into the actual AI files.
+  __________
+  2014-12-13
+  
+  * Added the Seraphim Experimental Rapid-Fire Artillery.                  
 __________.__________
 2014-11-23|0.5.6
 
