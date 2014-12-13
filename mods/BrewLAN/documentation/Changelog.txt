@@ -23,10 +23,17 @@ __________.__________
   2014-12-08
   
   * Sorted some things related to the assignment of units in the build restrictions list. Specifically:
-    * The Scathis MK 2 can't be built with no Game Enders.
-      * It is also back to its old unit code, for compatibility with other mods. This also fixed the bug whereby with BrewLAN disabled the Scathis icon was still the Scathis Mk 2.
+    * The Scathis MK 2 can't be built with no Game Enders, on its original code now.
+      * It is also back to its old unit code for compatibility with other mods.
+      * This also fixed the bug whereby with BrewLAN disabled the Scathis icon was still the Scathis Mk 2.
+      * And a bug whereby the rebuild bonus wasn't working due to it referencing the current (and original) unit code.      
     * The Cybran Shields, and tech 1 shields are no longer buildable with no Bubbles (Asuming you are running a version for which no-bubbles isn't bugged.)
-    * Paragon Game: The Paragon is always buildable by the Paragon guy.              
+    * Paragon Game: The Paragon is always buildable by the Paragon guy.
+  __________
+  2014-12-10
+  
+  * Sorian AI now treats the Absolution as if it was a Fatboy.
+  * Created the infastructure to move all the Gantry AI scripts, and Centurion pancake scripts into the actual AI files.                  
 __________.__________
 2014-11-23|0.5.6
 

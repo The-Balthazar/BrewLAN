@@ -314,6 +314,7 @@ Unit_Description_BrewLAN_T4A001="Experimental gunship with extensive anti-air ca
 
 srb2401_desc="Experimental Rapid-Fire Artillery"
 srb2401_name="Scathis Mark II"
+ssb2404_name="Suthanus"
 Unit_Description_BrewLAN_T4B002="Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 
 srb4401="Experimental Shield Generator"
