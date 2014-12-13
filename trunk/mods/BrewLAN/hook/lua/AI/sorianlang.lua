@@ -18,19 +18,19 @@ AINames.sal0401 = {
 -- Gantry: Experimental Factory                                                
 --------------------------------------------------------------------------------
 AINames.seb0401 = {
-	'Tentacles',
-	'Fatboys \'R\' Us',
-	'Mom\'s Friendly Robot Company',
-	'MomCorp',
-	'The Lab',
-	'Craneyard',
-	'Foundry',
-	'Octavius',
+    'Tentacles',
+    'Fatboys \'R\' Us',
+    'Mom\'s Friendly Robot Company',
+    'MomCorp',
+    'The Lab',
+    'Craneyard',
+    'Foundry',
+    'Octavius',
    'Legion HQ',
    'Forge',
    'Factory',
    'Legion Academy',
-	'Robots \'R\' Us',
+    'Robots \'R\' Us',
 }
 --------------------------------------------------------------------------------
 -- Scathis MK II: Experimental Rapid-fire Artillery
