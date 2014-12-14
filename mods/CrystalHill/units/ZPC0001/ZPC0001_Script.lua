@@ -3,6 +3,7 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local SStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
+local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker  
 
 ZPC0001 = Class(SStructureUnit) { 
              
