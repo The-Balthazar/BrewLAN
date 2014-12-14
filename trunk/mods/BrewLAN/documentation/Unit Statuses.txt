@@ -180,11 +180,8 @@ Tech 1
       * T1 Light Gunship
   		  * Would like to give a more unique appearance.            
   		* T1 Field engineer     
-      * T1 Pressure Mine
-                        
-  	Pending:
-  	  * T1 Torpedo Bomber ('Sou-ioz')
-
+      * T1 Pressure Mine 
+  	  * T1 Torpedo Bomber      
 -------------------------------------------------------
 Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -365,8 +362,9 @@ Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        
 Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Necro bot     |
 Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
-Indirect fire   |Mavor          |Salvation      |Scathis MK2    |Yolona&Suthanus|
-Static 2        |*Ivan (F)      |*Tele/CZAR fab |Darkness       |*Gate portal   |
+Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
+Strategic 2     |*Ivan (F)      |*?             |*?             |Yolona Oss     |
+Static 2        |*?             |*Tele/CZAR fab |Darkness       |*Gate portal   |
 Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ________________!_______________!_______________!_______________!_______________!
 

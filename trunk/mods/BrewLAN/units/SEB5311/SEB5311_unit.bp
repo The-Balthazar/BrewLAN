@@ -100,11 +100,10 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 200,
-                    ShaderName = 'Unit',                                            
-                    --MeshName = '/mods/brewlan/units/XRC8104/XRC8104_lod0.scm',
-                    AlbedoName = '/units/XEC8001/XEC8001_albedo.dds',
+                    ShaderName = 'Unit',
+                    AlbedoName = '/mods/brewlan/units/seb5310/seb5310_albedo.dds',
                     NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
-                    SpecularName = '/units/XEC8001/XEC8001_specteam.dds',
+                    SpecularName = '/mods/brewlan/units/seb5310/seb5310_specteam.dds',
                 },
                 {
                     LODCutoff = 400,

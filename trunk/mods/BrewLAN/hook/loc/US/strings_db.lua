@@ -304,9 +304,9 @@ Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly o
 -- Experimentals
 -------------------------------------------------------------------------------- 
 
-ssl0403_desc="Experimental Field Engineer"
+ssl0403_desc="Experimental Resurrection Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Experimental amphibious construction, repair, capture, reclamation, and mine layer unit. Has moderate combat and defense equipment, and can build specialist equipment."
+Unit_Description_BrewLAN_T4L001="Experimental amphibious resurrection, reclamation, capture, and repair unit. Has moderate self defense capabilities."
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"

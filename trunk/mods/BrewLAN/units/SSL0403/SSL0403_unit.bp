@@ -119,7 +119,7 @@ UnitBlueprint {
         SubThreatLevel = 40,
         SurfaceThreatLevel = 100,
     },
-    Description = '<LOC ssl0403_desc>Experimental Field Engineer',
+    Description = '<LOC ssl0403_desc>Experimental Resurrection Engineer',
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
