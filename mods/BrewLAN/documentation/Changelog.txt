@@ -37,7 +37,15 @@ __________.__________
   __________
   2014-12-13
   
-  * Added the Seraphim Experimental Rapid-Fire Artillery.                  
+  * Added the Seraphim Experimental Rapid-Fire Artillery.
+  __________
+  2014-12-14
+  
+  * Slight re-texture for the UEF T3 wall and gate sections.
+  * Added the Seraphim Experimental Rapid-Fire Artillery to the game enders list.
+  * Fixed a particle effect on the Seraphim T1 Gunship.
+  * Added a Seraphim T1 Light Torpedo Bomber.
+  * Changed the descriptions of the Iyadesu to match what it currently does.                          
 __________.__________
 2014-11-23|0.5.6
 
