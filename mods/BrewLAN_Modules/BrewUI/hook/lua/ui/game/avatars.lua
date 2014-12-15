@@ -3,7 +3,7 @@ local OldCreateIdleTab = CreateIdleTab
 local OldCreateIdleEngineerList = CreateIdleEngineerList
 
 function CreateIdleTab(unitData, id, expandFunc)
-    if Factions[1].BrewLAN != nil then -- If this exists assume BrewLAN is active.
+    if Factions[1].BrewLAN then -- If this exists assume BrewLAN is active.
         local bg = Bitmap(controls.avatarGroup, UIUtil.SkinnableFile('/game/avatar/avatar-s-e-f_bmp.dds'))
         bg.id = id
         bg.tooltipKey = 'mfd_idle_'..id
