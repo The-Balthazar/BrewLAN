@@ -45,7 +45,8 @@ __________.__________
   * Added the Seraphim Experimental Rapid-Fire Artillery to the game enders list.
   * Fixed a particle effect on the Seraphim T1 Gunship.
   * Added a Seraphim T1 Light Torpedo Bomber.
-  * Changed the descriptions of the Iyadesu to match what it currently does.                          
+  * Changed the descriptions of the Iyadesu to match what it currently does.
+  * Corrected a typo in the von mayor rector description.                             
 __________.__________
 2014-11-23|0.5.6
 
