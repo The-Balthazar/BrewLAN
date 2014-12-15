@@ -254,7 +254,7 @@ srb1311_name="Faraday Reactor"
 ssb1311_name="Uya-iyathan"
 Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output." 
 Unit_Description_BrewLAN_T3B0012="Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged." 
-Unit_Description_BrewLAN_T3B0014="Large power generating structure. Possesses a powerfull shield, which consumes a small portion of its operating output." 
+Unit_Description_BrewLAN_T3B0014="Large power generating structure. Possesses a powerful shield, which consumes a small portion of its operating output." 
 Unit_Description_BrewLAN_T3B0016="Large power generating structure. Possesses superior armor and has self regenerative capabilities." 
 
 sab1312_desc="Shielded Mass Extractor"
