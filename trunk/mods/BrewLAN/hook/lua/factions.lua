@@ -4,7 +4,7 @@
 Factions[1].IdleEngTextures.T1F = '/icons/units/sel0119_icon.dds'
 --Factions[1].IdleEngTextures.T2F = '/icons/units/xel0209_icon.dds'
 Factions[1].IdleEngTextures.T3F = '/icons/units/sel0319_icon.dds'
-
+Factions[1].BrewLAN = true -- referenced by BrewUI to check if it should do anything.
 Factions[1].IdleGantryTextures = {
 	'/icons/units/seb0401_icon.dds',
 }

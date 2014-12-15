@@ -203,7 +203,7 @@ function BrewLANHeavyWallBuildList(all_bps)
                     --Check it wouldn't overlap badly with the wall
                     if bp.Physics.SkirtSizeX < 3 then
                         table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
-                    elseif bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 then
+                    elseif bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or  bp.Footprint.SizeX == 1 and bp.Physics.SkirtSizeX == 3  then
                         table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
                     end
                 end
@@ -304,7 +304,7 @@ function UpgradeableToBrewLAN(all_bps)
 end
 
 --------------------------------------------------------------------------------
--- Specifying units to be upgradable into eachother
+-- Torpedo bombers able to land on/in water
 --------------------------------------------------------------------------------
  
 function TorpedoBomberWaterLandCat(all_bps)
@@ -329,7 +329,7 @@ function TorpedoBomberWaterLandCat(all_bps)
         table.insert(bp.Categories, 'TRANSPORTATION') ##transportation category allows aircraft to land on water.
         table.insert(bp.Categories, 'HOVER') ##hover category stops torpedos from being fired upon them while landed.
         for i, v in bp.Weapon do
-            if v.WeaponCategory == "Anti Navy" then
+            if v.WeaponCategory == "Anti Navy" and v.FireTargetLayerCapsTable then
                 v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
                 v.FireTargetLayerCapsTable.Sub = 'Seabed|Sub|Water'
                 v.FireTargetLayerCapsTable.Water = 'Seabed|Sub|Water'
@@ -368,31 +368,26 @@ function BrewLANMatchBalancing(all_bps)
         ssa0305 = 'uea0305',
 ------- Air transports to be based  
         ssa0306 = 'xea0306',
-        sra0306 = 'xea0306',
-        saa0306 = 'xea0306',
+        sra0306 = {'xea0306', 0.95,},
+        saa0306 = {'xea0306', 2.75,},
     }   
      
     for unitid, targetid in UnitsList do
-        if all_bps[unitid] and all_bps[targetid] then
-            all_bps[unitid].Economy.BuildCostEnergy = all_bps[targetid].Economy.BuildCostEnergy
-            all_bps[unitid].Economy.BuildCostMass = all_bps[targetid].Economy.BuildCostMass     
-            all_bps[unitid].Economy.BuildTime = all_bps[targetid].Economy.BuildTime
-        end
-    end     
- 
-    local UnitsListMult = {
-------- Air transport cost multipliers  
-        sra0306 = 0.95,
-        saa0306 = 2.75,
-    }      
-     
-    for unitid, mult in UnitsListMult do
-        if all_bps[unitid] then
-            all_bps[unitid].Economy.BuildCostEnergy = all_bps[unitid].Economy.BuildCostEnergy * mult
-            all_bps[unitid].Economy.BuildCostMass = all_bps[unitid].Economy.BuildCostMass * mult 
-            all_bps[unitid].Economy.BuildTime = all_bps[unitid].Economy.BuildTime * mult
-        end
-    end   
+        if type(targetid) == 'string' then
+            if all_bps[unitid] and all_bps[targetid] then
+                all_bps[unitid].Economy.BuildCostEnergy = all_bps[targetid].Economy.BuildCostEnergy
+                all_bps[unitid].Economy.BuildCostMass = all_bps[targetid].Economy.BuildCostMass     
+                all_bps[unitid].Economy.BuildTime = all_bps[targetid].Economy.BuildTime
+            end
+        elseif type(targetid) == 'table' then
+            local tid = targetid[1]
+            if all_bps[unitid] and all_bps[tid] then
+                all_bps[unitid].Economy.BuildCostEnergy = all_bps[tid].Economy.BuildCostEnergy * targetid[2]
+                all_bps[unitid].Economy.BuildCostMass = all_bps[tid].Economy.BuildCostMass * targetid[2]     
+                all_bps[unitid].Economy.BuildTime = all_bps[tid].Economy.BuildTime * targetid[2]
+            end
+        end    
+    end
 end
 
 --------------------------------------------------------------------------------

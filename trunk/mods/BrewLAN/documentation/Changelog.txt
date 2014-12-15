@@ -46,7 +46,12 @@ __________.__________
   * Fixed a particle effect on the Seraphim T1 Gunship.
   * Added a Seraphim T1 Light Torpedo Bomber.
   * Changed the descriptions of the Iyadesu to match what it currently does.
-  * Corrected a typo in the von mayor rector description.                             
+  * Corrected a typo in the von mayor rector description.
+  __________
+  2014-12-15
+  
+  * Minor improvement to the code that deals with the relative costs of aircraft.
+  * BrewUI now returns the original code if BrewLAN isn't active. Meaning you can leave it on when BrewLAN is off without breaking things.                               
 __________.__________
 2014-11-23|0.5.6
 
