@@ -51,7 +51,20 @@ __________.__________
   2014-12-15
   
   * Minor improvement to the code that deals with the relative costs of aircraft.
-  * BrewUI now returns the original code if BrewLAN isn't active. Meaning you can leave it on when BrewLAN is off without breaking things.                               
+  * BrewUI now returns the original code if BrewLAN isn't active. Meaning you can leave it on when BrewLAN is off without breaking things.
+  __________
+  2014-12-17
+  
+  * Script for handling sweeping changes of categories is now slightly more efficient.
+  * Crystal Hill now removes civilian buildings from the direct center of the map, and spawns the crystal in the exact position of the first of those buildings, if there were any.
+    * However the script no longer cares if anything else is blocking the location, or if the ground is flat.
+    * This is better for maps where uneven terrain would make the crystal appear nearer one player.
+    * The crystal sometimes has its underside visible.        
+  * MetalWorld now cheatspawns the correct factional power plant for AI's.
+  * Added credit headers to various scripts.
+  * Made the Paragon Game innitialisations script more compatible.
+  * Made the Crystal Hill innitlalisations script more compatible.
+  * Paragon Game and Crystal Hill can now be played together.                                              
 __________.__________
 2014-11-23|0.5.6
 
