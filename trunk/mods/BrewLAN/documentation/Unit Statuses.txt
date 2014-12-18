@@ -107,7 +107,7 @@ Modded Units:
       * Changed the tarmac texture.
   
   	Novax Center
-  		* Still in game but removed from build menus.
+  		* Removed.
   		* Replaced with a tech 3 observation satelite (that uses its models) & a T3 mobile uplink vehicle (that calls its weapon).
   
   	Mavor
@@ -161,27 +161,25 @@ Tech 1
   	  * T1 Torpedo Bomber ('Gannet')
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  UEF: 
-  	Fully Funtioning:
-      * T1 Light Gunship    
-  		  * Would like to give a more unique appearance.    
-      * T1 Light Artillery
-      * T1 Light Shield Gen
-      * T1 Torpedo Bomber
-      * T1 Air Staging        
-  		* T1 Field engineer
-  		* T1 Pressure Mine      
+  UEF (Functionally complete): 
+    * T1 Light Gunship    
+  	  * Would like to give a more unique appearance.    
+    * T1 Light Artillery
+    * T1 Light Shield Gen
+    * T1 Torpedo Bomber
+    * T1 Air Staging        
+  	* T1 Field engineer
+  	* T1 Pressure Mine      
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Seraphim:
-  	Fully Funtioning:
-      * T1 Light Artillery
-      * T1 Shield Genorator
-      * T1 Air Staging
-      * T1 Light Gunship
-  		  * Would like to give a more unique appearance.            
-  		* T1 Field engineer     
-      * T1 Pressure Mine 
-  	  * T1 Torpedo Bomber      
+  Seraphim (Functionally complete):
+    * T1 Light Artillery
+    * T1 Shield Genorator
+    * T1 Air Staging
+    * T1 Light Gunship
+		  * Would like to give a more unique appearance.            
+		* T1 Field engineer     
+    * T1 Pressure Mine 
+	  * T1 Torpedo Bomber      
 -------------------------------------------------------
 Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -198,13 +196,12 @@ Tech 2:
   	Pending:  
   		* T2 Restoration field genorator.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Cybran:
-  	Fully Funtioning.
-      * T2 Mass Storage
-      * T2 Field Engineer  
-      * T2 Proximity Mine
-      * T2 Energy Storage      
-  		* T2 Wall
+  Cybran (Functionally complete):
+    * T2 Mass Storage
+    * T2 Field Engineer  
+    * T2 Proximity Mine
+    * T2 Energy Storage      
+		* T2 Wall
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
   	Fully Funtioning.
@@ -370,18 +367,23 @@ ________________!_______________!_______________!_______________!_______________
 
   (A)  Aircraft Carrier
   (F)  Engineering or psudo engineering cababilities
-   *  Pending
-   ?  ???
-    PROFIT!
+   *   Pending
+   ?   ???
+       PROFIT!
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -     
+  ***  Completely non-existant
+  **   Partially existant, but disabled
+  *    Buildable, but only partially functioning
 
-UEF Experimental Assault Bot/tank
+
+*** UEF Experimental Assault Bot/tank
   * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
     * Possibly a two part splitting bot. Cain and Abel or something cool.
 
 UEF Centurion: Experimental AA gunship
   * Texture unfinished. Could be more efficiently UV mapped.     
 
-UEF Ivan: Experimental Drop-Pod Artillery
+** UEF Ivan: Experimental Drop-Pod Artillery
   * Fires projectiles that look like drop pods and spawn mech marines on impact.
     * Bouncing script doesnt work on shields.
     * Range should probably decrease for large ammos.
@@ -400,37 +402,40 @@ UEF Gantry: Experimental Factory
       * The Atlantis gets stuck in it. IssueDive is used to get it out, but it forgets/ignores its orders at some point.
       * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.                      
                   
-Seraphim totally not a stargate
+* Seraphim totally not a stargate
   * Will require two to be functional.
   * Use the script order interface, like the spy facilities.
   * Either mess with ferry orders, or use a trick similar to mines to let things walk through.            
 
-Seraphim Experimental Mine?
+*** Seraphim Experimental Mine?
   * To be an experimental for the field engy.
   * Possibile functions:  
     * Releasing a residual energy signature.
     * Self replicating mines.
     * Damage over time effect.       
 
-Seraphim Experimental Shield projection facility.
+*** Seraphim Experimental Shield projection facility.
   * Something between a shield gen and the eye of something or other in appearance.
   * To create individual shields around each unit within the radius, probably with a ghost unit attached.
     * Shields should share an overall health, and need some way to scale with the unit it surrounds.
   * Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size. 
 
-Seraphim Iyadesu
+* Seraphim Iyadesu
   Formerly Experimental Engineer (Prior to r205)
   Formerly Experimental Field Engineer (As of r205, removed as 2014-08-08)
   Experimental Ressurection Unit
     * Script attached to the reclaim command.
     * Had to totally overwrite the old CreateWreckageProp function for it to work.                 
 
+Seraphim Suthanus: Rapid-Fire Artillery
+  * Fully functioning.
+
 Aeon Absolution: Experimental Siege Tank
   * Mostly finished texture that needs more details.
   * Has its big cannon and two TMD's.
   * Totally isn't an eldar grav tank. Nope nope nope. 
 
-Cybran Experimental Missile ship
+** Cybran Experimental Missile ship
   * Initial ideas:
     * a cross between the Sea Shadow and a Houbei class missile boat.
     * Stealth, and tac missiles.
@@ -456,7 +461,8 @@ Cybran Darkness: Experimental Omni Disruption Facility
   * Uses the model of the QAI Mainframe from the campaign.
   * One of its arms doesn't move, for some unknown reason.
   * Was briefly called Oscuras before reverting back to Darkness.
-    * I realised that any unit for which I try to avoid refering to it by name, has a bad name. Sorry Kris.      
+    * I realised that any unit for which I try to avoid refering to it by name, has a bad name. Sorry Kris.
+  * Doesn't care if you run out of power.           
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Abandonned Ideas:
@@ -483,21 +489,39 @@ Naval mine layer units and/or other better ways to deploy mines.
 _______________________________________________________
 Side-mods
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* Crystal Hill (King of the Hill)
-  * Fully functional except where AI is conserened.
-  * Has the infastructure for translation, but only in english so far.   
-* Defend the (something or other)
-  * Unstarted
-* Paragon game
-  * Fully functional except for intelligent choice for who gets a Paragon.
-* Metal World
-  * Fully functional.
-    * Removes MEX position requirements, and MEXes
-    * AI gets some hardcore hax to prevent breaking them. (For sorian AI.)
-* Waterlag
-  * Fully functional.
-  * "Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental."
-  * Possibly still to do: Add floatations to things.                                 
+BrewUI
+* Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
+* Overwrites the two functions completely when active.
+* Completely optional, for compatibility.
+
+BrewLAN: Gantry AIx 1
+* This is an optional difficulty module for UEF AIx.
+* Also poses as an example for other peoples' manual altering.        
+
+Crystal Hill
+* King of the hill style: Spawns a crystal dead center of the map.
+  * Controlling it at the end of 20 mins causes game win.
+  * A change of hands below the 5 minute mark causes the time to increase back to 5 minutes.
+* Will remove civilian buildings in the area, and will occupy the space of the one closest to the center, if any.   
+* Fully functional except the AI doesn't care yet.  
+* Language strings exist for English & German.
+
+Paragon Game
+* Few vs Many aesymetric style gameplay.
+  * Player(s) on the smallest team(s) get a paragon, SACU, and shields.
+* Fully functional.
+  * Could position the Paragon in more intelligent places for players.   
+* Uses all default language strings.  
+
+Metal World                                
+* Removes MEX position requirements, and mass points.
+* Fully functional, except real AI control.
+  * AI gets some hardcore hax to prevent breaking them. (For sorian AI.)   
+
+Waterlag
+* Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental.
+* Fully functional.
+  * Should give floatations to things with an external 'floatation' bone and footprint size check.                                 
 _______________________________________________________
 Other mod ideas
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -506,4 +530,4 @@ Other mod ideas
 * Have cloaked/stealthed units able to detect when they are detected.
   * Might be easier to implement the other way round; the omni checks on detecting them.
 * Swap mass & energy.
-* Team colour lasers.                   
+* Team coloured lasers.                   

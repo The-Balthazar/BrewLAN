@@ -92,18 +92,18 @@ end
 function BrewLANCategoryChanges(all_bps) 
     local Units = {
         --Cybran Shields
-        urb4202 = {'TECH1','BUILTBYTIER1ENGINEER','BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = {'TECH2', }, },
-        urb4204 = {'TECH1', r = {'TECH2', }, },
+        urb4202 = {'TECH1','BUILTBYTIER1ENGINEER','BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = 'TECH2', },
+        urb4204 = {'TECH1', r = 'TECH2', },
         urb4205 = {'BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER',},
-        urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = {'TECH2', }, },
-        urb4207 = {'TECH3', r = {'TECH2', }, },
+        urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = 'TECH2', },
+        urb4207 = {'TECH3', r = 'TECH2', },
         --Tech 3 units
-        xab3301 = {'DRAGBUILD', 'SIZE16', r = {'SIZE4', }, },--Aeon Quantum Optics
-        xeb2306 = {'SIZE4', r = {'SIZE12', }, },---------------Ravager
+        xab3301 = {'DRAGBUILD', 'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
+        xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager
         --Experimental units
         xab1401 = {'SORTECONOMY',},----------------------------Paragon
         ueb2401 = {'SORTSTRATEGIC',}, -------------------------Mavor
-        xab2307 = {'EXPERIMENTAL', r = {'TECH3', }, },---------Salvation
+        xab2307 = {'EXPERIMENTAL', r = 'TECH3', },---------Salvation
         --url0401 = {NoBuild = true, }, -----------------------Scathis MkII currently using this ID
         xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
     }
@@ -125,8 +125,12 @@ function BrewLANCategoryChanges(all_bps)
             if not v.NoBuild then
                 for i in v do
                     if v.r then
-                        for i in v.r do
-                            table.removeByValue(all_bps[k].Categories, v.r[i])
+                        if type(v.r) == 'string' then
+                            table.removeByValue(all_bps[k].Categories, v.r)
+                        elseif type(v.r) == 'table' then   
+                            for i in v.r do
+                                table.removeByValue(all_bps[k].Categories, v.r[i])
+                            end
                         end
                     end
                     table.insert(all_bps[k].Categories, v[i])
