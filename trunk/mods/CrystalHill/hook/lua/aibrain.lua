@@ -1,33 +1,30 @@
--- aibrain.lua (hooked)--
--- Author      : Daniel Teh
--- Description :
---
--- Copyright © 2007 Gas Powered Games - All rights reserved
-
+--------------------------------------------------------------------------------
+--  Summary:  The neutral crystal spawner script
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 AIBrain = Class(AIBrain) {
     SpawnCrystal = function(self)
-        local factionIndex = self:GetFactionIndex()
-        
-        local crystal =  { { 'ZPC0002', 1 }, }  
-        
         local posX = ScenarioInfo.size[1]/2
-        local posY = ScenarioInfo.size[2]/2
-
-        if crystal then
-            # place land units down
-            for j, u in crystal do
-                
-                local count = 0
-                while count < u[2] do
-                    local unit = self:CreateUnitNearSpot(u[1], posX, posY)
-                    count = count + 1
-                    unit:CreateTarmac(true,true,true,false,false)
-                    --unit:ForkThread(unit.WarpIn)
-                end
-                
-            end
-        end
+        local posY = 0
+        local posZ = ScenarioInfo.size[2]/2
         
+        self:ForkThread(function()
+            WaitSeconds(1)   
+            local civs = self:GetUnitsAroundPoint(categories.STRUCTURE, Vector(posX, 0, posZ), 3)
+            if civs[1] then
+                for i, v in civs do
+                    LOG(v:GetAIBrain().Nickname)
+                    if v:GetAIBrain().Nickname == "civilian" then
+                        if i == 1 then
+                            posX, posY, posZ = unpack(v:GetPosition())
+                        end 
+                        v:Destroy()
+                    end
+                end
+            end
+            CreateUnitHPR('ZPC0002', self:GetArmyIndex(), posX, posY, posZ, 0, 0, 0)
+            --self:CreateUnitNearSpot('ZPC0002', posX, posZ)
+        end)
         self.PreBuilt = true
     end,
 }
