@@ -3,10 +3,17 @@ function AiTrix(SuperClass)
         OnStopBeingBuilt = function(self,builder,layer)
             SuperClass.OnStopBeingBuilt(self,builder,layer)     
             local aiBrain = self:GetAIBrain()
-            if aiBrain.BrainType != 'Human' then     
+            if aiBrain.BrainType != 'Human' then 
+                local fI = aiBrain:GetFactionIndex()
+                local powerfabs = {
+                    'ueb1101',
+                    'uab1101',
+                    'urb1101',
+                    'xsb1101',
+                }    
                 self:ForkThread(
                     function()
-                        self.MookBuild(self,builder, 'ueb1101')
+                        self.MookBuild(self,builder, powerfabs[fI])
                     end
                 )
             end

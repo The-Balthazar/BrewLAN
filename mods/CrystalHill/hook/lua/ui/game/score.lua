@@ -1,3 +1,7 @@
+--------------------------------------------------------------------------------
+--  Summary:  Crystal count down and notifications
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 do
 local Old_OnBeat = _OnBeat
 local Crystal = {}

@@ -1,4 +1,13 @@
+--------------------------------------------------------------------------------
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
+
 AIBrain = Class(AIBrain) {
+
+--------------------------------------------------------------------------------
+--  Summary:  The Paragon Decider script
+--------------------------------------------------------------------------------
+
     ParagonOrNotCheck = function(self, strArmy)
         
         -- Checks the teams
@@ -32,7 +41,11 @@ AIBrain = Class(AIBrain) {
             self:RestrictParagonUnits(strArmy)
         end     
     end,
-    
+
+--------------------------------------------------------------------------------
+--  Summary:  The Paragon Spawner script
+--------------------------------------------------------------------------------
+
     SpawnParagonUnits = function(self)
         local factionIndex = self:GetFactionIndex()
         
@@ -98,14 +111,22 @@ AIBrain = Class(AIBrain) {
         
         self.PreBuilt = true
     end,
-    
+
+--------------------------------------------------------------------------------
+--  Summary:  The Paragon restricter script
+--------------------------------------------------------------------------------    
+
     RestrictParagonUnits = function(self, strArmy)     
         AddBuildRestriction(strArmy,categories.xab1401)
         AddBuildRestriction(strArmy,categories.peb1401)
         AddBuildRestriction(strArmy,categories.prb1401)
         AddBuildRestriction(strArmy,categories.psb1401)   
     end, 
-    
+
+--------------------------------------------------------------------------------
+--  Summary:  The team size counter script
+--------------------------------------------------------------------------------    
+
     CountTeamSize = function(self, teams, myteam)
         if myteam == 1 then
             return 1
@@ -113,7 +134,11 @@ AIBrain = Class(AIBrain) {
             return table.getn(teams[myteam])
         end    
     end,
-       
+
+--------------------------------------------------------------------------------
+--  Summary:  The table logger script
+--------------------------------------------------------------------------------       
+
     tprint = function(self, tbl, indent)
         if not indent then indent = 0 end
         for k, v in pairs(tbl) do

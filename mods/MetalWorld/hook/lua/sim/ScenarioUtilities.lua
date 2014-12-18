@@ -1,16 +1,7 @@
-#--[                                                                             ]--
-#--[  File     : ScenarioUtilities.lua                                           ]--
-#--[  Author(s): Ivan Rumsey                                                     ]--
-#--[                                                                             ]--
-#--[  Summary  : Utility functions for use with scenario save file.              ]--
-#--[             Created from examples provided by Jeff Petkau.                  ]--
-#--[                                                                             ]--
-#--[  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.             ]--
---local Entity = import('/lua/sim/Entity.lua').Entity
-
-#--[  CreateProps                                                                ]--
-#--[                                                                             ]--
-#--[                                                                             ]--
+--------------------------------------------------------------------------------
+--  Summary:  Overwrites the innitial prop spawning; removing mass points
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 function CreateProps()
     for i, tblData in pairs(Scenario['Props']) do   
         if tblData.type != "Mass" then
@@ -23,9 +14,6 @@ function CreateProps()
     end
 end
 
-#--[  CreateResources                                                            ]--
-#--[                                                                             ]--
-#--[                                                                             ]--
 function CreateResources()
     local markers = GetMarkers()
     for i, tblData in pairs(markers) do   

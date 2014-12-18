@@ -14,7 +14,7 @@ ZPC0002 = Class(SStructureUnit) {
     OnCreate = function(self, builder, layer)    
         self:HideBone(0,true)
         local aiBrain = self:GetAIBrain()
-        if not ScenarioInfo.Crystal then
+        if not ScenarioInfo.Crystal.FirstCapture then
             ScenarioInfo.Crystal = {}
             ScenarioInfo.Crystal.FirstCapture = true
         end
