@@ -100,75 +100,15 @@ SEB0401 = Class(TLandFactoryUnit) {
             if unitBeingBuilt:GetUnitId() == 'uel0309' then
                 --table.insert(self.engineers, unitBeingBuilt)
                 self:ForkThread(
-                    function()
-                        for i = 1, 40 do
-                            if i == 1 then
-                                IssueClearCommands({unitBeingBuilt})
-                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
-                            elseif i != 40 then
-                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0104')
-                            else
-                                IssueGuard({unitBeingBuilt}, self)
-                            end
-                        end
+                    function()       
+                        IssueClearCommands({unitBeingBuilt})
+                        self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
+                        for i = 1, 40 do     
+                            self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0104')
+                        end   
+                        IssueGuard({unitBeingBuilt}, self)
                     end
-                )
-            elseif unitBeingBuilt:GetUnitId() == 'sea0401' then  
-                local ACUS = aiBrain:GetUnitsAroundPoint(categories.COMMAND, self:GetPosition(), 8000, 'Enemy' )
-                local Paragon = aiBrain:GetUnitsAroundPoint(categories.xab1401, self:GetPosition(), 8000, 'Enemy' )
-                if Paragon[1] then
-                    if IsUnit(Paragon[1]) then
-                        local Pancake = unitBeingBuilt
-                        self:ForkThread(
-                            function()
-                                local AINames = import('/lua/AI/sorianlang.lua').AINames
-                                while not Paragon[1]:IsDead() do
-                                    local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), Paragon[1]:GetPosition())
-                                    local hightdist = Pancake:GetPosition()[2] - Paragon[1]:GetPosition()[2]   
-                                    if not Pancake.customname then    
-                                        Pancake.customname = true     
-                                        self:ForkThread(
-                                            function()    
-                                                WaitTicks(50)                
-                                                if not Pancake:IsDead() then
-                                                    local num = Random(1, table.getn(AINames.sea0401pancake))
-                                                    Pancake:SetCustomName(AINames.sea0401pancake[num])
-                                                end                                    
-                                            end
-                                        )     
-                                    end      
-                                    if distance < hightdist * 1.66 and distance > hightdist * 1.5 and distance > 13 and not Paragon[1].TriedOnce then
-                                        Pancake:Kill()
-                                        Paragon[1].TriedOnce = true   
-                                    elseif distance < 13 then
-                                        Pancake:SetSpeedMult(distance/20)
-                                        if distance < .5 and not Pancake.Killthread then
-                                            Pancake.Killthread = true
-                                            self:ForkThread(
-                                                function()         
-                                                    WaitTicks(25)
-                                                    Pancake:Kill()
-                                                end
-                                            )
-                                        end
-                                    end    
-                                    IssueMove({Pancake}, Paragon[1]:GetPosition())
-                                    WaitTicks(5)  
-                                    IssueClearCommands({Pancake})
-                                end
-                            end
-                        )
-                    end
-                elseif ACUS[1] then
-                    if IsUnit(ACUS[1]) then
-                        IssueAttack({unitBeingBuilt}, ACUS[1])
-                    end
-                else
-                    local Anything = aiBrain:GetUnitsAroundPoint(categories.ALLUNITS, self:GetPosition(), 8000, 'Enemy' )
-                    if Anything[1] then
-                        IssueAttack({unitBeingBuilt}, Anything[1])
-                    end
-                end
+                )  
             end
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
         end
