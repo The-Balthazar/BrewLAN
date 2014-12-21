@@ -64,7 +64,14 @@ __________.__________
   * Added credit headers to various scripts.
   * Made the Paragon Game innitialisations script more compatible.
   * Made the Crystal Hill innitlalisations script more compatible.
-  * Paragon Game and Crystal Hill can now be played together.                                              
+  * Paragon Game and Crystal Hill can now be played together.
+  __________
+  2014-12-18
+  
+  * Lowered the selection priority of the Iyadesu.
+  * Units resurrected by the Iyadesu are now stunned for the ideal amount of time it would take to repair it.
+  * Crystal Hill now strips bracketed text from player names on the notification messages, most relevent for AIs.
+  * AI's now pay some attention to the crystal on Crystal Hill, and send units there, sometimes even leaving the units there.                                                   
 __________.__________
 2014-11-23|0.5.6
 
