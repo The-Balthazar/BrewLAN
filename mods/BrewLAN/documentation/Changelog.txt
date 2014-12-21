@@ -8,7 +8,15 @@
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
-All changes by Sean Wheeldon (Balthazar) unless otherwise stated.     
+All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+__________.__________
+2014-12-21|0.5.8
+
+* Fixed the bug in the category changes script created on 2014-12-17, which was causing it to re-add the categories after removing them.
+* Moved the centurion pancake script into AIBehaviours.lua.
+* Centurions now only pancake Paragons with shields, and will just attack them otherwise.
+* All Centurions now have this behaviour, not just Gantry built Centurions.
+* Disabled the original Scathis again.    
 __________.__________
 2014-11-30|0.5.7
 

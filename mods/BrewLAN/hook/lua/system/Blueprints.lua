@@ -103,8 +103,8 @@ function BrewLANCategoryChanges(all_bps)
         --Experimental units
         xab1401 = {'SORTECONOMY',},----------------------------Paragon
         ueb2401 = {'SORTSTRATEGIC',}, -------------------------Mavor
-        xab2307 = {'EXPERIMENTAL', r = 'TECH3', },---------Salvation
-        --url0401 = {NoBuild = true, }, -----------------------Scathis MkII currently using this ID
+        xab2307 = {'EXPERIMENTAL', r = 'TECH3', },-------------Salvation
+        url0401 = {NoBuild = true, }, -------------------------Scathis
         xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
     }
     local buildcats = {  
@@ -124,8 +124,8 @@ function BrewLANCategoryChanges(all_bps)
         if all_bps[k] then
             if not v.NoBuild then
                 for i in v do
-                    if v.r then
-                        if type(v.r) == 'string' then
+                    if i == 'r' then
+                        if type(v.r) == 'string' then  
                             table.removeByValue(all_bps[k].Categories, v.r)
                         elseif type(v.r) == 'table' then   
                             for i in v.r do
@@ -133,7 +133,9 @@ function BrewLANCategoryChanges(all_bps)
                             end
                         end
                     end
-                    table.insert(all_bps[k].Categories, v[i])
+                    if i != 'r' then
+                        table.insert(all_bps[k].Categories, v[i])
+                    end
                 end
             else
                 for i in buildcats do
