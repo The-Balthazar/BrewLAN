@@ -277,6 +277,7 @@ UnitBlueprint {
                 helpText = 'rez_reclaim',
             },
         },
+        SelectionPriority = 3,
         TechLevel = 'RULEUTL_Experimental',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,

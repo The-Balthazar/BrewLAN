@@ -1,11 +1,7 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/XSL0303/XSL0303_script.lua
-#**  Author(s):  Dru Staltman, Aaron Lundquist
-#**
-#**  Summary  :  Seraphim Experimental Engineer
-#**
-#****************************************************************************
+--------------------------------------------------------------------------------
+--  Summary:  Iyadesu Script
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 
 local SConstructionUnit = import('/lua/seraphimunits.lua').SConstructionUnit
 local SLandUnit = import('/lua/seraphimunits.lua').SLandUnit
@@ -56,7 +52,8 @@ SSL0403 = Class(SConstructionUnit) {
             rezzedGuy:SetHealth(self, 1 )
             rezzedGuy.WreckMassMult = 0.01
             rezzedGuy.OldWreckageID = wreckageID
-            rezzedGuy:SetStunned(10)
+            LOG(rezzedGuy:GetBlueprint().Economy.BuildTime / self:GetBlueprint().Economy.BuildRate)
+            rezzedGuy:SetStunned(rezzedGuy:GetBlueprint().Economy.BuildTime / self:GetBlueprint().Economy.BuildRate or 10)
             IssueRepair({self},rezzedGuy)
         end 
     end,
