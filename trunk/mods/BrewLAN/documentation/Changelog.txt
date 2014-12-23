@@ -16,7 +16,15 @@ __________.__________
 * Moved the centurion pancake script into AIBehaviours.lua.
 * Centurions now only pancake Paragons with shields, and will just attack them otherwise.
 * All Centurions now have this behaviour, not just Gantry built Centurions.
-* Disabled the original Scathis again.    
+* Disabled the original Scathis again.
+  __________
+  2014-12-23
+  
+  * The AI's Centurion pancake script now checks how many times they have failed against each Paragon.
+    * They will only try to pancake a Paragon once per half of the level of completion of the Paragon, or if they have more in the squad than the total number that died trying. 
+  * The pancake script now also checks the maximum speed of the Centurion, and adjusts the ideal kill angle estimation appropriately.
+    * For if I adjust the Centurion speed again, and if I apply the script to other experimental fliers.
+  * Increased the air speed of the Centurion from 12 to 15. (Original 18)        
 __________.__________
 2014-11-30|0.5.7
 
