@@ -4,11 +4,11 @@
 -- Modded By: Balthazar
 --------------------------------------------------------------------------------
 do
-
 --------------------------------------------------------------------------------
 -- UEF Experimental AA Gunship: Centurion script
 --------------------------------------------------------------------------------
 CenturionBehaviorBrewLAN = function(self)
+    --remove 2888 from any log reference error line number
     local aiBrain = self:GetBrain()
     local platoonUnits = self:GetPlatoonUnits()
     local cmd
@@ -20,6 +20,8 @@ CenturionBehaviorBrewLAN = function(self)
     end
     
     AssignExperimentalPrioritiesSorian(self)
+    
+    self:MergeWithNearbyPlatoonsSorian('ExperimentalAIHubSorian', 50, true)
     
     local targetUnit, targetBase = FindExperimentalTargetSorian(self)
     local centerOfMap = {ScenarioInfo.size[1]/2, 0, ScenarioInfo.size[2]/2}
@@ -33,25 +35,37 @@ CenturionBehaviorBrewLAN = function(self)
         if crystal[1] then
             crystal = aiBrain:GetUnitsAroundPoint( categories.zpc0001 + categories.zpc0002, centerOfMap, 20)
             while EntityCategoryContains(categories.zpc0002, crystal[1]) or not (IsAlly(aiBrain:GetArmyIndex(),crystal[1]:GetArmy() ) or true) do
-                if VDist3(self:GetPlatoonPosition(), crystal[1]:GetPosition() ) > 20 then
+                if VDist3(self:GetPlatoonPosition(), crystal[1]:GetPosition() ) > 40 then
                     LOG("THA CRYSTAL!")
                     IssueClearCommands(platoonUnits)
                     cmd = self:MoveToLocation(crystal[1]:GetPosition(), false)
+                elseif VDist3(self:GetPlatoonPosition(), crystal[1]:GetPosition() ) < 40 and not self:IsCommandsActive(cmd) then
+                    LOG("THA CRYSTAL!!")
+                    IssueClearCommands(platoonUnits)
+                    cmd = self:AggressiveMoveToLocation(crystal[1]:GetPosition() )
                 end
                 WaitSeconds(3)     
             end
         end
-        local Paragon = aiBrain:GetUnitsAroundPoint(categories.EXPERIMENTAL * categories.ECONOMIC * categories.MASSPRODUCTION, self:GetPlatoonPosition(), 8000, 'Enemy' )
+        local Paragons = aiBrain:GetUnitsAroundPoint(categories.EXPERIMENTAL * categories.ECONOMIC * categories.MASSPRODUCTION, self:GetPlatoonPosition(), 8000, 'Enemy' )
         local oldTargetUnit = nil		
-        if Paragon[1] then
-            if IsUnit(Paragon[1]) then
-                for k, Pancake in platoonUnits do   
-                    local AINames = import('/lua/AI/sorianlang.lua').AINames
-                    if GetClosestShieldProtectingTargetSorian(Pancake, Paragon[1]) then  
+        local TargetParagon = nil
+        
+        if Paragons[1] then--and not self:IsCommandsActive(cmd) then
+            TargetParagon = ParagonAttackPicker(Paragons, platoonUnits)
+        end
+        if TargetParagon then
+            if IsUnit(TargetParagon) and not TargetParagon:IsDead() then
+                if GetClosestShieldProtectingTargetSorian(platoonUnits[1], TargetParagon) then 
+                    for k, Pancake in platoonUnits do   
+                        local AINames = import('/lua/AI/sorianlang.lua').AINames
                         LOG("THIS PARAGON HAS SHIELDS")
-                        while not Paragon[1]:IsDead() do
-                            local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), Paragon[1]:GetPosition())
-                            local hightdist = Pancake:GetPosition()[2] - Paragon[1]:GetPosition()[2]   
+                        while not TargetParagon:IsDead() do
+                            local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), TargetParagon:GetPosition())
+                            local hightdist = Pancake:GetPosition()[2] - TargetParagon:GetPosition()[2]   
+                            
+                            local SpeedBalanceMult = Pancake:GetBlueprint().Air.MaxAirspeed / 12
+                            
                             if not Pancake.customname then    
                                 Pancake.customname = true     
                                 self:ForkThread(
@@ -64,9 +78,10 @@ CenturionBehaviorBrewLAN = function(self)
                                     end
                                 )     
                             end      
-                            if distance < hightdist * 1.66 and distance > hightdist * 1.5 and distance > 13 and not Paragon[1].TriedOnce then
+                            if distance < hightdist * 1.66 * SpeedBalanceMult and distance > hightdist * 1.5 * SpeedBalanceMult and distance > 13 and not TargetParagon.KillAttempts.Pancake then   
+                                if not TargetParagon.KillAttempts then TargetParagon.KillAttempts = {} end
+                                TargetParagon.KillAttempts.Pancake = true   
                                 Pancake:Kill()
-                                Paragon[1].TriedOnce = true   
                             elseif distance < 13 then
                                 Pancake:SetSpeedMult(distance/20)
                                 if distance < .5 and not Pancake.Killthread then
@@ -79,20 +94,24 @@ CenturionBehaviorBrewLAN = function(self)
                                     )
                                 end
                             end    
-                            IssueMove({Pancake}, Paragon[1]:GetPosition())
+                            IssueMove({Pancake}, TargetParagon:GetPosition())
                             WaitTicks(5)  
                             IssueClearCommands({Pancake})
-                        end
-                    else    
-                        LOG("THIS PARAGON HAS NO SHIELDS")
-                        IssueClearCommands({Pancake})
-                        IssueAttack({Pancake}, Paragon[1])
+                            ParagonAttackersAddTableCheck(TargetParagon, Pancake)
+                        end   
+                    end 
+                else    
+                    LOG("THIS PARAGON HAS NO SHIELDS")
+                    IssueClearCommands(platoonUnits)
+                    targetUnit = TargetParagon
+                    cmd = self:AttackTarget(targetUnit)
+                    for k, Pancake in platoonUnits do
+                        ParagonAttackersAddTableCheck(TargetParagon, Pancake)
                     end
                 end
             end
         else
             --This is the default behaviour for the CZAR. Might need some reworking for the Centurion 
-            self:MergeWithNearbyPlatoonsSorian('ExperimentalAIHubSorian', 50, true)
             
             if (targetUnit and targetUnit != oldTargetUnit) or not self:IsCommandsActive(cmd) then			
                 if targetUnit and VDist3( targetUnit:GetPosition(), self:GetPlatoonPosition() ) > 100 then
@@ -129,7 +148,45 @@ CenturionBehaviorBrewLAN = function(self)
         WaitSeconds(1)
     end
 end
-
+--------------------------------------------------------------------------------
+-- Paragon attackers table check for Centurion
+--------------------------------------------------------------------------------
+function ParagonAttackersAddTableCheck(TargetParagon, Pancake)
+    local alreadyontable = false
+    if TargetParagon.KillAttempts.Attackers then
+        for k, Attacker in TargetParagon.KillAttempts.Attackers do
+            if Attacker == Pancake then
+                alreadyontable = true
+            end
+        end 
+    else
+        if not TargetParagon.KillAttempts then TargetParagon.KillAttempts = {} end
+        TargetParagon.KillAttempts.Attackers = {}
+    end
+    if not alreadyontable then
+        table.insert(TargetParagon.KillAttempts.Attackers, Pancake )
+    end
+end 
+--------------------------------------------------------------------------------
+-- Paragon dangerous attack target check
+-- Returns Paragon, or nil if too dangerous
+--------------------------------------------------------------------------------
+function ParagonAttackPicker(Paragons, platoonUnits)
+    for i, Paragon in Paragons do   
+        local deathcount = 0
+        if Paragon.KillAttempts.Attackers then
+            for i, Attacker in Paragon.KillAttempts.Attackers do
+                if Attacker:IsDead() then
+                    deathcount = deathcount + 1
+                end
+            end
+        end
+        if (deathcount < table.getn(platoonUnits) and Paragon:GetFractionComplete() > .9) or deathcount < Paragon:GetFractionComplete() * 2 then
+            return Paragon
+        end
+    end
+    return nil
+end
 --------------------------------------------------------------------------------
 -- Sorian shield protecting target check.
 -- Overwritten to allow for accurate checks with the 80 range Iron Curtain.
