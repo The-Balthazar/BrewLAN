@@ -157,6 +157,7 @@ function ParagonAttackersAddTableCheck(TargetParagon, Pancake)
         for k, Attacker in TargetParagon.KillAttempts.Attackers do
             if Attacker == Pancake then
                 alreadyontable = true
+                break
             end
         end 
     else
@@ -201,7 +202,7 @@ function GetClosestShieldProtectingTargetSorian(attackingUnit, targetUnit)
     
     local blockingList = {}
     
-    #If targetUnit is within the radius of any shields, the shields need to be destroyed.
+    --If targetUnit is within the radius of any shields, the shields need to be destroyed.
     local shields = aiBrain:GetUnitsAroundPoint( categories.SHIELD * categories.STRUCTURE, targetUnit:GetPosition(), 80, 'Enemy' )
     for _,shield in shields do
         if not shield:IsDead() then
@@ -214,7 +215,7 @@ function GetClosestShieldProtectingTargetSorian(attackingUnit, targetUnit)
         end
     end
 
-    #return the closest blocking shield
+    --return the closest blocking shield
     local closest = false
     local closestDistSq = 999999
     for _,shield in blockingList do

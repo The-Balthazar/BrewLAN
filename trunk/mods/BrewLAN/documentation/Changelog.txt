@@ -25,7 +25,11 @@ __________.__________
   * The pancake script now also checks the maximum speed of the Centurion, and adjusts the ideal kill angle estimation appropriately.
     * For if I adjust the Centurion speed again, and if I apply the script to other experimental fliers.
   * Increased the air speed of the Centurion from 12 to 15. (Original 18)
-  * Added a work around for removal of things on walls sometimes causing it to lose its path blocking if the removed thing had the same or larger footprint.       
+  * Added a work around for removal of things on walls sometimes causing it to lose its path blocking if the removed thing had the same or larger footprint.
+  __________
+  2014-12-24
+  
+  * Added the Aeon T1 Torpedo Bomber.       
 __________.__________
 2014-11-30|0.5.7
 
