@@ -136,19 +136,15 @@ Added and planned units:
 -------------------------------------------------------
 Tech 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Aeon:              
-  	Fully functioning:  
-  		* T1 Light Gunship
-  		  * Would like to give a more unique appearance.       
-  		* T1 Light Artillery
-  		* T1 Shield Genorator
-  		* T1 Air Staging     
-  		* T1 Defence engineer 
-      * T1 Pressure Mine
-                        
-  	Pending:
-  	  * T1 Torpedo Bomber
-
+  Aeon (Functionally complete):  
+		* T1 Light Gunship
+		  * Would like to give a more unique appearance.       
+		* T1 Light Artillery
+		* T1 Shield Genorator
+		* T1 Air Staging     
+		* T1 Defence engineer 
+    * T1 Pressure Mine  
+	  * T1 Torpedo Bomber
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:          
   	Fully functioning:  
