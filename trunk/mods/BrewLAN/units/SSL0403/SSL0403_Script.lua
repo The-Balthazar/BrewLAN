@@ -53,7 +53,7 @@ SSL0403 = Class(SConstructionUnit) {
             rezzedGuy.WreckMassMult = 0.01
             rezzedGuy.OldWreckageID = wreckageID
             LOG(rezzedGuy:GetBlueprint().Economy.BuildTime / self:GetBlueprint().Economy.BuildRate)
-            rezzedGuy:SetStunned(rezzedGuy:GetBlueprint().Economy.BuildTime / self:GetBlueprint().Economy.BuildRate or 10)
+            rezzedGuy:SetStunned(math.min(rezzedGuy:GetBlueprint().Economy.BuildTime / self:GetBlueprint().Economy.BuildRate or 10, 60))
             IssueRepair({self},rezzedGuy)
         end 
     end,

@@ -29,7 +29,14 @@ __________.__________
   __________
   2014-12-24
   
-  * Added the Aeon T1 Torpedo Bomber.       
+  * Added the Aeon T1 Torpedo Bomber.
+  __________
+  2014-12-25
+  
+  * Reduced the maximum stunned time for ressurected units to a minute.
+  * Disabled the unscripted Seraphim Stargate experimental.
+  * Changed the LOD fadeoff of the Aeon T1 torp bomber.
+  * Fixed texture references in the Seraphim T1 gunship and T3 torpedo bomber.             
 __________.__________
 2014-11-30|0.5.7
 
