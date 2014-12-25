@@ -155,7 +155,7 @@ UnitBlueprint {
                     ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsa0204/xsa0204_lod1_albedo.dds', 
                     NormalsName = '/units/xsa0204/xsa0204_lod1_normalsts.dds', 
-                    SpecularName = '/units/xsa0204/xsa0204_slod1_pecteam.dds',  
+                    SpecularName = '/units/xsa0204/xsa0204_lod1_specteam.dds',  
                 },
             },
         },

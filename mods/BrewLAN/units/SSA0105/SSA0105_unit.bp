@@ -150,7 +150,6 @@ UnitBlueprint {
                     LODCutoff = 215,
                     ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsa0203/xsa0203_lod1_albedo.dds', 
-                    NormalsName = '/units/xsa0203/xsa0203_lod1_normalsTS.dds', 
                     SpecularName = '/units/xsa0203/xsa0203_lod1_specteam.dds', 
                 },
             },

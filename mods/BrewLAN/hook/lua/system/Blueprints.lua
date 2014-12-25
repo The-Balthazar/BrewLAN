@@ -106,6 +106,7 @@ function BrewLANCategoryChanges(all_bps)
         xab2307 = {'EXPERIMENTAL', r = 'TECH3', },-------------Salvation
         url0401 = {NoBuild = true, }, -------------------------Scathis
         xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
+        ssb5401 = {NoBuild = true, },--------------------------SG1
     }
     local buildcats = {  
         'BUILTBYTIER1ENGINEER',
