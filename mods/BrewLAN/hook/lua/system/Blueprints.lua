@@ -208,11 +208,39 @@ function BrewLANHeavyWallBuildList(all_bps)
             then
                 if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
                     --Check it wouldn't overlap badly with the wall
-                    if bp.Physics.SkirtSizeX < 3 then
-                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
-                    elseif bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or  bp.Footprint.SizeX == 1 and bp.Physics.SkirtSizeX == 3  then
-                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                    local fits = { X = false, Z = false,}
+                    local correct = { X = false, Z = false,}   
+                    
+                    if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then   
+                        correct.X = true
+                        fits.X = true
+                    elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
+                        fits.X = true
                     end
+                    
+                    if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then   
+                        correct.Z = true
+                        fits.Z = true       
+                    elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
+                        fits.Z = true
+                    end
+                    
+                    if fits.X and fits.Z then   
+                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                        --This is to prevent it from having the same footprint as the wall
+                        --and from it removing all the path blocking of the wall if it dies or gets removed.
+                        --It will still remove the blocking from the center of the wall, but that's acceptable.
+                        if correct.X then                               
+                            bp.Footprint.SizeX = 1
+                            bp.Physics.SkirtOffsetX = -1
+                            bp.Physics.SkirtSizeX = 3  
+                        end 
+                        if correct.Z then                               
+                            bp.Footprint.SizeZ = 1
+                            bp.Physics.SkirtOffsetZ = -1   
+                            bp.Physics.SkirtSizeZ = 3  
+                        end
+                    end    
                 end
             end
         end

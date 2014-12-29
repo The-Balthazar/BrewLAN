@@ -10,6 +10,15 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2014-12-29|0.5.9
+
+* Created a work around for the heavy walls losing their path blocking when a building on top of them dies or is removed.
+  * All things build able on the wall that would cause the issue now have their footprints modified so they only take the centre of the path blocking, which doesn't matter.
+__________.__________
+2014-12-26|0.5.8.1
+
+* Removed the attempted workaroud for the bug related to walls losing their blocking when a 3x3 building is removed from on top of them. I'm not sure its fixable.
+__________.__________
 2014-12-21|0.5.8
 
 * Fixed the bug in the category changes script created on 2014-12-17, which was causing it to re-add the categories after removing them.

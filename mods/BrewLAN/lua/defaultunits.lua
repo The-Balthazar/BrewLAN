@@ -265,17 +265,14 @@ CardinalWallScript = Class(CLandFactoryUnit) {
             --end
             --self:DoTakeDamage(instigator, amount, vector, damageType)
         end
-    end,     
+    end,   
     
     OnScriptBitSet = function(self, bit)
         CLandFactoryUnit.OnScriptBitSet(self, bit)
         if bit == 7 then
             if self.AttachedUnit then
-                self.blocker:Destroy()
                 self.AttachedUnit:Destroy() 
-            end  
-            self.blocker = CreateUnitHPR('ZZZ5301',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
-            self.Trash:Add(self.blocker) 
+            end 
             self:SetScriptBit('RULEUTC_SpecialToggle',false) 
             IssueClearCommands({self})
         end
