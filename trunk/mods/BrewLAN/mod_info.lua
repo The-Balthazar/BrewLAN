@@ -1,7 +1,7 @@
-name = "BrewLAN 0.5.8"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000058"
-version = "0.5.8"
-copyright = "2009 - 2014 Sean Wheeldon"
+name = "BrewLAN 0.5.9"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N000059"
+version = "0.5.9"
+copyright = "2009 - 2015 Sean Wheeldon"
 description = "Adds a large number of units and changes a number of existing units."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN/documentation/icon.dds"
@@ -45,14 +45,16 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N00004F", --0.4.F	alpha
     "25D57D85-7D84-27HT-A501-BR3WL4N00004G", --0.4.G	alpha
     "25D57D85-7D84-27HT-A501-BR3WL4N00004H", --0.4.H	alpha 
-    "25D57D85-7D84-27HT-A501-BR3WL4N000050", --0.5 beta
-    "25D57D85-7D84-27HT-A501-BR3WL4N000051", --0.5.1 beta
+    "25D57D85-7D84-27HT-A501-BR3WL4N000050", --0.5      beta
+    "25D57D85-7D84-27HT-A501-BR3WL4N000051", --0.5.1    beta
     "25D57D85-7D84-27HT-A501-BR3WL4N000052", 
     "25D57D85-7D84-27HT-A501-BR3WL4N000053",
     "25D57D85-7D84-27HT-A501-BR3WL4N000054", 
     "25D57D85-7D84-27HT-A501-BR3WL4N000055",   
     "25D57D85-7D84-27HT-A501-BR3WL4N000056",  
-    "25D57D85-7D84-27HT-A501-BR3WL4N000057",     
+    "25D57D85-7D84-27HT-A501-BR3WL4N000057",  
+    "25D57D85-7D84-27HT-A501-BR3WL4N000058", --0.5.8    beta (short lived) 
+    "25D57D85-7D84-27HT-A501-BR3WL4N0000581",--0.5.8.1  beta 
 }
 before = {  }
 after = {  }
