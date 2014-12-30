@@ -14,6 +14,12 @@ __________.__________
 
 * Created a work around for the heavy walls losing their path blocking when a building on top of them dies or is removed.
   * All things build able on the wall that would cause the issue now have their footprints modified so they only take the centre of the path blocking, which doesn't matter.
+* Added some basic functions for the start of the Stargate dailing script.
+* Added tooltips for the stargate dailing funcction.
+  __________
+  2014-12-30
+  
+  * Seraphim T4 stargate can now warp things across the map to other gates.   
 __________.__________
 2014-12-26|0.5.8.1
 

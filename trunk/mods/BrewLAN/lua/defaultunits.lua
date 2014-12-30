@@ -1,9 +1,7 @@
-#****************************************************************************
-#**
-#**  Summary  :  BrewLAN multi-unit scripts.
-#**
-#****************************************************************************
-                                                      
+--------------------------------------------------------------------------------
+-- Summary  :  BrewLAN multi-unit scripts.
+--------------------------------------------------------------------------------                                                      
+
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
 local CMobileKamikazeBombDeathWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombDeathWeapon 
