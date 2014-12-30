@@ -57,4 +57,9 @@ Tooltips['rez_reclaim'] = {
       title = "<LOC tooltipbrewlan0018>Resurrect/Reclaim (E)",
       description = "<LOC tooltipbrewlan0019>Clears and resurrects a wreckage, or reclaims a living unit.",
       keyID = "rez_reclaim",
+   }
+Tooltips['stargate_dail'] = {
+      title = "<LOC tooltipbrewlan0020>Dail Gateway",
+      description = "<LOC tooltipbrewlan0021>Selects a target quantum gateway to create a one way transportation link with.",
+      keyID = "stargate_dail",
    }  
