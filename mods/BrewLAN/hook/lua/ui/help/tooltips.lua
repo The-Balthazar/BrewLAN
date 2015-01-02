@@ -58,8 +58,18 @@ Tooltips['rez_reclaim'] = {
       description = "<LOC tooltipbrewlan0019>Clears and resurrects a wreckage, or reclaims a living unit.",
       keyID = "rez_reclaim",
    }
-Tooltips['stargate_dail'] = {
-      title = "<LOC tooltipbrewlan0020>Dail Gateway",
+Tooltips['stargate_dial'] = {
+      title = "<LOC tooltipbrewlan0020>Dial Gateway",
       description = "<LOC tooltipbrewlan0021>Selects a target quantum gateway to create a one way transportation link with.",
-      keyID = "stargate_dail",
-   }  
+      keyID = "stargate_dial",
+   }
+Tooltips['stargate_iris_shield'] = {
+      title = "<LOC tooltipui0040>Shield Toggle",
+      description = "<LOC tooltipbrewlan0022>Enable or disable the shield preventing incoming and out going travellers.",
+      keyID = "stargate_iris_shield",
+   }
+Tooltips['stargate_stop'] = {
+      title = "<LOC tooltipbrewlan0023>Close Link",
+      description = "<LOC tooltipbrewlan0024>Closes an outgoing link.",
+      keyID = "stargate_stop",
+   }     

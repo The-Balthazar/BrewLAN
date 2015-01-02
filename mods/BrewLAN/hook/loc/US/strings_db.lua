@@ -45,9 +45,13 @@ tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
 tooltipbrewlan0018="Resurrect/Reclaim (E)"
 tooltipbrewlan0019="Clears and resurrects a wreckage, or reclaims a living unit."
 
---Tooltips for Stargate dailing      
-tooltipbrewlan0020="Dail Gateway"
-tooltipbrewlan0021="Selects a target quantum gateway to create a one way transportation link with."
+--Tooltips for the Stargate      
+tooltipbrewlan0020="Dial Gateway"
+tooltipbrewlan0021="Selects a target quantum gateway to create a one way transportation link with." 
+tooltipbrewlan0022="Enable or disable the shield preventing incoming and outgoing travellers."
+tooltipbrewlan0023="Close Link"
+tooltipbrewlan0024="Closes an outgoing link."
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements 
 -------------------------------------------------------------------------------- 

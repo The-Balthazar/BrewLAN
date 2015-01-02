@@ -2,8 +2,8 @@
 -- Summary  :  Stargate Script
 --------------------------------------------------------------------------------    
 local SQuantumGateUnit = import('/lua/seraphimunits.lua').SQuantumGateUnit
-local StargateDailing = import('/mods/BrewLAN/lua/StargateDialing.lua').StargateDialing
-SQuantumGateUnit = StargateDailing(SQuantumGateUnit) 
+local StargateDialing = import('/mods/BrewLAN/lua/StargateDialing.lua').StargateDialing
+SQuantumGateUnit = StargateDialing(SQuantumGateUnit) 
 
 SSB5401 = Class(SQuantumGateUnit) {
 
