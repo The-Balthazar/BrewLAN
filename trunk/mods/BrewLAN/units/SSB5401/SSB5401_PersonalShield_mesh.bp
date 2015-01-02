@@ -3,22 +3,20 @@ MeshBlueprint {
     LODs = {
         {
             MeshName = 'SSB5401_PersonalShield_mesh.scm',
-            LODCutoff = 195,
-
+            LODCutoff = 500,
             --LookupName = '/effects/entities/PhaseShield/PhaseShieldLookup.dds',
-            LookupName = '/effects/Entities/SeraphimShield01/ramp_yellow_to_purple_01.dds',
-
-            AlbedoName = 'Shield01_Albedo.dds',
+            --AlbedoName = 'Shield01_Albedo.dds',
             --AlbedoName = 'SeraphimShield01_Albedo.dds',
-
             --NormalsName = 'Shield01_Secondary.dds',
-            NormalsName = 'SeraphimShield01_Normals3.dds',
-
+            --NormalsName = 'SeraphimShield01_Normals3.dds',
             --SpecularName = 'Shield01_Specular.dds',
-            SpecularName = 'SeraphimShield01_Specular2.dds',
-
-            --ShaderName = 'ShieldSeraphim',
-            ShaderName = 'ShieldCybran',
+            --SpecularName = 'SeraphimShield01_Specular2.dds',
+            AlbedoName = '/effects/Entities/SeraphimShield01/SeraphimShield01_Albedo.dds',
+            NormalsName = '/effects/Entities/SeraphimShield01/SeraphimShield01_Normals3.dds',
+            SpecularName = '/effects/Entities/SeraphimShield01/SeraphimShield01_Specular2.dds',
+            LookupName = '/effects/Entities/SeraphimShield01/ramp_yellow_to_purple_01.dds',
+            ShaderName = 'ShieldSeraphim',
+            --ShaderName = 'ShieldCybran',
             --ShaderName = 'ShieldUEF',
             --ShaderName = 'NukeEMP',
         },
