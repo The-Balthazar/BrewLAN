@@ -10,6 +10,12 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2015-01-02|0.6
+
+* (Mostly) Finished the Seraphim Quantum Gateway.
+* Added nuke mines and mobile nuke defences to the restricted nuke units.
+* Removed the console-only UEF T3 Artillery Shield from the bubbles restrictions list, which was causing it to break. 
+__________.__________
 2014-12-29|0.5.9
 
 * Created a work around for the heavy walls losing their path blocking when a building on top of them dies or is removed.
