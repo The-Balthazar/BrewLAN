@@ -25,7 +25,9 @@ __________.__________
     * UEF observation satelite uplink, and Seraphim optics tracking facility to the "No Eye of Rhianne and Soothsayer" restriction.                  
   * Added the special tech 3 fabrication units to the "No Mass Fabrication" restriction.
   * Added the Aeon Shielded resource buildings to the "No Shields" restriction.
-  * For Paragon Game added the three additional paragons to the "No Paragon" restriction.      
+  * For Paragon Game added the three additional paragons to the "No Paragon" restriction.
+  * Fixed the crash without Sorian AI.
+  * Fixed the Suthanus.          
 __________.__________
 2014-12-29|0.5.9
 
