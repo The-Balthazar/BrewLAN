@@ -14,7 +14,18 @@ __________.__________
 
 * (Mostly) Finished the Seraphim Quantum Gateway.
 * Added nuke mines and mobile nuke defences to the restricted nuke units.
-* Removed the console-only UEF T3 Artillery Shield from the bubbles restrictions list, which was causing it to break. 
+* Removed the console-only UEF T3 Artillery Shield from the bubbles restrictions list, which was causing it to break.
+  __________
+  2015-01-04
+  
+  * Added BrewLAN units to FAF unit restrictions list. Specifically:
+    * The heavy wall sections, armored wall sections, shield wall sections, and wall gates added to the "No Walls" restriction.
+    * The Seraphim engi stations, and UEF T3 engineering resource buildings added to the "No Engineering Stations" restriction.
+    * Scathis MK 2 and Suthanus added to the "No Super-Artillery" restriction.
+    * UEF observation satelite uplink, and Seraphim optics tracking facility to the "No Eye of Rhianne and Soothsayer" restriction.                  
+  * Added the special tech 3 fabrication units to the "No Mass Fabrication" restriction.
+  * Added the Aeon Shielded resource buildings to the "No Shields" restriction.
+  * For Paragon Game added the three additional paragons to the "No Paragon" restriction.      
 __________.__________
 2014-12-29|0.5.9
 

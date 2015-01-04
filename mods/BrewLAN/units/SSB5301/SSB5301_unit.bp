@@ -41,6 +41,7 @@ UnitBlueprint {
         'RECLAIMABLE',      
         'SHIELD',  
         'SORTDEFENSE',
+        'SHIELDWALL',
     },
     Defense = {
         AirThreatLevel = 0,
