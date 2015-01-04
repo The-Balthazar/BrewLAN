@@ -1,8 +1,8 @@
-name = "BrewLAN 0.6"
+name = "BrewLAN"
 uid = "25D57D85-7D84-27HT-A501-BR3WL4N000060"
 version = 0.6
 copyright = "2009 - 2015 Sean Wheeldon"
-description = "Adds a large number of units and changes a number of existing units."
+description = "Version 0.6. Adds a large number of units and changes a number of existing units."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN/documentation/icon.dds"
 selectable = true
@@ -55,7 +55,6 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N000057",  
     "25D57D85-7D84-27HT-A501-BR3WL4N000058", --0.5.8    beta (short lived) 
     "25D57D85-7D84-27HT-A501-BR3WL4N0000581",--0.5.8.1  beta
-    "25D57D85-7D84-27HT-A501-BR3WL4N000060",--0.5.8.1  beta 
 }
 before = {  }
 after = {  }
