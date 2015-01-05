@@ -46,7 +46,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWATTACKRETICLE',
-        'OVERLAYDIRECTFIRE',
+        'OVERLAYINDIRECTFIRE',
         'SORTDEFENSE',
     },
     CollisionOffsetY = -0.375,
@@ -178,7 +178,7 @@ UnitBlueprint {
     SizeX = 1.3,
     SizeY = 1.3,
     SizeZ = 1.3,
-    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconName = 'icon_structure3_artillery',
     StrategicIconSortPriority = 205,
     Veteran = {
         Level1 = 32,
@@ -256,7 +256,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 3,
             RackSlavedToTurret = true,
-            RangeCategory = 'UWRC_DirectFire',
+            RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = 0.25*.65,
             TargetCheckInterval = 2,
             TargetPriorities = {
@@ -281,7 +281,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 45,
             Turreted = true,
-            WeaponCategory = 'Direct Fire',
+            WeaponCategory = 'Indirect Fire',
         },
     },
 }

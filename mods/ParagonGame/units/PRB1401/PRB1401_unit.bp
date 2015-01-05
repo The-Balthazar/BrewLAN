@@ -74,7 +74,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 250,
                     Scrolling = true,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Insect',
                     MeshName = '/units/URC1901/URC1901_lod0.scm',
                     AlbedoName = '/units/URC1901/URC1901_albedo.dds',
                     NormalsName = '/units/URC1901/URC1901_normalsts.dds',
@@ -82,7 +82,7 @@ UnitBlueprint {
                 },
                 {
                     LODCutoff = 900,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Insect',
                     MeshName = '/units/URC1901/URC1901_lod1.scm',
                     AlbedoName = '/units/URC1901/URC1901_lod1_albedo.dds',
                     NormalsName = '/units/URC1901/URC1901_lod1_normalsts.dds',

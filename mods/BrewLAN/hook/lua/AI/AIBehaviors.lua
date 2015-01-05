@@ -182,7 +182,7 @@ function ParagonAttackPicker(Paragons, platoonUnits)
                 end
             end
         end
-        if (deathcount < table.getn(platoonUnits) and Paragon:GetFractionComplete() > .9) or deathcount < Paragon:GetFractionComplete() * 2 then
+        if (deathcount < table.getn(platoonUnits) and Paragon:GetFractionComplete() > .9) or deathcount < Paragon:GetFractionComplete() * 2 and Paragon:GetFractionComplete() > .66 then
             return Paragon
         end
     end

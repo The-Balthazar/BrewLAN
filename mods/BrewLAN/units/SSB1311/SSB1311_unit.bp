@@ -168,6 +168,7 @@ UnitBlueprint {
         BuildCostEnergy = 57600*1.25,
         BuildCostMass = 3240*1.25,
         BuildTime = 5400*1.25,
+        HalfPriceUpgradeFromID = 'xsb1301', 
         ProductionPerSecondEnergy = 2500*.75,
         RebuildBonusIds = {
             'xsb1301',

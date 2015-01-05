@@ -27,7 +27,15 @@ __________.__________
   * Added the Aeon Shielded resource buildings to the "No Shields" restriction.
   * For Paragon Game added the three additional paragons to the "No Paragon" restriction.
   * Fixed the crash without Sorian AI.
-  * Fixed the Suthanus.          
+  * Fixed the Suthanus. It couldn't fire more than half its range.
+  * Upgrading to the advanced T3 resource buildings now costs half.
+  * Paragon Game: Fixed the shaders for the Seraphim and Cybran Paragons.
+  * Fixed the texture shader for the Cybran T2 mine, Cybran T2, & T3 walls and gate.
+  * Reclassified the non-Seraphim anti-armor point defences as indirect fire. The Seraphim AAPD fires too directly.
+  * Stargate iris now cares about the energy costs of the units as well.
+    * An ACU can now survive with slightly less than a third health left.
+  * Sorian AI will now only specifically target a Paragon with its pancake script if its over 66% done.
+  * The Suthanus now has a fluctuating accuracy modifier, and gets more accurate the longer it has been firing on a target.                                      
 __________.__________
 2014-12-29|0.5.9
 

@@ -135,7 +135,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 250,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Insect',
                     --MeshName = '/mods/BrewLAN/units/srb5312/srb5312_lod0.scm',
                     --AlbedoName = '/units/XRC8001/XRC8001_albedo.dds',
                     --NormalsName = '/units/XRC8001/XRC8001_normalsts.dds',
