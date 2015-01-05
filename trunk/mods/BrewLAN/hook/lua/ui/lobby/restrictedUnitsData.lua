@@ -1,5 +1,13 @@
+--------------------------------------------------------------------------------
+-- Hook File: /lua/ui/lobby/restrictedUnitsData.lua
+--------------------------------------------------------------------------------
+-- Modded By: Balthazar
+--------------------------------------------------------------------------------
 do
-    local Units = {
+    local Units = { 
+        ------------------------------------------------------------------------
+        -- Default unit restrictions
+        ------------------------------------------------------------------------
         GAMEENDERS = {
             "srb2401",
             "ssb2404",
@@ -38,6 +46,9 @@ do
             "srl0321",
             "ssl0321",
         },
+        ------------------------------------------------------------------------
+        -- FAF unit restrictions
+        ------------------------------------------------------------------------
         WALL = {
             "MEDIUMWALL", 
             "MEDIUMWALLGATE",
@@ -75,6 +86,7 @@ do
             end
         end
     end
+    --Fixes the console exclusive UEF artillery shield breaking the non-bubbles restriction 
     if not categories.deb4303 then
         table.removeByValue(restrictedUnits.BUBBLES.categories, "deb4303")
     end

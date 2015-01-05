@@ -74,7 +74,8 @@ UnitBlueprint {
                 {
                     LODCutoff = 250,
                     Scrolling = true,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Seraphim',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     MeshName = '/units/XSC1501/XSC1501_lod0.scm',
                     AlbedoName = '/units/XSC1501/XSC1501_albedo.dds',
                     NormalsName = '/units/XSC1501/XSC1501_normalsts.dds',
@@ -82,7 +83,8 @@ UnitBlueprint {
                 },
                 {
                     LODCutoff = 900,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Seraphim',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     MeshName = '/units/XSC1501/XSC1501_lod1.scm',
                     AlbedoName = '/units/XSC1501/XSC1501_lod1_albedo.dds',
                     NormalsName = '/units/XSC1501/XSC1501_lod1_normalsts.dds',

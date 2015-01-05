@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
 -- Summary  :  Stargate Dialing Script
+-- Author   :  Balthazar
 --------------------------------------------------------------------------------    
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 
-# TODO: make sure each new instance is using a previous metatable
 function StargateDialing(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
@@ -44,7 +44,7 @@ function StargateDialing(SuperClass)
                                 for i, v in units do
                                     Warp(v, self.DialingData.TargetGate:GetPosition())
                                     if self.DialingData.TargetGate.DialingData.Iris then
-                                        local damage = v:GetBlueprint().Economy.BuildCostMass * v:GetHealthPercent()
+                                        local damage = (v:GetBlueprint().Economy.BuildCostMass + (v:GetBlueprint().Economy.BuildCostEnergy / 20) / 2 ) * v:GetHealthPercent()
                                         local irishealth = self.DialingData.TargetGate.MyShield:GetHealth()
                                         
                                         if irishealth > damage then
@@ -87,7 +87,6 @@ function StargateDialing(SuperClass)
         end,
  
         OnTargetLocation = function(self, location)
-            --Initial energy drain here - we drain resources instantly when an eye is relocated (including initial move)
             local aiBrain = self:GetAIBrain()
             local bp = self:GetBlueprint()
             local have = aiBrain:GetEconomyStored('ENERGY')

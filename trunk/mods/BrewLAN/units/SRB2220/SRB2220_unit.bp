@@ -63,7 +63,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     Scrolling = true,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Insect',
                     MeshName = '/units/urb5103/urb5103_lod0.scm', 
                     AlbedoName = '/units/urb5103/urb5103_albedo.dds', 
                     NormalsName = '/units/urb5103/urb5103_normalsts.dds', 
@@ -71,7 +71,7 @@ UnitBlueprint {
                 },
                 {
                     LODCutoff = 130,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Insect',
                     MeshName = '/units/urb5103/urb5103_lod1.scm', 
                     AlbedoName = '/units/urb5103/urb5103_lod1_albedo.dds', 
                     NormalsName = '/units/urb5103/urb5103_lod1_normalsts.dds', 
@@ -126,7 +126,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC sRb2220_name>Mutter',
+        UnitName = '<LOC srb2220_name>Mutter',
         UnitWeight = 1,
     },
     Intel = {

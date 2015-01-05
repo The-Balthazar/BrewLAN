@@ -14,7 +14,7 @@ Unit = Class(UnitOld) {
         elseif self.Rezrepairing then      
             self.Rezrepairing = false        
         end       
-		  UnitOld.OnStartBuild(self, unitBeingBuilt, order)
+        UnitOld.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)

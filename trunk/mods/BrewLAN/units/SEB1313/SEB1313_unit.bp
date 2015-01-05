@@ -155,6 +155,7 @@ UnitBlueprint {
             'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',  
             'BUILTBYTIER1ENGINEER MASSSTORAGE UEF',
         },
+        HalfPriceUpgradeFromID = 'ueb1303',
         MaintenanceConsumptionPerSecondEnergy = 3500*.75,
         ProductionPerSecondMass = 12*.75,
         BuildWhenAttackedByAir = 'ueb2104',

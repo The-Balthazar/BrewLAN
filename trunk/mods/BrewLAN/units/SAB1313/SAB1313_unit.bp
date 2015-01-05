@@ -166,7 +166,8 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 65000*1.25,
         BuildCostMass = 3000*1.25,
-        BuildTime = 3750*1.25,
+        BuildTime = 3750*1.25,  
+        HalfPriceUpgradeFromID = 'uab1303',
         MaintenanceConsumptionPerSecondEnergy = 3500*.75+375,
         MaintenanceConsumptionPerSecondEnergyFab = 3500*.75,
         MaintenanceConsumptionPerSecondEnergyShield = 375,
