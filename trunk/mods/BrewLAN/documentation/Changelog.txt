@@ -35,7 +35,48 @@ __________.__________
   * Stargate iris now cares about the energy costs of the units as well.
     * An ACU can now survive with slightly less than a third health left.
   * Sorian AI will now only specifically target a Paragon with its pancake script if its over 66% done.
-  * The Suthanus now has a fluctuating accuracy modifier, and gets more accurate the longer it has been firing on a target.                                      
+  * The Suthanus now has a fluctuating accuracy modifier, and gets more accurate the longer it has been firing on a target.
+  __________
+  2015-01-05
+  
+  * Added a transport attach bone to the Scarab.
+  * Improved the aesthetics of the stargate, and its effects.
+  __________
+  2015-01-07
+  
+  * Resbot now references the original unit ID propperly.
+  __________
+  2015-01-10
+  
+  * Fixed a bug in the stargate script preventing dailing back of a gate that just dailed in.
+  * 'Close Link' button now disapears on a gate with an incoming wormhole.
+  * Iris shield now has sound effects for enabling and disabling. (Unlike everything else for the stargate.)
+  __________
+  2015-01-14
+  
+  * Additional rezbot scripting. It now costs during reclaim and outputs a full health unit. Kinda. Numbers are off. Wont go right. Stress. Going to go shoot things now.
+  __________
+  2015-01-16
+  
+  * Paragon Game: Now does a civilian check, so they no longer break team calculations.
+  * Crystal Hill: Now does a propper civilian check, so a real player (human or ai) called 'civilian' for some reason can now get the first capture.
+  __________
+  2015-01-19
+  
+  * Made the additional build cats script marginally more efficient when dealing with units that have lost their ability to build from other mods.
+  * Added the Cybran T1 Light Torpedo Bomber. The last of the currently planned T1 units now exists.
+  * Altered the menu sort priority of the Jester, so it matches that of the Wailer, and appears between the torpedo bomber and transport.
+  __________
+  2015-01-21
+  
+  * The Seraphim Optics Tracking Facility now targets the closest unit to the center of the chosen location, instead of the first indexed unit, and now charges for new targets based on the distance between them.
+  __________
+  2015-01-23
+  
+  * Seraphim Optics Tracking Facility changes and fixes:
+    * Increased the range at which the Seraphim optics tracker gets a discount on range
+    * Fixed the discount so it is what is charged, instead of an additional cost.
+    * Fixed the no power auto on/off function.                                                         
 __________.__________
 2014-12-29|0.5.9
 

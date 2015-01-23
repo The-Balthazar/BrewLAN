@@ -11,7 +11,7 @@ local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 
 ZPC0002 = Class(SStructureUnit) { 
              
-    OnCreate = function(self, builder, layer)    
+    OnCreate = function(self, builder, layer)
         self:HideBone(0,true)
         local aiBrain = self:GetAIBrain()
         if not ScenarioInfo.Crystal.FirstCapture then
@@ -44,8 +44,15 @@ ZPC0002 = Class(SStructureUnit) {
                 WaitSeconds(10)
             end          
             if Units then
-                for i,v in Units do
-                    if v:GetEntityId() != self:GetEntityId() and v:GetAIBrain().Nickname != "civilian" then     
+                for i,v in Units do    
+                    local civilian = false
+                    for name,data in ScenarioInfo.ArmySetup do
+                        if name == v:GetAIBrain().Name then
+                            civilian = data.Civilian
+                            break
+                        end
+                    end 
+                    if v:GetEntityId() != self:GetEntityId() and not civilian then     
                         pos = self:GetPosition()   
                         CreateUnitHPR('ZPC0001',v:GetArmy(), pos[1],pos[2],pos[3],0,0,0)
                         self:Destroy()

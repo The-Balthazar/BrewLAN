@@ -75,11 +75,9 @@ function BrewLANBuildCatChanges(all_bps)
         xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
     }
     for unitid, buildcat in units_buildcats do
-        if all_bps[unitid] then
+        if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
             for i in buildcat do
-                if all_bps[unitid].Economy.BuildableCategory then --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
-                    table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
-                end
+                table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
             end
         end
     end 

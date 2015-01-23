@@ -1,7 +1,7 @@
 name = "Crystal Hill"
-uid = "BREWLANS-22b4-4936-820e-CRYSTAL0001"
-version = 1
-copyright = "2014 Sean Wheeldon"
+uid = "BREWLANS-22b4-4936-820e-CRYSTAL00011"
+version = 1.1
+copyright = "2014-2015 Sean Wheeldon"
 description = "King of the Hill with crystals. Spawns a crystal in the middle of the map. Capture it and keep it to win."
 author = "Sean Wheeldon"
 icon = "/mods/CrystalHill/mod_icon.dds"
