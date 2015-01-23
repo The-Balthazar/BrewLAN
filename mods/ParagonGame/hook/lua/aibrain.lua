@@ -13,16 +13,20 @@ AIBrain = Class(AIBrain) {
         -- Checks the teams
         local myteam     
         local teams = {}
-        for name,army in ScenarioInfo.ArmySetup do
-            if not teams[army.Team] then
-                teams[army.Team] = {}
-            end
-            table.insert(teams[army.Team],army.ArmyIndex)
-            if "ARMY_" .. army.ArmyIndex == strArmy then
-                myteam = army.Team
-            end 
-            if army.Team > 1 then
-                ScenarioInfo.TeamsDefined = true
+        for name,army in ScenarioInfo.ArmySetup do   
+            if not army.Civilian then
+                if not teams[army.Team] then
+                    teams[army.Team] = {}
+                end
+                table.insert(teams[army.Team],army.ArmyIndex)
+                if "ARMY_" .. army.ArmyIndex == strArmy then
+                    myteam = army.Team
+                end 
+                if army.Team > 1 then
+                    ScenarioInfo.TeamsDefined = true
+                end
+            else
+                LOG(name)                     
             end
         end
         

@@ -1,11 +1,18 @@
 --------------------------------------------------------------------------------
 -- Summary  :  Stargate Dialing Script
 -- Author   :  Balthazar
---------------------------------------------------------------------------------    
-local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
+--------------------------------------------------------------------------------   
+local explosion = import('/lua/defaultexplosions.lua')
 
 function StargateDialing(SuperClass)
     return Class(SuperClass) {
+        GateEffects = {
+				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_02_emit.bp', -- faint rings
+				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_03_emit.bp', -- distortion
+        },
+         
+        GateEffectsBag = {},
+        
         OnCreate = function(self)
             SuperClass.OnCreate(self)
             self.DialingData = {}
@@ -14,7 +21,7 @@ function StargateDialing(SuperClass)
             self.DialingData.ActiveWormhole = false
             self.DialingData.IncomingWormhole = false  
             self.DialingData.Iris = false
-            self:HideBone('Event_Horizon', true)  
+            self:HideBone('Event_Horizon', true)
         end,
             
         OnShieldEnabled = function(self)
@@ -68,23 +75,6 @@ function StargateDialing(SuperClass)
                 end
             )
         end,
-
-        OnKilled = function(self, instigator, type, overkillRatio)
-            SuperClass.OnKilled(self, instigator, type, overkillRatio)
-            self:SetMaintenanceConsumptionInactive()
-        end,
-        
-        DisableRemoteViewingButtons = function(self)
-            self.Sync.Abilities = self:GetBlueprint().Abilities
-            self.Sync.Abilities.TargetLocation.Active = false
-            self:RemoveToggleCap('RULEUTC_IntelToggle')
-        end,
-        
-        EnableRemoteViewingButtons = function(self)
-            self.Sync.Abilities = self:GetBlueprint().Abilities
-            self.Sync.Abilities.TargetLocation.Active = true
-            self:AddToggleCap('RULEUTC_IntelToggle')
-        end,
  
         OnTargetLocation = function(self, location)
             local aiBrain = self:GetAIBrain()
@@ -115,34 +105,57 @@ function StargateDialing(SuperClass)
         end,
         
         WormholeFunctionToggle = function(self, targetgate, wormhole)
-            LOG("WORMJOLE:", wormhole)
-            if not targetgate then
-                targetgate = self.DialingData.TargetGate
-            end
-            if wormhole then
+            if not targetgate then targetgate = self.DialingData.TargetGate end
+            if wormhole and not targetgate:IsDead() then
+                --Particle effectss
+                explosion.CreateDefaultHitExplosionAtBone( self, 'Center', 10.0 ) 
+                explosion.CreateDefaultHitExplosionAtBone( targetgate, 'Center', 10.0 )
+                for k, v in self.GateEffects do
+                    table.insert(self.GateEffectsBag, CreateAttachedEmitter( self, 'Center', self:GetArmy(), v ):OffsetEmitter(0,3,0) )
+                    table.insert(targetgate.GateEffectsBag, CreateAttachedEmitter( targetgate, 'Center', targetgate:GetArmy(), v ):OffsetEmitter(0,3,0) )
+                end  
+                --Self open opperations
                 self.DialingData.TargetGate = targetgate
-                self:ShowBone('Event_Horizon', true)  
+                self:ShowBone('Event_Horizon', true)
                 self.DialingData.ActiveWormhole = true  
-                self:DisableShield()    
-                if not targetgate:IsDead() then
-                    targetgate.DialingData.TargetGate = self
-                    targetgate:ShowBone('Event_Horizon', true)  
-                    targetgate.DialingData.ActiveWormhole = true
-                    targetgate.DialingData.IncomingWormhole = true  
-                    if self:GetArmy() == targetgate:GetArmy() then
-                        targetgate:DisableShield()
-                    elseif not IsAlly( self:GetArmy(), targetgate:GetArmy() ) then
-                        targetgate:EnableShield()
-                    end      
+                self:DisableShield()
+                --Target gate open opperations
+                targetgate.DialingData.TargetGate = self
+                targetgate:ShowBone('Event_Horizon', true)     
+                targetgate:RemoveToggleCap('RULEUTC_GenericToggle')  
+                targetgate.DialingData.ActiveWormhole = true
+                targetgate.DialingData.IncomingWormhole = true  
+                --Target gate shield check
+                if self:GetArmy() == targetgate:GetArmy() then  
+                    --Disables target gate shield only if same team
+                    targetgate:DisableShield()
+                elseif not IsAlly( self:GetArmy(), targetgate:GetArmy() ) then
+                    --Enables target gate shield if its an enemy gate 
+                    targetgate:EnableShield()
+                end   
+            else--Closing the wormhole
+                --Self particles destroy  
+                explosion.CreateDefaultHitExplosionAtBone( self, 'Center', 5.0 ) 
+                for k, v in self.GateEffectsBag do
+                    v:Destroy()
                 end
-            else
+                --Self close opperations 
                 self:HideBone('Event_Horizon', true)
-                self.DialingData.ActiveWormhole = false     
+                self.DialingData.ActiveWormhole = false    
                 self.DialingData.TargetGate = nil
-                if not targetgate:IsDead() then
-                    targetgate:HideBone('Event_Horizon', true)
+                --Target still exists check
+                if not targetgate:IsDead() then  
+                    --Target particles destroy     
+                    explosion.CreateDefaultHitExplosionAtBone( targetgate, 'Center', 5.0 )
+                    for k, v in targetgate.GateEffectsBag do
+                        v:Destroy()
+                    end               
+                    --Target close opperations 
+                    targetgate:HideBone('Event_Horizon', true) 
+                    targetgate:AddToggleCap('RULEUTC_GenericToggle') 
                     targetgate.DialingData.ActiveWormhole = false
-                    targetgate.DialingData.IncomingWormhole = false     
+                    targetgate.DialingData.IncomingWormhole = false   
+                    targetgate.DialingData.TargetGate = nil    
                 end  
             end
         end,
@@ -156,7 +169,7 @@ function StargateDialing(SuperClass)
               
         OnScriptBitSet = function(self, bit)
             SuperClass.OnScriptBitSet(self, bit)
-            if bit == 6 then
+            if bit == 6 then  
                 if self.DialingData.TargetGate then
                     if not self.DialingData.IncomingWormhole or self.DialingData.TargetGate:IsDead() then
                         self:WormholeFunctionToggle()
@@ -165,12 +178,13 @@ function StargateDialing(SuperClass)
                 self:SetScriptBit('RULEUTC_GenericToggle',false) 
             end
         end,
-        
+            
         OnKilled = function(self, instigator, type, overkillRatio)
             SuperClass.OnKilled(self, instigator, type, overkillRatio)  
             if self.DialingData.TargetGate then
                 self:WormholeFunctionToggle()
-            end
+            end  
+            self:SetMaintenanceConsumptionInactive()
         end,
     }    
 end

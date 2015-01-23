@@ -1,15 +1,9 @@
-#****************************************************************************
-#**
-#**  File     :  /lua/RemoteViewing.lua
-#**  Author(s):  Dru Staltman
-#**
-#**  Summary  :  File that creates in units ability to create Remote Entities
-#**
-#**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
+--------------------------------------------------------------------------------
+-- Seraphim Optics Tracking Facility script.
+-- Spererate from the units actual script for reasons.
+--------------------------------------------------------------------------------
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 
-# TODO: make sure each new instance is using a previous metatable
 function RemoteViewing(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
@@ -47,49 +41,53 @@ function RemoteViewing(SuperClass)
             self:AddToggleCap('RULEUTC_IntelToggle')
         end,
  
-        OnTargetLocation = function(self, location)
-            # Initial energy drain here - we drain resources instantly when an eye is relocated (including initial move)
+        OnTargetLocation = function(self, location) 
             local aiBrain = self:GetAIBrain()
-            local bp = self:GetBlueprint()
-            local have = aiBrain:GetEconomyStored('ENERGY')
-            local need = bp.Economy.InitialRemoteViewingEnergyDrain
-            if not ( have > need ) then
-                return
+            local targettable = aiBrain:GetUnitsAroundPoint(categories.SELECTABLE, location, 10)
+            local targetunit = targettable[1]
+            if table.getn(targettable) > 1 then
+                local dist = 100
+                for i, target in targettable do    
+                    if IsUnit(target) then
+                        local cdist = VDist2Sq(target:GetPosition()[1], target:GetPosition()[3], location[1], location[3])
+                        --LOG(location[1] .. " " .. location[2] .. " " .. location[3])
+                        --LOG(cdist)
+                        if cdist < dist then
+                            dist = cdist
+                            targetunit = target
+                        end
+                    end
+                end   
             end
-            
-            # Drain economy here
-            aiBrain:TakeResource( 'ENERGY', bp.Economy.InitialRemoteViewingEnergyDrain )
-        
-            self.RemoteViewingData.VisibleLocation = location
-            
-            --[[if self.RemoteViewingData.VisionHostTargets[1] then
-                for k,v in pairs(self.RemoteViewingData.VisionHostTargets) do self.RemoteViewingData.VisionHostTargets[k]=nil end
-            end --]]
-             
-            self.RemoteViewingData.VisionHostTargets = aiBrain:GetUnitsAroundPoint(categories.SELECTABLE, location, 10)
-            
-            if self.RemoteViewingData.VisionHostTargets[1] then
-                if IsUnit(self.RemoteViewingData.VisionHostTargets[1]) then
-                    self:CreateVisibleEntity()
-                end
+            if targetunit and IsUnit(targetunit) then
+                self:CreateVisibleEntity(location, targetunit)
             end
         end,
         
-        CreateVisibleEntity = function(self)
-            # Only give a visible area if we have a location and intel button enabled
-            if not self.RemoteViewingData.VisibleLocation then
+        CreateVisibleEntity = function(self, location, targetunit)
+            local bp = self:GetBlueprint()
+            local aiBrain = self:GetAIBrain()
+            local have = aiBrain:GetEconomyStored('ENERGY')
+            local need = bp.Economy.InitialRemoteViewingEnergyDrain      
+            
+            if not self.RemoteViewingData.Satellite then
                 self:SetMaintenanceConsumptionInactive()
-                return
+                if not location and not targetunit then
+                    return
+                end
             end
             
-            if self.RemoteViewingData.VisibleLocation and self.RemoteViewingData.DisableCounter == 0 and self.RemoteViewingData.IntelButton then
-                local bp = self:GetBlueprint()
-                self:SetMaintenanceConsumptionActive()
-                # Create new visible area
-                if not self.RemoteViewingData.Satellite then
+            if location and targetunit and self.RemoteViewingData.DisableCounter == 0 and self.RemoteViewingData.IntelButton then
+                --Create new visible area
+                if not self.RemoteViewingData.Satellite or self.RemoteViewingData.Satellite:BeenDestroyed() then  
+                    if not ( have > need ) then
+                        return
+                    end 
+                    aiBrain:TakeResource( 'ENERGY', need )
+                    self:SetMaintenanceConsumptionActive()
                     local spec = {
-                        X = self.RemoteViewingData.VisibleLocation[1],
-                        Z = self.RemoteViewingData.VisibleLocation[3],
+                        X = location[1],
+                        Z = location[3],
                         Radius = bp.Intel.RemoteViewingRadius,
                         LifeTime = -1,
                         Omni = false,
@@ -98,18 +96,31 @@ function RemoteViewing(SuperClass)
                         Army = self:GetAIBrain():GetArmyIndex(),
                     }
                     self.RemoteViewingData.Satellite = VizMarker(spec)   
-                    self.RemoteViewingData.Satellite:AttachTo(self.RemoteViewingData.VisionHostTargets[1], -1)
+                    self.RemoteViewingData.Satellite:AttachTo(targetunit, -1)
                     self.Trash:Add(self.RemoteViewingData.Satellite)
                 else
-                    # Move and reactivate old visible area
-                    if not self.RemoteViewingData.Satellite:BeenDestroyed() then
-                        Warp( self.RemoteViewingData.Satellite, self.RemoteViewingData.VisibleLocation )
-                        self.RemoteViewingData.Satellite:DetachFrom()
-                        self.RemoteViewingData.Satellite:AttachTo(self.RemoteViewingData.VisionHostTargets[1], -1)
-                        self.RemoteViewingData.Satellite:EnableIntel('Vision')
+                    --Charge based on the distance moved
+                    local oldpos = self.RemoteViewingData.Satellite:GetPosition()
+                    local newpos = targetunit:GetPosition()
+                    local distance = math.max(math.min(VDist2Sq(oldpos[1], oldpos[3], newpos[1], newpos[3]), 1000), 1)
+                    LOG("Distance: " .. distance)
+                    need = need * (distance * 0.001)
+                    LOG("NEED: " .. need)
+                    if not ( have > need ) then
+                        return
                     end
+                    aiBrain:TakeResource( 'ENERGY', need )      
+                    self:SetMaintenanceConsumptionActive()
+                    Warp( self.RemoteViewingData.Satellite, location )
+                    self.RemoteViewingData.Satellite:DetachFrom()
+                    self.RemoteViewingData.Satellite:AttachTo(targetunit, -1)
+                    self.RemoteViewingData.Satellite:EnableIntel('Vision')
                 end
-                # monitor resources
+            elseif not location and not targetunit and self.RemoteViewingData.DisableCounter == 0 and self.RemoteViewingData.IntelButton then  
+                self.RemoteViewingData.Satellite:EnableIntel('Vision')
+            end 
+            -- monitor resources
+            if self.RemoteViewingData.DisableCounter == 0 and self.RemoteViewingData.IntelButton then  
                 if self.RemoteViewingData.ResourceThread then
                     self.RemoteViewingData.ResourceThread:Destroy()
                 end
@@ -118,16 +129,16 @@ function RemoteViewing(SuperClass)
         end,
 
         DisableVisibleEntity = function(self)
-            # visible entity already off
+            -- visible entity already off
             if self.RemoteViewingData.DisableCounter > 1 then return end
-            # disable vis entity and monitor resources
+            -- disable vis entity and monitor resources
             if not self:IsDead() and self.RemoteViewingData.Satellite then
                 self.RemoteViewingData.Satellite:DisableIntel('Vision')
             end
         end,
 
         OnIntelEnabled = function(self)
-            # Make sure the button is only calculated once rather than once per possible intel type
+            -- Make sure the button is only calculated once rather than once per possible intel type
             if not self.RemoteViewingData.IntelButton then
                 self.RemoteViewingData.IntelButton = true
                 self.RemoteViewingData.DisableCounter = self.RemoteViewingData.DisableCounter - 1
@@ -137,7 +148,7 @@ function RemoteViewing(SuperClass)
         end,
 
         OnIntelDisabled = function(self)
-            # make sure button is only calculated once rather than once per possible intel type
+            -- make sure button is only calculated once rather than once per possible intel type
             if self.RemoteViewingData.IntelButton then
                 self.RemoteViewingData.IntelButton = false
                 self.RemoteViewingData.DisableCounter = self.RemoteViewingData.DisableCounter + 1

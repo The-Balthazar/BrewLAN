@@ -90,7 +90,6 @@ Unit = Class(UnitOld) {
         
         # Create some ambient wreckage smoke
         explosion.CreateWreckageEffects(self,prop)
-        prop.OldId = self:GetBlueprint().BlueprintId
         return prop
         else
             return nil

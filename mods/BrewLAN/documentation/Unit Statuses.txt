@@ -24,6 +24,11 @@ Errors list/the other to-do list.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
+* New pretty wall script ivolving a rotator and position detection.
+* Rebuild the Ivan script. Starting as a factory with aircraft carrier style storage, and adding unit data from storage to the projectiles.
+* Have the Iyadesu cost during reclaimation for a full health unit, instead of a 0 health needed repair.
+* Darkness doesn't disable on power outage.
+* Darkness doesn't care if the effected units move out of the range. (No vanilla units effected can.) 
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -134,9 +139,9 @@ Modded Units:
 _______________________________________________________
 Added and planned units:
 -------------------------------------------------------
-Tech 1
+Tech 1 (Functionally complete):
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Aeon (Functionally complete):  
+  Aeon:  
 		* T1 Light Gunship
 		  * Would like to give a more unique appearance.       
 		* T1 Light Artillery
@@ -147,17 +152,14 @@ Tech 1
 	  * T1 Torpedo Bomber
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:          
-  	Fully functioning:  
-  	  * T1 Light Artillery
-  	  * T1 Air Staging  
-  		* T1 Field engineer 
-      * T1 Pressure Mine
-                        
-  	Pending:
-  	  * T1 Torpedo Bomber ('Gannet')
-
+	  * T1 Light Artillery
+	  * T1 Air Staging  
+		* T1 Field engineer 
+    * T1 Pressure Mine     
+	  * T1 Torpedo Bomber     
+  	  * Would like to give a more unique appearance.  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  UEF (Functionally complete): 
+  UEF: 
     * T1 Light Gunship    
   	  * Would like to give a more unique appearance.    
     * T1 Light Artillery
@@ -167,7 +169,7 @@ Tech 1
   	* T1 Field engineer
   	* T1 Pressure Mine      
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Seraphim (Functionally complete):
+  Seraphim:
     * T1 Light Artillery
     * T1 Shield Genorator
     * T1 Air Staging
@@ -266,11 +268,9 @@ Tech 3:
       * T3 Cloakable Power Generator.
       * T3 Armored Wall Section.
       * T3 Armored Gate Section. 
-      * T3 Cloakable Mass Extractor.                                               
-  	         
-  	T3 Stealth tank (Cybran sniper bot alternative)
-      * Unfinished appearance.
-      * Needs some more specific coding relating to the behaviour of the cloak.             
+      * T3 Cloakable Mass Extractor.
+    	* T3 Stealth tank (Cybran sniper bot alternative)
+        * Unfinished appearance.            
 
     T3 Decoy Plane.
       * Functional but unfinished.
