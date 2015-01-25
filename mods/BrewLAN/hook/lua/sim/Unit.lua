@@ -9,11 +9,11 @@ Unit = Class(UnitOld) {
                 self.CouldntStop = true
             end
         end
-        if order == 'Repair' and unitBeingBuilt.WreckMassMult then
-            self.Rezrepairing = true
-        elseif self.Rezrepairing then      
-            self.Rezrepairing = false        
-        end       
+        --if order == 'Repair' and unitBeingBuilt.WreckMassMult then
+        --    self.Rezrepairing = true
+        --elseif self.Rezrepairing then      
+        --    self.Rezrepairing = false        
+        --end       
         UnitOld.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
@@ -22,10 +22,10 @@ Unit = Class(UnitOld) {
             self:RemoveCommandCap('RULEUCC_Stop')
             self.CouldntStop = false
         end                      
-        if self.Rezrepairing then
-            unitBeingBuilt.WreckMassMult = 0.9 * unitBeingBuilt:GetHealthPercent()
-            LOG('Thing is: ',unitBeingBuilt.WreckMassMult)
-        end           
+        --if self.Rezrepairing then
+        --    unitBeingBuilt.WreckMassMult = 0.9 * unitBeingBuilt:GetHealthPercent()
+        --    LOG('Thing is: ',unitBeingBuilt.WreckMassMult)
+        --end           
         UnitOld.OnStopBuild(self, unitBeingBuilt)
     end,
 
@@ -41,7 +41,7 @@ Unit = Class(UnitOld) {
         local bp = self:GetBlueprint()
         local wreck = bp.Wreckage.Blueprint
         if wreck then
-            #LOG('*DEBUG: Spawning Wreckage = ', repr(wreck), 'overkill = ',repr(overkillRatio))
+            --LOG('*DEBUG: Spawning Wreckage = ', repr(wreck), 'overkill = ',repr(overkillRatio))
             local pos = self:GetPosition()
             local mass = bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0)
             local energy = bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0)
@@ -54,8 +54,8 @@ Unit = Class(UnitOld) {
             
             local prop = CreateProp( pos, wreck )
             
-            # We make sure keep only a bounded list of wreckages around so we don't get into perf issues when
-            # we accumulate too many wreckages
+            --We make sure keep only a bounded list of wreckages around so we don't get into perf issues when
+            --we accumulate too many wreckages
             prop:AddBoundedProp(mass)
             
             prop:SetScale(bp.Display.UniformScale)
@@ -73,22 +73,22 @@ Unit = Class(UnitOld) {
             prop:SetMaxHealth(bp.Defense.Health)
             prop:SetHealth(self, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
             
-            #FIXME: SetVizToNeurals('Intel') is correct here, so you can't see enemy wreckage appearing
-            # under the fog. However the engine has a bug with prop intel that makes the wreckage
-            # never appear at all, even when you drive up to it, so this is disabled for now.
-            #prop:SetVizToNeutrals('Intel')
+            --FIXME: SetVizToNeurals('Intel') is correct here, so you can't see enemy wreckage appearing
+            --under the fog. However the engine has a bug with prop intel that makes the wreckage
+            --never appear at all, even when you drive up to it, so this is disabled for now.
+            --prop:SetVizToNeutrals('Intel')
             if not bp.Wreckage.UseCustomMesh then
             prop:SetMesh(bp.Display.MeshBlueprintWrecked)
         end
         
-        # Attempt to copy our animation pose to the prop. Only works if
-        # the mesh and skeletons are the same, but will not produce an error
-        # if not.
+        --Attempt to copy our animation pose to the prop. Only works if
+        --the mesh and skeletons are the same, but will not produce an error
+        --if not.
         TryCopyPose(self,prop,false)
         
         prop.AssociatedBP = self:GetBlueprint().BlueprintId
         
-        # Create some ambient wreckage smoke
+        --Create some ambient wreckage smoke
         explosion.CreateWreckageEffects(self,prop)
         return prop
         else
