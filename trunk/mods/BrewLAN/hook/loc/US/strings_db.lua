@@ -307,6 +307,10 @@ ssb3301_desc="Optics Tracking Facility"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips. Cannot target empty space."
 
+--Mobile Shield Generator
+sel0322_name="Ella"
+--Short and long descriptions both the same as default. 
+
 --------------------------------------------------------------------------------
 -- Experimentals
 -------------------------------------------------------------------------------- 

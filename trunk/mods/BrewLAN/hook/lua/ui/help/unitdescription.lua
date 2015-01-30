@@ -101,6 +101,8 @@ Description['srl0319'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious
 Description['ssl0319'] = "<LOC Unit_Description_BrewLAN_T3L006>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Description['sal0319'] = "<LOC Unit_Description_BrewLAN_T3L007>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L008>Mobile strategic missile defense. Fires a salvo of three missiles at its targets. Build costs include first missile salvo." 
+Description['sel0322'] = "<LOC Unit_Description_0034>Mobile shield generator." 
+Description['sal0322'] = "<LOC Unit_Description_0231>Mobile shield generator."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
