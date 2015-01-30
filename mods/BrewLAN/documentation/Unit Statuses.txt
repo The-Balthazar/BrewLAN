@@ -14,7 +14,6 @@ Errors list/the other to-do list.
 * Zenith has unused bones.
 * The Absolution can't hover over units.
 * Other experimentals walk through armored walls.
-* AI's dont propperly utilise their Gantries. 
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
@@ -24,11 +23,12 @@ Errors list/the other to-do list.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
-* New pretty wall script ivolving a rotator and position detection.
+* New prettier wall script ivolving a rotator, a slider, and position detection.
 * Rebuild the Ivan script. Starting as a factory with aircraft carrier style storage, and adding unit data from storage to the projectiles.
-* Have the Iyadesu cost during reclaimation for a full health unit, instead of a 0 health needed repair.
-* Darkness doesn't disable on power outage.
-* Darkness doesn't care if the effected units move out of the range. (No vanilla units effected can.) 
+* Have the Iyadesu cost during reclaimation for a full health unit, instead of a 1 health needed repair.
+* Darkness doesn't care about power outages.
+* Darkness doesn't care if the effected units move out of the range. (But no vanilla units effected can.)
+* Find a use for DEB4303AntiArtilleryShield01? 
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -97,6 +97,7 @@ Modded Units:
       * Changed tarmac.
   
   	Scathis
+      * Removed.
       * Replaced with immobile version for both balance and aesthetic purposes.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
@@ -111,9 +112,11 @@ Modded Units:
     T3 Nuke Defence Silo
       * Changed the tarmac texture.
   
-  	Novax Center
+  	Novax Center & Defense Satellite
   		* Removed.
-  		* Replaced with a tech 3 observation satelite (that uses its models) & a T3 mobile uplink vehicle (that calls its weapon).
+  		* Replaced with:
+  		  * A Tech 3 Observation Satellite Uplink & Observation Satellite. (Currently recycling its models)
+  		  * A Tech 3 Mobile Satellite Uplink vehicle. (With its weapon)
   
   	Mavor
       * Changed menu sorting.
@@ -135,7 +138,7 @@ Modded Units:
   		* Increased stats and cost to be comparable to that of Brick, Percival and Moldovite.
 
   	T2 Sonar
-  		* Allowed it to upgrade into the new T3 sonar.
+  		* Allowed it to upgrade into my T3 sonar.
 _______________________________________________________
 Added and planned units:
 -------------------------------------------------------
@@ -272,65 +275,50 @@ Tech 3:
     	* T3 Stealth tank (Cybran sniper bot alternative)
         * Unfinished appearance.            
 
-    T3 Decoy Plane.
-      * Functional but unfinished.
-        * Currently disabled.
-      * Need to give a button to toggle between Soulripper/ASF impersination.
-        * Aeon decoy is finished and has this function.
-      * Might leave as a Aeon only unit.               
-  
   	Pending:
   		* T3 Anti Shield.
-  		* T3 Mobile stealth Gen                 
+  		* T3 Mobile stealth Gen
+      * T3 Decoy Plane.
+        * Exists, but disabled. May stay Aeon only.                   
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  UEF:
-    Fully funtional:
-  	  * T3 Torpedo Bomber.
-  		  * Requires more texturing work.
-  		  * Probably needs remodelling to look less like the Ambassador.        
-      * T3 Naval Shield.
-      * T3 Mobile Satelite Uplink (UEF Sniper Bot alternative)
-        * May eventually give a more unique appearance.    
-      * T3 Novax Center
-        * As an observation satelite.
-          * Engine related bug: Radar and omni range is spherical not cylindrical (Except on FAF).
-      * T3 Nuke Mine.
-        * Needs a unique model.            
-  		* T3 Field engineer.      
-  		* T3 Engineering Power Generator.
-  		* T3 Engineering Mass Fabricator.
-  		  * Lacks a unique model. Aims from nothing.
-  		* T3 Engineering Mass Extractor.
-  		  * Lacks a unique model. Aims from nothing.                          
+  UEF (Fully represented, mostly functional):
+  	Finished:         
+  		* T3 Field engineer.                         
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
-      * T3 Torpedo launcher.
-        * Has an issue with its floatation on maps where the sea level isn't 17.5.
-      * T3 Armored Wall Section.                     
+      * T3 Armored Wall Section.
+  		* T3 Mobile Shield Gen.                          
+    
+    Functional:          
+      * T3 Torpedo Bomber.
+  		  * Needs remodelling to look like it can go underwater. Because it can.
+      * T3 Mobile Satelite Uplink (UEF Sniper Bot alternative)  
+      * T3 Observation Satelitte Uplink.
+      * T3 Observation Satellite.      
+        * Engine related bug: Radar and omni range is spherical not cylindrical (Except on FAF).       
+      * T3 Nuke Mine.
+                
+    Bugged:
+      Potentially gamebreaking:
+        * The following stop producing if their active consumption is greater than active production: (Vanilla code issue) 
+          * T3 Engineering Power Generator.   
+      		* T3 Engineering Mass Fabricator (lacks a unique model, aims from nothing).        
+      		* T3 Engineering Mass Extractor (lacks a unique model, aims from nothing).
+      Barely noticable:
+        * T3 Torpedo launcher.       
+          * On the rare times that its on the water surface, and if sea level isn't 17.5 (some custom maps), the floatation doesn't appear.
 
-    T3 Decoy Plane.
-      * Functional but unfinished.
-        * Currently disabled.       
-      * Needs a button to toggle between Centurion and Wasp.
-        * Aeon has this script.
-      * Might leave as a Aeon only unit.         
-
-  	Pending:
-  		* T3 Mobile Shield Gen.          
+    Other:
+      T3 Decoy Plane.
+        * Exists, but disabled. May stay Aeon only.  
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   
-    Fully funtional:       
+    Finished:
       * T3 Torpedo Bomber.
     	* T3 Gunship 'Vulthuum'
     	* T3 Air Transport.
-    	* T3 Point Defence                           
-    	  * Eventually want to give a better mesh.
-    	* T3 Sonar
-    	  * Eventually want to give a different mesh.             
-      * T3 Heavy Assault Bot:
-  		  * Uses a slightly modified T2 bot mesh.       
   		* T3 Field engineer  
       * T3 Anti-Armor Point Defence.   
       * T3 Mobile strat defence.
@@ -340,7 +328,12 @@ Tech 3:
       * T3 Armored Mass Extractor.
       * T3 Optics Tracking Facility.
       * T3 Nuke Mine.                                  
-  
+          
+    Functional:        
+    	* T3 Heavy Point Defence.                          
+    	* T3 Sonar.            
+      * T3 Heavy Assault Bot.
+            
     Pending:
       * T3 Torp launcher.
       * T3 Anti Shield. 

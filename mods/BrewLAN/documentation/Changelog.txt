@@ -76,7 +76,11 @@ __________.__________
   * Seraphim Optics Tracking Facility changes and fixes:
     * Increased the range at which the Seraphim optics tracker gets a discount on range
     * Fixed the discount so it is what is charged, instead of an additional cost.
-    * Fixed the no power auto on/off function.                                                         
+    * Fixed the no power auto on/off function.
+  __________
+  2015-01-30
+  
+  * Added the UEF T3 Mobile Shield Generator.                                                         
 __________.__________
 2014-12-29|0.5.9
 
