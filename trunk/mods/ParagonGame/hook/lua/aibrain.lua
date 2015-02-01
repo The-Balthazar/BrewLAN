@@ -96,7 +96,12 @@ AIBrain = Class(AIBrain) {
             for j, u in paragonunits do
                 local count = 0
                 while count < u[2] do
-                    local unit = self:CreateUnitNearSpot(u[1], posX, posY - 20)
+                    local unit
+                    if posY < 30 then 
+                        unit = self:CreateUnitNearSpot(u[1], posX, posY + 20)
+                    else
+                        unit = self:CreateUnitNearSpot(u[1], posX, posY - 20)
+                    end
                     count = count + 1
                     unit:CreateTarmac(true,true,true,false,false)
                 end

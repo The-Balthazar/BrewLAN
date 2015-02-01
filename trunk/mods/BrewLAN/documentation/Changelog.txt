@@ -80,7 +80,12 @@ __________.__________
   __________
   2015-01-30
   
-  * Added the UEF T3 Mobile Shield Generator.                                                         
+  * Added the UEF T3 Mobile Shield Generator.
+  __________
+  2015-01-31
+  
+  * Crystal Hill: Added a tarmac texture to the crystal.
+  * Paragon Game: Fixed a crash related to players with spawns near the far north of the map.                                                           
 __________.__________
 2014-12-29|0.5.9
 
