@@ -55,6 +55,23 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'XSC9002',
         SpawnRandomRotation = true,
+        Tarmacs = {
+            {
+                Albedo = '/env/Crystalline/decals/scx1_proto01_crev06b_albedo.dds',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 12.8/2,
+                Glow = '/env/Crystalline/decals/scx1_proto01_crev06_spec.dds',
+                Orientations = {
+                    0,
+                    90,
+                    180,
+                    270,
+                },
+                RemoveWhenDead = false,
+                Width = 12.8/2,
+            },
+        },
         UniformScale = .4,
     },
     Economy = {

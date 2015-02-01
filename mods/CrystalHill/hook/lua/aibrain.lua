@@ -33,8 +33,7 @@ AIBrain = Class(AIBrain) {
                     end
                 end
             end
-            CreateUnitHPR('ZPC0002', self:GetArmyIndex(), posX, posY, posZ, 0, 0, 0)
-            --self:CreateUnitNearSpot('ZPC0002', posX, posZ)
+            CreateUnitHPR('ZPC0002', self:GetArmyIndex(), posX, posY, posZ, 0, 0, 0):CreateTarmac(true,true,true,false,false)
         end)
         self.PreBuilt = true
     end,

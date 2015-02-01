@@ -28,7 +28,8 @@ Errors list/the other to-do list.
 * Have the Iyadesu cost during reclaimation for a full health unit, instead of a 1 health needed repair.
 * Darkness doesn't care about power outages.
 * Darkness doesn't care if the effected units move out of the range. (But no vanilla units effected can.)
-* Find a use for DEB4303AntiArtilleryShield01? 
+* Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
+* Find a use for DEB4303AntiArtilleryShield01?
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -197,7 +198,7 @@ Tech 2:
   	Pending:  
   		* T2 Restoration field genorator.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Cybran (Functionally complete):
+  Cybran:
     * T2 Mass Storage
     * T2 Field Engineer  
     * T2 Proximity Mine
