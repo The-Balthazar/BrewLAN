@@ -61,8 +61,6 @@ UnitBlueprint {
         'SERAPHIM',
         'STRUCTURE',
         'EXPERIMENTAL',
-        'FACTORY',
-        'GATE',
         'RALLYPOINT',
         'DRAGBUILD',
         'SIZE30',

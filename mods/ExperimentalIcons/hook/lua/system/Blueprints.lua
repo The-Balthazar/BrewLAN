@@ -19,7 +19,7 @@ end
 
 function ExperimentalIconOverhaul(all_bps)
     local units = {
-        ssb5401 = 'icon_experimental_structure_transport',
+        --ssb5401 = 'icon_experimental_structure_transport',
     }
     for id, bp in all_bps do
         ------------------------------------------------------------------------
@@ -59,7 +59,7 @@ function ExperimentalIconOverhaul(all_bps)
                 end
             end
             --------------------------------------------------------------------
-            -- Define the forground icon
+            -- Define the foreground icon
             --------------------------------------------------------------------
             local iconbackup = icon
             if table.find(bp.Categories, 'FIELDENGINEER') or table.find(bp.Categories, 'ENGINEER') then
@@ -73,17 +73,17 @@ function ExperimentalIconOverhaul(all_bps)
             elseif table.find(bp.Categories, 'DIRECTFIRE') or table.find(bp.Categories, 'GROUNDATTACK') or table.find(bp.Categories, 'ANTIAIR') then
                 local air = 0
                 local land = 0
-                --FIGHT FOR YOUR ICON! LITTERALLY!
+                --FIGHT FOR YOUR ICON! LITERALLY!
                 for i, weapon in bp.Weapon do
                     local function DPS(weapon)
                         return (math.pow(weapon.Damage or 0, 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10))
                     end
                     if string.find(weapon.WeaponCategory, 'Anti Air') or weapon.RangeCategory == 'UWRC_AntiAir' then
                         air = air + DPS(weapon)
-                        LOG(id, " AntiAir DPS: ", DPS(weapon))
+                        --LOG(id, " AntiAir DPS: ", DPS(weapon))
                     elseif (string.find(weapon.WeaponCategory, 'Direct Fire') or string.find(weapon.WeaponCategory, 'Bomb')) or weapon.RangeCategory == 'UWRC_DirectFire' then
                         land = land + DPS(weapon)
-                        LOG(id, " Directfire DPS: ", DPS(weapon))
+                        --LOG(id, " Directfire DPS: ", DPS(weapon))
                     end
                 end
                 if land > air then
@@ -108,19 +108,19 @@ function ExperimentalIconOverhaul(all_bps)
                     NAVAL = {'NAVAL',false},
                 }
                 if bp.Economy.BuildableCategory[1] then 
-                    for buildcat in bp.Economy.BuildableCategory do
-                        for layer, flag in buildlayers do
+                    for i, buildcat in bp.Economy.BuildableCategory do
+                        for layer, flag in buildlayers do 
                             if string.find(buildcat, flag[1]) then
                                 flag[2] = true
                             end
                         end
                     end
                 end
-                if buildlayers.LAND and not buildlayers.AIR and not buildlayers.NAVAL then
+                if buildlayers.LAND[2] and not buildlayers.AIR[2] and not buildlayers.NAVAL[2] then
                     icon = icon .. 'land'
-                elseif not buildlayers.LAND and buildlayers.AIR and not buildlayers.NAVAL then
+                elseif not buildlayers.LAND[2] and buildlayers.AIR[2] and not buildlayers.NAVAL[2] then
                     icon = icon .. 'air'
-                elseif not buildlayers.LAND and not buildlayers.AIR and buildlayers.NAVAL then
+                elseif not buildlayers.LAND[2] and not buildlayers.AIR[2] and buildlayers.NAVAL[2] then
                     icon = icon .. 'naval'
                 else  
                     icon = icon .. 'generic'
@@ -137,6 +137,8 @@ function ExperimentalIconOverhaul(all_bps)
                 icon = icon .. 'counterintel'
             elseif table.find(bp.Categories, 'ANTINAVY') then
                 icon = icon .. 'antinavy'
+            elseif table.find(bp.Categories, 'STARGATE') then
+                icon = icon .. 'transport'
             else
                 local bomb = false
                 if bp.Weapon then
