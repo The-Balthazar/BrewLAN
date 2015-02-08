@@ -102,16 +102,16 @@ function ExperimentalIconOverhaul(all_bps)
             elseif table.find(bp.Categories, 'CARRIER') or table.find(bp.Categories, 'AIRSTAGINGPLATFORM') then
                 icon = icon .. 'air'
             elseif table.find(bp.Categories, 'FACTORY') then
-                --[[local buildlayers = {
-                    LAND = false,
-                    AIR = false,
-                    NAVAL = false,
+                local buildlayers = {
+                    LAND = {'LAND',false},
+                    AIR = {'AIR',false},
+                    NAVAL = {'NAVAL',false},
                 }
                 if bp.Economy.BuildableCategory[1] then 
                     for buildcat in bp.Economy.BuildableCategory do
-                        for layer, bool in buildlayers do
-                            if string.find(buildcat, {layer}) then
-                                bool = true
+                        for layer, flag in buildlayers do
+                            if string.find(buildcat, flag[1]) then
+                                flag[2] = true
                             end
                         end
                     end
@@ -122,9 +122,9 @@ function ExperimentalIconOverhaul(all_bps)
                     icon = icon .. 'air'
                 elseif not buildlayers.LAND and not buildlayers.AIR and buildlayers.NAVAL then
                     icon = icon .. 'naval'
-                else  ]]--
+                else  
                     icon = icon .. 'generic'
-                --end
+                end
             elseif table.find(bp.Categories, 'NUKE') or table.find(bp.Categories, 'MISSILE') then
                 icon = icon .. 'missile'
             elseif table.find(bp.Categories, 'ANTIMISSILE') then
