@@ -1,0 +1,14 @@
+name = "Experimental Icons Overhaul"
+uid = "2529ea71-93ef-41a6-b552-EXPERICON00005"
+version = 0.5
+copyright = "2015 Sean Wheeldon"
+description = "An experimental icons overhaul for you. Or AEIOU for short."
+author = "Sean Wheeldon"
+icon = "/mods/experimentalicons/mod_icon.dds"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+conflicts = {  }
+before = {  }
+after = {  }
