@@ -103,24 +103,26 @@ function ExperimentalIconOverhaul(all_bps)
                 icon = icon .. 'air'
             elseif table.find(bp.Categories, 'FACTORY') then
                 local buildlayers = {
-                    LAND = {'LAND',false},
-                    AIR = {'AIR',false},
-                    NAVAL = {'NAVAL',false},
+                    'LAND',
+                    'AIR',
+                    'NAVAL',
                 }
+                local bits = {0,0,0}
                 if bp.Economy.BuildableCategory[1] then 
                     for i, buildcat in bp.Economy.BuildableCategory do
-                        for layer, flag in buildlayers do 
-                            if string.find(buildcat, flag[1]) then
-                                flag[2] = true
+                        for i, layer in buildlayers do 
+                            if string.find(buildcat, layer) then
+                                bits[i] = 1
                             end
                         end
                     end
                 end
-                if buildlayers.LAND[2] and not buildlayers.AIR[2] and not buildlayers.NAVAL[2] then
+                local sbits = tostring(bits[1]) .. tostring(bits[2]) .. tostring(bits[3])  
+                if sbits == '100' then
                     icon = icon .. 'land'
-                elseif not buildlayers.LAND[2] and buildlayers.AIR[2] and not buildlayers.NAVAL[2] then
+                elseif sbits == '010' then
                     icon = icon .. 'air'
-                elseif not buildlayers.LAND[2] and not buildlayers.AIR[2] and buildlayers.NAVAL[2] then
+                elseif sbits == '001' then
                     icon = icon .. 'naval'
                 else  
                     icon = icon .. 'generic'
