@@ -107,17 +107,18 @@ function ExperimentalIconOverhaul(all_bps)
                     'AIR',
                     'NAVAL',
                 }
-                local bits = {0,0,0}
+                local bits = {'0','0','0'}
                 if bp.Economy.BuildableCategory[1] then 
-                    for i, buildcat in bp.Economy.BuildableCategory do
-                        for i, layer in buildlayers do 
+                    for i, layer in buildlayers do   
+                        for _, buildcat in bp.Economy.BuildableCategory do
                             if string.find(buildcat, layer) then
-                                bits[i] = 1
+                                bits[i] = '1'
+                                break
                             end
                         end
                     end
                 end
-                local sbits = tostring(bits[1]) .. tostring(bits[2]) .. tostring(bits[3])  
+                local sbits = table.concat(bits)
                 if sbits == '100' then
                     icon = icon .. 'land'
                 elseif sbits == '010' then
