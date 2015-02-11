@@ -84,6 +84,7 @@ function ExperimentalIconOverhaul(all_bps)
                     elseif (string.find(weapon.WeaponCategory, 'Direct Fire') or string.find(weapon.WeaponCategory, 'Bomb')) or weapon.RangeCategory == 'UWRC_DirectFire' then
                         land = land + DPS(weapon)
                         --LOG(id, " Directfire DPS: ", DPS(weapon))
+                    -- SOMETHING SOMETHING 'Anti Navy' here.
                     end
                 end
                 if land > air then
