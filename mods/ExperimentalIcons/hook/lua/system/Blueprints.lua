@@ -70,28 +70,34 @@ function ExperimentalIconOverhaul(all_bps)
                 icon = icon .. 'artillery'
             elseif table.find(bp.Categories, 'ANTIARTILLERY') then
                 icon = icon .. 'antiartillery'
-            elseif table.find(bp.Categories, 'DIRECTFIRE') or table.find(bp.Categories, 'GROUNDATTACK') or table.find(bp.Categories, 'ANTIAIR') then
-                local air = 0
-                local land = 0
+            elseif table.find(bp.Categories, 'DIRECTFIRE') or table.find(bp.Categories, 'GROUNDATTACK') or table.find(bp.Categories, 'ANTIAIR') or table.find(bp.Categories, 'ANTINAVY') then
+                local layer = {
+                    air = {0, 'antiair'},
+                    land = {0, 'directfire'}, 
+                    naval = {0, 'antinavy'},
+                }
                 --FIGHT FOR YOUR ICON! LITERALLY!
                 for i, weapon in bp.Weapon do
                     local function DPS(weapon)
                         return (math.pow(weapon.Damage or 0, 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10))
                     end
                     if string.find(weapon.WeaponCategory, 'Anti Air') or weapon.RangeCategory == 'UWRC_AntiAir' then
-                        air = air + DPS(weapon)
-                        --LOG(id, " AntiAir DPS: ", DPS(weapon))
+                        layer.air[1] = layer.air[1] + DPS(weapon)
                     elseif (string.find(weapon.WeaponCategory, 'Direct Fire') or string.find(weapon.WeaponCategory, 'Bomb')) or weapon.RangeCategory == 'UWRC_DirectFire' then
-                        land = land + DPS(weapon)
-                        --LOG(id, " Directfire DPS: ", DPS(weapon))
-                    -- SOMETHING SOMETHING 'Anti Navy' here.
+                        layer.land[1] = layer.land[1] + DPS(weapon)
+                    elseif string.find(weapon.WeaponCategory, 'Anti Navy') or weapon.RangeCategory == 'UWRC_AntiNavy' then
+                        layer.naval[1] = layer.naval[1] + DPS(weapon)
                     end
                 end
-                if land > air then
-                    icon = icon .. 'directfire'
-                else 
-                    icon = icon .. 'antiair'
+                local best = {0, 'directfire'}
+                for l, data in layer do
+                    if data[1] > best[1] then best = data end
                 end
+                icon = icon .. best[2]
+            elseif table.find(bp.Categories, 'NUKE') or table.find(bp.Categories, 'MISSILE') or table.find(bp.Categories, 'SILO') then
+                icon = icon .. 'missile'     
+            elseif table.find(bp.Categories, 'ANTIMISSILE') then
+                icon = icon .. 'antimissile'
             elseif table.find(bp.Categories, 'ECONOMIC') then
                 if table.find(bp.Categories, 'MASSPRODUCTION') or table.find(bp.Categories, 'MASSFABRICATION') then
                     icon = icon .. 'mass'
@@ -129,18 +135,12 @@ function ExperimentalIconOverhaul(all_bps)
                 else  
                     icon = icon .. 'generic'
                 end
-            elseif table.find(bp.Categories, 'NUKE') or table.find(bp.Categories, 'MISSILE') then
-                icon = icon .. 'missile'
-            elseif table.find(bp.Categories, 'ANTIMISSILE') then
-                icon = icon .. 'antimissile'
             elseif table.find(bp.Categories, 'DEFENSE') and table.find(bp.Categories, 'SHIELD') then
                 icon = icon .. 'shield'
             elseif table.find(bp.Categories, 'ANTISHIELD') then
                 icon = icon .. 'antishield'
             elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') then
                 icon = icon .. 'counterintel'
-            elseif table.find(bp.Categories, 'ANTINAVY') then
-                icon = icon .. 'antinavy'
             elseif table.find(bp.Categories, 'STARGATE') then
                 icon = icon .. 'transport'
             else
