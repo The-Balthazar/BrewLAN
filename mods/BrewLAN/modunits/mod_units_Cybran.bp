@@ -4,7 +4,7 @@
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="urb4202",		##ED1
+	BlueprintId="urb4202",		--ED1
     Defense = {
         Health = 100,
         MaxHealth = 100,
@@ -24,7 +24,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="urb4205",		##ED3
+	BlueprintId="urb4205",		--ED3
     Defense = {
         Health = 300,
         MaxHealth = 300,
@@ -33,7 +33,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="urb4206",		##ED4
+	BlueprintId="urb4206",		--ED4
     Defense = {
         Health = 400,
         MaxHealth = 400,
@@ -43,13 +43,13 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="urb4207",		##ED5
+	BlueprintId="urb4207",		--ED5
     StrategicIconName = 'icon_structure3_shield',
 }
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="urb4302",		##Strat defence
+	BlueprintId="urb4302",		--Strat defence
     Display = {
         Tarmacs = {
             {
@@ -61,7 +61,20 @@ UnitBlueprint {
         },
     },
 }
-
+  
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xrb0304",		--Hive 3 
+    Economy = {
+        BuildCostEnergy = 1600*4,
+        BuildCostMass = 240*4,
+        HalfPriceUpgradeFromID = 'xrb0204',
+        UpgradeFromCostDiscount = .25,
+        RebuildBonusIds = {
+            'xrb0304',
+        },
+    },
+}
 
 
 #Cybran Units		----------------------------------#
@@ -70,8 +83,8 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="url0101",		##Mole
+	BlueprintId="url0101",		--Mole
     Intel = {
-        OmniRadius = 2,			##Added
+        OmniRadius = 2,			--Added
     },
 }

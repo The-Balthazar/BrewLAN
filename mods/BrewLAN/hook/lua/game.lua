@@ -7,12 +7,13 @@ do
     local OldGetConstructEconomyModel = GetConstructEconomyModel
     
     function GetConstructEconomyModel(builder, targetData, upgradeBaseData)
-        if builder:GetBlueprint().BlueprintId == targetData.HalfPriceUpgradeFromID then
+        if builder:GetBlueprint().BlueprintId == targetData.HalfPriceUpgradeFromID or builder:GetBlueprint().General.UpgradesTo == targetData.HalfPriceUpgradeFromID then
             local builder_bp = builder:GetBlueprint()
             local rate = builder:GetBuildRate()
             local buildtime = targetData.BuildTime or 0.1
-            local mass = math.max((targetData.BuildCostMass or 0) * 0.5, 0)
-            local energy = math.max((targetData.BuildCostEnergy or 0) * 0.5, 0)
+            local discount = targetData.UpgradeFromCostDiscount or 0.5
+            local mass = math.max((targetData.BuildCostMass or 0) * discount, 0)
+            local energy = math.max((targetData.BuildCostEnergy or 0) * discount, 0)
             
             buildtime = math.max(buildtime * (100 + (builder.BuildTimeModifier or 0))*.01, 0.1)
             energy = math.max(energy * (100 + (builder.EnergyModifier or 0))*.01, 0)

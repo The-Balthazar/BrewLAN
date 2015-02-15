@@ -85,7 +85,18 @@ __________.__________
   2015-01-31
   
   * Crystal Hill: Added a tarmac texture to the crystal.
-  * Paragon Game: Fixed a crash related to players with spawns near the far north of the map.                                                           
+  * Paragon Game: Fixed a crash related to players with spawns near the far north of the map.
+  __________
+  2015-02-15
+  
+  * UEF Kennel changes:
+    * Tech 3 version now costs double, but is directly buildable.
+    * The tech 2 version gets a 50% discount on upgrading to it, so its functionally the same that way.
+    * Building it directly results in a net profit of 50 mass and 250 energy compared to upgrading to it.
+  * Cybran Hive changes:
+    * Third level of it is now tech 3, costs 4 times as much, and is directly buildable.
+    * The second level gets a 75% discount on building it.
+    * Building it directly results in a net profit of 20 mass, and a loss of 700 energy compared to upgrading to.                                                                                  
 __________.__________
 2014-12-29|0.5.9
 

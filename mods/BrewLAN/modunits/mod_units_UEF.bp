@@ -42,6 +42,20 @@ UnitBlueprint {
         },
     },
 }
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xeb0204",		##The Kennel 
+    Economy = {
+        BuildCostEnergy = 2500*2,
+        BuildCostMass = 500*2,
+        HalfPriceUpgradeFromID = 'xeb0104',
+        RebuildBonusIds = {
+            'xeb0204',
+        },
+    },
+}
+
 #UEF Units	----------------------------------#
 
 UnitBlueprint {

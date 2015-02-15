@@ -97,7 +97,10 @@ function BrewLANCategoryChanges(all_bps)
         urb4207 = {'TECH3', r = 'TECH2', },
         --Tech 3 units
         xab3301 = {'DRAGBUILD', 'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
-        xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager
+        xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager       
+        xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD', },--Kennel 
+        xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD','TECH3', r = 'TECH2' },--Hive
+        
         --Experimental units
         xab1401 = {'SORTECONOMY',},----------------------------Paragon
         ueb2401 = {'SORTSTRATEGIC',}, -------------------------Mavor
