@@ -23,7 +23,7 @@ SEB0401 = Class(TLandFactoryUnit) {
         if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then       
             self:ForkThread(
                 function()
-                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (2.5+(GetGameTimeSeconds()/120-self.Time/120)) )
+                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.max(2.5+(GetGameTimeSeconds()/120-self.Time/120), 25)) )
                     while aiBrain:GetEconomyIncome( 'MASS' ) > 0 and aiBrain:GetEconomyIncome( 'ENERGY' ) > 0 do
                         if aiBrain:GetEconomyIncome( 'MASS' ) < aiBrain:GetEconomyRequested('MASS') or aiBrain:GetEconomyIncome( 'ENERGY' ) < aiBrain:GetEconomyRequested('ENERGY') then
                             aiBrain:GiveResource('Mass',100)
