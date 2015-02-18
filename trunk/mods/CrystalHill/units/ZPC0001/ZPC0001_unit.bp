@@ -148,6 +148,7 @@ UnitBlueprint {
     ScenarioInfo = {
         WinTimeMinsReq = 20,
         ResetTimeMinimum = 5,
+        OvertimeGraceSeconds = 10,
     },
     SelectionSizeX = 0.3,
     SelectionSizeZ = 0.3,

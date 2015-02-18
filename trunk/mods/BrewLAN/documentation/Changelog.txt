@@ -101,7 +101,11 @@ __________.__________
   2015-02-16
   
   * Gabtry Hax 1: Added an upper limit to the build speed of the AIx Gantries.
-  * Fixed the tripple notification bug on the 10 minute marker in paragon game.                                                                                       
+  * Fixed the tripple notification bug on the 10 minute marker in paragon game.
+  __________
+  2015-02-18
+  
+  * Crystal Hill: Added overtime; you now only win when there are no enemies, there hasn't been for 10 seconss, and the time is 0 or below.                                                                                        
 __________.__________
 2014-12-29|0.5.9
 

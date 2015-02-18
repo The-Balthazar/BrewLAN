@@ -6,3 +6,4 @@ crystal_0004=" gewinnt mit dem Kristall."
 
 crystal_0005="10 Minuten verbleibend."
 crystal_0006="2 Minuten und 30 Sekunden verbleibend."
+crystal_0007="Verlängerung"
