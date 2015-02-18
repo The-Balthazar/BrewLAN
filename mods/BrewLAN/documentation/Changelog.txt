@@ -96,7 +96,12 @@ __________.__________
   * Cybran Hive changes:
     * Third level of it is now tech 3, costs 4 times as much, and is directly buildable.
     * The second level gets a 75% discount on building it.
-    * Building it directly results in a net profit of 20 mass, and a loss of 700 energy compared to upgrading to.                                                                                  
+    * Building it directly results in a net profit of 20 mass, and a loss of 700 energy compared to upgrading to.
+  __________
+  2015-02-16
+  
+  * Gabtry Hax 1: Added an upper limit to the build speed of the AIx Gantries.
+  * Fixed the tripple notification bug on the 10 minute marker in paragon game.                                                                                       
 __________.__________
 2014-12-29|0.5.9
 
