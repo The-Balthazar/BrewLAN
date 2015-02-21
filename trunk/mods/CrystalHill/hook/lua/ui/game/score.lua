@@ -20,15 +20,14 @@ function _OnBeat()
             controls.time:SetText(LOCF('%02d:%02d:%02d', math.floor(remaining / 3600), math.floor(remaining/60), math.mod(remaining, 60)))
         elseif not Crystal.Victory and remaining <= 0 then    
             local overtimeTotal = GetGameTimeSeconds() - (Crystal.EndTimeMins * 60)
-            local overtimeLeft = (Crystal.Overtime * 60) - GetGameTimeSeconds()
-            controls.time:SetText("-" .. LOCF('%02d:%02d:%02d', math.floor(overtimeTotal / 3600), math.floor(overtimeTotal/60), math.mod(overtimeTotal, 60)) .. " (" .. math.floor(overtimeLeft + 0.5) .. ")")
+            local overtimeLeft = math.max(0, (Crystal.Overtime * 60) - GetGameTimeSeconds() )
+            controls.time:SetText("-" .. LOCF('%02d:%02d:%02d', math.floor(overtimeTotal / 3600), math.floor(overtimeTotal/60), math.mod(overtimeTotal, 60)) .. " (" .. math.ceil(overtimeLeft) .. ")")
         end
-         
         if remaining < 10 * 60 and remaining > 9.9*60 and not Crystal.Ten then
             import('/lua/ui/game/announcement.lua').CreateAnnouncement(LOC("<LOC crystal_0005>10 minutes remaining."), controls.time)
             Crystal.Ten = true
         end
-        if remaining < 2.5 * 60 and not Crystal.Two then
+        if remaining > 2.5 * 60 and remaining < 2.51 * 60 and not Crystal.Two then
             import('/lua/ui/game/announcement.lua').CreateAnnouncement(LOC("<LOC crystal_0006>2:30 minutes remain."), controls.time)
             Crystal.Two = true
         end

@@ -10,15 +10,15 @@ ZPC0001 = Class(SStructureUnit) {
     OnCreate = function(self, builder, layer)
         local aiBrain = self:GetAIBrain()
         if ScenarioInfo.Crystal.FirstCapture then
-            --Sanitise no rush time        
-            local norushtime
-            if ScenarioInfo.Options.NoRushOption == 'Off' then
-               norushtime = 0
-            else
-               norushtime = tonumber(ScenarioInfo.Options.NoRushOption)
-            end
-            
+            --Get defaults from blueprint
             ScenarioInfo.Crystal = self:GetBlueprint().ScenarioInfo
+            --Get overrides from lobby options, if they exist
+            if ScenarioInfo.Options.CrystalVictoryLength then
+                ScenarioInfo.Crystal.WinTimeMinsReq = math.max(tonumber(ScenarioInfo.Options.CrystalVictoryLength), (tonumber(ScenarioInfo.Options.CrystalOvertime)/60))
+                ScenarioInfo.Crystal.ResetTimeMinimum = tonumber(ScenarioInfo.Options.CrystalResetTime)
+                ScenarioInfo.Crystal.OvertimeGraceSeconds = tonumber(ScenarioInfo.Options.CrystalOvertime)
+            end
+            --Calculate the end time 
             ScenarioInfo.Crystal.EndTimeMins = (GetGameTimeSeconds() + (ScenarioInfo.Crystal.WinTimeMinsReq * 60)) / 60
             Sync.Crystal = {
                 EndTimeMins = ScenarioInfo.Crystal.EndTimeMins,
