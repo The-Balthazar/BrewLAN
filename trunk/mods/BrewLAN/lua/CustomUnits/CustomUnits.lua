@@ -25,7 +25,7 @@ T2BuildEngineer = {
     Seraphim = {'ssl0219', 10},
 },
 T3BuildEngineer = {
-    UEF = {'sel0319', 10},
+    --UEF = {'sel0319', 10},
     Aeon = {'sal0319', 10},
     Cybran = {'srl0319', 10},
     Seraphim = {'ssl0319', 10},

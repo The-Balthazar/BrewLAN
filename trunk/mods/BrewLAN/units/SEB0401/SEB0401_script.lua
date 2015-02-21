@@ -82,9 +82,9 @@ SEB0401 = Class(TLandFactoryUnit) {
         if aiBrain.BrainType != 'Human' then     
             --self.engineers = {} 
             self.BuildModeChange(self)         
-            aiBrain:BuildUnit(self, 'uel0309', 5)   
+            aiBrain:BuildUnit(self, 'sel0319', 5)   
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-            aiBrain:BuildUnit(self, 'uel0309', 5)       
+            aiBrain:BuildUnit(self, 'sel0319', 5)       
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
             local AINames = import('/lua/AI/sorianlang.lua').AINames
             if AINames.seb0401 then
@@ -97,14 +97,18 @@ SEB0401 = Class(TLandFactoryUnit) {
     AIControl = function(self, unitBeingBuilt)     
         local aiBrain = self:GetAIBrain()   
         if aiBrain.BrainType != 'Human' then   
-            if unitBeingBuilt:GetUnitId() == 'uel0309' then
+            if unitBeingBuilt:GetUnitId() == 'sel0319' then
                 --table.insert(self.engineers, unitBeingBuilt)
                 self:ForkThread(
                     function()       
                         IssueClearCommands({unitBeingBuilt})
                         self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
                         for i = 1, 40 do     
-                            self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0104')
+                            if unitBeingBuilt:CanBuild('xeb0204') then
+                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0204')
+                            else
+                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0104')
+                            end
                         end   
                         IssueGuard({unitBeingBuilt}, self)
                     end

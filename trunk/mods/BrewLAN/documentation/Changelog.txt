@@ -105,7 +105,16 @@ __________.__________
   __________
   2015-02-18
   
-  * Crystal Hill: Added overtime; you now only win when there are no enemies, there hasn't been for 10 seconss, and the time is 0 or below.                                                                                        
+  * Crystal Hill: Added overtime; you now only win when there are no enemies, there hasn't been for 10 seconss, and the time is 0 or below.
+  __________
+  2015-02-20
+  
+  * Crystal Hill: Added custom lobby options for defining the Crystal times. (requires the lobby enhancement mod)
+  __________
+  2015-02-21
+  
+  * Crystal HIll: Refined the lobby options, and added full complete tooltips and lauguage switch support. Currently only in English.
+  * Gantry now builds custodians instead of regular engineers during its build.                                                                                        
 __________.__________
 2014-12-29|0.5.9
 
