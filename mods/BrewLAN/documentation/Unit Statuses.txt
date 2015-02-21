@@ -4,7 +4,7 @@
  \____ (_   _|____ (_   _)/___)  | |     | |/___|_   _)
  _____) )| |_/ ___ | | |_|___ |  | |_____| |___ | | |_ 
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
-                                     Updated 2012-11-17 
+                   This number: last updated 2012-11-17 
 _______________________________________________________
 Errors list/the other to-do list.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -93,6 +93,9 @@ Modded Units:
   	ED5
     	* Changed to Tech 3.
     	* Health still 500.
+    
+    Hive
+      * 3rd level version is now tech 3, and directly buildable.
   
     T3 Anti nuke defence
       * Changed tarmac.
@@ -112,6 +115,9 @@ Modded Units:
   
     T3 Nuke Defence Silo
       * Changed the tarmac texture.
+        
+    Kennel
+      * Tech 3 version is now directly buildable.
   
   	Novax Center & Defense Satellite
   		* Removed.
@@ -128,7 +134,7 @@ Modded Units:
        
     Atlantis
       * Made Gantry buildable.
-        * Gets stuck and doesn't listen to roll of orders. But works.                                                    
+        * Gets stuck and doesn't listen to roll off orders. But works.                                                    
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
@@ -250,6 +256,7 @@ Tech 3:
             
   	Pending:
   		* T3 Torp launchers.
+  		  * Possibly have it hover?       
   		* T3 Mobile Shield Gen. 
       * T3 Shield wall.             
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -293,7 +300,7 @@ Tech 3:
     
     Functional:          
       * T3 Torpedo Bomber.
-  		  * Needs remodelling to look like it can go underwater. Because it can.
+  		  * Needs totally remodelling to look like it can go underwater. Because it can.
       * T3 Mobile Satelite Uplink (UEF Sniper Bot alternative)  
       * T3 Observation Satelitte Uplink.
       * T3 Observation Satellite.      
@@ -390,12 +397,14 @@ UEF Gantry: Experimental Factory
         * Would also need some visual justification for it while not there, or to maybe comprised of energy effects.                       
       * Add a OnDamaged twitch animation. So it looks like its in pain.
       * The Atlantis gets stuck in it. IssueDive is used to get it out, but it forgets/ignores its orders at some point.
-      * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.                      
+      * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.
+      * Find a way to allow building of things the UI is currently disabling. Possibly to have it swap modes briefly.                             
                   
-* Seraphim totally not a stargate
-  * Will require two to be functional.
-  * Use the script order interface, like the spy facilities.
-  * Either mess with ferry orders, or use a trick similar to mines to let things walk through.            
+Seraphim totally not a stargate
+  * Requires two to be functional.
+  * Add a ferry point icon to make transporting things through it easy.
+  * Possibly allow firing through the wormhole.
+  * Improve appearance; base it of the SGU gates.                
 
 *** Seraphim Experimental Mine?
   * To be an experimental for the field engy.

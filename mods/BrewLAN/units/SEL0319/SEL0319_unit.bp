@@ -206,6 +206,7 @@ UnitBlueprint {
             'BUILTBYTIER3ENGINEER NUKE SILO UEF',
             'BUILTBYTIER2FIELD UEF',
             'BUILTBYTIER3FIELD UEF',
+            'xeb0204',
         },
         MaintenanceConsumptionPerSecondEnergy = 15,
         StorageEnergy = 500,
