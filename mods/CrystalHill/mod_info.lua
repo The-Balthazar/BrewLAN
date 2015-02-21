@@ -1,6 +1,6 @@
 name = "Crystal Hill"
-uid = "BREWLANS-22b4-4936-820e-CRYSTAL00012"
-version = 1.2
+uid = "BREWLANS-22b4-4936-820e-CRYSTAL00014"
+version = 1.4
 copyright = "2014-2015 Sean Wheeldon"
 description = "King of the Hill with crystals. Spawns a crystal in the middle of the map. Capture it and keep it to win."
 author = "Sean Wheeldon"
