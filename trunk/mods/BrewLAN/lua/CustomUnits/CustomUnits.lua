@@ -25,7 +25,7 @@ T2BuildEngineer = {
     Seraphim = {'ssl0219', 10},
 },
 T3BuildEngineer = {
-    --UEF = {'sel0319', 10},
+    UEF = {'sel0319', 10},
     Aeon = {'sal0319', 10},
     Cybran = {'srl0319', 10},
     Seraphim = {'ssl0319', 10},
@@ -33,9 +33,9 @@ T3BuildEngineer = {
 --------------------------------------------------------------------------------
 -- Salvation/Scathis 2
 --------------------------------------------------------------------------------
-T4ArtilleryStructure =       {Aeon = {'xab2307', 100},Cybran = {'url0401', 100},},
-T4ArtilleryStructureSorian = {Aeon = {'xab2307', 100},Cybran = {'url0401', 100},},
-T4Artillery =                {Aeon = {'xab2307', 100},Cybran = {'url0401', 100},}, 
+T4ArtilleryStructure =       {Aeon = {'xab2307', 100},Cybran = {'srb2401', 100},Seraphim = {'ssb2404',50 },},
+T4ArtilleryStructureSorian = {Aeon = {'xab2307', 100},Cybran = {'srb2401', 100},Seraphim = {'ssb2404',50 },},
+T4Artillery =                {Aeon = {'xab2307', 100},Cybran = {'srb2401', 100},Seraphim = {'ssb2404',50 },}, 
 --------------------------------------------------------------------------------
 -- Absolution
 --------------------------------------------------------------------------------
@@ -107,6 +107,12 @@ T3SniperBots = {
 T3LandArtillery = {
     Cybran = {'srl0320', 20},
     UEF = {'sel0320', 40},
+},
+T3MobileShields = {
+    UEF = {'sel0322', 100},
+},  
+T2MobileShields = {
+    UEF = {'sel0322', 30},
 },
 --------------------------------------------------------------------------------
 -- Aeon T2 Bomber

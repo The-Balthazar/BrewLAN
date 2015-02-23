@@ -60,7 +60,7 @@ ZPC0001 = Class(SStructureUnit) {
                 end
             end 
             local remaining = (ScenarioInfo.Crystal.EndTimeMins * 60) - GetGameTimeSeconds()
-            local overtimeremaining = ((ScenarioInfo.Crystal.EndTimeOvertimeMins or ScenarioInfo.Crystal.EndTimeMins + (10/60)) * 60) - GetGameTimeSeconds()
+            local overtimeremaining = ((ScenarioInfo.Crystal.EndTimeOvertimeMins or ScenarioInfo.Crystal.EndTimeMins) * 60) - GetGameTimeSeconds()
             if remaining < 10 and self.Count(self, 'Enemy') != 0 then
                 ScenarioInfo.Crystal.EndTimeOvertimeMins = (GetGameTimeSeconds() + ScenarioInfo.Crystal.OvertimeGraceSeconds) / 60
                 Sync.CrystalEndTimeOvertimeMins = ScenarioInfo.Crystal.EndTimeOvertimeMins

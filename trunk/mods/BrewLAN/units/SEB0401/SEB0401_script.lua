@@ -82,9 +82,9 @@ SEB0401 = Class(TLandFactoryUnit) {
         if aiBrain.BrainType != 'Human' then     
             --self.engineers = {} 
             self.BuildModeChange(self)         
-            aiBrain:BuildUnit(self, 'sel0319', 5)   
+            aiBrain:BuildUnit(self, 'uel0309', 5)   
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-            aiBrain:BuildUnit(self, 'sel0319', 5)       
+            aiBrain:BuildUnit(self, 'uel0309', 5)       
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
             local AINames = import('/lua/AI/sorianlang.lua').AINames
             if AINames.seb0401 then
@@ -97,7 +97,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     AIControl = function(self, unitBeingBuilt)     
         local aiBrain = self:GetAIBrain()   
         if aiBrain.BrainType != 'Human' then   
-            if unitBeingBuilt:GetUnitId() == 'sel0319' then
+            if unitBeingBuilt:GetUnitId() == 'uel0309' then
                 --table.insert(self.engineers, unitBeingBuilt)
                 self:ForkThread(
                     function()       
