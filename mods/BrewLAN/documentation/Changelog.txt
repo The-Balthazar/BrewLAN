@@ -114,7 +114,14 @@ __________.__________
   2015-02-21
   
   * Crystal HIll: Refined the lobby options, and added full complete tooltips and lauguage switch support. Currently only in English.
-  * Gantry now builds custodians instead of regular engineers during its build.                                                                                        
+  * Gantry now builds custodians instead of regular engineers during its build.
+  __________
+  2015-02-23
+  
+  * Crystal Hill: Fixed a bug causing 10 seconds of overtime if no enemy ever came near the crystal to cause a real defined overtime end.
+  * Crystal Hill: MightyBlueDuck: Added German translations of Crystal Hill lobby options.
+  * Reverted the Gantry building Custodians instead of Engineers.
+  * Added Ella and the Suthanus to the Sorain AI build lists. Re-added the the Scathis Mk II to Sorian AI build lists.                                                                                                
 __________.__________
 2014-12-29|0.5.9
 

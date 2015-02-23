@@ -28,9 +28,9 @@ SEL0319 = Class(TConstructionUnit) {
         self.Rotator:SetSpinDown(false)
         self.Rotator:SetTargetSpeed(30)
         self.Rotator:SetAccel(20)
-        if self:GetAIBrain().BrainType == 'Human' then
-            self:AddBuildRestriction(categories.xeb0204)
-        end
+        --if self:GetAIBrain().BrainType == 'Human' then
+        --    self:AddBuildRestriction(categories.xeb0204)
+        --end
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
