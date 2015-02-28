@@ -24,12 +24,14 @@ SEB0401 = Class(TLandFactoryUnit) {
             self:ForkThread(
                 function()
                     local timealive = GetGameTimeSeconds()-self.Time
-                    local timediv = 600
-                    local timeexp = 1
+                    local timediv = 300
+                    local timeexp = 2   
+                    local timeco = .2
                     local enemymass = self:CalculatEnemyMass(self)
-                    local enemymassdiv = 350000
-                    local enemymassexp = 4
-                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.min(  1  +  math.pow(timealive/timediv,timeexp)  +  math.pow(enemymass/enemymassdiv, enemymassexp)  , 25) ) )
+                    local enemymassdiv = 500000
+                    local enemymassexp = 2
+                    local enemymassco = .5
+                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.min(  1  + timeco * math.pow(timealive/timediv,timeexp) + enemymassco * math.pow(enemymass/enemymassdiv, enemymassexp)  , 25) ) )
                     LOG("THIS IS THE WAY WE DIE " .. (math.min(  1  +  math.pow(timealive/timediv,timeexp)  +  math.pow(enemymass/enemymassdiv, enemymassexp)  , 25)) .. " which is time " .. math.pow(timealive/timediv,timeexp) .. " and mass " .. math.pow(enemymass/enemymassdiv, enemymassexp) )
                     while aiBrain:GetEconomyIncome( 'MASS' ) > 0 and aiBrain:GetEconomyIncome( 'ENERGY' ) > 0 do
                         if aiBrain:GetEconomyIncome( 'MASS' ) < aiBrain:GetEconomyRequested('MASS') or aiBrain:GetEconomyIncome( 'ENERGY' ) < aiBrain:GetEconomyRequested('ENERGY') then
