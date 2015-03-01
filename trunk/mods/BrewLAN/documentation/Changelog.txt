@@ -129,7 +129,8 @@ __________.__________
   __________
   2015-03-01
   
-  * Experimental Icons Overhaul: Did a slight overhaul of the detection for weapon based icons, and changed the priorities for others.                                                                                                    
+  * Experimental Icons Overhaul: Did a slight overhaul of the detection for weapon based icons, and changed the priorities for others.
+  * Experimental Icons Overhaul: Fixed the check for nuke based weapons, since they don't use the 'damage' attrib, the Yolona Oss was showing as directfire which is the default for things involved in the damage off checks.                                                                                                     
 __________.__________
 2014-12-29|0.5.9
 

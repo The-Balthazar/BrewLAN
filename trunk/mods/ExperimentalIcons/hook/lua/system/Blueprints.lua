@@ -99,7 +99,7 @@ function ExperimentalIconOverhaul(all_bps)
                     -- Damage per second calculation, biased towards high damage
                     ------------------------------------------------------------
                     local function DPS(weapon) 
-                        return (math.pow(weapon.Damage or 0, 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10))
+                        return (math.pow((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0), 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10))
                     end
                     ------------------------------------------------------------
                     -- String sanitisation and case desensitising
@@ -115,7 +115,7 @@ function ExperimentalIconOverhaul(all_bps)
                     local sanRcat = SAN(weapon.RangeCategory)
                     if string.find(sanWcat, 'anti air') or sanRcat == 'uwrc_antiair' then
                         layer.air[1] = layer.air[1] + DPS(weapon)
-                    elseif sanRcat == 'uwrc_indirectfire' or (string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile')) then
+                    elseif sanRcat == 'uwrc_indirectfire' or string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile') then
                         if string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') then
                             layer.artillery[1] = layer.artillery[1] + DPS(weapon)
                         elseif string.find(sanWcat, 'missile') then
