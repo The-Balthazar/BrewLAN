@@ -1,6 +1,6 @@
 name = "Experimental Icons Overhaul"
 uid = "2529ea71-93ef-41a6-b552-EXPERICON00005"
-version = 0.5
+version = 0.6
 copyright = "2015 Sean Wheeldon"
 description = "An experimental icons overhaul for you. Or AEIOU for short. If you can't see the mod icon, then you installed it wrong and missed the SCD file."
 author = "Sean Wheeldon"

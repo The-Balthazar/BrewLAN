@@ -66,38 +66,86 @@ function ExperimentalIconOverhaul(all_bps)
                 icon = icon .. 'engineer'
             elseif table.find(bp.Categories, 'TRANSPORTATION') then
                 icon = icon .. 'transport'
-            elseif table.find(bp.Categories, 'ARTILLERY') then
-                icon = icon .. 'artillery'
             elseif table.find(bp.Categories, 'ANTIARTILLERY') then
-                icon = icon .. 'antiartillery'
-            elseif table.find(bp.Categories, 'DIRECTFIRE') or table.find(bp.Categories, 'GROUNDATTACK') or table.find(bp.Categories, 'ANTIAIR') or table.find(bp.Categories, 'ANTINAVY') then
+                icon = icon .. 'antiartillery'  
+            elseif table.find(bp.Categories, 'ANTISHIELD') then
+                icon = icon .. 'antishield'     
+            elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') and (bp.Intel.CloakFieldRadius or bp.Intel.RadarStealthFieldRadius or bp.Intel.SonarStealthFieldRadius) then --Prioritise counterintel over weapon if it has a field generator
+                icon = icon .. 'counterintel'
+            elseif (
+                table.find(bp.Categories, 'DIRECTFIRE')
+                or table.find(bp.Categories, 'GROUNDATTACK')
+                or table.find(bp.Categories, 'ANTIAIR')
+                or table.find(bp.Categories, 'ANTINAVY')
+                or table.find(bp.Categories, 'BOMBER')
+                or table.find(bp.Categories, 'ARTILLERY')
+                or table.find(bp.Categories, 'INDIRECTFIRE')
+                or table.find(bp.Categories, 'MISSILE')
+                or table.find(bp.Categories, 'NUKE')
+                or table.find(bp.Categories, 'SILO')
+            )
+            and bp.Weapon then 
+                --FIGHT FOR YOUR ICON! LITERALLY!
                 local layer = {
                     air = {0, 'antiair'},
+                    artillery = {0, 'artillery'},
                     land = {0, 'directfire'}, 
                     naval = {0, 'antinavy'},
+                    missile = {0, 'missile'},
+                    kamikaze = {0, 'bomb'},
                 }
-                --FIGHT FOR YOUR ICON! LITERALLY!
                 for i, weapon in bp.Weapon do
-                    local function DPS(weapon)
+                    ------------------------------------------------------------
+                    -- Damage per second calculation, biased towards high damage
+                    ------------------------------------------------------------
+                    local function DPS(weapon) 
                         return (math.pow(weapon.Damage or 0, 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10))
                     end
-                    if string.find(weapon.WeaponCategory, 'Anti Air') or weapon.RangeCategory == 'UWRC_AntiAir' then
+                    ------------------------------------------------------------
+                    -- String sanitisation and case desensitising
+                    ------------------------------------------------------------
+                    local function SAN(stringtosan)
+                        if type(stringtosan) == 'string' then
+                            return string.lower(stringtosan)
+                        else
+                            return stringtosan
+                        end
+                    end
+                    local sanWcat = SAN(weapon.WeaponCategory)
+                    local sanRcat = SAN(weapon.RangeCategory)
+                    if string.find(sanWcat, 'anti air') or sanRcat == 'uwrc_antiair' then
                         layer.air[1] = layer.air[1] + DPS(weapon)
-                    elseif (string.find(weapon.WeaponCategory, 'Direct Fire') or string.find(weapon.WeaponCategory, 'Bomb')) or weapon.RangeCategory == 'UWRC_DirectFire' then
+                    elseif sanRcat == 'uwrc_indirectfire' or (string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile')) then
+                        if string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') then
+                            layer.artillery[1] = layer.artillery[1] + DPS(weapon)
+                        elseif string.find(sanWcat, 'missile') then
+                            layer.missile[1] = layer.missile[1] + DPS(weapon)
+                        end
+                    elseif (string.find(sanWcat, 'direct fire') or string.find(sanWcat, 'bomb')) or sanRcat == 'uwrc_directfire' then
                         layer.land[1] = layer.land[1] + DPS(weapon)
-                    elseif string.find(weapon.WeaponCategory, 'Anti Navy') or weapon.RangeCategory == 'UWRC_AntiNavy' then
+                    elseif string.find(sanWcat, 'anti navy') or sanRcat == 'uwrc_antinavy' then
                         layer.naval[1] = layer.naval[1] + DPS(weapon)
+                    elseif string.find(sanWcat, 'kamikaze') then
+                        layer.kamikaze[1] = layer.kamikaze[1] + DPS(weapon)
                     end
                 end
                 local best = {0, 'directfire'}
                 for l, data in layer do
                     if data[1] > best[1] then best = data end
                 end
-                icon = icon .. best[2]
-            elseif table.find(bp.Categories, 'NUKE') or table.find(bp.Categories, 'MISSILE') or table.find(bp.Categories, 'SILO') then
-                icon = icon .. 'missile'     
+                icon = icon .. best[2]   
             elseif table.find(bp.Categories, 'ANTIMISSILE') then
-                icon = icon .. 'antimissile'
+                icon = icon .. 'antimissile'     
+            elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') then
+                icon = icon .. 'counterintel'
+            elseif table.find(bp.Categories, 'CARRIER') or table.find(bp.Categories, 'AIRSTAGINGPLATFORM') then
+                icon = icon .. 'air'
+            elseif table.find(bp.Categories, 'DEFENSE') and table.find(bp.Categories, 'SHIELD') then
+                icon = icon .. 'shield'
+            elseif table.find(bp.Categories, 'STARGATE') or table.find(bp.Categories, 'GATE') then
+                icon = icon .. 'transport'
+            elseif table.find(bp.Categories, 'INTELLIGENCE') then
+                icon = icon .. 'intel'
             elseif table.find(bp.Categories, 'ECONOMIC') then
                 if table.find(bp.Categories, 'MASSPRODUCTION') or table.find(bp.Categories, 'MASSFABRICATION') then
                     icon = icon .. 'mass'
@@ -106,8 +154,6 @@ function ExperimentalIconOverhaul(all_bps)
                 else
                     icon = icon .. 'generic'
                 end
-            elseif table.find(bp.Categories, 'CARRIER') or table.find(bp.Categories, 'AIRSTAGINGPLATFORM') then
-                icon = icon .. 'air'
             elseif table.find(bp.Categories, 'FACTORY') then
                 local buildlayers = {
                     'LAND',
@@ -135,29 +181,8 @@ function ExperimentalIconOverhaul(all_bps)
                 else  
                     icon = icon .. 'generic'
                 end
-            elseif table.find(bp.Categories, 'DEFENSE') and table.find(bp.Categories, 'SHIELD') then
-                icon = icon .. 'shield'
-            elseif table.find(bp.Categories, 'ANTISHIELD') then
-                icon = icon .. 'antishield'
-            elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') then
-                icon = icon .. 'counterintel'
-            elseif table.find(bp.Categories, 'STARGATE') then
-                icon = icon .. 'transport'
             else
-                local bomb = false
-                if bp.Weapon then
-                    for i, weapon in bp.Weapon do
-                        if string.find(weapon.WeaponCategory, 'Kamikaze') then
-                            bomb = true
-                            break  
-                        end
-                    end
-                end
-                if bomb then
-                    icon = icon .. 'bomb'
-                else
-                    icon = icon .. 'generic'
-                end
+                icon = icon .. 'generic'
             end
             bp.StrategicIconName = icon
         end

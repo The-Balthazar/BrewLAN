@@ -125,7 +125,11 @@ __________.__________
   __________
   2015-02-27
   
-  * Created a new mesh for the Stargate. Based heavily off the SGU gate. Old mesh still used for distance model.                                                                                                   
+  * Created a new mesh for the Stargate. Based heavily off the SGU gate. Old mesh still used for distance model.
+  __________
+  2015-03-01
+  
+  * Experimental Icons Overhaul: Did a slight overhaul of the detection for weapon based icons, and changed the priorities for others.                                                                                                    
 __________.__________
 2014-12-29|0.5.9
 
