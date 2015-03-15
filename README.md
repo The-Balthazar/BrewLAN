@@ -7,7 +7,7 @@ and visually aesthetic units which complement those already in existence and to
 maximize technical compatibility with other mods. For more information, screenshots,
 and the community, visit its [ModDB page](http://www.moddb.com/mods/brewlan).
 
-## Instalation
+## Installation
 To install BrewLAN merge the contents of the /mods/ and /gamedata/ folders with that
 of *Supreme Commander: Forged Alliance*. Your mods folder may not pre-exist, create
 one if it doesn't.
