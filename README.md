@@ -22,7 +22,7 @@ Probable locations for the gamedata are:
 * `...\Steam\SteamApps\common\supreme commander forged alliance\gamedata\`
 * `...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\gamedata\`
 
-Most issues are caused by incorrect installation, if done correctly the following files, amoungst others, should exist:
+Most issues are caused by incorrect installation, if done correctly the following files, amongst others, should exist:
 
 * `...\supreme commander forged alliance\mods\BrewLAN\mod_info.lua`
 * `...\supreme commander forged alliance\gamedata\brewlan.scd`
