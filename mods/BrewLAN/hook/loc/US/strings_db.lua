@@ -301,7 +301,9 @@ srb5311_name="Procyon Offering"
 Unit_Description_BrewLAN_T3B0020="Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
 
 seb2308_name="Harpoon"
-Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."
+Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."                                 
+sab2308_name="Flash Flood"
+Unit_Description_BrewLAN_T3B0027="Very heavy long-range anti-naval defense system. Designed to engage the most powerful of naval units."
 
 ssb3301_desc="Optics Tracking Facility"
 ssb3301_name="Aezselen"

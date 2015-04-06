@@ -223,7 +223,7 @@ UnitBlueprint {
             FiringRandomness = 0.15,
             FiringTolerance = 2,
             Label = 'FrontCannon01',
-            MaxRadius = 150,
+            MaxRadius = 145,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,

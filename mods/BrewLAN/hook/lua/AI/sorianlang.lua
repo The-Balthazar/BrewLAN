@@ -13,6 +13,8 @@ AINames.sal0401 = {
     'Scorpion',
     'Night Spinner',
     'Wave Serpent',
+    'Wraith',
+    'Sniper',
 }
 --------------------------------------------------------------------------------
 -- Gantry: Experimental Factory                                                

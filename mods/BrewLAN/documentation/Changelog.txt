@@ -9,6 +9,15 @@
  \__)(_)(_)(_)(_)(_)\_)\__/(___)(____)\__/  \__/
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
+
+__________.__________
+2015-04-06|0.6.1
+
+* Added some additional AI names for the Absolution.
+* Added the Aeon T3 torpedo launcher.
+* Increased the max range of the UEF T3 Torpedo Launcher.
+* Lowered the range of each of the anti-armor point defences by 5. (150 to 145)
+
 __________.__________
 2015-01-02|0.6
 

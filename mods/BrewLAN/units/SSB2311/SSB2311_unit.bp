@@ -209,7 +209,7 @@ UnitBlueprint {
             },
             FiringTolerance = 1,
             Label = 'RightArm',
-            MaxRadius = 150,
+            MaxRadius = 145,
             MinRadius = 0,
             MuzzleChargeDelay = 2.5,
             MuzzleSalvoDelay = 0,

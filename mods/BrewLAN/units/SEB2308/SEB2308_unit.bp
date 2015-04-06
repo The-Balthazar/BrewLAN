@@ -234,7 +234,7 @@ UnitBlueprint {
             },
             FiringTolerance = 60,
             Label = 'Torpedo',
-            MaxRadius = 60,
+            MaxRadius = 75,
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 4,
             MuzzleVelocity = 5,

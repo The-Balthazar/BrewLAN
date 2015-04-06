@@ -252,11 +252,10 @@ Tech 3:
   		  * Lacks a unique model & icon.
       * T3 Shielded Power Generator.
       * T3 Shielded Mass Extractor.                 
-      * T3 Mobile strat defence.          
+      * T3 Mobile strat defence.   
+  		* T3 Torp launchers.       
             
-  	Pending:
-  		* T3 Torp launchers.
-  		  * Possibly have it hover?       
+  	Pending: 
   		* T3 Mobile Shield Gen. 
       * T3 Shield wall.             
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
