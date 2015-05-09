@@ -96,12 +96,25 @@ AIBrain = Class(AIBrain) {
             for j, u in paragonunits do
                 local count = 0
                 while count < u[2] do
+                    local distance = math.min(60, math.max(20, ScenarioInfo.size[1]/50))
+                    local dangerzone = distance + 10
+                
+                    local MapSizeX = ScenarioInfo.size[1]
+                    local MapSizeY = ScenarioInfo.size[2]
+                    
                     local unit
-                    if posY < 30 then 
-                        unit = self:CreateUnitNearSpot(u[1], posX, posY + 20)
+                    
+                    if posY < dangerzone or posX < dangerzone or posY > (MapSizeY - dangerzone) or posX > (MapSizeX - dangerzone) then 
+                        --build towards the center if we are too close to the edge
+                        unit = self:CreateUnitNearSpot(u[1], posX - math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY - math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
+                    elseif VDist2(MapSizeX / 2, MapSizeY / 2, posX, posY) / 2 < distance then
+                        --build between here and center if we are within the 'distance' of the center
+                        unit = self:CreateUnitNearSpot(u[1], (posX + (MapSizeX/2) ) / 2, (posY + (MapSizeY/2) ) / 2 )
                     else
-                        unit = self:CreateUnitNearSpot(u[1], posX, posY - 20)
+                        --build away from the center
+                        unit = self:CreateUnitNearSpot(u[1], posX + math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY + math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
                     end
+                
                     count = count + 1
                     unit:CreateTarmac(true,true,true,false,false)
                 end
