@@ -131,7 +131,7 @@ UnitBlueprint {
         },
     },
     Footprint = {
-        --MinWaterDepth = 1.5,
+        MinWaterDepth = 0.75,
         SizeX = 2,
         SizeZ = 2,
     },
@@ -302,9 +302,9 @@ UnitBlueprint {
         WreckageLayers = {
             Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
+            Seabed = true,
+            Sub = true,
+            Water = true,
         },
     },
 }

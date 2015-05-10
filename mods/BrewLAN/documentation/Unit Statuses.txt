@@ -253,7 +253,8 @@ Tech 3:
       * T3 Shielded Power Generator.
       * T3 Shielded Mass Extractor.                 
       * T3 Mobile strat defence.   
-  		* T3 Torp launchers.       
+  		* T3 Torp launchers.
+  		  * Gonna give the torpedos a random decay chance after about 70% of its max range.             
             
   	Pending: 
   		* T3 Mobile Shield Gen. 

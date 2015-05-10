@@ -17,7 +17,20 @@ __________.__________
 * Added the Aeon T3 torpedo launcher.
 * Increased the max range of the UEF T3 Torpedo Launcher.
 * Lowered the range of each of the anti-armor point defences by 5. (150 to 145)
-
+  __________
+  2015-05-09
+  
+  * Paragon Game: More intelligent placement of paragon:
+    * Paragon now spawns 20 to 60 distance away from you (based on map size).
+    * Paragon now cares more about where you are in the map for deciding position:
+      * If you are within 40 to 60 distance of the center (same sliding scale as the map size one) it spawns between you and the center.
+      * If you are within the 20 to 60 +10 distance of the edge of the map it now spawns the paragon towards the center of the map.
+      * Otherwise it spawns the paragon the other side of you from the center of the map.
+  __________
+  2015-05-10
+  
+  * Added a minimum depth for the Aeon T3 torpedo launcher, to prevent the turrets from being underground and doing nothing.
+  * Allowed the wreckage of the Aeon T3 torpedo launcher to apepar on water.                          
 __________.__________
 2015-01-02|0.6
 
