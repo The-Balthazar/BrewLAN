@@ -30,7 +30,11 @@ __________.__________
   2015-05-10
   
   * Added a minimum depth for the Aeon T3 torpedo launcher, to prevent the turrets from being underground and doing nothing.
-  * Allowed the wreckage of the Aeon T3 torpedo launcher to apepar on water.                          
+  * Allowed the wreckage of the Aeon T3 torpedo launcher to apepar on water.
+  __________
+  2015-05-11
+  
+  * Paragon Game: Fixed a crippling bug that would sometimes cause the script to crash and not spawn some players in.                          
 __________.__________
 2015-01-02|0.6
 

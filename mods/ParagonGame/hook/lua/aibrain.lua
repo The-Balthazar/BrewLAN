@@ -150,7 +150,7 @@ AIBrain = Class(AIBrain) {
 --------------------------------------------------------------------------------    
 
     CountTeamSize = function(self, teams, myteam)
-        if myteam == 1 then
+        if myteam == 1 or not teams[myteam] then
             return 1
         else
             return table.getn(teams[myteam])
