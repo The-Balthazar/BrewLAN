@@ -401,10 +401,10 @@ UEF Gantry: Experimental Factory
       * Find a way to allow building of things the UI is currently disabling. Possibly to have it swap modes briefly.                             
                   
 Seraphim totally not a stargate
-  * Requires two to be functional.
-  * Add a ferry point icon to make transporting things through it easy.
-  * Possibly allow firing through the wormhole.
-  * Improve appearance; base it of the SGU gates.                
+  * Requires two to be functional. Duh.
+  * Still to do:
+    * Add a ferry point icon to make transporting things through it easy.
+    * Possibly allow firing through the wormhole.            
 
 *** Seraphim Experimental Mine?
   * To be an experimental for the field engy.
@@ -428,6 +428,7 @@ Seraphim totally not a stargate
 
 Seraphim Suthanus: Rapid-Fire Artillery
   * Fully functioning.
+  * Possibly the cause of weird crashes.  
 
 Aeon Absolution: Experimental Siege Tank
   * Mostly finished texture that needs more details.

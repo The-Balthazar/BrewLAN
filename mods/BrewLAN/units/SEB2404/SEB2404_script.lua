@@ -8,10 +8,11 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
+local TStructureUnit = import('/lua/terranunits.lua').TLandFactoryUnit
+local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon    
 
 SEB2404 = Class(TStructureUnit) {
+    
     Weapons = {
         MainGun = Class(TIFArtilleryWeapon) {
             FxMuzzleFlashScale = 3,
@@ -27,70 +28,75 @@ SEB2404 = Class(TStructureUnit) {
             #    end,
             #},
         },
-        MongooseGun = Class(TIFArtilleryWeapon) {
-            FxMuzzleFlashScale = 3,
-        },
-        TitanGun = Class(TIFArtilleryWeapon) {
-            FxMuzzleFlashScale = 3,
-        },
-        PercivalGun = Class(TIFArtilleryWeapon) {
-            FxMuzzleFlashScale = 3,
-        },
     },
-    OnCreate = function(self)
-        TStructureUnit.OnCreate(self)
-        self:SetWeaponEnabledByLabel('MongooseGun', false)
-        self:SetWeaponEnabledByLabel('TitanGun', false)
-        self:SetWeaponEnabledByLabel('PercivalGun', false)
-	self.FiringMode = 1
+
+    BuildAttachBone = 'Box059',
+           
+    OnStopBeingBuilt = function(self,builder,layer)
+        TStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        
+        #CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
+        CreateSlider(self, 'AmmoExtender', 0, 0, 110, 100)
+        LOG("FUCKING DOOR ASdTO OTHER WORLDS")
     end,
 
-    OnScriptBitSet = function(self, bit)
-        TStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then
-	    self.FiringMode = self.FiringMode + 1
-            self.ToggleWeapons(self)
+    OnFailedToBuild = function(self)
+        TStructureUnit.OnFailedToBuild(self)
+    end,
+    
+    OnStartBuild = function(self, unitBuilding, order)
+        TStructureUnit.OnStartBuild(self, unitBuilding, order)
+        unitBuilding:HideBone(0, true)
+    end,
+    --},
+         
+    --BuildingState = State {
+     --   Main = function(self)
+      --      local unitBuilding = self.UnitBeingBuilt
+       --     self:SetBusy(true)
+        --    local bone = self.BuildAttachBone
+         --   self:DetachAll(bone)
+          --  unitBuilding:HideBone(0, true)
+           -- self.UnitDoneBeingBuilt = false
+        --end,
+    
+    AmmoStackThread = function(self)
+        if not self.AmmoStackGoals then
+            self.AmmoStackGoals = {
+            } 
+        end
+        if table.getn(self.AmmoList) then
+        
         end
     end,
 
-    OnScriptBitClear = function(self, bit)
-        TStructureUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then
-	    self.FiringMode = self.FiringMode + 1
-            self.ToggleWeapons(self)
+
+    OnStopBuild = function(self, unitBeingBuilt)
+        if unitBeingBuilt:GetFractionComplete() == 1 then
+            if not self.AmmoList then self.AmmoList = {} end
+            table.insert(self.AmmoList,unitBeingBuilt:GetBlueprint().BlueprintId)
+            unitBeingBuilt:Destroy() 
+            self:tprint(self.AmmoList)
+        end
+        TStructureUnit.OnStopBuild(self, unitBeingBuilt)    
+    end,    
+    
+    tprint = function(self, tbl, indent)
+        if not indent then indent = 0 end
+        for k, v in pairs(tbl) do
+            formatting = string.rep("  ", indent) .. k .. ": "
+            if type(v) == "table" then
+                LOG(formatting)
+                self:tprint(v, indent+1)
+            elseif type(v) == 'boolean' then
+                LOG(formatting .. tostring(v))		
+            elseif type(v) == 'string' or type(v) == 'number' then
+                LOG(formatting .. v)
+            else
+                LOG(formatting .. type(v))
+            end
         end
     end,
-
-    ToggleWeapons = function(self)
-
-        if self.FiringMode == 2 then
-            self:SetWeaponEnabledByLabel('MongooseGun', true)
-            self:SetWeaponEnabledByLabel('MainGun', false)
-            #self:GetWeaponManipulatorByLabel('MongooseGun'):SetHeadingPitch( self:GetWeaponManipulatorByLabel('MainGun'):GetHeadingPitch() )
-            FloatingEntityText(self:GetEntityId(),'<LOC del0204_desc>')
-
-        elseif self.FiringMode == 3 then
-            self:SetWeaponEnabledByLabel('TitanGun', true)
-            self:SetWeaponEnabledByLabel('MongooseGun', false)
-            #self:GetWeaponManipulatorByLabel('TitanGun'):SetHeadingPitch( self:GetWeaponManipulatorByLabel('MongooseGun'):GetHeadingPitch() )
-            FloatingEntityText(self:GetEntityId(),'<LOC uel0303_desc>')
-
-        elseif self.FiringMode == 4 then
-            self:SetWeaponEnabledByLabel('PercivalGun', true)
-            self:SetWeaponEnabledByLabel('TitanGun', false)
-            #self:GetWeaponManipulatorByLabel('PercivalGun'):SetHeadingPitch( self:GetWeaponManipulatorByLabel('TitanGun'):GetHeadingPitch() )
-            FloatingEntityText(self:GetEntityId(),'<LOC xel0305_desc>')
-
-        elseif self.FiringMode >= 5 then
-	    self.FiringMode = 1
-            self:SetWeaponEnabledByLabel('MainGun', true)
-            self:SetWeaponEnabledByLabel('PercivalGun', false)
-            #self:GetWeaponManipulatorByLabel('MainGun'):SetHeadingPitch( self:GetWeaponManipulatorByLabel('PercivalGun'):GetHeadingPitch() )
-            FloatingEntityText(self:GetEntityId(),'<LOC uel0106_desc>')
-
-        end
-    end,
-
 }
 
 TypeClass = SEB2404

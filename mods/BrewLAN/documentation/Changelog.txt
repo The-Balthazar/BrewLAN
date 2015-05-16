@@ -34,7 +34,11 @@ __________.__________
   __________
   2015-05-11
   
-  * Paragon Game: Fixed a crippling bug that would sometimes cause the script to crash and not spawn some players in.                          
+  * Paragon Game: Fixed a crippling bug that would sometimes cause the script to crash and not spawn some players in.
+  __________
+  2015-05-16
+  
+  * Partially redone UEF drop-pod artillery.                          
 __________.__________
 2015-01-02|0.6
 
