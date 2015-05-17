@@ -283,5 +283,19 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Indirect Fire',
         },
+    },       
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Air = false,
+            Land = true,
+            Seabed = false,
+            Sub = false,
+            Water = false,
+        },
     },
 }

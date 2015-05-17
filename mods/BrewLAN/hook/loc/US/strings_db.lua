@@ -348,7 +348,7 @@ Unit_Description_BrewLAN_T4L002="Experimental hovering siege assault tank. Equip
 
 seb2404="Experimental Drop-Pod Artillery"
 seb2404_name="Ivan"
-Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-pods containing assault bots deep into enemy lines, causing minor impact damage."
+Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-pods containing manually constructed land units deep into enemy lines, causing minor impact damage. Drop-pods are launched in a first in last out order."
 
 srb4402_desc="Experimental Omni Disrupting Facility"
 srb4402_name="Darkness"
