@@ -65,62 +65,6 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
         end
     end,
         
-
-    OnCollisionCheckWeapon = function(self, firingWeapon)
-      LOG("OnCollisionCheckWeapon")
-		# if this unit category is on the weapon's do-not-collide list, skip!
-		local weaponBP = firingWeapon:GetBlueprint()	
-		if weaponBP.DoNotCollideList then
-			for k, v in pairs(weaponBP.DoNotCollideList) do
-				if EntityCategoryContains(ParseEntityCategory(v), self) then
-					return false
-				end
-			end
-		end    
-        return true
-    end,
-
-    OnCollisionCheck = function(self,other)
-        LOG("OnCollisionCheck")
-        self:tprint(other)
-        -- If we return false the thing hitting us has no idea that it came into contact with us.
-        # By default, anything hitting us should know about it so we return true.
-        if (EntityCategoryContains(categories.TORPEDO, self) and EntityCategoryContains(categories.TORPEDO, other)) or 
-           (EntityCategoryContains(categories.TORPEDO, self) and EntityCategoryContains(categories.DIRECTFIRE, other)) or
-           (EntityCategoryContains(categories.MISSILE, self) and EntityCategoryContains(categories.MISSILE, other)) or 
-           (EntityCategoryContains(categories.MISSILE, self) and EntityCategoryContains(categories.DIRECTFIRE, other)) or 
-           (EntityCategoryContains(categories.DIRECTFIRE, self) and EntityCategoryContains(categories.MISSILE, other)) or 
-           (self:GetArmy() == other:GetArmy()) then
-            return false
-        end
-        
-        if other:GetBlueprint().Physics.HitAssignedTarget then
-            if other:GetTrackingTarget() != self then
-                return false
-            end
-        end
-        
-		local bp = other:GetBlueprint()	
-		if bp.DoNotCollideList then
-			for k, v in pairs(bp.DoNotCollideList) do
-				if EntityCategoryContains(ParseEntityCategory(v), self) then
-					return false
-				end
-			end
-		end
-		
-		bp = self:GetBlueprint()
-		if bp.DoNotCollideList then
-			for k, v in pairs(bp.DoNotCollideList) do
-				if EntityCategoryContains(ParseEntityCategory(v), other) then
-					return false
-				end
-			end
-		end		            
-        
-        return true
-    end,
-
     DropUnit = function(self)
         if self.Data then
             local pos = self:GetPosition()
