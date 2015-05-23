@@ -29,9 +29,9 @@ SEB0401 = Class(TLandFactoryUnit) {
                     local timeco = .2
                     local enemymass = self:CalculatEnemyMass(self)
                     local enemymassdiv = 500000
-                    local enemymassexp = 2
+                    local enemymassexp = 1.5
                     local enemymassco = .5
-                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.min(  1  + timeco * math.pow(timealive/timediv,timeexp) + enemymassco * math.pow(enemymass/enemymassdiv, enemymassexp)  , 25) ) )
+                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.min(  1  + timeco * math.pow(timealive/timediv,timeexp) + enemymassco * math.pow(enemymass/enemymassdiv, enemymassexp)  , 16) ) )
                     LOG("THIS IS THE WAY WE DIE " .. (math.min(  1  +  math.pow(timealive/timediv,timeexp)  +  math.pow(enemymass/enemymassdiv, enemymassexp)  , 25)) .. " which is time " .. math.pow(timealive/timediv,timeexp) .. " and mass " .. math.pow(enemymass/enemymassdiv, enemymassexp) )
                     while aiBrain:GetEconomyIncome( 'MASS' ) > 0 and aiBrain:GetEconomyIncome( 'ENERGY' ) > 0 do
                         if aiBrain:GetEconomyIncome( 'MASS' ) < aiBrain:GetEconomyRequested('MASS') or aiBrain:GetEconomyIncome( 'ENERGY' ) < aiBrain:GetEconomyRequested('ENERGY') then
