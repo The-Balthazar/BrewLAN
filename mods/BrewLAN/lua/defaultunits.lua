@@ -275,7 +275,7 @@ CardinalWallScript = Class(CLandFactoryUnit) {
             IssueClearCommands({self})
         end
     end,
-     
+    
     UpgradingState = State(CLandFactoryUnit.UpgradingState) {
         Main = function(self)
             CLandFactoryUnit.UpgradingState.Main(self)

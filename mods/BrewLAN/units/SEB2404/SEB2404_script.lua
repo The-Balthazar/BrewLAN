@@ -23,7 +23,7 @@ SEB2404 = Class(TStructureUnit) {
                     if self.unit.AmmoList[1] then
                         TIFArtilleryWeapon.RackSalvoFireReadyState.Main(self)
                     else
-                        IssueStop({self.unit})
+                        IssueClearCommands({self.unit})
                     end
                 end,    
             },

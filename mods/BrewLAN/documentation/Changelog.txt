@@ -44,7 +44,17 @@ __________.__________
   
   * Finished the recoding of the UEF drop-pod artillery: now also buildable agaon.
   * Did some more work on the model for the UEF drop-pod artillery.  
-  * The Cyrban Punisher can now leave a wreckage.                            
+  * The Cyrban Punisher can now leave a wreckage.
+  __________
+  2015-05-22
+  
+  * Drop pod artillery no longer auto targets.
+  * Recuded camera shake caused by drop-pod artillery firing.
+  * The Gantry now has a selection area a reasonable size, rather than nearly twice its size.
+  __________
+  2015-05-23
+  
+  * Prop-pod artillery now issues itself a stop when it finishes firing, so it can now successsfully be given build orders again after it finishes firing without manually telling it to stop.                                  
 __________.__________
 2015-01-02|0.6
 

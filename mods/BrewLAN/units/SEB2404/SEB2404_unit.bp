@@ -238,7 +238,7 @@ UnitBlueprint {
     },
     Weapon = {
         {
-            AboveWaterTargetsOnly = true,
+            --AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = true,
             ArtilleryShieldBlocks = true,
             Audio = {
@@ -260,9 +260,9 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_HighArc',
             CameraShakeDuration = 0.5,
-            CameraShakeMax = 2,
+            CameraShakeMax = 1,
             CameraShakeMin = 0,
-            CameraShakeRadius = 50,
+            CameraShakeRadius = 10,
             CollideFriendly = false,
             Damage = 100,
             DamageFriendly = true,
@@ -304,14 +304,14 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = .5,
-            RenderFireClock = true,
+            --RenderFireClock = true,
             TargetCheckInterval = 8,
-            TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'STRUCTURE',
-                'SPECIALLOWPRI',
-                'ALLUNITS',
-            },
+            --TargetPriorities = {
+            --    'SPECIALHIGHPRI',
+            --    'STRUCTURE',
+            --    'SPECIALLOWPRI',
+            --    'ALLUNITS',
+            --},
             TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'Turret_muzzle',
             TurretBonePitch = 'Turret_pitch',
