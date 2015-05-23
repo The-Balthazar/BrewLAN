@@ -35,9 +35,9 @@ SSB2404 = Class(SStructureUnit) {
                     proj:PassData(data)
                 end
                 self:SetFiringRandomness((self:GetBlueprint().FiringRandomness * (math.sin(GetGameTimeSeconds()/20)*.3 + 1)) * math.max(2 - (math.max(GetGameTimeSeconds() - self.ShotCounter, 60)-60)/60, .25 ) )
-                LOG("Randomness: " .. self:GetFiringRandomness())
-                LOG("Base rand: " .. self:GetBlueprint().FiringRandomness * (math.sin(GetGameTimeSeconds()/20)*.3 + 1))
-                LOG("Timer mult: " .. math.max(2 - (math.max(GetGameTimeSeconds() - self.ShotCounter, 60)-60)/60, .25 ))
+                --LOG("Randomness: " .. self:GetFiringRandomness())
+                --LOG("Base rand: " .. self:GetBlueprint().FiringRandomness * (math.sin(GetGameTimeSeconds()/20)*.3 + 1))
+                --LOG("Timer mult: " .. math.max(2 - (math.max(GetGameTimeSeconds() - self.ShotCounter, 60)-60)/60, .25 ))
             end,
                
             PlayRackRecoil = function(self, rackList)   
