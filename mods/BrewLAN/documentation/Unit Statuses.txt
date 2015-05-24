@@ -357,7 +357,7 @@ Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Necro bot     
 Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
-Strategic 2     |*Ivan (F)      |*?             |*?             |Yolona Oss     |
+Strategic 2     |Ivan (F)       |*?             |*?             |Yolona Oss     |
 Static 2        |*?             |*Tele/CZAR fab |Darkness       |*Gate portal   |
 Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ________________!_______________!_______________!_______________!_______________!

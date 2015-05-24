@@ -54,7 +54,13 @@ __________.__________
   __________
   2015-05-23
   
-  * Prop-pod artillery now issues itself a stop when it finishes firing, so it can now successsfully be given build orders again after it finishes firing without manually telling it to stop.                                  
+  * Prop-pod artillery now issues itself a stop when it finishes firing, so it can now successsfully be given build orders again after it finishes firing without manually telling it to stop.
+  __________
+  2015-05-24
+  
+  * Added the new improved Mentlegens Reef map to BrewLAN. (Its a 7v1 Gentlemans Reef)
+  * Gantry Hax 2: Merged numbers from git fork.
+  * Removed the log spam from the Suthanus.                                       
 __________.__________
 2015-01-02|0.6
 

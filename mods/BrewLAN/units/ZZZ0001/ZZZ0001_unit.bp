@@ -99,12 +99,6 @@ UnitBlueprint {
                     NormalsName = '/units/xec1401/xec1401_normalsts.dds', 
                     SpecularName = '/units/xec1401/xec1401_specteam.dds',  
                 },
-                {
-                    LODCutoff = 300,
-                    ShaderName = 'Aeon',
-                    AlbedoName = '/units/xec1401/xec1401_lod1_albedo.dds',  
-                    SpecularName = '/units/xec1401/xec1401_lod1_specteam.dds', 
-                },
             },
         },
         PlaceholderMeshName = 'UXB0018',
