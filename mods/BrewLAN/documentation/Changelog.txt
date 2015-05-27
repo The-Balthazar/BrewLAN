@@ -60,7 +60,11 @@ __________.__________
   
   * Added the new improved Mentlegens Reef map to BrewLAN. (Its a 7v1 Gentlemans Reef)
   * Gantry Hax 2: Merged numbers from git fork.
-  * Removed the log spam from the Suthanus.                                       
+  * Removed the log spam from the Suthanus.
+  __________
+  2015-05-27
+  
+  * Paragon Game: FIXED! FOR REALS THIS TIME!                                   
 __________.__________
 2015-01-02|0.6
 

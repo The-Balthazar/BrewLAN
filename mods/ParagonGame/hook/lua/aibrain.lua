@@ -11,39 +11,42 @@ AIBrain = Class(AIBrain) {
     ParagonOrNotCheck = function(self, strArmy)
         
         -- Checks the teams
-        local myteam     
-        local teams = {}
-        for name,army in ScenarioInfo.ArmySetup do   
-            if not army.Civilian then
-                if not teams[army.Team] then
-                    teams[army.Team] = {}
+        if not ScenarioInfo.ParagonChoicesMade then
+            local myteam     
+            local teams = {}
+            
+            --Make a table of teams with what players are in then
+            for name,army in ScenarioInfo.ArmySetup do   
+                if not army.Civilian then
+                    if not teams[army.Team] then
+                        teams[army.Team] = {}
+                    end                  
+                    table.insert(teams[army.Team],army.ArmyIndex) 
                 end
-                table.insert(teams[army.Team],army.ArmyIndex)
-                if "ARMY_" .. army.ArmyIndex == strArmy then
-                    myteam = army.Team
-                end 
-                if army.Team > 1 then
-                    ScenarioInfo.TeamsDefined = true
-                end
-            else
-                LOG(name)                     
             end
-        end
-        
-        -- Checks the smallest defined team size   
-        local minTeamQuantity = 2147483647 -- Arbitrary large number definitely larger than the largest possible team. Not counting mods that allow for most of the population of the planet to play.  
-        if ScenarioInfo.Options.TeamLock == 'locked' and ScenarioInfo.TeamsDefined then
+            
+            -- Checks the smallest defined team size   
+            local minTeamQuantity = 2147483647
             for i, v in teams do
                 minTeamQuantity = math.min(minTeamQuantity, self:CountTeamSize(teams, i ))
             end
+            
+            --Picking who should get a paragon
+            for name, army in ScenarioInfo.ArmySetup do    
+                if not army.Civilian then
+                    if self:CountTeamSize(teams, army.Team ) == minTeamQuantity or ScenarioInfo.Options.TeamLock != 'locked' then
+                        army.ShouldGetParagon = true
+                        LOG("HELLO MY NAME IS ARMY_" .. army.ArmyIndex .. " and i am on one of the smallest teams, or teams aren't locked" )
+                    end     
+                end
+            end
+            ScenarioInfo.ParagonChoicesMade = true
         end
-        
-        -- Spawn paragons for everyone if teams aren't locked or aren't defined, or for player(s) on the smallest team(s) if they are
-        if ScenarioInfo.Options.TeamLock != 'locked' or not ScenarioInfo.TeamsDefined or ScenarioInfo.TeamsDefined and self:CountTeamSize(teams, myteam) == minTeamQuantity then
-            self:SpawnParagonUnits()
-        else       
+        if ScenarioInfo.ArmySetup[strArmy].ShouldGetParagon then
+            self:SpawnParagonUnits()    
+        else         
             self:RestrictParagonUnits(strArmy)
-        end     
+        end
     end,
 
 --------------------------------------------------------------------------------
@@ -150,31 +153,11 @@ AIBrain = Class(AIBrain) {
 --------------------------------------------------------------------------------    
 
     CountTeamSize = function(self, teams, myteam)
-        if myteam == 1 or not teams[myteam] then
-            return 1
+        if myteam == 1 then
+            return 1     
         else
             return table.getn(teams[myteam])
         end    
     end,
-
---------------------------------------------------------------------------------
---  Summary:  The table logger script
---------------------------------------------------------------------------------       
-
-    tprint = function(self, tbl, indent)
-        if not indent then indent = 0 end
-        for k, v in pairs(tbl) do
-            formatting = string.rep("  ", indent) .. k .. ": "
-            if type(v) == "table" then
-                LOG(formatting)
-                self:tprint(v, indent+1)
-            elseif type(v) == 'boolean' then
-                LOG(formatting .. tostring(v))		
-            elseif type(v) == 'string' or type(v) == 'number' then
-                LOG(formatting .. v)
-            else
-                LOG(formatting .. type(v))
-            end
-        end
-    end,
+    
 }
