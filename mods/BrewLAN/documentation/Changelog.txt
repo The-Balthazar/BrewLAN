@@ -64,7 +64,10 @@ __________.__________
   __________
   2015-05-27
   
-  * Paragon Game: FIXED! FOR REALS THIS TIME!                                   
+  * Paragon Game: FIXED! FOR REALS THIS TIME!
+  * Improved the appearance of the Drop-pod artillery.
+    * Corrected the smoothing.  
+    * Finished the UV mapping and texture outline of its base.                                         
 __________.__________
 2015-01-02|0.6
 
