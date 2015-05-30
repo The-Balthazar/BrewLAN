@@ -37,7 +37,6 @@ SEB2404 = Class(TStructureUnit) {
                     table.remove(self.unit.AmmoList,num)
                 end  
                 self.unit:HideBone('DropPod', true)
-                self.unit.DropPod0Slider:SetGoal(0,0,55)  
                 self.unit:AmmoStackThread()
                 if proj and not proj:BeenDestroyed() then
                     proj:PassData(data)
@@ -59,8 +58,9 @@ SEB2404 = Class(TStructureUnit) {
     end,
     
     OnStartBuild = function(self, unitBuilding, order)
-        TStructureUnit.OnStartBuild(self, unitBuilding, order)
-        unitBuilding:HideBone(0, true)
+        TStructureUnit.OnStartBuild(self, unitBuilding, order) 
+        self.DropPod0Slider:SetGoal(0,0,55)
+        unitBuilding:HideBone(0, true)          
     end,          
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -100,6 +100,8 @@ SEB2404 = Class(TStructureUnit) {
         if ammocount > 0 then 
             self:ShowBone('DropPod', true)
             self.DropPod0Slider:SetGoal(0,0,0)
+        elseif ammocount == 0 then
+            self.DropPod0Slider:SetGoal(0,0,55)  
         end
     end,
     
@@ -109,7 +111,7 @@ SEB2404 = Class(TStructureUnit) {
                 local pos = self:GetPosition()
                 local dude = CreateUnitHPR(v,self:GetArmy(),pos[1] + math.random(-2,2), pos[2], pos[3] + math.random(-2,2),0 , math.random(0,360), 0)
                 local health = math.min(math.max((math.random(-300,100)/100)+(dude:GetHealth()/4500),0),1) * math.min(math.random(0,120)/100,1)  
-                LOG(health)  
+                --LOG(health)  
                 if health == 0 then
                     dude:Kill()
                 else          

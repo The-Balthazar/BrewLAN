@@ -67,7 +67,16 @@ __________.__________
   * Paragon Game: FIXED! FOR REALS THIS TIME!
   * Improved the appearance of the Drop-pod artillery.
     * Corrected the smoothing.  
-    * Finished the UV mapping and texture outline of its base.                                         
+    * Finished the UV mapping and texture outline of its base.
+  __________
+  2015-05-29
+  
+  * UEF Ivan: Experimental Drop-Pod Artillery changes:
+    * Finished the UV mapping and a basic texture for the Ivan Drop-pod Artillery.
+    * Reduced the cost and build time of the Ivan by 25%.
+    * Energy drain increased from 5600 a shot to 10000 a shot.
+    * Drain time reduced from just under a second and a half to half a second.
+    * Improved the movement of the decorative drop-pods.                                                      
 __________.__________
 2015-01-02|0.6
 

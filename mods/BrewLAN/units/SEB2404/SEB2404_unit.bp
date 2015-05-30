@@ -140,9 +140,9 @@ UnitBlueprint {
         UniformScale = 0.0275,
     },
     Economy = {
-        BuildCostEnergy = 900000*2,
-        BuildCostMass = 90000*2,
-        BuildTime = 30000*2,
+        BuildCostEnergy = 900000*1.5,
+        BuildCostMass = 90000*1.5,
+        BuildTime = 30000*1.5,
         RebuildBonusIds = {
             'seb2404',
         },                    
@@ -269,8 +269,8 @@ UnitBlueprint {
             DamageRadius = .5,
             DamageType = 'Normal',
             DisplayName = 'Anti Matter Artillery',
-            EnergyDrainPerSecond = 4000,
-            EnergyRequired = 560*10,
+            EnergyDrainPerSecond = 20000,
+            EnergyRequired = 10000,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
@@ -292,7 +292,9 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Turret_muzzle',
                     },
-                    RackBone = 'Turret_recoil',
+                    RackBone = 'Turret_recoil', 
+                    TelescopeBone = 'DropPod',
+                    TelescopeRecoilDistance = 40,
                 },
             },
             RackFireTogether = false,
