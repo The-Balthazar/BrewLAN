@@ -76,7 +76,11 @@ __________.__________
     * Reduced the cost and build time of the Ivan by 25%.
     * Energy drain increased from 5600 a shot to 10000 a shot.
     * Drain time reduced from just under a second and a half to half a second.
-    * Improved the movement of the decorative drop-pods.                                                      
+    * Improved the movement of the decorative drop-pods.
+  __________
+  2015-05-30
+  
+  * Some more work on the texture of the Ivan.                                                       
 __________.__________
 2015-01-02|0.6
 
