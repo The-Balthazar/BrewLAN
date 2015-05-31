@@ -33,6 +33,7 @@ AINames.seb0401 = {
    'Factory',
    'Legion Academy',
     'Robots \'R\' Us',
+    'La Creperie',
 }
 --------------------------------------------------------------------------------
 -- Scathis MK II: Experimental Rapid-fire Artillery
@@ -139,6 +140,7 @@ AINames.sea0401 = {
 AINames.sea0401pancake = {
     'Pancake',
     'Kamikaze',
+    'Divine Wind',
     'Accidents Happen',
     'Troll',
     'Operation: Paragon',
