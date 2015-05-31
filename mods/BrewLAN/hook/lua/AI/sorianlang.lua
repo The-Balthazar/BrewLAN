@@ -138,7 +138,7 @@ AINames.sea0401 = {
 }
 AINames.sea0401pancake = {
     'Pancake',
-    'Kamakaze',
+    'Kamikaze',
     'Accidents Happen',
     'Troll',
     'Operation: Paragon',
