@@ -72,7 +72,8 @@ SEB2404 = Class(TStructureUnit) {
         TStructureUnit.OnStopBuild(self, unitBeingBuilt)    
     end,     
 
-    OnFailedToBuild = function(self)
+    OnFailedToBuild = function(self)          
+        self:AmmoStackThread()
         TStructureUnit.OnFailedToBuild(self)  
     end,
     

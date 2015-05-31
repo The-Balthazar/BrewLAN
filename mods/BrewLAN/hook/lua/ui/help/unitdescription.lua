@@ -57,6 +57,7 @@ Description['sab2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nu
 Description['ssb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
   
 Description['srb5201'] = "<LOC Unit_Description_0179>Restricts the movement of enemy units."
+Description['seb5210'] = "<LOC Unit_Description_0179>Restricts the movement of enemy units."
     
 --Tech 2 construction units
 Description['ssb0104'] = "<LOC Unit_Description_0451> Automatically repairs, reclaims, assists or captures any unit within its operational radius."

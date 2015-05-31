@@ -17,19 +17,26 @@ Errors list/the other to-do list.
 * Megalith built eggs bug out when at the pop cap.
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
-* Shields need a floatation when on water (Possibly easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
 * New prettier wall script ivolving a rotator, a slider, and position detection.
-* Rebuild the Ivan script. Starting as a factory with aircraft carrier style storage, and adding unit data from storage to the projectiles.
 * Have the Iyadesu cost during reclaimation for a full health unit, instead of a 1 health needed repair.
 * Darkness doesn't care about power outages.
 * Darkness doesn't care if the effected units move out of the range. (But no vanilla units effected can.)
 * Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
-* Find a use for DEB4303AntiArtilleryShield01?
+* Replace the stargate iris effect with a seperate entity so it can have ripple effects.
+* Waterlag: Add a series of generic floatations to be spawned under units if they lack floatation bones.  
+  * Shields need a floatation when on water (Possibly easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
+* Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
+* Give the UEF walls, Ivan, Aster, T2 E-store, T2 M-store, & T1 air staging real distance models.
+* Do something with the repair ship idea.
+* Do something with the cybran stealth field sub idea.
+* Add the Artilllery Defence Grid for UEF (DEB4303AntiArtilleryShield01).
+* Create a UI for the contents of the Ivan.
+* Make the damage test unit look like a Nokia 3310.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -212,15 +219,15 @@ Tech 2:
 		* T2 Wall
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
-  	Fully Funtioning.
+  	Fully Funtioning:
       * T2 Mass Storage
       * T2 Energy Storage
       * T2 Proximity Mine
         * Lacks a unique water explosion.
-        * Doesn't leave behind a decent sized scorch mark yet.
+        * Doesn't leave behind a decent sized scorch mark yet.  
+  	  * T2 Wall.
+  	    * Uses a temprary model.        
     
-  	T2 Wall.
-  		* Pending creation  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	Fully Funtioning:
@@ -358,7 +365,7 @@ Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
 Strategic 2     |Ivan (F)       |*?             |*?             |Yolona Oss     |
-Static 2        |*?             |*Tele/CZAR fab |Darkness       |*Gate portal   |
+Static 2        |*?             |*Tele/CZAR fab |Darkness       |Stargate       |
 Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ________________!_______________!_______________!_______________!_______________!
 
@@ -380,13 +387,15 @@ ________________!_______________!_______________!_______________!_______________
 UEF Centurion: Experimental AA gunship
   * Texture unfinished. Could be more efficiently UV mapped.     
 
-** UEF Ivan: Experimental Drop-Pod Artillery
-  * Fires projectiles that look like drop pods and spawn mech marines on impact.
-    * Bouncing script doesnt work on shields.
+UEF Ivan: Experimental Drop-Pod Artillery
+  * Functionally a factory that deletes the things it makes then adds the unit code to the projectiles which spawn them in the other side.
+    * Needs a way to handle shields propperly either: 
+      * Bouncing off shields.
+      * Or piercing shields and reducing the life of the contents based on the number of shields passed.
+    * Currently sets the health to 25% if it hits a shield.            
     * Range should probably decrease for large ammos.
-    * Fucks up on aiming due to bone sharing.
-    * Unfinished replacement model is on an old un-connected HDD, from the computer upgrade.
-  * Might be able to get build things propperly, add them to storage, and attach them to the projectiles on fire.                                           
+    * Possibly pass kills of the units back to the cannon?
+    * Has an issue related to restarting skirmish games that can result in 'ghost' units appearing in the next game where it was.                                             
         
 UEF Gantry: Experimental Factory
   * Almost completely 100% Fully funtional.
@@ -486,6 +495,35 @@ Drone sript: http://forums.gaspowered.com/viewtopic.php?t=25920
     * Script might also be usefull for the decoy planes.
 
 Naval mine layer units and/or other better ways to deploy mines.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+Kris' notes on further experimental buildings
+* My notes on his notes. 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Experimental Sensor Array - You could probably spin it for anyone. Maybe it could give True-Sight for the whole map. How OP would that be?
+* Probably OP against players, less so against bots; and useless with fog off which we usually do against bots, particularly amusing against Cybran, since it also makes their experimental jamming thing useless. 
+
+Experimental Strat. Def. - Seraphim or Cybran? Much larger range and could return them to sender.
+* Return to sender is probably too much for nukes.
+
+Experimental Defense Structures - A UEF one that combines all three seems fine. Also acceptable would be a Cybran one that just ports the Obelisk of Darkness from C&C.
+* Maybe attach the torpedo section to the floatation, so its not there when on land.
+ 
+Experimental Air Staging - This is the only one that I don't have an idea for.
+
+
+Experimental Resource Storage - Aeon. When it's full on Energy, it emits a shield. When it's full on mass, it emits a Health Regen aura. There are a pile of issues with this, but I just thought it was a cool idea.
+* Would need to be careful with the shield, to make sure its not just used as another shield generator, but with slower responce times.
+  * Also don't want to make the Iron Curtain redundant.  
+* Health buff aura on mass full, Health regen on energy full.
+  * Is this pulling players in the wrong direction? Do we want them to be stockpiling and wasting resources for effect? 
+
+Experimental Wall - Seraphim. Firestorm Walls. Also applicable, Stealth Firestorm Walls for Cybran. (i.e, they're invisible until you walk over them and they melt your face).
+* Definitely avoids the issue of the fact that experimentals will just walk over them, if everyone is supposed to be able to walk over them.
+
+Experimental Engi. Station - Probably not a good idea now that they've been added to Seraphim (did you ever give them to Aeon?). I don't have any good ideas to make them interesting either (Unless you're mad enough to want to do infinite/super-huge range). Stylistically, it could be a bundle of Nano-Bots for Cybran, some ethereal light bubbles for Seraphim/Aeon, or just bigger drones for UEF.
+* Experimental engineering is probably still a terrible idea.
+
 _______________________________________________________
 Side-mods
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -

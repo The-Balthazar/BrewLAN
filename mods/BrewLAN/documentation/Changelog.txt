@@ -81,7 +81,13 @@ __________.__________
   2015-05-30
   
   * Some more work on the texture of the Ivan.
-  * Removed some log spam.                                                         
+  * Removed some log spam.
+  __________
+  2015-05-31
+  
+  * The Ivan now loads a drop-pod into its barrel if the current build is cancelled.
+  * Added the Cybran T2 wall to the language tables. (Fuck knows how long that's been missing)
+  * Added a temporary version of the UEF T2 wall. (Uses the T3 model)                                                             
 __________.__________
 2015-01-02|0.6
 

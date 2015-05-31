@@ -30,6 +30,9 @@ do
                 elseif ID == 'sea0401' then                  
                     --LOG("Centurion behaviour script innitiated")
                     return behaviors.CenturionBehaviorBrewLAN(self)
+                elseif ID == 'seb0401' then
+                    LOG("GANTRY BEHAVIOUR COULD GO HERE")
+                    sorianoldPlatoon.ExperimentalAIHubSorian(self)
                 end
                 
                 sorianoldPlatoon.ExperimentalAIHubSorian(self)
