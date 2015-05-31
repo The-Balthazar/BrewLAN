@@ -147,7 +147,7 @@ SEB0401 = Class(TLandFactoryUnit) {
             for i=1,2 do
                 for i, v in bpAirExp do
                     if self.ExpIndex[1] <= i then
-                        LOG('Current cycle = ', v[1])  
+                        --LOG('Current cycle = ', v[1])  
                         if not bpAirExp[i+1] then
                             self.ExpIndex[1] = 1
                         else
@@ -156,7 +156,7 @@ SEB0401 = Class(TLandFactoryUnit) {
                         if self:CanBuild(v[1]) then   
                             self.togglebuild = true
                             self.Lastbuilt = v[1]    
-                            LOG('Returning air chosen = ', v[1])  
+                            --LOG('Returning air chosen = ', v[1])  
                             return v[1]
                         end
                     end
@@ -164,13 +164,13 @@ SEB0401 = Class(TLandFactoryUnit) {
             end
             --only reaches here if it can't build any air experimentals   
             self.togglebuild = true
-            LOG('Gantry failed to find experimental fliers')
+            --LOG('Gantry failed to find experimental fliers')
         end
         if self.togglebuild then          
             for i=1,2 do
                 for i, v in bpOtherExp do
                     if self.ExpIndex[2] <= i then   
-                        LOG('Current cycle = ', v[1])  
+                        --LOG('Current cycle = ', v[1])  
                         if not bpOtherExp[i+1] then
                             self.ExpIndex[2] = 1
                         else
@@ -179,7 +179,7 @@ SEB0401 = Class(TLandFactoryUnit) {
                         if self:CanBuild(v[1]) then   
                             self.togglebuild = false
                             self.Lastbuilt = v[1]       
-                            LOG('Returning land chosen= ', v[1])  
+                            --LOG('Returning land chosen= ', v[1])  
                             return v[1]
                         end
                     end
@@ -187,11 +187,11 @@ SEB0401 = Class(TLandFactoryUnit) {
             end 
             --Only reaches this if it can't build any non-fliers
             self.togglebuild = false    
-            LOG('Gantry failed to find non-flying experimentals')  
+            --LOG('Gantry failed to find non-flying experimentals')  
         end
         --Attempts last successfull experimental, probably air at this point
         if self.Lastbuilt then       
-            LOG('Returning last built = ', self.Lastbuilt)  
+            --LOG('Returning last built = ', self.Lastbuilt)  
             return self.Lastbuilt   
         --If nothing else works, flip a coin and build an ASF or a bomber
         elseif self:CanBuild('uea0303') and self:CanBuild('uea0304') then

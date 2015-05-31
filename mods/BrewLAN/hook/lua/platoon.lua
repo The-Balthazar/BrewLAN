@@ -25,10 +25,10 @@ do
                 self:SetPlatoonFormationOverride('AttackFormation')
                 
                 if ID == 'sal0401' then              
-                    LOG("Absolution pretending to be a Fatboy innitiated")
+                    --LOG("Absolution pretending to be a Fatboy innitiated")
                     return behaviors.FatBoyBehaviorSorian(self)
                 elseif ID == 'sea0401' then                  
-                    LOG("Centurion behaviour script innitiated")
+                    --LOG("Centurion behaviour script innitiated")
                     return behaviors.CenturionBehaviorBrewLAN(self)
                 end
                 

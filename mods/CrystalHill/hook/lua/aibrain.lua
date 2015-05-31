@@ -24,7 +24,7 @@ AIBrain = Class(AIBrain) {
             local civs = self:GetUnitsAroundPoint(categories.STRUCTURE, Vector(posX, 0, posZ), 3)
             if civs[1] then
                 for i, v in civs do
-                    LOG(v:GetAIBrain().Nickname)
+                    --LOG(v:GetAIBrain().Nickname)
                     if v:GetAIBrain().Nickname == "civilian" then
                         if i == 1 then
                             posX, posY, posZ = unpack(v:GetPosition())
@@ -59,9 +59,9 @@ AIBrain = Class(AIBrain) {
         for x = -40, 40, 20 do
             for z = -40, 40, 20 do
                 if not (x == 0 and z == 0) then  
-                    LOG("THIS IS THE WAY WE LOG, THIS IS THE WAY WE LOG, NOT WITH A BANG, BUT WITH A")  
+                    --LOG("THIS IS THE WAY WE LOG, THIS IS THE WAY WE LOG, NOT WITH A BANG, BUT WITH A")  
                     if not AIBrain.TacticalBases then AIBrain.TacticalBases = {} end
-                    LOG(AIBrain.TacticalBases)                               
+                    --LOG(AIBrain.TacticalBases)                               
                     local nextbase = (table.getn(AIBrain.TacticalBases) + 1)
                     local tempPos = Vector((SIS[1]/2) + x, 0, (SIS[2]/2) + z)
                     table.insert(AIBrain.TacticalBases,

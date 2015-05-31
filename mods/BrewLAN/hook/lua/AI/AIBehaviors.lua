@@ -36,11 +36,11 @@ CenturionBehaviorBrewLAN = function(self)
             crystal = aiBrain:GetUnitsAroundPoint( categories.zpc0001 + categories.zpc0002, centerOfMap, 20)
             while EntityCategoryContains(categories.zpc0002, crystal[1]) or not (IsAlly(aiBrain:GetArmyIndex(),crystal[1]:GetArmy() ) or true) do
                 if VDist3(self:GetPlatoonPosition(), crystal[1]:GetPosition() ) > 40 then
-                    LOG("THA CRYSTAL!")
+                    --LOG("THA CRYSTAL!")
                     IssueClearCommands(platoonUnits)
                     cmd = self:MoveToLocation(crystal[1]:GetPosition(), false)
                 elseif VDist3(self:GetPlatoonPosition(), crystal[1]:GetPosition() ) < 40 and not self:IsCommandsActive(cmd) then
-                    LOG("THA CRYSTAL!!")
+                    --LOG("THA CRYSTAL!!")
                     IssueClearCommands(platoonUnits)
                     cmd = self:AggressiveMoveToLocation(crystal[1]:GetPosition() )
                 end
@@ -59,7 +59,7 @@ CenturionBehaviorBrewLAN = function(self)
                 if GetClosestShieldProtectingTargetSorian(platoonUnits[1], TargetParagon) then 
                     for k, Pancake in platoonUnits do   
                         local AINames = import('/lua/AI/sorianlang.lua').AINames
-                        LOG("THIS PARAGON HAS SHIELDS")
+                        --LOG("THIS PARAGON HAS SHIELDS")
                         while not TargetParagon:IsDead() do
                             local distance = Utilities.XZDistanceTwoVectors(Pancake:GetPosition(), TargetParagon:GetPosition())
                             local hightdist = Pancake:GetPosition()[2] - TargetParagon:GetPosition()[2]   
@@ -101,7 +101,7 @@ CenturionBehaviorBrewLAN = function(self)
                         end   
                     end 
                 else    
-                    LOG("THIS PARAGON HAS NO SHIELDS")
+                    --LOG("THIS PARAGON HAS NO SHIELDS")
                     IssueClearCommands(platoonUnits)
                     targetUnit = TargetParagon
                     cmd = self:AttackTarget(targetUnit)

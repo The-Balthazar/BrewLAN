@@ -74,29 +74,11 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
             
             local target = self:GetCurrentTargetPosition()
             IssueMove( {AssaultBot},  {target[1] + Random(-3, 3), target[2], target[3]+ Random(-3, 3)} )
-            --IssueAttack( {AssaultBot}, target )
         else
             LOG("YOU GET NOTHING. GOOD DAY")
         end
         self:Kill()
-    end,      
-    
-    tprint = function(self, tbl, indent)
-        if not indent then indent = 0 end
-        for k, v in pairs(tbl) do
-            formatting = string.rep("  ", indent) .. k .. ": "
-            if type(v) == "table" then
-                LOG(formatting)
-                self:tprint(v, indent+1)
-            elseif type(v) == 'boolean' then
-                LOG(formatting .. tostring(v))		
-            elseif type(v) == 'string' or type(v) == 'number' then
-                LOG(formatting .. v)
-            else
-                LOG(formatting .. type(v))
-            end
-        end
-    end,
+    end,     
 }
 
 TypeClass = TIFDropPodArtilleryMechMarine

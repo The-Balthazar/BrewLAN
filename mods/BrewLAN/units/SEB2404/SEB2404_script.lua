@@ -19,7 +19,6 @@ SEB2404 = Class(TStructureUnit) {
             
             RackSalvoFireReadyState = State(TIFArtilleryWeapon.RackSalvoFireReadyState) {
                 Main = function(self)
-                    LOG("DUUUUUUDE ARE WE READY TO FIRE?")  
                     if self.unit.AmmoList[1] then
                         TIFArtilleryWeapon.RackSalvoFireReadyState.Main(self)
                     else
@@ -67,8 +66,7 @@ SEB2404 = Class(TStructureUnit) {
         if unitBeingBuilt:GetFractionComplete() == 1 then
             if not self.AmmoList then self.AmmoList = {} end
             table.insert(self.AmmoList,unitBeingBuilt:GetBlueprint().BlueprintId)
-            unitBeingBuilt:Destroy() 
-            --self:tprint(self.AmmoList)     
+            unitBeingBuilt:Destroy()     
             self:AmmoStackThread()
         end
         TStructureUnit.OnStopBuild(self, unitBeingBuilt)    
@@ -110,8 +108,7 @@ SEB2404 = Class(TStructureUnit) {
             for k,v in self.AmmoList do  
                 local pos = self:GetPosition()
                 local dude = CreateUnitHPR(v,self:GetArmy(),pos[1] + math.random(-2,2), pos[2], pos[3] + math.random(-2,2),0 , math.random(0,360), 0)
-                local health = math.min(math.max((math.random(-300,100)/100)+(dude:GetHealth()/4500),0),1) * math.min(math.random(0,120)/100,1)  
-                --LOG(health)  
+                local health = math.min(math.max((math.random(-300,100)/100)+(dude:GetHealth()/4500),0),1) * math.min(math.random(0,120)/100,1)
                 if health == 0 then
                     dude:Kill()
                 else          
@@ -131,23 +128,6 @@ SEB2404 = Class(TStructureUnit) {
             end
         end
         TStructureUnit.OnDestroy(self)
-    end,
-    
-    tprint = function(self, tbl, indent)
-        if not indent then indent = 0 end
-        for k, v in pairs(tbl) do
-            formatting = string.rep("  ", indent) .. k .. ": "
-            if type(v) == "table" then
-                LOG(formatting)
-                self:tprint(v, indent+1)
-            elseif type(v) == 'boolean' then
-                LOG(formatting .. tostring(v))		
-            elseif type(v) == 'string' or type(v) == 'number' then
-                LOG(formatting .. v)
-            else
-                LOG(formatting .. type(v))
-            end
-        end
     end,
 }
 

@@ -104,9 +104,9 @@ function RemoteViewing(SuperClass)
                         local oldpos = self.RemoteViewingData.Satellite:GetPosition()
                         local newpos = targetunit:GetPosition()
                         local distance = math.max(math.min(VDist2Sq(oldpos[1], oldpos[3], newpos[1], newpos[3]), 1000), 1)
-                        LOG("Distance: " .. distance)
+                        --LOG("Distance: " .. distance)
                         need = need * (distance * 0.001)
-                        LOG("NEED: " .. need)
+                        --LOG("NEED: " .. need)
                         if not ( have > need ) then
                             return
                         end

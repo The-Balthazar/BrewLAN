@@ -16,7 +16,7 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
     
     CreateBuildEffects = function( self, unitBeingBuilt, order )
         local UpgradesFrom = unitBeingBuilt:GetBlueprint().General.UpgradesFrom
-        # If we are assisting an upgrading unit, or repairing a unit, play seperate effects
+        --If we are assisting an upgrading unit, or repairing a unit, play seperate effects
         if (order == 'Repair' and not unitBeingBuilt:IsBeingBuilt()) or (UpgradesFrom and UpgradesFrom != 'none' and self:IsUnitState('Guarding'))then
             EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
         else
@@ -34,7 +34,7 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
                 local bp = self:GetBlueprint()
                 local distance = Utilities.GetDistanceBetweenTwoEntities(self, instigator)
                 if distance > bp.Intel.VisionRadius * 3 then 
-                    #LOG("Shit that's far: ".. distance)
+                    --LOG("Shit that's far: ".. distance)
                     return
                 elseif layer == 'Land' or self.AlternateWater  then
                     self.BuildThis = bp.Economy.BuildWhenAttackedByLand or 'ueb2101'
@@ -50,7 +50,7 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
                 else
                     return --what are we fighting here I dont even.
                 end   
-                #LOG("Instigator layer: ".. layer)
+                --LOG("Instigator layer: ".. layer)
                 ChangeState(self, self.PanicState)
             end
         end
@@ -73,9 +73,8 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
                 self.BuildGoalX = math.random(-x, x)
                 self.BuildGoalZ = sign * z
             end
-
-            local halp = "Help, help, I'm being repressed!"  
-            LOG(halp)
+            
+            LOG( "Help, help, I'm being repressed!" )
             aiBrain:BuildStructure(self, self.BuildThis or 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalZ, 0})
         end,   
         OnStopBuild = function(self, unitBuilding)

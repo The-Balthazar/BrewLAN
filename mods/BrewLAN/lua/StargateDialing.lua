@@ -97,9 +97,9 @@ function StargateDialing(SuperClass)
                     end
                     self:WormholeFunctionToggle(targetarea[1], true)
                     aiBrain:TakeResource( 'ENERGY', bp.Economy.DialingCostBase )  
-                    LOG("CHEVRON 7 LOCKED")
+                    --LOG("CHEVRON 7 LOCKED")
                 else
-                    LOG("CHEVRON 7 ... WONT ENGAGE")
+                    --LOG("CHEVRON 7 ... WONT ENGAGE")
                 end
             end
         end,

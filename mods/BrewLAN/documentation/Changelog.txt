@@ -80,7 +80,8 @@ __________.__________
   __________
   2015-05-30
   
-  * Some more work on the texture of the Ivan.                                                       
+  * Some more work on the texture of the Ivan.
+  * Removed some log spam.                                                         
 __________.__________
 2015-01-02|0.6
 
