@@ -72,4 +72,9 @@ Tooltips['stargate_stop'] = {
       title = "<LOC tooltipbrewlan0023>Close Link",
       description = "<LOC tooltipbrewlan0024>Closes an outgoing link.",
       keyID = "stargate_stop",
-   }     
+   }
+Tooltips['toggle_repeat_orders'] = {
+      title = "<LOC tooltipbrewlan0025>Toggle Repeating Orders",
+      description = "<LOC tooltipbrewlan0026>While enabled, once the artillery has finished firing it will re-create the units it just fired.",
+      keyID = "toggle_repeat_orders",
+   }      

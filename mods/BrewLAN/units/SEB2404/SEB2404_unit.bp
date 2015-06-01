@@ -183,8 +183,17 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'land',
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = {
+                bitmapId = 'patrol', -- maybe use 'retaliate' after it actually fires on the target eventually make own icon with drop pod and rotating arrows
+                helpText = 'toggle_repeat_orders',
+            },
+        },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
+        TechLevel = 'RULEUTL_Secret', 
+        ToggleCaps = {
+            RULEUTC_WeaponToggle = true,
+        },
         UnitName = '<LOC seb2404_name>Ivan',
         UnitWeight = 1,
     },

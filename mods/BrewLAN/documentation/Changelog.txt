@@ -87,7 +87,11 @@ __________.__________
   
   * The Ivan now loads a drop-pod into its barrel if the current build is cancelled.
   * Added the Cybran T2 wall to the language tables. (Fuck knows how long that's been missing)
-  * Added a temporary version of the UEF T2 wall. (Uses the T3 model)                                                             
+  * Added a temporary version of the UEF T2 wall. (Uses the T3 model)
+  __________
+  2015-06-01
+  
+  * Ivan now has the option to rebuilt what launched after its finished firing.                                                             
 __________.__________
 2015-01-02|0.6
 

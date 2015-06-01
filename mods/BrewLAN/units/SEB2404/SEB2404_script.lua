@@ -20,9 +20,27 @@ SEB2404 = Class(TStructureUnit) {
             RackSalvoFireReadyState = State(TIFArtilleryWeapon.RackSalvoFireReadyState) {
                 Main = function(self)
                     if self.unit.AmmoList[1] then
+                        
+                        if self.unit.RepeatOrders and not self.unit.FactoryOrdersList then
+                            self.unit.FactoryOrdersList = {}
+                            for k, v in self.unit.AmmoList do
+                                self.unit.FactoryOrdersList[k] = v
+                            end
+                        end
+                               
                         TIFArtilleryWeapon.RackSalvoFireReadyState.Main(self)
                     else
-                        IssueClearCommands({self.unit})
+                        IssueClearCommands({self.unit})  
+                        
+                        if self.unit.RepeatOrders and self.unit.FactoryOrdersList then
+                            self.unit:PostFireOrders()
+                            self.unit.FireNextOrders = {
+                                count = table.getn(self.unit.FactoryOrdersList),
+                                target = {0,0,0}, --Here is where I would put the attack co-ordinates. IF I HAD ANY!
+                            }
+                            self.unit.FactoryOrdersList = nil   
+                        end
+                        
                     end
                 end,    
             },
@@ -43,6 +61,12 @@ SEB2404 = Class(TStructureUnit) {
             end,
         },
     },
+    
+    PostFireOrders = function(self)
+        for k, v in self.FactoryOrdersList do
+            self:GetAIBrain():BuildUnit(self, v, 1)   
+        end
+    end,
              
     OnCreate = function(self)
         TStructureUnit.OnCreate(self)   
@@ -69,12 +93,33 @@ SEB2404 = Class(TStructureUnit) {
             unitBeingBuilt:Destroy()     
             self:AmmoStackThread()
         end
-        TStructureUnit.OnStopBuild(self, unitBeingBuilt)    
+        TStructureUnit.OnStopBuild(self, unitBeingBuilt)
+        --if table.getn(self.AmmoList) == self.FireNextOrders.count and self.RepeatOrders then
+        --IssueAttack({self}, {0,0,0})
+        --Here is where I would put the attack order. IF I HAD ANY CO-ORDINATES! 
+        --also make sure to add a check to make sure both tables exist before getn-ing   
     end,     
 
     OnFailedToBuild = function(self)          
         self:AmmoStackThread()
         TStructureUnit.OnFailedToBuild(self)  
+    end,
+      
+    
+    OnScriptBitSet = function(self, bit)
+        TStructureUnit.OnScriptBitSet(self, bit)
+        if bit == 1 then 
+            self.RepeatOrders = true
+            FloatingEntityText(self:GetEntityId(),'<LOC floatingtextIVAN01>Repeating orders enabled')
+        end
+    end,
+
+    OnScriptBitClear = function(self, bit)
+        TStructureUnit.OnScriptBitClear(self, bit)
+        if bit == 1 then 
+            self.RepeatOrders = false   
+            FloatingEntityText(self:GetEntityId(),'<LOC floatingtextIVAN02>Repeating orders disabled')
+        end
     end,
     
     AmmoStackThread = function(self)

@@ -52,6 +52,12 @@ tooltipbrewlan0022="Enable or disable the shield preventing access in or out of 
 tooltipbrewlan0023="Stop Link"
 tooltipbrewlan0024="Closes an outgoing link."
 
+
+tooltipbrewlan0025="Toggle Repeating Orders"
+tooltipbrewlan0026="While enabled, once the artillery has finished firing it will re-create the units it just fired."
+floatingtextIVAN01="Repeating orders enabled"
+floatingtextIVAN02="Repeating orders disabled"
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements 
 -------------------------------------------------------------------------------- 
