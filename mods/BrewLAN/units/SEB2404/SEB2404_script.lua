@@ -5,7 +5,7 @@
 #**
 #**  Summary  :  UEF Long Range Artillery Script
 #**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright Â© 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local TStructureUnit = import('/lua/terranunits.lua').TLandFactoryUnit
@@ -20,27 +20,19 @@ SEB2404 = Class(TStructureUnit) {
             RackSalvoFireReadyState = State(TIFArtilleryWeapon.RackSalvoFireReadyState) {
                 Main = function(self)
                     if self.unit.AmmoList[1] then
-                        
                         if self.unit.RepeatOrders and not self.unit.FactoryOrdersList then
                             self.unit.FactoryOrdersList = {}
                             for k, v in self.unit.AmmoList do
                                 self.unit.FactoryOrdersList[k] = v
                             end
                         end
-                               
                         TIFArtilleryWeapon.RackSalvoFireReadyState.Main(self)
                     else
                         IssueClearCommands({self.unit})  
-                        
                         if self.unit.RepeatOrders and self.unit.FactoryOrdersList then
                             self.unit:PostFireOrders()
-                            self.unit.FireNextOrders = {
-                                count = table.getn(self.unit.FactoryOrdersList),
-                                target = {0,0,0}, --Here is where I would put the attack co-ordinates. IF I HAD ANY!
-                            }
                             self.unit.FactoryOrdersList = nil   
                         end
-                        
                     end
                 end,    
             },
@@ -70,6 +62,8 @@ SEB2404 = Class(TStructureUnit) {
              
     OnCreate = function(self)
         TStructureUnit.OnCreate(self)   
+        self.Sync.Abilities = self:GetBlueprint().Abilities
+        self.Sync.Abilities.TargetLocation.Active = true
         self:HideBone('DropPod', true)
         self.DropPod0Slider = CreateSlider(self, 'DropPod', 0, 0, 55, 100)
     end,
@@ -94,17 +88,17 @@ SEB2404 = Class(TStructureUnit) {
             self:AmmoStackThread()
         end
         TStructureUnit.OnStopBuild(self, unitBeingBuilt)
-        --if table.getn(self.AmmoList) == self.FireNextOrders.count and self.RepeatOrders then
-        --IssueAttack({self}, {0,0,0})
-        --Here is where I would put the attack order. IF I HAD ANY CO-ORDINATES! 
-        --also make sure to add a check to make sure both tables exist before getn-ing   
+        if self.AmmoList[1] then
+            if table.getn(self.AmmoList) == self.FireNextOrders.count and self.RepeatOrders then
+                IssueAttack({self}, self.FireNextOrders.target)
+            end
+        end
     end,     
 
     OnFailedToBuild = function(self)          
         self:AmmoStackThread()
         TStructureUnit.OnFailedToBuild(self)  
     end,
-      
     
     OnScriptBitSet = function(self, bit)
         TStructureUnit.OnScriptBitSet(self, bit)
@@ -119,6 +113,21 @@ SEB2404 = Class(TStructureUnit) {
         if bit == 1 then 
             self.RepeatOrders = false   
             FloatingEntityText(self:GetEntityId(),'<LOC floatingtextIVAN02>Repeating orders disabled')
+        end
+    end,
+    
+    OnTargetLocation = function(self, location) 
+        if not self.AmmoList then
+            self.FireNextOrders = {
+                count = 1,
+                target = location,
+            }
+        else
+            self.FireNextOrders = {
+                count = table.getn(self.AmmoList),
+                target = location,
+            }
+            IssueAttack({self}, location)
         end
     end,
     
