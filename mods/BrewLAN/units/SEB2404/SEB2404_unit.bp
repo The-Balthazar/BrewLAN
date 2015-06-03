@@ -1,4 +1,10 @@
 UnitBlueprint {
+    Abilities = {
+        TargetLocation = {
+            bitmapId = 'skry-target',
+            helpText = 'attack',
+        },
+    },
     AI = {
         TargetBones = {
             'Target01',
