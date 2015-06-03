@@ -89,7 +89,7 @@ SEB2404 = Class(TStructureUnit) {
         end
         TStructureUnit.OnStopBuild(self, unitBeingBuilt)
         if self.AmmoList[1] then
-            if table.getn(self.AmmoList) == self.FireNextOrders.count and self.RepeatOrders then
+            if table.getn(self.AmmoList) >= self.FireNextOrders.count and self.RepeatOrders then
                 IssueAttack({self}, self.FireNextOrders.target)
             end
         end
@@ -117,17 +117,36 @@ SEB2404 = Class(TStructureUnit) {
     end,
     
     OnTargetLocation = function(self, location) 
-        if not self.AmmoList then
+        
+        --Removed because on target location clears current orders and breaks the intended use of this
+        --Need to compare self.FactoryOrdersList and self.AmmoList to find out what was missing, and recontinue before re-implementing this.
+        --[[if self.FireNextOrders and self.RepeatOrders then
+            --If there are already orders, and we are still set to repeat, assume we are updating the location for the same orders.
+            self.FireNextOrders.target = location
+            if self.AmmoList[1] then
+                if self.FireNextOrders.count < table.getn(self.AmmoList) then
+                    self.FireNextOrders.count = table.getn(self.AmmoList)
+                end
+            end        
+        else]]--
+        
+        if not self.AmmoList[1] then
+            --If there is no ammo, set to fire on repeat of whatever the first thing built is.
             self.FireNextOrders = {
                 count = 1,
                 target = location,
             }
         else
+            --Otherwise we probably have a load, and no orders, so FIRE ZE CANNON.
             self.FireNextOrders = {
                 count = table.getn(self.AmmoList),
                 target = location,
             }
             IssueAttack({self}, location)
+        end
+        --Regardless, we want repeat on now.
+        if not self.RepeatOrders then
+            self:SetScriptBit('RULEUTC_WeaponToggle', true)
         end
     end,
     

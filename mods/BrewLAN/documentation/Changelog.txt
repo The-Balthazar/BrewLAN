@@ -91,7 +91,13 @@ __________.__________
   __________
   2015-06-01
   
-  * Ivan now has the option to rebuilt what launched after its finished firing.                                                             
+  * Ivan now has the option to rebuilt what launched after its finished firing.
+  __________
+  2015-06-03
+  
+  You see Ivan, when fire repeating script, many robit will make attack.
+  * Added scripted button for repeat firing for the Ivan.
+  * Drop-podded units now spawn facing a random direction, instead of straight down.                                                                    
 __________.__________
 2015-01-02|0.6
 

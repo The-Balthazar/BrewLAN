@@ -1,8 +1,8 @@
 UnitBlueprint {
     Abilities = {
         TargetLocation = {
-            bitmapId = 'skry-target',
-            helpText = 'attack',
+            bitmapId = 'activate-weapon',
+            helpText = 'reapeat_attack_target_noupdate',
         },
     },
     AI = {

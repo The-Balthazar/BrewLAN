@@ -68,7 +68,7 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
     DropUnit = function(self)
         if self.Data then
             local pos = self:GetPosition()
-            local AssaultBot = CreateUnitHPR(self.Data,self:GetArmy(),pos[1], pos[2], pos[3],0, 0, 0)
+            local AssaultBot = CreateUnitHPR(self.Data,self:GetArmy(),pos[1], pos[2], pos[3],0, math.random(0,360), 0)
             
             AssaultBot:SetHealth(AssaultBot,AssaultBot:GetHealth()*self.DropHealth or 1)
             

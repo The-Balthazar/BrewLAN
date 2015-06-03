@@ -73,8 +73,20 @@ Tooltips['stargate_stop'] = {
       description = "<LOC tooltipbrewlan0024>Closes an outgoing link.",
       keyID = "stargate_stop",
    }
+   
+--Tooltips just for for the Ivan
 Tooltips['toggle_repeat_orders'] = {
       title = "<LOC tooltipbrewlan0025>Toggle Repeating Orders",
-      description = "<LOC tooltipbrewlan0026>While enabled, once the artillery has finished firing it will re-create the units it just fired.",
+      description = "<LOC tooltipbrewlan0026>While enabled, once the artillery has finished firing, it will re-create the units it just fired. And continue firing if a repeating attack target is set.",
       keyID = "toggle_repeat_orders",
-   }      
+   }
+Tooltips['reapeat_attack_target'] = {
+      title = "<LOC tooltipbrewlan0027>Repeating Attack",
+      description = "<LOC tooltipbrewlan0028>Starts a repeat attack cycle at the target location, or updates current cycle's target.",
+      keyID = "reapeat_attack_target",
+   }
+Tooltips['reapeat_attack_target_noupdate'] = {
+      title = "<LOC tooltipbrewlan0027>Repeating Attack",
+      description = "<LOC tooltipbrewlan0028-B>Starts a repeat attack cycle at the target location.",
+      keyID = "reapeat_attack_target_noupdate",
+   }       
