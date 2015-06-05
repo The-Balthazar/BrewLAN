@@ -97,7 +97,11 @@ __________.__________
   
   You see Ivan, when fire repeating script, many robit will make attack.
   * Added scripted button for repeat firing for the Ivan.
-  * Drop-podded units now spawn facing a random direction, instead of straight down.                                                                    
+  * Drop-podded units now spawn facing a random direction, instead of straight down.
+  __________
+  2015-06-05
+  
+  * The Ivan will now re-give itself the orders it loses when when the auto-target location is updated.                                                                    
 __________.__________
 2015-01-02|0.6
 

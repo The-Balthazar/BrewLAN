@@ -30,9 +30,13 @@ SEB2404 = Class(TStructureUnit) {
                     else
                         IssueClearCommands({self.unit})  
                         if self.unit.RepeatOrders and self.unit.FactoryOrdersList then
-                            self.unit:PostFireOrders()
+                            self.unit:PostFireOrders()   
+                            self.unit.FactoryOrdersBackup = {} 
+                            for k, v in self.unit.FactoryOrdersList do
+                                self.unit.FactoryOrdersBackup[k] = v
+                            end
                             self.unit.FactoryOrdersList = nil   
-                        end
+                        end     
                     end
                 end,    
             },
@@ -50,8 +54,8 @@ SEB2404 = Class(TStructureUnit) {
                 if proj and not proj:BeenDestroyed() then
                     proj:PassData(data)
                 end
-            end,
-        },
+            end,   
+        },          
     },
     
     PostFireOrders = function(self)
@@ -116,34 +120,48 @@ SEB2404 = Class(TStructureUnit) {
         end
     end,
     
-    OnTargetLocation = function(self, location) 
+    OnTargetLocation = function(self, location)                        
         
-        --Removed because on target location clears current orders and breaks the intended use of this
-        --Need to compare self.FactoryOrdersList and self.AmmoList to find out what was missing, and recontinue before re-implementing this.
-        --[[if self.FireNextOrders and self.RepeatOrders then
-            --If there are already orders, and we are still set to repeat, assume we are updating the location for the same orders.
+        --If there are already orders, and we are still set to repeat, assume we are updating the location for the same orders.
+        if self.FireNextOrders and self.RepeatOrders and self.FactoryOrdersBackup[1] then
             self.FireNextOrders.target = location
+            
+            --If we are part way through the build, continue where we left off
             if self.AmmoList[1] then
+                for k, v in self.FactoryOrdersBackup do
+                    if not self.AmmoList[k] then
+                        self:GetAIBrain():BuildUnit(self, v, 1)   
+                    end
+                end 
+                      
+            --And then double check we aren't already over the ammo count for some reason.
                 if self.FireNextOrders.count < table.getn(self.AmmoList) then
                     self.FireNextOrders.count = table.getn(self.AmmoList)
                 end
-            end        
-        else]]--
+            
+            --Otherwise we need to redo the whole list
+            else     
+                for k, v in self.FactoryOrdersList do
+                    self:GetAIBrain():BuildUnit(self, v, 1)  
+                end
+            end
         
-        if not self.AmmoList[1] then
-            --If there is no ammo, set to fire on repeat of whatever the first thing built is.
+        --If there is no ammo, set to fire on repeat of whatever the first thing built is.     
+        elseif not self.AmmoList[1] then
             self.FireNextOrders = {
                 count = 1,
                 target = location,
             }
+        
+        --Otherwise we probably have a load, and no orders, so FIRE ZE CANNON.
         else
-            --Otherwise we probably have a load, and no orders, so FIRE ZE CANNON.
             self.FireNextOrders = {
                 count = table.getn(self.AmmoList),
                 target = location,
             }
             IssueAttack({self}, location)
         end
+        
         --Regardless, we want repeat on now.
         if not self.RepeatOrders then
             self:SetScriptBit('RULEUTC_WeaponToggle', true)

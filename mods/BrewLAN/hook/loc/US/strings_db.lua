@@ -57,7 +57,6 @@ tooltipbrewlan0025="Toggle Repeating Orders"
 tooltipbrewlan0026="While enabled, once the artillery has finished firing, it will re-create the units it just fired. And continue firing if a repeating attack target is set."
 tooltipbrewlan0027="Repeating Attack"
 tooltipbrewlan0028="Starts a repeat attack cycle at the target location, or updates current cycle's target."
-tooltipbrewlan0028-B="Starts a repeat attack cycle at the target location."
 floatingtextIVAN01="Repeating orders enabled"
 floatingtextIVAN02="Repeating orders disabled"
 

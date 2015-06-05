@@ -2,7 +2,7 @@ UnitBlueprint {
     Abilities = {
         TargetLocation = {
             bitmapId = 'activate-weapon',
-            helpText = 'reapeat_attack_target_noupdate',
+            helpText = 'reapeat_attack_target',
         },
     },
     AI = {
