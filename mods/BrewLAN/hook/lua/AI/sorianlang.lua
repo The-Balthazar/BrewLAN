@@ -154,6 +154,8 @@ AINames.sea0401pancake = {
     'Bass',
     'Dorayaki',
     'Crepe',
+    '#YOLO',
+    '#JustPancakingThings',
 }
 --------------------------------------------------------------------------------
 -- Darkness: Experimental Omni Disrupting Facility
