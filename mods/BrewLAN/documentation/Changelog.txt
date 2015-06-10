@@ -101,7 +101,17 @@ __________.__________
   __________
   2015-06-05
   
-  * The Ivan will now re-give itself the orders it loses when when the auto-target location is updated.                                                                    
+  * The Ivan will now re-give itself the orders it loses when when the auto-target location is updated.
+  __________
+  2015-06-07
+  
+  * Experimental Icons: Category GATE experimentals no longer show up with transport icons.
+  * Additional texture work for Ivan.
+  __________
+  2015-06-10
+  
+  * Additional texture work for Ivan.
+  * Created a distance model for Ivan.                                                                            
 __________.__________
 2015-01-02|0.6
 

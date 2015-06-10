@@ -142,7 +142,7 @@ function ExperimentalIconOverhaul(all_bps)
                 icon = icon .. 'air'
             elseif table.find(bp.Categories, 'DEFENSE') and table.find(bp.Categories, 'SHIELD') then
                 icon = icon .. 'shield'
-            elseif table.find(bp.Categories, 'STARGATE') or table.find(bp.Categories, 'GATE') then
+            elseif table.find(bp.Categories, 'STARGATE') then
                 icon = icon .. 'transport'
             elseif table.find(bp.Categories, 'INTELLIGENCE') then
                 icon = icon .. 'intel'
