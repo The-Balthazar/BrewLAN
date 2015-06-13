@@ -309,7 +309,7 @@ UnitBlueprint {
                     },
                     RackBone = 'Turret_recoil', 
                     TelescopeBone = 'DropPod',
-                    TelescopeRecoilDistance = 40,
+                    TelescopeRecoilDistance = 15,
                 },
             },
             RackFireTogether = false,

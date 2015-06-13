@@ -80,7 +80,7 @@ SEB2404 = Class(TStructureUnit) {
     
     OnStartBuild = function(self, unitBuilding, order)
         TStructureUnit.OnStartBuild(self, unitBuilding, order) 
-        self.DropPod0Slider:SetGoal(0,0,55)
+        self.DropPod0Slider:SetGoal(0,0,50)
         unitBuilding:HideBone(0, true)          
     end,          
 
@@ -192,7 +192,7 @@ SEB2404 = Class(TStructureUnit) {
             self:ShowBone('DropPod', true)
             self.DropPod0Slider:SetGoal(0,0,0)
         elseif ammocount == 0 then
-            self.DropPod0Slider:SetGoal(0,0,55)  
+            self.DropPod0Slider:SetGoal(0,0,50)  
         end
         self:LCDUpdate(ammocount)
     end,
@@ -247,11 +247,9 @@ SEB2404 = Class(TStructureUnit) {
         local units = ammocount - (math.floor(ammocount/10)*10)
         local tens = (math.floor(ammocount/10)) - (math.floor(ammocount/100)*10)
         local huns = (math.floor(ammocount/100)) - (math.floor(ammocount/1000)*100)
-        --LOG("Testing fucking: " .. huns .. " " .. tens .. " " .. units)
         self:LCDnumber(units, 3)
         self:LCDnumber(tens, 2)
         self:LCDnumber(huns, 1)
-        --self:tprint(self.LCD)
     end,
     
     LCDnumber = function(self, num, mag)
@@ -279,17 +277,9 @@ SEB2404 = Class(TStructureUnit) {
         for k, v in self.LCD do
             for i, s in v do
                 if s[2] then
-                    --if s[3] then
-                        s[3]:SetGoal(0,0,0)
-                    --else
-                    --    s[3] = CreateSlider(self, s[1], 0, 0, 0, 100)
-                    --end
+                    s[3]:SetGoal(0,0,0)
                 else
-                    --if s[3] then   
-                        s[3]:SetGoal(0,0,-1)
-                    --else     
-                    --    s[3] = CreateSlider(self, s[1], 0, 0, 0, 100):SetGoal(0,0,-1)   
-                    --end
+                    s[3]:SetGoal(0,0,-1)
                 end
             end
         end
