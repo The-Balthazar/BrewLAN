@@ -94,6 +94,7 @@ SEB2404 = Class(TStructureUnit) {
         TStructureUnit.OnStopBuild(self, unitBeingBuilt)
         if self.AmmoList[1] then
             if table.getn(self.AmmoList) >= self.FireNextOrders.count and self.RepeatOrders then
+                IssueClearCommands({self})  
                 IssueAttack({self}, self.FireNextOrders.target)
             end
         end
@@ -193,6 +194,105 @@ SEB2404 = Class(TStructureUnit) {
         elseif ammocount == 0 then
             self.DropPod0Slider:SetGoal(0,0,55)  
         end
+        self:LCDUpdate(ammocount)
+    end,
+    
+    LCDUpdate = function(self, ammocount)
+          ---7---
+        --       --
+        --2      --4
+        --       --
+          ---6---
+        --       --
+        --1      --3
+        --       --
+          ---5---
+        if not self.LCD then
+            self.LCD = {
+                [1] = {
+                    {[1] = "LCD001", [2] = true,},
+                    {[1] = "LCD002", [2] = true,},
+                    {[1] = "LCD003", [2] = true,},
+                    {[1] = "LCD004", [2] = true,},
+                    {[1] = "LCD005", [2] = true,},
+                    {[1] = "LCD006", [2] = true,},
+                    {[1] = "LCD007", [2] = true,},
+                },   
+                [2] = {
+                    {[1] = "LCD008", [2] = true,},
+                    {[1] = "LCD009", [2] = true,},
+                    {[1] = "LCD010", [2] = true,},
+                    {[1] = "LCD011", [2] = true,},
+                    {[1] = "LCD012", [2] = true,},
+                    {[1] = "LCD013", [2] = true,},
+                    {[1] = "LCD014", [2] = true,},
+                },
+                [3] = {
+                    {[1] = "LCD015", [2] = true,},
+                    {[1] = "LCD016", [2] = true,},
+                    {[1] = "LCD017", [2] = true,},
+                    {[1] = "LCD018", [2] = true,},
+                    {[1] = "LCD019", [2] = true,},
+                    {[1] = "LCD020", [2] = true,},
+                    {[1] = "LCD021", [2] = true,},
+                },
+            }
+            for k, v in self.LCD do
+                for i, s in v do
+                    s[3] = CreateSlider(self, s[1], 0, 0, 0, 100)
+                end
+            end
+        end
+        ammocount = math.min(999,ammocount)
+        local units = ammocount - (math.floor(ammocount/10)*10)
+        local tens = (math.floor(ammocount/10)) - (math.floor(ammocount/100)*10)
+        local huns = (math.floor(ammocount/100)) - (math.floor(ammocount/1000)*100)
+        --LOG("Testing fucking: " .. huns .. " " .. tens .. " " .. units)
+        self:LCDnumber(units, 3)
+        self:LCDnumber(tens, 2)
+        self:LCDnumber(huns, 1)
+        --self:tprint(self.LCD)
+    end,
+    
+    LCDnumber = function(self, num, mag)
+        local deees = {
+          [1] = {0, 2, 6, 8,}, 
+          [2] = {0, 4, 5, 6, 8, 9,},
+          [3] = {0, 1, 3, 4, 5, 6, 7, 8, 9,},
+          [4] = {0, 1, 2, 3, 4, 7, 8, 9},
+          [5] = {0, 2, 3, 5, 6, 8, 9,},
+          [6] = {2, 3, 4, 5, 6, 8, 9,},
+          [7] = {0, 2, 3, 5, 6, 7, 8, 9,},
+        }
+        for k, v in deees do
+            for i, s in v do
+                if num == s then
+                    self.LCD[mag][k][2] = true
+                    break
+                else
+                    self.LCD[mag][k][2] = false
+                end
+            end
+        end   
+        
+        --self:tprint(self.LCD)
+        for k, v in self.LCD do
+            for i, s in v do
+                if s[2] then
+                    --if s[3] then
+                        s[3]:SetGoal(0,0,0)
+                    --else
+                    --    s[3] = CreateSlider(self, s[1], 0, 0, 0, 100)
+                    --end
+                else
+                    --if s[3] then   
+                        s[3]:SetGoal(0,0,-1)
+                    --else     
+                    --    s[3] = CreateSlider(self, s[1], 0, 0, 0, 100):SetGoal(0,0,-1)   
+                    --end
+                end
+            end
+        end
     end,
     
     OnKilled = function(self, instigator, type, overkillRatio)
@@ -220,6 +320,23 @@ SEB2404 = Class(TStructureUnit) {
             end
         end
         TStructureUnit.OnDestroy(self)
+    end,    
+    
+    tprint = function(self, tbl, indent)
+        if not indent then indent = 0 end
+        for k, v in pairs(tbl) do
+            formatting = string.rep("  ", indent) .. k .. ": "
+            if type(v) == "table" then
+                LOG(formatting)
+                self:tprint(v, indent+1)
+            elseif type(v) == 'boolean' then
+                LOG(formatting .. tostring(v))		
+            elseif type(v) == 'string' or type(v) == 'number' then
+                LOG(formatting .. v)
+            else
+                LOG(formatting .. type(v))
+            end
+        end
     end,
 }
 

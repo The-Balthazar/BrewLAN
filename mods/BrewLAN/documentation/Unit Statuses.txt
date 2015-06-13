@@ -365,7 +365,7 @@ Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
 Strategic 2     |Ivan (F)       |*?             |*?             |Yolona Oss     |
-Static 2        |*?             |*Tele/CZAR fab |Darkness       |Stargate       |
+Static 2        |*Panopticon    |*Tele/CZAR fab |Darkness       |Stargate       |
 Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ________________!_______________!_______________!_______________!_______________!
 
@@ -383,6 +383,8 @@ ________________!_______________!_______________!_______________!_______________
 *** UEF Experimental Assault Bot/tank
   * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
     * Possibly a two part splitting bot. Cain and Abel or something cool.
+
+*** UEF Panopticon: Experimental Intelligence Facility
 
 UEF Centurion: Experimental AA gunship
   * Texture unfinished. Could be more efficiently UV mapped.     
