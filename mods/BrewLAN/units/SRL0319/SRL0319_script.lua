@@ -22,7 +22,14 @@ SRL0209 = Class(CConstructionUnit) {
         TreadMarksInterval = 0.3,
         TreadOffset = { 0, 0, 0 },
     },
-
+            
+    OnCreate = function(self)
+        CConstructionUnit.OnCreate(self) 
+        if self:GetAIBrain().BrainType == 'Human' then
+            self:AddBuildRestriction(categories.urb4206)
+        end
+    end,
+    
     OnStopBeingBuilt = function(self)
         self:SetMaintenanceConsumptionActive()
         CConstructionUnit.OnStopBeingBuilt(self)

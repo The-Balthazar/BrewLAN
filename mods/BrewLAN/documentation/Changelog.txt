@@ -117,7 +117,12 @@ __________.__________
   
   * Ivan now has an LCD display of the ammo count.
   * Fixed an issue with having actual repeat orders on with the scripted repeat orders.
-  * Addional texture work on the Ivan.                                                                                 
+  * Addional texture work on the Ivan.
+  __________
+  2015-06-14
+  
+  * Cybran field engineer can now build the ED5 instead of the ED4. ED5 costs 50% more to build this way.
+  * More texture for Ivan.                                                                                   
 __________.__________
 2015-01-02|0.6
 

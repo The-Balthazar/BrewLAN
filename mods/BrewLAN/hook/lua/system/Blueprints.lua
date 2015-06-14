@@ -94,7 +94,7 @@ function BrewLANCategoryChanges(all_bps)
         urb4204 = {'TECH1', r = 'TECH2', },
         urb4205 = {'BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER',},
         urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = 'TECH2', },
-        urb4207 = {'TECH3', r = 'TECH2', },
+        urb4207 = {'TECH3','BUILTBYTIER3FIELD', r = 'TECH2', },
         --Tech 3 units
         xab3301 = {'DRAGBUILD', 'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
         xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager       
@@ -402,9 +402,14 @@ function BrewLANMatchBalancing(all_bps)
 ------- Sera T3 gunship to match Broadsword   
         ssa0305 = 'uea0305',
 ------- Air transports to be based  
-        ssa0306 = 'xea0306',
-        sra0306 = {'xea0306', 0.95,},
-        saa0306 = {'xea0306', 2.75,},
+        ssa0306 = 'xea0306',        
+                           --Energy mass  btime brate
+        sra0306 = {'xea0306', 0.95, 0.95, 0.95,},
+        saa0306 = {'xea0306', 2.75, 2.75, 2.75,},
+
+------- ED5 built by field engineer balancing         
+        urb4207 = {'urb4207', 1.5, 1.5, 2.725, },
+        urb4206 = {'urb4206', 1,   1,   1, 2.725,},
     }   
      
     for unitid, targetid in UnitsList do
@@ -418,8 +423,11 @@ function BrewLANMatchBalancing(all_bps)
             local tid = targetid[1]
             if all_bps[unitid] and all_bps[tid] then
                 all_bps[unitid].Economy.BuildCostEnergy = all_bps[tid].Economy.BuildCostEnergy * targetid[2]
-                all_bps[unitid].Economy.BuildCostMass = all_bps[tid].Economy.BuildCostMass * targetid[2]     
-                all_bps[unitid].Economy.BuildTime = all_bps[tid].Economy.BuildTime * targetid[2]
+                all_bps[unitid].Economy.BuildCostMass = all_bps[tid].Economy.BuildCostMass * targetid[3]     
+                all_bps[unitid].Economy.BuildTime = all_bps[tid].Economy.BuildTime * targetid[4] 
+                if all_bps[unitid].Economy.BuildRate and all_bps[tid].Economy.BuildRate and targetid[5] then 
+                    all_bps[unitid].Economy.BuildRate = all_bps[tid].Economy.BuildRate * targetid[5]
+                end
             end
         end    
     end
