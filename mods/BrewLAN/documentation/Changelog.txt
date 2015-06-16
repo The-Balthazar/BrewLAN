@@ -42,7 +42,7 @@ __________.__________
   __________
   2015-05-17
   
-  * Finished the recoding of the UEF drop-pod artillery: now also buildable agaon.
+  * Finished the recoding of the UEF drop-pod artillery: now also buildable again.
   * Did some more work on the model for the UEF drop-pod artillery.  
   * The Cyrban Punisher can now leave a wreckage.
   __________
