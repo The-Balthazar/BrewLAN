@@ -122,7 +122,25 @@ __________.__________
   2015-06-14
   
   * Cybran field engineer can now build the ED5 instead of the ED4. ED5 costs 50% more to build this way.
-  * More texture for Ivan.                                                                                   
+  * More texture for Ivan.
+  __________
+  2015-06-15
+  
+  * Halved the cost and energy storage or the stargate.
+  __________
+  2015-06-19
+  
+  * Moar ivan texture.
+  * Changed the LOD1 UV mapping on the UEF T1 Air staging, so it makes more sence.
+  * Doubled the Guardian LOD distance cutoffs.
+  * Fixed the LOD1 model of the LSD Pulse.
+  * Fixed the smoothing groups for the model of the UEF T2 mass storage.
+  * Spread out the blinking lights of the UEF T2 mass storage.
+  * Replaced the LOD1 textures of the UEF T2 mass storage.
+  * Replaced the LOD1 model of the UEF T2 mass storage.
+  * Fixed the smoothing groups for the model of the UEF T2 energy storage.
+  * Replaced the LOD1 textures of the UEF T2 energy storage.
+  * Doubled the LOD distance cutoffs for the UEF T2 storages.             
 __________.__________
 2015-01-02|0.6
 

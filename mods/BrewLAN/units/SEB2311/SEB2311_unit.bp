@@ -67,14 +67,14 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 100,
+                    LODCutoff = 200,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/UES0302/UES0302_albedo.dds', 
                     NormalsName = '/units/UES0302/UES0302_normalsts.dds', 
                     SpecularName = '/units/UES0302/UES0302_specteam.dds', 
                 },
                 {
-                    LODCutoff = 215,
+                    LODCutoff = 415,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/UES0302/UES0302_lod1_albedo.dds', 
                     NormalsName = '/units/UES0302/UES0302_lod1_normalsTS.dds', 
