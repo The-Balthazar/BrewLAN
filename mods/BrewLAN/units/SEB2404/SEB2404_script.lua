@@ -84,20 +84,20 @@ SEB2404 = Class(TStructureUnit) {
         unitBuilding:HideBone(0, true)          
     end,          
 
-    OnStopBuild = function(self, unitBeingBuilt)
+    OnStopBuild = function(self, unitBeingBuilt)          
         if unitBeingBuilt:GetFractionComplete() == 1 then
             if not self.AmmoList then self.AmmoList = {} end
             table.insert(self.AmmoList,unitBeingBuilt:GetBlueprint().BlueprintId)
             unitBeingBuilt:Destroy()     
             self:AmmoStackThread()
-        end
-        TStructureUnit.OnStopBuild(self, unitBeingBuilt)
+        end    
         if self.AmmoList[1] then
             if table.getn(self.AmmoList) >= self.FireNextOrders.count and self.RepeatOrders then
-                IssueClearCommands({self})  
+                IssueClearFactoryCommands({self})  
                 IssueAttack({self}, self.FireNextOrders.target)
             end
-        end
+        end      
+        TStructureUnit.OnStopBuild(self, unitBeingBuilt)
     end,     
 
     OnFailedToBuild = function(self)          

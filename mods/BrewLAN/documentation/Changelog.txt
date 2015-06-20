@@ -140,7 +140,14 @@ __________.__________
   * Replaced the LOD1 model of the UEF T2 mass storage.
   * Fixed the smoothing groups for the model of the UEF T2 energy storage.
   * Replaced the LOD1 textures of the UEF T2 energy storage.
-  * Doubled the LOD distance cutoffs for the UEF T2 storages.             
+  * Doubled the LOD distance cutoffs for the UEF T2 storages.
+  __________
+  2015-06-20
+  
+  * Replaced the LOD1 for the Harpoon.
+  * Gave the Aster a propper LOD1 model, and doubled the distance cutoffs for it.
+  * Doubled the LOD1 distance cutoff for the Archimedes.
+  * Fixed the duplicaion bug with the Ivan auto fire.                   
 __________.__________
 2015-01-02|0.6
 

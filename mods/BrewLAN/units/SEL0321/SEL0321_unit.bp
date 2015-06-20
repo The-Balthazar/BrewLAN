@@ -82,16 +82,16 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 100,
+                    LODCutoff = 200,
                     Scrolling = true,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/xel0306/xel0306_albedo.dds', 
                     SpecularName = '/units/xel0306/xel0306_specteam.dds', 
                 },
                 {
-                    LODCutoff = 215,
+                    LODCutoff = 415,
                     ShaderName = 'Unit',
-                    MeshName = '/units/xel0306/xel0306_lod1.scm', 
+                    --MeshName = '/units/xel0306/xel0306_lod1.scm', 
                     AlbedoName = '/units/xel0306/xel0306_lod1_albedo.dds', 
                     NormalsName = '/units/xel0306/xel0306_lod1_normalsTS.dds', 
                     SpecularName = '/units/xel0306/xel0306_lod1_specteam.dds', 
