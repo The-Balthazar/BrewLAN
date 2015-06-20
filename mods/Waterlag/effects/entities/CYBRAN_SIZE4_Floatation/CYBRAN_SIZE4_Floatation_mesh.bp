@@ -1,0 +1,13 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'CYBRAN_SIZE4_Floatation_lod0.scm',
+            AlbedoName = '/units/urb0103/urb0103_albedo.dds',
+            SpecularName = '/units/urb0103/urb0103_specteam.dds',
+            NormalsName = '/units/urb0103/urb0103_normalsTS.dds',
+            ShaderName = 'Insect',
+            LODCutoff = 1000,
+        },
+    },
+    SortOrder = 1000,
+}

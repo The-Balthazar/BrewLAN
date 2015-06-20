@@ -147,7 +147,9 @@ __________.__________
   * Replaced the LOD1 for the Harpoon.
   * Gave the Aster a propper LOD1 model, and doubled the distance cutoffs for it.
   * Doubled the LOD1 distance cutoff for the Archimedes.
-  * Fixed the duplicaion bug with the Ivan auto fire.                   
+  * Fixed the duplicaion bug with the Ivan auto fire.
+  * Made the Bessemer Reactor look slightly better.
+  * Waterlag: Added 'floatation' legs to Cybran and UEF units that have added water functionality.
 __________.__________
 2015-01-02|0.6
 

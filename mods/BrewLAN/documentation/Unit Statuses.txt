@@ -22,7 +22,7 @@ Errors list/the other to-do list.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
-* New prettier wall script ivolving a rotator, a slider, and position detection.
+* New prettier wall script ivolving a rotator, a slider, and position detection, for diagonals.
 * Have the Iyadesu cost during reclaimation for a full health unit, instead of a 1 health needed repair.
 * Darkness doesn't care about power outages.
 * Darkness doesn't care if the effected units move out of the range. (But no vanilla units effected can.)
@@ -31,7 +31,7 @@ Errors list/the other to-do list.
 * Waterlag: Add a series of generic floatations to be spawned under units if they lack floatation bones.  
   * Shields need a floatation when on water (Possibly easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
 * Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
-* Give the UEF walls, Ivan, Aster, T2 E-store, T2 M-store, & T1 air staging real distance models.
+* Give the UEF walls, and Bessemer Reactor real distance models.
 * Do something with the repair ship idea.
 * Do something with the cybran stealth field sub idea.
 * Add the Artilllery Defence Grid for UEF (DEB4303AntiArtilleryShield01).

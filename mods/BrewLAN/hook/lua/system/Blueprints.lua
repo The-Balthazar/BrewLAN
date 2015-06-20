@@ -467,6 +467,7 @@ function BrewLANNavalShields(all_bps)
             if not table.find(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic') then
                 table.insert(all_bps[k].Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
             end
+            table.insert(all_bps[k].Categories, 'GIVEMELEGS')
         end
     end
 end

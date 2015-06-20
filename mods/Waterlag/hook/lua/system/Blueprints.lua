@@ -41,6 +41,7 @@ function Waterlag(all_bps)
                         if bp.Wreckage.WreckageLayers.Land then
                             bp.Wreckage.WreckageLayers.Water = true
                         end
+                        table.insert(bp.Categories, 'GIVEMELEGS')
                     end
                 end
             end

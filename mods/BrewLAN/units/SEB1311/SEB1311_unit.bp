@@ -154,10 +154,10 @@ UnitBlueprint {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
-                    #MeshName = '/units/ueb1301/ueb1301_lod0.scm',
-                    #AlbedoName = '/units/ueb1301/ueb1301_albedo.dds',
-                    #SpecularName = '/units/ueb1301/ueb1301_specteam.dds',
-                    NormalsName = '/units/ueb1301/ueb1301_normalsTS.dds',
+                    --MeshName = '/units/ueb1301/ueb1301_lod0.scm',
+                    --AlbedoName = '/units/ueb1301/ueb1301_albedo.dds',
+                    --SpecularName = '/units/ueb1301/ueb1301_specteam.dds',
+                    --NormalsName = '/units/ueb1301/ueb1301_normalsTS.dds',
                 },
                 {
                     LODCutoff = 300,
