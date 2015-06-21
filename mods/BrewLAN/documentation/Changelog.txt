@@ -150,6 +150,10 @@ __________.__________
   * Fixed the duplicaion bug with the Ivan auto fire.
   * Made the Bessemer Reactor look slightly better.
   * Waterlag: Added 'floatation' legs to Cybran and UEF units that have added water functionality.
+  __________
+  2015-06-21
+  
+  * Waterlag: Added additional leg types for Cybran.
 __________.__________
 2015-01-02|0.6
 

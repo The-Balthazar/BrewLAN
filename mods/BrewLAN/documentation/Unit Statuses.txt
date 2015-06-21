@@ -14,7 +14,7 @@ Errors list/the other to-do list.
 * Zenith has unused bones.
 * The Absolution can't hover over units.
 * Other experimentals walk through armored walls.
-* Megalith built eggs bug out when at the pop cap.
+* Megalith built eggs bug out when at the pop cap. (vanilla bug)
 * Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
   * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
@@ -22,14 +22,13 @@ Errors list/the other to-do list.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
 * Armored walls (and probably other walls) need to be repaired slower.
-* New prettier wall script ivolving a rotator, a slider, and position detection, for diagonals.
-* Have the Iyadesu cost during reclaimation for a full health unit, instead of a 1 health needed repair.
+* New prettier wall script involving a rotator, a slider, and position detection, for diagonals.
+* Fix the Iyadesu.
 * Darkness doesn't care about power outages.
 * Darkness doesn't care if the effected units move out of the range. (But no vanilla units effected can.)
 * Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
 * Replace the stargate iris effect with a seperate entity so it can have ripple effects.
-* Waterlag: Add a series of generic floatations to be spawned under units if they lack floatation bones.  
-  * Shields need a floatation when on water (Possibly easier to create a dummy unit under it), and possibly to recieve radius and maintenence cost increases when built on water.
+* Find a way to increase static shield radius and maintenence cost increases when built on water.
 * Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
 * Give the UEF walls, and Bessemer Reactor real distance models.
 * Do something with the repair ship idea.
