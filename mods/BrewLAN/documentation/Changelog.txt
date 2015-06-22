@@ -154,6 +154,11 @@ __________.__________
   2015-06-21
   
   * Waterlag: Added additional leg types for Cybran.
+  __________
+  2015-06-22
+  
+  * Updated Russian translation by theonewhonevergivesa.
+  * Fixed LOC link for Little Bertha.  
 __________.__________
 2015-01-02|0.6
 

@@ -121,7 +121,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC srb2303_name>Little Bertha',
+        UnitName = '<LOC srb2103_name>Little Bertha',
         UnitWeight = 1,
     },
     Intel = {

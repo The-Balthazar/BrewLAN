@@ -36,6 +36,8 @@ Errors list/the other to-do list.
 * Add the Artilllery Defence Grid for UEF (DEB4303AntiArtilleryShield01).
 * Create a UI for the contents of the Ivan.
 * Make the damage test unit look like a Nokia 3310.
+* Fix the Cybran T1 air staging LOD1 and health bar.
+* Look into the issue of Seraphim Shield walls getting shot whilst still active.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
