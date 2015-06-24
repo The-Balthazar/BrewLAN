@@ -158,7 +158,12 @@ __________.__________
   2015-06-22
   
   * Updated Russian translation by theonewhonevergivesa.
-  * Fixed LOC link for Little Bertha.  
+  * Fixed LOC link for Little Bertha.
+  __________
+  2015-06-24
+  
+  * Localisation fixes.
+  * Fixed the health bar of the Cybran T1 Air Staging.    
 __________.__________
 2015-01-02|0.6
 

@@ -51,7 +51,7 @@ UnitBlueprint {
         MaxHealth = 20000,
         RegenRate = 0,
     },
-    Description = '<LOC sbui5201_desc>Heavy Wall Segment', 
+    Description = '<LOC sbui5201>Heavy Wall Segment', 
     Display = {      
         AdjacencyConnection = 'MEDIUMWALL',
         AdjacencyConnectionInfo = {  
@@ -175,7 +175,7 @@ UnitBlueprint {
         VisionRadius = 0,
     },
     Interface = {
-        HelpText = '<LOC sbui5201_desc>Heavy Wall Segment',
+        HelpText = '<LOC sbui5201>Heavy Wall Segment',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0,

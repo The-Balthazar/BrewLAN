@@ -166,7 +166,7 @@ Unit_Description_BrewLAN_T2D004="An all-terrain mine armed with a full-yield nuc
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
   
-sbui5201_desc="Heavy Wall Section"
+sbui5201="Heavy Wall Section"
 seb5210_name="General Destruction Impasse"
 srb5201_name="Bulkhead"
 Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage."
