@@ -1,8 +1,8 @@
 --+---------------+--+----------------------------------------------------------
---¦'-,_  ¦ ¦ _,-'¯¦--¦                                                                
---¦------+ +------¦--¦   BrewLAN English strings table
---¦------+ +------¦--¦   Author: Balthassar
---¦_,-'¯ ¦ ¦  ¯'-,¦--¦
+--Â¦'-,_  Â¦ Â¦ _,-'Â¯Â¦--Â¦                                                                
+--Â¦------+ +------Â¦--Â¦   BrewLAN English strings table
+--Â¦------+ +------Â¦--Â¦   Author: Balthassar
+--Â¦_,-'Â¯ Â¦ Â¦  Â¯'-,Â¦--Â¦
 --+---------------+--+----------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -321,6 +321,10 @@ Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly o
 --Mobile Shield Generator
 sel0322_name="Ella"
 --Short and long descriptions both the same as default. 
+
+srl0320_desc="Mobile Missile Launcher"
+srl0320_name="Slink"
+Unit_Description_BrewLAN_T3L009="Mobile cloaking missile launcher. Can fire at land- air- and sea-based units, but must decloak to fire."
 
 --------------------------------------------------------------------------------
 -- Experimentals
