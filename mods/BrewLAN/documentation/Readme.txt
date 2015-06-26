@@ -42,21 +42,22 @@ Beta testers
   Adam Butler (Outy)
   Christopher Hicks (Burning Star IV)
   John Williams (CyberJesus)
-  Daniel <redacted> (Mr.Deagle) – Code critique
+  Daniel <redacted> (mr.deagle) – Code critique, additional code, & poofreading
+  Simon Jenner (106.Bluebird) - German localisation
   'Dagordae'
   'Wrsaith'
   'Leviathan'
-  'ww.dk'
-  Simon Jenner (106.Bluebird) - German localisation
+  'ww.dk'         
+  Ajay (theonewhonevergivesa) - Russian localisation   
 
 Additional
 
   'asdrubaelvect29' - French localisation
-  Marc Tassetti (Explo) - French localisation   
+  Marc Tassetti (Explo) - French localisation
  
 --------------------------------------------------------------------------------
 -- External links
 --------------------------------------------------------------------------------
       
-   http://code.google.com/p/brewlan/
-   http://www.moddb.com/mods/brewlan
+   http://www.moddb.com/mods/brewlan   
+   https://github.com/The-Balthazar/BrewLAN

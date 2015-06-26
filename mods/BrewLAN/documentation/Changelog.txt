@@ -163,7 +163,11 @@ __________.__________
   2015-06-24
   
   * Localisation fixes.
-  * Fixed the health bar of the Cybran T1 Air Staging.    
+  * Fixed the health bar of the Cybran T1 Air Staging.
+  __________
+  2015-06-26
+  
+  * RU 4 real. Russian language update.    
 __________.__________
 2015-01-02|0.6
 
