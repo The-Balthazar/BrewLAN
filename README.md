@@ -1,4 +1,5 @@
 # BrewLAN
+
 **BrewLAN** is a mod for *Supreme Commander: Forged Alliance* that has been in on and
 off development by a team of one for over half a decade. It adds a wide variety
 of new units for all factions, as well as offering several new game modes and
@@ -26,3 +27,25 @@ Most issues are caused by incorrect installation, if done correctly the followin
 
 * `...\supreme commander forged alliance\mods\BrewLAN\mod_info.lua`
 * `...\supreme commander forged alliance\gamedata\brewlan.scd`
+
+## Credits
+Created by Sean Wheeldon (Balthazar/Balthassar)
+
+### Beta testers
+
+- Jonathan "Bilmon" Butler
+- Adam "Outy" Butler
+- Christopher "Burning Star IV" Hicks
+- John "CyberJesus" Williams
+- Daniel "mr.deagle" _\<redacted\>_ – Code critique, additional code & puffreading
+- Simon "106.Bluebird" Jenner – German localisation
+- Dagordae
+- Wrsaith
+- Leviathan
+- ww.dk
+- Ajay "theonewhonevergivesa" – Russian localisation   
+
+### Additional
+
+- asdrubaelvect29 – French localisation
+- Marc "Explo" Tassetti – French localisation
