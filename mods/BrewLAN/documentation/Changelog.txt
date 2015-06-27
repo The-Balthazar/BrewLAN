@@ -167,7 +167,16 @@ __________.__________
   __________
   2015-06-26
   
-  * RU 4 real. Russian language update.    
+  * RU 4 real. Russian language update.
+  * Fixed the LOD1 mesh of the Cybran T1 Air Staging.
+  * Adjusted the balance of the directly build ED5 again; buffed slightly.
+  * Field tech support commanders can no longer build both the ED4 & ED5.
+  * Added a build description for the ED5.
+  __________
+  2015-06-27
+  
+  * Megalith can now egg up some Salem.
+  * The Megalith flak egg is now considered T3.               
 __________.__________
 2015-01-02|0.6
 

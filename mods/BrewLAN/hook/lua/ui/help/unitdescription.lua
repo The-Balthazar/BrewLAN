@@ -68,6 +68,7 @@ Description['ssb0304'] = "<LOC Unit_Description_0452> Automatically repairs, rec
 --Tech 2 protection units
 Description['urb4205'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Description['urb4206'] = "<LOC Unit_Description_BrewLAN_T2D003>Generates a heavy shield around units and structures within its radius."
+Description['urb4207'] = "<LOC Unit_Description_BrewLAN_T2D003>Generates a heavy shield around units and structures within its radius."
 
 --Tech 2 land units
 Description['srl0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter, internal radar, and stealth."
@@ -153,6 +154,9 @@ Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amph
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
 Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of all active Omni sensors. Distant sensors are affected slower."
 Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
+
+--Megalith eggs
+Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."
 
 --Support commander upgrades
 Description['uel0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU." 

@@ -19,9 +19,11 @@ function SCUFieldUpgrade(SuperClass)
             if enh == 'Field' then
                 self:RemoveBuildRestriction(categories.BUILTBYTIER3FIELD)  
                 self:AddBuildRestriction(restriction)
+                self:AddBuildRestriction(categories.urb4206)
             elseif enh == 'FieldRemove' then
                 self:AddBuildRestriction(categories.BUILTBYTIER3FIELD)      
-                self:RemoveBuildRestriction(restriction)
+                self:RemoveBuildRestriction(restriction)     
+                self:RemoveBuildRestriction(categories.urb4206)
             end
         end,
     }

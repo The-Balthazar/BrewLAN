@@ -370,3 +370,5 @@ Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Crea
 ssb5401_desc="Experimental Quantum Gateway"
 ssb5401_name="Chappa'ai"
 Unit_Description_BrewLAN_T4B007="Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
+
+srl0001_desc="Crab Egg (Destroyer)"

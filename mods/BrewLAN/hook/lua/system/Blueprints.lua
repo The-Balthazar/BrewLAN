@@ -73,6 +73,7 @@ function BrewLANBuildCatChanges(all_bps)
         uel0301 = {'BUILTBYTIER3FIELD UEF',},
         url0301 = {'BUILTBYTIER3FIELD CYBRAN',},
         xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
+        xrl0403 = {'srl0001',},
     }
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
@@ -100,6 +101,8 @@ function BrewLANCategoryChanges(all_bps)
         xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager       
         xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD', },--Kennel 
         xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD','TECH3', r = 'TECH2' },--Hive
+        
+        xrl0004 = {'TECH3', r = 'TECH2'},
         
         --Experimental units
         xab1401 = {'SORTECONOMY',},----------------------------Paragon
@@ -408,8 +411,8 @@ function BrewLANMatchBalancing(all_bps)
         saa0306 = {'xea0306', 2.75, 2.75, 2.75,},
 
 ------- ED5 built by field engineer balancing         
-        urb4207 = {'urb4207', 1.5, 1.5, 2.725, },
-        urb4206 = {'urb4206', 1,   1,   1, 2.725,},
+        urb4207 = {'urb4207', 1.5, 1.5, 2.25, },
+        urb4206 = {'urb4206', 1,   1,   1, 2.25,},
     }   
      
     for unitid, targetid in UnitsList do
