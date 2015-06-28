@@ -176,7 +176,12 @@ __________.__________
   2015-06-27
   
   * Megalith can now egg up some Salem.
-  * The Megalith flak egg is now considered T3.               
+  * The Megalith flak egg is now considered T3.
+  __________
+  2015-06-28
+  
+  * RU strings for Megalith Salem egg.
+  * Improved the texturing for the Centurion LOD1.                 
 __________.__________
 2015-01-02|0.6
 
