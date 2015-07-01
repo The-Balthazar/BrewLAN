@@ -69,7 +69,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
         'GATE',
-    },
+    }, 
+    CollisionOffsetY = -2,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -297,7 +298,11 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,
+        MaxSteerForce = 0,       
+        --MeshExtentsOffsetY = -2,
+        --MeshExtentsX = 1.5,
+        --MeshExtentsY = 0.25,
+        --MeshExtentsZ = 1,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',   
         OccupyRects = {

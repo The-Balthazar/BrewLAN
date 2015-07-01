@@ -181,7 +181,12 @@ __________.__________
   2015-06-28
   
   * RU strings for Megalith Salem egg.
-  * Improved the texturing for the Centurion LOD1.                 
+  * Improved the texturing for the Centurion LOD1.
+  __________
+  2015-06-29
+  
+  * Waterlag: Now lowers the colision model of effected units so they are easier to torpedo.
+  * Lowered the colision model of the Gantry so it can be show by torpedos better.                   
 __________.__________
 2015-01-02|0.6
 
