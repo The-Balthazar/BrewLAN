@@ -4,61 +4,81 @@
 --------------------------------------------------------------------------------
 
 local TLandFactoryUnit = SEB0401
-local Utilities = import('/lua/utilities.lua')    
-local Buff = import('/lua/sim/Buff.lua')   
+local Utilities = import('/lua/utilities.lua')
+local Buff = import('/lua/sim/Buff.lua')
+local timeDiv = 300
+local timeExp = 2
+local timeCo = .2
+local massDiv = 500000
+local massExp = 1.5
+local massCo = .5
+local massIncrement = 100
+local energyIncrement = 1000
 
-SEB0401 = Class(TLandFactoryUnit) {    
+SEB0401 = Class(TLandFactoryUnit) {
 --------------------------------------------------------------------------------
 -- AI Cheats -- This script is triggered each time it starts building
---------------------------------------------------------------------------------   
-    AIxCheats = function(self)               
-        local aiBrain = self:GetAIBrain()    
+--------------------------------------------------------------------------------
+    AIxCheats = function(self)
+        local aiBrain = self:GetAIBrain()
         ------------------------------------------------------------------------
         -- Default hax, from BrewLAN actual
-        ------------------------------------------------------------------------   
-        TLandFactoryUnit.AIxCheats(self)     
+        ------------------------------------------------------------------------
+        TLandFactoryUnit.AIxCheats(self)
         ------------------------------------------------------------------------
         -- AIX cheats
-        ------------------------------------------------------------------------    
-        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then       
-            self:ForkThread(
-                function()
-                    local timealive = GetGameTimeSeconds()-self.Time
-                    local timediv = 300
-                    local timeexp = 2   
-                    local timeco = .2
-                    local enemymass = self:CalculatEnemyMass(self)
-                    local enemymassdiv = 500000
-                    local enemymassexp = 1.5
-                    local enemymassco = .5
-                    self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.min(  1  + timeco * math.pow(timealive/timediv,timeexp) + enemymassco * math.pow(enemymass/enemymassdiv, enemymassexp)  , 16) ) )
-                    LOG("THIS IS THE WAY WE DIE " .. (math.min(  1  +  math.pow(timealive/timediv,timeexp)  +  math.pow(enemymass/enemymassdiv, enemymassexp)  , 25)) .. " which is time " .. math.pow(timealive/timediv,timeexp) .. " and mass " .. math.pow(enemymass/enemymassdiv, enemymassexp) )
-                    while aiBrain:GetEconomyIncome( 'MASS' ) > 0 and aiBrain:GetEconomyIncome( 'ENERGY' ) > 0 do
-                        if aiBrain:GetEconomyIncome( 'MASS' ) < aiBrain:GetEconomyRequested('MASS') or aiBrain:GetEconomyIncome( 'ENERGY' ) < aiBrain:GetEconomyRequested('ENERGY') then
-                            aiBrain:GiveResource('Mass',100)
-                            aiBrain:GiveResource('Energy',1000)
-                        end    
-                        WaitSeconds(1)
-                    end
-                end
-            )    
         ------------------------------------------------------------------------
-        -- Regular minor-ai cheats
-        ------------------------------------------------------------------------               
-        elseif aiBrain.BrainType != 'Human' and not aiBrain.CheatEnabled then
-            self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * 2.5 )  
+        if aiBrain.BrainType != 'Human' then
+            if aiBrain.CheatEnabled then
+                -- AI supah4x0r
+                self.massIncome = (self.massIncome or 0) + massIncrement
+                self.energyIncome = (self.energyIncome or 0) + energyIncrement
+                local timeAlive = GetGameTimeSeconds() - self.Time
+                local enemyMass = self:CalculateEnemyMass(self)
+                local timeMultiplier = timeCo * math.pow(timeAlive / timeDiv, timeExp)
+                local massMultiplier = massCo * math.pow(enemyMass / massDiv, massExp)
+                local totalMultiplier = 1 + timeMultiplier + massMultiplier
+                local buildRate = self:GetBlueprint().Economy.BuildRate * (math.min(totalMultiplier, 16))
+                self:SetBuildRate(buildRate)
+            else
+                -- Regular minor AI cheats
+                self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 2.5)
+            end
         end
     end,
-    
-    CalculatEnemyMass = function(self)
+
+    CalculateEnemyMass = function(self)
         local totalmass = 0
         for i, brain in ArmyBrains do
             if not IsAlly(self:GetAIBrain():GetArmyIndex(), brain:GetArmyIndex()) then
                 totalmass = totalmass + brain:GetArmyStat("Economy_TotalProduced_Mass", 0.0).Value - brain:GetArmyStat("Economy_AccumExcess_Mass", 0.0).Value
             end
         end
-        LOG("total mass: " .. totalmass)
+        LOG("Total enemy mass = " .. totalmass)
         return totalmass
+    end,
+
+    OnStopBeingBuilt = function(self, builder, layer)
+        TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
+        self.AIStartOrders(self)
+
+        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
+            self.massIncome = 0
+            self.energyIncome = 0
+            self:ForkThread(
+                function()
+                    while true do
+                        if aiBrain:GetEconomyIncome('MASS') > 0 and aiBrain:GetEconomyIncome('ENERGY') > 0
+                                and (aiBrain:GetEconomyIncome('MASS') < aiBrain:GetEconomyRequested('MASS')
+                                or aiBrain:GetEconomyIncome('ENERGY') < aiBrain:GetEconomyRequested('ENERGY')) then
+                            aiBrain:GiveResource('Mass', self.massIncome)
+                            aiBrain:GiveResource('Energy', self.energyIncome)
+                        end
+                        WaitSeconds(1)
+                    end
+                end
+            )
+        end
     end,
 }
 
