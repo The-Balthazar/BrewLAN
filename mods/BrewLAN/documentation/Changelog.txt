@@ -186,7 +186,13 @@ __________.__________
   2015-06-29
   
   * Waterlag: Now lowers the colision model of effected units so they are easier to torpedo.
-  * Lowered the colision model of the Gantry so it can be show by torpedos better.                   
+  * Lowered the colision model of the Gantry so it can be show by torpedos better.
+  __________
+  2015-07-03
+  
+  * New Sub-mod: For specific features while running both BrewLAN and BlackOps: Lucky Dip:
+    * Anywhere that BlackOps and BrewLAN make similar units, it restricts one of them at random.
+  * Waterlag: Removed part of the collision model change that was effecting engineers wierdly.     
 __________.__________
 2015-01-02|0.6
 
