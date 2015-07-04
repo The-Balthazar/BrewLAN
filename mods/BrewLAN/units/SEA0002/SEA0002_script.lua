@@ -24,8 +24,11 @@ SEA0002 = Class(TAirUnit) {
         if self.IsDying then 
             return 
         end
-        self.IsDying = true
-        self.Parent:Kill(instigator, type, 0)
+        self.IsDying = true    
+        self.Parent.Satellite = nil
+        self.Parent:Rebuild()
+        --self.Parent.OpenState:Main(self.Parent)
+        --ChangeState( self.Parent, self.Parent.OpenState )--self.Parent:Kill(instigator, type, 0)
         TAirUnit.OnKilled(self, instigator, type, overkillRatio)        
     end,
     

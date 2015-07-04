@@ -194,7 +194,12 @@ __________.__________
     * Anywhere that BlackOps and BrewLAN make similar units, it restricts one of them at random.
   * Waterlag: Removed part of the collision model change that was effecting engineers wierdly.
   * Removed the Seraphim Battleship from the no nukes restriction.
-  * Had the Seraphim Battleship disable its nuke launcher if nukes are restricted.            
+  * Had the Seraphim Battleship disable its nuke launcher if nukes are restricted.
+  __________
+  2015-07-04
+  
+  * Novax now rebuilds the Satelite if it dies.
+  * Updated the build mode shortcuts for everything but field engineer buildings.              
 __________.__________
 2015-01-02|0.6
 
