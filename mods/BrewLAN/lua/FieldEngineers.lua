@@ -7,7 +7,7 @@ function SCUFieldUpgrade(SuperClass)
             SuperClass.OnCreate(self) 
             if self:GetAIBrain().BrainType == 'Human' then
                 self:AddBuildRestriction(categories.BUILTBYTIER3FIELD)
-            end
+            end 
         end,
         
         CreateEnhancement = function(self, enh)

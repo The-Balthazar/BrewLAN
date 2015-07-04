@@ -90,4 +90,5 @@ do
     if not categories.deb4303 then
         table.removeByValue(restrictedUnits.BUBBLES.categories, "deb4303")
     end
+    table.removeByValue(restrictedUnits.NUKE.categories, "xss0302")
 end
