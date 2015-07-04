@@ -153,6 +153,10 @@ Modded Units:
 
   	T2 Sonar
   		* Allowed it to upgrade into my T3 sonar.
+  	
+    T3 Battleship
+    	* Nuke launcher disabled when nukes are disabled.
+    	  * ToDo: Remove its useless nuke buttons during this time.              
 _______________________________________________________
 Added and planned units:
 -------------------------------------------------------

@@ -1,12 +1,12 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/XEB2402/XEB2402_script.lua
-#**  Author(s):  Dru Staltman
-#**
-#**  Summary  :  UEF Sub Orbital Laser
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
+--****************************************************************************
+--**
+--**  File     :  /cdimage/units/XEB2402/XEB2402_script.lua
+--**  Author(s):  Dru Staltman
+--**
+--**  Summary  :  UEF Sub Orbital Laser
+--**
+--**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+--****************************************************************************
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 
 SEB3303 = Class(TStructureUnit) {   
@@ -17,33 +17,45 @@ SEB3303 = Class(TStructureUnit) {
         ChangeState( self, self.OpenState )
     end,
     
+    Rebuild = function(self)
+        ChangeState( self, self.OpenState )
+    end,
+    
     OpenState = State() {
 
         Main = function(self)            
             local newSat = not self.Satellite
             
-            # Play open animations.  Currently both play after unit finished, but will change
-            # to play one while being built and one when finished        
-            # Can't use PermOpenAnimation because of the satellite
-            local bp = self:GetBlueprint()
-            self.AnimManip = CreateAnimator(self)
-            self.AnimManip:PlayAnim( '/units/XEB2402/XEB2402_aopen.sca' )
-            self.Trash:Add(self.AnimManip)
+            -- Play open animations.  Currently both play after unit finished, but will change
+            -- to play one while being built and one when finished        
+            -- Can't use PermOpenAnimation because of the satellite
+            local bp = self:GetBlueprint()   
+            local location = self:GetPosition('Attachpoint01')
+            local army = self:GetArmy()
+            
+            if self.AnimManip then
+                self.AnimManip:SetRate(1)   
+            else
+                self.AnimManip = CreateAnimator(self)
+                self.AnimManip:PlayAnim( '/units/XEB2402/XEB2402_aopen.sca' )
+                self.Trash:Add(self.AnimManip)    
+            end
             self:PlayUnitSound('MoveArms')
             WaitFor( self.AnimManip )
             
-            # Attach satellite to unit, play animation, release satellite
-            # Create satellite and attach to attachpoint bone
-            local location = self:GetPosition('Attachpoint01')
-            local army = self:GetArmy()
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(0.06, -0.10, 1.90))
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(-0.06, -0.10, 1.90))
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(0.08, -0.5, 1.60))
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(-0.04, -0.5, 1.60))
+            -- Attach satellite to unit, play animation, release satellite
+            -- Create satellite and attach to attachpoint bone   
+            if not self.LightsOn then
+                self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(0.06, -0.10, 1.90))
+                self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(-0.06, -0.10, 1.90))
+                self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(0.08, -0.5, 1.60))
+                self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(-0.04, -0.5, 1.60)) 
+                self.Trash:Add(CreateAttachedEmitter(self,'ConstuctBeam01',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
+                self.Trash:Add(CreateAttachedEmitter(self,'ConstuctBeam02',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
+                self.LightsOn = true
+            end 
             self.Trash:Add(CreateAttachedEmitter(self,'Attachpoint01',army, '/effects/emitters/structure_steam_ambient_01_emit.bp'):OffsetEmitter(0.7, -0.85, 0.35))
             self.Trash:Add(CreateAttachedEmitter(self,'Attachpoint01',army, '/effects/emitters/structure_steam_ambient_02_emit.bp'):OffsetEmitter(-0.7, -0.85, 0.35))
-            self.Trash:Add(CreateAttachedEmitter(self,'ConstuctBeam01',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
-            self.Trash:Add(CreateAttachedEmitter(self,'ConstuctBeam02',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
             
             if newSat then
                 self.Satellite = CreateUnitHPR('SEA0002', self:GetArmy(), location[1], location[2], location[3], 0, 0, 0)
@@ -51,23 +63,32 @@ SEB3303 = Class(TStructureUnit) {
                 self.Satellite:AttachTo(self, 'Attachpoint01')
             end
             
-            #Tell the satellite that we're its parent
+            --Tell the satellite that we're its parent
             self.Satellite.Parent = self
             
-            # Play open animation
+            -- Play open animation
             self.AnimManip:PlayAnim( '/units/XEB2402/XEB2402_aopen01.sca' )
             self:PlayUnitSound('LaunchSat')
+             
             WaitFor( self.AnimManip )
-			self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_01_emit.bp'):OffsetEmitter(0.00, 0.00, 1.00))
-			self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_02_emit.bp'):OffsetEmitter(0.00, 2.00, 1.00))
+    			self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_01_emit.bp'):OffsetEmitter(0.00, 0.00, 1.00))
+    			self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_02_emit.bp'):OffsetEmitter(0.00, 2.00, 1.00))
             
-            # Release unit
+            -- Release unit
             if newSat then
                 self.Satellite:DetachFrom()
                 self.Satellite:Open()
             end
+            ChangeState( self, self.OtherState )
         end,
-    },   
+    },
+       
+    OtherState = State() {
+        Main = function(self)
+            self.AnimManip:SetRate(-1)
+            self.AnimManip:SetPrecedence(0) 
+        end,
+    },
     
     OnKilled = function(self, instigator, type, overkillRatio)
         if self.Satellite and not self.Satellite:IsDead() and not self.Satellite.IsDying then
@@ -95,16 +116,16 @@ SEB3303 = Class(TStructureUnit) {
             local captorArmyIndex = captor:GetArmy()
             local captorBrain = false
             
-            # For campaigns:
-            # We need the brain to ignore army cap when transfering the unit
-            # do all necessary steps to set brain to ignore, then un-ignore if necessary the unit cap
+            -- For campaigns:
+            -- We need the brain to ignore army cap when transfering the unit
+            -- do all necessary steps to set brain to ignore, then un-ignore if necessary the unit cap
             
             if ScenarioInfo.CampaignMode then
                 captorBrain = captor:GetAIBrain()
                 SetIgnoreArmyUnitCap(captorArmyIndex, true)
             end
             
-            #Satellite stuff
+            --Satellite stuff
             self.Satellite:DoUnitCallbacks('OnCaptured', captor)
             local newSatUnitCallbacks = {}
             if self.Satellite.EventCallbacks.OnCapturedNewUnit then
@@ -114,7 +135,7 @@ SEB3303 = Class(TStructureUnit) {
             local satEnh = SimUnitEnhancements[satId]
             local sat = ChangeUnitArmy(self.Satellite, captorArmyIndex)
             
-            #Unit stuff
+            --Unit stuff
             local newUnit = ChangeUnitArmy(self, captorArmyIndex)
             if newUnit then
                 newUnit.Satellite = sat
@@ -135,7 +156,7 @@ SEB3303 = Class(TStructureUnit) {
                 end
             end
             
-            #Satellite stuff
+            --Satellite stuff
             if satEnh then
                 for k,v in satEnh do
                     sat:CreateEnhancement(v)
