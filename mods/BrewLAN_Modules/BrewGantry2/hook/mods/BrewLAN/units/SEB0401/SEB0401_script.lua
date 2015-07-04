@@ -61,7 +61,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     OnStopBeingBuilt = function(self, builder, layer)
         TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self.AIStartOrders(self)
-
+        local aiBrain = self:GetAIBrain()
         if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
             self.massIncome = 0
             self.energyIncome = 0
