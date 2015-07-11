@@ -6,7 +6,7 @@
 do
     local OldGetConstructEconomyModel = GetConstructEconomyModel
     
-    function GetConstructEconomyModel(builder, targetData, upgradeBaseData)
+    function GetConstructEconomyModel(builder, targetData, ...)
         if builder:GetBlueprint().BlueprintId == targetData.HalfPriceUpgradeFromID or builder:GetBlueprint().General.UpgradesTo == targetData.HalfPriceUpgradeFromID then
             local builder_bp = builder:GetBlueprint()
             local rate = builder:GetBuildRate()
@@ -20,11 +20,8 @@ do
             mass = math.max(mass * (100 + (builder.MassModifier or 0))*.01, 0)
             
             return buildtime/rate, energy, mass
-        elseif upgradeBaseData then
-            --FAF compatibility
-            return OldGetConstructEconomyModel(builder, targetData, upgradeBaseData)
         else
-            return OldGetConstructEconomyModel(builder, targetData)
+            return OldGetConstructEconomyModel(builder, targetData, unpack(arg))
         end
     end
 end

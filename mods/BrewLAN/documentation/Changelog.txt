@@ -199,7 +199,12 @@ __________.__________
   2015-07-04
   
   * Novax now rebuilds the Satelite if it dies.
-  * Updated the build mode shortcuts for everything but field engineer buildings.              
+  * Updated the build mode shortcuts for everything but field engineer buildings.
+  __________
+  2015-07-08
+  
+  * Fixed the buildability of the field engineers on FAF.
+  * Improved other FAF related compatibility.                
 __________.__________
 2015-01-02|0.6
 

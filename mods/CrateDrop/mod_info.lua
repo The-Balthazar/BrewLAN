@@ -1,0 +1,16 @@
+name = "Crate Drop"
+uid = "BREWLANS-a0a7-426d-88f2-CRATESZ00001"
+version = 0.1
+copyright = "2015 Sean Wheeldon"
+description = "Random crate drops happen. Will they be good? Will they be bad? Who knows."
+author = "Sean Wheeldon"
+--icon = "/mods/waterlag/mod_icon.dds"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+requires = { }
+requiresNames = { }
+conflicts = {
+}before = { }
+after = { }

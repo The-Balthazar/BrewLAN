@@ -6,7 +6,7 @@
 --+-----------------------------------------------------------------------------
 local OldOnClickHandler = OnClickHandler
                                                           
-function OnClickHandler(button, modifiers)         
+function OnClickHandler(button, modifiers, ...)         
     local item = button.Data
     local changeclick = false
     for i,v in sortedOptions.selection do
@@ -55,20 +55,20 @@ function OnClickHandler(button, modifiers)
                     IssueBlueprintCommand("UNITCOMMAND_BuildFactory", item.id, count)
                 end
             else
-                OldOnClickHandler(button, modifiers)
+                OldOnClickHandler(button, modifiers, unpack(arg))
             end
         elseif item.type == 'queuestack' then
-            OldOnClickHandler(button, modifiers) 
+            OldOnClickHandler(button, modifiers, unpack(arg)) 
         elseif item.type == 'unitstack' then   
-            OldOnClickHandler(button, modifiers)
+            OldOnClickHandler(button, modifiers, unpack(arg))
         elseif item.type == 'attachedunit' then   
-            OldOnClickHandler(button, modifiers)
+            OldOnClickHandler(button, modifiers, unpack(arg))
         elseif item.type == 'templates' then
-            OldOnClickHandler(button, modifiers)
+            OldOnClickHandler(button, modifiers, unpack(arg))
         elseif item.type == 'enhancement' then 
-            OldOnClickHandler(button, modifiers)
+            OldOnClickHandler(button, modifiers, unpack(arg))
         end
     else
-        OldOnClickHandler(button, modifiers)
+        OldOnClickHandler(button, modifiers, unpack(arg))
     end
 end
