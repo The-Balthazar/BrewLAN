@@ -80,16 +80,6 @@ SEB0401 = Class(TLandFactoryUnit) {
             )
         end
     end,
-
-    ChooseExpimental = function(self)  
-        if self:GetAIBrain():GetNoRushTicks() > 1500 then
-            if self:CanBuild('UEA0304') then
-                return 'UEA0304'
-            end
-        else 
-            return TLandFactoryUnit.ChooseExpimental(self)
-        end
-    end,
 }
 
 TypeClass = SEB0401

@@ -111,39 +111,50 @@ CenturionBehaviorBrewLAN = function(self)
                 end
             end
         else
-            --This is the default behaviour for the CZAR. Might need some reworking for the Centurion 
+            local ACUs = aiBrain:GetUnitsAroundPoint(categories.COMMAND, self:GetPlatoonPosition(), 8000, 'Enemy' )
+            local Gantries = aiBrain:GetUnitsAroundPoint(categories.GANTRY, self:GetPlatoonPosition(), 8000, 'Ally' )
+            local experimental = GetExperimentalUnit(self)
+            local closestGantry = GetClosestThingToThing(experimental, Gantries)
+            local ACUsAboveWater = {}
             
-            if (targetUnit and targetUnit != oldTargetUnit) or not self:IsCommandsActive(cmd) then			
-                if targetUnit and VDist3( targetUnit:GetPosition(), self:GetPlatoonPosition() ) > 100 then
-                    IssueClearCommands(platoonUnits)
-                    WaitTicks(5)
-                    cmd = ExpPathToLocation(aiBrain, self, 'Air', targetUnit:GetPosition(), false, 62500)
-                    cmd = self:AttackTarget(targetUnit)
-                else 
-                    IssueClearCommands(platoonUnits)
-                    WaitTicks(5)
-                    cmd = self:AttackTarget(targetUnit) #IssueAttack(platoonUnits, targetUnit)
+            --Request assistance from Albatrosses
+            if ACUs[1] and not ACUs[1]:IsDead() then
+                for i, ACU in ACUs do
+                    --LOG("ACU LAYER = ")
+                    --LOG(ACU:GetCurrentLayer())
+                    if ACU:GetCurrentLayer() == 'Seabed' then
+                        if closestGantry:CanBuild('sea0307') then 
+                            table.insert(closestGantry.RequestedUnits, {'sea0307', experimental})
+                        else
+                            table.insert(closestGantry.RequestedUnits, {'uea0204', experimental})
+                        end
+                    else
+                        table.insert(ACUsAboveWater, ACU)
+                    end
                 end
             end
             
-            local nearCommander = CommanderOverrideCheckSorian(self)
-            local oldCommander = nil
-            while nearCommander and aiBrain:PlatoonExists(self) and self:IsCommandsActive(cmd) do
-                if nearCommander and nearCommander != oldCommander then
-                    IssueClearCommands(platoonUnits)
-                    WaitTicks(5)
-                    cmd = self:AttackTarget(nearCommander)
-                    targetUnit = nearCommander
+            local targetLocation = GetHighestThreatClusterLocation(aiBrain, experimental)
+            local oldTargetLocation = nil
+            
+            if not ACUsAboveWater[1] then
+                targetLocation = GetClosestThingToThing(experimental, ACUsAboveWater)
+                while targetLocation and targetLocation:GetCurrentLayer() != 'Seabed' do  
+                    IssueClearCommands({experimental})
+                    IssueAggressiveMove({experimental}, targetLocation)           
+                    WaitSeconds(25)
                 end
-                
+            else     
+                if targetLocation and targetLocation != oldTargetLocation then
+                    IssueClearCommands({experimental})
+                    IssueAggressiveMove({experimental}, targetLocation)           
+                    WaitSeconds(25)
+                end
+               
                 WaitSeconds(1)
-                oldCommander = nearCommander
-                nearCommander = CommanderOverrideCheckSorian(self)
-            end
-            
-            WaitSeconds(1)
-            oldTargetUnit = targetUnit
-            targetUnit, targetBase = FindExperimentalTarget(self)
+                oldTargetLocation = targetLocation
+                targetLocation = GetHighestThreatClusterLocation(aiBrain, experimental)
+            end 
         end
         WaitSeconds(1)
     end
@@ -187,6 +198,27 @@ function ParagonAttackPicker(Paragons, platoonUnits)
         end
     end
     return nil
+end
+--------------------------------------------------------------------------------
+-- Finds the closest entity in a search table of entites
+-- Inputs: The point of reference unit, the getunitsaroundpoint table
+-- Output: The closest to the reference in the table.
+--------------------------------------------------------------------------------
+function GetClosestThingToThing(this,them)
+    local aPos = this:GetPosition()
+    local closest = false
+    local closestDistSq = 999999
+    for i,target in them do
+        local shieldPos = target:GetPosition()
+        local distSq = VDist2Sq(aPos[1], aPos[3], shieldPos[1], shieldPos[3])
+        
+        if distSq < closestDistSq then
+            closest = target
+            closestDistSq = distSq
+        end
+    end
+    
+    return closest
 end
 --------------------------------------------------------------------------------
 -- Sorian shield protecting target check.

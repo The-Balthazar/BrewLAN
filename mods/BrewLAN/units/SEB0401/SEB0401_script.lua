@@ -81,10 +81,7 @@ SEB0401 = Class(TLandFactoryUnit) {
         self.Time = GetGameTimeSeconds()       
         if aiBrain.BrainType != 'Human' then     
             --self.engineers = {} 
-            self.BuildModeChange(self)         
-            aiBrain:BuildUnit(self, 'uel0309', 5)   
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-            aiBrain:BuildUnit(self, 'uel0309', 5)       
+            self.BuildModeChange(self)               
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
             local AINames = import('/lua/AI/sorianlang.lua').AINames
             if AINames.seb0401 then
@@ -102,7 +99,6 @@ SEB0401 = Class(TLandFactoryUnit) {
                 self:ForkThread(
                     function()       
                         IssueClearCommands({unitBeingBuilt})
-                        self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
                         for i = 1, 40 do     
                             if unitBeingBuilt:CanBuild('xeb0204') then
                                 self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0204')
@@ -112,7 +108,26 @@ SEB0401 = Class(TLandFactoryUnit) {
                         end   
                         IssueGuard({unitBeingBuilt}, self)
                     end
-                )  
+                )
+            elseif unitBeingBuilt:GetUnitId() == 'uel0309' or unitBeingBuilt:GetUnitId() == 'sel0319' then
+                --table.insert(self.engineers, unitBeingBuilt)
+                self:ForkThread(
+                    function()       
+                        IssueClearCommands({unitBeingBuilt})
+                        self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
+                        IssueGuard({unitBeingBuilt}, self)
+                    end
+                )    
+            elseif unitBeingBuilt:GetUnitId() == self.AcceptedRequests[1][1] then
+                if not self.AcceptedRequests[1][2]:IsDead() then
+                    IssueGuard({unitBeingBuilt}, self.AcceptedRequests[1][2])
+                --Something for passing along the requested units here, and/or, for sharing them out.
+                --else
+                --    for i,v in self.AcceptedRequests do
+                --        if not 
+                --    end
+                end
+                table.remove(self.AcceptedRequests, 1)
             end
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
         end
@@ -138,7 +153,48 @@ SEB0401 = Class(TLandFactoryUnit) {
         aiBrain:BuildStructure(mook, building, {pos[1]+BuildGoalX, pos[3]+BuildGoalZ, 0})
     end,
     
+    RequestedUnits = {
+    },
+    
+    AcceptedRequests = {
+    },
+    
     ChooseExpimental = function(self)  
+        if not self.BuiltUnitsCount then self.BuiltUnitsCount = 1 else self.BuiltUnitsCount = self.BuiltUnitsCount + 1 end
+        local buildorder = {
+            'uel0309',
+            'sel0319',
+            'uel0309',  
+            false,
+            'uel0309',  
+            'sel0319',
+            'uel0309',
+            'sel0319',   
+            false,
+            'uel0309',
+            'sel0319',
+            'uel0309',
+        }
+        
+        if buildorder[self.BuiltUnitsCount] and self:CanBuild(buildorder[self.BuiltUnitsCount]) then
+            return buildorder[self.BuiltUnitsCount]
+        end
+        
+        if self.RequestedUnits[1] and math.mod(self.BuiltUnitsCount, 2) == 0 then
+            local req = self.RequestedUnits[1][1] 
+            table.insert(self.AcceptedRequests,self.RequestedUnits[1])
+            table.remove(self.RequestedUnits, 1)
+            if self:CanBuild(req) then
+                return req
+            end
+        end
+        
+        if self:GetAIBrain():GetNoRushTicks() > 1500 then
+            if self:CanBuild('UEA0304') then
+                return 'UEA0304'
+            end
+        end 
+        
         local bpAirExp = self:GetBlueprint().AI.Experimentals.Air
         local bpOtherExp = self:GetBlueprint().AI.Experimentals.Other
         if not self.ExpIndex then self.ExpIndex = {math.random(1, table.getn(bpAirExp)),math.random(1, table.getn(bpOtherExp)),} end
