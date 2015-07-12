@@ -35,7 +35,7 @@ do
     function arbitraryBrain()     
         for i, brain in ArmyBrains do
             if not brain:IsDefeated() and not ArmyIsCivilian(brain:GetArmyIndex()) then    
-                LOG(brain.Nickname)
+                --LOG(brain.Nickname)
                 return brain
             end
         end
@@ -57,8 +57,27 @@ do
             return getSafePos(tries + 1)  
         end
     end
+       
+    local lewt = {
+        {
+            function(Unit) Unit:GetAIBrain():GiveResource('Mass', 5000) end,
+            function(Unit) Unit:SetMaxHealth(Unit:GetMaxHealth() * 2) Unit:SetHealth(Unit, Unit:GetMaxHealth()) end,
+            function(Unit)
+                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), Unit:GetPosition()[1] + math.random(-2, 2), Unit:GetPosition()[2], Unit:GetPosition()[3] + math.random(-2, 2), 0, math.random(0,360), 0)
+                clone:SetMaxHealth(Unit:GetMaxHealth() )
+                clone:SetHealth(Unit, Unit:GetHealth() )
+            end,
+            --function(Unit) CreateUnitHPR(__blueprints[math.random(1, table.getn(__blueprints) )], Unit:GetArmy(), Unit:GetPosition()[1] + math.random(-2, 2), Unit:GetPosition()[2], Unit:GetPosition()[3] + math.random(-2, 2), 0, math.random(0,360), 0) end,
+        },
+        --{
+        --    function(Unit) LOG("YOU GET NOTHING. GOOD DAY.") end,
+        --},
+    }
     
     function PhatLewt(triggerUnit)
-        triggerUnit:GetAIBrain():GiveResource('Mass', 5000)
+        local a = math.random(1, table.getn(lewt) )
+        local b = math.random(1, table.getn(lewt[a]) )
+        
+        lewt[a][b](triggerUnit)
     end
 end

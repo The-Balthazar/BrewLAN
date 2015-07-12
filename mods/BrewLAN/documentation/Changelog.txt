@@ -204,7 +204,15 @@ __________.__________
   2015-07-08
   
   * Fixed the buildability of the field engineers on FAF.
-  * Improved other FAF related compatibility.                
+  * Improved other FAF related compatibility.
+  __________
+  2015-07-11
+  
+  * New submod with crates.
+  __________
+  2015-07-12
+  
+  * Crates: Now with more effects.                  
 __________.__________
 2015-01-02|0.6
 
