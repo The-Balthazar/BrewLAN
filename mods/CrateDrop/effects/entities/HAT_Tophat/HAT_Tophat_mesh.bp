@@ -1,0 +1,21 @@
+MeshBlueprint {
+    LODs = {
+        {
+            --MeshName = 'CRATE_Dodecahedron_lod0.scm',
+            --AlbedoName = 'CRATE_Dodecahedron_Albedo.dds',
+            --SpecularName = 'CRATE_Dodecahedron_Specteam.dds',
+            --NormalsName = 'CRATE_Dodecahedron_normalsts.dds',
+            ShaderName = 'Unit',
+            LODCutoff = 100,
+        },
+        --{
+        --    MeshName = 'CRATE_Dodecahedron_lod1.scm',
+        --    AlbedoName = 'CRATE_Dodecahedron_lod1_albedo.dds',
+        --    SpecularName = 'CRATE_Dodecahedron_lod1_specteam.dds',
+        --    NormalsName = 'CRATE_Dodecahedron_lod1_normalsTS.dds',
+        --    ShaderName = 'Unit',
+        --    LODCutoff = 1000,
+        --},
+    },
+    SortOrder = 1000,
+}

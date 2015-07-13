@@ -215,7 +215,11 @@ __________.__________
   * Crates: Now with more effects.
   * Changed the Centurion behaviour.
   * Changed the Scathis script, for less errors and better compatibility.
-  * Fixed the name of the Centurion distance normals.                          
+  * Fixed the name of the Centurion distance normals.
+  __________
+  2015-07-13
+  
+  * Crates: Now with more effects. Including HATS!                          
 __________.__________
 2015-01-02|0.6
 
