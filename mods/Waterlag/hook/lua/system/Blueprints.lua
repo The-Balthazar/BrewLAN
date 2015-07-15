@@ -42,7 +42,7 @@ function Waterlag(all_bps)
                             bp.Wreckage.WreckageLayers.Water = true
                         end
                         table.insert(bp.Categories, 'GIVEMELEGS')
-                        bp.CollisionOffsetY = (bp.CollisionOffsetY or 0) - .5
+                        bp.CollisionOffsetY = (bp.CollisionOffsetY or 0) - .25
                         --[[if bp.Physics then
                             bp.Physics.MeshExtentsOffsetY = (bp.Physics.MeshExtentsOffsetY or 0) -2
                             bp.Physics.MeshExtentsY = (bp.Physics.MeshExtentsOffsetY or 0) + 2

@@ -307,6 +307,7 @@ Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain
 
 srb5311_desc="Armored Gate Section"        
 srb5311_name="Procyon Offering"
+seb5311_name="Harrow"
 Unit_Description_BrewLAN_T3B0020="Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
 
 seb2308_name="Harpoon"

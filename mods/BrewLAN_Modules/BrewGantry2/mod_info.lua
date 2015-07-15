@@ -1,8 +1,8 @@
 name = "BrewLAN: Gantry AIx 2"
 uid = "25D57D85-7D84-27HT-A502-BR3WGA0000001"
 version = "0.1"
-copyright = "2015 Sean Wheeldon"
-description = "This module is the mr.deagle AIx Gantry superhax."
+copyright = "© 2015 Sean Wheeldon"
+description = "This module is the mr.deagle AIx Gantry superhax. Mass-gated exponential growth."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN_Modules/BrewGantry1/mod_icon.dds"
 selectable = true

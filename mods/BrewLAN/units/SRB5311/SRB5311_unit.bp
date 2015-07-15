@@ -207,7 +207,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },   
-        --UnitName = '<LOC srb5311_name>Procyon Offering',
+        UnitName = '<LOC srb5311_name>Procyon Offering',
         UnitWeight = 1,
     },
     Intel = {

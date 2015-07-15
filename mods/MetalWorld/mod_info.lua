@@ -1,7 +1,7 @@
 name = "Metal World"
 uid = "25D57D85-7D84-27HT-A501-METALWI0000011"
 version = 1.1
-copyright = "2014 Sean Wheeldon"
+copyright = "© 2014 Sean Wheeldon"
 description = "Removes the restriction from mass extractors, removes mass points, and makes Sorian AI go crazy."
 author = "Sean Wheeldon"
 icon = "/mods/metalworld/mod_icon.dds"

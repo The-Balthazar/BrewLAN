@@ -1,7 +1,7 @@
 name = "Pulchritudinousity"
 uid = "BREWLANS-a0a7-426d-88f2-PHOTORZ00001"
 version = 0
-copyright = "2015 Sean Wheeldon"
+copyright = "© 2015 Sean Wheeldon"
 description = "Various tweeks designed for taking better screenshots. Not advised for real gameplay."
 author = "Sean Wheeldon"
 icon = "/mods/Pulchritudinousity/canon.dds"

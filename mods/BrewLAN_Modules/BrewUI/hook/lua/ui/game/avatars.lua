@@ -2,7 +2,7 @@ do
 local OldCreateIdleTab = CreateIdleTab
 local OldCreateIdleEngineerList = CreateIdleEngineerList
 
-function CreateIdleTab(unitData, id, expandFunc)
+function CreateIdleTab(unitData, id, expandFunc, ...)
     if Factions[1].BrewLAN then -- If this exists assume BrewLAN is active.
         local bg = Bitmap(controls.avatarGroup, UIUtil.SkinnableFile('/game/avatar/avatar-s-e-f_bmp.dds'))
         bg.id = id
@@ -119,11 +119,11 @@ function CreateIdleTab(unitData, id, expandFunc)
         
         return bg
     else           
-        return OldCreateIdleTab(unitData, id, expandFunc)
+        return OldCreateIdleTab(unitData, id, expandFunc, unpack(arg) )
     end
 end
 
-function CreateIdleEngineerList(parent, units)   
+function CreateIdleEngineerList(parent, units, ...)   
     if Factions[1].BrewLAN then -- If this exists assume BrewLAN is active.
         local group = Group(parent)
         
@@ -263,7 +263,7 @@ function CreateIdleEngineerList(parent, units)
         
         return group    
     else
-        return OldCreateIdleEngineerList(parent, units)
+        return OldCreateIdleEngineerList(parent, units, unpack(arg))
     end
 end
 

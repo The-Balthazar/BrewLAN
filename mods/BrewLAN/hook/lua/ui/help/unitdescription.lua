@@ -30,6 +30,11 @@ Description['sel0119'] = "<LOC Unit_Description_BrewLAN_T1L001>Tech 1 amphibious
 Description['ssl0119'] = "<LOC Unit_Description_BrewLAN_T1L002>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Description['sal0119'] = "<LOC Unit_Description_BrewLAN_T1L003>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
+--Tech 2 buildings
+Description['sab5201'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent armored wall sections."
+Description['srb5201'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent armored wall sections."
+Description['seb5210'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent armored wall sections."
+
 --Tech 2 resource units
 Description['seb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
 Description['sab1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."
@@ -55,15 +60,11 @@ Description['srb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nu
 Description['seb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
 Description['sab2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
 Description['ssb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
-  
-Description['srb5201'] = "<LOC Unit_Description_0179>Restricts the movement of enemy units."
-Description['seb5210'] = "<LOC Unit_Description_0179>Restricts the movement of enemy units."
-    
+   
 --Tech 2 construction units
 Description['ssb0104'] = "<LOC Unit_Description_0451> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 Description['ssb0204'] = "<LOC Unit_Description_0324> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 Description['ssb0304'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
-
 
 --Tech 2 protection units
 Description['urb4205'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
