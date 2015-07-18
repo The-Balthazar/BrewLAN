@@ -226,7 +226,14 @@ __________.__________
   * Jaisse: French localisation update, and loc fixes.
   * More crate effects
   * Waterlag: Reduced the colision offset so land units can shoot the UEF T1 radar again.
-  * BrewUI slight passthrough future proofing.                                    
+  * BrewUI slight passthrough future proofing.
+  __________
+  2015-07-18
+  
+  * Crates: Flash effect for crate.
+  * Crates: New icon.
+  * Crates: Reduced the chances of higher tech level units coming from the crate, and gated the maximum to one level above the unit picking it up.
+  * Crates: New HAT!                                           
 __________.__________
 2015-01-02|0.6
 

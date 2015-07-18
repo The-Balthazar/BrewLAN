@@ -1,10 +1,10 @@
 name = "Crate Drop"
-uid = "BREWLANS-a0a7-426d-88f2-CRATESZ00001"
-version = 0.1
+uid = "BREWLANS-a0a7-426d-88f2-CRATESZ00005"
+version = 0.5
 copyright = "© 2015 Sean Wheeldon"
-description = "Random crate drops happen. Will they be good? Will they be bad? Who knows."
+description = "Random crate drops happen across the land. Will they be good? Will they be bad? Who knows."
 author = "Sean Wheeldon"
---icon = "/mods/waterlag/mod_icon.dds"
+icon = "/mods/cratedrop/lewt.dds"
 selectable = true
 enabled = true
 exclusive = false

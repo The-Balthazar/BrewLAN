@@ -3,7 +3,10 @@
 --------------------------------------------------------------------------------
 UnitBlueprint {
     RandomBuildableUnits = {},
-    RandomBuildableEngineers = {},     
+    RandomBuildableEngineers = {},
+    RandomBuildableUnitsT3orLess = {},
+    RandomBuildableUnitsT2orLess = {},
+    RandomBuildableUnitsT1 = {},
     Categories = {     
         'INVULNERABLE',
         'STRUCTURE',

@@ -10,6 +10,7 @@ do
                 function()
                     local crate = import('/lua/sim/Entity.lua').Entity()
                     local crateType = 'CRATE_Dodecahedron'
+                    local flash
                     Warp(crate,getSafePos())
                     crate:SetMesh('/mods/cratedrop/effects/entities/' .. crateType .. '/' .. crateType ..'_mesh')
                     crate:SetDrawScale(.08)
@@ -22,7 +23,15 @@ do
                         local search = arbitraryBrain():GetUnitsAroundPoint( categories.ALLUNITS, crate:GetPosition(), 1)
                         if search[1] and IsUnit(search[1]) then
                             PhatLewt(search[1], crate:GetPosition() )
+                            flash = CreateEmitterAtEntity(crate, search[1]:GetArmy(), '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(10)
+                            Warp(crate,{crate:GetPosition()[1],crate:GetPosition()[2]-20,crate:GetPosition()[3]})
+                            WaitTicks(5)
+                            flash:Destroy()
+                            
                             Warp(crate,getSafePos())
+                            flash = CreateEmitterAtEntity(crate, search[1]:GetArmy(), '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(4)
+                            WaitTicks(5)
+                            flash:Destroy()
                         end     
                     end 
                 end
@@ -66,37 +75,75 @@ do
             positionDummy:Destroy()
             LOG(repr(pos))
             return pos 
-        else   
-            --return getSafePos(tries + 1)
+        else
             return getSafePos(tries + 1)  
         end
     end
+    
+    function randomBuildable(thing)
+        local buildable = 'RandomBuildable' .. tostring(thing)
+        if not __blueprints.zzcrate[buildable] then
+            if not __blueprints.zzcrate.RandomBuildableUnits then
+                error("Random loot table refered to a random unit table that doesn't exist, and the default table also doesn't exist.")
+            else
+                WARN("Random loot table refered to a random unit table that doesn't exist. Returning value from all units table instead.")
+                return __blueprints.zzcrate.RandomBuildableUnits[math.random(1,table.getn(__blueprints.zzcrate.RandomBuildableUnits) )]
+            end
+        else
+            return __blueprints.zzcrate[buildable][math.random(1,table.getn(__blueprints.zzcrate[buildable]) )]
+        end
+    end
+    
+    function gatedRandomBuildableType(Unit)
+        local unitTypes = {'UnitsT1','UnitsT2orLess','UnitsT3orLess','Units',} 
+        local chosen
+        if EntityCategoryContains(categories.EXPERIMENTAL + categories.TECH3, Unit) then
+            LOG("ANYTHING GOES")
+            chosen = unitTypes[math.random(1, 4)]
+        elseif EntityCategoryContains(categories.TECH2, Unit) then
+            LOG("Tech 3 or less")
+            chosen = unitTypes[math.random(1, 3)]
+        elseif EntityCategoryContains(categories.TECH1, Unit) then
+            LOG("Tech 2 or less")
+            chosen = unitTypes[1]     
+        elseif EntityCategoryContains(categories.COMMAND, Unit) then
+            LOG("Tech 3 or less")
+            chosen = unitTypes[math.random(1, 3)]
+        else
+            LOG("ANYTHING GOES BITCHES")
+            chosen = unitTypes[math.random(1, table.getn(unitTypes))]
+        end
+        return chosen
+    end
                       
-    function randomBuildableUnit() return __blueprints.zzcrate.RandomBuildableUnits[math.random(1,table.getn(__blueprints.zzcrate.RandomBuildableUnits) )] end
-    function randomBuildableEngineer() return __blueprints.zzcrate.RandomBuildableEngineers[math.random(1,table.getn(__blueprints.zzcrate.RandomBuildableEngineers) )] end 
     local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
     local lewt = {
         -- Free stuff.
         {
             --5000 mass
-            function(Unit, pos) Unit:GetAIBrain():GiveResource('Mass', 5000) end,
+            function(Unit, pos) LOG("Dat mass") Unit:GetAIBrain():GiveResource('Mass', 5000) end,
             --Clone at current health
             function(Unit, pos)
+                LOG("Clone")
                 local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 clone:SetMaxHealth(Unit:GetMaxHealth() )
                 clone:SetHealth(Unit, Unit:GetHealth() )
             end,
             --Random buildable unit
-            function(Unit, pos) CreateUnitHPR(randomBuildableUnit(), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+            function(Unit, pos)
+                LOG("Random dude")
+                CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+            end,
             --Random buildable mobile engineer
-            function(Unit, pos) CreateUnitHPR(randomBuildableEngineer(), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+            function(Unit, pos) LOG("Engineer") CreateUnitHPR(randomBuildable('Engineers'), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
         },
         -- Unit buffs
         {
             --Double health and heal
-            function(Unit, pos) Unit:SetMaxHealth(Unit:GetMaxHealth() * 2) Unit:SetHealth(Unit, Unit:GetMaxHealth()) end,
+            function(Unit, pos) LOG("Health buff") Unit:SetMaxHealth(Unit:GetMaxHealth() * 2) Unit:SetHealth(Unit, Unit:GetMaxHealth()) end,
             --Give larger vis range
             function(Unit, pos)
+                LOG("Vision buff")
                 if not Unit.VisBuff then
                     local spec = {
                         X = pos[1],
@@ -116,13 +163,17 @@ do
                     --LOG("Vis + 20")
                 end
             end,
+            --Veterancy
+            function(Unit, pos) LOG("Kills") Unit:AddKills(100) end,
         },
         -- Hats
         {
             function(Unit, pos)
+                LOG("Hat")
                 local hatTypes = {
                     'HAT_Tophat',
                     'HAT_Tophat_whiteband',
+                    'HAT_Bowler_red',
                 }
                 
                 local bones = {
@@ -146,7 +197,11 @@ do
                     local hatType = hatTypes[math.random(1, table.getn(hatTypes) )]
                     Warp(Unit.Hat,Unit:GetPosition() )
                     Unit.Hat:SetMesh('/mods/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
-                    Unit.Hat:SetDrawScale(.03)
+                    if EntityCategoryContains(categories.EXPERIMENTAL, Unit) then
+                        Unit.Hat:SetDrawScale(.07)
+                    else
+                        Unit.Hat:SetDrawScale(.03)
+                    end
                     Unit.Hat:SetVizToAllies('Intel')
                     Unit.Hat:SetVizToNeutrals('Intel')
                     Unit.Hat:SetVizToEnemies('Intel')
@@ -163,20 +218,24 @@ do
             --Troll log
             function(Unit, pos) LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.") end,
             --Troll print
-            function(Unit, pos) print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  ) end,
+            function(Unit, pos) LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  ) end,
             --Troll bomb
-            function(Unit, pos) CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon() end,
+            function(Unit, pos) LOG("Explosion") CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon() end,
             --Nemesis dupe
             function(Unit, pos)
+                LOG("Evil Twin")
                 local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 clone:SetMaxHealth(Unit:GetMaxHealth() )
                 clone:SetHealth(Unit, Unit:GetHealth() )
             end,
             --Random nemesis 
-            function(Unit, pos) CreateUnitHPR(randomBuildableUnit(), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+            function(Unit, pos) LOG("Random Nemesis") CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
             --Random warping
-            function(Unit, pos) Warp(Unit,getSafePos()) end,
+            function(Unit, pos) LOG("Teleport") Warp(Unit,getSafePos()) end,
         },
+        --{
+        --    function(Unit, pos) LOG(repr(Unit) ) end,
+        --},
     }
     
     function PhatLewt(triggerUnit, pos)--, nohat)
@@ -188,7 +247,7 @@ do
         --else
             lewt[a][b](triggerUnit, pos)
             --lewt[3][1](triggerUnit, pos) --HATS ONLY TESTING
-            --lewt[5][1](triggerUnit, pos)
+            --lewt[2][3](triggerUnit, pos)
         --end
     end
 end
