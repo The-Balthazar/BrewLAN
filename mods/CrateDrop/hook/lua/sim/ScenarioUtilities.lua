@@ -39,6 +39,167 @@ do
         end
         return OldCreateInitialArmyGroup(strArmy, createCommander)
     end
+            
+    local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
+    local lewt = {
+        -- Free stuff.
+        {
+            --5000 mass
+            function(Unit, pos) LOG("Dat mass") Unit:GetAIBrain():GiveResource('Mass', 5000) end,
+            --Clone at current health
+            function(Unit, pos)
+                LOG("Clone")
+                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                clone:SetMaxHealth(Unit:GetMaxHealth() )
+                clone:SetHealth(Unit, Unit:GetHealth() )
+            end,
+            --Random buildable unit
+            function(Unit, pos)
+                LOG("Random dude")
+                CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+            end,
+            --Random buildable mobile engineer
+            function(Unit, pos) LOG("Engineer") CreateUnitHPR(randomBuildable('Engineers'), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+        },
+        -- Unit buffs
+        {
+            --Double health and heal
+            function(Unit, pos) LOG("Health buff") Unit:SetMaxHealth(Unit:GetMaxHealth() * 2) Unit:SetHealth(Unit, Unit:GetMaxHealth()) end,
+            --Give larger vis range
+            function(Unit, pos)
+                LOG("Vision buff")
+                if ScenarioInfo.Options.FogOfWar == 'none' then
+                    WARN("Vision buff selected while fog of war disabled. Rolling again.")
+                    PhatLewt(Unit, pos)
+                else    
+                    if not Unit.VisBuff then
+                        local spec = {
+                            X = pos[1],
+                            Z = pos[3],
+                            Radius = (Unit:GetIntelRadius('Vision') or 20) + 20,
+                            LifeTime = -1,
+                            Omni = false,
+                            Radar = false,
+                            Vision = true,
+                            Army = Unit:GetAIBrain():GetArmyIndex(),
+                        }
+                        Unit.VisBuff = VizMarker(spec) 
+                        Unit.VisBuff:AttachTo(Unit, -1)
+                        Unit.Trash:Add(Unit.VisBuff)
+                    else
+                        Unit.VisBuff:SetIntelRadius('Vision', Unit.VisBuff:GetIntelRadius('Vision') + 20)
+                    end
+                end
+            end,
+            --Veterancy
+            function(Unit, pos) LOG("Kills") Unit:AddKills(100) end,
+        },
+        -- Hats
+        {
+            function(Unit, pos)
+                LOG("Hat")
+                local hatTypes = {
+                    'HAT_Tophat',
+                    'HAT_Tophat_whiteband',
+                    'HAT_Bowler_red',
+                    'HAT_Boater',
+                }
+                
+                local bones = {
+                    'HatPoint',
+                    'Hat',
+                    'Head',
+                    'Attachpoint',
+                    'AttachPoint',
+                }
+                local attachHatTo = false
+                
+                if not Unit.Hats then
+                    for i, bone in bones do
+                        if Unit:IsValidBone(bone) then
+                            attachHatTo = bone
+                            break
+                        end 
+                    end
+                end
+                if attachHatTo or Unit.Hats then
+                    if not Unit.Hats then
+                        Unit.Hats = {}
+                    end
+                    table.insert(Unit.Hats, import('/lua/sim/Entity.lua').Entity() )
+                    local hat = Unit.Hats[table.getn(Unit.Hats)]
+                    local hatType = hatTypes[math.random(1, table.getn(hatTypes) )] 
+                    Warp(hat,Unit:GetPosition() )
+                    hat:SetMesh('/mods/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
+                    if EntityCategoryContains(categories.EXPERIMENTAL, Unit) then
+                        hat:SetDrawScale(.07)
+                    else
+                        hat:SetDrawScale(.03)
+                    end   
+                    hat:SetVizToAllies('Intel')
+                    hat:SetVizToNeutrals('Intel')
+                    hat:SetVizToEnemies('Intel')
+                    if table.getn(Unit.Hats) == 1 then
+                        hat:AttachTo(Unit, attachHatTo)
+                    else
+                        local no = table.getn(Unit.Hats) - 1
+                        hat:AttachTo(Unit.Hats[no], 'Attachpoint')
+                    end    
+                    Unit.Trash:Add(hat)
+                else                     
+                    WARN("Unit has no noticable head or attachpoint to wear a hat.")
+                    PhatLewt(Unit, pos)--, true)
+                end
+            end,
+        },
+        -- Bad stuff table
+        {         
+            --Troll log
+            function(Unit, pos) LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.") end,
+            --Troll print
+            function(Unit, pos) LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  ) end,
+            --Troll bomb
+            function(Unit, pos) LOG("Explosion") CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon() end,
+            --Nemesis dupe
+            function(Unit, pos)
+                LOG("Evil Twin")
+                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                clone:SetMaxHealth(Unit:GetMaxHealth() )
+                clone:SetHealth(Unit, Unit:GetHealth() )
+            end,
+            --Random nemesis 
+            function(Unit, pos) LOG("Random Nemesis") CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+            --Random warping
+            function(Unit, pos) LOG("Teleport") Warp(Unit,getSafePos()) end,
+        },
+        --{
+        --    function(Unit, pos) LOG(repr(Unit) ) end,
+        --},
+    }
+    ----------------------------------------------------------------------------
+    -- Main lewt picker
+    ----------------------------------------------------------------------------
+    function PhatLewt(triggerUnit, pos, note)
+        local a = math.random(1, table.getn(lewt) )
+        local b = math.random(1, table.getn(lewt[a]) )
+        LOG(repr(ScenarioInfo.Options))
+        
+        if note == 'Hat' or ScenarioInfo.Options.CrateHatsOnly then
+            lewt[3][1](triggerUnit, pos)
+        else
+            lewt[a][b](triggerUnit, pos)
+        end
+    end
+    ----------------------------------------------------------------------------
+    -- Utilities
+    ----------------------------------------------------------------------------
+    function TopLevelParent(Unit)
+        if Unit.Parent then
+            return TopLevelParent(Unit.Parent)
+        else
+            return Unit
+        end 
+    end
     
     function arbitraryBrain()     
         for i, brain in ArmyBrains do
@@ -114,140 +275,5 @@ do
             chosen = unitTypes[math.random(1, table.getn(unitTypes))]
         end
         return chosen
-    end
-                      
-    local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
-    local lewt = {
-        -- Free stuff.
-        {
-            --5000 mass
-            function(Unit, pos) LOG("Dat mass") Unit:GetAIBrain():GiveResource('Mass', 5000) end,
-            --Clone at current health
-            function(Unit, pos)
-                LOG("Clone")
-                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
-                clone:SetMaxHealth(Unit:GetMaxHealth() )
-                clone:SetHealth(Unit, Unit:GetHealth() )
-            end,
-            --Random buildable unit
-            function(Unit, pos)
-                LOG("Random dude")
-                CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
-            end,
-            --Random buildable mobile engineer
-            function(Unit, pos) LOG("Engineer") CreateUnitHPR(randomBuildable('Engineers'), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
-        },
-        -- Unit buffs
-        {
-            --Double health and heal
-            function(Unit, pos) LOG("Health buff") Unit:SetMaxHealth(Unit:GetMaxHealth() * 2) Unit:SetHealth(Unit, Unit:GetMaxHealth()) end,
-            --Give larger vis range
-            function(Unit, pos)
-                LOG("Vision buff")
-                if not Unit.VisBuff then
-                    local spec = {
-                        X = pos[1],
-                        Z = pos[3],
-                        Radius = (Unit:GetIntelRadius('Vision') or 20) + 20,
-                        LifeTime = -1,
-                        Omni = false,
-                        Radar = false,
-                        Vision = true,
-                        Army = Unit:GetAIBrain():GetArmyIndex(),
-                    }
-                    Unit.VisBuff = VizMarker(spec) 
-                    Unit.VisBuff:AttachTo(Unit, -1)
-                    Unit.Trash:Add(Unit.VisBuff)
-                else
-                    Unit.VisBuff:SetIntelRadius('Vision', Unit.VisBuff:GetIntelRadius('Vision') + 20)
-                    --LOG("Vis + 20")
-                end
-            end,
-            --Veterancy
-            function(Unit, pos) LOG("Kills") Unit:AddKills(100) end,
-        },
-        -- Hats
-        {
-            function(Unit, pos)
-                LOG("Hat")
-                local hatTypes = {
-                    'HAT_Tophat',
-                    'HAT_Tophat_whiteband',
-                    'HAT_Bowler_red',
-                }
-                
-                local bones = {
-                    'HatPoint',
-                    'Hat',
-                    'Head',
-                    'Attachpoint',
-                    'AttachPoint',
-                }
-                local attachHatTo = false
-                
-                for i, bone in bones do
-                    if Unit:IsValidBone(bone) then
-                        attachHatTo = bone
-                        break
-                    end 
-                end
-                
-                if attachHatTo then
-                    Unit.Hat = import('/lua/sim/Entity.lua').Entity()
-                    local hatType = hatTypes[math.random(1, table.getn(hatTypes) )]
-                    Warp(Unit.Hat,Unit:GetPosition() )
-                    Unit.Hat:SetMesh('/mods/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
-                    if EntityCategoryContains(categories.EXPERIMENTAL, Unit) then
-                        Unit.Hat:SetDrawScale(.07)
-                    else
-                        Unit.Hat:SetDrawScale(.03)
-                    end
-                    Unit.Hat:SetVizToAllies('Intel')
-                    Unit.Hat:SetVizToNeutrals('Intel')
-                    Unit.Hat:SetVizToEnemies('Intel')
-                    Unit.Hat:AttachTo(Unit, attachHatTo)
-                    Unit.Trash:Add(Unit.Hat)
-                else                     
-                    WARN("Unit has no noticable head or attachpoint to wear a hat.")
-                    PhatLewt(Unit, pos)--, true)
-                end
-            end,
-        },
-        -- Bad stuff table
-        {         
-            --Troll log
-            function(Unit, pos) LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.") end,
-            --Troll print
-            function(Unit, pos) LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  ) end,
-            --Troll bomb
-            function(Unit, pos) LOG("Explosion") CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon() end,
-            --Nemesis dupe
-            function(Unit, pos)
-                LOG("Evil Twin")
-                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
-                clone:SetMaxHealth(Unit:GetMaxHealth() )
-                clone:SetHealth(Unit, Unit:GetHealth() )
-            end,
-            --Random nemesis 
-            function(Unit, pos) LOG("Random Nemesis") CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
-            --Random warping
-            function(Unit, pos) LOG("Teleport") Warp(Unit,getSafePos()) end,
-        },
-        --{
-        --    function(Unit, pos) LOG(repr(Unit) ) end,
-        --},
-    }
-    
-    function PhatLewt(triggerUnit, pos)--, nohat)
-        local a = math.random(1, table.getn(lewt) )
-        local b = math.random(1, table.getn(lewt[a]) )
-        
-        --if not nohat then
-        --    lewt[a][b](triggerUnit, pos)
-        --else
-            lewt[a][b](triggerUnit, pos)
-            --lewt[3][1](triggerUnit, pos) --HATS ONLY TESTING
-            --lewt[2][3](triggerUnit, pos)
-        --end
     end
 end

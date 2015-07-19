@@ -233,7 +233,10 @@ __________.__________
   * Crates: Flash effect for crate.
   * Crates: New icon.
   * Crates: Reduced the chances of higher tech level units coming from the crate, and gated the maximum to one level above the unit picking it up.
-  * Crates: New HAT!                                           
+  * Crates: New HAT!
+  * Crates: Hats now stack!
+  * Crates: A second new hat!
+  * Crates: No longer able to recieve vision buff with fog of war disabled.                                                 
 __________.__________
 2015-01-02|0.6
 
