@@ -236,7 +236,13 @@ __________.__________
   * Crates: New HAT!
   * Crates: Hats now stack!
   * Crates: A second new hat!
-  * Crates: No longer able to recieve vision buff with fog of war disabled.                                                 
+  * Crates: No longer able to recieve vision buff with fog of war disabled.
+  __________
+  2015-07-19
+  
+  * Crates: Created a lobby option for hats only.
+  * Gave the Absolution an attachpoint. Totally not just so it can have a hat.
+  * Crates: Structures now get larger hats than regular units. (Only affects 1 known building that has a recognised hat bone: Orbos)                                                     
 __________.__________
 2015-01-02|0.6
 

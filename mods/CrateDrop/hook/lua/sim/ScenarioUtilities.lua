@@ -131,8 +131,10 @@ do
                     local hatType = hatTypes[math.random(1, table.getn(hatTypes) )] 
                     Warp(hat,Unit:GetPosition() )
                     hat:SetMesh('/mods/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
-                    if EntityCategoryContains(categories.EXPERIMENTAL, Unit) then
+                    if EntityCategoryContains(categories.EXPERIMENTAL , Unit) then
                         hat:SetDrawScale(.07)
+                    elseif EntityCategoryContains(categories.STRUCTURE , Unit) then
+                        hat:SetDrawScale(.055)
                     else
                         hat:SetDrawScale(.03)
                     end   
@@ -146,9 +148,13 @@ do
                         hat:AttachTo(Unit.Hats[no], 'Attachpoint')
                     end    
                     Unit.Trash:Add(hat)
-                else                     
-                    WARN("Unit has no noticable head or attachpoint to wear a hat.")
-                    PhatLewt(Unit, pos)--, true)
+                else
+                    if not ScenarioInfo.Options.CrateHatsOnly == 'true' then
+                        WARN("Unit has no noticable head or attachpoint to wear a hat.")
+                        PhatLewt(Unit, pos)--, true)
+                    else
+                        WARN("Unit with no noticable head attempted to pick up hats only crate.")
+                    end
                 end
             end,
         },
@@ -184,7 +190,7 @@ do
         local b = math.random(1, table.getn(lewt[a]) )
         LOG(repr(ScenarioInfo.Options))
         
-        if note == 'Hat' or ScenarioInfo.Options.CrateHatsOnly then
+        if note == 'Hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
             lewt[3][1](triggerUnit, pos)
         else
             lewt[a][b](triggerUnit, pos)
