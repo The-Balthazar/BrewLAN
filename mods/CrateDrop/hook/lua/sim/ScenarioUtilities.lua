@@ -103,6 +103,7 @@ do
                     'HAT_Tophat_whiteband',
                     'HAT_Bowler_red',
                     'HAT_Boater',
+                    'HAT_Cone_azn'
                 }
                 
                 local bones = {

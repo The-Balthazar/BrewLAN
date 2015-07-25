@@ -18,17 +18,18 @@ SSB5301 = Class(SShieldStructureUnit) {
     },
     OnStopBeingBuilt = function(self,builder,layer)
         SShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
-		self.ShieldEffectsBag = {}
+		  self.ShieldEffectsBag = {}
     end,
 
     OnShieldEnabled = function(self)
+        self.ShieldIsEnabled = true
         SShieldStructureUnit.OnShieldEnabled(self)
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-		    self.ShieldEffectsBag = {}
-		end
+		      self.ShieldEffectsBag = {}
+		  end
         for k, v in self.ShieldEffects do
             table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(0.475) )
         end
@@ -36,13 +37,14 @@ SSB5301 = Class(SShieldStructureUnit) {
     end,
 
     OnShieldDisabled = function(self)
+        self.ShieldIsEnabled = false
         SShieldStructureUnit.OnShieldDisabled(self)
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-		    self.ShieldEffectsBag = {}
-		end
+		      self.ShieldEffectsBag = {}
+		  end
     end,
     
     OnKilled = function(self, instigator, type, overkillRatio)
@@ -52,7 +54,17 @@ SSB5301 = Class(SShieldStructureUnit) {
                 v:Destroy()
             end
         end
-    end,    
+    end,
+      
+    OnDamage = function(self, instigator, amount, vector, damageType)
+        local shieldHealth = self.MyShield:GetHealth()
+        if self:ShieldIsOn() and self.MyShield:GetHealth() > 0 and self.ShieldIsEnabled then 
+            self.MyShield:OnDamage(instigator, math.min(amount, shieldHealth), vector, damageType)
+            SShieldStructureUnit.OnDamage(self, instigator, amount - shieldHealth, vector, damageType)
+        else
+            SShieldStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
+        end
+    end,  
 }
 
 TypeClass = SSB5301

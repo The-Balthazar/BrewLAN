@@ -242,7 +242,15 @@ __________.__________
   
   * Crates: Created a lobby option for hats only.
   * Gave the Absolution an attachpoint. Totally not just so it can have a hat.
-  * Crates: Structures now get larger hats than regular units. (Only affects 1 known building that has a recognised hat bone: Orbos)                                                     
+  * Crates: Structures now get larger hats than regular units. (Only affects 1 known building that has a recognised hat bone: Orbos)
+  __________
+  2015-07-24
+  
+  * Shield walls now instead pass their damage to the shield if it is enabled.
+  __________
+  2015-07-25
+  
+  * Crates: New hat!   
 __________.__________
 2015-01-02|0.6
 
