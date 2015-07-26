@@ -250,7 +250,12 @@ __________.__________
   __________
   2015-07-25
   
-  * Crates: New hat!   
+  * Crates: New hat!
+  __________
+  2015-07-26
+  
+  * Crates: Slight scripting change for exception handling.
+  * Added the UEF Artillery Defense Grid.        
 __________.__________
 2015-01-02|0.6
 

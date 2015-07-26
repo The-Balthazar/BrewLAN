@@ -150,11 +150,11 @@ do
                     end    
                     Unit.Trash:Add(hat)
                 else
-                    if not ScenarioInfo.Options.CrateHatsOnly == 'true' then
-                        WARN("Unit has no noticable head or attachpoint to wear a hat.")
-                        PhatLewt(Unit, pos)--, true)
-                    else
+                    if ScenarioInfo.Options.CrateHatsOnly == 'true' then
                         WARN("Unit with no noticable head attempted to pick up hats only crate.")
+                    else    
+                        WARN("Unit has no noticable head or attachpoint to wear a hat.")
+                        PhatLewt(Unit, pos)
                     end
                 end
             end,
@@ -189,8 +189,6 @@ do
     function PhatLewt(triggerUnit, pos, note)
         local a = math.random(1, table.getn(lewt) )
         local b = math.random(1, table.getn(lewt[a]) )
-        LOG(repr(ScenarioInfo.Options))
-        
         if note == 'Hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
             lewt[3][1](triggerUnit, pos)
         else

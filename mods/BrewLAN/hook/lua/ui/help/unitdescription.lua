@@ -139,6 +139,7 @@ Description['ssb1312'] = "<LOC Unit_Description_BrewLAN_T3B0024>High-end Mass ex
 Description['seb2308'] = "<LOC Unit_Description_BrewLAN_T3B0025>Heavy torpedo launching tower. Can be built on land and on the seabed."
 Description['ssb3301'] = "<LOC Unit_Description_BrewLAN_T3B0026>Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips."
 Description['sab2308'] = "<LOC Unit_Description_BrewLAN_T3B0027>Very heavy long-range anti-naval defense system. Designed to engage the most powerful of naval units."
+Description['seb4303'] = "<LOC Unit_Description_BrewLAN_T3B0028>Stationary artillery defense grid. Equipped with an integrated threat identification and tracking system."
 
 --Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."

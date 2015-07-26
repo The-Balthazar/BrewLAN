@@ -327,6 +327,9 @@ srl0320_desc="Mobile Missile Launcher"
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile cloaking missile launcher. Can fire at land- air- and sea-based units, but must decloak to fire."
 
+seb4303_name="Recoil"
+Unit_Description_BrewLAN_T3B0028="Stationary artillery defense grid. Equipped with an integrated threat identification and tracking system."
+
 --------------------------------------------------------------------------------
 -- Experimentals
 -------------------------------------------------------------------------------- 
