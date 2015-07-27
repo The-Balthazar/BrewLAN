@@ -255,7 +255,11 @@ __________.__________
   2015-07-26
   
   * Crates: Slight scripting change for exception handling.
-  * Added the UEF Artillery Defense Grid.        
+  * Added the UEF Artillery Defense Grid.
+  __________
+  2015-07-27
+  
+  * Minor aesthetic change to the ADG. It now does lizard eyes. I can't for the life of me work out what type of lizard it reminds me of.
 __________.__________
 2015-01-02|0.6
 

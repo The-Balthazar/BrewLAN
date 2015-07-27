@@ -20,8 +20,29 @@ UEB4301 = Class(TShieldStructureUnit) {
     
     OnStopBeingBuilt = function(self,builder,layer)
         TShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
-        --self.Rotator1 = CreateRotator(self, 'Spinner', 'y', nil, 10, 5, 10)
-        --self.Rotator2 = CreateRotator(self, 'B01', 'z', nil, -10, 5, -10)
+        self.Rotators = {
+            CreateRotator(self, 'Turret001', 'z', nil, 10, 5, 0),
+            CreateRotator(self, 'Turret002', 'z', nil, 10, 5, 0),
+            CreateRotator(self, 'Turret_barrel001', 'x', 0, 10, 5, 0),
+            CreateRotator(self, 'Turret_barrel002', 'x', 0, 10, 5, 0),
+        }
+        self:ForkThread(
+            function()
+                while true do
+                    if self:ShieldIsOn() then
+                        local pointer = math.random(1,2)
+                        local speed = math.random(0,1) * math.random(10,100)
+                        local goal = math.random(-20,20)
+                        self.Rotators[pointer]:SetSpeed(speed * (-1 + 2 * math.random(0, 1)) )
+                        self.Rotators[pointer + 2]:SetGoal(goal):SetSpeed(speed)
+                        WaitTicks(math.random(1,10) )
+                    else
+                        WaitSeconds(5)
+                    end
+                end
+            end
+        )
+        
         --self.Trash:Add(self.Rotator1)
         --self.Trash:Add(self.Rotator2)
 		self.ShieldEffectsBag = {}
