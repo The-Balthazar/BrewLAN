@@ -95,5 +95,37 @@ Unit = Class(UnitOld) {
             return nil
         end
     end, 
+    
+    OnDamage = function(self, instigator, amount, vector, damageType)
+        local check = function()
+            if 
+                instigator:GetBlueprint().BlueprintId == self:GetBlueprint().BlueprintId
+                and
+                EntityCategoryContains(categories.BOMBER, self)
+                and
+                instigator:GetCurrentLayer() == 'Air'
+                and
+                self:GetCurrentLayer() == 'Air'
+                and
+                self:GetArmy() == instigator:GetArmy() 
+            then
+                return true
+            else
+                return false
+            end
+        end
+        --LOG( "Check ISUNIT self   ", pcall(IsUnit(self) ) )
+        --LOG( "Check ISUNIT instigator   ", pcall(IsUnit(instigator) ) )
+        --LOG( "Check   ",check() )
+        --if pcall(IsUnit(self) ) and pcall(IsUnit(instigator) ) then
+            if check() then
+                --LOG("NOPE")
+            --else
+            --    UnitOld.OnDamage(self, instigator, amount, vector, damageType)
+            --end
+        else
+            UnitOld.OnDamage(self, instigator, amount, vector, damageType)
+        end
+    end, 
 }
 

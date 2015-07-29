@@ -60,7 +60,7 @@ SSB5301 = Class(SShieldStructureUnit) {
         local shieldHealth = self.MyShield:GetHealth()
         if self:ShieldIsOn() and self.MyShield:GetHealth() > 0 and self.ShieldIsEnabled then 
             self.MyShield:OnDamage(instigator, math.min(amount, shieldHealth), vector, damageType)
-            LOG(repr(instigator))
+            --LOG(repr(instigator))
             SShieldStructureUnit.OnDamage(self, instigator, amount - shieldHealth, vector, damageType)
         else
             SShieldStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
