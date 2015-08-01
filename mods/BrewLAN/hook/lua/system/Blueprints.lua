@@ -20,6 +20,7 @@ function ModBlueprints(all_blueprints)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
     BrewLANMatchBalancing(all_blueprints.Unit)
     BrewLANNavalShields(all_blueprints.Unit)
+    BrewLANBomberDamageType(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -479,9 +480,32 @@ function BrewLANNavalShields(all_bps)
             if not table.find(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic') then
                 table.insert(all_bps[k].Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
             end
+            --Waterlag visual compatability
             table.insert(all_bps[k].Categories, 'GIVEMELEGS')
         end
     end
 end
+
+--------------------------------------------------------------------------------
+-- Shield changes
+--------------------------------------------------------------------------------
+
+function BrewLANBomberDamageType(all_bps)
+    for id, bp in all_bps do
+        if table.find(bp.Categories, 'BOMBER') then
+            if bp.Weapon then
+                for i, weap in bp.Weapon do
+                    if weap.NeedToComputeBombDrop then
+                        if weap.DamageType == 'Normal' then
+                            weap.DamageType = 'NormalBomb'
+                        end
+                    end 
+                end 
+            end
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
 
 end

@@ -265,7 +265,20 @@ __________.__________
   
   * Made the ADGs 'eyes' stop moving more often.
   * Airborne bombers of the same type on the same team can no longer damage each other.
-    * This most specifically deals with the fact that a group of bombers attacking an Iron Curtain will almost certainly all kill eachother with their own bombs impacting the shield, but also affects experimental bombers hurting each other all the time when in groups.   
+    * This most specifically deals with the fact that a group of bombers attacking an Iron Curtain will almost certainly all kill eachother with their own bombs impacting the shield, but also affects experimental bombers hurting each other all the time when in groups.
+  __________
+  2015-08-01
+  
+  * Overhauled the previous Iron Curtain bomber self damage fix.
+    * Rather than doing a load of self and instigator checks on damage to make sure this only effects bombers of the same type on the same team that are also in the air it now does the following: 
+    * The damage type of each weapon with the variable NeedToComputeBombDrop that has the DamageType 'Normal' now has the damage type 'NormalBomb'. This includes all bombers' and fighter/bombers' bombs except corsair which doesn't bomb strictly speaking. This is computed during launch.
+    * When taking the damage the following checks are made:
+      * Am I a bomber?
+      * Am I in the air?
+      * Is the damage type NormalBomb.                 
+    * If the answer to all those is yes it takes 5% damage instead.
+      * This can still lead to a clumped group of 30 UEF T1 bombers damaging the bombers at the back of the group to half health
+        * This is preferable to killing the whole group, whilst also giving some feedback on the bombers flying through the fire.                  
 __________.__________
 2015-01-02|0.6
 
