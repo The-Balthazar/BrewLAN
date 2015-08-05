@@ -278,7 +278,17 @@ __________.__________
       * Is the damage type NormalBomb.                 
     * If the answer to all those is yes it takes 5% damage instead.
       * This can still lead to a clumped group of 30 UEF T1 bombers damaging the bombers at the back of the group to half health
-        * This is preferable to killing the whole group, whilst also giving some feedback on the bombers flying through the fire.                  
+        * This is preferable to killing the whole group, whilst also giving some feedback on the bombers flying through the fire.
+  __________
+  2015-08-05
+  
+  * Centurion changes:
+    * Speed reduced from 15 to 9. (Still faster than the Soul Ripper, which is 8 I think)
+    * The main flak cannon can no longer fire at ground targets.
+    * Fixed the forever broken, but always existant, rear AA laser.
+    * Added an additional light gattling cannon to the underside of the tail for air-to-ground attacks. DPS ~320.
+    * It can now wear a hat.
+  * Paragon game: Fixed an issue where the script would crash after failing to give someone a Paragon or shield due to map issues. The player will still be Paragon or shieldless, but the game will log a warning and carry on with life.                         
 __________.__________
 2015-01-02|0.6
 

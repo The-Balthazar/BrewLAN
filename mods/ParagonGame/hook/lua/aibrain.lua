@@ -119,7 +119,11 @@ AIBrain = Class(AIBrain) {
                     end
                 
                     count = count + 1
-                    unit:CreateTarmac(true,true,true,false,false)
+                    if unit then
+                        unit:CreateTarmac(true,true,true,false,false)
+                    else
+                        WARN(self.Nickname .. " didn't get a " .. __blueprints[string.lower(u[1])].General.UnitName .. " due to map limitations.")
+                    end
                 end
             end
         end

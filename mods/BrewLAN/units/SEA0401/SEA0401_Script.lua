@@ -10,8 +10,10 @@
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TAAFlakArtilleryCannon = import('/lua/terranweapons.lua').TAAFlakArtilleryCannon
 local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher             
-local TDFHiroPlasmaCannon = import('/lua/terranweapons.lua').TDFHiroPlasmaCannon
+local TDFHiroPlasmaCannon = import('/lua/terranweapons.lua').TDFHiroPlasmaCannon  
+local TDFPlasmaCannonWeapon = import('/lua/terranweapons.lua').TDFPlasmaCannonWeapon
 local EffectUtil = import('/lua/EffectUtilities.lua')
+local Effects = import('/lua/effecttemplates.lua')
 local CreateUEFBuildSliceBeams = EffectUtil.CreateUEFBuildSliceBeams
 
 SEA0401 = Class(TAirUnit) {
@@ -25,6 +27,36 @@ SEA0401 = Class(TAirUnit) {
         SAM1 = Class(TSAMLauncher) {},
         SAM2 = Class(TSAMLauncher) {},   
         RearASFBeam = Class(TDFHiroPlasmaCannon) {},
+        GatlingCannon = Class(TDFPlasmaCannonWeapon) 
+        {
+            PlayFxWeaponPackSequence = function(self)
+                if self.SpinManip then
+                    self.SpinManip:SetTargetSpeed(0)
+                end
+                self.ExhaustEffects = EffectUtil.CreateBoneEffects( self.unit, 'GGun_Barrel_Muzzle', self.unit:GetArmy(), Effects.WeaponSteam01 )
+                TDFPlasmaCannonWeapon.PlayFxWeaponPackSequence(self)
+            end,
+        
+            PlayFxRackSalvoChargeSequence = function(self)
+                if not self.SpinManip then 
+                    self.SpinManip = CreateRotator(self.unit, 'GGun_Barrel001', 'z', nil, 270, 180, 60)
+                    self.unit.Trash:Add(self.SpinManip)
+                end
+                
+                if self.SpinManip then
+                    self.SpinManip:SetTargetSpeed(500)
+                end
+                TDFPlasmaCannonWeapon.PlayFxRackSalvoChargeSequence(self)
+            end,            
+            
+            PlayFxRackSalvoReloadSequence = function(self)
+                if self.SpinManip then
+                    self.SpinManip:SetTargetSpeed(200)
+                end
+                self.ExhaustEffects = EffectUtil.CreateBoneEffects( self.unit, 'GGun_Barrel_Muzzle', self.unit:GetArmy(), Effects.WeaponSteam01 )
+                TDFPlasmaCannonWeapon.PlayFxRackSalvoChargeSequence(self)
+            end,
+        },
     },
 
     DestructionPartsChassisToss = {'SEA0401',},
