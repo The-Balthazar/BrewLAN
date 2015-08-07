@@ -107,22 +107,67 @@ AIBrain = Class(AIBrain) {
                     
                     local unit
                     
-                    if posY < dangerzone or posX < dangerzone or posY > (MapSizeY - dangerzone) or posX > (MapSizeX - dangerzone) then 
-                        --build towards the center if we are too close to the edge
-                        unit = self:CreateUnitNearSpot(u[1], posX - math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY - math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
-                    elseif VDist2(MapSizeX / 2, MapSizeY / 2, posX, posY) / 2 < distance then
-                        --build between here and center if we are within the 'distance' of the center
-                        unit = self:CreateUnitNearSpot(u[1], (posX + (MapSizeX/2) ) / 2, (posY + (MapSizeY/2) ) / 2 )
-                    else
-                        --build away from the center
-                        unit = self:CreateUnitNearSpot(u[1], posX + math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY + math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
+                    --This is so that if the paragon fails to be built until the last try, we dont end up with that player having their shields placed potentially miles away.
+                    if not self.FAILPARAGON then
+                        if posY < dangerzone or posX < dangerzone or posY > (MapSizeY - dangerzone) or posX > (MapSizeX - dangerzone) then 
+                            --build towards the center if we are too close to the edge
+                             unit = self:CreateUnitNearSpot(u[1], posX - math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY - math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
+                            if not unit then
+                                --If it fails try slightly closer to spawn
+                                unit = self:CreateUnitNearSpot(u[1], posX - math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*(distance-3), posY - math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*(distance-3))
+                            end
+                        elseif VDist2(MapSizeX / 2, MapSizeY / 2, posX, posY) / 2 < distance then
+                            --build between here and center if we are within the 'distance' of the center
+                            unit = self:CreateUnitNearSpot(u[1], (posX + (MapSizeX/2) ) / 2, (posY + (MapSizeY/2) ) / 2 )
+                        else
+                            --build away from the center   
+                            unit = self:CreateUnitNearSpot(u[1], posX + math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY + math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
+                            if not unit then
+                                --If it fails try slightly closer to spawn
+                                unit = self:CreateUnitNearSpot(u[1], posX + math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*(distance-3), posY + math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*(distance-3))
+                            end
+                        end
                     end
-                
+                    if not unit then
+                        --Try one last time, but this time, right where they start, because the fancy shit clearly isn't working.
+                        unit = self:CreateUnitNearSpot(u[1], posX, posY )
+                        --Let future generations know that we failed to get a good paragon position
+                        if j == 1 then
+                            self.FAILPARAGON = true
+                        end
+                    end
                     count = count + 1
                     if unit then
                         unit:CreateTarmac(true,true,true,false,false)
                     else
-                        WARN(self.Nickname .. " didn't get a " .. __blueprints[string.lower(u[1])].General.UnitName .. " due to map limitations.")
+                        local warning = {
+                            string.gsub(self.Nickname,'%b()', '' ),
+                            string.gsub(__blueprints[string.lower(u[1])].General.UnitName, '%b<>', ''),
+                            string.gsub(__blueprints[string.lower(u[1])].Description, '%b<>', ''),
+                        }
+                        local complaints = {
+                            {
+                                "This map is too lumpy. I didn't get a ",
+                                "There's awkward terrain where I was supposed to get a ",
+                                "I didn't get a ",
+                                "Hey where's my ",
+                            },
+                            {
+                                "Can we get a better map?",
+                                "Better map please?",
+                                "Is there another map we could play instead?",
+                                "Different map?",
+                            },
+                        }
+                        local message = complaints[1][math.random(1, table.getn(complaints[1]))] .. warning[2] .. " (" .. warning[3] .. "). " .. complaints[2][math.random(1, table.getn(complaints[2]))]
+                        
+                        WARN(warning[1] .. " didn't get a " .. warning[3])
+                        self:ForkThread(
+                            function()
+                                WaitTicks(20)
+                                table.insert(Sync.AIChat, {group='all', text=message, sender=self.Nickname})
+                            end
+                        )
                     end
                 end
             end

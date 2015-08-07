@@ -288,7 +288,14 @@ __________.__________
     * Fixed the forever broken, but always existant, rear AA laser.
     * Added an additional light gattling cannon to the underside of the tail for air-to-ground attacks. DPS ~320.
     * It can now wear a hat.
-  * Paragon game: Fixed an issue where the script would crash after failing to give someone a Paragon or shield due to map issues. The player will still be Paragon or shieldless, but the game will log a warning and carry on with life.                         
+  * Paragon game: Fixed an issue where the script would crash after failing to give someone a Paragon or shield due to map issues. The player will still be Paragon or shieldless, but the game will log a warning and carry on with life.
+  __________
+  2015-08-07
+  
+  * Paragon Game: If the script couldn't spawn a unit it will now try again a little bit closer to the players starting location. (Except for people in the center of the map.)
+    * If ANY player doesn't have the unit after these checks, it will try a third time (or second time in middle people cases) to spawn, but this time right on their starting location.
+      * If the Paragon fails to this point, the shields will also be spawned this way.
+      * Players who have STILL been failed by the spawn script, will have the failure announced on their behalf. So people know the game is ruined and that you should all try a different map.  
 __________.__________
 2015-01-02|0.6
 
