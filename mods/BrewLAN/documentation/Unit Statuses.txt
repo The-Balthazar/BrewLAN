@@ -33,7 +33,6 @@ Errors list/the other to-do list.
 * Give the UEF walls, and Bessemer Reactor real distance models.
 * Do something with the repair ship idea.
 * Do something with the cybran stealth field sub idea.
-* Add the Artilllery Defence Grid for UEF (DEB4303AntiArtilleryShield01).
 * Create a UI for the contents of the Ivan.
 * Make the damage test unit look like a Nokia 3310.
 * Look into the issue of Seraphim Shield walls getting shot whilst still active.
@@ -238,6 +237,7 @@ Tech 2:
   		* T2 Mass Storage.
       * T2 Energy Storage.
       * T2 Proximity Mine.
+        * No scorch mark. Massive particle effect.       
   		* T2 Engineering Station.     
   		* T2 Field engineer.
 
@@ -474,10 +474,8 @@ Cybran Scathis Mk 2: Experimental Rapid-fire Artillery
 
 Cybran Darkness: Experimental Omni Disruption Facility
   * Uses the model of the QAI Mainframe from the campaign.
-  * One of its arms doesn't move, for some unknown reason.
   * Was briefly called Oscuras before reverting back to Darkness.
     * I realised that any unit for which I try to avoid refering to it by name, has a bad name. Sorry Kris.
-  * Doesn't care if you run out of power.           
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Abandonned Ideas:
@@ -530,6 +528,13 @@ Experimental Wall - Seraphim. Firestorm Walls. Also applicable, Stealth Firestor
 Experimental Engi. Station - Probably not a good idea now that they've been added to Seraphim (did you ever give them to Aeon?). I don't have any good ideas to make them interesting either (Unless you're mad enough to want to do infinite/super-huge range). Stylistically, it could be a bundle of Nano-Bots for Cybran, some ethereal light bubbles for Seraphim/Aeon, or just bigger drones for UEF.
 * Experimental engineering is probably still a terrible idea.
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Blackrobe ideas
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+* Walls with personal shields
+* A land version of the air repair pad, like of tibsun.
+* T1-3 Jammers
+* T1 stealth field gen for Cybran.
 _______________________________________________________
 Side-mods
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -537,6 +542,7 @@ BrewUI
 * Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
 * Overwrites the two functions completely when active.
 * Completely optional, for compatibility.
+* Is overwritten by the support commander upgrade manager thing in GazUI and such.
 
 BrewLAN: Gantry AIx 1
 * This is an optional difficulty module for UEF AIx.

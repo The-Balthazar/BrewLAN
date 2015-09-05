@@ -11,6 +11,7 @@
 local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit  
 local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon 
 local Utilities = import('/lua/utilities.lua')
+local Buff = import('/lua/sim/Buff.lua')
 
 SRB4402 = Class(CRadarJammerUnit) {    
     Weapons = {
@@ -22,19 +23,21 @@ SRB4402 = Class(CRadarJammerUnit) {
                 local LocalUnits = aiBrain:GetUnitsAroundPoint(categories.ALLUNITS, Mypos, Range) 
                 local army = self.unit:GetArmy()
                 self:PlaySound(self:GetBlueprint().Audio.Fire)
-                for k, v in self.unit.Rotator do
-                    self.unit.Rotator[k]:SetGoal(-50)
-                    self.unit.Rotator[k]:SetSpeed(1900)
-                    
-                    ForkThread( function()
-                                    WaitTicks(1)  
-                                    for k, v in self.unit.Rotator do
-                                        self.unit.Rotator[k]:SetGoal(0)
-                                        self.unit.Rotator[k]:SetSpeed(25)
-                                    end
-                                end
-                              )
+                if self.ArmWaitThread then
+                    KillThread(self.ArmWaitThread)
                 end
+                for k, v in self.unit.Rotator do
+                    v:SetGoal(-50)
+                    v:SetSpeed(1900)
+                end 
+                self.ArmWaitThread = ForkThread( function()
+                                WaitTicks(1)    
+                                for k, v in self.unit.Rotator do
+                                    v:SetGoal(0)
+                                    v:SetSpeed(25)     
+                                end 
+                            end
+                          )
                 CreateAttachedEmitter(self.unit, 0, army, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter( 20 ):OffsetEmitter( 0, 4, 0 )
                 local epathR = '/effects/emitters/destruction_explosion_concussion_ring_03_emit.bp'
                 CreateAttachedEmitter(self.unit, 'XRC2201', army, epathR):OffsetEmitter( 0, 4, 0 )
@@ -45,40 +48,33 @@ SRB4402 = Class(CRadarJammerUnit) {
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '02_emit.bp')
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '03_emit.bp')
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '04_emit.bp')
-                for k, v in LocalUnits do
-                    if self.unit:GetEntityId() != v:GetEntityId()
-                    and v:IsIntelEnabled('Omni') then
-                    
-                        --If this is the first time the target has been effected by any facility
-                        if not v.Darkness.StartingRadius then
-                            v.Darkness = {}
-                            v.Darkness.StartingRadius = v:GetIntelRadius('Omni')
-                            v.Darkness.Facilities = {}
-                            v.Darkness.Facilities[self.unit:GetEntityId()] = true
-                            self.unit.NerfedUnits[k] = v
-                            
-                            --LOG('First Instance: ' .. v:GetBlueprint().Description .. v:GetEntityId() .. ' Rad: ' .. v.Darkness.StartingRadius)
-                            
-                        --If this is the first time the target has been effected by just this facility    
-                        elseif not v.Darkness.Facilities[self.unit:GetEntityId()] then
-                            v.Darkness.Facilities[self.unit:GetEntityId()] = true
-                            self.unit.NerfedUnits[k] = v
-                            
-                            --LOG('Second Instance: ' .. v:GetBlueprint().Description .. v:GetEntityId() .. ' Rad: ' .. v.Darkness.StartingRadius)
-                        end
-                        
-                        --Check to see the target has upgraded and increased its radius, since first being effected    
-                        if v:GetIntelRadius('Omni') > v.Darkness.StartingRadius then   
-                            v.Darkness.StartingRadius = v:GetIntelRadius('Omni')
-                            
-                            --LOG('Upgrade Instance: ' .. v:GetBlueprint().Description .. v:GetEntityId() .. ' Rad: ' .. v.Darkness.StartingRadius)
-                        end
-                        
-                        if v:GetIntelRadius('Omni') > 50 then
-                            rate = 0.4 + Utilities.GetDistanceBetweenTwoEntities(v, self.unit)/(Range*2)
-                            v:SetIntelRadius('Omni', math.max(v:GetIntelRadius('Omni')*rate, 50))
-                            v:RequestRefreshUI()
-                        end
+                
+                if not Buffs['DarknessOmniNerf'] then
+                    BuffBlueprint {
+                        Name = 'DarknessOmniNerf',
+                        DisplayName = 'DarknessOmniNerf',
+                        BuffType = 'OmniRadiusFix',
+                        Stacks = 'ALWAYS',
+                        Duration = 20.1,
+                        Affects = {
+                            OmniRadiusFix = {
+                                Add = 0,
+                                Mult = 0.6,
+                            },
+                        },
+                    }
+                end         
+                for k, v in LocalUnits do    
+                    if
+                    --self.unit:GetEntityId() != v:GetEntityId()
+                    --and
+                    v:IsIntelEnabled('Omni')
+                    and
+                    not EntityCategoryContains(categories.COMMAND + categories.ual0401 + categories.sab2306, v)
+                    --and
+                    --v:GetIntelRadius('Omni') > 50
+                    then
+                        Buff.ApplyBuff(v, 'DarknessOmniNerf')
                     end
                 end  
             end,
@@ -87,14 +83,11 @@ SRB4402 = Class(CRadarJammerUnit) {
         
     OnStopBeingBuilt = function(self,builder,layer)
         CRadarJammerUnit.OnStopBeingBuilt(self,builder,layer)
-        if not self.Sliders then
+        if not self.Rotator then
             self.Rotator = {}
             self.Rotator.B01 = CreateRotator(self, ' B01', 'x')
             self.Rotator.B02 = CreateRotator(self, ' B02', 'x')
-            self.Rotator.B02 = CreateRotator(self, ' B03', 'x')
-            for k,v in self.Rotator do
-                self.Trash:Add(self.Rotator[k])
-            end
+            self.Rotator.B03 = CreateRotator(self, ' B03', 'x')
         end 
         if self.IntelEffects and not self.IntelFxOn then
             self.IntelEffectsBag = {}
@@ -108,64 +101,31 @@ SRB4402 = Class(CRadarJammerUnit) {
     
     OnIntelEnabled = function(self) 
         self.Intel = true 
-        self:ForkThread(self.FirePulse, self)
+        --self:ForkThread(self.FirePulse, self)
         CRadarJammerUnit.OnIntelEnabled(self)
     end,
 
     OnIntelDisabled = function(self)
         self.Intel = false
         CRadarJammerUnit.OnIntelDisabled(self)
-        self.ReturnOmni(self) 
-        ForkThread( function()
-                        WaitTicks(1)  
-                        self.ReturnOmni(self) 
-                    end
-                  )
     end,
        
     OnKilled = function(self, instigator, type, overkillRatio)
         CRadarJammerUnit.OnKilled(self, instigator, type, overkillRatio)
-        self.ReturnOmni(self)
-        ForkThread( function()
-                        WaitTicks(1)  
-                        self.ReturnOmni(self) 
-                    end
-                  )
     end,
     
     FirePulse = function(self)
-        while self.Intel do 
-            WaitSeconds(2.5)
-            if self.Intel then
+        while true do 
+            if self.Intel then         
+                WaitSeconds(2.5)
+                --if aiBrain:GetEconomyIncome('ENERGY')
                 self:GetWeaponByLabel('PulseWeapon'):FireWeapon()
+                WaitSeconds(2.5)
+            else
+                WaitSeconds(1)
             end
-            WaitSeconds(2.5)
         end
-    end,
-    
-    ReturnOmni = function(self)
-        if self.NerfedUnits then 
-            for k, v in self.NerfedUnits do 
-                --LOG('Return Instance: ' .. v:GetBlueprint().Description .. v:GetEntityId() .. ' Rad: ' .. v.Darkness.StartingRadius)
-                
-                v.Darkness.Facilities[self:GetEntityId()] = false
-                for facility, active in v.Darkness.Facilities do
-                    if active then
-                        --fallback check, because primary can fail with multiple facilities disabled at the same time
-                        if GetEntityById(facility).Intel then
-                            return
-                        end
-                    end
-                end  
-                --LOG('Returning for: ' .. v:GetBlueprint().Description .. v:GetEntityId() .. ' Rad: ' .. v.Darkness.StartingRadius)
-                if v:GetIntelRadius('Omni') < v.Darkness.StartingRadius then
-                    v:SetIntelRadius('Omni', v.Darkness.StartingRadius)
-                end 
-            end
-        --else
-            --LOG('Nope, no return')
-        end
-    end,   
+    end, 
      
     IntelEffects = {
         {
