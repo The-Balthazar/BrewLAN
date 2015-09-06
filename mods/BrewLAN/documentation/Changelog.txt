@@ -21,7 +21,11 @@ __________.__________
   * Units leaving the area will now eventually lose the effect.
 * Fixed a bug in the vanilla buff definitions that references RADAR radius instead of OMNI radius when calculating the base size of omni buffs.
   * Unfortunately this causes log warnings every time the a unit with a omni buff has its buffs change. But that is to do with how bad the vanilla code is.
-* Darkness now stops firing pulses when it doesn't have power. To some degree.               
+* Darkness now stops firing pulses when it doesn't have power. To some degree.
+  __________
+  2015-09-06
+  
+  * Changed the UV, texture, and model for the Absolution lod1, so it looks more like, and increased the distances at which it appears and dissapears.                 
 __________.__________
 2015-04-06|0.6.1
 
