@@ -10,7 +10,7 @@
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 
 SEB3303 = Class(TStructureUnit) {   
-    DeathThreadDestructionWaitTime = 8,
+    DeathThreadDestructionWaitTime = 0,
     
     OnStopBeingBuilt = function(self)
         TStructureUnit.OnStopBeingBuilt(self)
@@ -18,7 +18,9 @@ SEB3303 = Class(TStructureUnit) {
     end,
     
     Rebuild = function(self)
-        ChangeState( self, self.OpenState )
+        if not self.IsDying then
+            ChangeState( self, self.OpenState )
+        end
     end,
     
     OpenState = State() {
@@ -91,6 +93,7 @@ SEB3303 = Class(TStructureUnit) {
     },
     
     OnKilled = function(self, instigator, type, overkillRatio)
+        self.IsDying = true
         if self.Satellite and not self.Satellite:IsDead() and not self.Satellite.IsDying then
             self.Satellite:Kill()
         end

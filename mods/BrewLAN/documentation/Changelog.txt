@@ -25,7 +25,12 @@ __________.__________
   __________
   2015-09-06
   
-  * Changed the UV, texture, and model for the Absolution lod1, so it looks more like, and increased the distances at which it appears and dissapears.                 
+  * Changed the UV, texture, and model for the Absolution lod1, so it looks more like, and increased the distances at which it appears and dissapears.
+  __________
+  2015-09-07
+  
+  * The observation satellite no longer falls to the ground if it dies.
+  * The observation satellite station no longer goes through the satellite respawn motions when its trying to die.                    
 __________.__________
 2015-04-06|0.6.1
 

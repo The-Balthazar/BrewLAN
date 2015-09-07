@@ -12,7 +12,7 @@ local TOrbitalDeathLaserBeamWeapon = import('/lua/terranweapons.lua').TOrbitalDe
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 
 SEA0002 = Class(TAirUnit) {
-    DestroyNoFallRandomChance = 1.1,
+    DestroyNoFallRandomChance = 0,
     
     HideBones = { 'Shell01', 'Shell02', 'Shell03', 'Shell04', },
     
