@@ -112,7 +112,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'AeonCZAR',
-                    MeshName = '/units/xea0002/xea0002_lod0.scm', 
+                    --MeshName = '/units/xea0002/xea0002_lod0.scm', 
                     AlbedoName = '/units/xea0002/xea0002_albedo.dds', 
                     NormalsName = '/units/xea0002/xea0002_normalsts.dds', 
                     SpecularName = '/units/xea0002/xea0002_specteam.dds',  

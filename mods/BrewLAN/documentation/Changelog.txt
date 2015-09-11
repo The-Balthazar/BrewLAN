@@ -30,7 +30,11 @@ __________.__________
   2015-09-07
   
   * The observation satellite no longer falls to the ground if it dies.
-  * The observation satellite station no longer goes through the satellite respawn motions when its trying to die.                    
+  * The observation satellite station no longer goes through the satellite respawn motions when its trying to die.
+  __________
+  2015-09-11
+  
+  * The observation satellite now has a different model than the original Novax satellite. Admitedly a derivative model, but different nontheless, that most importantly non longer has a phat lazor on it.                    
 __________.__________
 2015-04-06|0.6.1
 
