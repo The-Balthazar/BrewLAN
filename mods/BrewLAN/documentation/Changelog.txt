@@ -34,7 +34,17 @@ __________.__________
   __________
   2015-09-11
   
-  * The observation satellite now has a different model than the original Novax satellite. Admitedly a derivative model, but different nontheless, that most importantly non longer has a phat lazor on it.                    
+  * The observation satellite now has a different model than the original Novax satellite. Admitedly a derivative model, but different nontheless, that most importantly non longer has a phat lazor on it.
+  * Added a hat attach bone for the observation satellite.
+  * Crates: Changed the vision buff to use actual buffs, rather than an attached vis entity.
+  * Crates: Changed the health buff to use actual buffs, rather than just multiplying the units health. They now stack with other buffs like upgrades and veterency rather than being replaced by them. Buff is now x1.5 rather than x2.
+  * Crates: Clones now get a copy of the original units buff table, and then have their current health set to that of the original.
+  * Crates: Kills drop now only gives kills to units with defined veterency levels, and gives an amount of kills at random from the units veterancy levels table.
+  * Crates: Added a radar buff. Only activates if the unit has radar. Buff is 25%.
+  * Crates: Added weapon buff. Adds 10% to damage and aoe, and 25% to max range. Only applies to units with damage dealing weapons that aren't death weapons.
+  * Crates: Added movement speed buff. Value is 20%. Only applies if the unit isn't movement type 'RULEUMT_None'.
+  * Crates: Added build rate buff. Buff is x2. Only applies to units with a build speed.
+  * Crates: Added 'Jackpot' variations of each buff, which are an order of magnitude more powerfull, and have a 1% chance of replacing the original.                                       
 __________.__________
 2015-04-06|0.6.1
 

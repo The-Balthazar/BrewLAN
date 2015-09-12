@@ -39,8 +39,9 @@ do
         end
         return OldCreateInitialArmyGroup(strArmy, createCommander)
     end
-            
-    local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
+         
+    local Buff = import('/lua/sim/Buff.lua')   
+    --local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
     local lewt = {
         -- Free stuff.
         {
@@ -50,7 +51,12 @@ do
             function(Unit, pos)
                 LOG("Clone")
                 local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
-                clone:SetMaxHealth(Unit:GetMaxHealth() )
+                for kbuff, vbuff in Unit.Buffs.BuffTable do
+                    for k, v in vbuff do
+                        Buff.ApplyBuff(clone, v.BuffName)
+                    end
+                end
+                --clone:SetMaxHealth(Unit:GetMaxHealth() )
                 clone:SetHealth(Unit, Unit:GetHealth() )
             end,
             --Random buildable unit
@@ -64,35 +70,316 @@ do
         -- Unit buffs
         {
             --Double health and heal
-            function(Unit, pos) LOG("Health buff") Unit:SetMaxHealth(Unit:GetMaxHealth() * 2) Unit:SetHealth(Unit, Unit:GetMaxHealth()) end,
+            function(Unit, pos)
+                LOG("Health buff")
+                if not Buffs['CrateHealthBuff'] then
+                    BuffBlueprint {
+                        Name = 'CrateHealthBuff',
+                        DisplayName = 'CrateHealthBuff',
+                        BuffType = 'CrateHealthBuff',
+                        Stacks = 'ALWAYS',
+                        Duration = -1,
+                        Affects = {
+                            MaxHealth = {
+                                Add = 0,
+                                Mult = 1.5,
+                            },
+                            Health = {
+                                Add = 0,
+                                Mult = 1.5,
+                            },
+                        },
+                    }
+                    BuffBlueprint {
+                        Name = 'CrayCrateHealthBuff',
+                        DisplayName = 'CrayCrateHealthBuff',
+                        BuffType = 'CrayCrateHealthBuff',
+                        Stacks = 'ALWAYS',
+                        Duration = -1,
+                        Affects = {
+                            MaxHealth = {
+                                Add = 0,
+                                Mult = 10,
+                            },
+                            Health = {
+                                Add = 0,
+                                Mult = 10,
+                            },
+                        },
+                    }
+                end       
+                if math.random(1,100) == 100 then
+                    LOG("JACKPOT")
+                    Buff.ApplyBuff(Unit, 'CrayCrateHealthBuff')
+                else         
+                    Buff.ApplyBuff(Unit, 'CrateHealthBuff')
+                end
+            end,
             --Give larger vis range
             function(Unit, pos)
                 LOG("Vision buff")
                 if ScenarioInfo.Options.FogOfWar == 'none' then
                     WARN("Vision buff selected while fog of war disabled. Rolling again.")
                     PhatLewt(Unit, pos)
-                else    
-                    if not Unit.VisBuff then
-                        local spec = {
-                            X = pos[1],
-                            Z = pos[3],
-                            Radius = (Unit:GetIntelRadius('Vision') or 20) + 20,
-                            LifeTime = -1,
-                            Omni = false,
-                            Radar = false,
-                            Vision = true,
-                            Army = Unit:GetAIBrain():GetArmyIndex(),
+                else 
+                    if not Buffs['CrateVisBuff'] then
+                        BuffBlueprint {
+                            Name = 'CrateVisBuff',
+                            DisplayName = 'CrateVisBuff',
+                            BuffType = 'CrateVisBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                VisionRadius = {
+                                    Add = 20,
+                                    Mult = 1,
+                                },
+                            },
                         }
-                        Unit.VisBuff = VizMarker(spec) 
-                        Unit.VisBuff:AttachTo(Unit, -1)
-                        Unit.Trash:Add(Unit.VisBuff)
-                    else
-                        Unit.VisBuff:SetIntelRadius('Vision', Unit.VisBuff:GetIntelRadius('Vision') + 20)
+                        BuffBlueprint {
+                            Name = 'CrayCrateVisBuff',
+                            DisplayName = 'CrayCrateVisBuff',
+                            BuffType = 'CrayCrateVisBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                VisionRadius = {
+                                    Add = 0,
+                                    Mult = 2,
+                                },
+                            },
+                        }
+                    end   
+                    if math.random(1,100) == 100 then
+                        LOG("JACKPOT")
+                        Buff.ApplyBuff(Unit, 'CrayCrateVisBuff')
+                    else      
+                        Buff.ApplyBuff(Unit, 'CrateVisBuff')
                     end
                 end
             end,
+            --Give larger radar range
+            function(Unit, pos)
+                LOG("Radar buff")
+                if Unit:GetBlueprint().Intel.RadarRadius > 0 then    
+                    if not Buffs['CrateRadarBuff'] then
+                        BuffBlueprint {
+                            Name = 'CrateRadarBuff',
+                            DisplayName = 'CrateRadarBuff',
+                            BuffType = 'CrateRadarBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                RadarRadius = {
+                                    Add = 0,
+                                    Mult = 1.25,
+                                },
+                            },
+                        }
+                        BuffBlueprint {
+                            Name = 'CrayCrateRadarBuff',
+                            DisplayName = 'CrayCrateRadarBuff',
+                            BuffType = 'CrayCrateRadarBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                RadarRadius = {
+                                    Add = 0,
+                                    Mult = 1.25,
+                                },
+                            },
+                        }
+                    end         
+                    if math.random(1,100) == 100 then
+                        LOG("JACKPOT")
+                        Buff.ApplyBuff(Unit, 'CrayCrateRadarBuff')
+                    else      
+                        Buff.ApplyBuff(Unit, 'CrateRadarBuff')
+                    end
+                else   
+                    WARN("Radar buff selected but unit has no radar to buff. Rolling again.")
+                    PhatLewt(Unit, pos)
+                end
+            end,
+            --Give more dakka
+            function(Unit, pos)
+                LOG("Guns buff")
+                local goodtogo = false
+                if Unit:GetBlueprint().Weapon then
+                    for i, v in Unit:GetBlueprint().Weapon do
+                        if not v.WeaponCategory == 'Death' and v.Damage then
+                            goodtogo = true
+                            break
+                        end
+                    end 
+                end
+                
+                if not goodtogo then
+                    WARN("This unit lacks damage dealing non-death weapons. Rolling again.")
+                    PhatLewt(Unit, pos)
+                else 
+                    if not Buffs['CrateDamageBuff'] then
+                        BuffBlueprint {
+                            Name = 'CrateDamageBuff',
+                            DisplayName = 'CrateDamageBuff',
+                            BuffType = 'CrateDamageBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                Damage = {
+                                    Add = 0,
+                                    Mult = 1.1,
+                                },
+                                DamageRadius = {
+                                    Add = 0,
+                                    Mult = 1.1,
+                                },
+                                MaxRadius = {
+                                    Add = 0,
+                                    Mult = 1.15,
+                                },
+                            },
+                        }
+                        BuffBlueprint {
+                            Name = 'CrayCrateDamageBuff',
+                            DisplayName = 'CrayCrateDamageBuff',
+                            BuffType = 'CrayCrateDamageBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                Damage = {
+                                    Add = 0,
+                                    Mult = 11,
+                                },
+                                DamageRadius = {
+                                    Add = 0,
+                                    Mult = 11,
+                                },
+                                MaxRadius = {
+                                    Add = 0,
+                                    Mult = 15,
+                                },
+                            },
+                        }
+                    end                  
+                    if math.random(1,100) == 100 then
+                        LOG("JACKPOT")
+                        Buff.ApplyBuff(Unit, 'CrayCrateDamageBuff')
+                    else      
+                        Buff.ApplyBuff(Unit, 'CrateDamageBuff')
+                    end
+                end
+            end,
+            --Give fasterness
+            function(Unit, pos)
+                LOG("Speed buff")
+                if Unit:GetBlueprint().Physics.MotionType == 'RULEUMT_None' then
+                    WARN("Unit that can't move rolled speed buff. Rolling again.")
+                    PhatLewt(Unit, pos)
+                else 
+                    if not Buffs['CrateMoveBuff'] then
+                        BuffBlueprint {
+                            Name = 'CrateMoveBuff',
+                            DisplayName = 'CrateMoveBuff',
+                            BuffType = 'CrateMoveBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                MoveMult = {
+                                    Add = 0,
+                                    Mult = 1.2,
+                                },
+                            },
+                        }
+                        BuffBlueprint {
+                            Name = 'CrayCrateMoveBuff',
+                            DisplayName = 'CrayCrateMoveBuff',
+                            BuffType = 'CrayCrateMoveBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                MoveMult = {
+                                    Add = 0,
+                                    Mult = 10,
+                                },
+                            },
+                        }
+                    end         
+                    if math.random(1,100) == 100 then
+                        LOG("JACKPOT")
+                        Buff.ApplyBuff(Unit, 'CrayCrateMoveBuff')
+                    else      
+                        Buff.ApplyBuff(Unit, 'CrateMoveBuff')
+                    end
+                end
+            end,
+            --Give fasterness of building
+            function(Unit, pos)
+                LOG("Build buff")
+                if Unit:GetBlueprint().Economy.BuildRate > 0 then
+                    if not Buffs['CrateEngiBuff'] then
+                        BuffBlueprint {
+                            Name = 'CrateEngiBuff',
+                            DisplayName = 'CrateEngiBuff',
+                            BuffType = 'CrateEngiBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                BuildRate = {
+                                    Add = 0,
+                                    Mult = 2,
+                                },
+                            },
+                        }
+                        BuffBlueprint {
+                            Name = 'CrayCrateEngiBuff',
+                            DisplayName = 'CrayCrateEngiBuff',
+                            BuffType = 'CrayCrateEngiBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                BuildRate = {
+                                    Add = 0,
+                                    Mult = 20,
+                                },
+                            },
+                        }
+                    end                  
+                    if math.random(1,100) == 100 then
+                        LOG("JACKPOT")
+                        Buff.ApplyBuff(Unit, 'CrayCrateEngiBuff')
+                    else
+                        Buff.ApplyBuff(Unit, 'CrateEngiBuff')
+                    end  
+                else       
+                    WARN("Unit rolled for engineering buffs, but can't engineering. Rolling again.")
+                    PhatLewt(Unit, pos)
+                end
+            end,
             --Veterancy
-            function(Unit, pos) LOG("Kills") Unit:AddKills(100) end,
+            function(Unit, pos)
+                LOG("Kills")
+                local UnitVet = Unit:GetBlueprint().Veteran
+                if UnitVet then
+                    local kchoice = 0 
+                    for k, v in UnitVet do
+                        kchoice = kchoice + 1
+                    end
+                    kchoice = math.random(1,kchoice)
+                    local kcurrent = 0
+                    for k, v in UnitVet do
+                        kcurrent = kcurrent + 1
+                        --LOG(kcurrent .. kchoice)
+                        if kcurrent == kchoice then
+                            Unit:AddKills(v)
+                            break
+                        end
+                    end
+                else
+                    WARN("Unit has no defined veterancy levels to recieve useful kills. Rerolling.")
+                    PhatLewt(Unit, pos)
+                end
+            end,
         },
         -- Hats
         {
@@ -170,8 +457,12 @@ do
             --Nemesis dupe
             function(Unit, pos)
                 LOG("Evil Twin")
-                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
-                clone:SetMaxHealth(Unit:GetMaxHealth() )
+                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)  
+                for kbuff, vbuff in Unit.Buffs.BuffTable do
+                    for k, v in vbuff do
+                        Buff.ApplyBuff(clone, v.BuffName)
+                    end
+                end
                 clone:SetHealth(Unit, Unit:GetHealth() )
             end,
             --Random nemesis 
@@ -189,6 +480,7 @@ do
     function PhatLewt(triggerUnit, pos, note)
         local a = math.random(1, table.getn(lewt) )
         local b = math.random(1, table.getn(lewt[a]) )
+        --LOG(repr(triggerUnit))
         if note == 'Hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
             lewt[3][1](triggerUnit, pos)
         else
