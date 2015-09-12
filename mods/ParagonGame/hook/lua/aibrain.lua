@@ -107,8 +107,8 @@ AIBrain = Class(AIBrain) {
                     
                     local unit
                     
-                    --This is so that if the paragon fails to be built until the last try, we dont end up with that player having their shields placed potentially miles away.
-                    if not self.FAILPARAGON then
+                    --Slight improvement; on previous way: wherever it spawns the paragon, it targets the other units there instead of where it was targetting for the paragon. 
+                    if not self.PARAGONPOS then
                         if posY < dangerzone or posX < dangerzone or posY > (MapSizeY - dangerzone) or posX > (MapSizeX - dangerzone) then 
                             --build towards the center if we are too close to the edge
                              unit = self:CreateUnitNearSpot(u[1], posX - math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY - math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
@@ -126,15 +126,17 @@ AIBrain = Class(AIBrain) {
                                 --If it fails try slightly closer to spawn
                                 unit = self:CreateUnitNearSpot(u[1], posX + math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*(distance-3), posY + math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*(distance-3))
                             end
+                        end 
+                        if not unit then
+                            --Try one last time, but this time, right where they start, because the fancy shit clearly isn't working.
+                            unit = self:CreateUnitNearSpot(u[1], posX, posY )
+                            --Let future generations know that we failed to get a good paragon position
                         end
-                    end
-                    if not unit then
-                        --Try one last time, but this time, right where they start, because the fancy shit clearly isn't working.
-                        unit = self:CreateUnitNearSpot(u[1], posX, posY )
-                        --Let future generations know that we failed to get a good paragon position
-                        if j == 1 then
-                            self.FAILPARAGON = true
-                        end
+                    else
+                        unit = self:CreateUnitNearSpot(u[1], self.PARAGONPOS[1], self.PARAGONPOS[3] ) 
+                    end    
+                    if unit and j == 1 then
+                        self.PARAGONPOS = unit:GetPosition()
                     end
                     count = count + 1
                     if unit then

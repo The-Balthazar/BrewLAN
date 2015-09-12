@@ -11,7 +11,7 @@ do
                     local crate = import('/lua/sim/Entity.lua').Entity()
                     local crateType = 'CRATE_Dodecahedron'
                     local flash
-                    Warp(crate,getSafePos())
+                    Warp(crate,getSafePos(crate:GetPosition()))
                     crate:SetMesh('/mods/cratedrop/effects/entities/' .. crateType .. '/' .. crateType ..'_mesh')
                     crate:SetDrawScale(.08)
                     crate:SetVizToAllies('Intel')
@@ -28,7 +28,7 @@ do
                             WaitTicks(5)
                             flash:Destroy()
                             
-                            Warp(crate,getSafePos())
+                            Warp(crate,getSafePos(crate:GetPosition()))
                             flash = CreateEmitterAtEntity(crate, search[1]:GetArmy(), '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(4)
                             WaitTicks(5)
                             flash:Destroy()
@@ -46,7 +46,25 @@ do
         -- Free stuff.
         {
             --5000 mass
-            function(Unit, pos) LOG("Dat mass") Unit:GetAIBrain():GiveResource('Mass', 5000) end,
+            function(Unit, pos)
+                LOG("Dat mass")
+                local aiBrain = Unit:GetAIBrain()
+                local mass = aiBrain:GetEconomyStored('MASS')
+                local ratio = aiBrain:GetEconomyStoredRatio('MASS')
+                local storagespace = (mass * (1/ratio) ) - mass
+                if storagespace > 5000 then 
+                    if math.random(1,100) == 100 then
+                        LOG("JACKPOT")
+                        aiBrain:GiveResource('Mass', storagespace )
+                    else      
+                        aiBrain:GiveResource('Mass', math.max(5000, storagespace/10) )
+                    end   
+                    FloatingEntityText(Unit:GetEntityId(),'<LOC tooltipui0245>Mass Collected')
+                else  
+                    WARN("Rolled for mass, but storage space is low. Rolling again.")
+                    PhatLewt(Unit, pos)
+                end
+            end,
             --Clone at current health
             function(Unit, pos)
                 LOG("Clone")
@@ -58,14 +76,32 @@ do
                 end
                 --clone:SetMaxHealth(Unit:GetMaxHealth() )
                 clone:SetHealth(Unit, Unit:GetHealth() )
+                if clone:GetBlueprint().Description then
+                    FloatingEntityText(Unit:GetEntityId(), clone:GetBlueprint().Description )
+                else
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltips_0000>Give Units' )
+                end
             end,
             --Random buildable unit
             function(Unit, pos)
                 LOG("Random dude")
-                CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                local clone = CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                if clone:GetBlueprint().Description then
+                    FloatingEntityText(Unit:GetEntityId(), clone:GetBlueprint().Description )
+                else
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltips_0000>Give Units' )
+                end
             end,
             --Random buildable mobile engineer
-            function(Unit, pos) LOG("Engineer") CreateUnitHPR(randomBuildable('Engineers'), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+            function(Unit, pos)
+                LOG("Engineer")
+                local clone = CreateUnitHPR(randomBuildable('Engineers'), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                if clone:GetBlueprint().Description then
+                    FloatingEntityText(Unit:GetEntityId(), clone:GetBlueprint().Description )
+                else
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltips_0000>Give Units' )
+                end
+            end,
         },
         -- Unit buffs
         {
@@ -113,7 +149,8 @@ do
                     Buff.ApplyBuff(Unit, 'CrayCrateHealthBuff')
                 else         
                     Buff.ApplyBuff(Unit, 'CrateHealthBuff')
-                end
+                end    
+                FloatingEntityText(Unit:GetEntityId(),'<LOC SCORE_0046>Victory')
             end,
             --Give larger vis range
             function(Unit, pos)
@@ -155,7 +192,8 @@ do
                         Buff.ApplyBuff(Unit, 'CrayCrateVisBuff')
                     else      
                         Buff.ApplyBuff(Unit, 'CrateVisBuff')
-                    end
+                    end  
+                    FloatingEntityText(Unit:GetEntityId(),'<LOC tooltipui0082>Intel')
                 end
             end,
             --Give larger radar range
@@ -196,6 +234,7 @@ do
                     else      
                         Buff.ApplyBuff(Unit, 'CrateRadarBuff')
                     end
+                    FloatingEntityText(Unit:GetEntityId(),'<LOC tooltipui0082>Intel')
                 else   
                     WARN("Radar buff selected but unit has no radar to buff. Rolling again.")
                     PhatLewt(Unit, pos)
@@ -207,7 +246,7 @@ do
                 local goodtogo = false
                 if Unit:GetBlueprint().Weapon then
                     for i, v in Unit:GetBlueprint().Weapon do
-                        if not v.WeaponCategory == 'Death' and v.Damage then
+                        if v.WeaponCategory != 'Death' and v.Damage > 0 then
                             goodtogo = true
                             break
                         end
@@ -230,10 +269,10 @@ do
                                     Add = 0,
                                     Mult = 1.1,
                                 },
-                                DamageRadius = {
-                                    Add = 0,
-                                    Mult = 1.1,
-                                },
+                                --DamageRadius = {
+                                --    Add = 0,
+                                --    Mult = 1.1,
+                                --},
                                 MaxRadius = {
                                     Add = 0,
                                     Mult = 1.15,
@@ -251,10 +290,10 @@ do
                                     Add = 0,
                                     Mult = 11,
                                 },
-                                DamageRadius = {
-                                    Add = 0,
-                                    Mult = 11,
-                                },
+                                --DamageRadius = {
+                                --    Add = 0,
+                                --    Mult = 11,
+                                --},
                                 MaxRadius = {
                                     Add = 0,
                                     Mult = 15,
@@ -267,7 +306,8 @@ do
                         Buff.ApplyBuff(Unit, 'CrayCrateDamageBuff')
                     else      
                         Buff.ApplyBuff(Unit, 'CrateDamageBuff')
-                    end
+                    end 
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0017>Kills' )
                 end
             end,
             --Give fasterness
@@ -310,7 +350,8 @@ do
                         Buff.ApplyBuff(Unit, 'CrayCrateMoveBuff')
                     else      
                         Buff.ApplyBuff(Unit, 'CrateMoveBuff')
-                    end
+                    end  
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0262>Fast' )
                 end
             end,
             --Give fasterness of building
@@ -350,7 +391,8 @@ do
                         Buff.ApplyBuff(Unit, 'CrayCrateEngiBuff')
                     else
                         Buff.ApplyBuff(Unit, 'CrateEngiBuff')
-                    end  
+                    end
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC ability_engineeringsuite>Engineering Suite' )  
                 else       
                     WARN("Unit rolled for engineering buffs, but can't engineering. Rolling again.")
                     PhatLewt(Unit, pos)
@@ -375,6 +417,7 @@ do
                             break
                         end
                     end
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0017>Kills' )
                 else
                     WARN("Unit has no defined veterancy levels to recieve useful kills. Rerolling.")
                     PhatLewt(Unit, pos)
@@ -436,6 +479,7 @@ do
                         hat:AttachTo(Unit.Hats[no], 'Attachpoint')
                     end    
                     Unit.Trash:Add(hat)
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0046>Victory' )
                 else
                     if ScenarioInfo.Options.CrateHatsOnly == 'true' then
                         WARN("Unit with no noticable head attempted to pick up hats only crate.")
@@ -449,11 +493,21 @@ do
         -- Bad stuff table
         {         
             --Troll log
-            function(Unit, pos) LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.") end,
+            function(Unit, pos)
+                LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.")
+                FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0039>Failed' )
+            end,
             --Troll print
-            function(Unit, pos) LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  ) end,
+            function(Unit, pos)
+                LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  )
+                FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0039>Failed' )
+            end,
             --Troll bomb
-            function(Unit, pos) LOG("Explosion") CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon() end,
+            function(Unit, pos)
+                LOG("Explosion")
+                CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon()
+                FloatingEntityText(Unit:GetEntityId(), '<LOC ability_suicideweapon>Suicide Weapon' )
+            end,
             --Nemesis dupe
             function(Unit, pos)
                 LOG("Evil Twin")
@@ -464,11 +518,28 @@ do
                     end
                 end
                 clone:SetHealth(Unit, Unit:GetHealth() )
+                if clone:GetBlueprint().Description then
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' .. ' ' .. clone:GetBlueprint().Description )
+                else
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' )
+                end
             end,
             --Random nemesis 
-            function(Unit, pos) LOG("Random Nemesis") CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0) end,
+            function(Unit, pos)
+                LOG("Random Nemesis")
+                local clone = CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                if clone:GetBlueprint().Description then
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' .. ' ' .. clone:GetBlueprint().Description )
+                else
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' )
+                end
+            end,
             --Random warping
-            function(Unit, pos) LOG("Teleport") Warp(Unit,getSafePos()) end,
+            function(Unit, pos)
+                LOG("Teleport")
+                Warp(Unit,getSafePos(Unit:GetPosition()))
+                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltipui0024>Teleport' )
+            end,
         },
         --{
         --    function(Unit, pos) LOG(repr(Unit) ) end,
@@ -522,7 +593,7 @@ do
         end
     end
     
-    function getSafePos(tries) 
+    function getSafePos(start, tries) 
         if not tries then tries = 1 end
         local pos = {math.random(0+10,ScenarioInfo.size[1]-10), math.random(0+10,ScenarioInfo.size[2]-10)}
         local positionDummy = 'zzcrate' --need a big building that has no intel, doesn't flatten ground, and doesn't really care for evalation.      
@@ -534,7 +605,11 @@ do
             LOG(repr(pos))
             return pos 
         else
-            return getSafePos(tries + 1)  
+            if tries < 1000 then
+                return getSafePos(start, tries + 1)
+            else
+                return start    
+            end  
         end
     end
     

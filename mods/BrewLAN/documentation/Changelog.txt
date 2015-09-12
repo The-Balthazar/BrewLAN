@@ -44,7 +44,17 @@ __________.__________
   * Crates: Added weapon buff. Adds 10% to damage and aoe, and 25% to max range. Only applies to units with damage dealing weapons that aren't death weapons.
   * Crates: Added movement speed buff. Value is 20%. Only applies if the unit isn't movement type 'RULEUMT_None'.
   * Crates: Added build rate buff. Buff is x2. Only applies to units with a build speed.
-  * Crates: Added 'Jackpot' variations of each buff, which are an order of magnitude more powerfull, and have a 1% chance of replacing the original.                                       
+  * Crates: Added 'Jackpot' variations of each buff, which are an order of magnitude more powerfull, and have a 1% chance of replacing the original.
+  __________
+  2015-09-12
+  
+  * Crates: Removed the damage radius buff from the crate weapon buff. Because the function to set damage radius doesn't exist. Its another bugged buff.
+  * Crates: Fixed the weapons check on the weapons buff.
+  * Crates: Changed the free mass drop to check available storage. Rerolls if less than 5K remaining storage. It now gives 10% of remaining storage worth of mass, or 5000 mass, which ever is bigger. With a 1% chance of outright filling your storage.
+  * Crates: Added floating text box messages to drops. They use default language strings so I don't have to get translations done. Also means some are a bit odd.
+  * Paragon game: More intelligent placement of units after the paragon:
+    * It now tries to spawns the shields near where it actually spawned the paragon, rather than where it tried to spawn the paragon.
+  * Crates: No longer freezes the game if it can't find a safe place to warp to. Warps to the same place instead. Which can have hilarious consequences.                                                       
 __________.__________
 2015-04-06|0.6.1
 
