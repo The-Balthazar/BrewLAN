@@ -330,6 +330,10 @@ Unit_Description_BrewLAN_T3L009="Mobile cloaking missile launcher. Can fire at l
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationary artillery defense grid. Equipped with an integrated threat identification and tracking system."
 
+srl0316_desc="Cloakable Mobile Stealth Field System"
+srl0316_name="Operative"
+Unit_Description_BrewLAN_T3L010="Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
+
 --------------------------------------------------------------------------------
 -- Experimentals
 -------------------------------------------------------------------------------- 
@@ -369,10 +373,14 @@ Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-p
 
 srb4402_desc="Experimental Omni Disrupting Facility"
 srb4402_name="Darkness"
-Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of active Omni sensors. Distant sensors are affected slower."
+Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Generates a pulse that reduces the maximun penetration depth of most active Omni sensors."
 
 ssb5401_desc="Experimental Quantum Gateway"
 ssb5401_name="Chappa'ai"
 Unit_Description_BrewLAN_T4B007="Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
 
 srl0001_desc="Crab Egg (Destroyer)"
+
+seb3404_desc="Experimental Sensor Array"
+seb3404_name="Panopticon"
+Unit_Description_BrewLAN_T4B008="Experimental sensor array. Displays the location of enemy engineers, experimentals, and intel units."

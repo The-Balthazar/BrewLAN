@@ -41,6 +41,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYMISC',
+        'OVERLAYCOUNTERINTEL',
         'SORTINTEL',
     },
     CollisionOffsetY = -0.25,
@@ -169,7 +170,9 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 20,
-        OmniRadius = 20,
+        RadarStealthField = true,
+        RadarStealthFieldRadius = 50,
+        --OmniRadius = 20,
     },
     Interface = {
         HelpText = '<LOC srb4402_desc>Experimental Omni Disrupting Facility',

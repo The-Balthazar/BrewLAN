@@ -12,6 +12,7 @@ local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit
 local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon 
 local Utilities = import('/lua/utilities.lua')
 local Buff = import('/lua/sim/Buff.lua')
+local AIUtils = import('/lua/ai/aiutilities.lua')
 
 SRB4402 = Class(CRadarJammerUnit) {    
     Weapons = {
@@ -20,7 +21,12 @@ SRB4402 = Class(CRadarJammerUnit) {
                 local aiBrain = self.unit:GetAIBrain()      
                 local Mypos = self.unit:GetPosition()
                 local Range = self.MaxRadius or 2000
-                local LocalUnits = aiBrain:GetUnitsAroundPoint(categories.ALLUNITS, Mypos, Range) 
+                local LocalUnits = {} 
+                for index, brain in ArmyBrains do
+                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS, Mypos, Range) do
+                        table.insert(LocalUnits, unit)
+                    end
+                end
                 local army = self.unit:GetArmy()
                 self:PlaySound(self:GetBlueprint().Audio.Fire)
                 if self.ArmWaitThread then
@@ -75,6 +81,14 @@ SRB4402 = Class(CRadarJammerUnit) {
                     --v:GetIntelRadius('Omni') > 50
                     then
                         Buff.ApplyBuff(v, 'DarknessOmniNerf')
+                    end
+                    if v.PanopticonMarker then
+                        --LOG(VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) .. " sdfgdf " .. self.unit:GetBlueprint().Intel.RadarStealthFieldRadius)
+                        if VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) < self.unit:GetBlueprint().Intel.RadarStealthFieldRadius then
+                            --LOG("KILL IT DEAD")
+                            v.PanopticonMarker:Destroy()
+                            v.PanopticonMarker = nil
+                        end
                     end
                 end  
             end,

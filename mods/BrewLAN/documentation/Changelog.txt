@@ -54,7 +54,15 @@ __________.__________
   * Crates: Added floating text box messages to drops. They use default language strings so I don't have to get translations done. Also means some are a bit odd.
   * Paragon game: More intelligent placement of units after the paragon:
     * It now tries to spawns the shields near where it actually spawned the paragon, rather than where it tried to spawn the paragon.
-  * Crates: No longer freezes the game if it can't find a safe place to warp to. Warps to the same place instead. Which can have hilarious consequences.                                                       
+  * Crates: No longer freezes the game if it can't find a safe place to warp to. Warps to the same place instead. Which can have hilarious consequences.
+  __________
+  2015-09-20
+  
+  * Added a basic version of the Cybran T3 mobile stealth field gen. Lacks unique model and icon.
+  * Added a basic version of the Panopticon: UEF Experimental Sensor Array.
+  * Fixed a critical issue with the Darkness where it ignores units that you don't know about.
+  * Added a radar stealth field to the darkness. This is mostly to show the area that is protected from eaves dropping from the Panopticon.
+  * Darkness now removes Panopticon vis entities from units entering its stealth field area on pulse. Units in that area not recieving them in the first place is handled by the Panopticon.                                                                  
 __________.__________
 2015-04-06|0.6.1
 

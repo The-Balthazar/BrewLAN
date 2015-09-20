@@ -18,7 +18,7 @@ do
                 --    atype = 'OmniRadiusFix'
                 --    LOG("NOTICE: Changing OmniRadius atype to OmniRadiusFix. This will cause warnings related to the original function not being able to find it the type. This is expected.")
                 --end
-                LOG("The following warning is totally expected.")
+                LOG("The following warning about OmniRadiusFix is totally expected. GPG bugged the omni buff and warn about unknown buffs.")
                 local val = BuffCalculate(unit, buffName, 'OmniRadiusFix', unit:GetBlueprint().Intel.OmniRadius or 0)
                 if not unit:IsIntelEnabled('Omni') then
                     unit:InitIntel(unit:GetArmy(),'Omni', val)

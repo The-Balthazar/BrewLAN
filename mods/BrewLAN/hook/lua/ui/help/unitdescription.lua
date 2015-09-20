@@ -107,6 +107,7 @@ Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L008>Mobile strategic 
 Description['sel0322'] = "<LOC Unit_Description_0034>Mobile shield generator." 
 Description['sal0322'] = "<LOC Unit_Description_0231>Mobile shield generator."
 Description['srl0320'] = "<LOC Unit_Description_BrewLAN_T3L009>Mobile cloaking missile launcher. Can fire at land- air- and sea-based units, but must decloak to fire."
+Description['srl0316'] = "<LOC Unit_Description_BrewLAN_T3L010>Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
@@ -154,8 +155,9 @@ Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amph
 Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
 Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amphibious battleship."
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
-Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Creates a pulse that gradually reduces the maximun penetration depth of all active Omni sensors. Distant sensors are affected slower."
+Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Generates a pulse that reduces the maximun penetration depth of most active Omni sensors."
 Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
+Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sensor array. Displays the location of enemy engineers, experimentals, and intel units."
 
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."
