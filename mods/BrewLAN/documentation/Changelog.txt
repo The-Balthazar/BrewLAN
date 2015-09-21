@@ -62,7 +62,13 @@ __________.__________
   * Added a basic version of the Panopticon: UEF Experimental Sensor Array.
   * Fixed a critical issue with the Darkness where it ignores units that you don't know about.
   * Added a radar stealth field to the darkness. This is mostly to show the area that is protected from eaves dropping from the Panopticon.
-  * Darkness now removes Panopticon vis entities from units entering its stealth field area on pulse. Units in that area not recieving them in the first place is handled by the Panopticon.                                                                  
+  * Darkness now removes Panopticon vis entities from units entering its stealth field area on pulse. Units in that area not recieving them in the first place is handled by the Panopticon.
+  __________
+  2015-09-21
+  
+  * Added a temp icon for the Panopticon.
+  * Added some AI names for the Panopticon. (Although the AI wont build it yet.)
+  * Added a brief note in the Panopticon description pertaining to its interaction with the Darkness.                                                                        
 __________.__________
 2015-04-06|0.6.1
 

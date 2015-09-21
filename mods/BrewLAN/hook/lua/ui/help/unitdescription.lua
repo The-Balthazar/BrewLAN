@@ -157,7 +157,7 @@ Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amph
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
 Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Generates a pulse that reduces the maximun penetration depth of most active Omni sensors."
 Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
-Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sensor array. Displays the location of enemy engineers, experimentals, and intel units."
+Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sensor array. Displays the location of enemy engineers, experimentals, and intel units. Sensors can't penetrate areas of heavy omni-distruption."
 
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."
