@@ -68,7 +68,11 @@ __________.__________
   
   * Added a temp icon for the Panopticon.
   * Added some AI names for the Panopticon. (Although the AI wont build it yet.)
-  * Added a brief note in the Panopticon description pertaining to its interaction with the Darkness.                                                                        
+  * Added a brief note in the Panopticon description pertaining to its interaction with the Darkness.
+  __________
+  2015-09-26
+  
+  * Ivan drop pod units now die on contact with a shield.                                                                        
 __________.__________
 2015-04-06|0.6.1
 

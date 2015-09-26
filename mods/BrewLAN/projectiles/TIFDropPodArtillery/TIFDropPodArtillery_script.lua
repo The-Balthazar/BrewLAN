@@ -52,10 +52,10 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
 
         elseif TargetType == 'Shield' and self.ProjBounceCounter == 0 then
 
-            self.DropHealth = .25
+            self.DropHealth = 0.25
 
             TArtilleryAntiMatterProjectile.OnImpact(self, TargetType, TargetEntity)
-            self.DropUnit(self)
+            --self.DropUnit(self)
 
         else
 
