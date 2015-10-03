@@ -46,7 +46,7 @@ SEB3404 = Class(TStructureUnit) {
         local LocalUnits = {} 
         for index, brain in ArmyBrains do
             if IsEnemy(brain:GetArmyIndex(), self:GetArmy() ) then
-                for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, ((categories.INTELLIGENCE - categories.COUNTERINTELLIGENCE) + categories.ENGINEER + categories.EXPERIMENTAL) * categories.SELECTABLE, self:GetPosition(), maxrange) do
+                for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.SELECTABLE - categories.COUNTERINTELLIGENCE - categories.COMMAND - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, self:GetPosition(), maxrange) do
                     table.insert(LocalUnits, unit)
                 end
             end

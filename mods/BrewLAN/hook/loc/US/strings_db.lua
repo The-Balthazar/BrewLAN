@@ -383,4 +383,4 @@ srl0001_desc="Crab Egg (Destroyer)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
-Unit_Description_BrewLAN_T4B008="Experimental sensor array. Displays the location of enemy engineers, experimentals, and intel units."
+Unit_Description_BrewLAN_T4B008="Experimental sensor array. Displays the location of enemy units. Sensors can't penetrate areas of heavy sensor-distruption."

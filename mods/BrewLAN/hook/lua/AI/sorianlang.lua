@@ -145,6 +145,15 @@ AINames.sea0401 = {
     'Dipper',
     'Karma',
     'Fireball',
+    'Curly',
+    'Secks',
+    'Sobs',
+    'Rat',
+    'Heater',
+    'Organ',
+    'Maverick',
+    'Spuds',
+    'Wilbur',
 }
 AINames.sea0401pancake = {
     'Pancake',

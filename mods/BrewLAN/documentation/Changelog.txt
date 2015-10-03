@@ -72,7 +72,15 @@ __________.__________
   __________
   2015-09-26
   
-  * Ivan drop pod units now die on contact with a shield.                                                                        
+  * Ivan drop pod units now die on contact with a shield.
+  __________
+  2015-09-27
+  
+  * Added Top Gun callsigns to the list of things the AI will call Centurions.
+  __________
+  2015-10-02
+  
+  * The Panopticon can now see all enemy units, except for command units, counterintel, walls, and mines.                                                                         
 __________.__________
 2015-04-06|0.6.1
 
