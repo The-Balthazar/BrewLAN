@@ -61,7 +61,7 @@ SRL0320 = Class(CLandUnit) {
         else
             self:SetMaintenanceConsumptionActive()
             self:SetScriptBit('RULEUTC_CloakToggle', false)
-            self.unit:EnableUnitIntel('Cloak')
+            self:EnableUnitIntel('Cloak')
             self:RequestRefreshUI()   
         end
     end,

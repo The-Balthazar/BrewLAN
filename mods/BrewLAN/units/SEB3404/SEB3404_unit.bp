@@ -34,11 +34,14 @@ UnitBlueprint {
         'BUILTBYTIER3ENGINEER',
         'EXPERIMENTAL',
         'INTELLIGENCE',
+        'OMNI',
         'SELECTABLE',
         'LAND',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'DRAGBUILD',
+        'DRAGBUILD',  
+        'OVERLAYRADAR',
+        'OVERLAYOMNI',
         'SORTINTEL',
     },
     CollisionOffsetX = 0,
@@ -55,7 +58,11 @@ UnitBlueprint {
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC seb3404_desc>Experimental Sensor Array',
-    Display = {
+    Display = {    
+        Abilities = {
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_radar>Radar',
+        },
         DamageEffects = {
             {
                 Bone = 0,
@@ -122,9 +129,9 @@ UnitBlueprint {
         BuildCostEnergy = 990990,
         BuildCostMass = 82000,
         BuildTime = 27000,
-        MaintenanceConsumptionPerSecondEnergy = 10000,
+        MaintenanceConsumptionPerSecondEnergy = 5000,
         RebuildBonusIds = {
-	    'seb3404',
+            'seb3404',
         },
     },
     Footprint = {
@@ -152,8 +159,20 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         UnitName = '<LOC seb3404_name>Panopticon',
         UnitWeight = 1,
+    },
+    Intel = {
+        ShowIntelOnSelect = true,
+        VisionRadius = 2,
+        OmniRadius = 300,
+        RadarRadius = 1200,
+        SpyRadius = 8000,
+        SpyBlipRadius = 2,
+        ReactivateTime = 0,
     },
     Interface = {
         HelpText = '<LOC seb3404_desc>Experimental Sensor Array',

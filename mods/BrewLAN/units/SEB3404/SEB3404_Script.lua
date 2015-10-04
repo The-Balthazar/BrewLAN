@@ -15,26 +15,28 @@ SEB3404 = Class(TStructureUnit) {
     
     OnStopBeingBuilt = function(self)
         TStructureUnit.OnStopBeingBuilt(self)
+        --self.PanopticonUpkeep = 0
         self.VisualMarkersBag = {}
         self:ForkThread(
             function()
                 while true do 
-                    self:IntelSearch()
+                    if self.Intel == true then
+                        self:IntelSearch()
+                    else
+                        self:IntelKill()
+                    end      
                     WaitSeconds(3)
                 end
-            
             end
         )
     end,
     
     IntelSearch = function(self)
         local aiBrain = self:GetAIBrain()
-        local maxrange = 8000
-        local blip = {
-            vis = 2,
-            --radar = 50,
-            --omni = 2,
-        }
+        local maxrange = self:GetBlueprint().Intel.SpyRadius or 8000
+        ------------------------------------------------------------------------
+        -- Find local Darknesses
+        ------------------------------------------------------------------------
         local LocalDarkness = {}
         for index, brain in ArmyBrains do
             if IsEnemy(brain:GetArmyIndex(), self:GetArmy() ) then
@@ -43,14 +45,24 @@ SEB3404 = Class(TStructureUnit) {
                 end
             end
         end
+        ------------------------------------------------------------------------
+        -- Find visible things to attach vis entities to
+        ------------------------------------------------------------------------
         local LocalUnits = {} 
         for index, brain in ArmyBrains do
             if IsEnemy(brain:GetArmyIndex(), self:GetArmy() ) then
-                for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.SELECTABLE - categories.COUNTERINTELLIGENCE - categories.COMMAND - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, self:GetPosition(), maxrange) do
-                    table.insert(LocalUnits, unit)
+                for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.SELECTABLE - categories.COMMAND - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, self:GetPosition(), maxrange) do
+                    if unit:IsIntelEnabled('Cloak') or unit.PanopticonMarker then
+                        --LOG("Cloaked guy or guy with vis ent already attached")
+                    else
+                        table.insert(LocalUnits, unit)
+                    end
                 end
             end
-        end
+        end   
+        ------------------------------------------------------------------------
+        -- Check things aren't near a darkness.
+        ------------------------------------------------------------------------
         for i,v in LocalUnits do
             local DoTrack = true
             for j, dark in LocalDarkness do
@@ -59,13 +71,13 @@ SEB3404 = Class(TStructureUnit) {
                     DoTrack = false
                     break
                 end
-            end
-            if not v.PanopticonMarker and DoTrack then
+            end    
+            if DoTrack then
                 local location = v:GetPosition()
                 local spec = {
                     X = location[1],
                     Z = location[3],
-                    Radius = blip.vis,
+                    Radius = self:GetBlueprint().Intel.SpyBlipRadius or 2,
                     LifeTime = -1,
                     Omni = false,
                     Radar = false,
@@ -79,7 +91,42 @@ SEB3404 = Class(TStructureUnit) {
                 --self.Trash:Add(visentity)
                 table.insert(self.VisualMarkersBag, {visentity,v} )
             end
-        end 
+        end     
+        ------------------------------------------------------------------------
+        -- Calculate overall costs
+        ------------------------------------------------------------------------
+        local Upkeep = 0
+        for i,v in self.VisualMarkersBag do
+            if v[2].PanopticonMarker then
+                local ebp = v[2]:GetBlueprint()
+                --Make buildings cost a 10th of mobile units.
+                if string.lower(ebp.Physics.MotionType or 'NOPE') == string.lower('RULEUMT_None') then
+                    Upkeep = Upkeep + math.min(math.max((ebp.Economy.BuildCostEnergy or 10000) / 10000, 1), 100)
+                else
+                    Upkeep = Upkeep + math.min(math.max((ebp.Economy.BuildCostEnergy or 10000) / 1000, 10), 1000)
+                end
+            end
+        end
+        self:SetEnergyMaintenanceConsumptionOverride(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy + Upkeep)
+        self:SetMaintenanceConsumptionActive() 
+    end,
+
+    IntelKill = function(self)
+        for i, v in self.VisualMarkersBag do
+            v[1]:Destroy()
+            v[2].PanopticonMarker = nil
+            v = nil
+        end
+    end,
+
+    OnIntelDisabled = function(self)
+        TStructureUnit.OnIntelDisabled(self)
+        self.Intel = false 
+    end,
+
+    OnIntelEnabled = function(self)
+        TStructureUnit.OnIntelEnabled(self)
+        self.Intel = true
     end,
     
     OnKilled = function(self, instigator, type, overkillRatio)
@@ -88,10 +135,7 @@ SEB3404 = Class(TStructureUnit) {
     
     OnDestroy = function(self)
         TStructureUnit.OnDestroy(self)
-        for i, v in self.VisualMarkersBag do
-            v[1]:Destroy()
-            v[2].PanopticonMarker = nil
-        end
+        self:IntelKill()
     end,
     
     OnCaptured = function(self, captor) 
