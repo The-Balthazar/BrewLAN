@@ -20,7 +20,8 @@ SEB1311 = Class(TEngineeringResourceStructureUnit) {
                 self:PlaySound(myBlueprint.Audio.ActiveLoop)
             end
         end,
-    },         
+    },
+
     SetupBuildBones = function(self)       
         TEngineeringResourceStructureUnit.SetupBuildBones(self) 
         local bp = self:GetBlueprint()

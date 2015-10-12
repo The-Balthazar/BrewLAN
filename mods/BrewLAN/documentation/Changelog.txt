@@ -93,7 +93,12 @@ __________.__________
     * Gave radar and omni.
     * Added an upkeep cost.
     * Added a disable feature.
-    * Cleaned up some internal garbage collection.                                                                                    
+    * Cleaned up some internal garbage collection.
+  __________
+  2015-10-12
+  
+  * Added build sounds to the UEF T3 engineering power generator, mass fab, and mass extractor.
+  * Added the UEF T3 Repair & Assist Boat                                                                                       
 __________.__________
 2015-04-06|0.6.1
 

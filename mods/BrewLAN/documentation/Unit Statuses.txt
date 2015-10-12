@@ -392,11 +392,10 @@ ________________!_______________!_______________!_______________!_______________
     * Possibly a two part splitting bot. Cain and Abel or something cool.
 
 UEF Panopticon: Experimental Sensor Array
-  * Gives vision of enemy engineers, experimentals, and non-counterintel intel buildings.
+  * Gives vision of enemy non-ACU, non-wall, non-mine non-cloaked units.
     * Wont affect within 50 of a Darkness.
-  * Currently has no upkeep.
   * Currently has no unique model.
-  * Currently has no icon.            
+  * Also todo: Add camera teleport effect.            
 
 
 UEF Centurion: Experimental AA gunship

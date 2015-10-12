@@ -334,6 +334,11 @@ srl0316_desc="Cloakable Mobile Stealth Field System"
 srl0316_name="Operative"
 Unit_Description_BrewLAN_T3L010="Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
 
+
+ss0319_desc="Assist & Repair Ship"
+ses0319_name="Patch Class"
+Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and reclaimation unit. Equipped with a torpedo bay, anti-torpedo defense, and a single AA weapon."
+
 --------------------------------------------------------------------------------
 -- Experimentals
 -------------------------------------------------------------------------------- 

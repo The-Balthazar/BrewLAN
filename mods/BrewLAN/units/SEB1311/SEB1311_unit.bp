@@ -43,6 +43,36 @@ UnitBlueprint {
             Cue = 'UAB2108_Doors',
             LodCutoff = 'UnitMove_LodCutoff',
         },
+        CaptureLoop = Sound {
+            Bank = 'XEL',
+            Cue = 'XEL0209_Capture_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Construct = Sound {
+            Bank = 'XEL',
+            Cue = 'XEL0209_Construct_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        ConstructLoop = Sound {
+            Bank = 'XEL',
+            Cue = 'XEL0209_Construct_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        ReclaimLoop = Sound {
+            Bank = 'XEL',
+            Cue = 'XEL0209_Reclaim_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartCapture = Sound {
+            Bank = 'XEL',
+            Cue = 'XEL0209_Capture_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartReclaim = Sound {
+            Bank = 'XEL',
+            Cue = 'XEL0209_Reclaim_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
     },
     BuildIconSortPriority = 70,
     Categories = {

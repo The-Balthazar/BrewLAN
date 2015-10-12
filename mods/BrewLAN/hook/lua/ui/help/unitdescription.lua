@@ -144,6 +144,7 @@ Description['seb4303'] = "<LOC Unit_Description_BrewLAN_T3B0028>Stationary artil
 
 --Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
+Description['ses0319'] = "<LOC Unit_Description_BrewLAN_T3S002>Tech 3 naval construction, repair, capture and reclaimation unit. Equipped with a torpedo bay, anti-torpedo defense, and a single AA weapon."
 
 --Experimentals
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
