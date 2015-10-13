@@ -52,7 +52,7 @@ SEB3404 = Class(TStructureUnit) {
         for index, brain in ArmyBrains do
             if IsEnemy(brain:GetArmyIndex(), self:GetArmy() ) then
                 for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.SELECTABLE - categories.COMMAND - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, self:GetPosition(), maxrange) do
-                    if unit:IsIntelEnabled('Cloak') or unit.PanopticonMarker then
+                    if unit:IsIntelEnabled('Cloak') or unit.PanopticonMarker[self:GetArmy()] then
                         --LOG("Cloaked guy or guy with vis ent already attached")
                     else
                         table.insert(LocalUnits, unit)
@@ -86,7 +86,10 @@ SEB3404 = Class(TStructureUnit) {
                 }
                 local visentity = VizMarker(spec)
                 visentity:AttachTo(v, -1)
-                v.PanopticonMarker = visentity
+                if not v.PanopticonMarker then
+                    v.PanopticonMarker = {}
+                end
+                v.PanopticonMarker[self:GetArmy()] = visentity
                 v.Trash:Add(visentity)
                 --self.Trash:Add(visentity)
                 table.insert(self.VisualMarkersBag, {visentity,v} )
@@ -97,7 +100,7 @@ SEB3404 = Class(TStructureUnit) {
         ------------------------------------------------------------------------
         local Upkeep = 0
         for i,v in self.VisualMarkersBag do
-            if v[2].PanopticonMarker then
+            if v[2].PanopticonMarker[self:GetArmy()] then
                 local ebp = v[2]:GetBlueprint()
                 --Make buildings cost a 10th of mobile units.
                 if string.lower(ebp.Physics.MotionType or 'NOPE') == string.lower('RULEUMT_None') then
@@ -114,7 +117,7 @@ SEB3404 = Class(TStructureUnit) {
     IntelKill = function(self)
         for i, v in self.VisualMarkersBag do
             v[1]:Destroy()
-            v[2].PanopticonMarker = nil
+            v[2].PanopticonMarker[self:GetArmy()] = nil
             v = nil
         end
     end,

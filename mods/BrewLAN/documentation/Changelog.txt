@@ -98,7 +98,15 @@ __________.__________
   2015-10-12
   
   * Added build sounds to the UEF T3 engineering power generator, mass fab, and mass extractor.
-  * Added the UEF T3 Repair & Assist Boat                                                                                       
+  * Added the UEF T3 Repair & Assist Boat.
+  * Fixed an issue where a unit already being watched by a Panopticon couldn't also be watched by a third players Panopticon.
+  __________
+  2015-10-13
+  
+  * Fixed an issue where a unit that had been seen by a Panopticon, and had its bug removed by a Darkness, could not be seen again by the same Panopticon.
+  * Repair boat now automatically repairs nearby damaged units while idle.
+  * Reclassified the Patch Class as a Field Engineering Ship.
+  * Added a strategic icon and icon for the Patch Class.                                                                                                 
 __________.__________
 2015-04-06|0.6.1
 

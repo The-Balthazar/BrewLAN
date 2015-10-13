@@ -114,7 +114,7 @@ UnitBlueprint {
         SubThreatLevel = 21,
         SurfaceThreatLevel = 45,
     },
-    Description = '<LOC ss0319_desc>Assist & Repair Ship',
+    Description = '<LOC ss0319_desc>Field Engineering Ship',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',  
@@ -223,6 +223,7 @@ UnitBlueprint {
             'BUILTBYTIER3FIELD ANTIAIR UEF',
             'BUILTBYTIER3FIELD SHIELD UEF',
             'BUILTBYTIER3FIELD MINE UEF',
+            'BUILTBYTIER2ENGINEER ANTIMISSILE UEF',
         },
         --MaintenanceConsumptionPerSecondEnergy = 15,
         StorageEnergy = 500,
@@ -283,7 +284,7 @@ UnitBlueprint {
         WaterVisionRadius = 45,
     },
     Interface = {
-        HelpText = '<LOC ss0319_desc>Assist & Repair Ship',
+        HelpText = '<LOC ss0319_desc>Field Engineering Ship',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.45,

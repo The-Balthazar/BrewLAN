@@ -84,10 +84,18 @@ SRB4402 = Class(CRadarJammerUnit) {
                     end
                     if v.PanopticonMarker then
                         --LOG(VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) .. " sdfgdf " .. self.unit:GetBlueprint().Intel.RadarStealthFieldRadius)
-                        if VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) < self.unit:GetBlueprint().Intel.RadarStealthFieldRadius then
+                        local active = false
+                        for i, marker in v.PanopticonMarker do
+                            active = true
+                            break  
+                        end
+                        if active and VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) < self.unit:GetBlueprint().Intel.RadarStealthFieldRadius then
                             --LOG("KILL IT DEAD")
-                            v.PanopticonMarker:Destroy()
-                            v.PanopticonMarker = nil
+                            for i, marker in v.PanopticonMarker do
+                                v.PanopticonMarker[i]:Destroy()
+                                v.PanopticonMarker[i] = nil
+                            end
+                            v.PanopticonMarker = {}
                         end
                     end
                 end  

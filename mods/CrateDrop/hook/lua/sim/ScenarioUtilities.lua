@@ -19,7 +19,7 @@ do
                     crate:SetVizToEnemies('Intel')
                     while true do
                         WaitTicks(2)
-                        
+                        --Should do the darkness/panopticon trick here
                         local search = arbitraryBrain():GetUnitsAroundPoint( categories.ALLUNITS, crate:GetPosition(), 1)
                         if search[1] and IsUnit(search[1]) then
                             PhatLewt(search[1], crate:GetPosition() )

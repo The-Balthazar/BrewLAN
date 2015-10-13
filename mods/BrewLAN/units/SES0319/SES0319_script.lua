@@ -37,12 +37,27 @@ SES0319 = Class(TSeaUnit) {
         end
     end,
 
+    AssistThread = function(self)
+        while true do
+            if self:IsIdleState() then
+                --Insert some kind of table sort for most damaged here
+                for i, v in self:GetAIBrain():GetUnitsAroundPoint(categories.ALLUNITS, self:GetPosition(), 30, 'Ally' ) do
+                    if v:GetHealthPercent() != 1 then
+                        IssueRepair({self}, v)
+                    end
+                end
+            end   
+            WaitTicks(30)
+        end
+    end,
+
     OnStopBeingBuilt = function(self,builder,layer)
         TSeaUnit.OnStopBeingBuilt(self,builder,layer)
         self.Trash:Add(CreateRotator(self, 'Spinner01', 'y', nil, 180, 0, 180))
         self:ForkThread(self.RadarThread)
         self:HideBone( 'Back_Turret02', true )
         self:SetupBuildBones()
+        self:ForkThread(self.AssistThread)
     end,
          
     CreateBuildEffects = function( self, unitBeingBuilt, order )
