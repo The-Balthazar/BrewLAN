@@ -21,6 +21,7 @@ function ModBlueprints(all_blueprints)
     BrewLANMatchBalancing(all_blueprints.Unit)
     BrewLANNavalShields(all_blueprints.Unit)
     BrewLANBomberDamageType(all_blueprints.Unit)
+    BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -91,9 +92,36 @@ function BrewLANBuildCatChanges(all_bps)
                 table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
             end
         end
-    end 
+    end  
 end
 
+--------------------------------------------------------------------------------
+-- Fixes for land-built factories being able to build non-land engineers non-specifically.
+--------------------------------------------------------------------------------
+
+function BrewLANNavalEngineerCatFixes(all_bps)
+    local cats_table = {
+        {'BUILTBYTIER3FACTORY UEF MOBILE CONSTRUCTION',      'BUILTBYTIER3FACTORY UEF MOBILE LAND CONSTRUCTION'},
+        {'BUILTBYTIER3FACTORY CYBRAN MOBILE CONSTRUCTION',   'BUILTBYTIER3FACTORY CYBRAN MOBILE LAND CONSTRUCTION'},
+        {'BUILTBYTIER3FACTORY AEON MOBILE CONSTRUCTION',     'BUILTBYTIER3FACTORY AEON MOBILE LAND CONSTRUCTION'},
+        {'BUILTBYTIER3FACTORY SERAPHIM MOBILE CONSTRUCTION', 'BUILTBYTIER3FACTORY SERAPHIM MOBILE LAND CONSTRUCTION'},
+    }
+    
+    for id, bp in all_bps do
+        if bp.General.Classification == 'RULEUC_Factory' and bp.Physics.BuildOnLayerCaps.LAYER_Water == false then
+            if bp.Economy.BuildableCategory then
+                for i, cat in bp.Economy.BuildableCategory do
+                    for index, cattable in cats_table do
+                        if cat == cattable[1] then
+                            bp.Economy.BuildableCategory[i] = cattable[2]
+                        end
+                    end
+                end
+            end
+        end
+    end
+end   
+   
 --------------------------------------------------------------------------------
 -- Unit category changes
 --------------------------------------------------------------------------------

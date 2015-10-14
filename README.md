@@ -43,6 +43,8 @@ Created by Sean Wheeldon (Balthazar/Balthassar)
 - Wrsaith
 - Leviathan
 - ww.dk
+- Blackrobe
+- Scoobie
 - Ajay "theonewhonevergivesa" – Russian localisation   
 
 ### Additional

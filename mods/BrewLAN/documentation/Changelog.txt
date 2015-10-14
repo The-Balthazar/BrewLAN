@@ -106,7 +106,11 @@ __________.__________
   * Fixed an issue where a unit that had been seen by a Panopticon, and had its bug removed by a Darkness, could not be seen again by the same Panopticon.
   * Repair boat now automatically repairs nearby damaged units while idle.
   * Reclassified the Patch Class as a Field Engineering Ship.
-  * Added a strategic icon and icon for the Patch Class.                                                                                                 
+  * Added a strategic icon and icon for the Patch Class.
+  __________
+  2015-10-14
+  
+  * Fix for land and air factories being able to build naval engineers.                                                                                                 
 __________.__________
 2015-04-06|0.6.1
 
