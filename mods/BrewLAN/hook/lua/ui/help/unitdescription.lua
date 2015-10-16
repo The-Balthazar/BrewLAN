@@ -31,9 +31,9 @@ Description['ssl0119'] = "<LOC Unit_Description_BrewLAN_T1L002>Tech 1 amphibious
 Description['sal0119'] = "<LOC Unit_Description_BrewLAN_T1L003>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
 --Tech 2 buildings
-Description['sab5201'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent armored wall sections."
-Description['srb5201'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent armored wall sections."
-Description['seb5210'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent armored wall sections."
+Description['sab5201'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
+Description['srb5201'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
+Description['seb5210'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
 
 --Tech 2 resource units
 Description['seb1205'] = "<LOC Unit_Description_BrewLAN_T2R001>Stores large amounts of energy. Construct next to power generators for adjacency bonus."

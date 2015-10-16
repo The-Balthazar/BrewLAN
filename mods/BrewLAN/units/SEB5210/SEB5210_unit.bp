@@ -33,10 +33,10 @@ UnitBlueprint {
         'UEF',
         'STRUCTURE',    
         'CONSTRUCTION',
-        'FACTORY',
+        --'FACTORY',
         'DEFENSE',      
         --'RALLYPOINT',
-        'SHOWQUEUE',
+        --'SHOWQUEUE',
         'DRAGBUILD',
         'SIZE4',
         'TECH2',
@@ -85,29 +85,9 @@ UnitBlueprint {
                     bonetype = 'Tower',
                     conflict = nil,
                 },
-                North_TB = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South_TB = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                }, 
-                East_TB = {
-                    visibility = 'hide', 
-                    bonetype = 'East',
-                    conflict = nil,
-                }, 
-                West_TB = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },    
             },
         },     
-        BuildAttachBone = 'Build_Node',                  
+        --BuildAttachBone = 'Build_Node',                  
         DamageEffects = {
             {
                 Bone = 0,
@@ -126,19 +106,12 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 200,
+                    LODCutoff = 500,
                     ShaderName = 'Unit',
-                    MeshName = '/mods/BrewLAN/units/seb5310/seb5310_lod0.scm',
-                    AlbedoName = '/units/XEC8001/XEC8001_albedo.dds',
-                    NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
-                    SpecularName = '/units/XEC8001/XEC8001_specteam.dds',
-                },
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/XEC8001/XEC8001_lod1_albedo.dds',
-                    NormalsName = '/units/XEC8001/XEC8001_lod1_normalsts.dds',
-                    SpecularName = '/units/XEC8001/XEC8001_lod1_specteam.dds',
+                    --MeshName = '/mods/BrewLAN/units/seb5310/seb5310_lod0.scm',
+                    --AlbedoName = '/units/XEC8001/XEC8001_albedo.dds',
+                    --NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
+                    --SpecularName = '/units/XEC8001/XEC8001_specteam.dds',
                 },
             },
         },
@@ -167,11 +140,11 @@ UnitBlueprint {
         BuildCostEnergy = 10*5,
         BuildCostMass = 2*5,
         BuildTime = 10,
-        BuildRate = 1,    
-        BuildableCategory = {
-            'BUILTBYHEAVYWALL ueb2101',
-            'BUILTBYHEAVYWALL ueb2104',
-        },
+        --BuildRate = 1,    
+        --BuildableCategory = {
+        --    'BUILTBYHEAVYWALL ueb2101',
+        --    'BUILTBYHEAVYWALL ueb2104',
+        --},
         RebuildBonusIds = {
             'sab5210',
             'seb5210',
@@ -184,14 +157,15 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {      
-        BuildBones = {
-            BuildEffectBones = {
-                0,
-            },
-        },           
+        --BuildBones = {
+        --    BuildEffectBones = {
+        --        0,
+        --    },
+        --},           
         CapCost = 0,
         Category = 'Defense',
-        Classification = 'RULEUC_Factory',
+        --Classification = 'RULEUC_Factory',    
+        Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
@@ -204,20 +178,20 @@ UnitBlueprint {
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = true,
+            RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },      
-        ConstructionBar = true,
+        --ConstructionBar = true,
         FactionName = 'UEF',      
-        ToggleCaps = {
-            RULEUTC_SpecialToggle= true,
-        },
-        OrderOverrides = {
-            RULEUTC_SpecialToggle= {
-                bitmapId = 'Nuke',
-                helpText = 'removestorage',
-            },
-        },
+        --ToggleCaps = {
+        --    RULEUTC_SpecialToggle= true,
+        --},
+        --OrderOverrides = {
+        --    RULEUTC_SpecialToggle= {
+        --        bitmapId = 'Nuke',
+        --        helpText = 'removestorage',
+        --    },
+        --},
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',    
         UnitName = '<LOC seb5210_name>GDI',

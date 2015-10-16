@@ -138,10 +138,10 @@ UnitBlueprint {
         },
         UniformScale = 0.1,
     },
-    Economy = {
-        BuildCostEnergy = 5994000,
-        BuildCostMass = 299700,
-        BuildTime = 99900,
+    Economy = { --Base cost, minus the cost of 4 T2 power plants, and 1 T1 power plant; the amount you need to get it to greater rof than the original.
+        BuildCostEnergy = 5994000 - (12000 * 4) - 750,
+        BuildCostMass = 299700 - (1200 * 4) - 75,
+        BuildTime = 99900 - (2000 * 4) - 125,
         RebuildBonusIds = {
             'srb2401',
         },

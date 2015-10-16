@@ -230,8 +230,7 @@ Tech 2:
       * T2 Proximity Mine
         * Lacks a unique water explosion.
         * Doesn't leave behind a decent sized scorch mark yet.  
-  	  * T2 Wall.
-  	    * Uses a temprary model.        
+  	  * T2 Wall.    
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
@@ -271,7 +270,8 @@ Tech 3:
             
   	Pending: 
   		* T3 Mobile Shield Gen. 
-      * T3 Shield wall.             
+      * T3 Shield wall.
+      * T3 Field Engineering Ship.                   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 		Fully Funtioning:
@@ -301,7 +301,8 @@ Tech 3:
   	Pending:
   		* T3 Anti Shield.
       * T3 Decoy Plane.
-        * Exists, but disabled. May stay Aeon only.                   
+        * Exists, but disabled. May stay Aeon only.
+      * T3 Field Engineering Ship.                   
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF (Fully represented, mostly functional):
@@ -320,6 +321,7 @@ Tech 3:
       * T3 Observation Satellite.      
         * Engine related bug: Radar and omni range is spherical not cylindrical (Except on FAF).       
       * T3 Nuke Mine.
+      * T3 Field Engineering Ship.
                 
     Bugged:
       Potentially gamebreaking:
@@ -360,21 +362,23 @@ Tech 3:
       * T3 Torp launcher.
       * T3 Anti Shield. 
       * T3 Decoy Plane.
-        * Might leave as a Aeon only unit.   
+        * Might leave as a Aeon only unit.
+      * T3 Field Engineering Ship.   
 _______________________________________________________
 Experimental Table
-                ._______________._______________._______________._______________.
+                +———————————————+———————————————+———————————————+———————————————+
                 |UEF            |Aeon           |Cybran         |Seraphim       |
-________________!_______________!_______________!_______________!_______________!
+————————————————+———————————————+———————————————+———————————————+———————————————|
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
 Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Necro bot     |
 Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
+————————————————+———————————————+———————————————+———————————————+———————————————|
 Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
 Strategic 2     |Ivan (F)       |*?             |*?             |Yolona Oss     |
-Static 2        |Panopticon     |*Tele/CZAR fab |Darkness       |Stargate       |
-Static 3        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
-________________!_______________!_______________!_______________!_______________!
+Static 3        |Panopticon     |*Tele/CZAR fab |Darkness       |Stargate       |
+Static 4        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
+————————————————+———————————————+———————————————+———————————————+———————————————+
 
   (A)  Aircraft Carrier
   (F)  Engineering or psudo engineering cababilities

@@ -110,7 +110,17 @@ __________.__________
   __________
   2015-10-14
   
-  * Fix for land and air factories being able to build naval engineers.                                                                                                 
+  * Fix for land and air factories being able to build naval engineers.
+  __________
+  2015-10-15
+  
+  * Reduced the costs of the Scathis Mk2 to build by the sum of 4 T2 power plants and 1 T1 power plant. This is what it takes to increase its RoF to greater than that of the original.
+  * Gave the UEF T2 wall a unique model & removed its ability to make turrets.
+  * Fixed the localisation for the T2 walls' descriptions.
+  __________
+  2015-10-16
+  
+  * Created the cost variance mod.                                                                                                   
 __________.__________
 2015-04-06|0.6.1
 

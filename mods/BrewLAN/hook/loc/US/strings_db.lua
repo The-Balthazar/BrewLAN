@@ -169,8 +169,8 @@ Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and struc
 sbui5201="Heavy Wall Section"
 seb5210_name="General Destruction Impasse"
 srb5201_name="Bulkhead"
-Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage."
-  
+Unit_Description_BrewLAN_T2B001="Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 -------------------------------------------------------------------------------- 
