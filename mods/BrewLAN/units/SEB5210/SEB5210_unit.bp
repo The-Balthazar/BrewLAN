@@ -27,35 +27,31 @@ UnitBlueprint {
     BuildIconSortPriority = 150,
     Categories = {
         'PRODUCTBREWLAN',
-        'SELECTABLE',
         'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
+        'SELECTABLE',
         'UEF',
         'STRUCTURE',    
-        'CONSTRUCTION',
-        --'FACTORY',
-        'DEFENSE',      
-        --'RALLYPOINT',
-        --'SHOWQUEUE',
+        'DEFENSE',  
+        'WALL',   
         'DRAGBUILD',
-        'SIZE4',
+        'BENIGN', 
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
         'MEDIUMWALL',
-        'GATE',
     },
     CollisionOffsetX = 0,
     CollisionOffsetY = 0,
     CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
-        Health = 40000,
-        MaxHealth = 40000,
+        Health = 20000,
+        MaxHealth = 20000,
         RegenRate = 0,
     },
-    Description = '<LOC sbui5201>Heavy Wall Segment', 
+    Description = '<LOC sbui5210>Heavy Wall Segment', 
     Display = {      
         AdjacencyConnection = 'MEDIUMWALL',
         AdjacencyConnectionInfo = {  
@@ -86,8 +82,7 @@ UnitBlueprint {
                     conflict = nil,
                 },
             },
-        },     
-        --BuildAttachBone = 'Build_Node',                  
+        },                   
         DamageEffects = {
             {
                 Bone = 0,
@@ -108,10 +103,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit',
-                    --MeshName = '/mods/BrewLAN/units/seb5310/seb5310_lod0.scm',
-                    --AlbedoName = '/units/XEC8001/XEC8001_albedo.dds',
-                    --NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
-                    --SpecularName = '/units/XEC8001/XEC8001_specteam.dds',
                 },
             },
         },
@@ -140,15 +131,10 @@ UnitBlueprint {
         BuildCostEnergy = 10*5,
         BuildCostMass = 2*5,
         BuildTime = 10,
-        --BuildRate = 1,    
-        --BuildableCategory = {
-        --    'BUILTBYHEAVYWALL ueb2101',
-        --    'BUILTBYHEAVYWALL ueb2104',
-        --},
         RebuildBonusIds = {
             'sab5210',
             'seb5210',
-            'srb5201',
+            'srb5210',
             'ssb5210',
         },
     },
@@ -156,15 +142,9 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 2,
     },
-    General = {      
-        --BuildBones = {
-        --    BuildEffectBones = {
-        --        0,
-        --    },
-        --},           
+    General = {         
         CapCost = 0,
-        Category = 'Defense',
-        --Classification = 'RULEUC_Factory',    
+        Category = 'Defense', 
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
             RULEUCC_Attack = false,
@@ -181,17 +161,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },      
-        --ConstructionBar = true,
-        FactionName = 'UEF',      
-        --ToggleCaps = {
-        --    RULEUTC_SpecialToggle= true,
-        --},
-        --OrderOverrides = {
-        --    RULEUTC_SpecialToggle= {
-        --        bitmapId = 'Nuke',
-        --        helpText = 'removestorage',
-        --    },
-        --},
+        FactionName = 'UEF',  
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',    
         UnitName = '<LOC seb5210_name>GDI',
@@ -201,7 +171,7 @@ UnitBlueprint {
         VisionRadius = 0,
     },
     Interface = {
-        HelpText = '<LOC sbui5201>Heavy Wall Segment',
+        HelpText = '<LOC sbui5210>Heavy Wall Segment',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0,

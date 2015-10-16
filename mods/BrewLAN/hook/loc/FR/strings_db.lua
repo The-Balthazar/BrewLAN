@@ -166,9 +166,9 @@ Unit_Description_BrewLAN_T2D004="Pour tous les terrains, cette mine est équipé
 Unit_Description_BrewLAN_T2D002="Génère un bouclier qui protège les unités dans un rayon limité. Améliorable deux fois."
 Unit_Description_BrewLAN_T2D003="Génère un bouclier qui protège les unités dans un rayon limité."
   
-sbui5201="Murs renforcés"
+sbui5210="Murs renforcés"
 seb5210_name="Calcigranit"
-srb5201_name="Bulkhead"
+srb5210_name="Bulkhead"
 Unit_Description_BrewLAN_T2B001="Bloque les mouvements des unités ennemies. Peut absorber beaucoup de dégâts et se connecte automatiquement aux murs adjacents."
 
 --------------------------------------------------------------------------------

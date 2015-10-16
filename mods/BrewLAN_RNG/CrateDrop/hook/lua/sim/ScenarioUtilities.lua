@@ -12,7 +12,7 @@ do
                     local crateType = 'CRATE_Dodecahedron'
                     local flash
                     Warp(crate,getSafePos(crate:GetPosition()))
-                    crate:SetMesh('/mods/cratedrop/effects/entities/' .. crateType .. '/' .. crateType ..'_mesh')
+                    crate:SetMesh('/mods/BrewLAN_RNG/cratedrop/effects/entities/' .. crateType .. '/' .. crateType ..'_mesh')
                     crate:SetDrawScale(.08)
                     crate:SetVizToAllies('Intel')
                     crate:SetVizToNeutrals('Intel')
@@ -487,7 +487,7 @@ do
                     local hat = Unit.Hats[table.getn(Unit.Hats)]
                     local hatType = hatTypes[math.random(1, table.getn(hatTypes) )] 
                     Warp(hat,Unit:GetPosition() )
-                    hat:SetMesh('/mods/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
+                    hat:SetMesh('/mods/BrewLAN_RNG/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
                     if EntityCategoryContains(categories.EXPERIMENTAL , Unit) then
                         hat:SetDrawScale(.07)
                     elseif EntityCategoryContains(categories.STRUCTURE , Unit) then

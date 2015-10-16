@@ -6,6 +6,6 @@
 
 local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript
 
-SRB5201 = Class(CardinalWallScript) {}
+SRB5210 = Class(CardinalWallScript) {}
 
-TypeClass = SRB5201
+TypeClass = SRB5210

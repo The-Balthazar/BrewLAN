@@ -51,7 +51,7 @@ UnitBlueprint {
         MaxHealth = 20000,
         RegenRate = 0,
     },
-    Description = '<LOC sbui5201>Heavy Wall Segment', 
+    Description = '<LOC sbui5210>Heavy Wall Segment', 
     Display = {      
         AdjacencyConnection = 'MEDIUMWALL',
         AdjacencyConnectionInfo = {  
@@ -135,10 +135,10 @@ UnitBlueprint {
         BuildCostMass = 2*5,
         BuildTime = 10,
         RebuildBonusIds = {
-            'sab5201',
-            'seb5201',
-            'srb5201',
-            'ssb5201',
+            'sab5210',
+            'seb5210',
+            'srb5210',
+            'ssb5210',
         },
     },
     Footprint = {
@@ -168,14 +168,14 @@ UnitBlueprint {
         FactionName = 'Aeon',  
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',    
-        --UnitName = '<LOC sab5201_name>Bulkhead',
+        --UnitName = '<LOC sab5210_name>Bulkhead',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,
     },
     Interface = {
-        HelpText = '<LOC sbui5201>Heavy Wall Segment',
+        HelpText = '<LOC sbui5210>Heavy Wall Segment',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0,
