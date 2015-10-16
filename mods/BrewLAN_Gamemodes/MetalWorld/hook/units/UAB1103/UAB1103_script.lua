@@ -3,7 +3,7 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local UAB1103 = import('/units/uab1103/uab1103_script.lua').UAB1103
-local AiTrix = import('/mods/MetalWorld/lua/MookBuild.lua').AiTrix
+local AiTrix = import('/mods/BrewLAN_Gamemodes/MetalWorld/lua/MookBuild.lua').AiTrix
 local TMassCollectionUnit = AiTrix(UAB1103)
 
 UAB1103 = Class(TMassCollectionUnit) {
