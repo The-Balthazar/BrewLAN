@@ -24,23 +24,23 @@ function CostVariance(all_bps)
             local rand2 = math.random(50000,150000)/100000
             local rand3 = (rand1 + rand2)/2
             
-            bp.Economy.BuildCostEnergy = math.floor((bp.Economy.BuildCostEnergy or 0) * rand1)
-            bp.Economy.BuildCostMass = math.floor((bp.Economy.BuildCostMass or 0) * rand2)
-            bp.Economy.BuildTime = math.floor((bp.Economy.BuildTime or 0) * rand3)
+            bp.Economy.BuildCostEnergy = math.ceil((bp.Economy.BuildCostEnergy or 0) * rand1)
+            bp.Economy.BuildCostMass = math.ceil((bp.Economy.BuildCostMass or 0) * rand2)
+            bp.Economy.BuildTime = math.ceil((bp.Economy.BuildTime or 0) * rand3)
             if bp.Defense.Health and bp.Defense.MaxHealth then 
-                bp.Defense.Health = math.floor((bp.Defense.Health or 0) * rand2)
-                bp.Defense.MaxHealth = math.floor((bp.Defense.MaxHealth or 0) * rand2) 
+                bp.Defense.Health = math.ceil((bp.Defense.Health or 0) * rand2)
+                bp.Defense.MaxHealth = math.ceil((bp.Defense.MaxHealth or 0) * rand2) 
             end
             if bp.Defense.Shield.ShieldMaxHealth then
-                bp.Defense.Shield.ShieldMaxHealth = math.floor((bp.Defense.Shield.ShieldMaxHealth or 0) * rand2)            
+                bp.Defense.Shield.ShieldMaxHealth = math.ceil((bp.Defense.Shield.ShieldMaxHealth or 0) * rand2)            
             end
             if bp.Physics.MaxSpeed then
-                bp.Physics.MaxSpeed = math.floor((bp.Physics.MaxSpeed or 0) * rand1)
+                bp.Physics.MaxSpeed = (bp.Physics.MaxSpeed or 0) * rand1
             end
             if bp.Weapon then
                 for i, weapon in bp.Weapon do
                     if weapon.MaxRadius then
-                        bp.Weapon[i].MaxRadius = math.floor((bp.Weapon[i].MaxRadius or 0) * rand1)
+                        bp.Weapon[i].MaxRadius = (bp.Weapon[i].MaxRadius or 0) * rand1
                     end
                 end
             end

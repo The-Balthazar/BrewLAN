@@ -19,8 +19,12 @@ do
                     crate:SetVizToEnemies('Intel')
                     while true do
                         WaitTicks(2)
-                        --Should do the darkness/panopticon trick here
-                        local search = arbitraryBrain():GetUnitsAroundPoint( categories.ALLUNITS, crate:GetPosition(), 1)
+                        local search = {} 
+                        for index, brain in ArmyBrains do
+                            for i, unit in import('/lua/ai/aiutilities.lua').GetOwnUnitsAroundPoint(brain, categories.ALLUNITS, crate:GetPosition(), 1) do
+                                table.insert(search, unit)
+                            end
+                        end
                         if search[1] and IsUnit(search[1]) then
                             PhatLewt(search[1], crate:GetPosition() )
                             flash = CreateEmitterAtEntity(crate, search[1]:GetArmy(), '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(10)

@@ -126,7 +126,9 @@ __________.__________
   __________
   2015-10-17
   
-  * Paragon Game: Added the factional Paragons to the AI buildable lists.                                                                                                        
+  * Paragon Game: Added the factional Paragons to the AI buildable lists.
+  * Cost Varience: Fixed an issue that was causing some slow units to have 0 speed.
+  * Crate Drop: Fixed the issue of some people not being able to pick up the crates because another arbitrary random person couldn't see them picking it up.                                                                                                             
 __________.__________
 2015-04-06|0.6.1
 
