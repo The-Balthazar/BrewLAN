@@ -122,7 +122,11 @@ __________.__________
   
   * Created the cost variance mod.
   * Partially reworked the file structure.
-  * Changed the unit code of the Aeon and Cybran T2 walls, from 5201 to 5210.                                                                                                        
+  * Changed the unit code of the Aeon and Cybran T2 walls, from 5201 to 5210.
+  __________
+  2015-10-17
+  
+  * Paragon Game: Added the factional Paragons to the AI buildable lists.                                                                                                        
 __________.__________
 2015-04-06|0.6.1
 
