@@ -104,6 +104,11 @@ SRB4402 = Class(CRadarJammerUnit) {
     },
         
     OnStopBeingBuilt = function(self,builder,layer)
+        --if pcall(GpgNetSend ~= nil) then
+        --    LOG("We are either in the past or on FAF. Asuming FAF.")
+        --else
+        --    LOG("Less faffing about, more work arounds for dumb bugs.")
+        --end
         CRadarJammerUnit.OnStopBeingBuilt(self,builder,layer)
         if not self.Rotator then
             self.Rotator = {}

@@ -130,6 +130,19 @@ __________.__________
   * Cost Varience: Fixed an issue that was causing some slow units to have 0 speed.
   * Crate Drop: Fixed the issue of some people not being able to pick up the crates because another arbitrary random person couldn't see them picking it up.
   * Added adjacency bonuses for the Panopticon.
+  __________
+  2015-10-25
+  
+  * Added the waterlag UEF small leg entity to the UEF T3 wall when it builds something.
+  * Paragon Game: Added an Aeon Engineering Station. Currently has no icon and has a borrowed model.
+  __________
+  2015-10-31
+  
+  * Fixed the Ivan being able to build the naval engy.
+  __________
+  2015-11-01
+  
+  * TeaD: Added a super basic version of a new game mode mod: Tower Defence.       
 __________.__________
 2015-04-06|0.6.1
 

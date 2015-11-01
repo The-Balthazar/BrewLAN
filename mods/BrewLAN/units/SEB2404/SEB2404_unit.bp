@@ -154,7 +154,7 @@ UnitBlueprint {
         },                    
         BuildRate = 180,
         BuildableCategory = {                   
-            'BUILTBYTIER3FACTORY UEF MOBILE CONSTRUCTION',   
+            'BUILTBYTIER3FACTORY UEF MOBILE LAND CONSTRUCTION',   
             'BUILTBYTIER3FACTORY UEF MOBILE LAND',   
             'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         },

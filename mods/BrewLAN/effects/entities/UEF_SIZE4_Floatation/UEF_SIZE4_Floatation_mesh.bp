@@ -1,0 +1,13 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'UEF_SIZE4_Floatation_lod0.scm',
+            AlbedoName = '/units/ueb0103/ueb0103_albedo.dds',
+            SpecularName = '/units/ueb0103/ueb0103_specteam.dds',
+            NormalsName = '/units/ueb0103/ueb0103_normalsTS.dds',
+            ShaderName = 'Unit',
+            LODCutoff = 1000,
+        },
+    },
+    SortOrder = 1000,
+}

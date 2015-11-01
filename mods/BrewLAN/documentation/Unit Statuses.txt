@@ -592,5 +592,4 @@ Other mod ideas
 * Random asteroid showers.
 * Have cloaked/stealthed units able to detect when they are detected.
   * Might be easier to implement the other way round; the omni checks on detecting them.
-* Swap mass & energy.
-* Team coloured lasers.                   
+* Team coloured lasers.       

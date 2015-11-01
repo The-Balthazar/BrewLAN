@@ -5,6 +5,9 @@ do
             "prb1401",
             "psb1401",
         },
+        ENGISTATION = {
+            "pab0104",
+        },
     }  
     for k, v in Units do
         --Checks the table exists, for the sake of FAF restrictions
