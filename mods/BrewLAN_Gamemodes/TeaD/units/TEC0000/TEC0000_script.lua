@@ -33,20 +33,38 @@ TEC0000 = Class(TQuantumGateUnit) {
     end,
     
     BuildThings = function(self)
-        local buildorder = {
-            'tec0001',
-            'tec0002',
-            'tec0003',
-        }
-        for i, v in buildorder do
-            self:GetAIBrain():BuildUnit(self,v,math.random(8,12) ) 
+        local buildorder = self:GetBlueprint().Economy.BuildOrder
+        --BuildOrder = {
+        --    {Wait = 10},
+        --    {'tec0001', 6, 10 },
+        --    {Wait = 10},
+        --    {'tec0002', 8, 12 },
+        --    {Wait = 10},
+        --    {'tec0003', 10, 14 },
+        --},
+        self.Build = (self.Build or 0) + 1
+        LOG(self.Build)
+        if buildorder[self.Build].Wait then
+            self:ForkThread(function()
+                WaitSeconds(buildorder[self.Build].Wait)
+                self:BuildThings()
+            end)
+        elseif buildorder[self.Build] then
+            self.BuildQuantity = math.random(buildorder[self.Build][2], buildorder[self.Build][3])
+            self:GetAIBrain():BuildUnit(self,buildorder[self.Build][1], self.BuildQuantity )
         end
-    end,  
-       
+    end,
+    
     OnStopBuild = function(self, unitBeingBuilt)     
         TQuantumGateUnit.OnStopBuild(self, unitBeingBuilt)    
-        IssueMove({unitBeingBuilt}, {ScenarioInfo.size[1]/2, 0, ScenarioInfo.size[2]/2})      
-    end,    
+        if unitBeingBuilt:GetFractionComplete() == 1 then
+            unitBeingBuilt.Target = GetArmyBrain(self.Target).LifeCrystalPos
+            self.BuildQuantity = self.BuildQuantity - 1
+            if self.BuildQuantity < 1 then
+                self:BuildThings()
+            end
+        end        
+    end,     
 }
 
 TypeClass = TEC0000

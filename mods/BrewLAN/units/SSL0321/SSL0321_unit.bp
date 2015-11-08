@@ -96,7 +96,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'XSL0111',
+                            0,
                         },
                         Scale = 0.5,
                         Type = 'GroundKickup01',

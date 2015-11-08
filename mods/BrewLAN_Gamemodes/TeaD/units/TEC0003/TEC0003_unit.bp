@@ -81,6 +81,7 @@ UnitBlueprint {
         'LAND',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'EXPERIMENTAL',
     },
     CollisionOffsetY = -0.25,
     CollisionOffsetZ = -0.05,

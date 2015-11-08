@@ -55,7 +55,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '03_emit.bp')
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '04_emit.bp')
                 
-                if not Buffs['DarknessOmniNerf'] then
+                if not Buffs['DarknessOmniNerf'] and not self.unit.FAF then
                     BuffBlueprint {
                         Name = 'DarknessOmniNerf',
                         DisplayName = 'DarknessOmniNerf',
@@ -64,6 +64,20 @@ SRB4402 = Class(CRadarJammerUnit) {
                         Duration = 20.1,
                         Affects = {
                             OmniRadiusFix = {
+                                Add = 0,
+                                Mult = 0.6,
+                            },
+                        },
+                    }
+                elseif not Buffs['DarknessOmniNerf'] and self.unit.FAF then
+                    BuffBlueprint {
+                        Name = 'DarknessOmniNerf',
+                        DisplayName = 'DarknessOmniNerf',
+                        BuffType = 'OmniRadius',
+                        Stacks = 'ALWAYS',
+                        Duration = 20.1,
+                        Affects = {
+                            OmniRadius = {
                                 Add = 0,
                                 Mult = 0.6,
                             },
@@ -104,11 +118,12 @@ SRB4402 = Class(CRadarJammerUnit) {
     },
         
     OnStopBeingBuilt = function(self,builder,layer)
-        --if pcall(GpgNetSend ~= nil) then
-        --    LOG("We are either in the past or on FAF. Asuming FAF.")
-        --else
-        --    LOG("Less faffing about, more work arounds for dumb bugs.")
-        --end
+        if ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
+            LOG("We are probably on FAF.")
+            self.FAF = true
+        else
+            LOG("Less faffing about, more work arounds for dumb bugs.")
+        end
         CRadarJammerUnit.OnStopBeingBuilt(self,builder,layer)
         if not self.Rotator then
             self.Rotator = {}

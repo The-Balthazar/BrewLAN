@@ -142,7 +142,12 @@ __________.__________
   __________
   2015-11-01
   
-  * TeaD: Added a super basic version of a new game mode mod: Tower Defence.       
+  * TeaD: Added a super basic version of a new game mode mod: Tower Defence.
+  __________
+  2015-11-07
+  
+  * Added a FAF check to the Darkness so that it uses the real omni buff while on FAF, since I had it fixed there. Possibly only the beta version so far.
+  * Fixed the Seraphim strat defence particle effects.         
 __________.__________
 2015-04-06|0.6.1
 
