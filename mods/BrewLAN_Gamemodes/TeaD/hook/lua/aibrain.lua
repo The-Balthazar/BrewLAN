@@ -10,15 +10,18 @@ AIBrain = Class(AIBrain) {
         local AiTeam = true
         --If we are on the free team (-), which is index 1, and an AI, we are a lonely AI
         if
-          not (ScenarioInfo.ArmySetup[strArmy].Team == 1 and self.BrainType != 'Human')
+          not (ScenarioInfo.ArmySetup[strArmy].Team == 1 and GetArmyBrain(strArmy).BrainType != 'Human')
           or
-          self.BrainType != 'Human' and ScenarioInfo.ArmySetup[strArmy].Team > 1 then
+          GetArmyBrain(strArmy).BrainType != 'Human' and ScenarioInfo.ArmySetup[strArmy].Team > 1 then
             for name, army in ScenarioInfo.ArmySetup do
                 if army.Human == true and army.Team == ScenarioInfo.ArmySetup[strArmy].Team then
                     AiTeam = false
                     break
                 end
             end     
+        end
+        if GetArmyBrain(strArmy).BrainType == 'Human' then
+            AiTeam = false
         end
         if ScenarioInfo.TeamGame == true or ScenarioInfo.Options.TeamLock == 'locked' then
             TeamGame = true                        
@@ -43,8 +46,15 @@ AIBrain = Class(AIBrain) {
         local posX, posY = self:GetArmyStartPos()
         local MapSizeX = ScenarioInfo.size[1]*.5
         local MapSizeY = ScenarioInfo.size[2]*.5
+        local Dis = 20
+        local X = (posX + (MapSizeX * Dis) ) /(Dis + 1)
+        local Y = (posY + (MapSizeY * Dis) ) /(Dis + 1)
+        local crystal = self:CreateUnitNearSpot('tpc0000', X, Y)
         
-        local crystal = self:CreateUnitNearSpot('tpc0000', (posX + (MapSizeX * 10) ) /11 , (posY + (MapSizeY * 10) ) /11 )
+        if not crystal then
+            crystal = CreateUnitHPR('tpc0000', self:GetArmyIndex(), X, 0, Y,0,0,0)
+        end   
+        crystal:CreateTarmac(true,true,true,false,false)
         self.LifeCrystalPos = crystal:GetPosition()
     end,
 }

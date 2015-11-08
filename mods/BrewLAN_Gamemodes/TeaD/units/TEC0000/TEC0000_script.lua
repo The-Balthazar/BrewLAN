@@ -34,14 +34,6 @@ TEC0000 = Class(TQuantumGateUnit) {
     
     BuildThings = function(self)
         local buildorder = self:GetBlueprint().Economy.BuildOrder
-        --BuildOrder = {
-        --    {Wait = 10},
-        --    {'tec0001', 6, 10 },
-        --    {Wait = 10},
-        --    {'tec0002', 8, 12 },
-        --    {Wait = 10},
-        --    {'tec0003', 10, 14 },
-        --},
         self.Build = (self.Build or 0) + 1
         LOG(self.Build)
         if buildorder[self.Build].Wait then

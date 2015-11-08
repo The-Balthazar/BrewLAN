@@ -13,4 +13,10 @@ Creep = Class(Unit) {
             end
         end)      
     end,
+    
+    OnKilled = function(self, instigator, type, overkillRatio)
+        instigator:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.BuildCostMass * self:GetBlueprint().Wreckage.MassMult )
+        instigator:GetAIBrain():GiveResource('Energy', self:GetBlueprint().Economy.BuildCostEnergy * self:GetBlueprint().Wreckage.EnergyMult )
+        Unit.OnKilled(self, instigator, type, 2)
+    end,
 }

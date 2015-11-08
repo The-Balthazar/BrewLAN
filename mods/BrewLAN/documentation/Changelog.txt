@@ -147,7 +147,17 @@ __________.__________
   2015-11-07
   
   * Added a FAF check to the Darkness so that it uses the real omni buff while on FAF, since I had it fixed there. Possibly only the beta version so far.
-  * Fixed the Seraphim strat defence particle effects.         
+  * Fixed the Seraphim strat defence particle effects.
+  * TeaD: Made functional. Still very content-less though.  
+  __________
+  2015-11-08
+  
+  * TeaD: Fixed the AI team check, which caused issues if the only Human wasn't on a team.
+  * TeaD: Created a propper start unit for UEF.
+  * TeaD: Added a pathfinder unit. It runs fast, leaves treadmarks that stay for 10 minutes, and doesn't damage the crystal.
+  * TeaD: Creeps now give their mass on death, and no longer leath a corpse.
+  * TeaD: Moved the crystals nearer to the center.
+  * TeaD: Added a backup if the crystal fails to spawn.                      
 __________.__________
 2015-04-06|0.6.1
 

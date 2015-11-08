@@ -21,7 +21,7 @@ TPC0000 = Class(SStructureUnit) {
                 LifeTime = -1,
                 Army = brain:GetArmyIndex(),
             })
-        end 
+        end
     end,
     
     LeaksThread = function(self)      
@@ -34,7 +34,9 @@ TPC0000 = Class(SStructureUnit) {
             if Units then
                 for i,v in Units do 
                     if v:GetEntityId() != self:GetEntityId() then 
-                        self:SetHealth(self, self:GetHealth() - 1)    
+                        if not EntityCategoryContains(categories.PATHFINDER, v) then
+                            self:SetHealth(self, self:GetHealth() - 1)    
+                        end
                         v:Destroy()
                         if self:GetHealth() < 1 then   
                             self:GetAIBrain():OnDefeat()

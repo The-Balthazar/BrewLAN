@@ -38,7 +38,7 @@ UnitBlueprint {
         SurfaceThreatLevel = 0,
         AirThreatLevel = 0,
     },
-    Description = '<LOC Crystal_desc>Crystal',
+    Description = '<LOC crystal_desc>Crystal',
     Display = {
         Mesh = {
             IconFadeInZoom = 130,
@@ -110,7 +110,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC xsc9002_help>Jammer Crystal',
+        HelpText = '<LOC crystal_desc>Crystal',
     },
     LifeBarHeight = 0.0000001,
     LifeBarOffset = 0.000000,
@@ -138,6 +138,10 @@ UnitBlueprint {
         MotionType = 'RULEUMT_None',
         TurnRadius = 0,
         TurnRate = 80,
+        SkirtOffsetX = -1,
+        SkirtOffsetZ = -1,
+        SkirtSizeX = 3,
+        SkirtSizeZ = 3,
     },
     SelectionSizeX = 0.3,
     SelectionSizeZ = 0.3,
@@ -145,7 +149,7 @@ UnitBlueprint {
     SizeX = 0.5,
     SizeY = 0.5,
     SizeZ = 0.5,
-    StrategicIconName = 'icon_crystal_neutral',
+    StrategicIconName = 'icon_crystal_generic',
     StrategicIconSortPriority = 0,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

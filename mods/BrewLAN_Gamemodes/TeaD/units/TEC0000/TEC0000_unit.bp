@@ -50,7 +50,7 @@ UnitBlueprint {
         'INVULNERABLE',
         'UNTARGETABLE',
         'PRODUCTTEAD',
-        'SELECTABLE',
+        --'SELECTABLE',
         'UEF',
         'STRUCTURE',
         'FACTORY',
@@ -162,6 +162,7 @@ UnitBlueprint {
             'BUILTBYTEAD CREEP UEF',
         },
         BuildOrder = {
+            {'tec0004', 1, 1 },
             {Wait = 30},
             {'tec0001', 6, 8 },
             {Wait = 20},
