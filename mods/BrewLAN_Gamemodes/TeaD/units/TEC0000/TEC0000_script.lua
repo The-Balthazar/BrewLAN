@@ -35,14 +35,16 @@ TEC0000 = Class(TQuantumGateUnit) {
     BuildThings = function(self)
         local buildorder = self:GetBlueprint().Economy.BuildOrder
         self.Build = (self.Build or 0) + 1
-        LOG(self.Build)
         if buildorder[self.Build].Wait then
             self:ForkThread(function()
                 WaitSeconds(buildorder[self.Build].Wait)
                 self:BuildThings()
             end)
+        elseif buildorder[self.Build].Message then
+            --MESSAGE GOES HERE
+            self:BuildThings()
         elseif buildorder[self.Build] then
-            self.BuildQuantity = math.random(buildorder[self.Build][2], buildorder[self.Build][3])
+            self.BuildQuantity = math.random(buildorder[self.Build][2], buildorder[self.Build][3] or buildorder[self.Build][2])
             self:GetAIBrain():BuildUnit(self,buildorder[self.Build][1], self.BuildQuantity )
         end
     end,
@@ -50,7 +52,7 @@ TEC0000 = Class(TQuantumGateUnit) {
     OnStopBuild = function(self, unitBeingBuilt)     
         TQuantumGateUnit.OnStopBuild(self, unitBeingBuilt)    
         if unitBeingBuilt:GetFractionComplete() == 1 then
-            unitBeingBuilt.Target = GetArmyBrain(self.Target).LifeCrystalPos
+            unitBeingBuilt.Target = self.Target
             self.BuildQuantity = self.BuildQuantity - 1
             if self.BuildQuantity < 1 then
                 self:BuildThings()

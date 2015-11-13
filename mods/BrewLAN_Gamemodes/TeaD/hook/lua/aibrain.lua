@@ -1,6 +1,14 @@
 --------------------------------------------------------------------------------
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
+local TeaDScenarioSpecificDistances = {
+    ['scmp_001'] = -.5,
+    ['scmp_024'] = 0.4,
+    ['scmp_029'] = 0.3,
+    ['x1mp_006'] = 10,
+}
+
+
 AIBrain = Class(AIBrain) {
 --------------------------------------------------------------------------------
 --  AIOnlyTeam Check: Returns true if a player is an AI on an AI only team.
@@ -35,9 +43,21 @@ AIBrain = Class(AIBrain) {
                 local posX, posY = GetArmyBrain(name):GetArmyStartPos()
                 local MapSizeX = ScenarioInfo.size[1]
                 local MapSizeY = ScenarioInfo.size[2]
-                local distance = math.min(MapSizeX - posX, posX, MapSizeY - posY, posY) * 0.75
+                local distance = math.min(MapSizeX - posX, posX, MapSizeY - posY, posY)
+                
+                for mapname, mapdist in TeaDScenarioSpecificDistances do
+                    if string.lower(ScenarioInfo.map) == "/maps/" .. mapname .. "/" .. mapname .. ".scmap" then
+                        LOG("Map specific distance found." .. mapname)
+                        distance = distance * mapdist
+                    else
+                        distance = distance * 0.5
+                    end
+                end 
+                
                 local gate = self:CreateUnitNearSpot('tec0000', posX + math.sin(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance, posY + math.cos(math.atan2(posX - (MapSizeX / 2),posY - (MapSizeY / 2)))*distance)
-                gate.Target = name
+                if gate then
+                    gate.Target = name
+                end
             end
         end
     end,

@@ -162,13 +162,77 @@ UnitBlueprint {
             'BUILTBYTEAD CREEP UEF',
         },
         BuildOrder = {
-            {'tec0004', 1, 1 },
+        
+            {Wait = 10},
+            
+            {Message = "Pathfinder inbound"},
+            {'tec0004', 1},
             {Wait = 30},
-            {'tec0001', 6, 8 },
+            
+            {Message = "Wave group 1 inbound"},
+            
+            {'tec0001', 6, 8 }, --Cars
             {Wait = 20},
-            {'tec0002', 8, 10 },
+            {'tec0002', 8, 10 }, --Trucks
             {Wait = 20},
-            {'tec0003', 10, 12 },
+            {'tec0003', 10, 12 }, -- Busses
+            {Wait = 20},
+            {'tec0005', 1}, --Shield
+            {'tec0001', 8, 10 }, --Cars
+            {Wait = 20},
+            {'tec0005', 1}, --Shield
+            {'tec0002', 5, 6 }, --Trucks
+            {'tec0005', 1}, --Shield
+            {'tec0002', 5, 6 }, --Trucks
+            {Wait = 20},
+            
+            {Message = "Damage test inbound"},
+            {'tec0004', 1}, --NEED DAMAGE TEST HERE
+            {Wait = 30},
+               
+            {Message = "Wave group 2 inbound"},
+            {'tec0002', 18, 20 }, --Trucks
+            {Wait = 20},
+            {'tec0006', 18, 20 }, --Bikes
+            {Wait = 20},
+            {Message = "INSERT CLOAKED UNITS HERE"}, 
+            {Wait = 20},
+            {'tec0005', 1}, --Shield
+            {'tec0002', 2, 3 }, --Trucks
+            {'tec0005', 1}, --Shield
+            {'tec0002', 2, 3 }, --Trucks
+            {'tec0005', 1}, --Shield
+            {'tec0002', 2, 3 }, --Trucks
+            {Wait = 20},
+            {'tec0005', 1}, --Shield
+            {'tec0003', 2, 3 }, --Trucks
+            {'tec0005', 1}, --Shield
+            {'tec0003', 2, 3 }, --Trucks
+            {'tec0005', 1}, --Shield
+            {'tec0003', 2, 3 }, --Trucks
+            {'tec0005', 1}, --Shield
+            {'tec0003', 2, 3 }, --Trucks 
+            {Wait = 20},
+            
+            {Message = "Damage test inbound"},
+            {'tec0004', 1}, --NEED DAMAGE TEST 2 HERE
+            {Wait = 30},
+               
+            --5 fling scouts
+            --20 busses
+            --15 cloaked units
+            --15-20 personal shielded things
+            --5 bubble shields, 15 personal shielded things
+            
+            --Slow shielded boss
+            
+            --50 fast bikes with 5 heal things
+            --15 fat aircraft
+            --15 cloaked units
+            --5 shielded aircraft
+            --20 bubble shields
+            
+            --fast boss
         },
         ProductionPerSecondMass = 100,
         ProductionPerSecondEnergy = 200,
