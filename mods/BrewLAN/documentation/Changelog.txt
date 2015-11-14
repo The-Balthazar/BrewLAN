@@ -159,12 +159,22 @@ __________.__________
   * TeaD: Moved the crystals nearer to the center.
   * TeaD: Added a backup if the crystal fails to spawn.  
   __________
-  2015-11-08
+  2015-11-13
   
   * TeaD: Creeps now have an anti-blocking script, that removes nearby walls if they are in the same position they were 10 seconds ago.
   * TeaD: All factions now start with the UEF TeaD Engineer, while we wait for the others to exist.
   * TeaD: Some map specific creep gate start distances set.
-  * TeaD: New wave and units. Lasts about 10 minutes from start to finish now.                            
+  * TeaD: New wave and units. Lasts about 10 minutes from start to finish now.  
+  __________
+  2015-11-04
+  
+  * TeaD: Adjusted the rewards balance for creep rewards.
+  * TeaD: Increased the speed and reduced the size and health of the Bike.
+  * TeaD: Slowed the Shield down so its the same speed as the other units, and increased its shield size.
+  * TeaD: Pathfinder is now a residual energy signature.
+  * TeaD: Added a Shield Marine.
+  * TeaD: Added more waves.
+  * TeaD: Added a Cloaked creep.                                            
 __________.__________
 2015-04-06|0.6.1
 

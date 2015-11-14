@@ -31,6 +31,38 @@ Creep = Class(Unit) {
             end
         end)      
     end,
+         
+    WalkingAnim = nil,
+    WalkingAnimRate = 1,
+    IdleAnim = false,
+    IdleAnimRate = 1,
+    DeathAnim = false,
+    DisabledBones = {},
+
+    OnMotionHorzEventChange = function( self, new, old )
+        Unit.OnMotionHorzEventChange(self, new, old)
+        if EntityCategoryContains(categories.WALKER, self) then
+            if ( old == 'Stopped' ) then
+                if (not self.Animator) then
+                    self.Animator = CreateAnimator(self, true)
+                end
+                local bpDisplay = self:GetBlueprint().Display
+                if bpDisplay.AnimationWalk then
+                    self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
+                    self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
+                end
+            elseif ( new == 'Stopped' ) then
+                # only keep the animator around if we are dying and playing a death anim
+                # or if we have an idle anim
+                if(self.IdleAnim and not self:IsDead()) then
+                    self.Animator:PlayAnim(self.IdleAnim, true)
+                elseif(not self.DeathAnim or not self:IsDead()) then
+                    self.Animator:Destroy()
+                    self.Animator = false
+                end
+            end
+        end
+    end,
     
     OnKilled = function(self, instigator, type, overkillRatio)
         instigator:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.BuildCostMass * self:GetBlueprint().Wreckage.MassMult )

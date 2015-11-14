@@ -162,15 +162,14 @@ UnitBlueprint {
             'BUILTBYTEAD CREEP UEF',
         },
         BuildOrder = {
-        
             {Wait = 10},
-            
+            --------------------------------------------------------------------
             {Message = "Pathfinder inbound"},
             {'tec0004', 1},
             {Wait = 30},
-            
+            --------------------------------------------------------------------
             {Message = "Wave group 1 inbound"},
-            
+            --------------------------------------------------------------------
             {'tec0001', 6, 8 }, --Cars
             {Wait = 20},
             {'tec0002', 8, 10 }, --Trucks
@@ -185,17 +184,18 @@ UnitBlueprint {
             {'tec0005', 1}, --Shield
             {'tec0002', 5, 6 }, --Trucks
             {Wait = 20},
-            
+            --------------------------------------------------------------------
             {Message = "Damage test inbound"},
             {'tec0004', 1}, --NEED DAMAGE TEST HERE
             {Wait = 30},
-               
+            --------------------------------------------------------------------   
             {Message = "Wave group 2 inbound"},
+            --------------------------------------------------------------------
             {'tec0002', 18, 20 }, --Trucks
             {Wait = 20},
             {'tec0006', 18, 20 }, --Bikes
             {Wait = 20},
-            {Message = "INSERT CLOAKED UNITS HERE"}, 
+            {'tec0008', 15 }, --Cloaked cars
             {Wait = 20},
             {'tec0005', 1}, --Shield
             {'tec0002', 2, 3 }, --Trucks
@@ -213,26 +213,64 @@ UnitBlueprint {
             {'tec0005', 1}, --Shield
             {'tec0003', 2, 3 }, --Trucks 
             {Wait = 20},
-            
+            --------------------------------------------------------------------
             {Message = "Damage test inbound"},
             {'tec0004', 1}, --NEED DAMAGE TEST 2 HERE
+            {Wait = 15},
+            {Message = "Warning: Fliers inbound"},
             {Wait = 30},
-               
-            --5 fling scouts
-            --20 busses
-            --15 cloaked units
-            --15-20 personal shielded things
-            --5 bubble shields, 15 personal shielded things
-            
-            --Slow shielded boss
-            
-            --50 fast bikes with 5 heal things
-            --15 fat aircraft
-            --15 cloaked units
+            --------------------------------------------------------------------
+            {Message = "Wave group 3 inbound"},
+            --------------------------------------------------------------------   
+            --5 flying scouts    
+            {Wait = 20},
+            {'tec0003', 20 }, -- Busses   
+            {Wait = 20},
+            {'tec0008', 15 }, --Cloaked cars  
+            {Wait = 20},   
+            {'tec0007', 15, 20}, --Shield Marines   
+            {Wait = 20},
+            {'tec0005', 1}, --Shield
+            {'tec0007', 3}, --Shield Marines
+            {'tec0005', 1}, --Shield
+            {'tec0007', 3}, --Shield Marines
+            {'tec0005', 1}, --Shield
+            {'tec0007', 3}, --Shield Marines
+            {'tec0005', 1}, --Shield
+            {'tec0007', 3}, --Shield Marines
+            {'tec0005', 1}, --Shield
+            {'tec0007', 3}, --Shield Marines
+            --------------------------------------------------------------------
+            {Message = "Boss wave inbound"},
+            {'tec0004', 1}, --NEED BOSS 3 HERE
+            {Wait = 30},
+            --------------------------------------------------------------------
+            {'tec0006', 10 }, --Bikes
+            --heal things
+            {'tec0006', 10 }, --Bikes
+            --heal things
+            {'tec0006', 10 }, --Bikes
+            --heal things
+            {'tec0006', 10 }, --Bikes
+            --heal things
+            {'tec0006', 10 }, --Bikes
+            --heal things 
+            {Message = "Warning: Fliers inbound"},
+            {Wait = 20},
+            --15 fat aircraft 
+            {Wait = 20},
+            {'tec0008', 15 }, --Cloaked cars 
+            {Message = "Warning: Fliers inbound"}, 
+            {Wait = 20},
             --5 shielded aircraft
-            --20 bubble shields
-            
-            --fast boss
+            {Wait = 20},
+            {'tec0005', 20}, --Shield
+            {Wait = 20},
+            --------------------------------------------------------------------
+            {Message = "Boss wave inbound"},
+            {'tec0004', 1}, --NEED BOSS 3 HERE
+            {Wait = 30},
+            --------------------------------------------------------------------
         },
         ProductionPerSecondMass = 100,
         ProductionPerSecondEnergy = 200,
