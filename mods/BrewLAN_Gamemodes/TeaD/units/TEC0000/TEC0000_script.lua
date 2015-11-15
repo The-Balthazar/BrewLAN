@@ -41,7 +41,7 @@ TEC0000 = Class(TQuantumGateUnit) {
                 self:BuildThings()
             end)
         elseif buildorder[self.Build].Message then
-            --MESSAGE GOES HERE
+            print(buildorder[self.Build].Message)
             self:BuildThings()
         elseif buildorder[self.Build] then
             self.BuildQuantity = math.random(buildorder[self.Build][2], buildorder[self.Build][3] or buildorder[self.Build][2])

@@ -21,11 +21,11 @@ Creep = Class(Unit) {
                 if VDist2Sq(pos[1], pos[3], newpos[1], newpos[3]) < .05 then
                     for i, wall in self:GetAIBrain():GetUnitsAroundPoint( categories.WALL, self:GetPosition(), 2) do
                         wall:Destroy()
-                        if self.Target then
-                            IssueMove({self}, self.Target)
-                        else
-                            IssueMove({self}, {ScenarioInfo.size[1]/2, 0, ScenarioInfo.size[2]/2})
-                        end
+                    end 
+                    if self.Target then
+                        IssueMove({self}, GetArmyBrain(self.Target).LifeCrystalPos )
+                    else
+                        IssueMove({self}, {ScenarioInfo.size[1]/2, 0, ScenarioInfo.size[2]/2})
                     end
                 end
             end

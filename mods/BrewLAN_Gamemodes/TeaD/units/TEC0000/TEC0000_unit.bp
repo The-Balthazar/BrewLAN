@@ -222,7 +222,7 @@ UnitBlueprint {
             --------------------------------------------------------------------
             {Message = "Wave group 3 inbound"},
             --------------------------------------------------------------------   
-            --5 flying scouts    
+            {'tec0009', 5 }, -- Flying Scouts
             {Wait = 20},
             {'tec0003', 20 }, -- Busses   
             {Wait = 20},
@@ -475,13 +475,13 @@ UnitBlueprint {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 3,
+                Z = 1,
             },
             {
                 UnitSpin = 180,
                 X = 0,
                 Y = 0,
-                Z = -3,
+                Z = -1,
             },
         },
         SkirtOffsetX = -1.5,
