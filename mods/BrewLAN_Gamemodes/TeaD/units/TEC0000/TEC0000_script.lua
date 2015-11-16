@@ -5,7 +5,7 @@
 #**
 #**  Summary  :  UEF Quantum Gate Script
 #**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright Â© 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local TQuantumGateUnit = import('/lua/terranunits.lua').TQuantumGateUnit
@@ -41,7 +41,11 @@ TEC0000 = Class(TQuantumGateUnit) {
                 self:BuildThings()
             end)
         elseif buildorder[self.Build].Message then
-            print(buildorder[self.Build].Message)
+            --print(buildorder[self.Build].Message)
+            Sync.TeaDMessage = {
+                buildorder[self.Build].Message,
+                self.Build,
+            }
             self:BuildThings()
         elseif buildorder[self.Build] then
             self.BuildQuantity = math.random(buildorder[self.Build][2], buildorder[self.Build][3] or buildorder[self.Build][2])
