@@ -186,7 +186,14 @@ __________.__________
   * TeaD: Added a light radar tower, to detect the cloaked creeps with.
   * TeaD: The wave messages are now printed to the bottom of the screen.
     * Some of the warning messages are lies, and wont be true until the content they refer to exists.   
-  * TeaD: Approx game duration ~15 minutes.                                                          
+  * TeaD: Approx game duration ~15 minutes.  
+  __________
+  2015-11-16
+  
+  * TeaD: Spaced some waves out better.
+  * TeaD: Buffed the T1 Air turret. It can now kill the scouts. Although it looks silly.
+  * TeaD: Added propper wave messages. It gives a 20-30 second warning on flier waves. Although not cloaked waves.
+  * TeaD: Game length estimate: ~18 minutes.
 __________.__________
 2015-04-06|0.6.1
 

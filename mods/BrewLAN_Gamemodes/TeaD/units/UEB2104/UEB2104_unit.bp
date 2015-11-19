@@ -1,0 +1,12 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ueb2104",	
+    Weapon = {
+        {
+            LeadTarget = true,
+            MaxRadius = 64,
+            MuzzleVelocity = 145,
+            RateOfFire = 1.5*1.5,
+        },
+    },
+}

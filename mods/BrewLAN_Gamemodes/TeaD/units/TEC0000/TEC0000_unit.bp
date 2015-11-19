@@ -164,11 +164,11 @@ UnitBlueprint {
         BuildOrder = {
             {Wait = 10},
             --------------------------------------------------------------------
-            {Message = "Pathfinder inbound"},
+            {Message = "Pathfinder wave"},
             {'tec0004', 1},
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Wave group 1 inbound"},
+            {Message = "Wave group 1"},
             --------------------------------------------------------------------
             {'tec0001', 6, 8 }, --Cars
             {Wait = 20},
@@ -183,13 +183,13 @@ UnitBlueprint {
             {'tec0002', 5, 6 }, --Trucks
             {'tec0005', 1}, --Shield
             {'tec0002', 5, 6 }, --Trucks
-            {Wait = 20},
+            {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Damage test inbound"},
+            {Message = "Damage test wave 1"},
             {'tec0004', 1}, --NEED DAMAGE TEST HERE
             {Wait = 30},
             --------------------------------------------------------------------   
-            {Message = "Wave group 2 inbound"},
+            {Message = "Wave group 2"},
             --------------------------------------------------------------------
             {'tec0002', 18, 20 }, --Trucks
             {Wait = 20},
@@ -212,15 +212,15 @@ UnitBlueprint {
             {'tec0003', 2, 3 }, --Trucks
             {'tec0005', 1}, --Shield
             {'tec0003', 2, 3 }, --Trucks 
-            {Wait = 20},
+            {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Damage test inbound"},
+            {Message = "Damage test wave 2"},
             {'tec0004', 1}, --NEED DAMAGE TEST 2 HERE
             {Wait = 15},
             {Message = "Warning: Fliers inbound"},
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Wave group 3 inbound"},
+            {Message = "Wave group 3"},
             --------------------------------------------------------------------   
             {'tec0009', 5 }, -- Flying Scouts
             {Wait = 20},
@@ -240,8 +240,9 @@ UnitBlueprint {
             {'tec0007', 3}, --Shield Marines
             {'tec0005', 1}, --Shield
             {'tec0007', 3}, --Shield Marines
+            {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Boss wave inbound"},
+            {Message = "Boss wave 1"},
             {'tec0004', 1}, --NEED BOSS 3 HERE
             {Wait = 30},
             --------------------------------------------------------------------
@@ -265,9 +266,9 @@ UnitBlueprint {
             --5 shielded aircraft
             {Wait = 20},
             {'tec0005', 20}, --Shield
-            {Wait = 20},
+            {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Boss wave inbound"},
+            {Message = "Boss wave 2"},
             {'tec0004', 1}, --NEED BOSS 3 HERE
             {Wait = 30},
             --------------------------------------------------------------------
