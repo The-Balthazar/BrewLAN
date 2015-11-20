@@ -38,7 +38,7 @@ UnitBlueprint {
         SurfaceThreatLevel = 0,
         AirThreatLevel = 0,
     },
-    Description = '<LOC crystal_desc>Crystal',
+    Description = '<LOC tpc0000_desc>Life Teacup',
     Display = {
         Mesh = {
             IconFadeInZoom = 130,
@@ -46,11 +46,11 @@ UnitBlueprint {
                 {
                     LODCutoff = 1000,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    ShaderName = 'Unit',
-                    MeshName = '/units/XSC9002/XSC9002_lod0.scm',
-                    AlbedoName = '/units/XSC9002/XSC9002_albedo.dds',
-                    NormalsName = '/units/XSC9002/XSC9002_normalsts.dds',
-                    SpecularName = '/units/XSC9002/XSC9002_specteam.dds',
+                    ShaderName = 'Aeon',
+                    --MeshName = '/units/XSC9002/XSC9002_lod0.scm',
+                    --AlbedoName = '/units/XSC9002/XSC9002_albedo.dds',
+                    --NormalsName = '/units/XSC9002/XSC9002_normalsts.dds',
+                    --SpecularName = '/units/XSC9002/XSC9002_specteam.dds',
                 },
             },
         },
@@ -73,7 +73,7 @@ UnitBlueprint {
                 Width = 12.8/2,
             },
         },
-        UniformScale = .4,
+        UniformScale = 30,
     },
     Economy = {
         BuildCostEnergy = 0,
@@ -108,9 +108,6 @@ UnitBlueprint {
     },  
     Intel = {
         VisionRadius = 20,
-    },
-    Interface = {
-        HelpText = '<LOC crystal_desc>Crystal',
     },
     LifeBarHeight = 0.0000001,
     LifeBarOffset = 0.000000,

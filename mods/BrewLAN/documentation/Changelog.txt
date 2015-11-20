@@ -193,7 +193,15 @@ __________.__________
   * TeaD: Spaced some waves out better.
   * TeaD: Buffed the T1 Air turret. It can now kill the scouts. Although it looks silly.
   * TeaD: Added propper wave messages. It gives a 20-30 second warning on flier waves. Although not cloaked waves.
-  * TeaD: Game length estimate: ~18 minutes.
+  * TeaD: Game length estimate: ~18 minutes.  
+  __________
+  2015-11-20
+  
+  * TeaD: Crystal is now a teacup, with health represented by tea.
+    * TeaD: It has a steam effect while it is full.
+  * TeaD: Creep gates will no longer start waves if the target player is dead.
+  * TeaD: Leaked Non-damage-test boss waves now cause 5 damage.
+  * TeaD: Added the first damage test boss.                                         
 __________.__________
 2015-04-06|0.6.1
 

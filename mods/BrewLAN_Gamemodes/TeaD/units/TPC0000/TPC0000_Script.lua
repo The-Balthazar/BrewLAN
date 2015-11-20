@@ -21,7 +21,8 @@ TPC0000 = Class(SStructureUnit) {
                 LifeTime = -1,
                 Army = brain:GetArmyIndex(),
             })
-        end
+        end 
+        self.Steam = CreateAttachedEmitter(self,'Liquid',self:GetArmy(), '/mods/brewlan_gamemodes/tead/effects/emitters/tead_cuppa_steam_emit.bp'):OffsetEmitter(0,3,0):ScaleEmitter(3)
     end,
     
     LeaksThread = function(self)      
@@ -29,16 +30,24 @@ TPC0000 = Class(SStructureUnit) {
         local pos = self:GetPosition()   
         local radius = 5  
         local Units
+        local teaslider = CreateSlider(self,'Liquid')
         while true do   
             Units = aiBrain:GetUnitsAroundPoint( categories.CREEP, pos, radius)
             if Units then
                 for i,v in Units do 
                     if v:GetEntityId() != self:GetEntityId() then 
-                        if not EntityCategoryContains(categories.PATHFINDER, v) then
-                            self:SetHealth(self, self:GetHealth() - 1)    
+                        if not EntityCategoryContains(categories.PATHFINDER + categories.DAMAGETEST, v) then
+                            if EntityCategoryContains(categories.BOSS, v) then
+                                self:SetHealth(self, self:GetHealth() - 5)                            
+                            else
+                                self:SetHealth(self, self:GetHealth() - 1)
+                            end
+                            teaslider:SetGoal(0, - (30-self:GetHealth())*0.003, 0)  
+                            self.Steam:Destroy()  
                         end
                         v:Destroy()
-                        if self:GetHealth() < 1 then   
+                        if self:GetHealth() < 1 then    
+                            self:HideBone('Liquid', true) 
                             self:GetAIBrain():OnDefeat()
                         end
                     end
@@ -50,9 +59,13 @@ TPC0000 = Class(SStructureUnit) {
     
     OnDamage = function()
     end,   
-      
+         
+    ManageDamageEffects = function(self, newHealth, oldHealth)
+    end,
+    
     OnKilled = function(self, instigator, type, overkillRatio)  
         self:GetAIBrain():OnDefeat()
+        --SStructureUnit.OnKilled(self,instigator,type,2)
     end,
 }
 TypeClass = TPC0000

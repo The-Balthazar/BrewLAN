@@ -186,7 +186,7 @@ UnitBlueprint {
             {Wait = 30},
             --------------------------------------------------------------------
             {Message = "Damage test wave 1"},
-            {'tec0004', 1}, --NEED DAMAGE TEST HERE
+            {'tec0101', 1}, --NEED DAMAGE TEST HERE
             {Wait = 30},
             --------------------------------------------------------------------   
             {Message = "Wave group 2"},
