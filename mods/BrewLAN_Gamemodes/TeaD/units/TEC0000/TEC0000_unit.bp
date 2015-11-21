@@ -186,7 +186,7 @@ UnitBlueprint {
             {Wait = 30},
             --------------------------------------------------------------------
             {Message = "Damage test wave 1"},
-            {'tec0101', 1}, --NEED DAMAGE TEST HERE
+            {'tec0101', 1}, --Damage test boss 1
             {Wait = 30},
             --------------------------------------------------------------------   
             {Message = "Wave group 2"},
@@ -215,7 +215,7 @@ UnitBlueprint {
             {Wait = 30},
             --------------------------------------------------------------------
             {Message = "Damage test wave 2"},
-            {'tec0004', 1}, --NEED DAMAGE TEST 2 HERE
+            {'tec0102', 1}, --Damage test boss 1
             {Wait = 15},
             {Message = "Warning: Fliers inbound"},
             {Wait = 30},
@@ -497,7 +497,7 @@ UnitBlueprint {
     SizeX = 7.25,
     SizeY = 3.5,
     SizeZ = 1.5,
-    StrategicIconName = 'icon_structure3_transport',
+    StrategicIconName = 'icon_structure_transport',
     StrategicIconSortPriority = 175,
     Transport = {
         Class2AttachSize = 1,

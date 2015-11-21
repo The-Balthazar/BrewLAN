@@ -1,28 +1,13 @@
 UnitBlueprint {
     Audio = {
         AmbientMove = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        CaptureLoop = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Capture_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Construct = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Construct_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ConstructLoop = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Construct_Loop',
+            Bank = 'XSL',
+            Cue = 'XSL0402_Move_Loop',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEL_Destroy_Sml_Land',
+            Bank = 'XSL_Destroy',
+            Cue = 'XSL0402_Death',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         HoverKilledOnWater = Sound {
@@ -30,34 +15,9 @@ UnitBlueprint {
             Cue = 'Expl_Water_Lrg_01',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-        ReclaimLoop = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Reclaim_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartCapture = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Capture_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartReclaim = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Reclaim_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'XEL',
-            Cue = 'XEL0209_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Vehicle',
+        Spawn = Sound {
+            Bank = 'XSL',
+            Cue = 'XSL0402_Spawn',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -223,9 +183,8 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Hover',
         RotateBodyWhileMoving = true,
         TurnFacingRate = 1800,
-        TurnRadius = 1800,
-        TurnRate = 1800,
-        TurnRadius = 0,
+        TurnRadius = 180,
+        TurnRate = 180,
     },
     SelectionCenterOffsetX = 0,
     SelectionCenterOffsetZ = 0,

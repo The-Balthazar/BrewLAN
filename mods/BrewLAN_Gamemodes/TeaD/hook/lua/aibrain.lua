@@ -2,9 +2,11 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local TeaDScenarioSpecificDistances = {
-    ['scmp_001'] = -.5,
+    ['scmp_001'] = -.5,       
+    ['scmp_011'] = {"badmap", 0},
     ['scmp_024'] = 0.4,
-    ['scmp_029'] = 0.3,
+    ['scmp_029'] = 0.3,   
+    ['scmp_040'] = {"badmap", 0}, 
     ['x1mp_006'] = 10,
 }
 
@@ -48,7 +50,22 @@ AIBrain = Class(AIBrain) {
                 for mapname, mapdist in TeaDScenarioSpecificDistances do
                     if string.lower(ScenarioInfo.map) == "/maps/" .. mapname .. "/" .. mapname .. ".scmap" then
                         LOG("Map specific distance found." .. mapname)
-                        distance = distance * mapdist
+                        if type(mapdist) == 'number' then  
+                            distance = distance * mapdist
+                        else
+                            distance = distance * mapdist[2]
+                            ForkThread(function()
+                                WaitTicks(5)
+                                local message = "Bad Map Detected"
+                                if mapdist[1] != "badmap" then
+                                    message = mapdist[1]
+                                end
+                                Sync.TeaDMessage = {
+                                    message,
+                                    1,
+                                }
+                            end)
+                        end
                     else
                         distance = distance * 0.5
                     end

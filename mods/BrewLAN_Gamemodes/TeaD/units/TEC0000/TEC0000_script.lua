@@ -35,7 +35,7 @@ TEC0000 = Class(TQuantumGateUnit) {
     BuildThings = function(self)
         local buildorder = self:GetBlueprint().Economy.BuildOrder
         self.Build = (self.Build or 0) + 1
-        LOG(self.Target)
+        --LOG(self.Target)
         if self.Target and GetArmyBrain(self.Target):IsDefeated() then
             return false
         end
