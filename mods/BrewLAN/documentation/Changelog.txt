@@ -209,6 +209,8 @@ __________.__________
   2015-11-21
   
   * TeaD: Added the second damage test boss.
+  * TeaD: Added the first real boss.
+  * TeaD: The gate can no longer take damage.    
 __________.__________
 2015-04-06|0.6.1
 

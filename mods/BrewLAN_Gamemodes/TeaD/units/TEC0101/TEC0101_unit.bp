@@ -41,6 +41,7 @@ UnitBlueprint {
         'DAMAGETEST',
         'BOSS',
         'WALKER',
+        'BOT',
     },
     Defense = {
         AirThreatLevel = 0,

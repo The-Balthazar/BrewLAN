@@ -243,19 +243,19 @@ UnitBlueprint {
             {Wait = 30},
             --------------------------------------------------------------------
             {Message = "Boss wave 1"},
-            {'tec0004', 1}, --NEED BOSS 3 HERE
+            {'tec0103', 1}, --Shield boss
             {Wait = 30},
             --------------------------------------------------------------------
             {'tec0006', 10 }, --Bikes
-            --heal things
+            --heal thing
             {'tec0006', 10 }, --Bikes
-            --heal things
+            --heal thing
             {'tec0006', 10 }, --Bikes
-            --heal things
+            --heal thing
             {'tec0006', 10 }, --Bikes
-            --heal things
+            --heal thing
             {'tec0006', 10 }, --Bikes
-            --heal things 
+            --heal thing 
             {Message = "Warning: Fliers inbound"},
             {Wait = 20},
             --15 fat aircraft 
@@ -265,7 +265,7 @@ UnitBlueprint {
             {Wait = 20},
             --5 shielded aircraft
             {Wait = 20},
-            {'tec0005', 20}, --Shield
+            {'tec0005', 20}, --Shields
             {Wait = 30},
             --------------------------------------------------------------------
             {Message = "Boss wave 2"},

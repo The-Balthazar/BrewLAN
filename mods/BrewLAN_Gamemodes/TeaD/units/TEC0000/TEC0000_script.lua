@@ -56,7 +56,10 @@ TEC0000 = Class(TQuantumGateUnit) {
             self:GetAIBrain():BuildUnit(self,buildorder[self.Build][1], self.BuildQuantity )
         end
     end,
-    
+             
+    OnDamage = function()
+    end,   
+      
     OnStopBuild = function(self, unitBeingBuilt)     
         TQuantumGateUnit.OnStopBuild(self, unitBeingBuilt)    
         if unitBeingBuilt:GetFractionComplete() == 1 then
