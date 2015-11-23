@@ -39,7 +39,15 @@ TEC0000 = Class(TQuantumGateUnit) {
         if self.Target and GetArmyBrain(self.Target):IsDefeated() then
             return false
         end
-        if buildorder[self.Build].Wait then
+        if self.Build > 1 and self:GetAIBrain():GetNoRushTicks() > 0 then
+            Sync.TeaDMessage = {
+                "<LOC tead_waiting_for_no_rush>Waiting for no rush to end",
+                self.Build,
+            }
+            WaitTicks(self:GetAIBrain():GetNoRushTicks() )
+            self.Build = self.Build - 1
+            self:BuildThings()
+        elseif buildorder[self.Build].Wait then
             self:ForkThread(function()
                 WaitSeconds(buildorder[self.Build].Wait)
                 self:BuildThings()

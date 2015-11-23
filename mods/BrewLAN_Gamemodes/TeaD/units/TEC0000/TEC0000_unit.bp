@@ -194,6 +194,7 @@ UnitBlueprint {
             {'tec0002', 18, 20 }, --Trucks
             {Wait = 20},
             {'tec0006', 18, 20 }, --Bikes
+            {Message = "Warning: Cloaked units inbound"},
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars
             {Wait = 20},
@@ -224,7 +225,8 @@ UnitBlueprint {
             --------------------------------------------------------------------   
             {'tec0009', 5 }, -- Flying Scouts
             {Wait = 20},
-            {'tec0003', 20 }, -- Busses   
+            {'tec0003', 20 }, -- Busses
+            {Message = "Warning: Cloaked units inbound"},   
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars  
             {Wait = 20},   
@@ -258,7 +260,8 @@ UnitBlueprint {
             --heal thing 
             {Message = "Warning: Fliers inbound"},
             {Wait = 20},
-            --15 fat aircraft 
+            --15 fat aircraft
+            {Message = "Warning: Cloaked units inbound"}, 
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars 
             {Message = "Warning: Fliers inbound"}, 
@@ -274,7 +277,7 @@ UnitBlueprint {
             --------------------------------------------------------------------
         },
         ProductionPerSecondMass = 100,
-        ProductionPerSecondEnergy = 200,
+        ProductionPerSecondEnergy = 1000,
         StorageEnergy = 200000,
         StorageMass = 100000,
         RebuildBonusIds = {

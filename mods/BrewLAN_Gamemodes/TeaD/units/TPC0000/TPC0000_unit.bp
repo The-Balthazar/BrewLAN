@@ -58,11 +58,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = '/env/Crystalline/decals/scx1_proto01_crev06b_albedo.dds',
+                Albedo = '/mods/BrewLAN_gamemodes/TeaD/env/Common/decals/Tarmacs/Tar6x_doily_01_albedo.dds',
                 DeathLifetime = 300,
                 FadeOut = 150,
-                Length = 12.8/2,
-                Glow = '/env/Crystalline/decals/scx1_proto01_crev06_spec.dds',
+                Length = 12.8/3,
+                Normal = '/mods/BrewLAN_gamemodes/TeaD/env/Common/decals/Tarmacs/Tar6x_doily_01_normals.dds',
                 Orientations = {
                     0,
                     90,
@@ -70,7 +70,7 @@ UnitBlueprint {
                     270,
                 },
                 RemoveWhenDead = false,
-                Width = 12.8/2,
+                Width = 12.8/3,
             },
         },
         UniformScale = 30,

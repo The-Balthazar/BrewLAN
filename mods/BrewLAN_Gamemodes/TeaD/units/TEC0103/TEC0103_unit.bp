@@ -226,7 +226,7 @@ UnitBlueprint {
     SizeX = 0.9,
     SizeY = 1.2,
     SizeZ = 0.9,
-    StrategicIconName = 'icon_experimental_directfire',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 115,
     Transport = {
         CanFireFromTransport = false,

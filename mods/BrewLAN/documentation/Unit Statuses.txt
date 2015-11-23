@@ -33,6 +33,7 @@ Errors list/the other to-do list.
 * Do something with the cybran stealth field sub idea.
 * Create a UI for the contents of the Ivan.
 * Make the damage test unit look like a Nokia 3310.
+* TeaD: Do something about civies blocking the teacup.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -

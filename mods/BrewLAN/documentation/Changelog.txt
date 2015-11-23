@@ -210,7 +210,17 @@ __________.__________
   
   * TeaD: Added the second damage test boss.
   * TeaD: Added the first real boss.
-  * TeaD: The gate can no longer take damage.    
+  * TeaD: The gate can no longer take damage.
+  __________
+  2015-11-22
+  
+  * TeaD: Added no-rush handling.
+  * TeaD: Fixed the shield boss strategic icon.
+  * TeaD: Added a warning for cloaked waves.
+  __________
+  2015-11-23
+  
+  * TeaD: Doily.   
 __________.__________
 2015-04-06|0.6.1
 
