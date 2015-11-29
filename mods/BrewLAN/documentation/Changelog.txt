@@ -234,7 +234,13 @@ __________.__________
   * TeaD: Reduced the mass rewards for later level creeps.
   * Added an economy watch mode for the Panopticon.
   * Made the description of the Panopticon more explicit in its abilities and restrictions.
-  * Added Seraphim T2 walls.       
+  * Added Seraphim T2 walls.
+  __________
+  2015-11-29
+  
+  * Added the Aeon T3 shield wall.
+    * Requires a rewrite of the cardinal wall script that I still haven't done.
+  * Fixed the Aeon T2 wall icon.            
 __________.__________
 2015-04-06|0.6.1
 

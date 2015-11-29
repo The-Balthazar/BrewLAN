@@ -302,6 +302,7 @@ Unit_Description_BrewLAN_T3B0011="Generates a steath field and a personal cloak.
 
 ssb5301_desc="Shield Wall Section"
 ssb5301_name="Athahaas"
+sab5301_name="Aegis"
 Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
         
 srb5310_desc="Armored Wall Section"

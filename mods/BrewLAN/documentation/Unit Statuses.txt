@@ -269,11 +269,12 @@ Tech 3:
       * T3 Shielded Mass Extractor.                 
       * T3 Mobile strat defence.   
   		* T3 Torp launchers.
-  		  * Gonna give the torpedos a random decay chance after about 70% of its max range.             
+  		  * Gonna give the torpedos a random decay chance after about 70% of its max range.
+      * T3 Shield wall.
+        * Requires a rewrite of the cardinal wall script that I still haven't done.
             
   	Pending: 
   		* T3 Mobile Shield Gen. 
-      * T3 Shield wall.
       * T3 Field Engineering Ship.                   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:

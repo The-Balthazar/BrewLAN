@@ -129,6 +129,7 @@ Description['sab1313'] = "<LOC Unit_Description_BrewLAN_T3B0015>Large mass fabri
 Description['ssb1311'] = "<LOC Unit_Description_BrewLAN_T3B0016>Large power generating structure. Possesses superior armor and has self regenerative capabilities."    
 Description['ssb1313'] = "<LOC Unit_Description_BrewLAN_T3B0017>Large mass fabrication structure. Possesses superior armor and has self regenerative capabilities."
 Description['ssb5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
+Description['sab5301'] = "<LOC Unit_Description_BrewLAN_T3B0018>Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
 Description['srb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 Description['seb5310'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 Description['srb5312'] = "<LOC Unit_Description_BrewLAN_T3B0019>Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
