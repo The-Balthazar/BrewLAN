@@ -34,6 +34,7 @@ Errors list/the other to-do list.
 * Create a UI for the contents of the Ivan.
 * Make the damage test unit look like a Nokia 3310.
 * TeaD: Do something about civies blocking the teacup.
+* UAL0207.
 _______________________________________________________
 Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -216,6 +217,7 @@ Tech 2:
       
   	Pending:  
   		* T2 Restoration field genorator.
+  		  * May not do.       
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
     * T2 Mass Storage
@@ -242,9 +244,9 @@ Tech 2:
         * No scorch mark. Massive particle effect.       
   		* T2 Engineering Station.     
   		* T2 Field engineer.
+  		* T2 Wall
 
   	Pending:
-  		* T2 Wall
   		* T2 Mobile Shield Gen.
             
 -------------------------------------------------------
@@ -296,8 +298,7 @@ Tech 3:
       * T3 Cloakable Mass Extractor.
     	* T3 Stealth tank (Cybran sniper bot alternative)
         * Unfinished appearance.
-  		* T3 Mobile stealth Gen.
-  		  * No icon. Placeholder mesh.       
+  		* T3 Mobile stealth Gen.    
         
   	Pending:
   		* T3 Anti Shield.

@@ -162,6 +162,13 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
+            RULEUTC_WeaponToggle = true,
+        },
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = {
+                bitmapId = 'Vision',
+                helpText = 'toggle_economy_watch',
+            },
         },
         UnitName = '<LOC seb3404_name>Panopticon',
         UnitWeight = 1,

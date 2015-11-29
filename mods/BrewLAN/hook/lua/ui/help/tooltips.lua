@@ -84,4 +84,10 @@ Tooltips['reapeat_attack_target'] = {
       title = "<LOC tooltipbrewlan0027>Repeating Attack",
       description = "<LOC tooltipbrewlan0028>Starts a repeat attack cycle at the target location, or updates current cycle's target.",
       keyID = "reapeat_attack_target",
+   }
+   
+Tooltips['toggle_economy_watch'] = {
+      title = "<LOC tooltipbrewlan0029>Toggle Economy Watch",
+      description = "<LOC tooltipbrewlan0030>While active, will dynamically reduce its operational radius to an economically sustainable level.",
+      keyID = "toggle_economy_watch",
    } 

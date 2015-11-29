@@ -60,6 +60,10 @@ tooltipbrewlan0028="Starts a repeat attack cycle at the target location, or upda
 floatingtextIVAN01="Repeating orders enabled"
 floatingtextIVAN02="Repeating orders disabled"
 
+--Tooltips for the Panopticon
+tooltipbrewlan0029="Toggle Economy Watch"
+tooltipbrewlan0030="While active, this unit will dynamically reduce its operational spying radius to an economically sustainable level."
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements 
 -------------------------------------------------------------------------------- 
@@ -388,4 +392,4 @@ srl0001_desc="Crab Egg (Destroyer)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
-Unit_Description_BrewLAN_T4B008="Experimental sensor array. Displays the location of enemy units. Sensors can't penetrate areas of heavy sensor-distruption."
+Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius. Upkeep costs additional per-unit being spied on. Mobile units and expensive units cost more to spy on. Cloaked units, ACUs and units near a " .. srb4402_name .. " can't be spied on."

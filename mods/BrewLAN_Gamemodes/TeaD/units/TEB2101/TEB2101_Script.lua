@@ -9,11 +9,14 @@
 #****************************************************************************
 
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local TDFLightPlasmaCannonWeapon = import('/lua/terranweapons.lua').TDFLightPlasmaCannonWeapon
+local TDFRiotWeapon = import('/lua/terranweapons.lua').TDFRiotWeapon
+local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TEB2101 = Class(TStructureUnit) {
     Weapons = {
-        MainGun = Class(TDFLightPlasmaCannonWeapon) {}
+        Riotgun01 = Class(TDFRiotWeapon) {
+            FxMuzzleFlash = EffectTemplate.TRiotGunMuzzleFxTank
+        },
     },
 }
 

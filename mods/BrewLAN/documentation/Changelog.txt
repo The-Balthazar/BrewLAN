@@ -220,7 +220,21 @@ __________.__________
   __________
   2015-11-23
   
-  * TeaD: Doily.   
+  * TeaD: Doily.
+  __________
+  2015-11-25
+  
+  * Fixed a potential, but unlikely, interaction with the Panopticon and the Darkness, whereby a Darkness just outside of the Panopticons radius would be totally ignored, and have its nearby units spied upon.
+  __________
+  2015-11-28
+  
+  * Gave the Operative a new model and an icon.
+  * TeaD: Added icons for the creeps.
+  * TeaD: Changed the light point defence, and gave it an icon.
+  * TeaD: Reduced the mass rewards for later level creeps.
+  * Added an economy watch mode for the Panopticon.
+  * Made the description of the Panopticon more explicit in its abilities and restrictions.
+  * Added Seraphim T2 walls.       
 __________.__________
 2015-04-06|0.6.1
 
