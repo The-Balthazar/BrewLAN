@@ -1,15 +1,8 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UAB5101/UAB5101_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  Aeon Wall Piece Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-local AShieldStructureUnit = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript --import('/lua/aeonunits.lua').AShieldStructureUnit
+local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
+local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+AShieldStructureUnit = CardinalWallUnit( AShieldStructureUnit ) 
 
-SAB5301 = Class(AShieldStructureUnit) {
+SAB5301 = Class( AShieldStructureUnit ) {
     ShieldEffects = {
         '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',  -- tight floor pulse
         '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',-- eclipse thing

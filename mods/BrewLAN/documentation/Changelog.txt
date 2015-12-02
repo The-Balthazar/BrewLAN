@@ -240,7 +240,12 @@ __________.__________
   
   * Added the Aeon T3 shield wall.
     * Requires a rewrite of the cardinal wall script that I still haven't done.
-  * Fixed the Aeon T2 wall icon.            
+  * Fixed the Aeon T2 wall icon.
+  * Inverted the Aeon defence engineer normal map.
+  __________
+  2015-12-01
+  
+  * Partially rewrote the cardinal wall script.               
 __________.__________
 2015-04-06|0.6.1
 

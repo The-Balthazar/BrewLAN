@@ -77,7 +77,7 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
         end
     end,
 }
- 
+
 --------------------------------------------------------------------------------
 -- Wall script
 -------------------------------------------------------------------------------- 
@@ -207,7 +207,7 @@ CardinalWallScript = Class(CLandFactoryUnit) {
                 end
             end
         end                                               
-    end,   
+    end,
     
     OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
         local MyX, MyY, MyZ = unpack(self:GetPosition())
