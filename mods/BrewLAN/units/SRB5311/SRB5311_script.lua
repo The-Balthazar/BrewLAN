@@ -1,11 +1,14 @@
 #****************************************************************************
 #** 
-#**  Cybran Wall: With cordinal scripting
+#**  Cybran Gate: With cordinal scripting
 #** 
 #****************************************************************************
+local CWallStructureUnit = import('/lua/cybranunits.lua').CWallStructureUnit
+local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+local GateWallUnit = import('/mods/brewlan/lua/walls.lua').GateWallUnit
+CWallStructureUnit = CardinalWallUnit( CWallStructureUnit ) 
+CWallStructureUnit = GateWallUnit( CWallStructureUnit )
 
-local CardinalGateScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalGateScript
-
-SRB5311 = Class(CardinalGateScript) {}
+SRB5311 = Class(CWallStructureUnit) {}
 
 TypeClass = SRB5311

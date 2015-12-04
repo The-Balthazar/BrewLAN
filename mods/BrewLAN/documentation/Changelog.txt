@@ -251,7 +251,11 @@ __________.__________
   
   * Finished rewrite of the cardinal wall script, and applied the new script to all walls.
     * Gates still use old script.   
-  * Fixed the icon for the Cybran T2 wall.                 
+  * Fixed the icon for the Cybran T2 wall.
+  __________
+  2015-12-04
+  
+  * Updated the gates with the new cardinal wall script, and updated the script to work better with them.                  
 __________.__________
 2015-04-06|0.6.1
 
