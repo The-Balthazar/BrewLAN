@@ -271,7 +271,6 @@ Tech 3:
   		* T3 Torp launchers.
   		  * Gonna give the torpedos a random decay chance after about 70% of its max range.
       * T3 Shield wall.
-        * Requires a rewrite of the cardinal wall script that I still haven't done.
             
   	Pending: 
   		* T3 Mobile Shield Gen. 

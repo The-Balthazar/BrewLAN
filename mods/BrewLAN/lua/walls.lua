@@ -8,21 +8,21 @@ function CardinalWallUnit(SuperClass)
             SuperClass.OnCreate(self)
             self.Info = {
                 ents = {
-                    ['northUnit'] = {
+                    ['North'] = {
                         ent = {},
-                        val = false,
+                        val = {false, 99 },
                     },
-                    ['southUnit'] = {
+                    ['South'] = {
                         ent = {},
-                        val = false,
+                        val = {false, 101},
                     },
-                    ['eastUnit'] = {
+                    ['East'] = {
                         ent = {},
-                        val = false,
+                        val = {false, 97},
                     },
-                    ['westUnit'] = {
+                    ['West'] = {
                         ent = {},
-                        val = false,
+                        val = {false, 103},
                     },
                 },
                 bones = {}
@@ -36,9 +36,15 @@ function CardinalWallUnit(SuperClass)
             
             self:BoneUpdate(self.Info.bones)   
         end,
-             
+           
+        OnStopBeingBuilt = function(self,builder,layer)
+            SuperClass.OnStopBeingBuilt(self,builder,layer)
+            --This is here purely for the UEF ones, because it doesn't work OnCreate for them.
+            self:BoneUpdate(self.Info.bones)
+        end,
+          
         OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
-            local dirs = { 'southUnit', 'eastUnit', 'eastUnit', 'northUnit', 'northUnit', 'westUnit', 'westUnit', 'southUnit'}
+            local dirs = { 'South', 'East', 'East', 'North', 'North', 'West', 'West', 'South'}
             local MyX, MyY, MyZ = unpack(self:GetPosition())
             local AX, AY, AZ = unpack(adjacentUnit:GetPosition())
             local cat = self:GetBlueprint().Display.AdjacencyConnection
@@ -46,7 +52,7 @@ function CardinalWallUnit(SuperClass)
             self.Info.ents[dirs[math.ceil(((math.atan2(MyX - AX, MyZ - AZ) * 180 / math.pi) + 180)/45)]].ent = adjacentUnit
             
             for k, v in self.Info.ents do              
-                v.val = EntityCategoryContains(categories[cat], v.ent)
+                v.val[1] = EntityCategoryContains(categories[cat], v.ent)
             end      
             self:BoneCalculation() 
             SuperClass.OnAdjacentTo(self, adjacentUnit, triggerUnit) 
@@ -55,64 +61,32 @@ function CardinalWallUnit(SuperClass)
         --Old codes
         BoneCalculation = function(self)   
             local cat = self:GetBlueprint().Display.AdjacencyConnection
-            for k, v in self.Info.ents do              
-                v.val = EntityCategoryContains(categories[cat], v.ent)
-            end      
             local TowerCalc = 0
-            if self.Info.ents.northUnit.val then
-                self:SetAllBones('bonetype', 'North', 'show')
-                TowerCalc = TowerCalc + 99
-            else
-                self:SetAllBones('bonetype', 'North', 'hide')
-            end 
-            if self.Info.ents.southUnit.val then     
-                self:SetAllBones('bonetype', 'South', 'show')
-                TowerCalc = TowerCalc + 101 
-            else
-                self:SetAllBones('bonetype', 'South', 'hide')
-            end 
-            if self.Info.ents.eastUnit.val then     
-                self:SetAllBones('bonetype', 'East', 'show')
-                TowerCalc = TowerCalc + 97 
-            else
-                self:SetAllBones('bonetype', 'East', 'hide')
-            end   
-            if self.Info.ents.westUnit.val then     
-                self:SetAllBones('bonetype', 'West', 'show')
-                TowerCalc = TowerCalc + 103 
-            else
-                self:SetAllBones('bonetype', 'West', 'hide')
+            for i, v in self.Info.ents do
+                if v.val[1] == true then
+                    TowerCalc = TowerCalc + v.val[2]
+                    self:SetAllBones('bonetype', i, 'show')
+                    self:SetAllBones('conflict', i, 'hide')
+                else
+                    self:SetAllBones('bonetype', i, 'hide')
+                end 
             end
             if TowerCalc == 200 then
                 self:SetAllBones('bonetype', 'Tower', 'hide')
             else
                 self:SetAllBones('bonetype', 'Tower', 'show')
                 self:SetAllBones('conflict', 'Tower', 'hide')
-                if self.Info.ents.northUnit.val then
-                    self:SetAllBones('conflict', 'North', 'hide')
-                end 
-                if self.Info.ents.southUnit.val then     
-                    self:SetAllBones('conflict', 'South', 'hide') 
-                end 
-                if self.Info.ents.eastUnit.val then     
-                    self:SetAllBones('conflict', 'East', 'hide') 
-                end   
-                if self.Info.ents.westUnit.val then     
-                    self:SetAllBones('conflict', 'West', 'hide')   
-                end
             end
             if self:GetBlueprint().Display.AdjacencyBeamConnections then
                 for k1, v1 in self.Info.ents do
-                    if v1.val then
-                        --if not v1.ent:isDead() then 
-                            for k, v in self.Info.bones do
-                                if v.bonetype == 'Beam' then
-                                    if self:IsValidBone(k) and v1.ent:IsValidBone(k) then
-                                        v1.ent.Trash:Add(AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype))
-                                    end
+                    if v1.val[1] then
+                        for k, v in self.Info.bones do
+                            if v.bonetype == 'Beam' then
+                                if self:IsValidBone(k) and v1.ent:IsValidBone(k) then
+                                    v1.ent.Trash:Add(AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype))
                                 end
                             end
-                        --end
+                        end
                     end
                 end
             end

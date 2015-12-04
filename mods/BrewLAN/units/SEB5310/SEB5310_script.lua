@@ -1,10 +1,11 @@
 #****************************************************************************
 #** 
-#**  Cybran Wall: With cordinal scripting
+#**  UEF Wall: With cordinal scripting
 #** 
 #****************************************************************************
-
-local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript
+local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallUnit
+local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+CardinalWallScript = CardinalWallUnit(CardinalWallScript) 
 
 SEB5310 = Class(CardinalWallScript) {
     OnStartBuild = function(self, unitBeingBuilt, order )

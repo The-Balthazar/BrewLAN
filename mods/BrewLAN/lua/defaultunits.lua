@@ -79,8 +79,82 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
 }
 
 --------------------------------------------------------------------------------
--- Wall script
+-- Wall scripts
 -------------------------------------------------------------------------------- 
+
+CardinalWallUnit = Class(CLandFactoryUnit) {
+        
+    BuildAttachBone = 'WallNode', 
+       
+    OnCreate = function(self,builder,layer)      
+        self:AddBuildRestriction(categories.ANTINAVY)
+        self:AddBuildRestriction(categories.HYDROCARBON)
+        CLandFactoryUnit.OnCreate(self,builder,layer)    
+    end, 
+    
+    CreateBlinkingLights = function(self, color)
+    end, 
+      
+    FinishBuildThread = function(self, unitBeingBuilt, order )
+        self:SetBusy(true)
+        self:SetBlockCommandQueue(true)
+        local bp = self:GetBlueprint()
+        local bpAnim = bp.Display.AnimationFinishBuildLand
+        --self:DestroyBuildRotator()
+        if order != 'Upgrade' then
+            ChangeState(self, self.RollingOffState)
+        else
+            self:SetBusy(false)
+            self:SetBlockCommandQueue(false)
+        end
+        self.AttachedUnit = unitBeingBuilt
+    end,
+         
+    StartBuildFx = function(self, unitBeingBuilt)
+    end,  
+    
+    OnDamage = function(self, instigator, amount, vector, damageType)    
+        CLandFactoryUnit.OnDamage(self, instigator, amount, vector, damageType)
+        if self.AttachedUnit and not self.AttachedUnit:IsDead() then
+            local amountR = amount * .5
+            self.AttachedUnit:OnDamage(instigator, amountR, vector, damageType)
+            --if self.AttachedUnit:IsDead() then
+            --    self:DetachAll(self:GetBlueprint().Display.BuildAttachBone or 0)
+            --    self:DestroyBuildRotator()
+            --end
+            --self:DoTakeDamage(instigator, amount, vector, damageType)
+        end
+    end,   
+    
+    OnScriptBitSet = function(self, bit)
+        CLandFactoryUnit.OnScriptBitSet(self, bit)
+        if bit == 7 then
+            if self.AttachedUnit then
+                self.AttachedUnit:Destroy() 
+            end 
+            self:SetScriptBit('RULEUTC_SpecialToggle',false) 
+            IssueClearCommands({self})
+        end
+    end,
+    
+    UpgradingState = State(CLandFactoryUnit.UpgradingState) {
+        Main = function(self)
+            CLandFactoryUnit.UpgradingState.Main(self)
+        end,
+        
+        OnStopBuild = function(self, unitBuilding)
+            if unitBuilding:GetFractionComplete() == 1 then
+                if self.AttachedUnit then
+                    self.AttachedUnit:Destroy() 
+                end
+            end
+            CLandFactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding) 
+                --unitBuilding.Info.ents = self.Info.ents
+                --unitBuilding:BoneCalculation()  
+        end,
+    }
+}
+
 
 CardinalWallScript = Class(CLandFactoryUnit) {        
     BuildAttachBone = 'WallNode',    

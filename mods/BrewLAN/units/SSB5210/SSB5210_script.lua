@@ -3,9 +3,10 @@
 #**  Cybran Wall: With cordinal scripting
 #** 
 #****************************************************************************
+local SWallStructureUnit = import('/lua/seraphimunits.lua').SWallStructureUnit
+local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+SWallStructureUnit = CardinalWallUnit( SWallStructureUnit )
 
-local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript
-
-SSB5210 = Class(CardinalWallScript) {}
+SSB5210 = Class(SWallStructureUnit) {}
 
 TypeClass = SSB5210

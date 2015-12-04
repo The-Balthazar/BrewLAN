@@ -1,11 +1,12 @@
 #****************************************************************************
 #** 
-#**  Cybran Wall: With cordinal scripting
+#**  UEF Wall: With cordinal scripting
 #** 
 #****************************************************************************
+local TWallStructureUnit = import('/lua/terranunits.lua').TWallStructureUnit
+local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+TWallStructureUnit = CardinalWallUnit( TWallStructureUnit ) 
 
-local CardinalWallScript = import('/mods/brewlan/lua/defaultunits.lua').CardinalWallScript
-
-SEB5210 = Class(CardinalWallScript) {}
+SEB5210 = Class(TWallStructureUnit) {}
 
 TypeClass = SEB5210
