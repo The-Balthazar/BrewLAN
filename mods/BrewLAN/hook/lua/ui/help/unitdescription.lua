@@ -76,6 +76,7 @@ Description['urb4207'] = "<LOC Unit_Description_BrewLAN_T2D003>Generates a heavy
 Description['srl0209'] = "<LOC Unit_Description_BrewLAN_T2L001>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Armed with a heavy bolter, internal radar, and stealth."
 Description['sal0209'] = "<LOC Unit_Description_BrewLAN_T2L002>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. Equipped a personal shield and radar."
 Description['ssl0219'] = "<LOC Unit_Description_BrewLAN_T2L003>Tech 2 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
+Description['ssl0222'] = "<LOC Unit_Description_BrewLAN_T2L004>Mobile shield generator."
 
 --Tech 2 aircraft
 Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Mid-level tactical bomber. Equipped with a light Quark bomb and radar."

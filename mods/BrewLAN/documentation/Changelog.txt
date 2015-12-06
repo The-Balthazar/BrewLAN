@@ -255,7 +255,17 @@ __________.__________
   __________
   2015-12-04
   
-  * Updated the gates with the new cardinal wall script, and updated the script to work better with them.                  
+  * Updated the gates with the new cardinal wall script, and updated the script to work better with them.
+  __________
+  2015-12-05
+  
+  * Added the Seraphim T2 mobile shield generator.
+  * Increased the shield health of the UEF T3 shield generator from 8000 to 8800.
+  * Added an unfinished Aeon T3 mobile shield generator.
+  __________
+  2015-12-06
+  
+  * Additional texture work for the Ivan.                       
 __________.__________
 2015-04-06|0.6.1
 

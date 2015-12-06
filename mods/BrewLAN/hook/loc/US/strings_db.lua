@@ -175,6 +175,9 @@ seb5210_name="General Destruction Impasse"
 srb5210_name="Bulkhead"
 Unit_Description_BrewLAN_T2B001="Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
 
+ssl0222_name="Athanne"
+Unit_Description_BrewLAN_T2L004="Mobile shield generator."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 -------------------------------------------------------------------------------- 
