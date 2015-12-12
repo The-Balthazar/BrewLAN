@@ -265,6 +265,10 @@ __________.__________
   __________
   2015-12-06
   
+  * Additional texture work for the Ivan.
+  __________
+  2015-12-12
+  
   * Additional texture work for the Ivan.                       
 __________.__________
 2015-04-06|0.6.1
