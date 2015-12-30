@@ -269,7 +269,11 @@ __________.__________
   __________
   2015-12-12
   
-  * Additional texture work for the Ivan.                       
+  * Additional texture work for the Ivan.
+  __________
+  2015-12-30
+  
+  * Paragon Game: Created new model for the Aeon Engineering station.                         
 __________.__________
 2015-04-06|0.6.1
 

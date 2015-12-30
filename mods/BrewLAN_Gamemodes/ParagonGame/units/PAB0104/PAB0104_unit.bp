@@ -84,7 +84,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
-            '<LOC ability_upgradable>Upgradeable',
+            --'<LOC ability_upgradable>Upgradeable',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -92,17 +92,17 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/ual0401/ual0401_albedo.dds',
-                    NormalsName = '/units/ual0401/ual0401_normalsts.dds',
-                    SpecularName = '/units/ual0401/ual0401_specteam.dds',
+                    AlbedoName = '/units/ual0105/ual0105_albedo.dds',
+                    NormalsName = '/units/ual0105/ual0105_normalsts.dds',
+                    SpecularName = '/units/ual0105/ual0105_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     Scrolling = true,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/ual0401/ual0401_lod1_albedo.dds',
-                    NormalsName = '/units/ual0401/ual0401_lod1_normalsts.dds',
-                    SpecularName = '/units/ual0401/ual0401_lod1_specteam.dds',
+                    AlbedoName = '/units/ual0105/ual0105_lod1_albedo.dds',
+                    NormalsName = '/units/ual0105/ual0105_lod1_normalsts.dds',
+                    SpecularName = '/units/ual0105/ual0105_lod1_specteam.dds',
                 },
             },
         },
@@ -125,16 +125,16 @@ UnitBlueprint {
                 Width = 6.4,
             },
         },
-        UniformScale = 0.05,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 2500,
         BuildCostMass = 500,
         BuildRate = 15,
         BuildTime = 900,
-        BuildableCategory = {
-            'pab0104',
-        },
+        --BuildableCategory = {
+        --    'pab0104',
+        --},
         MaxBuildDistance = 15,
         RebuildBonusIds = {
             'pab0104',
@@ -146,12 +146,12 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Head_Muzzle',
+            --AimBone = 'Head_Muzzle',
             BuildEffectBones = {
-                'Head_Muzzle',
+                0,
             },
-            PitchBone = 'Head',
-            YawBone = 'Head',
+            --PitchBone = 'Head',
+            --YawBone = 'Head',
         },
 
         Category = 'Construction',
@@ -220,11 +220,11 @@ UnitBlueprint {
         SkirtSizeZ = 2,
         TurnRate = 0,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
-    SelectionCenterOffsetX = .2,
-    SelectionCenterOffsetZ = -.1,
-    SelectionThickness = 0.4,
+    SelectionSizeX = .6,
+    SelectionSizeZ = .6,
+    --SelectionCenterOffsetX = .2,
+    --SelectionCenterOffsetZ = -.1,
+    SelectionThickness = 1,
     SizeX = 1.2,
     SizeY = 1.6,
     SizeZ = 1.2,
