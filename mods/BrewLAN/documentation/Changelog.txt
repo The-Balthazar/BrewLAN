@@ -10,6 +10,10 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2016-01-05|0.7.5
+
+* Removed the Iyadesu related wreckage prop changes, which due to script changes in the Iyadesu actually did nothing but cause FAF conflicts. 
+__________.__________
 2015-09-05|0.7
 
 * Fixed the third arm and thread accumalation of the Darkness.
@@ -273,7 +277,7 @@ __________.__________
   __________
   2015-12-30
   
-  * Paragon Game: Created new model for the Aeon Engineering station.                         
+  * Paragon Game: Created new model for the Aeon Engineering station.
 __________.__________
 2015-04-06|0.6.1
 
