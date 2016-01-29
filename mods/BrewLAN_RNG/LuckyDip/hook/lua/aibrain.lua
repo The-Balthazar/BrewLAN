@@ -64,6 +64,11 @@ AIBrain = Class(AIBrain) {
                 'brlk001',
                 'srl0320',
             },
+            -- Aeon T3 tank
+            {
+                'bal0310',
+                'sal0311',
+            },
             --[[
             {
                 '',

@@ -1,5 +1,5 @@
 name = "BrewLAN"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000070"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N000075"
 version = 0.75
 copyright = "© 2009 - 2015 Sean Wheeldon"
 description = "Version 0.7.5. Adds a large number of units and changes a number of existing units."
@@ -56,7 +56,7 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N000058", --0.5.8    beta (short lived) 
     "25D57D85-7D84-27HT-A501-BR3WL4N0000581",--0.5.8.1  beta 
     "25D57D85-7D84-27HT-A501-BR3WL4N000060", --0.6  git beta
-    "25D57D85-7D84-27HT-A501-BR3WL4N000075", --0.7
+    "25D57D85-7D84-27HT-A501-BR3WL4N000070", --0.7
 }
 before = {  }
 after = {  }

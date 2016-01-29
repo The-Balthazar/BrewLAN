@@ -16,15 +16,12 @@ SEB3404 = Class(TStructureUnit) {
     OnStopBeingBuilt = function(self)
         TStructureUnit.OnStopBeingBuilt(self)
         self.PanopticonUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
-        self.VisualMarkersBag = {}
         self:SetScriptBit('RULEUTC_WeaponToggle', true)
         self:ForkThread(
             function()
                 while true do 
                     if self.Intel == true then
                         self:IntelSearch()
-                    else
-                        self:IntelKill()
                     end      
                     WaitSeconds(1)
                 end
@@ -35,7 +32,6 @@ SEB3404 = Class(TStructureUnit) {
     IntelSearch = function(self)
         local aiBrain = self:GetAIBrain()
         local maxrange = self:GetBlueprint().Intel.SpyRadius or 8000
-        local VisualMarkersBag = {}
         -- Populate LocalDarkness with the an entity array of Darknesses.
         local LocalDarkness = self:FindAllUnits( categories.srb4402, maxrange + __blueprints['srb4402'].Intel.RadarStealthFieldRadius)
         -- Find visible things to attach vis entities to
@@ -88,6 +84,7 @@ SEB3404 = Class(TStructureUnit) {
                 if i == 1 then
                     NewUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy  
                 end   
+                
                 break 
             else
                 NewUpkeep = NewUpkeep + cost
@@ -114,12 +111,6 @@ SEB3404 = Class(TStructureUnit) {
         }
         local visentity = VizMarker(spec)
         visentity:AttachTo(unit, -1)
-        if not unit.PanopticonMarker then
-            unit.PanopticonMarker = {}
-        end
-        unit.PanopticonMarker[self:GetArmy()] = visentity
-        unit.Trash:Add(visentity)
-        table.insert(self.VisualMarkersBag, {visentity,unit} )
     end,
     
     FindAllUnits = function(self, category, range, cloakcheck)
@@ -142,7 +133,6 @@ SEB3404 = Class(TStructureUnit) {
         TStructureUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
             self.ActiveConsumptionRestriction = false
-            LOG(false)
         end
     end,
        
@@ -150,21 +140,10 @@ SEB3404 = Class(TStructureUnit) {
     OnScriptBitClear = function(self, bit)
         TStructureUnit.OnScriptBitClear(self, bit)
         if bit == 1 then
-            self.ActiveConsumptionRestriction = true 
-            LOG(true)
+            self.ActiveConsumptionRestriction = true
         end
     end,
     
-    IntelKill = function(self)
-        for i, v in self.VisualMarkersBag do
-            v[1]:Destroy()
-            v[2].PanopticonMarker[self:GetArmy()] = nil
-            v = nil
-        end
-        self.PanopticonUpkeep = math.min(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy, self.PanopticonUpkeep)
-        self:SetEnergyMaintenanceConsumptionOverride(self.PanopticonUpkeep)  
-    end,
-
     OnIntelDisabled = function(self)
         TStructureUnit.OnIntelDisabled(self)
         self.Intel = false 
@@ -181,7 +160,6 @@ SEB3404 = Class(TStructureUnit) {
     
     OnDestroy = function(self)
         TStructureUnit.OnDestroy(self)
-        self:IntelKill()
     end,
     
     OnCaptured = function(self, captor) 

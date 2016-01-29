@@ -32,7 +32,6 @@ Most issues are caused by incorrect installation, if done correctly the followin
 Created by Sean Wheeldon (Balthazar/Balthassar)
 
 ### Beta testers
-
 - Jonathan "Bilmon" Butler
 - Adam "Outy" Butler
 - Christopher "Burning Star IV" Hicks
@@ -46,8 +45,11 @@ Created by Sean Wheeldon (Balthazar/Balthassar)
 - Blackrobe
 - Scoobie
 - Ajay "theonewhonevergivesa" – Russian localisation   
-
+- Saxxonknight
+- 
 ### Additional
-
 - asdrubaelvect29 – French localisation
 - Marc "Explo" Tassetti – French localisation
+
+### Donators
+- Saxxonknight
