@@ -32,10 +32,18 @@ function CostVariance(all_bps)
                 bp.Defense.MaxHealth = math.ceil((bp.Defense.MaxHealth or 0) * rand2) 
             end
             if bp.Defense.Shield.ShieldMaxHealth then
-                bp.Defense.Shield.ShieldMaxHealth = math.ceil((bp.Defense.Shield.ShieldMaxHealth or 0) * rand2)            
+                bp.Defense.Shield.ShieldMaxHealth = math.ceil((bp.Defense.Shield.ShieldMaxHealth or 0) * rand2)
+                if bp.Defense.Shield.ShieldSize and bp.Defense.Shield.ShieldSize > 4 then
+                    local offset = bp.Defense.Shield.ShieldSize - ((bp.Defense.Shield.ShieldSize or 0) * ((rand2 + 4) / 5))
+                    bp.Defense.Shield.ShieldSize = (bp.Defense.Shield.ShieldSize or 0) * ((rand2 + 4) / 5)
+                    bp.Defense.Shield.ShieldVerticalOffset = (bp.Defense.Shield.ShieldVerticalOffset or 0) + offset 
+                end         
             end
             if bp.Physics.MaxSpeed then
-                bp.Physics.MaxSpeed = (bp.Physics.MaxSpeed or 0) * rand1
+                bp.Physics.MaxSpeed = (bp.Physics.MaxSpeed or 0) * rand3
+            end
+            if bp.Economy.BuildRate then
+                bp.Economy.BuildRate = math.ceil((bp.Economy.BuildRate or 0) * rand3) 
             end
             if bp.Weapon then
                 for i, weapon in bp.Weapon do

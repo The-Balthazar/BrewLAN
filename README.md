@@ -44,9 +44,9 @@ Created by Sean Wheeldon (Balthazar/Balthassar)
 - ww.dk
 - Blackrobe
 - Scoobie
-- Ajay "theonewhonevergivesa" – Russian localisation   
+- Ajay "theonewhonevergivesa" – Russian localisation
 - Saxxonknight
-- 
+
 ### Additional
 - asdrubaelvect29 – French localisation
 - Marc "Explo" Tassetti – French localisation

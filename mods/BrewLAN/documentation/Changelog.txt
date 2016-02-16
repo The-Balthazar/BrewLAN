@@ -17,11 +17,16 @@ __________.__________
   2016-01-25
   
   * LuckyDip: Added the Moldovite & Wraith to the selections.
-  
   __________
   2016-01-29
   
-  * Removed the entity tracking tables from the Panopticon, and the vis entity removal scripts.    
+  * Removed the entity tracking tables from the Panopticon, and the vis entity removal scripts.
+  __________
+  2016-02-15
+  
+  * Cost Variance: Build rate now altered by the combined random of mass and energy.
+  * Cost Variance: Movement speed now altered by the combined random instead of just energy.
+  * Cost Variance: Shield size is now altered by 20% of the engergy random. Shield vertical offset altered to maintain the location of the top of the shield. If my tired maths is correct.           
 __________.__________
 2015-09-05|0.7
 
