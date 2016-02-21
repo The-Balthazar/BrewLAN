@@ -65,6 +65,8 @@ do
             "seb1311",
             "seb1312",
             "seb1313",
+            "xeb0204",
+            "xrb0304",
         },
         SALVAMAVOSCATH = {
             "srb2401", --Scathis MK II
@@ -79,16 +81,24 @@ do
         --Checks the table exists, for the sake of FAF restrictions
         if restrictedUnits[k] then
             for i in v do  
-                --Checks the unit exists, just in case
-                if categories[v[i]] then
+                --Checks the unit exists, just in case and the new FaF restriction check
+                if categories[v[i]] and restrictedUnits[k].categories then
                     table.insert(restrictedUnits[k].categories, v[i])
+                --Are we FaF?
+                elseif categories[v[i]] and restrictedUnits[k].categoryExpression then
+                    restrictedUnits[k].categoryExpression = restrictedUnits[k].categoryExpression .. " + " .. v[i] 
                 end
             end
         end
     end
     --Fixes the console exclusive UEF artillery shield breaking the non-bubbles restriction 
-    if not categories.deb4303 then
+    if not categories.deb4303 and restrictedUnits.BUBBLES.categories then
         table.removeByValue(restrictedUnits.BUBBLES.categories, "deb4303")
     end
-    table.removeByValue(restrictedUnits.NUKE.categories, "xss0302")
+    if restrictedUnits.NUKE.categories then
+        table.removeByValue(restrictedUnits.NUKE.categories, "xss0302")
+    --Are we FaF?
+    elseif restrictedUnits.NUKE.categoryExpression then
+        restrictedUnits.NUKE.categoryExpression = string.gsub(restrictedUnits.NUKE.categoryExpression, " + xss0302", "")
+    end
 end

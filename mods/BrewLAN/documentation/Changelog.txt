@@ -26,7 +26,12 @@ __________.__________
   
   * Cost Variance: Build rate now altered by the combined random of mass and energy.
   * Cost Variance: Movement speed now altered by the combined random instead of just energy.
-  * Cost Variance: Shield size is now altered by 20% of the engergy random. Shield vertical offset altered to maintain the location of the top of the shield. If my tired maths is correct.           
+  * Cost Variance: Shield size is now altered by 20% of the engergy random. Shield vertical offset altered to maintain the location of the top of the shield. If my tired maths is correct.
+  __________
+  2016-02-21
+  
+  * Restricted units data update for FaF.
+  * Added the UEF and Cybran T3 engineering stations to the FaF engineering stations restriction.s               
 __________.__________
 2015-09-05|0.7
 
