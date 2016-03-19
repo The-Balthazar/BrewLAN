@@ -89,9 +89,9 @@ UnitBlueprint {
         'ALLUNITS',
     },
     Economy = {
-        BuildCostEnergy = 135000,
-        BuildCostMass = 1200,
-        BuildTime = 600,
+        BuildCostEnergy = 135000*3,
+        BuildCostMass = 1200*1.5,
+        BuildTime = 600*2,
         RebuildBonusIds = {
             'seb2220',
             'seb2221',
