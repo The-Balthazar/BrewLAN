@@ -36,7 +36,13 @@ __________.__________
   2016-03-19
   
   * Increased the costs of the nuke mines. Energy x3, Mass x1.5, Time x2.
-  * TeaD: Changed the anti-blocking script of the creeps from an instant wall destroy to a wall DoT.                   
+  * TeaD: Changed the anti-blocking script of the creeps from an instant wall destroy to a wall DoT.
+  __________
+  2016-03-26
+  
+  * Corrected a typo in the heavy wall description.
+  * MightyBlueDuck: Updated German translations for BrewLAN.
+  * Disabled the Aeon T3 shield generator, pending real model.                        
 __________.__________
 2015-09-05|0.7
 

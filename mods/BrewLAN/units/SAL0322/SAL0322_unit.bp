@@ -40,7 +40,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        'BUILTBYTIER3FACTORY',
+        --'BUILTBYTIER3FACTORY',
         'AEON',
         'MOBILE',
         'LAND',

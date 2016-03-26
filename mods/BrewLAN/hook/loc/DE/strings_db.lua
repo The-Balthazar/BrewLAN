@@ -1,7 +1,7 @@
 --+------------+--+-------------------------------------------------------------  
 --¦████████████¦--¦   BrewLAN German strings table
 --¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Author: Balthassar
---¦░░░░░░░░░░░░¦--¦   Translator: 106.Bluebird
+--¦░░░░░░░░░░░░¦--¦   Translator: MightyBlueDuck
 --+------------+--+-------------------------------------------------------------
 
 
@@ -30,7 +30,7 @@ tooltipbrewlan0010="Entfernt alle Gebäude und/oder Rückstände von der Bauflä
 
 --Tooltops for the Seraphim spy facility
 tooltipbrewlan0011="Scry"
-tooltipbrewlan0012="Wähle eine Einheit die spioniert werden soll"
+tooltipbrewlan0012="Wähle eine Einheit die ausspioniert werden soll"
       
 --Tooltips for the open/closeable kind of gate.      
 tooltipbrewlan0013="Öffnen/Schließen"
@@ -41,6 +41,36 @@ tooltipbrewlan0015="Automatisch öffnen aktiviert."
 tooltipbrewlan0016="Störungspuls umschalten"
 tooltipbrewlan0017="Schalte den Störungspuls an oder aus."
 
+--Tooltips for the Rez/reclaim command.                    
+tooltipbrewlan0018="Wiederbeleben/Zurückgewinnen (E)"
+tooltipbrewlan0019="Entfernt Wrack und belebt Einheit oder gewinnt eine lebende Einheit zurück."
+
+--Tooltips for the Stargate      
+tooltipbrewlan0020="Tor anwählen"
+tooltipbrewlan0021="Wählt ein Quantum Tor an um eine Einbahn Transportverbindung aufzubauen." 
+tooltipbrewlan0022="Aktiviert oder deaktiviert das Schild um An- und abreise am Tor zu verhindern."
+tooltipbrewlan0023="Verbindung abbrechen."
+tooltipbrewlan0024="Trennt eine ausgehende Verbindung."
+
+--Tooltips for the Ivan
+tooltipbrewlan0025="Befehlswiederholung Ein- /Ausschalten"
+tooltipbrewlan0026="Wenn Befehlswiederholung aktiviert ist, werden sobald der Abschuss abgeschlossen ist, die verschossenen Einheiten erneut gebaut und abgefeuert, wenn eine Angriffsschleife gesetzt wurde."
+tooltipbrewlan0027="Wiederhole Angriff"
+tooltipbrewlan0028="Beginnt eine wiederholende Angriffsschleife auf die Zielposition oder aktualisiert diese."
+floatingtextIVAN01="Wiederholung aktiviert"
+floatingtextIVAN02="Wiederholung deaktiviert"
+
+--Tooltips for the Panopticon
+tooltipbrewlan0029="Wirtschaftliche Beobachtung Ein- /Ausschalten"
+tooltipbrewlan0030="Wenn aktiviert wird der Spionageradius dynamisch an ein wirtschaftlich aufrechterhaltbares Level angepasst."
+
+--------------------------------------------------------------------------------
+-- Support commander enchancements 
+-------------------------------------------------------------------------------- 
+
+Unit_Description_BrewLAN_E001="Erweitert die defensiven Baufähigkeiten der SACU."
+brewlan_enhancements_1="Gefechtstechnikerausrüstung"
+brewlan_enhancements_2="Entferne Gefechtstechnikerausrüstung"
 --------------------------------------------------------------------------------
 -- Tech 1
 -------------------------------------------------------------------------------- 
@@ -137,12 +167,16 @@ ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="Eine nukleare Annäherungsmine für jedes Terrain. Getarnt. Vorsicht bei der Benutzung."
 
 --Cybran T2 shields; they didn't have build description originally.
-Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann dreimal Aufgerüstet werden."
+Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann zweimal Aufgerüstet werden."
 Unit_Description_BrewLAN_T2D003="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
   
-seb5210_desc="Schwere Mauer Abschnitt"
+sbui5210="Schwerer Mauern Abschnitt"
 seb5210_name="Zerstörende Sackgasse"
-Unit_Description_BrewLAN_T3B0019="Bremst den Vorstoß des Feindes. Kann extreme Mengen an Schaden abfangen."
+srb5210_name="Panzerdamm"
+Unit_Description_BrewLAN_T3B0019="Bremst den Vorstoß des Feindes. Kann extremem Mengen an Schaden standhalten. Verbindet sich automatisch mit angrenzenden Mauerabschnitten."
+
+ssl0222_name="Athanne"
+Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
   
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -160,7 +194,7 @@ Unit_Description_BrewLAN_T3A002="Schwerer Lufttransporter. Bewaffnet mit schwere
 Unit_Description_BrewLAN_T3A003="Schwerer Lufttransporter. Bietet 32 Transporthaken, schwere Kanonen, Raketenwerfer und einen Schildgenerator. Kann bis zu 32 Einheiten transportieren."
 Unit_Description_BrewLAN_T3A004="Schwerer Lufttransporter. Kann bis zu 72 Einheiten transportieren."
 
-sair0307="Schweres Torpedobomber"
+sair0307="Schwerer Torpedobomber"
 sra0307_name="Zenith"
 sea0307_name="Albatross"
 ssa0307_name="Souioz"
@@ -184,7 +218,7 @@ Unit_Description_BrewLAN_T3L002="Belagerungspanzer mit niedriger Feuerrate. Als 
 
 ssl0311_desc="Schwerer Angriffsbot"
 ssl0311_name="Ilshatha"
-Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit mächtigen Waffen und einem Schildgenerator."
+Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit Dual Aire-au Boltern und einem Schildgenerator."
 
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
@@ -234,7 +268,7 @@ Unit_Description_BrewLAN_T3L006="Tech 3 amphibische Bau- , Reparatur- , Übernah
 Unit_Description_BrewLAN_T3L007="Tech 3 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit einem persönlichen Schild ausgestattet. Kann spezial Verteidigung bauen"
       
 srb1311_desc="Tarnbarer Energie Generator"
-seb1311_desc="Techniker Energie Generator"
+seb1311_desc="Technischer Energie Generator"
 sab1311_desc="Geschildeter Energie Generator"
 ssb1311_desc="Gepanzerter Energie Generator"
 sab1311_name="Von Mayer Reaktor"
@@ -247,7 +281,7 @@ Unit_Description_BrewLAN_T3B0014="Großes, Energie erzeugendes Gebäude. Besitzt
 Unit_Description_BrewLAN_T3B0016="Großes, Energie erzeugendes Gebäude. Besitzt überlegene Panzerung und regenerative Kräfte." 
 
 sab1312_desc="Geschildeter Masse Extraktor"
-seb1312_desc="Techniker Masse Extraktor"
+seb1312_desc="Technischer Masse Extraktor"
 srb1312_desc="Tarnbarer Masse Extraktor"
 ssb1312_desc="Gepanzerter Masse Extraktor"
 seb1312_name="Masse Pumpe 3E" 
@@ -257,7 +291,7 @@ Unit_Description_BrewLAN_T3B0023="High-end Masse extraktor. Muss auf Massevorkom
 Unit_Description_BrewLAN_T3B0024="High-end Masse extraktor. Muss auf Massevorkommen plaziert werden. Besitzt überlegene Panzerung und regenerative Kräfte."
   
 srb1313_desc="Tarnbarer Masse Fabrikator" 
-seb1313_desc="Techniker Masse Fabrikator"  
+seb1313_desc="Technischer Masse Fabrikator"  
 sab1313_desc="Geschildeter Masse Fabrikator" 
 ssb1313_desc="Gepanzerter Masse Fabrikator"
 Unit_Description_BrewLAN_T3B0010="Großes, Masse erzeugendes Gebäude. Besitzt die Fähigkeit sich zu tarnen, welche zusätzliche Energie verbraucht." 
@@ -269,25 +303,49 @@ srb4313_desc="Tarnbarer Tarnfeldgenerator"
 srb4313_name="Nightshade" 
 Unit_Description_BrewLAN_T3B0011="Erzeugt ein Tarnfeld. Versteckt Einheiten und Gebäude vor Radar und Sonar aufklärung. Getarnt." 
 
-ssb5301_desc="Schild Mauer Segment"
+ssb5301_desc="Schild Mauer"
 ssb5301_name="Athahaas"
+sab5301_name="Aegis"
 Unit_Description_BrewLAN_T3B0018="Verlangsamt den Vorstoß des Feindes. Erzeugt ein kleines Schild um zusätzlichen Schutz vor feindlichem Feuer zu bieten."
         
-srb5310_desc="Gepanzerte Mauer Segment"
+srb5310_desc="Gepanzerte Mauer"
 srb5310_name="Procyon Defiance"
 seb5310_name="Citadel"
 Unit_Description_BrewLAN_T3B0019="Verlangsamt den Vorstoß des Feindes. Hält extrem starkem Beschuss stand."
 
-srb5311_desc="Gepanzertes Tor Segment"        
+srb5311_desc="Gepanzertes Tor"        
 srb5311_name="Procyon Offering"
+seb5311_name="Harrow"
 Unit_Description_BrewLAN_T3B0020="Manuell kontrolliertes Tor; erlaubt Passage und hält starkem Beschuss stand."
 
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Schwerer Torpedo feuernder Verteidigungsturm. Kann an Land oder am Meeresboden gebaut werden."
+sab2308_name="Flash Flood"
+Unit_Desciption_BrewLAN_T§B0027="Superschweres langstrecken Anti-Marine Verteidigungssystem. Konzipiert um die mächtigsten Marineeinheiten zu bekämpfen."
 
 ssb3301_desc="Optik-Tracking Einrichtung"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Enthüllt das Sichtfeld einer feindlichen oder verbündeten Einheit. Kann nur auf Einheiten oder Radarsignaturen angewandt werden."
+
+--Mobile Shield Generator
+sel0322_name="Ella"
+--Short and long descriptions both the same as default. 
+
+srl0320_desc="Mobile Missile Launcher"
+srl0320_name="Slink"
+Unit_Description_BrewLAN_T3L009="Mobile und getarnte Racketenplattform. Kann Land-, Luft- und Marineeinheiten angreifen, muss sich aber enttarnen um zu feuern."
+
+seb4303_name="Recoil"
+Unit_Description_BrewLAN_T3B0028="Stationäres Artillerie Abwehrsystem. Ausgestattet mit integriertem Gefahrenidentifikations- und tracking System."
+
+srl0316_desc="Tarnbares Mobiles Tarnfeldsystem"
+srl0316_name="Operative"
+Unit_Description_BrewLAN_T3L010="Mobiler getarnter Tarnfeldgenerator. Verdeckt nahegelegene Einheiten für Radar und Sonar. Nur Sichtbar für Omnisensoren."
+
+
+ss0319_desc="Field Engineering Ship"
+ses0319_name="Patch Class"
+Unit_Description_BrewLAN_T3S002="TEch 3 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestatted mit einem Torpedowerfer, Torpedoabwehr und einer Luftabwehrkanone."
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -303,6 +361,7 @@ Unit_Description_BrewLAN_T4A001="Experimentelles Kanonenboot mit beträchtlicher
 
 srb2401_desc="Experimentelle Artilleriestellung"
 srb2401_name="Scathis Mark II"
+ssb2404_name="Suthanus"
 Unit_Description_BrewLAN_T4B002="Experimentelle Schnellfeuer-Artillerie. Verbraucht große Mengen an Energie mit jedem Schuss."
 
 srb4401="Experimenteller Schildgenerator"
@@ -310,7 +369,7 @@ srb4401_name="Iron Curtain"
 Unit_Description_BrewLAN_T4B003="Experimenteller Schildgenerator. Schützt ein großes Gebiet."
 
 srs0401="Experimentelles Schlachtschiff"
-srs0401_name="Hell Prosecutor"
+srs0401_name="Abyssal Prosecutor"
 Unit_Description_BrewLAN_T4S001="Experimentelles amphibisches Schlachtschiff."
 
 seb0401="Experimentelle Fabrik"
@@ -328,3 +387,13 @@ Unit_Description_BrewLAN_T4B005="Exerimentelle schnellfeuer Artillerie. Feuert L
 srb4402_desc="Experimentelle Omni-Störungs Einrichtung"
 srb4402_name="Darkness"
 Unit_Description_BrewLAN_T4B006="Experimentelle Gegenspionage Einrichtung. Erzeugt einen Puls der allmählich die Reichweite von Omnisensoren reduziert. Weiter entfernte Sensoren werden langsamer beeinflusst."
+
+ssb5401_desc="Exterimentelles Quantum Tor"
+ssb5401_name="Chappa'ai"
+Unit_Description_BrewLAN_T4B007="Experimentelles Quantum Tore. Dazu fähig Einheiten augenblicklich zu jedem anderen Tor auf dem Schlachtfeld zu teleportieren."
+
+srl0001_desc="Krabben Ei (Zerstörer)"
+
+seb3404_desc="Experimentelle Sensor Matrix"
+seb3404_name="Panopticon"
+Unit_Description_BrewLAN_T4B008="Experimentelle Sensor Matrix. Gibt Sichtfeld für für jede gegnerische Einheit in Radarreichweite. Unterhalt steigt für jede ausspionierte Einheit in Reichweite. Mobile und teure Einheiten erzeugen einen höheren Unterhalt. Getarnte Einheiten, ACUs und Einheiten in der nähe eines " .. srb4402_name .. " können nicht ausspioniert werden."

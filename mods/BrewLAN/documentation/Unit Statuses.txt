@@ -290,7 +290,6 @@ Tech 3:
         
   	Pending:
   		* T3 Anti Shield.
-        * Exists, but disabled. May stay Aeon only.
       * T3 Field Engineering Ship.                   
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -

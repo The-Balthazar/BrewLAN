@@ -1,12 +1,6 @@
---****************************************************************************
---**
---**  File     :  /cdimage/units/XEB2402/XEB2402_script.lua
---**  Author(s):  Dru Staltman
---**
---**  Summary  :  UEF Sub Orbital Laser
---**
---**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
---****************************************************************************
+--------------------------------------------------------------------------------
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 local AIUtils = import('/lua/ai/aiutilities.lua')
