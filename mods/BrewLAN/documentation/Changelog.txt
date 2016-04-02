@@ -46,7 +46,8 @@ __________.__________
   __________
   2016-04-02
   
-  * Ivan drop pods now deal damage equal to mass value to shields, and leave a wreckage of the unit when it does.                          
+  * Ivan drop pods now deal damage equal to mass value to shields, and leave a wreckage of the unit when it does.
+  * German fix from SchwererKreuzer.                            
 __________.__________
 2015-09-05|0.7
 

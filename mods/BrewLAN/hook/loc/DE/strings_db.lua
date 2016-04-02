@@ -70,7 +70,8 @@ tooltipbrewlan0030="Wenn aktiviert wird der Spionageradius dynamisch an ein wirt
 
 Unit_Description_BrewLAN_E001="Erweitert die defensiven Baufähigkeiten der SACU."
 brewlan_enhancements_1="Gefechtstechnikerausrüstung"
-brewlan_enhancements_2="Entferne Gefechtstechnikerausrüstung"
+brewlan_enhancements_2="Entferne Gefechtstechnikerausrüstung"  
+
 --------------------------------------------------------------------------------
 -- Tech 1
 -------------------------------------------------------------------------------- 
@@ -109,7 +110,7 @@ ssb5104_name="Iathu-uhthe"
 sab5104_name="Pedestal"
 seb5104_name="Resupply"
 srb5104_name="Ravitailler"
-Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Rerpariert und Betankt kleine Flugzeuge, ein Landeplatz"
+Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Repariert und Betankt kleine Flugzeuge, ein Landeplatz"
 
 --Field engineers
 sel0119_name="Wally"    
@@ -127,7 +128,6 @@ Unit_Description_BrewLAN_T1L003="Tech 1 amphibische Bau- , Reparatur- , Übernah
 saa0211_name="Impaler"
 saa0211_desc="Taktischer Bomber"
 Unit_Description_BrewLAN_T2A001="Mittlerer taktischer Bomber. Ausgestattet mit einer leichten strategischen Bombe und Radar"
-
 
 --Field Engineer
 sal0209_desc="Defensiv Techniker"
@@ -321,7 +321,7 @@ Unit_Description_BrewLAN_T3B0020="Manuell kontrolliertes Tor; erlaubt Passage un
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Schwerer Torpedo feuernder Verteidigungsturm. Kann an Land oder am Meeresboden gebaut werden."
 sab2308_name="Flash Flood"
-Unit_Desciption_BrewLAN_T§B0027="Superschweres langstrecken Anti-Marine Verteidigungssystem. Konzipiert um die mächtigsten Marineeinheiten zu bekämpfen."
+Unit_Desciption_BrewLAN_T3B0027="Superschweres langstrecken Anti-Marine Verteidigungssystem. Konzipiert um die mächtigsten Marineeinheiten zu bekämpfen."
 
 ssb3301_desc="Optik-Tracking Einrichtung"
 ssb3301_name="Aezselen"
