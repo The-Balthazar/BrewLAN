@@ -42,7 +42,11 @@ __________.__________
   
   * Corrected a typo in the heavy wall description.
   * MightyBlueDuck: Updated German translations for BrewLAN.
-  * Disabled the Aeon T3 shield generator, pending real model.                        
+  * Disabled the Aeon T3 shield generator, pending real model.
+  __________
+  2016-04-02
+  
+  * Ivan drop pods now deal damage equal to mass value to shields, and leave a wreckage of the unit when it does.                          
 __________.__________
 2015-09-05|0.7
 
