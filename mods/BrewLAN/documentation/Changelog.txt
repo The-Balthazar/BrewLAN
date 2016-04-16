@@ -47,7 +47,11 @@ __________.__________
   2016-04-02
   
   * Ivan drop pods now deal damage equal to mass value to shields, and leave a wreckage of the unit when it does.
-  * German fix from SchwererKreuzer.                            
+  * German fix from SchwererKreuzer.
+  __________
+  2016-04-16
+  
+  * Did additional texture work for the Ivan.                             
 __________.__________
 2015-09-05|0.7
 

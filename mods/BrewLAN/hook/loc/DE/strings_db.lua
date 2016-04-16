@@ -374,7 +374,7 @@ Unit_Description_BrewLAN_T4S001="Experimentelles amphibisches Schlachtschiff."
 
 seb0401="Experimentelle Fabrik"
 seb0401_name="Gantry"
-Unit_Description_BrewLAN_T4B004="Experimentelle multi-funktions Fabrik. Ändert abhängig von der Umgebung dynamisch die produzierbaren Einheiten . Kann Lufteinheiten in jeder Umgebung bauen."
+Unit_Description_BrewLAN_T4B004="Experimentelle multi-funktions Fabrik. Ändert abhängig von der Umgebung dynamisch die produzierbaren Einheiten. Kann Lufteinheiten in jeder Umgebung bauen."
 
 sal0401="Experimenteller Belagerungspanzer"
 sal0401_name="Absolution"
