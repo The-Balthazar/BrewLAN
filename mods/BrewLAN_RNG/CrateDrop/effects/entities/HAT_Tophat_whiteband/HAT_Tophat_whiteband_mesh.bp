@@ -1,7 +1,7 @@
 MeshBlueprint {
     LODs = {
         {
-            MeshName = '/mods/CrateDrop/effects/entities/HAT_Tophat/HAT_Tophat_lod0.scm',
+            MeshName = '/mods/BrewLAN_RNG/CrateDrop/effects/entities/HAT_Tophat/HAT_Tophat_lod0.scm',
             --AlbedoName = 'CRATE_Dodecahedron_Albedo.dds',
             --SpecularName = 'CRATE_Dodecahedron_Specteam.dds',
             --NormalsName = 'CRATE_Dodecahedron_normalsts.dds',
