@@ -1,48 +1,38 @@
 local UnitOld = Unit
 
 Unit = Class(UnitOld) {
-    OnStartBuild = function(self, unitBeingBuilt, order)
-        local bp = self:GetBlueprint()
-        if bp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == bp.General.UpgradesTo and order == 'Upgrade' then
-            if not bp.General.CommandCaps.RULEUCC_Stop then
+    OnStartBuild = function(self, unitBeingBuilt, order, ...)
+        local myBp = self:GetBlueprint()
+        if myBp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == myBp.General.UpgradesTo and order == 'Upgrade' then
+            if not myBp.General.CommandCaps.RULEUCC_Stop then
                 self:AddCommandCap('RULEUCC_Stop')
                 self.CouldntStop = true
             end
         end
-        --if order == 'Repair' and unitBeingBuilt.WreckMassMult then
-        --    self.Rezrepairing = true
-        --elseif self.Rezrepairing then      
-        --    self.Rezrepairing = false        
-        --end       
-        UnitOld.OnStartBuild(self, unitBeingBuilt, order)
+        return UnitOld.OnStartBuild(self, unitBeingBuilt, order, unpack(arg))
     end,
 
-    OnStopBuild = function(self, unitBeingBuilt)
+    OnStopBuild = function(self, unitBeingBuilt, ...)
         if self.CouldntStop then
             self:RemoveCommandCap('RULEUCC_Stop')
             self.CouldntStop = false
-        end                      
-        --if self.Rezrepairing then
-        --    unitBeingBuilt.WreckMassMult = 0.9 * unitBeingBuilt:GetHealthPercent()
-        --    LOG('Thing is: ',unitBeingBuilt.WreckMassMult)
-        --end           
-        UnitOld.OnStopBuild(self, unitBeingBuilt)
+        end             
+        return UnitOld.OnStopBuild(self, unitBeingBuilt, unpack(arg))
     end,
 
-    OnFailedToBuild = function(self)
+    OnFailedToBuild = function(self, ...)
         if self.CouldntStop then
             self:RemoveCommandCap('RULEUCC_Stop')
-            self.CouldntStop = false
+            self.CouldntStop = nil
         end       
-        UnitOld.OnFailedToBuild(self)
+        return UnitOld.OnFailedToBuild(self, unpack(arg))
     end,
     
-    OnDamage = function(self, instigator, amount, vector, damageType)
+    OnDamage = function(self, instigator, amount, vector, damageType, ...)
         if EntityCategoryContains(categories.BOMBER, self) and self:GetCurrentLayer() == 'Air' and damageType == 'NormalBomb' then
-            UnitOld.OnDamage(self, instigator, amount * 0.05 , vector, damageType)
+            UnitOld.OnDamage(self, instigator, amount * 0.05 , vector, damageType, unpack(arg))
         else
-            UnitOld.OnDamage(self, instigator, amount, vector, damageType)
+            UnitOld.OnDamage(self, instigator, amount, vector, damageType, unpack(arg))
         end
     end, 
 }
-
