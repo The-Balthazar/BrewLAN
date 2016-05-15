@@ -201,7 +201,6 @@ UnitBlueprint {
         },
         UnitName = '<LOC seb1312_name>Mass Pump 3E',
         UnitWeight = 1,
-        UpgradesFrom = 'ueb1302',
     },
     Intel = {
         VisionRadius = 20,

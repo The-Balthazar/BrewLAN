@@ -148,7 +148,6 @@ UnitBlueprint {
             RULEUTC_ProductionToggle = true,
         },
         UnitWeight = 1,
-        UpgradesFrom = 'uab1302',
     },
     Intel = {
         VisionRadius = 20,

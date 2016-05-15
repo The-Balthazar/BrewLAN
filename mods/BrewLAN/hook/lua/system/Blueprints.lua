@@ -357,24 +357,24 @@ function UpgradeableToBrewLAN(all_bps)
         end
     end
     local UpgradesFromBase = {
-        sab4102 = 'uab4301',--FromAeon T2 shield
-        xsb3102 = 'sss0305',--From Seraphim T2 sonar
-        urb1101 = 'srb1311',--To Cloakable Generator 
-        urb1102 = 'srb1312',--To Cloakable Extractor
-        urb1103 = 'srb1313',--To Cloakable Fabricator
-        ueb1101 = 'seb1311',--To engineering Generator
-        ueb1102 = 'seb1312',--To engineering Extractor
-        ueb1103 = 'seb1313',--To engineering Fabricator   
-        uab1101 = 'sab1311',--To shielded Generator
-        uab1102 = 'sab1312',--To shielded Extractor
-        uab1103 = 'sab1313',--To shielded Fabricator
-        xsb1101 = 'ssb1311',--To Armored Generator
-        xsb1102 = 'ssb1312',--To Armored Extractor
-        xsb1103 = 'ssb1313',--To Armored Fabricator
+        urb1103 = 'srb1312',--To Cloakable Extractor
+        ueb1103 = 'seb1312',--To engineering Extractor
+        uab1103 = 'sab1312',--To shielded Extractor
+        xsb1103 = 'ssb1312',--To Armored Extractor
     } 
-    for unitid, upgradeid in VanillasToUpgrade do
+    for unitid, upgradeid in UpgradesFromBase do
         if all_bps[upgradeid] then
-            all_bps[upgradeid].General.UpgradesFromBase = unitid
+            local nextID = upgradeid 
+            while true do
+                if nextID == unitid then break end
+                all_bps[nextID].General.UpgradesFromBase = unitid
+                LOG(all_bps[nextID].Description, unitid )
+                if all_bps[nextID].General.UpgradesFrom then 
+                    nextID = all_bps[nextID].General.UpgradesFrom
+                else
+                    break
+                end
+            end
         end
     end
 end
