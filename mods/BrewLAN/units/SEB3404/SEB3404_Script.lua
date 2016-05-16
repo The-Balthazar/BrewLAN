@@ -7,8 +7,8 @@ local AIUtils = import('/lua/ai/aiutilities.lua')
 
 SEB3404 = Class(TStructureUnit) {   
     
-    OnStopBeingBuilt = function(self)
-        TStructureUnit.OnStopBeingBuilt(self)
+    OnStopBeingBuilt = function(self, ...)
+        TStructureUnit.OnStopBeingBuilt(self, unpack(arg) )
         self.PanopticonUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
         self:SetScriptBit('RULEUTC_WeaponToggle', true)
         self:ForkThread(

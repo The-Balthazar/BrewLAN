@@ -19,9 +19,9 @@ SEL0319 = Class(TConstructionUnit) {
         },
     },
 
-    OnStopBeingBuilt = function(self)
+    OnStopBeingBuilt = function(self, ...)
         self:SetMaintenanceConsumptionActive()
-        TConstructionUnit.OnStopBeingBuilt(self)
+        TConstructionUnit.OnStopBeingBuilt(self, unpack(arg))
         --Rotate the antenna
         self.Rotator = CreateRotator(self, 'Antenna', 'y')
         self.Trash:Add(self.Rotator)
@@ -30,26 +30,34 @@ SEL0319 = Class(TConstructionUnit) {
         self.Rotator:SetAccel(20)
     end,
 
-    OnStartBuild = function(self, unitBeingBuilt, order)
-        --Disable the gun while building something
-        self:SetWeaponEnabledByLabel('Riotgun01', false)
+    OnStartBuild = function(self, unitBeingBuilt, order)   
+        if not ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
+            --Disable the gun while building something
+            self:SetWeaponEnabledByLabel('Riotgun01', false)
+        end
         TConstructionUnit.OnStartBuild(self, unitBeingBuilt, order)
     end,
     
-    OnStopBuild = function(self)
-        --Re-enable the gun after done building
-        self:SetWeaponEnabledByLabel('Riotgun01', true)
+    OnStopBuild = function(self)    
+        if not ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
+            --Re-enable the gun after done building
+            self:SetWeaponEnabledByLabel('Riotgun01', true)
+        end
         TConstructionUnit.OnStopBuild(self)
     end,
     
     OnStartReclaim = function(self, target)
-        TConstructionUnit.OnStartReclaim(self, target)
-        self:SetAllWeaponsEnabled(false)
+        TConstructionUnit.OnStartReclaim(self, target) 
+        if not ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
+            self:SetAllWeaponsEnabled(false)
+        end
     end,
     
     OnStopReclaim = function(self, target)
         TConstructionUnit.OnStopReclaim(self, target)
-        self:SetAllWeaponsEnabled( true)
+        if not ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
+            self:SetAllWeaponsEnabled( true)
+        end
     end,
 }
 

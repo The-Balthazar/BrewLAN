@@ -60,7 +60,16 @@ __________.__________
   2016-05-15
   
   * Fixed the script and assignment of UpradesFromBase; allowing the T1 MeXes to upgrade to their 3.5 variants.
-  * Fixed the upgrade issue on FaF.   
+  * Fixed the upgrade issue on FaF.
+  __________
+  2016-05-16
+  
+  * FaF unit fixes:
+    * T3 UEF Satelite Uplink,
+    * Panopticon,
+    * UEF & Cybran T1 & T3 field engineers,
+    * Cybran T2 Field Engineer.
+  * Changed the UEF T1 & T3 field engineers to be more inline with the T2 on FaF.     
 __________.__________
 2015-09-05|0.7
 

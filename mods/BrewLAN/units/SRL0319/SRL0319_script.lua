@@ -30,9 +30,9 @@ SRL0209 = Class(CConstructionUnit) {
         end
     end,
     
-    OnStopBeingBuilt = function(self)
+    OnStopBeingBuilt = function(self, ...)
         self:SetMaintenanceConsumptionActive()
-        CConstructionUnit.OnStopBeingBuilt(self)
+        CConstructionUnit.OnStopBeingBuilt(self, unpack(arg) )
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)

@@ -23,9 +23,9 @@ SRL0119 = Class(CConstructionUnit) {
         TreadOffset = { 0, 0, 0 },
     },
 
-    OnStopBeingBuilt = function(self)
+    OnStopBeingBuilt = function(self, ...)
         self:SetMaintenanceConsumptionActive()
-        CConstructionUnit.OnStopBeingBuilt(self)
+        CConstructionUnit.OnStopBeingBuilt(self, unpack(arg) )
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)

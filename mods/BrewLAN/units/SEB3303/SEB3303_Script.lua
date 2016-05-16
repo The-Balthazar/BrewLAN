@@ -12,8 +12,8 @@ local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 SEB3303 = Class(TStructureUnit) {   
     DeathThreadDestructionWaitTime = 0,
     
-    OnStopBeingBuilt = function(self)
-        TStructureUnit.OnStopBeingBuilt(self)
+    OnStopBeingBuilt = function(self, ...)
+        TStructureUnit.OnStopBeingBuilt(self, unpack(arg) )
         ChangeState( self, self.OpenState )
     end,
     
