@@ -4,8 +4,7 @@
 
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
-local CMobileKamikazeBombDeathWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombDeathWeapon 
-local TIFCommanderDeathWeapon = import('/lua/terranweapons.lua').TIFCommanderDeathWeapon
+local TIFCommanderDeathWeapon = import('/mods/brewlan/lua/sim/defaultweapons.lua').DeathNukeWeapon
 local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit    
 
 --------------------------------------------------------------------------------
@@ -14,7 +13,7 @@ local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
 
 MineStructureUnit = Class(TStructureUnit) {
     Weapons = {
-        DeathWeapon = Class(CMobileKamikazeBombDeathWeapon) {},
+        --DeathWeapon = Class(CMobileKamikazeBombDeathWeapon) {},
         Suicide = Class(CMobileKamikazeBombWeapon) {      
             OnFire = function(self)			
                 self.unit:SetDeathWeaponEnabled(false)

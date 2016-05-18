@@ -368,7 +368,7 @@ function UpgradeableToBrewLAN(all_bps)
             while true do
                 if nextID == unitid then break end
                 all_bps[nextID].General.UpgradesFromBase = unitid
-                LOG(all_bps[nextID].Description, unitid )
+                --LOG(all_bps[nextID].Description, unitid )
                 if all_bps[nextID].General.UpgradesFrom then 
                     nextID = all_bps[nextID].General.UpgradesFrom
                 else

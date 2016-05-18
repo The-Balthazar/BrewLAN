@@ -115,6 +115,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'amph',
+        InstantDeathOnSelfDestruct = true,
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
                 bitmapId = 'Nuke',
@@ -188,6 +189,7 @@ UnitBlueprint {
                 Sub = 'Land|Water|Seabed|Sub',
             },
             FiringTolerance = 360,
+            FireOnSelfDestruct = true,
             Label = 'Suicide',
             MaxRadius = 1,
             RangeCategory = 'UWRC_DirectFire',

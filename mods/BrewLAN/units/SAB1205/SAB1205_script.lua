@@ -54,22 +54,22 @@ SAB1205 = Class(AEnergyStorageUnit) {
                 else
                     if curEnergy < 0.2 then
                         self:GetWeaponByLabel('DeathWeapon0'):FireWeapon()
-                        #LOG('Weapon0')
+                        --LOG('Weapon0')
                     elseif curEnergy < 0.4 then
                         self:GetWeaponByLabel('DeathWeapon1'):FireWeapon()
-                        #LOG('Weapon1')
+                        --LOG('Weapon1')
                     elseif curEnergy < 0.6 then
                         self:GetWeaponByLabel('DeathWeapon2'):FireWeapon()
-                        #LOG('Weapon2')
+                        --LOG('Weapon2')
                     elseif curEnergy < 0.8 then
                         self:GetWeaponByLabel('DeathWeapon3'):FireWeapon()
-                        #LOG('Weapon3')
+                        --LOG('Weapon3')
                     elseif curEnergy < 0.9 then
                         self:GetWeaponByLabel('DeathWeapon4'):FireWeapon()
-                        #LOG('Weapon4')
+                        --LOG('Weapon4')
                     elseif curEnergy <= 1.0 then
                         self:GetWeaponByLabel('DeathWeapon5'):FireWeapon()
-                        #LOG('Weapon5')
+                        --LOG('Weapon5')
                     end
                 end
 

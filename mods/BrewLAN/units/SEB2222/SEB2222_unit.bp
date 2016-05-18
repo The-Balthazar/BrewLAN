@@ -124,6 +124,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'amph',
+        InstantDeathOnSelfDestruct = true,
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
                 bitmapId = 'Nuke',
@@ -199,6 +200,7 @@ UnitBlueprint {
                 Sub = 'Land|Water|Seabed|Sub',
             },
             FiringTolerance = 360,
+            FireOnSelfDestruct = true,
             Label = 'Suicide',
             ManualFire = 1,
             MaxRadius = 30,

@@ -1,13 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UAL0307/UAL0307_script.lua
-#**  Author(s):  John Comes, David Tomandl
-#**
-#**  Summary  :  Aeon Mobile Shield Generator Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local AShieldHoverLandUnit = import('/lua/aeonunits.lua').AShieldHoverLandUnit
 
 SAL0322 = Class(AShieldHoverLandUnit) {

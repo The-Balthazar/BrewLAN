@@ -54,7 +54,7 @@ SEB0401 = Class(TLandFactoryUnit) {
                 totalmass = totalmass + brain:GetArmyStat("Economy_TotalProduced_Mass", 0.0).Value - brain:GetArmyStat("Economy_AccumExcess_Mass", 0.0).Value
             end
         end
-        LOG("Total enemy mass = " .. totalmass)
+        --LOG("Total enemy mass = " .. totalmass)
         return totalmass
     end,
 

@@ -30,8 +30,8 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
             elseif thing then
                 AssaultBot:Kill()
             else
-                LOG(__blueprints[self.Data].Physics.BuildOnLayerCaps)
-                --This doesn't work. BuildOnLayerCaps gets replaced with a number. Parsing the number is less elgant.
+                --LOG(__blueprints[self.Data].Physics.BuildOnLayerCaps)
+                --This doesn't work. BuildOnLayerCaps gets replaced with a bitwise opperator. Need to actually parse the number.
                 --if __blueprints[self.Data].Physics.BuildOnLayerCaps['LAYER_' .. AssaultBot:GetCurrentLayer()]) then
                     local target = self:GetCurrentTargetPosition()
                     IssueMove( {AssaultBot},  {target[1] + Random(-3, 3), target[2], target[3]+ Random(-3, 3)} )

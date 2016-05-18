@@ -1,12 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /units/XSL0307/XSL0307_script.lua
-#**
-#**  Summary  :  Seraphim Mobile Shield Generator Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local SShieldHoverLandUnit = import('/lua/seraphimunits.lua').SShieldHoverLandUnit
 
 SSL0222 = Class(SShieldHoverLandUnit) {

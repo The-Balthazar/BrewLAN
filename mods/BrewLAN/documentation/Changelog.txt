@@ -69,7 +69,17 @@ __________.__________
     * Panopticon,
     * UEF & Cybran T1 & T3 field engineers,
     * Cybran T2 Field Engineer.
-  * Changed the UEF T1 & T3 field engineers to be more inline with the T2 on FaF.     
+  * Changed the UEF T1 & T3 field engineers to be more inline with the T2 on FaF.
+  * Disabled SRS0401's weapons. (Hidden unfinished unit, has no weapon models.)
+  * Fixed the upgrade issue on FaF.
+  __________
+  2016-05-18
+  
+  * Commented out a number of logs, and logged some things in some comments.
+  * Fixed the mines on FaF.
+    * Mirrored the FaF nuke scripts, because they deleted the originals I refered to, and there is no safe way to check which to try to load.   
+  * Allowed the mines to function like the Fire Beetle on FaF.
+    * That is to say, while on FaF, the mines suicide imediately with ctrl-k and also trigger thier weapon.       
 __________.__________
 2015-09-05|0.7
 

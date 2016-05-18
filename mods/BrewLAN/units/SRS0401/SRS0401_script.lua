@@ -31,14 +31,14 @@ SRS0401 = Class(CSeaUnit) {
     Walking = false,
     IsWaiting = false,
 
-    Weapons = {
+    --[[Weapons = {
         ParticleGun = Class(CDFProtonCannonWeapon) {},
         AAGun = Class(CAAAutocannon) {},
         TorpedoR = Class(CANNaniteTorpedoWeapon) {},
         TorpedoL = Class(CANNaniteTorpedoWeapon) {},
         AntiTorpedoF = Class(CIFSmartCharge) {},
         AntiTorpedoB = Class(CIFSmartCharge) {},
-    },
+    },--]]
 
     OnCreate = function(self)
         CSeaUnit.OnCreate(self)

@@ -376,7 +376,7 @@ UnitBlueprint {
         Level4 = 200,
         Level5 = 250,
     },
-    Weapon = {
+    --[[Weapon = {
         {
             AboveWaterTargetsOnly = true,
             Audio = {
@@ -666,7 +666,7 @@ UnitBlueprint {
             Label = 'MegalithDeath',
             WeaponCategory = 'Death',
         },
-    },
+    },--]]
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
