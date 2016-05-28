@@ -542,6 +542,7 @@ end
 function BrewLANRelativisticLinksUpdate(all_bps)
     local BrewLANPath = function()
         for i, mod in __active_mods do
+            --UID also hard referenced in /hook/lua/game.lua and mod_info.lua
             if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000075" then
                 return mod.location
             end
@@ -561,7 +562,7 @@ function PathTrawler(tbl, sfind, srepl)
     for k, v in tbl do
         if type(v) == "string" then
             if string.find(string.lower(v), sfind) then
-                tbl[k] = string.gsub( string.lower(v), sfind, srepl)
+                tbl[k] = string.gsub(string.lower(v), sfind, srepl)
             end 
         elseif type(v) == "table" then
             PathTrawler(tbl[k], sfind, srepl)
