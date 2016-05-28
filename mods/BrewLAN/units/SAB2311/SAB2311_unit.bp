@@ -61,7 +61,7 @@ UnitBlueprint {
     },
     Description = '<LOC sbui2311_desc>Anti-Armor Point Defence',
     Display = {
-        AnimationPermOpen = '/mods/brewlan/units/SAB2311/SAB2311_aopen01.sca',
+        AnimationPermOpen = '/mods/BrewLAN/units/SAB2311/SAB2311_aopen01.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

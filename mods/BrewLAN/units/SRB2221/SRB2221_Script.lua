@@ -4,7 +4,7 @@
 #**
 #****************************************************************************
 
-local MineStructureUnit = import('/mods/brewlan/lua/defaultunits.lua').MineStructureUnit
+local MineStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/defaultunits.lua').MineStructureUnit
 
 SRB2221 = Class(MineStructureUnit) {}
 TypeClass = SRB2221

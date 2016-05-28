@@ -74,7 +74,7 @@ UnitBlueprint {
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_upgradable>Upgradeable',
         },
-        #AnimationUpgrade = '/mods/brewlan/units/seb4102/seb4102_upgrade.sca',
+        #AnimationUpgrade = '/mods/BrewLAN/units/seb4102/seb4102_upgrade.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -91,7 +91,7 @@ UnitBlueprint {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_shielddome>Shield Dome',
         },   
-        AnimationWater = '/mods/brewlan/units/sel0322/sel0322_afold.sca',
+        AnimationWater = '/mods/BrewLAN/units/sel0322/sel0322_afold.sca',
         AnimationOpen = '/units/uel0307/uel0307_Aactivate.sca',
         Mesh = {
             IconFadeInZoom = 130,

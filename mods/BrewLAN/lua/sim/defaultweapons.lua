@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- From FaF, because they deleted TIFCommanderDeathWeapon, and broke everything.
 --------------------------------------------------------------------------------
-local NukeDamage = import('/mods/brewlan/lua/sim/NukeDamage.lua').NukeAOE
+local NukeDamage = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/NukeDamage.lua').NukeAOE
 local BareBonesWeapon = import('/lua/sim/DefaultWeapons.lua').BareBonesWeapon
 
 DeathNukeWeapon = Class(BareBonesWeapon) {

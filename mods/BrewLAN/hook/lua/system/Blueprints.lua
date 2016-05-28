@@ -22,6 +22,7 @@ function ModBlueprints(all_blueprints)
     BrewLANNavalShields(all_blueprints.Unit)
     BrewLANBomberDamageType(all_blueprints.Unit)
     BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
+    BrewLANRelativisticLinksUpdate(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -515,7 +516,7 @@ function BrewLANNavalShields(all_bps)
 end
 
 --------------------------------------------------------------------------------
--- Shield changes
+-- Work around for bombers destroying themselves on the Iron Curtain
 --------------------------------------------------------------------------------
 
 function BrewLANBomberDamageType(all_bps)
@@ -531,6 +532,40 @@ function BrewLANBomberDamageType(all_bps)
                 end 
             end
         end
+    end
+end
+
+--------------------------------------------------------------------------------
+-- The bit that makes BrewLAN blueprints not care where BrewLAN is installed
+--------------------------------------------------------------------------------
+
+function BrewLANRelativisticLinksUpdate(all_bps)
+    local BrewLANPath = function()
+        for i, mod in __active_mods do
+            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000075" then
+                return mod.location
+            end
+        end 
+    end
+    
+    if string.lower(BrewLANPath() ) != "/mods/brewlan" then 
+        for id, bp in all_bps do
+            if table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
+                PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
+            end
+        end
+    end
+end
+
+function PathTrawler(tbl, sfind, srepl)
+    for k, v in tbl do
+        if type(v) == "string" then
+            if string.find(string.lower(v), sfind) then
+                tbl[k] = string.gsub( string.lower(v), sfind, srepl)
+            end 
+        elseif type(v) == "table" then
+            PathTrawler(tbl[k], sfind, srepl)
+        end       
     end
 end
 

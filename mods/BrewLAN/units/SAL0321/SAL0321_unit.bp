@@ -92,7 +92,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_stratmissiledef>Strategic Missile Defense',
         },
-        AnimationWalk = '/mods/brewlan/units/sal0321/sal0321_Awalk.sca',
+        AnimationWalk = '/mods/BrewLAN/units/sal0321/sal0321_Awalk.sca',
         AnimationWalkRate = 10,
         Mesh = {
             IconFadeInZoom = 130,
@@ -279,7 +279,7 @@ UnitBlueprint {
             Turreted = false,
             WeaponCategory = 'Defense',
             WeaponRepackTimeout = 1,
-            WeaponUnpackAnimation = '/mods/brewlan/units/sal0321/SAL0321_Aunfold.sca',
+            WeaponUnpackAnimation = '/mods/BrewLAN/units/sal0321/SAL0321_Aunfold.sca',
             WeaponUnpackAnimationRate = 1.5,
             WeaponUnpacks = true,
         },

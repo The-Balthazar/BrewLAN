@@ -86,7 +86,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
         },
-        AnimationBuild = '/mods/brewlan/units/seb0401/SEB0401_abuild.sca',
+        AnimationBuild = '/mods/BrewLAN/units/seb0401/SEB0401_abuild.sca',
         BlinkingLights = {
             {
                 BLBone = 'Base_001',

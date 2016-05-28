@@ -120,7 +120,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Insect',                                            
-                    --MeshName = '/mods/brewlan/units/XRC8104/XRC8104_lod0.scm',
+                    --MeshName = '/mods/BrewLAN/units/XRC8104/XRC8104_lod0.scm',
                     AlbedoName = '/units/XRC8104/XRC8104_albedo.dds',
                     NormalsName = '/units/XRC8104/XRC8104_normalsts.dds',
                     SpecularName = '/units/XRC8104/XRC8104_specteam.dds',

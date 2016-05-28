@@ -101,9 +101,9 @@ UnitBlueprint {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
-                    AlbedoName = '/mods/brewlan/units/seb5310/seb5310_albedo.dds',
+                    AlbedoName = '/mods/BrewLAN/units/seb5310/seb5310_albedo.dds',
                     NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
-                    SpecularName = '/mods/brewlan/units/seb5310/seb5310_specteam.dds',
+                    SpecularName = '/mods/BrewLAN/units/seb5310/seb5310_specteam.dds',
                 },
                 {
                     LODCutoff = 400,

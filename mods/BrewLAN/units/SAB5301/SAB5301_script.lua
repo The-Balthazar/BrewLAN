@@ -1,5 +1,5 @@
 local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
-local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/walls.lua').CardinalWallUnit
 AShieldStructureUnit = CardinalWallUnit( AShieldStructureUnit ) 
 
 SAB5301 = Class( AShieldStructureUnit ) {

@@ -134,7 +134,7 @@ UnitBlueprint {
         },
         AnimationIdle = '/units/ura0104/ura0104_Aidle.sca',
         AnimationLand = '/units/ura0104/ura0104_Aland.sca',
-        AnimationOpen = '/mods/brewlan/units/sra0306/sra0306_Aopen.sca',
+        AnimationOpen = '/mods/BrewLAN/units/sra0306/sra0306_Aopen.sca',
         AnimationTakeOff = '/units/ura0104/ura0104_Atakeoff.sca',
         ForcedBuildSpin = 90,
         LayerChangeEffects = {

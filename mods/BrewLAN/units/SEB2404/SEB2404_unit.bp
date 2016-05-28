@@ -299,7 +299,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 160,
             MuzzleVelocityReduceDistance = 2000,
-            ProjectileId = '/mods/brewlan/projectiles/TIFDropPodArtillery/TIFDropPodArtillery_proj.bp',
+            ProjectileId = '/mods/BrewLAN/projectiles/TIFDropPodArtillery/TIFDropPodArtillery_proj.bp',
             ProjectileLifetime = 1000,
             ProjectilesPerOnFire = 1,
             RackBones = {

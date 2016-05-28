@@ -24,4 +24,43 @@ do
             return OldGetConstructEconomyModel(builder, targetData, unpack(arg))
         end
     end
+    
+    --------------------------------------------------------------------------------
+    -- Adapted from Manimal's mod locator script.
+    -- Because I'm sick of people moaning when they put it in the wrong hole.
+    -- Note to self: Remember to update the UID when I change it for next version.
+    --------------------------------------------------------------------------------
+    BrewLANPath = function()
+        for i, mod in __active_mods do
+            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000075" then
+                return mod.location
+            end
+        end 
+    end   
+    --[[local BrewLAN_UID = "25D57D85-7D84-27HT-A501-BR3WL4N000075" 
+      
+    local GetMyActiveMod = function( byName, byUID, byAuthor )
+        for i, leMod in __active_mods do
+            if (byName   and ( byName   == leMod.name   )) 
+            or (byUID    and ( byUID    == leMod.uid    ))
+            or (byAuthor and ( byAuthor == leMod.author )) then
+            return leMod
+            end
+        end
+        WARN("MANIMAL\'s MOD FINDER:  Unable to get Mod Infos ! Either your mod is not installed or you have mistyped its name, UID or author.")
+        return {}
+    end
+    
+    local GetMyActiveModLocation = function( leMod )
+        if leMod and (type(leMod) == 'table') then
+            return leMod.location
+        end
+        WARN("MANIMAL\'s MOD LOCATOR:  Unable to get Mod Infos ! Either your mod is not installed or you have mistyped its name, UID or author.")
+        return ''
+    end
+
+    BrewLANMod = GetMyActiveMod( false, BrewLAN_UID, false )
+    BrewLANPath = GetMyActiveModLocation( MonMod )
+     ]]--
+
 end

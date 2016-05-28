@@ -4,8 +4,8 @@
 #** 
 #****************************************************************************
 local CWallStructureUnit = import('/lua/cybranunits.lua').CWallStructureUnit
-local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
-local GateWallUnit = import('/mods/brewlan/lua/walls.lua').GateWallUnit
+local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/walls.lua').CardinalWallUnit
+local GateWallUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/walls.lua').GateWallUnit
 CWallStructureUnit = CardinalWallUnit( CWallStructureUnit ) 
 CWallStructureUnit = GateWallUnit( CWallStructureUnit )
 

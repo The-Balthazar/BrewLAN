@@ -173,10 +173,10 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
-                    MeshName = '/mods/brewlan/units/sal0319/sal0319_lod0.scm', 
-                    AlbedoName = '/mods/brewlan/units/sal0319/sal0319_albedo.dds', 
-                    NormalsName = '/mods/brewlan/units/sal0319/sal0319_normalsts.dds', 
-                    SpecularName = '/mods/brewlan/units/sal0319/sal0319_specteam.dds',  
+                    MeshName = '/mods/BrewLAN/units/sal0319/sal0319_lod0.scm', 
+                    AlbedoName = '/mods/BrewLAN/units/sal0319/sal0319_albedo.dds', 
+                    NormalsName = '/mods/BrewLAN/units/sal0319/sal0319_normalsts.dds', 
+                    SpecularName = '/mods/BrewLAN/units/sal0319/sal0319_specteam.dds',  
                 },
                 {
                     LODCutoff = 215,

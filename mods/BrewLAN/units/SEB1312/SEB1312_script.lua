@@ -8,7 +8,7 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TEngineeringResourceStructureUnit = import('/mods/brewlan/lua/uefunits.lua').TEngineeringResourceStructureUnit  
+local TEngineeringResourceStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/uefunits.lua').TEngineeringResourceStructureUnit  
 
 SEB1312 = Class(TEngineeringResourceStructureUnit) {
     

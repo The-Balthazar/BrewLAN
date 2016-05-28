@@ -17,7 +17,7 @@ local Effects = import('/lua/effecttemplates.lua')
 local CreateUEFBuildSliceBeams = EffectUtil.CreateUEFBuildSliceBeams
 
 SEA0401 = Class(TAirUnit) {
-    BeamExhaustCruise = '/mods/BrewLAN/effects/emitters/brewlan_missile_exhaust_fire_beam_01_emit.bp',
+    BeamExhaustCruise = import( '/lua/game.lua' ).BrewLANPath() .. '/effects/emitters/brewlan_missile_exhaust_fire_beam_01_emit.bp',
 
     EngineRotateBones = {'Engine_Body001', 'Engine_Body002','Engine_Body003', 'Engine_Body004',},
 

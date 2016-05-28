@@ -68,7 +68,7 @@ UnitBlueprint {
     },
     Description = '<LOC sal0401>Experimental Assault Tank',
     Display = {
-        AnimationPermOpen = '/mods/brewlan/units/sal0401/sal0401_aopen.sca',
+        AnimationPermOpen = '/mods/BrewLAN/units/sal0401/sal0401_aopen.sca',
         Abilities = {
             '<LOC ability_hover>Hover',
             '<LOC ability_tacmissiledef>Tactical Missile Defense',

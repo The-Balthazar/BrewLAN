@@ -71,13 +71,13 @@ UnitBlueprint {
         },
         AnimationDeath = {
             {
-                Animation = '/mods/brewlan/units/sab4102/sab4102_ADeath.sca',
+                Animation = '/mods/BrewLAN/units/sab4102/sab4102_ADeath.sca',
                 AnimationRateMax = 0.5,
                 AnimationRateMin = 0.5,
                 Weight = 1,
             },
         },
-        AnimationOpen = '/mods/brewlan/units/sab4102/sab4102_aopen.sca',
+        AnimationOpen = '/mods/BrewLAN/units/sab4102/sab4102_aopen.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

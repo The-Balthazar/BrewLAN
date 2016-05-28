@@ -152,7 +152,7 @@ UnitBlueprint {
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_transport>Transport',
         },
-        AnimationPermOpen = '/mods/brewlan/units/SAA0306/SAA0306_Open.sca',
+        AnimationPermOpen = '/mods/BrewLAN/units/SAA0306/SAA0306_Open.sca',
         ForcedBuildSpin = 90,
         LayerChangeEffects = {
             AirLand = {

@@ -18,7 +18,7 @@ SAA0306 = Class(AAirUnit) {
 
     ShieldEffects = {
 		     '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
-##	'/mods/BrewLAN/effects/emitters/aeon_shield_generator_mobile_air_01_emit.bp',	
+##	import( '/lua/game.lua' ).BrewLANPath() .. '/effects/emitters/aeon_shield_generator_mobile_air_01_emit.bp',	
     },
 
     AirDestructionEffectBones = { 'Outer1', 'Outer002', 'Outer003', 'Outer004', 'Outer005', 'Outer006',

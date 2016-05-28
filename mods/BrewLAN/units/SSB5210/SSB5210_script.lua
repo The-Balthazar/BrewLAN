@@ -4,7 +4,7 @@
 #** 
 #****************************************************************************
 local SWallStructureUnit = import('/lua/seraphimunits.lua').SWallStructureUnit
-local CardinalWallUnit = import('/mods/brewlan/lua/walls.lua').CardinalWallUnit
+local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/walls.lua').CardinalWallUnit
 SWallStructureUnit = CardinalWallUnit( SWallStructureUnit )
 
 SSB5210 = Class(SWallStructureUnit) {}

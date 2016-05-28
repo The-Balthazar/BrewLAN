@@ -4,7 +4,7 @@
 
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
-local TIFCommanderDeathWeapon = import('/mods/brewlan/lua/sim/defaultweapons.lua').DeathNukeWeapon
+local TIFCommanderDeathWeapon = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
 local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit    
 
 --------------------------------------------------------------------------------

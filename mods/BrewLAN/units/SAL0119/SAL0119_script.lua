@@ -8,7 +8,7 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local AConstructionUnit = import('/mods/brewlan/units/sal0319/sal0319_script.lua').SAL0319
+local AConstructionUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/units/sal0319/sal0319_script.lua').SAL0319
 
 SAL0119 = Class(AConstructionUnit) { 
     OnCreate = function( self ) 
