@@ -79,7 +79,13 @@ __________.__________
   * Fixed the mines on FaF.
     * Mirrored the FaF nuke scripts, because they deleted the originals I refered to, and there is no safe way to check which to try to load.   
   * Allowed the mines to function like the Fire Beetle on FaF.
-    * That is to say, while on FaF, the mines suicide imediately with ctrl-k and also trigger thier weapon.       
+    * That is to say, while on FaF, the mines suicide imediately with ctrl-k and also trigger thier weapon.
+  __________
+  2016-05-28
+  
+  * Increased the adjacency bonus for T2 power plants with the Gantry.
+    * Surrounded the total price payed is now 50% instead of 91.6 recurring %.
+      * For reference, with T1 its 75%, and with T3 its 25%.                  
 __________.__________
 2015-09-05|0.7
 
