@@ -40,14 +40,13 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        --'BUILTBYTIER3FACTORY',
+        'BUILTBYTIER3FACTORY',
         'AEON',
         'MOBILE',
         'LAND',
         'TECH3',
         'SHIELD',
         'DEFENSE',
-        'HOVER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYDEFENSE',
@@ -79,10 +78,10 @@ UnitBlueprint {
     Description = '<LOC ual0307_desc>Mobile Shield Generator',
     Display = {
         Abilities = {
-            '<LOC ability_hover>Hover',
+            '<LOC ability_amphibious>Amphibious',
             '<LOC ability_shielddome>Shield Dome',
         },
-        AnimationOpen = '/units/UAL0307/UAL0307_aopen.sca',
+        AnimationOpen = '/mods/BrewLAN/units/SAL0322/SAL0322_aopen.sca',
         IdleEffects = {
             Land = {
                 Effects = {
@@ -107,10 +106,10 @@ UnitBlueprint {
                     LODCutoff = 100,
                     Scrolling = true,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/ual0207/ual0207_lod0.scm',
-                    AlbedoName = '/units/ual0307/ual0307_albedo.dds', 
-                    NormalsName = '/units/ual0307/ual0307_normalsts.dds', 
-                    SpecularName = '/units/ual0307/ual0307_specteam.dds',
+                    --MeshName = '/units/ual0207/ual0207_lod0.scm',
+                    --AlbedoName = '/units/ual0307/ual0307_albedo.dds', 
+                    --NormalsName = '/units/ual0307/ual0307_normalsts.dds', 
+                    --SpecularName = '/units/ual0307/ual0307_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
@@ -158,7 +157,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXL0009',
         SpawnRandomRotation = true,
-        UniformScale = 0.5,
+        UniformScale = 0.02,
     },
     Economy = {
         BuildCostEnergy = 1080*5,
@@ -199,7 +198,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC ual0307_name>Asylum',
+        UnitName = '<LOC sal0322_name>Flame Lotus',
         UnitWeight = 1,
     },
     Intel = {
@@ -232,7 +231,7 @@ UnitBlueprint {
         MeshExtentsY = 0.65,
         MeshExtentsZ = 1,
         MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_Hover',
+        MotionType = 'RULEUMT_Amphibious',
         RotateBodyWhileMoving = true,
         RotateOnSpot = true,
         RotateOnSpotThreshold = 0.1,
@@ -251,7 +250,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_land3_shield',
     StrategicIconSortPriority = 125,
     Transport = {
-        TransportClass = 2,
+        TransportClass = 3,
     },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

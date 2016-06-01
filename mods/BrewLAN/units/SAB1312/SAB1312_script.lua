@@ -46,7 +46,7 @@ SAB1312 = Class(AMassCollectionUnit) {
     end,
    
     OnShieldDisabled = function(self)
-        AShieldStructureUnit.OnShieldDisabled(self)
+        AMassCollectionUnit.OnShieldDisabled(self)
         if self.Spinner then
             self.Spinner:SetSpinDown(true)
             self.Spinner:SetTargetSpeed(0)

@@ -328,6 +328,7 @@ ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips. Cannot target empty space."
 
 --Mobile Shield Generator
+sal0322_name="Flame Lotus"
 sel0322_name="Ella"
 --Short and long descriptions both the same as default. 
 

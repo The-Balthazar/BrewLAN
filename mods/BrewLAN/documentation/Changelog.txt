@@ -87,7 +87,15 @@ __________.__________
     * Surrounded the total price payed is now 50% instead of 91.6 recurring %.
       * For reference, with T1 its 75%, and with T3 its 25%.
   * BrewLAN no longer cares if its installed in the correct place. (Not true for all sub-mods yet.)
-    * Used an adapted version of Manimals old mod locator script, and some crazy voodoo hax so it also applies to .bp files as well as .lua files.                           
+    * Used an adapted version of Manimals old mod locator script, and some crazy voodoo hax so it also applies to .bp files as well as .lua files.
+  __________
+  2016-05-29
+  
+  * Fixed the script of the Aeon shielded mass extractor.
+  __________
+  2016-06-01
+  
+  * Many things for the Aeon T3 Mobile Shield Generator.                             
 __________.__________
 2015-09-05|0.7
 
