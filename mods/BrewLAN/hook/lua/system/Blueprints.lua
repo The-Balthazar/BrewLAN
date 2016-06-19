@@ -549,7 +549,15 @@ function BrewLANRelativisticLinksUpdate(all_bps)
         end 
     end
     
-    if string.lower(BrewLANPath() ) != "/mods/brewlan" then 
+    if string.lower(BrewLANPath() ) != "/mods/brewlan" then
+        all_bps.zzz0001.Desync = {
+            "BrewLAN reports you installed it",
+            "wrong; it should be at:",
+            "/mods/brewlan",
+            "but it's at:",
+            string.lower(BrewLANPath()),
+            "Everything should still work though.",
+        }
         for id, bp in all_bps do
             if table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
                 PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
