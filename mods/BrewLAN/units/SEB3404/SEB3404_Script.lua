@@ -25,22 +25,9 @@ SEB3404 = Class(TStructureUnit) {
     
     IntelSearch = function(self)
         local aiBrain = self:GetAIBrain()
-        local maxrange = self:GetBlueprint().Intel.SpyRadius or 8000
-        -- Populate LocalDarkness with the an entity array of Darknesses.
-        local LocalDarkness = self:FindAllUnits( categories.srb4402, maxrange + __blueprints['srb4402'].Intel.RadarStealthFieldRadius)
+        local maxrange = self:GetIntelRadius('radar') or self:GetBlueprint().Intel.RadarRadius or 6000
         -- Find visible things to attach vis entities to
-        local LocalUnits = self:FindAllUnits(categories.SELECTABLE - categories.COMMAND - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, maxrange, true)
-        ------------------------------------------------------------------------
-        -- Check things aren't near a darkness.
-        ------------------------------------------------------------------------
-        for i,v in LocalUnits do
-            for j, dark in LocalDarkness do
-                if VDist2(dark:GetPosition()[1], dark:GetPosition()[3], v:GetPosition()[1], v:GetPosition()[3] ) < dark:GetBlueprint().Intel.RadarStealthFieldRadius then   --dark:GetIntelRadius('RadarStealthField') then  -- This outputs 0 for some reason
-                    LocalUnits[i] = nil
-                    break
-                end
-            end  
-        end
+        local LocalUnits = self:FindAllUnits(categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, maxrange, true)
         ------------------------------------------------------------------------
         -- IF self.ActiveConsumptionRestriction Sort the table by distance
         ------------------------------------------------------------------------
@@ -108,16 +95,12 @@ SEB3404 = Class(TStructureUnit) {
     end,
     
     FindAllUnits = function(self, category, range, cloakcheck)
-        local Ftable = {}
-        for index, brain in ArmyBrains do
-            if IsEnemy(brain:GetArmyIndex(), self:GetArmy() ) then
-                for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, category, self:GetPosition(), range or self:GetBlueprint().Intel.SpyRadius or 8000) do
-                    if unit:IsIntelEnabled('Cloak') and cloakcheck then
-                        --LOG("Cloaked guy")
-                    else
-                        table.insert(Ftable, unit)
-                    end
-                end
+        local Ftable = {} 
+        for i, unit in self:GetAIBrain():GetUnitsAroundPoint(category, self:GetPosition(), range, 'Enemy' ) do
+            if cloakcheck and unit:IsIntelEnabled('Cloak') then
+                LOG("Counterintel guy")
+            else
+                table.insert(Ftable, unit)
             end
         end
         return Ftable

@@ -95,7 +95,26 @@ __________.__________
   __________
   2016-06-01
   
-  * Many things for the Aeon T3 Mobile Shield Generator.                             
+  * Many things for the Aeon T3 Mobile Shield Generator.
+  __________
+  2016-06-19
+  
+  * Added desync warnings for people who don't install BrewLAN properly.
+  __________
+  2016-06-25
+  
+  * Heavy functional change to the panopticon:
+    * It now has radar radius of 6000 instead of 1200.
+    * Increased base energy consumption to 10000, from 5000.    
+    * It now uses its current radar radius as its max view distance, instead of 8000.
+    * It can no longer spy on support commanders.        
+    * It now uses only your own intel to decide what to view. This means:
+      * Better performance:
+        * Formerly, for each opponent, it would use that players intel, filter out units that that player didn't control and cloaked units, and add those units to its list. Then check again at a larger radius (its radius + Darkess stealth field radius) for Darkness facilities, and check the distances of units on the first list to Darkness facilities list, and remove any too close.
+      * It now respects stealth:
+        * There is no easy way of checking if a unit is affected by a stealth field in script, only if it is emitting a stealth field. This means in the old system it would have needed to something similar to the Darkness check for each stealth field generator. Now that it only checks your own intel it doesn't know about stealthed units or units in stealth fields to begin with.
+      * Darkness facilities no longer get free immunity to the Panopticon:
+        * If the Darkess loses power or you get intel on its location some other way, standard game rules on intel apply; its a building and its not going anywhere. It gets spied on.                
 __________.__________
 2015-09-05|0.7
 
