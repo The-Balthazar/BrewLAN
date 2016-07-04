@@ -142,6 +142,55 @@ UnitBlueprint {
                         Type = 'AeonGroundFX01',
                     },
                 },
+                Treads = {
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            TreadMarks = 'tank_treads03_albedo',
+                            TreadMarksInterval = 0.09,
+                            TreadMarksSizeX = 0.2,
+                            TreadMarksSizeZ = 2,
+                            TreadOffset = {
+                                -.45,
+                                0,
+                                -.8,
+                            },
+                        },
+                        {
+                            TreadMarks = 'tank_treads03_albedo',
+                            TreadMarksInterval = 0.09,
+                            TreadMarksSizeX = 0.2,
+                            TreadMarksSizeZ = 2,
+                            TreadOffset = {
+                                -0.25,
+                                0,
+                                -.8,
+                            },
+                        },
+                        {
+                            TreadMarks = 'tank_treads03_albedo',
+                            TreadMarksInterval = 0.09,
+                            TreadMarksSizeX = 0.2,
+                            TreadMarksSizeZ = 2,
+                            TreadOffset = {
+                                .45,
+                                0,
+                                -.8,
+                            },
+                        },
+                        {
+                            TreadMarks = 'tank_treads03_albedo',
+                            TreadMarksInterval = 0.09,
+                            TreadMarksSizeX = 0.2,
+                            TreadMarksSizeZ = 2,
+                            TreadOffset = {
+                                0.25,
+                                0,
+                                -.8,
+                            },
+                        },
+                    },
+                },
             },
             Water = {
                 Effects = {

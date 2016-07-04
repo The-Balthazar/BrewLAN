@@ -98,7 +98,7 @@ SEB3404 = Class(TStructureUnit) {
         local Ftable = {} 
         for i, unit in self:GetAIBrain():GetUnitsAroundPoint(category, self:GetPosition(), range, 'Enemy' ) do
             if cloakcheck and unit:IsIntelEnabled('Cloak') then
-                LOG("Counterintel guy")
+                --LOG("Counterintel guy")
             else
                 table.insert(Ftable, unit)
             end

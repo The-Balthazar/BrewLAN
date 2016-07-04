@@ -114,7 +114,11 @@ __________.__________
       * It now respects stealth:
         * There is no easy way of checking if a unit is affected by a stealth field in script, only if it is emitting a stealth field. This means in the old system it would have needed to something similar to the Darkness check for each stealth field generator. Now that it only checks your own intel it doesn't know about stealthed units or units in stealth fields to begin with.
       * Darkness facilities no longer get free immunity to the Panopticon:
-        * If the Darkess loses power or you get intel on its location some other way, standard game rules on intel apply; its a building and its not going anywhere. It gets spied on.                
+        * If the Darkess loses power or you get intel on its location some other way, standard game rules on intel apply; its a building and its not going anywhere. It gets spied on.
+  __________
+  2016-07-04
+  
+  * Finished the UV map of the Aeon T3 mobile shield generator, and gave it a good temporary texture.                   
 __________.__________
 2015-09-05|0.7
 
