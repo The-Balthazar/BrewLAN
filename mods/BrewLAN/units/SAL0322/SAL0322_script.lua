@@ -26,7 +26,10 @@ SAL0322 = Class(AShieldHoverLandUnit) {
         if not self.Rotarybits then
            self.Rotarybits = {}
            self.Rotarybits[1] = CreateRotator(self, 'Ring1', 'z', nil, 0, 45, math.random(-45, 45 ) )
-           self.Rotarybits[2] = CreateRotator(self, 'Ring2', 'z', nil, 0, 45, math.random(-45, 45 ) ) 
+           self.Rotarybits[2] = CreateRotator(self, 'Ring2', 'z', nil, 0, 45, math.random(-45, 45 ) )
+           self.Rotarybits[3] = CreateRotator(self, 'GeoSphere', 'z', nil, 0, 45, math.random(-45, 45 ) )
+           self.Rotarybits[4] = CreateRotator(self, 'GeoSphere', 'z', nil, 0, 45, math.random(-45, 45 ) )
+           self.Rotarybits[5] = CreateRotator(self, 'GeoSphere', 'y', nil, 0, 45, math.random(-45, 45 ) ) 
         end    
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do

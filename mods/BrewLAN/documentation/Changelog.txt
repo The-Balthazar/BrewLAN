@@ -118,7 +118,15 @@ __________.__________
   __________
   2016-07-04
   
-  * Finished the UV map of the Aeon T3 mobile shield generator, and gave it a good temporary texture.                   
+  * Finished the UV map of the Aeon T3 mobile shield generator, and gave it a good temporary texture.
+  __________
+  2016-07-09
+  
+  * Aeon T3 mobile shield generator changes:
+    * Changed balance, so it has more health, and less shield.   
+    * Swapped the treads animations.
+    * Did additional work on the texture.
+    * Gave it an icon.                             
 __________.__________
 2015-09-05|0.7
 
