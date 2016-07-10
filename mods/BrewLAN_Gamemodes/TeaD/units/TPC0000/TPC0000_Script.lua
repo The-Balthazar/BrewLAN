@@ -37,12 +37,18 @@ TPC0000 = Class(SStructureUnit) {
                 for i,v in Units do 
                     if v:GetEntityId() != self:GetEntityId() then 
                         if not EntityCategoryContains(categories.PATHFINDER + categories.DAMAGETEST, v) then
-                            if EntityCategoryContains(categories.BOSS, v) then
+                            if EntityCategoryContains(categories.BIGBOSS, v) then
+                                self:SetHealth(self, self:GetHealth() - 30)
+                                if self:GetHealth() > 0 then
+                                    v:GetAIBrain():OnDefeat()
+                                    --Survived
+                                end                            
+                            elseif EntityCategoryContains(categories.BOSS, v) then
                                 self:SetHealth(self, self:GetHealth() - 5)                            
                             else
                                 self:SetHealth(self, self:GetHealth() - 1)
                             end
-                            teaslider:SetGoal(0, - (30-self:GetHealth())*0.003, 0)  
+                            teaslider:SetGoal(0, - (30- math.min(self:GetHealth(),30) )*0.003, 0)  
                             self.Steam:Destroy()  
                         end
                         v:Destroy()

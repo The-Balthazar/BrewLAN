@@ -75,6 +75,7 @@ do
         EYE = {
             "seb3303", --Novax Observation Satelite
             "ssb3301", --Seraphim Optics Tracking Facility
+            "seb3404", --PANOPTICON
         },
     }  
     for k, v in Units do
@@ -91,7 +92,7 @@ do
             end
         end
     end
-    --Fixes the console exclusive UEF artillery shield breaking the non-bubbles restriction 
+    --Fixes the console exclusive UEF artillery shield breaking the no-bubbles restriction 
     if not categories.deb4303 and restrictedUnits.BUBBLES.categories then
         table.removeByValue(restrictedUnits.BUBBLES.categories, "deb4303")
     end

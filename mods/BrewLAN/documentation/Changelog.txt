@@ -126,7 +126,17 @@ __________.__________
     * Changed balance, so it has more health, and less shield.   
     * Swapped the treads animations.
     * Did additional work on the texture.
-    * Gave it an icon.                             
+    * Gave it an icon.
+  __________
+  2016-07-10
+  
+  * Added the Panopticon to the FAF no eyes restriction.
+  * TeaD: Increased the down time after wave group bosses and damage tests.
+  * TeaD: Added healer mobs after the first boss wave.
+  * TeaD: Added large aircraft and shielded aircraft waves.
+  * TeaD: Prevented the teacup from overflowing with health buffs.
+  * TeaD: The first non-damage test boss is no longer tagged as damage test.
+  * TeaD: Added a second boss wave. Currectly tagged as 'Final Boss' so it is completable in its current state.                                         
 __________.__________
 2015-09-05|0.7
 

@@ -63,8 +63,8 @@ Creep = Class(Unit) {
                     self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
                 end
             elseif ( new == 'Stopped' ) then
-                # only keep the animator around if we are dying and playing a death anim
-                # or if we have an idle anim
+                --only keep the animator around if we are dying and playing a death anim
+                --or if we have an idle anim
                 if(self.IdleAnim and not self:IsDead()) then
                     self.Animator:PlayAnim(self.IdleAnim, true)
                 elseif(not self.DeathAnim or not self:IsDead()) then
@@ -78,6 +78,17 @@ Creep = Class(Unit) {
     OnKilled = function(self, instigator, type, overkillRatio)
         instigator:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.BuildCostMass * self:GetBlueprint().Wreckage.MassMult )
         instigator:GetAIBrain():GiveResource('Energy', self:GetBlueprint().Economy.BuildCostEnergy * self:GetBlueprint().Wreckage.EnergyMult )
+        if EntityCategoryContains(categories.HEALERCREEP, self) then
+            local lifecrystal = instigator:GetAIBrain().LifeCrystal   
+            if lifecrystal:GetHealth() > lifecrystal:GetMaxHealth() - 2 then
+                lifecrystal:SetMaxHealth(lifecrystal:GetMaxHealth() + 1 )
+            end
+            lifecrystal:SetHealth(lifecrystal, lifecrystal:GetHealth() + 2)
+        end
+        if EntityCategoryContains(categories.BIGBOSS, self) then
+            self:GetAIBrain():OnDefeat()
+            --Victory
+        end
         Unit.OnKilled(self, instigator, type, 2)
     end,
 }

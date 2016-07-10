@@ -86,12 +86,12 @@ AIBrain = Class(AIBrain) {
         local Dis = 20
         local X = (posX + (MapSizeX * Dis) ) /(Dis + 1)
         local Y = (posY + (MapSizeY * Dis) ) /(Dis + 1)
-        local crystal = self:CreateUnitNearSpot('tpc0000', X, Y)
+        self.LifeCrystal = self:CreateUnitNearSpot('tpc0000', X, Y)
         
-        if not crystal then
-            crystal = CreateUnitHPR('tpc0000', self:GetArmyIndex(), X, 0, Y,0,0,0)
+        if not self.LifeCrystal then
+            self.LifeCrystal = CreateUnitHPR('tpc0000', self:GetArmyIndex(), X, 0, Y,0,0,0)
         end   
-        crystal:CreateTarmac(true,true,true,false,false)
-        self.LifeCrystalPos = crystal:GetPosition()
+        self.LifeCrystal:CreateTarmac(true,true,true,false,false)
+        self.LifeCrystalPos = self.LifeCrystal:GetPosition()
     end,
 }

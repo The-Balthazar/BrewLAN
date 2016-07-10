@@ -161,7 +161,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYTEAD CREEP UEF',
         },
-        BuildOrder = {
+        BuildOrder = {      
             {Wait = 10},
             --------------------------------------------------------------------
             {Message = "Pathfinder wave"},
@@ -187,7 +187,7 @@ UnitBlueprint {
             --------------------------------------------------------------------
             {Message = "Damage test wave 1"},
             {'tec0101', 1}, --Damage test boss 1
-            {Wait = 30},
+            {Wait = 60},
             --------------------------------------------------------------------   
             {Message = "Wave group 2"},
             --------------------------------------------------------------------
@@ -219,7 +219,7 @@ UnitBlueprint {
             {'tec0102', 1}, --Damage test boss 1
             {Wait = 15},
             {Message = "Warning: Fliers inbound"},
-            {Wait = 30},
+            {Wait = 60},
             --------------------------------------------------------------------
             {Message = "Wave group 3"},
             --------------------------------------------------------------------   
@@ -246,33 +246,34 @@ UnitBlueprint {
             --------------------------------------------------------------------
             {Message = "Boss wave 1"},
             {'tec0103', 1}, --Shield boss
-            {Wait = 30},
+            {Wait = 60},
             --------------------------------------------------------------------
             {'tec0006', 10 }, --Bikes
-            --heal thing
+            {'tec0010', 1}, --ambulance
             {'tec0006', 10 }, --Bikes
-            --heal thing
+            {'tec0010', 1}, --ambulance
             {'tec0006', 10 }, --Bikes
-            --heal thing
+            {'tec0010', 1}, --ambulance
             {'tec0006', 10 }, --Bikes
-            --heal thing
+            {'tec0010', 1}, --ambulance
             {'tec0006', 10 }, --Bikes
-            --heal thing 
+            {'tec0010', 1}, --ambulance
             {Message = "Warning: Fliers inbound"},
             {Wait = 20},
-            --15 fat aircraft
+            {'tec0011', 15 }, --15 fat aircraft
             {Message = "Warning: Cloaked units inbound"}, 
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars 
             {Message = "Warning: Fliers inbound"}, 
             {Wait = 20},
-            --5 shielded aircraft
+            {'tec0012', 5 }, --5 shielded aircraft
             {Wait = 20},
             {'tec0005', 20}, --Shields
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Boss wave 2"},
-            {'tec0004', 1}, --NEED BOSS 3 HERE
+            --{Message = "Boss wave 2"},
+            {Message = "Final Boss"},
+            {'tec0104', 1},
             {Wait = 30},
             --------------------------------------------------------------------
         },
