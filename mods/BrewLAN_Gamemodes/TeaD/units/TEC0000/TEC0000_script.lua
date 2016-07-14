@@ -9,10 +9,11 @@
 #****************************************************************************
 
 local TQuantumGateUnit = import('/lua/terranunits.lua').TQuantumGateUnit
+local Buff = import('/lua/sim/Buff.lua')
 TEC0000 = Class(TQuantumGateUnit) {
 
-	GateEffectVerticalOffset = 0.35,
-	GateEffectScale = 0.42,
+    GateEffectVerticalOffset = 0.35,
+    GateEffectScale = 0.42,
 
     OnStopBeingBuilt = function(self,builder,layer)
         self.GateEffectEntity = import('/lua/sim/Entity.lua').Entity()
@@ -47,6 +48,17 @@ TEC0000 = Class(TQuantumGateUnit) {
             WaitTicks(self:GetAIBrain():GetNoRushTicks() )
             self.Build = self.Build - 1
             self:BuildThings()
+        elseif buildorder[self.Build].End and ScenarioInfo.Options.TeaDEndless == 'true' then
+            --End is only for loop purposes. Actual end criteria are elsewhere.
+            --Continue counting for non-doubled messages
+            self.BuildLoop = (self.BuildLoop or 0) + self.Build
+            self.BuffStack = (self.BuffStack or 0) + 1
+            --Set build track to 0
+            self.Build = 0
+            --And start again
+            self:BuildThings()
+        elseif buildorder[self.Build].End then
+            --The end I guess. Nothing more to do. Stop looping.
         elseif buildorder[self.Build].Wait then
             self:ForkThread(function()
                 WaitSeconds(buildorder[self.Build].Wait)
@@ -56,7 +68,7 @@ TEC0000 = Class(TQuantumGateUnit) {
             --print(buildorder[self.Build].Message)
             Sync.TeaDMessage = {
                 buildorder[self.Build].Message,
-                self.Build,
+                self.Build + (self.BuildLoop or 0),
             }
             self:BuildThings()
         elseif buildorder[self.Build] then
@@ -66,11 +78,35 @@ TEC0000 = Class(TQuantumGateUnit) {
     end,
              
     OnDamage = function()
-    end,   
-      
+    end,
+    
     OnStopBuild = function(self, unitBeingBuilt)     
         TQuantumGateUnit.OnStopBuild(self, unitBeingBuilt)    
         if unitBeingBuilt:GetFractionComplete() == 1 then
+            if self.BuffStack then
+                if not Buffs['CreepHealthBuff'] then
+                    BuffBlueprint {
+                        Name = 'CreepHealthBuff',
+                        DisplayName = 'CreepHealthBuff',
+                        BuffType = 'CreepHealthBuff',
+                        Stacks = 'ALWAYS',
+                        Duration = -1,
+                        Affects = {
+                            MaxHealth = {
+                                Add = 2,
+                                Mult = 1.5,
+                            },
+                            Health = {
+                                Add = 2,
+                                Mult = 1.5,
+                            },
+                        },
+                    }
+                end 
+                for i = 1, self.BuffStack do 
+                    Buff.ApplyBuff(unitBeingBuilt, 'CreepHealthBuff')
+                end
+            end
             unitBeingBuilt.Target = self.Target
             self.BuildQuantity = self.BuildQuantity - 1
             if self.BuildQuantity < 1 then

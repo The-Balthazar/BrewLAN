@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
---  Summary:  The neutral crystal script
+--  Summary:  The teacup script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local SStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
@@ -40,8 +40,11 @@ TPC0000 = Class(SStructureUnit) {
                             if EntityCategoryContains(categories.BIGBOSS, v) then
                                 self:SetHealth(self, self:GetHealth() - 30)
                                 if self:GetHealth() > 0 then
-                                    v:GetAIBrain():OnDefeat()
-                                    --Survived
+                                    --Check we aren't on endless (possible values 'true' 'false' and nil)
+                                    if not ScenarioInfo.Options.TeaDEndless == 'true' then
+                                        v:GetAIBrain():OnDefeat()
+                                        --Survived
+                                    end
                                 end                            
                             elseif EntityCategoryContains(categories.BOSS, v) then
                                 self:SetHealth(self, self:GetHealth() - 5)                            

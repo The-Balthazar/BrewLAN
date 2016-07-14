@@ -136,7 +136,11 @@ __________.__________
   * TeaD: Added large aircraft and shielded aircraft waves.
   * TeaD: Prevented the teacup from overflowing with health buffs.
   * TeaD: The first non-damage test boss is no longer tagged as damage test.
-  * TeaD: Added a second boss wave. Currectly tagged as 'Final Boss' so it is completable in its current state.                                         
+  * TeaD: Added a second boss wave. Currectly tagged as 'Final Boss' so it is completable in its current state.
+  __________
+  2016-07-11
+  
+  * TeaD: Added endless mode.                                         
 __________.__________
 2015-09-05|0.7
 

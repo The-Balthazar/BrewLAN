@@ -85,7 +85,7 @@ Creep = Class(Unit) {
             end
             lifecrystal:SetHealth(lifecrystal, lifecrystal:GetHealth() + 2)
         end
-        if EntityCategoryContains(categories.BIGBOSS, self) then
+        if EntityCategoryContains(categories.BIGBOSS, self) and not ScenarioInfo.Options.TeaDEndless == 'true' then
             self:GetAIBrain():OnDefeat()
             --Victory
         end

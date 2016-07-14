@@ -275,6 +275,7 @@ UnitBlueprint {
             {Message = "Final Boss"},
             {'tec0104', 1},
             {Wait = 30},
+            {End = true},
             --------------------------------------------------------------------
         },
         ProductionPerSecondMass = 100,
