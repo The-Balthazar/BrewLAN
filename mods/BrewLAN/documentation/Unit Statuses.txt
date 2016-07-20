@@ -382,9 +382,12 @@ Static 4        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine
     * Possibly a two part splitting bot. Cain and Abel or something cool.
 
 UEF Panopticon: Experimental Sensor Array
-  * Gives vision of enemy non-ACU, non-wall, non-mine non-cloaked units.
-    * Wont affect within 50 of a Darkness.
+  * Gives vision of enemy non-ACU non-SACU, non-wall, non-mine non-cloaked units that you know about.
+  * Has a massive radar radius, which it uses to see choose vision targets.
+    * Can no longer see stealthed units without other intel.
+    * Darkness no longer a hard counter, but has a stealth field.        
   * Currently has no unique model.
+    * Style off Goonhilly Earth or Jodgrel Bank.
   * Also todo: Add camera teleport effect.            
 
 

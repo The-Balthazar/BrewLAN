@@ -54,6 +54,7 @@ UnitBlueprint {
     Description = '<LOC url0306_desc>Mobile Stealth Field System',
     Display = {
         Abilities = {
+            '<LOC ability_amphibious>Amphibious',
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_stealthfield>Stealth Field',
         },

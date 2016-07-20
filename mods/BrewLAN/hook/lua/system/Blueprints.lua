@@ -358,6 +358,7 @@ function UpgradeableToBrewLAN(all_bps)
         end
     end
     local UpgradesFromBase = {
+        -- Base        Max
         urb1103 = 'srb1312',--To Cloakable Extractor
         ueb1103 = 'seb1312',--To engineering Extractor
         uab1103 = 'sab1312',--To shielded Extractor
@@ -420,14 +421,8 @@ end
 --------------------------------------------------------------------------------
  
 function RoundGalacticCollosusHealth(all_bps)
-
-    local GalacticCollosus = {
-        all_bps['ual0401'],
-    }
-    for arrayIndex, bp in GalacticCollosus do
-        if bp.Defense.Health == 99999 then bp.Defense.Health = 100000 end
-        if bp.Defense.MaxHealth == 99999 then bp.Defense.MaxHealth = 100000 end
-    end
+    if all_bps['ual0401'].Defense.Health == 99999 then all_bps['ual0401'].Defense.Health = 100000 end
+    if all_bps['ual0401'].Defense.MaxHealth == 99999 then all_bps['ual0401'].Defense.MaxHealth = 100000 end
 end
 
 --------------------------------------------------------------------------------

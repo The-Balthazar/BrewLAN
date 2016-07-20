@@ -26,6 +26,7 @@ UnitBlueprint {
         'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
+        'BUILTBYTIER3TEAD',
         'OVERLAYRADAR',
         'OVERLAYDIRECTFIRE',
         'OVERLAYMISC',

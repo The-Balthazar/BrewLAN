@@ -140,7 +140,19 @@ __________.__________
   __________
   2016-07-11
   
-  * TeaD: Added endless mode.                                         
+  * TeaD: Added endless mode.
+  __________
+  2016-07-17
+  
+  * Listed the Cybran T3 mobile stealth gen's amphibious ability.
+  __________
+  2016-07-20
+  
+  * TeaD/BrewLAN: Made the field engineer mines buildable by TeaD engineer.
+  * TeaD: Increased the view distance of the light radar from 20 to 60.
+  * TeaD: Gave the light radar a custom model and icon.
+  * TeaD: Made the colision model for the gate 0 size, so shots don't impact meaninglessly on them.
+  * TeaD: Added a regen for walls that havent been sapped in a second.                                                 
 __________.__________
 2015-09-05|0.7
 

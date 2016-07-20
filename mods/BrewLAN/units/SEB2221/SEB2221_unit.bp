@@ -22,6 +22,8 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
+        'BUILTBYTIER2TEAD',
+        'BUILTBYTIER3TEAD',
         'OVERLAYRADAR',
         'OVERLAYDIRECTFIRE',
         'INTELLIGENCE',
