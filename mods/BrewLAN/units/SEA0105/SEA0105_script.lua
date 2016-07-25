@@ -39,26 +39,6 @@ SEA0105 = Class(TAirUnit) {
 
     end,
     
-    OnTransportAttach = function(self, attachBone, unit)
-        TAirUnit.OnTransportAttach(self, attachBone, unit)
-        if not self.AttachedUnits then
-            self.AttachedUnits = {}
-        end
-        table.insert( self.AttachedUnits, unit )
-    end,
-    
-    OnTransportDetach = function(self, attachBone, unit)
-        TAirUnit.OnTransportDetach( self, attachBone, unit )
-        if self.AttachedUnits then
-            for k,v in self.AttachedUnits do
-                if v == unit then
-                    self.AttachedUnits[k] = nil
-                    break
-                end                    
-            end
-        end
-    end,
-    
     DestroyedOnTransport = function(self)
         if self.AttachedUnits then
             for k,v in self.AttachedUnits do

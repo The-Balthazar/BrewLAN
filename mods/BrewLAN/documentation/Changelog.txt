@@ -152,7 +152,15 @@ __________.__________
   * TeaD: Increased the view distance of the light radar from 20 to 60.
   * TeaD: Gave the light radar a custom model and icon.
   * TeaD: Made the colision model for the gate 0 size, so shots don't impact meaninglessly on them.
-  * TeaD: Added a regen for walls that havent been sapped in a second.                                                 
+  * TeaD: Added a regen for walls that havent been sapped in a second.
+  __________
+  2016-07-21
+  
+  * Crystal Hill: The crystals no longer care if a player dies controlling one. That player retains the crystal even in death.
+  __________
+  2016-07-25
+  
+  * Removed the ontransportattached/detached scripts from the Pidgeon; they seem to do nothing except cause FAF errors.                                                     
 __________.__________
 2015-09-05|0.7
 

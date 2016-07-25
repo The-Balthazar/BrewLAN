@@ -132,14 +132,6 @@ ZPC0001 = Class(SStructureUnit) {
     end,     
     
     OnKilled = function(self, instigator, type, overkillRatio)  
-        local pos = self:GetPosition()               
-        for i, brain in ArmyBrains do
-            if not brain:IsDefeated() and not brain == self:GetAIBrain() then    
-                CreateUnitHPR('ZPC0002',brain:GetArmy(), pos[1],pos[2],pos[3],0,0,0)
-                self:Destroy()
-                break
-            end
-        end
     end,
 }
 TypeClass = ZPC0001

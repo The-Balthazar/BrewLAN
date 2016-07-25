@@ -196,7 +196,7 @@ UnitBlueprint {
         NaturalProducer = true,
         ProductionPerSecondEnergy = 20,
         BuildableCategory = {
-            'BUILTBYTIER1TEAD UEF',
+            'BUILTBYTIER1TEAD UEF STRUCTURE',
             'BUILTBYTIER1ENGINEER UEF DIRECTFIRE',
             'BUILTBYTIER1ENGINEER UEF ANTIAIR',
             'BUILTBYTIER1ENGINEER UEF ENERGYPRODUCTION',
