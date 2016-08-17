@@ -54,8 +54,8 @@ Tooltips['toggle_omni_distruption'] = {
       keyID = "toggle_omni_distruption",
    }
 Tooltips['rez_reclaim'] = {
-      title = "<LOC tooltipbrewlan0018>Resurrect/Reclaim (E)",
-      description = "<LOC tooltipbrewlan0019>Clears and resurrects a wreckage, or reclaims a living unit.",
+      title = "<LOC tooltipui0032>Reclaim (E)",
+      description = "<LOC tooltipbrewlan0019>Reclaim a unit or wreckage and learn its blueprint.",
       keyID = "rez_reclaim",
    }
 Tooltips['stargate_dial'] = {

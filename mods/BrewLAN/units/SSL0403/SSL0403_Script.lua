@@ -16,85 +16,109 @@ SSL0403 = Class(SConstructionUnit) {
         LeftTurret = Class(SDFAireauBolter) {},
         RightTurret = Class(SDFAireauBolter) {},
     },
+
+    OnCreate = function(self)
+        SConstructionUnit.OnCreate(self)
+        self:AddBuildRestriction(categories.SELECTABLE)
+        self.Pods = { }
+        local pod = {
+            PodAttachpoint = 'Node_00',
+            PodName = 'Pod',
+            PodUnitID = 'SSA0001',
+            Entity = {},
+            Active = false,
+        }
+        for i = 1, 8 do
+            self.Pods[i] = {}
+            for k, v in pod do
+                if k == "PodAttachpoint" or k == "PodName" then
+                    self.Pods[i][k] = v .. tostring(i) 
+                else
+                    self.Pods[i][k] = v
+                end            
+            end
+        end
+        --LOG(repr(self.Pods))
+    end,    
+    
     StartBeingBuiltEffects = function(self, builder, layer)
         SConstructionUnit.StartBeingBuiltEffects(self, builder, layer)
         self:ForkThread( EffectUtil.CreateSeraphimExperimentalBuildBaseThread, builder, self.OnBeingBuiltEffectsBag )
     end,     
           
     OnStartReclaim = function(self, target)
-        if target.AssociatedBP then
-            local work = {
-                BuildCostMass = __blueprints[target.AssociatedBP].Economy.BuildCostMass - (target.MaxMassReclaim * 0.9),
-                BuildCostEnergy = __blueprints[target.AssociatedBP].Economy.BuildCostEnergy - (target.MaxEnergyReclaim * 0.9),
-                BuildTime = __blueprints[target.AssociatedBP].Economy.BuildTime,
-            }
-            LOG("Costs Mass: " .. work.BuildCostMass .. " Energy: " .. work.BuildCostEnergy .. " Build Time: " .. work.BuildTime) 
-            local buildtime, energy, mass = import('/lua/game.lua').GetConstructEconomyModel(self, work)
-            LOG("Calculated Mass: " .. mass .. " Energy: " .. energy .. " Build Time: " .. buildtime)
-            target:SetMaxReclaimValues( target.ReclaimTimeMassMult, target.ReclaimTimeEnergyMult, target.MaxMassReclaim * 0.1, target.MaxEnergyReclaim * 0.1)
-            target:SetReclaimValues( target.ReclaimTimeMassMult, target.ReclaimTimeEnergyMult, target.MassReclaim * 0.1, target.EnergyReclaim * 0.1)    
-            self.WorkItem = {
-                id = target.AssociatedBP,
-                BuildCostMass = mass,
-                BuildCostEnergy = energy,
-                BuildTime = buildtime,
-                pos = target:GetPosition(),
-                ori = target:GetOrientation(),
-                entid = target:GetEntityId(),
-            }     
-            self:SetActiveConsumptionActive()
-        end     
+        local TargetId = target.AssociatedBP or target:GetBlueprint().BlueprintId
+        if TargetId and not string.find(TargetId, "/") then
+            self.ReclaimID = {id = TargetId}
+        end    
         SConstructionUnit.OnStartReclaim(self, target)
     end,
 
     OnStopReclaim = function(self, target)    
-        if not target and self.WorkItem.id then   
-            local pos = self.WorkItem.pos   
-            local wreckageID = self.WorkItem.entid  
-            local dupecheck = self:GetAIBrain():GetUnitsAroundPoint( categories[self.WorkItem.id], pos, 10)
-            local ABORT = false    
-            if dupecheck and table.getn(dupecheck) > 0 then
-                for i, v in dupecheck do
-                    if v.OldWreckageID == wreckageID then
-                        ABORT = true
-                    end
-                end
-            end       
-            if not ABORT then
-                local ori = self.WorkItem.ori
-                local rezzedGuy = CreateUnit(self.WorkItem.id, self:GetArmy(), pos[1], pos[2], pos[3], ori[1], ori[2], ori[3], ori[4])
-                --rezzedGuy:SetHealth(self, 1 )
-                --rezzedGuy.WreckMassMult = 0.01
-                rezzedGuy.OldWreckageID = wreckageID
-                local tc = 6
-                if rezzedGuy:GetBlueprint().Transport.TransportClass then
-                    tc = rezzedGuy:GetBlueprint().Transport.TransportClass
-                end
-                LOG(10 * tc)
-                rezzedGuy:SetStunned(10 * tc)
-                --IssueRepair({self},rezzedGuy)
-                self.WorkItem = {}
-            end 
-        elseif self.WorkItem.id then    
-            self.WorkItem = {}
-        end   
-        self:SetActiveConsumptionInactive()
+        if not target and self.ReclaimID.id then
+            self:CreatePod(self.ReclaimID.id)
+        end    
+        self.ReclaimID = {}
         SConstructionUnit.OnStopReclaim(self, target)
     end,
     
-    tprint = function(self, tbl, indent)
-        if not indent then indent = 0 end
-        for k, v in pairs(tbl) do
-            formatting = string.rep("  ", indent) .. k .. ": "
-            if type(v) == "table" then
-                LOG(formatting)
-                self:tprint(v, indent+1)
-            elseif type(v) == 'boolean' then
-                LOG(formatting .. tostring(v))		
-            elseif type(v) == 'string' or type(v) == 'number' then
-                LOG(formatting .. v)
-            else
-                LOG(formatting .. type(v))
+    CreatePod = function(self, WorkID)
+        self:RemoveBuildRestriction(categories[WorkID])
+        if self:CanBuild(WorkID) then
+            for i, pod in self.Pods do
+                if not pod.Active then
+                    local location = self:GetPosition(pod.PodAttachpoint)
+                    pod.Entity = CreateUnitHPR(pod.PodUnitID, self:GetArmy(), location[1], location[2], location[3], 0, 0, 0)
+                    pod.StorageID = WorkID
+                    pod.Active = true
+                    pod.Entity:SetCustomName(LOC(__blueprints[WorkID].Description))
+                    pod.Entity:SetParent(self, i)
+                    self:RefreshBuildRestrictions()
+                    break
+                end
+            end
+            -- No pod bays available
+        end
+    end,
+    
+    NotifyOfPodDeath = function(self, pod)
+        --self:AddBuildRestriction(categories[self.Pods[pod].StorageID]) 
+        self.Pods[pod].Active = false
+        self.Pods[pod].StorageID = nil
+        self:RefreshBuildRestrictions()
+        --LOG(repr(self.Pods))
+    end,
+    
+    RefreshBuildRestrictions = function(self)
+        self:RestoreBuildRestrictions()
+        self:AddBuildRestriction(categories.SELECTABLE)
+        for i, pod in self.Pods do
+            if pod.StorageID then
+                self:RemoveBuildRestriction(categories[pod.StorageID])
+            end
+        end 
+    end,
+    
+    OnMotionHorzEventChange = function( self, new, old )
+        SConstructionUnit.OnMotionHorzEventChange(self, new, old)
+
+        if ( old == 'Stopped' ) then
+            if (not self.Animator) then
+                self.Animator = CreateAnimator(self, true)
+            end
+            local bpDisplay = self:GetBlueprint().Display
+            if bpDisplay.AnimationWalk then
+                self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
+                self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
+            end
+        elseif ( new == 'Stopped' ) then
+            -- only keep the animator around if we are dying and playing a death anim
+            -- or if we have an idle anim
+            if(self.IdleAnim and not self.Dead) then
+                self.Animator:PlayAnim(self.IdleAnim, true)
+            elseif(not self.DeathAnim or not self.Dead) then
+                self.Animator:Destroy()
+                self.Animator = false
             end
         end
     end,

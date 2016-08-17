@@ -42,8 +42,8 @@ tooltipbrewlan0016="Disruption pulse toggle"
 tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
  
 --Tooltips for the Rez/reclaim command.                    
-tooltipbrewlan0018="Resurrect/Reclaim (E)"
-tooltipbrewlan0019="Clears and resurrects a wreckage, or reclaims a living unit."
+--tooltipbrewlan0018="Reclaim (E)"
+tooltipbrewlan0019="Reclaim a unit or wreckage and learn its blueprint."
 
 --Tooltips for the Stargate      
 tooltipbrewlan0020="Dial Gateway"
@@ -352,9 +352,9 @@ Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and 
 -- Experimentals
 -------------------------------------------------------------------------------- 
 
-ssl0403_desc="Experimental Resurrection Engineer"
+ssl0403_desc="Experimental Reconstruction Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Experimental amphibious resurrection, reclamation, capture, and repair unit. Has moderate self defense capabilities."
+Unit_Description_BrewLAN_T4L001="Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them."
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"

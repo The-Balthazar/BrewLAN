@@ -83,7 +83,9 @@ UnitBlueprint {
         'DIRECTFIRE',
         'REPAIR',
         'RECLAIM',
+        'CONSTRUCTION',
         'FIELDENGINEER',
+        'PODSTAGINGPLATFORM',
         'CAPTURE',
         'NEEDMOBILEBUILD',
         'VISIBLETORECON',
@@ -93,6 +95,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'OVERLAYDEFENSE',
         'OVERLAYDIRECTFIRE',
+        'REBUILDER',
+        'MOBILEBUILDERONLY'
     },
     CollisionOffsetZ = 0,
     Defense = {
@@ -102,7 +106,7 @@ UnitBlueprint {
         Health = 18450,
         MaxHealth = 18450,
         RegenRate = 10,
-        Shield = {
+        --[[Shield = {
             ImpactEffects = 'SeraphimShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
             Mesh = '/effects/entities/SeraphimShield01/SeraphimShield01_mesh',
@@ -115,7 +119,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 3,
             ShieldVerticalOffset = 0,
-        },
+        },]]--
         SubThreatLevel = 40,
         SurfaceThreatLevel = 100,
     },
@@ -127,16 +131,19 @@ UnitBlueprint {
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_deathaoe>Volatile',
         },
+        AnimationWalk = '/units/XSL0304/XSL0304_awalk01.sca',
+        AnimationWalkRate = 2.8,
         LayerChangeEffects = {
             SeabedLand = {
                 Effects = {
                     {
                         Bones = {
-                            'Torpedo_Muzzle',
-                            'Right_Turret',
-                            'Left_Turret',
-                            'Exhaust_Center',
-                            'XSL0303',
+                            --'Torpedo_Muzzle',
+                            --'Right_Turret',
+                            --'Left_Turret',
+                            --'Exhaust_Center',
+                            --'XSL0303',
+                            0
                         },
                         Scale = 2,
                         Type = 'UnderWater01',
@@ -150,12 +157,12 @@ UnitBlueprint {
                 {
                     LODCutoff = 180,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    Scrolling = true,
+                    --Scrolling = true,
                     ShaderName = 'Seraphim',
-                    MeshName = '/mods/BrewLAN/units/ssl0319/ssl0319_lod0.scm',
-                    AlbedoName = '/units/XSL0201/XSL0201_albedo.dds', 
-                    NormalsName = '/units/XSL0201/XSL0201_normalsts.dds', 
-                    SpecularName = '/units/XSL0201/XSL0201_specteam.dds', 
+                    --MeshName = '/mods/BrewLAN/units/ssl0319/ssl0319_lod0.scm',
+                    AlbedoName = '/units/XSL0304/XSL0304_albedo.dds', 
+                    NormalsName = '/units/XSL0304/XSL0304_normalsts.dds', 
+                    SpecularName = '/units/XSL0304/XSL0304_specteam.dds', 
                 },
                 {
                     LODCutoff = 400,
@@ -173,8 +180,9 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Exhaust_Left',
-                            'Exhaust_Right',
+                            0,
+                            --'Exhaust_Left',
+                            --'Exhaust_Right',
                         },
                         Offset = {
                             0,
@@ -201,7 +209,7 @@ UnitBlueprint {
                     },
                 },
             },
-            Seabed = {
+            --[[Seabed = {
                 Effects = {
                     {
                         Bones = {
@@ -215,37 +223,42 @@ UnitBlueprint {
                         Type = 'UnderWater01',
                     },
                 },
-            },
+            },]]--
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        UniformScale = 0.12,
+        UniformScale = 0.12*1.8,
     },
     Economy = {
         BuildCostEnergy = 150000,
         BuildCostMass = 6000,
         BuildRate = 50,
         BuildTime = 2400*3,
-        MaintenanceConsumptionPerSecondEnergy = 50,
+        --MaintenanceConsumptionPerSecondEnergy = 50,
+        BuildableCategory = {
+            --'SELECTABLE STRUCTURE',
+            'SELECTABLE', --Only when either reverse gantry function, or fatboy function.
+        },
         StorageMass = 10000,
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 3*2,
+        SizeZ = 3*2,
     },
     General = {
         BuildBones = {
-            AimBone = 'Turret_Muzzle',
+            --AimBone = 'Turret_Muzzle',
             BuildEffectBones = {
-                'Turret_Muzzle',
-                'Turret_Muzzle001',
-                'Turret_Muzzle002',
+                0,
+                --'Turret_Muzzle',
+                --'Turret_Muzzle001',
+                --'Turret_Muzzle002',
             },
-            PitchBone = 'Arm_Pitch',
-            YawBone = 'Arm_Yaw',
+            --PitchBone = 'Arm_Pitch',
+            --YawBone = 'Arm_Yaw',
         },
         Category = 'Experimental',
         Classification = 'RULEUC_Engineer',
@@ -268,10 +281,10 @@ UnitBlueprint {
         FactionName = 'SERAPHIM',
         Icon = 'amph',
         OrderOverrides = {
-            RULEUTC_ShieldToggle = {
-                bitmapId = 'shield-dome',
-                helpText = 'toggle_shield_dome',
-            }, 
+            --RULEUTC_ShieldToggle = {
+            --    bitmapId = 'shield-dome',
+            --    helpText = 'toggle_shield_dome',
+            --}, 
             RULEUCC_Reclaim = {
                 bitmapId = 'rez',
                 helpText = 'rez_reclaim',
@@ -279,9 +292,9 @@ UnitBlueprint {
         },
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Experimental',
-        ToggleCaps = {
-            RULEUTC_ShieldToggle = true,
-        },
+        --ToggleCaps = {
+        --    RULEUTC_ShieldToggle = true,
+        --},
         UnitName = '<LOC ssl0403_name>Iyadesu',
         UnitWeight = 4,
     },
@@ -294,8 +307,8 @@ UnitBlueprint {
         HelpText = '<LOC ssl0403_desc>Experimental Field Engineer',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 2.35,
-    LifeBarSize = 2.75,
+    LifeBarOffset = 2.5,
+    LifeBarSize = 5,
     Physics = {
         BackUpDistance = 15,
         BankingSlope = 3,
@@ -315,9 +328,9 @@ UnitBlueprint {
         MaxSpeed = 3.75,
         MaxSpeedReverse = 2.05,
         MaxSteerForce = 1000,
-        MeshExtentsX = 2,
-        MeshExtentsY = 2.5,
-        MeshExtentsZ = 2,
+        MeshExtentsX = 2*2,
+        MeshExtentsY = 2.5*2,
+        MeshExtentsZ = 2*2,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Amphibious',
         RotateBodyWhileMoving = false,
@@ -325,19 +338,19 @@ UnitBlueprint {
         RotateOnSpotThreshold = 0.5,
         SkirtOffsetX = -.5,
         SkirtOffsetZ = -.5,
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
+        SkirtSizeX = 4*2,
+        SkirtSizeZ = 4*2,
         TurnRadius = 0,
         TurnRate = 30,
     },
     SelectionCenterOffsetX = 0,
     SelectionCenterOffsetZ = -0.3,
-    SelectionSizeX = 1.4,
-    SelectionSizeZ = 1.8,
+    SelectionSizeX = 1.4*2,
+    SelectionSizeZ = 1.8*2,
     SelectionThickness = 0.34,
-    SizeX = 1.4,
+    SizeX = 1.4*2,
     SizeY = 0.6,
-    SizeZ = 1.6,
+    SizeZ = 1.6*2,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 45,
     Veteran = {
@@ -384,12 +397,12 @@ UnitBlueprint {
                     },
                     RackBone = 'Turret_Barrel',
                 },
-                {
+                --[[{
                     MuzzleBones = {
                         'Turret_Barrel_Muzzle001',
                     },
                     RackBone = 'Turret_Barrel001',
-                },
+                },]]--
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -412,12 +425,15 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.15,
-            TurretBoneMuzzle = 'Turret_Barrel_Muzzle',
+            TurretBoneMuzzle = 'Turret_Barrel',
             TurretBonePitch = 'Turret_Barrel',
-            TurretBoneYaw = 'Turret',
-            TurretBoneDualMuzzle = 'Turret_Barrel_Muzzle001',
-            TurretBoneDualPitch = 'Turret_Barrel001',
-            TurretDualManipulators = true,
+            TurretBoneYaw = 'Turret_Barrel',
+            --TurretBoneMuzzle = 'Turret_Barrel_Muzzle',
+            --TurretBonePitch = 'Turret_Barrel',
+            --TurretBoneYaw = 'Turret',
+            --TurretBoneDualMuzzle = 'Turret_Barrel_Muzzle001',
+            --TurretBoneDualPitch = 'Turret_Barrel001',
+            --TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 60,
             TurretPitchSpeed = 90,

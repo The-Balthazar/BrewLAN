@@ -160,7 +160,24 @@ __________.__________
   __________
   2016-07-25
   
-  * Removed the ontransportattached/detached scripts from the Pidgeon; they seem to do nothing except cause FAF errors.                                                     
+  * Removed the ontransportattached/detached scripts from the Pidgeon; they seem to do nothing except cause FAF errors.
+  __________
+  2016-07-26
+  
+  * TeaD: Added a tiny factory.
+  * TeaD/BrewLAN: Field engineers now buildable by tiny factory.
+  __________
+  2016-08-17
+  
+  * Overhauled the Iyadesu:
+    * Now classified as Experimental Reconstruction Engineer.
+    * Its reclaim now works as normal units except that if it reclaims a unit or wreckage it adds that unit or wreckages blueprint to its build list and spawns a drone.
+      * This drone works like an engineering drone, except if it dies the Iyadesu loses access to the blueprint.
+      * It has a limit of 8 drones.        
+    * It now also has the ability to rebuild destroyed buildings in the same way as the SACUs.
+    * Gave it a new temporary model.
+    * Made it bigger.
+    * Removed its shield.                 
 __________.__________
 2015-09-05|0.7
 

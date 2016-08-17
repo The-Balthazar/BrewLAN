@@ -12,6 +12,12 @@ function OnClickHandler(button, modifiers, ...)
     for i,v in sortedOptions.selection do
         if EntityCategoryContains(categories.BUILTBYGANTRY, item.id) and EntityCategoryContains(categories.GANTRY, v) or EntityCategoryContains(categories.HEAVYWALL, v) or EntityCategoryContains(categories.MEDIUMWALL, v) then
             changeclick = true
+        elseif EntityCategoryContains(categories.MOBILEBUILDERONLY, v) then
+            local blueprint = __blueprints[item.id]
+            local count = 1
+            local performUpgrade = false
+            local buildCmd = "build"   
+            import('/lua/ui/game/commandmode.lua').StartCommandMode(buildCmd, {name=item.id})
         end
     end        
     if changeclick then 
@@ -31,14 +37,14 @@ function OnClickHandler(button, modifiers, ...)
                     performUpgrade = false
                 else
                     for i,v in sortedOptions.selection do
-                        if v then   # it's possible that your unit will have died by the time this gets to it
+                        if v then   --it's possible that your unit will have died by the time this gets to it
                             local unitBp = v:GetBlueprint()
                             if blueprint.General.UpgradesFrom == unitBp.BlueprintId then
                                 performUpgrade = true
                             elseif blueprint.General.UpgradesFrom == unitBp.General.UpgradesTo then
                                 performUpgrade = true
                             elseif blueprint.General.UpgradesFromBase != "none" then
-                                # try testing against the base
+                                --try testing against the base
                                 if blueprint.General.UpgradesFromBase == unitBp.BlueprintId then
                                     performUpgrade = true
                                 elseif blueprint.General.UpgradesFromBase == unitBp.General.UpgradesFromBase then
