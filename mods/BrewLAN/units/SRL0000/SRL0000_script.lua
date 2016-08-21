@@ -6,6 +6,6 @@
 
 local CConstructionEggUnit = import('/lua/cybranunits.lua').CConstructionEggUnit
 
-SRL0001 = Class(CConstructionEggUnit) {}
+SRL0000 = Class(CConstructionEggUnit) {}
 
-TypeClass = SRL0001
+TypeClass = SRL0000

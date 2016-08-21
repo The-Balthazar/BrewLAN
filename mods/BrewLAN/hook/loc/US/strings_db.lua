@@ -393,7 +393,12 @@ ssb5401_desc="Experimental Quantum Gateway"
 ssb5401_name="Chappa'ai"
 Unit_Description_BrewLAN_T4B007="Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
 
-srl0001_desc="Crab Egg (Destroyer)"
+srl0000_desc="Crab Egg"
+srl0001_desc=srl0000_desc .. " (Destroyer)"
+srl0002_desc=srl0000_desc .. " (Field Engineer)"
+srl0003_desc=srl0000_desc .. " (Stealth)"
+srl0004_desc=srl0000_desc .. " (Missile)"
+srl0005_desc=srl0000_desc .. " (Hedgehog)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"

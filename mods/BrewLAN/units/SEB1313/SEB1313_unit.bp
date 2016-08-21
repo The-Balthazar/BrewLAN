@@ -183,7 +183,7 @@ UnitBlueprint {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
             'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF', 
             'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',  
-            'BUILTBYTIER1ENGINEER MASSSTORAGE UEF',
+            'BUILTBYTIER3ENGINEER MASSSTORAGE UEF',
         },
         HalfPriceUpgradeFromID = 'ueb1303',
         MaintenanceConsumptionPerSecondEnergy = 3500*.75,

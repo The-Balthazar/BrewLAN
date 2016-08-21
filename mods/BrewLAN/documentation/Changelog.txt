@@ -177,7 +177,14 @@ __________.__________
     * It now also has the ability to rebuild destroyed buildings in the same way as the SACUs.
     * Gave it a new temporary model.
     * Made it bigger.
-    * Removed its shield.                 
+    * Removed its shield.
+  __________
+  2016-08-21
+  
+  * The UEF engineering resource buildings can now build up to T3 storage of their respective type.
+    * Notably this means they can now build the BrewLAN T2 storages and the BlOps T3 storage.
+  * Finished the first overhaul of the Megalith egg backend. (I have a second planned.)
+  * Added the Slink, Hedgehog, and House to the Megalith build lists.                       
 __________.__________
 2015-09-05|0.7
 

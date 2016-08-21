@@ -23,6 +23,7 @@ function ModBlueprints(all_blueprints)
     BrewLANBomberDamageType(all_blueprints.Unit)
     BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
     BrewLANRelativisticLinksUpdate(all_blueprints.Unit)
+    BrewLANMegalithEggs(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -43,6 +44,11 @@ function BrewLANBuildCatChanges(all_bps)
         ueb0101 = {'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',},
         ueb0301 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',},
         uel0401 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',},
+        --TeaD tiny factories
+        teb0101 = {'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',},
+        trb0101 = {'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',},
+        tab0101 = {'BUILTBYLANDTIER1FACTORY AEON MOBILE CONSTRUCTION',},
+        tsb0101 = {'BUILTBYLANDTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION',},
         --FAF support factories
         zab9501 = {'BUILTBYLANDTIER2FACTORY AEON MOBILE CONSTRUCTION',},
         zab9601 = {'BUILTBYLANDTIER3FACTORY AEON MOBILE CONSTRUCTION',},
@@ -85,7 +91,7 @@ function BrewLANBuildCatChanges(all_bps)
         uel0301 = {'BUILTBYTIER3FIELD UEF',},
         url0301 = {'BUILTBYTIER3FIELD CYBRAN',},
         xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
-        xrl0403 = {'srl0001',},
+        --xrl0403 = {'srl0001',},
     }
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
@@ -197,6 +203,7 @@ function BrewLANGantryBuildList(all_bps)
     for id, bp in all_bps do
         --Check the Gantry can't already build it, and that its a mobile experimental
         if table.find(bp.Categories, 'BUILTBYGANTRY') and table.find(bp.Categories, 'EXPERIMENTAL') then
+            --Populate the Gantry AI table
             if table.find(bp.Categories, 'AIR') then
                 table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
             else
@@ -223,6 +230,7 @@ function BrewLANGantryBuildList(all_bps)
                 --or bp.Footprint.SizeX < 9
                 then
                     table.insert(bp.Categories, 'BUILTBYGANTRY')
+                    --Populate the Gantry AI table with the newly selected experimentals, so AI use them.
                     if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'EXPERIMENTAL') then
                         table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
                     elseif table.find(bp.Categories, 'EXPERIMENTAL') then
@@ -272,6 +280,9 @@ function BrewLANHeavyWallBuildList(all_bps)
                         --This is to prevent it from having the same footprint as the wall
                         --and from it removing all the path blocking of the wall if it dies or gets removed.
                         --It will still remove the blocking from the center of the wall, but that's acceptable.
+                        
+                        --This will also make it so those turrets will no longer block pathing whilst adjacent
+                        --But that is probably fine. 
                         if correct.X then                               
                             bp.Footprint.SizeX = 1
                             bp.Physics.SkirtOffsetX = -1
@@ -363,7 +374,8 @@ function UpgradeableToBrewLAN(all_bps)
         ueb1103 = 'seb1312',--To engineering Extractor
         uab1103 = 'sab1312',--To shielded Extractor
         xsb1103 = 'ssb1312',--To Armored Extractor
-    } 
+    }  
+    --This could potentially loop forever if someone broke the upgrade chain elsewhere
     for unitid, upgradeid in UpgradesFromBase do
         if all_bps[upgradeid] then
             local nextID = upgradeid 
@@ -404,8 +416,8 @@ function TorpedoBomberWaterLandCat(all_bps)
         all_bps['saa0106'], #T1 Aeon
     }
     for arrayIndex, bp in TorpedoBombers do
-        table.insert(bp.Categories, 'TRANSPORTATION') ##transportation category allows aircraft to land on water.
-        table.insert(bp.Categories, 'HOVER') ##hover category stops torpedos from being fired upon them while landed.
+        table.insert(bp.Categories, 'TRANSPORTATION') --transportation category allows aircraft to land on water.
+        table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
         for i, v in bp.Weapon do
             if v.WeaponCategory == "Anti Navy" and v.FireTargetLayerCapsTable then
                 v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
@@ -570,6 +582,45 @@ function PathTrawler(tbl, sfind, srepl)
         elseif type(v) == "table" then
             PathTrawler(tbl[k], sfind, srepl)
         end       
+    end
+end
+
+--------------------------------------------------------------------------------
+-- Eggs. Eggs everywhere
+--------------------------------------------------------------------------------
+
+function BrewLANMegalithEggs(all_bps)
+    --First check the Megalith exists and can build
+    if all_bps['xrl0403'] and all_bps['xrl0403'].Economy.BuildableCategory then
+        local baseEgg = all_bps['srl0000']
+        for id, bp in all_bps do
+            if table.find(bp.Categories, 'MEGALITHEGG') then
+                copyTableNoReplace(baseEgg, bp)
+                table.insert(all_bps['xrl0403'].Economy.BuildableCategory, bp.BlueprintId)
+                bp.Economy.BuildCostEnergy = all_bps[bp.Economy.BuildUnit].Economy.BuildCostEnergy
+                bp.Economy.BuildCostMass = all_bps[bp.Economy.BuildUnit].Economy.BuildCostMass
+                bp.Economy.BuildTime = all_bps[bp.Economy.BuildUnit].Economy.BuildTime
+                bp.General.Icon = all_bps[bp.Economy.BuildUnit].General.Icon
+                if string.lower(all_bps[bp.Economy.BuildUnit].Physics.MotionType) == "ruleumt_amphibious" then
+                    bp.Physics.BuildOnLayerCaps.LAYER_Water = true
+                end
+            end
+        end
+    end
+end
+          
+function copyTableNoReplace(source, target)
+    for k, v in source do
+        if type(v) == "table" then
+            if not target[k] then
+                target[k] = {}
+            end
+            copyTableNoReplace(v, target[k])
+        else
+            if not target[k] then
+                target[k] = v
+            end
+        end
     end
 end
 
