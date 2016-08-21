@@ -42,7 +42,21 @@ Modded Units:
   		* Gave omni at a range of 2, unlisted in game.
   		  * Allows T1 scouts that 'walk into' cloaked & stealthed units to see them.
   		  * There is a chance that units already had this, but never told anyone.            
-  
+    
+    T1 Walls
+      * Unified build sorting.
+    
+    T3 Assault/Armored Assault Bots/Tanks
+      * Unified build sorting.
+
+    T3 Mobile Artillery/Sniper Bots
+      * Unified build sorting.
+      
+    Bombers
+      * Bombers have been granted a 95% damage resistance to weapons that require a computed drop distance (ie, bomber bombs) while they are in the air.
+        * This is to prevent bombers killing themselves consistently when they attack the Iron Curtain. Seriously.
+        * It actually made the Iron Curtain basically self defending against bombers, because of its coincidentally perfect size.   
+        
   	Torpedo Bombers
   		* Gave the ability to land on water.                  
     
@@ -52,11 +66,7 @@ Modded Units:
           * Seraphim already did this.        
 
     Support Commanders
-      * Added an enhancement for field engineer tech.
-    
-    Bombers
-      * Bombers have been granted a 95% damage resistance to bombs while they are in the air.
-        * This is mostly because of an unfortunate interaction between bombers and the size of the Iron Curtain.                              
+      * Added an enhancement for field engineer tech.                                               
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
   	T2 Shield Generator
@@ -69,6 +79,9 @@ Modded Units:
   
     T3 Heavy Assault Bot
       * Decreased the cost and stats to be comparable with that of the Titan, the Loyalist, and that Serephim one.    
+    
+    T3 Torpedo bomber.
+      * Unified build sorting.
       
   	T3 Rapid Fire Artillery Installation
   		* Recategorised as an experimental.
@@ -102,9 +115,17 @@ Modded Units:
   	ED5
     	* Changed to Tech 3.
     	* Health still 500.
+    	* Gave a third discount on upgrading from ED4.      
+    
+    Jester
+      * Chanegd build menu sorting.
     
     Hive
-      * 3rd level version is now tech 3, and directly buildable.
+      * Second upgrade is now:
+        * Tech 3
+        * Directly buildable.
+        * 4x the cost.
+        * Given a 75% discount when upgraded to.              
   
     T3 Anti nuke defence
       * Changed tarmac.
@@ -112,6 +133,9 @@ Modded Units:
   	Scathis
       * Removed.
       * Replaced with immobile version for both balance and aesthetic purposes.
+    
+    Megalith
+      * Added the ability to build the Salem, House, Hedgehog, Slink, and Opperative       
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
     T2 Field Engineer
@@ -127,15 +151,17 @@ Modded Units:
         
     Kennel
       * Tech 3 version is now directly buildable.
+      * Increased cost by double.
+      * Has a 50% cost reduction whilst upgrading from the T2.            
   
   	Novax Center & Defense Satellite
   		* Removed.
   		* Replaced with:
-  		  * A Tech 3 Observation Satellite Uplink & Observation Satellite, which partially reuses its apearance.
+  		  * A Tech 3 Observation Satellite Uplink & Observation Satellite, which mostly reuses its apearance.
   		  * A Tech 3 Mobile Satellite Uplink vehicle, with its weapon.
   
   	Mavor
-      * Changed menu sorting.
+      * Gave 'strategic' menu sorting.
     
     Fatboy
       * Made Gantry buildable.
@@ -147,7 +173,7 @@ Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
   	T2 Shield Genorator: Atha
-  		* Added "UpgradesFrom" attribute to allow the T1 shield to upgrade to it.
+  		* Allow the T1 shield to upgrade to it.
   
   	T3 Siege Tank
   		* Set the allways upright attribute to false.
@@ -356,7 +382,7 @@ Experimental Table
                 |UEF            |Aeon           |Cybran         |Seraphim       |
 ————————————————+———————————————+———————————————+———————————————+———————————————|
 Land 1          |*Assault thing |Galactic Col...|Mokeylord      |Ythotha        |
-Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Necro bot     |
+Land 2          |Fatboy (F)     |Absolution     |Megalith (F)   |*Necro bot (F) |
 Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        |
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 ————————————————+———————————————+———————————————+———————————————+———————————————|
@@ -442,9 +468,15 @@ Seraphim totally not a stargate
 * Seraphim Iyadesu
   Formerly Experimental Engineer (Prior to r205)
   Formerly Experimental Field Engineer (As of r205, removed as 2014-08-08)
-  Experimental Ressurection Unit
-    * Script attached to the reclaim command.
-    * Had to totally overwrite the old CreateWreckageProp function for it to work.                 
+  Formerly Experimental Ressurection Unit (Prior to 2016-08-17)
+  Experimental Reconstruction Engineer
+  * Reclaims things to learn their recipie.
+  * Can learn up to 8 recipies.
+  * Cooks delicious units from its recipies.
+  * Gets storage drones for the recipies.
+  * Loses its recipies if it loses its drones.
+  * Drones help to build.
+  * Uses a temporary model of the T3 artillery.              
 
 Seraphim Suthanus: Rapid-Fire Artillery
   * Fully functioning.
@@ -548,7 +580,7 @@ Blackrobe ideas
 _______________________________________________________
 Side mods
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-BrewLAN modules:
+BrewLAN modules: (Require BrewLAN to do anything)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   BrewUI
   * Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
@@ -562,7 +594,7 @@ BrewLAN modules:
     * 2 has a mass gated exponential increase in the two.   
   * Also poses as an example for other on how to mod BrewLAN.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Game modes:
+Gameplay: (Alter gameplay in a fixed way)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Crystal Hill
   * King of the hill style: Spawns a crystal dead center of the map.
@@ -588,8 +620,11 @@ Game modes:
   Anti-Mass
   * Swaps mass and energy production, and shifts them an order of magnitude closer to eachother.
 
+  Waterlag
+  * Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental.
+  * Spawns an entity that looks like legs underneith UEF and Cybran buildings that were made aquatic by waterlag and dont have defined floatation bones.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-RNG bullshit:
+RNG bullshit: (Alter gameplay with random effects)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
   Cost Variance
   * Adds a +/- 50% random cost variation to all non-economic units, and alters some stats to match.
@@ -603,18 +638,15 @@ RNG bullshit:
     * For each similar unit added by both, randomly restricts one for each player.
       * Do you get a Manticore this game or a Hades? How about your opponent?            
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Uncategorised:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Waterlag
-  * Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental.
-  * Spawns an entity that looks like legs underneith UEF and Cybran buildings that were made aquatic by waterlag and dont have defined floatation bones.
-  
+Plenus: (Satisfaction guaranteed; sim-side aesthetic changes only)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -  
   Pulchritudinousity
   * For taking better screenshots:
     * Increases the view distances of models and tarmacs 1000x.
     * Makes spawned in units auto-give themselves tarmacs.
   
   Experimental Icons Overhaul
+  * Doesn't work on FAF for scd reasons.
   * Dynamically changes units experimental icons from a circle to something useful.
     * Has a system that includes comparative weapon DPS for deciding icons.   
   * Specifically tested for use with Total Mayhem, Experimental Wars, BlackOps, 4th Dimension, and X'Treme Wars.          

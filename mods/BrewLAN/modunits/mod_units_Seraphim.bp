@@ -1,11 +1,13 @@
-#Seraphim Buildings	----------------------------------#
+--------------------------------------------------------------------------------
+-- Buildings
+--------------------------------------------------------------------------------
 
-
-#Seraphim Units	----------------------------------#
-
+--------------------------------------------------------------------------------
+-- Units
+--------------------------------------------------------------------------------
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xsl0101",# selen, T1 land scout
+	BlueprintId="xsl0101",--selen, T1 land scout
     Intel = {
         OmniRadius = 2,
     },
@@ -13,7 +15,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xsl0303", # T3 Siege tank
+	BlueprintId="xsl0303",--T3 Siege tank
     Defense = {
         Health = 9000,
         MaxHealth = 9000,

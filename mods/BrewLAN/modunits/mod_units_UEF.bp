@@ -1,8 +1,9 @@
-#UEF Buildings	----------------------------------#
-
+--------------------------------------------------------------------------------
+-- Buildings
+--------------------------------------------------------------------------------
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ueb4301",		##HSD - Pulse     
+	BlueprintId="ueb4301",		--HSD - Pulse     
     Display = {
         Tarmacs = {
             {
@@ -17,7 +18,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ueb4202",		##SD - Pulse          
+	BlueprintId="ueb4202",		--SD - Pulse          
     Display = {
         Tarmacs = {
             {
@@ -32,7 +33,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ueb4302",		##UEF antinuke
+	BlueprintId="ueb4302",		-- Antinuke
     Display = {
         Tarmacs = {
             {
@@ -45,7 +46,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xeb0204",		##The Kennel 
+	BlueprintId="xeb0204",		--The Kennel 
     Economy = {
         BuildCostEnergy = 2500*2,
         BuildCostMass = 500*2,
@@ -55,13 +56,13 @@ UnitBlueprint {
         },
     },
 }
-
-#UEF Units	----------------------------------#
-
+--------------------------------------------------------------------------------
+-- Units
+--------------------------------------------------------------------------------
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="uel0101",		##snoop
+	BlueprintId="uel0101",		--snoop
     Intel = {
-        OmniRadius = 2,			##Added
+        OmniRadius = 2,			--Added
     },
 }

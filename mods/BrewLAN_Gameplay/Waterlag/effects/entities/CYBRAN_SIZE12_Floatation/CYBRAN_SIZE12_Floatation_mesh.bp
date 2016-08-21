@@ -1,0 +1,13 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'CYBRAN_SIZE12_Floatation_lod0.scm',
+            AlbedoName = '/mods/BrewLAN_Gameplay/Waterlag/effects/entities/CYBRAN_SIZE4_Floatation/CYBRAN_SIZE4_Floatation_albedo.dds',
+            SpecularName = '/mods/BrewLAN_Gameplay/Waterlag/effects/entities/CYBRAN_SIZE4_Floatation/CYBRAN_SIZE4_Floatation_specteam.dds',
+            NormalsName = '/mods/BrewLAN_Gameplay/Waterlag/effects/entities/CYBRAN_SIZE4_Floatation/CYBRAN_SIZE4_Floatation_normalsTS.dds',
+            ShaderName = 'Insect',
+            LODCutoff = 1000,
+        },
+    },
+    SortOrder = 1000,
+}

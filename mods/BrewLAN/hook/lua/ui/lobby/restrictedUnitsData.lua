@@ -65,6 +65,7 @@ do
             "seb1311",
             "seb1312",
             "seb1313",
+            --Hive and Kennel final forms
             "xeb0204",
             "xrb0304",
         },
@@ -100,6 +101,7 @@ do
         table.removeByValue(restrictedUnits.NUKE.categories, "xss0302")
     --Are we FaF?
     elseif restrictedUnits.NUKE.categoryExpression then
+        --I don't think this actually works. Dont care enough to fix it.
         restrictedUnits.NUKE.categoryExpression = string.gsub(restrictedUnits.NUKE.categoryExpression, " + xss0302", "")
     end
 end
