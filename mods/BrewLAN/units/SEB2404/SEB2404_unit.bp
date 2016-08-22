@@ -153,6 +153,7 @@ UnitBlueprint {
             'seb2404',
         },                    
         BuildRate = 180,
+        BuilderDiscountMult = 0.6,
         BuildableCategory = {                   
             'BUILTBYTIER3FACTORY UEF MOBILE LAND CONSTRUCTION',   
             'BUILTBYTIER3FACTORY UEF MOBILE LAND',   

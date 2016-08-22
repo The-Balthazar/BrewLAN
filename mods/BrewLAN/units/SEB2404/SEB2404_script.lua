@@ -1,15 +1,8 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UEB2302/UEB2302_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  UEF Long Range Artillery Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+-- YOU SEE IVAN, WHEN GUN FIRE SMALLER GUN 
+--------------------------------------------------------------------------------
 local TStructureUnit = import('/lua/terranunits.lua').TLandFactoryUnit
-local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon    
+local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
 
 SEB2404 = Class(TStructureUnit) {
     
@@ -141,7 +134,7 @@ SEB2404 = Class(TStructureUnit) {
                 end
             
             --Otherwise we need to redo the whole list
-            else     
+            elseif self.FactoryOrdersList then     
                 for k, v in self.FactoryOrdersList do
                     self:GetAIBrain():BuildUnit(self, v, 1)  
                 end

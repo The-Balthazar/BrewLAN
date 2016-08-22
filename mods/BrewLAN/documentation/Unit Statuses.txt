@@ -429,7 +429,8 @@ UEF Ivan: Experimental Drop-Pod Artillery
     * Range should probably decrease for large ammos.
     * Possibly pass kills of the units back to the cannon?
     * Has an issue related to restarting skirmish games that can result in 'ghost' units appearing in the next game where it was.
-      * Caused by spawning objects with the ondestroyed call.                                                  
+      * Caused by spawning objects with the ondestroyed call.
+    * Gets a 40% discount on built units. Units spawn with 40% of their health missing.                                                        
         
 UEF Gantry: Experimental Factory
   * Almost completely 100% Fully funtional.
