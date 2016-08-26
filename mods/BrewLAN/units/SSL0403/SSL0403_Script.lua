@@ -9,12 +9,12 @@ local WeaponsFile = import('/lua/seraphimweapons.lua')
 local SDFAireauBolter = WeaponsFile.SDFAireauBolterWeapon
 local SANUallCavitationTorpedo = WeaponsFile.SANUallCavitationTorpedo
 local EffectUtil = import('/lua/EffectUtilities.lua')
+local SDFUltraChromaticBeamGenerator = import('/lua/seraphimweapons.lua').SDFUltraChromaticBeamGenerator
 
 SSL0403 = Class(SConstructionUnit) {
     Weapons = {
-        Torpedo01 = Class(SANUallCavitationTorpedo) {},
-        LeftTurret = Class(SDFAireauBolter) {},
-        RightTurret = Class(SDFAireauBolter) {},
+        --Torpedo01 = Class(SANUallCavitationTorpedo) {},
+        MainTurret = Class(SDFUltraChromaticBeamGenerator) {},
     },
 
     OnCreate = function(self)

@@ -14,7 +14,7 @@ function SCUFieldUpgrade(SuperClass)
             SuperClass.CreateEnhancement(self, enh)
             local bp = self:GetBlueprint().Enhancements[enh]
             if not bp then return end
-            #Field
+            --Field
             local restriction = (categories.ECONOMIC * categories.TECH3) - categories.BUILTBYTIER3FIELD - categories.MASSSTORAGE - categories.ENERGYSTORAGE - categories.HYDROCARBON
             if enh == 'Field' then
                 self:RemoveBuildRestriction(categories.BUILTBYTIER3FIELD)  

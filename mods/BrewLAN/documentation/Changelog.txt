@@ -192,7 +192,11 @@ __________.__________
   
   * Ivan now gets a 40% dscount on units.
   * Units build by Ivan have 40% less health than usual.
-  * Fixed an issue with the Ivan related to clearing orders after firing its last unit with scripted repeat orders.                               
+  * Fixed an issue with the Ivan related to clearing orders after firing its last unit with scripted repeat orders.
+  __________
+  2016-08-26
+
+  * Iyadesu now has a beam weapon.                                 
 __________.__________
 2015-09-05|0.7
 

@@ -359,8 +359,7 @@ SEB0401 = Class(TLandFactoryUnit) {
             self.BuildAnimManip:SetRate(0)
         end
     end,
-    
-    
+
     DeathThread = function(self, overkillRatio, instigator) 
         for i = 1, 8 do
             local r = 1 - 2 * math.random(0,1)

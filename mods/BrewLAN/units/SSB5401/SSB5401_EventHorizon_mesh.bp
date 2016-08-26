@@ -1,0 +1,16 @@
+MeshBlueprint {
+    LODs = {
+        {
+            ShaderName = 'SeraphimBuild',
+            SpecularName = '/textures/effects/SeraphimBuildSpecular.dds',
+            NormalsName = '/textures/effects/SeraphimBuildSpecular.dds',
+            LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+            MeshName = 'SSB5401_EventHorizon_lod0.scm',
+            AlbedoName = 'SSB5401_Albedo.dds',
+            --SpecularName = 'SSB5401_SpecTeam.dds',
+            --NormalsName = 'SSB5401_normalsTS.dds',
+            LODCutoff = 1000,
+        },
+    },
+    SortOrder = 1000,
+}

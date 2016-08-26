@@ -16,4 +16,3 @@ SAL0401 = Class(ALandUnit) {
     },
 }
 TypeClass = SAL0401
-
