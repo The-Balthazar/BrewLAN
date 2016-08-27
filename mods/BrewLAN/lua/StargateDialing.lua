@@ -6,24 +6,23 @@ local explosion = import('/lua/defaultexplosions.lua')
 
 function StargateDialing(SuperClass)
     return Class(SuperClass) {
-        GateEffects = {
-				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_02_emit.bp', -- faint rings
-				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_03_emit.bp', -- distortion
-        },
-         
-        GateEffectsBag = {},
-        
+
         OnCreate = function(self)
             SuperClass.OnCreate(self)
-            self.DialingData = {}
-            --self.DialingData.DisableCounter = 0
-            self.DialingData.IntelButton = true
-            self.DialingData.ActiveWormhole = false
-            self.DialingData.IncomingWormhole = false  
-            self.DialingData.Iris = false
-            self:HideBone('Event_Horizon', true)
+            self.DialingData = {
+                ActiveWormhole = false,
+                IncomingWormhole = false,  
+                Iris = false,
+                TargetGate = nil,
+                WormholeThread = nil,
+                --DisableCounter = 0,
+            }
         end,
-            
+        
+        ------------------------------------------------------------------------
+        -- Main function callbacks
+        ------------------------------------------------------------------------    
+        
         OnShieldEnabled = function(self)
             SuperClass.OnShieldEnabled(self)
             self.DialingData.Iris = true
@@ -33,15 +32,36 @@ function StargateDialing(SuperClass)
             SuperClass.OnShieldDisabled(self)
             self.DialingData.Iris = false
         end,
+
+        OnKilled = function(self, instigator, type, overkillRatio)  
+            self:CloseWormhole(true)
+            SuperClass.OnKilled(self, instigator, type, overkillRatio)
+        end,
+
+        OnDestroy = function(self)  
+            self:CloseWormhole(true)
+            SuperClass.OnDestroy(self)
+        end,
+            
+        OnScriptBitSet = function(self, bit)
+            SuperClass.OnScriptBitSet(self, bit)
+            if bit == 6 then  
+                self:CloseWormhole()
+                self:SetScriptBit('RULEUTC_GenericToggle',false) 
+            end
+        end,
         
         OnStopBeingBuilt = function(self,builder,layer)
             self.Sync.Abilities = self:GetBlueprint().Abilities
-            self:SetMaintenanceConsumptionInactive()
+            self:RemoveToggleCap('RULEUTC_GenericToggle')
             SuperClass.OnStopBeingBuilt(self,builder,layer)           
             self.DialingData.WormholeThread = self:ForkThread(
                 function()
                     while true do
-                        if self.DialingData.TargetGate
+                        if not self.DialingData.ActiveWormhole and self.DialingData.TargetGate and not self.DialingData.TargetGate.IncomingWormhole then
+                            self:DialingAnimation(self.DialingData.TargetGate)
+                            self:OpenWormhole(self.DialingData.TargetGate, true)
+                        elseif self.DialingData.TargetGate
                         and self.DialingData.ActiveWormhole
                         and not self.DialingData.IncomingWormhole
                         and not self.DialingData.Iris
@@ -51,31 +71,21 @@ function StargateDialing(SuperClass)
                                 for i, v in units do
                                     Warp(v, self.DialingData.TargetGate:GetPosition())
                                     if self.DialingData.TargetGate.DialingData.Iris then
-                                        local damage = (v:GetBlueprint().Economy.BuildCostMass + (v:GetBlueprint().Economy.BuildCostEnergy / 20) / 2 ) * v:GetHealthPercent()
-                                        local irishealth = self.DialingData.TargetGate.MyShield:GetHealth()
-                                        
-                                        if irishealth > damage then
-                                            v:Destroy()
-                                        else
-                                            v:SetHealth(v, v:GetHealth() * (1 - (irishealth / damage)))
-                                        end
-                                        self.DialingData.TargetGate:CreateIrisImpactEffect(self.DialingData.TargetGate)
-                                        self.DialingData.TargetGate.MyShield:OnDamage(v,damage, {x=0,y=0,z=0}, 'normal')
-                                        
+                                        self.DialingData.TargetGate:OnIrisImpact(v)
                                     end
                                 end
                             elseif self.DialingData.TargetGate:IsDead() then
-                                self:WormholeFunctionToggle()
+                                self:CloseWormhole(true)
                             end
                             WaitTicks(3)
                         else
-                            WaitTicks(12)
+                            WaitTicks(5)
                         end
                     end
                 end
             )
         end,
- 
+                  
         OnTargetLocation = function(self, location)
             local aiBrain = self:GetAIBrain()
             local bp = self:GetBlueprint()
@@ -85,106 +95,164 @@ function StargateDialing(SuperClass)
                 return
             end
             local targetarea = aiBrain:GetUnitsAroundPoint(categories.STARGATE, location, 10)
-            if targetarea[1] then      
-                if targetarea[1] != self                                            --Check not trying to dial self
-                and targetarea[1] != self.DialingData.TargetGate                    --Check not redialing the same gate
-                and targetarea[1].DialingData.WormholeThread                        --Check the target is built and ready
-                and not targetarea[1].DialingData.ActiveWormhole                    --Check the target isn't already dialing out
-                and not targetarea[1].DialingData.IncomingWormhole                  --Check the target isn't already being dialed into
-                then
-                    if self.DialingData.TargetGate then
-                        self:WormholeFunctionToggle()
-                    end
-                    self:WormholeFunctionToggle(targetarea[1], true)
-                    aiBrain:TakeResource( 'ENERGY', bp.Economy.DialingCostBase )  
-                    --LOG("CHEVRON 7 LOCKED")
-                else
-                    --LOG("CHEVRON 7 ... WONT ENGAGE")
+            --if table.getn(targetarea) > 1 then
+                --sort by distance here
+                local targetgate = targetarea[1]
+            --end
+            
+            if targetgate                                   --Check we have a target
+            and targetgate != self                          --Check not trying to dial self
+            and targetgate != self.DialingData.TargetGate   --Check not redialing the same gate
+            and targetgate.DialingData.WormholeThread       --Check the target is built and ready
+            and not targetgate.DialingData.ActiveWormhole   --Check the target isn't already dialing out
+            and not targetgate.DialingData.IncomingWormhole --Check the target isn't already being dialed into
+            and not targetgate.DialingData.OutgoingWormhole --Check the target isn't currently dialing out
+            and not self.DialingData.IncomingWormhole       --Check we don't have incoming
+            then
+                if self.DialingData.OutgoingWormhole then
+                    self:CloseWormhole(true)
                 end
-            end
-        end,
-        
-        WormholeFunctionToggle = function(self, targetgate, wormhole)
-            if not targetgate then targetgate = self.DialingData.TargetGate end
-            if wormhole and not targetgate:IsDead() then
-                --Particle effectss
-                explosion.CreateDefaultHitExplosionAtBone( self, 'Center', 10.0 ) 
-                explosion.CreateDefaultHitExplosionAtBone( targetgate, 'Center', 10.0 )
-                for k, v in self.GateEffects do
-                    table.insert(self.GateEffectsBag, CreateAttachedEmitter( self, 'Center', self:GetArmy(), v ):OffsetEmitter(0,3,0) )
-                    table.insert(targetgate.GateEffectsBag, CreateAttachedEmitter( targetgate, 'Center', targetgate:GetArmy(), v ):OffsetEmitter(0,3,0) )
-                end  
-                --Self open opperations
+                targetgate.DialingData.IncomingWormhole = true
                 self.DialingData.TargetGate = targetgate
-                self:ShowBone('Event_Horizon', true)
-                self.DialingData.ActiveWormhole = true  
-                self:DisableShield()
-                --Target gate open opperations
-                targetgate.DialingData.TargetGate = self
-                targetgate:ShowBone('Event_Horizon', true)     
-                targetgate:RemoveToggleCap('RULEUTC_GenericToggle')  
-                targetgate.DialingData.ActiveWormhole = true
-                targetgate.DialingData.IncomingWormhole = true  
-                --Target gate shield check
-                if self:GetArmy() == targetgate:GetArmy() then  
-                    --Disables target gate shield only if same team
-                    targetgate:DisableShield()
-                elseif not IsAlly( self:GetArmy(), targetgate:GetArmy() ) then
-                    --Enables target gate shield if its an enemy gate 
-                    targetgate:EnableShield()
-                end   
-            else--Closing the wormhole
-                --Self particles destroy  
-                explosion.CreateDefaultHitExplosionAtBone( self, 'Center', 5.0 ) 
-                for k, v in self.GateEffectsBag do
-                    v:Destroy()
-                end
-                --Self close opperations 
-                self:HideBone('Event_Horizon', true)
-                self.DialingData.ActiveWormhole = false    
-                self.DialingData.TargetGate = nil
-                --Target still exists check
-                if not targetgate:IsDead() then  
-                    --Target particles destroy     
-                    explosion.CreateDefaultHitExplosionAtBone( targetgate, 'Center', 5.0 )
-                    for k, v in targetgate.GateEffectsBag do
-                        v:Destroy()
-                    end               
-                    --Target close opperations 
-                    targetgate:HideBone('Event_Horizon', true) 
-                    targetgate:AddToggleCap('RULEUTC_GenericToggle') 
-                    targetgate.DialingData.ActiveWormhole = false
-                    targetgate.DialingData.IncomingWormhole = false   
-                    targetgate.DialingData.TargetGate = nil    
-                end  
+                self.DialingData.OutgoingWormhole = true
+                aiBrain:TakeResource( 'ENERGY', bp.Economy.DialingCostBase )  
+                --LOG("CHEVRON 7 LOCKED")
+            else
+                --LOG("CHEVRON 7 ... WONT ENGAGE")
             end
         end,
         
-        CreateIrisImpactEffect = function(self)
+        OpenWormhole = function(self, other, primary)
+            --FloatingEntityText(self:GetEntityId(),tostring(primary) )
+            if other and not other:IsDead() then
+                if primary then 
+                    other:OpenWormhole(self, not primary)
+                    self:AddToggleCap('RULEUTC_GenericToggle')
+                    self:SetScriptBit('RULEUTC_GenericToggle',false)
+                    --Disable shield whilst dialing out. Can't leave else.
+                    self:DisableShield()
+                else
+                    self:RemoveToggleCap('RULEUTC_GenericToggle')
+                    if self:GetArmy() == other:GetArmy() then  
+                        --Disables shield if being dialed by another owners gate.
+                        self:DisableShield()
+                    elseif not IsAlly( self:GetArmy(), other:GetArmy() ) then
+                        --Enables shield if being dialed by an enemy gate. 
+                        self:EnableShield()
+                    end   
+                end
+                self.DialingData.TargetGate = other
+                self.DialingData.ActiveWormhole = true
+                self.DialingData.IncomingWormhole = not primary   
+                self:EventHorizonToggle(true)
+            end
+        end,
+        
+        CloseWormhole = function(self, force)
+            if not self.DialingData.IncomingWormhole or force then
+                if self.DialingData.TargetGate and not self.DialingData.TargetGate:IsDead() then
+                    local other = self.DialingData.TargetGate
+                    self.DialingData.TargetGate.DialingData.TargetGate = nil
+                    other:CloseWormhole(true)    
+                end
+                self:EventHorizonToggle(false)
+                self:RemoveToggleCap('RULEUTC_GenericToggle')
+                self.DialingData.ActiveWormhole = false
+                self.DialingData.IncomingWormhole = false
+                self.DialingData.OutgoingWormhole = false     
+                self.DialingData.TargetGate = nil
+            end 
+        end,
+
+        OnIrisImpact = function(self, instigator)
             local army = self:GetArmy()
+            local damage = (instigator:GetBlueprint().Economy.BuildCostMass + (instigator:GetBlueprint().Economy.BuildCostEnergy / 20) / 2 ) * instigator:GetHealthPercent()
+            local irishealth = self.MyShield:GetHealth()
+            if irishealth > damage then
+                instigator:Destroy()
+                self:AddKills(1)
+                self:PlayUnitSound('ShieldImpact')
+            else
+                instigator:SetHealth(instigator, instigator:GetHealth() * (1 - (irishealth / damage)))
+            end
+            self.MyShield:OnDamage(instigator,damage, {x=0,y=0,z=0}, 'normal')
             for k, v in self.MyShield.ImpactEffects do
                 CreateEmitterAtBone(self, 'Center', army, v ):ScaleEmitter(4)
             end
         end,
-              
-        OnScriptBitSet = function(self, bit)
-            SuperClass.OnScriptBitSet(self, bit)
-            if bit == 6 then  
-                if self.DialingData.TargetGate then
-                    if not self.DialingData.IncomingWormhole or self.DialingData.TargetGate:IsDead() then
-                        self:WormholeFunctionToggle()
-                    end
-                end
-                self:SetScriptBit('RULEUTC_GenericToggle',false) 
+        
+        ------------------------------------------------------------------------
+        -- Animations and effects
+        ------------------------------------------------------------------------
+        
+        DialingAnimation = function(self, target)
+            if not target then
+                target = self
             end
-        end,
+            local targetPos = target:GetPosition()
+            local firstChevron = math.ceil(targetPos[1] / (ScenarioInfo.size[1] / 9) )
+            local secondChevron = math.ceil(targetPos[3] / (ScenarioInfo.size[2] / 9) )
+            local Dial = function(manipulator, val, neg)
+                --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
+                --CreateRotator(gate, 'Ring', 'z', val * 40, 0, 0, 100 * val)
+                manipulator:SetAccel(20 * math.abs(val))
+                manipulator:SetTargetSpeed(100 * math.abs(val))
+                manipulator:SetGoal(val * 40)
+                manipulator:SetSpeed(10 * math.abs(val))
+            end
+            if not self.DailingAnimation then self.DailingAnimation = CreateRotator(self, 'Ring', 'z') end
+            if target != self and not target.DailingAnimation then target.DailingAnimation = CreateRotator(target, 'Ring', 'z') end
             
-        OnKilled = function(self, instigator, type, overkillRatio)
-            SuperClass.OnKilled(self, instigator, type, overkillRatio)  
-            if self.DialingData.TargetGate then
-                self:WormholeFunctionToggle()
-            end  
-            self:SetMaintenanceConsumptionInactive()
-        end,
+            Dial(self.DailingAnimation, firstChevron)
+            if self != target then
+                Dial(target.DailingAnimation, firstChevron)
+            end
+            
+            WaitFor(self.DailingAnimation)
+            WaitFor(target.DailingAnimation)
+            
+            WaitTicks(3)
+            
+            Dial(self.DailingAnimation, - secondChevron)
+            if self != target then
+                Dial(target.DailingAnimation, - secondChevron)
+            end
+            
+            WaitFor(self.DailingAnimation)
+            WaitFor(target.DailingAnimation)
+        end,       
+        
+        GateEffects = {
+				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_02_emit.bp', -- faint rings
+				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_03_emit.bp', -- distortion
+        },
+       
+        GateEffectsBag = {},
+        
+        EventHorizonToggle = function(self, value)
+            if value then 
+                explosion.CreateDefaultHitExplosionAtBone( self, 'Center', 10.0 )
+                for k, v in self.GateEffects do
+                    table.insert(self.GateEffectsBag, CreateAttachedEmitter( self, 'Center', self:GetArmy(), v ):OffsetEmitter(0,3,0) )
+                end 
+                self.EventHorizon = import('/lua/sim/Entity.lua').Entity({Owner = self,})
+                self.EventHorizon:AttachBoneTo( -1, self, 'Center' )
+                self.EventHorizon:SetMesh( import( '/lua/game.lua' ).BrewLANPath() .. '/units/ssb5401/SSB5401_EventHorizon_mesh')
+                self.EventHorizon:SetDrawScale(0.12)
+                self.EventHorizon:SetVizToAllies('Intel')
+                self.EventHorizon:SetVizToNeutrals('Intel')
+                self.EventHorizon:SetVizToEnemies('Intel')     
+                self.EventHorizonRotator = CreateRotator(self, 'Center', 'z', nil, math.random(-5, 5) )
+                self.Trash:Add(self.EventHorizon)
+            else  
+                explosion.CreateDefaultHitExplosionAtBone( self, 'Center', 5.0 )
+                for k, v in self.GateEffectsBag do
+                    v:Destroy()
+                end
+                if self.EventHorizon then
+                    self.EventHorizon:Destroy()
+                end
+            end
+        end,                 
     }    
 end

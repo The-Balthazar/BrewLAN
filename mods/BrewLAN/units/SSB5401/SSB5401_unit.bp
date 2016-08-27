@@ -46,10 +46,26 @@ UnitBlueprint {
             Cue = 'XSB4301_On_Off',
             LodCutoff = 'UnitMove_LodCutoff',
         },
+        ShieldImpact = Sound {
+            --Bank = 'AmbientTest',
+            --Cue = 'Gen_Fire_Start',
+            Bank = 'Impacts',
+            Cue = 'X_Impact_Land_Gen_Seraphim',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
         UISelection = Sound {
             Bank = 'SeraphimSelect',
             Cue = 'Seraphim_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
+        },
+    },
+    Buffs = {
+        Regen = {
+            Level1 = 15,
+            Level2 = 30,
+            Level3 = 45,
+            Level4 = 60,
+            Level5 = 75,
         },
     },
     BuildIconSortPriority = 220,
@@ -419,6 +435,13 @@ UnitBlueprint {
         Class2AttachSize = 1,
         Class3AttachSize = 1,
         ClassGenericUpTo = 3,
+    },
+    Veteran = {
+        Level1 = 5,
+        Level2 = 10,
+        Level3 = 15,
+        Level4 = 20,
+        Level5 = 25,
     },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

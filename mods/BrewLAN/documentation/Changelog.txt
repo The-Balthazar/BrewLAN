@@ -196,7 +196,16 @@ __________.__________
   __________
   2016-08-26
 
-  * Iyadesu now has a beam weapon.                                 
+  * Iyadesu now has a beam weapon.
+  * Rewrote the script for the Stargate. Main in game differences:
+    * Event horizon is a different entity with different shaders.
+    * It now performs a two chevron dial animation before connecting.
+      * This dialing animation is based on where the target gate actually is.
+      * There are 81 dialing adresses. Gates near enough to one another will have the same adress. This changes nothing.      
+    * Units dying on impact on the iris now award kills to the gate.
+    * Fixed a bug that may or may not have existed before which bricked gates if you just re-dialed another gate.
+    * Added veterency levels.
+    * Added a sound effect to the iris impacts.                                                                       
 __________.__________
 2015-09-05|0.7
 
