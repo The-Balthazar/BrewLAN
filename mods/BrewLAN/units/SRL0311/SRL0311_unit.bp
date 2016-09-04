@@ -1,8 +1,6 @@
 UnitBlueprint {
     AI = {   
         InitialAutoMode = true,
-        --GuardScanRadius = 30,
-        --NeedUnpack = true,
     },
     Audio = {
         Activate = Sound {
@@ -58,7 +56,6 @@ UnitBlueprint {
         'SILO',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        --'SHOWATTACKRETICLE',
         'OVERLAYINDIRECTFIRE',
     },
     Defense = {
@@ -71,12 +68,8 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 24,
     },
-    Description = '<LOC xel0306_desc>Mobile Missile Platform',
+    Description = '<LOC srl0311_desc>Mobile Rocket Platform',
     Display = {
-        --Abilities = {
-        --    '<LOC ability_deploys>Deploys',
-        --},
-        --AnimationOpen = '/units/URL0304/URL0304_Aactivate.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -86,7 +79,7 @@ UnitBlueprint {
                     ShaderName = 'Insect',
                     AlbedoName = '/units/url0304/url0304_albedo.dds', 
                     NormalsName = '/units/url0304/url0304_normalsTS.dds', 
-                    SpecularName = '/units/url0304/url0304_specteam.dds', 
+                    --SpecularName = '/units/url0304/url0304_specteam.dds', 
                 },
                 {
                     LODCutoff = 215,
@@ -165,7 +158,7 @@ UnitBlueprint {
         VisionRadius = 26,
     },
     Interface = {
-        HelpText = '<LOC xel0306_help>Mobile Missile Platform',
+        HelpText = '<LOC srl0311_desc>Mobile Rocket Platform',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
@@ -217,24 +210,18 @@ UnitBlueprint {
         {
             AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = true,
-            --ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'URAWeapon',
                     Cue = 'URA0401_Rock_Pack',
                     LodCutoff = 'Weapon_LodCutoff',
                 },
-                --Fire = Sound {
-                --    Bank = 'URLWeapon',
-                --    Cue = 'URL0304_Artillery_Proton',
-                --    LodCutoff = 'Weapon_LodCutoff',
-                --},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 125,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'Iridium Rocket Barrage',
             FireTargetLayerCapsTable = {
@@ -250,8 +237,8 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 20,
-            MuzzleVelocityReduceDistance = 85,
-            ProjectileId = '/projectiles/CIFArtilleryProton01/CIFArtilleryProton01_proj.bp',
+            ProjectileId = '/mods/brewlan/projectiles/CDFRocketIridium03/CDFRocketIridium03_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 21,
             RackBones = {
                 {
@@ -281,11 +268,7 @@ UnitBlueprint {
                     RackBone = 'Turret_Barrel',
                 },
             },
-            --RackFireTogether = false,
-            RackRecoilDistance = 0,
-            --RackReloadTimeout = 0.25,
-            --RackSalvoChargeTime = 0,
-            --RackSalvoReloadTime = 10,
+            RackRecoilDistance = 0, 
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_IndirectFire',
@@ -314,11 +297,6 @@ UnitBlueprint {
             TurretYawSpeed = 30,
             Turreted = true,
             WeaponCategory = 'Missile',
-            --WeaponRepackTimeout = 0,
-            --WeaponUnpackAnimation = '/units/URL0304/URL0304_Aactivate.sca',
-            --WeaponUnpackAnimationRate = 1,
-            --WeaponUnpackLocksMotion = true,
-            --WeaponUnpacks = true,
         },
     },
     Wreckage = {

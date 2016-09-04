@@ -312,10 +312,10 @@ Tech 3:
       * T3 Cloakable Mass Extractor.
     	* T3 Stealth tank (Cybran sniper bot alternative)
         * Unfinished appearance.
-  		* T3 Mobile stealth Gen.    
+  		* T3 Mobile stealth Gen.
+  		* T3 Mobile Rocket Platform.          
         
   	Pending:
-  		* T3 Anti Shield.
       * T3 Field Engineering Ship.                   
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -

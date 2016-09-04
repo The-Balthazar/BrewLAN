@@ -343,8 +343,9 @@ srl0316_desc="Cloakable Mobile Stealth Field System"
 srl0316_name="Operative"
 Unit_Description_BrewLAN_T3L010="Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
 
+srl0311_desc="Mobile Rocket Platform"
 srl03ll_name="Hexatron"
-Unit_Description_BrewLAN_T3L011="Mobile missile launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
+Unit_Description_BrewLAN_T3L011="Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
 
 ss0319_desc="Field Engineering Ship"
 ses0319_name="Patch Class"
