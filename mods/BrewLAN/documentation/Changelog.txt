@@ -205,7 +205,20 @@ __________.__________
     * Units dying on impact on the iris now award kills to the gate.
     * Fixed a bug that may or may not have existed before which bricked gates if you just re-dialed another gate.
     * Added veterency levels.
-    * Added a sound effect to the iris impacts.                                                                       
+    * Added a sound effect to the iris impacts.
+  __________
+  2016-09-03
+
+  * Stargate new longer dialing sequence, with more efficient address calculation.
+  __________
+  2016-09-04
+
+  * Added Hexatron: Cybran T3 Mobile Missile Platform.
+    * Weapon not finished.
+      * Sometimes it doesn't fire.
+      * The explosion graphic is about 20x too big.
+      * It uses the graphic of shells instead of missiles.
+      * There isn't a reload animation yet.                                                                                                
 __________.__________
 2015-09-05|0.7
 

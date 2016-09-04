@@ -6,18 +6,6 @@ local explosion = import('/lua/defaultexplosions.lua')
 
 function StargateDialing(SuperClass)
     return Class(SuperClass) {
-
-        OnCreate = function(self)
-            SuperClass.OnCreate(self)
-            self.DialingData = {
-                ActiveWormhole = false,
-                IncomingWormhole = false,  
-                Iris = false,
-                TargetGate = nil,
-                WormholeThread = nil,
-                --DisableCounter = 0,
-            }
-        end,
         
         ------------------------------------------------------------------------
         -- Main function callbacks
@@ -49,6 +37,25 @@ function StargateDialing(SuperClass)
                 self:CloseWormhole()
                 self:SetScriptBit('RULEUTC_GenericToggle',false) 
             end
+        end,
+        
+        ------------------------------------------------------------------------
+        -- Innitialisation
+        ------------------------------------------------------------------------
+        
+        OnCreate = function(self)
+            SuperClass.OnCreate(self)
+            self.DialingData = {
+                ActiveWormhole = false,
+                IncomingWormhole = false,  
+                Iris = false,
+                TargetGate = nil,
+                WormholeThread = nil,
+                --DisableCounter = 0,
+                DialingSequence = self:DialingSequence(self),
+                DialingHome = math.mod(self:GetEntityId() or 1, 9),
+                CurrentPosition = 9,
+            }
         end,
         
         OnStopBeingBuilt = function(self,builder,layer)
@@ -85,6 +92,10 @@ function StargateDialing(SuperClass)
                 end
             )
         end,
+        
+        ------------------------------------------------------------------------
+        -- Activation
+        ------------------------------------------------------------------------
                   
         OnTargetLocation = function(self, location)
             local aiBrain = self:GetAIBrain()
@@ -121,6 +132,10 @@ function StargateDialing(SuperClass)
                 --LOG("CHEVRON 7 ... WONT ENGAGE")
             end
         end,
+        
+        ------------------------------------------------------------------------
+        -- Event Horizon functions
+        ------------------------------------------------------------------------
         
         OpenWormhole = function(self, other, primary)
             --FloatingEntityText(self:GetEntityId(),tostring(primary) )
@@ -161,6 +176,7 @@ function StargateDialing(SuperClass)
                 self.DialingData.IncomingWormhole = false
                 self.DialingData.OutgoingWormhole = false     
                 self.DialingData.TargetGate = nil
+                --self:DialingAnimationReset()
             end 
         end,
 
@@ -185,42 +201,63 @@ function StargateDialing(SuperClass)
         -- Animations and effects
         ------------------------------------------------------------------------
         
-        DialingAnimation = function(self, target)
-            if not target then
-                target = self
-            end
+        DialingSequence = function(self, target)
             local targetPos = target:GetPosition()
-            local firstChevron = math.ceil(targetPos[1] / (ScenarioInfo.size[1] / 9) )
-            local secondChevron = math.ceil(targetPos[3] / (ScenarioInfo.size[2] / 9) )
-            local Dial = function(manipulator, val, neg)
-                --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
-                --CreateRotator(gate, 'Ring', 'z', val * 40, 0, 0, 100 * val)
-                manipulator:SetAccel(20 * math.abs(val))
-                manipulator:SetTargetSpeed(100 * math.abs(val))
-                manipulator:SetGoal(val * 40)
-                manipulator:SetSpeed(10 * math.abs(val))
-            end
+            local Chevrons = {
+                math.ceil((targetPos[1] * 9) / ScenarioInfo.size[1]),
+                math.ceil((targetPos[3] * 9) / ScenarioInfo.size[2]),
+                math.ceil(math.mod(targetPos[1] * 81, ScenarioInfo.size[1] * 9) / ScenarioInfo.size[1]),
+                math.ceil(math.mod(targetPos[3] * 81, ScenarioInfo.size[2] * 9) / ScenarioInfo.size[2]),
+            }
+            return Chevrons
+        end, 
+        
+        DialingAnimation = function(self, target, reset)            
+            --------------------------------------------------------------------
+            -- Error protection (Should never trigger)
+            --------------------------------------------------------------------
+            if not target then target = self end
+            if not target.DialingData.DialingSequence then target.DialingData.DialingSequence = self:DialingSequence(target) end
+            if not self.DialingData.DialingHome then self.DialingData.DialingHome = math.mod(self:GetEntityId() or 1, 9) end
+            --------------------------------------------------------------------
+            -- First time triggers
+            --------------------------------------------------------------------
             if not self.DailingAnimation then self.DailingAnimation = CreateRotator(self, 'Ring', 'z') end
             if target != self and not target.DailingAnimation then target.DailingAnimation = CreateRotator(target, 'Ring', 'z') end
-            
-            Dial(self.DailingAnimation, firstChevron)
-            if self != target then
-                Dial(target.DailingAnimation, firstChevron)
+            --------------------------------------------------------------------
+            -- Dial turn function
+            --------------------------------------------------------------------
+            local Dial = function(manipulator, values)
+                local index = values[1]
+                local Chevron = values[2]
+                local prevChe = values[3]
+                local sign = -1 + (2 * math.mod(index,2) )
+                
+                manipulator:SetAccel(40 )-- * Chevron)
+                manipulator:SetTargetSpeed(100 * 5)-- * Chevron)
+                manipulator:SetGoal(Chevron * 40)
+                manipulator:SetSpeed(30 )-- * Chevron)
             end
-            
-            WaitFor(self.DailingAnimation)
-            WaitFor(target.DailingAnimation)
-            
-            WaitTicks(3)
-            
-            Dial(self.DailingAnimation, - secondChevron)
-            if self != target then
-                Dial(target.DailingAnimation, - secondChevron)
+            --------------------------------------------------------------------
+            -- Load sequence
+            --------------------------------------------------------------------
+            local Chevrons = target.DialingData.DialingSequence
+            table.insert(Chevrons, self.DialingData.DialingHome)
+            --------------------------------------------------------------------
+            -- Animation
+            --------------------------------------------------------------------
+            for i, chevron in Chevrons do
+                Dial(self.DailingAnimation, {i, chevron, self.DialingData.CurrentPosition})
+                self.DialingData.CurrentPosition = chevron
+                if self != target then
+                    Dial(target.DailingAnimation, {i, chevron, target.DialingData.CurrentPosition})
+                    target.DialingData.CurrentPosition = chevron
+                end       
+                WaitFor(self.DailingAnimation)
+                WaitFor(target.DailingAnimation)   
+                WaitTicks(3)
             end
-            
-            WaitFor(self.DailingAnimation)
-            WaitFor(target.DailingAnimation)
-        end,       
+        end,        
         
         GateEffects = {
 				'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_02_emit.bp', -- faint rings
