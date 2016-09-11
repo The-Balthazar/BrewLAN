@@ -223,7 +223,11 @@ __________.__________
   * Reclassified the Hexatron as a Mobile Rocket Platform and changed its description to match.
   * Gave Hexatron team colours.
   * Gave Hexatron a reload animation.
-  * Enabled Sorian AI to build Hexatron.                                                                                                      
+  * Enabled Sorian AI to build Hexatron.
+  __________
+  2016-09-11
+
+  * Fixed the broken Hexatron Sorian AI file, which was breaking Sorian AI.                                                                                                      
 __________.__________
 2015-09-05|0.7
 
