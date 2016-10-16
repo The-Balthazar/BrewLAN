@@ -5,186 +5,87 @@
  _____) )| |_/ ___ | | |_|___ |  | |_____| |___ | | |_ 
 (______/  \__)_____|  \__|___/   |_______)_(___/   \__)
                    This number: last updated 2012-11-17 
+
 _______________________________________________________
-Errors list/the other to-do list.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* The Atlantis ignores its rolloff orders from the Gantry.
-* SRS0401 lacks weapons.
-* Wilson lacks treadmarks for its front tracks.
-* Zenith has unused bones.
-* The Absolution can't hover over units.
-  * Other experimentals walk through armored walls.
-* Megalith built eggs bug out when at the pop cap. (vanilla bug)
-* Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
-  * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
-* The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
-* Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
-* Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
-* Nuke mines should have the option to auto explode, but be set to manual from the off.
-* Armored walls (and probably other walls) need to be repaired slower.
-* New prettier wall script involving a rotator, a slider, and position detection, for diagonals.
-* Fix the Iyadesu.
-* Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
-* Replace the stargate iris effect with a seperate entity so it can have ripple effects.
-* Find a way to increase static shield radius and maintenence cost increases when built on water.
-* Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
-* Give the UEF walls, and Bessemer Reactor real distance models.
-* Do something with the cybran stealth field sub idea.
-* Create a UI for the contents of the Ivan.
-* Make the damage test unit look like a Nokia 3310.
-* TeaD: Do something about civies blocking the teacup.
-* UAL0207.
+
+Side mods - Mods that aren't BrewLAN that come packaged.
 _______________________________________________________
-Modded Units:
+BrewLAN modules: (Require BrewLAN to do anything)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  All Factions: 
-  	T1 landscout
-  		* Gave omni at a range of 2, unlisted in game.
-  		  * Allows T1 scouts that 'walk into' cloaked & stealthed units to see them.
-  		  * There is a chance that units already had this, but never told anyone.            
-    
-    T1 Walls
-      * Unified build sorting.
-    
-    T3 Assault/Armored Assault Bots/Tanks
-      * Unified build sorting.
+  BrewUI
+  * Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
+  * Overwrites the two functions completely when active.
+  * Completely optional, for compatibility.
+  * Is overwritten by the support commander upgrade manager thing in GazUI and such.
+  
+  BrewLAN: Gantry AIx 1 & 2
+  * These are difficulty increasing module for AIx that affect the Gantry.
+    * 1 has linear increases in build speed and resource cheats.
+    * 2 has a mass gated exponential increase in the two.   
+  * Also poses as an example for others on how to mod BrewLAN.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Gameplay: (Alter gameplay in a fixed way)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Antimass
+  * Swaps mass and energy production.
+    * Multiplies the new energy production by 10.
+    * Divides the new mass production by 10.    
+  
+  Crystal Hill
+  * King of the hill style: Spawns a crystal dead center of the map.
+    * Controlling it at the end of 20 mins causes game win.
+    * A change of hands below the 5 minute mark causes the time to increase back to 5 minutes.
+  * While spawning the crystal will remove the nearest civilian building in the area, and will occupy its space. If any area near enough.   
+  * Fully functional except the AI doesn't care yet.  
+  * Language strings exist for English, German & French.
 
-    T3 Mobile Artillery/Sniper Bots
-      * Unified build sorting.
-      
-    Bombers
-      * Bombers have been granted a 95% damage resistance to weapons that require a computed drop distance (ie, bomber bombs) while they are in the air.
-        * This is to prevent bombers killing themselves consistently when they attack the Iron Curtain. Seriously.
-        * It actually made the Iron Curtain basically self defending against bombers, because of its coincidentally perfect size.   
-        
-  	Torpedo Bombers
-  		* Gave the ability to land on water.                  
-    
-    Experimental Buildings
-      * Added appropriate build menu sorting.
-        * This seperates them from the mobile experimentals.
-          * Seraphim already did this.        
+  Metal World                                
+  * Removes MEX position requirements, and mass points.
+  * Fully functional, except real AI control.
+    * AI gets some hardcore hax to prevent breaking them. (For sorian AI.)   
+  
+  Paragon Game
+  * Few vs Many aesymetric style gameplay.
+    * Player(s) on the smallest team(s) get a paragon, SACU, and shields.
+  * Uses all default language strings.  
+  
+  TeaD
+  * Tower Defence mod. Where you defend a cup of tea.
 
-    Support Commanders
-      * Added an enhancement for field engineer tech.                                               
+  Waterlag
+  * Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental.
+  * Spawns an entity that looks like legs underneith UEF and Cybran buildings that were made aquatic by waterlag and dont have defined floatation bones.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Aeon:
-  	T2 Shield Generator
-      * Allowed to upgrade from my T1 shield gen.
-  		* Allowed upgrade to the T3 shield gen.
-  		* Allowed rebuild bonus on T2 and T3 wreckages.
+RNG bullshit: (Alter gameplay with random effects)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  Cost Variance
+  * Adds a +/- 50% random cost variation to all non-economic units, and alters some stats to match.
   
-  	T3 Shield generator
-  		* Allowed T2 to upgrade into it.
+  Crate Drop
+  * Adds a random Tiberian Sun style crate drop.
+    * Rewards include hats.
   
-    T3 Heavy Assault Bot
-      * Decreased the cost and stats to be comparable with that of the Titan, the Loyalist, and that Serephim one.    
-    
-    T3 Torpedo bomber.
-      * Unified build sorting.
-      
-  	T3 Rapid Fire Artillery Installation
-  		* Recategorised as an experimental.
-  		* Gave it the experimental level health regen.
-  
-  	T3 Quantum Optics
-  		* Reduced build footprint.
-  		* Enabled click-drag build.
-  
-  	Galactic Collossus
-  		* Increased health by 1.
+  Lucky Dip
+  * Requires both BlackOps and BrewLAN to do anything.
+    * For each similar unit added by both, randomly restricts one for each player.
+      * Do you get a Manticore this game or a Hades? How about your opponent?            
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Cybran:
-  	ED1
-    	* Changed to Tech 1.
-    	* Reduced health to 100.    
+Plenus: (Satisfaction guaranteed; sim-side aesthetic changes only)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  Experimental Icons Overhaul
+  * Doesn't work on FAF for scd reasons.
+  * Dynamically changes units experimental icons from a circle to something useful.
+    * Has a system that includes comparative weapon DPS for deciding icons.   
+  * Specifically tested for use with Total Mayhem, Experimental Wars, BlackOps, 4th Dimension, and X'Treme Wars.
+              
+  Pulchritudinousity
+  * For taking better screenshots:
+    * Increases the view distances of models and tarmacs 1000x.
+    * Makes spawned in units auto-give themselves tarmacs.
   
-  	ED2
-    	* Changed to Tech 1.
-    	* Reduced health to 200.
-  
-    ED3
-      * Made buildable at Tech 2.
-    	* Reduced health to 300.
-  
-  	ED4 
-    	* Changed to Tech 3.
-    	* Made buildable at Tech 3.
-    	* Reduced health to 400.
-  
-  	ED5
-    	* Changed to Tech 3.
-    	* Health still 500.
-    	* Gave a third discount on upgrading from ED4.      
-    
-    Jester
-      * Chanegd build menu sorting.
-    
-    Hive
-      * Second upgrade is now:
-        * Tech 3
-        * Directly buildable.
-        * 4x the cost.
-        * Given a 75% discount when upgraded to.              
-  
-    T3 Anti nuke defence
-      * Changed tarmac.
-  
-  	Scathis
-      * Removed.
-      * Replaced with immobile version for both balance and aesthetic purposes.
-    
-    Megalith
-      * Added the ability to build the Salem, House, Hedgehog, Slink, and Opperative       
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  UEF:
-    T2 Field Engineer
-      * Gave a unique buildable category.
-            
-    T2+T3 Shield Generators
-      * Unified tarmacs textures.
-        * For some reason the T2 had a huge tarmac and the T3 had a tiny tarmac.
-      * Allowed the T2 to upgrade from my T1.            
-  
-    T3 Nuke Defence Silo
-      * Changed the tarmac texture.
-        
-    Kennel
-      * Tech 3 version is now directly buildable.
-      * Increased cost by double.
-      * Has a 50% cost reduction whilst upgrading from the T2.            
-  
-  	Novax Center & Defense Satellite
-  		* Removed.
-  		* Replaced with:
-  		  * A Tech 3 Observation Satellite Uplink & Observation Satellite, which mostly reuses its apearance.
-  		  * A Tech 3 Mobile Satellite Uplink vehicle, with its weapon.
-  
-  	Mavor
-      * Gave 'strategic' menu sorting.
-    
-    Fatboy
-      * Made Gantry buildable.
-      * Added build category so it can build the Custodian.      
-       
-    Atlantis
-      * Made Gantry buildable.
-        * Doesn't listen to roll off orders, but works.                                                    
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Seraphim:
-  	T2 Shield Genorator: Atha
-  		* Allow the T1 shield to upgrade to it.
-  
-  	T3 Siege Tank
-  		* Set the allways upright attribute to false.
-  		* Increased stats and cost to be comparable to that of Brick, Percival and Moldovite.
+_______________________________________________________
 
-  	T2 Sonar
-  		* Allowed it to upgrade into my T3 sonar.
-  	
-    T3 Battleship
-    	* Nuke launcher disabled when nukes are disabled.
-    	  * ToDo: Remove its useless nuke buttons during this time.              
+BrewLAN
 _______________________________________________________
 Added and planned units:
 -------------------------------------------------------
@@ -376,6 +277,7 @@ Tech 3:
       * T3 Torp launcher.
       * T3 Anti Shield.
       * T3 Field Engineering Ship.   
+
 _______________________________________________________
 Experimental Table
                 +———————————————+———————————————+———————————————+———————————————+
@@ -387,8 +289,8 @@ Flying          |Centurion      |CZAR (AF)      |Soulripper     |Ahwassa        
 Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             |
 ————————————————+———————————————+———————————————+———————————————+———————————————|
 Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
-Strategic 2     |Ivan (F)       |*?             |*?             |Yolona Oss     |
-Static 3        |Panopticon     |*Tele/CZAR fab |Darkness       |Stargate       |
+Strategic 2     |Ivan (F)       |*Teleporter?   |*?             |Yolona Oss     |
+Static 3        |Panopticon     |*Air factory   |Darkness       |Stargate       |
 Static 4        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ————————————————+———————————————+———————————————+———————————————+———————————————+
 
@@ -402,7 +304,6 @@ Static 4        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine
   **   Partially existant, but disabled
   *    Buildable, but only partially functioning
 
-
 *** UEF Experimental Assault Bot/tank
   * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
     * Possibly a two part splitting bot. Cain and Abel or something cool.
@@ -415,7 +316,6 @@ UEF Panopticon: Experimental Sensor Array
   * Currently has no unique model.
     * Style off Goonhilly Earth or Jodgrel Bank.
   * Also todo: Add camera teleport effect.            
-
 
 UEF Centurion: Experimental AA gunship
   * Texture unfinished. Could be more efficiently UV mapped.     
@@ -448,10 +348,8 @@ Seraphim totally not a stargate
   * Requires two to be functional. Duh.
   * Still to do:
     * Add a ferry point icon to make transporting things through it easy.
-    * Possibly allow firing through the wormhole.
     * Do a slight rework so that rather than instantly teleporting units that go near it, it tracks them until they have passed the center of it.
-    * Rework so it uses an entity with a ripple shader for the event horizon.
-    * Allow projectiles to pass through.                         
+    * Allow projectiles to warp through.                         
 
 *** Seraphim Experimental Mine?
   * To be an experimental for the field engy.
@@ -516,33 +414,197 @@ Cybran Darkness: Experimental Omni Disruption Facility
     * I realised that any unit for which I try to avoid refering to it by name, has a bad name. Sorry Kris.
     * AI can still call it Oscuras. If they ever actually build it.    
 
+_______________________________________________________
+Modded Units:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Abandonned Ideas:
+  All Factions: 
+  	T1 landscout
+  		* Gave omni at a range of 2, unlisted in game.
+  		  * Allows T1 scouts that 'walk into' cloaked & stealthed units to see them.
+  		  * There is a chance that units already had this, but never told anyone.            
+    
+    T1 Walls
+      * Unified build sorting.
+    
+    T3 Assault/Armored Assault Bots/Tanks
+      * Unified build sorting.
+
+    T3 Mobile Artillery/Sniper Bots
+      * Unified build sorting.
+      
+    Bombers
+      * Bombers have been granted a 95% damage resistance to weapons that require a computed drop distance (ie, bomber bombs) while they are in the air.
+        * This is to prevent bombers killing themselves consistently when they attack the Iron Curtain. Seriously.
+        * It actually made the Iron Curtain basically self defending against bombers, because of its coincidentally perfect size.   
+        
+  	Torpedo Bombers
+  		* Gave the ability to land on water.                  
+    
+    Experimental Buildings
+      * Added appropriate build menu sorting.
+        * This seperates them from the mobile experimentals.
+          * Seraphim already did this.        
+
+    Support Commanders
+      * Added an enhancement for field engineer tech.                                               
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-UEF Doomsday Machine: Experimental Point Defence
-  * Was supposed to be a callback to the old TA unit.
-    * An uninteresting idea badly implemented. Removed.
-    * Was only still in the source files for nostalgia.
-      * Removed as of r146         
-                                
-UEF Engineering Facility 'The Pound'
-  * A facility that houses a large number of Rover drones.
-  * Do you want lag? Because this is how you get lag.
-
-Aeon Restoration Field Generator:
-  * Supposed to have been an alternative to the engineering station that Aeon aren't getting.
-  * I still intend to give them something, but this is probably never happening.
-
-UEF/Cybran/Seraphim Decoy Planes
-  * Staying Aeon only.       
+  Aeon:
+  	T2 Shield Generator
+      * Allowed to upgrade from my T1 shield gen.
+  		* Allowed upgrade to the T3 shield gen.
+  		* Allowed rebuild bonus on T2 and T3 wreckages.
+  
+  	T3 Shield generator
+  		* Allowed T2 to upgrade into it.
+  
+    T3 Heavy Assault Bot
+      * Decreased the cost and stats to be comparable with that of the Titan, the Loyalist, and that Serephim one.    
+    
+    T3 Torpedo bomber.
+      * Unified build sorting.
+      
+  	T3 Rapid Fire Artillery Installation
+  		* Recategorised as an experimental.
+  		* Gave it the experimental level health regen.
+  
+  	T3 Quantum Optics
+  		* Reduced build footprint.
+  		* Enabled click-drag build.
+  
+  	Galactic Collossus
+  		* Increased health by 1.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Other unit ideas:
+  Cybran:
+  	ED1
+    	* Changed to Tech 1.
+    	* Reduced health to 100.    
+  
+  	ED2
+    	* Changed to Tech 1.
+    	* Reduced health to 200.
+  
+    ED3
+      * Made buildable at Tech 2.
+    	* Reduced health to 300.
+  
+  	ED4 
+    	* Changed to Tech 3.
+    	* Made buildable at Tech 3.
+    	* Reduced health to 400.
+  
+  	ED5
+    	* Changed to Tech 3.
+    	* Health still 500.
+    	* Gave a third discount on upgrading from ED4.      
+    
+    Jester
+      * Chanegd build menu sorting.
+    
+    Hive
+      * Second upgrade is now:
+        * Tech 3
+        * Directly buildable.
+        * 4x the cost.
+        * Given a 75% discount when upgraded to.              
+  
+    T3 Anti nuke defence
+      * Changed tarmac.
+  
+  	Scathis
+      * Removed.
+      * Replaced with immobile version for both balance and aesthetic purposes.
+    
+    Megalith
+      * Added the ability to build the Salem, House, Hedgehog, Slink, and Opperative       
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Anti-naval gunship.
+  UEF:
+    T2 Field Engineer
+      * Gave a unique buildable category.
+            
+    T2+T3 Shield Generators
+      * Unified tarmacs textures.
+        * For some reason the T2 had a huge tarmac and the T3 had a tiny tarmac.
+      * Allowed the T2 to upgrade from my T1.            
+  
+    T3 Nuke Defence Silo
+      * Changed the tarmac texture.
+        
+    Kennel
+      * Tech 3 version is now directly buildable.
+      * Increased cost by double.
+      * Has a 50% cost reduction whilst upgrading from the T2.            
+  
+  	Novax Center & Defense Satellite
+  		* Removed.
+  		* Replaced with:
+  		  * A Tech 3 Observation Satellite Uplink & Observation Satellite, which mostly reuses its apearance.
+  		  * A Tech 3 Mobile Satellite Uplink vehicle, with its weapon.
+  
+  	Mavor
+      * Gave 'strategic' menu sorting.
+    
+    Fatboy
+      * Made Gantry buildable.
+      * Added build category so it can build the Custodian.      
+       
+    Atlantis
+      * Made Gantry buildable.
+        * Doesn't listen to roll off orders, but works.                                                    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Seraphim:
+  	T2 Shield Genorator: Atha
+  		* Allow the T1 shield to upgrade to it.
+  
+  	T3 Siege Tank
+  		* Set the allways upright attribute to false.
+  		* Increased stats and cost to be comparable to that of Brick, Percival and Moldovite.
 
-Rail gun.    
-
-Naval mine layer units and/or other better ways to deploy mines.
+  	T2 Sonar
+  		* Allowed it to upgrade into my T3 sonar.
+  	
+    T3 Battleship
+    	* Nuke launcher disabled when nukes are disabled.
+    	  * ToDo: Remove its useless nuke buttons during this time.
+         
+_______________________________________________________
+Errors and ideas; stuff to do
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* The Atlantis ignores its rolloff orders from the Gantry.
+* SRS0401 lacks weapons.
+* Wilson lacks treadmarks for its front tracks.
+* Zenith has unused bones.
+* The Absolution can't hover over units.
+  * Other experimentals walk through armored walls.
+  * Engine related bug; possibly can't fix.  
+* Megalith built eggs bug out when at the pop cap. (vanilla bug)
+* Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
+  * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
+* The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
+* Change the explosion graphics of the T2 power storages to propperly represent the explosion size.
+* Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
+* Nuke mines should have the option to auto explode, but be set to manual from the off.
+* Armored walls (and probably other walls) need to be repaired slower.
+* New prettier wall script involving a rotator, a slider, and position detection, for diagonals.
+* Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
+* Find a way to increase static shield radius and maintenence cost increases when built on water.
+* Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
+* Give the UEF walls, and Bessemer Reactor real distance models.
+* Do something with the cybran stealth field sub idea.
+* Create a UI for the contents of the Ivan.
+* Make the damage test unit look like a Nokia 3310.
+* TeaD: Do something about civies blocking the teacup.
+* UAL0207.
+* Landspeeder.
+* Mobile tac defence.
+* Hero last stand mode.
+* Anti-naval gunship.
+* Rail gun.    
+* More naval mine layer units and other better ways to deploy mines.
+* Aircraft barrel roll.
+* Random asteroid showers.
+* Have cloaked/stealthed units able to detect when they are detected.
+  * Might be easier to implement the other way round; the omni checks on detecting them.
+* Team coloured lasers. 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 Kris' notes on further experimental buildings
@@ -577,85 +639,24 @@ Blackrobe ideas
 * Walls with personal shields
 * A land version of the air repair pad, like of tibsun.
 * T1-3 Jammers
-* T1 stealth field gen for Cybran.
+* T1 stealth field gen for Cybran.            
+
 _______________________________________________________
-Side mods
+Abandonned Ideas:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-BrewLAN modules: (Require BrewLAN to do anything)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  BrewUI
-  * Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
-  * Overwrites the two functions completely when active.
-  * Completely optional, for compatibility.
-  * Is overwritten by the support commander upgrade manager thing in GazUI and such.
-  
-  BrewLAN: Gantry AIx 1 & 2
-  * These are difficulty increasing module for AIx that affect the Gantry.
-    * 1 has linear increases in build speed and resource cheats.
-    * 2 has a mass gated exponential increase in the two.   
-  * Also poses as an example for other on how to mod BrewLAN.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Gameplay: (Alter gameplay in a fixed way)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  Crystal Hill
-  * King of the hill style: Spawns a crystal dead center of the map.
-    * Controlling it at the end of 20 mins causes game win.
-    * A change of hands below the 5 minute mark causes the time to increase back to 5 minutes.
-  * While spawning the crystal will remove the nearest civilian building in the area, and will occupy its space. If any area near enough.   
-  * Fully functional except the AI doesn't care yet.  
-  * Language strings exist for English, German & French.
-  
-  Paragon Game
-  * Few vs Many aesymetric style gameplay.
-    * Player(s) on the smallest team(s) get a paragon, SACU, and shields.
-  * Uses all default language strings.  
-  
-  Metal World                                
-  * Removes MEX position requirements, and mass points.
-  * Fully functional, except real AI control.
-    * AI gets some hardcore hax to prevent breaking them. (For sorian AI.)   
+UEF Doomsday Machine: Experimental Point Defence
+  * Was supposed to be a callback to the old TA unit.
+    * An uninteresting idea badly implemented. Removed.
+    * Was only still in the source files for nostalgia.
+      * Removed as of r146         
+                                
+UEF Engineering Facility 'The Pound'
+  * A facility that houses a large number of Rover drones.
+  * Do you want lag? Because this is how you get lag.
 
-  TeaD
-  * Tower Defence mod. Where you defend a cup of tea.
+Aeon Restoration Field Generator:
+  * Supposed to have been an alternative to the engineering station that Aeon aren't getting.
+  * I still intend to give them something, but this is probably never happening.
 
-  Anti-Mass
-  * Swaps mass and energy production, and shifts them an order of magnitude closer to eachother.
-
-  Waterlag
-  * Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental.
-  * Spawns an entity that looks like legs underneith UEF and Cybran buildings that were made aquatic by waterlag and dont have defined floatation bones.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-RNG bullshit: (Alter gameplay with random effects)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  Cost Variance
-  * Adds a +/- 50% random cost variation to all non-economic units, and alters some stats to match.
-  
-  Crate Drop
-  * Adds a random Tiberian Sun style crate drop.
-    * Rewards include hats.
-  
-  Lucky Dip
-  * Requires BlackOps and BrewLAN to do anything.
-    * For each similar unit added by both, randomly restricts one for each player.
-      * Do you get a Manticore this game or a Hades? How about your opponent?            
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Plenus: (Satisfaction guaranteed; sim-side aesthetic changes only)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  Pulchritudinousity
-  * For taking better screenshots:
-    * Increases the view distances of models and tarmacs 1000x.
-    * Makes spawned in units auto-give themselves tarmacs.
-  
-  Experimental Icons Overhaul
-  * Doesn't work on FAF for scd reasons.
-  * Dynamically changes units experimental icons from a circle to something useful.
-    * Has a system that includes comparative weapon DPS for deciding icons.   
-  * Specifically tested for use with Total Mayhem, Experimental Wars, BlackOps, 4th Dimension, and X'Treme Wars.          
-_______________________________________________________
-Other mod ideas
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* Aircraft barrel roll.
-* Random asteroid showers.
-* Have cloaked/stealthed units able to detect when they are detected.
-  * Might be easier to implement the other way round; the omni checks on detecting them.
-* Team coloured lasers.       
+UEF/Cybran/Seraphim Decoy Planes
+  * Staying Aeon only.

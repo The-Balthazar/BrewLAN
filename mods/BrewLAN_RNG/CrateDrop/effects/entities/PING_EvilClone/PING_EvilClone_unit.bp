@@ -1,0 +1,57 @@
+UnitBlueprint {
+    Categories = {
+        'PRODUCTBREWLAN',
+        'INVULNERABLE',
+        'EXPERIMENTAL',
+        --'NEEDMOBILEBUILD',  
+        'BENIGN',   
+        'UNSELECTABLE',
+        'UNTARGETABLE',
+    },
+    Defense = {
+        Health = 0,
+        MaxHealth = 0,
+    },
+    Display = {
+        Mesh = {
+            LODs = {
+                {
+                    ShaderName = 'PhalanxEffect',--'CommandFeedback4',
+                    LODCutoff = 500,
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Intel = {
+        VisionRadius = 0,
+    },
+    LifeBarHeight = 0.0000001,
+    LifeBarOffset = 0.000000,
+    LifeBarSize = 0.0000001,
+    General = {
+        CapCost = 0,
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Air = true,
+            LAYER_Land = false,
+            LAYER_Orbit = false,
+            LAYER_Seabed = false,
+            LAYER_Sub = false,
+            LAYER_Water = false,
+        },
+        MotionType = 'RULEUMT_Air',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 0,
+        SkirtSizeZ = 0,
+    },
+    SelectionSizeX = 0,
+    SelectionSizeZ = 0,
+    SelectionThickness = 0,
+    SizeX = 0,
+    SizeY = 0,
+    SizeZ = 0,
+    SortOrder = 1000,
+}

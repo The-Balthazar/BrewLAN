@@ -227,7 +227,43 @@ __________.__________
   __________
   2016-09-11
 
-  * Fixed the broken Hexatron Sorian AI file, which was breaking Sorian AI.                                                                                                      
+  * Fixed the broken Hexatron Sorian AI file, which was breaking Sorian AI.
+  __________
+  2016-09-28
+
+  * Changed the buff definitions file so it doesn't error all the time with the Darkness debuff while not on FAF anymore.
+  * Removed some old no-longer relevant categories from the Stargate.
+  __________
+  2016-10-14
+
+  * Crate Drop: Added a graphical notification popup on hat pickups.
+  __________
+  2016-10-15
+
+  * Gave the Scarab a propper Hat bone.
+  * Crate Drop: Added graphical notification popus for the pickups:
+    * Nothing
+    * Generic bad thing
+    * Generic good thing        
+    * Clone
+    * Dude
+    * Evil clone
+    * Evil dude
+    * Engineer
+    * Engineering    
+    * Energy (Not used)
+    * Health
+    * Mass
+    * Veterancy
+    * Speed
+    * Intel
+    * Weapon
+  __________
+  2016-10-16
+
+  * Crate Drop: Hats now vary in size up to 15%.
+  * Crate Drop: Added a fedora. M'lady.
+  * Crate Drop: Added a black derby.                                                                                                                                        
 __________.__________
 2015-09-05|0.7
 

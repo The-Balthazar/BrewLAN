@@ -46,6 +46,8 @@ do
          
     local Buff = import('/lua/sim/Buff.lua')   
     --local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
+    local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
+    
     local lewt = {
         -- Free stuff.
         {
@@ -65,7 +67,7 @@ do
                     else      
                         aiBrain:GiveResource('Mass', math.max(5000, storagespace/10) )
                     end   
-                    FloatingEntityText(Unit:GetEntityId(),'<LOC tooltipui0245>Mass Collected')
+                    notificationPingis(Unit, 'Mass', '<LOC tooltipui0245>Mass Collected' )
                 else  
                     WARN("Rolled for mass, but storage space is low. Rolling again.")
                     PhatLewt(Unit, pos)
@@ -85,9 +87,9 @@ do
                 --clone:SetMaxHealth(Unit:GetMaxHealth() )
                 clone:SetHealth(Unit, Unit:GetHealth() )
                 if clone:GetBlueprint().Description then
-                    FloatingEntityText(Unit:GetEntityId(), clone:GetBlueprint().Description )
+                    notificationPingis(Unit, 'Clone', clone:GetBlueprint().Description )
                 else
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltips_0000>Give Units' )
+                    notificationPingis(Unit, 'Clone', '<LOC tooltips_0000>Give Units' )
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -97,9 +99,9 @@ do
                 LOG("Random dude")
                 local clone = CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 if clone:GetBlueprint().Description then
-                    FloatingEntityText(Unit:GetEntityId(), clone:GetBlueprint().Description )
+                    notificationPingis(Unit, 'Dude', clone:GetBlueprint().Description )
                 else
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltips_0000>Give Units' )
+                    notificationPingis(Unit, 'Dude', '<LOC tooltips_0000>Give Units' )
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -109,9 +111,9 @@ do
                 LOG("Engineer")
                 local clone = CreateUnitHPR(randomBuildable('Engineers'), Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 if clone:GetBlueprint().Description then
-                    FloatingEntityText(Unit:GetEntityId(), clone:GetBlueprint().Description )
+                    notificationPingis(Unit, 'EngineerDude', clone:GetBlueprint().Description )
                 else
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltips_0000>Give Units' )
+                    notificationPingis(Unit, 'EngineerDude', '<LOC tooltips_0000>Give Units' )
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -165,7 +167,7 @@ do
                 else         
                     Buff.ApplyBuff(Unit, 'CrateHealthBuff')
                 end    
-                FloatingEntityText(Unit:GetEntityId(),'<LOC SCORE_0046>Victory')
+                notificationPingis(Unit, 'Health')
             end,                                                                
             --------------------------------------------------------------------
             --Give larger vis range                                             
@@ -210,7 +212,7 @@ do
                     else      
                         Buff.ApplyBuff(Unit, 'CrateVisBuff')
                     end  
-                    FloatingEntityText(Unit:GetEntityId(),'<LOC tooltipui0082>Intel')
+                    notificationPingis(Unit, 'Intel', '<LOC tooltipui0082>Intel')
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -253,7 +255,7 @@ do
                     else      
                         Buff.ApplyBuff(Unit, 'CrateRadarBuff')
                     end
-                    FloatingEntityText(Unit:GetEntityId(),'<LOC tooltipui0082>Intel')
+                    notificationPingis(Unit, 'Intel', '<LOC tooltipui0082>Intel')
                 else   
                     WARN("Radar buff selected but unit has no radar to buff. Rolling again.")
                     PhatLewt(Unit, pos)
@@ -328,7 +330,7 @@ do
                     else      
                         Buff.ApplyBuff(Unit, 'CrateDamageBuff')
                     end 
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0017>Kills' )
+                    notificationPingis(Unit, 'Weapon')
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -374,7 +376,7 @@ do
                     else      
                         Buff.ApplyBuff(Unit, 'CrateMoveBuff')
                     end  
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0262>Fast' )
+                    notificationPingis(Unit, 'Speed', '<LOC lobui_0262>Fast' )
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -417,7 +419,7 @@ do
                     else
                         Buff.ApplyBuff(Unit, 'CrateEngiBuff')
                     end
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC ability_engineeringsuite>Engineering Suite' )  
+                    notificationPingis(Unit, 'Engineering', '<LOC ability_engineeringsuite>Engineering Suite' )  
                 else       
                     WARN("Unit rolled for engineering buffs, but can't engineering. Rolling again.")
                     PhatLewt(Unit, pos)
@@ -444,7 +446,7 @@ do
                             break
                         end
                     end
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0017>Kills' )
+                    notificationPingis(Unit, 'Veterancy', '<LOC SCORE_0017>Kills' )
                 else
                     WARN("Unit has no defined veterancy levels to recieve useful kills. Rerolling.")
                     PhatLewt(Unit, pos)
@@ -463,7 +465,9 @@ do
                     'HAT_Tophat_whiteband',
                     'HAT_Bowler_red',
                     'HAT_Boater',
-                    'HAT_Cone_azn'
+                    'HAT_Cone_azn',
+                    'HAT_Fedora',
+                    'HAT_Derby',
                 }
                 
                 local bones = {
@@ -493,11 +497,11 @@ do
                     Warp(hat,Unit:GetPosition() )
                     hat:SetMesh('/mods/BrewLAN_RNG/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
                     if EntityCategoryContains(categories.EXPERIMENTAL , Unit) then
-                        hat:SetDrawScale(.07)
+                        hat:SetDrawScale(.07 * RandomFloat(0.925, 1.075) )
                     elseif EntityCategoryContains(categories.STRUCTURE , Unit) then
-                        hat:SetDrawScale(.055)
+                        hat:SetDrawScale(.055 * RandomFloat(0.925, 1.075) )
                     else
-                        hat:SetDrawScale(.03)
+                        hat:SetDrawScale(.03 * RandomFloat(0.925, 1.075) )
                     end   
                     hat:SetVizToAllies('Intel')
                     hat:SetVizToNeutrals('Intel')
@@ -509,7 +513,7 @@ do
                         hat:AttachTo(Unit.Hats[no], 'Attachpoint')
                     end    
                     Unit.Trash:Add(hat)
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0046>Victory' )
+                    notificationPingis(Unit, 'Hat' )
                 else
                     if ScenarioInfo.Options.CrateHatsOnly == 'true' then
                         WARN("Unit with no noticable head attempted to pick up hats only crate.")
@@ -528,14 +532,14 @@ do
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.")
-                FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0039>Failed' )
+                notificationPingis(Unit, 'Nothing', '<LOC SCORE_0039>Failed' )
             end,                                                                
             --------------------------------------------------------------------
             --Troll print                                                       
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  )
-                FloatingEntityText(Unit:GetEntityId(), '<LOC SCORE_0039>Failed' )
+                notificationPingis(Unit, 'Bad', '<LOC SCORE_0039>Failed' )
             end,                                                                
             --------------------------------------------------------------------
             --Troll bomb                                                        
@@ -543,7 +547,7 @@ do
             function(Unit, pos)
                 LOG("Explosion")
                 CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon()
-                FloatingEntityText(Unit:GetEntityId(), '<LOC ability_suicideweapon>Suicide Weapon' )
+                notificationPingis(Unit, 'Bad', '<LOC ability_suicideweapon>Suicide Weapon' )
             end,                                                                
             --------------------------------------------------------------------
             --Nemesis dupe                                                      
@@ -558,9 +562,9 @@ do
                 end
                 clone:SetHealth(Unit, Unit:GetHealth() )
                 if clone:GetBlueprint().Description then
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' .. ' ' .. clone:GetBlueprint().Description )
+                    notificationPingis(Unit, 'EvilClone', '<LOC lobui_0293>Enemy' .. ' ' .. clone:GetBlueprint().Description )
                 else
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' )
+                    notificationPingis(Unit, 'EvilClone', '<LOC lobui_0293>Enemy' )
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -570,9 +574,9 @@ do
                 LOG("Random Nemesis")
                 local clone = CreateUnitHPR(randomBuildable(gatedRandomBuildableType(Unit)), randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 if clone:GetBlueprint().Description then
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' .. ' ' .. clone:GetBlueprint().Description )
+                    notificationPingis(Unit, 'EvilDude', '<LOC lobui_0293>Enemy' .. ' ' .. clone:GetBlueprint().Description )
                 else
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC lobui_0293>Enemy' )
+                    notificationPingis(Unit, 'EvilDude', '<LOC lobui_0293>Enemy' )
                 end
             end,                                                                
             --------------------------------------------------------------------
@@ -581,7 +585,7 @@ do
             function(Unit, pos)
                 LOG("Teleport")
                 Warp(Unit,getSafePos(Unit:GetPosition()))
-                    FloatingEntityText(Unit:GetEntityId(), '<LOC tooltipui0024>Teleport' )
+                    notificationPingis(Unit, 'Bad', '<LOC tooltipui0024>Teleport' )
             end,                                                                
             --------------------------------------------------------------------
         },
@@ -622,6 +626,46 @@ do
         end
     end
     
+    function notificationPingis(unit, ping, text)
+        local pos = unit:GetPosition()
+        --if type(pos) != 'table' or type(pos[1]) != 'number' then
+        --    return 
+        --end
+        --Make sure we have a real ping name 
+        local pings = {
+            'Nothing',
+            'Bad',
+            'Clone',
+            'Dude',
+            'Energy',
+            'EngineerDude',
+            'Engineering',
+            'EvilClone',
+            'EvilDude',
+            'Good',
+            'Hat',
+            'Health',
+            'Intel',
+            'Mass',
+            'Speed',
+            'Veterancy',
+            'Weapon',
+        }
+        --LOG(table.find(pings, ping))
+        if type(ping) == 'string' and not table.find(pings, ping) or type(ping) != 'string' then
+            ping = pings[1]
+        end
+        CreateUnitHPR(
+            'PING_' .. ping,
+            unit:GetArmy(),
+            pos[1], pos[2], pos[3],
+            0, 0, 0
+        )
+        if text and false then --Currently disabled
+            FloatingEntityText(Unit:GetEntityId(), text)
+        end
+    end
+    
     function randomEnemyBrain(unit)
         local enemies = {}
         
@@ -642,11 +686,10 @@ do
         local pos = {math.random(0+10,ScenarioInfo.size[1]-10), math.random(0+10,ScenarioInfo.size[2]-10)}
         local positionDummy = 'zzcrate' --need a big building that has no intel, doesn't flatten ground, and doesn't really care for evalation.      
         positionDummy = arbitraryBrain():CreateUnitNearSpot(positionDummy, pos[1], pos[2])
-        if positionDummy and IsUnit(positionDummy) then    
-            LOG("We tried " .. tries)
+        if positionDummy and IsUnit(positionDummy) then
             local pos = positionDummy:GetPosition()
             positionDummy:Destroy()
-            LOG(repr(pos))
+            LOG("Crate location choice attempts " .. tries .. ". Lotation across: " .. pos[1] .. ", down: " .. pos[3] .. "." )
             return pos 
         else
             if tries < 1000 then

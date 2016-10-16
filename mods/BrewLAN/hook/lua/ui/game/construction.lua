@@ -10,7 +10,7 @@ function OnClickHandler(button, modifiers, ...)
     local item = button.Data
     local changeclick = false
     for i,v in sortedOptions.selection do
-        if EntityCategoryContains(categories.BUILTBYGANTRY, item.id) and EntityCategoryContains(categories.GANTRY, v) or EntityCategoryContains(categories.HEAVYWALL, v) or EntityCategoryContains(categories.MEDIUMWALL, v) then
+        if EntityCategoryContains(categories.GANTRY, v) or EntityCategoryContains(categories.HEAVYWALL, v) or EntityCategoryContains(categories.MEDIUMWALL, v) then
             changeclick = true
         elseif EntityCategoryContains(categories.MOBILEBUILDERONLY, v) then
             local blueprint = __blueprints[item.id]

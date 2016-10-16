@@ -118,12 +118,15 @@ SRB4402 = Class(CRadarJammerUnit) {
     },
         
     OnStopBeingBuilt = function(self,builder,layer)
+        --GetVersion() == '1.6.6' -- is steam version
+        
         if ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
             LOG("We are probably on FAF.")
             self.FAF = true
         else
             LOG("Less faffing about, more work arounds for dumb bugs.")
-        end
+        end       
+        LOG(GetVersion())
         CRadarJammerUnit.OnStopBeingBuilt(self,builder,layer)
         if not self.Rotator then
             self.Rotator = {}
