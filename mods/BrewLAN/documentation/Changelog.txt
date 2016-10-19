@@ -263,7 +263,18 @@ __________.__________
 
   * Crate Drop: Hats now vary in size up to 15%.
   * Crate Drop: Added a fedora. M'lady.
-  * Crate Drop: Added a black derby.                                                                                                                                        
+  * Crate Drop: Added a black derby.
+  __________
+  2016-10-19
+
+  * Crate Drop: Allowed multiple crates per level, based on map size. (2-6 crates, 5-81 km)
+  * Crate Drop: An explosion roll no longer crashes a crate if the unit dies and has no death animation.
+  * Crate Drop: A unit can no longer get a free extra roll if they don't have a hat bone when given a bonus hat (This couldn't happen before).
+  * Crate Drop: Units who roll a jackpot now get a free bonus hat.
+  * Crate Drop: Crates now re-appears 1-(20-60, based on map size) seconds after geing collected, instead of imediately.
+  * Crate Drop: Added a French pith helmet.
+  * Crate Drop: Added a Vietnamese pith helmet.
+  * Crate Drop: Added a Brodie helmet.                                                                                                                                                      
 __________.__________
 2015-09-05|0.7
 

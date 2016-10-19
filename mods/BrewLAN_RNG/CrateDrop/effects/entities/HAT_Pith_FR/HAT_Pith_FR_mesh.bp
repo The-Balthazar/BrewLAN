@@ -1,0 +1,9 @@
+MeshBlueprint {
+    LODs = {
+        {
+            ShaderName = 'Unit',
+            LODCutoff = 100,
+        },
+    },
+    SortOrder = 1000,
+}
