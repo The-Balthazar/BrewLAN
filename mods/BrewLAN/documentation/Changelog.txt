@@ -274,7 +274,19 @@ __________.__________
   * Crate Drop: Crates now re-appears 1-(20-60, based on map size) seconds after geing collected, instead of imediately.
   * Crate Drop: Added a French pith helmet.
   * Crate Drop: Added a Vietnamese pith helmet.
-  * Crate Drop: Added a Brodie helmet.                                                                                                                                                      
+  * Crate Drop: Added a Brodie helmet.
+  __________
+  2016-10-24
+
+  * Added hat bones to:
+    * Aeon:
+      * Light Gunship
+      * Light Torpedo Bomber
+      * Tactical Bomber
+      * Heavy Air Transport
+      * Decoy Plane
+      * Defense Engineers
+      * Armored Assault Tank                                                                                                                                                                                                   
 __________.__________
 2015-09-05|0.7
 
