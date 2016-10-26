@@ -18,7 +18,12 @@ do
 
     function crateThread(crateNum)
         local crate = import('/lua/sim/Entity.lua').Entity()
-        local crateType = 'CRATE_Dodecahedron'
+        local crateTypes = {
+            'CRATE_Dodecahedron',
+            'CRATE_Icosahedron',
+            'CRATE_Truncated_Tetrahedron',
+        }
+        local crateType = crateTypes[math.random(1, table.getn(crateTypes) )]
         local flash
         Warp(crate,getSafePos(crate:GetPosition()))
         crate:SetMesh('/mods/BrewLAN_RNG/cratedrop/effects/entities/' .. crateType .. '/' .. crateType ..'_mesh')

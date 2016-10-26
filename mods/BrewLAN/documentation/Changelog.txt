@@ -286,7 +286,12 @@ __________.__________
       * Heavy Air Transport
       * Decoy Plane
       * Defense Engineers
-      * Armored Assault Tank                                                                                                                                                                                                   
+      * Armored Assault Tank
+  __________
+  2016-10-26
+
+  * Crate Drop: Added an icosahedron based alternative crate.
+  * Crate Drop: Added a truncated tetrahedron based alternative crate.                                                                                                                                                                                                      
 __________.__________
 2015-09-05|0.7
 
