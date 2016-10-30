@@ -291,7 +291,28 @@ __________.__________
   2016-10-26
 
   * Crate Drop: Added an icosahedron based alternative crate.
-  * Crate Drop: Added a truncated tetrahedron based alternative crate.                                                                                                                                                                                                      
+  * Crate Drop: Added a truncated tetrahedron based alternative crate.
+  * Added a basic version of the Alchemist Aeon T3 Mobile AA.
+  __________
+  2016-10-27
+  
+  * Added a custom beam, stats, and strings for the Alchemist.
+  * Updated the relitivistic path trawler to also update beam blueprints.
+  __________
+  2016-10-28
+  
+  * Crystal Hill: UI no longer crashes if its managed to go to overtime without realising because people have teamed up with unlocked teams. Game still behaves wierd in that case though.
+  * Gave the Patch Class a unique texture with yellow black engineer bits, and a hat bone. There is currently no way for it to actually get a hat.
+  * Gave the Alchemist a better mesh.
+  * Renamed the Alchemist to the Armillary.
+  __________
+  2016-10-29
+  
+  * Mostly finished the Armillary's model and texture.
+  __________
+  2016-10-30
+  
+  * Finished the Armillary.                                                                                                                                                                                                                 
 __________.__________
 2015-09-05|0.7
 

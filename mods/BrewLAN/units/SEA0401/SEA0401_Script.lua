@@ -1,12 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /mods/BrewLAN/units/BEA0401/BEA0401_script.lua
-#**
-#**  Summary  :  UEF Experimental Gunship script
-#**
-#**  Copyright © 2010 BrewLAN
-#****************************************************************************
-
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TAAFlakArtilleryCannon = import('/lua/terranweapons.lua').TAAFlakArtilleryCannon
 local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher             

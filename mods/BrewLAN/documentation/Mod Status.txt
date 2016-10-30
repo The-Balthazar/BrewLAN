@@ -179,17 +179,20 @@ Tech 3:
   		* T3 Field engineer    
       * T3 Anti-Armor Point Defence.
       * T3 Shielded Mass Fabricator.  
-  		  * Lacks a unique model & icon.
+  		  * Lacks a unique model.
       * T3 Shielded Power Generator.
       * T3 Shielded Mass Extractor.                 
       * T3 Mobile strat defence.   
-  		* T3 Torp launchers.
+  		* T3 Torp launcher.
   		  * Gonna give the torpedos a random decay chance after about 70% of its max range.
       * T3 Shield wall. 
   		* T3 Mobile Shield Gen.
+      * T3 Mobile AA.
             
   	Pending: 
-      * T3 Field Engineering Ship.                   
+      * T3 Field Engineering Ship.
+      * T3 Mobile Torpedo
+      * T3 Mobilr tactical missile defence              
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 		Fully Funtioning:
@@ -200,7 +203,8 @@ Tech 3:
       * T3 Nuke Mine       
   		* T3 Field engineer      
       * T3 Anti-Armor Point Defence.
-      * T3 Armored Wall Section.       
+      * T3 Armored Wall Section.
+      * T3 Armored Gate Section.    
       * T3 Cloakable Stealth Field Generator.
         * Would like to seperate the Cloak/Stealth functions
         * Have it re-increase its stealth range while cloak off.                 
@@ -208,25 +212,27 @@ Tech 3:
         * Lacks a unique model & icon.  
       * T3 Cloakable Mass Fabricator.  
       * T3 Cloakable Power Generator.
-      * T3 Armored Wall Section.
-      * T3 Armored Gate Section. 
       * T3 Cloakable Mass Extractor.
-    	* T3 Stealth tank (Cybran sniper bot alternative)
+    	* T3 Stealth tank (Cybran sniper/AA alternative)
         * Unfinished appearance.
   		* T3 Mobile stealth Gen.
   		* T3 Mobile Rocket Platform.          
         
   	Pending:
-      * T3 Field Engineering Ship.                   
+      * T3 Field Engineering Ship.
+      * T3 Mobile torpedo? (Brick?)      
+      * T3 Mobile tactical missile defence? (Loyalist?)                          
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  UEF (Fully represented, mostly functional):
+  UEF:
   	Finished:         
   		* T3 Field engineer.                         
       * T3 Anti-Armor Point Defence.
       * T3 Mobile strat defence.
       * T3 Armored Wall Section.
-  		* T3 Mobile Shield Gen.                          
+      * T3 Armored Gate Section.      
+  		* T3 Mobile Shield Gen.
+      * T3 Field Engineering Ship.                          
     
     Functional:          
       * T3 Torpedo Bomber.
@@ -236,7 +242,6 @@ Tech 3:
       * T3 Observation Satellite.      
         * Engine related bug: Radar and omni range is spherical not cylindrical (Except on FAF).       
       * T3 Nuke Mine.
-      * T3 Field Engineering Ship.
                 
     Bugged:
       Potentially gamebreaking:
@@ -250,7 +255,10 @@ Tech 3:
         
   	Pending:
   		* T3 Engineering drone station (3)
-  		  * A third upgrade of the kennel, with a single large drone with the speed of 3 small drones, to reduce the overall number of entities and lag caused by UEF drones.           
+  		  * A third upgrade of the kennel, with a single large drone with the speed of 3 small drones, to reduce the overall number of entities and lag caused by UEF drones.
+  		* T3 Mobile AA
+  		* T3 Mobile torpedo
+  		* T3 Mobile tactical missile defence                                
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:   
@@ -276,8 +284,11 @@ Tech 3:
     Pending:
       * T3 Torp launcher.
       * T3 Anti Shield.
-      * T3 Field Engineering Ship.   
-
+      * T3 Field Engineering Ship.
+      * T3 Mobile Aa
+      * T3 Mobile torpedo? (Siege tank?)
+      * T3 Mobile tactical missile defence
+                           
 _______________________________________________________
 Experimental Table
                 +———————————————+———————————————+———————————————+———————————————+
@@ -595,7 +606,6 @@ Errors and ideas; stuff to do
 * TeaD: Do something about civies blocking the teacup.
 * UAL0207.
 * Landspeeder.
-* Mobile tac defence.
 * Hero last stand mode.
 * Anti-naval gunship.
 * Rail gun.    

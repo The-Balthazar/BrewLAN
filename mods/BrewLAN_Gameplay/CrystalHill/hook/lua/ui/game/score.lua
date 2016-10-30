@@ -20,7 +20,12 @@ function _OnBeat()
             controls.time:SetText(LOCF('%02d:%02d:%02d', math.floor(remaining / 3600), math.floor(remaining/60), math.mod(remaining, 60)))
         elseif not Crystal.Victory and remaining <= 0 then    
             local overtimeTotal = GetGameTimeSeconds() - (Crystal.EndTimeMins * 60)
-            local overtimeLeft = math.max(0, (Crystal.Overtime * 60) - GetGameTimeSeconds() )
+            local overtimeLeft
+            if Crystal.Overtime then
+                overtimeLeft = math.max(0, (Crystal.Overtime * 60) - GetGameTimeSeconds() )
+            else
+                overtimeLeft = 0            
+            end             
             controls.time:SetText("-" .. LOCF('%02d:%02d:%02d', math.floor(overtimeTotal / 3600), math.floor(overtimeTotal/60), math.mod(overtimeTotal, 60)) .. " (" .. math.ceil(overtimeLeft) .. ")")
         end
         if remaining < 10 * 60 and remaining > 9.9*60 and not Crystal.Ten then

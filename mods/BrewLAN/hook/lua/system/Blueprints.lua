@@ -22,7 +22,7 @@ function ModBlueprints(all_blueprints)
     BrewLANNavalShields(all_blueprints.Unit)
     BrewLANBomberDamageType(all_blueprints.Unit)
     BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
-    BrewLANRelativisticLinksUpdate(all_blueprints.Unit)
+    BrewLANRelativisticLinksUpdate(all_blueprints)
     BrewLANMegalithEggs(all_blueprints.Unit)
 end
 
@@ -557,7 +557,7 @@ function BrewLANRelativisticLinksUpdate(all_bps)
     end
     
     if string.lower(BrewLANPath() ) != "/mods/brewlan" then
-        all_bps.zzz0001.Desync = {
+        all_bps.Unit.zzz0001.Desync = {
             "BrewLAN reports you installed it",
             "wrong; it should be at:",
             "/mods/brewlan",
@@ -565,11 +565,23 @@ function BrewLANRelativisticLinksUpdate(all_bps)
             string.lower(BrewLANPath()),
             "Everything should still work though.",
         }
-        for id, bp in all_bps do
+        for id, bp in all_bps.Unit do
             if table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
                 PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
             end
         end
+        for id, bp in all_bps.Beam do
+            if bp.Categories and table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
+                PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
+            end
+        end
+        --INFO: TrailEmitter
+        --INFO: Beam
+        --INFO: Emitter
+        --INFO: Projectile
+        --INFO: Prop
+        --INFO: Mesh
+        --INFO: Unit
     end
 end
 
