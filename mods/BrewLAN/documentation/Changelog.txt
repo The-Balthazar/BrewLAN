@@ -312,7 +312,13 @@ __________.__________
   __________
   2016-10-30
   
-  * Finished the Armillary.                                                                                                                                                                                                                 
+  * Finished the Armillary.
+  __________
+  2016-11-01
+  
+  * Crystal Hill: Now treats allies as enemy with unlocked teams.
+  * Crystal Hill: Now only counts selectable units when counting units.
+  * Crystal Hill: Now only selectable, targetable, non-wall, non-satellite units can capture the crystal.                                                                                                                                                                                                                       
 __________.__________
 2015-09-05|0.7
 

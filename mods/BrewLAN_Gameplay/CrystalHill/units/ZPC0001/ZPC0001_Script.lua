@@ -8,6 +8,7 @@ local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 ZPC0001 = Class(SStructureUnit) { 
              
     OnCreate = function(self, builder, layer)
+        LOG(repr(ScenarioInfo.Options))
         local aiBrain = self:GetAIBrain()
         if ScenarioInfo.Crystal.FirstCapture then
             --Get defaults from blueprint
@@ -54,8 +55,8 @@ ZPC0001 = Class(SStructureUnit) {
         local radius = self:GetBlueprint().Intel.VisionRadius or 20
         while not self.WinnerMessage do
             if self.Count(self) != 0 and self.Count(self, 'Ally' ) == 0 then
-                local Units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius, 'Enemy') 
-                if Units[1] and IsUnit(Units[1]) then
+                local Units = aiBrain:GetUnitsAroundPoint(categories.SELECTABLE - categories.WALL - categories.SATELLITE - categories.UNTARGETABLE, pos, radius) 
+                if Units[1] and IsUnit(Units[1]) and Units[1]:GetArmy() != self:GetArmy() then
                     ChangeUnitArmy(self,Units[1]:GetArmy())
                 end
             end 
@@ -66,11 +67,21 @@ ZPC0001 = Class(SStructureUnit) {
                 Sync.CrystalEndTimeOvertimeMins = ScenarioInfo.Crystal.EndTimeOvertimeMins
             elseif remaining < 0 and self.Count(self, 'Enemy') == 0 and overtimeremaining < 0 then   
                 local allies = -1
-                for i, brain in ArmyBrains do
-                    if not IsAlly(self:GetArmy(), brain:GetArmyIndex()) then
-                        brain:OnDefeat()
-                    else
-                        allies = allies + 1
+                if ScenarioInfo.Options.TeamLock == "locked" then
+                    for i, brain in ArmyBrains do
+                        if not IsAlly(self:GetArmy(), brain:GetArmyIndex()) then
+                            brain:OnDefeat()
+                        else
+                            allies = allies + 1
+                        end
+                    end
+                elseif ScenarioInfo.Options.TeamLock == "unlocked" then
+                    for i, brain in ArmyBrains do
+                        if self:GetArmy() != brain:GetArmyIndex() then
+                            brain:OnDefeat()
+                        else
+                            allies = allies + 1
+                        end
                     end
                 end
                 if allies > 1 and not self.WinnerMessage then
@@ -112,16 +123,39 @@ ZPC0001 = Class(SStructureUnit) {
     Count = function(self, fealty) 
         local pos = self:GetPosition()   
         local aiBrain = self:GetAIBrain()
-        local radius = self:GetBlueprint().Intel.VisionRadius or 20   
-        local units
-        if fealty then
-            units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius, fealty)
-        else
-            units = aiBrain:GetUnitsAroundPoint( categories.ALLUNITS, pos, radius)
+        local radius = self:GetBlueprint().Intel.VisionRadius or 20
+        local AIUtils = import('/lua/ai/aiutilities.lua')   
+        local searchCat = categories.ALLUNITS
+        local units = {}
+        if ScenarioInfo.Options.TeamLock == "locked" then
+            -- Normal team search on locked teams
+            if fealty then
+                units = aiBrain:GetUnitsAroundPoint( searchCat, pos, radius, fealty)
+            else
+                units = aiBrain:GetUnitsAroundPoint( searchCat, pos, radius)
+            end
+        elseif ScenarioInfo.Options.TeamLock == "unlocked" then
+            -- Treat only self as ally on unteamed games. 
+            if fealty == "Ally" then
+                -- Only self units
+                units = AIUtils.GetOwnUnitsAroundPoint( aiBrain, searchCat, pos, radius)
+            elseif fealty == "Enemy" then
+                -- Only non-self units
+                for index, brain in ArmyBrains do
+                    if brain:GetArmyIndex() != self:GetArmy() then
+                        for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, searchCat, pos, radius) do
+                            table.insert(units, unit)
+                        end
+                    end
+                end
+            else
+                -- Any units
+                units = aiBrain:GetUnitsAroundPoint( searchCat, pos, radius)
+            end
         end
         local count = 0
         for k, v in units do
-            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) then
+            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) then
                 count = count + 1
             end
         end
