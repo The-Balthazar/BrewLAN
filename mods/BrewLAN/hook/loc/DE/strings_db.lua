@@ -328,12 +328,17 @@ ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Enthüllt das Sichtfeld einer feindlichen oder verbündeten Einheit. Kann nur auf Einheiten oder Radarsignaturen angewandt werden."
 
 --Mobile Shield Generator
+sal0322_name="Flame Lotus"
 sel0322_name="Ella"
 --Short and long descriptions both the same as default. 
 
-srl0320_desc="Mobile Missile Launcher"
+srl0320_desc="Mobiler Raketen Werfer"
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile und getarnte Racketenplattform. Kann Land-, Luft- und Marineeinheiten angreifen, muss sich aber enttarnen um zu feuern."
+
+sal0320_desc="Mobile Luftabwehr"
+sal0320_name="Armillary"
+Unit_Description_BrewLAN_T3L012="Schwebendes mobiles Luftabwehr System. Verbraucht mit jedem Schuss Energie."
 
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationäres Artillerie Abwehrsystem. Ausgestattet mit integriertem Gefahrenidentifikations- und tracking System."
@@ -342,10 +347,13 @@ srl0316_desc="Tarnbares Mobiles Tarnfeldsystem"
 srl0316_name="Operative"
 Unit_Description_BrewLAN_T3L010="Mobiler getarnter Tarnfeldgenerator. Verdeckt nahegelegene Einheiten für Radar und Sonar. Nur Sichtbar für Omnisensoren."
 
+srl0311_desc="Mobile Raketen Plattform"
+srl03ll_name="Hexatron"
+Unit_Description_BrewLAN_T3L011="Mobiler Mehrfach-Raketenwerfer. Lange Nachladezeit. Entwickelt um Schilde und taktische Raketenabwehr mit großen Salven zu überwältigen."
 
-ss0319_desc="Field Engineering Ship"
-ses0319_name="Patch Class"
-Unit_Description_BrewLAN_T3S002="TEch 3 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestatted mit einem Torpedowerfer, Torpedoabwehr und einer Luftabwehrkanone."
+ss0319_desc="Kampftechniker Schiff"
+ses0319_name="Patch-Klasse"
+Unit_Description_BrewLAN_T3S002="Tech 3 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestatted mit einem Torpedowerfer, Torpedoabwehr und einer Luftabwehrkanone."
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -392,7 +400,13 @@ ssb5401_desc="Exterimentelles Quantum Tor"
 ssb5401_name="Chappa'ai"
 Unit_Description_BrewLAN_T4B007="Experimentelles Quantum Tore. Dazu fähig Einheiten augenblicklich zu jedem anderen Tor auf dem Schlachtfeld zu teleportieren."
 
-srl0001_desc="Krabben Ei (Zerstörer)"
+srl0000_desc="Krabbenei"
+srl0001_desc=srl0000_desc .. " (Zerstörer)"
+srl0002_desc=srl0000_desc .. " (Kampftechniker)"
+srl0003_desc=srl0000_desc .. " (Tarn)"
+srl0004_desc=srl0000_desc .. " (Rakete)"
+srl0005_desc=srl0000_desc .. " (Hedgehog)"
+srl0006_desc=srl0000_desc .. " (Raketenwerfer)"
 
 seb3404_desc="Experimentelle Sensor Matrix"
 seb3404_name="Panopticon"

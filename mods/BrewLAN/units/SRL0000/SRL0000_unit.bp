@@ -3,6 +3,7 @@ UnitBlueprint {	BlueprintId="srl0002",	Economy = {BuildUnit = 'srl0319',},	Categ
 UnitBlueprint {	BlueprintId="srl0003",	Economy = {BuildUnit = 'srl0316',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0003_desc>Crab Egg (Stealth)',	}
 UnitBlueprint {	BlueprintId="srl0004",	Economy = {BuildUnit = 'srl0320',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0004_desc>Crab Egg (Missile)',	Footprint = {SizeX = 2,SizeZ = 2,},	Display = {UniformScale = 0.075,},	}
 UnitBlueprint {	BlueprintId="srl0005",	Economy = {BuildUnit = 'srl0321',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0005_desc>Crab Egg (Hedgehog)',	Footprint = {SizeX = 2,SizeZ = 2,},	Display = {UniformScale = 0.075,},	}
+UnitBlueprint {	BlueprintId="srl0006",	Economy = {BuildUnit = 'srl0311',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0006_desc>Crab Egg (MRL)',	}
 
 UnitBlueprint {
 	BlueprintId="srl0000",

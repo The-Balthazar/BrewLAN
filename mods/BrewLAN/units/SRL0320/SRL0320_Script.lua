@@ -1,13 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/URL0304/URL0304_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  Cybran Heavy Mobile Artillery Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
 local CAAMissileNaniteWeapon = import('/lua/cybranweapons.lua').CAAMissileNaniteWeapon
 local EffectUtil = import('/lua/EffectUtilities.lua')

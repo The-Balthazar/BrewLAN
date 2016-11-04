@@ -167,6 +167,11 @@ Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sens
 
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."
+Description['srl0002'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defenses."
+Description['srl0003'] = "<LOC Unit_Description_BrewLAN_T3L010>Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
+Description['srl0004'] = "<LOC Unit_Description_BrewLAN_T3L009>Mobile cloaking missile launcher. Can fire at land- air- and sea-based units, but must decloak to fire."
+Description['srl0005'] = "<LOC Unit_Description_BrewLAN_T3L004>Mobile strategic missile defense. Build costs include first missile, however the vehicle lacks a fabrication suite to produce additional missiles unassisted."
+Description['srl0006'] = "<LOC Unit_Description_BrewLAN_T3L011>Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
 
 --Support commander upgrades
 Description['uel0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU." 

@@ -36,6 +36,10 @@ function _OnBeat()
             import('/lua/ui/game/announcement.lua').CreateAnnouncement(LOC("<LOC crystal_0006>2:30 minutes remain."), controls.time)
             Crystal.Two = true
         end
+        if remaining > 0.5 * 60 and remaining < 0.51 * 60 and not Crystal.Half then
+            import('/lua/ui/game/announcement.lua').CreateAnnouncement(LOC("<LOC crystal_0008>30 seconds remain."), controls.time)
+            Crystal.Half = true
+        end
     end   
     if Sync.Crystal.Victory == 1 then
         import('/lua/ui/game/announcement.lua').CreateAnnouncement(string.gsub(Sync.Crystal.PlayerName, " (.*", "") .. LOC("<LOC crystal_0002> and friends win with the crystal."), controls.time)

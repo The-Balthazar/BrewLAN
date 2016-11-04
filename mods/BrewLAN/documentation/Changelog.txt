@@ -318,7 +318,29 @@ __________.__________
   
   * Crystal Hill: Now treats allies as enemy with unlocked teams.
   * Crystal Hill: Now only counts selectable units when counting units.
-  * Crystal Hill: Now only selectable, targetable, non-wall, non-satellite units can capture the crystal.                                                                                                                                                                                                                       
+  * Crystal Hill: Now only selectable, targetable, non-wall, non-satellite units can capture the crystal.
+  __________
+  2016-11-02
+  
+  * Fixed the attach point on the slink.
+  * Added a hat point to the slink.
+  * Increased the pitch of the weapon of the slink, so it always fires upwards.
+  __________
+  2016-11-04
+  
+  * Crystal Hill: Removed movement statistics from the crystal. (Unlike health or some others that are useful for mod compatibility.)
+  * Crystal Hill: Added a 30 second notification.
+  * Crystal Hill: Added German string for 30 seconds remaining aquired from the blue hued avian.
+  * German strings, and flagrant insults. Prodived by AlmostBlueBlueDuck.
+    20:49 - AlmostBlueBlueDuck: GO FUCK YOUR MOUTH
+    20:49 - AlmostBlueBlueDuck: i will make me food
+    20:50 - ? Balthazar: bitch what am I paying you for
+    * Aint he a darlin'
+  * Gave the Megalith the ability to build the Hexatron.
+  * Added descriptions to the Megalith eggs.
+  * Gave the new Megalith eggs icons.
+  * Fixed the layer seabed amphibious eggs are built on.               
+
 __________.__________
 2015-09-05|0.7
 

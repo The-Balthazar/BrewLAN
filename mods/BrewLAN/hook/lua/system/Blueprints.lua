@@ -614,7 +614,7 @@ function BrewLANMegalithEggs(all_bps)
                 bp.Economy.BuildTime = all_bps[bp.Economy.BuildUnit].Economy.BuildTime
                 bp.General.Icon = all_bps[bp.Economy.BuildUnit].General.Icon
                 if string.lower(all_bps[bp.Economy.BuildUnit].Physics.MotionType) == "ruleumt_amphibious" then
-                    bp.Physics.BuildOnLayerCaps.LAYER_Water = true
+                    bp.Physics.BuildOnLayerCaps.LAYER_Seabed = true
                 end
             end
         end
