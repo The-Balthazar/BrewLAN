@@ -339,7 +339,11 @@ __________.__________
   * Gave the Megalith the ability to build the Hexatron.
   * Added descriptions to the Megalith eggs.
   * Gave the new Megalith eggs icons.
-  * Fixed the layer seabed amphibious eggs are built on.               
+  * Fixed the layer seabed amphibious eggs are built on.
+  __________
+  2016-11-05
+  
+  * Separated out a section of the Ai support, in an attempt to narrow down one of the crashes.                
 
 __________.__________
 2015-09-05|0.7
