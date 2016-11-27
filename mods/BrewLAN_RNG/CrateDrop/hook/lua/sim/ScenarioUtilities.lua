@@ -72,10 +72,10 @@ do
                 local ratio = aiBrain:GetEconomyStoredRatio('MASS')
                 local storagespace = (mass * (1/ratio) ) - mass
                 if storagespace > 5000 then 
-                    if math.random(1,100) == 100 then
+                    if math.random(1,10) == 10 then
                         LOG("JACKPOT")
                         aiBrain:GiveResource('Mass', storagespace )
-                        PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                        PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                     else      
                         aiBrain:GiveResource('Mass', math.max(5000, storagespace/10) )
                     end   
@@ -176,7 +176,7 @@ do
                 if math.random(1,100) == 100 then
                     LOG("JACKPOT")
                     Buff.ApplyBuff(Unit, 'CrayCrateHealthBuff')
-                    PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                    PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                 else         
                     Buff.ApplyBuff(Unit, 'CrateHealthBuff')
                 end    
@@ -222,7 +222,7 @@ do
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateVisBuff')
-                        PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                        PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                     else      
                         Buff.ApplyBuff(Unit, 'CrateVisBuff')
                     end  
@@ -266,7 +266,7 @@ do
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateRadarBuff')
-                        PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                        PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                     else      
                         Buff.ApplyBuff(Unit, 'CrateRadarBuff')
                     end
@@ -342,7 +342,7 @@ do
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateDamageBuff')
-                        PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                        PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                     else      
                         Buff.ApplyBuff(Unit, 'CrateDamageBuff')
                     end 
@@ -389,7 +389,7 @@ do
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateMoveBuff')
-                        PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                        PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                     else      
                         Buff.ApplyBuff(Unit, 'CrateMoveBuff')
                     end  
@@ -433,7 +433,7 @@ do
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateEngiBuff')
-                        PhatLewt(Unit, pos,'Hat')--Bonus jackpot hat
+                        PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                     else
                         Buff.ApplyBuff(Unit, 'CrateEngiBuff')
                     end
@@ -479,6 +479,7 @@ do
             function(Unit, pos, noRerollFail)
                 LOG("Hat")
                 local hatTypes = {
+                    'HAT_Crown',
                     'HAT_Tophat',
                     'HAT_Tophat_whiteband',
                     'HAT_Bowler_red',
@@ -514,7 +515,12 @@ do
                     end
                     table.insert(Unit.Hats, import('/lua/sim/Entity.lua').Entity() )
                     local hat = Unit.Hats[table.getn(Unit.Hats)]
-                    local hatType = hatTypes[math.random(1, table.getn(hatTypes) )] 
+                    local hatType
+                    if table.find(hatTypes, noRerollFail) and noRerollFail != 'Hat' then
+                        hatType = hatTypes[table.find(hatTypes, noRerollFail)]
+                    else
+                        hatType = hatTypes[math.random(2, table.getn(hatTypes) )]
+                    end 
                     Warp(hat,Unit:GetPosition() )
                     hat:SetMesh('/mods/BrewLAN_RNG/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
                     if EntityCategoryContains(categories.EXPERIMENTAL , Unit) then
@@ -618,8 +624,8 @@ do
     -- Main lewt picker
     ----------------------------------------------------------------------------
     function PhatLewt(triggerUnit, pos, note)
-        if note == 'Hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
-            lewt[3][1](triggerUnit, pos, true)
+        if string.lower(string.sub(note or "NOPE",1,3)) == 'hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
+            lewt[3][1](triggerUnit, pos, note or true)
         else      
             local a = math.random(1, table.getn(lewt) )
             local b = math.random(1, table.getn(lewt[a]) )

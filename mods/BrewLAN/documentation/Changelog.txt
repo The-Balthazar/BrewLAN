@@ -343,7 +343,38 @@ __________.__________
   __________
   2016-11-05
   
-  * Separated out a section of the Ai support, in an attempt to narrow down one of the crashes.                
+  * Separated out a section of the Ai support, in an attempt to narrow down one of the crashes.
+  __________
+  2016-11-11
+  
+  * Crate Drop: The jackpot free hat is now a crown, which can't drop randomly.
+  * Crate Drop: Increased the odds of a mass jackpot to 1 in 10.
+  * Added hat bones to:
+    * UEF
+      * T1 Gunship
+      * T1 Torpedo bomber
+      * T3 Torpedo bomber
+  __________
+  2016-11-19
+  
+  * Increased the lifebar offset on the Patch Class.
+  * Added the Fixxie Class; a T2 Patch Class.
+  * Extended the build lists of the field engineering ships to:
+    * Naval buildings
+    * Anti-missile buildings (T2 max)
+    * Anti-navy buildings
+    * Anti-air buildings
+    * Shield buildings
+    * And mines
+  __________
+  2016-11-22
+  
+  * Finished most of the graphics for the Fixxie Class.
+  __________
+  2016-11-27
+  
+  * Fixed land and air factories being able to build the T2 field engineer boat.
+  * Fixed the nuke mines.                                                              
 
 __________.__________
 2015-09-05|0.7

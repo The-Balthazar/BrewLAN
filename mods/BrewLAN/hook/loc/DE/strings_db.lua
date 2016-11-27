@@ -177,6 +177,10 @@ Unit_Description_BrewLAN_T3B0019="Bremst den Vorstoß des Feindes. Kann extremem
 
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
+
+ss0219_desc=ss0319_desc --"Field Engineering Ship"
+ses0219_name="Fixxie-Klasse"
+Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
   
 --------------------------------------------------------------------------------
 -- Tech 3

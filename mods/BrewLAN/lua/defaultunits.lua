@@ -4,7 +4,7 @@
 
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
-local TIFCommanderDeathWeapon = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
+local DeathNukeWeapon = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
 local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit    
 
 --------------------------------------------------------------------------------
@@ -60,18 +60,19 @@ MineStructureUnit = Class(TStructureUnit) {
 
 NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
-        DeathWeapon = Class(TIFCommanderDeathWeapon) {},
-        Suicide = Class(TIFCommanderDeathWeapon) {
-            OnFire = function(self)			
-                self.unit:SetWeaponEnabledByLabel('DeathWeapon', false)
-                TIFCommanderDeathWeapon.OnFire(self)
+        DeathWeapon = Class(DeathNukeWeapon) {},
+        Suicide = Class(DeathNukeWeapon) {
+            Fire = function(self, ...)			
+                self.unit.DeathWeaponEnabled = false
+                DeathNukeWeapon.Fire(self, unpack(arg) )
             end,
         },
     },
 
     OnScriptBitSet = function(self, bit)
         TStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then 
+        if bit == 1 then  
+            self.DeathWeaponEnabled = false
             self:GetWeaponByLabel('Suicide'):Fire()
         end
     end,

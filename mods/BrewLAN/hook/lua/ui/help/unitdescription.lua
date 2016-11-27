@@ -81,6 +81,9 @@ Description['ssl0222'] = "<LOC Unit_Description_BrewLAN_T2L004>Mobile shield gen
 --Tech 2 aircraft
 Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
+--Tech 2 naval units
+Description['ses0219'] = "<LOC Unit_Description_BrewLAN_T2S001>Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
+
 --Tech 3 aircraft
 Description['ssa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
 Description['sra0306'] = "<LOC Unit_Description_BrewLAN_T3A002>Heavy air transport. Armed with heavy anti-air defense, an EMP weapon and a stealth field. Can carry up to 16 units."

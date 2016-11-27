@@ -79,7 +79,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        'BUILTBYTIER3FACTORY',  
+        'BUILTBYTIER3FACTORY',
         'CONSTRUCTION',
         'ENGINEER',
         'REPAIR',
@@ -211,16 +211,18 @@ UnitBlueprint {
         BuildTime = 10000,
         BuildRate = 45,
         BuildableCategory = {
-            'BUILTBYTIER3ENGINEER NAVAL FACTORY UEF',
+            'BUILTBYTIER3ENGINEER NAVAL UEF',
+            'BUILTBYTIER2ENGINEER ANTIMISSILE UEF',
             'BUILTBYTIER3ENGINEER ANTINAVY UEF',
             'BUILTBYTIER3ENGINEER ANTIAIR UEF',
             'BUILTBYTIER3ENGINEER SHIELD UEF',
-            'BUILTBYTIER3FIELD NAVAL FACTORY UEF',
+            'BUILTBYTIER3ENGINEER MINE UEF',
+            'BUILTBYTIER3FIELD NAVAL UEF',
+            'BUILTBYTIER2FIELD ANTIMISSILE UEF',
             'BUILTBYTIER3FIELD ANTINAVY UEF',
             'BUILTBYTIER3FIELD ANTIAIR UEF',
             'BUILTBYTIER3FIELD SHIELD UEF',
             'BUILTBYTIER3FIELD MINE UEF',
-            'BUILTBYTIER2ENGINEER ANTIMISSILE UEF',
         },
         --MaintenanceConsumptionPerSecondEnergy = 15,
         StorageEnergy = 500,
@@ -230,13 +232,13 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 8,
     },
-    General = {         
-        BuildBones = {        
+    General = {
+        BuildBones = {
             AimBone = 'Turret_Muzzle02',
             BuildEffectBones = {
                 'Turret_Muzzle01',
                 'Turret_Muzzle02',
-                'Turret_Muzzle03',  
+                'Turret_Muzzle03',
                 'Turret_Muzzle004',
                 'Turret_Muzzle005',
                 'Turret_Muzzle006',
@@ -268,7 +270,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
-        Icon = 'sea',                    
+        Icon = 'sea',
         SelectionPriority = 2,
         TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ses0319_name>Patch Class',
@@ -284,7 +286,7 @@ UnitBlueprint {
         HelpText = '<LOC ss0319_desc>Field Engineering Ship',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 2.45,
+    LifeBarOffset = 3.5,
     LifeBarSize = 1.5,
     Physics = {
         BackUpDistance = 5,

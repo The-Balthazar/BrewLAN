@@ -178,6 +178,10 @@ Unit_Description_BrewLAN_T2B001="Restricts movement of enemy units and can susta
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobile shield generator."
 
+ss0219_desc=ss0319_desc --"Field Engineering Ship"
+ses0219_name="Fixxie Class"
+Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 -------------------------------------------------------------------------------- 

@@ -215,7 +215,7 @@ UnitBlueprint {
             NukeOuterRingTicks = 20,
             NukeOuterRingTotalTime = 0,
 
-            ProjectileId = '/projectiles/AIFQuantumWarhead02/AIFQuantumWarhead02_proj.bp',
+            ProjectileId = '/mods/brewlan/effects/entities/QuantumWarheadEffectController/QuantumWarheadEffectController_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -230,14 +230,33 @@ UnitBlueprint {
             WeaponCategory = 'Kamikaze',
         },
         {
-            Damage = 10000,
+            CollideFriendly = false,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 10,
-            DamageType = 'Deathnuke',
-            DisplayName = 'Death Weapon',
+            DamageType = 'Normal',
+            DisplayName = 'Death Nuke',
             FireOnDeath = true,
+            FiringTolerance = 2,
             Label = 'DeathWeapon',
+            MaxRadius = 1,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
             ProjectileId = '/effects/Entities/SCUDeath01/SCUDeath01_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        0,
+                    },
+                    RackBone = 0,
+                },
+            },
+            RackRecoilDistance = 0,
+            RateOfFire = 1,
+            TargetCheckInterval = 9999999,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            Turreted = false,
             WeaponCategory = 'Death',
         },
     },
