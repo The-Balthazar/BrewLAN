@@ -460,13 +460,13 @@ function BrewLANMatchBalancing(all_bps)
         ssa0305 = 'uea0305',
 ------- Air transports to be based  
         ssa0306 = 'xea0306',        
-                           --Energy mass  btime brate
+                           --Energy mass  b-time b-rate
         sra0306 = {'xea0306', 0.95, 0.95, 0.95,},
         saa0306 = {'xea0306', 2.75, 2.75, 2.75,},
 
 ------- ED5 built by field engineer balancing         
-        urb4207 = {'urb4207', 1.5, 1.5, 2.25, },
-        urb4206 = {'urb4206', 1,   1,   1, 2.25,},
+        urb4207 = {'urb4207', 1.5,  1.5,  2.25, },
+        urb4206 = {'urb4206', 1,    1,    1,     2.25,},
     }   
      
     for unitid, targetid in UnitsList do

@@ -66,6 +66,9 @@ UnitBlueprint {
     },
     Description = '<LOC sab1312_desc>Shielded Mass Extractor',
     Display = {
+        Abilities = {           
+            '<LOC ability_shielddome>Shield Dome',
+        },
         AnimationActivate = '/units/UAB1302/UAB1302_Apump.sca',
         Mesh = {
             IconFadeInZoom = 130,

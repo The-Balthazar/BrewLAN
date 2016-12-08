@@ -35,8 +35,10 @@ do
             WaitTicks(2)
             local search = {} 
             for index, brain in ArmyBrains do
-                for i, unit in import('/lua/ai/aiutilities.lua').GetOwnUnitsAroundPoint(brain, categories.ALLUNITS, crate:GetPosition(), 1) do
-                    table.insert(search, unit)
+                for i, unit in import('/lua/ai/aiutilities.lua').GetOwnUnitsAroundPoint(brain, categories.SELECTABLE, crate:GetPosition(), 1) do
+                    if unit:GetCurrentLayer() == "Land" then
+                        table.insert(search, unit)
+                    end
                 end
             end
             if search[1] and IsUnit(search[1]) then

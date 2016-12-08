@@ -173,7 +173,8 @@ Unit_Description_BrewLAN_T2D003="Erzeugt einen schützenden Schild um Einheiten 
 sbui5210="Schwerer Mauern Abschnitt"
 seb5210_name="Zerstörende Sackgasse"
 srb5210_name="Panzerdamm"
-Unit_Description_BrewLAN_T3B0019="Bremst den Vorstoß des Feindes. Kann extremem Mengen an Schaden standhalten. Verbindet sich automatisch mit angrenzenden Mauerabschnitten."
+ssb5210_name="Haas-haas"
+Unit_Description_BrewLAN_T2B001="Bremst den Vorstoß des Feindes. Kann extremem Mengen an Schaden standhalten. Verbindet sich automatisch mit angrenzenden Mauerabschnitten."
 
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
@@ -366,6 +367,7 @@ Unit_Description_BrewLAN_T3S002="Tech 3 Marine Konstruktions-, Reparatur-, Über
 ssl0403_desc="Experimenteller Kampf-Techniker"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimentelle amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Ausgestattet mit mittlerer Bewaffnung und Verteidigung. Kann spezial Ausrüstung bauen."
+ssa00001_desc="Drohn"
 
 sea0401_desc="Experimentelles Luftabwehr Kanonenboot"
 sea0401_name="AC-500 Centurion"

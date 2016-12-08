@@ -374,7 +374,20 @@ __________.__________
   2016-11-27
   
   * Fixed land and air factories being able to build the T2 field engineer boat.
-  * Fixed the nuke mines.                                                              
+  * Fixed the nuke mines.
+  __________
+  2016-12-08
+  
+  * theonewhonevergivesa: Updated Russion language translation.
+  * Added the Seraphim T2 wall's name to the string tables for translation.
+  * Added the Megalith egg MRL to the translation tables.
+  * Added the Iyadesu's storage drone description to the translation tables.
+  * Fixed the string assignment for the T2 wall long description on Russian and German.
+  * Listed the Aeon shielded mass extractors "Shield Dome" ability.
+  * Crate Drop: Only selectable units on the 'Land' layer can collect the crate.
+    * Aircraft must land to collect it.
+    * Dummy units, satelites, and drones can no longer collect it.
+  * Remerged AI files, because Saxxon testing indicates it doesn't help.                                                                                    
 
 __________.__________
 2015-09-05|0.7

@@ -173,6 +173,7 @@ Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and struc
 sbui5210="Heavy Wall Section"
 seb5210_name="General Destruction Impasse"
 srb5210_name="Bulkhead"
+ssb5210_name="Haas-haas"
 Unit_Description_BrewLAN_T2B001="Restricts movement of enemy units and can sustain extreme amounts of damage. Connects to other adjacent heavy wall sections."
 
 ssl0222_name="Athanne"
@@ -366,6 +367,7 @@ Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and 
 ssl0403_desc="Experimental Reconstruction Engineer"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them."
+ssa00001_desc="Drone"
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"
@@ -410,6 +412,7 @@ srl0002_desc=srl0000_desc .. " (Field Engineer)"
 srl0003_desc=srl0000_desc .. " (Stealth)"
 srl0004_desc=srl0000_desc .. " (Missile)"
 srl0005_desc=srl0000_desc .. " (Hedgehog)"
+srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
