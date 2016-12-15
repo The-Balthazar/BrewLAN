@@ -89,7 +89,7 @@ BrewLAN
 _______________________________________________________
 Added and planned units:
 -------------------------------------------------------
-Tech 1 (Functionally complete):
+Tech 1:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:  
 		* T1 Light Gunship
@@ -100,6 +100,9 @@ Tech 1 (Functionally complete):
 		* T1 Defence engineer 
     * T1 Pressure Mine  
 	  * T1 Torpedo Bomber
+            
+  	Pending: 
+      * T1 Field Engineering Boat.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:          
 	  * T1 Light Artillery
@@ -107,7 +110,10 @@ Tech 1 (Functionally complete):
 		* T1 Field engineer 
     * T1 Pressure Mine     
 	  * T1 Torpedo Bomber     
-  	  * Would like to give a more unique appearance.  
+  	  * Would like to give a more unique appearance.
+            
+  	Pending: 
+      * T3 Field Engineering Boat.  
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF: 
     * T1 Light Gunship    
@@ -117,7 +123,8 @@ Tech 1 (Functionally complete):
     * T1 Torpedo Bomber
     * T1 Air Staging        
   	* T1 Field engineer
-  	* T1 Pressure Mine      
+  	* T1 Pressure Mine
+	  * T1 Field Engineering Boat.      
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Seraphim:
     * T1 Light Artillery
@@ -127,9 +134,12 @@ Tech 1 (Functionally complete):
 		  * Would like to give a more unique appearance.            
 		* T1 Field engineer     
     * T1 Pressure Mine 
-	  * T1 Torpedo Bomber      
+	  * T1 Torpedo Bomber
+            
+  	Pending: 
+      * T3 Field Engineering Boat.      
 -------------------------------------------------------
-Tech 2 (Functionally complete):
+Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Aeon:
     * T2 Mass Storage
@@ -138,7 +148,10 @@ Tech 2 (Functionally complete):
     * T2 Defence Engineer
     * T2 Proximity Mine
       * Lacks a unique model.
-		* T2 Heavy Wall.    
+		* T2 Heavy Wall.
+            
+  	Pending: 
+      * T2 Field Engineering Ship.    
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
     * T2 Mass Storage
@@ -146,6 +159,9 @@ Tech 2 (Functionally complete):
     * T2 Proximity Mine
     * T2 Energy Storage      
 		* T2 Wall
+            
+  	Pending: 
+      * T2 Field Engineering Ship.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF:
     * T2 Mass Storage
@@ -165,6 +181,9 @@ Tech 2 (Functionally complete):
 		* T2 Field engineer.
 		* T2 Heavy Wall.
 		* T2 Mobile Shield Gen.
+            
+  	Pending: 
+      * T2 Field Engineering Ship.
 -------------------------------------------------------
 Tech 3:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -233,7 +252,8 @@ Tech 3:
       * T3 Armored Wall Section.
       * T3 Armored Gate Section.      
   		* T3 Mobile Shield Gen.
-      * T3 Field Engineering Ship.                          
+      * T3 Field Engineering Ship.
+      * T3 Anti-Artillery Shield.                                
     
     Functional:          
       * T3 Torpedo Bomber.

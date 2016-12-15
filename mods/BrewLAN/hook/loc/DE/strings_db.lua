@@ -121,6 +121,10 @@ Unit_Description_BrewLAN_T1L001="Tech 1 amphibische Bau- , Reparatur- , Übernah
 Unit_Description_BrewLAN_T1L002="Tech 1 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit geringfügiger Bewaffnung sowie Sonar und einem persönlichen Tarnfeldgenerator. Kann spezial Verteitigung bauen"
 Unit_Description_BrewLAN_T1L003="Tech 1 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit einem persönlichen Schild ausgestattet. Kann spezial Verteidigung bauen"
 
+ss0119_desc=ss0319_desc --"Field Engineering Ship"
+ses0119_name="Mendy-Klasse"
+Unit_Description_BrewLAN_T1S001="Tech 1 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit."
+
 --------------------------------------------------------------------------------
 -- Tech 2
 -------------------------------------------------------------------------------- 
@@ -181,7 +185,7 @@ Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
 
 ss0219_desc=ss0319_desc --"Field Engineering Ship"
 ses0219_name="Fixxie-Klasse"
-Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
+Unit_Description_BrewLAN_T2S001="Tech 2 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestattet mit einem Luftabwehrkanone."
   
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -247,9 +251,12 @@ sea0002_desc="Beobachtungs Satellit"
 sea0002_name="Brennender Stern"
 Unit_Description_BrewLAN_T3B002="Satelliten-Beobachtungssystem. Hat eine große Sichtweite und Omnisensorausrüstung. Wenn die Satellitenzentrale zerstört wird, wird der Satellit sofort deaktiviert."
 
+--Sniper bot alternatives
 sel0320_desc="Mobiler Satelliten-Uplink"
 sel0320_name="Archimedes"
+srl0318_name="Aracme"
 Unit_Description_BrewLAN_T3L003="Ein mobiler Satelliten-Uplink. Markiert Ziele für orbitalen Laserbeschuss."
+Unit_Description_BrewLAN_T3L013="Mobile spiderbot. Armed with a long range EMP beam weapon."
 
 sel0321_desc="Mobile strategische Raketenabwehr"
 sel0321_name="Aster"
@@ -417,3 +424,7 @@ srl0006_desc=srl0000_desc .. " (Raketenwerfer)"
 seb3404_desc="Experimentelle Sensor Matrix"
 seb3404_name="Panopticon"
 Unit_Description_BrewLAN_T4B008="Experimentelle Sensor Matrix. Gibt Sichtfeld für für jede gegnerische Einheit in Radarreichweite. Unterhalt steigt für jede ausspionierte Einheit in Reichweite. Mobile und teure Einheiten erzeugen einen höheren Unterhalt. Getarnte Einheiten, ACUs und Einheiten in der nähe eines " .. srb4402_name .. " können nicht ausspioniert werden."
+
+sab0401_desc="Versuchsanlage"
+sab0401_name="Unabhängigkeit"
+Unit_Description_BrewLAN_T4B009="Versuchsanlage."

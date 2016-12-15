@@ -108,8 +108,8 @@ UnitBlueprint {
         AirThreatLevel = 8,
         ArmorType = 'Normal',
         EconomyThreatLevel = 0,
-        Health = 7200,
-        MaxHealth = 7200,
+        Health = 6525,
+        MaxHealth = 6525,
         RegenRate = 0,
         SubThreatLevel = 21,
         SurfaceThreatLevel = 45,
@@ -206,9 +206,9 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Economy = {
-        BuildCostEnergy = 15000,
-        BuildCostMass = 2250,
-        BuildTime = 10000,
+        BuildCostEnergy = 7100,
+        BuildCostMass = 2275,
+        BuildTime = 4750,
         BuildRate = 45,
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER NAVAL UEF',

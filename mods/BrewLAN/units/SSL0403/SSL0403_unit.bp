@@ -178,22 +178,6 @@ UnitBlueprint {
                         Type = 'GroundKickup01',
                     },
                 },
-                Treads = {
-                    ScrollTreads = true,
-                    TreadMarks = {
-                        {
-                            TreadMarks = 'tank_treads_albedo',
-                            TreadMarksInterval = 0.09,
-                            TreadMarksSizeX = 0.8,
-                            TreadMarksSizeZ = 0.7,
-                            TreadOffset = {
-                                0,
-                                0,
-                                -0.2,
-                            },
-                        },
-                    },
-                },
             },
             --[[Seabed = {
                 Effects = {

@@ -30,6 +30,9 @@ Description['sel0119'] = "<LOC Unit_Description_BrewLAN_T1L001>Tech 1 amphibious
 Description['ssl0119'] = "<LOC Unit_Description_BrewLAN_T1L002>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Description['sal0119'] = "<LOC Unit_Description_BrewLAN_T1L003>Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
+--Tech 1 naval units
+Description['ses0119'] = "<LOC Unit_Description_BrewLAN_T1S001>Tech 1 construction, repair, capture, reclamation, and mine layer unit."
+
 --Tech 2 buildings
 Description['sab5210'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
 Description['srb5210'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
@@ -115,6 +118,7 @@ Description['srl0320'] = "<LOC Unit_Description_BrewLAN_T3L009>Mobile cloaking m
 Description['srl0316'] = "<LOC Unit_Description_BrewLAN_T3L010>Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
 Description['srl0311'] = "<LOC Unit_Description_BrewLAN_T3L011>Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
 Description['sal0320'] = "<LOC Unit_Description_BrewLAN_T3L012>Hovering mobile anti-air defence system. Consumes power with each shot."
+Description['srl0318'] = "<LOC Unit_Description_BrewLAN_T3L013>Mobile spiderbot. Armed with a long range EMP beam weapon."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
@@ -167,6 +171,7 @@ Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hove
 Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Generates a pulse that reduces the maximun penetration depth of most active Omni sensors."
 Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
 Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sensor array. Displays the location of enemy units. Upkeep costs per-unit being watched. Sensors can't penetrate areas of heavy sensor-distruption."
+Description['sab0401'] = "<LOC Unit_Description_BrewLAN_T4B009>Experimental Air Factory."
 
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."

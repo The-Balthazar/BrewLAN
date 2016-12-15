@@ -60,6 +60,10 @@ tooltipbrewlan0028="Démarre ou redémarre un cycle d'envoi sur la zone cible."
 floatingtextIVAN01="Ordre répétitif activé"
 floatingtextIVAN02="Ordre répétitif désactivé"
 
+--Tooltips for the Panopticon
+tooltipbrewlan0029="Basculer la veille économique"
+tooltipbrewlan0030="Bien que active, cette unité réduira dynamiquement son rayon d'espionnage opérationnel à un niveau économiquement viable."
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements 
 -------------------------------------------------------------------------------- 
@@ -117,6 +121,10 @@ Unit_Description_BrewLAN_T1L001="Unité amphibie tech 1, construit, répare, cap
 Unit_Description_BrewLAN_T1L002="Unité amphibie tech 1, construit, répare, capture, exploite et détecte les mines. Equipé d'un armement léger et d'un équipement sonar furtif. Peut construire des défenses."
 Unit_Description_BrewLAN_T1L003="Unité amphibie tech 1, construit, répare, capture, exploite et détecte les mines. Equipé d'un bouclier personnel. Peut construire des défenses."
 
+ss0119_desc="Bateau d'ingénierie"
+ses0119_name="Classe Mendy"
+Unit_Description_BrewLAN_T1S001="Unité de construction, de réparation, de capture, de récupération et de couche minière tech 1."
+
 --------------------------------------------------------------------------------
 -- Tech 2
 -------------------------------------------------------------------------------- 
@@ -169,7 +177,15 @@ Unit_Description_BrewLAN_T2D003="Génère un bouclier qui protège les unités d
 sbui5210="Murs renforcés"
 seb5210_name="Calcigranit"
 srb5210_name="Bulkhead"
+ssb5210_name="Haas-haas"
 Unit_Description_BrewLAN_T2B001="Bloque les mouvements des unités ennemies. Peut absorber beaucoup de dégâts et se connecte automatiquement aux murs adjacents."
+
+ssl0222_name="Athanne"
+Unit_Description_BrewLAN_T2L004=Unit_Description_0034  --Mobile shield generator
+
+ss0219_desc="Bateau d'ingénierie"
+ses0219_name="Classe Fixxie"
+Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
 
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -298,6 +314,7 @@ Unit_Description_BrewLAN_T3B0011="Génère une zone d'invisibilité. Masque les 
 
 ssb5301_desc="Mur avec bouclier"
 ssb5301_name="Athahaas"
+sab5301_name="Aegis"
 Unit_Description_BrewLAN_T3B0018="Bloque les mouvements des unités ennemies. Généré un bouclier."
         
 srb5310_desc="Mur blindé"
@@ -320,12 +337,33 @@ ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offres une ligne de vue sur une unité amie ou ennemie ciblée. Vous ne pouvez pas cibler un espace vide."
 
 --Mobile Shield Generator
+sal0322_name="Flamme Lotus"
 sel0322_name="Ella"
 --Short and long descriptions both the same as default. 
 
 srl0320_desc="Système anti-aérien furtif"
 srl0320_name="Fronde"
 Unit_Description_BrewLAN_T3L009="Système de défense anti-aérienne ayant des capacités de dissimulation. Idéale pour piéger les avions ennemis."
+
+sal0320_desc="Défense anti-aérienne mobile"
+sal0320_name="Armillaire"
+Unit_Description_BrewLAN_T3L012="Système de défense anti-aérien mobile pivotant. Consomme de l'énergie à chaque prise de vue."
+
+seb4303_name="Recul"
+Unit_Description_BrewLAN_T3B0028="Grille de défense d'artillerie stationnaire. Équipé d'un système intégré d'identification et de suivi des menaces."
+
+srl0316_desc="Système de furtivité mobile"
+srl0316_name="Opératoire"
+Unit_Description_BrewLAN_T3L010="Générateur de furtivité mobile. Cache les unités à proximité du radar et du sonar. Visible seulement à omni."
+
+srl0311_desc="Lance-roquettes multiple"
+srl03ll_name="Hexatron"
+Unit_Description_BrewLAN_T3L011="Lanceur de fusée mobile multiple. Temps de rechargement long. Conçu pour submerger les boucliers ennemis et les défenses tactiques de missiles avec de grandes salves."
+
+ss0319_desc="Bateau d'ingénierie"
+ses0319_name="Classe Patch"
+Unit_Description_BrewLAN_T3S002="Tech 3 de construction navale, de réparation, de capture et de récupération. Équipé d'une baie de torpilles, d'une défense anti-torpille et d'une seule arme anti-aérienne."
+
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -334,6 +372,7 @@ Unit_Description_BrewLAN_T3L009="Système de défense anti-aérienne ayant des c
 ssl0403_desc="Ingénieur expérimental"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Unité amphibie expérimentale, reconstruit, répare et capture. Possède des capacités d'attaque et de défenses moyennes."
+ssa00001_desc="Drone"
 
 sea0401_desc="Vaisseau de combat anti-aérien expérimental"
 sea0401_name="AC-500 Centurion"
@@ -372,4 +411,18 @@ ssb5401_desc="Portail quantique expérimental"
 ssb5401_name="Chappa'ai"
 Unit_Description_BrewLAN_T4B007="Portail expérimental capable de transporter instantanément les unités vers un autre portail."
 
-srl0001_desc="Crab Egg (Destroyer)"
+srl0000_desc="Œuf de crabe "
+srl0001_desc=srl0000_desc .. " (Destroyer)"
+srl0002_desc=srl0000_desc .. " (Étincelle)"
+srl0003_desc=srl0000_desc .. " (Furtif)"
+srl0004_desc=srl0000_desc .. " (Antiaérienne)"
+srl0005_desc=srl0000_desc .. " (" .. srl0321_name .. ")"
+srl0006_desc=srl0000_desc .. " (LRM)"
+
+seb3404_desc="Ensemble de capteurs expérimentaux"
+seb3404_name="Panoptique"
+Unit_Description_BrewLAN_T4B008="Sondes expérimentales. Donne la ligne de visée pour les unités ennemies dans son rayon opérationnel visible aux capteurs disponibles, tels que le radar. Frais d'entretien supplémentaires par unité étant espionné. Les unités mobiles et les unités coûteuses coûtent plus cher à espionner."
+
+sab0401_desc="Experimental Air Factory"
+sab0401_name="Independence Engine"
+Unit_Description_BrewLAN_T4B009="Experimental Air Factory."

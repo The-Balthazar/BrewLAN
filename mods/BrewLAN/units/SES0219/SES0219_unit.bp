@@ -78,8 +78,8 @@ UnitBlueprint {
         AirThreatLevel = 1,
         ArmorType = 'Normal',
         EconomyThreatLevel = 0,
-        Health = 2120,
-        MaxHealth = 2120,
+        Health = 3025,
+        MaxHealth = 3025,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 9,
@@ -95,15 +95,15 @@ UnitBlueprint {
         },
         AnimationDeath = {
             {
-                Animation = '/units/ues0103/ues0103_ADeath01.sca',
+                Animation = '/mods/brewlan/units/ses0219/ses0219_ADeath01.sca',
                 Weight = 100,
             },
             {
-                Animation = '/units/ues0103/ues0103_A001.sca',
+                Animation = '/mods/brewlan/units/ses0219/ses0219_ADeath02.sca',
                 Weight = 100,
             },
             {
-                Animation = '/units/ues0103/ues0103_ADeath02.sca',
+                Animation = '/mods/brewlan/units/ses0219/ses0219_ADeath03.sca',
                 Weight = 100,
             },
         },
@@ -168,9 +168,9 @@ UnitBlueprint {
         UniformScale = 0.09*1.35,
     },
     Economy = {
-        BuildCostEnergy = 2600,
-        BuildCostMass = 260,
-        BuildTime = 1300,
+        BuildCostEnergy = 1950,
+        BuildCostMass = 750,
+        BuildTime = 1975,
         BuildRate = 30,
         --MaintenanceConsumptionPerSecondEnergy = 5,
         BuildableCategory = {
@@ -189,10 +189,13 @@ UnitBlueprint {
         },
         StorageEnergy = 250,
         StorageMass = 25,
+        TeleportEnergyMod = 0.15,
+        TeleportMassMod = 1,
+        TeleportTimeMod = 0.01,
     },
     Footprint = {
-        SizeX = 2*1.35,
-        SizeZ = 6*1.35,
+        SizeX = 3,
+        SizeZ = 8,
     },
     General = {       
         BuildBones = {        

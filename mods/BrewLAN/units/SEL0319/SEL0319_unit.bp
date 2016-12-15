@@ -137,7 +137,7 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                     AlbedoName = '/units/xel0209/xel0209_albedo.dds',
                     SpecularName = '/units/xel0209/xel0209_specteam.dds',
-                    NormalsName = '/units/xel0209/xel0209_normalsts.dds',
+                    NormalsName = '/mods/brewlan/units/sel0119/sel0119_normalsts.dds',
                 },
                 {
                     LODCutoff = 215,
@@ -196,7 +196,7 @@ UnitBlueprint {
         UniformScale = 0.05*1.25,
     },
     Economy = {
-        BuildCostEnergy = 4000,
+        BuildCostEnergy = 3625,
         BuildCostMass = 675,
         BuildRate = 15,
         BuildTime = 2400,

@@ -387,7 +387,55 @@ __________.__________
   * Crate Drop: Only selectable units on the 'Land' layer can collect the crate.
     * Aircraft must land to collect it.
     * Dummy units, satelites, and drones can no longer collect it.
-  * Remerged AI files, because Saxxon testing indicates it doesn't help.                                                                                    
+  * Remerged AI files, because Saxxon testing indicates it doesn't help.
+  __________
+  2016-12-09
+  
+  * Increased the health of Outy from 215 to 220.
+  * Reduced the energy cost and build time of T1 field engineers from 300 to 265.
+  * Reduced the energy cost of T3 field engineers from 4000 to 3625.
+  __________
+  2016-12-12
+  
+  * Adjusted the balance of Field Boats.
+    * They now have calculated stats rather than stats taken from what their base model is.  
+      * T3 UEF:
+        * Health now 6525 from 7200
+        * Energy cost now 7100 from 15000
+        * Mass cost 2275 from 2250
+        * Build time now 4750 from 10000
+      * T2 UEF:
+        * Health now 3025 from 2120
+        * Energy cost now 1950 from 2600
+        * Mass cost now 750 from 260
+        * Build time now 1975 from 1300
+  * Added the UEF T1 Field Engineering Boat.
+  * Experimental Icons Overhaul: Potentially fixed a bug related to checking non-existant strings.
+  __________
+  2016-12-13
+  
+  * Experimental Icons Overhaul: Fixed an issue related to doing string opperations on non-strings.
+  * Updated the description of the Panopticon.
+  * Added string entries for the Aeon Experimental Air Factory, for the future, and disabled it.
+  * Added string entries for the unfinished and unadded Cybran Sniperbot.
+  __________
+  2016-12-14
+
+  * Fixed the death animations of the T1 field engy boat.
+  * Fixed the death animations of the T2 field engy boat.
+  * Recreated the icons for the UEF field engy boats so they all match.
+  * Created icons for meta-units, such as the crate drop pings, and for temp units, such as the Aeon Experimental Aircraft Factory.
+  * Removed the treadmarks from the Iyadesu.
+  * Updated the icon to match the current Iyadesu model.
+  * Created strategic icons for T2 and T1 engineer boats.
+  * Gave the UEG ADG considerably better texture.
+  * Fixed the tarmac size for the ADG.
+  * Added more detail to the texture of the Ivan.
+  * Inverted the normals of the UEF T1&3 field engineers.
+  __________
+  2016-12-15
+
+  * Added final few missing non-English translations. Google translate wooo.                 
 
 __________.__________
 2015-09-05|0.7

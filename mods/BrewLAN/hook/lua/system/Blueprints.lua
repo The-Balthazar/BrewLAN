@@ -91,7 +91,6 @@ function BrewLANBuildCatChanges(all_bps)
         uel0301 = {'BUILTBYTIER3FIELD UEF',},
         url0301 = {'BUILTBYTIER3FIELD CYBRAN',},
         xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
-        --xrl0403 = {'srl0001',},
     }
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
@@ -558,7 +557,7 @@ function BrewLANRelativisticLinksUpdate(all_bps)
     local BrewLANPath = function()
         for i, mod in __active_mods do
             --UID also hard referenced in /hook/lua/game.lua and mod_info.lua
-            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000075" then
+            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N0000755" then
                 return mod.location
             end
         end 

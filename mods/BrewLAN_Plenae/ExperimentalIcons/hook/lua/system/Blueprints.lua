@@ -28,7 +28,7 @@ function ExperimentalIconOverhaul(all_bps)
         if bp.StrategicIconName == 'icon_experimental_generic' and (bp.StrategicIconNameEIOOverride or units[id]) then
             bp.StrategicIconName = units[id] or bp.StrategicIconNameEIOOverride
         end
-        if bp.StrategicIconName == 'icon_experimental_generic' then
+        if bp.StrategicIconName == 'icon_experimental_generic' and bp.Categories and type(bp.Categories[1]) == "string" then
             local icon = 'icon_experimental_'
             --------------------------------------------------------------------
             -- Define background shape 
@@ -108,7 +108,7 @@ function ExperimentalIconOverhaul(all_bps)
                         if type(stringtosan) == 'string' then
                             return string.lower(stringtosan)
                         else
-                            return stringtosan
+                            return 'unknowntype'
                         end
                     end
                     local sanWcat = SAN(weapon.WeaponCategory)
@@ -161,7 +161,7 @@ function ExperimentalIconOverhaul(all_bps)
                     'NAVAL',
                 }
                 local bits = {'0','0','0'}
-                if bp.Economy.BuildableCategory[1] then 
+                if bp.Economy.BuildableCategory and type(bp.Economy.BuildableCategory[1]) == "string" then 
                     for i, layer in buildlayers do   
                         for _, buildcat in bp.Economy.BuildableCategory do
                             if string.find(buildcat, layer) then

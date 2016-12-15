@@ -121,6 +121,10 @@ Unit_Description_BrewLAN_T1L001="Tech 1 amphibious construction, repair, capture
 Unit_Description_BrewLAN_T1L002="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth and can build specialist defenses."
 Unit_Description_BrewLAN_T1L003="Tech 1 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 
+ss0119_desc="Field Engineering Boat"
+ses0119_name="Mendy Class"
+Unit_Description_BrewLAN_T1S001="Tech 1 construction, repair, capture, reclamation, and mine layer unit."
+
 --------------------------------------------------------------------------------
 -- Tech 2
 -------------------------------------------------------------------------------- 
@@ -247,9 +251,12 @@ sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
 Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni sensors. If its control center is destroyed, the satellite is immediately disabled."
 
+--Sniper alternatives
 sel0320_desc="Mobile Satellite Uplink"
 sel0320_name="Archimedes"
+srl0318_name="Aracme"
 Unit_Description_BrewLAN_T3L003="A mobile satellite uplink vehicle. Marks targets for an orbital laser to fire upon."
+Unit_Description_BrewLAN_T3L013="Mobile spiderbot. Armed with a long range EMP beam weapon."
 
 sel0321_desc="Mobile Strategic Missile Defense"
 sel0321_name="Aster"
@@ -416,4 +423,8 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
-Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius. Upkeep costs additional per-unit being spied on. Mobile units and expensive units cost more to spy on. Cloaked units, ACUs and units near a " .. srb4402_name .. " can't be spied on."
+Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and expensive units cost more to spy on."
+
+sab0401_desc="Experimental Air Factory"
+sab0401_name="Independence Engine"
+Unit_Description_BrewLAN_T4B009="Experimental Air Factory."

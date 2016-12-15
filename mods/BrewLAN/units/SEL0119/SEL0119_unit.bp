@@ -139,7 +139,7 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                     AlbedoName = '/units/xel0209/xel0209_albedo.dds',
                     SpecularName = '/units/xel0209/xel0209_specteam.dds',
-                    NormalsName = '/units/xel0209/xel0209_normalsts.dds',
+                    --NormalsName = '/units/xel0209/xel0209_normalsts.dds',
                 },
                 {
                     LODCutoff = 215,
@@ -198,10 +198,10 @@ UnitBlueprint {
         UniformScale = 0.05*.8,
     },
     Economy = {
-        BuildCostEnergy = 300,
+        BuildCostEnergy = 265,
         BuildCostMass = 60,
         BuildRate = 5,
-        BuildTime = 300,
+        BuildTime = 265,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE UEF',
             'BUILTBYTIER1ENGINEER INDIRECTFIRE UEF',

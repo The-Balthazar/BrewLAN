@@ -1,19 +1,7 @@
 UnitBlueprint {
     AI = {
-        --[[TargetBones = {
-            'Base_001',
-            'Base_002',
-            'Base_003',
-            'Base_004',
-            'Base_005',
-            'Base_006',
-            'Base_007',
-            'Base_008',
-        },]]--
-        --This list is populated on game launch
-        Experimentals = {
-            Air = {},
-            Other = {},
+        TargetBones = {
+            0,
         },
     },
     Audio = {
@@ -52,8 +40,8 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER3COMMANDER',
+        --'BUILTBYTIER3ENGINEER',
+        --'BUILTBYTIER3COMMANDER',
         'AEON',
         'STRUCTURE',
         'LAND',
@@ -81,7 +69,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC seb0401>Experimental Factory',
+    Description = '<LOC sab0401>Experimental Air Factory',
     Display = {
         --[[Abilities = {
             '<LOC ability_aquatic>Aquatic',
@@ -173,11 +161,10 @@ UnitBlueprint {
             --'BUILTBYTIER3FACTORY MOBILE LAND UEF',
             --'BUILTBYTIER3FACTORY MOBILE NAVAL UEF',
             --'BUILTBYTIER3FACTORY MOBILE AIR UEF',
-            --'TRANSPORTBUILTBYTIER3FACTORY UEF MOBILE AIR',
-            'BUILTBYTIER3FACTORY AEON AIR',
-            'BUILTBYGANTRY AEON AIR',
-            'EXPERIMENTAL MOBILE LAND AEON',
-            'EXPERIMENTAL MOBILE AIR AEON',
+            'TRANSPORTBUILTBYTIER3FACTORY AEON MOBILE AIR',
+            'BUILTBYTIER3FACTORY MOBILE AEON AIR',
+            'BUILTBYGANTRY MOBILE AEON AIR',
+            'BUILTBYTIER3ENGINEER EXPERIMENTAL MOBILE AIR AEON',
         },
         RebuildBonusIds = {
             'sab0401',
@@ -231,14 +218,14 @@ UnitBlueprint {
         },]]--
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC seb0401_name>Gantry',
+        UnitName = '<LOC sab0401_name>Independence Engine',
         UnitWeight = 1,
     },
     Intel = {
-        VisionRadius = 20,
+        VisionRadius = 37,
     },
     Interface = {
-        HelpText = '<LOC seb0401>Experimental Factory',
+        HelpText = '<LOC sab0401>Experimental Air Factory',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 5,
