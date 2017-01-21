@@ -10,6 +10,27 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 __________.__________
+2017-01-18|0.7.9
+
+* Paragon Game: Fixed an issue with civilian spawns.
+* Paragon Game: Made the Paragon ajacency bonus not cause errors without BrewLAN enabled.
+  __________
+  2017-01-19
+
+  * Bubble Tea: Functionally finished the Aeon Experimental Shield Projector.
+  __________
+  2017-01-20
+
+  * Bubble Tea: Finished the model of the Aeon Experimental Shield Projector.
+  __________
+  2017-01-21
+
+  * Bubble Tea: Finished a texture for the Aeon Experimental Shield Projector, and gave it a description.
+__________.__________
+2016-12-15|0.7.5.5
+
+* Release version. 
+__________.__________
 2016-01-05|0.7.5
 
 * Removed the Iyadesu related wreckage prop changes, which due to script changes in the Iyadesu actually did nothing but cause FAF conflicts.

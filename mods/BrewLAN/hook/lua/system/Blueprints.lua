@@ -556,7 +556,7 @@ end
 function BrewLANRelativisticLinksUpdate(all_bps)
     local BrewLANPath = function()
         for i, mod in __active_mods do
-            --UID also hard referenced in /hook/lua/game.lua and mod_info.lua
+            --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
             if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N0000755" then
                 return mod.location
             end

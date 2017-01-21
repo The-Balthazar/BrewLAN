@@ -16,7 +16,6 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    Adjacency = 'ParagonAdjacencyBuffs',
     BuildIconSortPriority = 140,
     Categories = {
         'PRODUCTPARAGONGAME',

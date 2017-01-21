@@ -1,4 +1,9 @@
+--UnitBlueprint {	BlueprintId="tec0002",	Defense = {Health = 35, MaxHealth = 35,},	Categories = {'BAREBONESUEFCREEP',},	Description = '<LOC tec0002_desc>Truck',	Economy = {BuildCostEnergy = 15,},												Display = { Mesh = { LODs = { { Scrolling = true,	ModelName = '/env/UEF/Props/UEF_Truck', }, }, },	}
+--UnitBlueprint {	BlueprintId="tec0003",	Defense = {Health = 45, MaxHealth = 45,},	Categories = {'BAREBONESUEFCREEP',},	Description = '<LOC tec0003_desc>Bus',		Economy = {BuildCostEnergy = 20, BuildCostMass = 3, BuildTime = 3,},	Display = { Mesh = { LODs = { { 							ModelName = '/env/UEF/Props/UEF_Bus', }, }, },	}
+--UnitBlueprint {	BlueprintId="tec0006",	Defense = {Health = 18, MaxHealth = 18,},	Categories = {'BAREBONESUEFCREEP',},	Description = '<LOC tec0006_desc>Bike',	Economy = {BuildCostEnergy = 10, BuildCostMass = 1, BuildTime = 1,},	Display = { Mesh = { LODs = { { 							ModelName = '/units/uel0101/uel0101', }, },	UniformScale = 0.05,	MovementEffects = {Land = {Treads = {TreadMarks = {{TreadMarks = 'tank_treads07_albedo',TreadMarksInterval = 0.1,TreadMarksSizeX = 0.3,TreadMarksSizeZ = 0.42,},},},},},	},	Physics = { MaxAcceleration = 6,	MaxBrake = 6,	MaxSpeed = 6,	MaxSteerForce = 30,	TurnRate = 240, },	}
+
 UnitBlueprint {
+    --BlueprintId="tec0001",
     Audio = {
         AmbientMove = Sound {
             Bank = 'XEL',
@@ -72,6 +77,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
+        '',
         'PRODUCTTEAD',
         'BUILTBYTEAD',
         'CREEP',
@@ -115,7 +121,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UEF_Car1',
+                            0,
                         },
                         Type = 'GroundKickup01',
                     },
@@ -124,7 +130,7 @@ UnitBlueprint {
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                            BoneName = 'UEF_Car1',
+                            BoneName = 0,
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.3,
                             TreadMarksSizeX = 0.7,
@@ -142,7 +148,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'UEF_Car1',
+                            0,
                         },
                         Scale = 0.4,
                         Type = 'BackWake',

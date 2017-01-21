@@ -214,7 +214,7 @@ Unit_Description_BrewLAN_T3A008="Schwerer Torpedo-Bomber. Entwickelt um schwere 
 sair0310="Köder Flugzeug"
 sea0310_name="Nark"
 saa0310_name="Beguiler"
-sea0310_name="Vanguard"
+sra0310_name="Vanguard"
 ssa0310_name="Iathuselen"
 Unit_Description_BrewLAN_T3A006="Leicht gepanzertes, Radar störendes Flugzeug. Ausgestattet mit einem starken Störsender der mehrere falsche Radar Signaturen erzeugt."
 Unit_Description_BrewLAN_T3A009="Leicht gepanzertes, Radar störendes Flugzeug. Ausgestattet mit einem starken Störsender der mehrere falsche Radar Signaturen erzeugt."
@@ -333,7 +333,7 @@ Unit_Description_BrewLAN_T3B0020="Manuell kontrolliertes Tor; erlaubt Passage un
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Schwerer Torpedo feuernder Verteidigungsturm. Kann an Land oder am Meeresboden gebaut werden."
 sab2308_name="Flash Flood"
-Unit_Desciption_BrewLAN_T3B0027="Superschweres langstrecken Anti-Marine Verteidigungssystem. Konzipiert um die mächtigsten Marineeinheiten zu bekämpfen."
+Unit_Description_BrewLAN_T3B0027="Superschweres langstrecken Anti-Marine Verteidigungssystem. Konzipiert um die mächtigsten Marineeinheiten zu bekämpfen."
 
 ssb3301_desc="Optik-Tracking Einrichtung"
 ssb3301_name="Aezselen"
