@@ -113,7 +113,7 @@ Tech 1:
   	  * Would like to give a more unique appearance.
             
   	Pending: 
-      * T3 Field Engineering Boat.  
+      * T1 Field Engineering Boat.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   UEF: 
     * T1 Light Gunship    
@@ -137,7 +137,7 @@ Tech 1:
 	  * T1 Torpedo Bomber
             
   	Pending: 
-      * T3 Field Engineering Boat.      
+      * T1 Field Engineering Boat.
 -------------------------------------------------------
 Tech 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -149,6 +149,7 @@ Tech 2:
     * T2 Proximity Mine
       * Lacks a unique model.
 		* T2 Heavy Wall.
+    * T2 Mobile tactical missile defence
             
   	Pending: 
       * T2 Field Engineering Ship.    
@@ -212,7 +213,6 @@ Tech 3:
   	Pending: 
       * T3 Field Engineering Ship.
       * T3 Mobile Torpedo
-      * T3 Mobilr tactical missile defence              
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   Cybran:
 		Fully Funtioning:

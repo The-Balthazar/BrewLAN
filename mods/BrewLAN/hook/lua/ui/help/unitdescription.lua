@@ -119,6 +119,10 @@ Description['srl0316'] = "<LOC Unit_Description_BrewLAN_T3L010>Mobile cloaking s
 Description['srl0311'] = "<LOC Unit_Description_BrewLAN_T3L011>Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
 Description['sal0320'] = "<LOC Unit_Description_BrewLAN_T3L012>Hovering mobile anti-air defence system. Consumes power with each shot."
 Description['srl0318'] = "<LOC Unit_Description_BrewLAN_T3L013>Mobile spiderbot. Armed with a long range EMP beam weapon."
+Description['sal0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
+Description['ssl0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
+Description['sel0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
+Description['srl0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."

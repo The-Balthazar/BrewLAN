@@ -26,6 +26,14 @@ __________.__________
   2017-01-21
 
   * Bubble Tea: Finished a texture for the Aeon Experimental Shield Projector, and gave it a description.
+  __________
+  2017-01-25
+
+  * Added an Aeon T2 mobile tactical missile defense.
+  * Added a strategicicon for T2 mobile anti-missile.
+  * Made the Aeon T3 mobile AA take up T3 transport slots instead of T2.
+  * Re-enabled the Aeon T4 Air Factory, gave it a new model, a temporary texture, and a new script.
+  * Bubble Tea: Added a distance model for the Aeon Shield Projector.
 __________.__________
 2016-12-15|0.7.5.5
 

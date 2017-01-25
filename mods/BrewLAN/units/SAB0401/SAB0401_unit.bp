@@ -40,8 +40,8 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        --'BUILTBYTIER3ENGINEER',
-        --'BUILTBYTIER3COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'AEON',
         'STRUCTURE',
         'LAND',
@@ -74,7 +74,7 @@ UnitBlueprint {
         --[[Abilities = {
             '<LOC ability_aquatic>Aquatic',
         },]]--
-        --AnimationBuild = '/mods/BrewLAN/units/seb0401/SEB0401_abuild.sca',
+        AnimationPermOpen = '/mods/BrewLAN/units/sab0401/SAB0401_aopen.sca',
         BlinkingLights = {
             {
                 BLBone = 0,
@@ -89,7 +89,7 @@ UnitBlueprint {
             Red = '/effects/emitters/light_red_03_emit.bp',
             Yellow = '/effects/emitters/light_yellow_02_emit.bp',
         },
-        BuildAttachBone = 'AttachPoint',
+        BuildAttachBone = 'Platform',
         --[[IdleEffects = {
             Water = {
                 Effects = {
@@ -114,19 +114,12 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 200,
+                    LODCutoff = 400,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/uab0302/uab0302_albedo.dds',
-                    NormalsName = '/units/uab0302/uab0302_normalsts.dds',
-                    SpecularName = '/units/uab0302/uab0302_specteam.dds',
                 },
                 {
-                    LODCutoff = 500,
+                    LODCutoff = 1000,
                     ShaderName = 'Unit',
-                    MeshName = '/units/uab0302/uab0302_lod1_albedo.scm',
-                    AlbedoName = '/units/uab0302/uab0302_lod1_albedo.dds',
-                    NormalsName = '/units/uab0302/uab0302_lod1_normalsts.dds',
-                    SpecularName = '/units/uab0302/uab0302_lod1_specteam.dds',
                 },
             },
         },
@@ -137,7 +130,7 @@ UnitBlueprint {
                 Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
-                Length = 12.8*3,
+                Length = 12.8*4,
                 Normal = 'Tarmacs/Tar12x_aeon_01_normals',
                 Orientations = {
                     0,
@@ -146,21 +139,17 @@ UnitBlueprint {
                     270,
                 },
                 RemoveWhenDead = false,
-                Width = 12.8*3,
+                Width = 12.8*4,
             },
         },
-        UniformScale = 0.14,
+        UniformScale = 0.14*2.1,
     },
     Economy = {
-        BuildCostEnergy = 28350*3,
-        BuildCostMass = 3150*3,
+        BuildCostEnergy = 28350*4,
+        BuildCostMass = 3150*4,
         BuildRate = 60*4,
-        BuildTime = 8400*1.5,
+        BuildTime = 8400*2,
         BuildableCategory = {
-            --'BUILTBYLANDTIER3FACTORY MOBILE CONSTRUCTION UEF',
-            --'BUILTBYTIER3FACTORY MOBILE LAND UEF',
-            --'BUILTBYTIER3FACTORY MOBILE NAVAL UEF',
-            --'BUILTBYTIER3FACTORY MOBILE AIR UEF',
             'TRANSPORTBUILTBYTIER3FACTORY AEON MOBILE AIR',
             'BUILTBYTIER3FACTORY MOBILE AEON AIR',
             'BUILTBYGANTRY MOBILE AEON AIR',
@@ -180,11 +169,7 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                'Turret_Muzzle_001',
-                'Turret_Muzzle_002',
-                'Turret_Muzzle_003',
-                'Turret_Muzzle_004',
-                'Turret_Muzzle_005',
+                0,
             },
         },
         Category = 'Factory',
@@ -207,15 +192,6 @@ UnitBlueprint {
         ConstructionBar = true,
         FactionName = 'Aeon',
         Icon = 'air',
-        --[[ToggleCaps = {
-            RULEUTC_WeaponToggle= true,
-        },
-        OrderOverrides = {
-            RULEUTC_WeaponToggle= {
-                bitmapId = 'airsf',
-                helpText = 'buildair',
-            },
-        },]]--
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sab0401_name>Independence Engine',
@@ -251,15 +227,71 @@ UnitBlueprint {
         MotionType = 'RULEUMT_None',   
         OccupyRects = {
 
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -6,
+            --offsetX offsetZ  sizeX sizeZ, offset from center of unit
             0,
-            2.5,
-            5.5,
-            6,
             0,
-            2.5,
-            5.5,
+            7/2,
+            27/2,
+
+            -5,
+            0,
+            3/2,
+            25/2,
+
+            -8,
+            0,
+            2/2,
+            23/2,
+
+            -10,
+            0,
+            2/2,
+            21/2,
+
+            -11,
+            0,
+            1/2,
+            17/2,
+
+            -12,
+            0,
+            1/2,
+            13/2,
+
+            -13,
+            0,
+            1/2,
+            7/2,
+
+            5,
+            0,
+            3/2,
+            25/2,
+
+            7,
+            0,
+            2/2,
+            23/2,
+
+            9,
+            0,
+            2/2,
+            21/2,
+
+            11,
+            0,
+            1/2,
+            17/2,
+
+            12,
+            0,
+            1/2,
+            13/2,
+
+            13,
+            0,
+            1/2,
+            7/2,
         },
         RollOffPoints = {
             {
