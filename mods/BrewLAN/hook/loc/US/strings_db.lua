@@ -427,4 +427,4 @@ Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight 
 
 sab0401_desc="Experimental Air Factory"
 sab0401_name="Independence Engine"
-Unit_Description_BrewLAN_T4B009="Experimental Air Factory."
+Unit_Description_BrewLAN_T4B009="Constructs air units."

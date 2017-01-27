@@ -34,6 +34,18 @@ __________.__________
   * Made the Aeon T3 mobile AA take up T3 transport slots instead of T2.
   * Re-enabled the Aeon T4 Air Factory, gave it a new model, a temporary texture, and a new script.
   * Bubble Tea: Added a distance model for the Aeon Shield Projector.
+  __________
+  2017-01-26
+
+  * Additional texture work on the Aeon T4 air factory.
+  __________
+  2017-01-27
+
+  * T4 Factory Changes:
+    * New pathing area.
+    * Updated texture.
+    * Amended lifebar size ans position.
+    * Updated Build description.
 __________.__________
 2016-12-15|0.7.5.5
 
