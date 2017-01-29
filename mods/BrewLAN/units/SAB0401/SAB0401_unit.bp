@@ -71,17 +71,42 @@ UnitBlueprint {
     },
     Description = '<LOC sab0401>Experimental Air Factory',
     Display = {
-        --[[Abilities = {
+        Abilities = {
             '<LOC ability_aquatic>Aquatic',
-        },]]--
+        },
         AnimationPermOpen = '/mods/BrewLAN/units/sab0401/SAB0401_aopen.sca',
         BlinkingLights = {
             {
-                BLBone = 0,
-                BLOffsetX = 0,
-                BLOffsetY = 15,
-                BLOffsetZ = 0,
-                BLScale = 3,
+                BLBone = 'Blinking_001',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_002',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_003',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_004',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_005',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_006',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_007',
+                BLScale = 6,
+            },
+            {
+                BLBone = 'Blinking_008',
+                BLScale = 6,
             },
         },
         BlinkingLightsFx = {
@@ -114,12 +139,23 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit',
+                    LODCutoff = 500,
+                    ShaderName = 'Aeon',
                 },
                 {
                     LODCutoff = 1000,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Aeon',
+                },
+                {
+                    LODCutoff = 2000,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    LODCutoff = 4000,
+                    ShaderName = 'Aeon',
+                    AlbedoName = 'sab0401_lod2_albedo.dds',
+                    NormalsName = 'sab0401_lod2_normalsTS.dds',
+                    SpecularName = 'sab0401_lod2_specteam.dds',
                 },
             },
         },
@@ -169,7 +205,7 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                0,
+                'BuilderM_001',
             },
         },
         Category = 'Factory',

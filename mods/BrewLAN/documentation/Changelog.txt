@@ -46,6 +46,15 @@ __________.__________
     * Updated texture.
     * Amended lifebar size ans position.
     * Updated Build description.
+  * Pulcheitudinousity: Made it not destroy the universe with certain mod combinations.
+  * Fixed a potential compatibility issue with the unit.lua.
+  * Waterlag: Fixed a potential compatibility issue with the unit.lua.
+  __________
+  2017-01-29
+
+  * Fixed the shader on the Independance Engine.
+  * Added three distance models for the Independance Engine.
+    * The normal quantity is one. This thing is too big for one.
 __________.__________
 2016-12-15|0.7.5.5
 

@@ -322,7 +322,7 @@ Sea/Sub         |Atlantis (AF)  |Tempest (F)    |*Abyssal Per...|*?             
 ————————————————+———————————————+———————————————+———————————————+———————————————|
 Strategic 1     |Mavor          |Salvation      |Scathis MK2    |Suthanus       |
 Strategic 2     |Ivan (F)       |*Teleporter?   |*?             |Yolona Oss     |
-Static 3        |Panopticon     |*Air factory   |Darkness       |Stargate       |
+Static 3        |Panopticon     |Air Factory (F)|Darkness       |Stargate       |
 Static 4        |Gantry (F)     |Paragon        |Iron Curtain   |*Shield or Mine|
 ————————————————+———————————————+———————————————+———————————————+———————————————+
 

@@ -28,8 +28,6 @@ CenturionBehaviorBrewLAN = function(self)
     local crystal = {}
     if categories.zpc0001 then
         crystal = aiBrain:GetUnitsAroundPoint( categories.zpc0001 + categories.zpc0002, centerOfMap, 20)
-    else
-        crystal[1] = false
     end
     while aiBrain:PlatoonExists(self) do  
         if crystal[1] then
