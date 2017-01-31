@@ -114,7 +114,7 @@ UnitBlueprint {
             Red = '/effects/emitters/light_red_03_emit.bp',
             Yellow = '/effects/emitters/light_yellow_02_emit.bp',
         },
-        BuildAttachBone = 'Platform',
+        BuildAttachBone = 'Attachpoint',
         --[[IdleEffects = {
             Water = {
                 Effects = {
@@ -206,6 +206,13 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {
                 'BuilderM_001',
+                'BuilderM_002',
+                'BuilderM_003',
+                'BuilderM_004',
+                'BuilderM_005',
+                'BuilderM_006',
+                'BuilderM_007',
+                'BuilderM_008',
             },
         },
         Category = 'Factory',

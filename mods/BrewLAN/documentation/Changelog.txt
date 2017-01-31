@@ -59,6 +59,7 @@ __________.__________
   2017-01-31
 
   * Baristas: New mod that dynamicallly adds in-game attribution for units by way of their abilities lists.
+  * Added build animations to the Independance Engine.
 __________.__________
 2016-12-15|0.7.5.5
 
