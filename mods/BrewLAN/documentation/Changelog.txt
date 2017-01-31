@@ -55,6 +55,10 @@ __________.__________
   * Fixed the shader on the Independance Engine.
   * Added three distance models for the Independance Engine.
     * The normal quantity is one. This thing is too big for one.
+  __________
+  2017-01-31
+
+  * Baristas: New mod that dynamicallly adds in-game attribution for units by way of their abilities lists.
 __________.__________
 2016-12-15|0.7.5.5
 

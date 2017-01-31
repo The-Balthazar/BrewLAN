@@ -29,6 +29,7 @@ UnitBlueprint {
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,    
         UniformScale = 0,
+        HideLifebars = true,
     },
     Footprint = {
         SizeX = 3,
@@ -56,9 +57,9 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 5,
     },       
-    LifeBarHeight = 0.0000001,
-    LifeBarOffset = 0.000000,
-    LifeBarSize = 0.0000001,
+    --LifeBarHeight = 0.0000001,
+    --LifeBarOffset = 0.000000,
+    --LifeBarSize = 0.0000001,
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
