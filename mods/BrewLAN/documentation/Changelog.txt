@@ -1,8 +1,8 @@
-'||''|.                               '||'          |     '|.   '|' 
- ||   ||  ... ..    ....  ... ... ...  ||          |||     |'|   |  
- ||'''|.   ||' '' .|...||  ||  ||  |   ||         |  ||    | '|. |  
- ||    ||  ||     ||        ||| |||    ||        .''''|.   |   |||  
-.||...|'  .||.     '|...'    |   |    .||.....| .|.  .||. .|.   '|  
+'||''|.                               '||'          |     '|.   '|'
+ ||   ||  ... ..    ....  ... ... ...  ||          |||     |'|   |
+ ||'''|.   ||' '' .|...||  ||  ||  |   ||         |  ||    | '|. |
+ ||    ||  ||     ||        ||| |||    ||        .''''|.   |   |||
+.||...|'  .||.     '|...'    |   |    .||.....| .|.  .||. .|.   '|
   __  _  _   __   _  _  __  ___  __    __    __   by Sean Wheeldon
  / _)( )( ) (  ) ( \( )/ _)(  _)(  )  /  \  / _)
 ( (_  )__(  /__\  )  (( (/\ ) _) )(__( () )( (/\
@@ -13,7 +13,7 @@ __________.__________
 2017-01-18|0.7.9
 
 * Paragon Game: Fixed an issue with civilian spawns.
-* Paragon Game: Made the Paragon ajacency bonus not cause errors without BrewLAN enabled.
+* Paragon Game: Made the Paragon adjacency bonus not cause errors without BrewLAN enabled.
   __________
   2017-01-19
 
@@ -44,7 +44,7 @@ __________.__________
   * T4 Factory Changes:
     * New pathing area.
     * Updated texture.
-    * Amended lifebar size ans position.
+    * Amended lifebar size and position.
     * Updated Build description.
   * Pulcheitudinousity: Made it not destroy the universe with certain mod combinations.
   * Fixed a potential compatibility issue with the unit.lua.
@@ -52,75 +52,91 @@ __________.__________
   __________
   2017-01-29
 
-  * Fixed the shader on the Independance Engine.
-  * Added three distance models for the Independance Engine.
+  * Fixed the shader on the Independence Engine.
+  * Added three distance models for the Independence Engine.
     * The normal quantity is one. This thing is too big for one.
   __________
   2017-01-31
 
-  * Baristas: New mod that dynamicallly adds in-game attribution for units by way of their abilities lists.
-  * Added build animations to the Independance Engine.
+  * Baristas: New mod that dynamically adds in-game attribution for units by way of their abilities lists.
+  * Added build animations to the Independence Engine.
+  __________
+  2017-02-02
+
+  * Ivan changes:
+    * Units produced by it now have less max health rather than starting damage.
+    * Pods that impact a shield now deal damage equal to the unit's mass value to that shield.
+      * New tactic: firing 3735 mass Asters at them because you don't have a Mavor.
+    * Pods that impact a shield no longer spawn the unit at all.
+      * Previously it would spawn the unit then kill it, leaving a wreckage.
+    * Units dropped somewhere they can't normally survive are now killed immediately instead of slowly.
+    * Impacts now leave reclaimable remains of the drop-pod, which are worth 3 mass.
+    * There is now a light flash when it impacts.
+    * Fixed the specular texture for the projectile drop-pod.
+  * Corrected a bunch of typos in the first part of the changelog.
+  * Damage Numbers: A new mod that makes damage numbers appear.
+    * Currently only works for your units taking damage.
 __________.__________
 2016-12-15|0.7.5.5
 
-* Release version. 
+* Release version.
 __________.__________
 2016-01-05|0.7.5
 
 * Removed the Iyadesu related wreckage prop changes, which due to script changes in the Iyadesu actually did nothing but cause FAF conflicts.
   __________
   2016-01-25
-  
+
   * LuckyDip: Added the Moldovite & Wraith to the selections.
   __________
   2016-01-29
-  
+
   * Removed the entity tracking tables from the Panopticon, and the vis entity removal scripts.
   __________
   2016-02-15
-  
+
   * Cost Variance: Build rate now altered by the combined random of mass and energy.
   * Cost Variance: Movement speed now altered by the combined random instead of just energy.
-  * Cost Variance: Shield size is now altered by 20% of the engergy random. Shield vertical offset altered to maintain the location of the top of the shield. If my tired maths is correct.
+  * Cost Variance: Shield size is now altered by 20% of the energy random. Shield vertical offset altered to maintain the location of the top of the shield. If my tired maths is correct.
   __________
   2016-02-21
-  
+
   * Restricted units data update for FaF.
   * Added the UEF and Cybran T3 engineering stations to the FaF engineering stations restrictions.
   __________
   2016-03-19
-  
+
   * Increased the costs of the nuke mines. Energy x3, Mass x1.5, Time x2.
   * TeaD: Changed the anti-blocking script of the creeps from an instant wall destroy to a wall DoT.
   __________
   2016-03-26
-  
+
   * Corrected a typo in the heavy wall description.
   * MightyBlueDuck: Updated German translations for BrewLAN.
   * Disabled the Aeon T3 shield generator, pending real model.
   __________
   2016-04-02
-  
+
   * Ivan drop pods now deal damage equal to mass value to shields, and leave a wreckage of the unit when it does.
   * German fix from SchwererKreuzer.
   __________
   2016-04-16
-  
+
   * Did additional texture work for the Ivan.
   __________
   2016-04-30
-  
+
   * CrateDrop: Fixed the white headband tophat, which has been broken since the directory structure change.
   __________
   2016-05-15
-  
+
   * Fixed the script and assignment of UpradesFromBase; allowing the T1 MeXes to upgrade to their 3.5 variants.
   * Fixed the upgrade issue on FaF.
   __________
   2016-05-16
-  
+
   * FaF unit fixes:
-    * T3 UEF Satelite Uplink,
+    * T3 UEF Satellite Uplink,
     * Panopticon,
     * UEF & Cybran T1 & T3 field engineers,
     * Cybran T2 Field Engineer.
@@ -129,122 +145,122 @@ __________.__________
   * Fixed the upgrade issue on FaF.
   __________
   2016-05-18
-  
+
   * Commented out a number of logs, and logged some things in some comments.
   * Fixed the mines on FaF.
-    * Mirrored the FaF nuke scripts, because they deleted the originals I refered to, and there is no safe way to check which to try to load.   
+    * Mirrored the FaF nuke scripts, because they deleted the originals I referred to, and there is no safe way to check which to try to load.
   * Allowed the mines to function like the Fire Beetle on FaF.
-    * That is to say, while on FaF, the mines suicide imediately with ctrl-k and also trigger thier weapon.
+    * That is to say, while on FaF, the mines suicide immediately with ctrl-k and also trigger their weapon.
   __________
   2016-05-28
-  
+
   * Increased the adjacency bonus for T2 power plants with the Gantry.
-    * Surrounded the total price payed is now 50% instead of 91.6 recurring %.
+    * Surrounded the total price paid is now 50% instead of 91.6 recurring %.
       * For reference, with T1 its 75%, and with T3 its 25%.
   * BrewLAN no longer cares if its installed in the correct place. (Not true for all sub-mods yet.)
     * Used an adapted version of Manimals old mod locator script, and some crazy voodoo hax so it also applies to .bp files as well as .lua files.
   __________
   2016-05-29
-  
+
   * Fixed the script of the Aeon shielded mass extractor.
   __________
   2016-06-01
-  
+
   * Many things for the Aeon T3 Mobile Shield Generator.
   __________
   2016-06-19
-  
+
   * Added desync warnings for people who don't install BrewLAN properly.
   __________
   2016-06-25
-  
-  * Heavy functional change to the panopticon:
+
+  * Heavy functional change to the Panopticon:
     * It now has radar radius of 6000 instead of 1200.
-    * Increased base energy consumption to 10000, from 5000.    
+    * Increased base energy consumption to 10000, from 5000.
     * It now uses its current radar radius as its max view distance, instead of 8000.
-    * It can no longer spy on support commanders.        
+    * It can no longer spy on support commanders.
     * It now uses only your own intel to decide what to view. This means:
       * Better performance:
         * Formerly, for each opponent, it would use that players intel, filter out units that that player didn't control and cloaked units, and add those units to its list. Then check again at a larger radius (its radius + Darkess stealth field radius) for Darkness facilities, and check the distances of units on the first list to Darkness facilities list, and remove any too close.
       * It now respects stealth:
         * There is no easy way of checking if a unit is affected by a stealth field in script, only if it is emitting a stealth field. This means in the old system it would have needed to something similar to the Darkness check for each stealth field generator. Now that it only checks your own intel it doesn't know about stealthed units or units in stealth fields to begin with.
       * Darkness facilities no longer get free immunity to the Panopticon:
-        * If the Darkess loses power or you get intel on its location some other way, standard game rules on intel apply; its a building and its not going anywhere. It gets spied on.
+        * If the Darkness loses power or you get intel on its location some other way, standard game rules on intel apply; its a building and its not going anywhere. It gets spied on.
   __________
   2016-07-04
-  
+
   * Finished the UV map of the Aeon T3 mobile shield generator, and gave it a good temporary texture.
   __________
   2016-07-09
-  
+
   * Aeon T3 mobile shield generator changes:
-    * Changed balance, so it has more health, and less shield.   
+    * Changed balance, so it has more health, and less shield.
     * Swapped the treads animations.
     * Did additional work on the texture.
     * Gave it an icon.
   __________
   2016-07-10
-  
+
   * Added the Panopticon to the FAF no eyes restriction.
   * TeaD: Increased the down time after wave group bosses and damage tests.
   * TeaD: Added healer mobs after the first boss wave.
   * TeaD: Added large aircraft and shielded aircraft waves.
   * TeaD: Prevented the teacup from overflowing with health buffs.
   * TeaD: The first non-damage test boss is no longer tagged as damage test.
-  * TeaD: Added a second boss wave. Currectly tagged as 'Final Boss' so it is completable in its current state.
+  * TeaD: Added a second boss wave. Currently tagged as 'Final Boss' so it is complete-able in its current state.
   __________
   2016-07-11
-  
+
   * TeaD: Added endless mode.
   __________
   2016-07-17
-  
+
   * Listed the Cybran T3 mobile stealth gen's amphibious ability.
   __________
   2016-07-20
-  
+
   * TeaD/BrewLAN: Made the field engineer mines buildable by TeaD engineer.
   * TeaD: Increased the view distance of the light radar from 20 to 60.
   * TeaD: Gave the light radar a custom model and icon.
-  * TeaD: Made the colision model for the gate 0 size, so shots don't impact meaninglessly on them.
-  * TeaD: Added a regen for walls that havent been sapped in a second.
+  * TeaD: Made the collision model for the gate 0 size, so shots don't impact meaninglessly on them.
+  * TeaD: Added a regen for walls that haven't been sapped in a second.
   __________
   2016-07-21
-  
+
   * Crystal Hill: The crystals no longer care if a player dies controlling one. That player retains the crystal even in death.
   __________
   2016-07-25
-  
+
   * Removed the ontransportattached/detached scripts from the Pidgeon; they seem to do nothing except cause FAF errors.
   __________
   2016-07-26
-  
+
   * TeaD: Added a tiny factory.
   * TeaD/BrewLAN: Field engineers now buildable by tiny factory.
   __________
   2016-08-17
-  
+
   * Overhauled the Iyadesu:
     * Now classified as Experimental Reconstruction Engineer.
     * Its reclaim now works as normal units except that if it reclaims a unit or wreckage it adds that unit or wreckages blueprint to its build list and spawns a drone.
       * This drone works like an engineering drone, except if it dies the Iyadesu loses access to the blueprint.
-      * It has a limit of 8 drones.        
+      * It has a limit of 8 drones.
     * It now also has the ability to rebuild destroyed buildings in the same way as the SACUs.
     * Gave it a new temporary model.
     * Made it bigger.
     * Removed its shield.
   __________
   2016-08-21
-  
+
   * The UEF engineering resource buildings can now build up to T3 storage of their respective type.
     * Notably this means they can now build the BrewLAN T2 storages and the BlOps T3 storage.
   * Finished the first overhaul of the Megalith egg backend. (I have a second planned.)
   * Added the Slink, Hedgehog, and House to the Megalith build lists.
-  * Altered file heirachy.
+  * Altered file hierarchy.
   * Antimass: Changed the icon.
   __________
   2016-08-22
-  
+
   * Ivan now gets a 40% dscount on units.
   * Units build by Ivan have 40% less health than usual.
   * Fixed an issue with the Ivan related to clearing orders after firing its last unit with scripted repeat orders.
@@ -256,10 +272,10 @@ __________.__________
     * Event horizon is a different entity with different shaders.
     * It now performs a two chevron dial animation before connecting.
       * This dialing animation is based on where the target gate actually is.
-      * There are 81 dialing adresses. Gates near enough to one another will have the same adress. This changes nothing.      
+      * There are 81 dialing addresses. Gates near enough to one another will have the same address. This changes nothing.
     * Units dying on impact on the iris now award kills to the gate.
     * Fixed a bug that may or may not have existed before which bricked gates if you just re-dialed another gate.
-    * Added veterency levels.
+    * Added veterancy levels.
     * Added a sound effect to the iris impacts.
   __________
   2016-09-03
@@ -295,17 +311,17 @@ __________.__________
   __________
   2016-10-15
 
-  * Gave the Scarab a propper Hat bone.
-  * Crate Drop: Added graphical notification popus for the pickups:
+  * Gave the Scarab a proper Hat bone.
+  * Crate Drop: Added graphical notification popups for the pickups:
     * Nothing
     * Generic bad thing
-    * Generic good thing        
+    * Generic good thing
     * Clone
     * Dude
     * Evil clone
     * Evil dude
     * Engineer
-    * Engineering    
+    * Engineering
     * Energy (Not used)
     * Health
     * Mass
@@ -326,7 +342,7 @@ __________.__________
   * Crate Drop: An explosion roll no longer crashes a crate if the unit dies and has no death animation.
   * Crate Drop: A unit can no longer get a free extra roll if they don't have a hat bone when given a bonus hat (This couldn't happen before).
   * Crate Drop: Units who roll a jackpot now get a free bonus hat.
-  * Crate Drop: Crates now re-appears 1-(20-60, based on map size) seconds after geing collected, instead of imediately.
+  * Crate Drop: Crates now re-appears 1-(20-60, based on map size) seconds after being collected, instead of immediately.
   * Crate Drop: Added a French pith helmet.
   * Crate Drop: Added a Vietnamese pith helmet.
   * Crate Drop: Added a Brodie helmet.
@@ -350,58 +366,58 @@ __________.__________
   * Added a basic version of the Alchemist Aeon T3 Mobile AA.
   __________
   2016-10-27
-  
+
   * Added a custom beam, stats, and strings for the Alchemist.
-  * Updated the relitivistic path trawler to also update beam blueprints.
+  * Updated the relativistic path trawler to also update beam blueprints.
   __________
   2016-10-28
-  
-  * Crystal Hill: UI no longer crashes if its managed to go to overtime without realising because people have teamed up with unlocked teams. Game still behaves wierd in that case though.
+
+  * Crystal Hill: UI no longer crashes if its managed to go to overtime without realizing because people have teamed up with unlocked teams. Game still behaves wierd in that case though.
   * Gave the Patch Class a unique texture with yellow black engineer bits, and a hat bone. There is currently no way for it to actually get a hat.
   * Gave the Alchemist a better mesh.
   * Renamed the Alchemist to the Armillary.
   __________
   2016-10-29
-  
+
   * Mostly finished the Armillary's model and texture.
   __________
   2016-10-30
-  
+
   * Finished the Armillary.
   __________
   2016-11-01
-  
+
   * Crystal Hill: Now treats allies as enemy with unlocked teams.
   * Crystal Hill: Now only counts selectable units when counting units.
   * Crystal Hill: Now only selectable, targetable, non-wall, non-satellite units can capture the crystal.
   __________
   2016-11-02
-  
+
   * Fixed the attach point on the slink.
   * Added a hat point to the slink.
   * Increased the pitch of the weapon of the slink, so it always fires upwards.
   __________
   2016-11-04
-  
+
   * Crystal Hill: Removed movement statistics from the crystal. (Unlike health or some others that are useful for mod compatibility.)
   * Crystal Hill: Added a 30 second notification.
-  * Crystal Hill: Added German string for 30 seconds remaining aquired from the blue hued avian.
-  * German strings, and flagrant insults. Prodived by AlmostBlueBlueDuck.
+  * Crystal Hill: Added German string for 30 seconds remaining acquired from the blue hued avian.
+  * German strings, and flagrant insults. Provided by AlmostBlueBlueDuck.
     20:49 - AlmostBlueBlueDuck: GO FUCK YOUR MOUTH
     20:49 - AlmostBlueBlueDuck: i will make me food
     20:50 - ? Balthazar: bitch what am I paying you for
-    * Aint he a darlin'
+    * Ain't he a darlin'
   * Gave the Megalith the ability to build the Hexatron.
   * Added descriptions to the Megalith eggs.
   * Gave the new Megalith eggs icons.
   * Fixed the layer seabed amphibious eggs are built on.
   __________
   2016-11-05
-  
+
   * Separated out a section of the Ai support, in an attempt to narrow down one of the crashes.
   __________
   2016-11-11
-  
+
   * Crate Drop: The jackpot free hat is now a crown, which can't drop randomly.
   * Crate Drop: Increased the odds of a mass jackpot to 1 in 10.
   * Added hat bones to:
@@ -411,7 +427,7 @@ __________.__________
       * T3 Torpedo bomber
   __________
   2016-11-19
-  
+
   * Increased the lifebar offset on the Patch Class.
   * Added the Fixxie Class; a T2 Patch Class.
   * Extended the build lists of the field engineering ships to:
@@ -423,17 +439,17 @@ __________.__________
     * And mines
   __________
   2016-11-22
-  
+
   * Finished most of the graphics for the Fixxie Class.
   __________
   2016-11-27
-  
+
   * Fixed land and air factories being able to build the T2 field engineer boat.
   * Fixed the nuke mines.
   __________
   2016-12-08
-  
-  * theonewhonevergivesa: Updated Russion language translation.
+
+  * theonewhonevergivesa: Updated Russian language translation.
   * Added the Seraphim T2 wall's name to the string tables for translation.
   * Added the Megalith egg MRL to the translation tables.
   * Added the Iyadesu's storage drone description to the translation tables.
@@ -441,19 +457,19 @@ __________.__________
   * Listed the Aeon shielded mass extractors "Shield Dome" ability.
   * Crate Drop: Only selectable units on the 'Land' layer can collect the crate.
     * Aircraft must land to collect it.
-    * Dummy units, satelites, and drones can no longer collect it.
+    * Dummy units, satellites, and drones can no longer collect it.
   * Remerged AI files, because Saxxon testing indicates it doesn't help.
   __________
   2016-12-09
-  
+
   * Increased the health of Outy from 215 to 220.
   * Reduced the energy cost and build time of T1 field engineers from 300 to 265.
   * Reduced the energy cost of T3 field engineers from 4000 to 3625.
   __________
   2016-12-12
-  
+
   * Adjusted the balance of Field Boats.
-    * They now have calculated stats rather than stats taken from what their base model is.  
+    * They now have calculated stats rather than stats taken from what their base model is.
       * T3 UEF:
         * Health now 6525 from 7200
         * Energy cost now 7100 from 15000
@@ -465,11 +481,11 @@ __________.__________
         * Mass cost now 750 from 260
         * Build time now 1975 from 1300
   * Added the UEF T1 Field Engineering Boat.
-  * Experimental Icons Overhaul: Potentially fixed a bug related to checking non-existant strings.
+  * Experimental Icons Overhaul: Potentially fixed a bug related to checking non-existent strings.
   __________
   2016-12-13
-  
-  * Experimental Icons Overhaul: Fixed an issue related to doing string opperations on non-strings.
+
+  * Experimental Icons Overhaul: Fixed an issue related to doing string operations on non-strings.
   * Updated the description of the Panopticon.
   * Added string entries for the Aeon Experimental Air Factory, for the future, and disabled it.
   * Added string entries for the unfinished and unadded Cybran Sniperbot.
@@ -490,7 +506,7 @@ __________.__________
   __________
   2016-12-15
 
-  * Added final few missing non-English translations. Google translate wooo.                 
+  * Added final few missing non-English translations. Google translate wooo.
 
 __________.__________
 2015-09-05|0.7
@@ -507,16 +523,16 @@ __________.__________
 * Darkness now stops firing pulses when it doesn't have power. To some degree.
   __________
   2015-09-06
-  
+
   * Changed the UV, texture, and model for the Absolution lod1, so it looks more like, and increased the distances at which it appears and dissapears.
   __________
   2015-09-07
-  
+
   * The observation satellite no longer falls to the ground if it dies.
   * The observation satellite station no longer goes through the satellite respawn motions when its trying to die.
   __________
   2015-09-11
-  
+
   * The observation satellite now has a different model than the original Novax satellite. Admitedly a derivative model, but different nontheless, that most importantly non longer has a phat lazor on it.
   * Added a hat attach bone for the observation satellite.
   * Crates: Changed the vision buff to use actual buffs, rather than an attached vis entity.
@@ -530,7 +546,7 @@ __________.__________
   * Crates: Added 'Jackpot' variations of each buff, which are an order of magnitude more powerfull, and have a 1% chance of replacing the original.
   __________
   2015-09-12
-  
+
   * Crates: Removed the damage radius buff from the crate weapon buff. Because the function to set damage radius doesn't exist. Its another bugged buff.
   * Crates: Fixed the weapons check on the weapons buff.
   * Crates: Changed the free mass drop to check available storage. Rerolls if less than 5K remaining storage. It now gives 10% of remaining storage worth of mass, or 5000 mass, which ever is bigger. With a 1% chance of outright filling your storage.
@@ -540,7 +556,7 @@ __________.__________
   * Crates: No longer freezes the game if it can't find a safe place to warp to. Warps to the same place instead. Which can have hilarious consequences.
   __________
   2015-09-20
-  
+
   * Added a basic version of the Cybran T3 mobile stealth field gen. Lacks unique model and icon.
   * Added a basic version of the Panopticon: UEF Experimental Sensor Array.
   * Fixed a critical issue with the Darkness where it ignores units that you don't know about.
@@ -548,30 +564,30 @@ __________.__________
   * Darkness now removes Panopticon vis entities from units entering its stealth field area on pulse. Units in that area not recieving them in the first place is handled by the Panopticon.
   __________
   2015-09-21
-  
+
   * Added a temp icon for the Panopticon.
   * Added some AI names for the Panopticon. (Although the AI wont build it yet.)
   * Added a brief note in the Panopticon description pertaining to its interaction with the Darkness.
   __________
   2015-09-26
-  
+
   * Ivan drop pod units now die on contact with a shield.
   __________
   2015-09-27
-  
+
   * Added Top Gun callsigns to the list of things the AI will call Centurions.
   __________
   2015-10-02
-  
+
   * The Panopticon can now see all enemy units, except for command units, counterintel, walls, and mines.
   __________
   2015-10-03
-  
+
   * The Panopticon can now get vis entities on counterintel units, but not units currently cloaked anymore.
   * Fixed a script issue with AI controlled Slinks.
   __________
   2015-10-04
-  
+
   * Panopticon changes:
     * Gave radar and omni.
     * Added an upkeep cost.
@@ -579,88 +595,88 @@ __________.__________
     * Cleaned up some internal garbage collection.
   __________
   2015-10-12
-  
+
   * Added build sounds to the UEF T3 engineering power generator, mass fab, and mass extractor.
   * Added the UEF T3 Repair & Assist Boat.
   * Fixed an issue where a unit already being watched by a Panopticon couldn't also be watched by a third players Panopticon.
   __________
   2015-10-13
-  
+
   * Fixed an issue where a unit that had been seen by a Panopticon, and had its bug removed by a Darkness, could not be seen again by the same Panopticon.
   * Repair boat now automatically repairs nearby damaged units while idle.
   * Reclassified the Patch Class as a Field Engineering Ship.
   * Added a strategic icon and icon for the Patch Class.
   __________
   2015-10-14
-  
+
   * Fix for land and air factories being able to build naval engineers.
   __________
   2015-10-15
-  
+
   * Reduced the costs of the Scathis Mk2 to build by the sum of 4 T2 power plants and 1 T1 power plant. This is what it takes to increase its RoF to greater than that of the original.
   * Gave the UEF T2 wall a unique model & removed its ability to make turrets.
   * Fixed the localisation for the T2 walls' descriptions.
   __________
   2015-10-16
-  
+
   * Created the cost variance mod.
   * Partially reworked the file structure.
   * Changed the unit code of the Aeon and Cybran T2 walls, from 5201 to 5210.
   __________
   2015-10-17
-  
+
   * Paragon Game: Added the factional Paragons to the AI buildable lists.
   * Cost Varience: Fixed an issue that was causing some slow units to have 0 speed.
   * Crate Drop: Fixed the issue of some people not being able to pick up the crates because another arbitrary random person couldn't see them picking it up.
   * Added adjacency bonuses for the Panopticon.
   __________
   2015-10-25
-  
+
   * Added the waterlag UEF small leg entity to the UEF T3 wall when it builds something.
   * Paragon Game: Added an Aeon Engineering Station. Currently has no icon and has a borrowed model.
   __________
   2015-10-31
-  
+
   * Fixed the Ivan being able to build the naval engy.
   __________
   2015-11-01
-  
+
   * TeaD: Added a super basic version of a new game mode mod: Tower Defence.
   __________
   2015-11-07
-  
+
   * Added a FAF check to the Darkness so that it uses the real omni buff while on FAF, since I had it fixed there. Possibly only the beta version so far.
   * Fixed the Seraphim strat defence particle effects.
-  * TeaD: Made functional. Still very content-less though.  
+  * TeaD: Made functional. Still very content-less though.
   __________
   2015-11-08
-  
+
   * TeaD: Fixed the AI team check, which caused issues if the only Human wasn't on a team.
   * TeaD: Created a propper start unit for UEF.
   * TeaD: Added a pathfinder unit. It runs fast, leaves treadmarks that stay for 10 minutes, and doesn't damage the crystal.
   * TeaD: Creeps now give their mass on death, and no longer leath a corpse.
   * TeaD: Moved the crystals nearer to the center.
-  * TeaD: Added a backup if the crystal fails to spawn.  
+  * TeaD: Added a backup if the crystal fails to spawn.
   __________
   2015-11-13
-  
+
   * TeaD: Creeps now have an anti-blocking script, that removes nearby walls if they are in the same position they were 10 seconds ago.
   * TeaD: All factions now start with the UEF TeaD Engineer, while we wait for the others to exist.
   * TeaD: Some map specific creep gate start distances set.
-  * TeaD: New wave and units. Lasts about 10 minutes from start to finish now.  
+  * TeaD: New wave and units. Lasts about 10 minutes from start to finish now.
   __________
   2015-11-14
-  
+
   * TeaD: Adjusted the rewards balance for creep rewards.
   * TeaD: Increased the speed and reduced the size and health of the Bike.
   * TeaD: Slowed the Shield down so its the same speed as the other units, and increased its shield size.
   * TeaD: Pathfinder is now a residual energy signature.
   * TeaD: Added a Shield Marine.
   * TeaD: Added more waves.
-  * TeaD: Added a Cloaked creep.  
+  * TeaD: Added a Cloaked creep.
   __________
   2015-11-15
-  
+
   * TeaD: Removed mass points.
   * TeaD: Added conflict between TeaD and MetalWorld.
   * TeaD: Fixed an issue with the re-issue of move orders for stuck creeps.
@@ -668,18 +684,18 @@ __________.__________
   * TeaD: Added a light point defence.
   * TeaD: Added a light radar tower, to detect the cloaked creeps with.
   * TeaD: The wave messages are now printed to the bottom of the screen.
-    * Some of the warning messages are lies, and wont be true until the content they refer to exists.   
-  * TeaD: Approx game duration ~15 minutes.  
+    * Some of the warning messages are lies, and wont be true until the content they refer to exists.
+  * TeaD: Approx game duration ~15 minutes.
   __________
   2015-11-16
-  
+
   * TeaD: Spaced some waves out better.
   * TeaD: Buffed the T1 Air turret. It can now kill the scouts. Although it looks silly.
   * TeaD: Added propper wave messages. It gives a 20-30 second warning on flier waves. Although not cloaked waves.
-  * TeaD: Game length estimate: ~18 minutes.  
+  * TeaD: Game length estimate: ~18 minutes.
   __________
   2015-11-20
-  
+
   * TeaD: Crystal is now a teacup, with health represented by tea.
     * TeaD: It has a steam effect while it is full.
   * TeaD: Creep gates will no longer start waves if the target player is dead.
@@ -687,30 +703,30 @@ __________.__________
   * TeaD: Added the first damage test boss.
   * TeaD: Changed the sounds of the pathfinder.
   * TeaD: Fixed the turn radius of the pathfinder.
-  * TeaD: Added some bad map handling.  
+  * TeaD: Added some bad map handling.
   __________
   2015-11-21
-  
+
   * TeaD: Added the second damage test boss.
   * TeaD: Added the first real boss.
   * TeaD: The gate can no longer take damage.
   __________
   2015-11-22
-  
+
   * TeaD: Added no-rush handling.
   * TeaD: Fixed the shield boss strategic icon.
   * TeaD: Added a warning for cloaked waves.
   __________
   2015-11-23
-  
+
   * TeaD: Doily.
   __________
   2015-11-25
-  
+
   * Fixed a potential, but unlikely, interaction with the Panopticon and the Darkness, whereby a Darkness just outside of the Panopticons radius would be totally ignored, and have its nearby units spied upon.
   __________
   2015-11-28
-  
+
   * Gave the Operative a new model and an icon.
   * TeaD: Added icons for the creeps.
   * TeaD: Changed the light point defence, and gave it an icon.
@@ -720,42 +736,42 @@ __________.__________
   * Added Seraphim T2 walls.
   __________
   2015-11-29
-  
+
   * Added the Aeon T3 shield wall.
     * Requires a rewrite of the cardinal wall script that I still haven't done.
   * Fixed the Aeon T2 wall icon.
   * Inverted the Aeon defence engineer normal map.
   __________
   2015-12-01
-  
+
   * Partially rewrote the cardinal wall script.
   __________
   2015-12-03
-  
+
   * Finished rewrite of the cardinal wall script, and applied the new script to all walls.
-    * Gates still use old script.   
+    * Gates still use old script.
   * Fixed the icon for the Cybran T2 wall.
   __________
   2015-12-04
-  
+
   * Updated the gates with the new cardinal wall script, and updated the script to work better with them.
   __________
   2015-12-05
-  
+
   * Added the Seraphim T2 mobile shield generator.
   * Increased the shield health of the UEF T3 shield generator from 8000 to 8800.
   * Added an unfinished Aeon T3 mobile shield generator.
   __________
   2015-12-06
-  
+
   * Additional texture work for the Ivan.
   __________
   2015-12-12
-  
+
   * Additional texture work for the Ivan.
   __________
   2015-12-30
-  
+
   * Paragon Game: Created new model for the Aeon Engineering station.
 __________.__________
 2015-04-06|0.6.1
@@ -766,7 +782,7 @@ __________.__________
 * Lowered the range of each of the anti-armor point defences by 5. (150 to 145)
   __________
   2015-05-09
-  
+
   * Paragon Game: More intelligent placement of paragon:
     * Paragon now spawns 20 to 60 distance away from you (based on map size).
     * Paragon now cares more about where you are in the map for deciding position:
@@ -775,49 +791,49 @@ __________.__________
       * Otherwise it spawns the paragon the other side of you from the center of the map.
   __________
   2015-05-10
-  
+
   * Added a minimum depth for the Aeon T3 torpedo launcher, to prevent the turrets from being underground and doing nothing.
   * Allowed the wreckage of the Aeon T3 torpedo launcher to apepar on water.
   __________
   2015-05-11
-  
+
   * Paragon Game: Fixed a crippling bug that would sometimes cause the script to crash and not spawn some players in.
   __________
   2015-05-16
-  
+
   * Partially redone UEF drop-pod artillery.
   __________
   2015-05-17
-  
+
   * Finished the recoding of the UEF drop-pod artillery: now also buildable again.
-  * Did some more work on the model for the UEF drop-pod artillery.  
+  * Did some more work on the model for the UEF drop-pod artillery.
   * The Cyrban Punisher can now leave a wreckage.
   __________
   2015-05-22
-  
+
   * Drop pod artillery no longer auto targets.
   * Recuded camera shake caused by drop-pod artillery firing.
   * The Gantry now has a selection area a reasonable size, rather than nearly twice its size.
   __________
   2015-05-23
-  
+
   * Prop-pod artillery now issues itself a stop when it finishes firing, so it can now successsfully be given build orders again after it finishes firing without manually telling it to stop.
   __________
   2015-05-24
-  
+
   * Added the new improved Mentlegens Reef map to BrewLAN. (Its a 7v1 Gentlemans Reef)
   * Gantry Hax 2: Merged numbers from git fork.
   * Removed the log spam from the Suthanus.
   __________
   2015-05-27
-  
+
   * Paragon Game: FIXED! FOR REALS THIS TIME!
   * Improved the appearance of the Drop-pod artillery.
-    * Corrected the smoothing.  
+    * Corrected the smoothing.
     * Finished the UV mapping and texture outline of its base.
   __________
   2015-05-29
-  
+
   * UEF Ivan: Experimental Drop-Pod Artillery changes:
     * Finished the UV mapping and a basic texture for the Ivan Drop-pod Artillery.
     * Reduced the cost and build time of the Ivan by 25%.
@@ -826,57 +842,57 @@ __________.__________
     * Improved the movement of the decorative drop-pods.
   __________
   2015-05-30
-  
+
   * Some more work on the texture of the Ivan.
   * Removed some log spam.
   __________
   2015-05-31
-  
+
   * The Ivan now loads a drop-pod into its barrel if the current build is cancelled.
   * Added the Cybran T2 wall to the language tables. (Fuck knows how long that's been missing)
   * Added a temporary version of the UEF T2 wall. (Uses the T3 model)
   __________
   2015-06-01
-  
+
   * Ivan now has the option to rebuilt what launched after its finished firing.
   __________
   2015-06-03
-  
+
   You see Ivan, when fire repeating script, many robit will make attack.
   * Added scripted button for repeat firing for the Ivan.
   * Drop-podded units now spawn facing a random direction, instead of straight down.
   __________
   2015-06-05
-  
+
   * The Ivan will now re-give itself the orders it loses when when the auto-target location is updated.
   __________
   2015-06-07
-  
+
   * Experimental Icons: Category GATE experimentals no longer show up with transport icons.
   * Additional texture work for Ivan.
   __________
   2015-06-10
-  
+
   * Additional texture work for Ivan.
   * Created a distance model for Ivan.
   __________
   2015-06-13
-  
+
   * Ivan now has an LCD display of the ammo count.
   * Fixed an issue with having actual repeat orders on with the scripted repeat orders.
   * Addional texture work on the Ivan.
   __________
   2015-06-14
-  
+
   * Cybran field engineer can now build the ED5 instead of the ED4. ED5 costs 50% more to build this way.
   * More texture for Ivan.
   __________
   2015-06-15
-  
+
   * Halved the cost and energy storage or the stargate.
   __________
   2015-06-19
-  
+
   * Moar ivan texture.
   * Changed the LOD1 UV mapping on the UEF T1 Air staging, so it makes more sence.
   * Doubled the Guardian LOD distance cutoffs.
@@ -890,7 +906,7 @@ __________.__________
   * Doubled the LOD distance cutoffs for the UEF T2 storages.
   __________
   2015-06-20
-  
+
   * Replaced the LOD1 for the Harpoon.
   * Gave the Aster a propper LOD1 model, and doubled the distance cutoffs for it.
   * Doubled the LOD1 distance cutoff for the Archimedes.
@@ -899,21 +915,21 @@ __________.__________
   * Waterlag: Added 'floatation' legs to Cybran and UEF units that have added water functionality.
   __________
   2015-06-21
-  
+
   * Waterlag: Added additional leg types for Cybran.
   __________
   2015-06-22
-  
+
   * Updated Russian translation by theonewhonevergivesa.
   * Fixed LOC link for Little Bertha.
   __________
   2015-06-24
-  
+
   * Localisation fixes.
   * Fixed the health bar of the Cybran T1 Air Staging.
   __________
   2015-06-26
-  
+
   * RU 4 real. Russian language update.
   * Fixed the LOD1 mesh of the Cybran T1 Air Staging.
   * Adjusted the balance of the directly build ED5 again; buffed slightly.
@@ -921,22 +937,22 @@ __________.__________
   * Added a build description for the ED5.
   __________
   2015-06-27
-  
+
   * Megalith can now egg up some Salem.
   * The Megalith flak egg is now considered T3.
   __________
   2015-06-28
-  
+
   * RU strings for Megalith Salem egg.
   * Improved the texturing for the Centurion LOD1.
   __________
   2015-06-29
-  
+
   * Waterlag: Now lowers the colision model of effected units so they are easier to torpedo.
   * Lowered the colision model of the Gantry so it can be show by torpedos better.
   __________
   2015-07-03
-  
+
   * New Sub-mod: For specific features while running both BrewLAN and BlackOps: Lucky Dip:
     * Anywhere that BlackOps and BrewLAN make similar units, it restricts one of them at random.
   * Waterlag: Removed part of the collision model change that was effecting engineers wierdly.
@@ -944,39 +960,39 @@ __________.__________
   * Had the Seraphim Battleship disable its nuke launcher if nukes are restricted.
   __________
   2015-07-04
-  
+
   * Novax now rebuilds the Satelite if it dies.
   * Updated the build mode shortcuts for everything but field engineer buildings.
   __________
   2015-07-08
-  
+
   * Fixed the buildability of the field engineers on FAF.
   * Improved other FAF related compatibility.
   __________
   2015-07-11
-  
+
   * New submod with crates.
   __________
   2015-07-12
-  
+
   * Crates: Now with more effects.
   * Changed the Centurion behaviour.
   * Changed the Scathis script, for less errors and better compatibility.
   * Fixed the name of the Centurion distance normals.
   __________
   2015-07-13
-  
+
   * Crates: Now with more effects. Including HATS!
   __________
   2015-07-15
-  
+
   * Jaisse: French localisation update, and loc fixes.
   * More crate effects
   * Waterlag: Reduced the colision offset so land units can shoot the UEF T1 radar again.
   * BrewUI slight passthrough future proofing.
   __________
   2015-07-18
-  
+
   * Crates: Flash effect for crate.
   * Crates: New icon.
   * Crates: Reduced the chances of higher tech level units coming from the crate, and gated the maximum to one level above the unit picking it up.
@@ -986,49 +1002,49 @@ __________.__________
   * Crates: No longer able to recieve vision buff with fog of war disabled.
   __________
   2015-07-19
-  
+
   * Crates: Created a lobby option for hats only.
   * Gave the Absolution an attachpoint. Totally not just so it can have a hat.
   * Crates: Structures now get larger hats than regular units. (Only affects 1 known building that has a recognised hat bone: Orbos)
   __________
   2015-07-24
-  
+
   * Shield walls now instead pass their damage to the shield if it is enabled.
   __________
   2015-07-25
-  
+
   * Crates: New hat!
   __________
   2015-07-26
-  
+
   * Crates: Slight scripting change for exception handling.
   * Added the UEF Artillery Defense Grid.
   __________
   2015-07-27
-  
+
   * Minor aesthetic change to the ADG. It now does lizard eyes. I can't for the life of me work out what type of lizard it reminds me of.
   __________
   2015-07-29
-  
+
   * Made the ADGs 'eyes' stop moving more often.
   * Airborne bombers of the same type on the same team can no longer damage each other.
     * This most specifically deals with the fact that a group of bombers attacking an Iron Curtain will almost certainly all kill eachother with their own bombs impacting the shield, but also affects experimental bombers hurting each other all the time when in groups.
   __________
   2015-08-01
-  
+
   * Overhauled the previous Iron Curtain bomber self damage fix.
-    * Rather than doing a load of self and instigator checks on damage to make sure this only effects bombers of the same type on the same team that are also in the air it now does the following: 
+    * Rather than doing a load of self and instigator checks on damage to make sure this only effects bombers of the same type on the same team that are also in the air it now does the following:
     * The damage type of each weapon with the variable NeedToComputeBombDrop that has the DamageType 'Normal' now has the damage type 'NormalBomb'. This includes all bombers' and fighter/bombers' bombs except corsair which doesn't bomb strictly speaking. This is computed during launch.
     * When taking the damage the following checks are made:
       * Am I a bomber?
       * Am I in the air?
-      * Is the damage type NormalBomb.                 
+      * Is the damage type NormalBomb.
     * If the answer to all those is yes it takes 5% damage instead.
       * This can still lead to a clumped group of 30 UEF T1 bombers damaging the bombers at the back of the group to half health
         * This is preferable to killing the whole group, whilst also giving some feedback on the bombers flying through the fire.
   __________
   2015-08-05
-  
+
   * Centurion changes:
     * Speed reduced from 15 to 9. (Still faster than the Soul Ripper, which is 8 I think)
     * The main flak cannon can no longer fire at ground targets.
@@ -1038,11 +1054,11 @@ __________.__________
   * Paragon game: Fixed an issue where the script would crash after failing to give someone a Paragon or shield due to map issues. The player will still be Paragon or shieldless, but the game will log a warning and carry on with life.
   __________
   2015-08-07
-  
+
   * Paragon Game: If the script couldn't spawn a unit it will now try again a little bit closer to the players starting location. (Except for people in the center of the map.)
     * If ANY player doesn't have the unit after these checks, it will try a third time (or second time in middle people cases) to spawn, but this time right on their starting location.
       * If the Paragon fails to this point, the shields will also be spawned this way.
-      * Players who have STILL been failed by the spawn script, will have the failure announced on their behalf. So people know the game is ruined and that you should all try a different map.  
+      * Players who have STILL been failed by the spawn script, will have the failure announced on their behalf. So people know the game is ruined and that you should all try a different map.
 __________.__________
 2015-01-02|0.6
 
@@ -1051,12 +1067,12 @@ __________.__________
 * Removed the console-only UEF T3 Artillery Shield from the bubbles restrictions list, which was causing it to break.
   __________
   2015-01-04
-  
+
   * Added BrewLAN units to FAF unit restrictions list. Specifically:
     * The heavy wall sections, armored wall sections, shield wall sections, and wall gates added to the "No Walls" restriction.
     * The Seraphim engi stations, and UEF T3 engineering resource buildings added to the "No Engineering Stations" restriction.
     * Scathis MK 2 and Suthanus added to the "No Super-Artillery" restriction.
-    * UEF observation satelite uplink, and Seraphim optics tracking facility to the "No Eye of Rhianne and Soothsayer" restriction.                  
+    * UEF observation satelite uplink, and Seraphim optics tracking facility to the "No Eye of Rhianne and Soothsayer" restriction.
   * Added the special tech 3 fabrication units to the "No Mass Fabrication" restriction.
   * Added the Aeon Shielded resource buildings to the "No Shields" restriction.
   * For Paragon Game added the three additional paragons to the "No Paragon" restriction.
@@ -1072,57 +1088,57 @@ __________.__________
   * The Suthanus now has a fluctuating accuracy modifier, and gets more accurate the longer it has been firing on a target.
   __________
   2015-01-05
-  
+
   * Added a transport attach bone to the Scarab.
   * Improved the aesthetics of the stargate, and its effects.
   __________
   2015-01-07
-  
+
   * Resbot now references the original unit ID propperly.
   __________
   2015-01-10
-  
+
   * Fixed a bug in the stargate script preventing dailing back of a gate that just dailed in.
   * 'Close Link' button now disapears on a gate with an incoming wormhole.
   * Iris shield now has sound effects for enabling and disabling. (Unlike everything else for the stargate.)
   __________
   2015-01-14
-  
+
   * Additional rezbot scripting. It now costs during reclaim and outputs a full health unit. Kinda. Numbers are off. Wont go right. Stress. Going to go shoot things now.
   __________
   2015-01-16
-  
+
   * Paragon Game: Now does a civilian check, so they no longer break team calculations.
   * Crystal Hill: Now does a propper civilian check, so a real player (human or ai) called 'civilian' for some reason can now get the first capture.
   __________
   2015-01-19
-  
+
   * Made the additional build cats script marginally more efficient when dealing with units that have lost their ability to build from other mods.
   * Added the Cybran T1 Light Torpedo Bomber. The last of the currently planned T1 units now exists.
   * Altered the menu sort priority of the Jester, so it matches that of the Wailer, and appears between the torpedo bomber and transport.
   __________
   2015-01-21
-  
+
   * The Seraphim Optics Tracking Facility now targets the closest unit to the center of the chosen location, instead of the first indexed unit, and now charges for new targets based on the distance between them.
   __________
   2015-01-23
-  
+
   * Seraphim Optics Tracking Facility changes and fixes:
     * Increased the range at which the Seraphim optics tracker gets a discount on range
     * Fixed the discount so it is what is charged, instead of an additional cost.
     * Fixed the no power auto on/off function.
   __________
   2015-01-30
-  
+
   * Added the UEF T3 Mobile Shield Generator.
   __________
   2015-01-31
-  
+
   * Crystal Hill: Added a tarmac texture to the crystal.
   * Paragon Game: Fixed a crash related to players with spawns near the far north of the map.
   __________
   2015-02-15
-  
+
   * UEF Kennel changes:
     * Tech 3 version now costs double, but is directly buildable.
     * The tech 2 version gets a 50% discount on upgrading to it, so its functionally the same that way.
@@ -1133,38 +1149,38 @@ __________.__________
     * Building it directly results in a net profit of 20 mass, and a loss of 700 energy compared to upgrading to.
   __________
   2015-02-16
-  
+
   * Gabtry Hax 1: Added an upper limit to the build speed of the AIx Gantries.
   * Fixed the tripple notification bug on the 10 minute marker in paragon game.
   __________
   2015-02-18
-  
+
   * Crystal Hill: Added overtime; you now only win when there are no enemies, there hasn't been for 10 seconss, and the time is 0 or below.
   __________
   2015-02-20
-  
+
   * Crystal Hill: Added custom lobby options for defining the Crystal times. (requires the lobby enhancement mod)
   __________
   2015-02-21
-  
+
   * Crystal HIll: Refined the lobby options, and added full complete tooltips and lauguage switch support. Currently only in English.
   * Gantry now builds custodians instead of regular engineers during its build.
   __________
   2015-02-23
-  
+
   * Crystal Hill: Fixed a bug causing 10 seconds of overtime if no enemy ever came near the crystal to cause a real defined overtime end.
   * Crystal Hill: MightyBlueDuck: Added German translations of Crystal Hill lobby options.
   * Reverted the Gantry building Custodians instead of Engineers.
   * Added Ella and the Suthanus to the Sorain AI build lists. Re-added the the Scathis Mk II to Sorian AI build lists.
   __________
   2015-02-27
-  
+
   * Created a new mesh for the Stargate. Based heavily off the SGU gate. Old mesh still used for distance model.
   __________
   2015-03-01
-  
+
   * Experimental Icons Overhaul: Did a slight overhaul of the detection for weapon based icons, and changed the priorities for others.
-  * Experimental Icons Overhaul: Fixed the check for nuke based weapons, since they don't use the 'damage' attrib, the Yolona Oss was showing as directfire which is the default for things involved in the damage off checks.                                                                                                     
+  * Experimental Icons Overhaul: Fixed the check for nuke based weapons, since they don't use the 'damage' attrib, the Yolona Oss was showing as directfire which is the default for things involved in the damage off checks.
 __________.__________
 2014-12-29|0.5.9
 
@@ -1174,8 +1190,8 @@ __________.__________
 * Added tooltips for the stargate dailing funcction.
   __________
   2014-12-30
-  
-  * Seraphim T4 stargate can now warp things across the map to other gates.   
+
+  * Seraphim T4 stargate can now warp things across the map to other gates.
 __________.__________
 2014-12-26|0.5.8.1
 
@@ -1190,24 +1206,24 @@ __________.__________
 * Disabled the original Scathis again.
   __________
   2014-12-23
-  
+
   * The AI's Centurion pancake script now checks how many times they have failed against each Paragon.
-    * They will only try to pancake a Paragon once per half of the level of completion of the Paragon, or if they have more in the squad than the total number that died trying. 
+    * They will only try to pancake a Paragon once per half of the level of completion of the Paragon, or if they have more in the squad than the total number that died trying.
   * The pancake script now also checks the maximum speed of the Centurion, and adjusts the ideal kill angle estimation appropriately.
     * For if I adjust the Centurion speed again, and if I apply the script to other experimental fliers.
   * Increased the air speed of the Centurion from 12 to 15. (Original 18)
   * Added a work around for removal of things on walls sometimes causing it to lose its path blocking if the removed thing had the same or larger footprint.
   __________
   2014-12-24
-  
+
   * Added the Aeon T1 Torpedo Bomber.
   __________
   2014-12-25
-  
+
   * Reduced the maximum stunned time for ressurected units to a minute.
   * Disabled the unscripted Seraphim Stargate experimental.
   * Changed the LOD fadeoff of the Aeon T1 torp bomber.
-  * Fixed texture references in the Seraphim T1 gunship and T3 torpedo bomber.             
+  * Fixed texture references in the Seraphim T1 gunship and T3 torpedo bomber.
 __________.__________
 2014-11-30|0.5.7
 
@@ -1216,30 +1232,30 @@ __________.__________
 * Re-adjusted the AIx pancake code to accomadate the new Centurion speed.
   __________
   2014-12-07
-  
+
   * Fixed a minor error in the panic state script for UEF engineering resource buildings.
   __________
   2014-12-08
-  
+
   * Sorted some things related to the assignment of units in the build restrictions list. Specifically:
     * The Scathis MK 2 can't be built with no Game Enders, on its original code now.
       * It is also back to its old unit code for compatibility with other mods.
       * This also fixed the bug whereby with BrewLAN disabled the Scathis icon was still the Scathis Mk 2.
-      * And a bug whereby the rebuild bonus wasn't working due to it referencing the current (and original) unit code.      
+      * And a bug whereby the rebuild bonus wasn't working due to it referencing the current (and original) unit code.
     * The Cybran Shields, and tech 1 shields are no longer buildable with no Bubbles (Asuming you are running a version for which no-bubbles isn't bugged.)
     * Paragon Game: The Paragon is always buildable by the Paragon guy.
   __________
   2014-12-10
-  
+
   * Sorian AI now treats the Absolution as if it was a Fatboy.
   * Created the infastructure to move all the Gantry AI scripts, and Centurion pancake scripts into the actual AI files.
   __________
   2014-12-13
-  
+
   * Added the Seraphim Experimental Rapid-Fire Artillery.
   __________
   2014-12-14
-  
+
   * Slight re-texture for the UEF T3 wall and gate sections.
   * Added the Seraphim Experimental Rapid-Fire Artillery to the game enders list.
   * Fixed a particle effect on the Seraphim T1 Gunship.
@@ -1248,17 +1264,17 @@ __________.__________
   * Corrected a typo in the von mayor rector description.
   __________
   2014-12-15
-  
+
   * Minor improvement to the code that deals with the relative costs of aircraft.
   * BrewUI now returns the original code if BrewLAN isn't active. Meaning you can leave it on when BrewLAN is off without breaking things.
   __________
   2014-12-17
-  
+
   * Script for handling sweeping changes of categories is now slightly more efficient.
   * Crystal Hill now removes civilian buildings from the direct center of the map, and spawns the crystal in the exact position of the first of those buildings, if there were any.
     * However the script no longer cares if anything else is blocking the location, or if the ground is flat.
     * This is better for maps where uneven terrain would make the crystal appear nearer one player.
-    * The crystal sometimes has its underside visible.        
+    * The crystal sometimes has its underside visible.
   * MetalWorld now cheatspawns the correct factional power plant for AI's.
   * Added credit headers to various scripts.
   * Made the Paragon Game innitialisations script more compatible.
@@ -1266,37 +1282,37 @@ __________.__________
   * Paragon Game and Crystal Hill can now be played together.
   __________
   2014-12-18
-  
+
   * Lowered the selection priority of the Iyadesu.
   * Units resurrected by the Iyadesu are now stunned for the ideal amount of time it would take to repair it.
   * Crystal Hill now strips bracketed text from player names on the notification messages, most relevent for AIs.
-  * AI's now pay some attention to the crystal on Crystal Hill, and send units there, sometimes even leaving the units there.                                                   
+  * AI's now pay some attention to the crystal on Crystal Hill, and send units there, sometimes even leaving the units there.
 __________.__________
 2014-11-23|0.5.6
 
 * Created a new icon for the field tech enhancement.
   __________
   2014-11-24
-  
+
   * Re-enabled the Iyadesu as a RezBot.
   __________
   2014-11-26
-  
+
   * New icon for the rez/reclaim ability.
   * Rezzing now causes the resurrected thing to become stunned for 10 seconds.
   * The Iyadesu now has only mass storage instead of mass storage and energy storage, and its shield now only costs 50 energy per second.
   __________
   2014-11-28
-  
+
   * Fixed the rezbot duplication bug.
   * Changed some of the rezcode variables to be better named.
   * Fixed the orientation issue of the rezed units.
   __________
   2014-11-29
-  
+
   * Fixed a typo in 3 of the tech 1 shield generator descriptions.
   * Fixed a typo in the anti-armor point defense descriptions.
-  * Fixed a typo in the Novax description.             
+  * Fixed a typo in the Novax description.
 __________.__________
 2014-11-17|0.5.5
 
@@ -1304,24 +1320,24 @@ __________.__________
 * Changed the AI Gantry build Centurion pancake behaviour.
   __________
   2014-11-18
-  
+
   * Fixed the Gantry build pancake Centurion name threads issue.
   __________
   2014-11-19
-  
+
   * Fixed the Gantry-built pancake-Centurion name threads re-issue. For reals this time.
   * Paragon Adjacency buffs change.
     * This change includes a work around for an issue with things requiring maintenence energy breaking next to the paragon.
   __________
   2014-11-21
-  
+
   * Changed the Paragon buffs again.
   * Fixed an issue with some hooked scripts hard linking back to the originals.
   * Added an enhancement to the SACUs to enable field engineer buildings for them.
   __________
   2014-11-22
-  
-  * Center of the Gantry no longer blocks pathing.               
+
+  * Center of the Gantry no longer blocks pathing.
 __________.__________
 2014-11-16|0.5.4
 
@@ -1338,41 +1354,41 @@ __________.__________
 * AI now names its pancake Centurions differently.
   __________
   2014-10-31
-  
+
   * The AI Gantry experimental picker now starts at with a random experimental instead of the first on its list (it still cycles linearly from there).
   * Field engineers can now build air staging platforms.
   __________
   2014-11-08
-  
+
   * Added a super basic version of the Seraphim totally-not-a-stargate.
   * Added air staging to the build lists of field engineers.
   * Increased the chances of the AI building the Gantry.
   * Extended the build list of the Gantry.
-  * Added additional AI Gantry name options.         
+  * Added additional AI Gantry name options.
 __________.__________
 2014-10-19|0.5.2
 
 * Added strings to the table for the soon to exist seraphim experimentals.
   __________
   2014-10-20
-  
+
   * Changed the AI behaviour with a Gantry.
-    * It will now have it build 5 engineers.     
+    * It will now have it build 5 engineers.
     * It will then build a Centurion.
     * It will then repeat the two preceding steps before infinite building Centurions.
   __________
   2014-10-23
-  
+
   * Fixed an issue with beams on the walls not removing propperly when a section dies.
   __________
   2014-10-24
-  
+
   * Changed the AI use of the Gantry. Involves hax. Lots of hax.
   __________
   2014-10-25
-  
+
   * Created a propper function for the Gantry choosing which experimental to build while AI controlled.
-    * It now cycles through all air experimentals detected by the launch script, and builds one, then does the same for land experimentals, and then sequentially cycles through all of them in that pattern.                                                 
+    * It now cycles through all air experimentals detected by the launch script, and builds one, then does the same for land experimentals, and then sequentially cycles through all of them in that pattern.
 __________.__________
 2014-10-15|0.5.1
 
@@ -1380,14 +1396,14 @@ __________.__________
 * Fixed a typo in the long descriptions of tech 1 gunships.
   __________
   2014-10-17
-  
+
   * Fixed the remaining issues with the Russian string tables.
   * Fixed the string reference for the description of the engineering mass extractor.
   * Fixed the string reference for the long description of the tech 1 mines.
   * Fixed the conflict with Extreme Wars. (Caused by BrewLAN asuming the Fatboy could build.)
   * Changed the way the armored walls pick their turrets. Its now based on footprint, not size cat.
   * Fixed the conflict with TotalVeterency. (Caused by TotalVeterency asuming all units have health.)
-  * Allowed the Absolution to move backwards.          
+  * Allowed the Absolution to move backwards.
 __________.__________
 2014-10-05|0.5
 
@@ -1400,7 +1416,7 @@ __________.__________
   * Increased its build rate to 10.
   __________
   2014-10-06
-  
+
   * Fixed the maintenance cost not auto-activating on the UEF E-MEX.
   * Increased the animation speed of the Aster.
   * Added the pause function to all units that can upgrade.
@@ -1411,20 +1427,20 @@ __________.__________
   * Updated the strings for the German localisation. Pending actual translation.
   __________
   2014-10-08
-  
+
   * Updated German translation provided by Simon Jenner (106.Bluebird).
   __________
   2014-10-09
-  
+
   * New French translation provided by asdrubaelvect29.
   * AI related changes to the Gantry.
   __________
   2014-10-10
-  
+
   * Slightly improved AI handling for Gantry; they no longer have the air/other ui build restrictions.
   __________
   2014-10-11
-  
+
   * Finished the Scarab.
   * Fixed the script of the Aeon shielded fab.
   * Increased the size of the Hedgehog.
@@ -1432,11 +1448,11 @@ __________.__________
   * Created a Russian translation with GOOGLE.
   __________
   2014-10-12
-  
+
   * Moved the upgrade stop button function to the unit script, so that it only appears when it needs to.
-  * Gantry now picks buildable experimentals based on their footprint width to be buildable.  
+  * Gantry now picks buildable experimentals based on their footprint width to be buildable.
   * Made the Gantry to be able to build other races experimentals if you control a T3 engineer (or anything that has the categories 'engineer' and 'tech3') of that race next to it.
-  * Fixed an FX error with the Aeon T1 Gunship.                                        
+  * Fixed an FX error with the Aeon T1 Gunship.
 __________.__________
 2014-09-28|0.4.F
 
@@ -1446,10 +1462,10 @@ __________.__________
 * Created the UEF T3 Gate section.
   __________
   2014-09-29
-  
+
   * Fixed the bug with the Sparky mine build cat, which had accidentally gotten overwritten by the counterintel cat.
   * Unified spellings of 'Defence' to match the American spellings of 'Defense' already found throughout the game. Even if it feels wrong.
-  * Set all land mines to link back to the same script, instead of being almost exact copies of said script.  
+  * Set all land mines to link back to the same script, instead of being almost exact copies of said script.
   * Allowed all units to walk over land mines.
   * Fixed the normals link for the UEF T1 Field Engineer.
   * Gave the UEF T1 mine a unique appearance, fixed, and finished it.
@@ -1460,7 +1476,7 @@ __________.__________
   * Finished the Aeon T3 Shielded Mass Extractor.
   __________
   2014-09-30
-  
+
   * Sorian AI will now build most new BrewLAN units, including the Centurion, Archimedes, Field Engineers, Mobile Strat Defences, and others. (Also the Gantry, but they don't use it well.)
   * Allowed AI to cheat with field engineer exclusive units, and be able to build them with regular engineers, allowing them to build the alternate resource buildings and anti-armor point defences.
   * Removed the Aeon and UEF T1 shield references to the non-existant naval shields.
@@ -1468,7 +1484,7 @@ __________.__________
   * Fixed the particle effects of the Aeon decoy.
   __________
   2014-10-01
-  
+
   * Added the Seraphim T1 & T3 mines.
   * Removed the radar and sonar from T1 mines and replaced them with omni; they are supposed to be pressure sensitive and wouldn't detonate to jammer signals.
   * Created a new model for the Orbos.
@@ -1477,7 +1493,7 @@ __________.__________
   * Fixed the transport class of the Cybran T3 engineer.
   __________
   2014-10-02
-  
+
   * Brightened the distance lights of the Aeon Field engineers.
   * Added the Aeon T1 mine.
   * Fixed the shader types of several mines.
@@ -1487,12 +1503,12 @@ __________.__________
   * Set the Slink to disable its Cloak on fire.
   __________
   2014-10-03
-  
+
   * Slink now decloaks to fire, and recloaks afterwards.
     * Added sound effects and particle effects for some audio and visual feedback on its cloak status.
   __________
   2014-10-04
-  
+
   * Added a clause for the cardinal wall script to check multiple conflicts.
   * Added the Aeon T2 Wall.
   * Added a build restriction so walls can't build Hydrocarbon plants. (This only effected a total Meyhem unit to my knowledge.)
@@ -1500,7 +1516,7 @@ __________.__________
   * Added a check to the wall script for creating beams, to check both bone ends are legit.
   * Created a custom model for the Aeon Shielded power gen.
   * Added the Cybran T1 mine.
-  * Added the Cybran T3 Cloakable Extractor.                                                                      
+  * Added the Cybran T3 Cloakable Extractor.
 __________.__________
 2014-09-22|0.4.E
 
@@ -1508,7 +1524,7 @@ __________.__________
   * As much as I prefered the lack of UI clutter it being an upgrade came with, it had three unfortunate side effects:
     * It ocasionally broke adjacency script for them.
     * You couldn't have them in templates.
-    * It made the gate sections be repaired virtually instantly by anything. (They both still repair to fast anyway.)    
+    * It made the gate sections be repaired virtually instantly by anything. (They both still repair to fast anyway.)
 * Altered the costs of the T3 walls.
 * Increased the animation speed of the gates.
 * Increased the max slope that T2 & T3 walls can be built on.
@@ -1518,18 +1534,18 @@ __________.__________
 * Added the UEF T3 Armored Wall Section.
   __________
   2014-09-23
-  
+
   * Added an icon and description to the UEF T3 wall.
   __________
   2014-09-24
-  
+
   * Did a complete blitz of the blueprints.lua. (Over 100 lines shorter, with the same+ function.)
   * Made the Ravager buildable by the armored walls.
   * Set the Ravager to be Size4 instead of Size12.
   * Created a base unit for the Cybran Experimental Omni Disrupting Facility. No script yet.
   __________
   2014-09-27
-  
+
   * Made the Omni Disrupter almost fully functional.
 __________.__________
 2014-09-14|0.4.D
@@ -1537,23 +1553,23 @@ __________.__________
 * Added Harpoon: UEF T3 torpedo launcher.
   __________
   2014-09-15
-  
+
   * Created a new model for the Cybran T2 wall.
   __________
   2014-09-17
-  
+
   * Created a texture for the Cybran T2 wall's new texture.
   * Added a laser fence effect to the Cynran T2 wall.
   * Added decals to the second layer version of the Cybran T3 wall.
   __________
   2014-09-18
-  
+
   * Added a seraphim quantum optics variant.
-    * Currently not very varient-y. That is a word now.  
+    * Currently not very varient-y. That is a word now.
   * Fixed the size category for the Aeon Quantum Optics. It was set to size 4, so you could make it free with T1 power plants, but if you did it broke it.
   __________
   2014-09-19
-  
+
   * Changes to the Seraphim quantum optics variant:
     * Reclassified as a 'Optics Tracking Facility'.
     * Renamed and given unique text strings.
@@ -1563,69 +1579,69 @@ __________.__________
   * Added Cybran heavy gate sections.
   __________
   2014-09-21
-  
+
   * Fixed the construction button onclick changes so it now cares about things other than building more, and removing things on the questack.
   * Set the armored wall to upgrade into the armored gate.
   * Had the armored wall destroy whatever was ontop of it when the upgrade finishes.
   * Set the gate sections to pass their orders to adjacent gate sections.
-  * Created a model for the Cybran armored gate sections.                                                                      
+  * Created a model for the Cybran armored gate sections.
 __________.__________
 2014-09-08|0.4.C
-                              
+
 * Updated factions.lua
 * Created BrewUI.
   * A seperate UI mod for handling all the Field Engineers, seperate because its not coded well for compatibility. (Yet)
   __________
   2014-09-10
-  
+
   * Made the Gantry not trigger the idle factories list.
   __________
   2014-09-11
-  
+
   * Made the cybran armored wall not trigger the idle factories list.
   __________
   2014-09-12
-  
+
   * Added a destroy turret button to the heavy walls. Just in case.
   * Changed the build list for the Cybran T3 wall to have a different wall.
     * This different wall has a smaller base and cant build.
   * Fixed the distance mesh for the Iron Curtain, that has been misslinked since the B-S unit code change.
   * Changed the T2 adjacency buffs from T2 storage with size 12 and size 20 buildings, to account for the gaps they will always leave. Although there are no size 20 buildings that care anyway.
-  * Changed the Cybran T2 wall to be larger, and use the cardinal directions code. Currently uses the stripped down T3 mesh.            
+  * Changed the Cybran T2 wall to be larger, and use the cardinal directions code. Currently uses the stripped down T3 mesh.
 __________.__________
 2014-08-31|0.4.B
-                              
+
 * Lowered the rate of fire bonus given by the Paragon from -1 to -.2. P90 Mavor, while hilarious, is not on.
   __________
   2014-09-02
-  
+
   * Added a death animation script to the Gantry. Complete with random exploding arms.
   * Improved the LOD1 mesh of the Gantry, so the arms move at a distance, and the floatation legs also appear at a distance.
   __________
   2014-09-03
-  
+
   * The Hades now has an overheat effect: A small explosion dealing 500 damage, usually only to itself, a small fire, and some smoke that lasts most of the 16 cooldown time.
   * Hades now deals damage when it dies, equal to its power drain, or calculated power drain if its not firing, at a proportional radius of up to 3.
   __________
   2014-09-04
-  
+
   * Minor performance improvements for the Gantry whacky wailing inflatable arms flailing script.
   * Minor change in Gantry flailing arm speeds.
   * Basic script for building things on top of the armored walls.
   __________
   2014-09-05
-  
+
   * Fixed the script errors and the 'I dropped it' bug with the armored wall buildings.
   * Mostly sorted out the build lists for the armored walls. (It can build torpedo launchers still.)
   * Allowed the Fatboy to build the Custodian.
   * Fixed an issue with the Seraphim shield walls getting shot.
   __________
   2014-09-06
-  
-  * Removed torpedo launchers from the heavy wall build lists.                  
+
+  * Removed torpedo launchers from the heavy wall build lists.
 __________.__________
 2014-08-31|0.4.A
-                              
+
 * Changed the description of the cybran armored wall.
 * Modified the onlclick function of a buildmenu buttons to check if the unit clicked is buildable by the Gantry and one of the units selected is the Gantry.
   * This allows units to both be Gantry built and Engineer built, without any wierdness with fake units that become the real thing.
@@ -1636,14 +1652,14 @@ __________.__________
 * Set the population cap usage of the Novax Satelite to 0. Center itself still takes a slot.
   * This prevents it from not spawning when at the population limit, and leaving useless centers.
 * Fixed a minor error in the Centurion script, relating to it attempting to set the speed of its rotors before they have been set up as.
-* Added additional compatability scripts for the Gantry building units with other mods enabled.         
+* Added additional compatability scripts for the Gantry building units with other mods enabled.
 __________.__________
 2014-08-24|0.4.9
-                              
+
 * Added the Aeon T3 Shielded Power Gen and Fabricator, neither has a unique model yet.
   __________
   2014-08-25
-  
+
   * Changes to the Aeon and UEF T1 Shields:
     * Footprint increased to 6x6:
       * Coverage area proportionally increased for same effective coverage.
@@ -1662,7 +1678,7 @@ __________.__________
   * Disabled Torpedo Bombers from landing in the water again.
   __________
   2014-08-26
-  
+
   * Changes to the Novax Observation Satelite:
     * Intel changes:
       * Radar added with range 80.
@@ -1670,7 +1686,7 @@ __________.__________
       * Sonar added with range 50.
       * Omni reduced from 50 to 35.
       * Underwater vision added at 20.
-      * Added personal stealth.      
+      * Added personal stealth.
     * Selection priority reduced to 4; after engineers but before buildings.
     * Reduced impact damage to 10.
     * Maintenence per second set to 2500.
@@ -1684,39 +1700,39 @@ __________.__________
   * Created a ghetto work around for the Atlantis getting stuck in the Gantry. Very ghetto fix.
   __________
   2014-08-27
-  
-  * Created a script class for the UEF engineering resource generators, so there is less copied code.   
+
+  * Created a script class for the UEF engineering resource generators, so there is less copied code.
     * Script now checks how far away the instigator is, and does nothing if its too far away, then checks the instigator layer instead of its categories when deciding what to build.
       * Too far away is considered over *3 its visual range.
       * If the units layer is water it alternates between trying to build a torpedo or point defence, incase it can't reach the water for a torpedo.
   * The Engineering Power Generator now aims with all its arms, instead of just the first.
   * Fixed a long standing bug with the Gantry being able to have its costs reduced, through adjacency, to 0 of any one resource.
   * Increased the physical size of the T1 UEF Shield so it matches the size of the T2, and doesn't look odd when upgrading to it.
-  * Applied a change to the Engineering resource building script by MrDeagle, which reduces total lines of code.  
+  * Applied a change to the Engineering resource building script by MrDeagle, which reduces total lines of code.
   __________
   2014-08-28
-  
+
   * Added Cybran Tech 3 Armored Wall Section.
   __________
   2014-08-29
-  
+
   * Fixed the script of the Cybran Armored Wall, and otherwise finished it.
   * Finished the Seraphim T3 Shield Wall.
   * Made the Seraphim shield walls double-clickable.
-  * Fixed the cost of the UEF Engineering Mass Fabricator. (It was 10x cheaper than it should have been.)    
+  * Fixed the cost of the UEF Engineering Mass Fabricator. (It was 10x cheaper than it should have been.)
   __________
   2014-08-30
-  
+
   * Added the Seraphim Armored Power Generator, Fabricator, and Extractor, allowed there T3 others to upgrade into them.
   * Added adjacency buffs to the Paragon.
   * Increased the cost to fire of the Orbos to 1500 from 500.
   * corrected the distance model of the Centurion, so it doesn't look like the old version.
   * Added a basic Aeon T3 Shielded Mass Extractor.
   * Sorted an issue with some units not being able to que upgrade all the way up from the bottom.
-  * Fixed the normals linking on the UEF T3 Field engineer.                                                                                                                        
+  * Fixed the normals linking on the UEF T3 Field engineer.
 __________.__________
 2014-08-17|0.4.8
-                              
+
 * Fixed the Cybran T3 Cloakable Fabricator, gave it a custom model, and added it to the string tables.
 * Added Field Engineer capability to build counterintelligence buildings.
 * Removed the basic UEF Cloakable fusion.
@@ -1724,28 +1740,28 @@ __________.__________
 * Added the appropriate T1 storage to each T3 engineering resource buildings' buildable list.
   __________
   2014-08-18
-  
+
   * Changed the energy drain of T3 Point defences:
     * Aeon Orbos to 500 per shot from 400.
     * Seraphim Othuushala to 100 per shot from 10.
     * Partial setup of a script for the Cybran Hades to have its energy drain per second increase by 10 for every half second its active and decrease by 30 for every half second its inactive. (It doesn't subtract correcrly, and currently breaks the economy.)
   __________
   2014-08-20
-  
+
   * Re-created the script for the Hades cumulatively increasing and decreasing its firing upkeep cost, so it now works.
   __________
   2014-08-22
-  
+
   * Updated the descriptions of the Hades and Orbos.
   * Created the UEF Tech 3 Engineering Power Generator.
   * Fixed a long standing bug with the Seraphim Shield Wall test unit, which was preventing it from loading.
   __________
   2014-08-23
-  
+
   * Experiments with giving the Aeon Decoy Plane the category 'SPECIALHIGHPRI' so it gets the shit shot out of it.
   * Changed the Engineering Power Generator script to also check if the instigator was a submarine or dead, for making a torpedo, or nothing respectively.
   * Gave the Engineering Power Generator a siren when it is attacked.
-  * Added the UEF T3 Engineering Mass Fabricator                              
+  * Added the UEF T3 Engineering Mass Fabricator
 __________.__________
 2014-08-08|0.4.7
 
@@ -1753,56 +1769,56 @@ __________.__________
 * Removed the Iyadesu again.
   __________
   2014-08-15
-  
+
   * Cybran Tech 3 Cloakable Power Generator changes.
     * Created a unique model for it.
-    * Gave it a name.      
+    * Gave it a name.
     * Changed its balancing.
     * Added particle effects to its cloak.
   __________
   2014-08-16
-  
+
   * Added a basic UEF Cloakable Power Gen.
   * Added a basic Cybran Cloakable Fab.
 __________.__________
 2014-06-08|0.4.6
-          
+
 * Workaround for the bug that prevents things from propperly assisting a builder that has 0 build rate.
   * Set the mobile anti-nukes to have a build rate of 1 so they are still completely inefectual on their own but can be assisted.
 * Added the Seraphim T3 Mobile Strat Defence.
-* Fixed the collision box of the Aeon T3 Heavy Point Defence.  
+* Fixed the collision box of the Aeon T3 Heavy Point Defence.
   __________
   2014-06-28
-  
+
   * Removed the footprint size from the Gantry built Centurion. It was preventing other things being built infront or behind the Gantry.
   __________
   2014-08-03
-  
+
   * Reduced the build time of mobile anti nuke missles, so they take less engineering power than the units that get one for free.
-  * Added Nihiloid: Aeon Tech 3 Anti-Armour Point Defence.                    
+  * Added Nihiloid: Aeon Tech 3 Anti-Armour Point Defence.
 __________.__________
 2014-01-06|0.4.5
 
 * Corrected problem with fake Centurion not referencing the model of the original propperly.
 * Added icon for fake Centurion.
-* Linked flavour text for the fake Centurion.     
+* Linked flavour text for the fake Centurion.
   __________
   2014-01-18
-  
-  * Added the Guardian; A UEF Static Gauss Cannon. Still needs some work. Not in string tables yet.   
+
+  * Added the Guardian; A UEF Static Gauss Cannon. Still needs some work. Not in string tables yet.
   __________
   2014-01-25
-  
+
   * Moved the Guardian to be buildable only by the currently non existant T3 field engineer.
   * Gave the Guardian a description and added it to the en string tables.
   * Fixed the Guardian crashing the game when it tries to fire.
   * Added A T3 Field engineer to build the Guardian.
   * Made the UEF Nuke mine only buildable by the T3 field engineer.
   * Increased the tarmac size, footprint size, and physics model size of the Guardian.
-  * Reclassified the Guardian as a Anti-Armor Point Defense. 
+  * Reclassified the Guardian as a Anti-Armor Point Defense.
   __________
   2014-01-26
-          
+
   * Added a Cybran T3 Field Engineer. Called House.
   * Made the Cybran Nuke Mine only buildable by House.
   * Added a Cybran T1 Field Engineer. Called Outy.
@@ -1810,61 +1826,61 @@ __________.__________
   * Increased the damage and range of the Custodian, slightly.
   __________
   2014-01-26
-          
+
   * Fixed the Guardian not being able to fire directly north.
   * Added a Seraphim T3 Torpedo Bomber.
   __________
   2014-02-08
-          
+
   * Lowered the health of the Cybran T3 field engineer by 35.
   * Increased the health of the Aeon T3 defence engineer by 5.
   * Added a line of Seraphim fiend engineers. (T1, T2, & T3)
     * The Seraphim now have a way of building their mine.
   __________
   2014-02-09
-          
+
   * Added a Seraphim T3 Anti-Armor Point Defence.
   * Fixed the BlackOps fake weapon crash from the fake Centurion.
   __________
   2014-02-17
-          
+
   * Corrected the Night Skimmer not using default language string tables.
   * Added Aeon T1 & T3 field engineers.
   * Moved the Aeon Nuke mine to be T3 buildable only.
   * Buffed the Seraphim T3 field engineer to have the same build speed as the regular T3 engineer for seraphim.
   __________
   2014-02-18
-          
+
   * Changed the Gantry scripts to move all BlackOps and TotalMeyhem units that fit to be buildable by it.
   * Added a script to change the costs of the BrewLAN T3 torp bombers, gunships, and transports based on the version of FA used.
   * Added the UEF T1 fiend engineer.
   __________
   2014-02-19
-          
-  * Added an icon for the UEF T1 field engineer, and temporary icons for the temporary Aeon T1 & T3 field engineers. 
+
+  * Added an icon for the UEF T1 field engineer, and temporary icons for the temporary Aeon T1 & T3 field engineers.
   * Added the Cybran: Punisher: Tech 3 Anti-Armor Point Defence.
   * Reduced the damage radius and health of the Seraphim T3 AArmorPD.
   * Increased the health of the UEF AArmorPD.
   __________
   2014-02-20
-          
+
   * Moved the decal tarmac textures out of the gamedata folder into the mods folder.
   * Changed the healthbar size and positions of the AArmorPDs.
   __________
   2014-02-21
-          
+
   * Added a LOD1 mesh for the Punisher.
   __________
   2014-02-28
-          
+
   * Re-enabled the Iyadesu, with a total overhaul as an experimental field engineer.
   __________
   2014-03-02
-          
+
   * Increased the tarmac of the T2 and T3 UEF shield generators.
   __________
   2014-03-07
-          
+
   * Added the Hedgehog: Cybran T3 Mobile strat defence. Showcasing my new balance plan for the unit: Build cost includes its only missile, and it is unable to make more unassisted.
   * Adjusted the balance of Aster to match that of the Hedgehog. Specifically:
     * Energy cost from 78750 to 391500.
@@ -1876,19 +1892,19 @@ __________.__________
     * Build time of missile from 259200 to 25920.
   __________
   2014-03-10
-          
+
   * Slightly increased the energy cost and slightly decreased the mass cost and build time of the mobile anti nuke launchers.
   * Changed the description of the mobile ANLs slightly.
   __________
   2014-03-15
-          
+
   * Added Scarab: Aeon Tech 3 Mobile Strategic Missile Defense.
-    * Not fully functioning yet; still lacks animation and bone setups. But it looks nice.  
-  * Listed the ability 'Strategic Missile Defense' for Scarab, Aster, and Hedghog.       
+    * Not fully functioning yet; still lacks animation and bone setups. But it looks nice.
+  * Listed the ability 'Strategic Missile Defense' for Scarab, Aster, and Hedghog.
 __________._________
 2013-08-17|0.4.4
 
-* Changed the implementation for the Galactic Collosus health increase so it doesn't conflict with other mods' GC health changes. 
+* Changed the implementation for the Galactic Collosus health increase so it doesn't conflict with other mods' GC health changes.
 * Fixed the energy drain of the Seraphim and Aeon T3 point defences.
 * Added the Cybran T3 Cloaked Mobile Missile Launcher.
   __________
@@ -1923,11 +1939,11 @@ __________._________
   __________
   2013-12-16
 
-  * More Centurion things.     
+  * More Centurion things.
   __________
   2013-12-19
 
-  * More Centurion things.  
+  * More Centurion things.
   __________
   2013-12-20
 
@@ -1937,7 +1953,7 @@ __________._________
   2014-01-05
 
   * More Centurion things.
-  * Added an engineer built Centurion.  
+  * Added an engineer built Centurion.
 __________._________
 2013-06-01|0.4.2
 
@@ -1964,7 +1980,7 @@ __________._________
     * Pigeon (UEF T1 Gunship)
     * Vulesel (Seraphim T1 Gunship)
     * Seagul (UEF T1 Torpedo bomber)
-    * Impaler (Aeon T2 Bomber)                                                    
+    * Impaler (Aeon T2 Bomber)
   * Changed build mode keys for Othuum.
   * Added build mode key bindings for upgrading the following:
     * Aspis (T1 shield)
@@ -2002,7 +2018,7 @@ __________._________
       Fatboy into the Gantry, had a fake AA weapon with no targetting restrictions
       (because it could never fire it) and BlackOps had a script that tried to
       give all AA weapons a restriction so they couldn't shoot their nuke
-      satelite, which failed when it found a weapon with no restrictions.                                  
+      satelite, which failed when it found a weapon with no restrictions.
 __________._________
 2012-11-04|0.4.1
 
@@ -2015,7 +2031,7 @@ __________._________
   2012-11-07
 
   * Added Orbos, the Aeon T3 Heavy Point Defence.
-  * AM-12 Anti-Armor: UEF Tech 2 Proximity Mine changes:  
+  * AM-12 Anti-Armor: UEF Tech 2 Proximity Mine changes:
     * Increased damage from 1200 to 4500.
     * Lowered the mass cost from 300 to 100.
     * Lowered the build time from 150, to 50. (5 seconds)
@@ -2028,12 +2044,12 @@ __________._________
     * Changed the explosion effects to look more UEF.
   __________
   2012-11-10
-    
+
   * AM-12 Anti-Armor changes:
     * Changed the mesh to be more round.
     * Made more of the mesh visible above ground (For on slopes).
     * Added a submerging animation for while on water.
-    * Fixed its build icon background to display it as amphibious.               
+    * Fixed its build icon background to display it as amphibious.
   * Fixed the slightly out of align build skirt of the pseudo Fatboy.
   * Fixed the targetting beams of the Archimedes not being able to pass through allied shields.
   * Added a LOD1 mesh for the Archimedes.
@@ -2041,7 +2057,7 @@ __________._________
   * Added the seraphim proximity mine. Even though there isn't a Seraphim field engineer yet.
   __________
   2012-11-11
-    
+
   * Jesus christ its been a year since Skyrim came out.
   * Started the long slow process of changing the unit codes from B~~ to S~~.
   * Added the Cybran T2 Energy Storage.
@@ -2050,7 +2066,7 @@ __________._________
   * Created a lod1 mesh for the Solaris.
   __________
   2012-11-12
-    
+
   * Fixed the Solaris only being able to fire its AA in one direction.
     * This wasn't actually that noticable because it used to turn without
       changing where it was flying, but it meant it could only really shoot
@@ -2062,108 +2078,108 @@ __________._________
   * Added 'Bulkhead' a T2 Cybran wall section. Buildable by field engineer.
   __________
   2012-11-13
-    
+
   * Condenced and rewrote parts of blueprints.lua.
   __________
   2012-11-14
-    
+
   * Changed the on killed explosion of the nuke mine to the damage category deathnuke from normal.
     * Gives ACUs and structures a massive resistance to it.
   * Changed the Scathis Mk2's armour class to structure, from experimental.
     * It provides more relevant resistances.
   __________
   2012-11-17
-    
+
   * Fixed the shader and build animation of the Seraphim T2 proxy mine.
   * Fixed an error in the unit statuses doc caused by the SVN being a retard, and updated it.
-  * Added the UEF Nuke Mine.  
+  * Added the UEF Nuke Mine.
   * Increased the health of proxy mines by 5 so they can just about survive the death explosions of SCUs and nuke mines.
   * Made most of the cannons on the Centurion functional.
   __________
   2012-11-18
-    
-  * Fixed the massive bug which made Seraphim, Aeon, and Cybran T1 Land factories be able to build every engineer-capable unit for that faction. Including the Megalith, Iyadesu, and SCUs.                                                                  
+
+  * Fixed the massive bug which made Seraphim, Aeon, and Cybran T1 Land factories be able to build every engineer-capable unit for that faction. Including the Megalith, Iyadesu, and SCUs.
   * Added the Aeon Experimental Assault Tank.
   __________
   2012-11-20
-    
+
   * Changed the unit codes of proximity mines to s~b2221 from s~b2220.
   * Changed other mine stuff around.
   __________
   2012-11-23
-    
+
   * Aeon Experimental Assault Tank changes:
     * Created a new mesh.
     * Increased rate of fire once every 6 seconds from 10.
   __________
   2012-11-24
-    
+
   * Aeon Experimental Assault Tank changes:
     * Improved texture.
     * Tactical Missile Defense added.
-    * Fixed footprint size and some particle effects.   
+    * Fixed footprint size and some particle effects.
   * Changed nuke mines to list as T3, but sort downwards so it stays where it is on the menus.
-    * This way it gets disabled in T2 only games.   
+    * This way it gets disabled in T2 only games.
   * Made a prototype version of the UEF T1 Pressure Mine.
   * Renamed the UEF Nuke mine to AM-36 Trinity, from AM-36 Fatman.
   __________
   2012-11-25
-    
+
   * Corrected a typo in the Novax centre description.
   __________
   2012-11-26
-    
+
   * Improved texture of the Aeon T4 Tank.
   __________
   2012-11-27
-                       
+
   * Aeon Experimental Assault Tank changes:
     * Improved the texture.
     * Aligned some of the texture mapping.
     * Added the Volatile warning to the abilities list.
   __________
   2012-12-01
-  
-  * Changed the Gantry roll off stats.                    
+
+  * Changed the Gantry roll off stats.
   * Aeon Experimental Assault Tank changes:
     * Made texture look complete.
     * Created opening animation.
     * Removed its mass & energy storage ability.
   __________
   2012-12-02
-                 
+
   * Aeon Experimental Assault Tank changes:
     * Fixed the selection area.
     * Updated the icon to the new model.
   __________
   2012-12-(3-4)
-  
-  <Section data missing>  
+
+  <Section data missing>
   __________
   2012-12-05
-                 
+
   * Aeon T3 Point Defence changes:
     * Changed its appearance.
     * Decreased its range slightly.
     * Gave it the ability to target low altitude aircraft (gunships and transports)
-    * Gave it an idle animation.             
-  * Added a section of test script that moves the Total Mayhem mod unit Doomsday into the Gantry.  
+    * Gave it an idle animation.
+  * Added a section of test script that moves the Total Mayhem mod unit Doomsday into the Gantry.
   __________
   2012-12-07
-                 
+
   * Adjusted the tracks of the Wilson.
   * Corrected the selection overlay for the Little Bertha.
   * Fixed the pitch animation of the Little Bertha.
   * Aligned the selection overlay for the Poker.
   * Tightened the build effect overlay of the Poker.
-  * Aligned the selection overlay of the Charis. 
+  * Aligned the selection overlay of the Charis.
   __________
   2012-12-08
-                 
+
   * Added the Seraphim T3 Sonar.
     * Allowed the Seraphim T2 Sonar to upgrade into it.
   * Fixed the blank icons on the idle engineers tab heading for Aeon and Cybran T2 when the field engineers are the only idle engineer.
-    * They still lack entries on the actual list.  
+    * They still lack entries on the actual list.
   * Changed the build sorting of the Gantry to Construction.
   * Changed the build sorting of the Paragon to Economy.
   * Changed the build sorting of the Iron Curtain to Defence.
@@ -2171,10 +2187,10 @@ __________._________
   * Changed the unit codes of all T2 energy and mass storages to S- prefix from b- prefix.
   * Added the Aeon T2 energy storage.
   * Enabled Sorian AI to build and rename the Absolution.
-  * Re-added all the old Sorian names I removed around rev71. 
+  * Re-added all the old Sorian names I removed around rev71.
   __________
   2012-12-09
-                 
+
   * Gantry changes:
     * Changed unit code to new prefix.
     * Allowed it to build engineers while in naval & air modes.
@@ -2182,13 +2198,13 @@ __________._________
     * Gave it a better texture, and team coloured areas.
   __________
   2012-12-10
-                 
+
   * Fixed the dust emitters and partially inverted normal map for the Moldovite.
   * Added a water ripple idle effect for the Absolution.
   * Added a custom tarmac for the Gantry, one that is actually large enough for it.
   __________
   2012-12-10
-                 
+
   * Changed the following unit code prefixes to prevent direct BlackOps unit conflcts:
     * Cybran T3 Point Defence.
     * Seraphim T3 Point Defence.
@@ -2199,12 +2215,12 @@ __________._________
   * Increased the firing tolerance on the Archimedes to prevent it from occasionally not firing.
   __________
   2012-12-15
-                 
+
   * Added scaled explosions to the T2 energy storages. Sucessfully this time.
     * With no power in storage they do next to nothing. Big boom when full.
   __________
   2012-12-16
-                 
+
   * Gantry changes:
     * Added blinking lights.
     * Fixed the targetting bones so things shoot it right.
@@ -2214,33 +2230,33 @@ __________._________
   * Fixed the treadmarks on the Aster.
   __________
   2012-12-17
-                 
+
   * Changed the unit code prefixes of ALL remaining units, fixing a number of errors along the way.
   * Removed the horribly broken Cybran sniper bot.
   __________
   2012-12-19
-                 
+
   * Added the Aeon Proximity and Nuclear mines.
   * Fixed the sound files for the UEF Nuclear mine.
   * Fixed the Seraphim T1 shield not propperly upgrading.
   * Added the Seraphim T2 engineering station line.
   __________
   2012-12-23
-                 
+
   * Added localisation data for the Seraphim engineering stations.
   __________
   2012-12-29
-                 
+
   * Fixed the highest upgrade of Seraphim engy station being able to build itself.
   __________
   2013-01-02
-                 
+
   * Experimented with classifying the Absolution as an aircraft engine side so it floats around better.
   __________
   2013-01-03
-                 
+
   * Started work on the UEF Experimental Drop-Pod Artillery.
-    * Currently uses the model of the Mavor, and only fires Mech Marines.                                                                                                                                            
+    * Currently uses the model of the Mavor, and only fires Mech Marines.
 __________._________
 2011-03-19|0.4.0
 
@@ -2278,93 +2294,93 @@ __________._________
   * Added French localisation; the names and nicknames are probably fine(ish) but the description text is probably pigeon French.
   __________
   2012-09-25
-	
+
   * Fixed the Abyssal Persecutors occasional walk animation speed bugs.
   * Flailed around blindly with the UEF T2 energy storage.
   __________
   2012-09-30
-  
+
   * Minor changes to the UEF T1 shield gen for allowing it to upgrade.
-  * Disabled the UEF T1 shield from upgrading on land.   
+  * Disabled the UEF T1 shield from upgrading on land.
   * Added the UEF T3 Naval shield, only available as an upgrade from the UEF T1 light shield (which is aquatic).
-  * Added some ghetto german and french string tables for the UEF T3 Naval shield.      
+  * Added some ghetto german and french string tables for the UEF T3 Naval shield.
   __________
   2012-10-01
-               
+
   * Increased the max health of the Scathis, to 17500 from 8750.
-  * Shield generator changes:     
+  * Shield generator changes:
     * Fixed the adjacency bonuses of the T1 Aeon & UEF shields, and the UEF T3 Naval shield.
-    * Corrected the abilities list of the Iron Curtain.   
+    * Corrected the abilities list of the Iron Curtain.
     * Cybran shield balancing:
       * Bumped the ED2 down to T1 and removed it from T2 build lists.
-      * Added the ED3 to T2 build lists.       
+      * Added the ED3 to T2 build lists.
       * Increased the max health of the Iron Curtain to 6950 from 4250.
         * It now takes 3 hits from any T3 bomber directly to destroy it, instead of 1-2 (race dependand).
-      * Removed the unlisted radar and sonar from the Iron Curtain.       
+      * Removed the unlisted radar and sonar from the Iron Curtain.
     * T1 UEF Shield gen balancing:
       * Increased the build rate (for upgrading) from 7.5 to 10.
       * Increased the power outage regen time to 5 sec from 3.
       * Increased the damage outage regen time to 10 sec from 7.25.
-      * Increased regen rate to 110 from 80.   
-      * Increased shield size to 14 from 13.         
+      * Increased regen rate to 110 from 80.
+      * Increased shield size to 14 from 13.
     * Aeon T1 shield balancing:
       * Increased regen to 120 from 69.
       * Increased recharge time to 10 from 8.
       * Increased shield strength to 6700 from 5500.
       * Increased size to 11 from 10.
-      * Lowered build costs to 240m 2400e 240t from identical to the T2's.       
+      * Lowered build costs to 240m 2400e 240t from identical to the T2's.
   __________
   2012-10-02
-                  
-  * Part two of shield generator changes:     
+
+  * Part two of shield generator changes:
     * Seraphim T1 shield balancing.
       * Increased health to 250 from 200.
       * Increased shield strength to 8000 from 6500.
       * Increased shield size to 17 from 16.
       * Increased regen rate to 139 from 75.
       * Increased recharge time to 12 from 10.
-      * Increased mass/energy/build time to 400/4000/400 from 350/3500/350.                        
+      * Increased mass/energy/build time to 400/4000/400 from 350/3500/350.
     * Cybran Iron Curtain changes.
       * Halved mass/energy/time/maintenance costs to 1200/200000e/8000/2500eps.
       * Halved the regen assist mult and energy drain regen values back to their original 60 and 5, like all other shields.
-      * Lowered shield rebuild time to 1:30 from 3:40.      
+      * Lowered shield rebuild time to 1:30 from 3:40.
   __________
   2012-10-06
-  
+
   * More random flailing at the T2 Energy storage scaled explosions. Srsly, fuck them.
   * Partially completed a new model for the Aeon T3 Transport. It came out bigger than expected.
   * Rebalanced stats of the Aeon T3 Transport to accomadate for its new size.
   __________
   2012-10-13
-  
+
   * Fixed the Hades' cannon not rotating while firing.
-  * Fixed the Hades' inverted normals.  
+  * Fixed the Hades' inverted normals.
   * Allowed Cerberus to upgrade into Hades, then disallowed it. That shit was crazy OP.
   __________
   2012-10-14
-  
+
   * Gave the Aeon T3 Transport shield active animations and effects, although the particles
     are out of align, the shutter doors don't open yet, and it still has no weapons.
   __________
   2012-10-16
-  
+
   * Gave the Aeon T3 Transport weapons (AA only), fixed the partical effects, and made the shutters hide on built.
   * Fixed the Aeon T3 Transport's rings and ball not starting up again on shield reset.
   __________
   2012-10-17
-  
+
   * Increased the build time of the Aeon T3 Transport.
   * Gave the Aeon T3 Transport a pretty death.
   __________
   2012-10-19
-  
+
   * Reclassified the Abyssal Persecutor as 'Experimental Battleship' instead of 'Experimental Dreadnaught'.
   * Fixed, and gave a slightly more unique appearance to, the Seraphim T3 Point Defence.
   * Gave the damage test unit a mesh. Because that's important enough for the changelog.
   * Cleaned up some un-needed files.
   __________
   2012-10-20
-  
+
   * Fixed the death animation link for the Seraphim T3 Point Defence.
   * Corrected the Solaris' name on the French and German string tables.
   * Added build descriptions for the Seraphim T3 Point Defence.
@@ -2383,46 +2399,46 @@ __________._________
   * Added the UEF Experimental Factory.
   * Temporarily disabled the UEF T4 Factory from building aircraft.
   * Temporarily disabled the UEF T4 Factory from building experimental naval units.
-    * The Atlantis gets stuck attached to it for some reason.    
+    * The Atlantis gets stuck attached to it for some reason.
   * Failed attempt at making the T4 factory accept experimental units propperly.
   __________
   2012-10-21
-  
+
   * Added headers to the language string tables with cheesy ascii art.
   * Minor change to the Sorian ai units table. It needs a propper update still.
   * Removed the Restorer changes for breaking FAF balancing.
-  * Moved 1k health from the Harbingers shields to its health.       
+  * Moved 1k health from the Harbingers shields to its health.
   * UEF Experimental Factory changes:
     * Halved build time.
-      * It is now quicker to build than the Fatboy, instead of longer.  
+      * It is now quicker to build than the Fatboy, instead of longer.
     * Increased build rate from 180 to 240.
       * Its now faster than the Fatboy instead of the same speed.
     * Gave it the name 'Gantry'.
     * Increased the selection width.
   __________
   2012-10-22
-  
+
   * Fixed a number of errors in the foreign string tables.
-  * Added the Aeon T3 naval shield, T2 defence enginner and the Gantry to the string tables.           
+  * Added the Aeon T3 naval shield, T2 defence enginner and the Gantry to the string tables.
   * UEF Gantry changes:
     * Gave build animations.
     * Fixed unit rolloff.
     * Made Air units buildable again.
     * Created a toggle button for between building land/sea and air.
       * Gave the toggle button custom tooltips.
-        * Added tooltips to the localisation string tables.           
+        * Added tooltips to the localisation string tables.
       * Gave the button a custom appearance.
   __________
   2012-10-23
-  
+
   * Moved the Fatboy to be buildable only by the Gantry, for technical reasons.
   * Added a fake Fatboy for engineers to build.
-    * It has all the stats important during building of the real Fatboy.  
+    * It has all the stats important during building of the real Fatboy.
     * When it finishes building it gets replaced by the real one.
       * I'll do the same for the Atlantis when I make a script to make it automatically dive, or otherwise not get stuck.
   __________
   2012-10-24
-  
+
   * Fixed the engineer built Fatboy regaining all its health on completion.
   * Disabled torpedo bombers ability to land on water.
     * While landed on water they wont retaliate automatically against submarines.
@@ -2434,10 +2450,10 @@ __________._________
   * Made a start on the script to change the speed of the Aeon Decoy plane.
   __________
   2012-10-30
-  
+
   * Fixed the string tables for the decoy plane tooltips.
   * Removed the Aster (UEF mobile anti-nuke) from build menus.
-    * It fires missiles it doesn't have, and goes into negative numbers. Forever.   
+    * It fires missiles it doesn't have, and goes into negative numbers. Forever.
   * Changes Archimedes to be listed as indirect fire.
   * Changed stats of the Archimedes to be similar to the Seraphim sniper bot on slow.
   * Gave the Beguiler (Aeon Decoy Plane) a mesh and icon.
@@ -2449,7 +2465,7 @@ __________._________
   * Fixed the Gantry to be able to build Sparky. For reals this time.
   __________
   2012-10-31
-  
+
   * Changed the icon of the Pigeon. Still not happy with it; its at the wrong angle.
   * Archimedes changes:
     * Fixed the strategic icon.
@@ -2463,7 +2479,7 @@ __________._________
   __________
   2012-11-02
 
-  * Lowered the damage of the Aeon T2 bomber from 1925 to 1125.                                                                                                                                       
+  * Lowered the damage of the Aeon T2 bomber from 1925 to 1125.
 __________._________
 2010-05-29|0.3.1a
 
@@ -2803,7 +2819,7 @@ __________.__________
 * Fixed various issues with the Moldovite.
 	__________
 	2009-11-05
-	
+
 	* Compatibility fix regarding the changes to the Salvation.
 	* Changed the menu sort of all experimental buildings.
 	* Replaced the Scathis.

@@ -1,0 +1,41 @@
+PropBlueprint {
+    Categories = {
+        'RECLAIMABLE',
+    },
+    Defense = {
+        Health = 150,
+        MaxHealth = 150,
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                {
+
+                    AlbedoName = 'UEF_Ivan_Droppod_Remains_Albedo.dds',
+                    SpecName = 'UEF_Ivan_Droppod_Remains_SpecTeam.dds',
+                    LODCutoff = 200,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        UniformScale = 0.95,
+    },
+    Economy = {
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 3,
+        ReclaimTime = 1,
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
+    Interface = {
+        HelpText = 'Drop-pod remains',
+    },
+    Physics = {
+        BlockPath = false,
+    },
+    SizeX = 3,
+    SizeY = .5,
+    SizeZ = 3,
+}

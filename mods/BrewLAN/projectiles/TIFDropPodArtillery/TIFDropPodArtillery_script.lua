@@ -1,6 +1,6 @@
 local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArtilleryAntiMatterProjectile02
 local utilities = import('/lua/utilities.lua')
---local Buff = import('/lua/sim/Buff.lua')
+local Buff = import('/lua/sim/Buff.lua')
 TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
 
     FxLandHitScale = 0.2,
@@ -15,65 +15,71 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
         if TargetType == 'Shield' then
             TArtilleryAntiMatterProjectile.OnImpact(self, TargetType, TargetEntity)
             --Damage(self, {0,0,0}, TargetEntity, __blueprints[self.Data].Economy.BuildCostMass, 'Normal')
-            self.DropUnit(self,true)
+            if self.Data then
+                DamageArea(self, self:GetPosition(), self.DamageData.DamageRadius, __blueprints[self.Data[1]].Economy.BuildCostMass * (self.Data[2] or 1) , 'Normal', self.DamageData.DamageFriendly)
+            end
+            --self.DropUnit(self,true)
         else
             TArtilleryAntiMatterProjectile.OnImpact(self, TargetType, TargetEntity)
-                              --Take health off equal to discount. Since debuf doesn't work.
-            self.DropUnit(self, __blueprints.seb2404.Economy.BuilderDiscountMult or 1)
+            self.DropUnit(self)
         end
     end,
         
-    DropUnit = function(self,thing)
-        if self.Data then
-            local pos = self:GetPosition()
-            local AssaultBot = CreateUnitHPR(self.Data,self:GetArmy(),pos[1], pos[2], pos[3],0, math.random(0,360), 0)
-            --Nothing equates to 1 for 'thing' 
-            if type(thing) == 'number' or not thing then
-                if thing then
-                    AssaultBot:SetHealth(AssaultBot,AssaultBot:GetHealth()*thing or 1)
-                end
-                --Although 'thing' of 0 or less is makes for a dead unit
-                if thing > 0 then
-                    --LOG(__blueprints[self.Data].Physics.BuildOnLayerCaps)
-                    --This doesn't work. BuildOnLayerCaps gets replaced with a bitwise opperator. Need to actually parse the number.
-                    --if __blueprints[self.Data].Physics.BuildOnLayerCaps['LAYER_' .. AssaultBot:GetCurrentLayer()]) then
-                        local target = self:GetCurrentTargetPosition()
-                        IssueMove( {AssaultBot},  {target[1] + Random(-3, 3), target[2], target[3]+ Random(-3, 3)} )
-                        
-                        -- For some reason this was causing warnings elsewhere. Maybe the game hates debuf health buffs
-                        --[[local IvanDiscountMult = __blueprints.seb2404.Economy.BuilderDiscountMult or 1
-                        if not Buffs['IvanHealthBuff'] and IvanDiscountMult != 1 then
-                            BuffBlueprint {
-                                Name = 'IvanHealthBuff',
-                                DisplayName = 'IvanHealthBuff',
-                                BuffType = 'IvanHealthBuff',
-                                Stacks = 'ALWAYS',
-                                Duration = -1,
-                                Affects = {
-                                    MaxHealth = {
-                                        Add = 0,
-                                        Mult = IvanDiscountMult,
-                                    },
-                                    Health = {
-                                        Add = 0,
-                                        Mult = IvanDiscountMult,
-                                    },
+    DropUnit = function(self, hitshield)
+        local pos = self:GetPosition()
+        if self.Data[1] then
+            local DroppedUnit = CreateUnitHPR(self.Data[1],self:GetArmy(),pos[1], pos[2], pos[3],0, math.random(0,360), 0)
+            if
+            not hitshield and
+            (
+                -- If we are on land                           and they say land                                             or the bitwise string is odd
+                DroppedUnit:GetCurrentLayer() == "Land" and (__blueprints[self.Data[1]].Physics.BuildOnLayerCaps == "Land" or math.mod(tonumber(__blueprints[self.Data[1]].Physics.BuildOnLayerCaps), 2) == 1)
+                or --or if we are not on land              and the unit doesn't say land                                then it will survive anywhere else since the other options are all "in or on the water"
+                DroppedUnit:GetCurrentLayer() != "Land" and __blueprints[self.Data[1]].Physics.BuildOnLayerCaps != "Land"
+            )
+            then
+                local target = self:GetCurrentTargetPosition()
+                IssueMove( {DroppedUnit},  {target[1] + Random(-3, 3), target[2], target[3]+ Random(-3, 3)} )
+                if self.Data[2] and type(self.Data[2]) == "number" and self.Data[2] != 1 then
+                    local buffname = 'IvanHealthBuff' .. self.Data[2]
+                    if not Buffs[buffname] then
+                        BuffBlueprint {
+                            Name = buffname,
+                            DisplayName = 'IvanHealthBuff',
+                            BuffType = 'IvanHealthBuff',
+                            Stacks = 'ALWAYS',
+                            Duration = -1,
+                            Affects = {
+                                MaxHealth = {
+                                    Add = 0,
+                                    Mult = self.Data[2],
                                 },
-                            }
-                        end
-                        Buff.ApplyBuff(AssaultBot, 'IvanHealthBuff')]]--
-                    --else
-                        --AssaultBot:Kill()
-                    --end
+                                --Health = {   --The 'Health' buff is both unnessessary and bugged
+                                --    Add = 0,
+                                --    Mult = self.Data[2],
+                                --},
+                            },
+                        }
+                    end
+                    --DroppedUnit:SetHealth(self, DroppedUnit:GetMaxHealth() * self.Data[2] )
+                    --DroppedUnit:SetMaxHealth(DroppedUnit:GetMaxHealth() * self.Data[2] )
+                    Buff.ApplyBuff(DroppedUnit, buffname)
                 end
-            elseif thing then
-                AssaultBot:Kill()
+            else
+                --Its landed somewhere it says it shouldn't be
+                DroppedUnit:Kill()
             end
-            --This is another piece of data that should get manually passed through,
-            --But since I have no plans to make this used by anything other than the Ivan, I'm just going to hardlink it.
         else
+            --we were never told what the thing was
             LOG("YOU GET NOTHING. GOOD DAY")
         end
+        --LOG(GetTerrainType(pos[1],pos[3]) )
+        CreateLightParticle(self, -1, self:GetArmy(), 10, 3, 'flare_lens_add_03', 'ramp_white_07' )
+        CreatePropHPR(
+            import( '/lua/game.lua' ).BrewLANPath() .. '/env/uef/props/UEF_Ivan_Droppod_Remains_prop.bp',
+            pos[1], pos[2], pos[3],
+            math.random(0,360), 0, 0
+        )
         self:Kill()
     end,     
 }

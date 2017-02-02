@@ -354,15 +354,14 @@ UEF Centurion: Experimental AA gunship
 
 UEF Ivan: Experimental Drop-Pod Artillery
   * Functionally a factory that deletes the things it makes then adds the unit code to the projectiles which spawn them in the other side.
-    * Needs a way to handle shields propperly either: 
-      * Bouncing off shields.
-      * Or piercing shields and reducing the life of the contents based on the number of shields passed.
-    * Currently kills units that hit a shield.            
+    * Currently kills units that hit a shield; shield damaged by mass value, plus static drop-pod impact value.
     * Range should probably decrease for large ammos.
     * Possibly pass kills of the units back to the cannon?
-    * Has an issue related to restarting skirmish games that can result in 'ghost' units appearing in the next game where it was.
-      * Caused by spawning objects with the ondestroyed call.
-    * Gets a 40% discount on built units. Units spawn with 40% of their health missing.                                                        
+    * Units it has in storage have a chance of being spawned under it if it dies, or is reclaimed.
+      * Causes an issue related to restarting skirmish games that can result in 'ghost' units appearing in the next game where it was.
+        * Caused by spawning objects with the ondestroyed call.
+    * Gets a 40% discount on built units. Units spawn with 40% less max health.
+    * Has no UI representation of what it has ready to fire, but has a visual representation of how much is ready to fire.
         
 UEF Gantry: Experimental Factory
   * Almost completely 100% Fully funtional.

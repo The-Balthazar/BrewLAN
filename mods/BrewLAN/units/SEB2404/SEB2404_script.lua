@@ -39,7 +39,7 @@ SEB2404 = Class(TStructureUnit) {
                 local data = false
                 if self.unit.AmmoList[1] then
                     local num = table.getn(self.unit.AmmoList)
-                    data = self.unit.AmmoList[num]
+                    data = {self.unit.AmmoList[num], self.unit:GetBlueprint().Economy.BuilderDiscountMult or 1 }
                     table.remove(self.unit.AmmoList,num)
                 end  
                 self.unit:HideBone('DropPod', true)
