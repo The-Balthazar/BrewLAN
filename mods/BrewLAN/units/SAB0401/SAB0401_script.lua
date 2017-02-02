@@ -14,41 +14,41 @@ local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 SAB0401 = Class(AAirFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers
---------------------------------------------------------------------------------   
+--------------------------------------------------------------------------------
 
     OnCreate = function(self)
         AAirFactoryUnit.OnCreate(self)
     end,
-           
+
     OnStopBeingBuilt = function(self, builder, layer)
         AAirFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self:ForkThread(self.PlatformRaisingThread)
     end,
-     
+
     OnLayerChange = function(self, new, old)
         AAirFactoryUnit.OnLayerChange(self, new, old)
     end,
-    
-    OnStartBuild = function(self, unitBeingBuilt, order)                    
+
+    OnStartBuild = function(self, unitBeingBuilt, order)
         AAirFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
-    end,      
-           
-    OnStopBuild = function(self, unitBeingBuilt)     
+    end,
+
+    OnStopBuild = function(self, unitBeingBuilt)
         AAirFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-    end,      
-        
+    end,
+
 --------------------------------------------------------------------------------
 -- Button controls
---------------------------------------------------------------------------------  
-          
+--------------------------------------------------------------------------------
+
     OnScriptBitSet = function(self, bit)
         AAirFactoryUnit.OnScriptBitSet(self, bit)
     end,
-    
+
     OnScriptBitClear = function(self, bit)
         AAirFactoryUnit.OnScriptBitClear(self, bit)
     end,
-              
+
     OnPaused = function(self)
         AAirFactoryUnit.OnPaused(self)
         self:StopBuildFx(self:GetFocusUnit())
@@ -60,10 +60,10 @@ SAB0401 = Class(AAirFactoryUnit) {
             self:StartBuildFx(self:GetFocusUnit())
         end
     end,
-      
+
 --------------------------------------------------------------------------------
 -- Animations
---------------------------------------------------------------------------------  
+--------------------------------------------------------------------------------
 
     StartBuildFx = function(self, unitBeingBuilt)
         if not unitBeingBuilt then
@@ -72,7 +72,7 @@ SAB0401 = Class(AAirFactoryUnit) {
         local thread = self:ForkThread( self.CreateAeonFactoryBuildingEffects, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, 'Attachpoint', self.BuildEffectsBag )
         unitBeingBuilt.Trash:Add( thread )
     end,
-    
+
     --StopBuildFx = function(self)
     --end,
 
@@ -88,13 +88,19 @@ SAB0401 = Class(AAirFactoryUnit) {
         local pMaxHeight = 32
 
         local unitBeingBuilt
+        local buildState = 'start'
         local uBBF
         local pSliderPos
         local bSliderPos
         while self do
             unitBeingBuilt = self:GetFocusUnit()
             if unitBeingBuilt then
-                uBBF = unitBeingBuilt:GetFractionComplete()
+                if buildState == 'start' or buildState == 'active' then
+                    uBBF = math.max(unitBeingBuilt:GetFractionComplete() - 0.8, 0) * 5
+                    buildState = 'active'
+                else
+                    uBBF = 1
+                end
                 pSliderPos = uBBF * pMaxHeight
                 if math.random(1,15) == 10 then
                     --bRotator:SetGoal(math.random(1,3) * 22.5 - 22.5 )
@@ -106,7 +112,13 @@ SAB0401 = Class(AAirFactoryUnit) {
                     end
                 end
             else
-                pSliderPos = 0
+                WaitTicks(3) -- If there is something building after 3 ticks, then assume inf build and stay up.
+                if (buildState == 'active' or buildState == 'repeat') and self:GetFocusUnit() then
+                    buildState = 'repeat'
+                else
+                    buildState = 'start'
+                    pSliderPos = 0
+                end
             end
             pSlider:SetGoal(0,pSliderPos,0)
             WaitTicks(1)

@@ -76,6 +76,10 @@ __________.__________
   * Corrected a bunch of typos in the first part of the changelog.
   * Damage Numbers: A new mod that makes damage numbers appear.
     * Currently only works for your units taking damage.
+  * Damage Numbers: Now shows both damage taken and dealt on self, as a workaround for the entity text only appearing for the controller.
+  * Damage Numbers: Added a random quantity of spaces (0-5) either side of the number so they are sometimes off center.
+  * Independence Engine now only moves its platform for the last 20% of the first unit in its queue.
+    * It can't be assisted while the platform is moving, so this is a workaround compromise between function and aesthetics.
 __________.__________
 2016-12-15|0.7.5.5
 
