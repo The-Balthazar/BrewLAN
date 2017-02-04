@@ -1,32 +1,23 @@
 UnitBlueprint {
-    AI = {
-        GuardScanRadius = 70,
-        StagingPlatformScanRadius = 70,
-    },
     Audio = {
         Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Killed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
+            Bank = 'UELDestroy',
+            Cue = 'UEB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         ShieldOff = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB4202_Activate',
+            Bank = 'UEB',
+            Cue = 'UEB4202_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         ShieldOn = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB4202_Activate',
+            Bank = 'UEB',
+            Cue = 'UEB4202_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'Aeon_Select_Structure',
+            Cue = 'UEF_Select_Gun',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -36,7 +27,7 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
-        'AEON',
+        'UEF',
         'STRUCTURE',
         'DEFENSE',
         'EXPERIMENTAL',
@@ -60,34 +51,18 @@ UnitBlueprint {
         MaxHealth = 6950,
         RegenRate = 0,
         Shield = {
-            ImpactEffects = 'AeonShieldHit01',
+            ImpactEffects = 'UEFShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
-            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            Mesh = '/effects/entities/Shield01/Shield01_mesh',
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 180000,
-            ShieldRechargeTime = 100,
-            ShieldRegenRate = 300,
+            ShieldMaxHealth = 150000,
+            ShieldRechargeTime = 95,
+            ShieldRegenRate = 262,
             ShieldRegenStartTime = 1,
-            ShieldSize = 7.9,
-            ShieldVerticalOffset = 0,
-            ShieldProjectionRadius = 70,
-            ShieldTargetBeam = '/effects/emitters/collossus_tractor_beam_01_emit.bp',
-        },
-        TargetShield = {
-            ImpactEffects = 'AeonShieldHit01',
-            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
-            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
-            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
-            RegenAssistMult = 60,
-            ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 180000,
-            ShieldRechargeTime = 110,
-            ShieldRegenRate = 300,
-            ShieldRegenStartTime = 1,
-            ShieldSize = 10,
-            ShieldVerticalOffset = 0,
+            ShieldSize = 88,
+            ShieldVerticalOffset = -22,
         },
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -95,9 +70,9 @@ UnitBlueprint {
     Description = '<LOC srb4401>Experimental Shield Generator',
     Display = {
         AINames = {
-            'Bubblegum Palace',
-            'Shield Tower',
-            'Bubble Tea',
+            'Pulsar',
+            'BFS - Pulse',
+            'Nul',
         },
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
@@ -107,11 +82,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 200,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Unit',
                 },
             },
         },
@@ -119,11 +90,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 12.8,
-                Normal = 'Tarmacs/Tar12x_aeon_01_normals',
+                Albedo = '/env/Common/decals/Tarmacs/Tar12x_01_albedo.dds',
+                Normal = '/env/Common/decals/Tarmacs/Tar12x_01_normals.dds',
                 Orientations = {
                     0,
                     90,
@@ -134,15 +105,15 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
-        UniformScale = 0.115,
+        UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 440000*.5,
-        BuildCostMass = 24000*.5,
-        BuildTime = 16000*.5,
+        BuildCostEnergy = 250000,
+        BuildCostMass = 15000,
+        BuildTime = 9375,
         MaintenanceConsumptionPerSecondEnergy = 2500,
         RebuildBonusIds = {
-            'sab4401',
+            'seb4401',
         },
     },
     Footprint = {
@@ -167,7 +138,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'Aeon',
+        FactionName = 'UEF',
         Icon = 'land',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {
@@ -180,7 +151,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitName = '<LOC sab4401_name>Pillar of Prominence',
+        UnitName = '<LOC seb4401_name>BFS - Nullifier',
         UnitWeight = 1,
     },
     Intel = {
