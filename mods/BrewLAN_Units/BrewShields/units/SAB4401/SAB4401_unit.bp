@@ -56,8 +56,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 200,
-        Health = 6950,
-        MaxHealth = 6950,
+        Health = 4200,
+        MaxHealth = 4200,
         RegenRate = 0,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
@@ -139,8 +139,8 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 440000*.5,
         BuildCostMass = 24000*.5,
-        BuildTime = 16000*.5,
-        MaintenanceConsumptionPerSecondEnergy = 2500,
+        BuildTime = 18000*.5,
+        MaintenanceConsumptionPerSecondEnergy = 1500,
         RebuildBonusIds = {
             'sab4401',
         },

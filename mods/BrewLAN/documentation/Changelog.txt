@@ -80,15 +80,28 @@ __________.__________
   * Damage Numbers: Added a random quantity of spaces (0-5) either side of the number so they are sometimes off center.
   * Independence Engine now only moves its platform for the last 20% of the first unit in its queue.
     * It can't be assisted while the platform is moving, so this is a workaround compromise between function and aesthetics.
-    __________
-    2017-02-04
+  __________
+  2017-02-04
 
-    * Bubble Tea: Added a UEF Experimental Shield.
-    * Bubble Tea: Aeon shield changes:
-      * Energy cost up to 220000 from 200000.
-      * Recharge time down to 100 from 110.
-      * Regen rate 300 from 280.
-      * Radius up to 70 from 60.
+  * Bubble Tea: Added a UEF Experimental Shield.
+  * Bubble Tea: Aeon shield changes:
+    * Energy cost up to 220000 from 200000.
+    * Recharge time down to 100 from 110.
+    * Regen rate 300 from 280.
+    * Radius up to 70 from 60.
+    * Built time 9000 from 8000.
+  __________
+  2017-02-05
+
+  * Bubble Tea: UEF Shield changes:
+    * New AI names.
+    * New name in English strings (default still the same).
+    * Health up to 7000 from 6950.
+    * Maintenance cost down to 2000 from 2500.
+  * Bubble Tea: Aeon shield changes:
+    * Health down to 4200 from 6950.
+    * Maintenance cost down to 1600 from 2500.
+
 __________.__________
 2016-12-15|0.7.5.5
 
