@@ -101,6 +101,10 @@ __________.__________
   * Bubble Tea: Aeon shield changes:
     * Health down to 4200 from 6950.
     * Maintenance cost down to 1600 from 2500.
+  __________
+  2017-02-07
+
+  * BrewUI: Now looks for textures in the BrewLAN directory.
 
 __________.__________
 2016-12-15|0.7.5.5
