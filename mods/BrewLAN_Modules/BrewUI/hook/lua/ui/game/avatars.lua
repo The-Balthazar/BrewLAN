@@ -100,7 +100,7 @@ function CreateIdleTab(unitData, id, expandFunc, ...)
                         if table.getn(sortedFactories[curCat][i]) > 0 then
                             if needIcon then
                                 if
-                                  string.lower(string.sub(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],1,7)) == '/icons/'
+                                  string.lower(string.sub(Factions[currentFaction].IdleFactoryTextures[categoryTable[curCat]][i],1,7)) == '/icons/'
                                 and
                                   DiskGetFileInfo('/textures/ui/common'..Factions[currentFaction].IdleFactoryTextures[categoryTable[curCat]][i])
                                 then
