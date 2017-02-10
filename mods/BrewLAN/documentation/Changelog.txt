@@ -110,6 +110,10 @@ __________.__________
   2017-02-08
 
   * BrewUI: Fixed the broken factory idle tab from yesterdays change.
+  __________
+  2017-02-09
+
+  * Added a UEF T3 mobile AA. Stats temporary.
 __________.__________
 2016-12-15|0.7.5.5
 
