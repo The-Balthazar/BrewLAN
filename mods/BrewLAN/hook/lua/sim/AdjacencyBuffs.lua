@@ -1,6 +1,6 @@
-##################################################################
-## TIER 2 ENERGY STORAGE
-##################################################################
+------------------------------------------------------------------
+-- TIER 2 ENERGY STORAGE
+------------------------------------------------------------------
 
 T2EnergyStorageAdjacencyBuffs = {
     'T2EnergyStorageEnergyProductionBonusSize4',
@@ -10,9 +10,9 @@ T2EnergyStorageAdjacencyBuffs = {
     'T2EnergyStorageEnergyProductionBonusSize20',
 }
 
-##################################################################
-## ENERGY PRODUCTION BONUS - TIER 2 ENERGY STORAGE
-##################################################################
+------------------------------------------------------------------
+-- ENERGY PRODUCTION BONUS - TIER 2 ENERGY STORAGE
+------------------------------------------------------------------
 
 BuffBlueprint {
     Name = 'T2EnergyStorageEnergyProductionBonusSize4',
@@ -104,9 +104,9 @@ BuffBlueprint {
     },
 }
 
-##################################################################
-## TIER 2 MASS STORAGE
-##################################################################
+------------------------------------------------------------------
+-- TIER 2 MASS STORAGE
+------------------------------------------------------------------
 
 T2MassStorageAdjacencyBuffs = {
     'T2MassStorageMassProductionBonusSize4',
@@ -116,9 +116,9 @@ T2MassStorageAdjacencyBuffs = {
     'T2MassStorageMassProductionBonusSize20',
 }
 
-##################################################################
-## MASS PRODUCTION BONUS - TIER 2 MASS STORAGE
-##################################################################
+------------------------------------------------------------------
+-- MASS PRODUCTION BONUS - TIER 2 MASS STORAGE
+------------------------------------------------------------------
 
 BuffBlueprint {
     Name = 'T2MassStorageMassProductionBonusSize4',
@@ -210,9 +210,9 @@ BuffBlueprint {
     },
 }
 
-##################################################################
-## GANTRY SIZE 30 PRODUCTION BONUSES
-##################################################################
+------------------------------------------------------------------
+-- GANTRY SIZE 30 PRODUCTION BONUSES
+------------------------------------------------------------------
 
 BuffBlueprint {
     Name = 'T1PowerEnergyBuildBonusSize30',
@@ -304,7 +304,6 @@ BuffBlueprint {
     },
 }
 
-
 BuffBlueprint {
     Name = 'T3MEXMassBuildBonusSize30',
     DisplayName = 'T3MEXMassBuildBonus',
@@ -364,20 +363,60 @@ do
     table.insert(T1PowerGeneratorAdjacencyBuffs, 'T1PowerEnergyBuildBonusSize30')
     table.insert(T2PowerGeneratorAdjacencyBuffs, 'T2PowerEnergyBuildBonusSize30')
     table.insert(T3PowerGeneratorAdjacencyBuffs, 'T3PowerEnergyBuildBonusSize30')
-    
+
     table.insert(HydrocarbonAdjacencyBuffs, 'T2PowerEnergyBuildBonusSize30')
-    
+
     table.insert(T1MassExtractorAdjacencyBuffs, 'T1MEXMassBuildBonusSize30')
     table.insert(T2MassExtractorAdjacencyBuffs, 'T2MEXMassBuildBonusSize30')
-    table.insert(T3MassExtractorAdjacencyBuffs, 'T3MEXMassBuildBonusSize30')  
-    
-    table.insert(T1MassFabricatorAdjacencyBuffs, 'T1FabricatorMassBuildBonusSize30') 
+    table.insert(T3MassExtractorAdjacencyBuffs, 'T3MEXMassBuildBonusSize30')
+
+    table.insert(T1MassFabricatorAdjacencyBuffs, 'T1FabricatorMassBuildBonusSize30')
     table.insert(T3MassFabricatorAdjacencyBuffs, 'T3FabricatorMassBuildBonusSize30')
 end
-     
-##################################################################
-## PARAGON ADJACENCY BONUSES BECAUSE WHY NOT
-##################################################################
+
+------------------------------------------------------------------
+-- GANTRY AI CHEAT BUFFS - Not actually adjacency buffs.
+------------------------------------------------------------------
+
+BuffBlueprint {
+    Name = 'GantryAIBaseBonus',
+    DisplayName = 'GantryAIBaseBonus',
+    BuffType = 'GANTRYBASICBONUS',
+    Stacks = 'REPLACE',
+    Duration = -1,
+    Affects = {
+        BuildRate = {
+            Add = 0,
+            Mult = 2.5,
+        },
+    },
+}
+
+BuffBlueprint {
+    Name = 'GantryAIxBaseBonus',
+    DisplayName = 'GantryAIxBaseBonus',
+    BuffType = 'GANTRYBASICBONUS',
+    Stacks = 'REPLACE',
+    Duration = -1,
+    Affects = {
+        BuildRate = {
+            Add = 0,
+            Mult = 2.5,
+        },
+        EnergyActive = {
+            Add = -0.5,
+            Mult = 1,
+        },
+        MassActive = {
+            Add = -0.5,
+            Mult = 1,
+        },
+    },
+}
+
+------------------------------------------------------------------
+-- PARAGON ADJACENCY BONUSES BECAUSE WHY NOT
+------------------------------------------------------------------
 
 ParagonAdjacencyBuffs = {
     'ParagonEnergyBuildBonus',
@@ -385,8 +424,8 @@ ParagonAdjacencyBuffs = {
     'ParagonEnergyWeaponBonus',
     'ParagonRateOfFireBonus',
     'ParagonMassBuildBonus',
-}  
-   
+}
+
 BuffBlueprint {
     Name = 'ParagonEnergyBuildBonus',
     DisplayName = 'ParagonEnergyBuildBonus',
@@ -458,7 +497,7 @@ BuffBlueprint {
         },
     },
 }
-    
+
 BuffBlueprint {
     Name = 'ParagonMassBuildBonus',
     DisplayName = 'ParagonMassBuildBonus',
@@ -476,4 +515,3 @@ BuffBlueprint {
         },
     },
 }
-

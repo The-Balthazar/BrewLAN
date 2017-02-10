@@ -57,7 +57,7 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
         'GATE',
-    }, 
+    },
     CollisionOffsetY = -2,
     Defense = {
         AirThreatLevel = 0,
@@ -261,13 +261,13 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,       
+        MaxSteerForce = 0,
         --MeshExtentsOffsetY = -2,
         --MeshExtentsX = 1.5,
         --MeshExtentsY = 0.25,
         --MeshExtentsZ = 1,
         MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',   
+        MotionType = 'RULEUMT_None',
         OccupyRects = {
 
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
@@ -337,9 +337,9 @@ UnitBlueprint {
         SkirtSizeX = 30,
         SkirtSizeZ = 30,
         TurnRate = 0,
-    },         
+    },
     --SelectionMeshScaleX = 0.5,
-    --SelectionMeshScaleZ = 0.5,   
+    --SelectionMeshScaleZ = 0.5,
     --SelectionMeshUseTopAmount = 0.15,
     SelectionSizeX = 20,
     SelectionSizeZ = 20,

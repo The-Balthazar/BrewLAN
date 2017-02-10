@@ -7,14 +7,14 @@ do
 
 local OldModBlueprints = ModBlueprints
 
-function ModBlueprints(all_blueprints)         
+function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
-    
+
     ExperimentalIconOverhaul(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
--- Icon modifications the hardcore way. May make a UI only version later. 
+-- Icon modifications the hardcore way. May make a UI only version later.
 --------------------------------------------------------------------------------
 
 function ExperimentalIconOverhaul(all_bps)
@@ -31,7 +31,7 @@ function ExperimentalIconOverhaul(all_bps)
         if bp.StrategicIconName == 'icon_experimental_generic' and bp.Categories and type(bp.Categories[1]) == "string" then
             local icon = 'icon_experimental_'
             --------------------------------------------------------------------
-            -- Define background shape 
+            -- Define background shape
             --------------------------------------------------------------------
             if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'MOBILE') then
                 if bp.Air.Winged then
@@ -50,7 +50,7 @@ function ExperimentalIconOverhaul(all_bps)
                     icon = icon .. 'sub_'
                 else
                     icon = icon .. 'ship_'
-                end    
+                end
             elseif table.find(bp.Categories, 'LAND') and table.find(bp.Categories, 'MOBILE') then
                 if table.find(bp.Categories, 'FACTORY') then
                     icon = icon .. 'mobilefactory_'
@@ -67,9 +67,9 @@ function ExperimentalIconOverhaul(all_bps)
             elseif table.find(bp.Categories, 'TRANSPORTATION') then
                 icon = icon .. 'transport'
             elseif table.find(bp.Categories, 'ANTIARTILLERY') then
-                icon = icon .. 'antiartillery'  
+                icon = icon .. 'antiartillery'
             elseif table.find(bp.Categories, 'ANTISHIELD') then
-                icon = icon .. 'antishield'     
+                icon = icon .. 'antishield'
             elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') and (bp.Intel.CloakFieldRadius or bp.Intel.RadarStealthFieldRadius or bp.Intel.SonarStealthFieldRadius) then --Prioritise counterintel over weapon if it has a field generator
                 icon = icon .. 'counterintel'
             elseif (
@@ -84,12 +84,12 @@ function ExperimentalIconOverhaul(all_bps)
                 or table.find(bp.Categories, 'NUKE')
                 or table.find(bp.Categories, 'SILO')
             )
-            and bp.Weapon then 
+            and bp.Weapon then
                 --FIGHT FOR YOUR ICON! LITERALLY!
                 local layer = {
                     air = {0, 'antiair'},
                     artillery = {0, 'artillery'},
-                    land = {0, 'directfire'}, 
+                    land = {0, 'directfire'},
                     naval = {0, 'antinavy'},
                     missile = {0, 'missile'},
                     kamikaze = {0, 'bomb'},
@@ -98,8 +98,12 @@ function ExperimentalIconOverhaul(all_bps)
                     ------------------------------------------------------------
                     -- Damage per second calculation, biased towards high damage
                     ------------------------------------------------------------
-                    local function DPS(weapon) 
-                        return (math.pow((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0), 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10))
+                    local function DPS(weapon)
+                        return (math.pow((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0), 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10)) * (weapon.BeamLifetime or 1)
+                    end
+
+                    local function RealDPS(weapon)
+                        return ((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10)) * (weapon.BeamLifetime or 1)
                     end
                     ------------------------------------------------------------
                     -- String sanitisation and case desensitising
@@ -115,6 +119,9 @@ function ExperimentalIconOverhaul(all_bps)
                     local sanRcat = SAN(weapon.RangeCategory)
                     if string.find(sanWcat, 'anti air') or sanRcat == 'uwrc_antiair' then
                         layer.air[1] = layer.air[1] + DPS(weapon)
+                        if id == 'sea0401' then
+                          LOG("Centurion DPS " .. RealDPS(weapon))
+                        end
                     elseif sanRcat == 'uwrc_indirectfire' or string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile') then
                         if string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') then
                             layer.artillery[1] = layer.artillery[1] + DPS(weapon)
@@ -133,9 +140,9 @@ function ExperimentalIconOverhaul(all_bps)
                 for l, data in layer do
                     if data[1] > best[1] then best = data end
                 end
-                icon = icon .. best[2]   
+                icon = icon .. best[2]
             elseif table.find(bp.Categories, 'ANTIMISSILE') then
-                icon = icon .. 'antimissile'     
+                icon = icon .. 'antimissile'
             elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') then
                 icon = icon .. 'counterintel'
             elseif table.find(bp.Categories, 'CARRIER') or table.find(bp.Categories, 'AIRSTAGINGPLATFORM') then
@@ -161,8 +168,8 @@ function ExperimentalIconOverhaul(all_bps)
                     'NAVAL',
                 }
                 local bits = {'0','0','0'}
-                if bp.Economy.BuildableCategory and type(bp.Economy.BuildableCategory[1]) == "string" then 
-                    for i, layer in buildlayers do   
+                if bp.Economy.BuildableCategory and type(bp.Economy.BuildableCategory[1]) == "string" then
+                    for i, layer in buildlayers do
                         for _, buildcat in bp.Economy.BuildableCategory do
                             if string.find(buildcat, layer) then
                                 bits[i] = '1'
@@ -178,7 +185,7 @@ function ExperimentalIconOverhaul(all_bps)
                     icon = icon .. 'air'
                 elseif sbits == '001' then
                     icon = icon .. 'naval'
-                else  
+                else
                     icon = icon .. 'generic'
                 end
             else

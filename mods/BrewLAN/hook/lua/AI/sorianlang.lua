@@ -17,7 +17,7 @@ AINames.sal0401 = {
     'Sniper',
 }
 --------------------------------------------------------------------------------
--- Gantry: Experimental Factory                                                
+-- Experimental Factorys
 --------------------------------------------------------------------------------
 AINames.seb0401 = {
     'Tentacles',
@@ -28,11 +28,27 @@ AINames.seb0401 = {
     'Craneyard',
     'Foundry',
     'Octavius',
-   'Legion HQ',
-   'Forge',
-   'Factory',
-   'Legion Academy',
+    'Legion HQ',
+    'Forge',
+    'Factory',
+    'Legion Academy',
     'Robots \'R\' Us',
+    'La Creperie',
+}
+
+AINames.sab0401 = {
+    'Area 51',
+    'CZARs \'R\' Us',
+    'Dome',
+    'Gas Tower',
+    'Smith\'s Bane',
+    'Foundry',
+    'Octavius',
+    'Donut Factory',
+    'Forge',
+    'Factory',
+    'Land Hog',
+    'Donuts \'R\' Us',
     'La Creperie',
 }
 --------------------------------------------------------------------------------

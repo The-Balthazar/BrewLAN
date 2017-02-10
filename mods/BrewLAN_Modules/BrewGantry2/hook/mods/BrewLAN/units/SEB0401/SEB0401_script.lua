@@ -2,10 +2,8 @@
 --  Summary:  The Gantry script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-
-local TLandFactoryUnit = SEB0401
-local Utilities = import('/lua/utilities.lua')
-local Buff = import('/lua/sim/Buff.lua')
+do
+local SEB0401OLD = SEB0401
 local timeDiv = 300
 local timeExp = 2
 local timeCo = .2
@@ -15,35 +13,30 @@ local massCo = .5
 local massIncrement = 100
 local energyIncrement = 1000
 
-SEB0401 = Class(TLandFactoryUnit) {
+SEB0401 = Class(SEB0401OLD) {
 --------------------------------------------------------------------------------
 -- AI Cheats -- This script is triggered each time it starts building
 --------------------------------------------------------------------------------
-    AIxCheats = function(self)
+    AICheats = function(self)
         local aiBrain = self:GetAIBrain()
         ------------------------------------------------------------------------
         -- Default hax, from BrewLAN actual
         ------------------------------------------------------------------------
-        TLandFactoryUnit.AIxCheats(self)
+        SEB0401OLD.AIxCheats(self)
         ------------------------------------------------------------------------
         -- AIX cheats
         ------------------------------------------------------------------------
-        if aiBrain.BrainType != 'Human' then
-            if aiBrain.CheatEnabled then
-                -- AI supah4x0r
-                self.massIncome = (self.massIncome or 0) + massIncrement
-                self.energyIncome = (self.energyIncome or 0) + energyIncrement
-                local timeAlive = GetGameTimeSeconds() - self.Time
-                local enemyMass = self:CalculateEnemyMass(self)
-                local timeMultiplier = timeCo * math.pow(timeAlive / timeDiv, timeExp)
-                local massMultiplier = massCo * math.pow(enemyMass / massDiv, massExp)
-                local totalMultiplier = 1 + timeMultiplier + massMultiplier
-                local buildRate = self:GetBlueprint().Economy.BuildRate * (math.min(totalMultiplier, 16))
-                self:SetBuildRate(buildRate)
-            else
-                -- Regular minor AI cheats
-                self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 2.5)
-            end
+        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
+            -- AI supah4x0r
+            self.massIncome = (self.massIncome or 0) + massIncrement
+            self.energyIncome = (self.energyIncome or 0) + energyIncrement
+            local timeAlive = GetGameTimeSeconds() - self.Time
+            local enemyMass = self:CalculateEnemyMass(self)
+            local timeMultiplier = timeCo * math.pow(timeAlive / timeDiv, timeExp)
+            local massMultiplier = massCo * math.pow(enemyMass / massDiv, massExp)
+            local totalMultiplier = 1 + timeMultiplier + massMultiplier
+            local buildRate = self:GetBlueprint().Economy.BuildRate * (math.min(totalMultiplier, 16))
+            self:SetBuildRate(buildRate)
         end
     end,
 
@@ -59,7 +52,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
+        SEB0401OLD.OnStopBeingBuilt(self, builder, layer)
         self.AIStartOrders(self)
         local aiBrain = self:GetAIBrain()
         if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
@@ -83,3 +76,4 @@ SEB0401 = Class(TLandFactoryUnit) {
 }
 
 TypeClass = SEB0401
+end

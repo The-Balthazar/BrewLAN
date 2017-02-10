@@ -98,12 +98,12 @@ UnitBlueprint {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
                 },
-                {
+                --[[{
                     AlbedoName = 'ual0205_lod1_albedo.dds',
                     LODCutoff = 215,
                     ShaderName = 'Aeon',
                     SpecularName = 'ual0205_lod1_specteam.dds',
-                },
+                },]]--
             },
         },
         MovementEffects = {

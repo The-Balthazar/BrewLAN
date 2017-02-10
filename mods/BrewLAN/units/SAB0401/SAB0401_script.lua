@@ -1,12 +1,11 @@
 --------------------------------------------------------------------------------
---  Summary:  The Gantry script
+--  Summary:  The Independence Engine script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-
 local AAirFactoryUnit = import('/lua/aeonunits.lua').AAirFactoryUnit
 --local explosion = import('/lua/defaultexplosions.lua')
 --local Utilities = import('/lua/utilities.lua')
---local Buff = import('/lua/sim/Buff.lua')
+local Buff = import('/lua/sim/Buff.lua')
 local CreateAeonCommanderBuildingEffects = import('/lua/EffectUtilities.lua').CreateAeonCommanderBuildingEffects
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
@@ -15,14 +14,15 @@ SAB0401 = Class(AAirFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers
 --------------------------------------------------------------------------------
-
     OnCreate = function(self)
         AAirFactoryUnit.OnCreate(self)
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
+        self.AIStartCheats(self)
         AAirFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self:ForkThread(self.PlatformRaisingThread)
+        self.AIStartOrders(self)
     end,
 
     OnLayerChange = function(self, new, old)
@@ -30,17 +30,17 @@ SAB0401 = Class(AAirFactoryUnit) {
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
+        self.AICheats(self)
         AAirFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         AAirFactoryUnit.OnStopBuild(self, unitBeingBuilt)
+        self.AIControl(self, unitBeingBuilt)
     end,
-
 --------------------------------------------------------------------------------
 -- Button controls
 --------------------------------------------------------------------------------
-
     OnScriptBitSet = function(self, bit)
         AAirFactoryUnit.OnScriptBitSet(self, bit)
     end,
@@ -60,11 +60,56 @@ SAB0401 = Class(AAirFactoryUnit) {
             self:StartBuildFx(self:GetFocusUnit())
         end
     end,
+--------------------------------------------------------------------------------
+-- AI control
+--------------------------------------------------------------------------------
+    AIStartOrders = function(self)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain.BrainType != 'Human' then
+            --self.engineers = {}
+            self.Time = GetGameTimeSeconds()
+            --self.BuildModeChange(self)
+            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+            local AINames = import('/lua/AI/sorianlang.lua').AINames
+            if AINames.sab0401 then
+                local num = Random(1, table.getn(AINames.sab0401))
+                self:SetCustomName(AINames.sab0401[num])
+            end
+        end
+    end,
 
+    AIControl = function(self, unitBeingBuilt)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain.BrainType != 'Human' then
+            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+        end
+    end,
+
+    ChooseExpimental = function(self)
+        --Nothing fancy yet. CZARs. CZARs for days.
+        if self:CanBuild('uaa0310') then
+            return 'uaa0310'
+        end
+    end,
+  --------------------------------------------------------------------------------
+  -- AI Cheats
+  --------------------------------------------------------------------------------
+    AIStartCheats = function(self)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain.BrainType != 'Human' then
+            if aiBrain.CheatEnabled then
+                Buff.ApplyBuff(self, 'GantryAIxBaseBonus')
+            else
+                Buff.ApplyBuff(self, 'GantryAIBaseBonus')
+            end
+        end
+    end,
+
+    AICheats = function(self)
+    end,
 --------------------------------------------------------------------------------
 -- Animations
 --------------------------------------------------------------------------------
-
     StartBuildFx = function(self, unitBeingBuilt)
         if not unitBeingBuilt then
             unitBeingBuilt = self:GetFocusUnit()

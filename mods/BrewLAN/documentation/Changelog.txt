@@ -114,6 +114,18 @@ __________.__________
   2017-02-09
 
   * Added a UEF T3 mobile AA. Stats temporary.
+  __________
+  2017-02-10
+
+  * Lucky Dip: Updated with T3 Mobile AAs for BlOps and FAF.
+  * Lucky Dip: Moved unit table outside of function so it can be hooked.
+  * Damage Numbers: No longer causes errors if something dies.
+  * Added AI control for the Independence Engine.
+  * Gantry now uses buffs for the AI cheats instead of direct modifiers.
+  * Gantry AIxs 1 & 2: Reformatted and rebalanced for new Gantry code.
+  * Gantry AIx 3: Same as 2, except it gives discounts instead of resources.
+  * AI names for Independence Engine added.
+  * EIO: Added Beam lifetime to the calculation.
 __________.__________
 2016-12-15|0.7.5.5
 

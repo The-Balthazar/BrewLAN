@@ -54,7 +54,7 @@ Gameplay: (Alter gameplay in a fixed way)
 
   Waterlag
   * Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental.
-  * Spawns an entity that looks like legs underneath UEF and Cybran buildings that were made aquatic by waterlag and dont have defined floatation bones.
+  * Spawns an entity that looks like legs underneath UEF and Cybran buildings that were made aquatic by waterlag and don't have defined floatation bones.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 RNG bullshit: (Alter gameplay with random effects)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -473,7 +473,7 @@ Modded Units:
 
     Experimental Buildings
       * Added appropriate build menu sorting.
-        * This seperates them from the mobile experimentals.
+        * This separates them from the mobile experimentals.
           * Seraphim already did this.
 
     Support Commanders
