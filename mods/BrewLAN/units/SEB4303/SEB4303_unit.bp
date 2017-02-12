@@ -51,7 +51,7 @@ UnitBlueprint {
             AntiArtilleryShield = true,
             ImpactEffects = 'UEFAntiArtilleryShieldHit01',         
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
-            Mesh = '/effects/entities/DEB4303AntiArtilleryShield01/DEB4303AntiArtilleryShield01_mesh',
+            Mesh = '/mods/brewlan/effects/entities/SEB4303AntiArtilleryShield01/SEB4303AntiArtilleryShield01_mesh',
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
@@ -78,12 +78,10 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                     
                 },
-                --[[{
-                    AlbedoName = 'ueb4301_lod1_albedo.dds',
-                    LODCutoff = 300,
+                {
+                    LODCutoff = 400,
                     ShaderName = 'Unit',
-                    SpecularName = 'ueb4301_lod1_specteam.dds',
-                },]]--
+                },
             },
         },
         PlaceholderMeshName = 'UXB0018',

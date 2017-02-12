@@ -284,7 +284,7 @@ UnitBlueprint {
             DamageFriendly = true,
             DamageRadius = 1.5,
             DamageType = 'Normal',
-            DisplayName = 'Anti Matter Artillery',
+            DisplayName = 'Drop-Pod Artillery',
             EnergyDrainPerSecond = 20000,
             EnergyRequired = 10000,
             FireTargetLayerCapsTable = {

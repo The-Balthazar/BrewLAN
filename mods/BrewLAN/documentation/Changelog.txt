@@ -126,6 +126,49 @@ __________.__________
   * Gantry AIx 3: Same as 2, except it gives discounts instead of resources.
   * AI names for Independence Engine added.
   * EIO: Added Beam lifetime to the calculation.
+  __________
+  2017-02-11
+
+  * EIO: Started overhauled the DPS calculation system.
+  __________
+  2017-02-12
+
+  * EIO: Finished overhaul of DPS system. Its accurate about 97% of the time now.
+  * Logger: New mod that outputs the DPS of weapons into the LOG.
+  * UEF T3 mobile real AA changes and non-temp stats:
+    * Name: NG3 Longbow
+    * E: 12000
+    * M: 850
+    * Damage: 190 (DPS approx 319)
+    * Health 5250
+    * Radar: 350
+    * Omni: 70
+    * Vision: 35
+    * Upkeep E: 750
+    * Corrected turn animations for tracks.
+    * Added dust kickup.
+  * Rebalanced Alchemist:
+    * Health: 7100 from 3500
+    * Rof halved (DPS is now 427)
+    * Enerhy per shot 250 from 1500
+    * Energy storage 500 from 1500
+    * Explosion 500 radius 1 from 2500 radius 2
+  * Slink changes:
+    * Can no longer attack land and sea
+      * Description and designation changed to match
+    * Health up to 2780 from 850
+    * No longer has Jamming (still has cloak and stealth)
+    * Energy 5870 from 8000
+    * Mass 450 from 800
+    * Build time 1800 from 4800
+    * Upkeep 150 from 500
+    * Damage 210 from 300
+    * Distance model created
+    * Slightly modified model
+    * Updated texture
+  * Aeon Decoy Plane is now T2, and has double its previous HP.
+  * Changed the texture of the Anti-Artillery shield to differentiate it from normal shields.
+  * Gave the anti-artillery shield a distance model.
 __________.__________
 2016-12-15|0.7.5.5
 

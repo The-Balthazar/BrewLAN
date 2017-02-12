@@ -1,0 +1,14 @@
+name = "Blueprint Logger"
+uid = "2529ea71-93ef-41a6-b552-LOGS0000000001"
+version = 0.6
+copyright = "© 2017 Sean Wheeldon"
+description = "Logs DPS of units."
+author = "Sean Wheeldon"
+--icon = "/mods/BrewLAN_Plenae/ExperimentalIcons/Experimental-Icon-Overhaul_Mod_Icon.dds"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+conflicts = {  }
+before = {  }
+after = {  }

@@ -346,7 +346,7 @@ sel0322_name="Ella"
 
 srl0320_desc="Mobile Missile Launcher"
 srl0320_name="Slink"
-Unit_Description_BrewLAN_T3L009="Mobile cloaking missile launcher. Can fire at land- air- and sea-based units, but must decloak to fire."
+Unit_Description_BrewLAN_T3L009="Mobile cloaking anti-air missile launcher. Must decloak to fire."
 
 sal0320_desc="Mobile Anti-Air Defense"
 sal0320_name="Armillary"

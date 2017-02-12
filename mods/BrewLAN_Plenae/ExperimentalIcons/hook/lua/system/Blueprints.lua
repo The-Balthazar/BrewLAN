@@ -99,11 +99,21 @@ function ExperimentalIconOverhaul(all_bps)
                     -- Damage per second calculation, biased towards high damage
                     ------------------------------------------------------------
                     local function DPS(weapon)
-                        return (math.pow((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0), 1.2)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10)) * (weapon.BeamLifetime or 1)
-                    end
+                        --Base values
+                        local bias = 1.2
+                        local ProjectileCount = math.max(1, table.getn(weapon.RackBones[1].MuzzleBones or {'boop'} ) )
+                        local DamageInterval = math.floor((math.max(0.1, 1 / (weapon.RateOfFire or 1)) * 10) + 0.5) / 10  + ProjectileCount * math.max(weapon.MuzzleSalvoDelay or 0, weapon.MuzzleChargeDelay or 0)
+                        local Damage = ((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0)) * ProjectileCount
 
-                    local function RealDPS(weapon)
-                        return ((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0)) * (weapon.RateOfFire or 1) * ((weapon.ProjectilesPerOnFire or weapon.MuzzleSalvoSize) or 1) * (10 / (weapon.BeamCollisionDelay or 10)) * (weapon.BeamLifetime or 1)
+                        if weapon.BeamLifetime and weapon.BeamLifetime == 0 then
+                            DamageInterval = 0.1 + (weapon.BeamCollisionDelay or 0)
+                            return math.pow(Damage * (1 / DamageInterval), bias)  --Apply Bias to full second of continuous beams
+                        elseif weapon.BeamLifetime and weapon.BeamLifetime > 0 then
+                            DamageInterval = DamageInterval + weapon.BeamLifetime
+                            Damage = Damage * (weapon.BeamLifetime / (0.1 + (weapon.BeamCollisionDelay or 0) )) --Calculate damage as across the whole beam for non-continuous beams
+                        end
+
+                        return math.pow(Damage, bias) * (1 / DamageInterval)
                     end
                     ------------------------------------------------------------
                     -- String sanitisation and case desensitising
@@ -119,9 +129,6 @@ function ExperimentalIconOverhaul(all_bps)
                     local sanRcat = SAN(weapon.RangeCategory)
                     if string.find(sanWcat, 'anti air') or sanRcat == 'uwrc_antiair' then
                         layer.air[1] = layer.air[1] + DPS(weapon)
-                        if id == 'sea0401' then
-                          LOG("Centurion DPS " .. RealDPS(weapon))
-                        end
                     elseif sanRcat == 'uwrc_indirectfire' or string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile') then
                         if string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') then
                             layer.artillery[1] = layer.artillery[1] + DPS(weapon)
