@@ -184,6 +184,11 @@ __________.__________
       * Aeon, UEF, and Cybran T2 share an explosion based on the Seraphim explosion.
         * Cybran has extra effects to it.
       * T1 use their land explosion with an extra splash.
+  * Non-UEF mobile strat defenses are no longer set to auto.
+    * This fixes a long standing issue whereby they could get to 2/1 missiles.
+  * Cybran mobile strat defense has a (partially complete) new model.
+  * Darkened Slink specular texture a little.
+  * Created test basis for a new 'freezing' mechanic.
 __________.__________
 2016-12-15|0.7.5.5
 

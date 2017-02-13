@@ -1,7 +1,4 @@
 UnitBlueprint {
-    AI = {
-        InitialAutoMode = true,
-    },
     Audio = {
         AmbientMove = Sound {
             Bank = 'XSL',

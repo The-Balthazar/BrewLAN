@@ -6,6 +6,14 @@
 do
 
 local OldModBlueprints = ModBlueprints
+local BrewLANPath = function()
+    for i, mod in __active_mods do
+        --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
+        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000079" then
+            return mod.location
+        end
+    end
+end
 
 function ModBlueprints(all_blueprints)         
     OldModBlueprints(all_blueprints)
@@ -24,6 +32,7 @@ function ModBlueprints(all_blueprints)
     BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
     BrewLANRelativisticLinksUpdate(all_blueprints)
     BrewLANMegalithEggs(all_blueprints.Unit)
+    ExtractFrozenMeshBlueprint(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -554,15 +563,6 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANRelativisticLinksUpdate(all_bps)
-    local BrewLANPath = function()
-        for i, mod in __active_mods do
-            --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
-            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000079" then
-                return mod.location
-            end
-        end 
-    end
-    
     if string.lower(BrewLANPath() ) != "/mods/brewlan" then
         all_bps.Unit.zzz0001.Desync = {
             "BrewLAN reports you installed it",
@@ -643,6 +643,38 @@ function copyTableNoReplace(source, target)
     end
 end
 
+--------------------------------------------------------------------------------
+-- Do you want to build a snowman?
+--------------------------------------------------------------------------------
+
+function ExtractFrozenMeshBlueprint(all_bps)
+    for id, bp in all_bps do
+        local meshid = bp.Display.MeshBlueprint
+        if meshid then
+            local meshbp = original_blueprints.Mesh[meshid]
+            if meshbp then
+                local frozenbp = table.deepcopy(meshbp)
+                if frozenbp.LODs then
+                    for i,lod in frozenbp.LODs do
+                        if lod.ShaderName == 'TMeshAlpha' or lod.ShaderName == 'NormalMappedAlpha' or lod.ShaderName == 'UndulatingNormalMappedAlpha' then
+                            --lod.ShaderName = 'BlackenedNormalMappedAlpha'
+                        else
+                            lod.ShaderName = 'Aeon'
+                            lod.SpecularName = BrewLANPath() .. '/env/common/frozen_specular.dds'
+                            lod.NormalsName = BrewLANPath() .. '/env/common/frozen_normals.dds'
+                        end
+                    end
+                end
+                frozenbp.BlueprintId = meshid .. '_frozen'
+                bp.Display.MeshBlueprintFrozen = frozenbp.BlueprintId
+                MeshBlueprint(frozenbp)
+            end
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
+--
 --------------------------------------------------------------------------------
 
 end

@@ -24,6 +24,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
                 totalDamageSustain = 0,
                 totalDamageBurst = amount,
             }
+            self:SetMesh(self:GetBlueprint().Display.MeshBlueprintFrozen, true)
         else
             local enttable = self.DPScalcs[instigator:GetEntityId()]
             enttable.totalDamageSustain = enttable.totalDamageSustain + amount

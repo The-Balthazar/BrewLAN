@@ -78,7 +78,7 @@ CenturionBehaviorBrewLAN = function(self)
                             end      
                             if distance < hightdist * 1.66 * SpeedBalanceMult and distance > hightdist * 1.5 * SpeedBalanceMult and distance > 13 and not TargetParagon.KillAttempts.Pancake then   
                                 if not TargetParagon.KillAttempts then TargetParagon.KillAttempts = {} end
-                                TargetParagon.KillAttempts.Pancake = true   
+                                TargetParagon.KillAttempts.Pancake = true
                                 Pancake:Kill()
                             elseif distance < 13 then
                                 Pancake:SetSpeedMult(distance/20)

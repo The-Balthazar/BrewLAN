@@ -605,8 +605,6 @@ Errors and ideas; stuff to do
   * Other experimentals walk through armored walls.
   * Engine related bug; possibly can't fix.
 * Megalith built eggs bug out when at the pop cap. (vanilla bug)
-* Mobile anti nukes start building an anti nuke immediately, despite already having full capacity, leading to 2/1 built if it finishes.
-  * The rate of fire of the mobile anti nukes also means that its likely to fire both at the same target, making having two redundant unless its a seraphim experimental nuke.
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
 * Change the explosion graphics of the T2 power storages to properly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
