@@ -1,4 +1,13 @@
 local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
+local function LOC(s)
+    if string.sub(s, 1, 4)=='<LOC' then
+        local i = string.find(s,">")
+        if i then
+            s = string.sub(s, i+1)
+        end
+    end
+    return s
+end
 
 ZZZ0001 = Class(AShieldStructureUnit) {
 
@@ -20,12 +29,15 @@ ZZZ0001 = Class(AShieldStructureUnit) {
             enttable.totalDamageSustain = enttable.totalDamageSustain + amount
             enttable.totalDamageBurst = enttable.totalDamageBurst + amount
 
-            local intro = (instigator:GetBlueprint().General.UnitName or instigator:GetBlueprint().BlueprintId) .. " DPS: "
+            local intro = (instigator:GetBlueprint().BlueprintId .. " - " .. LOC(instigator:GetBlueprint().General.UnitName or instigator:GetBlueprint().Description ) ) .. " DPS: "
             local duration = GetGameTimeSeconds() - enttable.startTime
 
             if enttable.Message != math.floor(enttable.totalDamageSustain / duration + 0.5) .. " - " .. math.floor(enttable.totalDamageBurst / duration + 0.5) then
                 enttable.Message = math.floor(enttable.totalDamageSustain / duration + 0.5) .. " - " .. math.floor(enttable.totalDamageBurst / duration + 0.5)
                 LOG(intro .. enttable.Message )
+                if math.floor(enttable.totalDamageSustain / duration + 0.5) == math.floor(enttable.totalDamageBurst / duration + 0.5) then
+                    instigator:SetCustomName('DPS: ' .. math.floor(enttable.totalDamageSustain / duration + 0.5) )
+                end
             end
         end
         if IsUnit(instigator) then

@@ -1,17 +1,13 @@
-#****************************************************************************
-#**
-#**  Summary  :  Aeon Stationary Explosive Script
-#**
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  Aeon Stationary Explosive Script
+--------------------------------------------------------------------------------
 local MineStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/defaultunits.lua').MineStructureUnit
-local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 SAB2221 = Class(MineStructureUnit) {
     Weapons = {
-        Suicide = Class(CMobileKamikazeBombWeapon) {      
-   			FxDeath = EffectTemplate.AOblivionCannonHit02,  
+        Suicide = Class(MineStructureUnit.Weapons.Suicide) {
+   			FxDeathLand = EffectTemplate.AOblivionCannonHit02,
         },
     },
 }

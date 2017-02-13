@@ -1,30 +1,75 @@
 --------------------------------------------------------------------------------
 -- Summary  :  BrewLAN multi-unit scripts.
 --------------------------------------------------------------------------------                                                      
-
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
+local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
+--------------------------------------------------------------------------------
+local DefaultWeapons = import('/lua/sim/DefaultWeapons.lua')
 local DeathNukeWeapon = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
-local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit    
-
+--------------------------------------------------------------------------------
+local EffectTemplates = import('/lua/effecttemplates.lua')
+local CreateScorchMarkSplat = import('/lua/defaultexplosions.lua').CreateScorchMarkSplat
+local GetRandomFloat = import('/lua/utilities.lua').GetRandomFloat
+local TableCat = import('/lua/utilities.lua').TableCat
+local EBPSRA = '/effects/emitters/seraphim_rifter_artillery_hit_'
 --------------------------------------------------------------------------------
 -- Mine script
 -------------------------------------------------------------------------------- 
 
 MineStructureUnit = Class(TStructureUnit) {
     Weapons = {
-        --DeathWeapon = Class(CMobileKamikazeBombDeathWeapon) {},
-        Suicide = Class(CMobileKamikazeBombWeapon) {      
-            OnFire = function(self)			
+        Suicide = Class(DefaultWeapons.KamikazeWeapon) {
+
+            FxDeathLand = EffectTemplates.DefaultHitExplosion01,
+            FxDeathWater = {
+                EBPSRA .. '01w_emit.bp',
+                EBPSRA .. '02w_emit.bp',
+                EBPSRA .. '03w_emit.bp',
+                EBPSRA .. '05w_emit.bp',
+                EBPSRA .. '06w_emit.bp',
+                EBPSRA .. '08w_emit.bp',
+            },
+            FxDeathSeabed = EffectTemplates.DefaultProjectileWaterImpact,
+
+            OnFire = function(self)
+                local bp = self:GetBlueprint()
+                local radius = bp.DamageRadius
+                local army = self.unit:GetArmy()
+                local pos = self.unit:GetPosition()
+                local FxDeath = {
+                    Land = self.FxDeathLand,
+                    Water = self.FxDeathWater,
+                    Seabed = TableCat(self.FxDeathSeabed, self.FxDeathLand),
+                }
+                for layer, effects in FxDeath do
+                    if layer == self.unit:GetCurrentLayer() then
+                        for k, v in effects do
+                            CreateEmitterAtBone(self.unit,-2,army,v)
+                        end
+                    end
+                end
+                if not self.SplatTexture then
+                    CreateScorchMarkSplat( self.unit, bp.DamageRadius * 0.5, army)
+                else
+                    if self.SplatTexture.Albedo then                                                                                                                                                                                    --LOD          Lifetime
+                        CreateDecal( pos, GetRandomFloat(0,2*math.pi), (self.SplatTexture.Albedo[1] or self.SplatTexture.Albedo), '', 'Albedo', radius * (self.SplatTexture.Albedo[2] or 4), radius * (self.SplatTexture.Albedo[2] or 4), radius * 60, bp.Damage * 15, army )
+                    end
+                    if self.SplatTexture.AlphaNormals then
+                        CreateDecal( pos, GetRandomFloat(0,2*math.pi), (self.SplatTexture.AlphaNormals[1] or self.SplatTexture.AlphaNormals), '', 'Alpha Normals', radius * (self.SplatTexture.AlphaNormals[2] or 2), radius * (self.SplatTexture.AlphaNormals[2] or 2), radius * 30, bp.Damage * 15, army )
+                    end
+                end
+                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
+                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
+                DamageRing(self.unit, pos, 0.1, radius, 10, 'Fire', false, false)
                 self.unit:SetDeathWeaponEnabled(false)
-                CMobileKamikazeBombWeapon.OnFire(self)
+                DefaultWeapons.KamikazeWeapon.OnFire(self)
             end,
         },
     },
 
     OnCreate = function(self,builder,layer)
         TStructureUnit.OnCreate(self)
-        ### enable cloaking and stealth 
+        --enable cloaking and stealth
         self:EnableIntel('Cloak')
         self:EnableIntel('RadarStealth')
         self:EnableIntel('SonarStealth')
@@ -62,7 +107,12 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
         DeathWeapon = Class(DeathNukeWeapon) {},
         Suicide = Class(DeathNukeWeapon) {
-            Fire = function(self, ...)			
+            Fire = function(self, ...)
+                local radius = self:GetBlueprint().NukeInnerRingRadius or self:GetBlueprint().DamageRadius
+                local pos = self.unit:GetPosition()
+                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
+                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
+                DamageRing(self.unit, pos, 0.1, radius, 10, 'Fire', false, false)
                 self.unit.DeathWeaponEnabled = false
                 DeathNukeWeapon.Fire(self, unpack(arg) )
             end,
@@ -149,8 +199,8 @@ StackingBuilderUnit = Class(CLandFactoryUnit) {
                 end
             end
             CLandFactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding) 
-                --unitBuilding.Info.ents = self.Info.ents
-                --unitBuilding:BoneCalculation()  
+            --unitBuilding.Info.ents = self.Info.ents
+            --unitBuilding:BoneCalculation()  
         end,
     }
 }

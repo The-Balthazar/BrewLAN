@@ -169,6 +169,21 @@ __________.__________
   * Aeon Decoy Plane is now T2, and has double its previous HP.
   * Changed the texture of the Anti-Artillery shield to differentiate it from normal shields.
   * Gave the anti-artillery shield a distance model.
+  __________
+  2017-02-13
+
+  * Improved the outputs of logger and the damage tester.
+  * Improved mines:
+    * All mines now have appropriate splat marks.
+      * T2 UEF, Cybran, and Seraphim mines share splat marks with their factions strat bombers.
+      * T1 and the Aeon T2 have default splat marks.
+    * Cybran T2 mine has a better explosion.
+    * All mines knock over and set fire to trees.
+    * T1 & T2 mines now have different effects in water.
+      * Seraphim T2 shares its water explosion with that of their T3 artillery.
+      * Aeon, UEF, and Cybran T2 share an explosion based on the Seraphim explosion.
+        * Cybran has extra effects to it.
+      * T1 use their land explosion with an extra splash.
 __________.__________
 2016-12-15|0.7.5.5
 

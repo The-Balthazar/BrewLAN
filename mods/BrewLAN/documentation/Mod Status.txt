@@ -168,8 +168,6 @@ Tech 2:
     * T2 Mass Storage
     * T2 Energy Storage
     * T2 Proximity Mine
-      * Lacks a unique water explosion.
-      * Doesn't leave behind a decent sized scorch mark yet.
 	  * T2 Wall.
 	  * T2 Field Engineering Ship
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -177,7 +175,6 @@ Tech 2:
 		* T2 Mass Storage.
     * T2 Energy Storage.
     * T2 Proximity Mine.
-      * No scorch mark. Massive particle effect.
 		* T2 Engineering Station.
 		* T2 Field engineer.
 		* T2 Heavy Wall.

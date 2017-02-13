@@ -6,6 +6,15 @@
 do
 
 local OldModBlueprints = ModBlueprints
+local function LOC(s)
+    if string.sub(s, 1, 4)=='<LOC' then
+        local i = string.find(s,">")
+        if i then
+            s = string.sub(s, i+1)
+        end
+    end
+    return s
+end
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
@@ -51,7 +60,7 @@ function LoggerGonnaLog(all_bps)
 
                     return Damage * (1 / DamageInterval)
                 end
-                LOG((bp.General.UnitName or id) .. '--' .. (weapon.DisplayName or 'No name gun') .. ": " .. RealDPS(weapon))
+                LOG(id .. " - " .. LOC(bp.General.UnitName or bp.Description) .. ' -- ' .. (weapon.DisplayName or '<Unnamed weapon>') .. " DPS: " .. RealDPS(weapon))
             end
         end
     end
