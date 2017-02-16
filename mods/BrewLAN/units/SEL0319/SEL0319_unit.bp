@@ -204,7 +204,6 @@ UnitBlueprint {
             'BUILTBYTIER3ENGINEER DEFENSE UEF',
             'BUILTBYTIER3ENGINEER INDIRECTFIRE UEF',
             'BUILTBYTIER3ENGINEER NUKE SILO UEF',
-            'BUILTBYTIER2FIELD UEF',
             'BUILTBYTIER3FIELD UEF',
         },
         MaintenanceConsumptionPerSecondEnergy = 15,

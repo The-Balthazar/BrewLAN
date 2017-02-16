@@ -161,7 +161,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },      
-        FactionName = 'UEF',  
+        FactionName = 'UEF',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',    
         UnitName = '<LOC seb5210_name>GDI',

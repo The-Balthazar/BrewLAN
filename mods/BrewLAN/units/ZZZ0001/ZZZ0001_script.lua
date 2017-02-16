@@ -13,7 +13,8 @@ ZZZ0001 = Class(AShieldStructureUnit) {
 
     OnCreate = function(self)
         AShieldStructureUnit.OnCreate(self)
-        LOG("POS: " .. self:GetPosition()[1] .. ", " .. self:GetPosition()[2] .. ", " .. self:GetPosition()[3])
+        local pos = self:GetPosition()
+        LOG("POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3] .. ". Terrain type: " .. GetTerrainType( pos[1], pos[3] ).Style)
         self.DPScalcs = {}
     end,
 

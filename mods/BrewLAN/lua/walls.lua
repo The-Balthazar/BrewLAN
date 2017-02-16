@@ -4,6 +4,7 @@
 function CardinalWallUnit(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
+            local bp = self:GetBlueprint()
             self.Info = {
                 ents = {
                     ['North'] = {
@@ -25,24 +26,29 @@ function CardinalWallUnit(SuperClass)
                 },
                 bones = {}
             }
-            for i, v in self:GetBlueprint().Display.AdjacencyConnectionInfo.Bones do
+            for i, v in bp.Display.AdjacencyConnectionInfo.Bones do
                 self.Info.bones[i] = {}
                 for j, k in v do
                     self.Info.bones[i][j] = k                 
                 end
             end
-            if self:GetBlueprint().Display.AdjacencyConnection then
+            if bp.Display.AdjacencyConnection then
                 self.BeamEffectsBag = {}
             end
-            
-            self:BoneUpdate(self.Info.bones)
+            if bp.Display.Tarmacs[1] then
+                self:CreateTarmac(true,true,true,false,false)
+            end
+            if bp.General.FactionName != 'UEF' then
+                self:BoneUpdate(self.Info.bones)
+            end
             SuperClass.OnCreate(self)
         end,
-           
-        OnStopBeingBuilt = function(self,builder,layer)
-            SuperClass.OnStopBeingBuilt(self,builder,layer)
-            --This is here purely for the UEF ones, because it doesn't work OnCreate for them.
-            self:BoneUpdate(self.Info.bones)
+
+        StopBeingBuiltEffects = function(self, builder, layer)
+            SuperClass.StopBeingBuiltEffects(self, builder, layer)
+            if self:GetBlueprint().General.FactionName == 'UEF' then
+                self:BoneUpdate(self.Info.bones)
+            end
         end,
           
         OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
@@ -50,15 +56,12 @@ function CardinalWallUnit(SuperClass)
             local MyX, MyY, MyZ = unpack(self:GetPosition())
             local AX, AY, AZ = unpack(adjacentUnit:GetPosition())
             local cat = self:GetBlueprint().Display.AdjacencyConnection
-            
             if EntityCategoryContains(categories[cat], adjacentUnit) then
                 local dir = dirs[math.ceil(((math.atan2(MyX - AX, MyZ - AZ) * 180 / math.pi) + 180)/45)]
                 self.Info.ents[dir].ent = adjacentUnit
                 self.Info.ents[dir].val[1] = true
             end
-                  
-            self:BoneCalculation() 
-            
+            self:BoneCalculation()
             SuperClass.OnAdjacentTo(self, adjacentUnit, triggerUnit) 
         end,
     
@@ -99,12 +102,12 @@ function CardinalWallUnit(SuperClass)
     
         BoneUpdate = function(self, bones)
             for k, v in bones do
-                if v.visibility == 'show' then   
+                if v.visibility == 'show' then
                     if self:IsValidBone(k) then
                         self:ShowBone(k, true)
                     end
                 else
-                    if self:IsValidBone(k) then   
+                    if self:IsValidBone(k) then
                         self:HideBone(k, true) 
                     end
                 end

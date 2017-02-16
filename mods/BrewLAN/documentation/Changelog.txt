@@ -205,6 +205,12 @@ __________.__________
   * EIO & Logger: Fixed DPS for weapons that have their racks fire together.
   * Created a new tarmac for the Indenepndance Engine, then shrunk it because all the exported files for it were 60mb.
     * They are still 12mb.
+  __________
+  2017-02-16
+
+  * Walls now have tarmacs again.
+  * UEF walls now behave correctly when first built.
+    * The bug was caused by the UEF built animations. Seriously.
 __________.__________
 2016-12-15|0.7.5.5
 
