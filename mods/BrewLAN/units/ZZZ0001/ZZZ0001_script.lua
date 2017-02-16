@@ -14,8 +14,9 @@ ZZZ0001 = Class(AShieldStructureUnit) {
     OnCreate = function(self)
         AShieldStructureUnit.OnCreate(self)
         local pos = self:GetPosition()
-        LOG("POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3] .. ". Terrain type: " .. GetTerrainType( pos[1], pos[3] ).Style)
+        LOG("Terrain type: " .. GetTerrainType( pos[1], pos[3] ).Style .. " POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3])
         self.DPScalcs = {}
+        self:SetCustomName('True Brick')
     end,
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)

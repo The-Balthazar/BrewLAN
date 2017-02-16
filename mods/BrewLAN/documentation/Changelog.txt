@@ -211,6 +211,7 @@ __________.__________
   * Walls now have tarmacs again.
   * UEF walls now behave correctly when first built.
     * The bug was caused by the UEF built animations. Seriously.
+  * Damage test unit now logs terrain type and looks like a 3310.
 __________.__________
 2016-12-15|0.7.5.5
 

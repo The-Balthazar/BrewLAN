@@ -617,7 +617,6 @@ Errors and ideas; stuff to do
 * Give the UEF walls, and Bessemer Reactor real distance models.
 * Do something with the Cybran stealth field sub idea.
 * Create a UI for the contents of the Ivan.
-* Make the damage test unit look like a Nokia 3310.
 * TeaD: Do something about civi's blocking the teacup.
 * UAL0207.
 * Landspeeder.
