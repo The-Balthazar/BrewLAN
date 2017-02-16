@@ -16,6 +16,14 @@ SAB0401 = Class(AAirFactoryUnit) {
 --------------------------------------------------------------------------------
     OnCreate = function(self)
         AAirFactoryUnit.OnCreate(self)
+        local bp = self:GetBlueprint()
+        self:SetCollisionShape(
+            'Sphere',
+            bp.CollisionSphereOffsetX or 0,
+            bp.CollisionSphereOffsetY or 0,
+            bp.CollisionSphereOffsetZ or 0,
+            bp.SizeSphere
+        )
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
@@ -170,7 +178,7 @@ SAB0401 = Class(AAirFactoryUnit) {
         end
     end,
 
-   CreateAeonFactoryBuildingEffects = function( builder, unitBeingBuilt, BuildEffectBones, BuildBone, EffectsBag )
+    CreateAeonFactoryBuildingEffects = function( builder, unitBeingBuilt, BuildEffectBones, BuildBone, EffectsBag )
         local army = builder:GetArmy()
         for kBone, vBone in BuildEffectBones do
             EffectsBag:Add( CreateAttachedEmitter( builder, vBone, army, '/effects/emitters/aeon_build_03_emit.bp' ) )

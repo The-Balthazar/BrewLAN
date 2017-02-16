@@ -189,6 +189,22 @@ __________.__________
   * Cybran mobile strat defense has a (partially complete) new model.
   * Darkened Slink specular texture a little.
   * Created test basis for a new 'freezing' mechanic.
+  __________
+  2017-02-14
+
+  * Beam wall codes now no longer tries to attach to dead units.
+  * Beams now no longer overlay ad nauseum.
+  * Mines no longer leave wreckages.
+  * Mines now use the generic structure base script instead of the UEF structure base script.
+  * Walls with build lists now use the generic factory base script instead of the Cybran land factory base script.
+  __________
+  2017-02-15
+
+  * Independance Engine now can be attacked from the ground. It has a spherical collision shape.
+  * Independance Engine now has 8 different roll-off points, in the cardinal and primary intercardinal directions.
+  * EIO & Logger: Fixed DPS for weapons that have their racks fire together.
+  * Created a new tarmac for the Indenepndance Engine, then shrunk it because all the exported files for it were 60mb.
+    * They are still 12mb.
 __________.__________
 2016-12-15|0.7.5.5
 

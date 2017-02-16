@@ -1,7 +1,14 @@
 UnitBlueprint {
     AI = {
         TargetBones = {
-            0,
+            'Blinking_001',
+            'Blinking_002',
+            'Blinking_003',
+            'Blinking_004',
+            'Blinking_005',
+            'Blinking_006',
+            'Blinking_007',
+            'Blinking_008',
         },
     },
     Audio = {
@@ -58,7 +65,7 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
         'GATE',
     },
-    CollisionOffsetY = -2,
+    CollisionOffsetY = 5,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -115,26 +122,26 @@ UnitBlueprint {
             Yellow = '/effects/emitters/light_yellow_02_emit.bp',
         },
         BuildAttachBone = 'Attachpoint',
-        --[[IdleEffects = {
+        IdleEffects = {
             Water = {
                 Effects = {
                     {
                         Bones = {
-                            'Base_001',
-                            'Base_002',
-                            'Base_003',
-                            'Base_004',
-                            'Base_005',
-                            'Base_006',
-                            'Base_007',
-                            'Base_008',
+                            'Blinking_001',
+                            'Blinking_002',
+                            'Blinking_003',
+                            'Blinking_004',
+                            'Blinking_005',
+                            'Blinking_006',
+                            'Blinking_007',
+                            'Blinking_008',
                         },
-                        Scale = 5,
+                        Scale = 12,
                         Type = 'SeaIdle02',
                     },
                 },
             },
-        },]]--
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -163,11 +170,12 @@ UnitBlueprint {
         SpawnRandomRotation = false,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
+                Albedo = '/mods/brewlan/env/common/decals/Tarmacs/Tar48x_aeon_01_albedo.dds',
                 DeathLifetime = 300,
-                FadeOut = 150,
-                Length = 12.8*4,
-                Normal = 'Tarmacs/Tar12x_aeon_01_normals',
+                FadeOut = 450,
+                Length = 12.8*3.15,
+                Normal = '/mods/brewlan/env/common/decals/Tarmacs/Tar48x_aeon_01_normals.dds',
+                Glow = '/mods/brewlan/env/common/decals/Tarmacs/Tar48x_aeon_01_spec.dds',
                 Orientations = {
                     0,
                     90,
@@ -175,7 +183,7 @@ UnitBlueprint {
                     270,
                 },
                 RemoveWhenDead = false,
-                Width = 12.8*4,
+                Width = 12.8*3.15,
             },
         },
         UniformScale = 0.14*2.1,
@@ -262,59 +270,19 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         FlattenSkirt = true,
         MaxSteerForce = 0,
-        --MeshExtentsOffsetY = -2,
-        --MeshExtentsX = 1.5,
-        --MeshExtentsY = 0.25,
-        --MeshExtentsZ = 1,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         OccupyRects = {
-
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            0,
-            0,
-            7/2,
-            27/2,
-
-            0,
-            0,
-            27/2,
-            7/2,
-
-            0,
-            0,
-            21/2,
-            25/2,
-
-            0,
-            0,
-            25/2,
-            21/2,
-
-            0,
-            0,
-            23/2,
-            23/2,
-
-            8.5,
-            0,
-            2/2,
-            27/2,
-
-            -8.5,
-            0,
-            2/2,
-            27/2,
-
-            0,
-            -8.5,
-            27/2,
-            2/2,
-
-            0,
-            8.5,
-            27/2,
-            2/2,
+            0,    0,    7/2,     27/2,
+            0,    0,    27/2,    7/2,
+            0,    0,    21/2,    25/2,
+            0,    0,    25/2,    21/2,
+            0,    0,    23/2,    23/2,
+            8.5,    0,    2/2,    27/2,
+            -8.5,    0,    2/2,    27/2,
+            0,    -8.5,    27/2,    2/2,
+            0,    8.5,    27/2,    2/2,
         },
         RollOffPoints = {
             {
@@ -324,14 +292,48 @@ UnitBlueprint {
                 Z = 8,
             },
             {
+                UnitSpin = 45,
+                X = 5.66,
+                Y = 0,
+                Z = 5.66,
+            },
+            {
+                UnitSpin = 90,
+                X = 8,
+                Y = 0,
+                Z = 0,
+            },
+            {
+                UnitSpin = 135,
+                X = 5.66,
+                Y = 0,
+                Z = -5.66,
+            },
+            {
                 UnitSpin = 180,
                 X = 0,
                 Y = 0,
                 Z = -8,
             },
+            {
+                UnitSpin = 225,
+                X = -5.66,
+                Y = 0,
+                Z = -5.66,
+            },
+            {
+                UnitSpin = 270,
+                X = -8,
+                Y = 0,
+                Z = 0,
+            },
+            {
+                UnitSpin = 315,
+                X = -5.66,
+                Y = 0,
+                Z = 5.66,
+            },
         },
-
-        # height
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 30,
@@ -341,12 +343,13 @@ UnitBlueprint {
     --SelectionMeshScaleX = 0.5,
     --SelectionMeshScaleZ = 0.5,
     --SelectionMeshUseTopAmount = 0.15,
-    SelectionSizeX = 20,
-    SelectionSizeZ = 20,
+    SelectionSizeX = 15,
+    SelectionSizeZ = 15,
     SelectionThickness = 0.1,
-    SizeX = 20,
-    SizeY = 3,
-    SizeZ = 20,
+    SizeX = 27,
+    SizeY = 10,
+    SizeZ = 27,
+    SizeSphere = 13,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 210,
     Wreckage = {

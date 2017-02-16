@@ -1,8 +1,9 @@
 --------------------------------------------------------------------------------
 -- Summary  :  BrewLAN multi-unit scripts.
 --------------------------------------------------------------------------------                                                      
-local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
+local DefaultUnits = import('/lua/defaultunits.lua')
+local StructureUnit = DefaultUnits.StructureUnit
+local FactoryUnit = DefaultUnits.FactoryUnit
 --------------------------------------------------------------------------------
 local DefaultWeapons = import('/lua/sim/DefaultWeapons.lua')
 local DeathNukeWeapon = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
@@ -16,7 +17,7 @@ local EBPSRA = '/effects/emitters/seraphim_rifter_artillery_hit_'
 -- Mine script
 -------------------------------------------------------------------------------- 
 
-MineStructureUnit = Class(TStructureUnit) {
+MineStructureUnit = Class(StructureUnit) {
     Weapons = {
         Suicide = Class(DefaultWeapons.KamikazeWeapon) {
 
@@ -61,14 +62,14 @@ MineStructureUnit = Class(TStructureUnit) {
                 DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
                 DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
                 DamageRing(self.unit, pos, 0.1, radius, 10, 'Fire', false, false)
-                self.unit:SetDeathWeaponEnabled(false)
+                self.unit.DeathWeaponEnabled = false
                 DefaultWeapons.KamikazeWeapon.OnFire(self)
             end,
         },
     },
 
     OnCreate = function(self,builder,layer)
-        TStructureUnit.OnCreate(self)
+        StructureUnit.OnCreate(self)
         --enable cloaking and stealth
         self:EnableIntel('Cloak')
         self:EnableIntel('RadarStealth')
@@ -79,7 +80,7 @@ MineStructureUnit = Class(TStructureUnit) {
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
-        TStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        StructureUnit.OnStopBeingBuilt(self,builder,layer)
         local bp = self:GetBlueprint()    
         if self:GetCurrentLayer() == 'Water' then
             self.Trash:Add(CreateSlider(self, 0, 0, -20, 0, 5))
@@ -92,10 +93,14 @@ MineStructureUnit = Class(TStructureUnit) {
     end,
 
     OnScriptBitSet = function(self, bit)
-        TStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then 
+        StructureUnit.OnScriptBitSet(self, bit)
+        if bit == 1 then
             self:GetWeaponByLabel('Suicide'):FireWeapon()
         end
+    end,
+
+    OnKilled = function(self, instigator, type, overkillRatio)
+        StructureUnit.OnKilled(self, instigator, type, 2)
     end,
 }
 
@@ -118,28 +123,20 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
             end,
         },
     },
-
-    OnScriptBitSet = function(self, bit)
-        TStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then  
-            self.DeathWeaponEnabled = false
-            self:GetWeaponByLabel('Suicide'):Fire()
-        end
-    end,
 }
 
 --------------------------------------------------------------------------------
 -- Wall scripts
 -------------------------------------------------------------------------------- 
 
-StackingBuilderUnit = Class(CLandFactoryUnit) {
+StackingBuilderUnit = Class(FactoryUnit) {
         
     BuildAttachBone = 'WallNode', 
        
     OnCreate = function(self,builder,layer)      
         self:AddBuildRestriction(categories.ANTINAVY)
         self:AddBuildRestriction(categories.HYDROCARBON)
-        CLandFactoryUnit.OnCreate(self,builder,layer)    
+        FactoryUnit.OnCreate(self,builder,layer)
     end, 
     
     CreateBlinkingLights = function(self, color)
@@ -164,20 +161,14 @@ StackingBuilderUnit = Class(CLandFactoryUnit) {
     end,  
     
     OnDamage = function(self, instigator, amount, vector, damageType)    
-        CLandFactoryUnit.OnDamage(self, instigator, amount, vector, damageType)
+        FactoryUnit.OnDamage(self, instigator, amount, vector, damageType)
         if self.AttachedUnit and not self.AttachedUnit:IsDead() then
-            local amountR = amount * .5
-            self.AttachedUnit:OnDamage(instigator, amountR, vector, damageType)
-            --if self.AttachedUnit:IsDead() then
-            --    self:DetachAll(self:GetBlueprint().Display.BuildAttachBone or 0)
-            --    self:DestroyBuildRotator()
-            --end
-            --self:DoTakeDamage(instigator, amount, vector, damageType)
+            self.AttachedUnit:OnDamage(instigator, amount * 0.5, vector, damageType)
         end
     end,   
     
     OnScriptBitSet = function(self, bit)
-        CLandFactoryUnit.OnScriptBitSet(self, bit)
+        FactoryUnit.OnScriptBitSet(self, bit)
         if bit == 7 then
             if self.AttachedUnit then
                 self.AttachedUnit:Destroy() 
@@ -187,9 +178,9 @@ StackingBuilderUnit = Class(CLandFactoryUnit) {
         end
     end,
     
-    UpgradingState = State(CLandFactoryUnit.UpgradingState) {
+    UpgradingState = State(FactoryUnit.UpgradingState) {
         Main = function(self)
-            CLandFactoryUnit.UpgradingState.Main(self)
+            FactoryUnit.UpgradingState.Main(self)
         end,
         
         OnStopBuild = function(self, unitBuilding)
@@ -198,9 +189,7 @@ StackingBuilderUnit = Class(CLandFactoryUnit) {
                     self.AttachedUnit:Destroy() 
                 end
             end
-            CLandFactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding) 
-            --unitBuilding.Info.ents = self.Info.ents
-            --unitBuilding:BoneCalculation()  
+            FactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding)
         end,
     }
 }

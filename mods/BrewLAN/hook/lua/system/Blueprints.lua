@@ -22,7 +22,7 @@ function ModBlueprints(all_blueprints)
     BrewLANCategoryChanges(all_blueprints.Unit)
     BrewLANGantryBuildList(all_blueprints.Unit)
     BrewLANHeavyWallBuildList(all_blueprints.Unit)
-    BrewLANNameCalling(all_blueprints.Unit)  
+    --BrewLANNameCalling(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
@@ -317,7 +317,7 @@ function BrewLANHeavyWallBuildList(all_bps)
 end
  
 --------------------------------------------------------------------------------
--- Adding AI names (Not sure if this actually does anything for Sorian)
+-- This has no effect, and as a result is no longer ran
 --------------------------------------------------------------------------------
   
 function BrewLANNameCalling(all_bps)

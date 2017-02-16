@@ -31,6 +31,9 @@ function CardinalWallUnit(SuperClass)
                     self.Info.bones[i][j] = k                 
                 end
             end
+            if self:GetBlueprint().Display.AdjacencyConnection then
+                self.BeamEffectsBag = {}
+            end
             
             self:BoneUpdate(self.Info.bones)
             SuperClass.OnCreate(self)
@@ -39,7 +42,7 @@ function CardinalWallUnit(SuperClass)
         OnStopBeingBuilt = function(self,builder,layer)
             SuperClass.OnStopBeingBuilt(self,builder,layer)
             --This is here purely for the UEF ones, because it doesn't work OnCreate for them.
-            self:BoneUpdate(self.Info.bones)   
+            self:BoneUpdate(self.Info.bones)
         end,
           
         OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
@@ -81,8 +84,10 @@ function CardinalWallUnit(SuperClass)
                     if v1.val[1] then
                         for k, v in self.Info.bones do
                             if v.bonetype == 'Beam' then
-                                if self:IsValidBone(k) and v1.ent:IsValidBone(k) then
-                                    v1.ent.Trash:Add(AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype))
+                                if self:IsValidBone(k) and not v1.ent:IsDead() and v1.ent:IsValidBone(k) and not v1.beams[k] then
+                                    if not v1.beams then v1.beams = {} end
+                                    v1.beams[k] = AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype)
+                                    v1.ent.Trash:Add(v1.beams[k])
                                 end
                             end
                         end

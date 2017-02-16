@@ -81,7 +81,6 @@ UnitBlueprint {
     },
     Description = '<LOC seb2404>Experimental Drop-Pod Artillery',
     Display = {
-        --AnimationOpen = '/units/ueb2401/ueb2401_aopen.sca',  
         BlinkingLights = {
             {
                 BLBone = 'Light1',
@@ -110,17 +109,10 @@ UnitBlueprint {
                 {
                     LODCutoff = 300,
                     ShaderName = 'Unit',
-                    --AlbedoName = '/units/ueb2401/ueb2401_albedo.dds',
-                    --SpecularName = '/units/ueb2401/ueb2401_specteam.dds',
-                    --NormalsName = '/units/ueb2401/ueb2401_normalsts.dds',
                 },
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit',
-                    --MeshName = '/units/ueb2401/ueb2401_lod1.scm',
-                    --AlbedoName = '/units/ueb2401/ueb2401_lod1_albedo.dds',
-                    --SpecularName = '/units/ueb2401/ueb2401_lod1_specteam.dds',
-                    --NormalsName = '/units/ueb2401/ueb2401_lod1_normalsts.dds',
                 },
             },
         },
@@ -254,7 +246,6 @@ UnitBlueprint {
     },
     Weapon = {
         {
-            --AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = true,
             ArtilleryShieldBlocks = true,
             Audio = {
@@ -322,14 +313,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = .5,
-            --RenderFireClock = true,
             TargetCheckInterval = 8,
-            --TargetPriorities = {
-            --    'SPECIALHIGHPRI',
-            --    'STRUCTURE',
-            --    'SPECIALLOWPRI',
-            --    'ALLUNITS',
-            --},
             TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'Turret_muzzle',
             TurretBonePitch = 'Turret_pitch',

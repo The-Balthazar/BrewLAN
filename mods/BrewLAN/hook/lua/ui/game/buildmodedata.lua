@@ -181,7 +181,7 @@ local UEFGANTRYT3 = {
 do -- I probably have something very wrong here
     local function joinMyTables(t1, t2)
      
-       for k,v in ipairs(t2) do
+       for k,v in t2 do
           table.insert(t1, v)
        end 
      

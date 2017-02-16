@@ -6,6 +6,7 @@ local BareBonesWeapon = import('/lua/sim/DefaultWeapons.lua').BareBonesWeapon
 
 DeathNukeWeapon = Class(BareBonesWeapon) {
     OnFire = function(self)
+        return self.Fire(self)
     end,
 
     Fire = function(self)
