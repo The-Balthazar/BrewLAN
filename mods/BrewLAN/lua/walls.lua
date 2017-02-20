@@ -35,8 +35,12 @@ function CardinalWallUnit(SuperClass)
             if bp.Display.AdjacencyConnection then
                 self.BeamEffectsBag = {}
             end
-            if bp.Display.Tarmacs[1] then
-                self:CreateTarmac(true,true,true,false,false)
+            if bp.Display.Tarmacs[1] and self:GetCurrentLayer() == 'Land' and not self:HasTarmac() then
+                if self.TarmacBag then
+                    self:CreateTarmac(true, true, true, self.TarmacBag.Orientation, self.TarmacBag.CurrentBP)
+                else
+                    self:CreateTarmac(true, true, true, false, false)
+                end
             end
             if bp.General.FactionName != 'UEF' then
                 self:BoneUpdate(self.Info.bones)

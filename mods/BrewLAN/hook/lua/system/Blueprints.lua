@@ -20,6 +20,7 @@ function ModBlueprints(all_blueprints)
     
     BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANCategoryChanges(all_blueprints.Unit)
+    BrewLANGlobalCategoryAdditions(all_blueprints.Unit)
     BrewLANGantryBuildList(all_blueprints.Unit)
     BrewLANHeavyWallBuildList(all_blueprints.Unit)
     --BrewLANNameCalling(all_blueprints.Unit)
@@ -210,7 +211,26 @@ function BrewLANCategoryChanges(all_bps)
         end
     end
 end   
- 
+
+--------------------------------------------------------------------------------
+-- Global category additions
+--------------------------------------------------------------------------------
+
+function BrewLANGlobalCategoryAdditions(all_bps)
+    local Cats = {
+        'DRAGBUILD',
+    }
+    for id, bp in all_bps do
+        if bp.Categories then
+            for i, cat in Cats do
+                if not table.find(bp.Categories, cat) then
+                    table.insert(bp.Categories, cat)
+                end
+            end
+        end
+    end
+end
+
 --------------------------------------------------------------------------------
 -- Allowing other experimentals that look like they fit to be gantry buildable
 --------------------------------------------------------------------------------

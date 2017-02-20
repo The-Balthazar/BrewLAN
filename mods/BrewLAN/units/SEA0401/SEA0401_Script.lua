@@ -53,7 +53,12 @@ SEA0401 = Class(TAirUnit) {
     DestructionPartsChassisToss = {'SEA0401',},
     DestroyNoFallRandomChance = 1.1,
 
+    OnCreate = function(self)
+        TAirUnit.OnCreate(self)
+    end,
+
     OnStopBeingBuilt = function(self,builder,layer)
+        self:SetMesh(self:GetBlueprint().TerrainMeshes.RedRock)
         TAirUnit.OnStopBeingBuilt(self,builder,layer)
         self.EngineManipulators = {}
 
@@ -85,8 +90,6 @@ SEA0401 = Class(TAirUnit) {
         self.LandingAnimManip:SetPrecedence(0)
         self.Trash:Add(self.LandingAnimManip)
         self.LandingAnimManip:PlayAnim(self:GetBlueprint().Display.AnimationLand):SetRate(1)
-        self:ForkThread(self.ExpandThread)
-
     end,
 
     OnLayerChange = function(self, new, old)

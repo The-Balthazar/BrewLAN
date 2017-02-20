@@ -24,6 +24,21 @@ SSA0001 = Class(TConstructionUnit) {
         self.PodName = podName
         self:SetCreator(parent)
         IssueGuard({self},self.Parent)
+        self:ForkThread(self.StayCloseThread)
+    end,
+
+    StayCloseThread = function(self)
+        local myPos, pPos
+        while self do
+            WaitSeconds(3)
+            myPos = self:GetPosition()
+            pPos = self.Parent:GetPosition()
+            if not self.Parent:IsDead() and VDist2Sq(myPos[1], myPos[3], pPos[1], pPos[3]) > 900 then
+                IssueClearCommands({self})
+                IssueGuard({self},self.Parent)
+                --LOG("HALP IM ALONE " .. VDist2Sq(myPos[1], myPos[3], pPos[1], pPos[3]))
+            end
+        end
     end,
 
     OnKilled = function(self, instigator, type, overkillRatio)

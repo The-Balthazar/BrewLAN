@@ -17,6 +17,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
         LOG("Terrain type: " .. GetTerrainType( pos[1], pos[3] ).Style .. " POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3])
         self.DPScalcs = {}
         self:SetCustomName('True Brick')
+        LOG(repr(self:GetBlueprint() ))
     end,
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)

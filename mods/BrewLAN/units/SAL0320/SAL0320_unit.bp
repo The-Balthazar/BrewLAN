@@ -98,12 +98,14 @@ UnitBlueprint {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
                 },
-                --[[{
-                    AlbedoName = 'ual0205_lod1_albedo.dds',
-                    LODCutoff = 215,
+                {
+                    LODCutoff = 200,
                     ShaderName = 'Aeon',
-                    SpecularName = 'ual0205_lod1_specteam.dds',
-                },]]--
+                },
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Aeon',
+                },
             },
         },
         MovementEffects = {
@@ -221,9 +223,9 @@ UnitBlueprint {
     SelectionSizeX = 0.75,
     SelectionSizeZ = 0.55,
     SelectionThickness = 0.56,
-    SizeX = 1.1,
-    SizeY = 0.6,
-    SizeZ = 1.2,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
     StrategicIconName = 'icon_land3_antiair',
     StrategicIconSortPriority = 125,
     Transport = {

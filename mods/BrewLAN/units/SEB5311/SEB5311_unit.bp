@@ -99,19 +99,19 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 200,
+                    LODCutoff = 400,
                     ShaderName = 'Unit',
                     AlbedoName = '/mods/BrewLAN/units/seb5310/seb5310_albedo.dds',
                     NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
                     SpecularName = '/mods/BrewLAN/units/seb5310/seb5310_specteam.dds',
                 },
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/XEC8001/XEC8001_lod1_albedo.dds',
-                    NormalsName = '/units/XEC8001/XEC8001_lod1_normalsts.dds',
-                    SpecularName = '/units/XEC8001/XEC8001_lod1_specteam.dds',
-                },
+                --{
+                --    LODCutoff = 400,
+                --    ShaderName = 'Unit',
+                --    AlbedoName = '/units/XEC8001/XEC8001_lod1_albedo.dds',
+                --    NormalsName = '/units/XEC8001/XEC8001_lod1_normalsts.dds',
+                --    SpecularName = '/units/XEC8001/XEC8001_lod1_specteam.dds',
+                --},
             },
         },
         PlaceholderMeshName = 'UXB0000',

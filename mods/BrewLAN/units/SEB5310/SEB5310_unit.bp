@@ -126,7 +126,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 200,
+                    LODCutoff = 400,
                     ShaderName = 'Unit',
                     --AlbedoName = '/units/XEC8001/XEC8001_albedo.dds',
                     NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',

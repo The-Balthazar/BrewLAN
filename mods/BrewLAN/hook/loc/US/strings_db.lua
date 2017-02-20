@@ -1,15 +1,14 @@
 --+---------------+--+----------------------------------------------------------
---¦'-,_  ¦ ¦ _,-'¯¦--¦                                                                
+--¦'-,_  ¦ ¦ _,-'¯¦--¦
 --¦------+ +------¦--¦   BrewLAN English strings table
 --¦------+ +------¦--¦   Author: Balthassar
 --¦_,-'¯ ¦ ¦  ¯'-,¦--¦
 --+---------------+--+----------------------------------------------------------
-
 --------------------------------------------------------------------------------
 -- Tooltips
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
---Tooltips for the UEF Experimental Factory production toggle between land/sea and air units. 
+--Tooltips for the Gantry
 tooltipbrewlan0000="Toggle air production"
 tooltipbrewlan0001="Enables or disables production of air units"
 
@@ -24,15 +23,15 @@ tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Cen
 tooltipbrewlan0007="Detonate"
 tooltipbrewlan0008="Immediately detonate the payload."
 
---Tooltips for the builderwalls                                                            
+--Tooltips for the builderwalls
 tooltipbrewlan0009="Clear build area"
-tooltipbrewlan0010="Removes any structures or remains from the build area."         
+tooltipbrewlan0010="Removes any structures or remains from the build area."
 
 --Tooltops for the Seraphim spy facility
 tooltipbrewlan0011="Scry"
 tooltipbrewlan0012="Choose a unit to spy on"
-      
---Tooltips for the open/closeable kind of gate.      
+
+--Tooltips for the open/closeable kind of gate.
 tooltipbrewlan0013="Open/Close"
 tooltipbrewlan0014="Toggle gate open or closed"
 tooltipbrewlan0015="Auto open enabled."
@@ -40,14 +39,14 @@ tooltipbrewlan0015="Auto open enabled."
 --Tooltips for the Omni disrupter.
 tooltipbrewlan0016="Disruption pulse toggle"
 tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
- 
---Tooltips for the Rez/reclaim command.                    
+
+--Tooltips for the Rez/reclaim command.
 --tooltipbrewlan0018="Reclaim (E)"
 tooltipbrewlan0019="Reclaim a unit or wreckage and learn its blueprint."
 
---Tooltips for the Stargate      
+--Tooltips for the Stargate
 tooltipbrewlan0020="Dial Gateway"
-tooltipbrewlan0021="Selects a target quantum gateway to create a one way transportation link with." 
+tooltipbrewlan0021="Selects a target quantum gateway to create a one way transportation link with."
 tooltipbrewlan0022="Enable or disable the shield preventing access in or out of the gateway."
 tooltipbrewlan0023="Stop Link"
 tooltipbrewlan0024="Closes an outgoing link."
@@ -65,8 +64,8 @@ tooltipbrewlan0029="Toggle Economy Watch"
 tooltipbrewlan0030="While active, this unit will dynamically reduce its operational spying radius to an economically sustainable level."
 
 --------------------------------------------------------------------------------
--- Support commander enchancements 
--------------------------------------------------------------------------------- 
+-- Support commander enchancements
+--------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Adds field engineer build capabilities to the SACU."
 brewlan_enhancements_1="Field Engineering Suite"
@@ -74,7 +73,7 @@ brewlan_enhancements_2="Remove Field Engineering Suite"
 
 --------------------------------------------------------------------------------
 -- Tech 1
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 sair0105="Light Gunship"
 saa0105_name="Respirer"
@@ -113,7 +112,7 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels individual aircrafts."
 
 --Field engineers
-sel0119_name="Wally"    
+sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
 ssl0119_name="Iyaz"
@@ -127,7 +126,7 @@ Unit_Description_BrewLAN_T1S001="Tech 1 construction, repair, capture, reclamati
 
 --------------------------------------------------------------------------------
 -- Tech 2
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 saa0211_name="Impaler"
 saa0211_desc="Tactical Bomber"
@@ -173,7 +172,7 @@ Unit_Description_BrewLAN_T2D004="An all-terrain mine armed with a full-yield nuc
 -- Cybran T2 shields; they didnt have build description originally.
 Unit_Description_BrewLAN_T2D002="Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
 Unit_Description_BrewLAN_T2D003="Generates a heavy shield around units and structures within its radius."
-  
+
 sbui5210="Heavy Wall Section"
 seb5210_name="General Destruction Impasse"
 srb5210_name="Bulkhead"
@@ -183,17 +182,18 @@ Unit_Description_BrewLAN_T2B001="Restricts movement of enemy units and can susta
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobile shield generator."
 
-ss0219_desc=ss0319_desc --"Field Engineering Ship"
+--Field Engineering Ship
+ss0219_desc="Field Engineering Ship"
 ses0219_name="Fixxie Class"
-Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
+Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclamation unit. Equipped with a single AA weapon."
 
 --------------------------------------------------------------------------------
 -- Tech 3
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 sair0305="Heavy Gunship"
 ssa0305_name="Vulthuum"
-Unit_Description_BrewLAN_T3A001="Heavy gunship. Armed with Phasic autoguns and powerful but short range AA weaponry."
+Unit_Description_BrewLAN_T3A001="Heavy gunship. Armed with Phasic autoguns and powerful but short range AA weapons."
 
 sair0306="Heavy Air Transport"
 saa0306_name="Solaris"
@@ -207,7 +207,7 @@ sair0307="Heavy Torpedo Bomber"
 sra0307_name="Zenith"
 sea0307_name="Albatross"
 ssa0307_name="Souioz"
-Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwelm torpedo defenses with large salvos."
+Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwhelm torpedo defenses with large salvos."
 Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defense."
 Unit_Description_BrewLAN_T3A008="High-level torpedo bomber. Designed to engage powerful naval units."
 
@@ -238,10 +238,10 @@ Unit_Description_BrewLAN_T3B004="Heavy defensive tower. Attacks land-based units
 
 sbui2311_desc="Anti-Armor Point Defense"
 seb2311_name="Guardian"
-ssb2311_name="Sinn Unthe"  
+ssb2311_name="Sinn Unthe"
 srb2311_name="Punisher"
 sab2311_name="Nihiloid"
-Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerful battleship-grade gauss cannon."                       
+Unit_Description_BrewLAN_T3B005="Very heavy defensive tower. Attacks land- and sea-based units with a powerful battleship-grade gauss cannon."
 Unit_Description_BrewLAN_T3B006="Very heavy defensive tower. Attacks land- and sea-based units with a powerful energy weapon."
 Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and sea-based units with a powerful battleship-grade proton cannon."
 Unit_Description_BrewLAN_T3B008="Very heavy defensive tower. Attacks land- and sea-based units with a powerful oblivion cannon."
@@ -261,7 +261,7 @@ Unit_Description_BrewLAN_T3L013="Mobile spiderbot. Armed with a long range EMP b
 sel0321_desc="Mobile Strategic Missile Defense"
 sel0321_name="Aster"
 srl0321_name="Hedgehog"
-sal0321_name="Scarab"  
+sal0321_name="Scarab"
 ssl0321_name="Ythhu"
 Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Build costs include first missile, however the vehicle lacks a fabrication suite to produce additional missiles unassisted."
 Unit_Description_BrewLAN_T3L008="Mobile strategic missile defense. Fires a salvo of three missiles at each target. Build costs include first salvo."
@@ -278,7 +278,7 @@ ssl0319_name="Iyazyne"
 Unit_Description_BrewLAN_T3L005="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment. Can build specialist defenses."
 Unit_Description_BrewLAN_T3L006="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Unit_Description_BrewLAN_T3L007="Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
-      
+
 srb1311_desc="Cloakable Power Generator"
 seb1311_desc="Engineering Power Generator"
 sab1311_desc="Shielded Power Generator"
@@ -287,70 +287,72 @@ sab1311_name="Von Mayer Reactor"
 seb1311_name="Bessemer Reactor"
 srb1311_name="Faraday Reactor"
 ssb1311_name="Uya-iyathan"
-Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output." 
-Unit_Description_BrewLAN_T3B0012="Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged." 
-Unit_Description_BrewLAN_T3B0014="Large power generating structure. Possesses a powerful shield, which consumes a small portion of its operating output." 
-Unit_Description_BrewLAN_T3B0016="Large power generating structure. Possesses superior armor and has self regenerative capabilities." 
+Unit_Description_BrewLAN_T3B009="Large power generating structure. Possesses the capability to cloak, which consumes a large portion of its operating output."
+Unit_Description_BrewLAN_T3B0012="Large power generating structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
+Unit_Description_BrewLAN_T3B0014="Large power generating structure. Possesses a powerful shield, which consumes a small portion of its operating output."
+Unit_Description_BrewLAN_T3B0016="Large power generating structure. Possesses superior armor and has self regenerative capabilities."
 
 sab1312_desc="Shielded Mass Extractor"
 seb1312_desc="Engineering Mass Extractor"
 srb1312_desc="Cloakable Mass Extractor"
 ssb1312_desc="Armored Mass Extractor"
-seb1312_name="Mass Pump 3E" 
+seb1312_name="Mass Pump 3E"
 Unit_Description_BrewLAN_T3B0021="High-end Mass extractor. Must be constructed on Mass deposits. It generates a shield dome large enough to cover itself and 4 small storages."
 Unit_Description_BrewLAN_T3B0022="High-end Mass extractor. Must be constructed on Mass deposits. It possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
 Unit_Description_BrewLAN_T3B0023="High-end Mass extractor. Must be constructed on Mass deposits. Visible only to Omni."
-Unit_Description_BrewLAN_T3B0024="High-end Mass extractor. Must be constructed on Mass deposits. It possesses superiour armor and has self regenerative capabilities."
-  
-srb1313_desc="Cloakable Mass Fabricator" 
-seb1313_desc="Engineering Mass Fabricator"  
-sab1313_desc="Shielded Mass Fabricator" 
+Unit_Description_BrewLAN_T3B0024="High-end Mass extractor. Must be constructed on Mass deposits. It possesses superior armor and has self regenerative capabilities."
+
+srb1313_desc="Cloakable Mass Fabricator"
+seb1313_desc="Engineering Mass Fabricator"
+sab1313_desc="Shielded Mass Fabricator"
 ssb1313_desc="Armored Mass Fabricator"
-Unit_Description_BrewLAN_T3B0010="Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power." 
+Unit_Description_BrewLAN_T3B0010="Large mass fabrication structure. Possesses the capability to cloak, which consumes additional power."
 Unit_Description_BrewLAN_T3B0013="Large mass fabrication structure. Possesses the ability to repair nearby buildings. Automatically builds defenses when damaged."
-Unit_Description_BrewLAN_T3B0015="Large mass fabrication structure. Possesses a powerfull shield, which consumes additional power."    
-Unit_Description_BrewLAN_T3B0017="Large mass fabrication structure. Possesses superior armor and has self regenerative capabilities."  
- 
+Unit_Description_BrewLAN_T3B0015="Large mass fabrication structure. Possesses a powerful shield, which consumes additional power."
+Unit_Description_BrewLAN_T3B0017="Large mass fabrication structure. Possesses superior armor and has self regenerative capabilities."
+
 srb4313_desc="Cloakable Stealth Field Generator"
-srb4313_name="Nightshade" 
-Unit_Description_BrewLAN_T3B0011="Generates a steath field and a personal cloak. Hides units and structures within its operational range from radar and sonar, but not from visual sensors, the generator itself is only visible to omni." 
+srb4313_name="Nightshade"
+Unit_Description_BrewLAN_T3B0011="Generates a stealth field and a personal cloak. Hides units and structures within its operational range from radar and sonar, but not from visual sensors, the generator itself is only visible to omni."
 
 ssb5301_desc="Shield Wall Section"
 ssb5301_name="Athahaas"
 sab5301_name="Aegis"
 Unit_Description_BrewLAN_T3B0018="Restricts movement of enemy units. Projects a small shield dome above itself to offer additional protection from enemy fire."
-        
+
 srb5310_desc="Armored Wall Section"
 srb5310_name="Procyon Defiance"
 seb5310_name="Citadel"
 Unit_Description_BrewLAN_T3B0019="Restricts movement of enemy units. Can sustain extreme amounts of damage. Connects to other adjacent armored wall sections."
 
-srb5311_desc="Armored Gate Section"        
+srb5311_desc="Armored Gate Section"
 srb5311_name="Procyon Offering"
 seb5311_name="Harrow"
 Unit_Description_BrewLAN_T3B0020="Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
 
 seb2308_name="Harpoon"
-Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."                                 
+Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."
 sab2308_name="Flash Flood"
 Unit_Description_BrewLAN_T3B0027="Very heavy long-range anti-naval defense system. Designed to engage the most powerful of naval units."
 
 ssb3301_desc="Optics Tracking Facility"
 ssb3301_name="Aezselen"
-Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targetted friendly or enemy unit. Can target radar blips. Cannot target empty space."
+Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targeted friendly or enemy unit. Can target radar blips. Cannot target empty space."
 
 --Mobile Shield Generator
 sal0322_name="Flame Lotus"
 sel0322_name="Ella"
---Short and long descriptions both the same as default. 
+--Short and long descriptions both the same as default.
 
-srl0320_desc="Mobile Missile Launcher"
-srl0320_name="Slink"
-Unit_Description_BrewLAN_T3L009="Mobile cloaking anti-air missile launcher. Must decloak to fire."
-
+--Mobile AA
 sal0320_desc="Mobile Anti-Air Defense"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Hovering mobile anti-air defence system. Consumes power with each shot."
+sel0324_name="NG3 Longbow"
+Unit_Description_BrewLAN_T3L015="Mobile anti-air missile launcher. Equipped with advanced scanning equipment."
+--srl0320_desc="Mobile Missile Launcher"
+srl0320_name="Slink"
+Unit_Description_BrewLAN_T3L009="Mobile cloaking anti-air missile launcher. Must decloak to fire."
 
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationary artillery defense grid. Equipped with an integrated threat identification and tracking system."
@@ -365,11 +367,14 @@ Unit_Description_BrewLAN_T3L011="Mobile multiple rocket launcher. Long reload ti
 
 ss0319_desc="Field Engineering Ship"
 ses0319_name="Patch Class"
-Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and reclaimation unit. Equipped with a torpedo bay, anti-torpedo defense, and a single AA weapon."
+Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and reclamation unit. Equipped with a torpedo bay, anti-torpedo defense, and a single AA weapon."
 
+sl0323_desc="Mobile Tactical Missile Defense"
+sal0323_name="Rupture"
+Unit_Description_BrewLAN_T3L014="Mobile tactical missile defense. Protection is limited to unit's operational area."
 --------------------------------------------------------------------------------
 -- Experimentals
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 ssl0403_desc="Experimental Reconstruction Engineer"
 ssl0403_name="Iyadesu"
@@ -407,7 +412,7 @@ Unit_Description_BrewLAN_T4B005="Experimental rapid-fire artillery. Fires drop-p
 
 srb4402_desc="Experimental Omni Disrupting Facility"
 srb4402_name="Darkness"
-Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Generates a pulse that reduces the maximun penetration depth of most active Omni sensors."
+Unit_Description_BrewLAN_T4B006="Experimental counterintelligence facility. Generates a pulse that reduces the maximum penetration depth of most active Omni sensors."
 
 ssb5401_desc="Experimental Quantum Gateway"
 ssb5401_name="Chappa'ai"
@@ -417,13 +422,13 @@ srl0000_desc="Crab Egg"
 srl0001_desc=srl0000_desc .. " (Destroyer)"
 srl0002_desc=srl0000_desc .. " (Field Engineer)"
 srl0003_desc=srl0000_desc .. " (Stealth)"
-srl0004_desc=srl0000_desc .. " (Missile)"
-srl0005_desc=srl0000_desc .. " (Hedgehog)"
+srl0004_desc=srl0000_desc .. " (Anti-Air)"
+srl0005_desc=srl0000_desc .. " (" .. srl0321_name .. ")"
 srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
-Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and expensive units cost more to spy on."
+Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius that are visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and large units cost more to spy on."
 
 sab0401_desc="Experimental Air Factory"
 sab0401_name="Independence Engine"
