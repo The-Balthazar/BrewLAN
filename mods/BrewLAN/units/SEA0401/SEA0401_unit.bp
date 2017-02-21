@@ -10,13 +10,13 @@ UnitBlueprint {
         BreakOffIfNearNewTarget = true,
         CanFly = true,
         CirclingDirChange = true,
-	CirclingDirChangeFrequencySec = '5',
+        CirclingDirChangeFrequencySec = '5',
         CirclingElevationChangeRatio = 0.25,
         CirclingFlightChangeFrequency = 15,
         CirclingRadiusChangeMaxRatio = .9,
         CirclingRadiusChangeMinRatio = .5,
         CirclingTurnMult = 2,
-#        CombatTurnSpeed = 0.8,
+--        CombatTurnSpeed = 0.8,
         EngageDistance = 50,
         KLift = 1,
         KLiftDamping = 0.8,
@@ -28,12 +28,12 @@ UnitBlueprint {
         KTurnDamping = 1.5,
         LiftFactor = 7,
         MaxAirspeed = 9, -- originally 18, then 12, then 15
-#        MinAirspeed = 5,
-#        PredictAheadForBombDrop = 2,
-#        StartTurnDistance = 5,
-#        TightTurnMultiplier = 0,
+--        MinAirspeed = 5,
+--        PredictAheadForBombDrop = 2,
+--        StartTurnDistance = 5,
+--        TightTurnMultiplier = 0,
         TransportHoverHeight = 3,
-#        TurnSpeed = 0.8,
+--        TurnSpeed = 0.8,
         Winged = false,
     },
     Audio = {
@@ -117,7 +117,7 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'OVERLAYANTIAIR',
         'OVERLAYDIRECTFIRE',
-        'OVERLAYSONAR',
+        --'OVERLAYSONAR',
         'OVERLAYRADAR',
         'CANNOTUSEAIRSTAGING',
     },
@@ -136,7 +136,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_radar>Radar',
-            '<LOC ability_sonar>Sonar',
+            --'<LOC ability_sonar>Sonar',
         },
         AnimationLand = '/mods/BrewLAN/units/SEA0401/SEA0401_Afoldup.sca',
         LayerChangeEffects = {
@@ -253,7 +253,7 @@ UnitBlueprint {
     Intel = {
         RadarRadius = 72,
         VisionRadius = 46,
-        SonarRadius = 46,
+        --SonarRadius = 46,
     },
     Interface = {
         HelpText = '<LOC sea0401_desc>Experimental AA Gunship',
@@ -273,7 +273,7 @@ UnitBlueprint {
         Elevation = 23,
         GroundCollisionOffset = 10,
         MaxSpeed = 0.5,
-        MeshExtentsX = 11,
+        MeshExtentsX = 7,
         MeshExtentsY = 3.5,
         MeshExtentsZ = 15,
         MotionType = 'RULEUMT_Air',
@@ -286,7 +286,7 @@ UnitBlueprint {
     SelectionSizeZ = 8,
     SelectionThickness = 0.17,
     SizeSphere = 6,
-    SizeX = 10,
+    SizeX = 8,
     SizeY = 4,
     SizeZ = 13,
     StrategicIconName = 'icon_experimental_generic',
@@ -305,10 +305,8 @@ UnitBlueprint {
     },
     Weapon = {
         {
-
             Label = 'HeadAAGun',
-
-	    AutoInitiateAttackCommand = true,
+            AutoInitiateAttackCommand = true,
             AlwaysRecheckTarget = true,
             Audio = {
                 Fire = Sound {
@@ -337,7 +335,7 @@ UnitBlueprint {
             FiringTolerance = 2,
             HeadingArcCenter = 0,
             HeadingArcRange = 40,
-	    LeadTarget = 'true',
+            LeadTarget = 'true',
             MaxRadius = 64,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -426,9 +424,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         {
-
             Label = 'RearAAGun',
-
             AlwaysRecheckTarget = true,
             Audio = {
                 Fire = Sound {
@@ -457,7 +453,7 @@ UnitBlueprint {
             },
             FiringRandomness = 0,
             FiringTolerance = 2,
-	    LeadTarget = 'true',
+            LeadTarget = 'true',
             MaxRadius = 64,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -530,9 +526,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         {
-
             Label = 'SAM1',
-
             Audio = {
                 Fire = Sound {
                     Bank = 'XEA_Weapon',
@@ -637,9 +631,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         {
-
             Label = 'SAM2',
-
             Audio = {
                 Fire = Sound {
                     Bank = 'XEA_Weapon',
@@ -744,9 +736,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },      
         {
-
             Label = 'RearASFBeam',
-
             AlwaysRecheckTarget = true,
             Audio = {
                 Fire = Sound {
@@ -826,7 +816,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },   
         {         
-	         AutoInitiateAttackCommand = true,
+            AutoInitiateAttackCommand = true,
             AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = false,
             Audio = {

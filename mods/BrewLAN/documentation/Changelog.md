@@ -232,6 +232,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Iyadesu drones now return if they get too far away.
   * New almost working sub-mod that will give map based re-skins for units.
   * Bubble Tea: Disabled the beam effect on the Aeon shield.
+  * Expert Camo: Renamed from Expert Cammo.
+  * Expert Camo: Added Mongoose RedRock texture.
+    * It looks godaweful, but it works. Unlike the Centurion, which bugs out.
+
+  ### 2017-02-21
+
+  * Rewrote the Centurion script.
+  * Removed the Centurion's sonar.
+    * At one point it was going to have a depth charge weapon, but it got the anti-ASF laser instead.
+  * Centurion now has a build cube for its build animation.
+  * Created a new texture for the Centurion.
 
 ## 2016-12-15|0.7.5.5
 
