@@ -54,6 +54,7 @@ function ExtractExpertCammoTerrainMeshes(all_bps)
                 --Extract substrings
                 local bp = string.sub(tex, bpFirstI, bpLastI)
                 local tt = string.sub(tex, bpLastI + 2, ttLastI)
+                --local bp, tt = string.match(tex, "/terrainmeshes/([^_]+)_([^_]+)") -- Too bad supcom can't do string match
                 --Correct capitalisation on terrain type
                 local knownCap = false
                 for ti, TerrainString in terrainTypes do

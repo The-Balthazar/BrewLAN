@@ -58,7 +58,6 @@ SEA0401 = Class(TAirUnit) {
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
-        self:SetMesh(self:GetBlueprint().TerrainMeshes.RedRock)
         TAirUnit.OnStopBeingBuilt(self,builder,layer)
         self.EngineManipulators = {}
 

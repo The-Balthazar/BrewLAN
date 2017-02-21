@@ -90,7 +90,7 @@ SAB4401 = Class(AShieldStructureUnit) {
         if not target.PillarShieldNode then target.PillarShieldNode = {} end
 
         --Targeted-by beam effects
-        target.PillarShieldNode[self:GetEntityId()] = AttachBeamEntityToEntity(self, 'Gem', target, 0, self:GetArmy(), Bp.Defense.Shield.ShieldTargetBeam)
+        --target.PillarShieldNode[self:GetEntityId()] = AttachBeamEntityToEntity(self, 'Gem', target, 0, self:GetArmy(), Bp.Defense.Shield.ShieldTargetBeam)
 
         --Define targets shield
         local spec = Bp.Defense.TargetShield

@@ -231,6 +231,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Iyadesu drones now fly higher.
   * Iyadesu drones now return if they get too far away.
   * New almost working sub-mod that will give map based re-skins for units.
+  * Bubble Tea: Disabled the beam effect on the Aeon shield.
 
 ## 2016-12-15|0.7.5.5
 
