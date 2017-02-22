@@ -4,16 +4,24 @@ do
     UEFT3Land['S'] = 'sel0320'
     UEFT3Land['V'] = 'sel0322'
     UEFT3Land['K'] = 'sel0321'
+    UEFT3Land['N'] = 'sel0324'
 
     UEFT1Air['G'] = 'sea0105'
     UEFT1Air['P'] = 'sea0106'
     UEFT3Air['P'] = 'sea0307'
 
+    --Engineer boats
+    UEFT1Sea['F'] = 'ses0119'
+    UEFT2Sea['F'] = 'ses0219'
+    UEFT3Sea['F'] = 'ses0319'
+
     CybranT1Land['F'] = 'srl0119'
     CybranT2Land['F'] = 'srl0209'
     CybranT3Land['F'] = 'srl0319'
-    CybranT3Land['N'] = 'srl0320'
-    CybranT3Land['K'] = 'srl0321'
+    CybranT3Land['N'] = 'srl0320' --AA
+    CybranT3Land['K'] = 'srl0321' --anti-strat
+    CybranT3Land['M'] = 'srl0311' --MRL
+    CybranT3Land['C'] = 'srl0316' --Stealth
 
     CybranT1Air['P'] = 'sra0106'
     CybranT3Air['T'] = 'sra0306'
@@ -21,15 +29,18 @@ do
 
     AeonT1Land['F'] = 'sal0119'
     AeonT2Land['F'] = 'sal0209'
+    AeonT2Land['K'] = 'sal0323' --anti-tac
     AeonT3Land['A'] = 'sal0311'
     AeonT3Land['F'] = 'sal0319'
     AeonT3Land['K'] = 'sal0321'
+    AeonT3Land['N'] = 'sal0320' --AA
+    AeonT3Land['V'] = 'sal0322' --Shield
 
     AeonT1Air['G'] = 'saa0105'
     AeonT1Air['P'] = 'saa0106'
     AeonT2Air['O'] = 'saa0211'
+    AeonT2Air['D'] = 'saa0310'
     AeonT3Air['T'] = 'saa0306'
-    AeonT3Air['D'] = 'saa0310'
 
     UEFT1Eng['V'] = 'seb4102'
     UEFT1Eng['G'] = 'seb5104'
@@ -38,10 +49,12 @@ do
     UEFT3Eng['A'] = 'xeb0204'
     UEFT3Eng['T'] = 'seb2308'
     UEFT3Eng['S'] = 'seb3303'
+    UEFT3Eng['B'] = 'seb4303'--ADG
 
-    UEFT4Eng['C'] = 'sea0401'
-    UEFT4Eng['I'] = 'seb2404'
-    UEFT4Eng['G'] = 'seb0401'
+    UEFT4Eng['C'] = 'sea0401'--Centurion
+    UEFT4Eng['I'] = 'seb2404'--Ivan
+    UEFT4Eng['G'] = 'seb0401'--Gantry
+    UEFT4Eng['P'] = 'seb3404'--Panopticon
 
     AeonT1Eng['V'] = 'sab4102'
     AeonT1Eng['G'] = 'sab5104'
@@ -50,8 +63,8 @@ do
     AeonT3Eng['T'] = 'sab2308'
     AeonT3Eng['D'] = 'sab2306'
     AeonT3Eng['S'] = 'xab3301'
-    AeonT3Eng['C'] = ''
 
+    AeonT4Eng['I'] = 'sab0401'
     AeonT4Eng['S'] = 'xab2307'
     AeonT4Eng['A'] = 'sal0401'
 
@@ -85,13 +98,20 @@ do
     -- UEF T1 shield
     buildModeKeys['seb4102'] = {['U'] = 'seb4301',}
 
+    --buildModeKeys[]
+
+    ----------------------------------------------------------------------------
+    -- Seraphim things
+    ----------------------------------------------------------------------------
     if GetVersion() != '1.1.0' then --If not original Steam SupCom
         SeraphimT1Land['F'] = 'ssl0119'
         SeraphimT2Land['F'] = 'ssl0219'
+        SeraphimT2Land['V'] = 'ssl0222'--shield
         SeraphimT3Land['F'] = 'ssl0319'
         SeraphimT3Land['A'] = 'xsl0303'
         SeraphimT3Land['O'] = 'ssl0311'
         SeraphimT3Land['K'] = 'ssl0321'
+        SeraphimT3Land['N'] = 'ssl0320'--AA
 
         SeraphimT1Air['P'] = 'ssa0106'
         SeraphimT1Air['G'] = 'ssa0105'
@@ -106,7 +126,7 @@ do
 
         SeraphimT2Eng['A'] = 'ssb0104'
 
-        SeraphimT3Eng['D'] = 'ddb2306'
+        SeraphimT3Eng['D'] = 'ssb2306'
         SeraphimT3Eng['O'] = 'sss0305'
         SeraphimT3Eng['S'] = 'ssb3301'
 
@@ -129,73 +149,59 @@ do
             },
         }
     end
-    -- Gantry awkwardness
-    local UEFGANTRYT1 = {
-        ['E'] = 'uel0105',
-        ['S'] = 'uel0101',
-        ['O'] = 'uel0106',
-        ['T'] = 'uel0201',
-        ['R'] = 'uel0103',
-        ['N'] = 'uel0104',
-        ['F'] = 'uea0102',
-        ['S'] = 'uea0101',
-        ['O'] = 'uea0103',
-        ['T'] = 'uea0107',
+    ----------------------------------------------------------------------------
+    -- Gantry dynamic table
+    ----------------------------------------------------------------------------
+    local validKeys = {
+        'Q','W','E','R','T','Y','U','I','O','P',
+         'A','S','D','F','G','H','J','K','L',
+           'Z','X','C','V','B','N','M',
     }
-    local UEFGANTRYT2 = {
-        ['O'] = 'del0204',
-        ['E'] = 'uel0208',
-        ['F'] = 'xel0209',
-        ['T'] = 'uel0202',
-        ['M'] = 'uel0111',
-        ['N'] = 'uel0205',
-        ['P'] = 'uel0203',
-        ['V'] = 'uel0307',
-        ['F'] = 'dea0202',
-        ['P'] = 'uea0204',
-        ['G'] = 'uea0203',
-        ['T'] = 'uea0104',
+    local UEFGANTRYTparts = {
+        {UEFT1Land, UEFT1Air, UEFT1Sea},
+        {UEFT2Land, UEFT2Air, UEFT2Sea},
+        {UEFT3Land, UEFT3Air, UEFT3Sea},
+        {UEFT4Eng, CybranT4Eng, AeonT4Eng},
     }
-    local UEFGANTRYT3 = {
-        ['A'] = 'xel0305',
-        ['M'] = 'xel0306',
-        ['E'] = 'uel0309',
-        ['O'] = 'uel0303',
-        ['R'] = 'uel0304',
-        ['T'] = 'xea0306',
-        ['S'] = 'uea0302',
-        ['F'] = 'uea0303',
-        ['O'] = 'uea0304',
-        ['G'] = 'uea0305',
-    }
-
-    --[[
-    do -- This needs a rework
-        local function joinMyTables(t1, t2)
-            for k,v in t2 do
-                table.insert(t1, v)
-            end
-            return t1
-        end
-
-        joinMyTables(UEFGANTRYT1, UEFT1Land)
-        joinMyTables(UEFGANTRYT1, UEFT1Air)
-        joinMyTables(UEFGANTRYT1, UEFT1Sea)
-
-        joinMyTables(UEFGANTRYT2, UEFT2Land)
-        joinMyTables(UEFGANTRYT2, UEFT2Air)
-        joinMyTables(UEFGANTRYT2, UEFT2Sea)
-
-        joinMyTables(UEFGANTRYT3, UEFT3Land)
-        joinMyTables(UEFGANTRYT3, UEFT3Air)
-        joinMyTables(UEFGANTRYT3, UEFT3Sea)
-    end
-    ]]--
-
     buildModeKeys['seb0401'] = {
-        [1] = UEFGANTRYT1,
-        [2] = UEFGANTRYT2,
-        [3] = UEFGANTRYT3,
-        [4] = UEFT4Eng,
+        [1] = {},
+        [2] = {},
+        [3] = {},
+        [4] = {},
     }
+    ----------------------------------------------------------------------------
+    -- Add Seraphim if we aren't on v1.1.0
+    ----------------------------------------------------------------------------
+    if GetVersion() != '1.1.0' then
+        table.insert(UEFGANTRYTparts[4], SeraphimT4Eng)
+    end
+    ----------------------------------------------------------------------------
+    -- Marge and swap where overlaps occur
+    ----------------------------------------------------------------------------
+    for techI, techTable in UEFGANTRYTparts do
+        for tableI, keyTable in techTable do
+            for key, uid in keyTable do
+                if not buildModeKeys['seb0401'][techI][key] then
+                    buildModeKeys['seb0401'][techI][key] = uid
+                    --LOG(key .. " " .. uid)
+                else
+                    local keyindex = table.find(validKeys, key)
+                    for i = 1, table.getn(validKeys) do
+                        --Starting from one after starting key cycle through whole scope with wrap around
+                        local newkeyi = keyindex + i
+                        if newkeyi > table.getn(validKeys) then
+                            newkeyi = newkeyi - table.getn(validKeys)
+                        end
+                        local newkey = validKeys[newkeyi]
+
+                        if not buildModeKeys['seb0401'][techI][newkey] then
+                            buildModeKeys['seb0401'][techI][newkey] = uid
+                            --LOG(newkey .. " bumped " .. uid)
+                            break
+                        end
+                    end
+                end
+            end
+        end
+    end
 end

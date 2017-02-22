@@ -253,6 +253,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * BrewLAN now runs on original SupCom (specifically only version 1.1.0).
     * By that I mean it no longer crashes it or breaks everything.
     * The degree to which any individual unit works varies substantially.
+  * Damage Numbers: Fix for things getting one-shotted.
+  * Overhauled the build mode data key assignment for the Gantry. (Build mode shortcut key is B)
+    * Overlapping key values are now bumped to the next free value, instead of overwritten.
+    * The priority order is Land, Air, Sea for tech 1-3. UEF, Cybran, Aeon, Seraphim for experimental.
+    * Still to do: Fix build mode for experimentals putting the Gantry into command mode.
+  * Added build mode key shortcuts for newer units that were lacking.
 
 ## 2016-12-15|0.7.5.5
 
