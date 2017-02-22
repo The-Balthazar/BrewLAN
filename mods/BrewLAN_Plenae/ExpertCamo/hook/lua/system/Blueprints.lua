@@ -35,6 +35,7 @@ function ExtractExpertCamoTerrainMeshes(all_bps)
     local units = {}
     --Known terrain type capitalisations
     local terrainTypes = {
+        'Default',
         'Desert',
         'Evergreen',
         'Geothermal',
@@ -65,15 +66,17 @@ function ExtractExpertCamoTerrainMeshes(all_bps)
                     end
                 end
                 --We don't know what it should be, but it probably starts with a capital
-                if not knownCap then
-                    tt = string.gsub(tt,"^%l", string.upper("^%l"))
-                end
-
-                if not units[bp] then
-                    units[bp] = {}
-                end
-                if not table.find(units[bp], tt) then
-                    table.insert(units[bp], tt)
+                --if not knownCap then
+                    --tt = string.gsub(tt,"^%l", string.upper("^%l"))
+                --end
+                --unknown terrain types disabled for now to prevent it from breaking if no terrain type is in the file URL.
+                if knownCap then
+                    if not units[bp] then
+                        units[bp] = {}
+                    end
+                    if not table.find(units[bp], tt) then
+                        table.insert(units[bp], tt)
+                    end
                 end
             --end
         end
@@ -138,7 +141,7 @@ function ExtractTerrainMeshBlueprint(bp, tt, textures)
     if not bp.Display.TerrainMeshes then bp.Display.TerrainMeshes = {} end
     bp.Display.TerrainMeshes[tt] = buildmeshbp.BlueprintId
     MeshBlueprint(buildmeshbp)
-    LOG(repr(bp.Display.TerrainMeshes) )
+    LOG("created mesh blueprint " .. buildmeshbp.BlueprintId )
 end
 
 end

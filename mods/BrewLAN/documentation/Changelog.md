@@ -244,6 +244,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Centurion now has a build cube for its build animation.
   * Created a new texture for the Centurion.
 
+  ### 2017-02-22
+
+  * Expert Camo: Removed most of the textures from the repo.
+    * They have the potential to make space requirements spiral out of control.
+    * I will provide them externally.
+  * Expert Camo: Added 'Default' to the list of terrain types.
+  * BrewLAN now runs on original SupCom (specifically only version 1.1.0).
+    * By that I mean it no longer crashes it or breaks everything.
+    * The degree to which any individual unit works varies substantially.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

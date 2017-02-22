@@ -118,7 +118,7 @@ SRB4402 = Class(CRadarJammerUnit) {
     },
         
     OnStopBeingBuilt = function(self,builder,layer)
-        --GetVersion() == '1.6.6' -- is steam version
+        --GetVersion() == '1.6.6' -- is steam FA version --1.1.0 is steam SC version
         
         if ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
             LOG("We are probably on FAF.")

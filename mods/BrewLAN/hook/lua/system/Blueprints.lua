@@ -187,7 +187,8 @@ function BrewLANCategoryChanges(all_bps)
         'BUILTBYHEAVYWALL',
     }
     for k, v in Units do   
-        if all_bps[k] then
+        --Make sure the unit exists, and has its table
+        if all_bps[k] and all_bps[k].Categories then
             if not v.NoBuild then
                 for i in v do
                     if i == 'r' then
@@ -237,43 +238,46 @@ end
 
 function BrewLANGantryBuildList(all_bps)
     for id, bp in all_bps do
-        --Check the Gantry can't already build it, and that its a mobile experimental
-        if table.find(bp.Categories, 'BUILTBYGANTRY') and table.find(bp.Categories, 'EXPERIMENTAL') then
-            --Populate the Gantry AI table
-            if table.find(bp.Categories, 'AIR') then
-                table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
-            else
-                table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
-            end
-        elseif --table.find(bp.Categories, 'MOBILE')
-        --and table.find(bp.Categories, 'EXPERIMENTAL') or
-        table.find(bp.Categories, 'NEEDMOBILEBUILD') 
-        then
-            --Check it should actually be buildable
-            if table.find(bp.Categories, 'BUILTBYTIER1COMMANDER')
-            or table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
-            or table.find(bp.Categories, 'BUILTBYTIER2COMMANDER')
-            or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')   
-            or table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
-            or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
-            --For BlOps, they have this as a thing.
-            or table.find(bp.Categories, 'BUILTBYTIER4COMMANDER')
-            or table.find(bp.Categories, 'BUILTBYTIER4ENGINEER')
+        --Check it has a category table first
+        if bp.Categories then
+            --Check the Gantry can't already build it, and that its a mobile experimental
+            if table.find(bp.Categories, 'BUILTBYGANTRY') and table.find(bp.Categories, 'EXPERIMENTAL') then
+                --Populate the Gantry AI table
+                if table.find(bp.Categories, 'AIR') then
+                    table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
+                else
+                    table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
+                end
+            elseif --table.find(bp.Categories, 'MOBILE')
+            --and table.find(bp.Categories, 'EXPERIMENTAL') or
+            table.find(bp.Categories, 'NEEDMOBILEBUILD')
             then
-                --Check it wouldn't be bigger than the Gantry hole
-                if bp.Physics.SkirtSizeX < 13
-                or not bp.Physics.SkirtSizeX
-                --or bp.Footprint.SizeX < 9
+                --Check it should actually be buildable
+                if table.find(bp.Categories, 'BUILTBYTIER1COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER2COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+                --For BlOps, they have this as a thing.
+                or table.find(bp.Categories, 'BUILTBYTIER4COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER4ENGINEER')
                 then
-                    table.insert(bp.Categories, 'BUILTBYGANTRY')
-                    --Populate the Gantry AI table with the newly selected experimentals, so AI use them.
-                    if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'EXPERIMENTAL') then
-                        table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
-                    elseif table.find(bp.Categories, 'EXPERIMENTAL') then
-                        table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
+                    --Check it wouldn't be bigger than the Gantry hole
+                    if bp.Physics.SkirtSizeX < 13
+                    or not bp.Physics.SkirtSizeX
+                    --or bp.Footprint.SizeX < 9
+                    then
+                        table.insert(bp.Categories, 'BUILTBYGANTRY')
+                        --Populate the Gantry AI table with the newly selected experimentals, so AI use them.
+                        if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'EXPERIMENTAL') then
+                            table.insert(all_bps.seb0401.AI.Experimentals.Air, {id})
+                        elseif table.find(bp.Categories, 'EXPERIMENTAL') then
+                            table.insert(all_bps.seb0401.AI.Experimentals.Other, {id})
+                        end
                     end
                 end
-            end 
+            end
         end
     end
 end
@@ -285,51 +289,53 @@ end
 function BrewLANHeavyWallBuildList(all_bps)
     for id, bp in all_bps do
         --Check its not hard coded to be buildable, then check it meets the standard requirements.
-        if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
-        and table.find(bp.Categories, 'STRUCTURE')
-        then
-            if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
-            or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
-            or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+        if bp.Categories then
+            if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
+            and table.find(bp.Categories, 'STRUCTURE')
             then
-                if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
-                    --Check it wouldn't overlap badly with the wall
-                    local fits = { X = false, Z = false,}
-                    local correct = { X = false, Z = false,}   
-                    
-                    if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then   
-                        correct.X = true
-                        fits.X = true
-                    elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
-                        fits.X = true
-                    end
-                    
-                    if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then   
-                        correct.Z = true
-                        fits.Z = true       
-                    elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
-                        fits.Z = true
-                    end
-                    
-                    if fits.X and fits.Z then   
-                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
-                        --This is to prevent it from having the same footprint as the wall
-                        --and from it removing all the path blocking of the wall if it dies or gets removed.
-                        --It will still remove the blocking from the center of the wall, but that's acceptable.
-                        
-                        --This will also make it so those turrets will no longer block pathing whilst adjacent
-                        --But that is probably fine. 
-                        if correct.X then                               
-                            bp.Footprint.SizeX = 1
-                            bp.Physics.SkirtOffsetX = -1
-                            bp.Physics.SkirtSizeX = 3  
-                        end 
-                        if correct.Z then                               
-                            bp.Footprint.SizeZ = 1
-                            bp.Physics.SkirtOffsetZ = -1   
-                            bp.Physics.SkirtSizeZ = 3  
+                if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+                then
+                    if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
+                        --Check it wouldn't overlap badly with the wall
+                        local fits = { X = false, Z = false,}
+                        local correct = { X = false, Z = false,}
+
+                        if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then
+                            correct.X = true
+                            fits.X = true
+                        elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
+                            fits.X = true
                         end
-                    end    
+
+                        if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then
+                            correct.Z = true
+                            fits.Z = true
+                        elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
+                            fits.Z = true
+                        end
+
+                        if fits.X and fits.Z then
+                            table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                            --This is to prevent it from having the same footprint as the wall
+                            --and from it removing all the path blocking of the wall if it dies or gets removed.
+                            --It will still remove the blocking from the center of the wall, but that's acceptable.
+
+                            --This will also make it so those turrets will no longer block pathing whilst adjacent
+                            --But that is probably fine.
+                            if correct.X then
+                                bp.Footprint.SizeX = 1
+                                bp.Physics.SkirtOffsetX = -1
+                                bp.Physics.SkirtSizeX = 3
+                            end
+                            if correct.Z then
+                                bp.Footprint.SizeZ = 1
+                                bp.Physics.SkirtOffsetZ = -1
+                                bp.Physics.SkirtSizeZ = 3
+                            end
+                        end
+                    end
                 end
             end
         end
@@ -452,13 +458,16 @@ function TorpedoBomberWaterLandCat(all_bps)
         all_bps['saa0106'], #T1 Aeon
     }
     for arrayIndex, bp in TorpedoBombers do
-        table.insert(bp.Categories, 'TRANSPORTATION') --transportation category allows aircraft to land on water.
-        table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
-        for i, v in bp.Weapon do
-            if v.WeaponCategory == "Anti Navy" and v.FireTargetLayerCapsTable then
-                v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
-                v.FireTargetLayerCapsTable.Sub = 'Seabed|Sub|Water'
-                v.FireTargetLayerCapsTable.Water = 'Seabed|Sub|Water'
+        --Check they exist, and have all their things.
+        if bp and bp.Categories and bp.Weapon then
+            table.insert(bp.Categories, 'TRANSPORTATION') --transportation category allows aircraft to land on water.
+            table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
+            for i, v in bp.Weapon do
+                if v.WeaponCategory == "Anti Navy" and v.FireTargetLayerCapsTable then
+                    v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
+                    v.FireTargetLayerCapsTable.Sub = 'Seabed|Sub|Water'
+                    v.FireTargetLayerCapsTable.Water = 'Seabed|Sub|Water'
+                end
             end
         end
     end	
@@ -564,7 +573,8 @@ end
 
 function BrewLANBomberDamageType(all_bps)
     for id, bp in all_bps do
-        if table.find(bp.Categories, 'BOMBER') then
+        --Check the table exists before doing a lookup.
+        if bp.Categories and table.find(bp.Categories, 'BOMBER') then
             if bp.Weapon then
                 for i, weap in bp.Weapon do
                     if weap.NeedToComputeBombDrop then
@@ -593,7 +603,7 @@ function BrewLANRelativisticLinksUpdate(all_bps)
             "Everything should still work though.",
         }
         for id, bp in all_bps.Unit do
-            if table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
+            if bp.Categories and table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
                 PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
             end
         end
@@ -633,7 +643,7 @@ function BrewLANMegalithEggs(all_bps)
     if all_bps['xrl0403'] and all_bps['xrl0403'].Economy.BuildableCategory then
         local baseEgg = all_bps['srl0000']
         for id, bp in all_bps do
-            if table.find(bp.Categories, 'MEGALITHEGG') then
+            if bp.Categories and table.find(bp.Categories, 'MEGALITHEGG') then
                 copyTableNoReplace(baseEgg, bp)
                 table.insert(all_bps['xrl0403'].Economy.BuildableCategory, bp.BlueprintId)
                 bp.Economy.BuildCostEnergy = all_bps[bp.Economy.BuildUnit].Economy.BuildCostEnergy

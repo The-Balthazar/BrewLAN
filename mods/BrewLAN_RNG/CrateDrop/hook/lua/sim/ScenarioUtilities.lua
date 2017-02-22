@@ -181,7 +181,7 @@ do
                     PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
                 else         
                     Buff.ApplyBuff(Unit, 'CrateHealthBuff')
-                end    
+                end
                 notificationPingis(pos, 'Health')
             end,                                                                
             --------------------------------------------------------------------
