@@ -74,7 +74,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     UnitControl = function(self, uBB)
         local IDcheck = function(uBB, id) return uBB and uBB:GetUnitId() == id end
         if IDcheck(uBB,'ues0401') then
-            IssueDive({unitBeingBuilt})
+            IssueDive({uBB})
         end
     end,
 --------------------------------------------------------------------------------

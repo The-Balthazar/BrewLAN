@@ -281,6 +281,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed all the textures from Expert Camo.
   * Added new icons to SCD.
   * Changed the unit prefix of the units added by Paragon Game.
+  * Fixed the accidentally broken Gantry building Atlantis.
 
 ## 2016-12-15|0.7.5.5
 
