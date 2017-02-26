@@ -259,6 +259,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * The priority order is Land, Air, Sea for tech 1-3. UEF, Cybran, Aeon, Seraphim for experimental.
     * Still to do: Fix build mode for experimentals putting the Gantry into command mode.
   * Added build mode key shortcuts for newer units that were lacking.
+  * Added build mode bindings for building with field engineers.
+    * Ran out of free keys for the actual field engineer units, pending a rework of that.
+
+  ### 2017-02-23
+
+  * Finished the rework of the key bindings. Field engineers and advanced resource buildings now have their build keys.
+
+  ### 2017-02-24
+
+  * Expert Camo: Now also works with Sup Com 1.1.0.
+  * Atlantis Gantry rollof script now moved to Gantry. Atlantis hook script removed.
+
+  ### 2017-02-25
+
+  * Decreased the colission size of the Longbow, Alchemist, and Slink.
+  * Expert Camo: Overhauled so now, rather than auto generating skins for itself, it can be used as a framework for other mods that just contain the component files for it to assemble for them.
+
+  ### 2017-02-26
+
+  * Removed all the textures from Expert Camo.
 
 ## 2016-12-15|0.7.5.5
 

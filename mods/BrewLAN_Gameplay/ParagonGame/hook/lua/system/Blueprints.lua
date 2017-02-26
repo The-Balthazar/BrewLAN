@@ -26,7 +26,7 @@ function ParagonAdjacency(all_bps)
             break
         end
     end
-    local paragons = {'peb1401','prb1401','psb1401'}
+    local paragons = {'seb1401','srb1401','ssb1401'}
     if BrewLAN then
         for i, paragon in paragons do
             all_bps[paragon].Adjacency = 'ParagonAdjacencyBuffs'

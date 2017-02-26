@@ -1,16 +1,17 @@
 --------------------------------------------------------------------------------
 -- Centurion script
 --------------------------------------------------------------------------------
-local TAirUnit = import('/lua/terranunits.lua').TAirUnit
+local               TAirUnit = import('/lua/terranunits.lua').TAirUnit
+local               TWeapons = import('/lua/terranweapons.lua')
 --------------------------------------------------------------------------------
-local TAAFlakArtilleryCannon = import('/lua/terranweapons.lua').TAAFlakArtilleryCannon
-local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher             
-local TDFHiroPlasmaCannon = import('/lua/terranweapons.lua').TDFHiroPlasmaCannon  
-local TDFPlasmaCannonWeapon = import('/lua/terranweapons.lua').TDFPlasmaCannonWeapon
+local TAAFlakArtilleryCannon = TWeapons.TAAFlakArtilleryCannon
+local           TSAMLauncher = TWeapons.TSAMLauncher
+local    TDFHiroPlasmaCannon = TWeapons.TDFHiroPlasmaCannon
+local  TDFPlasmaCannonWeapon = TWeapons.TDFPlasmaCannonWeapon
 --------------------------------------------------------------------------------
-local EffectUtil = import('/lua/EffectUtilities.lua')
-local Effects = import('/lua/effecttemplates.lua')
-local CreateBuildCubeThread = EffectUtil.CreateBuildCubeThread
+local             EffectUtil = import('/lua/EffectUtilities.lua')
+local                Effects = import('/lua/effecttemplates.lua')
+local  CreateBuildCubeThread = EffectUtil.CreateBuildCubeThread
 --------------------------------------------------------------------------------
 SEA0401 = Class(TAirUnit) {
     BeamExhaustCruise = import( '/lua/game.lua' ).BrewLANPath() .. '/effects/emitters/brewlan_missile_exhaust_fire_beam_01_emit.bp',
@@ -22,9 +23,9 @@ SEA0401 = Class(TAirUnit) {
         HeadAAGun = Class(TAAFlakArtilleryCannon) {},
         RearAAGun = Class(TAAFlakArtilleryCannon) {},
         SAM1 = Class(TSAMLauncher) {},
-        SAM2 = Class(TSAMLauncher) {},   
+        SAM2 = Class(TSAMLauncher) {},
         RearASFBeam = Class(TDFHiroPlasmaCannon) {},
-        GatlingCannon = Class(TDFPlasmaCannonWeapon) 
+        GatlingCannon = Class(TDFPlasmaCannonWeapon)
         {
             PlayFxWeaponPackSequence = function(self)
                 if self.SpinManip then
@@ -39,7 +40,6 @@ SEA0401 = Class(TAirUnit) {
                     self.SpinManip = CreateRotator(self.unit, 'GGun_Barrel001', 'z', nil, 270, 180, 60)
                     self.unit.Trash:Add(self.SpinManip)
                 end
-                
                 if self.SpinManip then
                     self.SpinManip:SetTargetSpeed(500)
                 end

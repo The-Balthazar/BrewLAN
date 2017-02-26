@@ -34,6 +34,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
+        self.UnitControl(self, unitBeingBuilt)
         TLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)
         self.AIControl(self, unitBeingBuilt)
     end,
@@ -65,6 +66,15 @@ SEB0401 = Class(TLandFactoryUnit) {
         TLandFactoryUnit.OnUnpaused(self)
         if self:IsUnitState('Building') then
             self:StartBuildFx(self:GetFocusUnit())
+        end
+    end,
+--------------------------------------------------------------------------------
+-- Unit control
+--------------------------------------------------------------------------------
+    UnitControl = function(self, uBB)
+        local IDcheck = function(uBB, id) return uBB and uBB:GetUnitId() == id end
+        if IDcheck(uBB,'ues0401') then
+            IssueDive({unitBeingBuilt})
         end
     end,
 --------------------------------------------------------------------------------

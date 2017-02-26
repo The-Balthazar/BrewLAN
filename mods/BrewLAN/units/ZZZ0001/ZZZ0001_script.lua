@@ -17,7 +17,24 @@ ZZZ0001 = Class(AShieldStructureUnit) {
         LOG("Terrain type: " .. GetTerrainType( pos[1], pos[3] ).Style .. " POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3])
         self.DPScalcs = {}
         self:SetCustomName('True Brick')
-        LOG(repr(self:GetBlueprint() ))
+        --Get lag fraction
+        --[[
+            ForkThread(function()
+                local time1, time2 = GetGameTimeSeconds(), GetSystemTimeSeconds()
+                WaitSeconds(1)
+                time1, time2 = GetGameTimeSeconds() - time1, GetSystemTimeSeconds() - time2
+                LOG(time1 / time2)
+            end)
+        ]]--
+        for k, v in _G do
+            LOG(k,"   ",v)
+            if type(v) == "table" then
+                for k2, v2 in v do
+                    LOG("   ",k2, "   ", v2)
+                end
+            end
+        end
+        --LOG(repr(_G)) --how to kill the universe in 13 characters.
     end,
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)

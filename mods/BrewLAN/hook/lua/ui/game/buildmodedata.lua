@@ -49,7 +49,7 @@ do
     UEFT3Eng['A'] = 'xeb0204'
     UEFT3Eng['T'] = 'seb2308'
     UEFT3Eng['S'] = 'seb3303'
-    UEFT3Eng['B'] = 'seb4303'--ADG
+    UEFT3Eng['Y'] = 'seb4303'--ADG
 
     UEFT4Eng['C'] = 'sea0401'--Centurion
     UEFT4Eng['I'] = 'seb2404'--Ivan
@@ -97,9 +97,104 @@ do
     buildModeKeys['sab4102'] = {['U'] = 'sab4301',}
     -- UEF T1 shield
     buildModeKeys['seb4102'] = {['U'] = 'seb4301',}
+    --
+    buildModeKeys['ueb1301'] = {['U'] = 'seb1311',}
+    buildModeKeys['urb1301'] = {['U'] = 'srb1311',}
+    buildModeKeys['uab1301'] = {['U'] = 'sab1311',}
 
-    --buildModeKeys[]
+    buildModeKeys['ueb1302'] = {['U'] = 'seb1312',}
+    buildModeKeys['urb1302'] = {['U'] = 'srb1312',}
+    buildModeKeys['uab1302'] = {['U'] = 'sab1312',}
 
+    buildModeKeys['ueb1303'] = {['U'] = 'seb1313',}
+    buildModeKeys['urb1303'] = {['U'] = 'srb1313',}
+    buildModeKeys['uab1303'] = {['U'] = 'sab1313',}
+    ----------------------------------------------------------------------------
+    -- Field Engineer tech
+    ----------------------------------------------------------------------------
+    local UEFT1FEng, UEFT2FEng, UEFT3FEng = table.deepcopy(UEFT1Eng), table.deepcopy(UEFT2Eng), table.deepcopy(UEFT3Eng)
+    local CybranT1FEng, CybranT2FEng, CybranT3FEng = table.deepcopy(CybranT1Eng), table.deepcopy(CybranT2Eng), table.deepcopy(CybranT3Eng)
+    local AeonT1FEng, AeonT2FEng, AeonT3FEng = table.deepcopy(AeonT1Eng), table.deepcopy(AeonT2Eng), table.deepcopy(AeonT3Eng)
+    -- Mines
+    UEFT1FEng['X'] = 'seb2220'
+    UEFT2FEng['X'] = 'seb2221'
+    UEFT3FEng['X'] = 'seb2222'
+    CybranT1FEng['X'] = 'srb2220'
+    CybranT2FEng['X'] = 'srb2221'
+    CybranT3FEng['X'] = 'srb2222'
+    AeonT1FEng['X'] = 'sab2220'
+    AeonT2FEng['X'] = 'sab2221'
+    AeonT3FEng['X'] = 'sab2222'
+    -- Advanced resource buildings
+    UEFT3FEng['P'] = 'seb1311'
+    UEFT3FEng['E'] = 'seb1312'
+    UEFT3FEng['F'] = 'seb1313'
+    CybranT3FEng['P'] = 'srb1311'
+    CybranT3FEng['E'] = 'srb1312'
+    CybranT3FEng['F'] = 'srb1313'
+    AeonT3FEng['P'] = 'sab1311'
+    AeonT3FEng['E'] = 'sab1312'
+    AeonT3FEng['F'] = 'sab1313'
+    -- Walls
+    UEFT2FEng['W'] = 'seb5210'
+    UEFT3FEng['W'] = 'seb5310'
+    CybranT2FEng['W'] = 'srb5210'
+    CybranT3FEng['W'] = 'srb5310'
+    AeonT2FEng['W'] = 'sab5210'
+    AeonT3FEng['W'] = 'sab5301'
+    -- Gates
+    UEFT3FEng['G'] = 'seb5311'
+    CybranT3FEng['G'] = 'srb5311'
+    -- AntiArmor PD
+    UEFT3FEng['A'] = 'seb2311'
+    CybranT3FEng['A'] = 'srb2311'
+    AeonT3FEng['A'] = 'sab2311'
+    -- ED5
+    CybranT3FEng['V'] = 'urb4207'
+    ----------------------------------------------------------------------------
+    -- Field Engineers
+    ----------------------------------------------------------------------------
+    buildModeKeys['sel0119'] = {
+        [1] = UEFT1FEng
+    }
+    buildModeKeys['xel0209'] = {
+        [1] = UEFT1FEng,
+        [2] = UEFT2FEng
+    }
+    buildModeKeys['sel0319'] = {
+        [1] = UEFT1FEng,
+        [2] = UEFT2FEng,
+        [3] = UEFT3FEng,
+        [4] = UEFT4Eng
+    }
+
+    buildModeKeys['srl0119'] = {
+        [1] = CybranT1FEng
+    }
+    buildModeKeys['srl0209'] = {
+        [1] = CybranT1FEng,
+        [2] = CybranT2FEng
+    }
+    buildModeKeys['srl0319'] = {
+        [1] = CybranT1FEng,
+        [2] = CybranT2FEng,
+        [3] = CybranT3FEng,
+        [4] = CybranT4Eng
+    }
+
+    buildModeKeys['sal0119'] = {
+        [1] = AeonT1FEng
+    }
+    buildModeKeys['sal0209'] = {
+        [1] = AeonT1FEng,
+        [2] = AeonT2FEng
+    }
+    buildModeKeys['sal0319'] = {
+        [1] = AeonT1FEng,
+        [2] = AeonT2FEng,
+        [3] = AeonT3FEng,
+        [4] = AeonT4Eng
+    }
     ----------------------------------------------------------------------------
     -- Seraphim things
     ----------------------------------------------------------------------------
@@ -119,12 +214,13 @@ do
         SeraphimT3Air['T'] = 'ssa0306'
         SeraphimT3Air['P'] = 'ssa0307'
 
-
         SeraphimT1Eng['V'] = 'ssb4102'
         SeraphimT1Eng['G'] = 'ssb5104'
         SeraphimT1Eng['R'] = 'ssb2103'
 
-        SeraphimT2Eng['A'] = 'ssb0104'
+        SeraphimT2Eng['A'] = 'ssb0104' --Engineering station
+        SeraphimT2Eng['Y'] = 'ssb1205' --T2 storage
+        SeraphimT2Eng['X'] = 'ssb1206' --T2 storage
 
         SeraphimT3Eng['D'] = 'ssb2306'
         SeraphimT3Eng['O'] = 'sss0305'
@@ -133,10 +229,6 @@ do
         SeraphimT4Eng['R'] = 'ssb2404'
         SeraphimT4Eng['S'] = 'ssb5401'
         SeraphimT4Eng['F'] = 'ssl0403'
-
-        SeraphimT2Eng['Y'] = 'ssb1205' --T2 storage
-        SeraphimT2Eng['X'] = 'ssb1206' --T2 storage
-
         -- Seraphim T1 shield
         buildModeKeys['ssb4102'] = {['U'] = 'xsb4202',}
 
@@ -148,6 +240,43 @@ do
                 ['A'] = 'ssb0104',
             },
         }
+
+        buildModeKeys['xsb1301'] = {['U'] = 'ssb1311',}
+        buildModeKeys['xsb1302'] = {['U'] = 'ssb1312',}
+        buildModeKeys['xsb1303'] = {['U'] = 'ssb1313',}
+
+        ------------------------------------------------------------------------
+        -- Field tech
+        ------------------------------------------------------------------------
+        local SeraphimT1FEng, SeraphimT2FEng, SeraphimT3FEng = table.deepcopy(SeraphimT1Eng), table.deepcopy(SeraphimT2Eng), table.deepcopy(SeraphimT3Eng)
+        SeraphimT2FEng['W'] = 'ssb5210'
+        SeraphimT3FEng['W'] = 'ssb5301'
+
+        SeraphimT3FEng['P'] = 'ssb1311'
+        SeraphimT3FEng['E'] = 'ssb1312'
+        SeraphimT3FEng['F'] = 'ssb1313'
+
+        SeraphimT1FEng['X'] = 'ssb2220'
+        SeraphimT2FEng['X'] = 'ssb2221'
+        SeraphimT3FEng['X'] = 'ssb2222'
+        -- AntiArmor PD
+        SeraphimT3FEng['A'] = 'ssb2311'
+        ------------------------------------------------------------------------
+        -- Field Engineers
+        ------------------------------------------------------------------------
+        buildModeKeys['ssl0119'] = {
+            [1] = SeraphimT1FEng
+        }
+        buildModeKeys['ssl0219'] = {
+            [1] = SeraphimT1FEng,
+            [2] = SeraphimT2FEng
+        }
+        buildModeKeys['ssl0319'] = {
+            [1] = SeraphimT1FEng,
+            [2] = SeraphimT2FEng,
+            [3] = SeraphimT3FEng,
+            [4] = SeraphimT4Eng
+        }
     end
     ----------------------------------------------------------------------------
     -- Gantry dynamic table
@@ -155,7 +284,7 @@ do
     local validKeys = {
         'Q','W','E','R','T','Y','U','I','O','P',
          'A','S','D','F','G','H','J','K','L',
-           'Z','X','C','V','B','N','M',
+           'Z','X','C','V','N','M',--B can't be used
     }
     local UEFGANTRYTparts = {
         {UEFT1Land, UEFT1Air, UEFT1Sea},

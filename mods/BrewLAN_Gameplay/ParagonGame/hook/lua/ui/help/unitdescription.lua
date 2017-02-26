@@ -1,4 +1,4 @@
-Description['peb1401'] = "<LOC Unit_Description_0336> Generates nearly limitless Energy and Mass. Toggles output to match production demands. If destroyed, resulting explosion is equivalent to the detonation of a strategic weapon."
-Description['prb1401'] = "<LOC Unit_Description_0336> Generates nearly limitless Energy and Mass. Toggles output to match production demands. If destroyed, resulting explosion is equivalent to the detonation of a strategic weapon."
-Description['psb1401'] = "<LOC Unit_Description_0336> Generates nearly limitless Energy and Mass. Toggles output to match production demands. If destroyed, resulting explosion is equivalent to the detonation of a strategic weapon."
-Description['pab0104'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['seb1401'] = "<LOC Unit_Description_0336> Generates nearly limitless Energy and Mass. Toggles output to match production demands. If destroyed, resulting explosion is equivalent to the detonation of a strategic weapon."
+Description['srb1401'] = "<LOC Unit_Description_0336> Generates nearly limitless Energy and Mass. Toggles output to match production demands. If destroyed, resulting explosion is equivalent to the detonation of a strategic weapon."
+Description['ssb1401'] = "<LOC Unit_Description_0336> Generates nearly limitless Energy and Mass. Toggles output to match production demands. If destroyed, resulting explosion is equivalent to the detonation of a strategic weapon."
+Description['sab0104'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."

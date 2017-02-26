@@ -133,11 +133,11 @@ UnitBlueprint {
         BuildRate = 15,
         BuildTime = 900,
         --BuildableCategory = {
-        --    'pab0104',
+        --    'sab0104',
         --},
         MaxBuildDistance = 15,
         RebuildBonusIds = {
-            'pab0104',
+            'sab0104',
         },
     },
     Footprint = {
@@ -184,7 +184,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        UnitName = '<LOC pab0104_name>Pearl',
+        UnitName = '<LOC sab0104_name>Pearl',
         UnitWeight = 1,
     },
     Intel = {
