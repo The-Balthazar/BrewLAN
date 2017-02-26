@@ -63,7 +63,7 @@ AIBrain = Class(AIBrain) {
         
         if factionIndex == 1 then
             paragonunits = {
-                { 'PEB1401', 1 },
+                { 'SEB1401', 1 },
                 { 'UEB4301', 4 },
             }             
             landunits = {
@@ -79,7 +79,7 @@ AIBrain = Class(AIBrain) {
             }
         elseif factionIndex == 3 then
             paragonunits = {
-                { 'PRB1401', 1 },
+                { 'SRB1401', 1 },
                 { 'URB4207', 4 },
             }   
             landunits = {
@@ -87,7 +87,7 @@ AIBrain = Class(AIBrain) {
             }
         elseif factionIndex == 4 then
             paragonunits = {
-                { 'PSB1401', 1 },
+                { 'SSB1401', 1 },
                 { 'XSB4301', 4 },
             }    
             landunits = {

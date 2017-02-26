@@ -279,6 +279,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2017-02-26
 
   * Removed all the textures from Expert Camo.
+  * Added new icons to SCD.
+  * Changed the unit prefix of the units added by Paragon Game.
 
 ## 2016-12-15|0.7.5.5
 
