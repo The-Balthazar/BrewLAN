@@ -5,6 +5,7 @@
 local AAirFactoryUnit = import('/lua/aeonunits.lua').AAirFactoryUnit
 --local explosion = import('/lua/defaultexplosions.lua')
 --local Utilities = import('/lua/utilities.lua')
+local BuildModeChange = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/GantryUtils.lua').BuildModeChange
 local Buff = import('/lua/sim/Buff.lua')
 local CreateAeonCommanderBuildingEffects = import('/lua/EffectUtilities.lua').CreateAeonCommanderBuildingEffects
 local EffectTemplate = import('/lua/EffectTemplates.lua')
@@ -24,6 +25,8 @@ SAB0401 = Class(AAirFactoryUnit) {
             bp.CollisionSphereOffsetZ or 0,
             bp.SizeSphere
         )
+        self.airmode = true
+        BuildModeChange(self)
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
@@ -40,11 +43,13 @@ SAB0401 = Class(AAirFactoryUnit) {
     OnStartBuild = function(self, unitBeingBuilt, order)
         self.AICheats(self)
         AAirFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
+        BuildModeChange(self)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         AAirFactoryUnit.OnStopBuild(self, unitBeingBuilt)
         self.AIControl(self, unitBeingBuilt)
+        BuildModeChange(self)
     end,
 --------------------------------------------------------------------------------
 -- Button controls

@@ -283,6 +283,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed the unit prefix of the units added by Paragon Game.
   * Fixed the accidentally broken Gantry building Atlantis.
 
+  ### 2017-02-27 — 2017-03-02
+
+  * Created Arthrolab: Cybran Experimental Land Factory.
+
+  ### 2017-03-03
+
+  * Aeon Experimental Factory now has the Gantry 'stolen tech' function.
+  * Gantry 'stolen tech' function split into its own seperate util function for all experimental factories.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

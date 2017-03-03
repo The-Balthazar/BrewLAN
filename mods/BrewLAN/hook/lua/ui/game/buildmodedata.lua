@@ -83,6 +83,7 @@ do
     CybranT4Eng['V'] = 'srb4401'
     CybranT4Eng['A'] = 'srb2401'
     CybranT4Eng['C'] = 'srb4402'
+    CybranT4Eng['T'] = 'srb0401'
 
     --T2 storage
     AeonT2Eng['Y'] = 'sab1205'
@@ -278,6 +279,22 @@ do
             [4] = SeraphimT4Eng
         }
     end
+
+    ----------------------------------------------------------------------------
+    -- Boring Gantry tables
+    ----------------------------------------------------------------------------
+    buildModeKeys['srb0401'] = {
+        [1] = CybranT1Land,
+        [2] = CybranT2Land,
+        [3] = CybranT3Land,
+        [4] = CybranT4Eng,
+    }
+    buildModeKeys['sab0401'] = {
+        [1] = AeonT1Land,
+        [2] = AeonT2Land,
+        [3] = AeonT3Land,
+        [4] = AeonT4Eng,
+    }
     ----------------------------------------------------------------------------
     -- Gantry dynamic table
     ----------------------------------------------------------------------------

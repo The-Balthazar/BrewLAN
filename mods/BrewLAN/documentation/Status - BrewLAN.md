@@ -226,9 +226,9 @@
 |**Naval**         |*Atlantis* (AF)|*Tempest* (F)  |`Abyssal Persecutor`|`?`       |
 |                  |               |               |               |               |
 |**Strategic 1**   |*Mavor*        |*Salvation*    |Scathis MK2    |Suthanus       |
-|**Strategic 2**   |Ivan (F)       |`Teleporter?`  |`?`            |*Yolona Oss*   |
-|**Static 3**      |Panopticon     |Air Factory (F)|Darkness       |Stargate       |
-|**Static 4**      |Gantry (F)     |*Paragon*      |Iron Curtain   |`?`            |
+|**Strategic 2**   |Ivan (F)       |`Teleporter?`  |Iron Curtain   |*Yolona Oss*   |
+|**Static 3**      |Panopticon     |*Paragon*      |Darkness       |Stargate       |
+|**Factory**       |Gantry (F)     |Air Factory (F)|Arthrolab (F)  |`?`            |
 
 |Key|Value
 |:-:|---|
@@ -366,6 +366,10 @@ Darkness: Experimental Omni Disruption Facility
   * Was briefly called Oscuras before reverting back to Darkness.
     * I realized that any unit for which I try to avoid referring to it by name, has a bad name. Sorry Kris.
     * AI can still call it Oscuras. If they ever actually build it.
+
+Arthrolab: Experimental Land Factory
+  * Has no death animation.
+  * Doesn't appear on idle factory tab.
 
 ## Modded vanilla units:
 ### All Factions:

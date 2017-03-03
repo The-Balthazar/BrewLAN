@@ -5,6 +5,7 @@
 local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 local explosion = import('/lua/defaultexplosions.lua')
 local Utilities = import('/lua/utilities.lua')
+local BuildModeChange = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/GantryUtils.lua').BuildModeChange
 local Buff = import('/lua/sim/Buff.lua')
 
 SEB0401 = Class(TLandFactoryUnit) {
@@ -13,7 +14,7 @@ SEB0401 = Class(TLandFactoryUnit) {
 --------------------------------------------------------------------------------
     OnCreate = function(self)
         TLandFactoryUnit.OnCreate(self)
-        self.BuildModeChange(self)
+        BuildModeChange(self)
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
@@ -24,13 +25,13 @@ SEB0401 = Class(TLandFactoryUnit) {
 
     OnLayerChange = function(self, new, old)
         TLandFactoryUnit.OnLayerChange(self, new, old)
-        self.BuildModeChange(self)
+        BuildModeChange(self)
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
         self.AICheats(self)
         TLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
-        self.BuildModeChange(self)
+        BuildModeChange(self)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -45,7 +46,7 @@ SEB0401 = Class(TLandFactoryUnit) {
         TLandFactoryUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
             self.airmode = true
-            self.BuildModeChange(self)
+            BuildModeChange(self)
         end
     end,
 
@@ -53,7 +54,7 @@ SEB0401 = Class(TLandFactoryUnit) {
         TLandFactoryUnit.OnScriptBitClear(self, bit)
         if bit == 1 then
             self.airmode = false
-            self.BuildModeChange(self)
+            BuildModeChange(self)
         end
     end,
 
@@ -85,7 +86,7 @@ SEB0401 = Class(TLandFactoryUnit) {
         if aiBrain.BrainType != 'Human' then
             --self.engineers = {}
             self.Time = GetGameTimeSeconds()
-            self.BuildModeChange(self)
+            BuildModeChange(self)
             aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
             local AINames = import('/lua/AI/sorianlang.lua').AINames
             if AINames.seb0401 then
@@ -283,65 +284,6 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
 
     AICheats = function(self)
-    end,
---------------------------------------------------------------------------------
--- UI buildmode change function
---------------------------------------------------------------------------------
-    BuildModeChange = function(self, mode)
-        self:RestoreBuildRestrictions()
-        ------------------------------------------------------------------------
-        -- The "Stolen tech" clause
-        ------------------------------------------------------------------------
-        local aiBrain = self:GetAIBrain()
-        local engineers = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, self:GetPosition(), 30, 'Ally' )
-        local stolentech = {}
-        stolentech.CYBRAN = false
-        stolentech.AEON = false
-        stolentech.SERAPHIM = false
-        for k, v in engineers do
-            if EntityCategoryContains(categories.TECH3, v) then
-                for race, val in stolentech do
-                    if EntityCategoryContains(ParseEntityCategory(race), v) then
-                        stolentech[race] = true
-                    end
-                end
-            end
-        end
-        for race, val in stolentech do
-            if not val then
-                self:AddBuildRestriction(categories[race])
-            end
-        end
-        ------------------------------------------------------------------------
-        -- Human UI air/other switch
-        ------------------------------------------------------------------------
-        if aiBrain.BrainType == 'Human' then
-            if self.airmode then
-                self:AddBuildRestriction(categories.NAVAL)
-                self:AddBuildRestriction(categories.MOBILESONAR)
-                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
-            else
-                if self:GetCurrentLayer() == 'Land' then
-                    self:AddBuildRestriction(categories.NAVAL)
-                    self:AddBuildRestriction(categories.MOBILESONAR)
-                elseif self:GetCurrentLayer() == 'Water' then
-                    self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
-                end
-                self:AddBuildRestriction(categories.AIR)
-            end
-        ------------------------------------------------------------------------
-        -- AI functional restrictions (allows easier AI control)
-        ------------------------------------------------------------------------
-        else
-            if self:GetCurrentLayer() == 'Land' then
-                self:AddBuildRestriction(categories.NAVAL)
-                self:AddBuildRestriction(categories.MOBILESONAR)
-            elseif self:GetCurrentLayer() == 'Water' then
-                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
-                self:AddBuildRestriction(categories.ues0401)
-            end
-        end
-        self:RequestRefreshUI()
     end,
 --------------------------------------------------------------------------------
 -- Animations

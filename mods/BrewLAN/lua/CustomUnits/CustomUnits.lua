@@ -42,10 +42,12 @@ T4Artillery =                {Aeon = {'xab2307', 100},Cybran = {'srb2401', 100},
 T4LandExperimental1 = {
     Aeon = {'sal0401', 50},
     UEF = {'seb0401', 99},
+    Cybran = {'srb0401', 99},
 },
 T4LandExperimental2 = {
     Aeon = {'sal0401', 100},  
     UEF = {'seb0401', 100},
+    Cybran = {'srb0401', 100},
 },
 T4SeaExperimental1 =  {Aeon = {'sal0401', 25},},
 --------------------------------------------------------------------------------

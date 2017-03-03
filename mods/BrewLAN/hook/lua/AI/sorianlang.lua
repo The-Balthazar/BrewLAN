@@ -51,6 +51,21 @@ AINames.sab0401 = {
     'Donuts \'R\' Us',
     'La Creperie',
 }
+
+AINames.srb0401 = {
+    'Monkeys \'R\' Us',
+    'Spike',
+    'Spiderplant',
+    'Foundry',
+    'Crabplant',
+    'Crab Factory',
+    'Forge',
+    'Factory',
+    'Land Hog',
+    'Crabs \'R\' Us',
+    'Nest',
+    'Web',
+}
 --------------------------------------------------------------------------------
 -- Panopticon: Experimental Spies
 --------------------------------------------------------------------------------

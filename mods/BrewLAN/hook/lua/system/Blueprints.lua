@@ -343,25 +343,6 @@ function BrewLANHeavyWallBuildList(all_bps)
 end
  
 --------------------------------------------------------------------------------
--- This has no effect, and as a result is no longer ran
---------------------------------------------------------------------------------
-  
-function BrewLANNameCalling(all_bps)
-    local Units = {
-        --Salvation
-        xab2307 = {'Judgment', 'Reconciliation', 'Purgatory', 'Avatar', 'Spitter', 'Grassy Knoll', 'Giant Phallus Cannon', },
-    }
-    for k, v in Units do   
-        if all_bps[k] then
-            for i in v do  
-                if not all_bps[k].Display.AINames then all_bps[k].Display.AINames = {} end
-                table.insert(all_bps[k].Display.AINames, v[i])
-            end 
-        end
-    end
-end
-  
---------------------------------------------------------------------------------
 -- Specifying units to be upgradable into eachother
 --------------------------------------------------------------------------------
   

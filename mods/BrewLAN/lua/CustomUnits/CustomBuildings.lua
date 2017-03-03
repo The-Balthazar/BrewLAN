@@ -5,14 +5,17 @@ UnitList = {
 T1LandFactory = {
     UEF =		{'seb0401', 40},
     Aeon =	{'sab0401', 20},
+    Cybran =		{'srb0401', 40},
 },
 T2LandFactory = {
     UEF =		{'seb0401', 50},
     Aeon =	{'sab0401', 25},
+    Cybran =		{'srb0401', 50},
 },
 T3LandFactory = {
     UEF =		{'seb0401', 60},
     Aeon =	{'sab0401', 30},
+    Cybran =		{'srb0401', 60},
 },
 T1SeaFactory = {
     UEF =		{'seb0401', 40},
@@ -29,6 +32,7 @@ T3SeaFactory = {
 T3QuantumGate = {
     UEF =		{'seb0401', 60},
     Aeon =	{'sab0401', 60},
+    Cybran =		{'srb0401', 60},
 },
 --------------------------------------------------------------------------------
 -- Shields
