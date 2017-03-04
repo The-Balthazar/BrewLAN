@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
---  Summary:  The Independence Engine script
+--  Summary:  Arthrolab script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit

@@ -75,8 +75,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 200,
-        Health = 88000,
-        MaxHealth = 88000,
+        Health = 112000,
+        MaxHealth = 112000,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -206,10 +206,10 @@ UnitBlueprint {
         UniformScale = 0.28,
     },
     Economy = {
-        BuildCostEnergy = 28350*3,
-        BuildCostMass = 3150*3,
+        BuildCostEnergy = 156750,
+        BuildCostMass = 9450,
         BuildRate = 60*4,
-        BuildTime = 8400*1.5,
+        BuildTime = 7034,
         BuildableCategory = {
             'BUILTBYLANDTIER3FACTORY MOBILE CONSTRUCTION UEF',
             'BUILTBYTIER3FACTORY MOBILE LAND UEF',
@@ -298,16 +298,12 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,       
-        --MeshExtentsOffsetY = -2,
-        --MeshExtentsX = 1.5,
-        --MeshExtentsY = 0.25,
-        --MeshExtentsZ = 1,
+        MaxSteerForce = 0,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',   
         OccupyRects = {
 
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
+            --offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -6,
             0,
             2.5,
@@ -331,8 +327,6 @@ UnitBlueprint {
                 Z = -8,
             },
         },
-
-        # height
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 18,
@@ -345,8 +339,6 @@ UnitBlueprint {
     SelectionSizeX = 10.5,
     SelectionSizeZ = 6.5,
     SelectionThickness = 0.1,
-
-    # height
     SizeX = 17,
     SizeY = 2,
     SizeZ = 11,
