@@ -1,3 +1,4 @@
+local VersionIsSC = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
 do
     UEFT1Land['F'] = 'sel0119'
     UEFT3Land['F'] = 'sel0319'
@@ -199,7 +200,7 @@ do
     ----------------------------------------------------------------------------
     -- Seraphim things
     ----------------------------------------------------------------------------
-    if GetVersion() != '1.1.0' then --If not original Steam SupCom
+    if not VersionIsSC then --If not original Steam SupCom
         SeraphimT1Land['F'] = 'ssl0119'
         SeraphimT2Land['F'] = 'ssl0219'
         SeraphimT2Land['V'] = 'ssl0222'--shield
@@ -318,7 +319,7 @@ do
     ----------------------------------------------------------------------------
     -- Add Seraphim if we aren't on v1.1.0
     ----------------------------------------------------------------------------
-    if GetVersion() != '1.1.0' then
+    if not VersionIsSC then
         table.insert(UEFGANTRYTparts[4], SeraphimT4Eng)
     end
     ----------------------------------------------------------------------------

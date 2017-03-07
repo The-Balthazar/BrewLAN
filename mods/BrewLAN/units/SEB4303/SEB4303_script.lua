@@ -10,12 +10,12 @@
 
 local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 
-UEB4301 = Class(TShieldStructureUnit) {
+SEB4303 = Class(TShieldStructureUnit) {
     
     ShieldEffects = {
         '/effects/emitters/terran_shield_generator_t2_01_emit.bp',
         '/effects/emitters/terran_shield_generator_T3_02_emit.bp',
-        ###'/effects/emitters/terran_shield_generator_t2_03_emit.bp',
+        --'/effects/emitters/terran_shield_generator_t2_03_emit.bp',
     },
     
     OnStopBeingBuilt = function(self,builder,layer)
@@ -84,4 +84,4 @@ UEB4301 = Class(TShieldStructureUnit) {
 
 }
 
-TypeClass = UEB4301
+TypeClass = SEB4303

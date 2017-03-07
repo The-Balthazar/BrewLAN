@@ -3,13 +3,14 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
---local explosion = import('/lua/defaultexplosions.lua')
---local Utilities = import('/lua/utilities.lua')
-local BuildModeChange = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/GantryUtils.lua').BuildModeChange
-local Buff = import('/lua/sim/Buff.lua')
+--------------------------------------------------------------------------------
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
-
+--------------------------------------------------------------------------------
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
+local BuildModeChange = import(BrewLANPath .. '/lua/GantryUtils.lua').BuildModeChange
+--------------------------------------------------------------------------------
 SRB0401 = Class(CLandFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers

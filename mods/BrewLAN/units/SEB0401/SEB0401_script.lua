@@ -3,11 +3,14 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
+--------------------------------------------------------------------------------
 local explosion = import('/lua/defaultexplosions.lua')
 local Utilities = import('/lua/utilities.lua')
-local BuildModeChange = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/GantryUtils.lua').BuildModeChange
-local Buff = import('/lua/sim/Buff.lua')
-
+--------------------------------------------------------------------------------
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
+local BuildModeChange = import(BrewLANPath .. '/lua/GantryUtils.lua').BuildModeChange
+--------------------------------------------------------------------------------
 SEB0401 = Class(TLandFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers

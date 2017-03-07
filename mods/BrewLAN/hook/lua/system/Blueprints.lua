@@ -163,7 +163,7 @@ function BrewLANCategoryChanges(all_bps)
         xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager       
         xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD', },--Kennel 
         xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD','TECH3', r = 'TECH2' },--Hive
-        
+        --Crab eggs.
         xrl0004 = {'TECH3', r = 'TECH2'},
         
         --Experimental units

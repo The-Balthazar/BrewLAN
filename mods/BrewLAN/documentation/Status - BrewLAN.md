@@ -220,15 +220,21 @@
 ## Experimentals:
 |                  |UEF            |Aeon           |Cybran         |Seraphim       |
 |-----------------:|---------------|---------------|---------------|---------------|
-|**Assault**       |`Assault thing`|*Galactic Colossus*|*Mokeylord*|*Ythotha*      |
-|**Support**       |*Fatboy* (F)   |Absolution     |*Megalith* (F) |`Necro bot` (F)|
-|**Flying**        |Centurion      |*CZAR* (AF)    |*Soulripper*   |*Ahwassa*      |
-|**Naval**         |*Atlantis* (AF)|*Tempest* (F)  |`Abyssal Persecutor`|`?`       |
+|**Factory**       |Gantry      (F)|I. Engine   (F)|Arthrolab   (F)|`Naval factory`|
+|**Economic**      |`?`            |*Paragon*      |`?`            |`*`            |
+|                  |               |               |               |               |
+|**Defence**       |`*`            |`?`            |Iron Curtain   |`?`            |
 |                  |               |               |               |               |
 |**Strategic 1**   |*Mavor*        |*Salvation*    |Scathis MK2    |Suthanus       |
-|**Strategic 2**   |Ivan (F)       |`Teleporter?`  |Iron Curtain   |*Yolona Oss*   |
-|**Static 3**      |Panopticon     |*Paragon*      |Darkness       |Stargate       |
-|**Factory**       |Gantry (F)     |Air Factory (F)|Arthrolab (F)  |`?`            |
+|**Strategic 2**   |Ivan        (F)|`*`            |`*`            |*Yolona Oss*   |
+|                  |               |               |               |               |
+|**Intel**         |Panopticon     | —             |Darkness       | —             |
+|**Transport**     | —             |`Teleporter`   | —             |Quantum Gateway|
+|                  |               |               |               |               |
+|**Assault**       |`*`            |*G. Colossus*  |*Mokeylord*    |*Ythotha*      |
+|**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|`Necro bot` (F)|
+|**Flying**        |Centurion      |*CZAR*     (AF)|*Soulripper*   |*Ahwassa*      |
+|**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|`A. Persecutor`|`Amph sub?`    |
 
 |Key|Value
 |:-:|---|
@@ -387,6 +393,15 @@ T3 Assault/Armored Assault Bots/Tanks
 T3 Mobile Artillery/Sniper Bots
 * Unified build sorting.
 
+Experimental Buildings
+* Added appropriate build menu sorting.
+  * This separates them from the mobile experimentals.
+    * Seraphim already did this.
+
+Experimental mobile units
+* Made buildable by experimental factories based on size.
+
+
 Bombers
 * Bombers have been granted a 95% damage resistance to weapons that require a computed drop distance (ie, bomber bombs) while they are in the air.
   * This is to prevent bombers killing themselves consistently when they attack the Iron Curtain. Seriously.
@@ -395,10 +410,8 @@ Bombers
 Torpedo Bombers
 * Gave the ability to land on water.
 
-Experimental Buildings
-* Added appropriate build menu sorting.
-  * This separates them from the mobile experimentals.
-    * Seraphim already did this.
+Turrets
+* Made buildable by armoured walls based on size.
 
 Support Commanders
 * Added an enhancement for field engineer tech.
@@ -425,9 +438,11 @@ T3 Rapid Fire Artillery Installation
 T3 Quantum Optics
 * Reduced build footprint.
 * Enabled click-drag build.
+* Adjacency effectiveness reduced.
+  * It was high enough that it could be reduced to 0 cost, which breaks the script.
 
 Galactic Colossus
-* Increased health by 1.
+* Conditionally increased health by 1 if no other mods change it from 99999.
 
 ### Cybran:
 ED1
@@ -450,6 +465,7 @@ ED4
 ED5
 * Changed to Tech 3.
 * Health still 500.
+* Cost increased by 50%.
 * Gave a third discount on upgrading from ED4.
 
 Jester
@@ -499,12 +515,7 @@ Mavor
 * Gave 'strategic' menu sorting.
 
 Fatboy
-* Made Gantry buildable.
 * Added build category so it can build the Custodian.
-
-Atlantis
-* Made Gantry buildable.
-  * Doesn't listen to roll off orders, but works.
 
 ### Seraphim:
 T2 Shield Generator: Atha
@@ -539,8 +550,8 @@ T3 Battleship
 * Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
 * Find a way to increase static shield radius and maintenance cost increases when built on water.
 * Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
+  * Beam shotgun?
 * Give the UEF walls, and Bessemer Reactor real distance models.
-* Do something with the Cybran stealth field sub idea.
 * Create a UI for the contents of the Ivan.
 * TeaD: Do something about civi's blocking the teacup.
 * UAL0207.
@@ -548,18 +559,27 @@ T3 Battleship
 * Hero last stand mode.
 * Anti-naval gunship.
 * Rail gun.
-* More naval mine layer units and other better ways to deploy mines.
+* More ways to deploy mines.
+  * Field engineer boats and other.
 * Aircraft barrel roll.
 * Random asteroid showers.
 * Have cloaked/stealthed units able to detect when they are detected.
   * Might be easier to implement the other way round; the omni checks on detecting them.
 * Team colored lasers.
+* Cybran Artillery stabaliser.
+* Cybran T1 Spy Submarine.
+  * https://imgur.com/a/EcghD
+* Cybran T2 or 3 stealth field aircraft.
+* Cybran stealth field sub.
+* Aeon T1 Mortar Station.
+  * https://imgur.com/a/TKCvF
+* Possibly make the ADG look more like the original.
+  * https://imgur.com/a/9tbXY
+* Turrets
+* Freeze mines
 
 ## Kris' notes on my ideas for further experimental buildings
 * My notes on his notes.
-
-Experimental Sensor Array - You could probably spin it for anyone. Maybe it could give True-Sight for the whole map. How OP would that be?
-* Became the Panopticon.
 
 Experimental Strat. Def. - Seraphim or Cybran? Much larger range and could return them to sender.
 * Return to sender is probably too much for nukes.

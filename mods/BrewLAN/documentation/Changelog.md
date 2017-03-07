@@ -292,6 +292,36 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Aeon Experimental Factory now has the Gantry 'stolen tech' function.
   * Gantry 'stolen tech' function split into its own seperate util function for all experimental factories.
 
+  ### 2017-03-04
+
+  * Adjusted the balance of the experimental factories:
+    * Gantry:
+      * Health to 112000 from 88000.
+      * Energy to 156750 from 85050.
+      * Mass still 9450.
+      * Time to 7034 from 12600.
+    * Independance engine:
+      * Health: 80000.
+      * Energy: 315000.
+      * Mass: 7090.
+      * Time 7000.
+    * Arthrolab:
+      * Health: 76000.
+      * Energy: 85050.
+      * Mass: 8790.
+      * Time: 6580.
+
+  ### 2017-03-06
+
+  * Fixed the Scarab, which had at some point either lost bones, or gained dodgy bone references.
+  * Added raised platform data for the Independance Engine so land units that end up inside it walk on it not in it.
+  * All Experimental Factory code now works on original Supreme Commander.
+
+  ### 2017-03-07
+
+  * Gave the ADG a unique type class.
+  * Expanded the range of version numbers from original SupCom that the scripts will look for.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

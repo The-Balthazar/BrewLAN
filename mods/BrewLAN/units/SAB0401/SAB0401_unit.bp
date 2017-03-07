@@ -284,6 +284,36 @@ UnitBlueprint {
             0,    -8.5,    27/2,    2/2,
             0,    8.5,    27/2,    2/2,
         },
+        RaisedPlatforms = {
+            -- Platform 1
+            -- TopLeft Offset From Center
+            -14,
+            -- x
+            -14,
+            -- z
+            1.5,
+            -- height
+            -- TopRight Offset From Center
+            14,
+            -- x
+            -14,
+            -- z
+            1.5,
+            -- height
+            -- BottomLeft Offset From Center
+            -14,
+            -- x
+            14,
+            -- z
+            1.5,
+            -- height
+            -- BottomRight Offset From Center
+            14,
+            -- x
+            14,
+            -- z
+            1.5,
+        },
         RollOffPoints = {
             {
                 UnitSpin = 0,

@@ -4,8 +4,9 @@
 --¦   Author: Balthassar
 --¦
 --+-----------------------------------------------------------------------------
+local VersionIsSC = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
 do
-    if GetVersion() != '1.1.0' then --If not original Steam SupCom
+    if not VersionIsSC then --If not original Steam SupCom
         local OldOnClickHandler = OnClickHandler
 
         function OnClickHandler(button, modifiers, ...)
@@ -80,7 +81,7 @@ do
                 OldOnClickHandler(button, modifiers, unpack(arg))
             end
         end
-    elseif GetVersion() == '1.1.0' then
+    elseif VersionIsSC then
         ------------------------------------------------------------------------------------------------------------------------------------------------
         -- LEGACY CRAP HO!                                                                                                                            --
         ------------------------------------------------------------------------------------------------------------------------------------------------
