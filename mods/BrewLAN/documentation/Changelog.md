@@ -321,6 +321,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Gave the ADG a unique type class.
   * Expanded the range of version numbers from original SupCom that the scripts will look for.
+  * Increased the max powerdrain per second of the Scathis Mk2.
+    * Actual power drain per shot remains the same.
+    * Rate of fire unassisted now increased.
+    * Power generators around the Scathis now have no noticable RoF effect.
+  * Resource cost of Scathis Mk2 increased by a trivial amount.
+  * Caffe Corretto: New mod for advanced field engineer weapon tech.
+    * New unit: Accuracy Boost Node.
+  * Updated icons for Cybran mobile strat defence.
 
 ## 2016-12-15|0.7.5.5
 
