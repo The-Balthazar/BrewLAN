@@ -13,11 +13,11 @@ do
                         local wep = unit:GetWeapon(i)
                         local wepbp = wep:GetBlueprint()
                         local wepfr = wepbp.FiringRandomness
-                        LOG(wepfr)
+                        --LOG(wepfr)
                         local val = BuffCalculate(unit, buffName, 'FiringRandomness', 1)
-                        LOG(val)
+                        --LOG(val)
                         wep:SetFiringRandomness( wepfr * val )
-                        LOG('*BUFF: FiringRandomness = ' ..  wepfr * val )
+                        --LOG('*BUFF: FiringRandomness = ' ..  wepfr * val )
                     end
                 end
             end

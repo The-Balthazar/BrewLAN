@@ -4,7 +4,9 @@
 do
     local OldCreateInitialArmyGroup = CreateInitialArmyGroup
     function CreateInitialArmyGroup(strArmy, createCommander)
-        GetArmyBrain(strArmy):ParagonOrNotCheck(strArmy)
+        if createCommander then
+            GetArmyBrain(strArmy):ParagonOrNotCheck(strArmy)
+        end
         return OldCreateInitialArmyGroup(strArmy, createCommander)
     end
 end

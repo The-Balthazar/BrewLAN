@@ -330,6 +330,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * New unit: Accuracy Boost Node.
   * Updated icons for Cybran mobile strat defence.
 
+  ### 2017-03-08 — 2017-03-09
+
+  * Caffe Corretto: Experimented with a damage boost node.
+    * Found out that the default buff function for damage does nothing.
+      * Bypassed the default function.
+        * Found out that the ChangeDamage function on a weapon just straight up doesn't work.
+
+  ### 2017-03-11
+
+  * Paragon Game: Fixed civilians not appearing.
+  * Added the Cybran T3 Mobile Sensor Array.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

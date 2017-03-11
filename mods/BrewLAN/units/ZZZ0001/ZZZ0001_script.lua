@@ -25,7 +25,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
                 time1, time2 = GetGameTimeSeconds() - time1, GetSystemTimeSeconds() - time2
                 LOG(time1 / time2)
             end)
-        ]]--
+        --LOG globals to a single recursion so the game doesn't crash
         for k, v in _G do
             LOG(k,"   ",v)
             if type(v) == "table" then
@@ -34,6 +34,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
                 end
             end
         end
+        ]]--
         --LOG(repr(_G)) --how to kill the universe in 13 characters.
     end,
 
