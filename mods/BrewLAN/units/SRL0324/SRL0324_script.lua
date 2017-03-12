@@ -12,6 +12,7 @@ SRL0324 = Class(CLandUnit) {
     OnCreate = function(self)
         self.FxBlinkingLightsBag = {}
         CLandUnit.OnCreate(self)
+        self.Bits = {}
     end,
 
     OnStopBeingBuilt = function(self, ...)
@@ -20,6 +21,18 @@ SRL0324 = Class(CLandUnit) {
         self:DisableUnitIntel('RadarStealth')
         self:DisableUnitIntel('Cloak')
         self.Cloaked = false
+        ChangeState( self, self.InvisState )
+    end,
+
+    OnScriptBitSet = function(self, bit)
+        self.Bits[bit] = true
+        CLandUnit.OnScriptBitSet(self, bit)
+        ChangeState( self, self.VisibleState )
+    end,
+
+    OnScriptBitClear = function(self, bit)
+        self.Bits[bit] = false
+        CLandUnit.OnScriptBitClear(self, bit)
         ChangeState( self, self.InvisState )
     end,
 
@@ -74,11 +87,13 @@ SRL0324 = Class(CLandUnit) {
             for i, v in self.Threads do
                 --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
                 self.Threads[i][2] = CreateRotator(self, v[1], 'z', 0, 10, 4, 10)
+                self.Trash:Add(self.Threads[i][2])
             end
             self.Threads[4] = {
                 true,
                 self:ForkThread(self.DishBehavior),
             }
+            self.Trash:Add(self.Threads[4][2])
             self.AnimManip = CreateAnimator(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
         else
@@ -90,7 +105,7 @@ SRL0324 = Class(CLandUnit) {
         while true do
             if self.Threads[4][1] then
                 for i, v in self.Threads do
-                    if i != 4 and math.random(1,3) == 3 then
+                    if i < 4 and math.random(1,3) == 3 then
                         WaitFor(self.Threads[i][2])
                         self.Threads[i][2]:SetGoal(math.random(0,45) )
                     end
@@ -121,17 +136,20 @@ SRL0324 = Class(CLandUnit) {
             if bp.Intel.StealthWaitTime then
                 WaitSeconds( bp.Intel.StealthWaitTime )
             end
-            self:EnableUnitIntel('RadarStealth')
-            self:EnableUnitIntel('Cloak')
-            self:EnableUnitIntel('Omni')
-            self:EnableUnitIntel('Radar')
-            self.Cloaked = true
+            if not self.Bits[3] then
+                self:EnableUnitIntel('RadarStealth')
+                self:EnableUnitIntel('Cloak')
+                self:EnableUnitIntel('Omni')
+                self:EnableUnitIntel('Radar')
+                self:SetMaintenanceConsumptionActive()
+                self.Cloaked = true
+            end
         end,
 
         OnMotionHorzEventChange = function(self, new, old)
             if new != 'Stopped' then
                 ChangeState( self, self.VisibleState )
-                LOG("OnMotionHorzEventChange become visible")
+                --LOG("OnMotionHorzEventChange become visible")
             end
             CLandUnit.OnMotionHorzEventChange(self, new, old)
         end,
@@ -144,13 +162,14 @@ SRL0324 = Class(CLandUnit) {
                 self:DisableUnitIntel('Cloak')
                 self:DisableUnitIntel('Omni')
                 self:DisableUnitIntel('Radar')
+                self:SetMaintenanceConsumptionInactive()
             end
         end,
 
         OnMotionHorzEventChange = function(self, new, old)
             if new == 'Stopped' and (self.LastTransportedTime or 0) + 2 < GetGameTimeSeconds() then
                 ChangeState( self, self.InvisState )
-                LOG("OnMotionHorzEventChange become invisible", new, old)
+                --LOG("OnMotionHorzEventChange become invisible", new, old)
             end
             CLandUnit.OnMotionHorzEventChange(self, new, old)
         end,

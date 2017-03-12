@@ -342,6 +342,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Paragon Game: Fixed civilians not appearing.
   * Added the Cybran T3 Mobile Sensor Array.
 
+  ### 2017-03-12
+
+  * Citron fixes:
+    * No longer draws power whilst moving.
+    * No longer gets free intel and stealth when moved after disabling.
+    * Fixed the normals on the track flaps.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
