@@ -6,6 +6,7 @@ local CUnitsDoc = import('/lua/cybranunits.lua')
 local CLandUnit = CUnitsDoc.CLandUnit
 local CRadarUnit = CUnitsDoc.CRadarUnit
 local CDFElectronBolterWeapon = import('/lua/cybranweapons.lua').CDFElectronBolterWeapon
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 
 SRL0324 = Class(CLandUnit) {
 
@@ -47,6 +48,7 @@ SRL0324 = Class(CLandUnit) {
             self.Threads[4][1] = false
             local bp = self:GetBlueprint()
             self.AnimManip:SetRate(-2)
+            CreateSplatOnBone(self, {0, 0, 0}, 0, BrewLANPath .. "/units/SRL0324/SRL0324_DeploySplat.dds", 1.75, 1.75, 100, 120, self:GetArmy() )
             self:SetCollisionShape(
                 'Box',
                 bp.CollisionOffsetX or 0,

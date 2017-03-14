@@ -151,7 +151,7 @@ UnitBlueprint {
         InitialRallyZ = 20,
     },
     Footprint = {
-        SizeX = 15,
+        SizeX = 17,
         SizeZ = 17,
     },
     General = {
@@ -224,63 +224,99 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         RaisedPlatforms = {
+            -- Main Platform middle
+            -- TopLeft Offset From Center
+            -- x, z, height
+            -5, -3, 0.7,
+            -- TopRight Offset From Center
+            5, -3, 0.7,
+            -- BottomLeft Offset From Center
+            -5, 3, 0.7,
+            -- BottomRight Offset From Center
+            5, 3, 0.7,
 
-            -- Platform 1
-            -- TopLeft Offset From Center
-            -8,
-            -- x
-            -8,
-            -- z
-            0.7,
-            -- height
-            -- TopRight Offset From Center
-            8,
-            -- x
-            -8,
-            -- z
-            0.7,
-            -- height
-            -- BottomLeft Offset From Center
-            -8,
-            -- x
-            8,
-            -- z
-            0.7,
-            -- height
-            -- BottomRight Offset From Center
-            8,
-            -- x
-            8,
-            -- z
-            0.7,
-            -- Platform 2
-            -- TopLeft Offset From Center
-            -8,
-            -- x
-            8,
-            -- z
-            0.7,
-            -- height
-            -- TopRight Offset From Center
-            8,
-            -- x
-            8,
-            -- z
-            0.7,
-            -- height
-            -- BottomLeft Offset From Center
-            -8,
-            -- x
-            9,
-            -- z
-            0,
-            -- height
-            -- BottomRight Offset From Center
-            8,
-            -- x
-            9,
-            -- z
-            0,
+            -- Main Platform bottom
+            -6.5, 3, 0.7,
+            6.5, 3, 0.7,
+            -4, 8, 0.7,
+            4, 8, 0.7,
+
+            -- Main offramp
+            -4, 8, 0.7,
+            4, 8, 0.7,
+            -4, 9, 0,
+            4, 9, 0,
+
+            -- Main Platform top left
+            -3, -7, 0.7,
+            -1, -7, 0.7,
+            -3, -4.5, 0.7,
+            -1, -4.5, 0.7,
+            -- Main Platform lower top left
+            -5.5, -4.5, 0.7,
+            -1, -4.5, 0.7,
+            -6.5, -3, 0.7,
+            -1, -3, 0.7,
+
+            -- Main Platform top left
+            1, -7, 0.7,
+            3, -7, 0.7,
+            1, -4.5, 0.7,
+            3, -4.5, 0.7,
+            -- Main Platform lower top left
+            1, -4.5, 0.7,
+            5.5, -4.5, 0.7,
+            1, -3, 0.7,
+            6.5, -3, 0.7,
+
+
+            -- Left block top
+            -7, -3, 2.45,
+            -5, -3, 2.45,
+            -8, -1, 2.45,
+            -5, -1, 2.45,
+            -- Left block spike
+            -8.5, -1, 3.85,
+            -6, -1, 2.45,
+            -8.5, 1, 3.85,
+            -6, 1, 2.45,
+            -- Left block middle
+            -6, -1, 2.45,
+            -5, -1, 2.45,
+            -6, 1, 2.45,
+            -5, 1, 2.45,
+            -- Left block bottom
+            -8, 1, 2.45,
+            -5, 1, 2.45,
+            -7, 3, 2.45,
+            -5, 3, 2.45,
+
+
+            -- Right block top
+            5, -3, 2.45,
+            7, -3, 2.45,
+            5, -1, 2.45,
+            8, -1, 2.45,
+            -- Right block spike
+            6, -1, 2.45,
+            8.5, -1, 3.85,
+            6, 1, 2.45,
+            8.5, 1, 3.85,
+            -- Right block middle
+            5, -1, 2.45,
+            6, -1, 2.45,
+            5, 1, 2.45,
+            6, 1, 2.45,
+            -- Right block bottom
+            5, 1, 2.45,
+            8, 1, 2.45,
+            5, 3, 2.45,
+            7, 3, 2.45,
+
+            --Top left corner spike
+            --Undefined for now
+            --Top right corner spike
+            --Undefined for now
         },
         RollOffPoints = {
             {
@@ -289,8 +325,20 @@ UnitBlueprint {
                 Y = 0,
                 Z = 9,
             },
+            {
+                UnitSpin = 90,
+                X = 9,
+                Y = 0,
+                Z = 4.5,
+            },
+            {
+                UnitSpin = 270,
+                X = -9,
+                Y = 0,
+                Z = 4.5,
+            },
         },
-        SkirtOffsetX = -1.5,
+        SkirtOffsetX = -.5,
         SkirtOffsetZ = -.5,
         SkirtSizeX = 18,
         SkirtSizeZ = 18,

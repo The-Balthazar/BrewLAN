@@ -247,6 +247,7 @@ SRB0401 = Class(CLandFactoryUnit) {
         for i, v in self.ArmRotators1 do
             self.ArmRotators1[i] = CreateRotator(self, v, 'z', 60, 50, 4, 50)
         end
+        local unitBeingBuilt
         while true do
             if self.AnimateArms then
                 for i, v in self.ArmRotators1 do
@@ -256,6 +257,11 @@ SRB0401 = Class(CLandFactoryUnit) {
                 end
             end
             WaitTicks(2)
+            --Rotation return watch thread, so we don't have two different loops running
+            unitBeingBuilt = self:GetFocusUnit()
+            if unitBeingBuilt and unitBeingBuilt:GetFractionComplete() > 0.8 then
+                self.Sliders[5]:SetGoal(0)
+            end
         end
     end,
 

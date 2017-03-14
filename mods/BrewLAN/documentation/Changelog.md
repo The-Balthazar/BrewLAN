@@ -349,6 +349,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * No longer gets free intel and stealth when moved after disabling.
     * Fixed the normals on the track flaps.
 
+  ### 2017-03-13 — 2017-03-14
+
+  * Created a distance model for the Citron.
+  * Made Citron leave ground markings behind when it retracts its mast.
+  * Allowed units to leave from the sides of the Artholab.
+    * Some units look hilarious climbing the side spikes.
+    * It is quicker for production to have them leave from the front still.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
