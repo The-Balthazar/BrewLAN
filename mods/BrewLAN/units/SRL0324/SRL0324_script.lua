@@ -61,7 +61,6 @@ SRL0324 = Class(CLandUnit) {
         end
     end,
 
-
     OnIntelEnabled = function(self)
         CLandUnit.OnIntelEnabled(self)
         if self.Threads and not self.Threads[4][1] then

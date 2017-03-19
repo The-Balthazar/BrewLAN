@@ -192,10 +192,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2017-02-15
 
-  * Independance Engine now can be attacked from the ground. It has a spherical collision shape.
-  * Independance Engine now has 8 different roll-off points, in the cardinal and primary intercardinal directions.
+  * Independence Engine now can be attacked from the ground. It has a spherical collision shape.
+  * Independence Engine now has 8 different roll-off points, in the cardinal and primary intercardinal directions.
   * EIO & Logger: Fixed DPS for weapons that have their racks fire together.
-  * Created a new tarmac for the Indenepndance Engine, then shrunk it because all the exported files for it were 60mb.
+  * Created a new tarmac for the Independence Engine, then shrunk it because all the exported files for it were 60mb.
     * They are still 12mb.
 
   ### 2017-02-16
@@ -227,14 +227,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * The distance model of the Iyadesu now matches the current model.
   * The collision model of the Iyadesu is now representative of its size.
   * The collision models of the T3 mobile AA's are now more representative of their sizes.
-  * Updated the EN-US strings from the spreadhseet for BrewLAN and Bubble Tea. Process still isn't automated.
+  * Updated the EN-US strings from the spreadsheet for BrewLAN and Bubble Tea. Process still isn't automated.
   * Iyadesu drones now fly higher.
   * Iyadesu drones now return if they get too far away.
   * New almost working sub-mod that will give map based re-skins for units.
   * Bubble Tea: Disabled the beam effect on the Aeon shield.
   * Expert Camo: Renamed from Expert Cammo.
   * Expert Camo: Added Mongoose RedRock texture.
-    * It looks godaweful, but it works. Unlike the Centurion, which bugs out.
+    * It looks god-awful, but it works. Unlike the Centurion, which bugs out.
 
   ### 2017-02-21
 
@@ -269,11 +269,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2017-02-24
 
   * Expert Camo: Now also works with Sup Com 1.1.0.
-  * Atlantis Gantry rollof script now moved to Gantry. Atlantis hook script removed.
+  * Atlantis Gantry roll-of script now moved to Gantry. Atlantis hook script removed.
 
   ### 2017-02-25
 
-  * Decreased the colission size of the Longbow, Alchemist, and Slink.
+  * Decreased the collision size of the Longbow, Alchemist, and Slink.
   * Expert Camo: Overhauled so now, rather than auto generating skins for itself, it can be used as a framework for other mods that just contain the component files for it to assemble for them.
 
   ### 2017-02-26
@@ -283,14 +283,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed the unit prefix of the units added by Paragon Game.
   * Fixed the accidentally broken Gantry building Atlantis.
 
-  ### 2017-02-27 — 2017-03-02
+  ### 2017-02-27 â€” 2017-03-02
 
   * Created Arthrolab: Cybran Experimental Land Factory.
 
   ### 2017-03-03
 
   * Aeon Experimental Factory now has the Gantry 'stolen tech' function.
-  * Gantry 'stolen tech' function split into its own seperate util function for all experimental factories.
+  * Gantry 'stolen tech' function split into its own separate util function for all experimental factories.
 
   ### 2017-03-04
 
@@ -300,7 +300,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * Energy to 156750 from 85050.
       * Mass still 9450.
       * Time to 7034 from 12600.
-    * Independance engine:
+    * Independence engine:
       * Health: 80000.
       * Energy: 315000.
       * Mass: 7090.
@@ -314,23 +314,23 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2017-03-06
 
   * Fixed the Scarab, which had at some point either lost bones, or gained dodgy bone references.
-  * Added raised platform data for the Independance Engine so land units that end up inside it walk on it not in it.
+  * Added raised platform data for the Independence Engine so land units that end up inside it walk on it not in it.
   * All Experimental Factory code now works on original Supreme Commander.
 
   ### 2017-03-07
 
   * Gave the ADG a unique type class.
   * Expanded the range of version numbers from original SupCom that the scripts will look for.
-  * Increased the max powerdrain per second of the Scathis Mk2.
+  * Increased the max power drain per second of the Scathis Mk2.
     * Actual power drain per shot remains the same.
     * Rate of fire unassisted now increased.
-    * Power generators around the Scathis now have no noticable RoF effect.
+    * Power generators around the Scathis now have no noticeable RoF effect.
   * Resource cost of Scathis Mk2 increased by a trivial amount.
   * Caffe Corretto: New mod for advanced field engineer weapon tech.
     * New unit: Accuracy Boost Node.
   * Updated icons for Cybran mobile strat defence.
 
-  ### 2017-03-08 — 2017-03-09
+  ### 2017-03-08 â€” 2017-03-09
 
   * Caffe Corretto: Experimented with a damage boost node.
     * Found out that the default buff function for damage does nothing.
@@ -349,13 +349,23 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * No longer gets free intel and stealth when moved after disabling.
     * Fixed the normals on the track flaps.
 
-  ### 2017-03-13 — 2017-03-14
+  ### 2017-03-13 â€” 2017-03-14
 
   * Created a distance model for the Citron.
   * Made Citron leave ground markings behind when it retracts its mast.
   * Allowed units to leave from the sides of the Artholab.
     * Some units look hilarious climbing the side spikes.
     * It is quicker for production to have them leave from the front still.
+
+  ### 2017-03-15
+
+  * Added a placeholder version of the UEF T2 recon aircraft.
+
+  ### 2017-03-19
+
+  * Moved version check omni nerf fix from Darkness script to global buff script.
+  * Improved FAF support.
+  * Listed the stealth field ability on the Darkness.
 
 ## 2016-12-15|0.7.5.5
 

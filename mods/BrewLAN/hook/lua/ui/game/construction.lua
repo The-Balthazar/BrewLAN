@@ -1,14 +1,13 @@
 --+-----------------------------------------------------------------------------
---¦                                                                
---¦   Summary: Allows the Gantry and heavy walls to build units built like buildings usually.
---¦   Author: Balthassar
---¦
+--|
+--|   Summary: Allows the Gantry and heavy walls to build units built like buildings usually.
+--|   Author: Balthassar
+--|
 --+-----------------------------------------------------------------------------
 local VersionIsSC = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
 do
     if not VersionIsSC then --If not original Steam SupCom
         local OldOnClickHandler = OnClickHandler
-
         function OnClickHandler(button, modifiers, ...)
             local item = button.Data
             local changeclick = false

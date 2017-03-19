@@ -1,27 +1,21 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/URB4203/URB4203_script.lua
-#**  Author(s):  David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  Cybran Radar Jammer Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
-local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit  
-local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon 
+--------------------------------------------------------------------------------
+--  Summary:  Cybran Omni Disrupter
+--   Author:  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
+local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit
+local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon
 local Utilities = import('/lua/utilities.lua')
 local Buff = import('/lua/sim/Buff.lua')
 local AIUtils = import('/lua/ai/aiutilities.lua')
 
-SRB4402 = Class(CRadarJammerUnit) {    
+SRB4402 = Class(CRadarJammerUnit) {
     Weapons = {
         PulseWeapon = Class(BareBonesWeapon) {
             OnFire = function(self)
-                local aiBrain = self.unit:GetAIBrain()      
+                local aiBrain = self.unit:GetAIBrain()
                 local Mypos = self.unit:GetPosition()
                 local Range = self.MaxRadius or 2000
-                local LocalUnits = {} 
+                local LocalUnits = {}
                 for index, brain in ArmyBrains do
                     for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS, Mypos, Range) do
                         table.insert(LocalUnits, unit)
@@ -35,15 +29,16 @@ SRB4402 = Class(CRadarJammerUnit) {
                 for k, v in self.unit.Rotator do
                     v:SetGoal(-50)
                     v:SetSpeed(1900)
-                end 
-                self.ArmWaitThread = ForkThread( function()
-                                WaitTicks(1)    
-                                for k, v in self.unit.Rotator do
-                                    v:SetGoal(0)
-                                    v:SetSpeed(25)     
-                                end 
-                            end
-                          )
+                end
+                self.ArmWaitThread = ForkThread(
+                    function()
+                        WaitTicks(1)
+                        for k, v in self.unit.Rotator do
+                            v:SetGoal(0)
+                            v:SetSpeed(25)
+                        end
+                    end
+                )
                 CreateAttachedEmitter(self.unit, 0, army, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter( 20 ):OffsetEmitter( 0, 4, 0 )
                 local epathR = '/effects/emitters/destruction_explosion_concussion_ring_03_emit.bp'
                 CreateAttachedEmitter(self.unit, 'XRC2201', army, epathR):OffsetEmitter( 0, 4, 0 )
@@ -54,22 +49,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '02_emit.bp')
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '03_emit.bp')
                 CreateAttachedEmitter(self.unit, 0, army, epathQ .. '04_emit.bp')
-                
-                if not Buffs['DarknessOmniNerf'] and not self.unit.FAF then
-                    BuffBlueprint {
-                        Name = 'DarknessOmniNerf',
-                        DisplayName = 'DarknessOmniNerf',
-                        BuffType = 'OmniRadiusFix',
-                        Stacks = 'ALWAYS',
-                        Duration = 20.1,
-                        Affects = {
-                            OmniRadiusFix = {
-                                Add = 0,
-                                Mult = 0.6,
-                            },
-                        },
-                    }
-                elseif not Buffs['DarknessOmniNerf'] and self.unit.FAF then
+                if not Buffs['DarknessOmniNerf'] then
                     BuffBlueprint {
                         Name = 'DarknessOmniNerf',
                         DisplayName = 'DarknessOmniNerf',
@@ -83,8 +63,8 @@ SRB4402 = Class(CRadarJammerUnit) {
                             },
                         },
                     }
-                end         
-                for k, v in LocalUnits do    
+                end
+                for k, v in LocalUnits do
                     if
                     --self.unit:GetEntityId() != v:GetEntityId()
                     --and
@@ -101,7 +81,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                         local active = false
                         for i, marker in v.PanopticonMarker do
                             active = true
-                            break  
+                            break
                         end
                         if active and VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) < self.unit:GetBlueprint().Intel.RadarStealthFieldRadius then
                             --LOG("KILL IT DEAD")
@@ -112,28 +92,19 @@ SRB4402 = Class(CRadarJammerUnit) {
                             v.PanopticonMarker = {}
                         end
                     end
-                end  
+                end
             end,
         },
     },
-        
+
     OnStopBeingBuilt = function(self,builder,layer)
-        --GetVersion() == '1.6.6' -- is steam FA version --1.1.0 is steam SC version
-        --not import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
-        if ScenarioInfo.ArmySetup[self:GetAIBrain().Name].RC then
-            LOG("We are probably on FAF.")
-            self.FAF = true
-        else
-            LOG("Less faffing about, more work arounds for dumb bugs.")
-        end       
-        LOG(GetVersion())
         CRadarJammerUnit.OnStopBeingBuilt(self,builder,layer)
         if not self.Rotator then
             self.Rotator = {}
             self.Rotator.B01 = CreateRotator(self, ' B01', 'x')
             self.Rotator.B02 = CreateRotator(self, ' B02', 'x')
             self.Rotator.B03 = CreateRotator(self, ' B03', 'x')
-        end 
+        end
         if self.IntelEffects and not self.IntelFxOn then
             self.IntelEffectsBag = {}
             self.CreateTerrainTypeEffects( self, self.IntelEffects, 'FXIdle',  self:GetCurrentLayer(), nil, self.IntelEffectsBag )
@@ -143,9 +114,9 @@ SRB4402 = Class(CRadarJammerUnit) {
         self.Intel = true
         self:ForkThread(self.FirePulse, self)
     end,
-    
-    OnIntelEnabled = function(self) 
-        self.Intel = true 
+
+    OnIntelEnabled = function(self)
+        self.Intel = true
         --self:ForkThread(self.FirePulse, self)
         CRadarJammerUnit.OnIntelEnabled(self)
     end,
@@ -154,14 +125,14 @@ SRB4402 = Class(CRadarJammerUnit) {
         self.Intel = false
         CRadarJammerUnit.OnIntelDisabled(self)
     end,
-       
+
     OnKilled = function(self, instigator, type, overkillRatio)
         CRadarJammerUnit.OnKilled(self, instigator, type, overkillRatio)
     end,
-    
+
     FirePulse = function(self)
-        while true do 
-            if self.Intel then         
+        while true do
+            if self.Intel then
                 WaitSeconds(2.5)
                 --if aiBrain:GetEconomyIncome('ENERGY')
                 self:GetWeaponByLabel('PulseWeapon'):FireWeapon()
@@ -170,8 +141,8 @@ SRB4402 = Class(CRadarJammerUnit) {
                 WaitSeconds(1)
             end
         end
-    end, 
-     
+    end,
+
     IntelEffects = {
         {
             Bones = {

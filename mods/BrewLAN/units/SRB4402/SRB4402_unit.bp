@@ -57,6 +57,9 @@ UnitBlueprint {
     },
     Description = '<LOC srb4402_desc>Experimental Omni Disrupting Facility',
     Display = {
+        Abilities = {
+            '<LOC ability_stealthfield>Stealth Field',
+        },
         AnimationDeath = {
             {
                 Animation = '/units/XRC2201/XRC2201_Adeath1.sca',
@@ -92,7 +95,7 @@ UnitBlueprint {
                 },
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Insect',  
+                    ShaderName = 'Insect',
                     --MeshName = '/units/xrc2201/xrc2201_lod1.scm',
                     AlbedoName = '/units/xrc2201/xrc2201_albedo.dds',
                     SpecularName = '/units/xrc2201/xrc2201_specteam.dds',
@@ -101,7 +104,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UEC1101',
-        SpawnRandomRotation = true,    
+        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_cybran_01_albedo',
@@ -161,8 +164,8 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',   
-        ToggleCaps = {      
+        TechLevel = 'RULEUTL_Advanced',
+        ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC srb4402_name>Darkness',
@@ -192,7 +195,7 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,       
+        MaxSteerForce = 0,
         MeshExtentsX = 3.2,
         MeshExtentsY = 2.2,
         MeshExtentsZ = 3.2,
@@ -203,7 +206,7 @@ UnitBlueprint {
         SkirtSizeX = 10,
         SkirtSizeZ = 10,
         TurnRate = 0,
-    },    
+    },
     SelectionCenterOffsetZ = -1.5,
     SelectionSizeX = 3,
     SelectionSizeZ = 3,
@@ -221,9 +224,9 @@ UnitBlueprint {
                     Cue = 'XSL0402_Death',
                     LodCutoff = 'Weapon_LodCutoff',
                 },
-            },  
-            DisplayName = 'Omni Gamma Pulse',
-            Label = 'PulseWeapon',     
+            },
+            DisplayName = 'Omni Disrupter Pulse',
+            Label = 'PulseWeapon',
             --EnergyDrainPerSecond = 2000,
             --EnergyRequired = 10000,
             MaxRadius = 2000,
@@ -235,7 +238,7 @@ UnitBlueprint {
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,    
+        ReclaimTimeMultiplier = 1,
         WreckageLayers = {
             Air = false,
             Land = true,

@@ -189,8 +189,8 @@ UnitBlueprint {
         MaxSteerForce = 5,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Land',
-#        RotateOnSpot = true,
-#        RotateOnSpotThreshold = 0.1,
+--        RotateOnSpot = true,
+--        RotateOnSpotThreshold = 0.1,
         TurnRadius = 0,
         TurnRate = 60,
     },
@@ -202,10 +202,10 @@ UnitBlueprint {
     SizeX = 0.9,
     SizeY = 0.55,
     SizeZ = 1,
-#    SplitDamage = {
-#        DamageAmount = 10,
-#        DamageRadius = 0.1,
-#    },
+--    SplitDamage = {
+--        DamageAmount = 10,
+--        DamageRadius = 0.1,
+--    },
     StrategicIconName = 'icon_land3_antimissile',
     StrategicIconSortPriority = 195,
     Transport = {
