@@ -1,6 +1,7 @@
 local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArtilleryAntiMatterProjectile02
 local utilities = import('/lua/utilities.lua')
-local Buff = import('/lua/sim/Buff.lua')
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
 
     FxLandHitScale = 0.2,
@@ -24,7 +25,7 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
             self.DropUnit(self)
         end
     end,
-        
+
     DropUnit = function(self, hitshield)
         local pos = self:GetPosition()
         if self.Data[1] then
@@ -81,7 +82,7 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
             math.random(0,360), 0, 0
         )
         self:Kill()
-    end,     
+    end,
 }
 
 TypeClass = TIFDropPodArtilleryMechMarine

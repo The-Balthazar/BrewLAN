@@ -366,6 +366,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Moved version check omni nerf fix from Darkness script to global buff script.
   * Improved FAF support.
   * Listed the stealth field ability on the Darkness.
+  * Drop-pod script now uses the compatibility check version of buffs.
 
 ## 2016-12-15|0.7.5.5
 
