@@ -368,6 +368,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Listed the stealth field ability on the Darkness.
   * Drop-pod script now uses the compatibility check version of buffs.
 
+  ### 2017-03-22
+
+  * Bubble Tea: Pillar of Prominence:
+    * Fixed it constantly re-generating every shield bubble as a result of removing the beams.
+    * Removed the left-over remnants of the beam code.
+    * Units that were shielded by one when its shield was destroyed can now be shielded by it again.
+      * This bug may have been caused by the above changes and never actually published, but if it wasn't it's fixed now.
+    * Now stops generating new shields when disabled by damage.
+    * Now stops generating new shields when disabled by a power outage.
+    * It is now on the lookout for spontaneous shield outages, and stops generating shields in that case.
+      * It now stops its animations and clears its particle effects in these events.
+  * Bubble Tea: projected shields:
+    * Added the beam effect removed from the projector to the projected shield script, appearing for 5 ticks when damaged.
+    * The damage to deal to the projectors is now calculated once instead of once for each projector to damage.
+    * The projected shields now check if the damage dealt would be lethal to the parent projectors.
+    * Overkill damage resulting from a parent not having enough shield health is now re-distributed among other parents recursively. If there are no other parents the remaining is dealt to the unit.
+    * Removed the default code for overkill calculation and regeneration from the projected shields, since they remain on 100% for their lifetime.
+    * Projectiles no longer collide with the shields if they have no owners and shouldn't exist.
+  * Gantry AIx 2: Fixed a reference to an old non-existant function.  
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
