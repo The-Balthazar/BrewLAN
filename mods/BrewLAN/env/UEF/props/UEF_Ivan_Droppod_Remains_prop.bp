@@ -27,7 +27,7 @@ PropBlueprint {
         ReclaimTime = 1,
     },
     Footprint = {
-        OccupancyCaps = 3,
+        OccupancyCaps = 0,
     },
     Interface = {
         HelpText = 'Drop-pod remains',

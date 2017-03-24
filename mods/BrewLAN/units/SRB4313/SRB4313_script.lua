@@ -1,13 +1,6 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/URB4203/URB4203_script.lua
-#**  Author(s):  David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  Cybran Radar Jammer Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+-- Summary  :  Cybran Cloakable Radar Stealth Script
+--------------------------------------------------------------------------------
 local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit
 
 SRB4313 = Class(CRadarJammerUnit) {
@@ -19,22 +12,30 @@ SRB4313 = Class(CRadarJammerUnit) {
             self.TowerSlider:SetGoal(0, 0, -6.2)
             self.TowerSlider:SetSpeed(2)
         end
+        --Force update of the cloak effect if there is a cloak mesh. For FAF graphics
+        if self:GetBlueprint().Display.CloakMeshBlueprint then
+            self:ForkThread(
+                function()
+                    WaitTicks(1)
+                    self:UpdateCloakEffect(true, 'Cloak')
+                end
+            )
+        end
     end,
 
     OnIntelEnabled = function(self)
         CRadarJammerUnit.OnIntelEnabled(self)
-
-            if not self.TowerSlider then return end
+        if self.TowerSlider then
             self.TowerSlider:SetGoal(0, 0, -6.2)
             self.TowerSlider:SetSpeed(2)
+        end
     end,
 
     OnIntelDisabled = function(self)
         CRadarJammerUnit.OnIntelDisabled(self)
-
-            self.TowerSlider:SetGoal(0, 0, 0)
-            self.TowerSlider:SetSpeed(2)
-    end,    
+        self.TowerSlider:SetGoal(0, 0, 0)
+        self.TowerSlider:SetSpeed(2)
+    end,
 
     IntelEffects = {
 		{

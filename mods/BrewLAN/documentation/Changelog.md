@@ -386,7 +386,23 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Overkill damage resulting from a parent not having enough shield health is now re-distributed among other parents recursively. If there are no other parents the remaining is dealt to the unit.
     * Removed the default code for overkill calculation and regeneration from the projected shields, since they remain on 100% for their lifetime.
     * Projectiles no longer collide with the shields if they have no owners and shouldn't exist.
-  * Gantry AIx 2: Fixed a reference to an old non-existant function.  
+  * Gantry AIx 2: Fixed a reference to an old non-existent function.  
+
+  ### 2017-03-23
+
+  * Drop-pod remains no longer block pathing.
+  * Listed the sonar and torpedo abilities of the Cybran T1 Torpedo Bomber.
+
+  ### 2017-03-24
+
+  * FAF: Fixed the cloakable resource buildings and stealth fields (mobile and building), and all mines, not using the cloak effect when they first cloak.
+    * They were actually cloaked, but the script didn't realise.
+    * This fix will also work for regular BrewLAN/BlackOps cross-play, since they use the same script.
+    * In the case of the mines, they actually cloak on create, not on stop being built, so its graphically inaccurate, but applying the effect on create would look wrong and would revert when its finished being built.
+  * Land mines now follow the slope of the terrain. It's *so* satisfying.
+    * The Cybran T1 landmine needs its model re-orientating.
+  * Drop-pod remains follow the slope of the terrain.
+    * They are no longer spawned a random orientation, until I can translate the angles for arbitrary rotations.
 
 ## 2016-12-15|0.7.5.5
 

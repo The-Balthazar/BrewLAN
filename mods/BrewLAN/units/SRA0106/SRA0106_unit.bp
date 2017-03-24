@@ -2,7 +2,7 @@ UnitBlueprint {
     Air = {
         AutoLandTime = 1,
         BankFactor = 4,
-        BankForward = false,    
+        BankForward = false,
         BreakOffDistance = 34,
         BreakOffIfNearNewTarget = true,
         BreakOffTrigger = 20,
@@ -109,6 +109,10 @@ UnitBlueprint {
     },
     Description = '<LOC sair0106>Light Torpedo Bomber',
     Display = {
+        Abilities = {
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_torpedo>Torpedoes',
+        },
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
@@ -136,18 +140,18 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 120,
-                    ShaderName = 'Insect',   
-                    AlbedoName = '/units/ura0101/ura0101_albedo.dds', 
-                    NormalsName = '/units/ura0101/ura0101_normalsTS.dds', 
-                    SpecularName = '/units/ura0101/ura0101_specteam.dds',  
+                    ShaderName = 'Insect',
+                    AlbedoName = '/units/ura0101/ura0101_albedo.dds',
+                    NormalsName = '/units/ura0101/ura0101_normalsTS.dds',
+                    SpecularName = '/units/ura0101/ura0101_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
-                    SpecularName = '/units/ura0101/ura0101_lod1.scm',   
-                    AlbedoName = '/units/ura0101/ura0101_lod1_albedo.dds', 
-                    NormalsName = '/units/ura0101/ura0101_lod1_normalsTS.dds', 
-                    SpecularName = '/units/ura0101/ura0101_lod1_specteam.dds',  
+                    SpecularName = '/units/ura0101/ura0101_lod1.scm',
+                    AlbedoName = '/units/ura0101/ura0101_lod1_albedo.dds',
+                    NormalsName = '/units/ura0101/ura0101_lod1_normalsTS.dds',
+                    SpecularName = '/units/ura0101/ura0101_lod1_specteam.dds',
                 },
             },
         },
@@ -210,7 +214,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.2,
     LifeBarSize = 0.5,
-    Physics = {      
+    Physics = {
         AttackElevation = 4,
         BankingSlope = 0.5,
         BuildOnLayerCaps = {
@@ -246,7 +250,7 @@ UnitBlueprint {
         AirClass = true,
         TransportClass = 1,
     },
-    Weapon = { 
+    Weapon = {
         {
             Audio = {
                 Fire = Sound {

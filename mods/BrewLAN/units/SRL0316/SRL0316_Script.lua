@@ -1,13 +1,6 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/URL0306/URL0306_script.lua
-#**  Author(s):  Jessica St. Croix
-#**
-#**  Summary  :  Cybran Mobile Radar Jammer Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+-- Summary  :  Cybran Cloakable Mobile Radar Stealth Script
+--------------------------------------------------------------------------------
 local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
@@ -15,8 +8,17 @@ SRL0316 = Class(CLandUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         CLandUnit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()
+        --Force update of the cloak effect if there is a cloak mesh. For FAF graphics
+        if self:GetBlueprint().Display.CloakMeshBlueprint then
+            self:ForkThread(
+                function()
+                    WaitTicks(1)
+                    self:UpdateCloakEffect(true, 'Cloak')
+                end
+            )
+        end
     end,
-    
+
     IntelEffects = {
 		{
 			Bones = {
@@ -31,7 +33,7 @@ SRL0316 = Class(CLandUnit) {
 			Type = 'Jammer01',
 		},
     },
-    
+
     OnIntelEnabled = function(self)
         CLandUnit.OnIntelEnabled(self)
         if self.IntelEffects then
@@ -43,8 +45,7 @@ SRL0316 = Class(CLandUnit) {
     OnIntelDisabled = function(self)
         CLandUnit.OnIntelDisabled(self)
         EffectUtil.CleanupEffectBag(self,'IntelEffectsBag')
-    end,    
-    
+    end,
 }
 
 TypeClass = SRL0316

@@ -2,6 +2,7 @@ local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArt
 local utilities = import('/lua/utilities.lua')
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
+local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
 
     FxLandHitScale = 0.2,
@@ -76,10 +77,11 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
         end
         --LOG(GetTerrainType(pos[1],pos[3]) )
         CreateLightParticle(self, -1, self:GetArmy(), 10, 3, 'flare_lens_add_03', 'ramp_white_07' )
+        local Angles = GetTerrainAngles(pos, 3)
         CreatePropHPR(
             import( '/lua/game.lua' ).BrewLANPath() .. '/env/uef/props/UEF_Ivan_Droppod_Remains_prop.bp',
             pos[1], pos[2], pos[3],
-            math.random(0,360), 0, 0
+            0, Angles[2], -Angles[1]
         )
         self:Kill()
     end,

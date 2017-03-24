@@ -1,12 +1,14 @@
 --------------------------------------------------------------------------------
 -- Summary  :  BrewLAN multi-unit scripts.
---------------------------------------------------------------------------------                                                      
+--------------------------------------------------------------------------------
 local DefaultUnits = import('/lua/defaultunits.lua')
 local StructureUnit = DefaultUnits.StructureUnit
 local FactoryUnit = DefaultUnits.FactoryUnit
 --------------------------------------------------------------------------------
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local DefaultWeapons = import('/lua/sim/DefaultWeapons.lua')
-local DeathNukeWeapon = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
+local DeathNukeWeapon = import(BrewLANPath .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
+local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 --------------------------------------------------------------------------------
 local EffectTemplates = import('/lua/effecttemplates.lua')
 local CreateScorchMarkSplat = import('/lua/defaultexplosions.lua').CreateScorchMarkSplat
@@ -15,7 +17,7 @@ local TableCat = import('/lua/utilities.lua').TableCat
 local EBPSRA = '/effects/emitters/seraphim_rifter_artillery_hit_'
 --------------------------------------------------------------------------------
 -- Mine script
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 MineStructureUnit = Class(StructureUnit) {
     Weapons = {
@@ -81,15 +83,31 @@ MineStructureUnit = Class(StructureUnit) {
 
     OnStopBeingBuilt = function(self,builder,layer)
         StructureUnit.OnStopBeingBuilt(self,builder,layer)
-        local bp = self:GetBlueprint()    
+        local bp = self:GetBlueprint()
         if self:GetCurrentLayer() == 'Water' then
             self.Trash:Add(CreateSlider(self, 0, 0, -20, 0, 5))
+        else
+            local Angles = GetTerrainAngles(self:GetPosition(),1)
+            self.TerrainSlope = {
+            --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
+                CreateRotator(self, 0, 'z', -Angles[1], 1000, 1000, 1000),
+                CreateRotator(self, 0, 'x', Angles[2], 1000, 1000, 1000)
+            }
         end
         if self.blocker then
             --This tricks the engine into thinking the area is clear:
             --Removing a building with an overlapping footprint from the same layer.
             self.blocker:Destroy()
-        end      
+        end
+        --Force update of the cloak effect if there is a cloak mesh. For FAF graphics
+        if self:GetBlueprint().Display.CloakMeshBlueprint then
+            self:ForkThread(
+                function()
+                    WaitTicks(1)
+                    self:UpdateCloakEffect(true, 'Cloak')
+                end
+            )
+        end
     end,
 
     OnScriptBitSet = function(self, bit)
@@ -106,7 +124,7 @@ MineStructureUnit = Class(StructureUnit) {
 
 --------------------------------------------------------------------------------
 -- Nuke Mine script
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
@@ -127,21 +145,21 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
 
 --------------------------------------------------------------------------------
 -- Wall scripts
--------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
 StackingBuilderUnit = Class(FactoryUnit) {
-        
-    BuildAttachBone = 'WallNode', 
-       
-    OnCreate = function(self,builder,layer)      
+
+    BuildAttachBone = 'WallNode',
+
+    OnCreate = function(self,builder,layer)
         self:AddBuildRestriction(categories.ANTINAVY)
         self:AddBuildRestriction(categories.HYDROCARBON)
         FactoryUnit.OnCreate(self,builder,layer)
-    end, 
-    
+    end,
+
     CreateBlinkingLights = function(self, color)
-    end, 
-      
+    end,
+
     FinishBuildThread = function(self, unitBeingBuilt, order )
         self:SetBusy(true)
         self:SetBlockCommandQueue(true)
@@ -156,37 +174,37 @@ StackingBuilderUnit = Class(FactoryUnit) {
         end
         self.AttachedUnit = unitBeingBuilt
     end,
-         
+
     StartBuildFx = function(self, unitBeingBuilt)
-    end,  
-    
-    OnDamage = function(self, instigator, amount, vector, damageType)    
+    end,
+
+    OnDamage = function(self, instigator, amount, vector, damageType)
         FactoryUnit.OnDamage(self, instigator, amount, vector, damageType)
         if self.AttachedUnit and not self.AttachedUnit:IsDead() then
             self.AttachedUnit:OnDamage(instigator, amount * 0.5, vector, damageType)
         end
-    end,   
-    
+    end,
+
     OnScriptBitSet = function(self, bit)
         FactoryUnit.OnScriptBitSet(self, bit)
         if bit == 7 then
             if self.AttachedUnit then
-                self.AttachedUnit:Destroy() 
-            end 
-            self:SetScriptBit('RULEUTC_SpecialToggle',false) 
+                self.AttachedUnit:Destroy()
+            end
+            self:SetScriptBit('RULEUTC_SpecialToggle',false)
             IssueClearCommands({self})
         end
     end,
-    
+
     UpgradingState = State(FactoryUnit.UpgradingState) {
         Main = function(self)
             FactoryUnit.UpgradingState.Main(self)
         end,
-        
+
         OnStopBuild = function(self, unitBuilding)
             if unitBuilding:GetFractionComplete() == 1 then
                 if self.AttachedUnit then
-                    self.AttachedUnit:Destroy() 
+                    self.AttachedUnit:Destroy()
                 end
             end
             FactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding)
