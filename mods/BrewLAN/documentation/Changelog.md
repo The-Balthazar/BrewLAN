@@ -403,6 +403,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * The Cybran T1 landmine needs its model re-orientating.
   * Drop-pod remains follow the slope of the terrain.
     * They are no longer spawned a random orientation, until I can translate the angles for arbitrary rotations.
+  * The cardinal wall scripts now check for bone conflicts after setting bones by type. (This fixes the overlaps in the Aeon T2 wall, and the Cybran T3 wall.)
+  * T1 and T2 walls currently also use the slope script.
 
 ## 2016-12-15|0.7.5.5
 

@@ -1,9 +1,9 @@
-UnitBlueprint {     
+UnitBlueprint {
     AI = {
-        TargetBones = {  
+        TargetBones = {
             'AttackTarget001',
             'AttackTarget002',
-            'AttackTarget003', 
+            'AttackTarget003',
             'AttackTarget004',
         },
     },
@@ -31,8 +31,8 @@ UnitBlueprint {
         'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'AEON',
-        'STRUCTURE',    
-        'DEFENSE',      
+        'STRUCTURE',
+        'DEFENSE',
         'WALL',
         'DRAGBUILD',
         'BENIGN',
@@ -51,10 +51,10 @@ UnitBlueprint {
         MaxHealth = 20000,
         RegenRate = 0,
     },
-    Description = '<LOC sbui5210>Heavy Wall Segment', 
-    Display = {      
+    Description = '<LOC sbui5210>Heavy Wall Segment',
+    Display = {
         AdjacencyConnection = 'MEDIUMWALL',
-        AdjacencyConnectionInfo = {  
+        AdjacencyConnectionInfo = {
             Bones = {
                 North = {
                     visibility = 'hide',
@@ -62,42 +62,42 @@ UnitBlueprint {
                     conflict = nil,
                 },
                 South = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'South',
                     conflict = nil,
-                }, 
+                },
                 East = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'East',
                     conflict = nil,
-                }, 
+                },
                 West = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'West',
                     conflict = nil,
                 },
                 NW = {
                     visibility = 'show',
                     bonetype = 'Tower',
-                    conflict = {'North','West',},
+                    conflict = {'North','West'},
                 },
                 NE = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
-                    conflict = {'North','East',},
-                }, 
+                    conflict = {'North','East'},
+                },
                 SW = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
-                    conflict = {'South','West',},
-                }, 
+                    conflict = {'South','West'},
+                },
                 SE = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
-                    conflict = {'South','East',},
-                },    
+                    conflict = {'South','East'},
+                },
             },
-        },                       
+        },
         DamageEffects = {
             {
                 Bone = 0,
@@ -111,7 +111,7 @@ UnitBlueprint {
                 OffsetY = 2.5,
                 OffsetZ = 0.25,
             },
-        },            
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -127,7 +127,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,   
+        SpawnRandomRotation = true,
         UniformScale = 0.0769230769230769230769230,
     },
     Economy = {
@@ -145,7 +145,7 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 2,
     },
-    General = {      
+    General = {
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_Factory',
@@ -156,18 +156,18 @@ UnitBlueprint {
             RULEUCC_Guard = false,
             RULEUCC_Move = false,
             RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false, 
+            RULEUCC_Patrol = false,
             RULEUCC_Pause = false,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
-        },      
+        },
         ConstructionBar = true,
-        FactionName = 'Aeon',  
+        FactionName = 'Aeon',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',    
+        TechLevel = 'RULEUTL_Basic',
         --UnitName = '<LOC sab5210_name>Bulkhead',
         UnitWeight = 1,
     },
@@ -190,7 +190,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        DragCoefficient = 0.2,    
+        DragCoefficient = 0.2,
         MaxGroundVariation = 2,
         FlattenSkirt = false,
         MaxSteerForce = 0,
@@ -213,7 +213,7 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_structure_wall',
     StrategicIconSortPriority = 208,
-    Wreckage = {    
+    Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
