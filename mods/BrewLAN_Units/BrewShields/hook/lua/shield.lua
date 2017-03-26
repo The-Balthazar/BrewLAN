@@ -8,8 +8,6 @@
 --local Shield = import('/lua/shield.lua').Shield
 
 ProjectedShield = Class(Shield){
-    Projectors = {},
-
     OnDamage =  function(self,instigator,amount,vector,type)
         --Count how many projectors are going to be recieving the damage.
         local pCount = self:CheckProjectors()

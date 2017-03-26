@@ -414,6 +414,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * The Cybran was an exception because it allowed use of the new option to pick axis and inversions, which the Cybran T1 mine and Seraphim T1 wall needed.
   * Bubble Tea: Moved the projector tracking table of bubbles created by the Aeon experimental shield to the unit the shield is covering.
     * This fixes the issue of damage getting split between ALL projectors instead of just the nearby ones.
+  * Bubble Tea: Created a workaround for GAZ_UI breaking whenever you mouse-over a unit with a projected shield with enhanced unit-view enabled.
+    * Units that could have a projected shield now have a ShieldMaxHealth defined as 1.
+      * This only affects things that check there like GAZ_UI. The projected shields don't care.
+  * Bubble Tea: Created a new shield mesh for the projected shields.
 
 ## 2016-12-15|0.7.5.5
 
