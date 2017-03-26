@@ -1,4 +1,4 @@
-UnitBlueprint {          
+UnitBlueprint {
     AI = {
         TargetBones = {
             'Target',
@@ -38,8 +38,8 @@ UnitBlueprint {
         'TECH3',
         'SIZE4',
         'VISIBLETORECON',
-        'RECLAIMABLE',      
-        'SHIELD',  
+        'RECLAIMABLE',
+        'SHIELD',
         'SORTDEFENSE',
         'SHIELDWALL',
     },
@@ -143,7 +143,7 @@ UnitBlueprint {
         BuildTime = 40,
         MaintenanceConsumptionPerSecondEnergy = 5,
         RebuildBonusIds = {
-            'ssb5301',  
+            'ssb5301',
         },
     },
     Footprint = {
@@ -215,6 +215,7 @@ UnitBlueprint {
         SkirtOffsetZ = 0,
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
+        SlopeToTerrain = true,
         TurnRate = 0,
     },
     SelectionSizeX = 0.6*1.2,

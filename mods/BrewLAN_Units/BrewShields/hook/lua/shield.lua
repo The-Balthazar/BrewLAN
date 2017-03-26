@@ -25,7 +25,7 @@ ProjectedShield = Class(Shield){
 
     CheckProjectors = function(self)
         local pCount = 0
-        for i, projector in self.Projectors do
+        for i, projector in self.Owner.Projectors do
             if IsUnit(projector) and projector.MyShield and projector.MyShield:GetHealth() > 0 then
                 pCount = pCount + 1
             --else
@@ -42,7 +42,7 @@ ProjectedShield = Class(Shield){
         end
         local damageToDeal = amount / pCount
         local overKillDamage, ProjectorHealth = 0,0
-        for i, projector in self.Projectors do
+        for i, projector in self.Owner.Projectors do
             ProjectorHealth = projector.MyShield:GetHealth()
             projector.MyShield:OnDamage(instigator,damageToDeal,vector,type)
             --If it looked like too much damage, remove it from the projector list, and count the overkill
@@ -62,7 +62,7 @@ ProjectedShield = Class(Shield){
         local OffsetLength = Util.GetVectorLength(vector)
         local ImpactMesh = Entity { Owner = self.Owner }
         local beams = {}
-        for i, Pillar in self.Projectors do
+        for i, Pillar in self.Owner.Projectors do
             beams[i] = AttachBeamEntityToEntity(self, 0, Pillar, 'Gem', self:GetArmy(), Pillar:GetBlueprint().Defense.Shield.ShieldTargetBeam)
         end
         Warp( ImpactMesh, self:GetPosition())

@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------
+-- Walls
+--------------------------------------------------------------------------------
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uab5101",	--Aeon--
+    Physics = {
+        SlopeToTerrain = true,
+    },
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsb5101",	--Seraphim--
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            Axis1 = 'y',
+            Axis2 = 'x',
+            InvertAxis = {true,false}
+        },
+    },
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ueb5101",	--UEF--
+    Physics = {
+        SlopeToTerrain = true,
+    },
+}
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="urb5101",	--Cybran--
+    Physics = {
+        SlopeToTerrain = true,
+    },
+}

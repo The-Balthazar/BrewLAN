@@ -406,6 +406,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * The cardinal wall scripts now check for bone conflicts after setting bones by type. (This fixes the overlaps in the Aeon T2 wall, and the Cybran T3 wall.)
   * T1 and T2 walls currently also use the slope script.
 
+  ### 2017-03-26
+
+  * Moved the building sloping script from the wall parent class to the top level unit class, and required units have a bp trigger to use it.
+    * Gave T1 walls, the T1 Cybran mine, and the Seraphim T3 shield wall the bp trigger.
+      * Other mines still use their version of the code, because I don't want to edit 11 blueprints just yet.
+      * The Cybran was an exception because it allowed use of the new option to pick axis and inversions, which the Cybran T1 mine and Seraphim T1 wall needed.
+  * Bubble Tea: Moved the projector tracking table of bubbles created by the Aeon experimental shield to the unit the shield is covering.
+    * This fixes the issue of damage getting split between ALL projectors instead of just the nearby ones.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

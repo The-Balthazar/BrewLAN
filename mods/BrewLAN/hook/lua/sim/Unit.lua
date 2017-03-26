@@ -1,7 +1,35 @@
 do
     local UnitOld = Unit
+    local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+    local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 
     Unit = Class(UnitOld) {
+        OnStopBeingBuilt = function(self,builder,layer, ...)
+            UnitOld.OnStopBeingBuilt(self,builder,layer, unpack(arg))
+            local bp = self:GetBlueprint()
+            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope then
+                local Angles = GetTerrainAngles(self:GetPosition(),{bp.Footprint.SizeX or bp.Physics.SkirtSizeX, bp.Footprint.SizeZ or bp.Physics.SkirtSizeZ})
+                local Axis1, Axis2 = 'z', 'x'
+                local Axis = bp.Physics.SlopeToTerrainAxis
+                if Axis then
+                    Axis1 = Axis.Axis1 or Axis1
+                    Axis2 = Axis.Axis2 or Axis2
+                end
+                if Axis.InvertAxis then
+                    for i, v in Angles do
+                        if Axis.InvertAxis[i] then
+                            Angles[i] = -v
+                        end
+                    end
+                end
+                self.TerrainSlope = {
+                --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
+                    CreateRotator(self, 0, Axis1, -Angles[1], 1000, 1000, 1000),
+                    CreateRotator(self, 0, Axis2, Angles[2], 1000, 1000, 1000)
+                }
+            end
+        end,
+
         OnStartBuild = function(self, unitBeingBuilt, order, ...)
             local myBp = self:GetBlueprint()
             if myBp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == myBp.General.UpgradesTo and order == 'Upgrade' then
