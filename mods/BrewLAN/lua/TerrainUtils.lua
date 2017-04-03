@@ -55,3 +55,19 @@ function GetTerrainSlopeAnglesDegrees(pos, box)
     end
     return(Angles)
 end
+
+function GetBoneTerrainOffset(unit, bone)
+    local pos = 1 pos = unit:GetPosition(bone)
+    return GetTerrainHeight(pos[1],pos[3]) - pos[2]
+end
+
+function OffsetBoneToTerrain(unit, bone)
+    local bp = unit:GetBlueprint()
+    local sizemult = 1 / bp.Display.UniformScale
+    local direction = unit:GetBoneDirection(bone)
+    LOG(direction)
+    if not unit.TerrainSlope then unit.TerrainSlope = {} end
+    --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
+    LOG(GetBoneTerrainOffset(unit, bone))
+    unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, 0, GetBoneTerrainOffset(unit, bone) * sizemult, 1000)
+end

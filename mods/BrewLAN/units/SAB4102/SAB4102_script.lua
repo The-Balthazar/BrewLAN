@@ -1,12 +1,9 @@
-#****************************************************************************
-#**
-#**  Summary  :  Aeon Shield Generator Script
-#**
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  Aeon Shield Generator Script
+--------------------------------------------------------------------------------
 local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
 local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
-
+--------------------------------------------------------------------------------
 SAB4102 = Class(AShieldStructureUnit) {
 
     ShieldEffects = {
@@ -15,7 +12,7 @@ SAB4102 = Class(AShieldStructureUnit) {
         '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
         '/effects/emitters/aeon_shield_generator_t3_04_emit.bp',
     },
-    
+
     OnCreate = function(self)
         AShieldStructureUnit.OnCreate(self)
         self:HideBone('Flap03', true)
@@ -24,7 +21,7 @@ SAB4102 = Class(AShieldStructureUnit) {
 
     OnStopBeingBuilt = function(self,builder,layer)
         AShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
-	self.ShieldEffectsBag = {}
+        self.ShieldEffectsBag = {}
     end,
 
     OnShieldEnabled = function(self)
@@ -44,8 +41,8 @@ SAB4102 = Class(AShieldStructureUnit) {
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-	    self.ShieldEffectsBag = {}
-	end
+    	    self.ShieldEffectsBag = {}
+    	end
         for k, v in self.ShieldEffects do
             table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(0.46) )
         end
@@ -78,10 +75,10 @@ SAB4102 = Class(AShieldStructureUnit) {
         EnableShield = function(self)
             AShieldStructureUnit.EnableShield(self)
         end,
-        
+
         DisableShield = function(self)
             AShieldStructureUnit.DisableShield(self)
-        end,   
+        end,
     },
 
     OnKilled = function(self, instigator, type, overkillRatio)
@@ -94,8 +91,7 @@ SAB4102 = Class(AShieldStructureUnit) {
             self.OrbManip2:Destroy()
             self.OrbManip2 = nil
         end
-    end,    
+    end,
 }
 
 TypeClass = SAB4102
-
