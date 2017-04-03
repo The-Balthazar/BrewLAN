@@ -85,10 +85,10 @@ MineStructureUnit = Class(StructureUnit) {
         StructureUnit.OnStopBeingBuilt(self,builder,layer)
         local bp = self:GetBlueprint()
         if self:GetCurrentLayer() == 'Water' then
-            self.Trash:Add(CreateSlider(self, 0, 0, -20, 0, 5))
+            self.Trash:Add(CreateSlider(self, 0, 0, -1 * 1 / bp.Display.UniformScale, 0, 5))
         elseif not bp.Physics.SlopeToTerrain and not self.TerrainSlope then
-            --This could now be replaced with a single line in the blueprint,
-            --but for now I can't be arsed to edit 11 blueprints.
+            --This has since been moved to the unit parent class, it is retained here so
+            --that if other mods overwrite that, it still works.
             local Angles = GetTerrainAngles(self:GetPosition(),1)
             self.TerrainSlope = {
             --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])

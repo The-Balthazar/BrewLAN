@@ -64,10 +64,7 @@ end
 function OffsetBoneToTerrain(unit, bone)
     local bp = unit:GetBlueprint()
     local sizemult = 1 / bp.Display.UniformScale
-    local direction = unit:GetBoneDirection(bone)
-    LOG(direction)
     if not unit.TerrainSlope then unit.TerrainSlope = {} end
     --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
-    LOG(GetBoneTerrainOffset(unit, bone))
     unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, 0, GetBoneTerrainOffset(unit, bone) * sizemult, 1000)
 end

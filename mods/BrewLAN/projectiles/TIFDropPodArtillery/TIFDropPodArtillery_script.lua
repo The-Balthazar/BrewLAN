@@ -78,10 +78,14 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
         --LOG(GetTerrainType(pos[1],pos[3]) )
         CreateLightParticle(self, -1, self:GetArmy(), 10, 3, 'flare_lens_add_03', 'ramp_white_07' )
         local Angles = GetTerrainAngles(pos, 3)
+        local rotation = 0
+        if Angles[1] == 0 and Angles[2] == 0 then
+            rotation = math.random(1,360)
+        end
         CreatePropHPR(
             import( '/lua/game.lua' ).BrewLANPath() .. '/env/uef/props/UEF_Ivan_Droppod_Remains_prop.bp',
-            pos[1], pos[2], pos[3],
-            0, Angles[2], -Angles[1]
+            pos[1], GetTerrainHeight(pos[1],pos[3]), pos[3],
+            rotation, Angles[2], -Angles[1]
         )
         self:Kill()
     end,

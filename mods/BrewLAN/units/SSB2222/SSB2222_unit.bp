@@ -19,7 +19,7 @@ UnitBlueprint {
             Bank = 'SeraphimSelect',
             Cue = 'Seraphim_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
-        }, 
+        },
         NukeExplosion = Sound {
             Bank = 'Impacts',
             Cue = 'XSB2305_Impact',
@@ -76,17 +76,17 @@ UnitBlueprint {
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     Scrolling = true,
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/XSC2201/XSC2201_albedo.dds', 
-                    NormalsName = '/units/XSC2201/XSC2201_normalsTS.dds', 
+                    AlbedoName = '/units/XSC2201/XSC2201_albedo.dds',
+                    NormalsName = '/units/XSC2201/XSC2201_normalsTS.dds',
                     SpecularName = '/units/XSC2201/XSC2201_specteam.dds',
                 },
                 {
                     LODCutoff = 130,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    MeshName = '/mods/BrewLAN/units/ssb2220/ssb2220_lod1.scm', 
-                    AlbedoName = '/units/XSC2201/XSC2201_lod1_albedo.dds', 
-                    NormalsName = '/units/XSC2201/XSC2201_lod1_normalsTS.dds', 
+                    MeshName = '/mods/BrewLAN/units/ssb2220/ssb2220_lod1.scm',
+                    AlbedoName = '/units/XSC2201/XSC2201_lod1_albedo.dds',
+                    NormalsName = '/units/XSC2201/XSC2201_lod1_normalsTS.dds',
                     SpecularName = '/units/XSC2201/XSC2201_lod1_specteam.dds',
                 },
             },
@@ -185,6 +185,7 @@ UnitBlueprint {
         SkirtOffsetZ = 0,
         SkirtSizeX = 1,
         SkirtSizeZ = 1,
+        SlopeToTerrain = true,
         TurnRate = 0,
     },
     SelectionSizeX = 0.4,
@@ -197,7 +198,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure3_bomb',
     StrategicIconSortPriority = 210,
     Weapon = {
-        {       
+        {
             CollideFriendly = false,
             Damage = 0,
             DamageFriendly = true,

@@ -419,6 +419,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * This only affects things that check there like GAZ_UI. The projected shields don't care.
   * Bubble Tea: Created a new shield mesh for the projected shields.
 
+  ### 2017-04-02
+
+  * Added a new bone positioning script for the UEF T2 wall.
+
+  ### 2017-04-03
+
+  * Moved the bone positioning script to be usable by any unit.
+    * Of the walls, the script is still only used by the UEF T2 wall, due to the bone positioning of the other walls.
+  * All mines now use the unit.lua defined terrain slope script.    
+  * Ivan drop-pod remains now no longer spawn on top of units they land on.
+  * Mines built in the water now sink a uniform distance below the surface.
+  * Remains from drop-pods that land on flat terrain now have a random orientation again.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

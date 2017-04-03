@@ -193,6 +193,9 @@ SRB0401 = Class(CLandFactoryUnit) {
         end
         local bp = unitBeingBuilt:GetBlueprint()
         local mult = 3.5
+        --LOG(1/self:GetBlueprint().Display.UniformScale)
+        --14.285714149475, obtained by the above, is the number to multiply a grid square to convert it into mesh sizes.
+        --Todo: Refactor movements around this multiplier, and set a minimum size to care about movements for.
         local add = 1
         local size = math.max((bp.Physics.SkirtSizeX or bp.SizeX),(bp.Physics.SkirtSizeZ or bp.SizeZ)) * mult
         local height = (bp.SizeY or 0) * mult

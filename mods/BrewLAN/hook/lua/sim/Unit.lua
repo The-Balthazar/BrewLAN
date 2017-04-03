@@ -1,13 +1,15 @@
 do
     local UnitOld = Unit
     local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
-    local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
+    local TerrainUtils = import(BrewLANPath .. '/lua/TerrainUtils.lua')
+    local GetTerrainAngles = TerrainUtils.GetTerrainSlopeAnglesDegrees
+    local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 
     Unit = Class(UnitOld) {
         OnStopBeingBuilt = function(self,builder,layer, ...)
             UnitOld.OnStopBeingBuilt(self,builder,layer, unpack(arg))
             local bp = self:GetBlueprint()
-            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope then
+            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope and self:GetCurrentLayer() != 'Water' then
                 local Angles = GetTerrainAngles(self:GetPosition(),{bp.Footprint.SizeX or bp.Physics.SkirtSizeX, bp.Footprint.SizeZ or bp.Physics.SkirtSizeZ})
                 local Axis1, Axis2 = 'z', 'x'
                 local Axis = bp.Physics.SlopeToTerrainAxis
@@ -27,6 +29,18 @@ do
                     CreateRotator(self, 0, Axis1, -Angles[1], 1000, 1000, 1000),
                     CreateRotator(self, 0, Axis2, Angles[2], 1000, 1000, 1000)
                 }
+            end
+            if not bp.Physics.FlattenSkirt and bp.Physics.AltitudeToTerrain then
+                if not self.TerrainSlope then
+                    self.TerrainSlope = {}
+                end
+                for i, v in bp.Physics.AltitudeToTerrain do
+                    if type(v) == 'string' then
+                        OffsetBoneToTerrain(self,v)
+                    elseif type(v) == 'table' then
+                        OffsetBoneToTerrain(self,v[1])
+                    end
+                end
             end
         end,
 
