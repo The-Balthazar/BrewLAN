@@ -9,7 +9,12 @@ local Utilities = import('/lua/utilities.lua')
 --------------------------------------------------------------------------------
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
-local BuildModeChange = import(BrewLANPath .. '/lua/GantryUtils.lua').BuildModeChange
+local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
+local BuildModeChange = GantryUtils.BuildModeChange
+local AIStartOrders = GantryUtils.AIStartOrders
+local AIControl = GantryUtils.AIControl
+local AIStartCheats = GantryUtils.AIStartCheats
+local AICheats = GantryUtils.AICheats
 --------------------------------------------------------------------------------
 SEB0401 = Class(TLandFactoryUnit) {
 --------------------------------------------------------------------------------
@@ -21,9 +26,9 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        self.AIStartCheats(self)
+        AIStartCheats(self, Buff)
         TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
-        self.AIStartOrders(self)
+        AIStartOrders(self)
     end,
 
     OnLayerChange = function(self, new, old)
@@ -32,7 +37,7 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
-        self.AICheats(self)
+        AICheats(self, Buff)
         TLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
         BuildModeChange(self)
     end,
@@ -40,7 +45,8 @@ SEB0401 = Class(TLandFactoryUnit) {
     OnStopBuild = function(self, unitBeingBuilt)
         self.UnitControl(self, unitBeingBuilt)
         TLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        self.AIControl(self, unitBeingBuilt)
+        AIControl(self, unitBeingBuilt)
+        BuildModeChange(self)
     end,
 --------------------------------------------------------------------------------
 -- Button controls
@@ -82,62 +88,45 @@ SEB0401 = Class(TLandFactoryUnit) {
         end
     end,
 --------------------------------------------------------------------------------
--- AI control
+-- AI Unit control
 --------------------------------------------------------------------------------
-    AIStartOrders = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            --self.engineers = {}
-            self.Time = GetGameTimeSeconds()
-            BuildModeChange(self)
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-            local AINames = import('/lua/AI/sorianlang.lua').AINames
-            if AINames.seb0401 then
-                local num = Random(1, table.getn(AINames.seb0401))
-                self:SetCustomName(AINames.seb0401[num])
-            end
-        end
-    end,
-
-    AIControl = function(self, unitBeingBuilt)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            if unitBeingBuilt:GetUnitId() == 'uel0309' then
-                --table.insert(self.engineers, unitBeingBuilt)
-                self:ForkThread(
-                    function()
-                        IssueClearCommands({unitBeingBuilt})
-                        for i = 1, 40 do
-                            if unitBeingBuilt:CanBuild('xeb0204') then
-                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0204')
-                            else
-                                self.MookBuild(self, aiBrain, unitBeingBuilt, 'xeb0104')
-                            end
+    --This is called by AI control if this exists
+    --Which is called on stop build
+    AIUnitControl = function(self, uBB, aiBrain)
+        if uBB:GetUnitId() == 'uel0309' then
+            self:ForkThread(
+                function()
+                    IssueClearCommands({uBB})
+                    for i = 1, 40 do
+                        if uBB:CanBuild('xeb0204') then
+                            self.MookBuild(self, aiBrain, uBB, 'xeb0204')
+                        elseif uBB:CanBuild('xeb0104') then
+                            self.MookBuild(self, aiBrain, uBB, 'xeb0104')
+                        else
+                            break
                         end
-                        IssueGuard({unitBeingBuilt}, self)
                     end
-                )
-            elseif unitBeingBuilt:GetUnitId() == 'uel0309' or unitBeingBuilt:GetUnitId() == 'sel0319' then
-                --table.insert(self.engineers, unitBeingBuilt)
-                self:ForkThread(
-                    function()
-                        IssueClearCommands({unitBeingBuilt})
-                        self.MookBuild(self, aiBrain, unitBeingBuilt, 'ueb4301')
-                        IssueGuard({unitBeingBuilt}, self)
-                    end
-                )
-            elseif unitBeingBuilt:GetUnitId() == self.AcceptedRequests[1][1] then
-                if not self.AcceptedRequests[1][2]:IsDead() then
-                    IssueGuard({unitBeingBuilt}, self.AcceptedRequests[1][2])
-                --Something for passing along the requested units here, and/or, for sharing them out.
-                --else
-                --    for i,v in self.AcceptedRequests do
-                --        if not
-                --    end
+                    IssueGuard({uBB}, self)
                 end
-                table.remove(self.AcceptedRequests, 1)
+            )
+        elseif uBB:GetUnitId() == 'sel0319' then
+            self:ForkThread(
+                function()
+                    IssueClearCommands({uBB})
+                    self.MookBuild(self, aiBrain, uBB, 'ueb4301')
+                    IssueGuard({uBB}, self)
+                end
+            )
+        elseif uBB:GetUnitId() == self.AcceptedRequests[1][1] then
+            if not self.AcceptedRequests[1][2]:IsDead() then
+                IssueGuard({uBB}, self.AcceptedRequests[1][2])
+            --Something for passing along the requested units here, and/or, for sharing them out.
+            --else
+            --    for i,v in self.AcceptedRequests do
+            --        if not
+            --    end
             end
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
+            table.remove(self.AcceptedRequests, 1)
         end
     end,
 
@@ -159,134 +148,6 @@ SEB0401 = Class(TLandFactoryUnit) {
             BuildGoalZ = sign * z
         end
         aiBrain:BuildStructure(mook, building, {pos[1]+BuildGoalX, pos[3]+BuildGoalZ, 0})
-    end,
-
-    RequestedUnits = {
-    },
-
-    AcceptedRequests = {
-    },
-
-    ChooseExpimental = function(self)
-        if not self.BuiltUnitsCount then self.BuiltUnitsCount = 1 else self.BuiltUnitsCount = self.BuiltUnitsCount + 1 end
-        local buildorder = {
-            'uel0309',
-            'sel0319',
-            'uel0309',
-            false,
-            'uel0309',
-            'sel0319',
-            'uel0309',
-            'sel0319',
-            false,
-            'uel0309',
-            'sel0319',
-            'uel0309',
-        }
-
-        if buildorder[self.BuiltUnitsCount] and self:CanBuild(buildorder[self.BuiltUnitsCount]) then
-            return buildorder[self.BuiltUnitsCount]
-        end
-
-        if self.RequestedUnits[1] and math.mod(self.BuiltUnitsCount, 2) == 0 then
-            local req = self.RequestedUnits[1][1]
-            table.insert(self.AcceptedRequests,self.RequestedUnits[1])
-            table.remove(self.RequestedUnits, 1)
-            if self:CanBuild(req) then
-                return req
-            end
-        end
-
-        if self:GetAIBrain():GetNoRushTicks() > 1500 then
-            if self:CanBuild('UEA0304') then
-                return 'UEA0304'
-            end
-        end
-
-        local bpAirExp = self:GetBlueprint().AI.Experimentals.Air
-        local bpOtherExp = self:GetBlueprint().AI.Experimentals.Other
-        if not self.ExpIndex then self.ExpIndex = {math.random(1, table.getn(bpAirExp)),math.random(1, table.getn(bpOtherExp)),} end
-
-        if not self.togglebuild then
-            for i=1,2 do
-                for i, v in bpAirExp do
-                    if self.ExpIndex[1] <= i then
-                        --LOG('Current cycle = ', v[1])
-                        if not bpAirExp[i+1] then
-                            self.ExpIndex[1] = 1
-                        else
-                            self.ExpIndex[1] = i + 1
-                        end
-                        if self:CanBuild(v[1]) then
-                            self.togglebuild = true
-                            self.Lastbuilt = v[1]
-                            --LOG('Returning air chosen = ', v[1])
-                            return v[1]
-                        end
-                    end
-                end
-            end
-            --only reaches here if it can't build any air experimentals
-            self.togglebuild = true
-            --LOG('Gantry failed to find experimental fliers')
-        end
-        if self.togglebuild then
-            for i=1,2 do
-                for i, v in bpOtherExp do
-                    if self.ExpIndex[2] <= i then
-                        --LOG('Current cycle = ', v[1])
-                        if not bpOtherExp[i+1] then
-                            self.ExpIndex[2] = 1
-                        else
-                            self.ExpIndex[2] = i + 1
-                        end
-                        if self:CanBuild(v[1]) then
-                            self.togglebuild = false
-                            self.Lastbuilt = v[1]
-                            --LOG('Returning land chosen= ', v[1])
-                            return v[1]
-                        end
-                    end
-                end
-            end
-            --Only reaches this if it can't build any non-fliers
-            self.togglebuild = false
-            --LOG('Gantry failed to find non-flying experimentals')
-        end
-        --Attempts last successfull experimental, probably air at this point
-        if self.Lastbuilt then
-            --LOG('Returning last built = ', self.Lastbuilt)
-            return self.Lastbuilt
-        --If nothing else works, flip a coin and build an ASF or a bomber
-        elseif self:CanBuild('uea0303') and self:CanBuild('uea0304') then
-            if math.random(1,2) == 1 then
-                return 'uea0303'
-            else
-                return 'uea0304'
-            end
-        --Are air and experimentals off?
-        elseif self:CanBuild('xel0305') then
-            return 'xel0305'
-        --Is T3 off? Fuck it. Mech Marines.
-        elseif self:CanBuild('uel0106') then
-            return 'uel0106'
-        end
-    end,
---------------------------------------------------------------------------------
--- AI Cheats
---------------------------------------------------------------------------------
-    AIStartCheats = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            if aiBrain.CheatEnabled then
-                Buff.ApplyBuff(self, 'GantryAIxBaseBonus')
-            else
-                Buff.ApplyBuff(self, 'GantryAIBaseBonus')
-            end
-        end
-    end,
-
-    AICheats = function(self)
     end,
 --------------------------------------------------------------------------------
 -- Animations

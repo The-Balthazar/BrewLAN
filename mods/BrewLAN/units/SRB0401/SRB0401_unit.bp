@@ -9,6 +9,38 @@ UnitBlueprint {
             'Arm3B',
             'Arm3C',
         },
+        --This list is populated on game launch
+        Experimentals = {
+            Requirements = {
+                SkirtSizeX = 15,
+            },
+            BuildableCategory = 'BUILTBYARTHROLAB',
+            Air = {},
+            Other = {},
+        },
+        BuildOrder = {
+            'url0309',
+            'srl0319',
+            'url0309',
+            false,
+            'url0309',
+            'srl0319',
+            'url0309',
+            'srl0319',
+            false,
+            'url0309',
+            'srl0319',
+            'url0309',
+        },
+        BuildBackups = {
+            EarlyNoRush = 'xrl0305',
+            LastResorts = {
+                'xrl0305',
+                'url0303',
+                'drl0204',
+                'url0106',
+            },
+        },
     },
     Audio = {
         Construct = Sound {
@@ -137,11 +169,11 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 6580,
         BuildableCategory = {
-            'BUILTBYTIER3FACTORY MOBILE CYBRAN LAND',
-            'BUILTBYLANDTIER3FACTORY MOBILE CYBRAN LAND',
-            'BUILTBYTIER3ENGINEER EXPERIMENTAL MOBILE CYBRAN LAND',
-            'BUILTBYGANTRY MOBILE CYBRAN LAND',
-            'BUILTBYGANTRY EXPERIMENTAL MOBILE LAND',
+            'BUILTBYLANDTIER3FACTORY CYBRAN',
+            'BUILTBYTIER3FACTORY CYBRAN',
+            'TRANSPORTBUILTBYTIER3FACTORY CYBRAN',
+            'BUILTBYARTHROLAB CYBRAN',
+            'BUILTBYARTHROLAB EXPERIMENTAL',
         },
         RebuildBonusIds = {
             'srb0401',

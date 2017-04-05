@@ -12,8 +12,39 @@ UnitBlueprint {
         },
         --This list is populated on game launch
         Experimentals = {
+            Requirements = {
+                SkirtSizeX = 13,
+            },
+            BuildableCategory = 'BUILTBYGANTRY',
             Air = {},
             Other = {},
+        },
+        BuildOrder = {
+            'uel0309',
+            'sel0319',
+            'uel0309',
+            false,
+            'uel0309',
+            'sel0319',
+            'uel0309',
+            'sel0319',
+            false,
+            'uel0309',
+            'sel0319',
+            'uel0309',
+        },
+        BuildBackups = {
+            EarlyNoRush = 'uea0304',
+            LastResorts = {
+                'ues0302',
+                'uea0303',
+                'uea0304',
+                'xel0305',
+                'del0204',
+                'ues0202',
+                'uel0106',
+                'ues0103',
+            },
         },
     },
     Audio = {
@@ -69,7 +100,7 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
         'GATE',
-    }, 
+    },
     CollisionOffsetY = -2,
     Defense = {
         AirThreatLevel = 0,
@@ -211,11 +242,9 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 7034,
         BuildableCategory = {
-            'BUILTBYLANDTIER3FACTORY MOBILE CONSTRUCTION UEF',
-            'BUILTBYTIER3FACTORY MOBILE LAND UEF',
-            'BUILTBYTIER3FACTORY MOBILE NAVAL UEF',
-            'BUILTBYTIER3FACTORY MOBILE AIR UEF',
-            'TRANSPORTBUILTBYTIER3FACTORY UEF MOBILE AIR',
+            'BUILTBYLANDTIER3FACTORY UEF',
+            'BUILTBYTIER3FACTORY UEF',
+            'TRANSPORTBUILTBYTIER3FACTORY UEF',
             'BUILTBYGANTRY UEF',
             'BUILTBYGANTRY EXPERIMENTAL',
         },
@@ -300,7 +329,7 @@ UnitBlueprint {
         FlattenSkirt = true,
         MaxSteerForce = 0,
         MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',   
+        MotionType = 'RULEUMT_None',
         OccupyRects = {
 
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
@@ -332,9 +361,9 @@ UnitBlueprint {
         SkirtSizeX = 18,
         SkirtSizeZ = 12,
         TurnRate = 0,
-    },         
+    },
     SelectionMeshScaleX = 0.5,
-    SelectionMeshScaleZ = 0.5,   
+    SelectionMeshScaleZ = 0.5,
     SelectionMeshUseTopAmount = 0.15,
     SelectionSizeX = 10.5,
     SelectionSizeZ = 6.5,

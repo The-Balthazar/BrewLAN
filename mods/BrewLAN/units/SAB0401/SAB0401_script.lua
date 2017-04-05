@@ -10,7 +10,12 @@ local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 --------------------------------------------------------------------------------
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
-local BuildModeChange = import(BrewLANPath .. '/lua/GantryUtils.lua').BuildModeChange
+local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
+local BuildModeChange = GantryUtils.BuildModeChange
+local AIStartOrders = GantryUtils.AIStartOrders
+local AIControl = GantryUtils.AIControl
+local AIStartCheats = GantryUtils.AIStartCheats
+local AICheats = GantryUtils.AICheats
 --------------------------------------------------------------------------------
 SAB0401 = Class(AAirFactoryUnit) {
 --------------------------------------------------------------------------------
@@ -31,25 +36,26 @@ SAB0401 = Class(AAirFactoryUnit) {
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        self.AIStartCheats(self)
+        AIStartCheats(self, Buff)
         AAirFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self:ForkThread(self.PlatformRaisingThread)
-        self.AIStartOrders(self)
+        AIStartOrders(self)
     end,
 
     OnLayerChange = function(self, new, old)
         AAirFactoryUnit.OnLayerChange(self, new, old)
+        BuildModeChange(self)
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
-        self.AICheats(self)
+        AICheats(self, Buff)
         AAirFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
         BuildModeChange(self)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         AAirFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        self.AIControl(self, unitBeingBuilt)
+        AIControl(self, unitBeingBuilt)
         BuildModeChange(self)
     end,
 --------------------------------------------------------------------------------
@@ -73,53 +79,6 @@ SAB0401 = Class(AAirFactoryUnit) {
         if self:IsUnitState('Building') then
             self:StartBuildFx(self:GetFocusUnit())
         end
-    end,
---------------------------------------------------------------------------------
--- AI control
---------------------------------------------------------------------------------
-    AIStartOrders = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            --self.engineers = {}
-            self.Time = GetGameTimeSeconds()
-            --self.BuildModeChange(self)
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-            local AINames = import('/lua/AI/sorianlang.lua').AINames
-            if AINames.sab0401 then
-                local num = Random(1, table.getn(AINames.sab0401))
-                self:SetCustomName(AINames.sab0401[num])
-            end
-        end
-    end,
-
-    AIControl = function(self, unitBeingBuilt)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-        end
-    end,
-
-    ChooseExpimental = function(self)
-        --Nothing fancy yet. CZARs. CZARs for days.
-        if self:CanBuild('uaa0310') then
-            return 'uaa0310'
-        end
-    end,
-  --------------------------------------------------------------------------------
-  -- AI Cheats
-  --------------------------------------------------------------------------------
-    AIStartCheats = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            if aiBrain.CheatEnabled then
-                Buff.ApplyBuff(self, 'GantryAIxBaseBonus')
-            else
-                Buff.ApplyBuff(self, 'GantryAIBaseBonus')
-            end
-        end
-    end,
-
-    AICheats = function(self)
     end,
 --------------------------------------------------------------------------------
 -- Animations
@@ -154,11 +113,13 @@ SAB0401 = Class(AAirFactoryUnit) {
         while self do
             unitBeingBuilt = self:GetFocusUnit()
             if unitBeingBuilt then
-                if buildState == 'start' or buildState == 'active' then
+                if buildState == 'start' or buildState == 'active' and EntityCategoryContains(categories.AIR,unitBeingBuilt) then
                     uBBF = math.max(unitBeingBuilt:GetFractionComplete() - 0.8, 0) * 5
                     buildState = 'active'
-                else
+                elseif EntityCategoryContains(categories.AIR,unitBeingBuilt) then
                     uBBF = 1
+                else
+                    uBBF = 0
                 end
                 pSliderPos = uBBF * pMaxHeight
                 if math.random(1,15) == 10 then

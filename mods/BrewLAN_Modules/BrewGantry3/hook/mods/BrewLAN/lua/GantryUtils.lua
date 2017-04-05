@@ -1,9 +1,3 @@
---------------------------------------------------------------------------------
---  Summary:  The Gantry script
---   Author:  Sean 'Balthazar' Wheeldon
---------------------------------------------------------------------------------
-do
-local SRB0401OLD = SRB0401
 local timeDiv = 300
 local timeExp = 2
 local timeCo = .2
@@ -11,12 +5,21 @@ local massDiv = 500000
 local massExp = 1.5
 local massCo = .5
 
-SRB0401 = Class(SRB0401OLD) {
---------------------------------------------------------------------------------
--- AI Start Cheats -- Triggers once on built
---------------------------------------------------------------------------------
-    AIStartCheats = function(self)
-        SRB0401OLD.AIStartCheats(self)
+function CalculateEnemyMass(self)
+    local totalmass = 0
+    for i, brain in ArmyBrains do
+        if not IsAlly(self:GetAIBrain():GetArmyIndex(), brain:GetArmyIndex()) then
+            totalmass = totalmass + brain:GetArmyStat("Economy_TotalProduced_Mass", 0.0).Value - brain:GetArmyStat("Economy_AccumExcess_Mass", 0.0).Value
+        end
+    end
+    --LOG("Total enemy mass = " .. totalmass)
+    return totalmass
+end
+
+do
+    local OldAIStartCheats = AIStartCheats
+    function AIStartCheats(self, Buff)
+        OldAIStartCheats(self, Buff)
         if not Buffs['GantryAIxIncrementBonus'] then
             BuffBlueprint {
                 Name = 'GantryAIxIncrementBonus',
@@ -36,15 +39,14 @@ SRB0401 = Class(SRB0401OLD) {
                 },
             }
         end
-    end,
---------------------------------------------------------------------------------
--- AI Cheats -- This script is triggered each time it starts building
---------------------------------------------------------------------------------
-    AICheats = function(self)
+    end
+
+    local OldAICheats = AICheats
+    function AICheats(self, Buff)
         ------------------------------------------------------------------------
         -- Default hax, from BrewLAN actual
         ------------------------------------------------------------------------
-        SRB0401OLD.AICheats(self)
+        OldAICheats(self, Buff)
         ------------------------------------------------------------------------
         -- AIX cheats
         ------------------------------------------------------------------------
@@ -53,26 +55,12 @@ SRB0401 = Class(SRB0401OLD) {
             -- AI supah4x0r
             Buff.ApplyBuff(self, 'GantryAIxIncrementBonus')
             local timeAlive = GetGameTimeSeconds() - self.Time
-            local enemyMass = self:CalculateEnemyMass(self)
+            local enemyMass = CalculateEnemyMass(self)
             local timeMultiplier = timeCo * math.pow(timeAlive / timeDiv, timeExp)
             local massMultiplier = massCo * math.pow(enemyMass / massDiv, massExp)
             local totalMultiplier = 1 + timeMultiplier + massMultiplier
             local buildRate = self:GetBlueprint().Economy.BuildRate * (math.min(totalMultiplier, 16))
             self:SetBuildRate(buildRate) -- I don't know how this interacts with the base buff.
         end
-    end,
-
-    CalculateEnemyMass = function(self)
-        local totalmass = 0
-        for i, brain in ArmyBrains do
-            if not IsAlly(self:GetAIBrain():GetArmyIndex(), brain:GetArmyIndex()) then
-                totalmass = totalmass + brain:GetArmyStat("Economy_TotalProduced_Mass", 0.0).Value - brain:GetArmyStat("Economy_AccumExcess_Mass", 0.0).Value
-            end
-        end
-        --LOG("Total enemy mass = " .. totalmass)
-        return totalmass
-    end,
-}
-
-TypeClass = SRB0401
+    end
 end

@@ -10,6 +10,42 @@ UnitBlueprint {
             'Blinking_007',
             'Blinking_008',
         },
+        --This list is populated on game launch
+        Experimentals = {
+            Requirements = {
+                SkirtSizeX = 26,
+            },
+            BuildableCategory = 'BUILTBYIENGINE',
+            Air = {},
+            Other = {},
+        },
+        BuildOrder = {
+            'ual0309',
+            'sal0319',
+            'ual0309',
+            false,
+            'ual0309',
+            'sal0319',
+            'ual0309',
+            'sal0319',
+            false,
+            'ual0309',
+            'sal0319',
+            'ual0309',
+        },
+        BuildBackups = {
+            EarlyNoRush = 'xaa0305',
+            LastResorts = {
+                'xaa0305',
+                'uaa0303',
+                'uaa0304',
+                'saa0211',
+                'xaa0202',
+                'uaa0203',
+                'uaa0103',
+                'uaa0102',
+            },
+        },
     },
     Audio = {
         Construct = Sound {
@@ -194,10 +230,10 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 7000,
         BuildableCategory = {
-            'TRANSPORTBUILTBYTIER3FACTORY AEON MOBILE AIR',
-            'BUILTBYTIER3FACTORY MOBILE AEON AIR',
-            'BUILTBYGANTRY MOBILE AEON AIR',
-            'BUILTBYTIER3ENGINEER EXPERIMENTAL MOBILE AIR',
+            'BUILTBYTIER3FACTORY AEON',
+            'TRANSPORTBUILTBYTIER3FACTORY AEON',
+            'BUILTBYIENGINE AEON',
+            'BUILTBYIENGINE EXPERIMENTAL',
         },
         RebuildBonusIds = {
             'sab0401',
@@ -381,6 +417,7 @@ UnitBlueprint {
     SizeZ = 27,
     SizeSphere = 13,
     StrategicIconName = 'icon_experimental_generic',
+    StrategicIconNameEIOOverride = 'icon_experimental_factory_air',
     StrategicIconSortPriority = 210,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

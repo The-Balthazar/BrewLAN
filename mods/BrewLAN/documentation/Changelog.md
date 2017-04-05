@@ -432,6 +432,23 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Mines built in the water now sink a uniform distance below the surface.
   * Remains from drop-pods that land on flat terrain now have a random orientation again.
 
+  ### 2017-04-04
+
+  * Overhaul of the Experimental factory script backends.
+    * They now all share the majority of their functional non-animation based scripts.
+      * Each of the experimental factories has the full AI functionality of the Gantry.
+  * Independence Engine can now build engineers.
+  * AI controlled Arthrolab and Independence Engine can now build any experimental.
+  * Independence Engine now only raises its platform for air units.
+  * Arthrolab arm movements now more accurately based on unit sizes.
+  * Defined minimum and maximum values for all arm positions.
+  * Very large units and weirdly oblong units no longer spin in the Arthrolab.
+    * Fatboy/Absolution size and shape is the maximum for spinning, as defined by the skirt size.
+  * Gantry AIx Hax 1-3: Updated to modify the new linked gantry scripts.
+    * This also means that versions 1 and 2 now also work with the Independence Engine and the Arthrolab.
+  * Gantry AIx Hax 1: Refactored it so that it only creates one cheat thread per factory, not per factory per unit that factory has ever made.
+    * Functionally the same for game purposes.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

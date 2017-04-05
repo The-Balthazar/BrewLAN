@@ -9,7 +9,12 @@ local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 --------------------------------------------------------------------------------
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
-local BuildModeChange = import(BrewLANPath .. '/lua/GantryUtils.lua').BuildModeChange
+local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
+local BuildModeChange = GantryUtils.BuildModeChange
+local AIStartOrders = GantryUtils.AIStartOrders
+local AIControl = GantryUtils.AIControl
+local AIStartCheats = GantryUtils.AIStartCheats
+local AICheats = GantryUtils.AICheats
 --------------------------------------------------------------------------------
 SRB0401 = Class(CLandFactoryUnit) {
 --------------------------------------------------------------------------------
@@ -22,24 +27,25 @@ SRB0401 = Class(CLandFactoryUnit) {
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        self.AIStartCheats(self)
+        AIStartCheats(self, Buff)
         CLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
-        self.AIStartOrders(self)
+        AIStartOrders(self)
     end,
 
     OnLayerChange = function(self, new, old)
         CLandFactoryUnit.OnLayerChange(self, new, old)
+        BuildModeChange(self)
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
-        self.AICheats(self)
+        AICheats(self, Buff)
         CLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
         BuildModeChange(self)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         CLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        self.AIControl(self, unitBeingBuilt)
+        AIControl(self, unitBeingBuilt)
         BuildModeChange(self)
     end,
 --------------------------------------------------------------------------------
@@ -63,57 +69,6 @@ SRB0401 = Class(CLandFactoryUnit) {
         if self:IsUnitState('Building') then
             self:StartBuildFx(self:GetFocusUnit())
         end
-    end,
---------------------------------------------------------------------------------
--- AI control
---------------------------------------------------------------------------------
-    AIStartOrders = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            --self.engineers = {}
-            self.Time = GetGameTimeSeconds()
-            --self.BuildModeChange(self)
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-            local AINames = import('/lua/AI/sorianlang.lua').AINames
-            if AINames.srb0401 then
-                local num = Random(1, table.getn(AINames.srb0401))
-                self:SetCustomName(AINames.srb0401[num])
-            end
-        end
-    end,
-
-    AIControl = function(self, unitBeingBuilt)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            aiBrain:BuildUnit(self, self.ChooseExpimental(self), 1)
-        end
-    end,
-
-    ChooseExpimental = function(self)
-        --Nothing fancy yet. MokeyLords.
-        local units = {'url0401', 'url0402', 'xrl0403'}
-        local randomunit = units[math.random(1, table.getn(units))]
-        if self:CanBuild(randomunit) then
-            return randomunit
-        else
-            return self.ChooseExpimental(self)
-        end
-    end,
-  --------------------------------------------------------------------------------
-  -- AI Cheats
-  --------------------------------------------------------------------------------
-    AIStartCheats = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
-            if aiBrain.CheatEnabled then
-                Buff.ApplyBuff(self, 'GantryAIxBaseBonus')
-            else
-                Buff.ApplyBuff(self, 'GantryAIBaseBonus')
-            end
-        end
-    end,
-
-    AICheats = function(self)
     end,
 --------------------------------------------------------------------------------
 -- Animations
@@ -192,24 +147,34 @@ SRB0401 = Class(CLandFactoryUnit) {
             self.ShowThread:Destroy()
         end
         local bp = unitBeingBuilt:GetBlueprint()
-        local mult = 3.5
-        --LOG(1/self:GetBlueprint().Display.UniformScale)
-        --14.285714149475, obtained by the above, is the number to multiply a grid square to convert it into mesh sizes.
-        --Todo: Refactor movements around this multiplier, and set a minimum size to care about movements for.
-        local add = 1
-        local size = math.max((bp.Physics.SkirtSizeX or bp.SizeX),(bp.Physics.SkirtSizeZ or bp.SizeZ)) * mult
-        local height = (bp.SizeY or 0) * mult
+        local ScaleMult = 1/self:GetBlueprint().Display.UniformScale
+        local UnitSize = {
+            bp.Physics.SkirtSizeX or bp.SizeX, --Width
+            bp.SizeY, --Height
+            bp.Physics.SkirtSizeZ or bp.SizeZ, --Length
+        }
+        self.RotateBase = false
+        if math.max(UnitSize[1],UnitSize[3]) > 3 and math.max(UnitSize[1],UnitSize[3]) <= 10 and math.abs(UnitSize[1]-UnitSize[3]) <= 2 then
+            self.RotateBase = true
+        end
+        --I want to add something so that when it is a short wide unit, the min pos for length pos is 0, but no units are this shape that I know of.
+        local MovementSizes = {
+            math.min(math.max(UnitSize[1]-1,0),6)*ScaleMult*0.5, --Width
+            math.min(math.max(UnitSize[2]-2,0),4.25)*ScaleMult, --Height
+            math.min(math.max(UnitSize[3]-1,0),8)*ScaleMult*0.5, --Platform
+            math.min(math.max(UnitSize[3]-1,1),10)*ScaleMult, --Rear arm
+        }
         unitBeingBuilt:HideBone(0, true)
         --ArmN
-        self.Sliders[1]:SetGoal(size+add,0,0)
-        self.Sliders[2]:SetGoal(0,0,(-size*3)-add)
-        self.Sliders[3]:SetGoal(-size-add,0,0)
+        self.Sliders[1]:SetGoal(MovementSizes[1],0,0)
+        self.Sliders[2]:SetGoal(0,0,-MovementSizes[4])
+        self.Sliders[3]:SetGoal(-MovementSizes[1],0,0)
         --Platform
-        self.Sliders[4]:SetGoal(0,0,(-size*2)-add)
+        self.Sliders[4]:SetGoal(0,0,-MovementSizes[3])
         --ArmNB
-        self.Sliders[6]:SetGoal(0,height,0)
-        self.Sliders[7]:SetGoal(0,height,0)
-        self.Sliders[8]:SetGoal(0,height,0)
+        self.Sliders[6]:SetGoal(0,MovementSizes[2],0)
+        self.Sliders[7]:SetGoal(0,MovementSizes[2],0)
+        self.Sliders[8]:SetGoal(0,MovementSizes[2],0)
 
         self.ShowThread = self:ForkThread(function()
             WaitFor(self.Sliders[1])
@@ -217,17 +182,16 @@ SRB0401 = Class(CLandFactoryUnit) {
         end)
         --1,   2,     6,          10.5
         --all, slink, monkeylord, megalith
-        local size = size/mult
         for arrayi, array in self.Platforms do
             for i, bone in array do
-                if arrayi <= size then
+                if arrayi <= math.ceil(math.max(UnitSize[1],UnitSize[3])) then
                     self:ShowBone(bone, true)
                 else
                     self:HideBone(bone, true)
                 end
             end
         end
-        if size > 3 then
+        if self.RotateBase then
             self.Sliders[5]:ClearGoal()
             self.Sliders[5]:SetTargetSpeed(10)
         else
@@ -262,7 +226,7 @@ SRB0401 = Class(CLandFactoryUnit) {
             WaitTicks(2)
             --Rotation return watch thread, so we don't have two different loops running
             unitBeingBuilt = self:GetFocusUnit()
-            if unitBeingBuilt and unitBeingBuilt:GetFractionComplete() > 0.8 then
+            if unitBeingBuilt and self.RotateBase and unitBeingBuilt:GetFractionComplete() > 0.8 then
                 self.Sliders[5]:SetGoal(0)
             end
         end
