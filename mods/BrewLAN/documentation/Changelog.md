@@ -422,6 +422,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2017-04-02
 
   * Added a new bone positioning script for the UEF T2 wall.
+  * Reduced the tarmac size of the UEF T2 wall.
 
   ### 2017-04-03
 
@@ -448,6 +449,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * This also means that versions 1 and 2 now also work with the Independence Engine and the Arthrolab.
   * Gantry AIx Hax 1: Refactored it so that it only creates one cheat thread per factory, not per factory per unit that factory has ever made.
     * Functionally the same for game purposes.
+
+    ### 2017-04-06
+
+    * Created a model and basic texture for the UEF T2 recon craft.
 
 ## 2016-12-15|0.7.5.5
 
