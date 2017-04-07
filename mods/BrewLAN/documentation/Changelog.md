@@ -454,6 +454,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
     * Created a model and basic texture for the UEF T2 recon craft.
 
+    ### 2017-04-07
+
+    * Created a new texture for the UEF T2 wall.
+    * Removed the gap in the UEF T2 wall's model visible on slopes with the new script.
+    * Created a new damaged model for the UEF T2 wall. Currently unimplemented.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

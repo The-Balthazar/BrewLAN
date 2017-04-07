@@ -20,7 +20,7 @@ end
 --   '/custommeshes' folder. That folder also has a 'ec_indexme.lua' so
 --   Expert Camo has confirmation that it should work with the folder.
 --   Within the script of uel0303 you could run
---     self:SetMesh(self:GetBlueprint().Display.CerrainMeshes.Prime)
+--     self:SetMesh(self:GetBlueprint().Display.CustomMeshes.Prime)
 --   and it will use that mesh from the time that is called until something else
 --   sets it.
 --   Meshes generated from '/terrainmeshes' folders are automatically applied
