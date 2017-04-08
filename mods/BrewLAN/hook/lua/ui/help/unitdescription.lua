@@ -83,6 +83,8 @@ Description['ssl0222'] = "<LOC Unit_Description_BrewLAN_T2L004>Mobile shield gen
 
 --Tech 2 aircraft
 Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
+Description['sea0201'] = "<LOC Unit_Description_BrewLAN_T2A002>Tactical reconnaissance aircraft."
+Description['sra0201'] = "<LOC Unit_Description_BrewLAN_T2A003>Tactical counter-intelligence and reconnaissance aircraft. Equipped with a stealth field generator."
 
 --Tech 2 naval units
 Description['ses0219'] = "<LOC Unit_Description_BrewLAN_T2S001>Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."

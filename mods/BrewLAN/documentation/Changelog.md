@@ -460,6 +460,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Removed the gap in the UEF T2 wall's model visible on slopes with the new script.
     * Created a new damaged model for the UEF T2 wall. Currently unimplemented.
 
+    ### 2017-04-08
+
+    * Reclassified the Recon Craft and Decoy Craft as Recon Plane and Decoy Plane.
+    * Gave the Recon Plane a build description.
+    * Gave the Recon Plane a build icon.
+    * Updated the US LOC from the translation document.
+    * Created a proper texture for the UEF Recon Plane.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

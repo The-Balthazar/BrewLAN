@@ -187,6 +187,25 @@ ss0219_desc="Field Engineering Ship"
 ses0219_name="Fixxie Class"
 Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclamation unit. Equipped with a single AA weapon."
 
+sea0201_desc="Recon Plane"
+sea0201_name="UX Dragonlady"
+ssa0201_name="Selia"
+Unit_Description_BrewLAN_T2A002="Tactical reconnaissance aircraft."
+
+sra0201_desc="Stealth Plane"
+sra0201_name="Blade Raven"
+Unit_Description_BrewLAN_T2A003="Tactical counter-intelligence and reconnaissance aircraft. Equipped with a stealth field generator."
+
+sair0310="Decoy Plane"
+sea0310_name="Nark"
+saa0310_name="Beguiler"
+sra0310_name="Vanguard"
+ssa0310_name="Iathuselen"
+Unit_Description_BrewLAN_T3A006="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Unit_Description_BrewLAN_T3A009="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Unit_Description_BrewLAN_T3A010="Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Unit_Description_BrewLAN_T3A011="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 --------------------------------------------------------------------------------
@@ -210,16 +229,6 @@ ssa0307_name="Souioz"
 Unit_Description_BrewLAN_T3A005="High-level stealth torpedo bomber. Designed to engage high-level naval units and overwhelm torpedo defenses with large salvos."
 Unit_Description_BrewLAN_T3A007="High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defense."
 Unit_Description_BrewLAN_T3A008="High-level torpedo bomber. Designed to engage powerful naval units."
-
-sair0310="Decoy Plane"
-sea0310_name="Nark"
-saa0310_name="Beguiler"
-sra0310_name="Vanguard"
-ssa0310_name="Iathuselen"
-Unit_Description_BrewLAN_T3A006="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
-Unit_Description_BrewLAN_T3A009="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
-Unit_Description_BrewLAN_T3A010="Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
-Unit_Description_BrewLAN_T3A011="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 
 sal0311_desc="Armored Assault Tank"
 sal0311_name="Moldavite"
@@ -372,6 +381,13 @@ Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and 
 sl0323_desc="Mobile Tactical Missile Defense"
 sal0323_name="Rupture"
 Unit_Description_BrewLAN_T3L014="Mobile tactical missile defense. Protection is limited to unit's operational area."
+
+srl0324_desc="Mobile Sensor Array"
+srl0324_name="Adramelech"
+sal0324_name="Metatron"
+Unit_Description_BrewLAN_T3L016="High-end mobile intelligense system. While stationary it is visible only to omni, and provides extensive radar and omni coverage."
+
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -433,3 +449,7 @@ Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight 
 sab0401_desc="Experimental Air Factory"
 sab0401_name="Independence Engine"
 Unit_Description_BrewLAN_T4B009="Constructs air units."
+
+srb0401_desc="Experimental Land Factory"
+srb0401_name="Arthrolab"
+Unit_Description_BrewLAN_T4B010="Constructs land units."
