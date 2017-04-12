@@ -450,27 +450,32 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Gantry AIx Hax 1: Refactored it so that it only creates one cheat thread per factory, not per factory per unit that factory has ever made.
     * Functionally the same for game purposes.
 
-    ### 2017-04-06
+  ### 2017-04-06
 
-    * Created a model and basic texture for the UEF T2 recon craft.
+  * Created a model and basic texture for the UEF T2 recon craft.
 
-    ### 2017-04-07
+  ### 2017-04-07
 
-    * Created a new texture for the UEF T2 wall.
-    * Removed the gap in the UEF T2 wall's model visible on slopes with the new script.
-    * Created a new damaged model for the UEF T2 wall. Currently unimplemented.
+  * Created a new texture for the UEF T2 wall.
+  * Removed the gap in the UEF T2 wall's model visible on slopes with the new script.
+  * Created a new damaged model for the UEF T2 wall. Currently unimplemented.
 
-    ### 2017-04-08
+  ### 2017-04-08
 
-    * Reclassified the Recon Craft and Decoy Craft as Recon Plane and Decoy Plane.
-    * Gave the Recon Plane a build description.
-    * Gave the Recon Plane a build icon.
-    * Updated the US LOC from the translation document.
-    * Started creating a proper texture for the UEF Recon Plane.
+  * Reclassified the Recon Craft and Decoy Craft as Recon Plane and Decoy Plane.
+  * Gave the Recon Plane a build description.
+  * Gave the Recon Plane a build icon.
+  * Updated the US LOC from the translation document.
+  * Started creating a proper texture for the UEF Recon Plane.
 
-    ### 2017-04-12
+  ### 2017-04-12
 
-    * Finished the texture of the UEF T2 recon plane, which was abandoned before between creating the changelog message and actually finishing it.
+  * Finished the texture of the UEF T2 recon plane, which was abandoned before between creating the changelog message and actually finishing it.
+  * Doubled the air speed of the UEF spy satellite.
+    * There is no reason for it to be as slow as its ion cannon predecessor.
+    * It is still the slowest aircraft by a good margin.
+  * Caffe Corretto: Added a prototype Seraphim T3 disarming point defence.
+    * Currently it lacks effects and actual balancing, but it works and its funny.
 
 ## 2016-12-15|0.7.5.5
 
