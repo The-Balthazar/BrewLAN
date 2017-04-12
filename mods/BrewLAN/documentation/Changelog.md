@@ -466,7 +466,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Gave the Recon Plane a build description.
     * Gave the Recon Plane a build icon.
     * Updated the US LOC from the translation document.
-    * Created a proper texture for the UEF Recon Plane.
+    * Started creating a proper texture for the UEF Recon Plane.
+
+    ### 2017-04-12
+
+    * Finished the texture of the UEF T2 recon plane, which was abandoned before between creating the changelog message and actually finishing it.
 
 ## 2016-12-15|0.7.5.5
 
