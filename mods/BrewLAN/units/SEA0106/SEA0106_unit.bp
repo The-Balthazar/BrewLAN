@@ -1,4 +1,8 @@
 UnitBlueprint {
+    AI = {
+        GuardReturnRadius = 125,
+        GuardScanRadius = 100,
+    },
     Air = {
         AutoLandTime = 1,
         BankFactor = 4,
@@ -183,16 +187,16 @@ UnitBlueprint {
                 {
                     LODCutoff = 140,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0204/uea0204_albedo.dds', 
-                    NormalsName = '/units/uea0204/uea0204_normalsTS.dds', 
-                    SpecularName = '/units/uea0204/uea0204_specteam.dds',  
+                    AlbedoName = '/units/uea0204/uea0204_albedo.dds',
+                    NormalsName = '/units/uea0204/uea0204_normalsTS.dds',
+                    SpecularName = '/units/uea0204/uea0204_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0204/uea0204_lod1_albedo.dds', 
-                    NormalsName = '/units/uea0204/uea0204_lod1_normalsTS.dds', 
-                    SpecularName = '/units/uea0204/uea0204_lod1_specteam.dds', 
+                    AlbedoName = '/units/uea0204/uea0204_lod1_albedo.dds',
+                    NormalsName = '/units/uea0204/uea0204_lod1_normalsTS.dds',
+                    SpecularName = '/units/uea0204/uea0204_lod1_specteam.dds',
                 },
             },
         },

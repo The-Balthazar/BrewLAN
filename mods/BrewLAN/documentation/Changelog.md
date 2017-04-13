@@ -477,6 +477,35 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Caffe Corretto: Added a prototype Seraphim T3 disarming point defence.
     * Currently it lacks effects and actual balancing, but it works and its funny.
 
+  ### 2017-04-13
+
+  * Added build description for currently non-existent Seraphim T2 spy plane.
+  * FAF related changes:
+    * Overhauled the balance matching script
+      * It now takes into account any tables you tell it to instead of just mass and energy build costs, build time, and build speed, from the economy table.
+      * Newly synced variables:
+        * Maintenance cost and kill requirements on T3 transports.
+        * T1 Gunship kill requirements.
+        * T2 Aeon decoy plane movement stats against the ASF.
+        * T3 torpedo bomber transport class.
+      * It now has the data to, although not the capacity yet, to set a unit stats to an average of other units stats.
+        * This will affect:
+          * UEF T2 recon plane for build cost, intel, and transport class.
+            * In FAF this means it is cheaper, has better radar, and uses air staging like a T1.
+          * Aeon T2 decoy plane for transport class.
+    * Added a new launch script which only triggers on FAF which:
+      * Allows BrewLAN aircraft to cash into water.
+    * T1 torpedo bombers now have AI guard scan variables.
+    * T3 torpedo bombers now have unified AI guard scan radii.
+      * Seraphim didn't have any, UEF had very large, Cybran had very small.
+    * T3 transports:
+      * Shields on the Seraphim and Aeon T3 transports are now categorised as transport shields for damage calculations.
+      * Transport hover height set to 6, from 3.
+      * Weapons are now willing to target from more layers.
+  * Fixed the selection offset of the Cybran T3 transport.
+  * Changed the build icon sort of the UEF T2 recon plane, so it sorts after Sparky, but before Janus.
+  * Changed the unit ID of the Aeon T2 decoy plane to saa0201 from saa0310.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

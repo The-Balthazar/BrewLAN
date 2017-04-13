@@ -28,6 +28,7 @@ function ModBlueprints(all_blueprints)
     TorpedoBomberWaterLandCat(all_blueprints.Unit)
     RoundGalacticCollosusHealth(all_blueprints.Unit)
     BrewLANMatchBalancing(all_blueprints.Unit)
+    BrewLANFAFExclusiveChanges(all_blueprints.Unit)
     BrewLANNavalShields(all_blueprints.Unit)
     BrewLANBomberDamageType(all_blueprints.Unit)
     BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
@@ -477,46 +478,153 @@ function RoundGalacticCollosusHealth(all_bps)
 end
 
 --------------------------------------------------------------------------------
--- Cost balance matching for between FAF and Steam versions of Forged Alliance
+-- Balance matching for between FAF, Steam, and retail versions balancing
 --------------------------------------------------------------------------------
 
-function BrewLANMatchBalancing(all_bps)
+function MathRoundTo(val, round)
+    if type(round) == 'number' and type(val) == 'number' and round >= 1 then
+        return math.floor((val / round) + 0.5) * round
+    else
+        return val
+    end
+end
 
+function MathRoundAppropriately(val)
+    if val <= 25 then
+        return val
+    elseif val <= 1000 then
+        return MathRoundTo(val, 5)
+    else
+        return MathRoundTo(val, 25)
+    end
+end
+
+function BrewLANMatchBalancing(all_bps)
     local UnitsList = {
+------- T1 gunships
+        saa0105 = {TargetID = 'xra0105', Affects = {'Veteran'}},
+        sea0105 = {TargetID = 'xra0105', Affects = {'Veteran'}},
+        sra0105 = {TargetID = 'xra0105', Affects = {'Veteran'}},
 ------- T3 torpedo bombers to match Solace
-        sra0307 = 'xaa0306',
-        sea0307 = 'xaa0306',
-        ssa0307 = 'xaa0306',
+        sra0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
+        sea0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
+        ssa0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
 ------- Sera T3 gunship to match Broadsword
         ssa0305 = 'uea0305',
 ------- Air transports to be based
-        ssa0306 = 'xea0306',
-                           --Energy mass  b-time b-rate
-        sra0306 = {'xea0306', 0.95, 0.95, 0.95,},
-        saa0306 = {'xea0306', 2.75, 2.75, 2.75,},
+        ssa0306 = {
+            TargetID ='xea0306',
+            Affects = {
+                'Economy',
+                'Veteran',
+            },
+        },
+        sra0306 = {
+            TargetID = 'xea0306',
+            BaseMult = 0.95,
+            Affects = {
+                'Economy',
+                'Veteran',
+            },
+            Mults = {
+                Economy = {
+                    MaintenanceConsumptionPerSecondEnergy = 0.4,
+                },
+                Veteran = 1,
+            },
+        },
+        saa0306 = {
+            TargetID = 'xea0306',
+            BaseMult = 2.75,
+            Affects = {
+                'Economy',
+                'Veteran',
+            },
+            Mults = {
+                Economy = {
+                    MaintenanceConsumptionPerSecondEnergy = 2,
+                },
+                Veteran = 1,
+            },
+        },
+------- Average between two other units
+        --T2 recon/decoy/stealths
+        sea0201 = {TargetID = {'uea0101', 'uea0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
+        saa0201 = {TargetID = {'uaa0101', 'uaa0302'}, Affects = {'Transport'}},
+        saa0201 = {TargetID = 'uaa0303', Affects = {'Air'}}, --It's imporant that it moves like an ASF
 
 ------- ED5 built by field engineer balancing
-        urb4207 = {'urb4207', 1.5,  1.5,  2.25, },
-        urb4206 = {'urb4206', 1,    1,    1,     2.25,},
+        urb4206 = {
+            TargetID = 'urb4206',
+            BaseMult = 1,
+            Mults = {
+                Economy = {
+                    BuildRate = 2.25
+                },
+            },
+        },
+        urb4207 = {
+            TargetID = 'urb4207',
+            BaseMult = 1,
+            Mults = {
+                Economy = {
+                    BuildCostEnergy = 1.5,
+                    BuildCostMass = 1.5,
+                    BuildTime = 2.25,
+                },
+            },
+        },
     }
 
-    for unitid, targetid in UnitsList do
-        if type(targetid) == 'string' then
-            if all_bps[unitid] and all_bps[targetid] then
-                all_bps[unitid].Economy.BuildCostEnergy = all_bps[targetid].Economy.BuildCostEnergy
-                all_bps[unitid].Economy.BuildCostMass = all_bps[targetid].Economy.BuildCostMass
-                all_bps[unitid].Economy.BuildTime = all_bps[targetid].Economy.BuildTime
-            end
-        elseif type(targetid) == 'table' then
-            local tid = targetid[1]
-            if all_bps[unitid] and all_bps[tid] then
-                all_bps[unitid].Economy.BuildCostEnergy = all_bps[tid].Economy.BuildCostEnergy * targetid[2]
-                all_bps[unitid].Economy.BuildCostMass = all_bps[tid].Economy.BuildCostMass * targetid[3]
-                all_bps[unitid].Economy.BuildTime = all_bps[tid].Economy.BuildTime * targetid[4]
-                if all_bps[unitid].Economy.BuildRate and all_bps[tid].Economy.BuildRate and targetid[5] then
-                    all_bps[unitid].Economy.BuildRate = all_bps[tid].Economy.BuildRate * targetid[5]
+    for unitid, data in UnitsList do
+        if type(data) == 'string' then
+            if all_bps[unitid] and all_bps[data] then
+                for key, val in  all_bps[unitid].Economy do
+                    if type(val) == 'number' then
+                        all_bps[unitid].Economy[key] = all_bps[data].Economy[key]
+                    end
                 end
             end
+        elseif type(data) == 'table' and type(data.TargetID) == 'string' then
+            local tid = data.TargetID
+            local Affects = data.Affects or {'Economy'}
+            if all_bps[unitid] and all_bps[tid] then
+                for i, tablename in Affects do
+                    for key, val in  all_bps[unitid][tablename] do
+                        if type(val) == 'number' then
+                            local mult
+                            if type(data.Mults[tablename]) == 'number' then
+                                --If the mults table is actually a number, use that
+                                mult = data.Mults[tablename]
+                            else
+                                --else run through in order, key, base, or 1
+                                --key only exists if its a table, else we go elsewhere
+                                mult = data.Mults[tablename][key] or data.BaseMult or 1
+                            end
+                            if mult == 1 then
+                                all_bps[unitid][tablename][key] = all_bps[tid][tablename][key]
+                            else
+                                all_bps[unitid][tablename][key] = MathRoundAppropriately(all_bps[tid][tablename][key] * mult)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+function BrewLANFAFExclusiveChanges(all_bps)
+    if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
+        for id, bp in all_bps do
+            if bp.Categories then
+                if table.find(bp.Categories, 'PRODUCTBREWLAN') and bp.Physics.MotionType == 'RULEUMT_Air' and bp.Wreckage.WreckageLayers then
+                    bp.Wreckage.WreckageLayers.Seabed = true
+                    bp.Wreckage.WreckageLayers.Sub = true
+                    bp.Wreckage.WreckageLayers.Water = true
+                end
+            end
+            --T3 torps anti-naval damage * 0.76
         end
     end
 end

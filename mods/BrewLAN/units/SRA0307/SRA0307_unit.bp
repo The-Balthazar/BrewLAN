@@ -1,7 +1,7 @@
 UnitBlueprint {
     AI = {
-        GuardReturnRadius = 75,
-        GuardScanRadius = 50,
+        GuardReturnRadius = 125,
+        GuardScanRadius = 100,
         TargetBones = {
             'BRA0307',
             'Wing_R02',
@@ -162,7 +162,7 @@ UnitBlueprint {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
                     AlbedoName = '/units/ura0204/ura0204_lod1_albedo.dds',
-                    NormalsName = '/units/ura0204/ura0204_lod1_normalsTS.dds', 
+                    NormalsName = '/units/ura0204/ura0204_lod1_normalsTS.dds',
                     SpecularName = '/units/ura0204/ura0204_lod1_specteam.dds',
                 },
             },

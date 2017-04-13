@@ -84,6 +84,7 @@ Description['ssl0222'] = "<LOC Unit_Description_BrewLAN_T2L004>Mobile shield gen
 --Tech 2 aircraft
 Description['saa0211'] = "<LOC Unit_Description_BrewLAN_T2A001>Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 Description['sea0201'] = "<LOC Unit_Description_BrewLAN_T2A002>Tactical reconnaissance aircraft."
+Description['ssa0201'] = "<LOC Unit_Description_BrewLAN_T2A002>Tactical reconnaissance aircraft."
 Description['sra0201'] = "<LOC Unit_Description_BrewLAN_T2A003>Tactical counter-intelligence and reconnaissance aircraft. Equipped with a stealth field generator."
 
 --Tech 2 naval units
@@ -98,7 +99,7 @@ Description['sra0307'] = "<LOC Unit_Description_BrewLAN_T3A005>High-level stealt
 Description['sea0310'] = "<LOC Unit_Description_BrewLAN_T3A006>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Description['sea0307'] = "<LOC Unit_Description_BrewLAN_T3A007>High-level torpedo bomber. Designed to engage powerful naval units. Equipped with light anti-air defense."
 Description['ssa0307'] = "<LOC Unit_Description_BrewLAN_T3A008>High-level torpedo bomber. Designed to engage powerful naval units."
-Description['saa0310'] = "<LOC Unit_Description_BrewLAN_T3A009>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
+Description['saa0201'] = "<LOC Unit_Description_BrewLAN_T3A009>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Description['sra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Description['ssa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 

@@ -4,7 +4,7 @@
 #**
 #**	Description:	For use with the Sorian AI
 #**
-#**	Copyright © 2009 BrewLAN
+#**	Copyright ï¿½ 2009 BrewLAN
 #**
 #****************************************************************************
 
@@ -79,10 +79,10 @@ T2TorpedoBomber = {
     Seraphim = {'ssa0307', 33},
 },
 T3AirScout ={
-    Aeon = {'saa0310', 10},
+    Aeon = {'saa0201', 10},
 },
 T3AirFighter ={
-    Aeon = {'saa0310', 10},
+    Aeon = {'saa0201', 10},
 },
 --------------------------------------------------------------------------------
 -- T3 Land units

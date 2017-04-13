@@ -211,9 +211,9 @@ Unit_Description_BrewLAN_T3A005="Bombardier torpilleur furtif lourd. Créé pour
 Unit_Description_BrewLAN_T3A007="Bombardier Torpilleur lourd. Créé pour attaquer les unités navales lourdes. Équipé d'un armement anti-aérien léger."
 Unit_Description_BrewLAN_T3A008="Bombardier Torpilleur lourd. Créé pour attaquer les unités navales lourdes."
 
-sair0310="Avion leurre"
+sair0201="Avion leurre"
 sea0310_name="Nark"
-saa0310_name="Séducteur"
+saa0201_name="Séducteur"
 sra0310_name="Avant-garde"
 ssa0310_name="Iathuselen"
 Unit_Description_BrewLAN_T3A006="Avion leurre. Équipé d'un brouilleur de radar puissant qui génère de faux signaux. Imite les mouvements d'un chasseur de supériorité aérienne."

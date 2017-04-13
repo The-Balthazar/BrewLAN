@@ -211,9 +211,9 @@ Unit_Description_BrewLAN_T3A005="Tarnkappen Torpedo-Bomber. Entworfen um schwere
 Unit_Description_BrewLAN_T3A007="Schwerer Torpedo-Bomber. Entwickelt um schwere Marine-Einheiten zu bekämpfen. Mit leichter Luftabwehr ausgestattet."
 Unit_Description_BrewLAN_T3A008="Schwerer Torpedo-Bomber. Entwickelt um schwere Marine-Einheiten zu bekämpfen."
 
-sair0310="Köder Flugzeug"
+sair0201="Köder Flugzeug"
 sea0310_name="Nark"
-saa0310_name="Beguiler"
+saa0201_name="Beguiler"
 sra0310_name="Vanguard"
 ssa0310_name="Iathuselen"
 Unit_Description_BrewLAN_T3A006="Leicht gepanzertes, Radar störendes Flugzeug. Ausgestattet mit einem starken Störsender der mehrere falsche Radar Signaturen erzeugt."

@@ -40,7 +40,7 @@ do
     AeonT1Air['G'] = 'saa0105'
     AeonT1Air['P'] = 'saa0106'
     AeonT2Air['O'] = 'saa0211'
-    AeonT2Air['D'] = 'saa0310'
+    AeonT2Air['D'] = 'saa0201'
     AeonT3Air['T'] = 'saa0306'
 
     UEFT1Eng['V'] = 'seb4102'

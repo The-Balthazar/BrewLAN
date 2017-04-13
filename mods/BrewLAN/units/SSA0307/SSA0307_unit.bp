@@ -1,4 +1,8 @@
 UnitBlueprint {
+    AI = {
+        GuardReturnRadius = 125,
+        GuardScanRadius = 100,
+    },
     Air = {
         AutoLandTime = 1,
         BankFactor = 4,
@@ -146,16 +150,16 @@ UnitBlueprint {
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     Scrolling = true,
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/xsa0204/xsa0204_albedo.dds', 
-                    NormalsName = '/units/xsa0204/xsa0204_normalsts.dds', 
-                    SpecularName = '/units/xsa0204/xsa0204_specteam.dds',  
+                    AlbedoName = '/units/xsa0204/xsa0204_albedo.dds',
+                    NormalsName = '/units/xsa0204/xsa0204_normalsts.dds',
+                    SpecularName = '/units/xsa0204/xsa0204_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/xsa0204/xsa0204_lod1_albedo.dds', 
-                    NormalsName = '/units/xsa0204/xsa0204_lod1_normalsts.dds', 
-                    SpecularName = '/units/xsa0204/xsa0204_lod1_specteam.dds',  
+                    AlbedoName = '/units/xsa0204/xsa0204_lod1_albedo.dds',
+                    NormalsName = '/units/xsa0204/xsa0204_lod1_normalsts.dds',
+                    SpecularName = '/units/xsa0204/xsa0204_lod1_specteam.dds',
                 },
             },
         },
