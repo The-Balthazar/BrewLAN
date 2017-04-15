@@ -547,6 +547,63 @@ function BrewLANMatchBalancing(all_bps)
                 Veteran = 1,
             },
         },
+        -- Mobile shield generators
+        sal0322 = {
+            TargetID = 'ual0307',
+            Affects = {'Shield', 'Economy'},
+            Mults = {
+                Shield = {
+                    ShieldMaxHealth = 1.1,
+                    ShieldRegenRate = 3,
+                    ShieldSize = 1.25,
+                    ShieldVerticalOffset = 1.25,
+                },
+                Economy = {
+                    BuildCostEnergy = 5,
+                    BuildCostMass = 5,
+                    BuildTime = 5,
+                    MaintenanceConsumptionPerSecondEnergy = 2,
+                },
+            },
+        },
+        sel0322 = {
+            TargetID = 'uel0307',
+            Affects = {'Shield', 'Economy'},
+            Mults = {
+                Shield = {
+                    ShieldMaxHealth = 2.2,
+                    ShieldRechargeTime = 2,
+                    ShieldRegenRate = 2,
+                    ShieldSize = 1.25,
+                    ShieldVerticalOffset = 1.25,
+                },
+                Economy = {
+                    BuildCostEnergy = 5,
+                    BuildCostMass = 5,
+                    BuildTime = 5,
+                    MaintenanceConsumptionPerSecondEnergy = 2,
+                },
+            },
+        },
+        ssl0222 = {
+            TargetID = 'xsl0307',
+            Affects = {'Shield', 'Economy'},
+            Mults = {
+                Shield = {
+                    ShieldMaxHealth = 0.45,
+                    ShieldRechargeTime = 0.5,
+                    ShieldRegenRate = 0.5,
+                    ShieldSize = 0.8,
+                    ShieldVerticalOffset = 0.8,
+                },
+                Economy = {
+                    BuildCostEnergy = 0.2,
+                    BuildCostMass = 0.2,
+                    BuildTime = 0.2,
+                    MaintenanceConsumptionPerSecondEnergy = 0.5,
+                },
+            },
+        },
 ------- Average between two other units
         --T2 recon/decoy/stealths
         sea0201 = {TargetID = {'uea0101', 'uea0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
@@ -585,26 +642,50 @@ function BrewLANMatchBalancing(all_bps)
                     end
                 end
             end
-        elseif type(data) == 'table' and type(data.TargetID) == 'string' then
+        elseif type(data) == 'table' then
             local tid = data.TargetID
             local Affects = data.Affects or {'Economy'}
-            if all_bps[unitid] and all_bps[tid] then
+            if all_bps[unitid] and (all_bps[tid[1]] and all_bps[tid[2]] or all_bps[tid]) then
+                LOG("Syncronising balance for " .. unitid)
                 for i, tablename in Affects do
-                    for key, val in  all_bps[unitid][tablename] do
-                        if type(val) == 'number' then
-                            local mult
-                            if type(data.Mults[tablename]) == 'number' then
-                                --If the mults table is actually a number, use that
-                                mult = data.Mults[tablename]
-                            else
-                                --else run through in order, key, base, or 1
-                                --key only exists if its a table, else we go elsewhere
-                                mult = data.Mults[tablename][key] or data.BaseMult or 1
+                    if tablename != 'Shield' then
+                        for key, val in  all_bps[unitid][tablename] do
+                            if type(val) == 'number' and (type(all_bps[tid[1]][tablename][key]) == 'number' and type(all_bps[tid[2]][tablename][key]) == 'number' or type(all_bps[tid][tablename][key]) == 'number') then
+                                local mult, rawnumber
+                                if type(data.Mults[tablename]) == 'number' then
+                                    --If the mults table is actually a number, use that
+                                    mult = data.Mults[tablename]
+                                else
+                                    --else run through in order, key, base, or 1
+                                    --key only exists if its a table, else we go elsewhere
+                                    mult = data.Mults[tablename][key] or data.BaseMult or 1
+                                end
+                                if type(all_bps[tid][tablename][key]) == 'number' then
+                                    rawnumber = all_bps[tid][tablename][key]
+                                else
+                                    rawnumber = (all_bps[tid[1]][tablename][key] + all_bps[tid[2]][tablename][key]) * 0.5
+                                end
+                                all_bps[unitid][tablename][key] = MathRoundAppropriately(rawnumber * mult)
                             end
-                            if mult == 1 then
-                                all_bps[unitid][tablename][key] = all_bps[tid][tablename][key]
-                            else
-                                all_bps[unitid][tablename][key] = MathRoundAppropriately(all_bps[tid][tablename][key] * mult)
+                        end
+                    else
+                        for key, val in  all_bps[unitid].Defense[tablename] do
+                            if type(val) == 'number' and (type(all_bps[tid[1]].Defense[tablename][key]) == 'number' and type(all_bps[tid[2]].Defense[tablename][key]) == 'number' or type(all_bps[tid].Defense[tablename][key]) == 'number') then
+                                local mult, rawnumber
+                                if type(data.Mults[tablename]) == 'number' then
+                                    --If the mults table is actually a number, use that
+                                    mult = data.Mults[tablename]
+                                else
+                                    --else run through in order, key, base, or 1
+                                    --key only exists if its a table, else we go elsewhere
+                                    mult = data.Mults[tablename][key] or data.BaseMult or 1
+                                end
+                                if type(all_bps[tid].Defense[tablename][key]) == 'number' then
+                                    rawnumber = all_bps[tid].Defense[tablename][key]
+                                else
+                                    rawnumber = (all_bps[tid[1]].Defense[tablename][key] + all_bps[tid[2]].Defense[tablename][key]) * 0.5
+                                end
+                                all_bps[unitid].Defense[tablename][key] = MathRoundAppropriately(rawnumber * mult)
                             end
                         end
                     end
@@ -618,7 +699,13 @@ function BrewLANFAFExclusiveChanges(all_bps)
     if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
         for id, bp in all_bps do
             if bp.Categories then
-                if table.find(bp.Categories, 'PRODUCTBREWLAN') and bp.Physics.MotionType == 'RULEUMT_Air' and bp.Wreckage.WreckageLayers then
+                if
+                  table.find(bp.Categories, 'PRODUCTBREWLAN')
+                and
+                  (bp.Physics.MotionType == 'RULEUMT_Air' or bp.Physics.MotionType == 'RULEUMT_Hover')
+                and
+                  bp.Wreckage.WreckageLayers
+                then
                     bp.Wreckage.WreckageLayers.Seabed = true
                     bp.Wreckage.WreckageLayers.Sub = true
                     bp.Wreckage.WreckageLayers.Water = true

@@ -51,6 +51,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYDEFENSE',
+        'DUMMYGSRWEAPON',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -71,6 +72,7 @@ UnitBlueprint {
             ShieldRegenRate = 133/2,
             ShieldRegenStartTime = 1,
             ShieldSize = 16,
+            ShieldSpillOverDamageMod = 0.5,
             ShieldVerticalOffset = -3,
         },
         SubThreatLevel = 0,
@@ -134,9 +136,9 @@ UnitBlueprint {
                     Scrolling = true,
                     ShaderName = 'Seraphim',
                     --MeshName = '/units/xsl0307/xsl0307_lod0.scm',
-                    AlbedoName = '/units/XSL0201/XSL0201_albedo.dds', 
-                    NormalsName = '/units/XSL0201/XSL0201_normalsts.dds', 
-                    SpecularName = '/units/XSL0201/XSL0201_specteam.dds', 
+                    AlbedoName = '/units/XSL0201/XSL0201_albedo.dds',
+                    NormalsName = '/units/XSL0201/XSL0201_normalsts.dds',
+                    SpecularName = '/units/XSL0201/XSL0201_specteam.dds',
                 },
                 {
                     LODCutoff = 180,
@@ -284,7 +286,35 @@ UnitBlueprint {
     StrategicIconName = 'icon_land2_shield',
     StrategicIconSortPriority = 125,
     Transport = {
-        TransportClass = 3,
+        TransportClass = 2,
+    },
+    Weapon = {
+        { -- special dummy weapon to make the unit stop a certain distance away
+            Damage = 0,
+            DamageFriendly = false,
+            FireTargetLayerCapsTable = { --what the unit will stop for
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+            MaxRadius = 38,
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'AttachPoint', -- when moving to new unit, update these to something that exists on the unit
+                    },
+                    RackBone = 'AttachPoint',
+                },
+            },
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+            Turreted = false,
+            SlavedToBody = false,
+        },
     },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

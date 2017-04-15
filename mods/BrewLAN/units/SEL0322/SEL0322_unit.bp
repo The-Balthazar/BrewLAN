@@ -59,6 +59,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYDEFENSE',
+        'DUMMYGSRWEAPON',
     },
     CollisionOffsetZ = 0.05,
     Defense = {
@@ -87,10 +88,10 @@ UnitBlueprint {
     },
     Description = '<LOC uel0307_desc>Mobile Shield Generator',
     Display = {
-        Abilities = {     
+        Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_shielddome>Shield Dome',
-        },   
+        },
         AnimationWater = '/mods/BrewLAN/units/sel0322/sel0322_afold.sca',
         AnimationOpen = '/units/uel0307/uel0307_Aactivate.sca',
         Mesh = {
@@ -99,19 +100,19 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     Scrolling = true,
-                    ShaderName = 'Unit',                      
-                    --MeshName = '/units/uel0307/uel0307_lod0.scm', 
-                    AlbedoName = '/units/uel0307/uel0307_albedo.dds', 
-                    NormalsName = '/units/uel0307/uel0307_normalsTS.dds', 
-                    SpecularName = '/units/uel0307/uel0307_specteam.dds', 
+                    ShaderName = 'Unit',
+                    --MeshName = '/units/uel0307/uel0307_lod0.scm',
+                    AlbedoName = '/units/uel0307/uel0307_albedo.dds',
+                    NormalsName = '/units/uel0307/uel0307_normalsTS.dds',
+                    SpecularName = '/units/uel0307/uel0307_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Unit',
-                    MeshName = '/units/uel0307/uel0307_lod1.scm', 
-                    AlbedoName = '/units/uel0307/uel0307_lod1_albedo.dds', 
-                    NormalsName = '/units/uel0307/uel0307_lod1_normalsTS.dds', 
-                    SpecularName = '/units/uel0307/uel0307_lod1_specteam.dds', 
+                    MeshName = '/units/uel0307/uel0307_lod1.scm',
+                    AlbedoName = '/units/uel0307/uel0307_lod1_albedo.dds',
+                    NormalsName = '/units/uel0307/uel0307_lod1_normalsTS.dds',
+                    SpecularName = '/units/uel0307/uel0307_lod1_specteam.dds',
                 },
             },
         },
@@ -144,7 +145,7 @@ UnitBlueprint {
                         },
                     },
                 },
-            }, 
+            },
             Water = {
                 Effects = {
                     {
@@ -250,6 +251,34 @@ UnitBlueprint {
     StrategicIconSortPriority = 125,
     Transport = {
         TransportClass = 3,
+    },
+    Weapon = {
+        { -- special dummy weapon to make the unit stop a certain distance away
+            Damage = 0,
+            DamageFriendly = false,
+            FireTargetLayerCapsTable = { --what the unit will stop for
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+            MaxRadius = 33,
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Attachpoint', -- when moving to new unit, update these to something that exists on the unit
+                    },
+                    RackBone = 'Attachpoint',
+                },
+            },
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+            Turreted = false,
+            SlavedToBody = false,
+        },
     },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

@@ -506,6 +506,27 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed the build icon sort of the UEF T2 recon plane, so it sorts after Sparky, but before Janus.
   * Changed the unit ID of the Aeon T2 decoy plane to saa0201 from saa0310.
 
+  ### 2017-04-14
+
+  * FAF related changes:
+    * FAF only additions:
+      * BrewLAN hovering units can now wreckage on water.
+    * Balance sync changes:
+      * The average code has now been implemented.
+
+  ### 2017-04-15
+
+  * FAF related changes:
+    * FAF only additions:
+      *
+    * Balance sync changes:
+      * Added functionality for syncing shields.
+      * Mobile shield gen costs and shields now synced.
+    * Unit changes:
+      * Mobile shield gens given dummy weapons and spill over variables.
+  * Fixed transport class of Seraphim T2 shield gen.
+  * Fixed tread marks of the Aeon T3 mobile shield.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
