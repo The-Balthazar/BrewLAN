@@ -56,7 +56,6 @@ SSB0401 = Class(SSeaFactoryUnit) {
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
-        self.UnitControl(self, unitBeingBuilt)
         SSeaFactoryUnit.OnStopBuild(self, unitBeingBuilt)
         AIControl(self, unitBeingBuilt)
         BuildModeChange(self)
