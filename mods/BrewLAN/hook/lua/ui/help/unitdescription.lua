@@ -182,6 +182,7 @@ Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quan
 Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sensor array. Displays the location of enemy units. Upkeep costs per-unit being watched. Sensors can't penetrate areas of heavy sensor-distruption."
 Description['sab0401'] = "<LOC Unit_Description_BrewLAN_T4B009>Constructs air units."
 Description['srb0401'] = "<LOC Unit_Description_BrewLAN_T4B010>Constructs land units."
+Description['ssb0401'] = "<LOC Unit_Description_BrewLAN_T4B011>Constructs naval units."
 
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."

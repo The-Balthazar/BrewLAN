@@ -20,19 +20,23 @@ T3LandFactory = {
 T1SeaFactory = {
     UEF =		{'seb0401', 40},
     Aeon =	{'sab0401', 20},
+    Seraphim = {'ssb0401', 90},
 },
 T2SeaFactory = {
     UEF =		{'seb0401', 50},
     Aeon =	{'sab0401', 25},
+    Seraphim = {'ssb0401', 95},
 },
 T3SeaFactory = {
     UEF =		{'seb0401', 60},
     Aeon =	{'sab0401', 30},
+    Seraphim = {'ssb0401', 100},
 },
 T3QuantumGate = {
     UEF =		{'seb0401', 60},
     Aeon =	{'sab0401', 60},
     Cybran =		{'srb0401', 60},
+    Seraphim = {'ssb0401', 60},
 },
 --------------------------------------------------------------------------------
 -- Shields
@@ -138,8 +142,10 @@ T3LandArtillery = {
     UEF =		{'sel0321', 5},
 },
 T4AirExperimental1 = {
-    UEF = {'seb0401', 99},
-    Aeon =	{'sab0401', 99},
+    UEF = {'seb0401', 100},
+    Aeon =	{'sab0401', 100},
+    Cybran = {'srb0401', 100},
+    Seraphim = {'ssb0401', 100},
 },
 --------------------------------------------------------------------------------
 -- End

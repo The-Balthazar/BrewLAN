@@ -1,21 +1,14 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UAL0401/UAL0401_script.lua
-#**  Author(s):  John Comes, Gordon Duclos
-#**
-#**  Summary  :  Aeon Galactic Colossus Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
+--------------------------------------------------------------------------------
+--  Summary  :  Lazy Laser Eye Point Defence script
+--------------------------------------------------------------------------------
 local AStructureUnit = import('/lua/aeonunits.lua').AStructureUnit
 local ADFPhasonLaser = import('/lua/aeonweapons.lua').ADFPhasonLaser
 local utilities = import('/lua/utilities.lua')
 
 SAB2306 = Class(AStructureUnit) {
     Weapons = {
-        EyeWeapon = Class(ADFPhasonLaser) {},     
+        EyeWeapon = Class(ADFPhasonLaser) {},
     },
-    
 
     OnKilled = function(self, instigator, type, overkillRatio)
         AStructureUnit.OnKilled(self, instigator, type, overkillRatio)
@@ -29,29 +22,15 @@ SAB2306 = Class(AStructureUnit) {
         end
         for k, v in wep.Beams do
             v.Beam:Disable()
-        end     
+        end
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
-
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
-
-        local num = self:GetRandomDir()
-        self.HeadManip = CreateRotator(self, 'Head', 'y', nil, 0, 15, 10 + Random(0, 80) * num)
-        self.HeadManip2 = CreateRotator(self, 'Head', 'x', nil, 0, 15, 10 + Random(0, 80) * num)
-        self.HeadManip2 = CreateRotator(self, 'Head', 'z', nil, 0, 15, 10 + Random(0, 80) * num)
-        self.Trash:Add(self.HeadManip)
-        self.Trash:Add(self.HeadManip2)
-
-    end,
-
-    GetRandomDir = function(self)
-        local num = Random(0, 2)
-        if num > 1 then
-            return 1
+        local vectors = {'x','y','z'}
+        for i, v in vectors do
+            self.Trash:Add(CreateRotator(self, 'Head', v, nil, 0, 15, 10 + Random(0, 80) * (-1 + (2 * Random(0,1)))))
         end
-        return -1
     end,
-
 }
 TypeClass = SAB2306

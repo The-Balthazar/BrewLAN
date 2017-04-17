@@ -517,8 +517,6 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2017-04-15
 
   * FAF related changes:
-    * FAF only additions:
-      *
     * Balance sync changes:
       * Added functionality for syncing shields.
       * Mobile shield gen costs and shields now synced.
@@ -526,6 +524,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * Mobile shield gens given dummy weapons and spill over variables.
   * Fixed transport class of Seraphim T2 shield gen.
   * Fixed tread marks of the Aeon T3 mobile shield.
+
+  ### 2017-04-16
+
+  * Orbos technical changes (functionally almost identical):
+    * Improved the script.
+    * Changed DoT rate from 500 every 0.2 seconds to 250 every 0.1.
+
+  ### 2017-04-17
+
+  * Added a basic version of the Seraphim Experimental Naval Factory.
 
 ## 2016-12-15|0.7.5.5
 
