@@ -104,7 +104,7 @@ function ChooseExpimental(self)
     local bp = self:GetBlueprint()
     local buildorder = bp.AI.BuildOrder
 
-    if buildorder[self.BuiltUnitsCount] and self:CanBuild(buildorder[self.BuiltUnitsCount]) then
+    if type(buildorder[self.BuiltUnitsCount]) == 'string' and self:CanBuild(buildorder[self.BuiltUnitsCount]) then
         return buildorder[self.BuiltUnitsCount]
     end
 
@@ -112,14 +112,14 @@ function ChooseExpimental(self)
         local req = self.RequestedUnits[1][1]
         table.insert(self.AcceptedRequests,self.RequestedUnits[1])
         table.remove(self.RequestedUnits, 1)
-        if self:CanBuild(req) then
+        if type(req) == 'string' and self:CanBuild(req) then
             return req
         end
     end
 
     local BuildBackups = bp.AI.BuildBackups
 
-    if self:GetAIBrain():GetNoRushTicks() > 1500 and self:CanBuild(BuildBackups.EarlyNoRush) then
+    if self:GetAIBrain():GetNoRushTicks() > 1500 and type(BuildBackups.EarlyNoRush) == 'string' and self:CanBuild(BuildBackups.EarlyNoRush) then
         return BuildBackups.EarlyNoRush
     end
 
@@ -137,7 +137,7 @@ function ChooseExpimental(self)
                     else
                         self.ExpIndex[1] = i + 1
                     end
-                    if self:CanBuild(v[1]) then
+                    if type(v[1]) == 'string' and self:CanBuild(v[1]) then
                         self.togglebuild = true
                         self.Lastbuilt = v[1]
                         --LOG('Returning air chosen = ', v[1])
@@ -160,7 +160,7 @@ function ChooseExpimental(self)
                     else
                         self.ExpIndex[2] = i + 1
                     end
-                    if self:CanBuild(v[1]) then
+                    if type(v[1]) == 'string' and self:CanBuild(v[1]) then
                         self.togglebuild = false
                         self.Lastbuilt = v[1]
                         --LOG('Returning land chosen= ', v[1])
@@ -181,7 +181,7 @@ function ChooseExpimental(self)
     end
     --LAST RESORT TABLE
     for i, v in BuildBackups.LastResorts do
-        if self:CanBuild(v) then
+        if type(v) == 'string' and self:CanBuild(v) then
             return v
         end
     end

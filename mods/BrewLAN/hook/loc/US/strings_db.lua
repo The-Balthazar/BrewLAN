@@ -12,22 +12,22 @@
 tooltipbrewlan0000="Toggle air production"
 tooltipbrewlan0001="Enables or disables production of air units"
 
---Toolttips for the T3 decoy planes.
+--Tooltips for the T3 decoy planes.
 tooltipbrewlan0002="Toggle air speed"
 tooltipbrewlan0003="Toggles impersonation of an air superiority or a CZAR"
 tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soulripper"
 tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
 tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
 
---Toolttips for the landmines.
+--Tooltips for the landmines.
 tooltipbrewlan0007="Detonate"
 tooltipbrewlan0008="Immediately detonate the payload."
 
---Tooltips for the builderwalls
+--Tooltips for the builder walls
 tooltipbrewlan0009="Clear build area"
 tooltipbrewlan0010="Removes any structures or remains from the build area."
 
---Tooltops for the Seraphim spy facility
+--Tooltips for the Seraphim spy facility
 tooltipbrewlan0011="Scry"
 tooltipbrewlan0012="Choose a unit to spy on"
 
@@ -64,7 +64,7 @@ tooltipbrewlan0029="Toggle Economy Watch"
 tooltipbrewlan0030="While active, this unit will dynamically reduce its operational spying radius to an economically sustainable level."
 
 --------------------------------------------------------------------------------
--- Support commander enchancements
+-- Support commander enhancements
 --------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Adds field engineer build capabilities to the SACU."
@@ -453,3 +453,7 @@ Unit_Description_BrewLAN_T4B009="Constructs air units."
 srb0401_desc="Experimental Land Factory"
 srb0401_name="Arthrolab"
 Unit_Description_BrewLAN_T4B010="Constructs land units."
+
+ssb0401_desc="Experimental Naval Factory"
+ssb0401_name="Souiya"
+Unit_Description_BrewLAN_T4B011="Constructs naval units."

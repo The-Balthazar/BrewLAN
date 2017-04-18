@@ -535,6 +535,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added a basic version of the Seraphim Experimental Naval Factory.
 
+  ### 2017-04-18
+
+  * Updated translation documents with auto generated strings.
+  * Added auto generated translations for Spanish, Italian, Polish, and Chinese.
+  * Added sanitisation checks to the Gantry build picker script.
+  * Removed part of the build pre-set for the Seraphim experimental naval yard which was breaking things.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
