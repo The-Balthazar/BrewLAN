@@ -1,3 +1,15 @@
+--BrewLAN/mods/BrewLAN/hook/loc/ES
+--ISO_639-1_code=ES
+--+------------+--+-------------------------------------------------------------
+--¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   BrewLAN Spanish strings table
+--¦░░▒▒░░░░░░░░¦--¦   Author: Balthassar
+--¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Translator: Google
+--+------------+--+-------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- La información sobre herramientas
+--------------------------------------------------------------------------------
+
 --Información sobre herramientas para el pórtico
 tooltipbrewlan0000="producción de aire de palanca"
 tooltipbrewlan0001="Activa o desactiva la producción de unidades de aire"
@@ -278,7 +290,7 @@ Unit_Description_BrewLAN_T3L005="Tech 3, la construcción, la reparación, la ca
 Unit_Description_BrewLAN_T3L006="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo de sonar, y puede construir defensas especializadas."
 Unit_Description_BrewLAN_T3L007="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con un escudo personal y se puede construir defensas especializadas."
 
-srb1311_desc="Generador Cloakable"
+srb1311_desc="Generador camuflado"
 seb1311_desc="Generador de ingeniería"
 sab1311_desc="Generador blindado"
 ssb1311_desc="Generador blindado"
@@ -286,14 +298,14 @@ sab1311_name="Von Mayer Reactor"
 seb1311_name="Bessemer Reactor"
 srb1311_name="Faraday Reactor"
 ssb1311_name="Uya-iyathan"
-Unit_Description_BrewLAN_T3B009="Large estructura de generación de energía. Posee la capacidad de capa, que consume una gran parte de su producción de funcionamiento."
+Unit_Description_BrewLAN_T3B009="Large estructura de generación de energía. Posee la capacidad de camuflaje, que consume una gran parte de su producción operativo."
 Unit_Description_BrewLAN_T3B0012="Large estructura de generación de energía. Posee la capacidad de reparar los edificios cercanos. construye automáticamente defensas cuando está dañado."
 Unit_Description_BrewLAN_T3B0014="Large estructura de generación de energía. Posee un poderoso escudo, que consume una pequeña parte de su producción de funcionamiento."
 Unit_Description_BrewLAN_T3B0016="Large estructura de generación de energía. Posee una armadura superior y uno mismo tiene capacidad regenerativa."
 
 sab1312_desc="Extractor de masa blindado"
 seb1312_desc="Extractor de masas Ingeniería"
-srb1312_desc="Extractor de masas Cloakable"
+srb1312_desc="Extractor de masas camuflado"
 ssb1312_desc="Extractor de masa blindado"
 seb1312_name="Bomba 3E masa"
 Unit_Description_BrewLAN_T3B0021="De gama alta extractora de masas. Debe ser construido sobre los depósitos masivos. Genera una cúpula escudo lo suficientemente grande como para cubrir misma y 4 pequeños almacenes."
@@ -301,18 +313,18 @@ Unit_Description_BrewLAN_T3B0022="De gama alta extractora de masas. Debe ser con
 Unit_Description_BrewLAN_T3B0023="De gama alta extractora de masas. Debe ser construido sobre los depósitos masivos. Visible solo para Omni."
 Unit_Description_BrewLAN_T3B0024="De gama alta extractora de masas. Debe ser construido sobre los depósitos masivos. Posee una armadura superior y uno mismo tiene capacidad regenerativa."
 
-srb1313_desc="Cloakable misa Fabricator"
+srb1313_desc="Camuflado misa Fabricator"
 seb1313_desc="Ingeniería misa Fabricator"
 sab1313_desc="Blindado misa Fabricator"
 ssb1313_desc="Masa blindada Fabricator"
-Unit_Description_BrewLAN_T3B0010="Large estructura fabricación en masa. Posee la capacidad de capa, que consume energía adicional."
+Unit_Description_BrewLAN_T3B0010="Large estructura fabricación en masa. Posee la capacidad de camuflaje, que consume energía adicional."
 Unit_Description_BrewLAN_T3B0013="Large estructura fabricación en masa. Posee la capacidad de reparar los edificios cercanos. construye automáticamente defensas cuando está dañado."
 Unit_Description_BrewLAN_T3B0015="Large estructura fabricación en masa. Posee un poderoso escudo, que consume energía adicional."
 Unit_Description_BrewLAN_T3B0017="Large estructura fabricación en masa. Posee una armadura superior y uno mismo tiene capacidad regenerativa."
 
-srb4313_desc="De campo del generador de Stealth Cloakable"
+srb4313_desc="De campo del generador de Stealth camuflado"
 srb4313_name="Hierba mora"
-Unit_Description_BrewLAN_T3B0011="Genera un campo de sigilo y un manto personal. Oculta unidades y estructuras dentro de su radio de acción de radar y sonar, pero no de sensores visuales, el generador en sí sólo es visible a omni."
+Unit_Description_BrewLAN_T3B0011="Genera un campo de sigilo y tiene camuflaje personal. Oculta unidades y estructuras dentro de su radio de acción de radar y sonar, pero no de sensores visuales, el generador en sí sólo es visible a omni."
 
 ssb5301_desc="Sección muro de escudos"
 ssb5301_name="Athahaas"
@@ -351,14 +363,14 @@ sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="lanzador de misiles antiaéreo móvil. Equipado con el equipo de exploración avanzada."
 --srl0320_desc="Lanzador de misiles móviles"
 srl0320_name="Escabullirse"
-Unit_Description_BrewLAN_T3L009="Mobile lanzador de misiles antiaéreos de camuflaje. Debe decloak al fuego."
+Unit_Description_BrewLAN_T3L009="camuflado lanzador de misiles móviles tierra-aire. Debe hacerse visible a los ataques."
 
 seb4303_name="Retroceso"
 Unit_Description_BrewLAN_T3B0028="red de defensa artillería estacionaria. Equipado con un sistema de identificación de amenazas y de seguimiento integrado."
 
-srl0316_desc="Sistema Cloakable móvil sigilo Campo"
+srl0316_desc="Sistema Móvil de Stealth campo camuflado"
 srl0316_name="Operatorio"
-Unit_Description_BrewLAN_T3L010="generador de sigilo camuflaje móvil. Oculta las unidades cercanas de radar y sonar. Visible solo para omnidireccional."
+Unit_Description_BrewLAN_T3L010="Móvil camuflado generador de sigilo. Oculta las unidades cercanas de radar y sonar. Visible solo para omnidireccional."
 
 srl0311_desc="Plataforma Rocket Mobile"
 srl03ll_name="Hexatron"

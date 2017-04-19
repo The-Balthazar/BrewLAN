@@ -1,3 +1,5 @@
+--BrewLAN/mods/BrewLAN/hook/loc/DE
+--ISO_639-1_code=DE
 --+------------+--+-------------------------------------------------------------
 --¦████████████¦--¦   BrewLAN German strings table
 --¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Author: Balthassar
@@ -5,7 +7,7 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- Tooltips
+-- Tooltips
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
@@ -182,7 +184,7 @@ Unit_Description_BrewLAN_T2B001="Bremst den Vorstoß des Feindes. Kann extremem 
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
 
-
+--Field Engineering Schiff
 ss0219_desc="Kampftechniker Schiff"
 ses0219_name="Fixxie-Klasse"
 Unit_Description_BrewLAN_T2S001="Tech 2 marine konstruktions-, reparatur-, übernahme- und zurückgewinnungs Einheit. Ausgerüstet mit einer Luftabwehrwaffe."
@@ -357,11 +359,11 @@ sel0322_name="Ella"
 sal0320_desc="Mobile Luftabwehr"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Schwebendes mobiles Luftabwehr System. Verbraucht mit jedem Schuss Energie."
-sel0324_name=
-Unit_Description_BrewLAN_T3L015=
+sel0324_name="NG3 Longbow"
+Unit_Description_BrewLAN_T3L015="Mobile Anti-Luft-Raketenwerfer. Ausgestattet mit erweiterten Scan-Geräten."
 --srl0320_desc="Mobiler Raketen Werfer"
 srl0320_name="Slink"
-Unit_Description_BrewLAN_T3L009="Mobile und getarnte Racketenplattform. Kann Land-, Luft- und Marineeinheiten angreifen, muss sich aber enttarnen um zu feuern."
+Unit_Description_BrewLAN_T3L009="Mobile und getarnte Anti-Luft-Raketenwerfer. Muss sich aber enttarnen um zu feuern."
 
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationäres Artillerie Abwehrsystem. Ausgestattet mit integriertem Gefahrenidentifikations- und tracking System."
@@ -438,13 +440,13 @@ srl0000_desc="Krabbenei"
 srl0001_desc=srl0000_desc .. " (Zerstörer)"
 srl0002_desc=srl0000_desc .. " (Kampftechniker)"
 srl0003_desc=srl0000_desc .. " (Tarn)"
-srl0004_desc=srl0000_desc .. " (Flugabwehr)
+srl0004_desc=srl0000_desc .. " (Flugabwehr)"
 srl0005_desc=srl0000_desc .. " (" .. srl0321_name .. ")"
 srl0006_desc=srl0000_desc .. " (Raketenwerfer)"
 
 seb3404_desc="Experimentelle Sensor Matrix"
 seb3404_name="Panoptikum"
-Unit_Description_BrewLAN_T4B008="Experimentelle Sensor Matrix. Gibt Sichtfeld für für jede gegnerische Einheit in Radarreichweite. Unterhalt steigt für jede ausspionierte Einheit in Reichweite. Mobile und teure Einheiten erzeugen einen höheren Unterhalt. Getarnte Einheiten, ACUs und Einheiten in der nähe eines " .. srb4402_name .. " können nicht ausspioniert werden."
+Unit_Description_BrewLAN_T4B008="Experimentelles Sensorarray. Gibt Sichtlinie für feindliche Einheiten in ihrem Aktionsradius, die sichtbar sind, um erhältliche Sensoren, wie Radar. Unterhaltskosten zusätzlich pro Einheit bespitzelt. Mobile Einheiten und große Einheiten kosten mehr bespitzeln."
 
 sab0401_desc="Experimentelle Luftwaffenfabrik"
 sab0401_name="Unabhängigkeit"

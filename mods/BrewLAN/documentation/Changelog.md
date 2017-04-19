@@ -542,6 +542,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added sanitisation checks to the Gantry build picker script.
   * Removed part of the build pre-set for the Seraphim experimental naval yard which was breaking things.
 
+  ### 2017-04-19
+
+  * Corrected the folder name for the Chinese translation document, which uses CN instead of the ISO 639-1 code ZH.
+  * Fixed the gaps in the French and Russian language documents, which were causing issues.
+  * Added an auto generated Czech language strings document.
+  * Improved the auto generated translations regarding the name of the ability 'cloak'.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

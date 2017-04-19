@@ -1,3 +1,15 @@
+--BrewLAN/mods/BrewLAN/hook/loc/CN
+--ISO_639-1_code=ZH
+--+------------+--+-------------------------------------------------------------
+--¦▒░░▒░▒▒▒▒▒▒▒¦--¦   BrewLAN Chinese strings table
+--¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Author: Balthassar
+--¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Translator: Google
+--+------------+--+-------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- 提示
+--------------------------------------------------------------------------------
+
 --工具提示龙门
 tooltipbrewlan0000="切换空气生产"
 tooltipbrewlan0001="启用或禁用生产空气单元"
@@ -178,7 +190,7 @@ ses0219_name="Fixxie类"
 Unit_Description_BrewLAN_T2S001="Tech 2的海军建设，维修，捕获和回收单位。配备了一个防空武器。"
 
 sea0201_desc="侦察机"
-sea0201_name="蛟龍夫人"
+sea0201_name="UX蛟龍夫人"
 ssa0201_name="Selia"
 Unit_Description_BrewLAN_T2A002="战术侦察机。"
 
@@ -278,7 +290,7 @@ Unit_Description_BrewLAN_T3L005="技术3水陆两用建造，修理，捕获，�
 Unit_Description_BrewLAN_T3L006="技术3水陆两用建造，修理，捕获，回收和矿层单元。它配备了轻微的武器，有声纳隐形，并且可以建立专门的防御。"
 Unit_Description_BrewLAN_T3L007="技术3水陆两用建造，修理，捕获，回收和矿层单元。它配备了个人防护，并可以建立专门的防御。"
 
-srb1311_desc="Cloakable发电机"
+srb1311_desc="伪装发电机"
 seb1311_desc="工程发电机"
 sab1311_desc="屏蔽发电机"
 ssb1311_desc="装甲发电机"
@@ -286,14 +298,14 @@ sab1311_name="冯·迈耶反应堆"
 seb1311_name="转炉反应堆"
 srb1311_name="法拉第电抗器"
 ssb1311_name="UYA-iyathan"
-Unit_Description_BrewLAN_T3B009="大型发电结构。具有的能力，斗篷，这消耗它的操作输出的很大一部分。"
+Unit_Description_BrewLAN_T3B009="大型发电结构。具有的能力，伪装，这消耗它的操作输出的很大一部分。"
 Unit_Description_BrewLAN_T3B0012="大型发电结构。拥有修理附近建筑物的能力。当损坏的自动构建防御。"
 Unit_Description_BrewLAN_T3B0014="大型发电结构。具有功能强大的屏蔽，这消耗它的操作输出的一小部分。"
 Unit_Description_BrewLAN_T3B0016="大型发电结构。拥有卓越的装甲和具有自再生功能。"
 
 sab1312_desc="屏蔽质量提取"
 seb1312_desc="工程质量提取"
-srb1312_desc="Cloakable质量提取"
+srb1312_desc="伪装质量提取"
 ssb1312_desc="装甲质量提取"
 seb1312_name="大众泵3E"
 Unit_Description_BrewLAN_T3B0021="高端质谱提取。必须在群众存款构成。它会产生一个屏蔽圆顶大到足以覆盖本身和4个小型存储器。"
@@ -301,18 +313,18 @@ Unit_Description_BrewLAN_T3B0022="高端质谱提取。必须在群众存款构�
 Unit_Description_BrewLAN_T3B0023="高端质谱提取。必须在群众存款构成。可见只有全方位。"
 Unit_Description_BrewLAN_T3B0024="高端质谱提取。必须在群众存款构成。它拥有卓越的装甲和具有自再生功能。"
 
-srb1313_desc="Cloakable质量加工厂"
+srb1313_desc="伪装质量加工厂"
 seb1313_desc="工程质量加工厂"
 sab1313_desc="屏蔽质量加工厂"
 ssb1313_desc="装甲质量加工厂"
-Unit_Description_BrewLAN_T3B0010="大质量的制造结构。拥有能力斗篷，这会消耗额外的功率。"
+Unit_Description_BrewLAN_T3B0010="大质量的制造结构。拥有能力伪装，这会消耗额外的功率。"
 Unit_Description_BrewLAN_T3B0013="大质量的制造结构。拥有修理附近建筑物的能力。当损坏的自动构建防御。"
 Unit_Description_BrewLAN_T3B0015="大质量的制造结构。拥有强大的盾牌，这会消耗更多的功率。"
 Unit_Description_BrewLAN_T3B0017="大质量的制造结构。拥有卓越的装甲和具有自再生功能。"
 
-srb4313_desc="Cloakable隐形力场发生器"
+srb4313_desc="伪装隐形力场发生器"
 srb4313_name="茄科"
-Unit_Description_BrewLAN_T3B0011="产生隐形领域和个人斗篷。隐藏单元和结构从雷达和声纳其工作范围内，但不能从视觉传感器，发电机本身仅仅是全可见。"
+Unit_Description_BrewLAN_T3B0011="生成一个隐形的学科，具有个人伪装。隐藏单元和结构从雷达和声纳其工作范围内，但不能从视觉传感器，发电机本身仅仅是全可见。"
 
 ssb5301_desc="盾墙段"
 ssb5301_name="Athahaas"
@@ -351,12 +363,12 @@ sel0324_name="NG3长弓"
 Unit_Description_BrewLAN_T3L015="移动防空导弹发射装置。配备了先进的扫描设备。"
 --srl0320_desc="移动导弹发射器"
 srl0320_name="早产"
-Unit_Description_BrewLAN_T3L009="移动隐形防空导弹发射装置。必须decloak火。"
+Unit_Description_BrewLAN_T3L009="移动伪装表面对空导弹发射装置。必须成为攻击可见。"
 
 seb4303_name="畏缩"
 Unit_Description_BrewLAN_T3B0028="固定式火炮防御网。配备有集成的威胁识别和跟踪系统。"
 
-srl0316_desc="Cloakable移动隐形场系统"
+srl0316_desc="伪装移动隐形场系统"
 srl0316_name="手术"
 Unit_Description_BrewLAN_T3L010="移动伪装隐形发生器。隐藏雷达和声纳附近单位。可见只有全。"
 
@@ -421,7 +433,7 @@ srb4402_name="黑暗"
 Unit_Description_BrewLAN_T4B006="实验反间谍机构。产生减少最活跃的Omni传感器的最大穿入深度的脉冲。"
 
 ssb5401_desc="实验量子网关"
-ssb5401_name="Chappa'ai"
+ssb5401_name="星門"
 Unit_Description_BrewLAN_T4B007="实验量子网关设备。能够跨地图瞬间传送单位，其他门。"
 
 srl0000_desc="蟹蛋"

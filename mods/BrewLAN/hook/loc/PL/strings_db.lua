@@ -1,3 +1,15 @@
+--BrewLAN/mods/BrewLAN/hook/loc/PL
+--ISO_639-1_code=PL
+--+------------+--+-------------------------------------------------------------
+--¦            ¦--¦   BrewLAN Polish strings table
+--¦▄▄▄▄▄▄▄▄▄▄▄▄¦--¦   Author: Balthassar
+--¦████████████¦--¦   Translator: Google
+--+------------+--+-------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- podpowiedzi
+--------------------------------------------------------------------------------
+
 --Podpowiedzi dla suwnicy
 tooltipbrewlan0000="produkcja powietrza Przegubowe"
 tooltipbrewlan0001="Włącza lub wyłącza wytwarzanie jednostek powietrznych"
@@ -278,7 +290,7 @@ Unit_Description_BrewLAN_T3L005="Tech 3 amfibii, remont, wychwytywania, regenera
 Unit_Description_BrewLAN_T3L006="Tech 3 amfibii, remont, wychwytywania, regeneracji, a jednostka warstwy kopalni. Jest wyposażony w niewielkim broni, ma sonaru ukrycia, a może zbudować specjalistycznych obronne."
 Unit_Description_BrewLAN_T3L007="Tech 3 amfibii, remont, wychwytywania, regeneracji, a jednostka warstwy kopalni. Jest wyposażony w osobistą tarczą i może budować specjalistycznych obronne."
 
-srb1311_desc="Cloakable moc generatora"
+srb1311_desc="Camouflaged moc generatora"
 seb1311_desc="Energetyka Generator"
 sab1311_desc="Ekranowany Zasilanie Generator"
 ssb1311_desc="Opancerzony moc generatora"
@@ -286,14 +298,14 @@ sab1311_name="Von Mayer Reactor"
 seb1311_name="Bessemer Reactor"
 srb1311_name="Faraday Reactor"
 ssb1311_name="UYA-iyathan"
-Unit_Description_BrewLAN_T3B009="Duża struktura wytwarzania energii. Posiada zdolność do płaszcza, który zużywa dużą część swojej produkcji operacyjnego."
+Unit_Description_BrewLAN_T3B009="Duża struktura wytwarzania energii. Posiada zdolność do kamuflażu, który zużywa dużą część swojej produkcji operacyjnego."
 Unit_Description_BrewLAN_T3B0012="Duża struktura wytwarzania energii. Posiada zdolność do naprawy pobliskich budynków. Automatycznie buduje mechanizmy obronne, gdy uszkodzony."
 Unit_Description_BrewLAN_T3B0014="Duża struktura wytwarzania energii. Posiada potężną tarczę, która pobiera niewielką część swojej produkcji operacyjnego."
 Unit_Description_BrewLAN_T3B0016="Duża struktura wytwarzania energii. Posiada doskonałą zbroję i ma zdolności regeneracyjne SELF."
 
 sab1312_desc="Ekranowane Mass Extractor"
 seb1312_desc="Inżynieria Mass Extractor"
-srb1312_desc="Cloakable Mass Extractor"
+srb1312_desc="Camouflaged Mass Extractor"
 ssb1312_desc="Opancerzony Mass Extractor"
 seb1312_name="Pompa masa 3E"
 Unit_Description_BrewLAN_T3B0021="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Generuje kopułę tarczy wystarczająco duże, aby pokryć siebie i 4 małe magazyny."
@@ -301,18 +313,18 @@ Unit_Description_BrewLAN_T3B0022="High-end wyciąg Mass. Muszą być skonstruowa
 Unit_Description_BrewLAN_T3B0023="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Widoczne tylko dla Omni."
 Unit_Description_BrewLAN_T3B0024="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Posiada lepszą zbroję i ma zdolności regeneracyjne SELF."
 
-srb1313_desc="Cloakable Mass Wykonawca"
+srb1313_desc="Camouflaged Mass Wykonawca"
 seb1313_desc="Inżynieria Mass Wykonawca"
 sab1313_desc="Ekranowane Mass Wykonawca"
 ssb1313_desc="Opancerzony Mass Wykonawca"
-Unit_Description_BrewLAN_T3B0010="Duża struktura produkcja masowa. Posiada zdolność do płaszcza, który zużywa dodatkową energię."
+Unit_Description_BrewLAN_T3B0010="Duża struktura produkcja masowa. Posiada zdolność do kamuflażu, który zużywa dodatkową energię."
 Unit_Description_BrewLAN_T3B0013="Duża struktura produkcja masowa. Posiada zdolność do naprawy pobliskich budynków. Automatycznie buduje mechanizmy obronne, gdy uszkodzony."
 Unit_Description_BrewLAN_T3B0015="Duża struktura produkcja masowa. Posiada potężną tarczę, która zużywa dodatkową energię."
 Unit_Description_BrewLAN_T3B0017="Duża struktura produkcja masowa. Posiada doskonałą zbroję i ma zdolności regeneracyjne SELF."
 
-srb4313_desc="Cloakable Stealth Generator Pole"
+srb4313_desc="Zamaskowany Stealth Generator Pole"
 srb4313_name="Nocny cień"
-Unit_Description_BrewLAN_T3B0011="Generuje pole Stealth i prywatnego płaszcz. Ukrywa jednostek i struktur w jej zasięgu operacyjnym z radaru i sonaru, ale nie z czujników wizualnych, sam generator jest widoczny tylko dla Omni."
+Unit_Description_BrewLAN_T3B0011="Generuje pole maskujące i ma prywatnego kamuflażu. Ukrywa jednostek i struktur w jej zasięgu operacyjnym z radaru i sonaru, ale nie z czujników wizualnych, sam generator jest widoczny tylko dla Omni."
 
 ssb5301_desc="Tarcza Ściana Sekcja"
 ssb5301_name="Athahaas"
@@ -351,14 +363,14 @@ sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Komórka anty-air missile launcher. Wyposażony w zaawansowane urządzenia skanującego."
 --srl0320_desc="Komórka Missile Launcher"
 srl0320_name="Poroniony płód"
-Unit_Description_BrewLAN_T3L009="Komórka maskowanie wyrzutnia rakiet anty-powietrze. Należy zdjąć ukrycie na ogień."
+Unit_Description_BrewLAN_T3L009="Komórka zakamuflowana ziemia-powietrze wyrzutnię rakiet. Musi stać się widoczny do ataku."
 
 seb4303_name="Odrzut"
 Unit_Description_BrewLAN_T3B0028="Stacjonarna siatka artylerii obrony. Wyposażony w zintegrowany system identyfikacji i śledzenia zagrożeniem."
 
-srl0316_desc="Układ Cloakable Komórka Stealth Pole"
+srl0316_desc="Zamaskowany mobilny system Stealth Pole"
 srl0316_name="Operacyjny"
-Unit_Description_BrewLAN_T3L010="Komórka maskowanie Stealth generator. Ukrywa pobliskie jednostki z radaru i sonaru. Widoczne tylko dla Omni."
+Unit_Description_BrewLAN_T3L010="Komórka zakamuflowana generator stealth. Ukrywa pobliskie jednostki z radaru i sonaru. Widoczne tylko dla Omni."
 
 srl0311_desc="Platforma mobilna Rocket"
 srl03ll_name="Hexatron"

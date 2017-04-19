@@ -1,3 +1,15 @@
+--BrewLAN/mods/BrewLAN/hook/loc/IT
+--ISO_639-1_code=IT
+--+------------+--+-------------------------------------------------------------
+--¦▒▒▒▒    ░░░░¦--¦   BrewLAN Italian strings table
+--¦▒▒▒▒    ░░░░¦--¦   Author: Balthassar
+--¦▒▒▒▒    ░░░░¦--¦   Translator: Google
+--+------------+--+-------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- Tooltips
+--------------------------------------------------------------------------------
+
 --Tooltips per il Gantry
 tooltipbrewlan0000="produzione di aria Toggle"
 tooltipbrewlan0001="Abilita o disabilita produzione di unità aeree"
@@ -278,7 +290,7 @@ Unit_Description_BrewLAN_T3L005="Tech 3 anfibia costruzione, riparazione, la cat
 Unit_Description_BrewLAN_T3L006="Tech 3 anfibia costruzione, riparazione, la cattura, la bonifica, e l'unità di mia strato. E 'dotato di armi minori, ha il sonar stealth, e può costruire difese specializzati."
 Unit_Description_BrewLAN_T3L007="Tech 3 anfibia costruzione, riparazione, la cattura, la bonifica, e l'unità di mia strato. E 'dotato di uno scudo personale e può costruire difese specializzati."
 
-srb1311_desc="Power Generator Cloakable"
+srb1311_desc="Power Generator Camouflaged"
 seb1311_desc="Generator Power Engineering"
 sab1311_desc="Generatore di potenza schermati"
 ssb1311_desc="Power Generator blindata"
@@ -286,14 +298,14 @@ sab1311_name="Mayer Reactor Von"
 seb1311_name="reattore Bessemer"
 srb1311_name="reattore Faraday"
 ssb1311_name="Uya-iyathan"
-Unit_Description_BrewLAN_T3B009="Grande struttura di generazione di potenza. Possiede la capacità di mantello che consuma una grande porzione della sua produzione operativa."
+Unit_Description_BrewLAN_T3B009="Grande struttura di generazione di potenza. Possiede la capacità di mimetizzazione, che consuma una grande porzione della sua produzione operativa."
 Unit_Description_BrewLAN_T3B0012="Grande struttura di generazione di potenza. Possiede la capacità di riparare edifici vicini. crea automaticamente le difese in caso di danneggiamento."
 Unit_Description_BrewLAN_T3B0014="Grande struttura di generazione di potenza. Possiede uno scudo potente, che consuma una piccola parte della sua produzione di funzionamento."
 Unit_Description_BrewLAN_T3B0016="Grande struttura di generazione di potenza. Possiede armatura superiore ed ha di sé capacità rigenerative."
 
 sab1312_desc="Schermato Mass Extractor"
 seb1312_desc="Ingegneria Mass Extractor"
-srb1312_desc="Cloakable Mass Extractor"
+srb1312_desc="Camouflaged Mass Extractor"
 ssb1312_desc="Armored Mass Extractor"
 seb1312_name="Mass Pump 3E"
 Unit_Description_BrewLAN_T3B0021="High-end estrattore di massa. Deve essere costruito sui depositi di massa. Esso genera una cupola scudo abbastanza grande da coprire se stessa e 4 piccoli depositi."
@@ -301,18 +313,18 @@ Unit_Description_BrewLAN_T3B0022="High-end estrattore di massa. Deve essere cost
 Unit_Description_BrewLAN_T3B0023="High-end estrattore di massa. Deve essere costruito sui depositi di massa. Visibile solo Omni."
 Unit_Description_BrewLAN_T3B0024="High-end estrattore di massa. Deve essere costruito sui depositi di massa. Esso possiede l'armatura superiore ed ha di sé capacità rigenerative."
 
-srb1313_desc="Cloakable Mass Fabricator"
+srb1313_desc="Camouflaged Mass Fabricator"
 seb1313_desc="Ingegneria Mass Fabricator"
 sab1313_desc="Schermato Mass Fabricator"
 ssb1313_desc="Armored Mass Fabricator"
-Unit_Description_BrewLAN_T3B0010="Grande struttura di fabbricazione di massa. Possiede la capacità di mantello che consuma energia aggiuntiva."
+Unit_Description_BrewLAN_T3B0010="Grande struttura di fabbricazione di massa. Possiede la capacità di mimetizzazione, che consuma potenza aggiuntiva."
 Unit_Description_BrewLAN_T3B0013="Grande struttura di fabbricazione di massa. Possiede la capacità di riparare edifici vicini. crea automaticamente le difese in caso di danneggiamento."
 Unit_Description_BrewLAN_T3B0015="Grande struttura di fabbricazione di massa. Possiede uno scudo potente, che consuma potenza aggiuntiva."
 Unit_Description_BrewLAN_T3B0017="Grande struttura di fabbricazione di massa. Possiede armatura superiore ed ha di sé capacità rigenerative."
 
-srb4313_desc="Cloakable Stealth Campo Generator"
+srb4313_desc="Mimetizzata campo Generatore Stealth"
 srb4313_name="solano"
-Unit_Description_BrewLAN_T3B0011="Genera un campo stealth e un mantello personale. Nasconde unità e le strutture della sua gamma operativa dal radar e sonar, ma non dai sensori visivi, il generatore stesso è visibile solo agli omni."
+Unit_Description_BrewLAN_T3B0011="Genera un campo stealth e ha camuffamento personale. Nasconde unità e le strutture della sua gamma operativa dal radar e sonar, ma non dai sensori visivi, il generatore stesso è visibile solo agli omni."
 
 ssb5301_desc="Scudo Sezione parete"
 ssb5301_name="Athahaas"
@@ -351,14 +363,14 @@ sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Cellulare lanciamissili anti-air. Dotata di apparecchiature di scansione avanzate."
 --srl0320_desc="Cellulare Lanciamissili"
 srl0320_name="sgattaiolare"
-Unit_Description_BrewLAN_T3L009="Cellulare lanciamissili anti-air cloaking. Deve decloak al fuoco."
+Unit_Description_BrewLAN_T3L009="Cellulare mimetizzato lanciamissili terra-aria. Deve diventare visibile agli attacchi."
 
 seb4303_name="Rinculo"
 Unit_Description_BrewLAN_T3B0028="griglia difesa dell'artiglieria stazionario. Dotato di un sistema di identificazione delle minacce e il monitoraggio integrato."
 
-srl0316_desc="Sistema Cloakable mobile Stealth Campo"
+srl0316_desc="Mimetizzata Mobile System Stealth Campo"
 srl0316_name="operativo"
-Unit_Description_BrewLAN_T3L010="Cellulare generatore di furtività di occultamento. Nasconde le unità vicine da radar e sonar. Visibile solo omni."
+Unit_Description_BrewLAN_T3L010="Cellulare mimetizzato generatore stealth. Nasconde le unità vicine da radar e sonar. Visibile solo omni."
 
 srl0311_desc="Piattaforma Rocket Mobile"
 srl03ll_name="Hexatron"

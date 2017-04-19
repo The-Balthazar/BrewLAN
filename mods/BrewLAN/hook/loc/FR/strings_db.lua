@@ -1,3 +1,5 @@
+--BrewLAN/mods/BrewLAN/hook/loc/FR
+--ISO_639-1_code=FR
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒    ░░░░¦--¦   BrewLAN French strings table
 --¦▒▒▒▒    ░░░░¦--¦   Author: Balthassar
@@ -5,7 +7,7 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- Tooltips
+-- infobulles
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
@@ -180,9 +182,9 @@ ssb5210_name="Haas-haas"
 Unit_Description_BrewLAN_T2B001="Bloque les mouvements des unités ennemies. Peut absorber beaucoup de dégâts et se connecte automatiquement aux murs adjacents."
 
 ssl0222_name="Athanne"
-Unit_Description_BrewLAN_T2L004=Unit_Description_0034  --Mobile shield generator
+Unit_Description_BrewLAN_T2L004="Générateur de bouclier mobile."
 
-
+--Ingénierie de navire
 ss0219_desc="Bateau d'ingénierie"
 ses0219_name="Classe Fixxie"
 Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
@@ -260,12 +262,12 @@ sea0002_desc="Centre de contrôle de satellite"
 sea0002_name="Étoile brulante"
 Unit_Description_BrewLAN_T3B002="Centre de contrôle de satellite. Détecteur longue portée omni. Si le Centre de contrôle est détruit le satellite est désactivé."
 
-
+--alternatives Sniper
 sel0320_desc="Véhicule de liaison satellite"
 sel0320_name="Archimède"
-srl0318_name=
+srl0318_name="Aracme"
 Unit_Description_BrewLAN_T3L003="Véhicule de liaison satellite. Marque les cible pour un soutien orbital."
-Unit_Description_BrewLAN_T3L013=
+Unit_Description_BrewLAN_T3L013="spiderbot Mobile. Armé d'une longue portée arme de faisceau EMP."
 
 sel0321_desc="Système de défense anti missile stratégique"
 sel0321_name="Aster"
@@ -357,11 +359,11 @@ sel0322_name="Ella"
 sal0320_desc="Défense anti-aérienne mobile"
 sal0320_name="Armillaire"
 Unit_Description_BrewLAN_T3L012="Système de défense anti-aérien mobile pivotant. Consomme de l'énergie à chaque prise de vue."
-sel0324_name=
-Unit_Description_BrewLAN_T3L015=
+sel0324_name="NG3 Longbow"
+Unit_Description_BrewLAN_T3L015="lance-missiles anti-air mobile. Doté d'un équipement de balayage de pointe."
 --srl0320_desc="Système anti-aérien furtif"
 srl0320_name="Fronde"
-Unit_Description_BrewLAN_T3L009="lance-missiles anti-air mobile invisible. Doit devenir invisible à l'attaque."
+Unit_Description_BrewLAN_T3L009="lanceur de missiles sol-air mobile camouflé. Doit devenir visible à l'attaque."
 
 seb4303_name="Recul"
 Unit_Description_BrewLAN_T3B0028="Grille de défense d'artillerie stationnaire. Équipé d'un système intégré d'identification et de suivi des menaces."
@@ -434,7 +436,7 @@ ssb5401_desc="Portail quantique expérimental"
 ssb5401_name="Chappa'ai"
 Unit_Description_BrewLAN_T4B007="Portail expérimental capable de transporter instantanément les unités vers un autre portail."
 
-srl0000_desc="Œuf de crabe "
+srl0000_desc="Œuf de crabe"
 srl0001_desc=srl0000_desc .. " (Destroyer)"
 srl0002_desc=srl0000_desc .. " (Étincelle)"
 srl0003_desc=srl0000_desc .. " (Furtif)"
