@@ -549,6 +549,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added an auto generated Czech language strings document.
   * Improved the auto generated translations regarding the name of the ability 'cloak'.
 
+  ### 2017-04-20
+
+  * Bubble Tea: Created a death animation for the UEF Experimental Shield.
+  * Bubble Tea: Created a distance model for the UEF Experimental Shield.
+  * Added the icons from Bubble Tea and Caffe Corretto to the brewlan.scd.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
@@ -2175,8 +2181,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Created a script class for the UEF engineering resource generators, so there is less copied code.
     * Script now checks how far away the instigator is, and does nothing if its too far away, then checks the instigator layer instead of its categories when deciding what to build.
-      * Too far away is considered over *3 its visual range.
-      * If the units layer is water it alternates between trying to build a torpedo or point defense, incase it can't reach the water for a torpedo.
+      * Too far away is considered over x3 its visual range.
+      * If the units layer is water it alternates between trying to build a torpedo or point defence, in case it can't reach the water for a torpedo.
   * The Engineering Power Generator now aims with all its arms, instead of just the first.
   * Fixed a long standing bug with the Gantry being able to have its costs reduced, through adjacency, to 0 of any one resource.
   * Increased the physical size of the T1 UEF Shield so it matches the size of the T2, and doesn't look odd when upgrading to it.

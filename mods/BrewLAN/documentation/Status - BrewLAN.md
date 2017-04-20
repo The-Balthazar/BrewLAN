@@ -165,7 +165,7 @@
 
 #### Functional:
 * T3 Torpedo Bomber.
-  * Needs totally remodeling to look like it can go underwater. Because it can.
+  * Needs totally remodelling to look like it can go underwater. Because it can.
 * T3 Mobile Satellite Uplink (UEF Sniper Bot alternative)
 * T3 Observation Satellite Uplink.
 * T3 Observation Satellite.
@@ -228,8 +228,8 @@
 |**Strategic 1**   |*Mavor*        |*Salvation*    |Scathis MK2    |Suthanus       |
 |**Strategic 2**   |Ivan        (F)|`*`            |`*`            |*Yolona Oss*   |
 |                  |               |               |               |               |
-|**Intel**         |Panopticon     | —             |Darkness       | —             |
-|**Transport**     | —             |`Teleporter`   | —             |Quantum Gateway|
+|**Intel**         |Panopticon     | â€”             |Darkness       | â€”             |
+|**Transport**     | â€”             |`Teleporter`   | â€”             |Quantum Gateway|
 |                  |               |               |               |               |
 |**Assault**       |`*`            |*G. Colossus*  |*Mokeylord*    |*Ythotha*      |
 |**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|`Necro bot` (F)|

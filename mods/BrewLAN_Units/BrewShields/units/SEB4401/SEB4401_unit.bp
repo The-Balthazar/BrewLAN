@@ -5,6 +5,11 @@ UnitBlueprint {
             Cue = 'UEB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
+        PanelDestroyed = Sound {
+            Bank = 'UELDestroy',
+            Cue = 'UEL_Destroy_Sml_Land',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
         ShieldOff = Sound {
             Bank = 'UEB',
             Cue = 'UEB4202_Activate',
@@ -79,11 +84,23 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
         },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/seb4401/seb4401_Adeath01.sca',
+                AnimationRateMax = 2.25,
+                AnimationRateMin = 1.75,
+                Weight = 10,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 200,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 600,
                     ShaderName = 'Unit',
                 },
             },
