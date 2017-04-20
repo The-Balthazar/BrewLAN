@@ -555,6 +555,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Bubble Tea: Created a distance model for the UEF Experimental Shield.
   * Added the icons from Bubble Tea and Caffe Corretto to the brewlan.scd.
   * Bubble Tea: Created 3 death animations for the Pillar of Prominence.
+  * Created unique distance models for the Seraphim Engineering Stations.
 
 ## 2016-12-15|0.7.5.5
 

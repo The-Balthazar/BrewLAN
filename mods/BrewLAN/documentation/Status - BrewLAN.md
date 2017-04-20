@@ -144,12 +144,12 @@
   * Unfinished appearance.
 * T3 Mobile stealth Gen.
 * T3 Mobile Rocket Platform.
+* T3 Mobile Radar.
 
 #### Pending:
 * T3 Field Engineering Ship.
 * T3 Mobile torpedo? (Brick?)
 * T3 Mobile tactical missile defense? (Loyalist?)
-* T3 Mobile Radar.
 
 ### UEF:
 #### Finished:
@@ -221,9 +221,9 @@
 |                  |UEF            |Aeon           |Cybran         |Seraphim       |
 |-----------------:|---------------|---------------|---------------|---------------|
 |**Factory**       |Gantry      (F)|I. Engine   (F)|Arthrolab   (F)|`Naval factory`|
-|**Economic**      |`?`            |*Paragon*      |`?`            |`*`            |
+|**Economic**      | —             |*Paragon*      | —             |`*`            |
 |                  |               |               |               |               |
-|**Defence**       |`*`            |`?`            |Iron Curtain   |`?`            |
+|**Defence**       |`*`            | —             |Iron Curtain   | —             |
 |                  |               |               |               |               |
 |**Strategic 1**   |*Mavor*        |*Salvation*    |Scathis MK2    |Suthanus       |
 |**Strategic 2**   |Ivan        (F)|`*`            |`*`            |*Yolona Oss*   |
@@ -545,6 +545,7 @@ T3 Battleship
 * Change the explosion graphics of the T2 power storages to properly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
+  * The commands for altering stance aren't accessible from sim.
 * Armored walls (and probably other walls) need to be repaired slower.
 * New prettier wall script involving a rotator, a slider, and position detection, for diagonals.
 * Tech 1 mobile shield generators? (Ella, Parashield, Umbra)

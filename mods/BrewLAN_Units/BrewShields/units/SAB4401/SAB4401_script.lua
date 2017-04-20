@@ -127,15 +127,15 @@ SAB4401 = Class(AShieldStructureUnit) {
         local pos = self:GetPosition()
         self:PlayUnitSound('Destroyed')
         explosion.CreateFlash( self, 'Ring_1', 4.5, army )
-        if self.PlayDestructionEffects then
-            self:CreateDestructionEffects( self, overkillRatio )
-        end
         for i = 1, 3 do
             DamageArea(self, pos, 10, 1, 'Force', true)
             self:HideBone('Ring_' .. i, false)
             for k, v in EffectTemplate.ExplosionDebrisLrg01 do
                 CreateAttachedEmitter( self, 'Base', army, v )
             end
+        end
+        if self.PlayDestructionEffects then
+            self:CreateDestructionEffects( self, overkillRatio )
         end
         for i, v in self.Manipulators do
             if v[4] then

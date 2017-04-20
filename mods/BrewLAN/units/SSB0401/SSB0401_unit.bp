@@ -296,7 +296,7 @@ UnitBlueprint {
     SizeY = 2,
     SizeZ = 10,
     StrategicIconName = 'icon_experimental_generic',
-    StrategicIconNameEIOOverride = 'icon_experimental_factory_naval',
+    StrategicIconNameEIOOverride = 'icon_experimental_factory_navy',
     StrategicIconSortPriority = 210,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
