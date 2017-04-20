@@ -122,8 +122,10 @@ SEB4401 = Class(TShieldStructureUnit) {
         end
         --Destroy living animations
         for i, v in self.Manipulators do
-            v[4]:Destroy()
-            v[4] = nil
+            if v[4] then
+                v[4]:Destroy()
+                v[4] = nil
+            end
         end
         --Set up for panels crashing into the ground
         self.detector = CreateCollisionDetector(self)

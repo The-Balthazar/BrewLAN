@@ -102,6 +102,26 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
         },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath01.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath02.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath03.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

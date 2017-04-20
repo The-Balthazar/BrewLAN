@@ -4,7 +4,10 @@
 --------------------------------------------------------------------------------
 local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
 local Shield = import('/lua/shield.lua').Shield
-
+--------------------------------------------------------------------------------
+local explosion = import('/lua/defaultexplosions.lua')
+local EffectTemplate = import('/lua/EffectTemplates.lua')
+--------------------------------------------------------------------------------
 SAB4401 = Class(AShieldStructureUnit) {
 
     ShieldEffects = {
@@ -36,11 +39,9 @@ SAB4401 = Class(AShieldStructureUnit) {
                 self.Trash:Add(v[4])
             end
         end
-
         for i, v in self.Manipulators do
             v[4]:SetTargetSpeed(v[3])
         end
-
         for k, v in self.ShieldEffects do
             table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(1.17) )
         end
@@ -119,6 +120,36 @@ SAB4401 = Class(AShieldStructureUnit) {
             end
             self.ShieldEffectsBag = {}
         end
+    end,
+
+    DeathThread = function(self, overkillRatio, instigator)
+        local army = self:GetArmy()
+        local pos = self:GetPosition()
+        self:PlayUnitSound('Destroyed')
+        explosion.CreateFlash( self, 'Ring_1', 4.5, army )
+        if self.PlayDestructionEffects then
+            self:CreateDestructionEffects( self, overkillRatio )
+        end
+        for i = 1, 3 do
+            DamageArea(self, pos, 10, 1, 'Force', true)
+            self:HideBone('Ring_' .. i, false)
+            for k, v in EffectTemplate.ExplosionDebrisLrg01 do
+                CreateAttachedEmitter( self, 'Base', army, v )
+            end
+        end
+        for i, v in self.Manipulators do
+            if v[4] then
+                v[4]:Destroy()
+                v[4] = nil
+            end
+        end
+        if overkillRatio <= 1.0 and self.DeathAnimManip then
+            WaitFor(self.DeathAnimManip)
+        end
+        self:PlayUnitSound('Destroyed')
+        explosion.CreateFlash( self, 'Ring_1', 4.5, army )
+        self:CreateWreckage(overkillRatio)
+        self:Destroy()
     end,
 }
 
