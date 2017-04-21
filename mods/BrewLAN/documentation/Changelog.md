@@ -557,6 +557,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Bubble Tea: Created 3 death animations for the Pillar of Prominence.
   * Created unique distance models for the Seraphim Engineering Stations.
 
+  ### 2017-04-21
+
+  * Bubble Tea: Created two additional variants of the UEF Experimental Shield explosion.
+  * Created a death animation for the Anti-Artillery shield.
+  * Created a death animation for the Seraphim T1 Light Air Staging.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

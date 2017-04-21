@@ -91,6 +91,18 @@ UnitBlueprint {
                 AnimationRateMin = 1.75,
                 Weight = 10,
             },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/seb4401/seb4401_Adeath02.sca',
+                AnimationRateMax = 2.25,
+                AnimationRateMin = 1.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/seb4401/seb4401_Adeath03.sca',
+                AnimationRateMax = 2.25,
+                AnimationRateMin = 1.75,
+                Weight = 10,
+            },
         },
         Mesh = {
             IconFadeInZoom = 130,

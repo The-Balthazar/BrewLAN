@@ -49,7 +49,7 @@ UnitBlueprint {
         RegenRate = 0,
         Shield = {
             AntiArtilleryShield = true,
-            ImpactEffects = 'UEFAntiArtilleryShieldHit01',         
+            ImpactEffects = 'UEFAntiArtilleryShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
             Mesh = '/mods/brewlan/effects/entities/SEB4303AntiArtilleryShield01/SEB4303AntiArtilleryShield01_mesh',
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
@@ -70,13 +70,21 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_artillerydef>Artillery Defense',
         },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan/units/seb4303/seb4303_Adeath01.sca',
+                AnimationRateMax = 2.25,
+                AnimationRateMin = 1.75,
+                Weight = 10,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
-                    
+
                 },
                 {
                     LODCutoff = 400,
