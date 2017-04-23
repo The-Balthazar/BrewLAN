@@ -5,7 +5,7 @@
 #**
 #**  Summary  :  UEF Heavy Torpedo Launcher Script
 #**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright ï¿½ 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
@@ -18,19 +18,19 @@ SEB2308 = Class(TStructureUnit) {
     Weapons = {
          Torpedo = Class(TANTorpedoAngler) {
        },
-    },     
-    
-    HideLandBones = function(self)  
-        TStructureUnit.HideLandBones(self)     
+    },
+
+    HideLandBones = function(self)
+        --TStructureUnit.HideLandBones(self)
         local pos = self:GetPosition()
-        if pos[2] != 17.5 then
+        if pos[2] == GetTerrainHeight(pos[1],pos[3]) then
             for k, v in self.LandBuiltHiddenBones do
                 if self:IsValidBone(v) then
                     self:HideBone(v, true)
                 end
             end
         end
-        LOG(pos[2])
+        --LOG(pos[2])
     end,
 }
 

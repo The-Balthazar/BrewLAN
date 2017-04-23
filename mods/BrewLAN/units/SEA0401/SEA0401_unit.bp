@@ -177,6 +177,9 @@ UnitBlueprint {
                 {
                     LODCutoff = 750,
                     ShaderName = 'Unit',
+                    AlbedoName = 'sea0401_lod1_albedo.dds',
+                    SpecularName = 'sea0401_lod1_specteam.dds',
+                    NormalsName = 'sea0401_lod1_normalsts.dds',
                 },
             },
         },
@@ -734,7 +737,7 @@ UnitBlueprint {
             WeaponCategory = 'Anti Air',
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,
-        },      
+        },
         {
             Label = 'RearASFBeam',
             AlwaysRecheckTarget = true,
@@ -746,7 +749,7 @@ UnitBlueprint {
                 },
             },
             BallisticArc = 'RULEUBA_None',
-            CannotAttackGround = true,       
+            CannotAttackGround = true,
             BeamCollisionDelay = 0.1,
             BeamLifetime = 0.2,
             CollideFriendly = false,
@@ -770,7 +773,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 0,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            PrefersPrimaryWeaponTarget = false,    
+            PrefersPrimaryWeaponTarget = false,
             --NeedPrep = true,
             RackBones = {
                 {
@@ -814,8 +817,8 @@ UnitBlueprint {
             WeaponCategory = 'Anti Air',
             WeaponRepackTimeout = 1,
             WeaponUnpacks = false,
-        },   
-        {         
+        },
+        {
             AutoInitiateAttackCommand = true,
             AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = false,
@@ -833,7 +836,7 @@ UnitBlueprint {
             DisplayName = 'Gatling Plasma Cannon',
             EnergyDrainPerSecond = 0,
             EnergyRequired = 0,
-            FireTargetLayerCapsTable = {  
+            FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Seabed',
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
@@ -847,7 +850,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.3,
             MuzzleSalvoSize = 15,
             MuzzleVelocity = 25,
-            NoPause = true,      
+            NoPause = true,
             PrefersPrimaryWeaponTarget = false,
             ProjectileId = '/projectiles/TDFPlasma02/TDFPlasma02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.15,

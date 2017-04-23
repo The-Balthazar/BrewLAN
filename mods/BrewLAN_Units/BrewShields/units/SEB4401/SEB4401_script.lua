@@ -5,10 +5,13 @@
 --------------------------------------------------------------------------------
 local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 --------------------------------------------------------------------------------
+local utilities = import('/lua/Utilities.lua')
+local GetRandomFloat = utilities.GetRandomFloat
+--------------------------------------------------------------------------------
 local explosion = import('/lua/defaultexplosions.lua')
 local CreateDeathExplosion = explosion.CreateDefaultHitExplosionAtBone
-local utilities = import('/lua/Utilities.lua')
 local EffectTemplate = import('/lua/EffectTemplates.lua')
+local ScorchSplatTextures = import('/lua/defaultexplosions.lua').ScorchSplatTextures
 --------------------------------------------------------------------------------
 SEB4401 = Class(TShieldStructureUnit) {
 
@@ -65,16 +68,13 @@ SEB4401 = Class(TShieldStructureUnit) {
         for k, vBone in bones do
             position = self:GetPosition(vBone)
             offset = utilities.GetDifferenceVector( position, basePosition )
-            velocity = utilities.GetDirectionVector( position, basePosition ) #
-            velocity.x = velocity.x + utilities.GetRandomFloat(-0.3, 0.3)
-            velocity.z = velocity.z + utilities.GetRandomFloat(-0.3, 0.3)
-            velocity.y = velocity.y + utilities.GetRandomFloat( 0.0, 0.3)
+            velocity = utilities.GetDirectionVector( position, basePosition )
+            velocity.x = velocity.x + GetRandomFloat(-0.3, 0.3)
+            velocity.z = velocity.z + GetRandomFloat(-0.3, 0.3)
+            velocity.y = velocity.y + GetRandomFloat( 0.0, 0.3)
             proj = self:CreateProjectile('/effects/entities/DestructionFirePlume01/DestructionFirePlume01_proj.bp', offset.x, offset.y + yBoneOffset, offset.z, velocity.x, velocity.y, velocity.z)
-            proj:SetBallisticAcceleration(utilities.GetRandomFloat(-1, -2)):SetVelocity(utilities.GetRandomFloat(3, 4)):SetCollision(false)
-
+            proj:SetBallisticAcceleration(GetRandomFloat(-1, -2)):SetVelocity(GetRandomFloat(3, 4)):SetCollision(false)
             local emitter = CreateEmitterOnEntity(proj, army, '/effects/emitters/destruction_explosion_fire_plume_02_emit.bp')
-
-            local lifetime = utilities.GetRandomFloat( 12, 22 )
         end
     end,
 
@@ -85,13 +85,18 @@ SEB4401 = Class(TShieldStructureUnit) {
     PanelExplosion = function(self, bone, pos)
         local tablei = table.find(self.panels, bone)
         if tablei then
+            local radius = 2
+            if pos then
+                --If we already have pos, then we just hit ground.
+                CreateSplat(pos,GetRandomFloat(0,2*math.pi),ScorchSplatTextures[math.random(1,table.getn(ScorchSplatTextures))], radius, radius, GetRandomFloat(200,350), GetRandomFloat(300,600), self:GetArmy() )
+            end
             if not pos then
                 pos = self:GetPosition(bone)
             end
             explosion.CreateDefaultHitExplosionAtBone( self, bone, 1.0 )
             explosion.CreateDebrisProjectiles(self, explosion.GetAverageBoundingXYZRadius(self), {self:GetUnitSizes()})
             self:PlayUnitSound('PanelDestroyed')
-            DamageArea(self, pos, 2, 50, 'Default', true, false)
+            DamageArea(self, pos, radius, 50, 'Default', true, false)
             self:HideBone(bone,true)
             self.panels[tablei] = nil
         end
@@ -154,6 +159,7 @@ SEB4401 = Class(TShieldStructureUnit) {
         --Final explosion to wreckage
         self:PlayUnitSound('Destroyed')
         explosion.CreateFlash( self, 'Tower_002', 4.5, army )
+        CreateSplat(pos,GetRandomFloat(0,2*math.pi),ScorchSplatTextures[math.random(1,table.getn(ScorchSplatTextures))], 15, 15, GetRandomFloat(200,350), GetRandomFloat(300,600), self:GetArmy() )
         self:CreateWreckage(0.1)
         self:Destroy()
     end,

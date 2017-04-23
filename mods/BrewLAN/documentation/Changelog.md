@@ -563,6 +563,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Created a death animation for the Anti-Artillery shield.
   * Created a death animation for the Seraphim T1 Light Air Staging.
 
+  ### 2017-04-22
+
+  * Bubble Tea: UEF Shield now creates decal splats when panels hit the ground and when it finally explodes.
+  * Bubble Tea: Corrected the texture and uv mapping of the UEF Shield.
+  * Fixed the long standing but meaningless bug with the UEF T3 torpedo tower's floatation appearing at inappropriate times.
+  * Fixed the texture reference on the Centurion distance model.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

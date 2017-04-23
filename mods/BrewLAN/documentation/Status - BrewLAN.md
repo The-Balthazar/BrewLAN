@@ -162,6 +162,7 @@
 * T3 Field Engineering Ship.
 * T3 Anti-Artillery Shield.
 * T3 Mobile AA & Radar.
+* T3 Torpedo launcher.
 
 #### Functional:
 * T3 Torpedo Bomber.
@@ -178,9 +179,6 @@
     * T3 Engineering Power Generator.
     * T3 Engineering Mass Fabricator (lacks a unique model, aims from nothing).
     * T3 Engineering Mass Extractor (lacks a unique model, aims from nothing).
-* Barely noticeable:
-  * T3 Torpedo launcher.
-    * On the rare times that its on the water surface, and if sea level isn't 17.5 (some custom maps), the floatation doesn't appear.
 
 #### Pending:
 * T3 Engineering Station (3)
