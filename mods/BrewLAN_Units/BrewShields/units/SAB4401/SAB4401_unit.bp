@@ -1,7 +1,7 @@
 UnitBlueprint {
     AI = {
-        GuardScanRadius = 70,
-        StagingPlatformScanRadius = 70,
+        GuardScanRadius = 35,
+        StagingPlatformScanRadius = 35,
     },
     Audio = {
         Destroyed = Sound {
@@ -72,7 +72,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 7.9,
             ShieldVerticalOffset = 0,
-            ShieldProjectionRadius = 70,
+            ShieldProjectionRadius = 35,
             ShieldTargetBeam = '/effects/emitters/collossus_tractor_beam_01_emit.bp',
         },
         TargetShield = {
@@ -117,6 +117,36 @@ UnitBlueprint {
             },
             {
                 Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath03.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath04.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath05.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath06.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath07.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath08.sca',
                 AnimationRateMax = 3.25,
                 AnimationRateMin = 2.75,
                 Weight = 10,

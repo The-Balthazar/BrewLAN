@@ -570,6 +570,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the long standing but meaningless bug with the UEF T3 torpedo tower's floatation appearing at inappropriate times.
   * Fixed the texture reference on the Centurion distance model.
 
+  ### 2017-04-23
+
+  * Bubble Tea: Created 4 extra dying aniation variants for the Pillar of Prominence.
+  * Bubble Tea: Halved the radius of the Pillar of Prominence to what it should be. A mix-up with radius vs diameter that I never questioned.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
