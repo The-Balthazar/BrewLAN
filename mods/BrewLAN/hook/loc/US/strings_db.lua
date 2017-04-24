@@ -124,6 +124,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 amphibious construction, repair, capture
 
 ss0119_desc="Field Engineering Boat"
 ses0119_name="Mendy Class"
+srs0119_name="Franklin Class"
 Unit_Description_BrewLAN_T1S001="Tech 1 construction, repair, capture, reclamation, and mine layer unit."
 
 --------------------------------------------------------------------------------
@@ -187,7 +188,9 @@ Unit_Description_BrewLAN_T2L004="Mobile shield generator."
 --Field Engineering Ship
 ss0219_desc="Field Engineering Ship"
 ses0219_name="Fixxie Class"
+srs0219_name="Barwick Class"
 Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclamation unit. Equipped with a single AA weapon."
+Unit_Description_BrewLAN_T2S002="Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
 
 sea0201_desc="Recon Plane"
 sea0201_name="UX Dragonlady"
@@ -378,7 +381,9 @@ Unit_Description_BrewLAN_T3L011="Mobile multiple rocket launcher. Long reload ti
 
 ss0319_desc="Field Engineering Ship"
 ses0319_name="Patch Class"
+srs0319_name="Stillson Class"
 Unit_Description_BrewLAN_T3S002="Tech 3 naval construction, repair, capture and reclamation unit. Equipped with a torpedo bay, anti-torpedo defense, and a single AA weapon."
+Unit_Description_BrewLAN_T3S003="Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
 
 sl0323_desc="Mobile Tactical Missile Defense"
 sal0323_name="Rupture"

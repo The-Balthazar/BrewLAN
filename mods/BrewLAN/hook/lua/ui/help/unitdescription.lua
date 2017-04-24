@@ -32,6 +32,9 @@ Description['sal0119'] = "<LOC Unit_Description_BrewLAN_T1L003>Tech 1 amphibious
 
 --Tech 1 naval units
 Description['ses0119'] = "<LOC Unit_Description_BrewLAN_T1S001>Tech 1 construction, repair, capture, reclamation, and mine layer unit."
+Description['srs0119'] = "<LOC Unit_Description_BrewLAN_T1S001>Tech 1 construction, repair, capture, reclamation, and mine layer unit."
+Description['sas0119'] = "<LOC Unit_Description_BrewLAN_T1S001>Tech 1 construction, repair, capture, reclamation, and mine layer unit."
+Description['sss0119'] = "<LOC Unit_Description_BrewLAN_T1S001>Tech 1 construction, repair, capture, reclamation, and mine layer unit."
 
 --Tech 2 buildings
 Description['sab5210'] = "<LOC Unit_Description_BrewLAN_T2B001>Restricts movement of enemy units and can sustain many damage. Connects to other adjacent heavy wall sections."
@@ -88,7 +91,10 @@ Description['ssa0201'] = "<LOC Unit_Description_BrewLAN_T2A002>Tactical reconnai
 Description['sra0201'] = "<LOC Unit_Description_BrewLAN_T2A003>Tactical counter-intelligence and reconnaissance aircraft. Equipped with a stealth field generator."
 
 --Tech 2 naval units
-Description['ses0219'] = "<LOC Unit_Description_BrewLAN_T2S001>Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
+Description['sas0219'] = "<LOC Unit_Description_BrewLAN_T2S001>Tech 2 naval construction, repair, capture and reclaimation unit. Equipped with a single AA weapon."
+Description['ses0219'] = "<LOC Unit_Description_BrewLAN_T2S002>Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
+Description['srs0219'] = "<LOC Unit_Description_BrewLAN_T2S002>Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
+Description['sss0219'] = "<LOC Unit_Description_BrewLAN_T2S002>Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
 
 --Tech 3 aircraft
 Description['ssa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
@@ -166,6 +172,9 @@ Description['seb4303'] = "<LOC Unit_Description_BrewLAN_T3B0028>Stationary artil
 --Tech 3 Naval units
 Description['sss0305'] = "<LOC Unit_Description_BrewLAN_T3S001>Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
 Description['ses0319'] = "<LOC Unit_Description_BrewLAN_T3S002>Tech 3 naval construction, repair, capture and reclaimation unit. Equipped with a torpedo bay, anti-torpedo defense, and a single AA weapon."
+Description['sas0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
+Description['srs0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
+Description['sss0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
 
 --Experimentals
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."

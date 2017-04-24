@@ -572,9 +572,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2017-04-23
 
-  * Bubble Tea: Created 4 extra dying aniation variants for the Pillar of Prominence.
+  * Bubble Tea: Created 4 extra dying animation variants for the Pillar of Prominence.
   * Bubble Tea: Halved the radius of the Pillar of Prominence to what it should be. A mix-up with radius vs diameter that I never questioned.
   * Moved the field engineering ship assist AI thread to the field engineers lua file, and referenced it.
+
+  ### 2017-04-24
+
+  * Gave the UEF T1 field engineering boat a build speed.
+    * HOW DID NO ONE NOTICE THIS.
+  * Added a Cybran T1 field engineering boat.
+  * Created string entries for Cybran T1-3 field engineering vessels.
 
 ## 2016-12-15|0.7.5.5
 
