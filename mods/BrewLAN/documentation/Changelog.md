@@ -574,6 +574,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Bubble Tea: Created 4 extra dying aniation variants for the Pillar of Prominence.
   * Bubble Tea: Halved the radius of the Pillar of Prominence to what it should be. A mix-up with radius vs diameter that I never questioned.
+  * Moved the field engineering ship assist AI thread to the field engineers lua file, and referenced it.
 
 ## 2016-12-15|0.7.5.5
 
