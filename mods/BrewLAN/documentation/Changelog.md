@@ -583,6 +583,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added a Cybran T1 field engineering boat.
   * Created string entries for Cybran T1-3 field engineering vessels.
 
+  ### 2017-04-25
+
+  * Bubble Tea: Fixed death animation breaking when it dies before it finishes construction.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

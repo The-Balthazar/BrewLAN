@@ -126,10 +126,12 @@ SEB4401 = Class(TShieldStructureUnit) {
             end
         end
         --Destroy living animations
-        for i, v in self.Manipulators do
-            if v[4] then
-                v[4]:Destroy()
-                v[4] = nil
+        if self.Manipulators then
+            for i, v in self.Manipulators do
+                if v[4] then
+                    v[4]:Destroy()
+                    v[4] = nil
+                end
             end
         end
         --Set up for panels crashing into the ground
