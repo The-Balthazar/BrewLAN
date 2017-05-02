@@ -134,6 +134,8 @@ Description['sel0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical m
 Description['srl0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
 Description['sel0324'] = "<LOC Unit_Description_BrewLAN_T3L015>Mobile anti-air missile launcher. Equipped with advanced scanning equipment."
 Description['srl0324'] = "<LOC Unit_Description_BrewLAN_T3L016>High-end mobile intelligense system. While stationary it is visible only to omni, and provides extensive radar and omni coverage."
+Description['sel0325'] = "<LOC Unit_Description_BrewLAN_T3L017>Mobile anti-naval vehicle."
+Description['sal0325'] = "<LOC Unit_Description_BrewLAN_T3L018>Mobile hovering anti-naval vehicle."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."

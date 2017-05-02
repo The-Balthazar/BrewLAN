@@ -48,6 +48,10 @@ function GetTerrainSlopeAngles(pos, box)
     return Angles
 end
 
+function UniformScaleMultiplier(unit)
+    return 1 / (unit:GetBlueprint().Display.UniformScale or 1)
+end
+
 function GetTerrainSlopeAnglesDegrees(pos, box)
     local Angles = GetTerrainSlopeAngles(pos, box)
     for i, v in Angles do
@@ -57,14 +61,23 @@ function GetTerrainSlopeAnglesDegrees(pos, box)
 end
 
 function GetBoneTerrainOffset(unit, bone)
-    local pos = 1 pos = unit:GetPosition(bone)
+    local pos = unit:GetPosition(bone)
     return GetTerrainHeight(pos[1],pos[3]) - pos[2]
 end
 
+function GetBoneSurfaceOffset(unit, bone)
+    local pos = unit:GetPosition(bone)
+    return GetSurfaceHeight(pos[1],pos[3]) - pos[2]
+end
+--Aligns to seabed or land
 function OffsetBoneToTerrain(unit, bone)
-    local bp = unit:GetBlueprint()
-    local sizemult = 1 / bp.Display.UniformScale
     if not unit.TerrainSlope then unit.TerrainSlope = {} end
     --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
-    unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, 0, GetBoneTerrainOffset(unit, bone) * sizemult, 1000)
+    unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, 0, GetBoneTerrainOffset(unit, bone) * UniformScaleMultiplier(unit), 1000)
+end
+
+--Aligns to water surface or land
+function OffsetBoneToSurface(unit, bone)
+    if not unit.TerrainSlope then unit.TerrainSlope = {} end
+    unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, GetBoneSurfaceOffset(unit, bone) * UniformScaleMultiplier(unit), 0, 1000)
 end
