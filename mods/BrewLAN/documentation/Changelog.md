@@ -587,6 +587,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Bubble Tea: Fixed death animation breaking when it dies before it finishes construction.
 
+  ### 2017-05-02
+
+  * Created a better model for the Seraphim Experimental Naval Factory.
+
+  ### 2017-05-04
+
+  * Fixed the icon of the beguiler after breaking it whilst changing its unit code.
+  * Independence Engine now uses the distance textures provided.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

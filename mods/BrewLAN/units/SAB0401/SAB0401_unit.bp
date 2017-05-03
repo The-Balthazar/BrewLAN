@@ -188,10 +188,16 @@ UnitBlueprint {
                 {
                     LODCutoff = 1000,
                     ShaderName = 'Aeon',
+                    AlbedoName = 'sab0401_lod1_albedo.dds',
+                    NormalsName = 'sab0401_lod1_normalsTS.dds',
+                    SpecularName = 'sab0401_lod1_specteam.dds',
                 },
                 {
                     LODCutoff = 2000,
                     ShaderName = 'Aeon',
+                    AlbedoName = 'sab0401_lod2_albedo.dds',
+                    NormalsName = 'sab0401_lod2_normalsTS.dds',
+                    SpecularName = 'sab0401_lod2_specteam.dds',
                 },
                 {
                     LODCutoff = 4000,
@@ -322,83 +328,25 @@ UnitBlueprint {
         },
         RaisedPlatforms = {
             -- Platform 1
+            -- x    z    height
             -- TopLeft Offset From Center
-            -14,
-            -- x
-            -14,
-            -- z
-            1.5,
-            -- height
+            -14, -14, 1.5,
             -- TopRight Offset From Center
-            14,
-            -- x
-            -14,
-            -- z
-            1.5,
-            -- height
+            14, -14, 1.5,
             -- BottomLeft Offset From Center
-            -14,
-            -- x
-            14,
-            -- z
-            1.5,
-            -- height
+            -14, 14, 1.5,
             -- BottomRight Offset From Center
-            14,
-            -- x
-            14,
-            -- z
-            1.5,
+            14, 14, 1.5,
         },
         RollOffPoints = {
-            {
-                UnitSpin = 0,
-                X = 0,
-                Y = 0,
-                Z = 8,
-            },
-            {
-                UnitSpin = 45,
-                X = 5.66,
-                Y = 0,
-                Z = 5.66,
-            },
-            {
-                UnitSpin = 90,
-                X = 8,
-                Y = 0,
-                Z = 0,
-            },
-            {
-                UnitSpin = 135,
-                X = 5.66,
-                Y = 0,
-                Z = -5.66,
-            },
-            {
-                UnitSpin = 180,
-                X = 0,
-                Y = 0,
-                Z = -8,
-            },
-            {
-                UnitSpin = 225,
-                X = -5.66,
-                Y = 0,
-                Z = -5.66,
-            },
-            {
-                UnitSpin = 270,
-                X = -8,
-                Y = 0,
-                Z = 0,
-            },
-            {
-                UnitSpin = 315,
-                X = -5.66,
-                Y = 0,
-                Z = 5.66,
-            },
+            {UnitSpin = 0,   X = 0,     Y = 0, Z = 8},
+            {UnitSpin = 45,  X = 5.66,  Y = 0, Z = 5.66},
+            {UnitSpin = 90,  X = 8,     Y = 0, Z = 0},
+            {UnitSpin = 135, X = 5.66,  Y = 0, Z = -5.66},
+            {UnitSpin = 180, X = 0,     Y = 0, Z = -8},
+            {UnitSpin = 225, X = -5.66, Y = 0, Z = -5.66},
+            {UnitSpin = 270, X = -8,    Y = 0, Z = 0},
+            {UnitSpin = 315, X = -5.66, Y = 0, Z = 5.66},
         },
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,

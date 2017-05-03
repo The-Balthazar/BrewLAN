@@ -270,11 +270,24 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         MaxSteerForce = 0,
-        MeshExtentsX = 10,
-        MeshExtentsY = 10,
+        MeshExtentsX = 14,
+        MeshExtentsY = 14,
         MeshExtentsZ = 3,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
+        --The raised platform is on the surface of the water, not the seabed.
+        --[[RaisedPlatforms = {
+            -- Platform 1
+            -- x    z    height
+            -- TopLeft Offset From Center
+            -13, -13, 1.5,
+            -- TopRight Offset From Center
+            13, -13, 1.5,
+            -- BottomLeft Offset From Center
+            -13, 13, 1.5,
+            -- BottomRight Offset From Center
+            13, 13, 1.5,
+        },]]--
         RollOffPoints = {
             {UnitSpin = 0,   X = 0,     Y = 0, Z = 8},
             {UnitSpin = 45,  X = 5.66,  Y = 0, Z = 5.66},
@@ -296,8 +309,8 @@ UnitBlueprint {
     SelectionSizeX = 8,
     SelectionSizeZ = 8,
     SelectionThickness = 0.11,
-    SizeX = 10,
-    SizeY = 10,
+    SizeX = 14,
+    SizeY = 14,
     SizeZ = 3,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconNameEIOOverride = 'icon_experimental_factory_navy',
