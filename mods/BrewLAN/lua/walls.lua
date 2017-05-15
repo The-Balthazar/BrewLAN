@@ -158,7 +158,9 @@ function GateWallUnit(SuperClass)
         end,
 
         ToggleGate = function(self, order)
-            local depth = self:GetBlueprint().Display.GateOpenHeight or 40
+            local bp = self:GetBlueprint()
+            local depth = bp.Display.GateOpenHeight or 40
+            local scale = bp.Display.UniformScale or 1
             if order == 'open' then
                 self.Slider:SetGoal(0, depth, 0)
                 self.Slider:SetSpeed(200)
@@ -166,6 +168,7 @@ function GateWallUnit(SuperClass)
                    self.blocker:Destroy()
                    self.blocker = nil
                 end
+                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, (bp.CollisionOffsetY or 0) - depth, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY, bp.SizeZ)
             end
             if order == 'close' then
                 self.Slider:SetGoal(0, 0, 0)
@@ -175,6 +178,7 @@ function GateWallUnit(SuperClass)
                    self.blocker = CreateUnitHPR('ZZZ5301',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
                    self.Trash:Add(self.blocker)
                 end
+                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY, bp.SizeZ)
             end
         end,
 

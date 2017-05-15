@@ -596,6 +596,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the icon of the beguiler after breaking it whilst changing its unit code.
   * Independence Engine now uses the distance textures provided.
 
+  ### 2017-05-13
+
+  * Crate Drop: Added a new hat.
+
+  ### 2017-05-15
+
+  * Fixed gates blocking projectiles whilst closed.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

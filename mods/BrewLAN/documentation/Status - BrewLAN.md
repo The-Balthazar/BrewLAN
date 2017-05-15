@@ -218,7 +218,7 @@
 ## Experimentals:
 |                  |UEF            |Aeon           |Cybran         |Seraphim       |
 |-----------------:|---------------|---------------|---------------|---------------|
-|**Factory**       |Gantry      (F)|I. Engine   (F)|Arthrolab   (F)|`Naval factory`|
+|**Factory**       |Gantry      (F)|I. Engine   (F)|Arthrolab   (F)|Souiya      (F)|
 |**Economic**      | —             |*Paragon*      | —             |`*`            |
 |                  |               |               |               |               |
 |**Defence**       |`*`            | —             |Iron Curtain   | —             |
@@ -251,7 +251,7 @@
 | * |Buildable, but only partially functioning
 
 ### UEF
-Experimental Assault Bot/tank (***)
+Experimental Assault Bot/tank ( *** )
   * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
     * Possibly a two part splitting bot. Cain and Abel or something cool.
 
@@ -299,20 +299,14 @@ Chappa'ai: Totally-not-a-stargate Experimental Quantum Gatewy
     * Do a slight rework so that rather than instantly teleporting units that go near it, it tracks them until they have passed the center of it.
     * Allow projectiles to warp through.
 
-Experimental Mine? (***)
+Experimental Mine? ( *** )
   * To be an experimental for the field engie.
   * Possibile functions:
     * Releasing a residual energy signature.
     * Self replicating mines.
     * Damage over time effect.
 
-Experimental Shield projection facility. (***)
-  * Something between a shield gen and the eye of something or other in appearance.
-  * To create individual shields around each unit within the radius, probably with a ghost unit attached.
-    * Shields should share an overall health, and need some way to scale with the unit it surrounds.
-  * Multiple towers could cause some problems, but shields will likely take damage at the same time on a unit, due to being the same size.
-
-Iyadesu: Experimental Reconstruction Engineer (*)
+Iyadesu: Experimental Reconstruction Engineer ( * )
 *  Formerly Experimental Engineer (Prior to r205)
 *  Formerly Experimental Field Engineer (As of r205, removed as 2014-08-08)
 *  Formerly Experimental Resurrection Unit (Prior to 2016-08-17)
@@ -323,12 +317,18 @@ Iyadesu: Experimental Reconstruction Engineer (*)
   * Gets storage drones for the recipes.
   * Loses its recipes if it loses its drones.
   * Drones help to build.
-  * Uses a temporary model of the T3 artillery.
+  * Uses a temporary model of the T3 mobile artillery.
 
 Suthanus: Experimental Rapid-Fire Artillery
   * Fully functioning.
   * Possibly the cause of weird crashes.
   * Needs a new name for dupe name reasons.
+
+Souiya: Experimental Naval Factory
+* Lacks unique model.
+* Without other mods it has no experimentals it can build.
+* May push it by giving it the ability to make amphibious units, and to protect subs it makes by making them underwater.
+* Doesn't appear on idle factory tab.
 
 ### Aeon
 Absolution: Experimental Siege Tank
@@ -336,15 +336,12 @@ Absolution: Experimental Siege Tank
   * Has its big cannon and two TMD's.
   * Totally isn't an eldar grav tank. Nope nope nope.
 
-Independance Engine: Experimental Air Factory
-* Huge and mostly finished.
-* Unfinished features:
-  * Lacks any tech-steal capabilities of the UEF Gantry.
-  * Lacks dirt-fall particle effects when platform rises from the ground.
-  * AI control lacks any nuance; it just makes CZARs.
+Independence Engine: Experimental Air Factory
+* Scary AF under AIx control.
+* Doesn't appear on idle factory tab.
 
 ### Cybran
-Abbysal Persecutor: Experimental Battleship (**)
+Abbysal Persecutor: Experimental Battleship ( ** )
   * Initial ideas:
     * a cross between the Sea Shadow and a Houbei class missile boat.
     * Stealth, and tac missiles.

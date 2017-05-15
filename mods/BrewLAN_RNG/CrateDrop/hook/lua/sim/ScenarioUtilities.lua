@@ -33,7 +33,7 @@ do
         crate:SetVizToEnemies('Intel')
         while true do
             WaitTicks(2)
-            local search = {} 
+            local search = {}
             for index, brain in ArmyBrains do
                 for i, unit in import('/lua/ai/aiutilities.lua').GetOwnUnitsAroundPoint(brain, categories.SELECTABLE, crate:GetPosition(), 1) do
                     if unit:GetCurrentLayer() == "Land" then
@@ -53,19 +53,19 @@ do
                 flash = CreateEmitterAtEntity(crate, UnitArmy, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(4)
                 WaitTicks(5)
                 flash:Destroy()
-            end     
-        end 
+            end
+        end
     end
-         
-    local Buff = import('/lua/sim/Buff.lua')   
+
+    local Buff = import('/lua/sim/Buff.lua')
     --local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
     local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
-    
+
     local lewt = {
         -- Free stuff.
         {
             --------------------------------------------------------------------
-            --5000 mass                                                         
+            --5000 mass
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Dat mass")
@@ -73,22 +73,22 @@ do
                 local mass = aiBrain:GetEconomyStored('MASS')
                 local ratio = aiBrain:GetEconomyStoredRatio('MASS')
                 local storagespace = (mass * (1/ratio) ) - mass
-                if storagespace > 5000 then 
+                if storagespace > 5000 then
                     if math.random(1,10) == 10 then
                         LOG("JACKPOT")
                         aiBrain:GiveResource('Mass', storagespace )
                         PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
-                    else      
+                    else
                         aiBrain:GiveResource('Mass', math.max(5000, storagespace/10) )
-                    end   
+                    end
                     notificationPingis(pos, 'Mass', '<LOC tooltipui0245>Mass Collected' )
-                else  
+                else
                     WARN("Rolled for mass, but storage space is low. Rolling again.")
                     PhatLewt(Unit, pos)
                 end
-            end,                                                                 
+            end,
             --------------------------------------------------------------------
-            --Clone at current health                                           
+            --Clone at current health
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Clone")
@@ -105,9 +105,9 @@ do
                 else
                     notificationPingis(pos, 'Clone', '<LOC tooltips_0000>Give Units' )
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Random buildable unit                                             
+            --Random buildable unit
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Random dude")
@@ -117,9 +117,9 @@ do
                 else
                     notificationPingis(pos, 'Dude', '<LOC tooltips_0000>Give Units' )
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Random buildable mobile engineer                                  
+            --Random buildable mobile engineer
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Engineer")
@@ -129,13 +129,13 @@ do
                 else
                     notificationPingis(pos, 'EngineerDude', '<LOC tooltips_0000>Give Units' )
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
         },
         -- Unit buffs
-        {                                                                        
+        {
             --------------------------------------------------------------------
-            --Double health and heal                                            
+            --Double health and heal
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Health buff")
@@ -174,25 +174,25 @@ do
                             },
                         },
                     }
-                end       
+                end
                 if math.random(1,100) == 100 then
                     LOG("JACKPOT")
                     Buff.ApplyBuff(Unit, 'CrayCrateHealthBuff')
                     PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
-                else         
+                else
                     Buff.ApplyBuff(Unit, 'CrateHealthBuff')
                 end
                 notificationPingis(pos, 'Health')
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Give larger vis range                                             
+            --Give larger vis range
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Vision buff")
                 if ScenarioInfo.Options.FogOfWar == 'none' then
                     WARN("Vision buff selected while fog of war disabled. Rolling again.")
                     PhatLewt(Unit, pos)
-                else 
+                else
                     if not Buffs['CrateVisBuff'] then
                         BuffBlueprint {
                             Name = 'CrateVisBuff',
@@ -220,23 +220,23 @@ do
                                 },
                             },
                         }
-                    end   
+                    end
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateVisBuff')
                         PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
-                    else      
+                    else
                         Buff.ApplyBuff(Unit, 'CrateVisBuff')
-                    end  
+                    end
                     notificationPingis(pos, 'Intel', '<LOC tooltipui0082>Intel')
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Give larger radar range                                           
+            --Give larger radar range
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Radar buff")
-                if Unit:GetBlueprint().Intel.RadarRadius > 0 then    
+                if Unit:GetBlueprint().Intel.RadarRadius > 0 then
                     if not Buffs['CrateRadarBuff'] then
                         BuffBlueprint {
                             Name = 'CrateRadarBuff',
@@ -264,22 +264,22 @@ do
                                 },
                             },
                         }
-                    end         
+                    end
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateRadarBuff')
                         PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
-                    else      
+                    else
                         Buff.ApplyBuff(Unit, 'CrateRadarBuff')
                     end
                     notificationPingis(pos, 'Intel', '<LOC tooltipui0082>Intel')
-                else   
+                else
                     WARN("Radar buff selected but unit has no radar to buff. Rolling again.")
                     PhatLewt(Unit, pos)
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Give more dakka                                                   
+            --Give more dakka
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Guns buff")
@@ -290,13 +290,13 @@ do
                             goodtogo = true
                             break
                         end
-                    end 
+                    end
                 end
-                
+
                 if not goodtogo then
                     WARN("This unit lacks damage dealing non-death weapons. Rolling again.")
                     PhatLewt(Unit, pos)
-                else 
+                else
                     if not Buffs['CrateDamageBuff'] then
                         BuffBlueprint {
                             Name = 'CrateDamageBuff',
@@ -340,26 +340,26 @@ do
                                 },
                             },
                         }
-                    end                  
+                    end
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateDamageBuff')
                         PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
-                    else      
+                    else
                         Buff.ApplyBuff(Unit, 'CrateDamageBuff')
-                    end 
+                    end
                     notificationPingis(pos, 'Weapon')
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Give fasterness                                                   
+            --Give fasterness
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Speed buff")
                 if Unit:GetBlueprint().Physics.MotionType == 'RULEUMT_None' then
                     WARN("Unit that can't move rolled speed buff. Rolling again.")
                     PhatLewt(Unit, pos)
-                else 
+                else
                     if not Buffs['CrateMoveBuff'] then
                         BuffBlueprint {
                             Name = 'CrateMoveBuff',
@@ -387,19 +387,19 @@ do
                                 },
                             },
                         }
-                    end         
+                    end
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateMoveBuff')
                         PhatLewt(Unit, pos,'HAT_Crown')--Bonus jackpot hat
-                    else      
+                    else
                         Buff.ApplyBuff(Unit, 'CrateMoveBuff')
-                    end  
+                    end
                     notificationPingis(pos, 'Speed', '<LOC lobui_0262>Fast' )
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Give fasterness of building                                       
+            --Give fasterness of building
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Build buff")
@@ -431,7 +431,7 @@ do
                                 },
                             },
                         }
-                    end                  
+                    end
                     if math.random(1,100) == 100 then
                         LOG("JACKPOT")
                         Buff.ApplyBuff(Unit, 'CrayCrateEngiBuff')
@@ -439,20 +439,20 @@ do
                     else
                         Buff.ApplyBuff(Unit, 'CrateEngiBuff')
                     end
-                    notificationPingis(pos, 'Engineering', '<LOC ability_engineeringsuite>Engineering Suite' )  
-                else       
+                    notificationPingis(pos, 'Engineering', '<LOC ability_engineeringsuite>Engineering Suite' )
+                else
                     WARN("Unit rolled for engineering buffs, but can't engineering. Rolling again.")
                     PhatLewt(Unit, pos)
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Veterancy                                                         
+            --Veterancy
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Kills")
                 local UnitVet = Unit:GetBlueprint().Veteran
                 if UnitVet then
-                    local kchoice = 0 
+                    local kchoice = 0
                     for k, v in UnitVet do
                         kchoice = kchoice + 1
                     end
@@ -471,11 +471,11 @@ do
                     WARN("Unit has no defined veterancy levels to recieve useful kills. Rerolling.")
                     PhatLewt(Unit, pos)
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-        },                                                                      
+        },
         -- Hats
-        {                                                                       
+        {
             --------------------------------------------------------------------
             --------------------------------------------------------------------
             function(Unit, pos, noRerollFail)
@@ -488,12 +488,13 @@ do
                     'HAT_Boater',
                     'HAT_Cone_azn',
                     'HAT_Fedora',
+                    'HAT_Fedora_Inquisitor',
                     'HAT_Derby',
                     'HAT_Pith_FR',
                     'HAT_Pith_VI',
                     'HAT_Brodie',
                 }
-                
+
                 local bones = {
                     'HatPoint',
                     'Hat',
@@ -502,13 +503,13 @@ do
                     'AttachPoint',
                 }
                 local attachHatTo = false
-                
+
                 if not Unit.Hats then
                     for i, bone in bones do
                         if Unit:IsValidBone(bone) then
                             attachHatTo = bone
                             break
-                        end 
+                        end
                     end
                 end
                 if attachHatTo or Unit.Hats then
@@ -522,7 +523,7 @@ do
                         hatType = hatTypes[table.find(hatTypes, noRerollFail)]
                     else
                         hatType = hatTypes[math.random(2, table.getn(hatTypes) )]
-                    end 
+                    end
                     Warp(hat,Unit:GetPosition() )
                     hat:SetMesh('/mods/BrewLAN_RNG/cratedrop/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
                     if EntityCategoryContains(categories.EXPERIMENTAL , Unit) then
@@ -531,7 +532,7 @@ do
                         hat:SetDrawScale(.055 * RandomFloat(0.925, 1.075) )
                     else
                         hat:SetDrawScale(.03 * RandomFloat(0.925, 1.075) )
-                    end   
+                    end
                     hat:SetVizToAllies('Intel')
                     hat:SetVizToNeutrals('Intel')
                     hat:SetVizToEnemies('Intel')
@@ -540,50 +541,50 @@ do
                     else
                         local no = table.getn(Unit.Hats) - 1
                         hat:AttachTo(Unit.Hats[no], 'Attachpoint')
-                    end    
+                    end
                     Unit.Trash:Add(hat)
                     notificationPingis(pos, 'Hat' )
                 else
                     if ScenarioInfo.Options.CrateHatsOnly == 'true' or noRerollFail then
                         WARN("Unit with no noticable head attempted to pick up hats only crate.")
-                    else    
+                    else
                         WARN("Unit has no noticable head or attachpoint to wear a hat.")
                         PhatLewt(Unit, pos)
                     end
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
         },
         -- Bad stuff table
-        {                                                                       
+        {
             --------------------------------------------------------------------
-            --Troll log                                                         
+            --Troll log
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("YOU GET NOTHING. YOU LOSE. GOOD DAY.")
                 notificationPingis(pos, 'Nothing', '<LOC SCORE_0039>Failed' )
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Troll print                                                       
+            --Troll print
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Cheating message") print(Unit:GetAIBrain().Nickname .. " " .. LOC("<LOC cheating_fragment_0000>is") .. LOC("<LOC cheating_fragment_0002> cheating!")  )
                 notificationPingis(pos, 'Bad', '<LOC SCORE_0039>Failed' )
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Troll bomb                                                        
+            --Troll bomb
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Explosion")
                 CreateUnitHPR('xrl0302', Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0):GetWeaponByLabel('Suicide'):FireWeapon()
                 notificationPingis(pos, 'Bad', '<LOC ability_suicideweapon>Suicide Weapon' )
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Nemesis dupe                                                      
+            --Nemesis dupe
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Evil Twin")
-                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)  
+                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 for kbuff, vbuff in Unit.Buffs.BuffTable do
                     for k, v in vbuff do
                         Buff.ApplyBuff(clone, v.BuffName)
@@ -595,9 +596,9 @@ do
                 else
                     notificationPingis(pos, 'EvilClone', '<LOC lobui_0293>Enemy' )
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Random nemesis                                                    
+            --Random nemesis
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Random Nemesis")
@@ -607,15 +608,15 @@ do
                 else
                     notificationPingis(pos, 'EvilDude', '<LOC lobui_0293>Enemy' )
                 end
-            end,                                                                
+            end,
             --------------------------------------------------------------------
-            --Random warping                                                    
+            --Random warping
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Teleport")
                 Warp(Unit,getSafePos(Unit:GetPosition()))
                     notificationPingis(pos, 'Bad', '<LOC tooltipui0024>Teleport' )
-            end,                                                                
+            end,
             --------------------------------------------------------------------
         },
         --{
@@ -628,7 +629,7 @@ do
     function PhatLewt(triggerUnit, pos, note)
         if string.lower(string.sub(note or "NOPE",1,3)) == 'hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
             lewt[3][1](triggerUnit, pos, note or true)
-        else      
+        else
             local a = math.random(1, table.getn(lewt) )
             local b = math.random(1, table.getn(lewt[a]) )
             lewt[a][b](triggerUnit, pos)
@@ -642,23 +643,23 @@ do
             return TopLevelParent(Unit.Parent)
         else
             return Unit
-        end 
+        end
     end
-    
-    function arbitraryBrain()     
+
+    function arbitraryBrain()
         for i, brain in ArmyBrains do
-            if not brain:IsDefeated() and not ArmyIsCivilian(brain:GetArmyIndex()) then    
+            if not brain:IsDefeated() and not ArmyIsCivilian(brain:GetArmyIndex()) then
                 --LOG(brain.Nickname)
                 return brain
             end
         end
     end
-    
+
     function notificationPingis(pos, ping, text)
         if type(pos) != 'table' or type(pos[1]) != 'number' then
-            return 
+            return
         end
-        --Make sure we have a real ping name 
+        --Make sure we have a real ping name
         local pings = {
             'Nothing',
             'Bad',
@@ -692,10 +693,10 @@ do
             FloatingEntityText(Unit:GetEntityId(), text)
         end
     end
-    
+
     function randomEnemyBrain(unit)
         local enemies = {}
-        
+
         for i, brain in ArmyBrains do
             if not IsAlly(brain:GetArmyIndex(), unit:GetAIBrain():GetArmyIndex() ) and not brain:IsDefeated() then
                 table.insert(enemies, brain)
@@ -707,26 +708,26 @@ do
             return enemies[math.random(1, table.getn(enemies) )]
         end
     end
-    
-    function getSafePos(start, tries) 
+
+    function getSafePos(start, tries)
         if not tries then tries = 1 end
         local pos = {math.random(0+10,ScenarioInfo.size[1]-10), math.random(0+10,ScenarioInfo.size[2]-10)}
-        local positionDummy = 'zzcrate' --need a big building that has no intel, doesn't flatten ground, and doesn't really care for evalation.      
+        local positionDummy = 'zzcrate' --need a big building that has no intel, doesn't flatten ground, and doesn't really care for evalation.
         positionDummy = arbitraryBrain():CreateUnitNearSpot(positionDummy, pos[1], pos[2])
         if positionDummy and IsUnit(positionDummy) then
             local pos = positionDummy:GetPosition()
             positionDummy:Destroy()
             LOG("Safe teleport location choice attempts " .. tries .. ". Lotation across: " .. pos[1] .. ", down: " .. pos[3] .. "." )
-            return pos 
+            return pos
         else
             if tries < 1000 then
                 return getSafePos(start, tries + 1)
             else
-                return start    
-            end  
+                return start
+            end
         end
     end
-    
+
     function randomBuildable(thing)
         local buildable = 'RandomBuildable' .. tostring(thing)
         if not __blueprints.zzcrate[buildable] then
@@ -740,9 +741,9 @@ do
             return __blueprints.zzcrate[buildable][math.random(1,table.getn(__blueprints.zzcrate[buildable]) )]
         end
     end
-    
+
     function gatedRandomBuildableType(Unit)
-        local unitTypes = {'UnitsT1','UnitsT2orLess','UnitsT3orLess','Units',} 
+        local unitTypes = {'UnitsT1','UnitsT2orLess','UnitsT3orLess','Units',}
         local chosen
         if EntityCategoryContains(categories.EXPERIMENTAL + categories.TECH3, Unit) then
             LOG("ANYTHING GOES")
@@ -752,7 +753,7 @@ do
             chosen = unitTypes[math.random(1, 3)]
         elseif EntityCategoryContains(categories.TECH1, Unit) then
             LOG("Tech 2 or less")
-            chosen = unitTypes[1]     
+            chosen = unitTypes[1]
         elseif EntityCategoryContains(categories.COMMAND, Unit) then
             LOG("Tech 3 or less")
             chosen = unitTypes[math.random(1, 3)]

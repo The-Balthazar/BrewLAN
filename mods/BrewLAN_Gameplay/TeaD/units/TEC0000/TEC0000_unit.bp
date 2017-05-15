@@ -109,17 +109,17 @@ UnitBlueprint {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
                     MeshName = '/units/ueb0304/ueb0304_lod0.scm',
-                    AlbedoName = '/units/ueb0304/ueb0304_albedo.dds', 
-                    NormalsName = '/units/ueb0304/ueb0304_normalsTS.dds', 
-                    SpecularName = '/units/ueb0304/ueb0304_specteam.dds', 
+                    AlbedoName = '/units/ueb0304/ueb0304_albedo.dds',
+                    NormalsName = '/units/ueb0304/ueb0304_normalsTS.dds',
+                    SpecularName = '/units/ueb0304/ueb0304_specteam.dds',
                 },
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit',
                     MeshName = '/units/ueb0304/ueb0304_lod1.scm',
-                    AlbedoName = '/units/ueb0304/ueb0304_lod1_albedo.dds', 
-                    NormalsName = '/units/ueb0304/ueb0304_lod1_normalsTS.dds', 
-                    SpecularName = '/units/ueb0304/ueb0304_lod1_specteam.dds', 
+                    AlbedoName = '/units/ueb0304/ueb0304_lod1_albedo.dds',
+                    NormalsName = '/units/ueb0304/ueb0304_lod1_normalsTS.dds',
+                    SpecularName = '/units/ueb0304/ueb0304_lod1_specteam.dds',
                 },
             },
         },
@@ -152,7 +152,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYTEAD CREEP UEF',
         },
-        BuildOrder = {      
+        BuildOrder = {
             {Wait = 10},
             --------------------------------------------------------------------
             {Message = "Pathfinder wave"},
@@ -179,7 +179,7 @@ UnitBlueprint {
             {Message = "Damage test wave 1"},
             {'tec0101', 1}, --Damage test boss 1
             {Wait = 60},
-            --------------------------------------------------------------------   
+            --------------------------------------------------------------------
             {Message = "Wave group 2"},
             --------------------------------------------------------------------
             {'tec0002', 18, 20 }, --Trucks
@@ -203,7 +203,7 @@ UnitBlueprint {
             {'tec0005', 1}, --Shield
             {'tec0003', 2, 3 }, --Trucks
             {'tec0005', 1}, --Shield
-            {'tec0003', 2, 3 }, --Trucks 
+            {'tec0003', 2, 3 }, --Trucks
             {Wait = 30},
             --------------------------------------------------------------------
             {Message = "Damage test wave 2"},
@@ -213,15 +213,15 @@ UnitBlueprint {
             {Wait = 60},
             --------------------------------------------------------------------
             {Message = "Wave group 3"},
-            --------------------------------------------------------------------   
+            --------------------------------------------------------------------
             {'tec0009', 5 }, -- Flying Scouts
             {Wait = 20},
             {'tec0003', 20 }, -- Busses
-            {Message = "Warning: Cloaked units inbound"},   
+            {Message = "Warning: Cloaked units inbound"},
             {Wait = 20},
-            {'tec0008', 15 }, --Cloaked cars  
-            {Wait = 20},   
-            {'tec0007', 15, 20}, --Shield Marines   
+            {'tec0008', 15 }, --Cloaked cars
+            {Wait = 20},
+            {'tec0007', 15, 20}, --Shield Marines
             {Wait = 20},
             {'tec0005', 1}, --Shield
             {'tec0007', 3}, --Shield Marines
@@ -252,10 +252,10 @@ UnitBlueprint {
             {Message = "Warning: Fliers inbound"},
             {Wait = 20},
             {'tec0011', 15 }, --15 fat aircraft
-            {Message = "Warning: Cloaked units inbound"}, 
+            {Message = "Warning: Cloaked units inbound"},
             {Wait = 20},
-            {'tec0008', 15 }, --Cloaked cars 
-            {Message = "Warning: Fliers inbound"}, 
+            {'tec0008', 15 }, --Cloaked cars
+            {Message = "Warning: Fliers inbound"},
             {Wait = 20},
             {'tec0012', 5 }, --5 shielded aircraft
             {Wait = 20},
