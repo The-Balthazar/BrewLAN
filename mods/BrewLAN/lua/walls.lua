@@ -1,3 +1,6 @@
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local TerrainUtils = import(BrewLANPath .. '/lua/TerrainUtils.lua')
+local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 --------------------------------------------------------------------------------
 -- Wall scripts
 --------------------------------------------------------------------------------
@@ -148,7 +151,7 @@ function GateWallUnit(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
             SuperClass.OnCreate(self)
-            self.Slider = CreateSlider(self, 0)
+            self.Slider = CreateSlider(self, self:GetBlueprint().Display.GateEffects.GateSliderBone or 0)
             self.Trash:Add(self.Slider)
         end,
 
@@ -159,16 +162,23 @@ function GateWallUnit(SuperClass)
 
         ToggleGate = function(self, order)
             local bp = self:GetBlueprint()
-            local depth = bp.Display.GateOpenHeight or 40
-            local scale = bp.Display.UniformScale or 1
+            local scale = 1 / bp.Display.UniformScale or 1
+            local depth = bp.SizeY * scale * 0.95
             if order == 'open' then
-                self.Slider:SetGoal(0, depth, 0)
+                self.Slider:SetGoal(0, -depth, 0)
                 self.Slider:SetSpeed(200)
                 if self.blocker then
                    self.blocker:Destroy()
                    self.blocker = nil
                 end
-                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, (bp.CollisionOffsetY or 0) - depth, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY, bp.SizeZ)
+                if bp.AI.TargetBones then
+                    for i, bone in bp.AI.TargetBones do
+                        if not self.TerrainSlope[bone] then
+                            OffsetBoneToTerrain(self, bone)
+                        end
+                    end
+                end
+                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY * 0.1, bp.SizeZ)
             end
             if order == 'close' then
                 self.Slider:SetGoal(0, 0, 0)
@@ -177,6 +187,14 @@ function GateWallUnit(SuperClass)
                    local pos = self:GetPosition()
                    self.blocker = CreateUnitHPR('ZZZ5301',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
                    self.Trash:Add(self.blocker)
+                end
+                if bp.AI.TargetBones then
+                    for i, bone in bp.AI.TargetBones do
+                        if self.TerrainSlope[bone] then
+                            self.TerrainSlope[bone]:Destroy()
+                            self.TerrainSlope[bone] = nil
+                        end
+                    end
                 end
                 self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY, bp.SizeZ)
             end

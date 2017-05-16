@@ -1,9 +1,9 @@
-UnitBlueprint {     
+UnitBlueprint {
     AI = {
-        TargetBones = {  
+        TargetBones = {
             'AttackTarget001',
             'AttackTarget002',
-            'AttackTarget003', 
+            'AttackTarget003',
             'AttackTarget004',
         },
     },
@@ -26,7 +26,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 151,
     Categories = {
-        'PRODUCTBREWLAN',    
+        'PRODUCTBREWLAN',
         'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'UEF',
@@ -55,9 +55,8 @@ UnitBlueprint {
     },
     Description = '<LOC srb5311_desc>Armored Gate Segment',
     Display = {
-        GateOpenHeight = -65,      
-        AdjacencyConnection = 'HEAVYWALL',    
-        AdjacencyConnectionInfo = {  
+        AdjacencyConnection = 'HEAVYWALL',
+        AdjacencyConnectionInfo = {
             Bones = {
                 North = {
                     visibility = 'hide',
@@ -65,22 +64,22 @@ UnitBlueprint {
                     conflict = nil,
                 },
                 South = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'South',
                     conflict = nil,
-                }, 
+                },
                 East = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'East',
                     conflict = nil,
-                }, 
+                },
                 West = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'West',
                     conflict = nil,
-                },  
+                },
             },
-        }, 
+        },
         DamageEffects = {
             {
                 Bone = 0,
@@ -94,6 +93,9 @@ UnitBlueprint {
                 OffsetY = 2.5,
                 OffsetZ = 0.25,
             },
+        },
+        GateEffects = {
+            GateSliderBone = 'Slider',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -115,7 +117,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,   
+        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_albedo.dds',
@@ -132,13 +134,13 @@ UnitBlueprint {
                 RemoveWhenDead = false,
                 Width = 6.4,
             },
-        },  
+        },
         UniformScale = 0.05,
     },
     Economy = {
         BuildCostEnergy = 750,
         BuildCostMass = 250,
-        BuildTime = 50,       
+        BuildTime = 50,
         RebuildBonusIds = {
             'sab5311',
             'seb5311',
@@ -146,11 +148,11 @@ UnitBlueprint {
             'ssb5311',
         },
     },
-    Footprint = {   
+    Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
-    General = {                 
+    General = {
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
@@ -171,7 +173,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret', 
+        TechLevel = 'RULEUTL_Secret',
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
                 bitmapId = 'dive',
@@ -186,7 +188,7 @@ UnitBlueprint {
         },
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
-        },   
+        },
         UnitName = '<LOC seb5311_name>Harrow',
         UnitWeight = 1,
     },
@@ -200,6 +202,12 @@ UnitBlueprint {
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
     Physics = {
+        AltitudeToTerrain = {
+            'North',
+            'South',
+            'East',
+            'West',
+        },
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,
@@ -209,7 +217,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        DragCoefficient = 0.2,   
+        DragCoefficient = 0.2,
         MaxGroundVariation = 2,
         FlattenSkirt = false,
         MaxSteerForce = 0,
@@ -228,11 +236,11 @@ UnitBlueprint {
     SelectionSizeZ = 1.8,
     SelectionThickness = 0.31,
     SizeX = 3,
-    SizeY = 3,
+    SizeY = 2.3,
     SizeZ = 3,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 207,
-    Wreckage = {    
+    Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,

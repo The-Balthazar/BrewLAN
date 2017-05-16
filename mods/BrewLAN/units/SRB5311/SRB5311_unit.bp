@@ -1,9 +1,9 @@
-UnitBlueprint {     
+UnitBlueprint {
     AI = {
-        TargetBones = {  
+        TargetBones = {
             'AttackTarget001',
             'AttackTarget002',
-            'AttackTarget003', 
+            'AttackTarget003',
             'AttackTarget004',
         },
     },
@@ -26,7 +26,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 151,
     Categories = {
-        'PRODUCTBREWLAN',    
+        'PRODUCTBREWLAN',
         'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'CYBRAN',
@@ -54,9 +54,8 @@ UnitBlueprint {
     },
     Description = '<LOC srb5311_desc>Armored Gate Segment',
     Display = {
-        GateOpenHeight = -65,      
-        AdjacencyConnection = 'HEAVYWALLGATE',    
-        AdjacencyConnectionInfo = {  
+        AdjacencyConnection = 'HEAVYWALLGATE',
+        AdjacencyConnectionInfo = {
             Bones = {
                 North = {
                     visibility = 'hide',
@@ -64,42 +63,42 @@ UnitBlueprint {
                     conflict = nil,
                 },
                 South = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'South',
                     conflict = nil,
-                }, 
+                },
                 East = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'East',
                     conflict = nil,
-                }, 
+                },
                 West = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'West',
                     conflict = nil,
-                },  
+                },
                 North_TB = {
                     visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'North',
                 },
                 South_TB = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'South',
-                }, 
+                },
                 East_TB = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'East',
-                }, 
+                },
                 West_TB = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'West',
                 },
             },
-        }, 
+        },
         DamageEffects = {
             {
                 Bone = 0,
@@ -114,12 +113,15 @@ UnitBlueprint {
                 OffsetZ = 0.25,
             },
         },
+        GateEffects = {
+            GateSliderBone = 'Slider',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 200,
-                    ShaderName = 'Insect',                                            
+                    ShaderName = 'Insect',
                     --MeshName = '/mods/BrewLAN/units/XRC8104/XRC8104_lod0.scm',
                     AlbedoName = '/units/XRC8104/XRC8104_albedo.dds',
                     NormalsName = '/units/XRC8104/XRC8104_normalsts.dds',
@@ -135,7 +137,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,   
+        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_albedo.dds',
@@ -158,7 +160,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 750,
         BuildCostMass = 250,
-        BuildTime = 50,       
+        BuildTime = 50,
         RebuildBonusIds = {
             'sab5311',
             'seb5311',
@@ -166,11 +168,11 @@ UnitBlueprint {
             'ssb5311',
         },
     },
-    Footprint = {   
+    Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
-    General = {                 
+    General = {
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
@@ -191,7 +193,7 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret', 
+        TechLevel = 'RULEUTL_Secret',
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
                 bitmapId = 'dive',
@@ -206,7 +208,7 @@ UnitBlueprint {
         },
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
-        },   
+        },
         UnitName = '<LOC srb5311_name>Procyon Offering',
         UnitWeight = 1,
     },
@@ -220,6 +222,12 @@ UnitBlueprint {
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
     Physics = {
+        AltitudeToTerrain = {
+            'North',
+            'South',
+            'East',
+            'West',
+        },
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,
@@ -229,7 +237,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        DragCoefficient = 0.2,   
+        DragCoefficient = 0.2,
         MaxGroundVariation = 2,
         FlattenSkirt = false,
         MaxSteerForce = 0,
@@ -252,7 +260,7 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 207,
-    Wreckage = {    
+    Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,

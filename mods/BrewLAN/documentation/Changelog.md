@@ -604,6 +604,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed gates blocking projectiles whilst closed.
 
+  ### 2017-05-16
+
+  * Gate target bones now move to the land surface whilst the gate is open.
+  * Gates now use the their defined height to determine distance to move to close.
+  * The segments of each gate now align to terrain height.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
