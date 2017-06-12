@@ -151,6 +151,11 @@ SAB4401 = Class(AShieldStructureUnit) {
         self:CreateWreckage(overkillRatio)
         self:Destroy()
     end,
+
+    OnDestroy = function(self)
+        self:ClearShieldProjections()
+        AShieldStructureUnit.OnDestroy(self)
+    end,
 }
 
 TypeClass = SAB4401

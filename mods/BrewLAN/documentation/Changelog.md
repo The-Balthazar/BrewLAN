@@ -610,6 +610,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Gates now use the their defined height to determine distance to move to close.
   * The segments of each gate now align to terrain height.
 
+  ### 2017-06-12
+
+  * Bubble Tea: Fixed issues related to reclaiming or script 'destroying' the Pillar of Prominence.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
