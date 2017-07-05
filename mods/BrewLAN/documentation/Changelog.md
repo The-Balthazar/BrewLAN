@@ -614,6 +614,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Bubble Tea: Fixed issues related to reclaiming or script 'destroying' the Pillar of Prominence.
 
+  ### 2017-07-05
+
+  * Added an Aeon T3 mobile sensor array.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

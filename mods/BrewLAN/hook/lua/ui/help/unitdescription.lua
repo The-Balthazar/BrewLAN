@@ -136,6 +136,7 @@ Description['sel0324'] = "<LOC Unit_Description_BrewLAN_T3L015>Mobile anti-air m
 Description['srl0324'] = "<LOC Unit_Description_BrewLAN_T3L016>High-end mobile intelligense system. While stationary it is visible only to omni, and provides extensive radar and omni coverage."
 Description['sel0325'] = "<LOC Unit_Description_BrewLAN_T3L017>Mobile anti-naval vehicle."
 Description['sal0325'] = "<LOC Unit_Description_BrewLAN_T3L018>Mobile hovering anti-naval vehicle."
+Description['sal0324'] = "<LOC Unit_Description_BrewLAN_T3L019>Hovering sensor array. Consumes large quantities of power to function."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."
