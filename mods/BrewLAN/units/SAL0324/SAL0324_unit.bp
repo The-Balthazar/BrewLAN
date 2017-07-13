@@ -78,6 +78,7 @@ UnitBlueprint {
     Description = '<LOC srl0324_desc>Mobile Sensor Array',
     Display = {
         Abilities = {
+            '<LOC ability_hover>Hover',
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
         },

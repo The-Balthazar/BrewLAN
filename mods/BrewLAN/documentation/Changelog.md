@@ -618,6 +618,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added an Aeon T3 mobile sensor array.
 
+  ### 2017-07-13
+
+  * Listed Metatron's hover ability.
+  * Created icons for Metatron and the Franklin Class.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

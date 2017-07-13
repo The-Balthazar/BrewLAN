@@ -22,9 +22,8 @@
 * T1 Pressure Mine
 * T1 Torpedo Bomber
   * Would like to give a more unique appearance.
-
-#### Pending:
 * T1 Field Engineering Boat.
+  * Would like to give a more unique appearance.
 
 ### UEF:
 * T1 Light Gunship
@@ -116,11 +115,11 @@
 * T3 Shield wall.
 * T3 Mobile Shield Gen.
 * T3 Mobile AA.
+* T3 Mobile Radar.
 
 #### Pending:
 * T3 Field Engineering Ship.
 * T3 Mobile Torpedo.
-* T3 Mobile Radar.
 
 ### Cybran:
 * T3 Air Transport.
