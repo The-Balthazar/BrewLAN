@@ -3,8 +3,8 @@ UnitBlueprint {
         'PRODUCTBREWLAN',
         'INVULNERABLE',
         'EXPERIMENTAL',
-        --'NEEDMOBILEBUILD',  
-        'BENIGN',   
+        --'NEEDMOBILEBUILD',
+        'BENIGN',
         'UNSELECTABLE',
         'UNTARGETABLE',
     },
@@ -31,6 +31,7 @@ UnitBlueprint {
     LifeBarSize = 0.0000001,
     General = {
         CapCost = 0,
+        FactionName = 'None',      --Because ofcourse it is the responsibility of the data set to make sure you sanitise your inputs. 
     },
     Physics = {
         BuildOnLayerCaps = {

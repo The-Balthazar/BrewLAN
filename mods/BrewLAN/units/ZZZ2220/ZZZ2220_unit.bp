@@ -1,11 +1,11 @@
-UnitBlueprint {     
-    Categories = {     
+UnitBlueprint {
+    Categories = {
         'INVULNERABLE',
         'PRODUCTBREWLAN',
-        'STRUCTURE',    
-        'DEFENSE',      
-        'WALL',    
-        'BENIGN',   
+        'STRUCTURE',
+        'DEFENSE',
+        'WALL',
+        'BENIGN',
         'UNSELECTABLE',
         'UNTARGETABLE',
     },
@@ -16,7 +16,7 @@ UnitBlueprint {
         Health = 0,
         MaxHealth = 0,
     },
-    Display = {       
+    Display = {
         Mesh = {
             IconFadeInZoom = 9999999,
             LODs = {
@@ -27,7 +27,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,    
+        SpawnRandomRotation = true,
         UniformScale = 0,
         HideLifebars = true,
     },
@@ -35,7 +35,7 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
-    General = {        
+    General = {
         CapCost = 0,
         Category = 'Defense',
         CommandCaps = {
@@ -45,18 +45,19 @@ UnitBlueprint {
             RULEUCC_Guard = false,
             RULEUCC_Move = false,
             RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false, 
+            RULEUCC_Patrol = false,
             RULEUCC_Pause = false,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
-        },      
+        },
+        FactionName = 'None',      --Because ofcourse it is the responsibility of the data set to make sure you sanitise your inputs.
     },
     Intel = {
         VisionRadius = 0,
-    },       
+    },
     --LifeBarHeight = 0.0000001,
     --LifeBarOffset = 0.000000,
     --LifeBarSize = 0.0000001,
