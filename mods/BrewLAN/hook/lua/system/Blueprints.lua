@@ -42,6 +42,13 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANBuildCatChanges(all_bps)
+    --[[local bb = function(data)
+        return 'BUILTBY' .. (data[1] or '') .. 'TIER' .. (data[t] or '')
+    end
+    local T1LF = 'BUILTBYLANDTIER1FACTORY '
+    local T2LF = 'BUILTBYLANDTIER2FACTORY '
+    local T3LF = 'BUILTBYLANDTIER3FACTORY '
+    ]]--
     local units_buildcats = {
         urb0101 = {'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',},
         urb0201 = {'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION',},

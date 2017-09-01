@@ -178,6 +178,7 @@ Description['ses0319'] = "<LOC Unit_Description_BrewLAN_T3S002>Tech 3 naval cons
 Description['sas0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
 Description['srs0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
 Description['sss0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
+Description['sss0306'] = "<LOC Unit_Description_BrewLAN_T3S004>Hovering torpedo system. Capable of destroying the largest of enemy vessels."
 
 --Experimentals
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."

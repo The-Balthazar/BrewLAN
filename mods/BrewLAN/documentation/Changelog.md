@@ -623,6 +623,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Listed Metatron's hover ability.
   * Created icons for Metatron and the Franklin Class.
 
+  ### 2017-08-03
+
+  * Partially added a Seraphim T3 torpedo launcher.
+
+  ### 2017-08-17
+
+  * Added faction names and snarky comments to units missing faction names.
+
+  ### 2017-09-01
+
+  * Seraphim T3 Torpedo Launcher changes:
+    * Now actually buildable.
+    * No longer has torpedo defence.
+    * Now has a transport class equal to that of a T3 unit.
+    * Gave real stats.
+    * Gave a unique name.
+    * Gave a build description.
+    * Gave an icon.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
