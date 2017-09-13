@@ -1,9 +1,9 @@
-UnitBlueprint {	BlueprintId="srl0001",	Economy = {BuildUnit = 'urs0201',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0001_desc>Crab Egg (Destroyer)',	Footprint = {SizeX = 3,SizeZ = 3,},	Display = {UniformScale = 0.1,},	}
-UnitBlueprint {	BlueprintId="srl0002",	Economy = {BuildUnit = 'srl0319',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0002_desc>Crab Egg (Field Engineer)',	}
-UnitBlueprint {	BlueprintId="srl0003",	Economy = {BuildUnit = 'srl0316',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0003_desc>Crab Egg (Stealth)',	}
-UnitBlueprint {	BlueprintId="srl0004",	Economy = {BuildUnit = 'srl0320',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0004_desc>Crab Egg (Missile)',	Footprint = {SizeX = 2,SizeZ = 2,},	Display = {UniformScale = 0.075,},	}
-UnitBlueprint {	BlueprintId="srl0005",	Economy = {BuildUnit = 'srl0321',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0005_desc>Crab Egg (Hedgehog)',	Footprint = {SizeX = 2,SizeZ = 2,},	Display = {UniformScale = 0.075,},	}
-UnitBlueprint {	BlueprintId="srl0006",	Economy = {BuildUnit = 'srl0311',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0006_desc>Crab Egg (MRL)',	}
+UnitBlueprint {	BlueprintId="srl0001",	General = {FactionName = 'Cybran',},  Economy = {BuildUnit = 'urs0201',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0001_desc>Crab Egg (Destroyer)',	Footprint = {SizeX = 3,SizeZ = 3,},	Display = {UniformScale = 0.1,},	}
+UnitBlueprint {	BlueprintId="srl0002",	General = {FactionName = 'Cybran',},  Economy = {BuildUnit = 'srl0319',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0002_desc>Crab Egg (Field Engineer)',	}
+UnitBlueprint {	BlueprintId="srl0003",	General = {FactionName = 'Cybran',},  Economy = {BuildUnit = 'srl0316',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0003_desc>Crab Egg (Stealth)',	}
+UnitBlueprint {	BlueprintId="srl0004",	General = {FactionName = 'Cybran',},  Economy = {BuildUnit = 'srl0320',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0004_desc>Crab Egg (Missile)',	Footprint = {SizeX = 2,SizeZ = 2,},	Display = {UniformScale = 0.075,},	}
+UnitBlueprint {	BlueprintId="srl0005",	General = {FactionName = 'Cybran',},  Economy = {BuildUnit = 'srl0321',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0005_desc>Crab Egg (Hedgehog)',	Footprint = {SizeX = 2,SizeZ = 2,},	Display = {UniformScale = 0.075,},	}
+UnitBlueprint {	BlueprintId="srl0006",	General = {FactionName = 'Cybran',},  Economy = {BuildUnit = 'srl0311',},	Categories = {'MEGALITHEGG',},	Description = '<LOC srl0006_desc>Crab Egg (MRL)',	}
 
 UnitBlueprint {
 	BlueprintId="srl0000",
@@ -85,19 +85,19 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 200,
-                    ShaderName = 'Insect',      
-                    MeshName = '/units/XRL0002/XRL0002_lod0.scm', 
-                    AlbedoName = '/units/XRL0002/XRL0002_albedo.dds', 
-                    NormalsName = '/units/XRL0002/XRL0002_normalsTS.dds', 
-                    SpecularName = '/units/XRL0002/XRL0002_specteam.dds', 
+                    ShaderName = 'Insect',
+                    MeshName = '/units/XRL0002/XRL0002_lod0.scm',
+                    AlbedoName = '/units/XRL0002/XRL0002_albedo.dds',
+                    NormalsName = '/units/XRL0002/XRL0002_normalsTS.dds',
+                    SpecularName = '/units/XRL0002/XRL0002_specteam.dds',
                 },
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Insect', 
-                    MeshName = '/units/XRL0002/XRL0002_lod1.scm', 
-                    AlbedoName = '/units/XRL0002/XRL0002_lod1_albedo.dds', 
-                    NormalsName = '/units/XRL0002/XRL0002_lod1_normalsTS.dds', 
-                    SpecularName = '/units/XRL0002/XRL0002_lod1_specteam.dds', 
+                    ShaderName = 'Insect',
+                    MeshName = '/units/XRL0002/XRL0002_lod1.scm',
+                    AlbedoName = '/units/XRL0002/XRL0002_lod1_albedo.dds',
+                    NormalsName = '/units/XRL0002/XRL0002_lod1_normalsTS.dds',
+                    SpecularName = '/units/XRL0002/XRL0002_lod1_specteam.dds',
                 },
             },
         },
