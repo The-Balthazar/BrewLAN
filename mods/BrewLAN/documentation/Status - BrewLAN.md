@@ -204,9 +204,9 @@
 * T3 Heavy Point Defense.
 * T3 Sonar.
 * T3 Heavy Assault Bot.
+* T3 Torp launcher.
 
 #### Pending:
-* T3 Torp launcher.
 * T3 Anti Shield.
 * T3 Mobile AA
 * T3 Field Engineering Ship.

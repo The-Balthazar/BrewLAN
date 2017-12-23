@@ -646,6 +646,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added faction names to the dummy Megalith egg units that have their faction names populated by launch scripts, which was causing issues for FAF having those values populated that late.
 
+  ### 2017-12-23
+
+  * Fixed Paragon Game unit ID references.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
