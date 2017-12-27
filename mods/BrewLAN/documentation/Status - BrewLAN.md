@@ -165,7 +165,7 @@
 
 #### Functional:
 * T3 Torpedo Bomber.
-  * Needs totally remodelling to look like it can go underwater. Because it can.
+  * Ugly.
 * T3 Mobile Satellite Uplink (UEF Sniper Bot alternative)
 * T3 Observation Satellite Uplink.
 * T3 Observation Satellite.

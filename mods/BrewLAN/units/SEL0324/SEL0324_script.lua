@@ -8,16 +8,17 @@ SEL0324 = Class(TLandUnit) {
 
     OnCreate = function(self)
         TLandUnit.OnCreate(self)
-        --[[if math.random(1,10) != 10 then
-            self:HideBone('Head',true)
-        end]]--
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
         TLandUnit.OnStopBeingBuilt(self, builder, layer)
         self:ForkThread(self.RadarAnimation)
-        self:SetMaintenanceConsumptionActive()
-        self.RadarEnabled = true
+        self:SetMaintenanceConsumptionInactive()
+        self:SetScriptBit('RULEUTC_IntelToggle', true)
+        --self:DisableUnitIntel('Radar')
+        --self:DisableUnitIntel('Omni')
+        self:RequestRefreshUI()
+        self.RadarEnabled = false
     end,
 
     OnIntelEnabled = function(self)
@@ -27,9 +28,9 @@ SEL0324 = Class(TLandUnit) {
     end,
 
     OnIntelDisabled = function(self)
+        self:DestroyIdleEffects()
         TLandUnit.OnIntelDisabled(self)
         self.RadarEnabled = false
-        self:DestroyIdleEffects()
     end,
 
     RadarAnimation = function(self)
@@ -37,11 +38,13 @@ SEL0324 = Class(TLandUnit) {
         --local headmanip =  CreateRotator(self, 'Satellite', 'y')
         manipulator:SetSpeed(10)
         --headmanip:SetSpeed(10)
+        manipulator:SetGoal(30)
         while IsUnit(self) do
             if self.RadarEnabled then
-                manipulator:SetGoal(30)
                 WaitFor(manipulator)
                 manipulator:SetGoal(-45)
+                WaitFor(manipulator)
+                manipulator:SetGoal(30)
                 WaitFor(manipulator)
             else
                 WaitTicks(10)

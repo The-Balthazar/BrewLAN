@@ -13,6 +13,11 @@ local Manipulators = {
 
 SAL0324 = Class(CLandUnit) {
 
+    OnStopBeingBuilt = function(self, builder, layer)
+        CLandUnit.OnStopBeingBuilt(self, builder, layer)
+        self:SetMaintenanceConsumptionActive()
+    end,
+    
     OnIntelDisabled = function(self)
         CLandUnit.OnIntelDisabled(self)
         self.Rotator1:SetSpinDown(true)

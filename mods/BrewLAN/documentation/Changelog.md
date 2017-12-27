@@ -650,6 +650,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed Paragon Game unit ID references.
 
+  ### 2017-12-27
+
+  * Torpedo bombers are no longer immune to torpedoes while landed on the water.
+  * Albatross no longer lands on the sea bed or flies through water.
+    * Whilst cute, this allowed the Albatross to avoid any AA which is destroyed on contact with water, and also made them almost impossible to kill while landed.
+      * While this second point would no longer be true now, the first point still stands.
+  * Fixed Aeon T3 mobile sensor giving free intel when first constructed.
+  * UEF T3 mobile AA no longer has its intel enabled from the get-go.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -463,7 +463,7 @@ function TorpedoBomberWaterLandCat(all_bps)
         --Check they exist, and have all their things.
         if bp and bp.Categories and bp.Weapon then
             table.insert(bp.Categories, 'TRANSPORTATION') --transportation category allows aircraft to land on water.
-            table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
+            --table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
             for i, v in bp.Weapon do
                 if v.WeaponCategory == "Anti Navy" and v.FireTargetLayerCapsTable then
                     v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
