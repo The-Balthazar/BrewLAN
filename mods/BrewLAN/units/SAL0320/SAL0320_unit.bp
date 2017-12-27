@@ -308,7 +308,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_AntiAir',
             RateOfFire = .5,
-            TargetCheckInterval = 0.3,
+            TargetCheckInterval = 1.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR MOBILE HIGHPRIAIR',

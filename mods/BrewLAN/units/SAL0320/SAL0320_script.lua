@@ -3,29 +3,24 @@ local ADFAlchemistPhasonLaser = import(import( '/lua/game.lua' ).BrewLANPath() .
 
 SAL0320 = Class(ALandUnit) {
     KickupBones = {},
-    
-    Weapons = {
-        AAGun = Class(ADFAlchemistPhasonLaser) {},
-    },
-    
-    OnCreate = function(self)
-        ALandUnit.OnCreate(self)
-    end,
+
+    Weapons = {AAGun = Class(ADFAlchemistPhasonLaser) {}},
 
     OnStopBeingBuilt = function(self,builder,layer)
         ALandUnit.OnStopBeingBuilt(self,builder,layer)
-        self.rotators = {
-            CreateRotator(self, 'Sphere', 'x', math.random(-30, 30) ),
-            CreateRotator(self, 'Sphere', 'y', math.random(-30, 30)),
-            CreateRotator(self, 'Sphere', 'z', nil, 0, 45, (-1 + 2 * math.random(0,1) ) * 45),
-            CreateRotator(self, 'Rule', 'x', math.random(-30, 30) ),
-            CreateRotator(self, 'Rule', 'y', math.random(-30, 30)),
-            CreateRotator(self, 'Rule', 'z', nil, 0, 45, (-1 + 2 * math.random(0,1) ) * 25),
-            CreateRotator(self, 'Orb', 'x', nil, 0, 45, (-1 + 2 * math.random(0,1) ) * 35),
-            CreateRotator(self, 'Orb', 'y', nil, 0, 45, (-1 + 2 * math.random(0,1) ) * 35),
-            CreateRotator(self, 'Orb', 'z', nil, 0, 45, (-1 + 2 * math.random(0,1) ) * 35),
-        }
-    end,    
+        self.rotators = {}
+        for _, bone in {'Sphere', 'Rule', 'Orb'} do
+            for _, ori in {'x','y','z'} do
+                if (ori == 'x' or ori =='y') and (bone == 'Sphere' or bone == 'Rule') then
+                    table.insert(self.rotators, CreateRotator(self, bone, ori, math.random(-30, 30) ) )
+                else
+                    local mult = 45
+                    if bone == 'Rule' then mult = 25 elseif bone == 'Orb' then mult = 35 end
+                    table.insert(self.rotators, CreateRotator(self, bone, ori, nil, 0, 45, (-1 + 2 * math.random(0,1) ) * mult) )
+                end
+            end
+        end
+    end,
 }
 
 TypeClass = SAL0320

@@ -658,6 +658,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * While this second point would no longer be true now, the first point still stands.
   * Fixed Aeon T3 mobile sensor giving free intel when first constructed.
   * UEF T3 mobile AA no longer has its intel enabled from the get-go.
+  * Cleaned up the script of the Armillary.
+  * Reduced the target check interval of the Armillary from 0.3 to 1.5 so a group no longer aimbots everything out of the sky in a single shot.
 
 ## 2016-12-15|0.7.5.5
 
