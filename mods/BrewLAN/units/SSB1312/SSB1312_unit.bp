@@ -50,7 +50,7 @@ UnitBlueprint {
         EconomyThreatLevel = 2500,
         Health = 8400*2.5,
         MaxHealth = 8400*2.5,
-        RegenRate = 0,
+        RegenRate = 10,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
@@ -113,7 +113,7 @@ UnitBlueprint {
         BuildCostEnergy = 31625*1.5,
         BuildCostMass = 4600*1.5,
         BuildTime = 2875*1.5,
-        HalfPriceUpgradeFromID = 'xsb1302', 
+        HalfPriceUpgradeFromID = 'xsb1302',
         MaintenanceConsumptionPerSecondEnergy = 54,
         ProductionPerSecondMass = 18,
         RebuildBonusIds = {

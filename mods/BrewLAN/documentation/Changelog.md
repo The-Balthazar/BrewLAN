@@ -660,6 +660,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * UEF T3 mobile AA no longer has its intel enabled from the get-go.
   * Cleaned up the script of the Armillary.
   * Reduced the target check interval of the Armillary from 0.3 to 1.5 so a group no longer aimbots everything out of the sky in a single shot.
+  * Armillary will now prioritise targeting experimentals over bombers.
+
+  ### 2017-12-28
+
+  * Fixed the regen rate of the Seraphim Armoured Extractor, which was 0 instead of 10.
 
 ## 2016-12-15|0.7.5.5
 
