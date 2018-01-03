@@ -502,7 +502,7 @@ Kennel
 Novax Center & Defense Satellite
 * Removed.
 * Replaced with:
-  * A Tech 3 Observation Satellite Uplink & Observation Satellite, which mostly reuses its apearance.
+  * A Tech 3 Observation Satellite Uplink & Observation Satellite, which mostly reuses its appearance.
   * A Tech 3 Mobile Satellite Uplink vehicle, with its weapon.
 
 Mavor
@@ -561,7 +561,7 @@ T3 Battleship
 * Have cloaked/stealthed units able to detect when they are detected.
   * Might be easier to implement the other way round; the omni checks on detecting them.
 * Team colored lasers.
-* Cybran Artillery stabaliser.
+* Cybran Artillery stabiliser.
 * Cybran T1 Spy Submarine.
   * https://imgur.com/a/EcghD
 * Cybran T2 or 3 stealth field aircraft.
@@ -585,7 +585,7 @@ Experimental Defense Structures - A UEF one that combines all three seems fine. 
 Experimental Air Staging - This is the only one that I don't have an idea for.
 
 Experimental Resource Storage - Aeon. When it's full on Energy, it emits a shield. When it's full on mass, it emits a Health Regen aura. There are a pile of issues with this, but I just thought it was a cool idea.
-* Would need to be careful with the shield, to make sure its not just used as another shield generator, but with slower responce times.
+* Would need to be careful with the shield, to make sure its not just used as another shield generator, but with slower response times.
   * Also don't want to make the Iron Curtain redundant.
 * Health buff aura on mass full, Health regen on energy full.
   * Is this pulling players in the wrong direction? Do we want them to be stockpiling and wasting resources for effect?

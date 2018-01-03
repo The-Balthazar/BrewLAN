@@ -666,6 +666,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed the regen rate of the Seraphim Armoured Extractor, which was 0 instead of 10.
 
+  ### 2018-01-03
+
+  * UEF T1 Air Staging retexture.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
