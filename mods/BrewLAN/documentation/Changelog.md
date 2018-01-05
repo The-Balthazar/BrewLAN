@@ -670,6 +670,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * UEF T1 Air Staging retexture.
 
+  ### 2018-01-05
+
+  * Added a non-functional unbuildable arbitrary-stats WIP UEF Experimental Point Defence, so I can work on it in America; I got a flight to go catch.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

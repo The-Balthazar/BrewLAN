@@ -220,7 +220,7 @@
 |**Factory**       |Gantry      (F)|I. Engine   (F)|Arthrolab   (F)|Souiya      (F)|
 |**Economic**      | —             |*Paragon*      | —             |`*`            |
 |                  |               |               |               |               |
-|**Defence**       |`*`            | —             |Iron Curtain   | —             |
+|**Defence**       |`Railgun`      | —             |Iron Curtain   | —             |
 |                  |               |               |               |               |
 |**Strategic 1**   |*Mavor*        |*Salvation*    |Scathis MK2    |Suthanus       |
 |**Strategic 2**   |Ivan        (F)|`*`            |`*`            |*Yolona Oss*   |
