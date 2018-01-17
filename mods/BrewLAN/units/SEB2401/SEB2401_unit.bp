@@ -23,19 +23,19 @@ UnitBlueprint {
     },
     Buffs = {
         Regen = {
-            Level1 = 3,
-            Level2 = 6,
-            Level3 = 9,
-            Level4 = 12,
-            Level5 = 15,
+            Level1 = 10,
+            Level2 = 20,
+            Level3 = 30,
+            Level4 = 40,
+            Level5 = 50,
         },
     },
     BuildIconSortPriority = 110,
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-        --'BUILTBYTIER3ENGINEER',
-        --'BUILTBYTIER3COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'UEF',
         'STRUCTURE',
         'DEFENSE',
@@ -52,15 +52,18 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 500,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 1190,
-        Health = 10000,
-        MaxHealth = 10000,
+        EconomyThreatLevel = 2337,
+        Health = 23075,
+        MaxHealth = 23075,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC seb2401>Experimental Point Defence',
+    Description = '<LOC seb2401_desc>Experimental Point Defence',
     Display = {
+        Abilities = {
+            '<LOC ability_deathaoe>Volatile',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -96,12 +99,13 @@ UnitBlueprint {
         UniformScale = 0.0275*3.5,
     },
     Economy = {
-        BuildCostEnergy = 900000*.25,
-        BuildCostMass = 90000*.25,
-        BuildTime = 30000*.25,
+        BuildCostEnergy = 175000,
+        BuildCostMass = 15000,
+        BuildTime = 6000,
         RebuildBonusIds = {
             'seb2401',
         },
+        StorageEnergy = 10000,
     },
     Footprint = {
         SizeX = 5,
@@ -135,7 +139,7 @@ UnitBlueprint {
         VisionRadius = 28,
     },
     Interface = {
-        HelpText = '<LOC seb2401>Experimental Point Defense',
+        HelpText = '<LOC seb2401_desc>Experimental Point Defense',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.9,
@@ -192,7 +196,7 @@ UnitBlueprint {
             --AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             BeamCollisionDelay = 0,
-            BeamLifetime = 8,
+            BeamLifetime = 1,
 
             CameraShakeDuration = 0.1,
             CameraShakeMax = 1,
@@ -204,9 +208,9 @@ UnitBlueprint {
             DamageRadius = 1.5,
             DamageType = 'Normal',
 
-            DisplayName = 'Excalibur Cannon',
+            DisplayName = 'Maelstrom Cannon',
             EnergyDrainPerSecond = 10000,
-            EnergyRequired = 80000,
+            EnergyRequired = 10000,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
@@ -224,20 +228,20 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Turret_Muzzle',
                     },
-                    RackBone = 'Turret_Muzzle',
+                    RackBone = 'Turret_Barrel',
                     --TelescopeBone = 'DropPod',
                     --TelescopeRecoilDistance = 15,
                 },
             },
             RackFireTogether = false,
-            RackRecoilDistance = 1,
+            RackRecoilDistance = -10,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
-            RateOfFire = 0.05,
+            RateOfFire = 0.15,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -262,6 +266,16 @@ UnitBlueprint {
             WeaponCategory = 'Direct Fire',
             WeaponRepackTimeout = 9999999,
             WeaponUnpacks = false,
+        },
+        {
+            Damage = 4000,
+            DamageFriendly = true,
+            DamageRadius = 6.5,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
         },
     },
     Wreckage = {

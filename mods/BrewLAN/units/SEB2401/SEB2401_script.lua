@@ -1,14 +1,9 @@
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local TOrbitalDeathLaserBeamWeapon = import('/lua/terranweapons.lua').TOrbitalDeathLaserBeamWeapon
+local MaelstromDeathLaser = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/weapons.lua').MaelstromDeathLaser
 
 SEB2401 = Class(TStructureUnit) {
     Weapons = {
-        MainGun = Class(TOrbitalDeathLaserBeamWeapon){},
+        MainGun = Class(MaelstromDeathLaser){},
     },
-
-    OnStopBeingBuilt = function(self,builder,layer)
-        TStructureUnit.OnStopBeingBuilt(self,builder,layer)
-        LOG("Test")
-    end,
 }
 TypeClass = SEB2401

@@ -1,4 +1,3 @@
---BrewLAN/mods/BrewLAN/hook/loc/US
 --ISO_639-1_code=EN
 --+---------------+--+----------------------------------------------------------
 --¦'-,_  ¦ ¦ _,-'¯¦--¦
@@ -48,7 +47,7 @@ tooltipbrewlan0019="Reclaim a unit or wreckage and learn its blueprint."
 
 --Tooltips for the Stargate
 tooltipbrewlan0020="Dial Gateway"
-tooltipbrewlan0021="Selects a target quantum gateway to create a one way transportation link with."
+tooltipbrewlan0021="Selects a target quantum gateway with which to create a one-way transportation link."
 tooltipbrewlan0022="Enable or disable the shield preventing access in or out of the gateway."
 tooltipbrewlan0023="Stop Link"
 tooltipbrewlan0024="Closes an outgoing link."
@@ -358,7 +357,7 @@ sal0322_name="Flame Lotus"
 sel0322_name="Ella"
 --Short and long descriptions both the same as default.
 
---Mobile AA
+--Mobile anti-air
 sal0320_desc="Mobile Anti-Air Defense"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Hovering mobile anti-air defence system. Consumes power with each shot."
@@ -392,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="Mobile tactical missile defense. Protection is 
 srl0324_desc="Mobile Sensor Array"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
-Unit_Description_BrewLAN_T3L016="High-end mobile intelligense system. While stationary it is visible only to omni, and provides extensive radar and omni coverage."
+Unit_Description_BrewLAN_T3L016="High-end mobile intelligence system. While stationary it is visible only to omni, and provides extensive radar and omni coverage."
+Unit_Description_BrewLAN_T3L019="Hovering sensor array. Consumes large quantities of power to function."
 
+sl0325_desc="Mobile Torpedo Launcher"
+sel0325_name="PT-57 Croc"
+sal0325_name="Limbo"
+Unit_Description_BrewLAN_T3L017="Mobile anti-naval vehicle."
+Unit_Description_BrewLAN_T3L018="Mobile hovering anti-naval vehicle."
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Hovering torpedo system. Capable of destroying the largest of enemy vessels."
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -464,3 +472,7 @@ Unit_Description_BrewLAN_T4B010="Constructs land units."
 ssb0401_desc="Experimental Naval Factory"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Constructs naval units."
+
+seb2401_desc="Experimental Point Defence"
+seb2401_name="Maelstrom"
+Unit_Description_BrewLAN_T4B012="Experimental defensive building. Consumes large amounts of power with each shot."

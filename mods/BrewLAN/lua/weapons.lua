@@ -1,8 +1,9 @@
 local DefaultBeamWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultBeamWeapon
 local EffectTemplate = import('/lua/EffectTemplates.lua')
+local BrewLANBeams = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/collisionbeams.lua')
 
 ADFAlchemistPhasonLaser = Class(DefaultBeamWeapon) {
-    BeamType = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/collisionbeams.lua').AlchemistPhasonLaserCollisionBeam,
+    BeamType = BrewLANBeams.AlchemistPhasonLaserCollisionBeam,
     FxMuzzleFlash = {},
     FxChargeMuzzleFlash = {},
     FxUpackingChargeEffects = EffectTemplate.CMicrowaveLaserCharge01,
@@ -20,4 +21,10 @@ ADFAlchemistPhasonLaser = Class(DefaultBeamWeapon) {
             DefaultBeamWeapon.PlayFxWeaponUnpackSequence(self)
         end
     end,
+}
+
+MaelstromDeathLaser = Class(DefaultBeamWeapon) {
+    BeamType = BrewLANBeams.DeathLaserCollisionBeam,
+    FxUpackingChargeEffects = {},
+    FxUpackingChargeEffectScale = 1,
 }
