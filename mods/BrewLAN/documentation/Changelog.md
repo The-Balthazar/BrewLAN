@@ -674,6 +674,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added a non-functional unbuildable arbitrary-stats WIP UEF Experimental Point Defence, so I can work on it in America; I got a flight to go catch.
 
+  ### 2018-01-17
+
+  * Mostly finished the UEF Experimental Point Defence.
+
+  ### 2018-01-19
+
+  * Sorian AI can now build the Experimental Point Defence.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

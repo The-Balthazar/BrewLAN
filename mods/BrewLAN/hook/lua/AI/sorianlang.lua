@@ -217,3 +217,22 @@ AINames.srb4402 = {
     'QAI',
     'Mainframe',
 }
+--------------------------------------------------------------------------------
+-- Experimental Point Defence
+--------------------------------------------------------------------------------
+AINames.seb2401 = {
+    'Maelstrom',
+    'Excalibur',
+    'Daddy',
+    'Hailstorm',
+    'Big Gun',
+    'Hypertron',
+    'Hyperion',
+    'Penetrator',
+    'Gauss Cannon',
+    'Junon',
+    'Opticor',
+    'Annihilator',
+    'Doomsday Machine',
+    'Gausstron',
+}

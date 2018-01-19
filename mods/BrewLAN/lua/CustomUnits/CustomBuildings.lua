@@ -63,6 +63,9 @@ T2GroundDefense = {
     Seraphim =	{'ssb2306', 33},
     Aeon =		{'sab2306', 33},
 },
+T3GroundDefense = {
+    UEF =	{'seb2401', 25},
+},
 T2Artillery = {
     UEF =		{'srb2311', 80},
     Cybran =	{'srb2311', 80},
