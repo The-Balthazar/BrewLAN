@@ -681,6 +681,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-01-19
 
   * Sorian AI can now build the Experimental Point Defence.
+  * Cafe Corretto: Added a new UEF T3 turret. Field engineer only. It is literally torn off the Neptune.
 
 ## 2016-12-15|0.7.5.5
 
