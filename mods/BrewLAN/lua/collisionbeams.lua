@@ -9,8 +9,8 @@ AlchemistPhasonLaserCollisionBeam = Class(PhasonLaserCollisionBeam) {
     SplatTexture = 'czar_mark01_albedo',
 }
 
-DeathLaserCollisionBeam = Class(OrbitalDeathLaserCollisionBeam) {
+--[[DeathLaserCollisionBeam = Class(OrbitalDeathLaserCollisionBeam) {
     FxBeamStartPoint = {
 		'/effects/emitters/uef_orbital_death_laser_muzzle_02_emit.bp',	# molecular, small details
     },
-}
+}]]--

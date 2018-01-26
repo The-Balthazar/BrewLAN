@@ -44,6 +44,37 @@ do
             end
         end,
 
+        OnCollisionCheck = function(self, other, firingWeapon)
+            local hit = UnitOld.OnCollisionCheck(self, other, firingWeapon)
+            if hit and other.DamageData.DamageType == 'Railgun' then
+                --other:OnImpact( 'Unit', self)
+                other:DoDamage( other:GetLauncher(), other.DamageData, self)
+                other:DoMetaImpact(other.damageData )
+                other:DoUnitImpactBuffs(other.targetEntity)
+
+                local ImpactEffects = {}
+                local ImpactEffectScale = 1
+                local army = other:GetArmy()
+                local bp = other:GetBlueprint()
+                local bpAud = bp.Audio
+                local snd = bpAud['Impact'..'Unit']
+                if snd then
+                    other:PlaySound(snd)
+                elseif bpAud.Impact then
+                    other:PlaySound(bpAud.Impact)
+                end
+                ImpactEffects = other.FxImpactUnit
+                ImpactEffectScale = other.FxUnitHitScale
+                if other.CreateRailGunImpactEffects then
+                    other:CreateRailGunImpactEffects( army, ImpactEffects, ImpactEffectScale, self )
+                else
+                    other:CreateImpactEffects( army, ImpactEffects, ImpactEffectScale )
+                end
+                return false
+            end
+            return hit
+        end,
+
         OnStartBuild = function(self, unitBeingBuilt, order, ...)
             local myBp = self:GetBlueprint()
             if myBp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == myBp.General.UpgradesTo and order == 'Upgrade' then

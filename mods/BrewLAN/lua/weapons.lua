@@ -23,8 +23,8 @@ ADFAlchemistPhasonLaser = Class(DefaultBeamWeapon) {
     end,
 }
 
-MaelstromDeathLaser = Class(DefaultBeamWeapon) {
+--[[MaelstromDeathLaser = Class(DefaultBeamWeapon) {
     BeamType = BrewLANBeams.DeathLaserCollisionBeam,
     FxUpackingChargeEffects = {},
     FxUpackingChargeEffectScale = 1,
-}
+}]]--

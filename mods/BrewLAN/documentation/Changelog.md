@@ -683,6 +683,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Sorian AI can now build the Experimental Point Defence.
   * Cafe Corretto: Added a new UEF T3 turret. Field engineer only. It is literally torn off the Neptune.
 
+  ### 2018-01-26
+
+  * Increased the collision height of the UEF T1 air staging.
+  * Renamed UEF Experimental Point Defence to Excalibur to match final results of poll.
+  * Replaced beam weapon of Excalibur with a projectile railgun.
+    * Removed splash damage.
+    * Damage now dealt instantly instead of over 1 second.
+    * Projectile penetrates targets.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

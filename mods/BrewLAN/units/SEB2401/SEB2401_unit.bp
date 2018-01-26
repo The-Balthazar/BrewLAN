@@ -188,25 +188,23 @@ UnitBlueprint {
             AimsStraightOnDisable = true,
             Audio = {
                 Fire = Sound {
-                    Bank = 'XEA_Weapon',
-                    Cue = 'XEA0002_Orbital_Death_Ray',
+                    Bank = 'XES_Weapons',
+                    Cue = 'XES0307_Plasma_Cannon',
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
             --AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
-            BeamCollisionDelay = 0,
-            BeamLifetime = 1,
 
             CameraShakeDuration = 0.1,
-            CameraShakeMax = 1,
+            CameraShakeMax = 3,
             CameraShakeMin = 0,
             CameraShakeRadius = 2,
 
             CollideFriendly = false,
-            Damage = 500,
-            DamageRadius = 1.5,
-            DamageType = 'Normal',
+            Damage = 5000,
+            DamageRadius = 0,
+            DamageType = 'Railgun',
 
             DisplayName = 'Maelstrom Cannon',
             EnergyDrainPerSecond = 10000,
@@ -214,6 +212,7 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
             },
             FiringTolerance = 2,
             Label = 'MainGun',
@@ -222,7 +221,12 @@ UnitBlueprint {
             MuzzleChargeDelay = 0,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
+            MuzzleVelocity = 3000,
             NeedPrep = true,
+            ProjectileId = '/mods/brewlan/projectiles/TDFRailGun/TDFRailGun_proj.bp',
+
+            --ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
+            ProjectilesPerOnFire = 1,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -262,7 +266,7 @@ UnitBlueprint {
             TurretYawSpeed = 8,
             Turreted = true,
             WeaponCategory = 'Direct Fire',
-            WeaponRepackTimeout = 9999999,
+            WeaponRepackTimeout = 0,
             WeaponUnpacks = false,
         },
         {
