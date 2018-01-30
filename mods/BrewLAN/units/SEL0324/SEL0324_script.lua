@@ -28,9 +28,9 @@ SEL0324 = Class(TLandUnit) {
     end,
 
     OnIntelDisabled = function(self)
-        self:DestroyIdleEffects()
         TLandUnit.OnIntelDisabled(self)
         self.RadarEnabled = false
+        self:DestroyIdleEffects()
     end,
 
     RadarAnimation = function(self)
@@ -48,6 +48,7 @@ SEL0324 = Class(TLandUnit) {
                 WaitFor(manipulator)
             else
                 WaitTicks(10)
+                self:DestroyIdleEffects()
             end
         end
     end,

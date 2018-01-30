@@ -692,6 +692,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Damage now dealt instantly instead of over 1 second.
     * Projectile penetrates targets.
 
+  ### 2018-01-30
+
+  * Reduced firing tolerance of Excalibur to 0 to prevent early fired shots that hit nothing.
+  * Corrected ballistic calculation category of Excalibur to low arc, since it technically has an arc.
+  * Excalibur now leads its targets, for times when that actually matters.
+  * Fixed a case of the Longbow having intel effects active while intel is inactive.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
