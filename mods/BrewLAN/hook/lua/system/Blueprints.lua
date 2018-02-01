@@ -167,10 +167,10 @@ function BrewLANCategoryChanges(all_bps)
         urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = 'TECH2', },
         urb4207 = {'TECH3','BUILTBYTIER3FIELD', r = 'TECH2', },
         --Tech 3 units
-        xab3301 = {'DRAGBUILD', 'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
+        xab3301 = {'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
         xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager
-        xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD', },--Kennel
-        xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','DRAGBUILD','TECH3', r = 'TECH2' },--Hive
+        xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', },--Kennel
+        xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','TECH3', r = 'TECH2' },--Hive
         --Crab eggs.
         xrl0004 = {'TECH3', r = 'TECH2'},
 
@@ -312,11 +312,18 @@ function BrewLANHeavyWallBuildList(all_bps)
         --Check its not hard coded to be buildable, then check it meets the standard requirements.
         if bp.Categories then
             if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
+            and not table.find(bp.Categories, 'WALL')
+            and not table.find(bp.Categories, 'HEAVYWALL')
+            and not table.find(bp.Categories, 'MEDIUMWALL')
+            and not table.find(bp.Categories, 'MINE')
             and table.find(bp.Categories, 'STRUCTURE')
             then
                 if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
                 or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
                 or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER1FIELD')
+                or table.find(bp.Categories, 'BUILTBYTIER2FIELD')
+                or table.find(bp.Categories, 'BUILTBYTIER3FIELD')
                 then
                     if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
                         --Check it wouldn't overlap badly with the wall

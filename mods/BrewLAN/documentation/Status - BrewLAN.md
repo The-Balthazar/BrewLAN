@@ -291,7 +291,7 @@ Gantry: Experimental Factory
       * Find a way to allow building of things the UI is currently disabling. Possibly to have it swap modes briefly.
 
 ### Seraphim
-Chappa'ai: Totally-not-a-stargate Experimental Quantum Gatewy
+Chappa'ai: Totally-not-a-stargate Experimental Quantum Gateway
   * Requires two to be functional. Duh.
   * Still to do:
     * Add a ferry point icon to make transporting things through it easy.
@@ -300,7 +300,7 @@ Chappa'ai: Totally-not-a-stargate Experimental Quantum Gatewy
 
 Experimental Mine? ( *** )
   * To be an experimental for the field engie.
-  * Possibile functions:
+  * Possible functions:
     * Releasing a residual energy signature.
     * Self replicating mines.
     * Damage over time effect.
@@ -572,6 +572,7 @@ T3 Battleship
   * https://imgur.com/a/9tbXY
 * Turrets
 * Freeze mines
+* Component tower ship
 
 ## Kris' notes on my ideas for further experimental buildings
 * My notes on his notes.
