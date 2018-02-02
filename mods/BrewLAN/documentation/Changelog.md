@@ -709,6 +709,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Caffe Corretto: UEF T1 anti-armor point defense added.
   * Caffe Corretto: Fixed categorisation of Hiro so builder walls can build it.
   * Replaced icon for Guardian to better match icons of Caffe Corretto T1&2 AAPDs.
+  * Caffe Corretto: Altered the life bar offset of Hiro.
+
+  ### 2018-02-02
+
+  * Paragon Game: Fix for FAF.
 
 ## 2016-12-15|0.7.5.5
 
