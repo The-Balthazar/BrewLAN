@@ -715,6 +715,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Paragon Game: Fix for FAF.
 
+  ### 2018-02-04
+
+  * Fixed Novax on FAF, which was broken because they fixed a typo in a place that isn't visible in game.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
