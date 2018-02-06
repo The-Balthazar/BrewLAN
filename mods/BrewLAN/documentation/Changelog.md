@@ -719,6 +719,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed Novax on FAF, which was broken because they fixed a typo in a place that isn't visible in game.
 
+  ### 2018-02-06
+
+  * Caffe Corretto: Added Cybran Experimental Point Defence.
+  * Caffe Corretto: Fixed UEF T1&2 AAPD mod-origin categories.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

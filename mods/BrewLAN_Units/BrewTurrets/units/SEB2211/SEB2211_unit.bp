@@ -27,7 +27,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 115,
     Categories = {
-        'PRODUCTBREWLAN',
+        'PRODUCTBREWLANTURRETS',
         'SELECTABLE',
         'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
