@@ -1,5 +1,5 @@
 local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 
-TEB0101 = Class(TLandFactoryUnit) {}
+SEB0101 = Class(TLandFactoryUnit) {}
 
-TypeClass = TEB0101
+TypeClass = SEB0101

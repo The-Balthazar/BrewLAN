@@ -5,12 +5,12 @@
 #**
 #**  Summary  :  UEF Light Radar Installation Script
 #**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright ï¿½ 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local TRadarUnit = import('/lua/terranunits.lua').TRadarUnit
 
-TEB3101 = Class(TRadarUnit) {
+SEB3101 = Class(TRadarUnit) {
           
     RadarThread = function(self)
         local spinner = CreateRotator(self, 'Spinner04', 'x', nil, 0, 30, -45)
@@ -31,4 +31,4 @@ TEB3101 = Class(TRadarUnit) {
     end,
 }
 
-TypeClass = TEB3101
+TypeClass = SEB3101

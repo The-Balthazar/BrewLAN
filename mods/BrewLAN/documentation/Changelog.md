@@ -724,6 +724,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Caffe Corretto: Added Cybran Experimental Point Defence.
   * Caffe Corretto: Fixed UEF T1&2 AAPD mod-origin categories.
 
+  ### 2018-02-09
+
+  * TeaD: Added translation support.
+  * TeaD: Added unit descriptions for buildable units.
+  * TeaD: Changed the unit code prefixes of buildable units from T to S.
+    * The starting unit and the creeps are still prefix T.
+  * Caffe Corretto: Added build description for Neolith.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -155,11 +155,11 @@ UnitBlueprint {
         BuildOrder = {
             {Wait = 10},
             --------------------------------------------------------------------
-            {Message = "Pathfinder wave"},
+            {Message = "<LOC tead_pathfinder_wave>Pathfinder wave"},
             {'tec0004', 1},
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Wave group 1"},
+            {Message = "<LOC tead_wave1>Wave group 1"},
             --------------------------------------------------------------------
             {'tec0001', 6, 8 }, --Cars
             {Wait = 20},
@@ -176,16 +176,16 @@ UnitBlueprint {
             {'tec0002', 5, 6 }, --Trucks
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Damage test wave 1"},
+            {Message = "<LOC tead_DTwave1>Damage test wave 1"},
             {'tec0101', 1}, --Damage test boss 1
             {Wait = 60},
             --------------------------------------------------------------------
-            {Message = "Wave group 2"},
+            {Message = "<LOC tead_wave2>Wave group 2"},
             --------------------------------------------------------------------
             {'tec0002', 18, 20 }, --Trucks
             {Wait = 20},
             {'tec0006', 18, 20 }, --Bikes
-            {Message = "Warning: Cloaked units inbound"},
+            {Message = "<LOC tead_warn_cloak>Warning: Cloaked units inbound"},
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars
             {Wait = 20},
@@ -206,18 +206,18 @@ UnitBlueprint {
             {'tec0003', 2, 3 }, --Trucks
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Damage test wave 2"},
+            {Message = "<LOC tead_DTwave2>Damage test wave 2"},
             {'tec0102', 1}, --Damage test boss 1
             {Wait = 15},
-            {Message = "Warning: Fliers inbound"},
+            {Message = "<LOC tead_warn_fliers>Warning: Fliers inbound"},
             {Wait = 60},
             --------------------------------------------------------------------
-            {Message = "Wave group 3"},
+            {Message = "<LOC tead_wave3>Wave group 3"},
             --------------------------------------------------------------------
             {'tec0009', 5 }, -- Flying Scouts
             {Wait = 20},
             {'tec0003', 20 }, -- Busses
-            {Message = "Warning: Cloaked units inbound"},
+            {Message = "<LOC tead_warn_cloak>Warning: Cloaked units inbound"},
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars
             {Wait = 20},
@@ -235,9 +235,11 @@ UnitBlueprint {
             {'tec0007', 3}, --Shield Marines
             {Wait = 30},
             --------------------------------------------------------------------
-            {Message = "Boss wave 1"},
+            {Message = "<LOC tead_boss1>Boss wave 1"},
             {'tec0103', 1}, --Shield boss
             {Wait = 60},
+            --------------------------------------------------------------------
+            {Message = "<LOC tead_wave4>Wave group 4"},
             --------------------------------------------------------------------
             {'tec0006', 10 }, --Bikes
             {'tec0010', 1}, --ambulance
@@ -249,13 +251,13 @@ UnitBlueprint {
             {'tec0010', 1}, --ambulance
             {'tec0006', 10 }, --Bikes
             {'tec0010', 1}, --ambulance
-            {Message = "Warning: Fliers inbound"},
+            {Message = "<LOC tead_warn_fliers>Warning: Fliers inbound"},
             {Wait = 20},
             {'tec0011', 15 }, --15 fat aircraft
-            {Message = "Warning: Cloaked units inbound"},
+            {Message = "<LOC tead_warn_cloak>Warning: Cloaked units inbound"},
             {Wait = 20},
             {'tec0008', 15 }, --Cloaked cars
-            {Message = "Warning: Fliers inbound"},
+            {Message = "<LOC tead_warn_fliers>Warning: Fliers inbound"},
             {Wait = 20},
             {'tec0012', 5 }, --5 shielded aircraft
             {Wait = 20},
@@ -263,7 +265,7 @@ UnitBlueprint {
             {Wait = 30},
             --------------------------------------------------------------------
             --{Message = "Boss wave 2"},
-            {Message = "Final Boss"},
+            {Message = "<LOC tead_boss_final>Final Boss"},
             {'tec0104', 1},
             {Wait = 30},
             {End = true},

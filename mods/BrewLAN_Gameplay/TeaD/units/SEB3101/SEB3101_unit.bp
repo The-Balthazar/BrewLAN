@@ -47,7 +47,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC teb3101_desc>Light Radar System',
+    Description = '<LOC seb3101_desc>Light Radar System',
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
@@ -115,7 +115,7 @@ UnitBlueprint {
         BuildTime = 80,
         MaintenanceConsumptionPerSecondEnergy = 5,
         RebuildBonusIds = {
-            'teb3101',
+            'seb3101',
         },
     },
     Footprint = {
@@ -153,7 +153,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        UnitName = '<LOC teb3101_name>SA0 - 100',
+        UnitName = '<LOC seb3101_name>SA0 - 100',
         UnitWeight = 1,
     },
     Intel = {
@@ -163,7 +163,7 @@ UnitBlueprint {
         VisionRadius = 60,
     },
     Interface = {
-        HelpText = '<LOC teb3101_desc>Light Radar System',
+        HelpText = '<LOC seb3101_desc>Light Radar System',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.4,

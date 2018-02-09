@@ -118,7 +118,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC srl2401_name>Neolith',
+        UnitName = '<LOC srb2402_name>Neolith',
         UnitWeight = 1,
     },
     Intel = {

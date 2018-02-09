@@ -5,14 +5,14 @@
 #**
 #**  Summary  :  Terran Light Gun Tower Script
 #**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright ï¿½ 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local TDFRiotWeapon = import('/lua/terranweapons.lua').TDFRiotWeapon
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
-TEB2101 = Class(TStructureUnit) {
+SEB2101 = Class(TStructureUnit) {
     Weapons = {
         Riotgun01 = Class(TDFRiotWeapon) {
             FxMuzzleFlash = EffectTemplate.TRiotGunMuzzleFxTank
@@ -20,4 +20,4 @@ TEB2101 = Class(TStructureUnit) {
     },
 }
 
-TypeClass = TEB2101
+TypeClass = SEB2101

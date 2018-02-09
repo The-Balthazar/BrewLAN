@@ -131,6 +131,7 @@ UnitBlueprint {
             'BUILTBYTIER1TEAD UEF MOBILE',
         },
         RebuildBonusIds = {
+            'seb0101',
             'ueb0101',
             'ueb0201',
             'ueb0301',

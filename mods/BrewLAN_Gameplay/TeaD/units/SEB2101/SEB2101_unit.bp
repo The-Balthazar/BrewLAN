@@ -55,7 +55,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 6,
     },
-    Description = '<LOC teb2101_desc>Light Point Defense',
+    Description = '<LOC seb2101_desc>Light Point Defense',
     Display = {
         Mesh = {
             IconFadeInZoom = 130,
@@ -96,7 +96,7 @@ UnitBlueprint {
         BuildCostMass = 250*.2,
         BuildTime = 250*.25,
         RebuildBonusIds = {
-            'teb2101',
+            'seb2101',
         },
     },
     General = {
@@ -120,14 +120,14 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC teb2101_name>DMX Riot Gun',
+        UnitName = '<LOC seb2101_name>DMX Riot Gun',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,
     },
     Interface = {
-        HelpText = '<LOC teb2101_desc>Light Point Defense',
+        HelpText = '<LOC seb2101_desc>Light Point Defense',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
