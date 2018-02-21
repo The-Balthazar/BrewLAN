@@ -1,0 +1,17 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'SEB3404_Dish_Scaffolds_lod0.scm',
+            AlbedoName = 'SEB3404_Dish_Scaffolds_albedo.dds',
+            ShaderName = 'Clutter',
+            LODCutoff = 25,
+        },
+        {
+            MeshName = 'SEB3404_Dish_Scaffolds_lod1.scm',
+            AlbedoName = 'SEB3404_Dish_Scaffolds_albedo_lod1.dds',
+            ShaderName = 'TMeshAlpha',
+            LODCutoff = 200,
+        },
+    },
+    SortOrder = 1000,
+}

@@ -1,0 +1,13 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'SEB3404_Domes_lod0.scm',
+            AlbedoName = '/effects/Entities/Shield01/Shield01_Albedo.dds',
+            SpecularName = '/effects/Entities/Shield01/Shield01_Specular.dds',
+            SecondaryName = '/effects/Entities/Shield01/Shield01_Secondary.dds',
+            ShaderName = 'ShieldUEF',
+            LODCutoff = 200,
+        },
+    },
+    SortOrder = 1000,
+}

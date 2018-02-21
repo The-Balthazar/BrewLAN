@@ -5,24 +5,35 @@ local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 local AIUtils = import('/lua/ai/aiutilities.lua')
 
-SEB3404 = Class(TStructureUnit) {   
-    
+SEB3404 = Class(TStructureUnit) {
+
     OnStopBeingBuilt = function(self, ...)
         TStructureUnit.OnStopBeingBuilt(self, unpack(arg) )
         self.PanopticonUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
         self:SetScriptBit('RULEUTC_WeaponToggle', true)
         self:ForkThread(
             function()
-                while true do 
+                while true do
                     if self.Intel == true then
                         self:IntelSearch()
-                    end      
+                    end
                     WaitSeconds(1)
                 end
             end
         )
+        self:ForkThread(self.AnimationThread)
+        for i, v in {{'Panopticon','Domes'},{'Large_Dish','Dish_Scaffolds'}} do
+            local entity = import('/lua/sim/Entity.lua').Entity({Owner = self,})
+            entity:AttachBoneTo( -1, self, v[1] )
+            entity:SetMesh(import( '/lua/game.lua' ).BrewLANPath() .. '/units/SEB3404/SEB3404_' .. v[2] .. '_mesh')
+            entity:SetDrawScale(self:GetBlueprint().Display.UniformScale)
+            entity:SetVizToAllies('Intel')
+            entity:SetVizToNeutrals('Intel')
+            entity:SetVizToEnemies('Intel')
+            self.Trash:Add(entity)
+        end
     end,
-    
+
     IntelSearch = function(self)
         local aiBrain = self:GetAIBrain()
         local maxrange = self:GetIntelRadius('radar') or self:GetBlueprint().Intel.RadarRadius or 6000
@@ -38,7 +49,7 @@ SEB3404 = Class(TStructureUnit) {
                 DistanceSortedLocalUnits[uniqueDistanceKey] = v
                 v = nil
             end
-            LocalUnits = DistanceSortedLocalUnits 
+            LocalUnits = DistanceSortedLocalUnits
         end
         ------------------------------------------------------------------------
         -- Calculate the overall cost and cut off point for the energy restricted radius
@@ -46,7 +57,7 @@ SEB3404 = Class(TStructureUnit) {
         local NewUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
         local SpareEnergy = self:GetAIBrain():GetEconomyIncome( 'ENERGY' ) - self:GetAIBrain():GetEconomyRequested('ENERGY') + self.PanopticonUpkeep
         for i, v in LocalUnits do
-        
+
             --Calculate costs per unit as we go
             local ebp = v:GetBlueprint()
             local cost
@@ -59,25 +70,25 @@ SEB3404 = Class(TStructureUnit) {
                 cost = math.min(math.max((ebp.Economy.BuildCostEnergy or 10000) / 1000, 10), 1000)
                 LocalUnits[i].cost = cost
             end
-            
+
             --Do things with those calculated costs
             if self.ActiveConsumptionRestriction and NewUpkeep + cost > SpareEnergy then
                 if i == 1 then
-                    NewUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy  
-                end   
-                
-                break 
+                    NewUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+                end
+
+                break
             else
                 NewUpkeep = NewUpkeep + cost
                 self:AttachVisEntityToTargetUnit(v)
-                 
+
             end
-        end    
+        end
         self.PanopticonUpkeep = NewUpkeep
-        self:SetMaintenanceConsumptionActive() 
-        self:SetEnergyMaintenanceConsumptionOverride(self.PanopticonUpkeep)  
+        self:SetMaintenanceConsumptionActive()
+        self:SetEnergyMaintenanceConsumptionOverride(self.PanopticonUpkeep)
     end,
-    
+
     AttachVisEntityToTargetUnit = function(self, unit)
         local location = unit:GetPosition()
         local spec = {
@@ -93,9 +104,9 @@ SEB3404 = Class(TStructureUnit) {
         local visentity = VizMarker(spec)
         visentity:AttachTo(unit, -1)
     end,
-    
+
     FindAllUnits = function(self, category, range, cloakcheck)
-        local Ftable = {} 
+        local Ftable = {}
         for i, unit in self:GetAIBrain():GetUnitsAroundPoint(category, self:GetPosition(), range, 'Enemy' ) do
             if cloakcheck and unit:IsIntelEnabled('Cloak') then
                 --LOG("Counterintel guy")
@@ -105,14 +116,14 @@ SEB3404 = Class(TStructureUnit) {
         end
         return Ftable
     end,
-    
+
     OnScriptBitSet = function(self, bit)
         TStructureUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
             self.ActiveConsumptionRestriction = false
         end
     end,
-       
+
 
     OnScriptBitClear = function(self, bit)
         TStructureUnit.OnScriptBitClear(self, bit)
@@ -120,27 +131,115 @@ SEB3404 = Class(TStructureUnit) {
             self.ActiveConsumptionRestriction = true
         end
     end,
-    
+
     OnIntelDisabled = function(self)
         TStructureUnit.OnIntelDisabled(self)
-        self.Intel = false 
+        self.Intel = false
     end,
 
     OnIntelEnabled = function(self)
         TStructureUnit.OnIntelEnabled(self)
         self.Intel = true
     end,
-    
+
     OnKilled = function(self, instigator, type, overkillRatio)
         TStructureUnit.OnKilled(self, instigator, type, overkillRatio)
     end,
-    
+
     OnDestroy = function(self)
         TStructureUnit.OnDestroy(self)
     end,
-    
-    OnCaptured = function(self, captor) 
+
+    OnCaptured = function(self, captor)
         TStructureUnit.OnCaptured(self, captor)
+    end,
+
+    AnimationThread = function(self)
+        local bones = {
+            {
+                'Xband_Base',
+                'Xband_Dish',
+                bounds = {-180,180,-90,0,},
+                speed = 3,
+            },
+            {
+                'Tiny_Dish_00',
+                c = 2,
+                cont = true
+            },
+            {
+                'Small_XBand_Stand_00',
+                'Small_XBand_Dish_00',
+                c = 4,
+                bounds = {-180,180,-90,0,},
+            },
+            {
+                'Small_Dish_00',
+                'Small_Dish_00',
+                c = 4,
+                bounds = {-180,180,-90,90,},
+                speed = 20,
+            },
+            {
+                'Med_Dish_Stand_00',
+                'Med_Dish_00',
+                c = 4,
+                bounds = {-180,180,-90,90,},
+                speed = 6,
+            },
+            {
+                'Large_Dish_Base',
+                'Large_Dish',
+                bounds = {-180,180,-90,0,},
+                speed = 2,
+            },
+        }
+        self.Rotators = {}
+        self.CRotators = {}
+        for i, set in bones do
+            if set.c then
+                for j = 1, set.c do
+                    if set.cont then
+                        table.insert(CreateRotator(self,set[1] .. j, 'z', nil, 30, 2, 30), self.CRotators)
+                    else
+                        table.insert(
+                            self.Rotators,
+                            {
+                                CreateRotator(self,set[1] .. j, 'z', math.random(set.bounds[1],set.bounds[2]), set.speed or 30, 2),
+                                CreateRotator(self,set[2] .. j, 'x', math.random(set.bounds[3],set.bounds[4]), set.speed or 30, 2),
+                                set.bounds,
+                                set.speed or 30,
+                            }
+                        )
+                    end
+                end
+            else
+                table.insert(
+                    self.Rotators,
+                    {
+                        CreateRotator(self,set[1], 'z', math.random(set.bounds[1],set.bounds[2]), set.speed or 30, 2),
+                        CreateRotator(self,set[2], 'x', math.random(set.bounds[3],set.bounds[4]), set.speed or 30, 2),
+                        set.bounds,
+                        set.speed or 30,
+                    }
+                )
+                --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
+            end
+        end
+        while true do
+            --LOG(self.Intel)
+            if self.Intel then
+                for i, v in self.Rotators do
+                    if math.random(1,40) < v[4] then
+                        v[1]:SetGoal(math.random(v[3][1],v[3][2]))
+                        v[2]:SetGoal(math.random(v[3][3],v[3][4]))
+                        WaitTicks(math.random(1,3))
+                    end
+                end
+                WaitTicks(math.random(1,3))
+            end
+            WaitTicks(10)
+        end
     end,
 }
 TypeClass = SEB3404

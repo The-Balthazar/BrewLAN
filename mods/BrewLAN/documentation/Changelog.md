@@ -732,6 +732,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * The starting unit and the creeps are still prefix T.
   * Caffe Corretto: Added build description for Neolith.
 
+  ### 2018-02-20
+
+  * Created a new model for the Panopticon.
+  * Massively increased the footprint size of the Panopticon.
+  * Created idle animations for the Panopticon.
+
+  ### 2018-02-21
+
+  * Created new tarmac and icon for Panopticon.
+  * Increased the size category of the Panopticon.
+  * Finished Panopticon texture.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
