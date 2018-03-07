@@ -744,6 +744,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Increased the size category of the Panopticon.
   * Finished Panopticon texture.
 
+  ### 2018-02-23
+
+  * Renamed the testing mod Blueprint Logger to Debug Tools.
+  * Debug Tools: Moved the damage test unit to Debug Tools.
+  * Debug Tools: Changed the log output of the damage test unit to CSV for graphing purposes.
+  * Debug Tools: Tripled the size of the damage test unit, so its harder to miss.
+  * Debug Tools: Made the damage test unit buildable.
+  * Made the hinges of the Panopticon more blue.
+  * TeaD: Made the cup black and updated the logo to the logo design, and fixed the specular map.
+
+  ### 2018-03-07
+
+  * Visual appearance rework for all aspects of the Iyadesu.
+    * Notable functional changes include:
+      * The firing arc of the laser is now only 30 degrees in front, instead of full 180.
+      * The minimum range of the laser is now 4, from 10.
+      * Drones now dock and are selectable, but still stay within a certain range of the parent.
+  * Iyadesu laser damage per tick halved, but tick rate doubled. DPS identical.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

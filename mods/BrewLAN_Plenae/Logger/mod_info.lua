@@ -1,8 +1,8 @@
-name = "Blueprint Logger"
-uid = "2529ea71-93ef-41a6-b552-LOGS0000000001"
-version = 0.6
-copyright = "© 2017 Sean Wheeldon"
-description = "Logs DPS of units."
+name = "Debug Tools"
+uid = "2529ea71-93ef-41a6-b552-LOGS0000000002"
+version = 0.7
+copyright = "ï¿½ 2017 - 2018 Sean Wheeldon"
+description = "Debug and testing tools. Not for real matches."
 author = "Sean Wheeldon"
 --icon = "/mods/BrewLAN_Plenae/ExperimentalIcons/Experimental-Icon-Overhaul_Mod_Icon.dds"
 selectable = true

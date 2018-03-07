@@ -91,10 +91,11 @@ UnitBlueprint {
         },
     },
     Categories = {
-        --'SELECTABLE',
+        'SELECTABLE',
         'SERAPHIM',
         'MOBILE',
         'AIR',
+        'EXPERIMENTAL',
         'POD',
         'REPAIR',
         'RECLAIM',
@@ -103,7 +104,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-        'STATIONASSISTPOD',
+        'MOBILEBUILDERONLY'
     },
     CollisionOffsetZ = -0.07,
     Defense = {
@@ -129,9 +130,9 @@ UnitBlueprint {
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     Scrolling = true,
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/XSB0303/XSB0303_albedo.dds', 
-                    NormalsName = '/units/XSB0303/XSB0303_normalsts.dds', 
-                    SpecularName = '/units/XSB0303/XSB0303_specteam.dds', 
+                    AlbedoName = '/units/xsa0101/xsa0101_albedo.dds',
+                    NormalsName = '/units/xsa0101/xsa0101_normalsts.dds',
+                    SpecularName = '/units/xsa0101/xsa0101_specteam.dds',
                 },
             },
         },
@@ -144,6 +145,12 @@ UnitBlueprint {
         BuildCostMass = 250,
         BuildRate = 15,
         BuildTime = 750,
+        BuildableCategory = {
+            'SELECTABLE TECH1',
+            'SELECTABLE TECH2',
+            'SELECTABLE TECH3',
+            'SELECTABLE EXPERIMENTAL',
+        },
     },
     General = {
         BuildBones = {
@@ -204,7 +211,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        Elevation = 2,
+        Elevation = 5,
         GroundCollisionOffset = 0.2,
         MaxAcceleration = 10,
         MaxSpeed = 10,

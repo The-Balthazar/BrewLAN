@@ -2,12 +2,11 @@
 --  Summary:  Iyadesu Script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-
 local SConstructionUnit = import('/lua/seraphimunits.lua').SConstructionUnit
 local SLandUnit = import('/lua/seraphimunits.lua').SLandUnit
 local WeaponsFile = import('/lua/seraphimweapons.lua')
 local SDFAireauBolter = WeaponsFile.SDFAireauBolterWeapon
-local SANUallCavitationTorpedo = WeaponsFile.SANUallCavitationTorpedo
+--local SANUallCavitationTorpedo = WeaponsFile.SANUallCavitationTorpedo
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local SDFUltraChromaticBeamGenerator = import('/lua/seraphimweapons.lua').SDFUltraChromaticBeamGenerator
 
@@ -19,10 +18,11 @@ SSL0403 = Class(SConstructionUnit) {
 
     OnCreate = function(self)
         SConstructionUnit.OnCreate(self)
+        self:CreateIdleEffects()
         self:AddBuildRestriction(categories.SELECTABLE)
         self.Pods = { }
         local pod = {
-            PodAttachpoint = 'Node_00',
+            PodAttachpoint = 'AttachSpecial0',
             PodName = 'Pod',
             PodUnitID = 'SSA0001',
             Entity = {},
@@ -32,36 +32,76 @@ SSL0403 = Class(SConstructionUnit) {
             self.Pods[i] = {}
             for k, v in pod do
                 if k == "PodAttachpoint" or k == "PodName" then
-                    self.Pods[i][k] = v .. tostring(i) 
+                    self.Pods[i][k] = v .. tostring(i)
                 else
                     self.Pods[i][k] = v
-                end            
+                end
             end
         end
         --LOG(repr(self.Pods))
-    end,    
-    
+    end,
+
+    OnStopBeingBuilt = function(self, ...)
+        SConstructionUnit.OnStopBeingBuilt(self, unpack(arg) )
+        self:MoveArms(0)
+    end,
+
     StartBeingBuiltEffects = function(self, builder, layer)
         SConstructionUnit.StartBeingBuiltEffects(self, builder, layer)
         self:ForkThread( EffectUtil.CreateSeraphimExperimentalBuildBaseThread, builder, self.OnBeingBuiltEffectsBag )
-    end,     
-          
+    end,
+
     OnStartReclaim = function(self, target)
         local TargetId = target.AssociatedBP or target:GetBlueprint().BlueprintId
         if TargetId and not string.find(TargetId, "/") then
             self.ReclaimID = {id = TargetId}
-        end    
+        end
+        self:MoveArms()
         SConstructionUnit.OnStartReclaim(self, target)
     end,
 
-    OnStopReclaim = function(self, target)    
+    OnStopReclaim = function(self, target)
         if not target and self.ReclaimID.id then
             self:CreatePod(self.ReclaimID.id)
-        end    
+        end
         self.ReclaimID = {}
+        self:MoveArms(0)
         SConstructionUnit.OnStopReclaim(self, target)
     end,
-    
+
+    OnStartBuild = function(self, unitBeingBuilt, order)
+        SConstructionUnit.OnStartBuild(self, unitBeingBuilt, order)
+        self:MoveArms(100)
+    end,
+
+    OnStopBuild = function(self)
+        SConstructionUnit.OnStopBuild(self)
+        self:MoveArms(0)
+    end,
+
+    OnProductionPaused = function(self)
+        self:MoveArms(0)
+        SConstructionUnit.OnProductionPaused(self)
+    end,
+
+    OnProductionUnpaused = function(self)
+        self:MoveArms(100)
+        SConstructionUnit.OnProductionUnpaused(self)
+    end,
+
+    MoveArms = function(self, num)
+        if self.SARotators then
+            for i = 1, 6 do
+                self.SARotators[i]:SetGoal(- (num or 100) + math.random(0,30))
+            end
+        else
+            self.SARotators = {}
+            for i = 1, 6 do
+                self.SARotators[i] = CreateRotator(self, 'Small_Blade_00' .. i, 'x', - (num or 100) + math.random(0,30), 300, 100)
+            end
+        end
+    end,
+
     CreatePod = function(self, WorkID)
         self:RemoveBuildRestriction(categories[WorkID])
         if self:CanBuild(WorkID) then
@@ -73,22 +113,20 @@ SSL0403 = Class(SConstructionUnit) {
                     pod.Active = true
                     pod.Entity:SetCustomName(LOC(__blueprints[WorkID].Description))
                     pod.Entity:SetParent(self, i)
-                    self:RefreshBuildRestrictions()
+                    pod.Entity:SetCreator(self)
                     break
                 end
             end
-            -- No pod bays available
         end
+        self:RefreshBuildRestrictions()
     end,
-    
+
     NotifyOfPodDeath = function(self, pod)
-        --self:AddBuildRestriction(categories[self.Pods[pod].StorageID]) 
         self.Pods[pod].Active = false
         self.Pods[pod].StorageID = nil
         self:RefreshBuildRestrictions()
-        --LOG(repr(self.Pods))
     end,
-    
+
     RefreshBuildRestrictions = function(self)
         self:RestoreBuildRestrictions()
         self:AddBuildRestriction(categories.SELECTABLE)
@@ -96,9 +134,10 @@ SSL0403 = Class(SConstructionUnit) {
             if pod.StorageID then
                 self:RemoveBuildRestriction(categories[pod.StorageID])
             end
-        end 
+        end
+        self:RequestRefreshUI()
     end,
-    
+
     OnMotionHorzEventChange = function( self, new, old )
         SConstructionUnit.OnMotionHorzEventChange(self, new, old)
 

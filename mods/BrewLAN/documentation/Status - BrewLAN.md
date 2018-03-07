@@ -229,7 +229,7 @@
 |**Transport**     | —             |`Teleporter`   | —             |Quantum Gateway|
 |                  |               |               |               |               |
 |**Assault**       |`*`            |*G. Colossus*  |*Mokeylord*    |*Ythotha*      |
-|**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|`Necro bot` (F)|
+|**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|Iyadesu     (F)|
 |**Flying**        |Centurion      |*CZAR*     (AF)|*Soulripper*   |*Ahwassa*      |
 |**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|`A. Persecutor`|`Amph sub?`    |
 
@@ -305,7 +305,7 @@ Experimental Mine? ( *** )
     * Self replicating mines.
     * Damage over time effect.
 
-Iyadesu: Experimental Reconstruction Engineer ( * )
+Iyadesu: Experimental Reconstruction Engineer
 *  Formerly Experimental Engineer (Prior to r205)
 *  Formerly Experimental Field Engineer (As of r205, removed as 2014-08-08)
 *  Formerly Experimental Resurrection Unit (Prior to 2016-08-17)
@@ -316,7 +316,6 @@ Iyadesu: Experimental Reconstruction Engineer ( * )
   * Gets storage drones for the recipes.
   * Loses its recipes if it loses its drones.
   * Drones help to build.
-  * Uses a temporary model of the T3 mobile artillery.
 
 Suthanus: Experimental Rapid-Fire Artillery
   * Fully functioning.
