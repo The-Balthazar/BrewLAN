@@ -767,6 +767,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Changed the description of the Iyadesu to reflect its 8 BP cap.
   * Updated translation documents.
+  * Created distance models for the Iyadesu.
+  * Changed the particle effects and sound effects of the Iyadesu drones.
 
 ## 2016-12-15|0.7.5.5
 

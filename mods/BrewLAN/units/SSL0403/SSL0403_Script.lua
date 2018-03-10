@@ -4,15 +4,11 @@
 --------------------------------------------------------------------------------
 local SConstructionUnit = import('/lua/seraphimunits.lua').SConstructionUnit
 local SLandUnit = import('/lua/seraphimunits.lua').SLandUnit
-local WeaponsFile = import('/lua/seraphimweapons.lua')
-local SDFAireauBolter = WeaponsFile.SDFAireauBolterWeapon
---local SANUallCavitationTorpedo = WeaponsFile.SANUallCavitationTorpedo
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local SDFUltraChromaticBeamGenerator = import('/lua/seraphimweapons.lua').SDFUltraChromaticBeamGenerator
 
 SSL0403 = Class(SConstructionUnit) {
     Weapons = {
-        --Torpedo01 = Class(SANUallCavitationTorpedo) {},
         MainTurret = Class(SDFUltraChromaticBeamGenerator) {},
     },
 
@@ -38,7 +34,6 @@ SSL0403 = Class(SConstructionUnit) {
                 end
             end
         end
-        --LOG(repr(self.Pods))
     end,
 
     OnStopBeingBuilt = function(self, ...)
