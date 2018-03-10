@@ -1,9 +1,8 @@
---BrewLAN/mods/BrewLAN/hook/loc/CN
 --ISO_639-1_code=ZH
 --+------------+--+-------------------------------------------------------------
 --¦▒░░▒░▒▒▒▒▒▒▒¦--¦   BrewLAN Chinese strings table
 --¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Author: Balthassar
---¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Translator: Google
+--¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Translators: Google, mr.deagle, mrs.deagle
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -11,47 +10,47 @@
 --------------------------------------------------------------------------------
 
 --工具提示龙门
-tooltipbrewlan0000="切换空气生产"
-tooltipbrewlan0001="启用或禁用生产空气单元"
+tooltipbrewlan0000="转换生产模式"
+tooltipbrewlan0001="在空军武器生产模式和陸軍/海軍武器生产模式間切換"
 
 --对于T3提示诱骗飞机。
-tooltipbrewlan0002="切换空气速度"
+tooltipbrewlan0002="转换空速"
 tooltipbrewlan0003="空中优势或沙皇切换模拟"
 tooltipbrewlan0004="空中优势或Soulripper的模拟切换"
 tooltipbrewlan0005="空中优势或Ahwassa的模拟切换"
 tooltipbrewlan0006="空中优势或AC-500百夫长切换模拟"
 
 --工具提示的地雷。
-tooltipbrewlan0007="起爆"
-tooltipbrewlan0008="随即引爆有效载荷。"
+tooltipbrewlan0007="引爆"
+tooltipbrewlan0008="立刻引爆裝置"
 
 --工具提示建设者墙壁
-tooltipbrewlan0009="清除积聚区"
+tooltipbrewlan0009="清除生产区"
 tooltipbrewlan0010="删除任何结构或从构建区域保持。"
 
 --工具提示塞拉芬间谍设备
-tooltipbrewlan0011="占卜"
-tooltipbrewlan0012="选择一个单元，以窥探"
+tooltipbrewlan0011="监控"
+tooltipbrewlan0012="选择并暗中监视一个单位"
 
 --工具提示打开/关闭的一种门。
-tooltipbrewlan0013="开关"
-tooltipbrewlan0014="切换门打开或关闭"
-tooltipbrewlan0015="自动开启功能。"
+tooltipbrewlan0013="打开／关闭"
+tooltipbrewlan0014="打开或者关闭闸门"
+tooltipbrewlan0015="自动开关功能已经被启用"
 
 --工具提示全方位破坏者。
-tooltipbrewlan0016="中断脉冲触发"
+tooltipbrewlan0016="转换干扰脉冲模式"
 tooltipbrewlan0017="打开或关闭全方位干扰脉冲。"
 
 --用于雷兹工具提示/回收命令。
 --tooltipbrewlan0018="回收（E）"
-tooltipbrewlan0019="回收单位或残骸和学习它的蓝图。"
+tooltipbrewlan0019="回收单位或残骸，及学习它的蓝图。"
 
 --工具提示星际之门
-tooltipbrewlan0020="拨号网关"
-tooltipbrewlan0021="选择目标量子网关创建一个单程运输环节。"
-tooltipbrewlan0022="启用或进出网关的禁用屏蔽阻止访问。"
-tooltipbrewlan0023="停止链接"
-tooltipbrewlan0024="关闭一个输出链接。"
+tooltipbrewlan0020="拨号使用传送器"
+tooltipbrewlan0021="选择一个目的地量子传送器，以创建一个单程运输接驳系统。"
+tooltipbrewlan0022="转换屏蔽开关模式，阻止所有进出。"
+tooltipbrewlan0023="关闭连接"
+tooltipbrewlan0024="关闭传送器之間的输出连接。"
 
 --工具提示为伊万
 tooltipbrewlan0025="切换重复订单"
@@ -89,20 +88,20 @@ sair0106="轻型鱼雷轰炸机"
 saa0106_name="Saksinokka"
 sea0106_name="海鸥"
 sra0106_name="鸬鹚"
-ssa0106_name="漱IOZ"
+ssa0106_name="Sou-ioz"
 Unit_Description_BrewLAN_T1A004="鱼雷轰炸机。专为从事低层次的海军部队。"
 
 sbui2103="轻型火炮安装"
-sab2103_name="的Charis"
-seb2103_name="扑克"
+sab2103_name="卡里斯"
+seb2103_name="戳者"
 srb2103_name="小伯莎"
-ssb2103_name="Thaam-ATHA"
+ssb2103_name="Thaam-atha"
 Unit_Description_BrewLAN_T1D001="光固定火炮。专搞低到中等水平的单位。"
 
 sbui4102="光盾发生器"
-sab4102_name="ASPIS"
+sab4102_name="Aspis"
 seb4102_name="LSD  - 脉冲"
-ssb4102_name="ATHA-istle"
+ssb4102_name="Atha-istle"
 Unit_Description_BrewLAN_T1P001="产生它的半径内周围单位和建筑的保护罩。可升级两次。"
 
 sbui5104="光空军分段设施"
@@ -124,6 +123,7 @@ Unit_Description_BrewLAN_T1L003="技术1水陆两用建造，修理，捕获，�
 
 ss0119_desc="现场工程船"
 ses0119_name="门迪班"
+srs0119_name="富兰克林类"
 Unit_Description_BrewLAN_T1S001="技术1建造，修理，捕获，回收和矿层单元。"
 
 --------------------------------------------------------------------------------
@@ -187,7 +187,9 @@ Unit_Description_BrewLAN_T2L004="移动盾发生器。"
 --现场工程船
 ss0219_desc="现场工程船"
 ses0219_name="Fixxie类"
+srs0219_name="巴威克类"
 Unit_Description_BrewLAN_T2S001="Tech 2的海军建设，维修，捕获和回收单位。配备了一个防空武器。"
+Unit_Description_BrewLAN_T2S002="Tech 2的海军建设，修理，捕获，复垦，和矿层单元。"
 
 sea0201_desc="侦察机"
 sea0201_name="UX蛟龍夫人"
@@ -355,13 +357,13 @@ sal0322_name="火焰莲花"
 sel0322_name="艾拉"
 --短期和长期的描述都一样的默认值。
 
---移动AA
+--移动防空
 sal0320_desc="移动反防空"
 sal0320_name="环形的"
 Unit_Description_BrewLAN_T3L012="悬停移动防空防御系统。电力消耗每拍摄一张照片。"
 sel0324_name="NG3长弓"
 Unit_Description_BrewLAN_T3L015="移动防空导弹发射装置。配备了先进的扫描设备。"
---srl0320_desc="移动导弹发射器"
+--srl0320_desc=--移动导弹发射器
 srl0320_name="早产"
 Unit_Description_BrewLAN_T3L009="移动伪装表面对空导弹发射装置。必须成为攻击可见。"
 
@@ -378,7 +380,9 @@ Unit_Description_BrewLAN_T3L011="移动多管火箭炮。长期重载时间。�
 
 ss0319_desc="现场工程船"
 ses0319_name="补丁类"
+srs0319_name="类的Stillson"
 Unit_Description_BrewLAN_T3S002="技术3海军建设，维修，捕获和回收单位。配备了鱼雷舱，反鱼雷防御，和一个防空武器。"
+Unit_Description_BrewLAN_T3S003="技术3海军建设，修理，捕获，复垦，和矿层单元。"
 
 sl0323_desc="移动战术导弹防御系统"
 sal0323_name="破裂"
@@ -387,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="移动战术导弹防御系统。保护仅限�
 srl0324_desc="移动传感器阵列"
 srl0324_name="亚得米勒"
 sal0324_name="塔特"
-Unit_Description_BrewLAN_T3L016="高端移动intelligense系统。虽然固定它是可见的只有全方位，并提供广泛的雷达，全方位覆盖。"
+Unit_Description_BrewLAN_T3L016="高端移动智能系统。虽然固定它是可见的只有全方位，并提供广泛的雷达，全方位覆盖。"
+Unit_Description_BrewLAN_T3L019="悬停传感器阵列。消耗大量的功率工作的。"
 
+sl0325_desc="移动鱼雷发射"
+sel0325_name="PT-57鳄鱼"
+sal0325_name="凌波"
+Unit_Description_BrewLAN_T3L017="手机防的海军车辆。"
+Unit_Description_BrewLAN_T3L018="移动徘徊抗海军车辆。"
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="悬停鱼雷系统。可摧毁的最大敌人船只的。"
 
 --------------------------------------------------------------------------------
 -- 实验部分
@@ -396,7 +409,7 @@ Unit_Description_BrewLAN_T3L016="高端移动intelligense系统。虽然固定�
 
 ssl0403_desc="实验重建工程师"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="实验两栖维修，捕获和回收单位。通过回收这些收益的单位和残骸的蓝图。"
+Unit_Description_BrewLAN_T4L001="实验两栖维修，捕获和回收单位。通过回收这些收益的单位和残骸的蓝图。只能存储8周的蓝图的时间。"
 ssa00001_desc="无人机"
 
 sea0401_desc="实验AA武装直升机"
@@ -459,3 +472,7 @@ Unit_Description_BrewLAN_T4B010="构造土地的单位。"
 ssb0401_desc="实验海军厂"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="构造海军部队。"
+
+seb2401_desc="实验点防御"
+seb2401_name="神剑"
+Unit_Description_BrewLAN_T4B012="实验防御建筑。消耗大量的每次拍摄的功率。"

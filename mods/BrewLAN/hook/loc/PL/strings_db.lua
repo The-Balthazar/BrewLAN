@@ -1,4 +1,3 @@
---BrewLAN/mods/BrewLAN/hook/loc/PL
 --ISO_639-1_code=PL
 --+------------+--+-------------------------------------------------------------
 --¦            ¦--¦   BrewLAN Polish strings table
@@ -48,7 +47,7 @@ tooltipbrewlan0019="Odzyskać jednostkę lub wraku i uczyć się jego plan."
 
 --Podpowiedzi dla Stargate
 tooltipbrewlan0020="Brama Dial"
-tooltipbrewlan0021="Wybór bramy cel kwantowej, aby stworzyć jedną stronę Link transport z."
+tooltipbrewlan0021="Wybór bramy kwantową docelową z którego można stworzyć jedną stronę Link transportu."
 tooltipbrewlan0022="Włącz lub wyłącz tarczy uniemożliwia dostęp do lub z bramy."
 tooltipbrewlan0023="Zatrzymaj link"
 tooltipbrewlan0024="Zamyka wychodzącego linku."
@@ -124,6 +123,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 amfibia budowa, naprawa, chwytania, reku
 
 ss0119_desc="Pole Inżynieria Łódź"
 ses0119_name="Mendy Class"
+srs0119_name="Franklin Class"
 Unit_Description_BrewLAN_T1S001="Tech 1 budowa, naprawa, chwytania, rekultywacja, a jednostka warstwa kopalni."
 
 --------------------------------------------------------------------------------
@@ -187,7 +187,9 @@ Unit_Description_BrewLAN_T2L004="Komórka generator tarczy."
 --Inżynieria Pole statku
 ss0219_desc="Inżynieria Pole statku"
 ses0219_name="Fixxie Class"
+srs0219_name="Klasa Barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 marynarki budowa, remont, urządzenie do przechwytywania i rekultywacja. Wyposażona w jednym broni AA."
+Unit_Description_BrewLAN_T2S002="Tech 2 marynarki budowa, naprawa, przechwytywanie odzyskania nazwy, a jednostka warstwa kopalni."
 
 sea0201_desc="Samolot zwiadowczy"
 sea0201_name="UX Dragonlady"
@@ -355,13 +357,13 @@ sal0322_name="płomień Lotus"
 sel0322_name="Ella"
 --Krótkie i długie opisy zarówno samo jako domyślne.
 
---Komórka AA
+--Komórka anty-powietrze
 sal0320_desc="Mobile Anti-Air Defence"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Najechanie mobilny system obrony przeciw powietrznej. Zużywa moc przy każdym zdjęciu."
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Komórka anty-air missile launcher. Wyposażony w zaawansowane urządzenia skanującego."
---srl0320_desc="Komórka Missile Launcher"
+--srl0320_desc=--Komórka Missile Launcher
 srl0320_name="Poroniony płód"
 Unit_Description_BrewLAN_T3L009="Komórka zakamuflowana ziemia-powietrze wyrzutnię rakiet. Musi stać się widoczny do ataku."
 
@@ -378,7 +380,9 @@ Unit_Description_BrewLAN_T3L011="Komórka stwardnienie wyrzutnia rakiet. Długi 
 
 ss0319_desc="Inżynieria Pole statku"
 ses0319_name="Klasa łata"
+srs0319_name="Klasa Stillson"
 Unit_Description_BrewLAN_T3S002="Tech 3 marynarki budowa, remont, urządzenie do przechwytywania i rekultywacja. Wyposażony w zatoce torpedowego, anty-torpedowego obrony, a pojedynczy broni AA."
+Unit_Description_BrewLAN_T3S003="Tech 3 marynarki budowa, naprawa, przechwytywanie odzyskania nazwy, a jednostka warstwa kopalni."
 
 sl0323_desc="Komórka Tactical Missile Defence"
 sal0323_name="Pęknięcie"
@@ -387,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="Komórka taktycznych obrony przeciwrakietowej. 
 srl0324_desc="Sensor Array mobilna"
 srl0324_name="adramelech"
 sal0324_name="Metatron"
-Unit_Description_BrewLAN_T3L016="High-end mobilny system intelligense. Natomiast stacjonarna jest widoczny tylko dla omni, i zapewnia szeroki zasięg radaru i Omni."
+Unit_Description_BrewLAN_T3L016="High-end mobilny system inteligencja. Natomiast stacjonarna jest widoczny tylko dla omni, i zapewnia szeroki zasięg radaru i Omni."
+Unit_Description_BrewLAN_T3L019="Unoszące się szereg czujników. Zużywa duże ilości mocy, aby funkcjonować."
 
+sl0325_desc="Komórka Torpedo Launcher"
+sel0325_name="PT-57 croc"
+sal0325_name="Otchłań"
+Unit_Description_BrewLAN_T3L017="Mobile Anti-Naval pojazdu."
+Unit_Description_BrewLAN_T3L018="Komórka unosić anty-morską pojazdu."
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Najechanie systemu torpedy. Zdolne do niszczenia największy statków wroga."
 
 --------------------------------------------------------------------------------
 -- doświadczalnej
@@ -396,7 +409,7 @@ Unit_Description_BrewLAN_T3L016="High-end mobilny system intelligense. Natomiast
 
 ssl0403_desc="Eksperymentalna Rekonstrukcja Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Eksperymentalny ziemnowodny naprawa, chwytania, a jednostka rekultywacji. Zyskuje plany jednostek i szczątków przez ich odzyskanie."
+Unit_Description_BrewLAN_T4L001="Eksperymentalny ziemnowodny naprawa, chwytania, a jednostka rekultywacji. Zyskuje plany jednostek i szczątków przez ich odzyskanie. Może przechowywać tylko 8 plany na raz."
 ssa00001_desc="Warkot"
 
 sea0401_desc="Eksperymentalna AA Gunship"
@@ -440,7 +453,7 @@ srl0000_desc="Crab Egg"
 srl0001_desc=srl0000_desc .. " (Niszczyciel)"
 srl0002_desc=srl0000_desc .. " (field Engineer)"
 srl0003_desc=srl0000_desc .. " (Podstęp)"
-srl0004_desc=srl0000_desc .. " (AntiAir)"
+srl0004_desc=srl0000_desc .. " (Przeciwlotniczy)"
 srl0005_desc=srl0000_desc .. " (" .. srl0321_name .. ")"
 srl0006_desc=srl0000_desc .. " (MRL)"
 
@@ -459,3 +472,7 @@ Unit_Description_BrewLAN_T4B010="Konstruuje jednostki lądowe."
 ssb0401_desc="Eksperymentalna Naval fabryczne"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Konstruuje jednostki morskie."
+
+seb2401_desc="Eksperymentalny punkt obrony"
+seb2401_name="Excalibur"
+Unit_Description_BrewLAN_T4B012="Eksperymentalny budynek obronny. Zużywa duże ilości energii przy każdym strzale."

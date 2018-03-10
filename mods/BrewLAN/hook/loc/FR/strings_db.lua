@@ -1,4 +1,3 @@
---BrewLAN/mods/BrewLAN/hook/loc/FR
 --ISO_639-1_code=FR
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒    ░░░░¦--¦   BrewLAN French strings table
@@ -124,6 +123,7 @@ Unit_Description_BrewLAN_T1L003="Unité amphibie tech 1, construit, répare, cap
 
 ss0119_desc="Bateau d'ingénierie"
 ses0119_name="Classe Mendy"
+srs0119_name="Franklin classe"
 Unit_Description_BrewLAN_T1S001="Unité de construction, de réparation, de capture, de récupération et de couche minière tech 1."
 
 --------------------------------------------------------------------------------
@@ -187,7 +187,9 @@ Unit_Description_BrewLAN_T2L004="Générateur de bouclier mobile."
 --Ingénierie de navire
 ss0219_desc="Bateau d'ingénierie"
 ses0219_name="Classe Fixxie"
+srs0219_name="Barwick classe"
 Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
+Unit_Description_BrewLAN_T2S002="Tech 2 construction navale, la réparation, la capture, reclaimation, et l'unité de mouilleur de mines."
 
 sea0201_desc="Avion Recon"
 sea0201_name="UX Dragonlady"
@@ -355,13 +357,13 @@ sal0322_name="Flamme Lotus"
 sel0322_name="Ella"
 --Short and long descriptions both the same as default.
 
---
+--anti-air mobile
 sal0320_desc="Défense anti-aérienne mobile"
 sal0320_name="Armillaire"
 Unit_Description_BrewLAN_T3L012="Système de défense anti-aérien mobile pivotant. Consomme de l'énergie à chaque prise de vue."
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="lance-missiles anti-air mobile. Doté d'un équipement de balayage de pointe."
---srl0320_desc="Système anti-aérien furtif"
+--srl0320_desc=--Système anti-aérien furtif
 srl0320_name="Fronde"
 Unit_Description_BrewLAN_T3L009="lanceur de missiles sol-air mobile camouflé. Doit devenir visible à l'attaque."
 
@@ -378,7 +380,9 @@ Unit_Description_BrewLAN_T3L011="Lanceur de fusée mobile multiple. Temps de rec
 
 ss0319_desc="Bateau d'ingénierie"
 ses0319_name="Classe Patch"
+srs0319_name="Stillson classe"
 Unit_Description_BrewLAN_T3S002="Tech 3 de construction navale, de réparation, de capture et de récupération. Équipé d'une baie de torpilles, d'une défense anti-torpille et d'une seule arme anti-aérienne."
+Unit_Description_BrewLAN_T3S003="Tech 3 construction navale, la réparation, la capture, reclaimation, et l'unité de mouilleur de mines."
 
 sl0323_desc="Missile Defense mobile tactique"
 sal0323_name="Rupture"
@@ -387,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="défense antimissile tactique mobile. La protec
 srl0324_desc="Tableau capteur mobile"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
-Unit_Description_BrewLAN_T3L016="Système de intelligense mobile haut de gamme. À l'arrêt, il est visible que de omni et fournit un radar et une vaste couverture omnidirectionnelle."
+Unit_Description_BrewLAN_T3L016="système d'intelligence mobile haut de gamme. À l'arrêt, il est visible que de omni et fournit un radar et une vaste couverture omnidirectionnelle."
+Unit_Description_BrewLAN_T3L019="Planant réseau de capteurs. Consomme de grandes quantités d'énergie pour fonctionner."
 
+sl0325_desc="Mobile Lance-torpilles"
+sel0325_name="PT-57 Croc"
+sal0325_name="Limbes"
+Unit_Description_BrewLAN_T3L017="véhicule anti-marine mobile."
+Unit_Description_BrewLAN_T3L018="Mobile en vol stationnaire véhicule anti-marine."
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Planant système de torpille. Capable de détruire le plus grand des navires ennemis."
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -459,3 +472,7 @@ Unit_Description_BrewLAN_T4B010="Unités terrestres construit."
 ssb0401_desc="Experimental Naval usine"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Unités navales construit."
+
+seb2401_desc="Défense expérimentale point"
+seb2401_name="Excalibur"
+Unit_Description_BrewLAN_T4B012="bâtiment défensif expérimental. Consomme de grandes quantités de puissance à chaque tir."

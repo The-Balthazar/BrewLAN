@@ -763,6 +763,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * Drones now dock and are selectable, but still stay within a certain range of the parent.
   * Iyadesu laser damage per tick halved, but tick rate doubled. DPS identical.
 
+  ### 2018-03-10
+
+  * Changed the description of the Iyadesu to reflect its 8 BP cap.
+  * Updated translation documents.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

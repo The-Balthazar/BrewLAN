@@ -1,4 +1,3 @@
---BrewLAN/mods/BrewLAN/hook/loc/DE
 --ISO_639-1_code=DE
 --+------------+--+-------------------------------------------------------------
 --¦████████████¦--¦   BrewLAN German strings table
@@ -124,6 +123,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 amphibische Bau- , Reparatur- , Übernah
 
 ss0119_desc="Gefechtstechniker Boot"
 ses0119_name="Mendy Klasse"
+srs0119_name="Franklin Klasse"
 Unit_Description_BrewLAN_T1S001="Tech 1 konstruktions-, reparatur-, übernahme-, zurückgewinnungs- und Minenleger Einheit."
 
 --------------------------------------------------------------------------------
@@ -187,7 +187,9 @@ Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
 --Field Engineering Schiff
 ss0219_desc="Kampftechniker Schiff"
 ses0219_name="Fixxie-Klasse"
+srs0219_name="Barwick Klasse"
 Unit_Description_BrewLAN_T2S001="Tech 2 marine konstruktions-, reparatur-, übernahme- und zurückgewinnungs Einheit. Ausgerüstet mit einer Luftabwehrwaffe."
+Unit_Description_BrewLAN_T2S002="Tech 2 Schiffsbau, Reparatur, zu erfassen, reclaimation und Einheit Mine Schicht."
 
 sea0201_desc="Aufklärungsflugzeug"
 sea0201_name="UX Dragon"
@@ -355,13 +357,13 @@ sal0322_name="Flame Lotus"
 sel0322_name="Ella"
 --Short and long descriptions both the same as default.
 
---
+--Mobile Anti-Luft
 sal0320_desc="Mobile Luftabwehr"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Schwebendes mobiles Luftabwehr System. Verbraucht mit jedem Schuss Energie."
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Mobile Anti-Luft-Raketenwerfer. Ausgestattet mit erweiterten Scan-Geräten."
---srl0320_desc="Mobiler Raketen Werfer"
+--srl0320_desc=--Mobiler Raketen Werfer
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile und getarnte Anti-Luft-Raketenwerfer. Muss sich aber enttarnen um zu feuern."
 
@@ -378,7 +380,9 @@ Unit_Description_BrewLAN_T3L011="Mobiler Mehrfach-Raketenwerfer. Lange Nachladez
 
 ss0319_desc="Kampftechniker Schiff"
 ses0319_name="Patch-Klasse"
+srs0319_name="Stillson Klasse"
 Unit_Description_BrewLAN_T3S002="Tech 3 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestatted mit einem Torpedowerfer, Torpedoabwehr und einer Luftabwehrkanone."
+Unit_Description_BrewLAN_T3S003="Tech 3 Schiffsbau, Reparatur, zu erfassen, reclaimation und Einheit Mine Schicht."
 
 sl0323_desc="Mobile Tactical Missile Defense"
 sal0323_name="Bruch"
@@ -387,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="Mobile taktische Raketenabwehr. Der Schutz ist 
 srl0324_desc="Mobile Sensor Array"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
-Unit_Description_BrewLAN_T3L016="High-End-Mobil intelligense System. Im Stand ist es nur omni sichtbar und bietet umfangreiches Radar und omni-Abdeckung."
+Unit_Description_BrewLAN_T3L016="High-End-Handy-Intelligence-System. Im Stand ist es nur omni sichtbar und bietet umfangreiches Radar und omni-Abdeckung."
+Unit_Description_BrewLAN_T3L019="Schwebend Sensorarray. Verbraucht große Energiemengen zu funktionieren."
 
+sl0325_desc="Mobile Torpedo Launcher"
+sel0325_name="PT-57 Croc"
+sal0325_name="Limbus"
+Unit_Description_BrewLAN_T3L017="Mobile Anti-Marinefahrzeug."
+Unit_Description_BrewLAN_T3L018="Mobile schweben anti-Marinefahrzeug."
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Schwebend Torpedo-System. Lage sind, die größte feindliche Schiffe zu zerstören."
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -454,8 +467,12 @@ Unit_Description_BrewLAN_T4B009="Konstruiert Lufteinheiten."
 
 srb0401_desc="Experimentelle Fabrik Land"
 srb0401_name="Gliederfüßerfabrik"
-Unit_Description_BrewLAN_T4B010="Unités terrestres construit."
+Unit_Description_BrewLAN_T4B010="Konstruiert Landeinheiten."
 
 ssb0401_desc="Experimental Naval usine"
 ssb0401_name="Souiya"
-Unit_Description_BrewLAN_T4B011="Unités navales construit."
+Unit_Description_BrewLAN_T4B011="Konstruiert Marineeinheiten."
+
+seb2401_desc="Experimental-Point Defense"
+seb2401_name="Excalibur"
+Unit_Description_BrewLAN_T4B012="Experimentelle defensive Gebäude. Verbraucht große Mengen an Energie mit jedem Schuss."

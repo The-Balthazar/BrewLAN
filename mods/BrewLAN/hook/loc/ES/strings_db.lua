@@ -1,4 +1,3 @@
---BrewLAN/mods/BrewLAN/hook/loc/ES
 --ISO_639-1_code=ES
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   BrewLAN Spanish strings table
@@ -48,7 +47,7 @@ tooltipbrewlan0019="Recuperar una unidad o restos y conocer su plan."
 
 --Información sobre herramientas para el Stargate
 tooltipbrewlan0020="Dial de puerta de enlace"
-tooltipbrewlan0021="Selecciona una puerta cuántica objetivo de crear un vínculo de transporte con una forma."
+tooltipbrewlan0021="Selecciona una puerta cuántica objetivo con el cual crear un enlace de transporte de una sola vía."
 tooltipbrewlan0022="Activar o desactivar el escudo de acceso prevención dentro o fuera de la puerta de entrada."
 tooltipbrewlan0023="parada de Enlace"
 tooltipbrewlan0024="Cierra un enlace de salida."
@@ -124,6 +123,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 construcción, reparación, la captura, 
 
 ss0119_desc="El campo Barco Ingeniería"
 ses0119_name="Clase Mendy"
+srs0119_name="Franklin Clase"
 Unit_Description_BrewLAN_T1S001="Tech 1 construcción, reparación, la captura, la regeneración, y la unidad de capa de la mía."
 
 --------------------------------------------------------------------------------
@@ -187,7 +187,9 @@ Unit_Description_BrewLAN_T2L004="generador de escudo móvil."
 --El campo de la nave Ingeniería
 ss0219_desc="El campo de la nave Ingeniería"
 ses0219_name="Clase Fixxie"
+srs0219_name="Clase Barwick"
 Unit_Description_BrewLAN_T2S001="La tecnología 2 de la construcción naval, la reparación, la captura y la unidad de recuperación. Equipado con una sola arma AA."
+Unit_Description_BrewLAN_T2S002="La tecnología 2 de construcción, reparación, captura, Reclaimation, y la unidad de capa de la mina naval."
 
 sea0201_desc="avión de reconocimiento"
 sea0201_name="UX Dragonlady"
@@ -252,7 +254,7 @@ seb2311_name="guardián"
 ssb2311_name="Sinn Unthe"
 srb2311_name="Castigador"
 sab2311_name="Nihiloid"
-Unit_Description_BrewLAN_T3B005="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un poderoso cañón gauss acorazado grado."
+Unit_Description_BrewLAN_T3B005="torre defensiva muy pesado. Ataques terrestres y unidades marinas con un poderoso cañón gauss acorazado grado."
 Unit_Description_BrewLAN_T3B006="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un arma poderosa energía."
 Unit_Description_BrewLAN_T3B007="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un potente cañón de protones acorazado grado."
 Unit_Description_BrewLAN_T3B008="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un cañón de gran alcance olvido."
@@ -355,13 +357,13 @@ sal0322_name="llama de Lotus"
 sel0322_name="Ella"
 --descripciones cortas y largas ambos el mismo que por defecto.
 
---móvil AA
+--antiaérea móvil
 sal0320_desc="Anti-defensa aérea móvil"
 sal0320_name="armilar"
 Unit_Description_BrewLAN_T3L012="Al pasar por el sistema de defensa antiaérea móvil. Consume energía en cada disparo."
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="lanzador de misiles antiaéreo móvil. Equipado con el equipo de exploración avanzada."
---srl0320_desc="Lanzador de misiles móviles"
+--srl0320_desc=--Lanzador de misiles móviles
 srl0320_name="Escabullirse"
 Unit_Description_BrewLAN_T3L009="camuflado lanzador de misiles móviles tierra-aire. Debe hacerse visible a los ataques."
 
@@ -378,7 +380,9 @@ Unit_Description_BrewLAN_T3L011="Mobile lanzador de cohetes múltiple. Mucho tie
 
 ss0319_desc="El campo de la nave Ingeniería"
 ses0319_name="Clase parche"
+srs0319_name="Clase stillson"
 Unit_Description_BrewLAN_T3S002="Tech 3, la construcción naval, la reparación, la captura y la unidad de recuperación. Equipado con una bahía de torpedos, defensa contra torpedos, y una sola arma AA."
+Unit_Description_BrewLAN_T3S003="Tech 3, construcción, reparación, captura, Reclaimation, y la unidad de capa de la mina naval."
 
 sl0323_desc="Mobile Tactical Defensa de Misiles"
 sal0323_name="Ruptura"
@@ -387,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="de defensa de misiles tácticos móvil. La prot
 srl0324_desc="Sensor Array móvil"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
-Unit_Description_BrewLAN_T3L016="intelligense sistema móvil de gama alta. Mientras estacionaria es visible sólo a omni, y proporciona una amplia cobertura de radar y omnidireccional."
+Unit_Description_BrewLAN_T3L016="sistema de inteligencia móvil de gama alta. Mientras estacionaria es visible sólo a omni, y proporciona una amplia cobertura de radar y omnidireccional."
+Unit_Description_BrewLAN_T3L019="Al pasar array sensor. Consume grandes cantidades de energía para funcionar."
 
+sl0325_desc="Mobile lanzatorpedos"
+sel0325_name="PT-57 Croc"
+sal0325_name="Limbo"
+Unit_Description_BrewLAN_T3L017="Mobile vehículo anti-naval."
+Unit_Description_BrewLAN_T3L018="Mobile flotando vehículo anti-naval."
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Al pasar por el sistema de torpedos. Capaz de destruir el mayor de los buques enemigos."
 
 --------------------------------------------------------------------------------
 -- Experimentals
@@ -396,7 +409,7 @@ Unit_Description_BrewLAN_T3L016="intelligense sistema móvil de gama alta. Mient
 
 ssl0403_desc="Engineer Reconstrucción Experimental"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="la reparación experimental anfibio, captura, y la unidad de recuperación. Gana los planos de las unidades y naufragios mediante la reivindicación de ellos."
+Unit_Description_BrewLAN_T4L001="la reparación experimental anfibio, captura, y la unidad de recuperación. Gana los planos de las unidades y naufragios mediante la reivindicación de ellos. Sólo se puede almacenar 8 planos a la vez."
 ssa00001_desc="Zumbido"
 
 sea0401_desc="Experimental AA Gunship"
@@ -459,3 +472,7 @@ Unit_Description_BrewLAN_T4B010="Construye unidades de tierra."
 ssb0401_desc="Experimental Fábrica Naval"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Construye unidades navales."
+
+seb2401_desc="Punto experimental Defensa"
+seb2401_name="Excalibur"
+Unit_Description_BrewLAN_T4B012="edificio defensivo experimental. Consume grandes cantidades de energía en cada disparo."

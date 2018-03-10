@@ -363,7 +363,7 @@ sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Hovering mobile anti-air defence system. Consumes power with each shot."
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Mobile anti-air missile launcher. Equipped with advanced scanning equipment."
---srl0320_desc="Mobile Missile Launcher"
+--srl0320_desc=--Mobile Missile Launcher
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile cloaking anti-air missile launcher. Must decloak to fire."
 
@@ -409,7 +409,7 @@ Unit_Description_BrewLAN_T3S004="Hovering torpedo system. Capable of destroying 
 
 ssl0403_desc="Experimental Reconstruction Engineer"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them."
+Unit_Description_BrewLAN_T4L001="Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them. Can only store 8 blueprints at a time."
 ssa00001_desc="Drone"
 
 sea0401_desc="Experimental AA Gunship"

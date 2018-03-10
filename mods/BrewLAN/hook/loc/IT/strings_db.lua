@@ -1,4 +1,3 @@
---BrewLAN/mods/BrewLAN/hook/loc/IT
 --ISO_639-1_code=IT
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒    ░░░░¦--¦   BrewLAN Italian strings table
@@ -48,7 +47,7 @@ tooltipbrewlan0019="Recuperare un'unità o di relitto e imparare il suo progetto
 
 --Tooltips per la Stargate
 tooltipbrewlan0020="Dial Gateway"
-tooltipbrewlan0021="Seleziona un gateway di destinazione quantistica per creare un collegamento di trasporto a senso unico con."
+tooltipbrewlan0021="Seleziona un gateway quantum bersaglio con cui creare un collegamento di trasporto a senso unico."
 tooltipbrewlan0022="Attivare o disattivare lo scudo che impedisce l'accesso dentro o fuori la porta d'ingresso."
 tooltipbrewlan0023="arresto link"
 tooltipbrewlan0024="Chiude un link in uscita."
@@ -124,6 +123,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 anfibia costruzione, riparazione, la cat
 
 ss0119_desc="Progettazione campo barche"
 ses0119_name="Mendy Class"
+srs0119_name="Franklin Class"
 Unit_Description_BrewLAN_T1S001="Tech 1 la costruzione, la riparazione, la cattura, la bonifica, e l'unità di mia strato."
 
 --------------------------------------------------------------------------------
@@ -187,7 +187,9 @@ Unit_Description_BrewLAN_T2L004="generatore di scudi mobile."
 --Campo Ship Ingegneria
 ss0219_desc="Campo Ship Ingegneria"
 ses0219_name="Fixxie Class"
+srs0219_name="Barwick Class"
 Unit_Description_BrewLAN_T2S001="Tech 2 costruzioni navali, la riparazione, la cattura e l'unità di bonifica. Equipaggiato con una sola arma AA."
+Unit_Description_BrewLAN_T2S002="Tech 2 navale costruzione, riparazione, la cattura, reclaimation, e l'unità di mia strato."
 
 sea0201_desc="Recon Aereo"
 sea0201_name="UX Dragonlady"
@@ -355,13 +357,13 @@ sal0322_name="Fiamma Lotus"
 sel0322_name="Ella"
 --descrizioni brevi e lunghe sia lo stesso come predefinito.
 
---cellulare AA
+--Cellulare anti-air
 sal0320_desc="Mobile Anti-Air Defense"
 sal0320_name="armillare"
 Unit_Description_BrewLAN_T3L012="Librarsi sistema di difesa anti-aerea mobile. Consuma il potere con ogni colpo."
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Cellulare lanciamissili anti-air. Dotata di apparecchiature di scansione avanzate."
---srl0320_desc="Cellulare Lanciamissili"
+--srl0320_desc=--Cellulare Lanciamissili
 srl0320_name="sgattaiolare"
 Unit_Description_BrewLAN_T3L009="Cellulare mimetizzato lanciamissili terra-aria. Deve diventare visibile agli attacchi."
 
@@ -378,7 +380,9 @@ Unit_Description_BrewLAN_T3L011="Cellulare lanciarazzi multiplo. Molto tempo di 
 
 ss0319_desc="Campo Ship Ingegneria"
 ses0319_name="Classe Patch"
+srs0319_name="Stillson Class"
 Unit_Description_BrewLAN_T3S002="Tech 3 costruzioni navali, la riparazione, la cattura e l'unità di bonifica. Dotato di una baia siluro, di difesa anti-siluro, e una sola arma AA."
+Unit_Description_BrewLAN_T3S003="Tech 3 navale costruzione, riparazione, la cattura, reclaimation, e l'unità di mia strato."
 
 sl0323_desc="Cellulare Tactical Missile Defense"
 sal0323_name="Rottura"
@@ -387,8 +391,17 @@ Unit_Description_BrewLAN_T3L014="Mobile di difesa missilistica tattico. La prote
 srl0324_desc="Array Sensor mobile"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
-Unit_Description_BrewLAN_T3L016="High-end del sistema intelligense mobile. Mentre stazionario è visibile solo omni, e fornisce un'ampia radar e copertura omnidirezionale."
+Unit_Description_BrewLAN_T3L016="High-end sistema di intelligenza mobile. Mentre stazionario è visibile solo omni, e fornisce un'ampia radar e copertura omnidirezionale."
+Unit_Description_BrewLAN_T3L019="Bilico matrice di sensori. Consuma grandi quantità di energia per funzionare."
 
+sl0325_desc="Cellulare Torpedo Launcher"
+sel0325_name="PT-57 Croc"
+sal0325_name="Limbo"
+Unit_Description_BrewLAN_T3L017="Cellulare veicolo anti-navale."
+Unit_Description_BrewLAN_T3L018="Cellulare in bilico veicolo anti-navale."
+
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Librarsi sistema di siluro. Capace di distruggere la più grande delle navi nemiche."
 
 --------------------------------------------------------------------------------
 -- sperimentazione
@@ -396,7 +409,7 @@ Unit_Description_BrewLAN_T3L016="High-end del sistema intelligense mobile. Mentr
 
 ssl0403_desc="Sperimentale ricostruzione Ingegnere"
 ssl0403_name="Iyadesu"
-Unit_Description_BrewLAN_T4L001="Sperimentale riparazione anfibia, la cattura, e l'unità di bonifica. Guadagni i progetti di unità e relitti da loro bonifica."
+Unit_Description_BrewLAN_T4L001="Sperimentale riparazione anfibia, la cattura, e l'unità di bonifica. Guadagni i progetti di unità e relitti da loro bonifica. Può memorizzare solo 8 progetti alla volta."
 ssa00001_desc="fuco"
 
 sea0401_desc="Sperimentale AA Gunship"
@@ -429,7 +442,7 @@ seb2404_name="Ivan"
 Unit_Description_BrewLAN_T4B005="Sperimentale artiglieria fuoco rapido. Incendi drop-baccelli contenenti unità di terra costruiti manualmente in profondità nelle linee nemiche, causando danni minor impatto. Goccia-pod vengono lanciati in una prima in ultimo ordine fuori."
 
 srb4402_desc="Sperimentale Omni Disrupting Struttura"
-srb4402_name="Oscurità"
+srb4402_name="Buio"
 Unit_Description_BrewLAN_T4B006="impianto di controspionaggio sperimentale. Genera un impulso che riduce la profondità massima penetrazione maggior parte dei sensori Omni attivi."
 
 ssb5401_desc="Sperimentale Quantum Gateway"
@@ -459,3 +472,7 @@ Unit_Description_BrewLAN_T4B010="Costruisce unità di terra."
 ssb0401_desc="Sperimentale Naval fabbrica"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Costruisce unità navali."
+
+seb2401_desc="Sperimentale Point Difesa"
+seb2401_name="Excalibur"
+Unit_Description_BrewLAN_T4B012="Sperimentale edificio difensivo. Consuma grandi quantità di energia a ogni scatto."
