@@ -1,4 +1,4 @@
-UnitBlueprint {           
+UnitBlueprint {
     Abilities = {
         TargetLocation = {
             bitmapId = 'teleport',
@@ -35,7 +35,7 @@ UnitBlueprint {
             Bank = 'XSB',
             Cue = 'XSB0304_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
-        }, 
+        },
         ShieldOff = Sound {
             Bank = 'XSB',
             Cue = 'XSB4301_On_Off',
@@ -79,7 +79,7 @@ UnitBlueprint {
         'EXPERIMENTAL',
         --'RALLYPOINT',
         'DRAGBUILD',
-        'SIZE30',
+        'SIZE24',
         'VISIBLETORECON',
         'RECLAIMABLE',
         --'SHOWQUEUE',
@@ -110,7 +110,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 3,
             ShieldSize = 0.12,
             ShieldVerticalOffset = -4.6,
-            PassOverkillDamage = false, 
+            PassOverkillDamage = false,
         },
     },
     Description = '<LOC ssb5401_desc>Experimental Quantum Gateway',
@@ -189,24 +189,24 @@ UnitBlueprint {
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
                     --MeshName = 'SSB5401_lod0.scm',
-                    --AlbedoName = '/units/xsb0304/xsb0304_albedo.dds', 
-                    --NormalsName = '/units/xsb0304/xsb0304_normalsTS.dds', 
+                    --AlbedoName = '/units/xsb0304/xsb0304_albedo.dds',
+                    --NormalsName = '/units/xsb0304/xsb0304_normalsTS.dds',
                     --SpecularName = '/units/xsb0304/xsb0304_specteam.dds',
                 },
                 {
                     LODCutoff = 500,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    AlbedoName = 'ssb5401_albedo.dds', 
-                    NormalsName = 'ssb5401_normalsTS.dds', 
+                    AlbedoName = 'ssb5401_albedo.dds',
+                    NormalsName = 'ssb5401_normalsTS.dds',
                     SpecularName = 'ssb5401_specteam.dds',
                 },
                 --[[{
                     LODCutoff = 500,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/xsc2201/xsc2201_lod1_albedo.dds', 
-                    NormalsName = '/units/xsc2201/xsc2201_lod1_normalsTS.dds', 
+                    AlbedoName = '/units/xsc2201/xsc2201_lod1_albedo.dds',
+                    NormalsName = '/units/xsc2201/xsc2201_lod1_normalsTS.dds',
                     SpecularName = '/units/xsc2201/xsc2201_lod1_specteam.dds',
                 },]]--
             },
@@ -233,11 +233,11 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Economy = {
-        DialingCostBase = 10000, 
+        DialingCostBase = 10000,
         BuildCostEnergy = 30000*5,
         BuildCostMass = 3000*5,
         BuildRate = 120,
-        BuildTime = 3000*5,             
+        BuildTime = 3000*5,
         MaintenanceConsumptionPerSecondEnergy = 500,
         StorageEnergy = 5000,
         RebuildBonusIds = {

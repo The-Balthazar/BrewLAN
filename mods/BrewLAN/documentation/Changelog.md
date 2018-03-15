@@ -770,6 +770,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Created distance models for the Iyadesu.
   * Changed the particle effects and sound effects of the Iyadesu drones.
 
+  ### 2018-03-13
+
+  * Overhauled the adjacency bonuses of large buildings.
+    * Independence Engine is now size 60.
+    * Panopticon and Arthrolab are now size 36.
+    * Souiya is now size 32.
+    * Gantry remains size 20.
+    * Stargate is now size 24.
+
+  ### 2018-03-14
+
+  * Fixed the rebuild bonus and tech level icon of Seraphim T1 artillery.
+
+  ### 2018-03-15
+
+  * Fixed the Stargate having the wrong size category, which was breaking ALL adjacency bonuses.
+    * It should have been 24, but it was actually 32.
+  * Added a new mod: Corrosive Ocean. It does what it sounds like. You probably wont be able to sustain a fleet.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

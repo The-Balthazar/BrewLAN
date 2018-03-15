@@ -94,7 +94,7 @@ UnitBlueprint {
         'FACTORY',
         'RALLYPOINT',
         'DRAGBUILD',
-        'SIZE30',
+        'SIZE60',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',

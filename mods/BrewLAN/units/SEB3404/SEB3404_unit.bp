@@ -37,7 +37,7 @@ UnitBlueprint {
         'OMNI',
         'SELECTABLE',
         'LAND',
-        'SIZE30',
+        'SIZE36',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
