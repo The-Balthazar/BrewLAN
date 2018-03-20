@@ -789,6 +789,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * It should have been 24, but it was actually 32.
   * Added a new mod: Corrosive Ocean. It does what it sounds like. You probably wont be able to sustain a fleet.
 
+  ### 2018-03-16
+
+  * Added a melee attack to the Iyadesu.
+    * Currently it uses beams, which will eventually be invisible.
+  * Lowered the trample damage of the Iyadesu, to stop it from destroying as many of the reclaim targets clumsily.
+
+  ### 2018-03-17
+
+  * Fixed the icons for the units from Paragon game.
+
+  ### 2018-03-20
+
+  * Debug tools: Added log output to all units on creation for map making purposes.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

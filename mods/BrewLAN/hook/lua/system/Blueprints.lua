@@ -17,7 +17,6 @@ end
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
-
     BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANCategoryChanges(all_blueprints.Unit)
     BrewLANGlobalCategoryAdditions(all_blueprints.Unit)
@@ -138,7 +137,6 @@ function BrewLANNavalEngineerCatFixes(all_bps)
         {'BUILTBYTIER1FACTORY AEON MOBILE CONSTRUCTION',     'BUILTBYTIER1FACTORY AEON MOBILE LAND CONSTRUCTION'},
         {'BUILTBYTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION', 'BUILTBYTIER1FACTORY SERAPHIM MOBILE LAND CONSTRUCTION'},
     }
-
     for id, bp in all_bps do
         if bp.General.Classification == 'RULEUC_Factory' and bp.Physics.BuildOnLayerCaps.LAYER_Water == false then
             if bp.Economy.BuildableCategory then
@@ -451,20 +449,20 @@ end
 function TorpedoBomberWaterLandCat(all_bps)
 
     local TorpedoBombers = {
-        all_bps['sra0307'], #T3 Cybran
-        all_bps['sea0307'], #T3 UEF
-        all_bps['ssa0307'], #T3 Seraphim
-        all_bps['xaa0306'], #T3 Aeon
+        all_bps['sra0307'], --T3 Cybran
+        all_bps['sea0307'], --T3 UEF
+        all_bps['ssa0307'], --T3 Seraphim
+        all_bps['xaa0306'], --T3 Aeon
 
-        all_bps['ura0204'], #T2 Cybran
-        all_bps['uea0204'], #T2 UEF
-        all_bps['xsa0204'], #T2 Seraphim
-        all_bps['uaa0204'], #T2 Aeon
+        all_bps['ura0204'], --T2 Cybran
+        all_bps['uea0204'], --T2 UEF
+        all_bps['xsa0204'], --T2 Seraphim
+        all_bps['uaa0204'], --T2 Aeon
 
-        all_bps['sra0106'], #T1 Cybran
-        all_bps['sea0106'], #T1 UEF
-        all_bps['ssa0106'], #T1 Seraphim
-        all_bps['saa0106'], #T1 Aeon
+        all_bps['sra0106'], --T1 Cybran
+        all_bps['sea0106'], --T1 UEF
+        all_bps['ssa0106'], --T1 Seraphim
+        all_bps['saa0106'], --T1 Aeon
     }
     for arrayIndex, bp in TorpedoBombers do
         --Check they exist, and have all their things.
@@ -487,8 +485,9 @@ end
 --------------------------------------------------------------------------------
 
 function RoundGalacticCollosusHealth(all_bps)
-    if all_bps['ual0401'].Defense.Health == 99999 then all_bps['ual0401'].Defense.Health = 100000 end
-    if all_bps['ual0401'].Defense.MaxHealth == 99999 then all_bps['ual0401'].Defense.MaxHealth = 100000 end
+    for i, v in {'Health','MaxHealth'} do
+        if all_bps['ual0401'].Defense[v] == 99999 then all_bps['ual0401'].Defense[v] = 100000 end
+    end
 end
 
 --------------------------------------------------------------------------------
