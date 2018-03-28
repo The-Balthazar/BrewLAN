@@ -20,6 +20,7 @@ function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
 
     LoggerGonnaLog(all_blueprints.Unit)
+    LoggerFutureScienceBullshit(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -27,12 +28,12 @@ end
 --------------------------------------------------------------------------------
 
 function LoggerGonnaLog(all_bps)
-    local units = {
+    --[[local units = {
         'sal0320',
         'uaa0310',
         'sea0401',
         'url0203',
-    }
+    }]]--
     for id, bp in all_bps do
     --for i, id in units do local bp = all_bps[id]
         if bp.Weapon then
@@ -65,6 +66,13 @@ function LoggerGonnaLog(all_bps)
                 end
                 LOG(id .. " - " .. LOC(bp.General.UnitName or bp.Description) .. ' -- ' .. (weapon.DisplayName or '<Unnamed weapon>') .. " DPS: " .. RealDPS(weapon))
             end
+        end
+    end
+end
+
+function LoggerFutureScienceBullshit(all_bps)
+    for id, bp in all_bps do
+        if bp.Intel.RadarRadius then
         end
     end
 end

@@ -803,6 +803,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Debug tools: Added log output to all units on creation for map making purposes.
 
+  ### 2018-03-28
+
+  * Removed unnecessary data from the observation Novax.
+  * Logger: Added some test code for scaling intel with map size.
+  * Logger: Added a speaker unit.
+  * Logger: Moved the icon for the damage test unit to Logger.
+  * Added the logger speaker icon to the brewlan.scd, because logger isn't getting its own .scd.
+  * Crate Drop: Made the intel buff crit actually significant.
+
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -259,8 +259,8 @@ do
                             Duration = -1,
                             Affects = {
                                 RadarRadius = {
-                                    Add = 0,
-                                    Mult = 1.25,
+                                    Add = 1000,
+                                    Mult = 1,
                                 },
                             },
                         }
