@@ -811,7 +811,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Logger: Moved the icon for the damage test unit to Logger.
   * Added the logger speaker icon to the brewlan.scd, because logger isn't getting its own .scd.
   * Crate Drop: Made the intel buff crit actually significant.
-
+  * Logger: Commented out the test code for intel scaling, because it wasn't fully functional.
+  * New mod: Research & Daiquiri's.
+    * Currently only contains a UEF omni sensor.
 
 ## 2016-12-15|0.7.5.5
 

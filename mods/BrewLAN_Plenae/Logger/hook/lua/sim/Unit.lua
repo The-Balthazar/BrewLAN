@@ -17,7 +17,7 @@ do
 
         OnCreate = function(self, ...)
             UnitOld.OnCreate(self, unpack(arg))
-            local bp = self:GetBlueprint().Intel
+            --[[local bp = self:GetBlueprint().Intel
             if bp then
                 local Buff = import('/lua/sim/Buff.lua')
                 for i, v in {'RadarRadius','OmniRadius','SonarRadius'} do
@@ -40,7 +40,7 @@ do
                         Buff.ApplyBuff(self, 'Map' .. v .. 'Mult')
                     end
                 end
-            end
+            end]]--
         end,
     }
 end
