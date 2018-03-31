@@ -815,6 +815,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * New mod: Research & Daiquiri's.
     * Currently only contains a UEF omni sensor.
 
+  ### 2018-03-31
+
+  * R&D: Added the UEF research centres.
+  * R&D & other: Research locked various UEF units, this only takes affect while R&D is enabled, specifically:
+    * All UEF Caffe Corretto units.
+    * The UEF Experimental Shield from Bubble Tea.
+    * The UEF Mines, T1 Artillery, and Panopticon from BrewLAN.
+    * The omni sensor from R&D.
+    * The grotesquely unfinished Seraphim disarming laser from Caffe Corretto. (This functionally disables it.)
+  * R&D: Created a dynamic backend for creating research units.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

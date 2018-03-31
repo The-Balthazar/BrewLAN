@@ -1,8 +1,8 @@
 UnitBlueprint {
-    AI = {        
+    AI = {
         GuardScanRadius = 15,
         InitialAutoMode = true,
-        ShowAssistRangeOnSelect = true,  
+        ShowAssistRangeOnSelect = true,
         StagingPlatformScanRadius = 15,
         TargetBones = {
             'Target01',
@@ -37,7 +37,7 @@ UnitBlueprint {
             Bank = 'Interface',
             Cue = 'UEF_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
-        },  
+        },
         PanicLoop = Sound {
             Bank = 'UAB',
             Cue = 'UAB2108_Doors',
@@ -81,23 +81,24 @@ UnitBlueprint {
         'BUILTBYTIER3FIELD',
         'UEF',
         'STRUCTURE',
-        'ECONOMIC',    
+        'ECONOMIC',
         'ENGINEER',
-        'TECH3',     
+        'TECH3',
         'CONSTRUCTION',
         'REPAIR',
-        'RECLAIM',      
-        'STATIONASSISTPOD',    
-        'PATROLHELPER',     
+        'RECLAIM',
+        'STATIONASSISTPOD',
+        'PATROLHELPER',
         'SHOWQUEUE',
         'ENGINEERSTATION',
         'ENERGYPRODUCTION',
         'DRAGBUILD',
         'SIZE16',
         'VISIBLETORECON',
-        'RECLAIMABLE',       
+        'RECLAIMABLE',
         'OVERLAYMISC',
         'SORTECONOMY',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = 0,
     Defense = {
@@ -223,15 +224,15 @@ UnitBlueprint {
     Economy = {
         AdjacentStructureEnergyMod = -5,
         BuildCostEnergy = 57600*1.25,
-        BuildCostMass = 3240*1.25,     
+        BuildCostMass = 3240*1.25,
         BuildRate = 15,
-        BuildTime = 5400*1.25,      
+        BuildTime = 5400*1.25,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
-            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF', 
+            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF',
             'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',
             'BUILTBYTIER3ENGINEER ENERGYSTORAGE UEF',
-        },  
+        },
         HalfPriceUpgradeFromID = 'ueb1301',
         ProductionPerSecondEnergy = 2500*.75,
         BuildWhenAttackedByAir = 'ueb2104',
@@ -246,7 +247,7 @@ UnitBlueprint {
         SizeX = 5,
         SizeZ = 5,
     },
-    General = {      
+    General = {
         BuildBones = {
             AimBone = 'Arm_Muzzle001',
             BuildEffectBones = {
@@ -290,7 +291,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
-        Icon = 'land',    
+        Icon = 'land',
         OrderOverrides = {
             RULEUTC_ProductionToggle = {
                 bitmapId = 'area-assist',
@@ -298,7 +299,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',     
+        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },

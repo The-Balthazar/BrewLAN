@@ -44,6 +44,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'SORTINTEL',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetX = 0,
     CollisionOffsetY = 0,

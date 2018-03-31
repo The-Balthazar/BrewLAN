@@ -77,25 +77,25 @@ UnitBlueprint {
                 OffsetZ = 0.25,
             },
         },
-        IconName = 'XEB2402', 
+        IconName = 'XEB2402',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
-                    MeshName = '/units/xeb2402/xeb2402_lod0.scm', 
-                    AlbedoName = '/units/xeb2402/xeb2402_albedo.dds', 
-                    NormalsName = '/units/xeb2402/xeb2402_normalsts.dds', 
-                    SpecularName = '/units/xeb2402/xeb2402_specteam.dds', 
+                    MeshName = '/units/xeb2402/xeb2402_lod0.scm',
+                    AlbedoName = '/units/xeb2402/xeb2402_albedo.dds',
+                    NormalsName = '/units/xeb2402/xeb2402_normalsts.dds',
+                    SpecularName = '/units/xeb2402/xeb2402_specteam.dds',
                 },
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit',
-                    MeshName = '/units/xeb2402/xeb2402_lod1.scm', 
-                    AlbedoName = '/units/xeb2402/xeb2402_lod1_albedo.dds', 
-                    NormalsName = '/units/xeb2402/xeb2402_lod1_normalsTS.dds', 
-                    SpecularName = '/units/xeb2402/xeb2402_lod1_specteam.dds', 
+                    MeshName = '/units/xeb2402/xeb2402_lod1.scm',
+                    AlbedoName = '/units/xeb2402/xeb2402_lod1_albedo.dds',
+                    NormalsName = '/units/xeb2402/xeb2402_lod1_normalsTS.dds',
+                    SpecularName = '/units/xeb2402/xeb2402_lod1_specteam.dds',
                 },
             },
         },
@@ -124,7 +124,7 @@ UnitBlueprint {
         BuildCostMass = 3700,
         BuildTime = 1000,
         RebuildBonusIds = {
-	    'seb3303',
+            'seb3303',
         },
     },
     Footprint = {

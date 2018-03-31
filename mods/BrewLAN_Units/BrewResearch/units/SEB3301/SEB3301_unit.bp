@@ -47,7 +47,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC ueb3201_desc>Radar System',
+    Description = '<LOC ueb3104_desc>Omni Sensor Array',
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
@@ -152,7 +152,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        UnitName = '<LOC seb3301_name>SAO - Omni',
+        UnitName = '<LOC seb3301_name>Coleman',
         UnitWeight = 1,
     },
     Intel = {
@@ -162,7 +162,7 @@ UnitBlueprint {
         VisionRadius = 25,
     },
     Interface = {
-        HelpText = '<LOC ueb3201_help>Radar System',
+        HelpText = '<LOC ueb3104_help>Radar System',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.4,

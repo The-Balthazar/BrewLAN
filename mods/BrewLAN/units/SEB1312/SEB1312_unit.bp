@@ -1,8 +1,8 @@
 UnitBlueprint {
-    AI = {        
+    AI = {
         GuardScanRadius = 15,
         InitialAutoMode = true,
-        ShowAssistRangeOnSelect = true,  
+        ShowAssistRangeOnSelect = true,
         StagingPlatformScanRadius = 15,
     },
     Adjacency = 'T3MassExtractorAdjacencyBuffs',
@@ -26,7 +26,7 @@ UnitBlueprint {
             Bank = 'Interface',
             Cue = 'UEF_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
-        },          
+        },
         PanicLoop = Sound {
             Bank = 'UAB',
             Cue = 'UAB2108_Doors',
@@ -84,9 +84,10 @@ UnitBlueprint {
         'MASSEXTRACTION',
         'SIZE4',
         'VISIBLETORECON',
-        'RECLAIMABLE',  
+        'RECLAIMABLE',
         'OVERLAYMISC',
         'SORTECONOMY',
+        'RESEARCHLOCKED',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -100,7 +101,7 @@ UnitBlueprint {
     },
     Description = '<LOC seb1312_desc>Engineering Mass Extractor',
     Display = {
-        Abilities = {        
+        Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         AnimationOpen = '/units/ueb1302/ueb1302_Apump.sca',
@@ -151,10 +152,10 @@ UnitBlueprint {
         BuildCostEnergy = 31625*1.5,
         BuildCostMass = 4600*1.5,
         BuildTime = 2875*1.5,
-        BuildRate = 15,                             
+        BuildRate = 15,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
-            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF', 
+            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF',
             'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',
             'BUILTBYTIER3ENGINEER MASSSTORAGE UEF',
         },

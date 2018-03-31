@@ -1,8 +1,8 @@
-UnitBlueprint {     
-    AI = {        
+UnitBlueprint {
+    AI = {
         GuardScanRadius = 15,
         InitialAutoMode = true,
-        ShowAssistRangeOnSelect = true,  
+        ShowAssistRangeOnSelect = true,
         StagingPlatformScanRadius = 15,
     },
     Adjacency = 'T3MassFabricatorAdjacencyBuffs',
@@ -26,7 +26,7 @@ UnitBlueprint {
             Bank = 'Interface',
             Cue = 'UEF_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
-        },  
+        },
         PanicLoop = Sound {
             Bank = 'UAB',
             Cue = 'UAB2108_Doors',
@@ -70,24 +70,25 @@ UnitBlueprint {
         'BUILTBYTIER3FIELD',
         'UEF',
         'STRUCTURE',
-        'ECONOMIC',    
+        'ECONOMIC',
         'ENGINEER',
-        'TECH3',     
+        'TECH3',
         'CONSTRUCTION',
         'REPAIR',
-        'RECLAIM',      
-        'STATIONASSISTPOD',    
-        'PATROLHELPER',     
+        'RECLAIM',
+        'STATIONASSISTPOD',
+        'PATROLHELPER',
         'SHOWQUEUE',
         'ENGINEERSTATION',
         'MASSPRODUCTION',
         'MASSFABRICATION',
         'DRAGBUILD',
-        'SIZE12', 
+        'SIZE12',
         'VISIBLETORECON',
-        'RECLAIMABLE',       
+        'RECLAIMABLE',
         'OVERLAYMISC',
         'SORTECONOMY',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -102,7 +103,7 @@ UnitBlueprint {
     },
     Description = '<LOC seb1313_desc>Engineering Mass Fabricator',
     Display = {
-        Abilities = {        
+        Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
             '<LOC ability_deathaoe>Volatile',
         },
@@ -137,7 +138,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 160,
-                    ShaderName = 'Unit',    
+                    ShaderName = 'Unit',
                     MeshName = '/units/ueb1303/ueb1303_lod0.scm',
                     AlbedoName = '/units/ueb1303/ueb1303_albedo.dds',
                     SpecularName = '/units/ueb1303/ueb1303_specteam.dds',
@@ -177,12 +178,12 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 65000*1.25,
         BuildCostMass = 3000*1.25,
-        BuildTime = 3750*1.25,  
-        BuildRate = 15,                             
+        BuildTime = 3750*1.25,
+        BuildRate = 15,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
-            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF', 
-            'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',  
+            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF',
+            'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',
             'BUILTBYTIER3ENGINEER MASSSTORAGE UEF',
         },
         HalfPriceUpgradeFromID = 'ueb1303',
@@ -200,7 +201,7 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 3,
     },
-    General = { 
+    General = {
         BuildBones = {
             #AimBone = 'Arm_Muzzle001',
             BuildEffectBones = {

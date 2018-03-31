@@ -38,6 +38,7 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'OVERLAYDIRECTFIRE',
         'SORTDEFENSE',
+        --'RESEARCHLOCKED',
     },
     CollisionOffsetY = -1,
     Defense = {
