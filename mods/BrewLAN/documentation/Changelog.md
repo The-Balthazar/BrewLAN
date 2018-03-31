@@ -825,6 +825,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * The omni sensor from R&D.
     * The grotesquely unfinished Seraphim disarming laser from Caffe Corretto. (This functionally disables it.)
   * R&D: Created a dynamic backend for creating research units.
+  * R&D: Half the research costs of the Panopticon.
+  * R&D: Added notes for what each research item is built by.
+  * R&D: Added icons.
 
 ## 2016-12-15|0.7.5.5
 

@@ -42,7 +42,7 @@ function GenerateResearchItemBPs(all_bps)
                     Description = bp.Description,
                     Display = {
                         Abilities = {
-                            '<LOC ability_unlock>Research Unlock',
+                            '<LOC ability_rnd_unlock>Research Unlock',
                         },
                         UniformScale = bp.Display.UniformScale / sizescale, --calculate properly based on footprint size
                     },
@@ -115,13 +115,43 @@ function GenerateResearchItemBPs(all_bps)
                     end
                 end
                 --Give units abilities listing what can build them
-                GiveUniqueMeshBlueprints(all_bps[newid], bp)
+                RNDGiveIndicativeAbilities(all_bps[newid], bp)
+                RNDGiveUniqueMeshBlueprints(all_bps[newid], bp)
             end
         end
     end
 end
 
-function GiveUniqueMeshBlueprints(bp, ref)
+function RNDGiveIndicativeAbilities(bp, ref)
+    if ref.General.UpgradesFrom then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_updade>Built as upgrade')
+    end
+    if TableFindSubstrings(ref.Categories,'BUILTBY','ENGINEER') then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_engineer>Built by engineer')
+    end
+    if TableFindSubstrings(ref.Categories,'BUILTBY','FIELD') then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_engineer>Built by field engineer')
+    end
+    if TableFindSubstrings(ref.Categories,'BUILTBY','COMMANDER') then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_command>Built by command unit')
+    end
+    if TableFindSubstrings(ref.Categories,'BUILTBY','FACTORY') then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_factory>Built by factory')
+    end
+    if TableFindSubstrings(ref.Categories,'BUILTBY','WALL') then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_wall>Built on wall')
+    end
+end
+
+function TableFindSubstrings(table, string1, string2)
+    for i, cat in table do
+        if string.find(cat,string1) and string.find(cat,string2 or string1) then
+            return cat
+        end
+    end
+end
+
+function RNDGiveUniqueMeshBlueprints(bp, ref)
     for i, mesh in {'BuildMeshBlueprint', 'MeshBlueprint'} do
         local refid = ref.Display[mesh]
         local meshbp = original_blueprints.Mesh[refid]
