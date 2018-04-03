@@ -9,11 +9,12 @@ local OldModBlueprints = ModBlueprints
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
+    RestrictExistingBlueprints(all_blueprints.Unit)
     GenerateResearchItemBPs(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
--- Logs
+-- Make some research items
 --------------------------------------------------------------------------------
 function GenerateResearchItemBPs(all_bps)
     for id, bp in all_bps do
@@ -78,7 +79,7 @@ function GenerateResearchItemBPs(all_bps)
                         MotionType = 'RULEUMT_Amphibious',
                     },
                     ScriptClass = 'ResearchItem',
-                    ScriptModule = '/mods/brewlan_units/brewresearch/lua/research.lua',
+                    ScriptModule = '/lua/defaultunits.lua',
                     SizeX = 2,
                     SizeY = 1,
                     SizeZ = 2,
@@ -151,6 +152,7 @@ function TableFindSubstrings(table, string1, string2)
     end
 end
 
+--Making unique mesh blueprints was unessessary, but I haven't bothered uncoupling the essential part of this.
 function RNDGiveUniqueMeshBlueprints(bp, ref)
     for i, mesh in {'BuildMeshBlueprint', 'MeshBlueprint'} do
         local refid = ref.Display[mesh]
@@ -167,6 +169,16 @@ function RNDGiveUniqueMeshBlueprints(bp, ref)
         IconFadeInZoom = 130,
         Source = ref.Display.Mesh.Source,
     }
+end
+
+function RestrictExistingBlueprints(all_bps)
+    local restrict = {
+        'ueb1101',
+        --'uab1101',  --Aeon down have a research centre yet.
+    }
+    for i, id in restrict do
+        table.insert(all_bps[id].Categories, 'RESEARCHLOCKED')
+    end
 end
 
 
