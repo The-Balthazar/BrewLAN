@@ -4,3 +4,4 @@ Description['seb2320'] = "<LOC Unit_Description_BrewLAN_Turrets_0003>Heavy defes
 Description['seb2211'] = "<LOC Unit_Description_BrewLAN_Turrets_0004>Defensive tower. Armed with a destroyer-grade plasma cannon."
 Description['seb2111'] = "<LOC Unit_Description_BrewLAN_Turrets_0005>Light defensive tower. Armed with a frigate-grade plasma cannon."
 Description['srb2402'] = "<LOC Unit_Description_BrewLAN_Turrets_0006>Defensive turret. Armed with a massive proton cannon."
+Description['srb2391'] = "<LOC Unit_Description_BrewLAN_Turrets_0007>Powerful, short range, defensive turret. It gradually stores energy and discharges everything with each shot. Most effective against large targets when given time to charge. Highly ineffective at sustained fire."

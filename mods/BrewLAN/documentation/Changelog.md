@@ -833,13 +833,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Added a UEF T1 wind turbine.
 
-  ### 2018-01-03
+  ### 2018-04-03
 
   * R&D: Added random wind.
   * R&D: Added an Aeon T1 wind turbine.
   * R&D: Moved class definitions to defaultunits.lua
   * R&D: Added icon for UEF wind turbine.
   * R&D: Research locked normal UEF power generator.
+
+  ### 2018-04-09
+
+  * Turrets: Added a Cybran Tech 3 Tesla Coil.
 
 ## 2016-12-15|0.7.5.5
 
