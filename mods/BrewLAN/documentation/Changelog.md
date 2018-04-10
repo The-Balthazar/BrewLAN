@@ -845,6 +845,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Turrets: Added a Cybran Tech 3 Tesla Coil.
 
+  ### 2018-04-10
+
+  * Turrets: Gave the Tesla Coil ambient sounds.
+  * Turrets: Increased the LOD0 cutoff of the Tesla Coil.
+  * Turrets: Moved some stats of the Tesla Coil from the script to the BP.
+  * Turrets: Increased the Tesla Coil stun duration to 6 ticks, from 5.
+  * Turrets: Added an off button to the Tesla Coil.
+  * Turrets: Created an icon for the Tesla Coil.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -1,5 +1,10 @@
 UnitBlueprint {
     Audio = {
+        ActiveLoop = Sound {
+            Bank = 'XSL',
+            Cue = 'XSL0402_Move_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
         Destroyed = Sound {
             Bank = 'URLDestroy',
             Cue = 'URB_Destroy_Huge',
@@ -75,7 +80,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 120,
+                    LODCutoff = 130,
                     ShaderName = 'Insect',
                 },
             },
@@ -133,8 +138,17 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'land',
+        OrderOverrides = {
+            RULEUTC_ProductionToggle = {
+                bitmapId = 'activate-weapon',
+                helpText = 'activate_weapon',
+            },
+        },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Secret',
+        ToggleCaps = {
+            RULEUTC_ProductionToggle = true,
+        },
         UnitName = '<LOC srb2391_name>Tesla Coil',
         UnitWeight = 1,
     },
@@ -205,7 +219,7 @@ UnitBlueprint {
                     },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 0.5,
+                    Duration = 0.6,
                     Radius = 0,
                     TargetAllow = 'ALLUNITS',
                     TargetDisallow = 'EXPERIMENTAL,COMMAND',
@@ -213,9 +227,19 @@ UnitBlueprint {
             },
             CollideFriendly = false,
             Damage = 2,
+            DamageTickMultiplier = 2,
+            --[[
+                Damage is multiplied by ticks since it last started firing and by the DamageTickMultiplier.
+                Listed values for BeamLifetime and BeamCollisionDelay are in seconds and are always that plus a tick.
+                With two damage ticks a shot, damage and multiplier of 2 equates to a sustained DPS of exactly 40, regardless of RoF.
+            ]]--
             DamageFriendly = false,
             DamageType = 'Normal',
             DisplayName = 'Tesla Coil',
+            Effects = {
+                ParticalStackIntervalTicks = 30,
+                ParticalStacksMax = 30, --Interval * stacks max = number of ticks to continue making effects for.
+            },
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
@@ -243,7 +267,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
-            RateOfFire = 1.5,
+            RateOfFire = 1.5, --With 1.5 RoF and damage, multiplier, and collisions of 2 each, minimum damage per shot is 28 and sustained DPS is 40.
             ReTargetOnMiss = true,
             TargetCheckInterval = 0.3,
             TargetPriorities = {
@@ -278,7 +302,7 @@ UnitBlueprint {
             DamageFriendly = true,
             DamageRadius = 10,
             DamageType = 'EMP',
-            DisplayName = 'EMP',
+            DisplayName = 'EMP Death Weapon',
             FireTargetLayerCapsTable = {
                 Air = 'Air|Land|Seabed|Water',
                 Land = 'Air|Land|Seabed|Water',
