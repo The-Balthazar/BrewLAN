@@ -16,11 +16,11 @@ T3WeaponBoosterAccuracyAdjacencyBuffs = {
 }
 
 T3WeaponBoosterDamageAdjacencyBuffs = {
-    'T3WeaponBoosterDamageBonusSize4',
-    'T3WeaponBoosterDamageBonusSize8',
-    'T3WeaponBoosterDamageBonusSize12',
-    'T3WeaponBoosterDamageBonusSize16',
-    'T3WeaponBoosterDamageBonusSize20',
+    --'T3WeaponBoosterDamageBonusSize4',
+    --'T3WeaponBoosterDamageBonusSize8',
+    --'T3WeaponBoosterDamageBonusSize12',
+    --'T3WeaponBoosterDamageBonusSize16',
+    --'T3WeaponBoosterDamageBonusSize20',
     'T3WeaponBoosterEnergyWeaponTradeOffSize4',
     'T3WeaponBoosterEnergyWeaponTradeOffSize8',
     'T3WeaponBoosterEnergyWeaponTradeOffSize12',
@@ -219,7 +219,7 @@ BuffBlueprint {
 ------------------------------------------------------------------
 -- Energy cost increases
 ------------------------------------------------------------------
-local EnergyDamageMult = 10     -- 10% max, multiplied by
+local EnergyDamageMult = 40     -- 10% max, multiplied by
 BuffBlueprint {
     Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize4',
     DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
@@ -312,7 +312,7 @@ BuffBlueprint {
 ------------------------------------------------------------------
 -- Damage boosts -- WARNING TO OTHERS, THESE DON'T WORK
 ------------------------------------------------------------------
-local DamageMult = 2.5     -- 10% max, multiplied by
+local DamageMult = 0     -- 10% max, multiplied by
 BuffBlueprint {
     Name = 'T3WeaponBoosterDamageBonusSize4',
     DisplayName = 'T3WeaponBoosterDamageBonus',

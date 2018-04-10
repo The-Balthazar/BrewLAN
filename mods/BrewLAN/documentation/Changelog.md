@@ -853,6 +853,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Turrets: Increased the Tesla Coil stun duration to 6 ticks, from 5.
   * Turrets: Added an off button to the Tesla Coil.
   * Turrets: Created an icon for the Tesla Coil.
+  * Turrets: Made the UEF Damage Boost Node work, enabled it, and finished it.
 
 ## 2016-12-15|0.7.5.5
 
