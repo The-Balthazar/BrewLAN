@@ -855,6 +855,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Turrets: Created an icon for the Tesla Coil.
   * Turrets: Made the UEF Damage Boost Node work, enabled it, and finished it.
 
+  ### 2018-04-12
+
+  * Overhauled the Solaris script. Visual effects mostly the same, including the increasing speed each time the shield needs re-activating.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

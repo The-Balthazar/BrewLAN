@@ -43,7 +43,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 115,
     Categories = {
-        'PRODUCTBREWTURRETS',
+        'PRODUCTBREWLANTURRETS',
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'CYBRAN',
