@@ -102,12 +102,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Experimental',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 618,
         Health = 18450,
         MaxHealth = 18450,
         RegenRate = 10,
-        SubThreatLevel = 40,
-        SurfaceThreatLevel = 100,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 750,
     },
     Description = '<LOC ssl0403_desc>Experimental Resurrection Engineer',
     Display = {

@@ -20,7 +20,7 @@ UnitBlueprint {
             Bank = 'Interface',
             Cue = 'Cybran_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
-        },     
+        },
     },
     BuildIconSortPriority = 50,
     Categories = {
@@ -43,7 +43,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 39,
+        EconomyThreatLevel = 565,
         Health = 6000*1.5,
         MaxHealth = 6000*1.5,
         RegenRate = 0,
@@ -103,7 +103,7 @@ UnitBlueprint {
         BuildCostEnergy = 65000*1.25,
         BuildCostMass = 3000*1.25,
         BuildTime = 3750*1.25,
-        HalfPriceUpgradeFromID = 'urb1303', 
+        HalfPriceUpgradeFromID = 'urb1303',
         MaintenanceConsumptionPerSecondEnergy = 3500,
         MaintenanceConsumptionPerSecondEnergyFab = 3500*.75,
         MaintenanceConsumptionPerSecondEnergyCloak = 3500*.25,

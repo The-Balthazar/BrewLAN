@@ -48,8 +48,8 @@ UnitBlueprint {
         Health = 20,
         MaxHealth = 20,
         RegenRate = 0,
-        SubThreatLevel = 10,
-        SurfaceThreatLevel = 5,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 90,
     },
     Description = '<LOC sbui2220>Pressure Mine',
     Display = {

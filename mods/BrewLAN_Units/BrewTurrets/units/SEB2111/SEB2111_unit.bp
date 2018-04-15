@@ -48,14 +48,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = 0,
     Defense = {
-        AirThreatLevel = 50,
+        AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 50,
+        EconomyThreatLevel = 0,
         Health = 1000,
         MaxHealth = 1000,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 75,
+        SurfaceThreatLevel = 13,
     },
     Description = '<LOC sbui2311_desc>Anti-Armor Point Defense',
     Display = {

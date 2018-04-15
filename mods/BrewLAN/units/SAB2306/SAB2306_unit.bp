@@ -52,14 +52,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = 0.3,
     Defense = {
-        AirThreatLevel = 55,
+        AirThreatLevel = 15, -- Half surface threat because it can hit low altitude air.
         ArmorType = 'Experimental',
-        EconomyThreatLevel = 45,
+        EconomyThreatLevel = 0,
         Health = 7250,
         MaxHealth = 7250,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        SurfaceThreatLevel = 29,
     },
     Description = '<LOC xeb2306_desc>Heavy Point Defence',
     Display = {

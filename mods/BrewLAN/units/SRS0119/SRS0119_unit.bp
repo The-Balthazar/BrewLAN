@@ -54,11 +54,11 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 35,
         Health = 650,
         MaxHealth = 650,
         RegenRate = 0,
-        SubThreatLevel = 9,
+        SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0119_desc>Field Engineering Boat',

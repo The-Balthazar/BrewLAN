@@ -48,7 +48,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 39,
+        EconomyThreatLevel = 865,
         Health = 6000*2.5,
         MaxHealth = 6000*2.5,
         RegenRate = 10,
@@ -156,7 +156,7 @@ UnitBlueprint {
         BuildCostEnergy = 65000*1.25,
         BuildCostMass = 3000*1.25,
         BuildTime = 3750*1.25,
-        HalfPriceUpgradeFromID = 'xsb1303', 
+        HalfPriceUpgradeFromID = 'xsb1303',
         MaintenanceConsumptionPerSecondEnergy = 3500*.75,
         ProductionPerSecondMass = 12*.75,
         RebuildBonusIds = {

@@ -59,12 +59,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 20,
+        EconomyThreatLevel = 11,
         Health = 1500,
         MaxHealth = 1500,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 25,
+        SurfaceThreatLevel = 5,
     },
     Description = '<LOC sbui2103>Light Artillery Installation',
     Display = {

@@ -4,10 +4,12 @@
 local DefaultUnits = import('/lua/defaultunits.lua')
 local StructureUnit = DefaultUnits.StructureUnit
 local FactoryUnit = DefaultUnits.FactoryUnit
+local EnergyStorageUnit = DefaultUnits.EnergyStorageUnit
 --------------------------------------------------------------------------------
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local DefaultWeapons = import('/lua/sim/DefaultWeapons.lua')
 local DeathNukeWeapon = import(BrewLANPath .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
+local EnergyStorageVariableDeathWeapon = import(BrewLANPath .. '/lua/weapons.lua').EnergyStorageVariableDeathWeapon
 local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 --------------------------------------------------------------------------------
 local EffectTemplates = import('/lua/effecttemplates.lua')
@@ -212,4 +214,45 @@ StackingBuilderUnit = Class(FactoryUnit) {
             FactoryUnit.UpgradingState.OnStopBuild(self, unitBuilding)
         end,
     }
+}
+
+--------------------------------------------------------------------------------
+-- Energy storage variable explosion scripts
+--------------------------------------------------------------------------------
+
+BrewLANEnergyStorageUnit = Class(EnergyStorageUnit) {
+
+    Weapons = {
+        DeathWeapon = Class(EnergyStorageVariableDeathWeapon) {},
+    },
+
+    OnKilled = function(self, instigator, type, overkillRatio)
+        local curEnergy = GetArmyBrain(self:GetArmy()):GetEconomyStoredRatio('ENERGY')
+        local ReductionMult = 1 - curEnergy
+
+        local weapon = self:GetWeaponByLabel('DeathWeapon')
+        local weaponbp = weapon:GetBlueprint()
+        local damage = weaponbp.Damage - 1000
+        local radius = weaponbp.DamageRadius - 3
+        --LOG( - radius * ReductionMult)
+        --LOG( - damage * ReductionMult)
+        weapon.DamageRadiusMod = - radius * ReductionMult
+        weapon.DamageMod = - damage * ReductionMult
+
+        if curEnergy < 0.2 then
+            weapon.FxDeath = EffectTemplates.ExplosionEffectsSml01
+        elseif curEnergy < 0.4 then
+            weapon.FxDeath = EffectTemplates.ExplosionEffectsSml01
+        elseif curEnergy < 0.6 then
+            weapon.FxDeath = EffectTemplates.ExplosionEffectsMed01
+        elseif curEnergy < 0.8 then
+            weapon.FxDeath = EffectTemplates.ExplosionEffectsLrg01
+        elseif curEnergy < 0.9 then
+            weapon.FxDeath = EffectTemplates.ExplosionEffectsLrg01
+        elseif curEnergy <= 1.0 then
+            weapon.FxDeath = EffectTemplates.ExplosionEffectsLrg02
+        end
+
+        EnergyStorageUnit.OnKilled(self)
+    end,
 }

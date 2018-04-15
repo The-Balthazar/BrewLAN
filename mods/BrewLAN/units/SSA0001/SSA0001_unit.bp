@@ -106,6 +106,7 @@ UnitBlueprint {
         },
     },
     Categories = {
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'SERAPHIM',
         'MOBILE',
@@ -125,7 +126,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Light',
-        EconomyThreatLevel = 1,
+        EconomyThreatLevel = 135,
         Health = 4000,
         MaxHealth = 4000,
         RegenRate = 0,

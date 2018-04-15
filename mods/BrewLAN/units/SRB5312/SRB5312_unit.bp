@@ -1,9 +1,9 @@
-UnitBlueprint {     
+UnitBlueprint {
     AI = {
-        TargetBones = {  
+        TargetBones = {
             'AttackTarget001',
             'AttackTarget002',
-            'AttackTarget003', 
+            'AttackTarget003',
             'AttackTarget004',
         },
     },
@@ -30,15 +30,15 @@ UnitBlueprint {
         'BUILTBYHEAVYWALL',
         'SELECTABLE',
         'CYBRAN',
-        'STRUCTURE',    
-        'DEFENSE',      
+        'STRUCTURE',
+        'DEFENSE',
         'DRAGBUILD',
         'SIZE4',
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'HEAVYWALL',     
+        'HEAVYWALL',
     },
     CollisionOffsetX = 0,
     CollisionOffsetY = 0,
@@ -49,10 +49,10 @@ UnitBlueprint {
         MaxHealth = 40000,
         RegenRate = 0,
     },
-    Description = '<LOC srb5310_desc>Armored Wall Segment', 
+    Description = '<LOC srb5310_desc>Armored Wall Segment',
     Display = {
         AdjacencyConnection = 'HEAVYWALL',
-        AdjacencyConnectionInfo = {  
+        AdjacencyConnectionInfo = {
             Bones = {
                 North = {
                     visibility = 'hide',
@@ -60,57 +60,57 @@ UnitBlueprint {
                     conflict = nil,
                 },
                 South = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'South',
                     conflict = nil,
-                }, 
+                },
                 East = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'East',
                     conflict = nil,
-                }, 
+                },
                 West = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'West',
                     conflict = nil,
                 },
                 Tower = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = nil,
-                },  
+                },
                 North_Buttress =  {
-                    visibility = 'hide',   
+                    visibility = 'hide',
                     bonetype = 'North',
                     conflict = 'Tower',
                 },
                 South_Buttress = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'South',
                     conflict = 'Tower',
                 },
                 East_Buttress = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'East',
                     conflict = 'Tower',
-                },  
+                },
                 West_Buttress = {
-                    visibility = 'hide', 
+                    visibility = 'hide',
                     bonetype = 'West',
                     conflict = 'Tower',
-                },    
+                },
                 TowerButtressN = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'North',
-                },  
+                },
                 TowerButtressS = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'South',
-                },  
+                },
                 TowerButtressE = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'East',
                 },
@@ -118,9 +118,9 @@ UnitBlueprint {
                     visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'West',
-                },  
+                },
             },
-        },                    
+        },
         BuildAttachBone = 'WallNode',
         DamageEffects = {
             {
@@ -135,7 +135,7 @@ UnitBlueprint {
                 OffsetY = 2.5,
                 OffsetZ = 0.25,
             },
-        },            
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -157,7 +157,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,   
+        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_albedo.dds',
@@ -179,8 +179,8 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 500,
-        BuildCostMass = 250,  
-        BuildTime = 50,   
+        BuildCostMass = 250,
+        BuildTime = 50,
         RebuildBonusIds = {
             'sab5310',
             'seb5310',
@@ -192,12 +192,12 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
-    General = {     
+    General = {
         BuildBones = {
             BuildEffectBones = {
                 0,
             },
-        },            
+        },
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_Factory',
@@ -208,18 +208,18 @@ UnitBlueprint {
             RULEUCC_Guard = false,
             RULEUCC_Move = false,
             RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false, 
+            RULEUCC_Patrol = false,
             RULEUCC_Pause = false,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
-        },      
+        },
         ConstructionBar = true,
-        FactionName = 'Cybran',  
+        FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',    
+        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC srb5310_name>Procyon Defiance',
         UnitWeight = 1,
     },
@@ -264,7 +264,7 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 207,
-    Wreckage = {    
+    Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,

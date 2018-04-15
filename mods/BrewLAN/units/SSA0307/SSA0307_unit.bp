@@ -89,7 +89,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 45,
     Categories = {
-        'PRODUCTFA',
+        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'SERAPHIM',
@@ -111,7 +111,7 @@ UnitBlueprint {
         Health = 3850,
         MaxHealth = 3850,
         RegenRate = 0,
-        SubThreatLevel = 18,
+        SubThreatLevel = 14,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC xsa0204_desc>Torpedo Bomber',

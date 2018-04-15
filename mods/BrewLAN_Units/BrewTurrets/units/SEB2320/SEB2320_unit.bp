@@ -54,11 +54,11 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 102,
         Health = 8625,
         MaxHealth = 8625,
         RegenRate = 0,
-        SurfaceThreatLevel = 180,
+        SurfaceThreatLevel = 17,
     },
     Description = '<LOC seb2320_desc>Heavy Point Defense',
     Display = {

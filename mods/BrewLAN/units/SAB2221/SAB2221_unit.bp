@@ -39,8 +39,8 @@ UnitBlueprint {
         Health = 100,
         MaxHealth = 100,
         RegenRate = 0,
-        SubThreatLevel = 10,
-        SurfaceThreatLevel = 10,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 450,
     },
     Description = '<LOC sbui2221>Proximity Mine',
     Display = {

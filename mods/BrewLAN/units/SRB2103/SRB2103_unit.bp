@@ -59,12 +59,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 15,
+        EconomyThreatLevel = 11,
         Health = 1500,
         MaxHealth = 1500,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 25,
+        SurfaceThreatLevel = 5,
     },
     Description = '<LOC sbui2103>Light Artillery Installation',
     Display = {
@@ -74,17 +74,17 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Insect',
-                    AlbedoName = '/units/urb2101/urb2101_albedo.dds', 
-                    NormalsName = '/units/urb2101/urb2101_normalsts.dds', 
-                    SpecularName = '/units/urb2101/urb2101_specteam.dds',  
+                    AlbedoName = '/units/urb2101/urb2101_albedo.dds',
+                    NormalsName = '/units/urb2101/urb2101_normalsts.dds',
+                    SpecularName = '/units/urb2101/urb2101_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
                     MeshName = '/units/urb2101/urb2101_lod1.scm', #needs replacing
-                    AlbedoName = '/units/urb2101/urb2101_lod1_albedo.dds', 
-                    NormalsName = '/units/urb2101/urb2101_lod1_normalsTS.dds', 
-                    SpecularName = '/units/urb2101/urb2101_lod1_specteam.dds', 
+                    AlbedoName = '/units/urb2101/urb2101_lod1_albedo.dds',
+                    NormalsName = '/units/urb2101/urb2101_lod1_normalsTS.dds',
+                    SpecularName = '/units/urb2101/urb2101_lod1_specteam.dds',
                 },
             },
         },

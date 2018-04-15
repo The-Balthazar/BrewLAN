@@ -44,7 +44,7 @@ UnitBlueprint {
         'SERAPHIM',
         'MOBILE',
         'LAND',
-        'TECH2',  
+        'TECH2',
         'CONSTRUCTION',
         'ENGINEER',
         'REPAIR',
@@ -63,15 +63,15 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 37,
         Health = 905,
         MaxHealth = 905,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 1,
+        SurfaceThreatLevel = 3,
     },
     Description = '<LOC uel0209_desc>Field Engineer',
-    Display = {   
+    Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_engineeringsuite>Engineering Suite',
@@ -86,16 +86,16 @@ UnitBlueprint {
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     Scrolling = true,
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/XSL0201/XSL0201_albedo.dds', 
-                    NormalsName = '/units/XSL0201/XSL0201_normalsts.dds', 
-                    SpecularName = '/units/XSL0201/XSL0201_specteam.dds', 
+                    AlbedoName = '/units/XSL0201/XSL0201_albedo.dds',
+                    NormalsName = '/units/XSL0201/XSL0201_normalsts.dds',
+                    SpecularName = '/units/XSL0201/XSL0201_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/XSL0201/XSL0201_lod1_albedo.dds', 
-                    NormalsName = '/units/XSL0201/XSL0201_lod1_normalsts.dds', 
-                    SpecularName = '/units/XSL0201/XSL0201_lod1_specteam.dds', 
+                    AlbedoName = '/units/XSL0201/XSL0201_lod1_albedo.dds',
+                    NormalsName = '/units/XSL0201/XSL0201_lod1_normalsts.dds',
+                    SpecularName = '/units/XSL0201/XSL0201_lod1_specteam.dds',
                 },
             },
         },
@@ -141,7 +141,7 @@ UnitBlueprint {
             'BUILTBYTIER2ENGINEER DEFENSE SERAPHIM',
             'BUILTBYTIER2ENGINEER INDIRECTFIRE SERAPHIM',
             'BUILTBYTIER2FIELD SERAPHIM',
-        },   
+        },
         StorageEnergy = 300,
         StorageMass = 30,
         TeleportEnergyMod = 0.15,
@@ -149,7 +149,7 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        BuildBones = { 
+        BuildBones = {
             AimBone = 'Turret_Muzzle',
             BuildEffectBones = {
                 'Turret_Muzzle',
@@ -177,13 +177,13 @@ UnitBlueprint {
         },
         ConstructionBar = true,
         FactionName = 'Seraphim',
-        Icon = 'amph',        
+        Icon = 'amph',
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssl0219_name>Iyazyn',
         UnitWeight = 2,
     },
-    Intel = {         
+    Intel = {
         RadarRadius = 30,
         VisionRadius = 20,
         SonarStealth = true,

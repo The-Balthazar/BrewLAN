@@ -858,6 +858,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-04-12
 
   * Overhauled the Solaris script. Visual effects mostly the same, including the increasing speed each time the shield needs re-activating.
+  * R&D & Turrets: Corrected some incorrect product codes, and unified RND codes.
+  * Recalculated threat values of all BrewLAN mods' units based on a formula I am also developing for LOUD.
+    * Most AIs other than LOUD don't use the threat values, so these are being balanced to LOUD.
+  * Changed the listed ability on shield walls, and the shielded fabricator and power gen to be 'personal shield'.
+
+  ### 2018-04-15
+
+  * Overhauled T2 energy storage scripts. Weapon damage is now entirely variable based on energy in storage, as opposed to having 5 preset damage levels.
+  * Logger: Now logs what the calculated threat values of selected units should be on launch.
+  * Finished applying the recalculated threat values.
+  * Removed the 'Volatile' ability listing from the Hades. It can overheat, but it's doesn't have a death weapon, which is what 'Volitile' should mean.
+  * Removed the errant build rate value from the Hades, Absolution, and Stargate.
+  * R&D: Changed the listed production value of the wind turbines to the average production, instead of the max.
 
 ## 2016-12-15|0.7.5.5
 

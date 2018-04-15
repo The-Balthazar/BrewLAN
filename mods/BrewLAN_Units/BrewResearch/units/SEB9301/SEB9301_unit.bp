@@ -28,7 +28,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 220,
     Categories = {
-        'PRODUCTBREWRND',
+        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'UEF',
         'STRUCTURE',
@@ -47,7 +47,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 100,
+        EconomyThreatLevel = 700,
         Health = 5000,
         MaxHealth = 5000,
         RegenRate = 0,

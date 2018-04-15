@@ -59,12 +59,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 490,
         Health = 45000,
         MaxHealth = 45000,
         RegenRate = 20,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 400,
+        SurfaceThreatLevel = 24,
     },
     Description = '<LOC sal0401>Experimental Assault Tank',
     Display = {
@@ -211,7 +211,6 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 400000,
         BuildCostMass = 28500,
-        BuildRate = 180,
         BuildTime = 12000*1.333333333333333333333333333,
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
@@ -249,7 +248,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 4.35,
     LifeBarSize = 5.75,
-    Physics = {             
+    Physics = {
         BackUpDistance = 20,
         BankingSlope = 0,
         BuildOnLayerCaps = {

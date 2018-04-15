@@ -18,7 +18,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 220,
     Categories = {
-        'PRODUCTBREWRND',
+        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -40,7 +40,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 3,
+        EconomyThreatLevel = 53,
         Health = 500,
         MaxHealth = 500,
         RegenRate = 0,

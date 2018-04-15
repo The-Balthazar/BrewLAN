@@ -46,7 +46,7 @@ UnitBlueprint {
         'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER2FACTORY',
-        'BUILTBYTIER3FACTORY', 
+        'BUILTBYTIER3FACTORY',
         'CONSTRUCTION',
         'ENGINEER',
         'REPAIR',
@@ -77,12 +77,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 1,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 121,
         Health = 3025,
         MaxHealth = 3025,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 9,
+        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0319_desc>Field Engineering Ship',
     Display = {
@@ -197,8 +197,8 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 8,
     },
-    General = {       
-        BuildBones = {        
+    General = {
+        BuildBones = {
             AimBone = 0,
             BuildEffectBones = {
                 'Turret_Muzzle_01',

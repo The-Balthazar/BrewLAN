@@ -49,9 +49,9 @@ UnitBlueprint {
         'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER3COMMANDER', 
-        'FACTORY',    
-        'GATE', 
+        'BUILTBYTIER3COMMANDER',
+        'FACTORY',
+        'GATE',
         'SHOWQUEUE',
         'UEF',
         'STRUCTURE',
@@ -67,12 +67,12 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'SORTSTRATEGIC',
     },
-    --CollisionOffsetY = 5,      
+    --CollisionOffsetY = 5,
     --CollisionOffsetZ = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 1190,
+        EconomyThreatLevel = 850,
         Health = 10000,
         MaxHealth = 10000,
         RegenRate = 0,
@@ -88,7 +88,7 @@ UnitBlueprint {
                 BLOffsetY = 0,
                 BLOffsetZ = 0,
                 BLScale = 1,
-            },        
+            },
             {
                 BLBone = 'Light2',
                 BLOffsetX = 0,
@@ -101,7 +101,7 @@ UnitBlueprint {
             Green = '/effects/emitters/light_green_03_emit.bp',
             Red = '/effects/emitters/light_red_03_emit.bp',
             Yellow = '/effects/emitters/light_yellow_02_emit.bp',
-        }, 
+        },
         BuildAttachBone = 'DropPod',
         Mesh = {
             IconFadeInZoom = 130,
@@ -143,12 +143,12 @@ UnitBlueprint {
         BuildTime = 30000*1.5,
         RebuildBonusIds = {
             'seb2404',
-        },                    
+        },
         BuildRate = 180,
         BuilderDiscountMult = 0.6,
-        BuildableCategory = {                   
-            'BUILTBYTIER3FACTORY UEF MOBILE LAND CONSTRUCTION',   
-            'BUILTBYTIER3FACTORY UEF MOBILE LAND',   
+        BuildableCategory = {
+            'BUILTBYTIER3FACTORY UEF MOBILE LAND CONSTRUCTION',
+            'BUILTBYTIER3FACTORY UEF MOBILE LAND',
             'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',
         },
     },
@@ -156,7 +156,7 @@ UnitBlueprint {
         SizeX = 5,
         SizeZ = 5,
     },
-    General = {        
+    General = {
         BuildBones = {
             BuildEffectBones = {
                 'BuildBone1',
@@ -189,7 +189,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret', 
+        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
@@ -236,7 +236,7 @@ UnitBlueprint {
     SizeY = 2,
     SizeZ = 5,
     StrategicIconName = 'icon_experimental_generic',
-    StrategicIconSortPriority = 175,  
+    StrategicIconSortPriority = 175,
     Veteran = {
         Level1 = 30,
         Level2 = 60,
@@ -299,7 +299,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Turret_muzzle',
                     },
-                    RackBone = 'Turret_recoil', 
+                    RackBone = 'Turret_recoil',
                     TelescopeBone = 'DropPod',
                     TelescopeRecoilDistance = 15,
                 },

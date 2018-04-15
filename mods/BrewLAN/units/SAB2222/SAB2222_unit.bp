@@ -40,12 +40,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 500,
+        EconomyThreatLevel = 5,
         Health = 250,
         MaxHealth = 250,
         RegenRate = 0,
-        SubThreatLevel = 500,
-        SurfaceThreatLevel = 500,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 7000,
     },
     Description = '<LOC sbui2222>Nuke Mine',
     Display = {

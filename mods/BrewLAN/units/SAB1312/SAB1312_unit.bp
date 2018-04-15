@@ -35,17 +35,17 @@ UnitBlueprint {
         'MASSEXTRACTION',
         'SIZE4',
         'VISIBLETORECON',
-        'RECLAIMABLE',        
-        'SHIELD',  
+        'RECLAIMABLE',
+        'SHIELD',
         'SORTECONOMY',
     },
     CollisionOffsetY = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 2500,
+        EconomyThreatLevel = 811,
         Health = 8400*1.5,
-        MaxHealth = 8400*1.5,  
+        MaxHealth = 8400*1.5,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -66,7 +66,7 @@ UnitBlueprint {
     },
     Description = '<LOC sab1312_desc>Shielded Mass Extractor',
     Display = {
-        Abilities = {           
+        Abilities = {
             '<LOC ability_shielddome>Shield Dome',
         },
         AnimationActivate = '/units/UAB1302/UAB1302_Apump.sca',
@@ -116,7 +116,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 31625*1.5,
         BuildCostMass = 4600*1.5,
-        BuildTime = 2875*1.5,  
+        BuildTime = 2875*1.5,
         HalfPriceUpgradeFromID = 'uab1302',
         MaintenanceConsumptionPerSecondEnergy = 54,
         ProductionPerSecondMass = 18,

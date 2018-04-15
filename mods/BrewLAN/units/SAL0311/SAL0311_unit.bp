@@ -79,7 +79,7 @@ UnitBlueprint {
         MaxHealth = 9000,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 27,
+        SurfaceThreatLevel = 33,
     },
     Description = '<LOC sal0311_desc>Armored Assault Tank',
     Display = {
@@ -97,9 +97,9 @@ UnitBlueprint {
                 {
                     LODCutoff = 215,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab0202/uab0202_lod1_albedo.dds', 
-                    NormalsName = '/units/uab0202/uab0202_lod1_normalsTS.dds', 
-                    SpecularName = '/units/uab0202/uab0202_lod1_specteam.dds', 
+                    AlbedoName = '/units/uab0202/uab0202_lod1_albedo.dds',
+                    NormalsName = '/units/uab0202/uab0202_lod1_normalsTS.dds',
+                    SpecularName = '/units/uab0202/uab0202_lod1_specteam.dds',
                 },
             },
         },

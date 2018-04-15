@@ -58,11 +58,11 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 13,
+        EconomyThreatLevel = 0,
         Health = 11500,
         MaxHealth = 11500,
         RegenRate = 0,
-        SubThreatLevel = 27,
+        SubThreatLevel = 20,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC xsb2205_desc>Torpedo Launcher',

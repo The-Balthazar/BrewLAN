@@ -37,17 +37,17 @@ UnitBlueprint {
         'SIZE12',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SORTECONOMY',          
-        'SHIELD',  
+        'SORTECONOMY',
+        'SHIELD',
         'OVERLAYDEFENSE',
     },
     CollisionOffsetY = -0.25,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 39,
+        EconomyThreatLevel = 865,
         Health = 6000*1.5,
-        MaxHealth = 6000*1.5,    
+        MaxHealth = 6000*1.5,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -69,7 +69,7 @@ UnitBlueprint {
     Description = '<LOC sab1313_desc>Shielded Mass Fabricator',
     Display = {
         Abilities = {
-            '<LOC ability_shielddome>Shield Dome',
+            '<LOC ability_personalshield>Personal Shield',
             '<LOC ability_deathaoe>Volatile',
         },
         DamageEffects = {
@@ -166,7 +166,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 65000*1.25,
         BuildCostMass = 3000*1.25,
-        BuildTime = 3750*1.25,  
+        BuildTime = 3750*1.25,
         HalfPriceUpgradeFromID = 'uab1303',
         MaintenanceConsumptionPerSecondEnergy = 3500*.75+375,
         MaintenanceConsumptionPerSecondEnergyFab = 3500*.75,
@@ -200,7 +200,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
-        Icon = 'land',        
+        Icon = 'land',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {
                 bitmapId = 'shield-dome',

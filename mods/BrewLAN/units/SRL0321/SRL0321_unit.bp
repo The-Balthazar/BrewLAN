@@ -53,12 +53,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 294,
+        EconomyThreatLevel = 85,
         Health = 2800,
         MaxHealth = 2800,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 24,
+        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sel0321_desc>Mobile Strategic Missile Defense',
     Display = {

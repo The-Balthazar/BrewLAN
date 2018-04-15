@@ -24,7 +24,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 69,
     Categories = {
-        'PRODUCTBREWRND',
+        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER2ENGINEER',
@@ -45,7 +45,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 1,
+        EconomyThreatLevel = 4,
         Health = 200,
         MaxHealth = 200,
         RegenRate = 0,
@@ -93,7 +93,7 @@ UnitBlueprint {
         BuildCostEnergy = 500,
         BuildCostMass = 25,
         BuildTime = 40,
-        ProductionPerSecondEnergy = 30,
+        ProductionPerSecondEnergy = 17.5,--This is just for the UI, the value is overwritten. It's 5-30.
         RebuildBonusIds = {
             'seb1101',
         },

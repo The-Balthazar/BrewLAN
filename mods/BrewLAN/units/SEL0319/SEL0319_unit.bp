@@ -98,12 +98,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 83,
         Health = 2250,
         MaxHealth = 2250,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 1,
+        SurfaceThreatLevel = 6,
     },
     Description = '<LOC uel0209_desc>Field Engineer',
     Display = {

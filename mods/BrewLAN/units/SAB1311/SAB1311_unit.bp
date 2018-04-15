@@ -46,17 +46,17 @@ UnitBlueprint {
         'SIZE16',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SORTECONOMY',               
-        'SHIELD',  
+        'SORTECONOMY',
+        'SHIELD',
         'OVERLAYDEFENSE',
     },
     CollisionOffsetY = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 56,
+        EconomyThreatLevel = 470,
         Health = 9720*1.5,
-        MaxHealth = 9720*1.5,      
+        MaxHealth = 9720*1.5,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -77,9 +77,9 @@ UnitBlueprint {
     },
     Description = '<LOC sab1311_desc>Shielded Power Generator',
     Display = {
-        Abilities = {           
-            '<LOC ability_shielddome>Shield Dome',
-            '<LOC ability_deathaoe>Volatile',   
+        Abilities = {
+            '<LOC ability_personalshield>Personal Shield',
+            '<LOC ability_deathaoe>Volatile',
         },
         AnimationDeath = {
             {
@@ -144,7 +144,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 160,
-                    ShaderName = 'Aeon',   
+                    ShaderName = 'Aeon',
                     --MeshName = '/units/UAB1301/UAB1301_lod0.scm',
                     AlbedoName = '/units/UAB1301/UAB1301_albedo.dds',
                     SpecularName = '/units/UAB1301/UAB1301_specteam.dds',
@@ -184,12 +184,12 @@ UnitBlueprint {
         AdjacentStructureEnergyMod = -5,
         BuildCostEnergy = 57600*1.25,
         BuildCostMass = 3240*1.25,
-        BuildTime = 5400*1.25,  
-        HalfPriceUpgradeFromID = 'uab1301',                  
+        BuildTime = 5400*1.25,
+        HalfPriceUpgradeFromID = 'uab1301',
         MaintenanceConsumptionPerSecondEnergy = 375,
         ProductionPerSecondEnergy = 2500*.75,
         RebuildBonusIds = {
-            'uab1301', 
+            'uab1301',
             'sab1311',
         },
     },

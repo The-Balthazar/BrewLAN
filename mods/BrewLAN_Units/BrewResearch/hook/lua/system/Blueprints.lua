@@ -26,7 +26,7 @@ function GenerateResearchItemBPs(all_bps)
                     BlueprintId = newid,
                     ResearchId = id,
                     Categories = {
-                        'PRODUCTBREWRD',
+                        'PRODUCTBREWLANRND',
                         'BUILTBYTIER3RESEARCH',
                         -- Engine stuff?
                         'VISIBLETORECON',

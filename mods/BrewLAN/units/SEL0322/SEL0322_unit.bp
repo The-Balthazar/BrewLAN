@@ -65,7 +65,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 5,
         Health = 150 * 2,
         MaxHealth = 150 * 2,
         RegenRate = 0,
@@ -84,7 +84,7 @@ UnitBlueprint {
             ShieldVerticalOffset = -3*1.25,
         },
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 9*2,
+        SurfaceThreatLevel = 0,
     },
     Description = '<LOC uel0307_desc>Mobile Shield Generator',
     Display = {

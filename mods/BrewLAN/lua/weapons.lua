@@ -1,4 +1,6 @@
-local DefaultBeamWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultBeamWeapon
+local WeaponsFile = import('/lua/sim/DefaultWeapons.lua')
+local DefaultBeamWeapon = WeaponsFile.DefaultBeamWeapon
+local BareBonesWeapon = WeaponsFile.BareBonesWeapon
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local BrewLANBeams = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/collisionbeams.lua')
 
@@ -28,3 +30,25 @@ ADFAlchemistPhasonLaser = Class(DefaultBeamWeapon) {
     FxUpackingChargeEffects = {},
     FxUpackingChargeEffectScale = 1,
 }]]--
+
+EnergyStorageVariableDeathWeapon = Class(BareBonesWeapon) {
+	FxDeath = EffectTemplate.ExplosionEffectsLrg02,
+
+    OnCreate = function(self)
+        BareBonesWeapon.OnCreate(self)
+        self:SetWeaponEnabled(false)
+    end,
+
+
+    OnFire = function(self)
+    end,
+
+    Fire = function(self)
+		local army = self.unit:GetArmy()
+        for k, v in self.FxDeath do
+            CreateEmitterAtBone(self.unit,-2,army,v)
+        end
+		local myBlueprint = self:GetBlueprint()
+        DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius + (self.DamageRadiusMod or 0), myBlueprint.Damage + (self.DamageMod or 0), myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
+    end,
+}

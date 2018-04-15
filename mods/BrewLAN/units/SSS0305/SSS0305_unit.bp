@@ -46,12 +46,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 50,
+        EconomyThreatLevel = 2,
         Health = 3500,
         MaxHealth = 3500,
         RegenRate = 0,
-        SubThreatLevel = 0.1,
-        SurfaceThreatLevel = 0.1,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = '<LOC uas0305_desc>Sonar Platform',
     Display = {

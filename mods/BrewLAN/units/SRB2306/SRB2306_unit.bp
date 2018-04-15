@@ -45,36 +45,33 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 50,
+        AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 40,
+        EconomyThreatLevel = 93,
         Health = 7000,
         MaxHealth = 7000,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        SurfaceThreatLevel = 23,
     },
     Description = '<LOC xeb2306_desc>Heavy Point Defense',
     Display = {
-        Abilities = {
-            '<LOC ability_deathaoe>Volatile',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 120,
                     ShaderName = 'Insect',
-                    AlbedoName = '/units/urb2301/urb2301_albedo.dds', 
-                    SpecularName = '/units/urb2301/urb2301_specteam.dds',  
+                    AlbedoName = '/units/urb2301/urb2301_albedo.dds',
+                    SpecularName = '/units/urb2301/urb2301_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
                     SpecularName = 'urb2301_lod1_specteam.dds',
-                    AlbedoName = '/units/urb2301/urb2301_lod1_albedo.dds', 
-                    NormalsName = '/units/urb2301/urb2301_lod1_normalsTS.dds', 
-                    SpecularName = '/units/urb2301/urb2301_lod1_specteam.dds', 
+                    AlbedoName = '/units/urb2301/urb2301_lod1_albedo.dds',
+                    NormalsName = '/units/urb2301/urb2301_lod1_normalsTS.dds',
+                    SpecularName = '/units/urb2301/urb2301_lod1_specteam.dds',
                 },
             },
         },
@@ -103,7 +100,6 @@ UnitBlueprint {
         BuildCostEnergy = 16000,
         BuildCostMass = 1800,
         BuildTime = 1500,
-        BuildRate = 15,
         RebuildBonusIds = {
             'srb2306',
         },
@@ -218,7 +214,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'Microwave Laser',
             EnergyCumulativeUpkeepCost = 10,
-            EnergyConsumptionPerSecondMin = 10,             
+            EnergyConsumptionPerSecondMin = 10,
             EnergyConsumptionPerSecondMax = 1000,
             EnergyDissipationPerSecond = 30,
             FireTargetLayerCapsTable = {

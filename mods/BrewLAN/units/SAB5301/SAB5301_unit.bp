@@ -1,4 +1,4 @@
-UnitBlueprint {          
+UnitBlueprint {
     AI = {
         TargetBones = {
             'Target',
@@ -28,8 +28,8 @@ UnitBlueprint {
         'TECH3',
         'SIZE4',
         'VISIBLETORECON',
-        'RECLAIMABLE',      
-        'SHIELD',  
+        'RECLAIMABLE',
+        'SHIELD',
         'SORTDEFENSE',
         'SHIELDWALL',
     },
@@ -59,9 +59,9 @@ UnitBlueprint {
         ThreatLevel = 0,
     },
     Description = '<LOC ssb5301_desc>Shield Wall Section',
-    Display = { 
+    Display = {
         AdjacencyConnection = 'SHIELDWALL',
-        AdjacencyConnectionInfo = {  
+        AdjacencyConnectionInfo = {
             Bones = {
                 North = {
                     visibility = 'show',
@@ -69,24 +69,24 @@ UnitBlueprint {
                     conflict = 'North',
                 },
                 South = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     --bonetype = 'South',
                     conflict = 'South',
-                }, 
+                },
                 East = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     --bonetype = 'East',
                     conflict = 'East',
-                }, 
+                },
                 West = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     --bonetype = 'West',
                     conflict = 'West',
                 },
             },
-        },        
+        },
         Abilities = {
-            '<LOC ability_shielddome>Shield Dome',
+            '<LOC ability_personalshield>Personal Shield',
         },
         DamageEffects = {
             {

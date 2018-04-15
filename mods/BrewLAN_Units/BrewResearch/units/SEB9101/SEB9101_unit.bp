@@ -28,7 +28,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 220,
     Categories = {
-        'PRODUCTBREWRND',
+        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER2ENGINEER',
@@ -51,7 +51,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 100,
+        EconomyThreatLevel = 260,
         Health = 3000,
         MaxHealth = 3000,
         RegenRate = 0,
@@ -129,8 +129,8 @@ UnitBlueprint {
         BuildTime = 450,
         BuildRate = 100,
         BuildableCategory = {
-            'BUILTBYTIER1RESEARCH UEF',
             'seb9201',
+            'BUILTBYTIER1RESEARCH UEF',
         },
         RebuildBonusIds = {
             'seb9101',

@@ -49,7 +49,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 4,
+        EconomyThreatLevel = 1,
         Health = 200,
         MaxHealth = 200,
         RegenRate = 0,
@@ -72,9 +72,9 @@ UnitBlueprint {
                 {
                     LODCutoff = 300,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab5202/uab5202_lod1_albedo.dds', 
-                    NormalsName = '/units/uab5202/uab5202_lod1_normalsTS.dds', 
-                    SpecularName = '/units/uab5202/uab5202_lod1_specteam.dds', 
+                    AlbedoName = '/units/uab5202/uab5202_lod1_albedo.dds',
+                    NormalsName = '/units/uab5202/uab5202_lod1_normalsTS.dds',
+                    SpecularName = '/units/uab5202/uab5202_lod1_specteam.dds',
                 },
             },
         },

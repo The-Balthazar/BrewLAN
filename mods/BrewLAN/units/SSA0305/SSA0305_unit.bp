@@ -101,14 +101,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.075,
     Defense = {
-        AirThreatLevel = 0,
+        AirThreatLevel = 3,
         ArmorType = 'Light',
         EconomyThreatLevel = 0,
         Health = 5980,
         MaxHealth = 5980,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 18,
+        SurfaceThreatLevel = 20,
     },
     Description = '<LOC uea0305_desc>Heavy Gunship',
     Display = {
@@ -149,9 +149,9 @@ UnitBlueprint {
                     LODCutoff = 215,
                     ShaderName = 'Seraphim',
                   #  MeshName = '/units/xsa0203/xsa0203_lod1.scm', #needs a custom Lod1 mesh
-                    AlbedoName = '/units/xsa0203/xsa0203_lod1_albedo.dds', 
+                    AlbedoName = '/units/xsa0203/xsa0203_lod1_albedo.dds',
                   #  NormalsName = '/units/xsa0203/xsa0203_lod1_normalsTS.dds', #seemed fine without before
-                    SpecularName = '/units/xsa0203/xsa0203_lod1_specteam.dds', 
+                    SpecularName = '/units/xsa0203/xsa0203_lod1_specteam.dds',
                 },
             },
         },

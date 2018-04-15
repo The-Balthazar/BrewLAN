@@ -66,9 +66,9 @@ UnitBlueprint {
         'OVERLAYOMNI',
     },
     Defense = {
-        AirThreatLevel = 50,
+        AirThreatLevel = 24,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 25,
+        EconomyThreatLevel = 0,
         Health = 5250,
         MaxHealth = 5250,
         RegenRate = 0,

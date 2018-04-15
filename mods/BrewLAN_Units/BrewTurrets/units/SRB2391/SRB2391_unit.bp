@@ -62,12 +62,12 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 6,
+        EconomyThreatLevel = 2,
         Health = 18910,
         MaxHealth = 18910,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 50,
+        SurfaceThreatLevel = 0,
     },
     Description = '<LOC srb2391_desc>Heavy Point Defense',
     Display = {

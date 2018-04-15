@@ -122,14 +122,14 @@ UnitBlueprint {
         'CANNOTUSEAIRSTAGING',
     },
     Defense = {
-        AirThreatLevel = 50,
+        AirThreatLevel = 296,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 25,
         Health = 100000,
         MaxHealth = 100000,
         RegenRate = 5,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 300,
+        SurfaceThreatLevel = 12,
     },
     Description = '<LOC sea0401_desc>Experimental AA Gunship',
     Display = {

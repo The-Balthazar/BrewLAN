@@ -51,7 +51,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 4,
+        EconomyThreatLevel = 1,
         Health = 200,
         MaxHealth = 200,
         RegenRate = 0,
@@ -69,8 +69,8 @@ UnitBlueprint {
                 {
                     LODCutoff = 120,
                     ShaderName = 'Insect',
-                    AlbedoName = '/units/urb5202/urb5202_albedo.dds', 
-                    SpecularName = '/units/urb5202/urb5202_specteam.dds', 
+                    AlbedoName = '/units/urb5202/urb5202_albedo.dds',
+                    SpecularName = '/units/urb5202/urb5202_specteam.dds',
                 },
                 {
                     LODCutoff = 300,

@@ -45,7 +45,7 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 2,
+        EconomyThreatLevel = 73,
         Health = 6000,
         MaxHealth = 6000,
         RegenRate = 0,
