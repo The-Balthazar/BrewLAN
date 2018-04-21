@@ -67,7 +67,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
     },
     Defense = {
-        AirThreatLevel = 16,
+        AirThreatLevel = 6,
         ArmorType = 'Normal',
         EconomyThreatLevel = 0,
         Health = 2780,

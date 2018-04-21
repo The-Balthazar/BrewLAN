@@ -117,7 +117,7 @@ UnitBlueprint {
         MaxHealth = 1225,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 23,
+        SurfaceThreatLevel = 11,
     },
     Description = '<LOC saa0211_desc>Tactical Bomber',
     Display = {

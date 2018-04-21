@@ -101,14 +101,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.075,
     Defense = {
-        AirThreatLevel = 3,
+        AirThreatLevel = 6,
         ArmorType = 'Light',
         EconomyThreatLevel = 0,
         Health = 5980,
         MaxHealth = 5980,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 20,
+        SurfaceThreatLevel = 15,
     },
     Description = '<LOC uea0305_desc>Heavy Gunship',
     Display = {

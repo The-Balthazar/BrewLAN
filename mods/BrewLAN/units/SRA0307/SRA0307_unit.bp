@@ -118,7 +118,7 @@ UnitBlueprint {
         Health = 3500,
         MaxHealth = 3500,
         RegenRate = 0,
-        SubThreatLevel = 18,
+        SubThreatLevel = 38,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC ura0204_desc>Torpedo Bomber',
@@ -326,7 +326,6 @@ UnitBlueprint {
             MuzzleVelocity = 14,
             ProjectileId = '/projectiles/CANTorpedoNanite03/CANTorpedoNanite03_proj.bp',
             ProjectileLifetime = 20,
-            ProjectilesPerOnFire = 10,
             RackBones = {
                 {
                     MuzzleBones = {

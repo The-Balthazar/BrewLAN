@@ -129,7 +129,7 @@ UnitBlueprint {
         MaxHealth = 100000,
         RegenRate = 5,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 12,
+        SurfaceThreatLevel = 3,
     },
     Description = '<LOC sea0401_desc>Experimental AA Gunship',
     Display = {

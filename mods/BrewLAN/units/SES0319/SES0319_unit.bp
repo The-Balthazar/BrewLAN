@@ -111,7 +111,7 @@ UnitBlueprint {
         Health = 6525,
         MaxHealth = 6525,
         RegenRate = 0,
-        SubThreatLevel = 3,
+        SubThreatLevel = 2,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0319_desc>Field Engineering Ship',

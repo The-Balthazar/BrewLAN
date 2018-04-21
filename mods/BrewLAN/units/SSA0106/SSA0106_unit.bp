@@ -113,7 +113,7 @@ UnitBlueprint {
         Health = 170,
         MaxHealth = 170,
         RegenRate = 0,
-        SubThreatLevel = 3,
+        SubThreatLevel = 5,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC sair0106>Light Torpedo Bomber',

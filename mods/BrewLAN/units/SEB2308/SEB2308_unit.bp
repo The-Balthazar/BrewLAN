@@ -57,7 +57,7 @@ UnitBlueprint {
         Health = 12100,
         MaxHealth = 12100,
         RegenRate = 0,
-        SubThreatLevel = 19,
+        SubThreatLevel = 8,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC ueb2205_desc>Torpedo Launcher',

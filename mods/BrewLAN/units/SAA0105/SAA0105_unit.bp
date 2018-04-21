@@ -109,7 +109,7 @@ UnitBlueprint {
         MaxHealth = 530,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 3,
+        SurfaceThreatLevel = 1,
     },
     Description = '<LOC xra0105_desc>Light Gunship',
     Display = {

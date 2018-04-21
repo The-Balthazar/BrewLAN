@@ -865,12 +865,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2018-04-15
 
-  * Overhauled T2 energy storage scripts. Weapon damage is now entirely variable based on energy in storage, as opposed to having 5 preset damage levels.
+  * Overhauled T2 energy storage scripts. Weapon damage is now entirely variable based on energy in storage, as opposed to having 5 pre-set damage levels.
   * Logger: Now logs what the calculated threat values of selected units should be on launch.
   * Finished applying the recalculated threat values.
-  * Removed the 'Volatile' ability listing from the Hades. It can overheat, but it's doesn't have a death weapon, which is what 'Volitile' should mean.
+  * Removed the 'Volatile' ability listing from the Hades. It can overheat, but it's doesn't have a death weapon, which is what 'Volatile' should mean.
   * Removed the errant build rate value from the Hades, Absolution, and Stargate.
   * R&D: Changed the listed production value of the wind turbines to the average production, instead of the max.
+
+  ### 2018-04-21
+
+  * Logger: Updated threat script and threat values.
 
 ## 2016-12-15|0.7.5.5
 
