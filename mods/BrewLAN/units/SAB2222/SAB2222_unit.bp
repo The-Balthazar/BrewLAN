@@ -36,6 +36,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'RESEARCHLOCKED',
     },
     Defense = {
         AirThreatLevel = 0,

@@ -38,6 +38,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHIELD',
         'SORTECONOMY',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = 0,
     Defense = {

@@ -38,6 +38,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = 0,
     CollisionOffsetZ = 0,

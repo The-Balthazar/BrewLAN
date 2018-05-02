@@ -876,6 +876,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Logger: Updated threat script and threat values.
 
+  ### 2018-05-01
+
+  * R&D: Added tech level researches.
+
+  ### 2018-05-02
+
+  * R&D: Added temporary models for Aeon, Cybran and Seraphim research centres.
+  * R&D: Research locked a bunch of units:
+    * All mines
+    * Advanced resource buildings
+    * Tech 1 artillery
+    * All units from Caffe Corretto
+    * All units from Bubble Tea.
+    * The Iron Curtain.
+    * The Darkness.
+    * The Suthanus (T4 artillery).
+    * The Stargate.
+    * The Aeon T1 power generator.
+  * Turrets: Damage boost node is now volitile.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

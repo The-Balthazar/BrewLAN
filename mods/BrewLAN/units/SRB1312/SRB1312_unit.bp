@@ -37,6 +37,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTECONOMY',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = 0,
     Defense = {
@@ -44,13 +45,13 @@ UnitBlueprint {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2500,
         Health = 8400*1.5,
-        MaxHealth = 8400*1.5,  
+        MaxHealth = 8400*1.5,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
     Description = '<LOC srb1312_desc>Cloakable Mass Extractor',
-    Display = {    
+    Display = {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_personalstealth>Personal Stealth',
@@ -82,7 +83,7 @@ UnitBlueprint {
         BuildCostEnergy = 31625*1.5,
         BuildCostMass = 4600*1.5,
         BuildTime = 2875*1.5,
-        HalfPriceUpgradeFromID = 'urb1302', 
+        HalfPriceUpgradeFromID = 'urb1302',
         MaintenanceConsumptionPerSecondEnergy = 54,
         ProductionPerSecondMass = 18,
         RebuildBonusIds = {
@@ -117,7 +118,7 @@ UnitBlueprint {
         },
         UnitWeight = 1,
     },
-    Intel = {          
+    Intel = {
         Cloak = true,
         RadarStealth = true,
         SonarStealth = true,

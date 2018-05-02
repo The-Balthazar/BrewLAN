@@ -6,6 +6,10 @@ do
     function CreateInitialArmyGroup(strArmy, createCommander)
         if createCommander then
             AddBuildRestriction(strArmy,categories.RESEARCHLOCKED)
+            AddBuildRestriction(strArmy,categories.RESEARCHLOCKEDTECH1)
+            AddBuildRestriction(strArmy,categories.TECH2)
+            AddBuildRestriction(strArmy,categories.TECH3)
+            AddBuildRestriction(strArmy,categories.EXPERIMENTAL)
         end
         return OldCreateInitialArmyGroup(strArmy, createCommander)
     end

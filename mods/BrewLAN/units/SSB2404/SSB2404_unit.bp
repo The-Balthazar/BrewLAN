@@ -54,6 +54,7 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'OVERLAYINDIRECTFIRE',
         'SORTSTRATEGIC',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
     CollisionOffsetZ = -1.5,

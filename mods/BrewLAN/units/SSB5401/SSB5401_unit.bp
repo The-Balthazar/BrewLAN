@@ -85,6 +85,7 @@ UnitBlueprint {
         --'SHOWQUEUE',
         'SORTSTRATEGIC',
         'STARGATE',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetZ = 0,
     Defense = {

@@ -51,6 +51,9 @@ UnitBlueprint {
     },
     Description = '<LOC seb5381_desc>Damage Boost Node',
     Display = {
+        Abilities = {
+            '<LOC ability_deathaoe>Volatile',
+        },
         DamageEffects = {
             {
                 Bone = 0,
@@ -176,6 +179,18 @@ UnitBlueprint {
     SizeZ = 0.7,
     StrategicIconName = 'icon_structure3_generic',
     StrategicIconSortPriority = 250,
+    Weapon = {
+        {
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,

@@ -40,6 +40,7 @@ UnitBlueprint {
         'SORTECONOMY',
         'SHIELD',
         'OVERLAYDEFENSE',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
     Defense = {

@@ -41,7 +41,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-        'CONSTRUCTIONSORTDOWN',
+        --'CONSTRUCTIONSORTDOWN',
+        'RESEARCHCENTRE',
         'SORTCONSTRUCTION',
     },
     Defense = {

@@ -11,30 +11,46 @@ end
 
 ResearchItem = Class(DummyUnit) {
     OnCreate = function(self)
+        local bp = self:GetBlueprint()
         DummyUnit.OnCreate(self)
         --Restrict me, the RND item, to one being built at a time.
-        AddBuildRestriction(self:GetArmy(), categories[self:GetBlueprint().BlueprintId] )
+        AddBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
+        local bp = self:GetBlueprint()
         --Enable what we were supposed to allow.
-        RemoveBuildRestriction(self:GetArmy(), categories[self:GetBlueprint().ResearchId] )
+        if bp.ResearchId == string.lower(bp.ResearchId) then --This wont work for any units without letters in the ID.
+            RemoveBuildRestriction(self:GetArmy(), categories[bp.ResearchId] )
+        else -- else we are a category, not a unitID
+            RemoveBuildRestriction(self:GetArmy(), (categories[bp.ResearchId] * categories[string.upper(bp.General.FactionName or 'SELECTABLE')]) - categories.RESEARCHLOCKED - categories[bp.BlueprintId] )
+            --Unlock the next tech research as well.
+            if bp.ResearchId == 'RESEARCHLOCKEDTECH1' then
+                RemoveBuildRestriction(self:GetArmy(), categories.TECH2 * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN )
+            elseif bp.ResearchId == 'TECH2' then
+                RemoveBuildRestriction(self:GetArmy(), categories.TECH3 * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN )
+            elseif bp.ResearchId == 'TECH3' then
+                RemoveBuildRestriction(self:GetArmy(), categories.EXPERIMENTAL * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN )
+            end
+        end
         --Before the rest, because the rest is Destroy(self)
         DummyUnit.OnStopBeingBuilt(self,builder,layer)
     end,
 
     OnKilled = function(self, instigator, type, overKillRatio)
+        local bp = self:GetBlueprint()
         --Allow restarting of me, the RND item, if I was never finished.
         if self:GetFractionComplete() < 1 then
-            RemoveBuildRestriction(self:GetArmy(), categories[self:GetBlueprint().BlueprintId] )
+            RemoveBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
         end
         DummyUnit.OnKilled(self, instigator, type, overKillRatio)
     end,
 
     OnDestroy = function(self)
+        local bp = self:GetBlueprint()
         --Allow restarting of me, the RND item, if I was never finished. In case of reclaim.
         if self:GetFractionComplete() < 1 then
-            RemoveBuildRestriction(self:GetArmy(), categories[self:GetBlueprint().BlueprintId] )
+            RemoveBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
         end
         DummyUnit.OnDestroy(self)
     end,

@@ -30,11 +30,8 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLANRND',
         'SELECTABLE',
-        'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER2ENGINEER',
-        'BUILTBYTIER3ENGINEER',
-        'BUILTBYTIER2COMMANDER',
-        'BUILTBYTIER3COMMANDER',
+        'BUILTBYENGINEER',
+        'BUILTBYCOMMANDER',
         'UEF',
         'STRUCTURE',
         'TECH1',
@@ -46,6 +43,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
+        'RESEARCHCENTRE',
         'SORTCONSTRUCTION',
     },
     Defense = {

@@ -35,7 +35,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
-	'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER2COMMANDER',
@@ -52,6 +52,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYINDIRECTFIRE',
         'SORTSTRATEGIC',
+        'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.1,
     Defense = {
@@ -225,7 +226,7 @@ UnitBlueprint {
             TargetCheckInterval = 5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-		'INDIRECTFIRE',
+                'INDIRECTFIRE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
