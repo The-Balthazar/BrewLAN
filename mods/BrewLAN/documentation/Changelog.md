@@ -896,6 +896,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * The Aeon T1 power generator.
   * Turrets: Damage boost node is now volitile.
   * R&D: Added build descriptions.
+  * R&D: Added icons.
+  * R&D: Fixed the Aeon T3 research centre.
+  * R&D: Removed the research restriction from the Iron Curtain.
 
 ## 2016-12-15|0.7.5.5
 

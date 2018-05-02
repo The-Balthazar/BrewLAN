@@ -45,7 +45,6 @@ UnitBlueprint {
         'OVERLAYDEFENSE',
         'OVERLAYCOUNTERINTEL',
         'SORTDEFENSE',
-        'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
     Defense = {
