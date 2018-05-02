@@ -87,7 +87,7 @@ function GenerateResearchItemBPs(all_bps)
                 ResearchMult = 1,
             },
             Categories = {'TECH1'},
-            Description = '<LOC srnd9200_desc>Tech Level Research',
+            Description = '<LOC srnd9100_desc>Tech Level Research',
         },
         TECH2 = {
             techid = 2,

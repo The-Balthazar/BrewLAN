@@ -895,6 +895,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * The Stargate.
     * The Aeon T1 power generator.
   * Turrets: Damage boost node is now volitile.
+  * R&D: Added build descriptions.
 
 ## 2016-12-15|0.7.5.5
 
