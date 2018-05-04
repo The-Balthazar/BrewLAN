@@ -9,7 +9,7 @@ Mods that require BrewLAN to be functional. For the most part these are totally 
 * Completely optional, for compatibility.
 * Is overwritten by the support commander upgrade manager thing in GazUI and such.
 
-### BrewLAN: Gantry AIx 1–3
+### BrewLAN: Gantry AIx 1â€“3
 * These are difficulty increasing AIx cheat mods that affect the Gantry, and give it increased production speed. With different caveats.
   1. Linear increases in build speed and resource cheats over time.
   2. Player-mass gated exponential increase in build speed and resources.
@@ -77,3 +77,26 @@ Satisfaction guaranteed; mods with sim-side aesthetic changes and meta-mods.
 * For taking better screenshots:
   * Increases the view distances of models and tarmacs 1000x.
   * Makes spawned in units auto-give themselves tarmacs.
+
+## Extra units
+Units that I wanted to make, but either I didn't want directly in BrewLAN, or caused such a difference in gameplay that they should be optional.
+
+### Bubble Tea
+* Adds experimental shields.
+* 66% complete; missing Seraphim experimental shield.
+
+### Caffe Corretto
+* Adds lots of extra turrets.
+* Turrets are built by field engineers, so functionally requires BrewLAN.
+* Has no criteria for being 'finished' as a mod; it's just turrets.
+
+### Research & Daiquiris
+* Functionally separates the hardware and software of tech levels and blueprints.
+* Adds research centres, tech level researches and unit unlock researches.
+* Currently missing planned units:
+  * Unique models for Seraphim, Cybran, and UEF research centres.
+  * Seraphim and Cybran wind turbines.
+  * Cybran, Seraphim, and Aeon dedicated omni sensors.
+  * Light tech 2 power generators; halfway point between T1 and T2.
+  * Hovercraft and submarine factories.
+  * Possibly an implementation of seaplane factories.

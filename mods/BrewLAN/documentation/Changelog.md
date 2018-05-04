@@ -900,6 +900,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Fixed the Aeon T3 research centre.
   * R&D: Removed the research restriction from the Iron Curtain.
 
+  ### 2018-05-04
+
+  * R&D: Updated the names of the non-UEF research centres to have their names.
+  * R&D: Commented out the LOG messages for the creation of research items.
+  * R&D: Reduced the build time of the tech 1 research centres from 400 to 250.
+  * R&D: Fixed an issue with soft category defined upgrades in factories allowing factories to build factories.
+  * R&D: Increased the health of tech 2 and tech 3 research centres to 6000 and 12000 respectively.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

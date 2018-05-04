@@ -113,7 +113,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 2500,
         BuildCostMass = 250,
-        BuildTime = 450,
+        BuildTime = 250,
         BuildRate = 100,
         BuildableCategory = {
             'sab9201',
@@ -156,7 +156,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC sab9101_name>Tyson Campus',
+        UnitName = '<LOC sab9101_name>Insight',
         UnitWeight = 1,
         UpgradesTo = 'sab9201',
     },

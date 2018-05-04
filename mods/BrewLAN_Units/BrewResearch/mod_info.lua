@@ -1,8 +1,8 @@
 name = "Research & Daiquiris"
-uid = "25D57D85-9JA7-D842-BREW-RESEARCH00000"
-version = 0.0
-copyright = "© 2018 Sean Wheeldon"
-description = "Adds research buildings that unlock new units."
+uid = "25D57D85-9JA7-D842-BREW-RESEARCH00002"
+version = 0.2
+copyright = "ï¿½ 2018 Sean Wheeldon"
+description = "Separates the hardware and software for tech levels, and adds research for unlocking tech tevels and units."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN_Units/BrewResearch/R&D.png"
 selectable = true

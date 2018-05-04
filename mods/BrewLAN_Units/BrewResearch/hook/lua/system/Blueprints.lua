@@ -19,6 +19,12 @@ end
 --------------------------------------------------------------------------------
 function RNDPrepareScript(all_bps)
     for id, bp in all_bps do
+        --Hard link upgrades, instead of soft-category linking, to prevent splurged links
+        --If they don't have a buildable category, we probably don't want to mess with it, and the upgrade tag is probably a mistake.
+        if bp.General.UpgradesTo and bp.Economy.BuildableCategory and not table.find(bp.Economy.BuildableCategory, bp.General.UpgradesTo) then
+            table.insert(bp.Economy.BuildableCategory, bp.General.UpgradesTo)
+            table.remove(all_bps[bp.General.UpgradesTo].Categories, TableFindSubstrings(all_bps[bp.General.UpgradesTo].Categories, 'BUILTBY', 'FACTORY'))
+        end
         if bp.Categories and id != 'zzz6969' then -- zzz6969 is a cat dump unit for compatibility
             --Create extended tech 1 restriction and allow the ACU to build them after the research
             if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER') and not table.find(bp.Categories, 'BUILTBYCOMMANDER') then
@@ -138,7 +144,7 @@ function GenerateResearchItemBPs(all_bps)
             bp.General.FactionName = faction
             RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
             RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
-            LOG(repr(all_bps[newid]))
+            --LOG(repr(all_bps[newid]))
         end
     end
 end
@@ -287,6 +293,7 @@ function RNDGiveUniqueMeshBlueprints(all_bps, newid, ref)
 end
 
 --This isn't nessessary for its original purpose, but it doesn't hurt to keep it around
+--It's also a mess for cleanup, since it leaves table floating nowhere. Possible memory leak?
 function CleanupDuplicateArrayKeys(array)
     local original = array
     local new = {}
