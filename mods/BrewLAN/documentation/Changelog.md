@@ -908,6 +908,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Fixed an issue with soft category defined upgrades in factories allowing factories to build factories.
   * R&D: Increased the health of tech 2 and tech 3 research centres to 6000 and 12000 respectively.
 
+  ### 2018-05-14
+
+  * Shields: Added a basic version of the Seraphim experimental shield:
+    * Texture unfinished, no icons.
+    * It lacks any of the damage share the final version will need for balance.
+    * Currently in it's OP early production proof of concept form.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
