@@ -915,6 +915,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * It lacks any of the damage share the final version will need for balance.
     * Currently in it's OP early production proof of concept form.
 
+  ### 2018-05-15
+
+  * Shields: Seraphim experimental shield now averages out the bubble health when it is disabled and re-enabled.
+  * Shields: Removed some unnecessary data from the shield drones.
+  * Shields: Lowered the health values of the outer drones.
+  * Shields: Added death animations to the Seraphim shield.
+  * Shields: Fixed the audio for the Seraphim shield and shield drones.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -4,29 +4,39 @@ UnitBlueprint {
         StagingPlatformScanRadius = 46,
     },
     Audio = {
-        Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Huge',
+        DeathExplosion = Sound {
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-        PanelDestroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEL_Destroy_Sml_Land',
+        Destroyed = Sound {
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Huge',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        DoneBeingBuilt = Sound {
+            Bank = 'XSB',
+            Cue = 'XSB4301_Activate',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Killed = Sound {
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         ShieldOff = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB4202_Activate',
+            Bank = 'XSB',
+            Cue = 'XSB4301_On_Off',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         ShieldOn = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB4202_Activate',
+            Bank = 'XSB',
+            Cue = 'XSB4301_On_Off',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Gun',
+            Bank = 'SeraphimSelect',
+            Cue = 'Seraphim_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -85,26 +95,26 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
         },
-        --[[AnimationDeath = {
+        AnimationDeath = {
             {
-                Animation = '/mods/brewlan_units/brewshields/units/seb4401/seb4401_Adeath01.sca',
+                Animation = '/mods/brewlan_units/brewshields/units/ssb4401/ssb4401_Adeath01.sca',
                 AnimationRateMax = 2.25,
                 AnimationRateMin = 1.75,
                 Weight = 10,
             },
             {
-                Animation = '/mods/brewlan_units/brewshields/units/seb4401/seb4401_Adeath02.sca',
+                Animation = '/mods/brewlan_units/brewshields/units/ssb4401/ssb4401_Adeath02.sca',
                 AnimationRateMax = 2.25,
                 AnimationRateMin = 1.75,
                 Weight = 10,
             },
             {
-                Animation = '/mods/brewlan_units/brewshields/units/seb4401/seb4401_Adeath03.sca',
+                Animation = '/mods/brewlan_units/brewshields/units/ssb4401/ssb4401_Adeath03.sca',
                 AnimationRateMax = 2.25,
                 AnimationRateMin = 1.75,
                 Weight = 10,
             },
-        },]]--
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -202,8 +212,8 @@ UnitBlueprint {
         HelpText = '<LOC srb4401>Experimental Shield Generator',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 2.7,
-    LifeBarSize = 5,
+    LifeBarOffset = 3.5,
+    LifeBarSize = 6,
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
