@@ -142,6 +142,13 @@ SSL0403 = Class(SConstructionUnit) {
     end,
 
     CreatePod = function(self, WorkID)
+        --This first section is for compatibility with R&D.
+        if table.find(__blueprints[WorkID].Categories, 'SELECTABLE') and (table.find(__blueprints[WorkID].Categories, 'TECH1') or table.find(__blueprints[WorkID].Categories, 'TECH2') or table.find(__blueprints[WorkID].Categories, 'TECH3') or table.find(__blueprints[WorkID].Categories, 'EXPERIMENTAL')) then
+            if true then --[TO DO!!!] MAKE SURE THIS ISN'T AGAINST BUILD RESTRICTIONS!!
+                RemoveBuildRestriction(self:GetArmy(), categories[WorkID] )
+            end
+        end
+        --And now regular stuff
         self:RemoveBuildRestriction(categories[WorkID])
         if self:CanBuild(WorkID) then
             for i, pod in self.Pods do

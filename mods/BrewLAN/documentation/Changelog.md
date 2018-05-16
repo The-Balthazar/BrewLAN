@@ -923,6 +923,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Shields: Added death animations to the Seraphim shield.
   * Shields: Fixed the audio for the Seraphim shield and shield drones.
 
+  ### 2018-05-16
+
+  * Shields: New textures for Seraphim shield.
+  * Resurrection Engineer compatibility with R&D.
+    * For this it has to unrestrict the unit for the player as well as itself, meaning it could unrestrict things it should be able to.
+  * R&D & Shields: Added icons for the Aeon turbine, tech 1 power generator research items, and Seraphim experimental shield and shield drones.
+  * R&D: Fixed internal directory structure for icons.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
