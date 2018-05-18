@@ -931,6 +931,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D & Shields: Added icons for the Aeon turbine, tech 1 power generator research items, and Seraphim experimental shield and shield drones.
   * R&D: Fixed internal directory structure for icons.
 
+  ### 2018-05-18
+
+  * Shields: Added another death animation for the Seraphim shield.
+  * Shields & BrewLAN: Removed errant range categories for experimental shields.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -47,7 +47,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
         'OVERLAYDEFENSE',
-        'OVERLAYCOUNTERINTEL',
         'OVERLAYMISC',
         'SORTDEFENSE',
         'RESEARCHLOCKED',

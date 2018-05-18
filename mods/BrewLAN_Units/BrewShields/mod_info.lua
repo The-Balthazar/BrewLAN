@@ -1,7 +1,7 @@
 name = "Bubble Tea"
-uid = "25D57D85-9JA7-D842-BREW-SHIELDS000002"
-version = 0.2
-copyright = "� 2017 Sean Wheeldon"
+uid = "25D57D85-9JA7-D842-BREW-SHIELDS000005"
+version = 0.5
+copyright = "© 2017–2018 Sean Wheeldon"
 description = "Adds experimental shields."
 author = "Sean Wheeldon"
 icon = "/mods/BrewLAN_Units/BrewShields/mod_icon.png"

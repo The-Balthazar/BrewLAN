@@ -57,7 +57,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
         'OVERLAYDEFENSE',
-        'OVERLAYCOUNTERINTEL',
         'OVERLAYMISC',
         'SORTDEFENSE',
         'RESEARCHLOCKED',
@@ -110,6 +109,12 @@ UnitBlueprint {
             },
             {
                 Animation = '/mods/brewlan_units/brewshields/units/ssb4401/ssb4401_Adeath03.sca',
+                AnimationRateMax = 2.25,
+                AnimationRateMin = 1.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/brewlan_units/brewshields/units/ssb4401/ssb4401_Adeath04.sca',
                 AnimationRateMax = 2.25,
                 AnimationRateMin = 1.75,
                 Weight = 10,
