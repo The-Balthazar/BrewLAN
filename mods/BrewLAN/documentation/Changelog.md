@@ -943,6 +943,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-05-24
 
   * Changed the shield bubble of the ADG.
+  * R&D: Finished the UEF dedicated omni.
+  * Moved the animation thread for the Panopticon to its own document, then referenced it for the Panopticon and the Coleman.
+  * R&D: Created models for the Seraphim research centres, and fixed all the effects.
+  * R&D: Reduced the research costs of the Suthanus to a 10th.
+  * R&D: Reduced the research time of the Panopticon to match the costs.
+  * R&D: Reduced the research costs of the Darkness by half.
 
 ## 2016-12-15|0.7.5.5
 

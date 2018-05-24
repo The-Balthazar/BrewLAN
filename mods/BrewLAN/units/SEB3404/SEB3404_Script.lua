@@ -4,6 +4,7 @@
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 local AIUtils = import('/lua/ai/aiutilities.lua')
+local AnimationThread = import('/lua/effectutilities.lua').IntelDishAnimationThread
 
 SEB3404 = Class(TStructureUnit) {
 
@@ -21,7 +22,45 @@ SEB3404 = Class(TStructureUnit) {
                 end
             end
         )
-        self:ForkThread(self.AnimationThread)
+        self:ForkThread(AnimationThread,{
+            {
+                'Xband_Base',
+                'Xband_Dish',
+                bounds = {-180,180,-90,0,},
+                speed = 3,
+            },
+            {
+                'Tiny_Dish_00',
+                c = 2,
+                cont = true
+            },
+            {
+                'Small_XBand_Stand_00',
+                'Small_XBand_Dish_00',
+                c = 4,
+                bounds = {-180,180,-90,0,},
+            },
+            {
+                'Small_Dish_00',
+                'Small_Dish_00',
+                c = 4,
+                bounds = {-180,180,-90,90,},
+                speed = 20,
+            },
+            {
+                'Med_Dish_Stand_00',
+                'Med_Dish_00',
+                c = 4,
+                bounds = {-180,180,-90,90,},
+                speed = 6,
+            },
+            {
+                'Large_Dish_Base',
+                'Large_Dish',
+                bounds = {-180,180,-90,0,},
+                speed = 2,
+            },
+        })
         for i, v in {{'Panopticon','Domes'},{'Large_Dish','Dish_Scaffolds'}} do
             local entity = import('/lua/sim/Entity.lua').Entity({Owner = self,})
             entity:AttachBoneTo( -1, self, v[1] )
@@ -152,94 +191,6 @@ SEB3404 = Class(TStructureUnit) {
 
     OnCaptured = function(self, captor)
         TStructureUnit.OnCaptured(self, captor)
-    end,
-
-    AnimationThread = function(self)
-        local bones = {
-            {
-                'Xband_Base',
-                'Xband_Dish',
-                bounds = {-180,180,-90,0,},
-                speed = 3,
-            },
-            {
-                'Tiny_Dish_00',
-                c = 2,
-                cont = true
-            },
-            {
-                'Small_XBand_Stand_00',
-                'Small_XBand_Dish_00',
-                c = 4,
-                bounds = {-180,180,-90,0,},
-            },
-            {
-                'Small_Dish_00',
-                'Small_Dish_00',
-                c = 4,
-                bounds = {-180,180,-90,90,},
-                speed = 20,
-            },
-            {
-                'Med_Dish_Stand_00',
-                'Med_Dish_00',
-                c = 4,
-                bounds = {-180,180,-90,90,},
-                speed = 6,
-            },
-            {
-                'Large_Dish_Base',
-                'Large_Dish',
-                bounds = {-180,180,-90,0,},
-                speed = 2,
-            },
-        }
-        self.Rotators = {}
-        self.CRotators = {}
-        for i, set in bones do
-            if set.c then
-                for j = 1, set.c do
-                    if set.cont then
-                        table.insert(CreateRotator(self,set[1] .. j, 'z', nil, 30, 2, 30), self.CRotators)
-                    else
-                        table.insert(
-                            self.Rotators,
-                            {
-                                CreateRotator(self,set[1] .. j, 'z', math.random(set.bounds[1],set.bounds[2]), set.speed or 30, 2),
-                                CreateRotator(self,set[2] .. j, 'x', math.random(set.bounds[3],set.bounds[4]), set.speed or 30, 2),
-                                set.bounds,
-                                set.speed or 30,
-                            }
-                        )
-                    end
-                end
-            else
-                table.insert(
-                    self.Rotators,
-                    {
-                        CreateRotator(self,set[1], 'z', math.random(set.bounds[1],set.bounds[2]), set.speed or 30, 2),
-                        CreateRotator(self,set[2], 'x', math.random(set.bounds[3],set.bounds[4]), set.speed or 30, 2),
-                        set.bounds,
-                        set.speed or 30,
-                    }
-                )
-                --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
-            end
-        end
-        while true do
-            --LOG(self.Intel)
-            if self.Intel then
-                for i, v in self.Rotators do
-                    if math.random(1,40) < v[4] then
-                        v[1]:SetGoal(math.random(v[3][1],v[3][2]))
-                        v[2]:SetGoal(math.random(v[3][3],v[3][4]))
-                        WaitTicks(math.random(1,3))
-                    end
-                end
-                WaitTicks(math.random(1,3))
-            end
-            WaitTicks(10)
-        end
     end,
 }
 TypeClass = SEB3404

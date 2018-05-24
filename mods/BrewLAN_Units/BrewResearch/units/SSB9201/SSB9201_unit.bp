@@ -1,28 +1,28 @@
 UnitBlueprint {
     Audio = {
         Construct = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB0301_Construct_Start',
+            Bank = 'XSB',
+            Cue = 'XSB0304_Construct_Start',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         ConstructLoop = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB0301_Construct_Loop',
+            Bank = 'XSB',
+            Cue = 'XSB0304_Construct_Loop',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DeathExplosion = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Lrg_PreDestroy',
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Huge',
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Structure',
+            Bank = 'SeraphimSelect',
+            Cue = 'Seraphim_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -61,7 +61,22 @@ UnitBlueprint {
         },
         BlinkingLights = {
             {
-                BLBone = 0,
+                BLBone = 'Light04',
+                BLScale = 2,
+                BLOffsetZ = -0.05,
+            },
+            {
+                BLBone = 'Light05',
+                BLScale = 2,
+                BLOffsetZ = -0.05,
+            },
+            {
+                BLBone = 'Light06',
+                BLScale = 2,
+                BLOffsetZ = -0.05,
+            },
+            {
+                BLBone = 'Light07',
                 BLScale = 2,
                 BLOffsetZ = -0.05,
             },
@@ -77,8 +92,9 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 130,
-                    ShaderName = 'Aeon',
-                    MeshName = '/units/xsb0304/xsb0304_lod0.scm',
+                    ShaderName = 'Seraphim',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    --MeshName = '/units/xsb0304/xsb0304_lod0.scm',
                     AlbedoName = '/units/xsb0304/xsb0304_albedo.dds',
                     NormalsName = '/units/xsb0304/xsb0304_normalsts.dds',
                     SpecularName = '/units/xsb0304/xsb0304_specteam.dds',
@@ -104,7 +120,7 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
-        UniformScale = 0.04,
+        UniformScale = 0.045,
     },
     Economy = {
         BuildCostEnergy = 15000,
@@ -126,7 +142,8 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                0
+                'Light01',
+                'Light02',
             },
         },
         Category = 'Factory',

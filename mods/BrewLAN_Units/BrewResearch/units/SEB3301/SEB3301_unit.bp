@@ -50,8 +50,7 @@ UnitBlueprint {
     Description = '<LOC ueb3104_desc>Omni Sensor Array',
     Display = {
         Abilities = {
-            '<LOC ability_radar>Radar',
-            '<LOC ability_upgradable>Upgradeable',
+            '<LOC ability_omni>Omni Sensor',
         },
         BlinkingLights = {
             {
@@ -91,11 +90,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar6x_01_albedo',
+                Albedo = 'Tarmacs/Tar8x_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
-                Length = 6.4,
-                Normal = 'Tarmacs/Tar6x_01_normals',
+                Length = 6.4*2,
+                Normal = 'Tarmacs/Tar8x_01_normals',
                 Orientations = {
                     0,
                     90,
@@ -103,7 +102,7 @@ UnitBlueprint {
                     270,
                 },
                 RemoveWhenDead = false,
-                Width = 6.4,
+                Width = 6.4*2,
             },
         },
         UniformScale = 0.08,
@@ -165,8 +164,8 @@ UnitBlueprint {
         HelpText = '<LOC ueb3104_help>Radar System',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.4,
-    LifeBarSize = 1.1,
+    LifeBarOffset = 2,
+    LifeBarSize = 3.5,
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
@@ -180,9 +179,9 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         FlattenSkirt = true,
         MaxSteerForce = 0,
-        MeshExtentsX = 1.35*2,
-        MeshExtentsY = 3.2*2,
-        MeshExtentsZ = 1.35*2,
+        MeshExtentsX = 1.35*2.4,
+        MeshExtentsY = 3.2*2.3,
+        MeshExtentsZ = 1.35*2.4,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
@@ -191,9 +190,9 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         TurnRate = 0,
     },
-    SelectionSizeX = 0.7,
-    SelectionSizeZ = 0.7,
-    SelectionThickness = 0.55,
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2.5,
+    SelectionThickness = 0.35,
     SizeX = 0.3*2,
     SizeY = 2*2,
     SizeZ = 0.3*2,
