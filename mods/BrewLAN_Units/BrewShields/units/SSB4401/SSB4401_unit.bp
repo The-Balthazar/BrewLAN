@@ -211,7 +211,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-        VisionRadius = 30,
+        VisionRadius = 23,
     },
     Interface = {
         HelpText = '<LOC srb4401>Experimental Shield Generator',

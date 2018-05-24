@@ -184,7 +184,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-        VisionRadius = 35,
+        VisionRadius = 18,
     },
     Interface = {
         HelpText = '<LOC ssb4401_drone_desc>Experimental Shield Drone',

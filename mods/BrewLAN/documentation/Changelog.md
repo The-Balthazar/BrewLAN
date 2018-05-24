@@ -934,7 +934,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-05-18
 
   * Shields: Added another death animation for the Seraphim shield.
-  * Shields & BrewLAN: Removed errant range categories for experimental shields.
+  * Shields & BrewLAN: Removed errant range categories from experimental shields.
+
+  ### 2018-05-23
+
+  * Shields & BrewLAN: Unified visual range for experimental shields to be the same as shield range.
+
+  ### 2018-05-24
+
+  * Changed the shield bubble of the ADG.
 
 ## 2016-12-15|0.7.5.5
 

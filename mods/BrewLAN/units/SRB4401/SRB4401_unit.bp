@@ -72,14 +72,14 @@ UnitBlueprint {
     },
     Description = '<LOC srb4401>Experimental Shield Generator',
     Display = {
-	AINames = {
+        AINames = {
             'ED6',
             'Vorhang',
             'Veil of Immortality',
             'Protector',
             'Wraithguard',
             'Hedgehog',
-	},
+        },
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
         },
@@ -171,7 +171,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-        VisionRadius = 30,
+        VisionRadius = 37,
     },
     Interface = {
         HelpText = '<LOC srb4401>Experimental Shield Generator',
