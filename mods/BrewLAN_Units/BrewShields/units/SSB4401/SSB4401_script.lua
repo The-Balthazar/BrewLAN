@@ -44,11 +44,10 @@ SSB4401 = Class(SShieldStructureUnit) {
                 dude.MyShield:SetHealth(self, dude.MyShield:GetHealth() * self.MyShield:GetHealth() / self:GetBlueprint().Defense.Shield.ShieldMaxHealth)
                 IssueMove({dude}, {pos[1] + (radius * (math.sin((math.pi * 2/drones)*i))), pos[2], pos[3] + (radius * (math.cos((math.pi * 2/drones)*i)))})
                 for i2 = 1, patrolnodes do
-                    IssuePatrol({dude}, {
-                        pos[1] + (radius * (math.sin((math.pi * 2/drones)*(i) + ((math.pi * 2/patrolnodes)*i2)))),
-                        pos[2],
-                        pos[3] + (radius * (math.cos((math.pi * 2/drones)*(i) + ((math.pi * 2/patrolnodes)*i2)))),
-                    })
+                    local xpos = pos[1] + (radius * (math.sin((math.pi * 2/drones)*(i) + ((math.pi * 2/patrolnodes)*i2))))
+                    local zpos = pos[3] + (radius * (math.cos((math.pi * 2/drones)*(i) + ((math.pi * 2/patrolnodes)*i2))))
+                    local ypos = pos[2]--GetTerrainHeight(xpos, zpos) -- Terrain height checks actually make deviations worse.
+                    IssuePatrol({dude}, {xpos, ypos, zpos})
                 end
             end
         end
@@ -77,7 +76,7 @@ SSB4401 = Class(SShieldStructureUnit) {
         SShieldStructureUnit.OnDestroyed(self)
     end,
 
-    CleanUp = function(self, notdeathcleanup)
+    CleanUp = function(self, deathcleanup)
         for i, v in {'ShieldEffectsBag', 'ShieldDroneBag'} do
             if self[v] then
                 for k, j in self[v] do
@@ -85,11 +84,11 @@ SSB4401 = Class(SShieldStructureUnit) {
                     --end
                     j:Destroy()
                 end
-                if not notdeathcleanup then
+                if not deathcleanup then
                     self[v] = {}
                 end
             end
-            if not self[v] and not notdeathcleanup then
+            if not self[v] and not deathcleanup then
                 self[v] = {}
             end
         end
