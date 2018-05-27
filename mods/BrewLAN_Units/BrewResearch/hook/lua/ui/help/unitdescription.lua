@@ -28,6 +28,20 @@ Description['seb9301'] = "<LOC Unit_Description_RND_007>Advanced research facili
 Description['srb9301'] = "<LOC Unit_Description_RND_007>Advanced research facility. Has increased research speed and durability."
 Description['ssb9301'] = "<LOC Unit_Description_RND_007>Advanced research facility. Has increased research speed and durability."
 
+Description['sra0211'] = "<LOC Unit_Description_RND_008>Intermediate bomber aircraft."
+Description['sea0211'] = "<LOC Unit_Description_RND_009>Intermediate bomber aircraft."
+Description['ssa0211'] = "<LOC Unit_Description_RND_010>Intermediate bomber aircraft."
+
+Description['sab1101'] = "<LOC Unit_Description_RND_011>Produces a variable quantity of energy."
+Description['seb1101'] = "<LOC Unit_Description_RND_011>Produces a variable quantity of energy."
+Description['srb1101'] = "<LOC Unit_Description_RND_011>Produces a variable quantity of energy."
+Description['ssb1101'] = "<LOC Unit_Description_RND_011>Produces a variable quantity of energy."
+
+Description['sab3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
+Description['seb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
+Description['srb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
+Description['ssb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
+
 do
     for id, bp in __blueprints do
         if bp.Categories and table.find(bp.Categories, 'BUILTBYRESEARCH') and not Description[id] and Description[string.gsub(id, "rnd","")] then

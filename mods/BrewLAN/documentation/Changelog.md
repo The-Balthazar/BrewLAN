@@ -950,6 +950,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Reduced the research time of the Panopticon to match the costs.
   * R&D: Reduced the research costs of the Darkness by half.
 
+  ### 2018-05-27
+
+  * R&D: Added the UEF T2 tactical bomber. Texture unfinished.
+  * R&D: Added the missing descriptions.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
