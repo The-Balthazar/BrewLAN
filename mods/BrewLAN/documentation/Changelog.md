@@ -955,6 +955,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added the UEF T2 tactical bomber. Texture unfinished.
   * R&D: Added the missing descriptions.
 
+  ### 2018-06-12
+
+  * R&D: Finished the texture of the UEF Tactical Bomber.
+  * R&D: Gave the UEF Tactical Bomber a tailgun.
+  * R&D: Created a script for the UEF Tactical Bomber.
+  * R&D: Created a new projectile for the UEF Tactical Bomber.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
