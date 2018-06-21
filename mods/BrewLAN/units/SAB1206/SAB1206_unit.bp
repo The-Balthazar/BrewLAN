@@ -1,5 +1,5 @@
 UnitBlueprint {
-    Adjacency = 'T2MassStorageAdjacencyBuffs',
+    Adjacency = 'T2Size8MassStorageAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
             Bank = 'UAB',
@@ -36,7 +36,7 @@ UnitBlueprint {
         'TECH2',
         'MASSSTORAGE',
         'DRAGBUILD',
-        'SIZE4',
+        'SIZE8',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTECONOMY',

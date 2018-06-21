@@ -1,15 +1,15 @@
 ------------------------------------------------------------------
 -- TIER 2 STORAGE
 ------------------------------------------------------------------
-T2EnergyStorageAdjacencyBuffs = {}
-T2MassStorageAdjacencyBuffs = {}
+T2Size8EnergyStorageAdjacencyBuffs = {}
+T2Size8MassStorageAdjacencyBuffs = {}
 ------------------------------------------------------------------
 do
     local buffs = {
         ---------------------------------------------------------
         -- T2 Storage
         ---------------------------------------------------------
-        T2EnergyStorageEnergyProductionBonus = {
+        T2Size8EnergyStorageEnergyProductionBonus = {
             SizeData = {
                 [4] = 0.125*4,
                 [8] = 0.0625*8,
@@ -23,10 +23,10 @@ do
             OnBuffAffect = AdjBuffFuncs.EnergyProductionBuffAffect,
             OnBuffRemove = AdjBuffFuncs.EnergyProductionBuffRemove,
             IncludeIn = {
-                T2EnergyStorageAdjacencyBuffs,
+                T2Size8EnergyStorageAdjacencyBuffs,
             },
         },
-        T2MassStorageMassProductionBonus = {
+        T2Size8MassStorageMassProductionBonus = {
             SizeData = {
                 [4] = 0.125,
                 [8] = 0.0625*2,
@@ -40,7 +40,7 @@ do
             OnBuffAffect = AdjBuffFuncs.MassProductionBuffAffect,
             OnBuffRemove = AdjBuffFuncs.MassProductionBuffRemove,
             IncludeIn = {
-                T2MassStorageAdjacencyBuffs,
+                T2Size8MassStorageAdjacencyBuffs,
             },
         },
         ---------------------------------------------------------

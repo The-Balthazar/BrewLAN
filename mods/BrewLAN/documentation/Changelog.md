@@ -962,6 +962,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Created a script for the UEF Tactical Bomber.
   * R&D: Created a new projectile for the UEF Tactical Bomber.
 
+  ### 2018-06-21
+
+  * Changed the names of the T2 storage buffs to prevent a conflict with LOUD.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

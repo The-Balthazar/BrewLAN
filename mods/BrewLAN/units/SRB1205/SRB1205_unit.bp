@@ -1,5 +1,5 @@
 UnitBlueprint {
-    Adjacency = 'T2EnergyStorageAdjacencyBuffs',
+    Adjacency = 'T2Size8EnergyStorageAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
             Bank = 'URB',
@@ -36,7 +36,7 @@ UnitBlueprint {
         'TECH2',
         'ENERGYSTORAGE',
         'DRAGBUILD',
-        'SIZE4',
+        'SIZE8',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTECONOMY',
