@@ -966,6 +966,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Changed the names of the T2 storage buffs to prevent a conflict with LOUD.
 
+  ### 2018-06-24
+
+  * Included the DEV_TEX map I use for icon creation. Created in 2009.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
