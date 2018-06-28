@@ -970,6 +970,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Included the DEV_TEX map I use for icon creation. Created in 2009.
 
+  ### 2018-06-28
+
+  * Added a Seraphim jammer building.
+  * Nightshade can no longer get rebuild bonus when built on the wreckage of the T2.
+  * R&D: Added a Seraphim wind turbine, and research locked the regular power plant.
+  * R&D: Fixed the Aeon turbine having UEF sounds.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

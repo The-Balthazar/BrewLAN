@@ -59,7 +59,7 @@ function RestrictExistingBlueprints(all_bps)
         'ueb1101',
         'uab1101',
         --'urb1101',
-        --'xsb1101',
+        'xsb1101',
     }
     for i, id in restrict do
         table.insert(all_bps[id].Categories, 'RESEARCHLOCKED')

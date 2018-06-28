@@ -2,23 +2,28 @@ UnitBlueprint {
     Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB1101_Active',
+            Bank = 'XSB',
+            Cue = 'XSB1101_Active',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Land',
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DoneBeingBuilt = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB1101_Activate',
+            Bank = 'XSB',
+            Cue = 'XSB1101_Activate',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Killed = Sound {
+            Bank = 'XSL_Destroy',
+            Cue = 'XSB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Aeon_Select_Resource',
+            Bank = 'SeraphimSelect',
+            Cue = 'Seraphim_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -30,7 +35,7 @@ UnitBlueprint {
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
-        'AEON',
+        'SERAPHIM',
         'STRUCTURE',
         'ECONOMIC',
         'TECH1',
@@ -59,7 +64,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 135,
-                    ShaderName = 'Aeon',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
                 },
             },
         },
@@ -67,11 +73,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar6x_aeon_01_albedo',
+                Albedo = 'Tarmacs/Tar6x_seraphim_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 6.4,
-                Normal = 'Tarmacs/Tar6x_aeon_01_normals',
+                Normal = 'Tarmacs/Tar6x_seraphim_01_normals',
                 Orientations = {
                     0,
                     90,
@@ -91,7 +97,7 @@ UnitBlueprint {
         BuildTime = 40,
         ProductionPerSecondEnergy = 17.5,--This is just for the UI, the value is overwritten. It's 5-30.
         RebuildBonusIds = {
-            'sab1101',
+            'ssb1101',
         },
     },
     General = {
@@ -111,11 +117,11 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'Aeon',
+        FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC sab1101_name>Lamp',
+        UnitName = '<LOC ssb1101_name>Uyalai',
         UnitWeight = 1,
     },
     Interface = {

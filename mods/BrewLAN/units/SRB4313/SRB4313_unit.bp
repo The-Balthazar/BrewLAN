@@ -87,7 +87,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergyStealth = 100,
         MaintenanceConsumptionPerSecondEnergyCloak = 875,
         RebuildBonusIds = {
-            'urb4203',
             'srb4313',
         },
     },
