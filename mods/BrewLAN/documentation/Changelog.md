@@ -977,6 +977,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added a Seraphim wind turbine, and research locked the regular power plant.
   * R&D: Fixed the Aeon turbine having UEF sounds.
 
+  ### 2018-06-29
+
+  * Gave the jammer building some dummy units like its campaign equivelant.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

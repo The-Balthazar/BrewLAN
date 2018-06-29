@@ -3,12 +3,16 @@ local SSJammerCrystalAmbient = import('/lua/EffectTemplates.lua').SJammerCrystal
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
 SSB4317 = Class(SStructureUnit) {
-
+--------------------------------------------------------------------------------
+-- Basic calls
+--------------------------------------------------------------------------------
     OnStopBeingBuilt = function(self,builder,layer)
         SStructureUnit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()
-        --self:ForkThread(self.LandBlipThread)
-        --self:ForkThread(self.AirBlipThread)
+        self.Holograms = {}
+        local pos = self:GetPosition()
+        self:ForkThread(self.LandBlipThread, pos)
+        self:ForkThread(self.AirBlipThread, pos)
     end,
 
     OnIntelEnabled = function(self)
@@ -17,57 +21,82 @@ SSB4317 = Class(SStructureUnit) {
         for k, v in SSJammerCrystalAmbient do
             table.insert(self.IntelEffectsBag, CreateAttachedEmitter(self, 'Cylinder001', self:GetArmy(), v))
         end
+        self.Intel = true
     end,
 
     OnIntelDisabled = function(self)
         SStructureUnit.OnIntelDisabled(self)
         EffectUtil.CleanupEffectBag(self,'IntelEffectsBag')
+        self:DestroyChildren(true)
+        self.Intel = false
     end,
-
-    --[[LandBlipThread = function(self)
-        local position = self:GetPosition()
-
-        while not self:IsDead() do
-            --Spawn land blips
-            self.landChildUnit = CreateUnitHPR('XSC9010', self:GetArmy(), position[1], position[2], position[3], 0, 0, 0)
-            self.landChildUnit.parentCrystal = self
-
-            WaitSeconds(Random(7,13))
-
-            self.landChildUnit:Destroy()
-            self.landChildUnit = nil
-
-            #WaitSeconds(Random(2,7))
-        end
-    end,
-
-    AirBlipThread = function(self)
-        local position = self:GetPosition()
-
-        while not self:IsDead() do
-            --Spawn air blips
-            self.airChildUnit = CreateUnitHPR('XSC9011', self:GetArmy(), position[1], position[2], position[3], 0, 0, 0)
-            self.airChildUnit.parentCrystal = self
-
-            IssuePatrol({self.airChildUnit}, {position[1] + Random(-10, 10), position[2], position[3] + Random(-10, 10)})
-            IssuePatrol({self.airChildUnit}, {position[1] + Random(-10, 10), position[2], position[3] + Random(-10, 10)})
-            IssuePatrol({self.airChildUnit}, {position[1] + Random(-10, 10), position[2], position[3] + Random(-10, 10)})
-            IssuePatrol({self.airChildUnit}, {position[1] + Random(-10, 10), position[2], position[3] + Random(-10, 10)})
-
-            WaitSeconds(Random(7,13))
-
-            self.airChildUnit:Destroy()
-            self.airChildUnit = nil
-
-            #WaitSeconds(Random(2,7))
-        end
-    end,]]--
 
     OnKilled = function(self, instigator, type, excessDamageRatio)
-        --if self.airChildUnit then self.airChildUnit:Destroy() end
-        --if self.landChildUnit then self.landChildUnit:Destroy() end
+        self:DestroyChildren()
         SStructureUnit.OnKilled(self, instigator, type, excessDamageRatio)
     end,
+
+    OnDestroy = function(self)
+        self:DestroyChildren()
+        SStructureUnit.OnKilled(self)
+    end,
+
+--------------------------------------------------------------------------------
+-- Controlling loops
+--------------------------------------------------------------------------------
+    LandBlipThread = function(self, pos)
+        while not self:IsDead() do
+            --Spawn land blips
+            if self.Intel then
+                self:SpawnHologram(pos, 'SSL0001', 1)
+            end
+            WaitSeconds(Random(7,13))
+            self:DestroyChildren(1)
+            --WaitSeconds(Random(2,7))
+        end
+    end,
+
+    AirBlipThread = function(self, pos)
+        while not self:IsDead() do
+            --Spawn air blips
+            if self.Intel then
+                self:SpawnHologram(pos, 'SSA0002', 2)
+            end
+            WaitSeconds(Random(7,13))
+            self:DestroyChildren(2)
+            --WaitSeconds(Random(2,7))
+        end
+    end,
+
+--------------------------------------------------------------------------------
+-- Main functions
+--------------------------------------------------------------------------------
+    SpawnHologram = function(self, pos, unitid, ref)
+        self.Holograms[ref] = CreateUnitHPR(unitid, self:GetArmy(), pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10), 0, 0, 0)
+        --self.Holograms[ref].parentCrystal = self
+        for i = 1, Random(3,5) do
+            IssuePatrol({self.Holograms[ref]}, {pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10)})
+        end
+    end,
+
+    DestroyChildren = function(self, var)
+        if type(var) != "boolean" then
+            if self.Holograms[var] then
+                self.Holograms[var]:Destroy()
+                self.Holograms[var] = nil
+            end
+        else --if nothing specif, then we are dying. Cleanup.
+            for i, v in self.Holograms do
+                if v then
+                    self.Holograms[i]:Destroy()
+                    if var then
+                        self.Holograms[i] = nil
+                    end
+                end
+            end
+        end
+    end,
+
 }
 
 TypeClass = SSB4317
