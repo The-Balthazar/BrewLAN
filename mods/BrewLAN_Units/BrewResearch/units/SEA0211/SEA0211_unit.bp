@@ -112,14 +112,14 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     Defense = {
-        AirThreatLevel = 0,
+        AirThreatLevel = 1,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 1,
         Health = 1250,
         MaxHealth = 1250,
         RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 11,
+        SurfaceThreatLevel = 10,
     },
     Description = '<LOC saa0211_desc>Tactical Bomber',
     Display = {

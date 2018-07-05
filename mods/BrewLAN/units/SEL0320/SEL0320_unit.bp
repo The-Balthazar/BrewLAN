@@ -59,6 +59,7 @@ UnitBlueprint {
         'TECH3',
         'INDIRECTFIRE',
         'VISIBLETORECON',
+        'SATELLITEUPLINK',
         'RECLAIMABLE',
         'OVERLAYDIRECTFIRE',
     },
@@ -74,6 +75,9 @@ UnitBlueprint {
     },
     Description = '<LOC sel0320_desc>Mobile Satellite Uplink',
     Display = {
+        Abilities = {
+            '<LOC ability_satellite_uplink>Satellite Uplink',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -148,6 +152,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
+        SatelliteCapacity = 0,
         UnitName = '<LOC sel0320_name>Archimedes',
         UnitWeight = 1,
     },

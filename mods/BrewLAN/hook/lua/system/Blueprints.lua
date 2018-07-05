@@ -33,6 +33,7 @@ function ModBlueprints(all_blueprints)
     BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
     BrewLANRelativisticLinksUpdate(all_blueprints)
     BrewLANMegalithEggs(all_blueprints.Unit)
+    BrewLANSatelliteUplinkForVanillaUnits(all_blueprints.Unit)
     ExtractFrozenMeshBlueprint(all_blueprints.Unit)
 end
 
@@ -234,6 +235,30 @@ function BrewLANGlobalCategoryAdditions(all_bps)
                     table.insert(bp.Categories, cat)
                 end
             end
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
+-- Satellite uplink
+--------------------------------------------------------------------------------
+
+function BrewLANSatelliteUplinkForVanillaUnits(all_bps)
+    local units = {
+        --Vanilla T3 sensors
+        ueb3104 = 1,
+        urb3104 = 1,
+        uab3104 = 1,
+        xsb3104 = 1,
+        --R&D T3 sensors
+        seb3303 = 3
+    }
+    for id, cap in units do
+        if all_bps[id] and all_bps[id].Categories then
+            table.insert(all_bps[id].Categories, 'SATELLITEUPLINK')
+            if not all_bps[id].Display.Abilities then all_bps[id].Display.Abilities = {} end
+            table.insert(all_bps[id].Display.Abilities, '<LOC ability_satellite_uplink>Satellite Uplink')
+            all_bps[id].General.SatelliteCapacity = cap
         end
     end
 end

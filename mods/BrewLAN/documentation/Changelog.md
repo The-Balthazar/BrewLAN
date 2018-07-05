@@ -979,7 +979,54 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2018-06-29
 
-  * Gave the jammer building some dummy units like its campaign equivelant.
+  * Gave the jammer building some dummy units like its campaign equivalent.
+
+  ### 2018-07-01
+
+  * Novax rework:
+    * Satellite changes:
+      * Increased the elevation to the max it can be without going off-screen on a 5km map.
+      * Increased base speed.
+      * Set it to have 60 seconds of fuel.
+        * Since it can't refuel, this means it only gets to move at full speed for the first 60 seconds.
+      * Removed the Omni, Sonar, and Radar, reduced the visual radius, and increased the water vision radius to match.
+  * R&D & BrewLAN: Updated threat values.
+  * Paragon Game: Fixed the Paragon size categories.
+
+  ### 2018-07-03
+
+  * Novax rework continued:
+    * Uplink changes:
+      * Now a factory.
+      * Cost reduced by value of one satellite.
+      * Satellites no longer free.
+      * Classified as a 'satellite uplink' building.
+
+  ### 2018-07-04
+
+  * Novax rework continued:
+    * Satellite changes:
+      * Fuel is now proportional to map size
+        * At full speed it can move 20km on a 20km map, and so on.
+      * It is no longer subject to the parent/child interactions.
+      * Sensors no longer active before unpack animation finishes.
+  * Listed 'Satellite Uplink' as an Ability for the Archimedes.
+    * It doesn't actually do anything for the observation satellite, it is assumed to be perma-linked the LOIC.
+  * R&D & BrewLAN: Listed 'Satellite Uplink' as an ability for the Panopticon and the dedicated Omni.
+    * It doesn't do anything for these yet, but for these it will.
+
+  ### 2018-07-05
+
+  * Novax rework continued:
+    * Uplink changes:
+      * Units with the uplink category now have a defined capacity for satellites.
+      * If the capacity is exceeded no more can be built.
+      * If no units with the category exist, satellites requiring uplink enter 'unstable orbit' mode or just die if unstable orbit mode is undefined.
+      * Novax Centre has a capacity of 2.
+      * Archimedes has a capacity of 0.
+      * Panopticon has a capacity of 9001.
+      * Coleman (from R&D) has a capacity of 3.
+      * T3 Sensor Arrays (vanilla) each have capacities of 1.
 
 ## 2016-12-15|0.7.5.5
 

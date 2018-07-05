@@ -38,6 +38,7 @@ UnitBlueprint {
         'SELECTABLE',
         'LAND',
         'SIZE36',
+        'SATELLITEUPLINK',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
@@ -64,6 +65,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
+            '<LOC ability_satellite_uplink>Satellite Uplink',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -131,6 +133,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'land',
+        SatelliteCapacity = 9001,
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {

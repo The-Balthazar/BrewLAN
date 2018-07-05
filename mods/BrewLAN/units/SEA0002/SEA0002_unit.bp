@@ -1,25 +1,12 @@
 UnitBlueprint {
     Air = {
-        BankFactor = 0,
         BankForward = false,
         CanFly = true,
-        HoverOverAttack = false,
-        KLift = 1,
-        KLiftDamping = 10,
-        KMove = 1,
-        KMoveDamping = 10,
-        KTurn = 1,
-        KTurnDamping = 10,
+        KLiftDamping = 5,
+		KTurn = 0,
         LiftFactor = 10,
-        MaxAirspeed = 12,
-        StartTurnDistance = 50,
     },
     Audio = {
-        AirUnitWaterImpact = Sound {
-            Bank = 'Explosions',
-            Cue = 'Expl_Water_Lrg_01',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
         AmbientMove = Sound {
             Bank = 'XEA',
             Cue = 'XEA0002_Move_Loop',
@@ -59,6 +46,7 @@ UnitBlueprint {
     BuildIconSortPriority = 10,
     Categories = {
         'PRODUCTBREWLAN',
+        'BUILTBYTIER3SPACEPORT',
         'SELECTABLE',
         'UEF',
         'MOBILE',
@@ -67,13 +55,12 @@ UnitBlueprint {
         'TECH3',
         'INTELLIGENCE',
         'SATELLITE',
+        'SATELLITEWITHNOPARENTALSUPERVISION',
         'VISIBLETORECON',
-        'RECLAIMABLE',
         'UNTARGETABLE',
         'SORTINTEL',
-        'OVERLAYOMNI',
-        'OVERLAYRADAR',
-        'OVERLAYSONAR',
+        'TARGETCHASER',
+        'CANNOTUSEAIRSTAGING',
     },
     CollisionOffsetY = -0.65,
     Defense = {
@@ -100,10 +87,8 @@ UnitBlueprint {
             'Telstar',
     	},
         Abilities = {
+            '<LOC ability_notcap>Not Capturable',
             '<LOC ability_personalstealth>Personal Stealth',
-            '<LOC ability_omni>Omni Sensor',
-            '<LOC ability_radar>Radar',
-            '<LOC ability_sonar>Sonar',
         },
         IconName = 'XEA0002',
         Mesh = {
@@ -142,9 +127,9 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        CapCost = 0,
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
+        CapCost = 1,
+        Category = 'Intelligence',
+        Classification = 'RULEUC_Sensor',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = false,
@@ -159,13 +144,14 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'UEF',
         SelectionPriority = 4,
         Icon = 'air',
         OrderOverrides = {
             RULEUTC_IntelToggle = {
-                bitmapId = 'omni',
-                helpText = 'toggle_omni',
+                bitmapId = 'vision',
+                helpText = 'vision_toggle',
             },
         },
         TechLevel = 'RULEUTL_Secret',
@@ -177,11 +163,9 @@ UnitBlueprint {
     },
     Intel = {
         RadarStealth = true,
-        RadarRadius = 80,
-        VisionRadius = 65,
-        SonarRadius = 50,
-        OmniRadius = 35,
-        WaterVisionRadius = 20,
+        VisionRadius = 0,
+        OrbitVisionRadius = 45,
+        WaterVisionRadius = 45,
     },
     Interface = {
         HelpText = '<LOC sea0002_desc>Observation Satellite',
@@ -199,23 +183,24 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        Elevation = 75,
-        FuelRechargeRate = 150,
-        FuelUseTime = 0,
-        MaxAcceleration = 1,
-        MaxSpeed = 10,
-        MaxSteerForce = 100,
-        MeshExtentsX = 27,
-        MeshExtentsY = 8,
-        MeshExtentsZ = 27,
+        Elevation = 165,
+        MaxAcceleration = 0.1,
+        ------------------------------------------------------------------------
+        FuelUseTime = 200,      -- max speed duration, seconds
+        --200 at 20 speed gets you 80km
+        --reduced proportionally based on map size.
+        MaxSpeed = 20,          -- max speed
+        NoFuelSpeedMult = 0.1,  -- speed reduction after fuel runs out
+                                -- there is no way to refuel.
+        ------------------------------------------------------------------------
+        MaxSteerForce = 1,
+        MeshExtentsX = 4,
+        MeshExtentsY = 2,
+        MeshExtentsZ = 4,
         MinSpeedPercent = 0.85,
         MotionType = 'RULEUMT_Air',
-        SkirtOffsetX = -1.5,
-        SkirtOffsetZ = -1.5,
-        SkirtSizeX = 24,
-        SkirtSizeZ = 24,
         TurnRadius = 100,
-        TurnRate = 20,
+        TurnRate = 0.02,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 0.8,
