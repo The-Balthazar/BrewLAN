@@ -1028,6 +1028,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * Coleman (from R&D) has a capacity of 3.
       * T3 Sensor Arrays (vanilla) each have capacities of 1.
 
+  ### 2018-07-06
+
+  * Added the Cybran T2 Field Engineering Ship.
+  * Removed some errant categories on the UEF T2 Engineering Ship.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
