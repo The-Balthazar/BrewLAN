@@ -270,6 +270,7 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         MaxSteerForce = 0,
+        MaxGroundVariation = 6,
         MeshExtentsX = 14,
         MeshExtentsY = 14,
         MeshExtentsZ = 3,

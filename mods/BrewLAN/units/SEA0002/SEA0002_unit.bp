@@ -90,7 +90,7 @@ UnitBlueprint {
             '<LOC ability_notcap>Not Capturable',
             '<LOC ability_personalstealth>Personal Stealth',
         },
-        IconName = 'XEA0002',
+        --IconName = 'XEA0002',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

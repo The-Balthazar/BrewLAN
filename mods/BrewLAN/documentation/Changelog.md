@@ -1033,6 +1033,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added the Cybran T2 Field Engineering Ship.
   * Removed some errant categories on the UEF T2 Engineering Ship.
 
+  ### 2018-07-0
+
+  * Gave the Barwick Class Cybran T2 Field Engineering Ship a more unique set of textures.
+  * Created new icons for the Novax Satellite and Barwick Class.
+  * Fixed the uplink stats for the Coleman being applied to the Novax instead.
+  * Removed the Icon Name field from the Novax satellite, which was overwriting the new icon in some instances.
+  * Gave the Franklin class a more unique set of textures.
+  * Listed the engineering suite ability on the Barwick Class.
+  * Increased the max ground variation for building the Seraphim Experimental Naval Factory.
+  * Fixed a script error with the modifications to the Seraphim Battleship if no restrictions are active.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

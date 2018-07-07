@@ -85,6 +85,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
+            '<LOC ability_engineeringsuite>Engineering Suite',
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
         },
@@ -126,9 +127,9 @@ UnitBlueprint {
                 {
                     LODCutoff = 140,
                     ShaderName = 'Insect',
-                    AlbedoName = '/units/urs0103/urs0103_albedo.dds',
-                    NormalsName = '/units/urs0103/urs0103_normalsts.dds',
-                    SpecularName = '/units/urs0103/urs0103_specteam.dds',
+                    --AlbedoName = '/units/urs0103/urs0103_albedo.dds',
+                    --NormalsName = '/units/urs0103/urs0103_normalsts.dds',
+                    --SpecularName = '/units/urs0103/urs0103_specteam.dds',
                 },
                 {
                     MeshName = '/units/urs0103/urs0103_lod1.scm',
