@@ -199,6 +199,7 @@ Description['sab0401'] = "<LOC Unit_Description_BrewLAN_T4B009>Constructs air un
 Description['srb0401'] = "<LOC Unit_Description_BrewLAN_T4B010>Constructs land units."
 Description['ssb0401'] = "<LOC Unit_Description_BrewLAN_T4B011>Constructs naval units."
 Description['seb2401'] = "<LOC Unit_Description_BrewLAN_T4B012>Experimental defensive building. Consumes large amounts of power with each shot."
+Description['srl0401'] = "<LOC Unit_Description_BrewLAN_T4L003>Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
 
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."

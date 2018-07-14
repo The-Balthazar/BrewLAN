@@ -1033,7 +1033,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added the Cybran T2 Field Engineering Ship.
   * Removed some errant categories on the UEF T2 Engineering Ship.
 
-  ### 2018-07-0
+  ### 2018-07-07
 
   * Gave the Barwick Class Cybran T2 Field Engineering Ship a more unique set of textures.
   * Created new icons for the Novax Satellite and Barwick Class.
@@ -1043,6 +1043,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Listed the engineering suite ability on the Barwick Class.
   * Increased the max ground variation for building the Seraphim Experimental Naval Factory.
   * Fixed a script error with the modifications to the Seraphim Battleship if no restrictions are active.
+
+  ### 2018-07-09
+
+  * Fixed the inverted normals on the Night Skimmer. (9 Years that's been wrong.)
+
+  ### 2018-07-14
+
+  * Added land-seabed transition effects to the Iyadesu.
+  * Added the Abyss Crawler: Cybran Experimental Transport.
+  * Increased the maximum travel distance of the Arthrolab platform.
+  * Corrected the threat value of the Cybran T3 engineering boat.
 
 ## 2016-12-15|0.7.5.5
 

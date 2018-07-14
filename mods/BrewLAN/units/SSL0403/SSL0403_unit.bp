@@ -169,6 +169,26 @@ UnitBlueprint {
                     },
                 },
             },
+            LandSeabed = {
+                Effects = {
+                    {
+                        Bones = {
+                            'Exhaust_Ring',
+                            'Exhaust_Neck_001',
+                            'Exhaust_Neck_002',
+                            'Weapon',
+                            'Kickup001',
+                            'Kickup002',
+                            'Footfall_001',
+                            'Footfall_002',
+                            'Footfall_003',
+                            'Footfall_004',
+                        },
+                        Scale = 2,
+                        Type = 'Surface01',
+                    },
+                },
+            },
         },
         Mesh = {
             IconFadeInZoom = 130,

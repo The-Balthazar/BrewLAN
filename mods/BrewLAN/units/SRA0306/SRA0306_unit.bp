@@ -178,7 +178,6 @@ UnitBlueprint {
                     LODCutoff = 200,
                     ShaderName = 'Insect',
                     AlbedoName = '/units/ura0104/ura0104_albedo.dds',
-                    NormalsName = '/units/ura0104/ura0104_normalsts.dds',
                 },
                 {
                     LODCutoff = 300,

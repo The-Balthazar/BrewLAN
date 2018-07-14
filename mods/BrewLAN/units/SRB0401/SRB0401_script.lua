@@ -161,7 +161,7 @@ SRB0401 = Class(CLandFactoryUnit) {
         local MovementSizes = {
             math.min(math.max(UnitSize[1]-1,0),6)*ScaleMult*0.5, --Width
             math.min(math.max(UnitSize[2]-2,0),4.25)*ScaleMult, --Height
-            math.min(math.max(UnitSize[3]-1,0),8)*ScaleMult*0.5, --Platform
+            math.min(math.max(UnitSize[3]-1,0),10)*ScaleMult*0.5, --Platform
             math.min(math.max(UnitSize[3]-1,1),10)*ScaleMult, --Rear arm
         }
         unitBeingBuilt:HideBone(0, true)
