@@ -1054,6 +1054,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added the Abyss Crawler: Cybran Experimental Transport.
   * Increased the maximum travel distance of the Arthrolab platform.
   * Corrected the threat value of the Cybran T3 engineering boat.
+  * Workaround for the issue with the Abyss Crawler dumping units INTO THE ABYSS; DEEP IN THE HEART OF THE PLANET! Where they die shortly afterwards.
 
 ## 2016-12-15|0.7.5.5
 

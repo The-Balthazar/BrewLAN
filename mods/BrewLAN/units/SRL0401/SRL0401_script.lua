@@ -62,6 +62,19 @@ SRL0401 = Class(CLandUnit) {
         attached:DetachFrom()
     end,
 
+    OnTransportDetach = function(self, attachBone, unit)
+        CLandUnit.OnTransportDetach(self, attachBone, unit)
+        self:ForkThread(
+            function()
+                WaitTicks(1)
+                local pos = unit:GetPosition()
+                local height = GetTerrainHeight(pos[1],pos[3])
+                Warp(unit, {pos[1], height, pos[3]})
+            end
+        )
+    end,
+
+
     OnMotionHorzEventChange = function(self, new, old)
         CLandUnit.OnMotionHorzEventChange(self, new, old)
         if new == 'Stopping' then
