@@ -117,11 +117,15 @@ SRL0324 = Class(CLandUnit) {
     end,
 
     CreateBlinkingLights = function(self, color)
-        CRadarUnit.CreateBlinkingLights(self, color)
+        if CRadarUnit.CreateBlinkingLights then
+            CRadarUnit.CreateBlinkingLights(self, color)
+        end
     end,
 
     DestroyBlinkingLights = function(self)
-        CRadarUnit.DestroyBlinkingLights(self)
+        if CRadarUnit.DestroyBlinkingLights then
+            CRadarUnit.DestroyBlinkingLights(self)
+        end
     end,
 
     OnStartTransportBeamUp = function(self, transport, bone)
