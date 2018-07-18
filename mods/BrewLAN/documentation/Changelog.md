@@ -1060,6 +1060,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed a script issue with the Adremelech on LOUD.
 
+  ### 2018-07-18
+
+  * Included the original Novax Centre model for compatibility with FAF.
+  * Removed some unnecessary code from the Night Skimmer.
+  * Potentially fixed the Centurion occasionally flying with its landing gear extended.
+  * Units now survive the Abyss Crawler dying, and are placed better when unloaded.
+    * The placement on unload is a workaround and still has units placed in odd places for a tick.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

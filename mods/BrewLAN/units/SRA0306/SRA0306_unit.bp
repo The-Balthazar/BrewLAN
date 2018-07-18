@@ -473,7 +473,7 @@ UnitBlueprint {
                 Water = 'Air|Land|Water',
             },
             FiringTolerance = 0.2,
-            Label = 'AAAutocannon2',
+            Label = 'AAAutocannon',
             LeadTarget = true,
             MaxRadius = 50,
             MuzzleSalvoDelay = 0,

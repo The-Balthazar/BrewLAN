@@ -34,9 +34,9 @@ SEA0401 = Class(TAirUnit) {
                 self.ExhaustEffects = EffectUtil.CreateBoneEffects( self.unit, 'GGun_Barrel_Muzzle', self.unit:GetArmy(), Effects.WeaponSteam01 )
                 TDFPlasmaCannonWeapon.PlayFxWeaponPackSequence(self)
             end,
-        
+
             PlayFxRackSalvoChargeSequence = function(self)
-                if not self.SpinManip then 
+                if not self.SpinManip then
                     self.SpinManip = CreateRotator(self.unit, 'GGun_Barrel001', 'z', nil, 270, 180, 60)
                     self.unit.Trash:Add(self.SpinManip)
                 end
@@ -44,8 +44,8 @@ SEA0401 = Class(TAirUnit) {
                     self.SpinManip:SetTargetSpeed(500)
                 end
                 TDFPlasmaCannonWeapon.PlayFxRackSalvoChargeSequence(self)
-            end,            
-            
+            end,
+
             PlayFxRackSalvoReloadSequence = function(self)
                 if self.SpinManip then
                     self.SpinManip:SetTargetSpeed(200)
@@ -93,7 +93,7 @@ SEA0401 = Class(TAirUnit) {
         TAirUnit.OnMotionVertEventChange(self, new, old)
         if new == 'Down' then
             self.LandingAnimManip:SetRate(-1)
-        elseif new == 'Up' then
+        elseif new == 'Up' or new == 'Top' then
             self.LandingAnimManip:SetRate(1)
         end
     end,

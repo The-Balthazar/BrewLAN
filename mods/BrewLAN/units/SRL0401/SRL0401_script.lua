@@ -53,9 +53,10 @@ SRL0401 = Class(CLandUnit) {
         end
     end,
 
-    OnKilled = function(self, instigator, type, overkillRatio)
+    Kill = function(self, ...)
+        self.Dying = true
         self:TransportDetachAllUnits(false)
-        CLandUnit.OnKilled(self, instigator, type, overkillRatio)
+        CLandUnit.Kill(self, unpack(arg))
     end,
 
     OnAttachedKilled = function(self, attached)
@@ -63,17 +64,23 @@ SRL0401 = Class(CLandUnit) {
     end,
 
     OnTransportDetach = function(self, attachBone, unit)
+        local pos
+        if not self.Dying then
+            pos = unit:GetPosition()
+        end
         CLandUnit.OnTransportDetach(self, attachBone, unit)
-        self:ForkThread(
-            function()
-                WaitTicks(1)
-                local pos = unit:GetPosition()
-                local height = GetTerrainHeight(pos[1],pos[3])
-                Warp(unit, {pos[1], height, pos[3]})
-            end
-        )
+        if not self.Dying then
+            self:ForkThread( --This prevents units getting dumped into the earth.
+                function()
+                    WaitTicks(1)
+                    local height = GetTerrainHeight(pos[1],pos[3])
+                    --if pos[2] < height then
+                        Warp(unit, {pos[1], height, pos[3]})
+                    --end
+                end
+            )
+        end
     end,
-
 
     OnMotionHorzEventChange = function(self, new, old)
         CLandUnit.OnMotionHorzEventChange(self, new, old)

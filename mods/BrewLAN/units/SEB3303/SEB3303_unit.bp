@@ -117,7 +117,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
-                    MeshName = '/units/xeb2402/xeb2402_lod0.scm',
+                    --MeshName = '/units/xeb2402/xeb2402_lod0.scm',
                     AlbedoName = '/units/xeb2402/xeb2402_albedo.dds',
                     NormalsName = '/units/xeb2402/xeb2402_normalsts.dds',
                     SpecularName = '/units/xeb2402/xeb2402_specteam.dds',
