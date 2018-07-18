@@ -62,6 +62,9 @@ UnitBlueprint {
         'NEEDMOBILEBUILD',
         'CYBRAN',
         'MOBILE',
+        --'AIR',
+        --For some reason, the AIR category is required to set up a ferry point.
+        --However, this is not an acceptable cost.
         'LAND',
         'EXPERIMENTAL',
         'TRANSPORTATION',
@@ -296,7 +299,7 @@ UnitBlueprint {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = false,
-            RULEUCC_Ferry = true,
+            --RULEUCC_Ferry = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Nuke = false,
@@ -347,8 +350,6 @@ UnitBlueprint {
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
-        Elevation = 1,
-        --LayerChangeOffsetHeight = -0.75,
         MaxAcceleration = 1.0,
         MaxBrake = 0.75,
         MaxSpeed = 2.8,
@@ -372,7 +373,6 @@ UnitBlueprint {
     },
     SelectionSizeX = 4,
     SelectionSizeZ = 8,
-    --SelectionCenterOffsetZ = 0,
     SelectionThickness = 0.12,
     SizeX = 6,
     SizeY = 7,
@@ -380,7 +380,6 @@ UnitBlueprint {
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 65,
     Transport = {
-        --AirClass = true,
         Class2AttachSize = 2,
         Class3AttachSize = 4,
         TransportClass = 10,

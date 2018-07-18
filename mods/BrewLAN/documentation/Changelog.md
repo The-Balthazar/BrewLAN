@@ -1067,6 +1067,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Potentially fixed the Centurion occasionally flying with its landing gear extended.
   * Units now survive the Abyss Crawler dying, and are placed better when unloaded.
     * The placement on unload is a workaround and still has units placed in odd places for a tick.
+  * Removed the ferry button from the Abyss Crawler.
+    * Until I can find a way to remove the requirement of units having the category 'AIR' to set up ferry points,
+      there is no point in having the button. Having the category will mean a portion of AA can target it,
+      which negates half of the reason for the unit.
+    * It can still assist ferry's set up by other units.
 
 ## 2016-12-15|0.7.5.5
 
