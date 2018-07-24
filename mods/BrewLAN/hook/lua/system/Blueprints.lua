@@ -17,9 +17,9 @@ end
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
-    BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANCategoryChanges(all_blueprints.Unit)
     BrewLANGlobalCategoryAdditions(all_blueprints.Unit)
+    BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANGantryBuildList(all_blueprints.Unit)
     BrewLANHeavyWallBuildList(all_blueprints.Unit)
     --BrewLANNameCalling(all_blueprints.Unit)
@@ -49,6 +49,21 @@ function BrewLANBuildCatChanges(all_bps)
     local T2LF = 'BUILTBYLANDTIER2FACTORY '
     local T3LF = 'BUILTBYLANDTIER3FACTORY '
     ]]--
+
+    ----------------------------------------------------------------------------
+    -- Get a list of all real categories
+    ----------------------------------------------------------------------------
+    local real_categories = {}
+    for id, bp in all_bps do
+        if bp.Categories then
+            for i, cat in bp.Categories do
+                real_categories[cat] = true
+            end
+        end
+    end
+    ----------------------------------------------------------------------------
+    -- What build cats do we want to add
+    ----------------------------------------------------------------------------
     local units_buildcats = {
         urb0101 = {'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',},
         urb0201 = {'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION',},
@@ -61,7 +76,7 @@ function BrewLANBuildCatChanges(all_bps)
         xsb0301 = {'BUILTBYLANDTIER3FACTORY SERAPHIM MOBILE CONSTRUCTION',},
         ueb0101 = {'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',},
         ueb0301 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',},
-        uel0401 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',},
+        uel0401 = {'BUILTBYLANDTIER3FACTORY UEF MOBILE CONSTRUCTION',}, -- FATBOY
         --TeaD tiny factories
         seb0101 = {'BUILTBYLANDTIER1FACTORY UEF MOBILE CONSTRUCTION',},
         srb0101 = {'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',},
@@ -113,11 +128,32 @@ function BrewLANBuildCatChanges(all_bps)
     for unitid, buildcat in units_buildcats do
         if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
             for i in buildcat do
-                table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
+                --Check we can
+                if CheckBuildCatConsistsOfRealCats(real_categories, buildcat[i]) then
+                    table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
+                end
             end
         end
     end
 end
+
+function CheckBuildCatConsistsOfRealCats(real_categories, buildcat)
+    if type(real_categories) == 'table' and type(buildcat) == 'string' then
+        local invalidcats = 0
+        string.gsub(buildcat, "(%w+)",
+            function(w)
+                if not real_categories[w] then
+                    invalidcats = invalidcats + 1
+                end
+            end
+        )
+        return invalidcats == 0
+    else
+        LOG("WARNING: Function 'CheckBuildCatConsistsOfRealCats' requires two args; an array of strings, and a string. Recieved " .. type(real_categories) .. " and " .. type(buildcat) .. ".")
+        return false
+    end
+end
+
 
 --------------------------------------------------------------------------------
 -- Fixes for land-built factories being able to build non-land engineers non-specifically.

@@ -60,6 +60,7 @@ UnitBlueprint {
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
         'NEEDMOBILEBUILD',
+        'DRAGBUILD',
         'CYBRAN',
         'MOBILE',
         --'AIR',

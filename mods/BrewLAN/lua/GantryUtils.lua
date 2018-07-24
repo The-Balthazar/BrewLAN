@@ -7,7 +7,11 @@ function BuildModeChange(self, mode)
     -- The "Stolen tech" clause
     ------------------------------------------------------------------------
     local aiBrain = self:GetAIBrain()
-    local engineers = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, self:GetPosition(), 30, 'Ally' )
+    local pos = self.CachePosition or self:GetPosition()
+    local engineers
+    if pos then
+        engineers = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, self:GetPosition(), 30, 'Ally' )
+    end
     local stolentech = {
         CYBRAN = false,
         AEON = false,
@@ -19,11 +23,13 @@ function BuildModeChange(self, mode)
             stolentech[race] = true
         end
     end
-    for k, v in engineers do
-        if EntityCategoryContains(categories.TECH3, v) then
-            for race, val in stolentech do
-                if EntityCategoryContains(ParseEntityCategory(race), v) then
-                    stolentech[race] = true
+    if type(engineers) == 'table' then
+        for k, v in engineers do
+            if EntityCategoryContains(categories.TECH3, v) then
+                for race, val in stolentech do
+                    if EntityCategoryContains(ParseEntityCategory(race), v) then
+                        stolentech[race] = true
+                    end
                 end
             end
         end

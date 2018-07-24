@@ -1073,6 +1073,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       which negates half of the reason for the unit.
     * It can still assist ferry's set up by other units.
 
+  ### 2018-07-19
+
+  * R&D: Added a currently unnamed Cybran Experimental Tank, which is the Abyss Crawler, but with guns instead of transport arms.
+
+  ### 2018-07-23
+
+  * Added the dragbuild category to the Abyss Crawler. This changes nothing unless the unit is removed from BrewLAN.
+  * R&D: Cybran Experimental Siege Tank is now an Experimental Mobile Artillery.
+  * Fixed the GantryUtils causing an error on LOUD.
+  * Blueprint units build cat changes now checks all categories are valid in a buildcat before adding them.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

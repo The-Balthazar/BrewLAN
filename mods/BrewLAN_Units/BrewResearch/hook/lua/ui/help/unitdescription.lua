@@ -86,6 +86,8 @@ Description['seb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of
 Description['srb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 Description['ssb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 
+Description['srl0403'] = "<LOC Unit_Description_RND_016>Large mobile heavy artillery. Must be stationary and on land to fire the artillery. Consumes large amounts of energy per shot."
+
 --Description['something'] = "<LOC Unit_Description_RND_016>"
 
 do
