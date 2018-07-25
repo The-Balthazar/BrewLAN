@@ -1,9 +1,9 @@
 name = "Debug Tools"
 uid = "2529ea71-93ef-41a6-b552-LOGS0000000008"
 version = 0.8
-copyright = "� 2017 - 2018 Sean Wheeldon"
+copyright = "© 2017–2018 Sean Wheeldon"
 description = "Debug and testing tools. Not for real matches."
-author = "Sean Wheeldon"
+author = "Sean 'Balthazar' Wheeldon"
 --icon = "/mods/BrewLAN_Plenae/ExperimentalIcons/Experimental-Icon-Overhaul_Mod_Icon.dds"
 selectable = true
 enabled = true

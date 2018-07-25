@@ -1,9 +1,9 @@
 name = "Antimass"
 uid = "f31a09b5-2b2f-4bb4-aeac-47ab777a7cde"
 version = 0
-copyright = "� 2015 Sean Wheeldon"
+copyright = "© 2015–2018 Sean Wheeldon"
 description = "Mass and energy production is reversed. Did you really need all those shields and energy weapons?"
-author = "Sean Wheeldon"
+author = "Sean 'Balthazar' Wheeldon"
 icon = "/mods/BrewLAN_Gameplay/antimass/mod_icon.dds"
 selectable = true
 enabled = true

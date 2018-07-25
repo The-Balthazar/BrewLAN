@@ -1,9 +1,9 @@
 name = "Research & Daiquiris"
 uid = "25D57D85-9JA7-D842-BREW-RESEARCH00002"
 version = 0.2
-copyright = "� 2018 Sean Wheeldon"
+copyright = "© 2018 Sean Wheeldon"
 description = "Separates the hardware and software for tech levels, and adds research for unlocking tech tevels and units."
-author = "Sean Wheeldon"
+author = "Sean 'Balthazar' Wheeldon"
 icon = "/mods/BrewLAN_Units/BrewResearch/R&D.png"
 selectable = true
 enabled = true

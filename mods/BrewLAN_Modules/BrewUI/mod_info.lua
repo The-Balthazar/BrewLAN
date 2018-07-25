@@ -1,9 +1,9 @@
-name = "BrewUI 0.2"
+name = "BrewUI"
 uid = "25D57D85-7D84-27HT-A501-BR3WUI0000002"
 version = 0.2
-copyright = "� 2009 - 2015 Sean Wheeldon"
+copyright = "© 2009–2018 Sean Wheeldon"
 description = "BrewLAN engineer tab. Dormant without BrewLAN. May conflict with mods with a \"/hook/lua/ui/game/avatars.lua\" file while BrewLAN is active."
-author = "Sean Wheeldon"
+author = "Sean 'Balthazar' Wheeldon"
 icon = "/mods/BrewLAN_Modules/BrewUI/mod_icon.dds"
 selectable = true
 enabled = true

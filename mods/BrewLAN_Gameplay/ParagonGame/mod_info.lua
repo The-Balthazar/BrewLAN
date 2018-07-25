@@ -1,9 +1,9 @@
 name = "Paragon Game"
 uid = "BREWLANS-22b4-4936-820e-PARAGON00191"
 version = 1.91
-copyright = "� 2012 - 2015 Sean Wheeldon"
+copyright = "© 2012–2018 Sean Wheeldon"
 description = "Few vs Many. The few get a Paragon and a SACU each. Only they can build new Paragons and can always build one, regardless of race."
-author = "Sean Wheeldon"
+author = "Sean 'Balthazar' Wheeldon"
 icon = "/mods/BrewLAN_Gameplay/ParagonGame/mod_icon.dds"
 selectable = true
 enabled = true

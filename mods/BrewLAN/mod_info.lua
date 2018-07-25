@@ -1,9 +1,9 @@
 name = "BrewLAN"
 uid = "25D57D85-7D84-27HT-A501-BR3WL4N000079" -- this is UID hard coded into hook/lua/game.lua and hook/lua/system/blueprints.lua
 version = 0.79
-copyright = "� 2009 - 2018 Sean Wheeldon"
+copyright = "© 2009–2018 Sean Wheeldon"
 description = "Version 0.7.9. Adds a large number of units and changes a number of existing units."
-author = "Sean Wheeldon"
+author = "Sean 'Balthazar' Wheeldon"
 icon = "/mods/BrewLAN/documentation/icon.dds"
 selectable = true
 enabled = true
