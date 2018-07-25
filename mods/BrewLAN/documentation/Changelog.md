@@ -1088,7 +1088,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Crystal Hill: Updated so that custom map markers can determine the hill location.
   * Crystal Hill: Commented out the old non-functioning Sorian AI code.
-  * Slightly modified the hieght map on Dev-Tex.
+  * Slightly modified the height map on Dev-Tex.
   * Added an objective marker to the Dev-Tex map for use with Crystal hill.
   * Updated Dev-Tex to FA map markers.
   * Lowered the tread mark ticks rate for the Abyss Crawler.
@@ -1097,6 +1097,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed the AA capability from the Retributor's Bolters.
   * EIO: Fixed the concatenation of 'naval' instead of 'navy'.
   * EIO: Added the missing mobilefactory navy air and land combinations.
+  * Abyss Crawler can no longer target high altitude aircraft.
+  * Reworked most T2+ segmented walls and gates to match terrain slopes of the terrain.
+    * Aeon T2 not included; Aeon build animation breaks this.
+  * Cleaned up non-centralised terrain code.
 
 ## 2016-12-15|0.7.5.5
 

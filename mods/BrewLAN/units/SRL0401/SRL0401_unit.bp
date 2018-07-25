@@ -17,31 +17,11 @@ UnitBlueprint {
         },
     },
     Audio = {
-        AmbientMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0401_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Killed = Sound {
-            Bank = 'URSDestroy',
-            Cue = 'URS0302_Destroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0401_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0401_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Spider',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        AmbientMove = Sound {Bank = 'URL', Cue = 'URL0401_Move_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed = Sound {Bank = 'URSDestroy', Cue = 'URS0302_Destroy', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove = Sound {Bank = 'URL', Cue = 'URL0401_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StopMove = Sound {Bank = 'URL', Cue = 'URL0401_Move_Stop', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound {Bank = 'Interface', Cue = 'Cybran_Select_Spider', LodCutoff = 'UnitMove_LodCutoff'},
     },
     AverageDensity = 1,
     Buffs = {
@@ -65,7 +45,7 @@ UnitBlueprint {
         'MOBILE',
         --'AIR',
         --For some reason, the AIR category is required to set up a ferry point.
-        --However, this is not an acceptable cost.
+        --However, this is not an acceptable cost, most AA will shoot it.
         'LAND',
         'EXPERIMENTAL',
         'TRANSPORTATION',
@@ -99,14 +79,8 @@ UnitBlueprint {
             '<LOC ability_transport>Transport',
         },
         AnimationDeath = {
-            {
-                Animation = '/mods/BrewLAN/units/srl0401/SRL0401_Adeath_Open.sca',
-                State = 'Open',
-            },
-            {
-                Animation = '/mods/BrewLAN/units/srl0401/SRL0401_Adeath_Closed.sca',
-                State = 'Closed',
-            }
+            {Animation = '/mods/BrewLAN/units/srl0401/SRL0401_Adeath_Open.sca', State = 'Open'},
+            {Animation = '/mods/BrewLAN/units/srl0401/SRL0401_Adeath_Closed.sca', State = 'Closed'},
         },
         AnimationOpen = '/mods/BrewLAN/units/srl0401/srl0401_Aopen.sca',
         LayerChangeEffects = {
@@ -150,21 +124,9 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Insect',
-                    Scrolling = true,
-                },
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Insect',
-                    Scrolling = true,
-                },
-                {
-                    LODCutoff = 2000,
-                    ShaderName = 'Insect',
-                    Scrolling = true,
-                },
+                {LODCutoff = 200, ShaderName = 'Insect', Scrolling = true},
+                {LODCutoff = 500, ShaderName = 'Insect', Scrolling = true},
+                {LODCutoff = 2000, ShaderName = 'Insect', Scrolling = true},
             },
         },
         MovementEffects = {
@@ -177,66 +139,42 @@ UnitBlueprint {
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 3.8,
-                            TreadOffset = {
-                                2.7,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = {2.7, -1.1, -6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 3.8,
-                            TreadOffset = {
-                                1.62,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = {1.62, -1.1, -6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 3.8,
-                            TreadOffset = {
-                                0.54,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = {0.54, -1.1, -6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 3.8,
-                            TreadOffset = {
-                                -2.7,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = {-2.7, -1.1, -6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 3.8,
-                            TreadOffset = {
-                                -1.62,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = {-1.62, -1.1, -6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 3.8,
-                            TreadOffset = {
-                                -0.54,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = {-0.54, -1.1, -6,},
                         },
                     },
                 },
@@ -398,11 +336,7 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
@@ -432,7 +366,7 @@ UnitBlueprint {
             RateOfFire = 1.5,
             TargetCheckInterval = 0.5,
             TargetPriorities = {'SPECIALHIGHPRI','MOBILE','SPECIALLOWPRI','ALLUNITS'},
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
             TrackingRadius = 1.15,
             TurretBoneMuzzle = 'Turret_Muzzle_001',
             TurretBonePitch = 'Turret_Barrel_001',
@@ -450,11 +384,7 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
@@ -484,7 +414,7 @@ UnitBlueprint {
             RateOfFire = 1.5,
             TargetCheckInterval = 0.5,
             TargetPriorities = {'SPECIALHIGHPRI','MOBILE','SPECIALLOWPRI','ALLUNITS'},
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
             TrackingRadius = 1.15,
             TurretBoneMuzzle = 'Turret_Muzzle_002',
             TurretBonePitch = 'Turret_Barrel_002',
@@ -502,11 +432,7 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
@@ -536,7 +462,7 @@ UnitBlueprint {
             RateOfFire = 1.5,
             TargetCheckInterval = 0.5,
             TargetPriorities = {'SPECIALHIGHPRI','MOBILE','SPECIALLOWPRI','ALLUNITS'},
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
             TrackingRadius = 1.15,
             TurretBoneMuzzle = 'Turret_Muzzle_003',
             TurretBonePitch = 'Turret_Barrel_003',
@@ -554,11 +480,7 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
@@ -588,7 +510,7 @@ UnitBlueprint {
             RateOfFire = 1.5,
             TargetCheckInterval = 0.5,
             TargetPriorities = {'SPECIALHIGHPRI','MOBILE','SPECIALLOWPRI','ALLUNITS'},
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
             TrackingRadius = 1.15,
             TurretBoneMuzzle = 'Turret_Muzzle_004',
             TurretBonePitch = 'Turret_Barrel_004',
@@ -604,11 +526,7 @@ UnitBlueprint {
         },
         {
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Torpedo',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Torpedo', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 50,

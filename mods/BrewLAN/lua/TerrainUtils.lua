@@ -73,7 +73,7 @@ end
 function OffsetBoneToTerrain(unit, bone)
     if not unit.TerrainSlope then unit.TerrainSlope = {} end
     --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
-    unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, 0, GetBoneTerrainOffset(unit, bone) * UniformScaleMultiplier(unit), 1000)
+    unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, GetBoneTerrainOffset(unit, bone) * UniformScaleMultiplier(unit), 0, 1000)
 end
 
 --Aligns to water surface or land

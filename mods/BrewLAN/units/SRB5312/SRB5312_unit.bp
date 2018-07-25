@@ -233,6 +233,16 @@ UnitBlueprint {
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
     Physics = {
+        AltitudeToTerrain = {
+            'North',
+            'South',
+            'East',
+            'West',
+            'North_Buttress',
+            'South_Buttress',
+            'East_Buttress',
+            'West_Buttress',
+        },
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,

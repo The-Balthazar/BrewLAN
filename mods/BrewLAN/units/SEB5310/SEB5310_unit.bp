@@ -231,6 +231,16 @@ UnitBlueprint {
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
     Physics = {
+        AltitudeToTerrain = {
+            'North',
+            'South',
+            'East',
+            'West',
+            'North_TB',
+            'South_TB',
+            'East_TB',
+            'West_TB',
+        },
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,

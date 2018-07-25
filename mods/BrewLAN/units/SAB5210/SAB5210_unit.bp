@@ -148,7 +148,7 @@ UnitBlueprint {
     General = {
         CapCost = 0,
         Category = 'Defense',
-        Classification = 'RULEUC_Factory',
+        Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
@@ -164,11 +164,9 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        ConstructionBar = true,
         FactionName = 'Aeon',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        --UnitName = '<LOC sab5210_name>Bulkhead',
         UnitWeight = 1,
     },
     Intel = {
@@ -181,6 +179,13 @@ UnitBlueprint {
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
     Physics = {
+        --Aeon build animation fucks this up
+        --[[AltitudeToTerrain = {
+            'North',
+            'South',
+            'East',
+            'West',
+        },]]
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,

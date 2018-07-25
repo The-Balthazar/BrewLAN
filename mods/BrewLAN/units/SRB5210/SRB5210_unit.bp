@@ -1,9 +1,9 @@
-UnitBlueprint {     
+UnitBlueprint {
     AI = {
-        TargetBones = {  
+        TargetBones = {
             'AttackTarget001',
             'AttackTarget002',
-            'AttackTarget003', 
+            'AttackTarget003',
             'AttackTarget004',
         },
     },
@@ -31,8 +31,8 @@ UnitBlueprint {
         'BUILTBYTIER3FIELD',
         'SELECTABLE',
         'CYBRAN',
-        'STRUCTURE',    
-        'DEFENSE',      
+        'STRUCTURE',
+        'DEFENSE',
         'WALL',
         'DRAGBUILD',
         'BENIGN',
@@ -51,11 +51,11 @@ UnitBlueprint {
         MaxHealth = 20000,
         RegenRate = 0,
     },
-    Description = '<LOC sbui5210>Heavy Wall Segment', 
-    Display = {      
+    Description = '<LOC sbui5210>Heavy Wall Segment',
+    Display = {
         AdjacencyConnection = 'MEDIUMWALL',
         AdjacencyBeamConnections = true,
-        AdjacencyConnectionInfo = {  
+        AdjacencyConnectionInfo = {
             Bones = {
                 North = {
                     visibility = 'hide',
@@ -63,34 +63,34 @@ UnitBlueprint {
                     conflict = nil,
                 },
                 South = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'South',
                     conflict = nil,
-                }, 
+                },
                 East = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'East',
                     conflict = nil,
-                }, 
+                },
                 West = {
-                    visibility = 'hide',  
+                    visibility = 'hide',
                     bonetype = 'West',
                     conflict = nil,
                 },
                 N1 = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     bonetype = 'Beam',
                     conflict = nil,
                     beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
                 },
                 N2 = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     bonetype = 'Beam',
                     conflict = nil,
                     beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
                 },
                 --[[Tower = {
-                    visibility = 'show',  
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = nil,
                 },
@@ -100,22 +100,22 @@ UnitBlueprint {
                     conflict = 'North',
                 },
                 South_TB = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'South',
-                }, 
+                },
                 East_TB = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'East',
-                }, 
+                },
                 West_TB = {
-                    visibility = 'show', 
+                    visibility = 'show',
                     bonetype = 'Tower',
                     conflict = 'West',
-                },--]]    
+                },--]]
             },
-        },                       
+        },
         DamageEffects = {
             {
                 Bone = 0,
@@ -129,7 +129,7 @@ UnitBlueprint {
                 OffsetY = 2.5,
                 OffsetZ = 0.25,
             },
-        },            
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -144,7 +144,7 @@ UnitBlueprint {
             },
         },
         PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,   
+        SpawnRandomRotation = true,
         UniformScale = 0.05*.66666666666666666,
     },
     Economy = {
@@ -162,7 +162,7 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 2,
     },
-    General = {      
+    General = {
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
@@ -173,7 +173,7 @@ UnitBlueprint {
             RULEUCC_Guard = false,
             RULEUCC_Move = false,
             RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false, 
+            RULEUCC_Patrol = false,
             RULEUCC_Pause = false,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
@@ -181,9 +181,9 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'Cybran',  
+        FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',    
+        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srb5210_name>Bulkhead',
         UnitWeight = 1,
     },
@@ -197,6 +197,12 @@ UnitBlueprint {
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
     Physics = {
+        AltitudeToTerrain = {
+            'North',
+            'South',
+            'East',
+            'West',
+        },
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,
@@ -206,7 +212,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        DragCoefficient = 0.2,    
+        DragCoefficient = 0.2,
         MaxGroundVariation = 2,
         FlattenSkirt = false,
         MaxSteerForce = 0,
@@ -229,7 +235,7 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_structure_wall',
     StrategicIconSortPriority = 208,
-    Wreckage = {    
+    Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
