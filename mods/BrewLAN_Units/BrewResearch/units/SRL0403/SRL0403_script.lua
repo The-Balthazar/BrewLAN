@@ -59,6 +59,20 @@ SRL0402 = Class(CLandUnit) {
         self:EnableUnitIntel('SonarStealth')
         self:RequestRefreshUI()
     end,
+
+    OnScriptBitSet = function(self, bit)
+        CLandUnit.OnScriptBitSet(self, bit)
+        if bit == 1 then
+            self:SetWeaponEnabledByLabel('MainGun', false)
+        end
+    end,
+
+    OnScriptBitClear = function(self, bit)
+        CLandUnit.OnScriptBitClear(self, bit)
+        if bit == 1 then
+            self:SetWeaponEnabledByLabel('MainGun', true)
+        end
+    end,
 }
 
 TypeClass = SRL0402

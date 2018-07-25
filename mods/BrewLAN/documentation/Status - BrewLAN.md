@@ -314,11 +314,10 @@ Iyadesu: Experimental Reconstruction Engineer
   * Gets storage drones for the recipes.
   * Loses its recipes if it loses its drones.
   * Drones help to build.
-  * Can circumvent build restrictions.
+  * Can potentially circumvent build restrictions, if a map has a wreckage of a restricted unit.
 
 Suthanus: Experimental Rapid-Fire Artillery
   * Fully functioning.
-  * Possibly the cause of weird crashes.
   * Needs a new name for dupe name reasons.
 
 Souiya: Experimental Naval Factory
@@ -517,7 +516,6 @@ T3 Battleship
 
 ## Errors and ideas; stuff to do
 * The Atlantis ignores its rolloff orders from the Gantry.
-* SRS0401 lacks weapons.
 * Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
 * The Absolution can't hover over units.
@@ -525,7 +523,6 @@ T3 Battleship
   * Engine related bug; possibly can't fix.
 * Megalith built eggs bug out when at the pop cap. (vanilla bug)
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
-* Change the explosion graphics of the T2 power storages to properly represent the explosion size.
 * Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
   * The commands for altering stance aren't accessible from sim.
@@ -542,15 +539,13 @@ T3 Battleship
 * Landspeeder.
 * Hero last stand mode.
 * Anti-naval gunship.
-* Rail gun.
 * More ways to deploy mines.
   * Field engineer boats and other.
 * Aircraft barrel roll.
 * Random asteroid showers.
 * Have cloaked/stealthed units able to detect when they are detected.
-  * Might be easier to implement the other way round; the omni checks on detecting them.
+  * Might be easier to implement the other way round; have the omni check on detecting them.
 * Team colored lasers.
-* Cybran Artillery stabiliser.
 * Cybran T1 Spy Submarine.
   * https://imgur.com/a/EcghD
 * Cybran T2 or 3 stealth field aircraft.
@@ -617,10 +612,10 @@ Abyssal Persecutor: Experimental Battleship
     * Stealth, and tac missiles.
     * Possible strat missiles.
     * Possible cloak, disabled during firing and or really high power cost.
-  * Current implementation:
+  * Idea 2:
     * A Battleship with legs.
-    * Currently no functioning weapons, but can stamp on things.
   * Idea 3:
     * Carrier/battleship. With legs.
     * Unique T3 fighter/bombers.
   * Slot filled by the Abyss Crawler.
+  * Removed as of r647.

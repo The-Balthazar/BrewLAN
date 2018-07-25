@@ -275,7 +275,7 @@ UnitBlueprint {
     Economy = {          --Battleship    --Artillery
         BuildCostEnergy = (54000 * 1.8) + (870000 * 1.5),
         BuildCostMass =   (9000 * 1.8)  + (87000 * 1.5),
-        BuildTime =       28000,
+        BuildTime =       96280,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -305,15 +305,18 @@ UnitBlueprint {
         SelectionPriority = 2,
         TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
-            RULEUTC_StealthToggle = true,
+            RULEUTC_WeaponToggle = true,
+        },
+        OrderOverrides = {
+            RULEUTC_WeaponToggle= {
+                bitmapId = 'activate-weapon',
+                helpText = 'toggleartillery',
+            },
         },
         UnitName = '<LOC srl0403_name>Retributor',
         UnitWeight = 1,
     },
     Intel = {
-        --RadarStealth = true,
-        --ReactivateTime = 4,
-        --SonarStealth = true,
         VisionRadius = 45,
     },
     Interface = {

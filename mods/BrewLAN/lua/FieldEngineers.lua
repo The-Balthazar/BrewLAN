@@ -7,6 +7,9 @@ function SCUFieldUpgrade(SuperClass)
             SuperClass.OnCreate(self)
             if self:GetAIBrain().BrainType == 'Human' then
                 self:AddBuildRestriction(categories.BUILTBYTIER3FIELD)
+                if categories.BUILTBYFIELD then
+                    self:AddBuildRestriction(categories.BUILTBYFIELD)
+                end
             end
         end,
 
@@ -18,10 +21,16 @@ function SCUFieldUpgrade(SuperClass)
             local restriction = (categories.ECONOMIC * categories.TECH3) - categories.BUILTBYTIER3FIELD - categories.MASSSTORAGE - categories.ENERGYSTORAGE - categories.HYDROCARBON
             if enh == 'Field' then
                 self:RemoveBuildRestriction(categories.BUILTBYTIER3FIELD)
+                if categories.BUILTBYFIELD then
+                    self:RemoveBuildRestriction(categories.BUILTBYFIELD)
+                end
                 self:AddBuildRestriction(restriction)
                 self:AddBuildRestriction(categories.urb4206)
             elseif enh == 'FieldRemove' then
                 self:AddBuildRestriction(categories.BUILTBYTIER3FIELD)
+                if categories.BUILTBYFIELD then
+                    self:AddBuildRestriction(categories.BUILTBYFIELD)
+                end
                 self:RemoveBuildRestriction(restriction)
                 self:RemoveBuildRestriction(categories.urb4206)
             end
@@ -37,12 +46,15 @@ function RegularAIEngineer(SuperClass)
             SuperClass.OnCreate(self)
             if self:GetAIBrain().BrainType == 'Human' then
                 self:AddBuildRestriction(categories.BUILTBYTIER3FIELD)
+                if categories.BUILTBYFIELD then
+                    self:AddBuildRestriction(categories.BUILTBYFIELD)
+                end
             end
         end,
     }
 end
 --------------------------------------------------------------------------------
--- Function for AI field tech cheating with regular engineers
+-- Used by engineering boats to assist things when idle
 --------------------------------------------------------------------------------
 function AssistThread(self)
     while true do

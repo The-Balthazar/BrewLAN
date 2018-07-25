@@ -1097,10 +1097,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed the AA capability from the Retributor's Bolters.
   * EIO: Fixed the concatenation of 'naval' instead of 'navy'.
   * EIO: Added the missing mobilefactory navy air and land combinations.
+
+  ### 2018-07-25
+
   * Abyss Crawler can no longer target high altitude aircraft.
   * Reworked most T2+ segmented walls and gates to match terrain slopes of the terrain.
     * Aeon T2 not included; Aeon build animation breaks this.
   * Cleaned up non-centralised terrain code.
+  * Removed the remains of the Abyssal Persecutor.
+    * If I ever re-visited the idea, I'd start from scratch anyway.
+  * Gave the Retributor the ability to disable the main weapon.
+  * Fixed R&D breaking field engineer exclusivity.
 
 ## 2016-12-15|0.7.5.5
 
