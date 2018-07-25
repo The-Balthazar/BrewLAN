@@ -174,9 +174,9 @@ UnitBlueprint {
                     TreadMarks = {
                         {
                             TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.09,
+                            TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 2.8,
+                            TreadMarksSizeZ = 3.8,
                             TreadOffset = {
                                 2.7,
                                 -1.1,
@@ -185,9 +185,9 @@ UnitBlueprint {
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.09,
+                            TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 2.8,
+                            TreadMarksSizeZ = 3.8,
                             TreadOffset = {
                                 1.62,
                                 -1.1,
@@ -196,9 +196,9 @@ UnitBlueprint {
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.09,
+                            TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 2.8,
+                            TreadMarksSizeZ = 3.8,
                             TreadOffset = {
                                 0.54,
                                 -1.1,
@@ -207,9 +207,9 @@ UnitBlueprint {
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.09,
+                            TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 2.8,
+                            TreadMarksSizeZ = 3.8,
                             TreadOffset = {
                                 -2.7,
                                 -1.1,
@@ -218,9 +218,9 @@ UnitBlueprint {
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.09,
+                            TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 2.8,
+                            TreadMarksSizeZ = 3.8,
                             TreadOffset = {
                                 -1.62,
                                 -1.1,
@@ -229,9 +229,9 @@ UnitBlueprint {
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.09,
+                            TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 2.8,
+                            TreadMarksSizeZ = 3.8,
                             TreadOffset = {
                                 -0.54,
                                 -1.1,

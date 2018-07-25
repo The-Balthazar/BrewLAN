@@ -2,6 +2,11 @@ UnitBlueprint {
     AI = {
         BeaconName = 'URB5102',
         TargetBones = {
+            'URB2302',
+            'Front_Turret001',
+            'Front_Turret',
+            'Front_Turret002',
+            'Back_Turret',
         },
     },
     Audio = {
@@ -382,7 +387,7 @@ UnitBlueprint {
                 BarrelStart = Sound {Bank = 'URB', Cue = 'URB2302_Turret_Start', LodCutoff = 'WeaponBig_LodCutoff'},
                 Fire = Sound {Bank = 'URLWeapon', Cue = 'URB2302_Artillery_Proton', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CameraShakeDuration = 0.5,
             CameraShakeMax = 2,
             CameraShakeMin = 0,
@@ -395,9 +400,7 @@ UnitBlueprint {
             DisplayName = 'Proton Artillery',
             EnergyDrainPerSecond = 3500,
             EnergyRequired = 7000,
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-            },
+            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed'},
             FiringRandomness = 0.75,
             FiringTolerance = 2,
             Label = 'MainGun',
@@ -405,8 +408,8 @@ UnitBlueprint {
             MinRadius = 250,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 60,
-            MuzzleVelocityReduceDistance = 650,
+            MuzzleVelocity = 70,
+            MuzzleVelocityReduceDistance = 250,
             ProjectileId = '/projectiles/CIFArtilleryProton01/CIFArtilleryProton01_proj.bp',
             ProjectileLifetime = 120,
             ProjectilesPerOnFire = 1,
@@ -436,6 +439,7 @@ UnitBlueprint {
             TurretYawRange = 180,
             TurretYawSpeed = 3,
             Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
             WeaponCategory = 'Artillery',
             WeaponRepackTimeout = 4,
             WeaponUnpackLocksMotion = true,
@@ -449,17 +453,13 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
             DamageType = 'Normal',
             DisplayName = 'Heavy Electron Bolter',
-            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed|Air'},
+            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed'},
             FiringTolerance = 2,
             Label = 'Turret',
             MaxRadius = 45,
@@ -497,17 +497,13 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
             DamageType = 'Normal',
             DisplayName = 'Heavy Electron Bolter',
-            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed|Air'},
+            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed'},
             RackRecoilDistance = 0,
             FiringTolerance = 2,
             Label = 'Turret',
@@ -545,17 +541,13 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
             DamageType = 'Normal',
             DisplayName = 'Heavy Electron Bolter',
-            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed|Air'},
+            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed'},
             FiringTolerance = 2,
             Label = 'Turret',
             MaxRadius = 46,
@@ -593,17 +585,13 @@ UnitBlueprint {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Bolter',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Bolter', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 150,
             DamageType = 'Normal',
             DisplayName = 'Heavy Electron Bolter',
-            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed|Air'},
+            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed'},
             FiringTolerance = 2,
             Label = 'Turret',
             MaxRadius = 46,
@@ -637,13 +625,12 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Direct Fire',
         },
+        ------------------------------------------------------------------------
+        -- Torpedoes
+        ------------------------------------------------------------------------
         {
             Audio = {
-                Fire = Sound {
-                    Bank = 'URLWeapon',
-                    Cue = 'URL0402_Torpedo',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Torpedo', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             Damage = 50,
@@ -683,7 +670,7 @@ UnitBlueprint {
             WeaponCategory = 'Anti Navy',
         },
         ------------------------------------------------------------------------
-        -- Stuff off the battleship
+        -- Battleship cannons
         ------------------------------------------------------------------------
         {
             AboveWaterTargetsOnly = true,
@@ -736,7 +723,7 @@ UnitBlueprint {
             TurretPitchRange = 45,
             TurretPitchSpeed = 10,
             TurretYaw = 0,
-            TurretYawRange = 180,
+            TurretYawRange = 120,
             TurretYawSpeed = 45,
             Turreted = true,
             WeaponCategory = 'Direct Fire Experimental',
@@ -792,7 +779,7 @@ UnitBlueprint {
             TurretPitchRange = 45,
             TurretPitchSpeed = 10,
             TurretYaw = 0,
-            TurretYawRange = 180,
+            TurretYawRange = 120,
             TurretYawSpeed = 45,
             Turreted = true,
             WeaponCategory = 'Direct Fire Experimental',
@@ -848,7 +835,7 @@ UnitBlueprint {
             TurretPitchRange = 45,
             TurretPitchSpeed = 10,
             TurretYaw = 0,
-            TurretYawRange = 180,
+            TurretYawRange = 120,
             TurretYawSpeed = 45,
             Turreted = true,
             WeaponCategory = 'Direct Fire Experimental',
@@ -856,21 +843,9 @@ UnitBlueprint {
         {
             AboveWaterTargetsOnly = true,
             Audio = {
-                BarrelLoop = Sound {
-                    Bank = 'URS',
-                    Cue = 'URS_Turret_Lrg_Loop',
-                    LodCutoff = 'WeaponBig_LodCutoff',
-                },
-                BarrelStart = Sound {
-                    Bank = 'URS',
-                    Cue = 'URS_Turret_Lrg_Start',
-                    LodCutoff = 'WeaponBig_LodCutoff',
-                },
-                Fire = Sound {
-                    Bank = 'URSWeapon',
-                    Cue = 'URS0302_Cannon',
-                    LodCutoff = 'WeaponBig_LodCutoff',
-                },
+                BarrelLoop = Sound {Bank = 'URS', Cue = 'URS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff'},
+                BarrelStart = Sound {Bank = 'URS', Cue = 'URS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff'},
+                Fire = Sound {Bank = 'URSWeapon', Cue = 'URS0302_Cannon', LodCutoff = 'WeaponBig_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
@@ -878,9 +853,7 @@ UnitBlueprint {
             DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'Proton Cannon',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-            },
+            FireTargetLayerCapsTable = {Land = 'Land|Water|Seabed'},
             FiringRandomness = 0.3,
             FiringTolerance = 2,
             Label = 'Cannon',
@@ -924,7 +897,7 @@ UnitBlueprint {
             TurretPitchRange = 35,
             TurretPitchSpeed = 10,
             TurretYaw = 0,
-            TurretYawRange = 135,
+            TurretYawRange = 120,
             TurretYawSpeed = 45,
             Turreted = true,
             WeaponCategory = 'Direct Fire Experimental',
@@ -935,11 +908,7 @@ UnitBlueprint {
         {
             AlwaysRecheckTarget = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URSWeapon',
-                    Cue = 'URS0302_Anti_Air',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URSWeapon', Cue = 'URS0302_Anti_Air', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             CannotAttackGround = true,
@@ -947,9 +916,7 @@ UnitBlueprint {
             Damage = 6,
             DamageType = 'Normal',
             DisplayName = 'Electron Autocannon',
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-            },
+            FireTargetLayerCapsTable = {Land = 'Air'},
             FiringRandomness = 0,
             FiringTolerance = 1,
             Label = 'AA',
@@ -1011,11 +978,7 @@ UnitBlueprint {
         {
             AlwaysRecheckTarget = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'URSWeapon',
-                    Cue = 'URS0302_Anti_Air',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URSWeapon', Cue = 'URS0302_Anti_Air', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             CannotAttackGround = true,
@@ -1023,9 +986,7 @@ UnitBlueprint {
             Damage = 6,
             DamageType = 'Normal',
             DisplayName = 'Electron Autocannon',
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-            },
+            FireTargetLayerCapsTable = {Land = 'Air'},
             FiringRandomness = 0,
             FiringTolerance = 1,
             Label = 'AA',
@@ -1090,11 +1051,7 @@ UnitBlueprint {
         ------------------------------------------------------------------------
         {
             Audio = {
-                Fire = Sound {
-                    Bank = 'URSWeapon',
-                    Cue = 'URS0302_Anti_Missile',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URSWeapon', Cue = 'URS0302_Anti_Missile', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             BeamCollisionDelay = 0.1,
@@ -1103,9 +1060,7 @@ UnitBlueprint {
             Damage = 1,
             DamageType = 'Normal',
             DisplayName = 'Zapper Anti Missile',
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-            },
+            FireTargetLayerCapsTable = {Land = 'Air'},
             FiringTolerance = 5,
             HeadingArcCenter = -90,
             HeadingArcRange = 100,
@@ -1115,12 +1070,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             NeedPrep = true,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Left_Muzzle01',
-                    },
-                    RackBone = 'Left_Turret_Barrel02',
-                },
+                {MuzzleBones = {'Left_Muzzle01'}, RackBone = 'Left_Turret_Barrel02'},
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -1151,11 +1101,7 @@ UnitBlueprint {
         },
         {
             Audio = {
-                Fire = Sound {
-                    Bank = 'URSWeapon',
-                    Cue = 'URS0302_Anti_Missile',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URSWeapon', Cue = 'URS0302_Anti_Missile', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_None',
             BeamCollisionDelay = 0.1,
@@ -1164,9 +1110,7 @@ UnitBlueprint {
             Damage = 1,
             DamageType = 'Normal',
             DisplayName = 'Zapper Anti Missile',
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-            },
+            FireTargetLayerCapsTable = {Land = 'Air'},
             FiringTolerance = 5,
             HeadingArcCenter = 90,
             HeadingArcRange = 100,
@@ -1176,12 +1120,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             NeedPrep = true,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Right_Muzzle01',
-                    },
-                    RackBone = 'Right_Turret_Barrel02',
-                },
+                {MuzzleBones = {'Right_Muzzle01'}, RackBone = 'Right_Turret_Barrel02'},
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,

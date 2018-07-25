@@ -194,7 +194,7 @@ function ExperimentalIconOverhaul(all_bps)
                 elseif sbits == '010' then
                     icon = icon .. 'air'
                 elseif sbits == '001' then
-                    icon = icon .. 'naval'
+                    icon = icon .. 'navy'
                 else
                     icon = icon .. 'generic'
                 end

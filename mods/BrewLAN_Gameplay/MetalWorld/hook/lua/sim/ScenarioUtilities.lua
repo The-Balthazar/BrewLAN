@@ -3,7 +3,7 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 function CreateProps()
-    for i, tblData in pairs(Scenario['Props']) do   
+    for i, tblData in pairs(Scenario['Props']) do
         if tblData.type != "Mass" then
             CreatePropHPR(
                 tblData.prop,
@@ -17,14 +17,14 @@ end
 function CreateResources()
     local markers = GetMarkers()
     for i, tblData in pairs(markers) do   
-        if tblData.resource then 
+        if tblData.resource then
             if tblData.type != "Mass" then
                 CreateResourceDeposit(
                     tblData.type,
                     tblData.position[1], tblData.position[2], tblData.position[3],
                     tblData.size
                 )
-    
+
                 # fixme: texture names should come from editor
                 local albedo, sx, sz, lod
                 albedo = "/env/common/splats/hydrocarbon_marker.dds"

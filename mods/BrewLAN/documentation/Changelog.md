@@ -1084,6 +1084,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the GantryUtils causing an error on LOUD.
   * Blueprint units build cat changes now checks all categories are valid in a buildcat before adding them.
 
+  ### 2018-07-24
+
+  * Crystal Hill: Updated so that custom map markers can determine the hill location.
+  * Crystal Hill: Commented out the old non-functioning Sorian AI code.
+  * Slightly modified the hieght map on Dev-Tex.
+  * Added an objective marker to the Dev-Tex map for use with Crystal hill.
+  * Updated Dev-Tex to FA map markers.
+  * Lowered the tread mark ticks rate for the Abyss Crawler.
+  * Reduced the maximum firing angles of the Retributor's weapons.
+  * Added target bones to the Retributor.
+  * Removed the AA capability from the Retributor's Bolters.
+  * EIO: Fixed the concatenation of 'naval' instead of 'navy'.
+  * EIO: Added the missing mobilefactory navy air and land combinations.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.
