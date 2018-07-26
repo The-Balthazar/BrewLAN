@@ -96,6 +96,7 @@ UnitBlueprint {
             '<LOC ability_deploys>Deploys',
             '<LOC ability_tacmissiledef>Tactical Missile Defense',
             '<LOC ability_torpedo>Torpedoes',
+            '<LOC ability_deathaoe>Volatile',
         },
         --AnimationDeath = {},
         --AnimationOpen = '/mods/BrewLAN/units/srl0401/srl0401_Aopen.sca',
@@ -276,6 +277,9 @@ UnitBlueprint {
         BuildCostEnergy = (54000 * 1.8) + (870000 * 1.5),
         BuildCostMass =   (9000 * 1.8)  + (87000 * 1.5),
         BuildTime =       96280,
+        ResearchMultTime = 0.2,
+        ResearchMultEnergy = 0.4,
+        ResearchMultMass = 0.3,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -1151,6 +1155,19 @@ UnitBlueprint {
             TurretYawSpeed = 720,
             Turreted = true,
             WeaponCategory = 'Defense',
+        },
+        ------------------------------------------------------------------------
+        -- Boom
+        ------------------------------------------------------------------------
+        {
+            Damage = 6000,
+            DamageFriendly = true,
+            DamageRadius = 10,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
         },
     },
     Wreckage = {

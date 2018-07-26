@@ -1,5 +1,7 @@
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local OffsetBoneToTerrain = import(BrewLANPath .. '/lua/TerrainUtils.lua').OffsetBoneToTerrain
 
 SEA0002 = Class(TAirUnit) {
     DestroyNoFallRandomChance = 0,
@@ -44,6 +46,7 @@ SEA0002 = Class(TAirUnit) {
             self.OpenAnim:PlayAnim( '/units/XEA0002/xea0002_aopen02.sca' )
             WaitFor( self.OpenAnim )
             TAirUnit.SetupIntel(self)--self:SetupIntel()
+            self:CreateVisEntity()
             self:SetScriptBit('RULEUTC_IntelToggle', false)
         end,
     },
@@ -71,16 +74,39 @@ SEA0002 = Class(TAirUnit) {
 
     OnIntelEnabled = function(self)
         TAirUnit.OnIntelEnabled(self)
-        local bp = self:GetBlueprint()
-        self:SetIntelRadius('vision', bp.Intel.OrbitVisionRadius)
-        self:EnableIntel('WaterVision')
+        if self.VisEntity then
+            self.VisEntity:SetIntelRadius('vision', self.VisEntity.Radius)
+            self.VisEntity:EnableIntel('WaterVision')
+        end
     end,
-
 
     OnIntelDisabled = function(self)
         TAirUnit.OnIntelDisabled(self)
-        self:SetIntelRadius('vision', 0)
-        self:DisableIntel('WaterVision')
+        if self.VisEntity then
+            self.VisEntity:SetIntelRadius('vision', 0)
+            self.VisEntity:DisableIntel('WaterVision')
+        end
+    end,
+
+    CreateVisEntity = function(self)
+        local pos = self:GetPosition()
+        local bp = self:GetBlueprint().Intel
+        self.VisEntity = VizMarker({
+            X = pos[1],
+            Z = pos[3],
+            Radius = bp.OrbitIntelRadius or 45,
+            LifeTime = -1,
+            Omni = bp.OrbitOmni or false,
+            Radar = bp.OrbitRadar or false,
+            Sonar = bp.OrbitSonar or false,
+            Vision = bp.OrbitVision or true,
+            WaterVision = bp.OrbitWaterVision or true,
+            Army = self:GetAIBrain():GetArmyIndex(),
+        })
+        self.VisEntity:AttachTo(self, 'VisEntity')
+        self.VisEntity.Radius = bp.OrbitIntelRadius
+        self.Trash:Add(self.VisEntity)
+        OffsetBoneToTerrain(self, 'VisEntity')
     end,
 
     OnRunOutOfFuel = function(self)

@@ -13,7 +13,7 @@
 * T1 Torpedo Bomber
 
 #### Pending:
-* T1 Field Engineering Boat.
+* T1 Field Engineering Boat?
 
 ### Cybran:
 * T1 Light Artillery
@@ -47,7 +47,7 @@
 * T1 Torpedo Bomber
 
 #### Pending:
-* T1 Field Engineering Boat.
+* T1 Field Engineering Boat?
 
 ## Tech 2 units:
 
@@ -63,7 +63,7 @@
 * T2 Decoy Plane.
 
 #### Pending:
-* T2 Field Engineering Ship.
+* T2 Field Engineering Ship?
 
 ### Cybran:
 * T2 Mass Storage
@@ -93,7 +93,7 @@
 * T2 Mobile Shield Gen.
 
 #### Pending:
-* T2 Field Engineering Ship.
+* T2 Field Engineering Ship?
 
 ## Tech 3:
 
@@ -119,7 +119,7 @@
 * T3 Mobile Radar.
 
 #### Pending:
-* T3 Field Engineering Ship.
+* T3 Field Engineering Ship?
 * T3 Mobile Torpedo.
 
 ### Cybran:
@@ -163,14 +163,14 @@
 * T3 Anti-Artillery Shield.
 * T3 Mobile AA & Radar.
 * T3 Torpedo launcher.
+* T3 Satellite Launch Complex.
+  * A model that isn't the Novax would be nice, but not an issue since BrewLAN disables the Novax.
+* T3 Observation Satellite.
 
 #### Functional:
 * T3 Torpedo Bomber.
   * Ugly.
 * T3 Mobile Satellite Uplink (UEF Sniper Bot alternative)
-* T3 Observation Satellite Uplink.
-* T3 Observation Satellite.
-  * Engine related bug: Radar and omni range is spherical not cylindrical (Except on FAF).
 * T3 Nuke Mine.
 
 #### Bugged:

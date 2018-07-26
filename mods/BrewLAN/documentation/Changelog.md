@@ -1108,6 +1108,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * If I ever re-visited the idea, I'd start from scratch anyway.
   * Gave the Retributor the ability to disable the main weapon.
   * Fixed R&D breaking field engineer exclusivity.
+  * Gave the Iyadesu the Sacrifice ability.
+      Why did I do this
+      How damn sleep deprived am I?
+      Fuck it; I need sleep.
+  * Removed the Sacrifice ability from the Iyadesu again. That is an Aeon ability.
+  * Gave the Retributor a death weapon.
+  * Set the research multipliers of the Retributor to 0.2, 0.3, and 0.4 for time, mass, and energy respectively.
+  * Fixed the issue with spherical vision radii on the satellite.
 
 ## 2016-12-15|0.7.5.5
 

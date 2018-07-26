@@ -164,8 +164,12 @@ UnitBlueprint {
     Intel = {
         RadarStealth = true,
         VisionRadius = 0,
-        OrbitVisionRadius = 45,
-        WaterVisionRadius = 45,
+        OrbitIntelRadius = 45,
+        OrbitVision = true,
+        OrbitWaterVision = true,
+        OrbitRadar = false,
+        OrbitSonar = false,
+        OrbitOmni = false,
     },
     Interface = {
         HelpText = '<LOC sea0002_desc>Observation Satellite',

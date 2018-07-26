@@ -115,6 +115,7 @@ UnitBlueprint {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_engineeringsuite>Engineering Suite',
             '<LOC ability_massive>Massive',
+            --'<LOC ability_sacrifice>Sacrifice',
             '<LOC ability_deathaoe>Volatile',
         },
         AnimationDeath = {
@@ -396,7 +397,6 @@ UnitBlueprint {
         BuildCostMass = 6000,
         BuildRate = 50,
         BuildTime = 2400*3,
-        --MaintenanceConsumptionPerSecondEnergy = 50,
         BuildableCategory = {
             'SELECTABLE TECH1',
             'SELECTABLE TECH2',
@@ -405,6 +405,8 @@ UnitBlueprint {
         },
         MaxBuildDistance = 20,
         NeedToFaceTargetToBuild = true,
+        SacrificeEnergyMult = 0.95,
+        SacrificeMassMult = 0.95,
         StorageMass = 10000,
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
@@ -442,6 +444,7 @@ UnitBlueprint {
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
             RULEUCC_RetaliateToggle = true,
+            --RULEUCC_Sacrifice = true,
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
@@ -449,10 +452,6 @@ UnitBlueprint {
         FactionName = 'SERAPHIM',
         Icon = 'amph',
         OrderOverrides = {
-            --RULEUTC_ShieldToggle = {
-            --    bitmapId = 'shield-dome',
-            --    helpText = 'toggle_shield_dome',
-            --},
             RULEUCC_Reclaim = {
                 bitmapId = 'rez',
                 helpText = 'rez_reclaim',
@@ -460,9 +459,6 @@ UnitBlueprint {
         },
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Experimental',
-        --ToggleCaps = {
-        --    RULEUTC_ShieldToggle = true,
-        --},
         UnitName = '<LOC ssl0403_name>Iyadesu',
         UnitWeight = 4,
     },
