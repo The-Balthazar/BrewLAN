@@ -51,7 +51,7 @@ UnitBlueprint {
             Level5 = 75,
         },
     },
-    BuildIconSortPriority = 60,
+    BuildIconSortPriority = 55,
     Categories = {
         'PRODUCTBREWLANRND',
         'SELECTABLE',
@@ -306,7 +306,6 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'amph',
-        SelectionPriority = 2,
         TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,

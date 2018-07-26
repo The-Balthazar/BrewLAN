@@ -1117,6 +1117,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Set the research multipliers of the Retributor to 0.2, 0.3, and 0.4 for time, mass, and energy respectively.
   * Fixed the issue with spherical vision radii on the satellite.
 
+  ### 2018-07-26
+
+  * Replaced the textures and distance models of the Aeon T1 pressure mine.
+  * Replaced the distance model of the Seraphim T3 nuke mine.
+  * Added a distance model for the Scarab.
+  * Replaced the distance model for the Moldovite.
+  * Replaced the distance model for the Flame Lotus.
+  * Added a distance model for the Metatron.
+  * Added a distance model to the Aeon Defence Engineers.
+  * Changed the selection and build icon priorities of the Retributor.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

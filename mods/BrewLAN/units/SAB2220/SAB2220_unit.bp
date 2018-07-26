@@ -1,15 +1,7 @@
 UnitBlueprint {
     Audio = {
-        Killed = Sound {
-            Bank = 'XSL_Destroy',
-            Cue = 'XSB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Aeon_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        Killed = Sound {Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound {Bank = 'Interface', Cue = 'Aeon_Select_Structure', LodCutoff = 'UnitMove_LodCutoff'},
     },
     BuildIconSortPriority = 110,
     Categories = {
@@ -59,22 +51,10 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 100,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                    AlbedoName = '/mods/BrewLAN/units/sal0401/sal0401_albedo.dds',
-                    NormalsName = '/mods/BrewLAN/units/sal0401/sal0401_normalsts.dds',
-                    SpecularName = '/mods/BrewLAN/units/sal0401/sal0401_specteam.dds',
-                },
-                {
-                    LODCutoff = 130,
-                    ShaderName = 'Aeon',
-                    MeshName = '/mods/BrewLAN/units/ssb2220/ssb2220_lod1.scm',
-                    AlbedoName = '/units/xsb2303/xsb2303_lod1_albedo.dds',
-                    NormalsName = '/units/xsb2303/xsb2303_lod1_normalsts.dds',
-                    SpecularName = '/units/xsb2303/xsb2303_lod1_specteam.dds',
-                },
+                {LODCutoff = 50, ShaderName = 'Aeon'},
+                {LODCutoff = 100, ShaderName = 'Aeon'},
+                {LODCutoff = 200, ShaderName = 'Aeon'},
+                {LODCutoff = 400, ShaderName = 'Aeon'},
             },
         },
         PlaceholderMeshName = 'UXB0000',

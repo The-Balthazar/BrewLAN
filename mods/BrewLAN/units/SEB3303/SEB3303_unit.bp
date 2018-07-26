@@ -1,30 +1,10 @@
 UnitBlueprint {
     Audio = {
-        DeathExplosion = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        LaunchSat = Sound {
-            Bank = 'XEL_Weapons',
-            Cue = 'XEB2402_Launch',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        MoveArms = Sound {
-            Bank = 'XEB',
-            Cue = 'XEB2402_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        DeathExplosion = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        LaunchSat = Sound {Bank = 'XEL_Weapons', Cue = 'XEB2402_Launch', LodCutoff = 'UnitMove_LodCutoff'},
+        MoveArms = Sound {Bank = 'XEB', Cue = 'XEB2402_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound {Bank = 'Interface', Cue = 'UEF_Select_Structure', LodCutoff = 'UnitMove_LodCutoff'},
     },
     Categories = {
         'PRODUCTBREWLAN',
@@ -140,12 +120,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -161,9 +136,7 @@ UnitBlueprint {
             'BUILTBYTIER3SPACEPORT UEF SATELLITE',
         },
         MaintenanceConsumptionPerSecondEnergy = 2500,
-        RebuildBonusIds = {
-            'seb3303',
-        },
+        RebuildBonusIds = {'seb3303'},
     },
     Footprint = {
         SizeX = 5,

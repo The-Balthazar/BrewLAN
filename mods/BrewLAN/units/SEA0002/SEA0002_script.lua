@@ -6,7 +6,7 @@ local OffsetBoneToTerrain = import(BrewLANPath .. '/lua/TerrainUtils.lua').Offse
 SEA0002 = Class(TAirUnit) {
     DestroyNoFallRandomChance = 0,
 
-    HideBones = { 'Shell01', 'Shell02', 'Shell03', 'Shell04', },
+    HideBones = { 'Shell01', 'Shell02', 'Shell03', 'Shell04' },
 
     OnStopBeingBuilt = function(self, ...)
         TAirUnit.OnStopBeingBuilt(self, unpack(arg) )
@@ -111,7 +111,7 @@ SEA0002 = Class(TAirUnit) {
 
     OnRunOutOfFuel = function(self)
         TAirUnit.OnRunOutOfFuel(self)
-        self:SetSpeedMult(self:GetBlueprint().Physics.NoFuelSpeedMult )
+        self:SetSpeedMult(self:GetBlueprint().Physics.NoFuelSpeedMult)
         self:SetAccMult(1)
         self:SetTurnMult(1)
     end,
