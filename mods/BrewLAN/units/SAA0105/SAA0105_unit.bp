@@ -116,22 +116,12 @@ UnitBlueprint {
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {
-                            0,
-                        },
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {
-                            0,
-                        },
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
         },
@@ -141,6 +131,19 @@ UnitBlueprint {
                 {
                     LODCutoff = 120,
                     ShaderName = 'Aeon',
+                },
+            },
+        },
+        MovementEffects = {
+            Air = {
+                Contrails = {
+                    Bones = {'Back'},
+                },
+                Effects = {
+                    {
+                        Bones = {'Left', 'Right'},
+                        Type = 'AirMoveExhaust01',
+                    },
                 },
             },
         },
@@ -189,7 +192,7 @@ UnitBlueprint {
         HelpText = '<LOC xra0105_help>Light Gunship',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.55,
+    LifeBarOffset = 0.25,
     LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
@@ -205,17 +208,17 @@ UnitBlueprint {
         FuelUseTime = 300,
         GroundCollisionOffset = 1.6,
         MaxSpeed = 0.5,
-        MeshExtentsX = 1.75,
+        MeshExtentsX = 0.75,
         MeshExtentsY = 0.5,
-        MeshExtentsZ = 1.75,
+        MeshExtentsZ = 1,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 0.75,
-    SelectionThickness = 0.37,
+    SelectionSizeX = 0.4,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.7,
     SizeSphere = 1.6,
-    SizeX = 1,
-    SizeY = 0.5,
+    SizeX = 0.8,
+    SizeY = 0.6,
     SizeZ = 1,
     StrategicIconName = 'icon_gunship1_directfire',
     StrategicIconSortPriority = 65,
@@ -263,10 +266,10 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle01',
-                        'Turret_Muzzle02',
-                        'Turret_Muzzle03',
-                        'Turret_Muzzle04',
+                        'Muzzle_001',
+                        'Muzzle_002',
+                        'Muzzle_003',
+                        'Muzzle_004',
                     },
                     RackBone = 'Turret_Barrel',
                 },
@@ -287,11 +290,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
-            TurretBoneMuzzle = 'Turret_Muzzle01',
-            TurretBonePitch = 'C_Barrel',
-            TurretBoneDualPitch = 'C_Barrel01',
+            TurretBoneMuzzle = 'Muzzle_001',
+            TurretBonePitch = 'C_Turret',
             TurretBoneYaw = 'C_Turret',
-            TurretDualManipulators = true,
             TurretPitch = -20,
             TurretPitchRange = 60,
             TurretPitchSpeed = 360,

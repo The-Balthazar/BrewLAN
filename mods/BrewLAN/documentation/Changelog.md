@@ -1153,6 +1153,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added a distance model to Harrow.
   * Fixed inverted normals on Ella.
   * Added distance models to the Longbow.
+  * Removed unused distance model textures from the Armillary.
+  * Replaced the model for the Respirer.
+  * Overhauled the script of the Pigeon.
 
 ## 2016-12-15|0.7.5.5
 
