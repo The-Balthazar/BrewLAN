@@ -127,19 +127,9 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 300,
-                    ShaderName = 'Aeon',
-                    MeshName = '/units/uaa0304/uaa0304_lod1.scm',
-                    AlbedoName = '/units/uaa0304/uaa0304_lod1_albedo.dds',
-                    NormalsName = '/units/uaa0304/uaa0304_lod1_normalsTS.dds',
-                    SpecularName = '/units/uaa0304/uaa0304_lod1_specteam.dds',
-                },
+                {LODCutoff = 65, ShaderName = 'Aeon'},
+                {LODCutoff = 130, ShaderName = 'Aeon'},
+                {LODCutoff = 260, ShaderName = 'Aeon'},
             },
         },
         MovementEffects = {

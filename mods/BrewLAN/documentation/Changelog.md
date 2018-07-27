@@ -1127,6 +1127,32 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added a distance model for the Metatron.
   * Added a distance model to the Aeon Defence Engineers.
   * Changed the selection and build icon priorities of the Retributor.
+  * Added distance models for the Saksinokka.
+  * Added a distance model for the Beguiler.
+  * Added distance models for the Impaler.
+  * Added additional distance models for the Solaris.
+  * Removed unused distance model textures for the Solaris.
+
+  ### 2018-07-27
+
+  * Inserted a distance model for the Orbos.
+  * Gave the Orbos a death animation.
+  * Added distance models for Flash Flood.
+  * Fixed the distance model of the Nihiloid.
+  * Replaced the distance model on the Pedestal.
+  * Added a distance model for the Aeon Heavy Wall.
+  * Created death animations for the Pedestal.
+  * Moved the life bar of the Pedestal.
+  * Paragon Game: Fixed a crash related to reloading individual blueprints through disk watch.
+  * Added a distance model for the Dragonlady.
+  * Replaced the distance model for the AM-12 Trap.
+  * Fixed the distance model of the AM-12 Anti-Armor.
+  * Removed unused distance model textures from Ivan.
+  * Removed unused distance model textures from Recoil.
+  * Added a distance model to Citadel.
+  * Added a distance model to Harrow.
+  * Fixed inverted normals on Ella.
+  * Added distance models to the Longbow.
 
 ## 2016-12-15|0.7.5.5
 

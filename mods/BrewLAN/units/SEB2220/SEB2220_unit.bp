@@ -64,18 +64,8 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 50,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 130,
-                    ShaderName = 'Unit',
-                    MeshName = '/mods/BrewLAN/units/seb2221/seb2221_lod1.scm',
-                    AlbedoName = '/mods/BrewLAN/units/seb2221/seb2221_lod1_albedo.dds',
-                    NormalsName = '/mods/BrewLAN/units/seb2221/seb2221_lod1_normalsTS.dds',
-                    SpecularName = '/mods/BrewLAN/units/seb2221/seb2221_lod1_specteam.dds',
-                },
+                {LODCutoff = 65, ShaderName = 'Unit'},
+                {LODCutoff = 130, ShaderName = 'Unit'},
             },
         },
         PlaceholderMeshName = 'UXB0000',

@@ -331,7 +331,7 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         OccupyRects = {
-
+            
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -6,
             0,

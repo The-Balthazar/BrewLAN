@@ -20,8 +20,8 @@ end
 function RNDPrepareScript(all_bps)
     for id, bp in all_bps do
         --Hard link upgrades, instead of soft-category linking, to prevent splurged links
-        --If they don't have a buildable category, we probably don't want to mess with it, and the upgrade tag is probably a mistake.
-        if bp.General.UpgradesTo and bp.Economy.BuildableCategory and not table.find(bp.Economy.BuildableCategory, bp.General.UpgradesTo) then
+        --If they don't have a buildable category, we probably don't want to mess with it, and the upgrade tag is probably a mistake. Also make sure the thing exists.
+        if bp.General.UpgradesTo and bp.Economy.BuildableCategory and not table.find(bp.Economy.BuildableCategory, bp.General.UpgradesTo) and all_bps[bp.General.UpgradesTo] then
             table.insert(bp.Economy.BuildableCategory, bp.General.UpgradesTo)
             table.remove(all_bps[bp.General.UpgradesTo].Categories, TableFindSubstrings(all_bps[bp.General.UpgradesTo].Categories, 'BUILTBY', 'FACTORY'))
         end
@@ -62,7 +62,9 @@ function RestrictExistingBlueprints(all_bps)
         'xsb1101',
     }
     for i, id in restrict do
-        table.insert(all_bps[id].Categories, 'RESEARCHLOCKED')
+        if all_bps[id] then
+            table.insert(all_bps[id].Categories, 'RESEARCHLOCKED')
+        end
     end
 end
 
@@ -319,7 +321,7 @@ end
 function DumpOldBuiltByCategories(all_bps, cat)
     --This dumping of old categories is so that they remain valid categories, but categories that do nothing when other mods affect and reference them.
     if not all_bps.zzz6969 then all_bps.zzz6969 = {BlueprintId = 'zzz6969',Categories = {}} end
-    if not table.find(all_bps.zzz6969.Categories, cat) then
+    if all_bps.zzz6969 and not table.find(all_bps.zzz6969.Categories, cat) then
         table.insert(all_bps.zzz6969.Categories, cat)
     end
 end

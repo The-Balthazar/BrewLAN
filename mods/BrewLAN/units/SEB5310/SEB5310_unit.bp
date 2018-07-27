@@ -126,19 +126,14 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
+                    LODCutoff = 250,
                     ShaderName = 'Unit',
-                    --AlbedoName = '/units/XEC8001/XEC8001_albedo.dds',
                     NormalsName = '/units/XEC8001/XEC8001_normalsts.dds',
-                    --SpecularName = '/units/XEC8001/XEC8001_specteam.dds',
                 },
-                --{
-                --    LODCutoff = 400,
-                --    ShaderName = 'Unit',
-                --    AlbedoName = '/units/XEC8001/XEC8001_lod1_albedo.dds',
-                --    NormalsName = '/units/XEC8001/XEC8001_lod1_normalsts.dds',
-                --    SpecularName = '/units/XEC8001/XEC8001_lod1_specteam.dds',
-                --},
+                {
+                    LODCutoff = 500,
+                    ShaderName = 'Unit',
+                },
             },
         },
         PlaceholderMeshName = 'UXB0000',

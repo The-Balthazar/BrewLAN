@@ -61,21 +61,31 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
         },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan/units/sab5104/sab5104_ADeath01.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 1.4,
+                Weight = 15,
+            },
+            {
+                Animation = '/mods/brewlan/units/sab5104/sab5104_ADeath02.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 1.4,
+                Weight = 25,
+            },
+            {
+                Animation = '/mods/brewlan/units/sab5104/sab5104_ADeath03.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 1.4,
+                Weight = 20,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 300,
-                    ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab5202/uab5202_lod1_albedo.dds',
-                    NormalsName = '/units/uab5202/uab5202_lod1_normalsTS.dds',
-                    SpecularName = '/units/uab5202/uab5202_lod1_specteam.dds',
-                },
+                {LODCutoff = 120, ShaderName = 'Aeon'},
+                {LODCutoff = 300, ShaderName = 'Aeon'},
             },
         },
         SpawnRandomRotation = true,
@@ -140,7 +150,7 @@ UnitBlueprint {
         HelpText = '<LOC sbui5104>Air Staging Facility',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = .65,
+    LifeBarOffset = .3,
     LifeBarSize = 1.0,
     Physics = {
         BankingSlope = 0,

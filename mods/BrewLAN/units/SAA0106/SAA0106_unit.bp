@@ -149,11 +149,9 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 130,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 65, ShaderName = 'Aeon'},
+                {LODCutoff = 130, ShaderName = 'Aeon'},
+                {LODCutoff = 260, ShaderName = 'Aeon'},
             },
         },
         MovementEffects = {

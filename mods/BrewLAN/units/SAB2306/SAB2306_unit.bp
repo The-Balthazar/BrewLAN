@@ -66,6 +66,14 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
         },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan/units/sab2306/sab2306_ADeath01.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 1.4,
+                Weight = 100,
+            },
+        },
         IdleEffects = {
             Land = {
                 Effects = {
@@ -93,14 +101,21 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 100,
+                    LODCutoff = 80,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/ual0401/ual0401_albedo.dds',
                     NormalsName = '/units/ual0401/ual0401_normalsts.dds',
                     SpecularName = '/units/ual0401/ual0401_specteam.dds',
                 },
                 {
-                    LODCutoff = 215,
+                    LODCutoff = 160,
+                    ShaderName = 'Aeon',
+                    AlbedoName = '/units/ual0401/ual0401_albedo.dds',
+                    NormalsName = '/units/ual0401/ual0401_normalsts.dds',
+                    SpecularName = '/units/ual0401/ual0401_specteam.dds',
+                },
+                {
+                    LODCutoff = 320,
                     Scrolling = true,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/ual0401/ual0401_lod1_albedo.dds',

@@ -110,9 +110,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -120,9 +118,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -142,9 +138,9 @@ UnitBlueprint {
                 {
                     LODCutoff = 215,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/units/xaa0305/xaa0305_lod1_albedo.dds',
-                    NormalsName = '/units/xaa0305/xaa0305_lod1_normalsTS.dds',
-                    SpecularName = '/units/xaa0305/xaa0305_lod1_specteam.dds',
+                    AlbedoName = '/units/xaa0305/xaa0305_albedo.dds',
+                    NormalsName = '/units/xaa0305/xaa0305_normalsTS.dds',
+                    SpecularName = '/units/xaa0305/xaa0305_specteam.dds',
                 },
             },
         },
@@ -159,9 +155,7 @@ UnitBlueprint {
                 },
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'AirMoveExhaust01',
                     },
                 },
@@ -213,7 +207,7 @@ UnitBlueprint {
             },
         },
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC saa0201_name>',
+        UnitName = '<LOC saa0201_name>Beguiler',
         UnitWeight = 1,
     },
     Intel = {

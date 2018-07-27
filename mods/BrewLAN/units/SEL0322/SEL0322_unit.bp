@@ -103,7 +103,7 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                     --MeshName = '/units/uel0307/uel0307_lod0.scm',
                     AlbedoName = '/units/uel0307/uel0307_albedo.dds',
-                    NormalsName = '/units/uel0307/uel0307_normalsTS.dds',
+                    --NormalsName = '/units/uel0307/uel0307_normalsTS.dds',
                     SpecularName = '/units/uel0307/uel0307_specteam.dds',
                 },
                 {

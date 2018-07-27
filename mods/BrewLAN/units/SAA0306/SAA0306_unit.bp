@@ -182,15 +182,10 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 450,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 200, ShaderName = 'Aeon'},
+                {LODCutoff = 350, ShaderName = 'Aeon'},
+                {LODCutoff = 500, ShaderName = 'Aeon'},
+                {LODCutoff = 650, ShaderName = 'Aeon'},
             },
         },
         PlaceholderMeshName = 'UXB0000',

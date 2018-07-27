@@ -11,6 +11,11 @@ SAB2306 = Class(AStructureUnit) {
     },
 
     OnKilled = function(self, instigator, type, overkillRatio)
+        if self.LazyEye then
+            for i, v in self.LazyEye do
+                v:Destroy()
+            end
+        end
         AStructureUnit.OnKilled(self, instigator, type, overkillRatio)
         local wep = self:GetWeaponByLabel('EyeWeapon')
         local bp = wep:GetBlueprint()
@@ -28,8 +33,10 @@ SAB2306 = Class(AStructureUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
         local vectors = {'x','y','z'}
+        self.LazyEye = {}
         for i, v in vectors do
-            self.Trash:Add(CreateRotator(self, 'Head', v, nil, 0, 15, 10 + Random(0, 80) * (-1 + (2 * Random(0,1)))))
+            self.LazyEye[v] = CreateRotator(self, 'Head', v, nil, 0, 15, 10 + Random(0, 80) * (-1 + (2 * Random(0,1))))
+            self.Trash:Add(self.LazyEye[v])
         end
     end,
 }
