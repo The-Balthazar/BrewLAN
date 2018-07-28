@@ -1165,6 +1165,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Slightly reworked the script of the Von Mayer Reactor.
   * Merged script references on the Archimedes.
   * Did a large number of nothing-burger changes to UEF scripts.
+  * Gave the Cybran research centres new models.
 
 ## 2016-12-15|0.7.5.5
 
