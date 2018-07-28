@@ -1166,6 +1166,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Merged script references on the Archimedes.
   * Did a large number of nothing-burger changes to UEF scripts.
   * Gave the Cybran research centres new models.
+  * Rebalanced the advanced resource buildings.
+    * Reactors and fabricators are now slightly more expensive but produce more.
+    * Extractors now cost less and produce slightly more.
+    * All of them have R&D mod research costs of x1.25 instead of the x3 default of T3 units.
+  * Added distance models to UEF research centres.
+  * R&D: Prevented a crash caused by reloaded blueprints with diskwatch.
 
 ## 2016-12-15|0.7.5.5
 

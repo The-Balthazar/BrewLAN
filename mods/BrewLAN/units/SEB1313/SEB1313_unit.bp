@@ -176,9 +176,9 @@ UnitBlueprint {
         UniformScale = 0.35,
     },
     Economy = {
-        BuildCostEnergy = 65000*1.25,
-        BuildCostMass = 3000*1.25,
-        BuildTime = 3750*1.25,
+        BuildCostEnergy = 65000*1.35,
+        BuildCostMass = 3000*1.35,
+        BuildTime = 3750*1.35,
         BuildRate = 15,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
@@ -187,8 +187,8 @@ UnitBlueprint {
             'BUILTBYTIER3ENGINEER MASSSTORAGE UEF',
         },
         HalfPriceUpgradeFromID = 'ueb1303',
-        MaintenanceConsumptionPerSecondEnergy = 3500*.75,
-        ProductionPerSecondMass = 12*.75,
+        MaintenanceConsumptionPerSecondEnergy = 3500*1.25,
+        ProductionPerSecondMass = 12*1.25,
         BuildWhenAttackedByAir = 'ueb2104',
         BuildWhenAttackedBySub = 'ueb2109',
         BuildWhenAttackedByLand = 'ueb2101',
@@ -196,6 +196,7 @@ UnitBlueprint {
             'ueb1303',
             'seb1313',
         },
+        ResearchMult = 1.25,
     },
     Footprint = {
         SizeX = 3,

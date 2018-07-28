@@ -80,16 +80,17 @@ UnitBlueprint {
         UniformScale = 0.1,
     },
     Economy = {
-        BuildCostEnergy = 31625*1.5,
-        BuildCostMass = 4600*1.5,
-        BuildTime = 2875*1.5,
+        BuildCostEnergy = 31625*1.25,
+        BuildCostMass = 4600*1.25,
+        BuildTime = 2875*1.25,
         HalfPriceUpgradeFromID = 'urb1302',
-        MaintenanceConsumptionPerSecondEnergy = 54,
-        ProductionPerSecondMass = 18,
+        MaintenanceConsumptionPerSecondEnergy = 54*1.125,
+        ProductionPerSecondMass = 18*1.125,
         RebuildBonusIds = {
             'urb1302',
             'srb1312',
         },
+        ResearchMult = 1.25,
     },
     General = {
         Category = 'Economy',

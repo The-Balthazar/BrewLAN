@@ -97,6 +97,13 @@ UnitBlueprint {
                     NormalsName = '/mods/brewlan_units/brewresearch/units/seb9101/seb9101_normalsts.dds',
                     SpecularName = '/mods/brewlan_units/brewresearch/units/seb9101/seb9101_specteam.dds',
                 },
+                {
+                    LODCutoff = 260,
+                    ShaderName = 'Unit',
+                    AlbedoName = '/mods/brewlan_units/brewresearch/units/seb9101/seb9101_albedo.dds',
+                    NormalsName = '/mods/brewlan_units/brewresearch/units/seb9101/seb9101_normalsts.dds',
+                    SpecularName = '/mods/brewlan_units/brewresearch/units/seb9101/seb9101_specteam.dds',
+                },
             },
         },
         PlaceholderMeshName = 'UEB0101',

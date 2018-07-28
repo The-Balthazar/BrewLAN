@@ -4,7 +4,6 @@
 
 ### Aeon:
 * T1 Light Gunship
-  * Would like to give a more unique appearance.
 * T1 Light Artillery
 * T1 Shield Generator
 * T1 Air Staging

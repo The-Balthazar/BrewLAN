@@ -72,81 +72,83 @@ end
 -- Make some research items
 --------------------------------------------------------------------------------
 function GenerateResearchItemBPs(all_bps)
+    local tablesize = 0
     for id, bp in all_bps do
-        if bp.Categories then
-            if table.find(bp.Categories, 'RESEARCHLOCKED') then
-                local newid = id .. 'rnd'
-                RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
+        tablesize = tablesize + 1
+        if bp.Categories and table.find(bp.Categories, 'RESEARCHLOCKED') then
+            local newid = id .. 'rnd'
+            RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
 
-                RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
-                RNDGiveIndicativeAbilities(all_bps, newid, bp)
-                RNDGiveUniqueMeshBlueprints(all_bps, newid, bp)
-            end
+            RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
+            RNDGiveIndicativeAbilities(all_bps, newid, bp)
+            RNDGiveUniqueMeshBlueprints(all_bps, newid, bp)
         end
     end
 
-    local techresearch = {
-        RESEARCHLOCKEDTECH1 = {
-            techid = 1,
-            Economy = {
-                BuildCostEnergy = 130,
-                BuildCostMass = 26,
-                BuildTime = 26,
-                ResearchMult = 1,
+    if tablesize > 10 then -- This is to prevent it from regenerating them during disk watch. It could probably be ~= 1, but I wanted to be safe.
+        local techresearch = {
+            RESEARCHLOCKEDTECH1 = {
+                techid = 1,
+                Economy = {
+                    BuildCostEnergy = 130,
+                    BuildCostMass = 26,
+                    BuildTime = 26,
+                    ResearchMult = 1,
+                },
+                Categories = {'TECH1'},
+                Description = '<LOC srnd9100_desc>Tech Level Research',
             },
-            Categories = {'TECH1'},
-            Description = '<LOC srnd9100_desc>Tech Level Research',
-        },
-        TECH2 = {
-            techid = 2,
-            Economy = {
-                BuildCostEnergy = 8040,
-                BuildCostMass = 960,
-                BuildTime = 960,
-                ResearchMult = 1,
+            TECH2 = {
+                techid = 2,
+                Economy = {
+                    BuildCostEnergy = 8040,
+                    BuildCostMass = 960,
+                    BuildTime = 960,
+                    ResearchMult = 1,
+                },
+                Categories = {'TECH2'},
+                Description = '<LOC srnd9200_desc>Tech Level Research',
             },
-            Categories = {'TECH2'},
-            Description = '<LOC srnd9200_desc>Tech Level Research',
-        },
-        TECH3 = {
-            techid = 3,
-            Economy = {
-                BuildCostEnergy = 31500,
-                BuildCostMass = 3640,
-                BuildTime = 3640,
-                ResearchMult = 1,
+            TECH3 = {
+                techid = 3,
+                Economy = {
+                    BuildCostEnergy = 31500,
+                    BuildCostMass = 3640,
+                    BuildTime = 3640,
+                    ResearchMult = 1,
+                },
+                Categories = {'TECH3'},
+                Description = '<LOC srnd9300_desc>Tech Level Research',
             },
-            Categories = {'TECH3'},
-            Description = '<LOC srnd9300_desc>Tech Level Research',
-        },
-        EXPERIMENTAL = {
-            techid = 4,
-            Economy = {
-                BuildCostEnergy = 123415,
-                BuildCostMass = 13800,
-                BuildTime = 13800,
-                ResearchMult = 1,
+            EXPERIMENTAL = {
+                techid = 4,
+                Economy = {
+                    BuildCostEnergy = 123415,
+                    BuildCostMass = 13800,
+                    BuildTime = 13800,
+                    ResearchMult = 1,
+                },
+                Categories = {'EXPERIMENTAL'},
+                Description = '<LOC srnd9400_desc>Experimental Tech Level Research',
             },
-            Categories = {'EXPERIMENTAL'},
-            Description = '<LOC srnd9400_desc>Experimental Tech Level Research',
-        },
-    }
-    for tech, bp in techresearch do
-        for faction, uid in {Aeon = 'sar9', UEF = 'ser9', Cybran = 'srr9', Seraphim = 'ssr9'} do
-            local newid = uid .. bp.techid .. '00'
-            local id = tech
-            bp.Categories[2] = string.upper(faction)
-            bp.Categories[3] = 'SORTCONSTRUCTION'
-            if tech != 'RESEARCHLOCKEDTECH1' then
-                bp.Categories[4] = 'CONSTRUCTIONSORTDOWN'
+        }
+        for tech, bp in techresearch do
+            for faction, uid in {Aeon = 'sar9', UEF = 'ser9', Cybran = 'srr9', Seraphim = 'ssr9'} do
+                local newid = uid .. bp.techid .. '00'
+                local id = tech
+                bp.Categories[2] = string.upper(faction)
+                bp.Categories[3] = 'SORTCONSTRUCTION'
+                if tech != 'RESEARCHLOCKEDTECH1' then
+                    bp.Categories[4] = 'CONSTRUCTIONSORTDOWN'
+                end
+                if not bp.General then
+                    bp.General = {}
+                end
+                bp.General.FactionName = faction
+                RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
+                RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
+                --LOG(repr(all_bps[newid]))
             end
-            if not bp.General then
-                bp.General = {}
-            end
-            bp.General.FactionName = faction
-            RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
-            RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
-            --LOG(repr(all_bps[newid]))
         end
     end
 end
