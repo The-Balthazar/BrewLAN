@@ -1,13 +1,6 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UEL0307/UEL0307_script.lua
-#**  Author(s):  David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  UEF Mobile Shield Generator Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  UEF Mobile Shield Generator Script
+--------------------------------------------------------------------------------
 local TShieldLandUnit = import('/lua/terranunits.lua').TShieldLandUnit
 
 SEL0322 = Class(TShieldLandUnit) {
@@ -16,12 +9,12 @@ SEL0322 = Class(TShieldLandUnit) {
         '/effects/emitters/terran_shield_generator_mobile_01_emit.bp',
         '/effects/emitters/terran_shield_generator_mobile_02_emit.bp',
     },
-    
+
     OnStopBeingBuilt = function(self,builder,layer)
         TShieldLandUnit.OnStopBeingBuilt(self,builder,layer)
 		self.ShieldEffectsBag = {}
     end,
-      
+
     OnLayerChange = function(self, new, old)
         TShieldLandUnit.OnLayerChange(self, new, old)
         if self:GetBlueprint().Display.AnimationWater then
@@ -36,9 +29,9 @@ SEL0322 = Class(TShieldLandUnit) {
             end
         end
     end,
-              
+
     TransformThread = function(self, water)
-        
+
         if not self.TransformManipulator then
             self.TransformManipulator = CreateAnimator(self)
             self.Trash:Add( self.TransformManipulator )
@@ -56,7 +49,7 @@ SEL0322 = Class(TShieldLandUnit) {
             self.TransformManipulator = nil
         end
     end,
-    
+
     OnShieldEnabled = function(self)
         TShieldLandUnit.OnShieldEnabled(self)
         KillThread( self.DestroyManipulatorsThread )
@@ -74,7 +67,7 @@ SEL0322 = Class(TShieldLandUnit) {
             self.Trash:Add( self.AnimationManipulator )
         end
         self.AnimationManipulator:SetRate(1)
-        
+
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
@@ -90,7 +83,7 @@ SEL0322 = Class(TShieldLandUnit) {
         TShieldLandUnit.OnShieldDisabled(self)
         KillThread( self.DestroyManipulatorsThread )
         self.DestroyManipulatorsThread = self:ForkThread( self.DestroyManipulators )
-        
+
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
@@ -103,12 +96,12 @@ SEL0322 = Class(TShieldLandUnit) {
         if self.RotatorManipulator then
             self.RotatorManipulator:SetAccel( 5 )
             self.RotatorManipulator:SetTargetSpeed( 0 )
-            # Unless it goes smoothly back to its original position,
-            # it will snap there when the manipulator is destroyed.
-            # So for now, we'll just keep it on.
-            #WaitFor( self.RotatorManipulator )
-            #self.RotatorManipulator:Destroy()
-            #self.RotatorManipulator = nil
+            -- Unless it goes smoothly back to its original position,
+            -- it will snap there when the manipulator is destroyed.
+            -- So for now, we'll just keep it on.
+            -- WaitFor( self.RotatorManipulator )
+            -- self.RotatorManipulator:Destroy()
+            -- self.RotatorManipulator = nil
         end
         if self.AnimationManipulator then
             self.AnimationManipulator:SetRate(-1)

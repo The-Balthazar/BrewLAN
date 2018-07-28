@@ -308,7 +308,7 @@ UnitBlueprint {
     },
     Weapon = {
         {
-            Label = 'HeadAAGun',
+            Label = 'AAGun',
             AutoInitiateAttackCommand = true,
             AlwaysRecheckTarget = true,
             Audio = {
@@ -427,7 +427,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         {
-            Label = 'RearAAGun',
+            Label = 'AAGun',
             AlwaysRecheckTarget = true,
             Audio = {
                 Fire = Sound {
@@ -529,7 +529,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         {
-            Label = 'SAM1',
+            Label = 'SAM',
             Audio = {
                 Fire = Sound {
                     Bank = 'XEA_Weapon',
@@ -634,7 +634,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         {
-            Label = 'SAM2',
+            Label = 'SAM',
             Audio = {
                 Fire = Sound {
                     Bank = 'XEA_Weapon',

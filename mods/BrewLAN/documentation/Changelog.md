@@ -1157,6 +1157,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Replaced the model for the Respirer.
   * Overhauled the script of the Pigeon.
 
+  ### 2018-07-28
+
+  * Lowered the muzzle flash scale of the Respirer.
+  * Merged script references on the Albatros.
+  * Merged script references on the Centurion.
+  * Slightly reworked the script of the Von Mayer Reactor.
+  * Merged script references on the Archimedes.
+  * Did a large number of nothing-burger changes to UEF scripts.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -1,18 +1,11 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UEB1302/UEB1302_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  UEF Tier 3 Mass Extractor Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
-local TEngineeringResourceStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/uefunits.lua').TEngineeringResourceStructureUnit  
+--------------------------------------------------------------------------------
+--  Summary  :  UEF Tier 3 Mass Extractor Script
+--------------------------------------------------------------------------------
+local TEngineeringResourceStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/uefunits.lua').TEngineeringResourceStructureUnit
 
 SEB1312 = Class(TEngineeringResourceStructureUnit) {
-    
-    
+
+
     PlayActiveAnimation = function(self)
         TEngineeringResourceStructureUnit.PlayActiveAnimation(self)
         if not self.AnimationManipulator then
@@ -40,8 +33,8 @@ SEB1312 = Class(TEngineeringResourceStructureUnit) {
         TEngineeringResourceStructureUnit.OnProductionUnpaused(self)
         if not self.AnimationManipulator then return end
         self.AnimationManipulator:SetRate(1)
-    end, 
-      
+    end,
+
     OnStopBeingBuilt = function(self,builder,layer)
         TEngineeringResourceStructureUnit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()

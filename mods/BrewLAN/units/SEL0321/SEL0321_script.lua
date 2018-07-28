@@ -1,16 +1,8 @@
-#****************************************************************************
-#**
-#**  File     :  /data/units/XEL0306/XEL0306_script.lua
-#**  Author(s):  Jessica St. Croix, Dru Staltman
-#**
-#**  Summary  :  UEF Mobile Missile Platform Script
-#**
-#**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  UEF Mobile Strategic Missile Defence Platform Script
+--------------------------------------------------------------------------------
 local TLandUnit = import('/lua/terranunits.lua').TLandUnit
 local TAMInterceptorWeapon = import('/lua/terranweapons.lua').TAMInterceptorWeapon
---local nukeFiredOnGotTarget = false
 
 SEL0321 = Class(TLandUnit) {
     Weapons = {
@@ -26,25 +18,15 @@ SEL0321 = Class(TLandUnit) {
                                     TAMInterceptorWeapon.RackSalvoFireReadyState.Main(self)
                                 end
                             end
-                        ) 
+                        )
                         return
                     else
                         TAMInterceptorWeapon.RackSalvoFireReadyState.Main(self)
                     end
-                end,    
+                end,
             },
         },
     },
-    
-    --[[OnStopBeingBuilt = function(self,builder,layer)
-        TLandUnit.OnStopBeingBuilt(self,builder,layer)
-        self:ForkThread(
-            function(self)
-                WaitSeconds(1)
-                LOG(self:GetTacticalSiloAmmoCount())
-            end
-        )
-    end,]]--
 }
 
 TypeClass = SEL0321

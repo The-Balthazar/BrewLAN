@@ -15,8 +15,6 @@ SEL0324 = Class(TLandUnit) {
         self:ForkThread(self.RadarAnimation)
         self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_IntelToggle', true)
-        --self:DisableUnitIntel('Radar')
-        --self:DisableUnitIntel('Omni')
         self:RequestRefreshUI()
         self.RadarEnabled = false
     end,
@@ -35,9 +33,7 @@ SEL0324 = Class(TLandUnit) {
 
     RadarAnimation = function(self)
         local manipulator = CreateRotator(self, 'Satellite', 'x')
-        --local headmanip =  CreateRotator(self, 'Satellite', 'y')
         manipulator:SetSpeed(10)
-        --headmanip:SetSpeed(10)
         manipulator:SetGoal(30)
         while IsUnit(self) do
             if self.RadarEnabled then

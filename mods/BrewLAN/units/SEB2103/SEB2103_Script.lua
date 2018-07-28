@@ -1,13 +1,6 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UEB2303/UEB2303_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  UEF Light Artillery Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  UEF Light Artillery Script
+--------------------------------------------------------------------------------
 local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
 local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
 
@@ -22,8 +15,7 @@ SEB2103 = Class(TStructureUnit) {
     end,
 
     Weapons = {
-        MainGun = Class(TIFArtilleryWeapon) {
-        },
+        MainGun = Class(TIFArtilleryWeapon) {},
     },
 }
 

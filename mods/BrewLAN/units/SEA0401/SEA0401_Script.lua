@@ -20,10 +20,8 @@ SEA0401 = Class(TAirUnit) {
     EngineRotateBones = {'Engine_Body001', 'Engine_Body002','Engine_Body003', 'Engine_Body004',},
 
     Weapons = {
-        HeadAAGun = Class(TAAFlakArtilleryCannon) {},
-        RearAAGun = Class(TAAFlakArtilleryCannon) {},
-        SAM1 = Class(TSAMLauncher) {},
-        SAM2 = Class(TSAMLauncher) {},
+        AAGun = Class(TAAFlakArtilleryCannon) {},
+        SAM = Class(TSAMLauncher) {},
         RearASFBeam = Class(TDFHiroPlasmaCannon) {},
         GatlingCannon = Class(TDFPlasmaCannonWeapon)
         {

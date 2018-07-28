@@ -1,16 +1,14 @@
-#****************************************************************************
-#** 
-#**  UEF Wall: With cordinal scripting
-#** 
-#****************************************************************************
+--------------------------------------------------------------------------------
+--  UEF Wall: With cordinal scripting
+--------------------------------------------------------------------------------
 local StackingBuilderUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/defaultunits.lua').StackingBuilderUnit
 local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/walls.lua').CardinalWallUnit
-StackingBuilderUnit = CardinalWallUnit(StackingBuilderUnit) 
+StackingBuilderUnit = CardinalWallUnit(StackingBuilderUnit)
 
 SEB5310 = Class(StackingBuilderUnit) {
     OnStartBuild = function(self, unitBeingBuilt, order )
         StackingBuilderUnit.OnStartBuild(self, unitBeingBuilt, order )
-        
+
         self:ForkThread(
             function()
                 WaitSeconds(0.2)
@@ -21,7 +19,7 @@ SEB5310 = Class(StackingBuilderUnit) {
                 unitBeingBuilt.Leg:SetDrawScale(0.083)
                 unitBeingBuilt.Leg:SetVizToAllies('Intel')
                 unitBeingBuilt.Leg:SetVizToNeutrals('Intel')
-                unitBeingBuilt.Leg:SetVizToEnemies('Intel')         
+                unitBeingBuilt.Leg:SetVizToEnemies('Intel')
                 unitBeingBuilt.Trash:Add(unitBeingBuilt.Leg)
             end
         )

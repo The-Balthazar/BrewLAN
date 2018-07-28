@@ -6,7 +6,9 @@ local ADFLaserLightWeapon = import('/lua/aeonweapons.lua').ADFLaserLightWeapon
 
 SAA0105 = Class(AAirUnit) {
     Weapons = {
-        Turret = Class(ADFLaserLightWeapon) {},
+        Turret = Class(ADFLaserLightWeapon) {
+            FxMuzzleFlashScale = 0.75,
+        },
     },
 
     OnStopBeingBuilt = function(self,builder,layer)

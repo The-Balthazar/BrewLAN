@@ -1,13 +1,6 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UEB1106/UEB1106_script.lua
-#**  Author(s):  Jessica St. Croix
-#**
-#**  Summary  :  UEF Mass Storage
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  UEF Mass Storage
+--------------------------------------------------------------------------------
 local TMassStorageUnit = import('/lua/terranunits.lua').TMassStorageUnit
 
 SEB1206 = Class(TMassStorageUnit) {

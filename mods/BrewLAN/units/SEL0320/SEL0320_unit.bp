@@ -361,7 +361,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
             FiringTolerance = 1,
-            Label = 'TargetFinder2',
+            Label = 'TargetFinder',
             MaxRadius = 80,
             MuzzleChargeDelay = 0,
             MuzzleSalvoDelay = 0,
