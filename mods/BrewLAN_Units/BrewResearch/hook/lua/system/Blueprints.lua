@@ -154,7 +154,7 @@ function GenerateResearchItemBPs(all_bps)
 end
 
 function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
-    local sizescale = ((bp.Physics.SkirtSizeX or bp.SizeX or 4) / 2)
+    local sizescale = math.max( ((bp.Physics.SkirtSizeX or bp.SizeX or 4) / 2), ((bp.Physics.SkirtSizeZ or bp.SizeZ or 4) / 2) )
     all_bps[newid] = {
         BlueprintId = newid,
         ResearchId = id,
@@ -204,9 +204,9 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
             UnitWeight = 1,
         },
         Physics = {
-            MeshExtentsX = 2,
-            MeshExtentsY = 1,
-            MeshExtentsZ = 2,
+            MeshExtentsX = (bp.Physics.MeshExtentsX or bp.SizeX or sizescale * 2) / sizescale,
+            MeshExtentsY = (bp.Physics.MeshExtentsY or bp.SizeY or sizescale) / sizescale,
+            MeshExtentsZ = (bp.Physics.MeshExtentsZ or bp.SizeZ or sizescale * 2) / sizescale,
             --And now some more lies.
             MaxSpeed = 1,
             MotionType = 'RULEUMT_Amphibious',
@@ -214,7 +214,7 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
         ScriptClass = 'ResearchItem',
         ScriptModule = '/lua/defaultunits.lua',
         SizeX = 2,
-        SizeY = 1,
+        SizeY = (bp.SizeY or sizescale) / sizescale,
         SizeZ = 2,
         Source = bp.Source or all_bps.seb9101.Source,
         StrategicIconName = bp.StrategicIconName,

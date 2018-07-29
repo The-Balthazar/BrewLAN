@@ -1172,6 +1172,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * All of them have R&D mod research costs of x1.25 instead of the x3 default of T3 units.
   * Added distance models to UEF research centres.
   * R&D: Prevented a crash caused by reloaded blueprints with diskwatch.
+  * R&D: Fixed unit's that are longer in the Z direction having a research item that's too big.
+
+  ### 2018-07-29
+
+  * R&D: The height of research items now scales with the unit's height.
+  * R&D: The mesh extents of research items now scale with the unit's original mesh extents.
+  * R&D: Cybran research centres now have build effect bones.
 
 ## 2016-12-15|0.7.5.5
 

@@ -133,7 +133,10 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                0
+                'Build_001',
+                'Build_002',
+                'Build_003',
+                'Build_004',
             },
         },
         Category = 'Factory',
