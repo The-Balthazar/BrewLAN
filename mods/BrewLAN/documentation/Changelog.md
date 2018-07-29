@@ -1186,6 +1186,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added the Cybran T1 wind turbine.
   * R&D: Research locked the Cybran T1 p-gen.
   * R&D: The wind turbine rotor affecter is now destroyed when the unit is killed.
+  * R&D: Cybran research centres now have Cybran sounds.
+  * R&D: Aeon research centres now have Aeon sounds.
 
 ## 2016-12-15|0.7.5.5
 

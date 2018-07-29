@@ -1,28 +1,28 @@
 UnitBlueprint {
     Audio = {
         Construct = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB0301_Construct_Start',
+            Bank = 'UAB',
+            Cue = 'UAB0101_Construct_Start',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         ConstructLoop = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB0301_Construct_Loop',
+            Bank = 'UAB',
+            Cue = 'UAB0101_Construct_Loop',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DeathExplosion = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Lrg_PreDestroy',
+            Bank = 'UALDestroy',
+            Cue = 'UAB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Huge',
+            Bank = 'UALDestroy',
+            Cue = 'UAB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'UEF_Select_Structure',
+            Cue = 'Aeon_Select_Structure',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
