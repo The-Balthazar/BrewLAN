@@ -1179,6 +1179,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: The height of research items now scales with the unit's height.
   * R&D: The mesh extents of research items now scale with the unit's original mesh extents.
   * R&D: Cybran research centres now have build effect bones.
+  * Crystal Hill: Fixed hill stacking vis-entities.
+  * Crystal Hill: Changed requirements for first capture to match subsequent captures.
+  * Crystal Hill: Hill no longer does a log dump of ScenarioInfo every time it is captured.
+  * Created the basic framework on a new control point style mod.
+  * R&D: Added the Cybran T1 wind turbine.
+  * R&D: Research locked the Cybran T1 p-gen.
+  * R&D: The wind turbine rotor affecter is now destroyed when the unit is killed.
 
 ## 2016-12-15|0.7.5.5
 

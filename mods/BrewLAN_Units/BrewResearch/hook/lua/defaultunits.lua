@@ -72,5 +72,14 @@ WindEnergyCreationUnit = Class(EnergyCreationUnit) {
         self.Spinners[1]:SetGoal(ScenarioInfo.WindStats.Direction)
         self.Spinners[2]:SetTargetSpeed(-400 * ((1/30) * ScenarioInfo.WindStats.Power))
         self:SetProductionPerSecondEnergy(ScenarioInfo.WindStats.Power)
-    end
+    end,
+
+    OnKilled = function(self, instigator, type, overKillRatio)
+        local bp = self:GetBlueprint()
+        --Allow restarting of me, the RND item, if I was never finished.
+        if self.Spinners then
+            self.Spinners[2]:Destroy()
+        end
+        EnergyCreationUnit.OnKilled(self, instigator, type, overKillRatio)
+    end,
 }

@@ -40,6 +40,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTECONOMY',
+        'WINDTURBINE',
     },
     CollisionOffsetY = -0.25,
     Defense = {

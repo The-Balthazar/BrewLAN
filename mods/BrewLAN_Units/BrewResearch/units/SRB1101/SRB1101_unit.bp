@@ -2,23 +2,23 @@ UnitBlueprint {
     Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB1101_Active',
+            Bank = 'URB',
+            Cue = 'URB1101_Active',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Land',
+            Bank = 'URLDestroy',
+            Cue = 'URB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DoneBeingBuilt = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB1101_Activate',
+            Bank = 'URB',
+            Cue = 'URB1101_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'Aeon_Select_Resource',
+            Cue = 'Cybran_Select_Resource',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -30,7 +30,7 @@ UnitBlueprint {
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
-        'AEON',
+        'CYBRAN',
         'STRUCTURE',
         'ECONOMIC',
         'TECH1',
@@ -55,12 +55,24 @@ UnitBlueprint {
     },
     Description = '<LOC ueb1101_desc>Power Generator',
     Display = {
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewresearch/units/srb1101/srb1101_ADeath01.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 1.4,
+                Weight = 15,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 135,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Insect',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
                 },
             },
         },
@@ -68,11 +80,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar6x_aeon_01_albedo',
+                Albedo = 'Tarmacs/Tar6x_cybran_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 6.4,
-                Normal = 'Tarmacs/Tar6x_aeon_01_normals',
+                Normal = 'Tarmacs/Tar6x_cybran_01_normals',
                 Orientations = {
                     0,
                     90,
@@ -83,7 +95,7 @@ UnitBlueprint {
                 Width = 6.4,
             },
         },
-        UniformScale = 0.06,
+        UniformScale = 0.06*0.9,
     },
     Economy = {
         AdjacentStructureEnergyMod = -2,
@@ -92,7 +104,7 @@ UnitBlueprint {
         BuildTime = 40,
         ProductionPerSecondEnergy = 17.5,--This is just for the UI, the value is overwritten. It's 5-30.
         RebuildBonusIds = {
-            'sab1101',
+            'srb1101',
         },
     },
     General = {
@@ -112,18 +124,18 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'Aeon',
+        FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC sab1101_name>Lamp',
+        UnitName = '<LOC seb1101_name>Spiny Boi',
         UnitWeight = 1,
     },
     Interface = {
-        HelpText = '<LOC usb1101_help>Power Generator',
+        HelpText = '<LOC ueb1101_help>Power Generator',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.35,
+    LifeBarOffset = 0.7,
     LifeBarSize = 0.9,
     Physics = {
         BankingSlope = 0,
@@ -149,8 +161,8 @@ UnitBlueprint {
         SkirtSizeZ = 2,
         TurnRate = 0,
     },
-    SelectionSizeX = 0.65,
-    SelectionSizeZ = 0.65,
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.6,
     SelectionThickness = 0.6,
     SizeX = 0.6,
     SizeY = 2.5,

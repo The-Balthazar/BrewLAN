@@ -58,7 +58,7 @@ function RestrictExistingBlueprints(all_bps)
         --Tech 1 power generators, force use of wind turbines early game.
         'ueb1101',
         'uab1101',
-        --'urb1101',
+        'urb1101',
         'xsb1101',
     }
     for i, id in restrict do
