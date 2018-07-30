@@ -1189,6 +1189,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Cybran research centres now have Cybran sounds.
   * R&D: Aeon research centres now have Aeon sounds.
 
+  ### 2018-07-30
+
+  * Added a Seraphim tech 2 recon plane.
+  * Set the Seraphim tech 2 recon planes stats to be the average of the tech 1 and tech 3 for balance matching.
+  * Disabled the tech demo disarmer weapon.
+  * Crate Drop: Fixed disk watch causing a crash on blueprint reload.
+  * Fixed the old-Scathis-based model for the Hedgehog.
+  * Gave an indication of how loaded the Hedgehog is or isn't.
+  * Added a transport fold animation to the Hedgehog.
+  * Created a distance model for the Hedgehog.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

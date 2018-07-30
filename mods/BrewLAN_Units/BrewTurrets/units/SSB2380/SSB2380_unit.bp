@@ -40,7 +40,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLANTURRETS',
         'SELECTABLE',
-        'BUILTBYTIER3FIELD',
+        --'BUILTBYTIER3FIELD',
         'SERAPHIM',
         'STRUCTURE',
         'DEFENSE',
@@ -52,7 +52,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYDIRECTFIRE',
         'SORTDEFENSE',
-        'RESEARCHLOCKED',
+        --'RESEARCHLOCKED',
     },
     CollisionOffsetY = 0,
     Defense = {
