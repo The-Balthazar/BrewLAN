@@ -11,9 +11,6 @@
 * T1 Pressure Mine
 * T1 Torpedo Bomber
 
-#### Pending:
-* T1 Field Engineering Boat?
-
 ### Cybran:
 * T1 Light Artillery
 * T1 Air Staging
@@ -45,9 +42,6 @@
 * T1 Pressure Mine
 * T1 Torpedo Bomber
 
-#### Pending:
-* T1 Field Engineering Boat?
-
 ## Tech 2 units:
 
 ### Aeon:
@@ -61,9 +55,6 @@
 * T2 Mobile tactical missile defense
 * T2 Decoy Plane.
 
-#### Pending:
-* T2 Field Engineering Ship?
-
 ### Cybran:
 * T2 Mass Storage
 * T2 Field Engineer
@@ -72,8 +63,6 @@
 * T2 Wall
 * T2 Field Engineering Ship.
   * Would like to give a more unique appearance.
-
-#### Pending:
 
 ### UEF:
 * T2 Mass Storage
@@ -90,9 +79,6 @@
 * T2 Field engineer.
 * T2 Heavy Wall.
 * T2 Mobile Shield Gen.
-
-#### Pending:
-* T2 Field Engineering Ship?
 
 ## Tech 3:
 
@@ -118,7 +104,6 @@
 * T3 Mobile Radar.
 
 #### Pending:
-* T3 Field Engineering Ship?
 * T3 Mobile Torpedo.
 
 ### Cybran:
@@ -144,11 +129,6 @@
 * T3 Mobile stealth Gen.
 * T3 Mobile Rocket Platform.
 * T3 Mobile Radar.
-
-#### Pending:
-* T3 Field Engineering Ship.
-* T3 Mobile torpedo? (Brick?)
-* T3 Mobile tactical missile defense? (Loyalist?)
 
 ### UEF:
 #### Finished:
@@ -407,7 +387,7 @@ T3 Shield generator
 * Allowed T2 to upgrade into it.
 
 T3 Heavy Assault Bot
-* Decreased the cost and stats to be comparable with that of the Titan, the Loyalist, and that Serephim one.
+* Decreased the cost and stats to be comparable with that of the Titan, the Loyalist, and my Serephim one.
 
 T3 Torpedo bomber.
 * Unified build sorting.
@@ -500,7 +480,7 @@ Fatboy
 
 ### Seraphim:
 T2 Shield Generator: Atha
-* Allow the T1 shield to upgrade to it.
+* Allowed the T1 shield to upgrade to it.
 
 T3 Siege Tank
 * Set the always upright attribute to false.
@@ -522,7 +502,8 @@ T3 Battleship
   * Engine related bug; possibly can't fix.
 * Megalith built eggs bug out when at the pop cap. (vanilla bug)
 * The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
-* Add unit orders to the blips of the Aeon Decoy plane, if possible. (IssueGuard)
+* Add unit orders to the blips of the Aeon Decoy plane, if possible.
+  * IssueGuard could be used if the Jammer is replaced with dummy units.
 * Nuke mines should have the option to auto explode, but be set to manual from the off.
   * The commands for altering stance aren't accessible from sim.
 * Armored walls (and probably other walls) need to be repaired slower.
@@ -531,7 +512,6 @@ T3 Battleship
 * Find a way to increase static shield radius and maintenance cost increases when built on water.
 * Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
   * Beam shotgun?
-* Give the UEF walls, and Bessemer Reactor real distance models.
 * Create a UI for the contents of the Ivan.
 * TeaD: Do something about civi's blocking the teacup.
 * UAL0207.
@@ -547,15 +527,14 @@ T3 Battleship
 * Team colored lasers.
 * Cybran T1 Spy Submarine.
   * https://imgur.com/a/EcghD
-* Cybran T2 or 3 stealth field aircraft.
 * Cybran stealth field sub.
 * Aeon T1 Mortar Station.
   * https://imgur.com/a/TKCvF
 * Possibly make the ADG look more like the original.
   * https://imgur.com/a/9tbXY
-* Turrets
-* Freeze mines
-* Component tower ship
+* Turrets.
+* Freeze mines.
+* Component tower ship.
 
 ## Kris' notes on my ideas for further experimental buildings
 * My notes on his notes.
@@ -618,3 +597,6 @@ Abyssal Persecutor: Experimental Battleship
     * Unique T3 fighter/bombers.
   * Slot filled by the Abyss Crawler.
   * Removed as of r647.
+
+Aeon/Seraphim Field Engineering Boat & Ships
+  * These are staying exclusive to UEF and Cybran.

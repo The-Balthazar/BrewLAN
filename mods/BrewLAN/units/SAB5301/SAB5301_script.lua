@@ -1,8 +1,9 @@
-local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
+local AShieldStructureUnit = import('/lua/defaultunits.lua').ShieldStructureUnit
 local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/walls.lua').CardinalWallUnit
-AShieldStructureUnit = CardinalWallUnit( AShieldStructureUnit ) 
+AShieldStructureUnit = CardinalWallUnit( AShieldStructureUnit )
 
 SAB5301 = Class( AShieldStructureUnit ) {
+
     ShieldEffects = {
         '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',  -- tight floor pulse
         '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',-- eclipse thing
@@ -39,7 +40,7 @@ SAB5301 = Class( AShieldStructureUnit ) {
 		      self.ShieldEffectsBag = {}
 		  end
     end,
-    
+
     OnKilled = function(self, instigator, type, overkillRatio)
         AShieldStructureUnit.OnKilled(self, instigator, type, overkillRatio)
         if self.ShieldEffctsBag then
@@ -48,17 +49,17 @@ SAB5301 = Class( AShieldStructureUnit ) {
             end
         end
     end,
-      
+
     OnDamage = function(self, instigator, amount, vector, damageType)
         local shieldHealth = self.MyShield:GetHealth()
-        if self:ShieldIsOn() and self.MyShield:GetHealth() > 0 and self.ShieldIsEnabled then 
+        if self:ShieldIsOn() and self.MyShield:GetHealth() > 0 and self.ShieldIsEnabled then
             self.MyShield:OnDamage(instigator, math.min(amount, shieldHealth), vector, damageType)
             --LOG(repr(instigator))
             AShieldStructureUnit.OnDamage(self, instigator, amount - shieldHealth, vector, damageType)
         else
             AShieldStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
         end
-    end,  
+    end,
 }
 
 TypeClass = SAB5301

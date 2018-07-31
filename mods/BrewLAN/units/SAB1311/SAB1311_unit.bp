@@ -144,7 +144,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 160,
+                    LODCutoff = 130,
                     ShaderName = 'Aeon',
                     --MeshName = '/units/UAB1301/UAB1301_lod0.scm',
                     AlbedoName = '/units/UAB1301/UAB1301_albedo.dds',
@@ -152,9 +152,17 @@ UnitBlueprint {
                     NormalsName = '/units/UaB1301/UAB1301_normalsTS.dds',
                 },
                 {
-                    LODCutoff = 300,
+                    LODCutoff = 260,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/UAB1301/UAB1301_lod1.scm',
+                    --MeshName = '/units/UAB1301/UAB1301_lod1.scm',
+                    AlbedoName = '/units/UAB1301/UAB1301_albedo.dds',
+                    SpecularName = '/units/UAB1301/UAB1301_specteam.dds',
+                    NormalsName = '/units/UaB1301/UAB1301_normalsTS.dds',
+                },
+                {
+                    LODCutoff = 390,
+                    ShaderName = 'Aeon',
+                    --MeshName = '/units/UAB1301/UAB1301_lod1.scm',
                     AlbedoName = '/units/UAB1301/UAB1301_lod1_albedo.dds',
                     SpecularName = '/units/UAB1301/UAB1301_lod1_specteam.dds',
                     NormalsName = '/units/UAB1301/UAB1301_lod1_normalsTS.dds',

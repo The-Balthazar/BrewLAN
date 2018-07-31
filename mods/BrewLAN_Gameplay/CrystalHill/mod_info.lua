@@ -1,9 +1,9 @@
 name = "Crystal Hill"
-uid = "BREWLANS-22b4-4936-820e-CRYSTAL00015"
-version = 1.5
+uid = "BREWLANS-22b4-4936-820e-CRYSTAL00016"
+version = 1.6
 copyright = "© 2014–2018 Sean Wheeldon"
 description = "King of the Hill with crystals. Spawns a crystal in the middle of the map. Capture it and keep it to win."
-author = "Sean 'Balthazar' Wheeldon"
+author = "Balthazar"
 icon = "/mods/BrewLAN_Gameplay/CrystalHill/mod_icon.dds"
 selectable = true
 enabled = true

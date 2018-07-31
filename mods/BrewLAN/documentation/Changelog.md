@@ -1200,6 +1200,21 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added a transport fold animation to the Hedgehog.
   * Created a distance model for the Hedgehog.
 
+  ### 2018-07-31
+
+  * Added a Cybran tech 2 stealth recon plane. It has a quick custom model. Probably getting reworked.
+  * Added the Stillson Class: Cybran tech 3 field engineering ship.
+  * Fixed the inverted normals on the Barwick Class.
+  * Replaced the icons for the UEF and Aeon special fabricator and generators, and the Centurion, Ivan, and the Aspis.
+  * Replaced the distance models for the Aeon shielded generator.
+  * Fixed the observation satellite in FAF. This involved removing some code made redundant by the round-vision fix.
+  * Bypassed the AShieldStructureUnit to prevent FAF from forcing bullshit on the Aegis and Pillar of Prominence. Who thought forcing specific animation scripts was a good idea? Honestly.
+    * This doesn't make the Pillar work on FAF, but it does fix one if its new issues on FAF.
+  * Changed Author credit on mod_info docs, because FAF truncates after any kind of punctuation for some reason, and it was crediting me by my first name alone.
+  * Incremented the version number and UID of Crystal Hill, Paragon Game, TeaD, Waterlag, Gantry Hax 1-3, BrewUI, Pulchritudinousity, CrateDrop, and Lucky Dip.
+    * They had been changed since 0.7.5.5 without updating the version number.
+  * Improved the descriptions of the Gantry Hax modules, differentiated their UIDs, and defined them as conflicts of each other.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

@@ -2,7 +2,7 @@
 -- Description: Shield bubble projection unit
 -- Author: Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
+local AShieldStructureUnit = import('/lua/defaultunits.lua').ShieldStructureUnit
 local Shield = import('/lua/shield.lua').Shield
 --------------------------------------------------------------------------------
 local explosion = import('/lua/defaultexplosions.lua')

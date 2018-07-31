@@ -1,9 +1,9 @@
 name = "Lucky Dip"
-uid = "25D57D85-7D84-27HT-A502-LDIPS0000001"
-version = 0.1
+uid = "25D57D85-7D84-27HT-A502-LDIPS0000002"
+version = 0.2
 copyright = "© 2015–2018 Sean Wheeldon"
 description = "BlackOps/BrewLAN unit lucky dip. Who knows what units you will get."
-author = "Sean 'Balthazar' Wheeldon"
+author = "Balthazar"
 selectable = true
 enabled = true
 exclusive = false

@@ -94,8 +94,7 @@ Units that I wanted to make, but either I didn't want directly in BrewLAN, or ca
 * Functionally separates the hardware and software of tech levels and blueprints.
 * Adds research centres, tech level researches and unit unlock researches.
 * Currently missing planned units:
-  * Unique models for Seraphim, Cybran, and UEF research centres.
-  * Seraphim and Cybran wind turbines.
+  * Unique models for Aeon research centres.
   * Cybran, Seraphim, and Aeon dedicated omni sensors.
   * Light tech 2 power generators; halfway point between T1 and T2.
   * Hovercraft and submarine factories.
