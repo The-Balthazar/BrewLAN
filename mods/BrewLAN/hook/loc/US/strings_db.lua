@@ -260,9 +260,14 @@ Unit_Description_BrewLAN_T3B007="Very heavy defensive tower. Attacks land- and s
 Unit_Description_BrewLAN_T3B008="Very heavy defensive tower. Attacks land- and sea-based units with a powerful oblivion cannon."
 
 seb3303_desc="Observation Satellite Uplink"
+seb3303b_desc="Satellite Launch Complex"
+Unit_Description_BrewLAN_T3B002="Produces and launches satellites"
+
+ability_satellite_uplink="Satellite Uplink"
+
 sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
-Unit_Description_BrewLAN_T3B002="Satellite-based observation system. Has a wide line-of-sight and omni sensors. If its control center is destroyed, the satellite is immediately disabled."
+Unit_Description_BrewLAN_T3A012="Satellite-based observation system. Provides visual satellite imagery from orbit. Requires a dedicated satellite uplink to receive data from it."
 
 --Sniper alternatives
 sel0320_desc="Mobile Satellite Uplink"
@@ -403,6 +408,11 @@ Unit_Description_BrewLAN_T3L018="Mobile hovering anti-naval vehicle."
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="Hovering torpedo system. Capable of destroying the largest of enemy vessels."
 
+ssb4317_desc="Radar Jammer"
+ssb4317_name="Yathesel"
+Unit_Description_BrewLAN_T3B0029="Radar disruption facility. Creates a large number of false radar signals within its operational area, causing a distraction and disrupting enemy targeting."
+ssa00002_desc="Hologram"
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -428,6 +438,10 @@ Unit_Description_BrewLAN_T4B003="Experimental shield generator. Protects a large
 srs0401="Experimental Battleship"
 srs0401_name="Abyssal Persecutor"
 Unit_Description_BrewLAN_T4S001="Experimental amphibious battleship."
+
+srs0402_desc="Experimental Transport"
+srs0402_name="Abyss Crawler"
+Unit_Description_BrewLAN_T4L003="Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
 
 seb0401="Experimental Factory"
 seb0401_name="Gantry"

@@ -260,9 +260,14 @@ Unit_Description_BrewLAN_T3B007="非常沉重的防御塔。攻击陆基和海�
 Unit_Description_BrewLAN_T3B008="非常沉重的防御塔。攻击陆基和海基单位提供了强大的遗忘炮。"
 
 seb3303_desc="观测卫星上行"
+seb3303b_desc="卫星发射复合"
+Unit_Description_BrewLAN_T3B002="生产和发射卫星"
+
+ability_satellite_uplink="卫星上行"
+
 sea0002_desc="观测卫星"
 sea0002_name="燃星"
-Unit_Description_BrewLAN_T3B002="卫星观测系统。具有广泛线的视线和全方位的传感器。如果它的控制中心被破坏，卫星被立即禁用。"
+Unit_Description_BrewLAN_T3A012="卫星观测系统。提供从轨道可视卫星图像。需要专用的卫星上行链路，从它接收数据。"
 
 --狙击手的替代品
 sel0320_desc="移动卫星通信"
@@ -403,6 +408,11 @@ Unit_Description_BrewLAN_T3L018="移动徘徊抗海军车辆。"
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="悬停鱼雷系统。可摧毁的最大敌人船只的。"
 
+ssb4317_desc="雷达干扰机"
+ssb4317_name="Yathesel"
+Unit_Description_BrewLAN_T3B0029="雷达干扰设施。创建大量其业务区域内虚假的雷达信号，造成分心和扰乱敌人定位。"
+ssa00002_desc="全息照相"
+
 --------------------------------------------------------------------------------
 -- 实验部分
 --------------------------------------------------------------------------------
@@ -428,6 +438,10 @@ Unit_Description_BrewLAN_T4B003="实验盾发生器。保护一大片。"
 srs0401="实验战舰"
 srs0401_name="深渊迫害者"
 Unit_Description_BrewLAN_T4S001="实验两栖战舰。"
+
+srs0402_desc="实验传输"
+srs0402_name="深渊履带"
+Unit_Description_BrewLAN_T4L003="实验两栖运输。旅行更快的水下。配备中等功率的通用武器。"
 
 seb0401="实验厂"
 seb0401_name="龙门"

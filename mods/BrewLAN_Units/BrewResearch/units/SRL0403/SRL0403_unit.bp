@@ -79,14 +79,14 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     Defense = {
-        AirThreatLevel = 43,
+        AirThreatLevel = 49,
         ArmorType = 'Experimental',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 920,
         Health = 60900,
         MaxHealth = 60900,
         RegenRate = 0,
         SubThreatLevel = 3,
-        SurfaceThreatLevel = 43,
+        SurfaceThreatLevel = 90,
     },
     Description = '<LOC srl0403_desc>Experimental Mobile Artillery',
     Display = {

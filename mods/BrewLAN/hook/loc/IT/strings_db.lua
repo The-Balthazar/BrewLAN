@@ -260,9 +260,14 @@ Unit_Description_BrewLAN_T3B007="Molto pesante torre difensiva. Gli attacchi ter
 Unit_Description_BrewLAN_T3B008="Molto pesante torre difensiva. Gli attacchi terrestri e unità navali-based con un potente cannone oblio."
 
 seb3303_desc="Osservazione satellitare Uplink"
+seb3303b_desc="Satellite Launch Complex"
+Unit_Description_BrewLAN_T3B002="Produce e lancia satelliti"
+
+ability_satellite_uplink="Uplink satellitare"
+
 sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
-Unit_Description_BrewLAN_T3B002="Satellite-based sistema di osservazione. Ha una vasta linea di vista e sensori Omni. Se il suo centro di controllo è distrutto, il satellite viene immediatamente disattivata."
+Unit_Description_BrewLAN_T3A012="Satellite-based sistema di osservazione. Fornisce immagini satellitari visiva dall'orbita. Richiede un uplink satellitare dedicato per ricevere i dati da esso."
 
 --alternative Sniper
 sel0320_desc="Mobile satellitare Uplink"
@@ -403,6 +408,11 @@ Unit_Description_BrewLAN_T3L018="Cellulare in bilico veicolo anti-navale."
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="Librarsi sistema di siluro. Capace di distruggere la più grande delle navi nemiche."
 
+ssb4317_desc="Radar Jammer"
+ssb4317_name="Yathesel"
+Unit_Description_BrewLAN_T3B0029="impianto di interruzione del radar. Crea un gran numero di falsi segnali radar nella propria area operativa, causando una distrazione e interrompere nemico targeting."
+ssa00002_desc="Ologramma"
+
 --------------------------------------------------------------------------------
 -- sperimentazione
 --------------------------------------------------------------------------------
@@ -428,6 +438,10 @@ Unit_Description_BrewLAN_T4B003="generatore di scudi sperimentale. Protegge una 
 srs0401="Sperimentale Battleship"
 srs0401_name="Abyssal Persecutor"
 Unit_Description_BrewLAN_T4S001="Sperimentale corazzata anfibio."
+
+srs0402_desc="Trasporti Sperimentale"
+srs0402_name="Abyss Crawler"
+Unit_Description_BrewLAN_T4L003="Sperimentale trasporto anfibia. Viaggia più velocemente sott'acqua. Equipaggiato con armi general-purpose moderata potenza."
 
 seb0401="Sperimentale di fabbrica"
 seb0401_name="Gantry"

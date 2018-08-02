@@ -102,14 +102,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.29,
     Defense = {
-        AirThreatLevel = 8,
+        AirThreatLevel = 1,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 227,
         Health = 6050,
         MaxHealth = 6050,
         RegenRate = 0,
-        SubThreatLevel = 21,
-        SurfaceThreatLevel = 45,
+        SubThreatLevel = 6,
+        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0319_desc>Field Engineering Ship',
     Display = {

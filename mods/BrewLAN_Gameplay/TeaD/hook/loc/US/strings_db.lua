@@ -1,4 +1,4 @@
-﻿--ISO_639-1_code=EN
+--ISO_639-1_code=EN
 --TeaD EN-US strings
 seb2101_name="DMX Riot Gun"
 seb2101_desc="Light Point Defense"

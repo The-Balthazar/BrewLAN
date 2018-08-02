@@ -127,7 +127,7 @@ UnitBlueprint {
         HelpText = '<LOC ueb1101_help>Power Generator',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.35,
+    LifeBarOffset = 0.55,
     LifeBarSize = 0.9,
     Physics = {
         BankingSlope = 0,

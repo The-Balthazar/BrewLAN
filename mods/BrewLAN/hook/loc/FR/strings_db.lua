@@ -260,9 +260,14 @@ Unit_Description_BrewLAN_T3B007="Tourelle de défense très lourde. Attaque les 
 Unit_Description_BrewLAN_T3B008="Tourelle de défense très lourde. Attaque les unités de surface terrestres / navales avec un canon Oblivion puissant."
 
 seb3303_desc="Centre de contrôle de satellite"
+seb3303b_desc="Complexe de lancement de satellite"
+Unit_Description_BrewLAN_T3B002="Produit et lance des satellites"
+
+ability_satellite_uplink="Uplink satellite"
+
 sea0002_desc="Centre de contrôle de satellite"
 sea0002_name="Étoile brulante"
-Unit_Description_BrewLAN_T3B002="Centre de contrôle de satellite. Détecteur longue portée omni. Si le Centre de contrôle est détruit le satellite est désactivé."
+Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Fournit des images satellites en orbite visuelle. Nécessite une liaison satellite dédiée à recevoir les données."
 
 --alternatives Sniper
 sel0320_desc="Véhicule de liaison satellite"
@@ -403,6 +408,11 @@ Unit_Description_BrewLAN_T3L018="Mobile en vol stationnaire véhicule anti-marin
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="Planant système de torpille. Capable de détruire le plus grand des navires ennemis."
 
+ssb4317_desc="radar Jammer"
+ssb4317_name="Yathesel"
+Unit_Description_BrewLAN_T3B0029="installation de perturbation du radar. Crée un grand nombre de faux signaux radar dans sa zone opérationnelle, ce qui provoque une distraction et perturber l'ennemi de ciblage."
+ssa00002_desc="Hologram"
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -428,6 +438,10 @@ Unit_Description_BrewLAN_T4B003="Générateur de bouclier expérimental. Protèg
 srs0401="Navire de combat expérimental"
 srs0401_name="Persécuteur abyssal"
 Unit_Description_BrewLAN_T4S001="Navire de combat expérimental amphibie."
+
+srs0402_desc="Transport expérimental"
+srs0402_name="Abyss sur chenilles"
+Unit_Description_BrewLAN_T4L003="transport amphibie expérimental. Voyages sous l'eau plus rapidement. Equipé de puissance modérée des armes à usage général."
 
 seb0401="Usine Expérimentale"
 seb0401_name="Portique"

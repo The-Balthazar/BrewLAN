@@ -136,6 +136,10 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
+                    LODCutoff = 130,
+                    ShaderName = 'Insect',
+                },
+                {
                     LODCutoff = 260,
                     ShaderName = 'Insect',
                 },
@@ -145,18 +149,17 @@ UnitBlueprint {
             Air = {
                 Contrails = {
                     Bones = {
-                        'Contrail_001',
-                        'Contrail_002',
-                        'Contrail_003',
-                        'Contrail_004',
-                        'Contrail_004',
+                        'Contrail_Left',
+                        'Contrail_Right',
                     },
                     ZOffset = 0,
                 },
                 Effects = {
                     {
                         Bones = {
-                            'Contrail_004',
+                            'Exhaust_Left',
+                            'Exhaust_Middle',
+                            'Exhaust_Right',
                         },
                         Type = 'AirMoveExhaust01',
                     },
@@ -165,7 +168,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXA0010',
         SpawnRandomRotation = true,
-        UniformScale = 0.013,
+        UniformScale = 0.023,
     },
     Economy = {
         BuildCostEnergy = 4550,
@@ -202,9 +205,9 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-        --RadarStealthFieldRadius = 32,
         RadarRadius = 64,
         RadarStealth = true,
+        RadarStealthFieldRadius = 32,
         SonarRadius = 30,
         VisionRadius = 53,
     },
@@ -231,11 +234,11 @@ UnitBlueprint {
         MinSpeedPercent = 0.85,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 0.95,
-    SelectionSizeZ = 0.55,
-    SelectionThickness = 0.4,
+    SelectionSizeX = 1.05,
+    SelectionSizeZ = 0.25,
+    SelectionThickness = 0.25,
     SizeSphere = 1.6,
-    SizeX = 1.5,
+    SizeX = 2,
     SizeY = 0.25,
     SizeZ = 0.6,
     StrategicIconName = 'icon_fighter2_intel',

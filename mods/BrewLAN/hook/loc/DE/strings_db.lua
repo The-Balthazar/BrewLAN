@@ -260,9 +260,14 @@ Unit_Description_BrewLAN_T3B007="Superschweres Verteitigungsgeschütz. Attackier
 Unit_Description_BrewLAN_T3B008="Superschweres Verteitigungsgeschütz. Attackiert Land- und Seeeinheiten mit einer Oblivion-Kanone der Schlachtschiff-Klasse"
 
 seb3303_desc="Beobachtungs Satelliten System"
+seb3303b_desc="Satellite Launch Complex"
+Unit_Description_BrewLAN_T3B002="Produziert und startet Satelliten"
+
+ability_satellite_uplink="Satelliten-Uplink"
+
 sea0002_desc="Beobachtungs Satellit"
 sea0002_name="Brennender Stern"
-Unit_Description_BrewLAN_T3B002="Satelliten-Beobachtungssystem. Hat eine große Sichtweite und Omnisensorausrüstung. Wenn die Satellitenzentrale zerstört wird, wird der Satellit sofort deaktiviert."
+Unit_Description_BrewLAN_T3A012="Satellitengestützte Beobachtungssystem. Bietet visuelle Satellitenbilder aus dem Orbit. Benötigt einen eigenen Satelliten-Uplink-Daten von ihm zu empfangen."
 
 --Sniper bot alternatives
 sel0320_desc="Mobiler Satelliten-Uplink"
@@ -403,6 +408,11 @@ Unit_Description_BrewLAN_T3L018="Mobile schweben anti-Marinefahrzeug."
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="Schwebend Torpedo-System. Lage sind, die größte feindliche Schiffe zu zerstören."
 
+ssb4317_desc="Radar-Störsender"
+ssb4317_name="Yathesel"
+Unit_Description_BrewLAN_T3B0029="Radar Störung Möglichkeiten. Erzeugt eine große Anzahl von falschen Radarsignalen innerhalb seines Betriebsbereiches, eine Ablenkung und stört Feind und verursachte Targeting."
+ssa00002_desc="Hologramm"
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -428,6 +438,10 @@ Unit_Description_BrewLAN_T4B003="Experimenteller Schildgenerator. Schützt ein g
 srs0401="Experimentelles Schlachtschiff"
 srs0401_name="Abyssal Prosecutor"
 Unit_Description_BrewLAN_T4S001="Experimentelles amphibisches Schlachtschiff."
+
+srs0402_desc="experimentelle Transport"
+srs0402_name="Abyss Crawler"
+Unit_Description_BrewLAN_T4L003="Experimentelle amphibischen Transport. Reist schneller unter Wasser. Ausgestattet mit mäßiger Leistung Allzweckwaffen."
 
 seb0401="Experimentelle Fabrik"
 seb0401_name="Gantry"

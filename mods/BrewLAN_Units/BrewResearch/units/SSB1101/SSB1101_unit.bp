@@ -89,7 +89,7 @@ UnitBlueprint {
                 Width = 6.4,
             },
         },
-        UniformScale = 0.06,
+        UniformScale = 0.064,
     },
     Economy = {
         AdjacentStructureEnergyMod = -2,
@@ -129,7 +129,7 @@ UnitBlueprint {
         HelpText = '<LOC usb1101_help>Power Generator',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.35,
+    LifeBarOffset = 0.5,
     LifeBarSize = 0.9,
     Physics = {
         BankingSlope = 0,
@@ -156,6 +156,7 @@ UnitBlueprint {
         TurnRate = 0,
     },
     SelectionSizeX = 0.65,
+    SelectionCenterOffsetX = 0.06,
     SelectionSizeZ = 0.65,
     SelectionThickness = 0.6,
     SizeX = 0.6,

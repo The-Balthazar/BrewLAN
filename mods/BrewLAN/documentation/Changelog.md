@@ -1202,7 +1202,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2018-07-31
 
-  * Added a Cybran tech 2 stealth recon plane. It has a quick custom model. Probably getting reworked.
+  * Added a Cybran tech 2 stealth recon plane. It looks terrible. Getting reworked.
   * Added the Stillson Class: Cybran tech 3 field engineering ship.
   * Fixed the inverted normals on the Barwick Class.
   * Replaced the icons for the UEF and Aeon special fabricator and generators, and the Centurion, Ivan, and the Aspis.
@@ -1214,6 +1214,21 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Incremented the version number and UID of Crystal Hill, Paragon Game, TeaD, Waterlag, Gantry Hax 1-3, BrewUI, Pulchritudinousity, CrateDrop, and Lucky Dip.
     * They had been changed since 0.7.5.5 without updating the version number.
   * Improved the descriptions of the Gantry Hax modules, differentiated their UIDs, and defined them as conflicts of each other.
+  * R&D: Re-adjusted the sizes, lifebar positions, and selection outlines of the wind turbines so that they match better.
+
+  ### 2018-08-01
+
+  * R&D: Added the Seraphim T2 bomber.
+  * Replaced the icons for the Seraphim T3 gunship and research centres.
+  * R&D: Removed unused icon for UEF turbine research.
+  * Updated the language documents. All of them. Every last one.
+  * Replaced the model for the Blade Raven: Cybran tech 2 stealth recon plane.
+  * Created a distance model for the Blade Raven.
+  * Fixed the stealth field on the Blade Raven.
+  * Updated threat values for resource buildings and a few new things.
+  * Created a distance model for the Seraphim T2 bomber.
+  * Increased the damage of the T2 dedicated bombers by around 18.7%.
+  * R&D: Added Reaper: Cybran T2 Tactical Bomber.
 
 ## 2016-12-15|0.7.5.5
 

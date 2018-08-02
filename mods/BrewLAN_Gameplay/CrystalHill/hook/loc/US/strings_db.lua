@@ -1,3 +1,4 @@
+--ISO_639-1_code=EN
 --[PLAYERNAME][Message]
 crystal_0001=" controls the crystal."
 crystal_0002=" and their allies win with the crystal."

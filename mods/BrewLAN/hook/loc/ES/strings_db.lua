@@ -254,15 +254,20 @@ seb2311_name="guardián"
 ssb2311_name="Sinn Unthe"
 srb2311_name="Castigador"
 sab2311_name="Nihiloid"
-Unit_Description_BrewLAN_T3B005="torre defensiva muy pesado. Ataques terrestres y unidades marinas con un poderoso cañón gauss acorazado grado."
+Unit_Description_BrewLAN_T3B005="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un poderoso cañón gauss acorazado grado."
 Unit_Description_BrewLAN_T3B006="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un arma poderosa energía."
 Unit_Description_BrewLAN_T3B007="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un potente cañón de protones acorazado grado."
 Unit_Description_BrewLAN_T3B008="torre defensiva muy pesado. Ataques terrestres y unidades basadas en el mar con un cañón de gran alcance olvido."
 
 seb3303_desc="Observación de enlace ascendente por satélite"
+seb3303b_desc="Complejo de Lanzamiento de Satélites"
+Unit_Description_BrewLAN_T3B002="Produce y lanza satélites"
+
+ability_satellite_uplink="de señal de satélite"
+
 sea0002_desc="satélite de observación"
 sea0002_name="Burning Star"
-Unit_Description_BrewLAN_T3B002="basado en satélites del sistema de observación. Tiene una amplia línea de visión y sensores omnidireccionales. Si su centro de control está destruido, el satélite se desactiva inmediatamente."
+Unit_Description_BrewLAN_T3A012="basado en satélites del sistema de observación. Proporciona imágenes de satélite visual desde la órbita. Requiere una conexión vía satélite dedicada a recibir datos de él."
 
 --alternativas de francotirador
 sel0320_desc="Móviles por satélite de enlace ascendente"
@@ -403,6 +408,11 @@ Unit_Description_BrewLAN_T3L018="Mobile flotando vehículo anti-naval."
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="Al pasar por el sistema de torpedos. Capaz de destruir el mayor de los buques enemigos."
 
+ssb4317_desc="radar Jammer"
+ssb4317_name="Yathesel"
+Unit_Description_BrewLAN_T3B0029="instalación de radar interrupción. Crea un gran número de señales de radar falsas dentro de su área operativa, causando una distracción e interrumpiendo enemigo orientación."
+ssa00002_desc="holograma"
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -428,6 +438,10 @@ Unit_Description_BrewLAN_T4B003="generador de escudo experimental. Protege un á
 srs0401="experimental acorazado"
 srs0401_name="abyssal Persecutor"
 Unit_Description_BrewLAN_T4S001="acorazado anfibio Experimental."
+
+srs0402_desc="Transporte experimental"
+srs0402_name="abismo de oruga"
+Unit_Description_BrewLAN_T4L003="transporte anfibio Experimental. Viaja más rápido bajo el agua. Equipado con moderada potencia armas de uso general."
 
 seb0401="fábrica experimental"
 seb0401_name="Portal"

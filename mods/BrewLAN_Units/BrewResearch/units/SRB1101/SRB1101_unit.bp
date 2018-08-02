@@ -95,7 +95,7 @@ UnitBlueprint {
                 Width = 6.4,
             },
         },
-        UniformScale = 0.06*0.9,
+        UniformScale = 0.05,
     },
     Economy = {
         AdjacentStructureEnergyMod = -2,
