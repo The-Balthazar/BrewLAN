@@ -11,6 +11,7 @@ function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
     RNDPrepareScript(all_blueprints.Unit)
     RestrictExistingBlueprints(all_blueprints.Unit)
+    RebalanceExistingBlueprints(all_blueprints.Unit)
     GenerateResearchItemBPs(all_blueprints.Unit)
 end
 
@@ -64,6 +65,52 @@ function RestrictExistingBlueprints(all_bps)
     for i, id in restrict do
         if all_bps[id] then
             table.insert(all_bps[id].Categories, 'RESEARCHLOCKED')
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
+-- Rebalance a few vanilla units
+--------------------------------------------------------------------------------
+function RebalanceExistingBlueprints(all_bps)
+    local t3radars = {
+        uab3104 = 'sab3301',
+        ueb3104 = 'seb3301',
+        urb3104 = 'srb3301',
+        xsb3104 = 'ssb3301',
+    }
+    for id, omniID in t3radars do
+        if all_bps[id] and all_bps[omniID] then
+            local bp = all_bps[id]
+            if bp.Intel.OmniRadius and bp.Intel.OmniRadius != 0 then
+                --maybe give omniradius * ~ 1.5 to equivelant dedicated omni to match balance.
+                bp.Intel.OmniRadius = nil
+
+                --Remove omni categories
+                table.removeByValue(bp.Categories, 'OMNI')
+                table.removeByValue(bp.Categories, 'OVERLAYOMNI')
+                if not table.find(bp.Categories, 'RADAR') then
+                    table.insert(bp.Categories, 'RADAR')
+                end
+
+                --Remove omni visiual elements
+                table.removeByValue(bp.Display.Abilities, 'Omni')
+                table.removeByValue(bp.Display.Abilities, 'Omni Sensor')
+                table.removeByValue(bp.Display.Abilities, '<LOC ability_omni>Omni Sensor')
+                if bp.General.OrderOverrides.RULEUTC_IntelToggle then
+                    bp.General.OrderOverrides.RULEUTC_IntelToggle.bitmapId = 'radar'
+                    bp.General.OrderOverrides.RULEUTC_IntelToggle.helpText = 'toggle_radar'
+                end
+                bp.Description = '<LOC ueb3201_desc>Radar System'
+
+                --Adjust costs
+                if bp.Economy.MaintenanceConsumptionPerSecondEnergy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
+                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.5
+                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy / 3 * 2
+                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass / 3 * 2
+                    bp.Economy.BuildTime = bp.Economy.BuildTime / 3 * 2
+                end
+            end
         end
     end
 end
@@ -238,7 +285,7 @@ function RNDGiveCategoriesAndDefineCosts(all_bps, newid, ref)
                     bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * i
                 end
                 if not (ref.Economy.ResearchMultTime or ref.Economy.ResearchMult) then
-                    bp.Economy.BuildTime = bp.Economy.BuildTime * i
+                    bp.Economy.BuildTime = bp.Economy.BuildTime * math.max(1, i * 0.5)
                 end
                 --Experimentals escape this, because they cost stupid amounts already. Pay once is enough.
             end
@@ -322,7 +369,7 @@ end
 
 function DumpOldBuiltByCategories(all_bps, cat)
     --This dumping of old categories is so that they remain valid categories, but categories that do nothing when other mods affect and reference them.
-    if not all_bps.zzz6969 then all_bps.zzz6969 = {BlueprintId = 'zzz6969',Categories = {}} end
+    if not all_bps.zzz6969 then all_bps.zzz6969 = {BlueprintId = 'zzz6969',Categories = {'NOTHINGIMPORTANT'}} end
     if all_bps.zzz6969 and not table.find(all_bps.zzz6969.Categories, cat) then
         table.insert(all_bps.zzz6969.Categories, cat)
     end

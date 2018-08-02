@@ -94,7 +94,7 @@ Unit_Description_RND_011="Produces a variable quantity of energy."
 saa0211_desc="Tactical Bomber"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-srs0211_name="Reaper"
+sra0211_name="Reaper"
 Unit_Description_RND_008="Intermediate bomber aircraft."
 --Maintained separately in case I make them interesting
 Unit_Description_RND_009=Unit_Description_RND_008

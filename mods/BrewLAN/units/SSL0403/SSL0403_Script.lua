@@ -6,10 +6,14 @@ local SConstructionUnit = import('/lua/seraphimunits.lua').SConstructionUnit
 local SLandUnit = import('/lua/seraphimunits.lua').SLandUnit
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local SDFUltraChromaticBeamGenerator = import('/lua/seraphimweapons.lua').SDFUltraChromaticBeamGenerator
+local tablefind = table.find -- local this to lower the overhead slightly.
+local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
 
 SSL0403 = Class(SConstructionUnit) {
     Weapons = {
         MainTurret = Class(SDFUltraChromaticBeamGenerator) {},
+        --[[
         BladeWeapon = Class(SDFUltraChromaticBeamGenerator) {
             CreateProjectileAtMuzzle = function(self, muzzle)
                 --LOG("AASDKBASD")
@@ -53,7 +57,7 @@ SSL0403 = Class(SConstructionUnit) {
                     self.unit.Trash:Add( self.AttackAnim )
                 end,
             },
-        },
+        },]]
     },
 
     OnCreate = function(self)
@@ -141,9 +145,29 @@ SSL0403 = Class(SConstructionUnit) {
         end
     end,
 
+    CheckBuildRestrictionsAllow = function(self, WorkID)
+        local Restrictions = ScenarioInfo.Options.RestrictedCategories
+        if table.getn(Restrictions) == 0 then
+            return true
+        elseif VersionIsFAF then
+            return not import('/lua/game.lua').IsRestricted(WorkID)
+        else
+            LOG("Checking we aren't being a cheatyface")
+            local restrictedData = import('/lua/ui/lobby/restrictedunitsdata.lua').restrictedUnits
+            for i, group in Restrictions do
+                for j, cat in restrictedData[group].categories do --
+                    if WorkID == cat or tablefind(__blueprints[WorkID].Categories, cat) then
+                        return false
+                    end
+                end
+            end
+        end
+        return true
+    end,
+
     CreatePod = function(self, WorkID)
         --This first section is for compatibility with R&D.
-        if table.find(__blueprints[WorkID].Categories, 'SELECTABLE') and (table.find(__blueprints[WorkID].Categories, 'TECH1') or table.find(__blueprints[WorkID].Categories, 'TECH2') or table.find(__blueprints[WorkID].Categories, 'TECH3') or table.find(__blueprints[WorkID].Categories, 'EXPERIMENTAL')) then
+        if tablefind(__blueprints[WorkID].Categories, 'SELECTABLE') and (tablefind(__blueprints[WorkID].Categories, 'TECH1') or tablefind(__blueprints[WorkID].Categories, 'TECH2') or tablefind(__blueprints[WorkID].Categories, 'TECH3') or tablefind(__blueprints[WorkID].Categories, 'EXPERIMENTAL')) and self:CheckBuildRestrictionsAllow(WorkID) then
             if true then --[TO DO!!!] MAKE SURE THIS ISN'T AGAINST BUILD RESTRICTIONS!!
                 RemoveBuildRestriction(self:GetArmy(), categories[WorkID] )
             end

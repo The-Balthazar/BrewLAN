@@ -622,7 +622,7 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Direct Fire',
             WeaponUnpacks = false,
-        },
+        },--[[
         {
 
             AutoInitiateAttackCommand = true,
@@ -708,7 +708,7 @@ UnitBlueprint {
             WeaponCategory = 'Direct Fire Experimental',
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,
-        },
+        },]]
         {
             Damage = 1000,
             DamageFriendly = true,

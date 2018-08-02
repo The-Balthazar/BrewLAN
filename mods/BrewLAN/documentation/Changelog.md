@@ -1230,6 +1230,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Increased the damage of the T2 dedicated bombers by around 18.7%.
   * R&D: Added Reaper: Cybran T2 Tactical Bomber.
 
+  ### 2018-08-02
+
+  * R&D: Improved the texture on the Reaper.
+  * R&D: Fixed the entry for Reaper's name, and updated the Russian translation.
+  * Blade Raven's stealth field is no longer free, starts disabled, and has a toggle.
+  * Set Excalibur to use firing solution instead of aim bone.
+  * Removed the dodgy unfinished blade weapon from Iyadesu.
+  * Iyadesu now respects build restrictions. On Steam, FAF, and LOUD.
+  * Caffe Corretto and Research & Daiquiris now have BrewLAN listed as a requirement.
+  * Paragon Game: Fixed old unitID references in restricted data.
+  * R&D: Research items now respect build restrictions.
+  * R&D: Halved the research costs of the tech 1 artillery.
+  * R&D: Set the default time multipliers for research to be x1 for T1, 2, and 4, and 1.5 for T3.
+  * R&D: Halved the research time of the tech 2 bombers.
+  * R&D: Set the Coleman to be tagged as OMNI, not RADAR.
+  * R&D: Lowered the build time of the Coleman.
+  * R&D: Implemented T3 radar rework. Only applies where dedicated omni exists.
+  * R&D: Created a super hacky script that makes the AI able to tech up.
+  * R&D: Added the wind turbines to the T1EnergyProduction platoon.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

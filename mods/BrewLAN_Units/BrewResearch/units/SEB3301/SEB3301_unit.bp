@@ -26,7 +26,7 @@ UnitBlueprint {
         'STRUCTURE',
         'INTELLIGENCE',
         'TECH3',
-        'RADAR',
+        'OMNI',
         'DRAGBUILD',
         'SIZE12',
         'VISIBLETORECON',
@@ -110,7 +110,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 30000*1.2,
         BuildCostMass = 2400*1.2,
-        BuildTime = 2575*1.2,
+        BuildTime = 2400,
         MaintenanceConsumptionPerSecondEnergy = 3000,
         RebuildBonusIds = {
             'seb3301',

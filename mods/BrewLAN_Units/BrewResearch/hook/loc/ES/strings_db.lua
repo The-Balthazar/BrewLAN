@@ -1,5 +1,5 @@
 --ISO_639-1_code=ES
---Translator: 
+--Translator:
 
 --Los centros de investigación
 seb9301_desc="Centro de Investigación"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="Produce una cantidad variable de energía."
 saa0211_desc="bombardero táctico"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-srs0211_name="segador"
+sra0211_name="segador"
 Unit_Description_RND_008="bombarderos intermedia."
 --Mantenido por separado en caso de que los hacen interesantes
 Unit_Description_RND_009=Unit_Description_RND_008

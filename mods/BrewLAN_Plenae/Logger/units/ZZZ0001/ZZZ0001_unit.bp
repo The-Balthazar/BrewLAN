@@ -130,9 +130,9 @@ UnitBlueprint {
     SelectionSizeX = 0.75*3,
     SelectionSizeZ = 1.25*3,
     SelectionThickness = 0.45,
-    SizeX = 1*3,
-    SizeY = 0.5*3,
-    SizeZ = 2*3,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 6.5,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 200,
     Wreckage = {

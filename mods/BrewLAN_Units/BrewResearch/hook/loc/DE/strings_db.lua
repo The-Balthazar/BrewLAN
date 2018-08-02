@@ -1,5 +1,5 @@
 --ISO_639-1_code=DE
---Translator: 
+--Translator:
 
 --Forschungszentren
 seb9301_desc="Forschungszentrum"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="Erzeugt eine variable Energiemenge."
 saa0211_desc="Taktischer Bomber"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-srs0211_name="Sensenmann"
+sra0211_name="Sensenmann"
 Unit_Description_RND_008="Zwischen Bomber."
 --Verwalten separat falls ich mache sie interessant
 Unit_Description_RND_009=Unit_Description_RND_008

@@ -95,6 +95,7 @@ UnitBlueprint {
         RebuildBonusIds = {
             'seb2103',
         },
+        ResearchMult = 0.5,
     },
     Footprint = {
         SizeX = 1,

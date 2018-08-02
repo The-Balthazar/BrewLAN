@@ -173,6 +173,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 4550,
         BuildCostMass = 120,
+        MaintenanceConsumptionPerSecondEnergy = 50,
         BuildTime = 650,
     },
     Footprint = {
@@ -200,7 +201,16 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'air',
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
         TechLevel = 'RULEUTL_Secret',
+        ToggleCaps = {
+            RULEUTC_StealthToggle = true,
+        },
         UnitName = '<LOC sra0201_name>Blade Raven',
         UnitWeight = 1,
     },

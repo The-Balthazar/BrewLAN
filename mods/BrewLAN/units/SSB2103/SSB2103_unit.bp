@@ -106,6 +106,7 @@ UnitBlueprint {
         BuildCostEnergy = 7500,
         BuildCostMass = 900,
         BuildTime = 900,
+        ResearchMult = 0.5,
         RebuildBonusIds = {
             'ssb2103',
         },

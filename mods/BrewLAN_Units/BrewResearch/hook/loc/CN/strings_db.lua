@@ -1,5 +1,5 @@
 --ISO_639-1_code=ZH
---Translator: 
+--Translator:
 
 --研究中心
 seb9301_desc="研究中心"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="产生能量的变化量。"
 saa0211_desc="战术轰炸机"
 sea0211_name="龙卷风"
 ssa0211_name="辛恩"
-srs0211_name="收割者"
+sra0211_name="收割者"
 Unit_Description_RND_008="中间轰炸机。"
 --在单独的情况下保持我让他们感兴趣
 Unit_Description_RND_009=Unit_Description_RND_008

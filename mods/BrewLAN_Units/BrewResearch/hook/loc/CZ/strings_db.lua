@@ -1,5 +1,5 @@
 --ISO_639-1_code=CS
---Translator: 
+--Translator:
 
 --výzkumná centra
 seb9301_desc="Výzkumné centrum"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="Vytváří variabilní množství energie."
 saa0211_desc="Taktický Bombardér"
 sea0211_name="Tornádo"
 ssa0211_name="Sinn"
-srs0211_name="Žací stroj"
+sra0211_name="Žací stroj"
 Unit_Description_RND_008="Intermediate bombardovací letoun."
 --Udržovány odděleně pro případ, že aby byly zajímavé
 Unit_Description_RND_009=Unit_Description_RND_008
