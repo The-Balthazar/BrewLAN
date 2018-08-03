@@ -179,6 +179,7 @@
 * T3 Armored Mass Extractor.
 * T3 Optics Tracking Facility.
 * T3 Nuke Mine.
+* T3 Mobile AA/TMD.
 
 #### Functional:
 * T3 Heavy Point Defense.
@@ -188,9 +189,6 @@
 
 #### Pending:
 * T3 Anti Shield.
-* T3 Mobile AA
-* T3 Field Engineering Ship.
-* T3 Mobile tactical missile defense.
 * T3 Mobile Radar.
 
 ## Experimentals:

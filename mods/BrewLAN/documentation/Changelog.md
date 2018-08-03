@@ -1250,6 +1250,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Created a super hacky script that makes the AI able to tech up.
   * R&D: Added the wind turbines to the T1EnergyProduction platoon.
 
+  ### 2018-08-03
+
+  * Tweaked some AI platoons.
+  * Bubble Tea: Added the shields to AI platoon T3ShieldDefense.
+  * R&D: Added T2 bombers to AI platoons.
+  * Added the Abyss Crawler to T3AirTransport platoon.
+  * Added the Iyadesu to T4LandExperimental1.
+  * Added a Seraphim T3 mobile AA/TMD.
+  * Replaced the textures on the UEF Engineering Resource buildings.
+  * Changed Excalibur's aiming again.
+  * R&D: Gave the Aeon research centres unique models.
+  * R&D: Added the dedicated Omni and the Retributor to AI platoons.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

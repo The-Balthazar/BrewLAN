@@ -83,18 +83,17 @@ Units that I wanted to make, but either I didn't want directly in BrewLAN, or ca
 
 ### Bubble Tea
 * Adds experimental shields.
-* 66% complete; missing Seraphim experimental shield.
+  * Aeon shield doesn't work on FAF.
 
 ### Caffe Corretto
 * Adds lots of extra turrets.
-* Turrets are built by field engineers, so functionally requires BrewLAN.
+* Turrets are built by field engineers, so requires BrewLAN.
 * Has no criteria for being 'finished' as a mod; it's just turrets.
 
 ### Research & Daiquiris
 * Functionally separates the hardware and software of tech levels and blueprints.
 * Adds research centres, tech level researches and unit unlock researches.
 * Currently missing planned units:
-  * Unique models for Aeon research centres.
   * Cybran, Seraphim, and Aeon dedicated omni sensors.
   * Light tech 2 power generators; halfway point between T1 and T2.
   * Hovercraft and submarine factories.

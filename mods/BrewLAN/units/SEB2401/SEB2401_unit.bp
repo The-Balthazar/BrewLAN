@@ -194,7 +194,7 @@ UnitBlueprint {
                 },
             },
             --AutoInitiateAttackCommand = true,
-            BallisticArc = 'RULEUBA_LowArc',
+            BallisticArc = 'RULEUBA_None',
 
             CameraShakeDuration = 0.1,
             CameraShakeMax = 3,
@@ -266,7 +266,7 @@ UnitBlueprint {
             TurretYawRange = 180,
             TurretYawSpeed = 8,
             Turreted = true,
-            UseFiringSolutionInsteadOfAimBone = true,
+            --UseFiringSolutionInsteadOfAimBone = true,
             WeaponCategory = 'Direct Fire',
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,

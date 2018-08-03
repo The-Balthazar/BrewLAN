@@ -3,52 +3,76 @@ UnitList = {
 -- Gantry things
 --------------------------------------------------------------------------------
 T1LandFactory = {
-    UEF =		{'seb0401', 40},
-    Aeon =	{'sab0401', 20},
-    Cybran =		{'srb0401', 40},
+    UEF = 		{'seb0401', 40},
+    Aeon = 		{'sab0401', 10},
+    Cybran = 	{'srb0401', 40},
+    Seraphim = 	{'ssb0401', 10},
 },
 T2LandFactory = {
     UEF =		{'seb0401', 50},
-    Aeon =	{'sab0401', 25},
-    Cybran =		{'srb0401', 50},
+    Aeon =		{'sab0401', 10},
+    Cybran =	{'srb0401', 50},
+    Seraphim = 	{'ssb0401', 10},
 },
 T3LandFactory = {
     UEF =		{'seb0401', 60},
-    Aeon =	{'sab0401', 30},
-    Cybran =		{'srb0401', 60},
+    Aeon =		{'sab0401', 10},
+    Cybran =	{'srb0401', 60},
+    Seraphim = 	{'ssb0401', 10},
+},
+T1AirFactory = {
+    UEF =		{'seb0401', 40},
+    Aeon =		{'sab0401', 40},
+    Cybran =	{'srb0401', 10},
+    Seraphim = 	{'ssb0401', 10},
+},
+T2AirFactory = {
+    UEF =		{'seb0401', 50},
+    Aeon =		{'sab0401', 50},
+    Cybran =	{'srb0401', 10},
+    Seraphim = 	{'ssb0401', 10},
+},
+T3AirFactory = {
+    UEF =		{'seb0401', 60},
+    Aeon =		{'sab0401', 60},
+    Cybran =	{'srb0401', 10},
+    Seraphim = 	{'ssb0401', 10},
 },
 T1SeaFactory = {
     UEF =		{'seb0401', 40},
-    Aeon =	{'sab0401', 20},
-    Seraphim = {'ssb0401', 90},
+    Aeon =		{'sab0401', 10},
+    Cybran =	{'srb0401', 10},
+    Seraphim = 	{'ssb0401', 90},
 },
 T2SeaFactory = {
     UEF =		{'seb0401', 50},
-    Aeon =	{'sab0401', 25},
-    Seraphim = {'ssb0401', 95},
+    Aeon =		{'sab0401', 10},
+    Cybran =	{'srb0401', 10},
+    Seraphim = 	{'ssb0401', 95},
 },
 T3SeaFactory = {
     UEF =		{'seb0401', 60},
-    Aeon =	{'sab0401', 30},
-    Seraphim = {'ssb0401', 100},
+    Aeon =		{'sab0401', 10},
+    Cybran =	{'srb0401', 10},
+    Seraphim = 	{'ssb0401', 100},
 },
 T3QuantumGate = {
     UEF =		{'seb0401', 60},
-    Aeon =	{'sab0401', 60},
-    Cybran =		{'srb0401', 60},
-    Seraphim = {'ssb0401', 60},
+    Aeon =		{'sab0401', 60},
+    Cybran =	{'srb0401', 60},
+    Seraphim = 	{'ssb0401', 60},
 },
 --------------------------------------------------------------------------------
 -- Shields
 --------------------------------------------------------------------------------
-T3ShieldDefense = {
-    Cybran =	{'srb4401', 50}, #Iron Curtain
-},
 T2ShieldDefense = {
     Cybran =	{'urb4205', 75}, #ED3
     --UEF =		{'seb4102', 10},
     --Aeon =		{'sab4102', 10},
     --Seraphim =	{'ssb4102', 10},
+},
+T3ShieldDefense = {
+    Cybran =	{'srb4401', 50}, #Iron Curtain
 },
 --------------------------------------------------------------------------------
 -- Tech 3 Buildings
@@ -64,7 +88,7 @@ T2GroundDefense = {
     Aeon =		{'sab2306', 33},
 },
 T3GroundDefense = {
-    UEF =	{'seb2401', 25},
+    UEF =		{'seb2401', 25},
 },
 T2Artillery = {
     UEF =		{'srb2311', 80},
@@ -83,19 +107,19 @@ T2NavalDefense = {
 --------------------------------------------------------------------------------
 T3EnergyProduction = {
     UEF =		{'seb1311', 80},
-    Cybran =	{'srb1311', 50},
+    Cybran =	{'srb1311', 80},
     Aeon =		{'sab1311', 80},
     Seraphim =	{'ssb1311', 80},
 },
 T3MassExtraction = {
-    UEF =		{'seb1312', 20},
-    Cybran =	{'srb1312', 40},
+    UEF =		{'seb1312', 80},
+    Cybran =	{'srb1312', 80},
     Aeon =		{'sab1312', 80},
     Seraphim =	{'ssb1312', 80},
 },
 T3MassCreation = {
-    UEF =		{'seb1313', 20},
-    Cybran =	{'srb1313', 60},
+    UEF =		{'seb1313', 80},
+    Cybran =	{'srb1313', 80},
     Aeon =		{'sab1313', 80},
     Seraphim =	{'ssb1313', 80},
 },
@@ -144,11 +168,17 @@ T3LandArtillery = {
     Cybran =	{'srl0321', 5},
     UEF =		{'sel0321', 5},
 },
+T4LandExperimental1 = {
+    Seraphim =  {'ssl0403', 3},
+},
 T4AirExperimental1 = {
-    UEF = {'seb0401', 100},
-    Aeon =	{'sab0401', 100},
-    Cybran = {'srb0401', 100},
-    Seraphim = {'ssb0401', 100},
+    UEF = 		{'seb0401', 100},
+    Aeon =		{'sab0401', 100},
+    Cybran = 	{'srb0401', 100},
+    Seraphim = 	{'ssb0401', 100},
+},
+T3AirTransport = {
+    Cybran =    {'srl0401', 20},
 },
 --------------------------------------------------------------------------------
 -- End
