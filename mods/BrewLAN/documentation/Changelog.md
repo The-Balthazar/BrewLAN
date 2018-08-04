@@ -1263,6 +1263,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Gave the Aeon research centres unique models.
   * R&D: Added the dedicated Omni and the Retributor to AI platoons.
 
+  ### 2018-08-04
+
+  * R&D: Added the Aeon Omni.
+  * R&D: Gave the UEF Omni distance models.
+  * R&D: Added the Cybran Omni. It's texture is unfinished.
+  * R&D: Fixed the collision models of the Omni buildings.
+
 ## 2016-12-15|0.7.5.5
 
 * Release version.

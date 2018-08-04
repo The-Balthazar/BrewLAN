@@ -1,18 +1,18 @@
 UnitBlueprint {
     Audio = {
         Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Med_Land',
+            Bank = 'UALDestroy',
+            Cue = 'UAB_Destroy_Lrg_PreDestroy',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DoneBeingBuilt = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB3201_Activate',
+            Bank = 'UAB',
+            Cue = 'UAB3201_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'UEF_Select_Radar',
+            Cue = 'Aeon_Select_Radar',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -22,7 +22,7 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
-        'UEF',
+        'AEON',
         'STRUCTURE',
         'INTELLIGENCE',
         'TECH3',
@@ -53,13 +53,7 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
         },
         BlinkingLights = {
-            {
-                BLBone = 'Emitter',
-                BLOffsetX = 0,
-                BLOffsetY = 0,
-                BLOffsetZ = 0,
-                BLScale = 1,
-            },
+            {BLBone = 'Reciever', BLScale = 1},
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -70,7 +64,7 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Emitter',
+                            'Reciever',
                         },
                         Type = 'Radar01',
                     },
@@ -80,20 +74,20 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {LODCutoff = 130, ShaderName = 'Unit'},
-                {LODCutoff = 260, ShaderName = 'Unit'},
-                {LODCutoff = 390, ShaderName = 'Unit'},
+                {LODCutoff = 130, ShaderName = 'Aeon'},
+                {LODCutoff = 260, ShaderName = 'Aeon'},
+                {LODCutoff = 390, ShaderName = 'Aeon'},
             },
         },
         PlaceholderMeshName = 'UXB0015',
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar8x_01_albedo',
+                Albedo = 'Tarmacs/Tar8x_aeon_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 6.4*2,
-                Normal = 'Tarmacs/Tar8x_01_normals',
+                Normal = 'Tarmacs/Tar8x_aeon_01_normals',
                 Orientations = {
                     0,
                     90,
@@ -104,7 +98,7 @@ UnitBlueprint {
                 Width = 6.4*2,
             },
         },
-        UniformScale = 0.08,
+        UniformScale = 0.08*1.6,
     },
     Economy = {
         BuildCostEnergy = 30000*1.2,
@@ -112,7 +106,7 @@ UnitBlueprint {
         BuildTime = 2400,
         MaintenanceConsumptionPerSecondEnergy = 3000,
         RebuildBonusIds = {
-            'seb3301',
+            'sab3301',
         },
     },
     Footprint = {
@@ -137,7 +131,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'UEF',
+        FactionName = 'Aeon',
         Icon = 'land',
         OrderOverrides = {
             RULEUTC_IntelToggle = {
@@ -150,7 +144,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        UnitName = '<LOC seb3301_name>Coleman',
+        UnitName = '<LOC sab3301_name>Heimdallr',
         UnitWeight = 1,
     },
     Intel = {
@@ -189,9 +183,10 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         TurnRate = 0,
     },
-    SelectionSizeX = 2.5,
-    SelectionSizeZ = 2.5,
-    SelectionThickness = 0.35,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionCenterOffsetZ = -0.5,
+    SelectionThickness = 0.45,
     SizeX = 3,
     SizeY = 6,
     SizeZ = 3,

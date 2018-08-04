@@ -1,18 +1,18 @@
 UnitBlueprint {
     Audio = {
         Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Med_Land',
+            Bank = 'URLDestroy',
+            Cue = 'URB_Destroy_Med_Land',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DoneBeingBuilt = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB3201_Activate',
+            Bank = 'URB',
+            Cue = 'URB3201_Activate',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         UISelection = Sound {
             Bank = 'Interface',
-            Cue = 'UEF_Select_Radar',
+            Cue = 'Cybran_Select_Radar',
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
@@ -22,7 +22,7 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
-        'UEF',
+        'CYBRAN',
         'STRUCTURE',
         'INTELLIGENCE',
         'TECH3',
@@ -53,13 +53,9 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
         },
         BlinkingLights = {
-            {
-                BLBone = 'Emitter',
-                BLOffsetX = 0,
-                BLOffsetY = 0,
-                BLOffsetZ = 0,
-                BLScale = 1,
-            },
+            {BLBone = 'R_001', BLScale = 1},
+            {BLBone = 'R_002', BLScale = 1},
+            {BLBone = 'R_003', BLScale = 1},
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -70,7 +66,9 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Emitter',
+                            'R_001',
+                            'R_002',
+                            'R_003',
                         },
                         Type = 'Radar01',
                     },
@@ -80,20 +78,20 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {LODCutoff = 130, ShaderName = 'Unit'},
-                {LODCutoff = 260, ShaderName = 'Unit'},
-                {LODCutoff = 390, ShaderName = 'Unit'},
+                {LODCutoff = 130, ShaderName = 'Insect'},
+                {LODCutoff = 260, ShaderName = 'Insect'},
+                {LODCutoff = 390, ShaderName = 'Insect'},
             },
         },
         PlaceholderMeshName = 'UXB0015',
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar8x_01_albedo',
+                Albedo = 'Tarmacs/Tar8x_cybran_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 6.4*2,
-                Normal = 'Tarmacs/Tar8x_01_normals',
+                Normal = 'Tarmacs/Tar8x_cybran_01_normals',
                 Orientations = {
                     0,
                     90,
@@ -104,7 +102,7 @@ UnitBlueprint {
                 Width = 6.4*2,
             },
         },
-        UniformScale = 0.08,
+        UniformScale = 0.04,
     },
     Economy = {
         BuildCostEnergy = 30000*1.2,
@@ -112,7 +110,7 @@ UnitBlueprint {
         BuildTime = 2400,
         MaintenanceConsumptionPerSecondEnergy = 3000,
         RebuildBonusIds = {
-            'seb3301',
+            'srb3301',
         },
     },
     Footprint = {
@@ -137,7 +135,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'UEF',
+        FactionName = 'Cybran',
         Icon = 'land',
         OrderOverrides = {
             RULEUTC_IntelToggle = {
@@ -150,7 +148,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        UnitName = '<LOC seb3301_name>Coleman',
+        UnitName = '<LOC srb3301_name>Qain',
         UnitWeight = 1,
     },
     Intel = {
@@ -189,11 +187,11 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         TurnRate = 0,
     },
-    SelectionSizeX = 2.5,
-    SelectionSizeZ = 2.5,
+    SelectionSizeX = 1.8,
+    SelectionSizeZ = 3,
     SelectionThickness = 0.35,
     SizeX = 3,
-    SizeY = 6,
+    SizeY = 4,
     SizeZ = 3,
     StrategicIconName = 'icon_structure3_intel',
     StrategicIconSortPriority = 230,
