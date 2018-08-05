@@ -64,6 +64,10 @@ floatingtextIVAN02="Repeating orders disabled"
 tooltipbrewlan0029="Toggle Economy Watch"
 tooltipbrewlan0030="While active, this unit will dynamically reduce its operational spying radius to an economically sustainable level."
 
+--Seraphim Mobile AA/TMD
+tooltipbrewlan0031="Toggle Weapon Priority"
+tooltipbrewlan0032="Toggle between anti-air target priority and tactical missile target priority."
+
 --------------------------------------------------------------------------------
 -- Support commander enhancements
 --------------------------------------------------------------------------------
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="Mobile anti-air missile launcher. Equipped with
 --srl0320_desc=--Mobile Missile Launcher
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile cloaking anti-air missile launcher. Must decloak to fire."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Hovering mobile anti-air and tactical missile defense."
 
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationary artillery defense grid. Equipped with an integrated threat identification and tracking system."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="Mobile tactical missile defense. Protection is 
 srl0324_desc="Mobile Sensor Array"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="High-end mobile intelligence system. While stationary it is visible only to omni, and provides extensive radar and omni coverage."
 Unit_Description_BrewLAN_T3L019="Hovering sensor array. Consumes large quantities of power to function."
 

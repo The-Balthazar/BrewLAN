@@ -9,8 +9,10 @@ selectable = true
 enabled = true
 exclusive = false
 ui_only = false
-requires = { }
-requiresNames = { }
+requires = {"25D57D85-7D84-27HT-A501-BR3WL4N000080RC1"}
+requiresNames = {
+    ["25D57D85-7D84-27HT-A501-BR3WL4N000080RC1"] = "BrewLAN 0.8",
+}
 conflicts = { }
 before = { }
 after = { }

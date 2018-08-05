@@ -64,6 +64,10 @@ floatingtextIVAN02="Powtarzanie Zamówienia wyłączone"
 tooltipbrewlan0029="Przegubowe Economy Watch"
 tooltipbrewlan0030="Podczas gdy aktywna, to urządzenie będzie dynamicznie zmniejszyć promień operacyjny szpiegostwo do zrównoważonego ekonomicznie poziomie."
 
+--Seraphim Komórka AA / TMD
+tooltipbrewlan0031="Przegubowe Broń Priorytet"
+tooltipbrewlan0032="Przełączać się między anty-powietrze priorytetu docelowej i taktycznego priorytetu docelowej pocisk."
+
 --------------------------------------------------------------------------------
 -- Udoskonalenia wsparcie dowódcy
 --------------------------------------------------------------------------------
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="Komórka anty-air missile launcher. Wyposażony
 --srl0320_desc=--Komórka Missile Launcher
 srl0320_name="Poroniony płód"
 Unit_Description_BrewLAN_T3L009="Komórka zakamuflowana ziemia-powietrze wyrzutnię rakiet. Musi stać się widoczny do ataku."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Najechanie Mobile Anti-powietrze i taktycznych obrony przeciwrakietowej."
 
 seb4303_name="Odrzut"
 Unit_Description_BrewLAN_T3B0028="Stacjonarna siatka artylerii obrony. Wyposażony w zintegrowany system identyfikacji i śledzenia zagrożeniem."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="Komórka taktycznych obrony przeciwrakietowej. 
 srl0324_desc="Sensor Array mobilna"
 srl0324_name="adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="High-end mobilny system inteligencja. Natomiast stacjonarna jest widoczny tylko dla omni, i zapewnia szeroki zasięg radaru i Omni."
 Unit_Description_BrewLAN_T3L019="Unoszące się szereg czujników. Zużywa duże ilości mocy, aby funkcjonować."
 

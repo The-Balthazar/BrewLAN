@@ -94,7 +94,7 @@ Unit_Description_RND_011="Produces a variable quantity of energy."
 saa0211_desc="Tactical Bomber"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-sra0211_name="Reaper"
+sra0211_name="Condor"
 Unit_Description_RND_008="Intermediate bomber aircraft."
 --Maintained separately in case I make them interesting
 Unit_Description_RND_009=Unit_Description_RND_008
@@ -106,6 +106,9 @@ Unit_Description_RND_010=Unit_Description_RND_008
 
 --Dedicated Omni Sensors
 seb3301_name="Coleman"
+srb3301_name="Qain"
+sab3301_name="Heimdallr"
+ssb3302_name="Selaez"
 Unit_Description_RND_012="Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 
 --Ekranoplan transports

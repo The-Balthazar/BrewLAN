@@ -154,7 +154,35 @@ SAB0401 = Class(AAirFactoryUnit) {
                 EffectsBag:Add(beamEffect)
             end
         end
-    end
+    end,
+
+    FinishBuildThread = function(self, unitBeingBuilt, order)
+        if EntityCategoryContains(categories.LAND * categories.EXPERIMENTAL, unitBeingBuilt) and self.PermOpenAnimManipulator then
+            self:SetBusy(true)
+            self:SetBlockCommandQueue(true)
+
+            self.PermOpenAnimManipulator:SetRate(-1)
+            WaitTicks(1)
+            WaitFor(self.PermOpenAnimManipulator)
+
+            if unitBeingBuilt and not unitBeingBuilt:IsDead() then
+                unitBeingBuilt:DetachFrom(true)
+            end
+            self:DetachAll(__blueprints.sab0401.Display.BuildAttachBone or 'Attachpoint')
+            self:DestroyBuildRotator()
+
+            ChangeState(self, self.RollingOffState)
+        else
+            AAirFactoryUnit.FinishBuildThread(self, unitBeingBuilt, order)
+        end
+    end,
+
+    PlayFxRollOffEnd = function(self)
+        if self.PermOpenAnimManipulator then
+            self.PermOpenAnimManipulator:SetRate(1)
+            WaitFor(self.PermOpenAnimManipulator)
+        end
+    end,
 }
 
 TypeClass = SAB0401

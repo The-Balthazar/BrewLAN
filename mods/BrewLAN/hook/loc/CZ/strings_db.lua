@@ -64,6 +64,10 @@ floatingtextIVAN02="Opakování příkazů vypnuto"
 tooltipbrewlan0029="Vypnout/Zapnout Ekonomický Dozor Sledování"
 tooltipbrewlan0030="Sleduje spotřebu energie. Aktivní dynamicky snižuje dosah sledování na ekonomicky udržitelnou úroveň."
 
+--Seraphim Mobile AA / TMD
+tooltipbrewlan0031="Toggle Weapon Priority"
+tooltipbrewlan0032="Přepínání mezi anti-vzduch priority objektů a taktické raketové cílovou prioritu."
+
 --------------------------------------------------------------------------------
 -- Vylepšení Podpůrného Velitele
 --------------------------------------------------------------------------------
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="Mobilní protiletecký odpalovač raket. Vybave
 --srl0320_desc=--Mobilní Raketomet
 srl0320_name="Tulák"
 Unit_Description_BrewLAN_T3L009="Maskovaný mobilní protiletecký raketomet. Musí se demaskovat při útoku."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Vznášející mobilní anti-vzduch a taktické raketové obrany."
 
 seb4303_name="Nárazník"
 Unit_Description_BrewLAN_T3B0028="Síť dělostřelecké obrany. Vybavena integrovaným sledovacím systémem a vyhodnocení ohrožení."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="Mobilní taktická raketová obrana. Ochrana je
 srl0324_desc="Mobilní Senzorové Pole"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="Špičkový zpravodajský systém. Nehybný je viditelný pouze pro omni a poskytuje rozsáhlé radarové a omni pokrytí."
 Unit_Description_BrewLAN_T3L019="Vznášedlo se senzorovým polem. Spotřebovává vysoké množství energie aby fungovalo."
 

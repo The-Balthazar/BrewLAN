@@ -2,6 +2,10 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2018-08-05|0.79900002479553 (Pronounced 0 point 7 9 9 floating point error)
+
+* BrewLAN 0.8 release candidate 1.
+
 ## 2017-01-18|0.7.9
 
 * Paragon Game: Fixed an issue with civilian spawns.
@@ -1269,6 +1273,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Gave the UEF Omni distance models.
   * R&D: Added the Cybran Omni. It's texture is unfinished.
   * R&D: Fixed the collision models of the Omni buildings.
+
+  ### 2018-08-05
+
+  * R&D: Finished the Cybran Omni.
+  * Updated the language documents for BrewLAN and R&D.
+  * R&D: Omni costs now directly based on original costs at run-time, to match balance.
+  * R&D: Death animation for Cybran Omni.
+  * TeaD: Removed from the gitignore list, which it had accidentally been placed on.
+  * Lucky Dip: Fixed a potential issue with duplication of map spawned units.
+  * In situations where the Independence Engine is forced to build land experimentals, it will now fold up again to allow them to leave without clipping.
 
 ## 2016-12-15|0.7.5.5
 

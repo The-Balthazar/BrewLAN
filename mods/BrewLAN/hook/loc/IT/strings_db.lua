@@ -64,6 +64,10 @@ floatingtextIVAN02="Ripetendo ordini disabilitati"
 tooltipbrewlan0029="Toggle Economia Guarda"
 tooltipbrewlan0030="Quando è attiva, l'unità ridurrà dinamicamente suo raggio spionaggio operativo ad un livello economicamente sostenibile."
 
+--Seraphim mobile AA / TMD
+tooltipbrewlan0031="Toggle Arma priorità"
+tooltipbrewlan0032="Commutare tra la priorità della destinazione anti-aria e priorità della destinazione missile tattico."
+
 --------------------------------------------------------------------------------
 -- Miglioramenti Supporto comandante
 --------------------------------------------------------------------------------
@@ -171,7 +175,7 @@ sab2222_name="Montagna"
 ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="Una miniera di all-terrain armato con una testata nucleare a pieno rendimento. detonazione manuale richiesto. Visibile solo Omni."
 
--- scudi T2 Cybran; che non ha ancora fisico Corporatura originariamente.
+-- scudi T2; Cybran che non ha ancora fisico Corporatura originariamente.
 Unit_Description_BrewLAN_T2D002="Genera uno scudo protettivo attorno unità e strutture nel suo raggio. Shield può essere aggiornato due volte."
 Unit_Description_BrewLAN_T2D003="Genera uno scudo pesante intorno unità e le strutture all'interno del suo raggio."
 
@@ -281,7 +285,7 @@ sel0321_name="astro"
 srl0321_name="Riccio"
 sal0321_name="Scarabeo"
 ssl0321_name="Ythhu"
-Unit_Description_BrewLAN_T3L004="Mobile di difesa missilistica strategica. Costruire costi includono primo missile, ma il veicolo non ha una suite di fabbricazione per la produzione di missili supplementari senza assistenza."
+Unit_Description_BrewLAN_T3L004="Mobile di difesa missilistica strategica. Costruire costi includono primo missile, ma il veicolo è priva di un privato di fabbricazione per la produzione di missili supplementari senza assistenza."
 Unit_Description_BrewLAN_T3L008="Mobile di difesa missilistica strategica. Spara una salva di tre missili contro ogni bersaglio. Costruire costi comprendono prima salva."
 
 --piattaforma sonar serafini T3
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="Cellulare lanciamissili anti-air. Dotata di app
 --srl0320_desc=--Cellulare Lanciamissili
 srl0320_name="sgattaiolare"
 Unit_Description_BrewLAN_T3L009="Cellulare mimetizzato lanciamissili terra-aria. Deve diventare visibile agli attacchi."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Librarsi Mobile Anti-aria e la difesa antimissile tattico."
 
 seb4303_name="Rinculo"
 Unit_Description_BrewLAN_T3B0028="griglia difesa dell'artiglieria stazionario. Dotato di un sistema di identificazione delle minacce e il monitoraggio integrato."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="Mobile di difesa missilistica tattico. La prote
 srl0324_desc="Array Sensor mobile"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="High-end sistema di intelligenza mobile. Mentre stazionario è visibile solo omni, e fornisce un'ampia radar e copertura omnidirezionale."
 Unit_Description_BrewLAN_T3L019="Bilico matrice di sensori. Consuma grandi quantità di energia per funzionare."
 

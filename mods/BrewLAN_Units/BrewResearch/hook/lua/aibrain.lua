@@ -1,6 +1,6 @@
 AIBrain = Class(AIBrain) {
     AISimulateResearch = function(self)
-        if self.BrainType != 'Human' then
+        if self.BrainType != 'Human' and not self.DaiquirisResearch then
             self:ForkThread(self.SimulateResearchThread)
         end
     end,

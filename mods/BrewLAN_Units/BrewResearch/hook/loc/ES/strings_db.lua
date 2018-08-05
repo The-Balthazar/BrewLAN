@@ -1,5 +1,5 @@
 --ISO_639-1_code=ES
---Translator:
+--Translator: 
 
 --Los centros de investigación
 seb9301_desc="Centro de Investigación"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="Produce una cantidad variable de energía."
 saa0211_desc="bombardero táctico"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-sra0211_name="segador"
+sra0211_name="Cóndor"
 Unit_Description_RND_008="bombarderos intermedia."
 --Mantenido por separado en caso de que los hacen interesantes
 Unit_Description_RND_009=Unit_Description_RND_008
@@ -106,6 +106,9 @@ Unit_Description_RND_010=Unit_Description_RND_008
 
 --Los sensores dedicados Omni
 seb3301_name="Coleman"
+srb3301_name="Qain"
+sab3301_name="Heimdallr"
+ssb3302_name="Selaez"
 Unit_Description_RND_012="matriz de sensores. Capaz de identificar objetivos a través del sigilo y el manto y borra repuntes jammer."
 
 --transportes ekranoplan

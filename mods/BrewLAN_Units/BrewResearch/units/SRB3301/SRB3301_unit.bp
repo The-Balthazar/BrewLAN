@@ -2,7 +2,7 @@ UnitBlueprint {
     Audio = {
         Destroyed = Sound {
             Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Med_Land',
+            Cue = 'URB_Destroy_Huge',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         DoneBeingBuilt = Sound {
@@ -51,6 +51,14 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
+        },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewresearch/units/srb3301/srb3301_adeath.sca',
+                Weight = 100,
+                AnimationRateMax = 1,
+                AnimationRateMin = 0.5,
+            },
         },
         BlinkingLights = {
             {BLBone = 'R_001', BLScale = 1},

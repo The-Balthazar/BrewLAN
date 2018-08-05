@@ -4,8 +4,7 @@
 do
     local OldCreateInitialArmyGroup = CreateInitialArmyGroup
     function CreateInitialArmyGroup(strArmy, createCommander)
-        local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')
-        if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
+        if createCommander then
             GetArmyBrain(strArmy):LuckyDip(strArmy)
         end
         return OldCreateInitialArmyGroup(strArmy, createCommander)

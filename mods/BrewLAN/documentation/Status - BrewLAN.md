@@ -597,4 +597,4 @@ Abyssal Persecutor: Experimental Battleship
   * Removed as of r647.
 
 Aeon/Seraphim Field Engineering Boat & Ships
-  * These are staying exclusive to UEF and Cybran.
+  * These are likely staying exclusive to UEF and Cybran.

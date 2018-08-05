@@ -1,5 +1,5 @@
 --ISO_639-1_code=FR
---Translator:
+--Translator: 
 
 --Centres de recherche
 seb9301_desc="Centre de recherche"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="Produit une quantité variable d'énergie."
 saa0211_desc="Bombardier Tactique"
 sea0211_name="Tornade"
 ssa0211_name="Sinn"
-sra0211_name="moissonneuse"
+sra0211_name="Condor"
 Unit_Description_RND_008="avions bombardier intermédiaire."
 --Classés séparément au cas où je les rendre intéressants
 Unit_Description_RND_009=Unit_Description_RND_008
@@ -106,6 +106,9 @@ Unit_Description_RND_010=Unit_Description_RND_008
 
 --Capteurs Omni dédiés
 seb3301_name="Coleman"
+srb3301_name="Qain"
+sab3301_name="Heimdallr"
+ssb3302_name="Selaez"
 Unit_Description_RND_012="Ensemble de capteurs. Capable d'identifier des cibles à travers la furtivité et manteau et efface blips brouilleurs."
 
 --transports ekranoplan

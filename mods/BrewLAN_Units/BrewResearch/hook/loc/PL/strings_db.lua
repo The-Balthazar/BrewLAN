@@ -1,5 +1,5 @@
 --ISO_639-1_code=PL
---Translator:
+--Translator: 
 
 --ośrodki badawcze
 seb9301_desc="Centrum Badań"
@@ -94,7 +94,7 @@ Unit_Description_RND_011="Tworzy zmienną ilość energii."
 saa0211_desc="taktyczny bombowiec"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-sra0211_name="Żniwiarz"
+sra0211_name="Kondor"
 Unit_Description_RND_008="Pośredni samolot bombowy."
 --Utrzymywane oddzielnie w przypadku I uczynić je ciekawy
 Unit_Description_RND_009=Unit_Description_RND_008
@@ -106,6 +106,9 @@ Unit_Description_RND_010=Unit_Description_RND_008
 
 --Dedykowane Omni Czujniki
 seb3301_name="Coleman"
+srb3301_name="Qain"
+sab3301_name="Heimdallr"
+ssb3302_name="Selaez"
 Unit_Description_RND_012="macierz czujników. W stanie zidentyfikować cele poprzez skradanie i płaszcz i czyści jammer blips."
 
 --ekranoplan transporty

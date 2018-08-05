@@ -64,6 +64,10 @@ floatingtextIVAN02="pedidos de repetición desactivados"
 tooltipbrewlan0029="Alternar Economía reloj"
 tooltipbrewlan0030="Si bien activa, esta unidad se reducirá dinámicamente su radio de espionaje operativa a un nivel económicamente sostenible."
 
+--Serafines móvil AA / TMD
+tooltipbrewlan0031="Prioridad de palanca Arma"
+tooltipbrewlan0032="Alternar entre la prioridad de destino anti-aire y prioridad de destino misil táctico."
+
 --------------------------------------------------------------------------------
 -- mejoras comandante apoyo
 --------------------------------------------------------------------------------
@@ -141,7 +145,7 @@ srl0209_name="Wilson"
 ssl0219_name="Iyazyn"
 Unit_Description_BrewLAN_T2L001="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Armado con un bólter pesado, radar interno, y el sigilo."
 Unit_Description_BrewLAN_T2L002="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Equipado un escudo personal y de radar."
-Unit_Description_BrewLAN_T2L003="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo de sonar, y puede construir defensas especializadas."
+Unit_Description_BrewLAN_T2L003="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo el sonar, y puede construir defensas especializadas."
 
 --almacenamientos de masa y energía
 seb1206_name="CJ-00F4T-2"
@@ -294,7 +298,7 @@ sal0319_name="Bilmon"
 srl0319_name="Casa"
 ssl0319_name="Iyazyne"
 Unit_Description_BrewLAN_T3L005="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento de menor importancia y el equipo de contra-inteligencia. Puede construir defensas especializadas."
-Unit_Description_BrewLAN_T3L006="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo de sonar, y puede construir defensas especializadas."
+Unit_Description_BrewLAN_T3L006="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo el sonar, y puede construir defensas especializadas."
 Unit_Description_BrewLAN_T3L007="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con un escudo personal y se puede construir defensas especializadas."
 
 srb1311_desc="Generador camuflado"
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="lanzador de misiles antiaéreo móvil. Equipado
 --srl0320_desc=--Lanzador de misiles móviles
 srl0320_name="Escabullirse"
 Unit_Description_BrewLAN_T3L009="camuflado lanzador de misiles móviles tierra-aire. Debe hacerse visible a los ataques."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Al pasar por móvil contra el aire y la defensa de misiles tácticos."
 
 seb4303_name="Retroceso"
 Unit_Description_BrewLAN_T3B0028="red de defensa artillería estacionaria. Equipado con un sistema de identificación de amenazas y de seguimiento integrado."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="de defensa de misiles tácticos móvil. La prot
 srl0324_desc="Sensor Array móvil"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="sistema de inteligencia móvil de gama alta. Mientras estacionaria es visible sólo a omni, y proporciona una amplia cobertura de radar y omnidireccional."
 Unit_Description_BrewLAN_T3L019="Al pasar array sensor. Consume grandes cantidades de energía para funcionar."
 

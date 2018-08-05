@@ -64,6 +64,10 @@ floatingtextIVAN02="Wiederholung deaktiviert"
 tooltipbrewlan0029="Wirtschaftliche Beobachtung Ein- /Ausschalten"
 tooltipbrewlan0030="Wenn aktiviert wird der Spionageradius dynamisch an ein wirtschaftlich aufrechterhaltbares Level angepasst."
 
+--Seraphim Mobil AA / TMD
+tooltipbrewlan0031="Toggle Waffe Priorität"
+tooltipbrewlan0032="Umschalten zwischen anti-Luft Zielpriorität und taktischer Raketenzielpriorität."
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements
 --------------------------------------------------------------------------------
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="Mobile Anti-Luft-Raketenwerfer. Ausgestattet mi
 --srl0320_desc=--Mobiler Raketen Werfer
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile und getarnte Anti-Luft-Raketenwerfer. Muss sich aber enttarnen um zu feuern."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Schwebend Mobile Anti-Luft-und taktische Raketenabwehr."
 
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationäres Artillerie Abwehrsystem. Ausgestattet mit integriertem Gefahrenidentifikations- und tracking System."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="Mobile taktische Raketenabwehr. Der Schutz ist 
 srl0324_desc="Mobile Sensor Array"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="High-End-Handy-Intelligence-System. Im Stand ist es nur omni sichtbar und bietet umfangreiches Radar und omni-Abdeckung."
 Unit_Description_BrewLAN_T3L019="Schwebend Sensorarray. Verbraucht große Energiemengen zu funktionieren."
 

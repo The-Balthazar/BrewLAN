@@ -64,6 +64,10 @@ floatingtextIVAN02="Ordre répétitif désactivé"
 tooltipbrewlan0029="Basculer la veille économique"
 tooltipbrewlan0030="Bien que active, cette unité réduira dynamiquement son rayon d'espionnage opérationnel à un niveau économiquement viable."
 
+--Séraphin mobile AA / TMD
+tooltipbrewlan0031="Priorité à bascule Weapon"
+tooltipbrewlan0032="Basculer entre la priorité de cible anti-aérienne et la priorité de la cible des missiles tactiques."
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements
 --------------------------------------------------------------------------------
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="lance-missiles anti-air mobile. Doté d'un équ
 --srl0320_desc=--Système anti-aérien furtif
 srl0320_name="Fronde"
 Unit_Description_BrewLAN_T3L009="lanceur de missiles sol-air mobile camouflé. Doit devenir visible à l'attaque."
+ssl0320_name="Atha-Ythia"
+Unit_Description_BrewLAN_T3L020="Planant anti-aérien mobile et la défense contre les missiles tactiques."
 
 seb4303_name="Recul"
 Unit_Description_BrewLAN_T3B0028="Grille de défense d'artillerie stationnaire. Équipé d'un système intégré d'identification et de suivi des menaces."
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="défense antimissile tactique mobile. La protec
 srl0324_desc="Tableau capteur mobile"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="système d'intelligence mobile haut de gamme. À l'arrêt, il est visible que de omni et fournit un radar et une vaste couverture omnidirectionnelle."
 Unit_Description_BrewLAN_T3L019="Planant réseau de capteurs. Consomme de grandes quantités d'énergie pour fonctionner."
 

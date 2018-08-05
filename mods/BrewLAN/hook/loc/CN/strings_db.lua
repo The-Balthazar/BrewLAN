@@ -64,6 +64,10 @@ floatingtextIVAN02="重复订单无效"
 tooltipbrewlan0029="切换经济观察"
 tooltipbrewlan0030="如果有效，此单元将动态其操作间谍半径降低至经济上可持续的水平。"
 
+--塞拉芬移动AA / TMD
+tooltipbrewlan0031="切换武器优先"
+tooltipbrewlan0032="防空目标优先级和战术导弹目标优先级之间进行切换。"
+
 --------------------------------------------------------------------------------
 -- 支持司令增强
 --------------------------------------------------------------------------------
@@ -371,6 +375,8 @@ Unit_Description_BrewLAN_T3L015="移动防空导弹发射装置。配备了先�
 --srl0320_desc=--移动导弹发射器
 srl0320_name="早产"
 Unit_Description_BrewLAN_T3L009="移动伪装表面对空导弹发射装置。必须成为攻击可见。"
+ssl0320_name="ATHA-Ythia"
+Unit_Description_BrewLAN_T3L020="悬停移动防空，战术导弹防御系统。"
 
 seb4303_name="畏缩"
 Unit_Description_BrewLAN_T3B0028="固定式火炮防御网。配备有集成的威胁识别和跟踪系统。"
@@ -396,6 +402,7 @@ Unit_Description_BrewLAN_T3L014="移动战术导弹防御系统。保护仅限�
 srl0324_desc="移动传感器阵列"
 srl0324_name="亚得米勒"
 sal0324_name="塔特"
+ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="高端移动智能系统。虽然固定它是可见的只有全方位，并提供广泛的雷达，全方位覆盖。"
 Unit_Description_BrewLAN_T3L019="悬停传感器阵列。消耗大量的功率工作的。"
 

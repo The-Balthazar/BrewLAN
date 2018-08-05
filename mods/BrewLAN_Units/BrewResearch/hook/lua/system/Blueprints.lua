@@ -77,13 +77,15 @@ function RebalanceExistingBlueprints(all_bps)
         uab3104 = 'sab3301',
         ueb3104 = 'seb3301',
         urb3104 = 'srb3301',
-        xsb3104 = 'ssb3301',
+        xsb3104 = 'ssb3302',--Forgot the optics tracking facility was already SSB3301
     }
     for id, omniID in t3radars do
-        if all_bps[id] and all_bps[omniID] then
-            local bp = all_bps[id]
-            if bp.Intel.OmniRadius and bp.Intel.OmniRadius != 0 then
-                --maybe give omniradius * ~ 1.5 to equivelant dedicated omni to match balance.
+        local bp = all_bps[id]
+        local omnibp = all_bps[omniID]
+        if bp and omnibp then
+            if bp.Intel.OmniRadius and bp.Intel.OmniRadius != 0 and bp.Economy.MaintenanceConsumptionPerSecondEnergy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
+                --Scale omni radii
+                omnibp.Intel.OmniRadius = bp.Intel.OmniRadius * 1.5
                 bp.Intel.OmniRadius = nil
 
                 --Remove omni categories
@@ -103,13 +105,21 @@ function RebalanceExistingBlueprints(all_bps)
                 end
                 bp.Description = '<LOC ueb3201_desc>Radar System'
 
+                --Scale health
+                omnibp.Defense.Health = bp.Defense.Health * 5
+                omnibp.Defense.MaxHealth = bp.Defense.MaxHealth * 5
+
+                --Scale costs
+                omnibp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 1.5
+                omnibp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.2
+                omnibp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.2
+                omnibp.Economy.BuildTime = bp.Economy.BuildTime * 1.2
+
                 --Adjust costs
-                if bp.Economy.MaintenanceConsumptionPerSecondEnergy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
-                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.5
-                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy / 3 * 2
-                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass / 3 * 2
-                    bp.Economy.BuildTime = bp.Economy.BuildTime / 3 * 2
-                end
+                bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.5
+                bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy / 3 * 2
+                bp.Economy.BuildCostMass = bp.Economy.BuildCostMass / 3 * 2
+                bp.Economy.BuildTime = bp.Economy.BuildTime / 3 * 2
             end
         end
     end

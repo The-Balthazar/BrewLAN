@@ -9,7 +9,7 @@ local OldModBlueprints = ModBlueprints
 local BrewLANPath = function()
     for i, mod in __active_mods do
         --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
-        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000079" then
+        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000080RC1" then
             return mod.location
         end
     end
@@ -287,7 +287,10 @@ function BrewLANSatelliteUplinkForVanillaUnits(all_bps)
         uab3104 = 1,
         xsb3104 = 1,
         --R&D T3 sensors
-        seb3301 = 3
+        sab3301 = 3,
+        seb3301 = 3,
+        srb3301 = 3,
+        ssb3301 = 3,
     }
     for id, cap in units do
         if all_bps[id] and all_bps[id].Categories then
