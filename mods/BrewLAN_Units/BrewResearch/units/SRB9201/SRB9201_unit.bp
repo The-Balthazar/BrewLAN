@@ -44,6 +44,7 @@ UnitBlueprint {
         'RESEARCHCENTRE',
         'SORTCONSTRUCTION',
     },
+    CollisionOffsetZ = -1,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -212,9 +213,9 @@ UnitBlueprint {
     SelectionSizeX = 3.0,
     SelectionSizeZ = 3.8,
     SelectionThickness = 0.25,
-    SizeX = 6,
-    SizeY = 6,
-    SizeZ = 6,
+    SizeX = 4,
+    SizeY = 5,
+    SizeZ = 3.5,
     StrategicIconName = 'icon_structure2_generic',
     StrategicIconSortPriority = 230,
     Wreckage = {

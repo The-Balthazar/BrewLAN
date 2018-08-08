@@ -145,7 +145,7 @@ srl0209_name="Wilson"
 ssl0219_name="Iyazyn"
 Unit_Description_BrewLAN_T2L001="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Armado con un bólter pesado, radar interno, y el sigilo."
 Unit_Description_BrewLAN_T2L002="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Equipado un escudo personal y de radar."
-Unit_Description_BrewLAN_T2L003="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo el sonar, y puede construir defensas especializadas."
+Unit_Description_BrewLAN_T2L003="La tecnología 2 de construcción, reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo de sonar, y puede construir defensas especializadas."
 
 --almacenamientos de masa y energía
 seb1206_name="CJ-00F4T-2"
@@ -298,7 +298,7 @@ sal0319_name="Bilmon"
 srl0319_name="Casa"
 ssl0319_name="Iyazyne"
 Unit_Description_BrewLAN_T3L005="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento de menor importancia y el equipo de contra-inteligencia. Puede construir defensas especializadas."
-Unit_Description_BrewLAN_T3L006="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo el sonar, y puede construir defensas especializadas."
+Unit_Description_BrewLAN_T3L006="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo de sonar, y puede construir defensas especializadas."
 Unit_Description_BrewLAN_T3L007="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con un escudo personal y se puede construir defensas especializadas."
 
 srb1311_desc="Generador camuflado"

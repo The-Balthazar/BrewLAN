@@ -2,9 +2,42 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2018-08-08|0.8
+
+* Release version. The big 0.8. Git revision 666. BrewLAN is 9 years old in 2 and a half weeks.
+
 ## 2018-08-05|0.79900002479553 (Pronounced 0 point 7 9 9 floating point error)
 
 * BrewLAN 0.8 release candidate 1.
+
+  ### 2018-08-07
+
+  * Crate Drop: Pings now spawns for correct player to see it.
+  * Crate Drop: Pings now share a script.
+  * Crate Drop is now *portable*.
+    * This means it no longer requires the strict `/mods/brewlan_rng/cratedrop` directory structure.
+    * Scripts now check file path locations, or used reference hooks.
+    * The white headband top hat now has a it's own copy of the model, instead of a reference.
+    * The mod icon is the only non-portable part of the mod.
+  * Disabled nuke mines from tying to use the FAF feature to instantly detonate on ctrl-k, since it was causing an error.
+  * Changed the death weapons of nuke mines so they also work on FAF.
+  * The Crab Egg Salem is now buildable on the waters surface as well as land.
+  * Tech 3 armoured gates now have a centre sections that appears when they're an end piece, corner piece, or alone.
+  * Corrected targetting bones on armoured gates, so they go to the ground, not to the side, when closed.
+  * Collision model fixes and tweaks:
+    * Vishuum, Solaris, Uosthuum, Night Skimmer, Adramelech, Gantry, Excalibur, Ivan, CJ-00F4T-2, PW4TH12-ST Capacitor, Darkness, Recoil, Harrow, Procyon Offering, Absolution, Iyadesu, Bessemer Reactor, Engineering Mass Fabricator, LSD - Pulse, Metatron, Orbos, Nihiloid, Charis, Shielded Mass Extractor, Scarab, Moldovite, Novax Center, Wally, Custodian, Resupply, Aeon T2 Mass & Energy Storage, Guardian, Aster, Harpoon, Hexatron, Hedgehog, Cloakable Power Generator & Mass Fabricator, Cybran T2 Mass Storage, Ravitailler, Punisher, Poker, Operative, Uya-iyathan, Hyaliya, Iyaz, Iyazyn, Iyazyne, Athanne, Ilshatha, Othuushala, Athahaas, Iathu-uhthe, Yathesel, Suthanus, Chappa'ai, Iya, Iya, & Iya, Nightshade, Aezselen, Thaam-atha, Little Bertha, Flash Flood, Pillar of Prominence, Lamp, Uyalai, Iaathan, Neolith, Hiro, Superhot, Stouty, Shorty, Tesla Coil, Tyson, Sagan, & Hawking Campuses, Insight, Guidance, Enlightenment, Einstein, Schrodinger, & Heisenberg Facilities, Souiya, Iyathlabistle, Iyathlab, and Iyathluub.
+  * Gave Nihiloid a wreckage.
+  * Created a death animation for Lamp and Uyalai.
+  * Corrected the selection priority of the Barwick & Stillson Classes.
+  * Added the icons from Bubble Tea, Caffe Corretto, and Research & Daiquiris to BrewLAN.scd.
+  * EIO: Made the description more concise.
+
+  ### 2018-08-08
+
+  * Added a distance model for Uyalai.
+  * Added a Seraphim T3 Mobile Sensor Array.
+  * Added build mode data for newer BrewLAN units that never got assigned.
+  * Updated the language documents.
 
 ## 2017-01-18|0.7.9
 

@@ -188,9 +188,9 @@ UnitBlueprint {
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SelectionThickness = 0.7,
-    SizeX = 0.9,
-    SizeY = 0.55,
-    SizeZ = 1,
+    SizeX = 1.5,
+    SizeY = 0.75,
+    SizeZ = 1.5,
 --    SplitDamage = {
 --        DamageAmount = 10,
 --        DamageRadius = 0.1,

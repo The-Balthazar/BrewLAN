@@ -184,9 +184,9 @@ UnitBlueprint {
     SelectionSizeX = 0.75,
     SelectionSizeZ = 0.75,
     SelectionThickness = 0.5,
-    SizeX = 1,
-    SizeY = 1.25,
-    SizeZ = 1,
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_structure3_directfire',
     StrategicIconSortPriority = 205,
     Veteran = {

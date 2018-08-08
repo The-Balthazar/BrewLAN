@@ -203,7 +203,7 @@ UnitBlueprint {
                 Sub = 'Land|Water|Seabed|Sub',
             },
             FiringTolerance = 360,
-            FireOnSelfDestruct = true,
+            --FireOnSelfDestruct = true,
             Label = 'Suicide',
             ManualFire = 1,
             MaxRadius = 30,

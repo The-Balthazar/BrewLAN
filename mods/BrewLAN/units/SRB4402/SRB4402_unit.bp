@@ -45,7 +45,6 @@ UnitBlueprint {
         'SORTINTEL',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = -0.25,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -213,9 +212,9 @@ UnitBlueprint {
     SelectionSizeX = 3,
     SelectionSizeZ = 3,
     SelectionThickness = 0.2,
-    SizeX = 2.5,
-    SizeY = 2.5,
-    SizeZ = 2.5,
+    SizeX = 5,
+    SizeY = 5,
+    SizeZ = 5,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 200,
     Weapon = {

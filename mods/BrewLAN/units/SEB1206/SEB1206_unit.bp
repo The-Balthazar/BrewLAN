@@ -41,7 +41,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTECONOMY',
     },
-    CollisionOffsetY = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -220,9 +219,9 @@ UnitBlueprint {
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionThickness = 0.4,
-    SizeX = 0.7,
-    SizeY = 0.95,
-    SizeZ = 0.7,
+    SizeX = 1.35,
+    SizeY = 1.2,
+    SizeZ = 1.35,
     StrategicIconName = 'icon_structure2_mass',
     StrategicIconSortPriority = 250,
     Wreckage = {

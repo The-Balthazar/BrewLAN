@@ -1,9 +1,8 @@
 UnitBlueprint {
     Categories = {
-        'PRODUCTBREWLAN',
+        'PRODUCTCRATEDROP',
         'INVULNERABLE',
         'EXPERIMENTAL',
-        --'NEEDMOBILEBUILD',
         'BENIGN',
         'UNSELECTABLE',
         'UNTARGETABLE',
@@ -21,17 +20,15 @@ UnitBlueprint {
                 },
             },
         },
+        HideLifebars = true,
         UniformScale = 0.1,
     },
     Intel = {
         VisionRadius = 0,
     },
-    LifeBarHeight = 0.0000001,
-    LifeBarOffset = 0.000000,
-    LifeBarSize = 0.0000001,
     General = {
         CapCost = 0,
-        FactionName = 'None',      --Because ofcourse it is the responsibility of the data set to make sure you sanitise your inputs. 
+        FactionName = 'None',
     },
     Physics = {
         BuildOnLayerCaps = {
@@ -48,6 +45,8 @@ UnitBlueprint {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
+    ScriptClass = 'CreateDropPing',
+    ScriptModule = '/lua/defaultunits.lua',
     SelectionSizeX = 0,
     SelectionSizeZ = 0,
     SelectionThickness = 0,

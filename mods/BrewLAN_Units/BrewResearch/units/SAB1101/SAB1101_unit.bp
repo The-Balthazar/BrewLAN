@@ -55,6 +55,14 @@ UnitBlueprint {
     },
     Description = '<LOC ueb1101_desc>Power Generator',
     Display = {
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewresearch/units/sab1101/sab1101_Adeath.sca',
+                AnimationRateMax = 0.2,
+                AnimationRateMin = 0.3,
+                Weight = 10,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -152,9 +160,9 @@ UnitBlueprint {
     SelectionSizeX = 0.65,
     SelectionSizeZ = 0.65,
     SelectionThickness = 0.6,
-    SizeX = 0.6,
+    SizeX = 1,
     SizeY = 2.5,
-    SizeZ = 0.6,
+    SizeZ = 1,
     StrategicIconName = 'icon_structure1_energy',
     StrategicIconSortPriority = 250,
     Wreckage = {

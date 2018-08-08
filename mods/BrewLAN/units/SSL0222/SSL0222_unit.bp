@@ -279,9 +279,9 @@ UnitBlueprint {
     SelectionSizeX = 0.5*.6,
     SelectionSizeZ = 0.7*.6,
     SelectionThickness = 0.58,
-    SizeX = 0.8*.6,
-    SizeY = 0.5*.6,
-    SizeZ = 0.8*.6,
+    SizeX = 0.5,
+    SizeY = 0.5,
+    SizeZ = 0.7,
     StrategicIconName = 'icon_land2_shield',
     StrategicIconSortPriority = 125,
     Transport = {

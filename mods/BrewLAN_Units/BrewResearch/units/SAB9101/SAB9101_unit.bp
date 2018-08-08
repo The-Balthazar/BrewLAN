@@ -214,9 +214,9 @@ UnitBlueprint {
     SelectionSizeX = 3.0,
     SelectionSizeZ = 3.0,
     SelectionThickness = 0.25,
-    SizeX = 6,
-    SizeY = 3,
-    SizeZ = 6,
+    SizeX = 5.5,
+    SizeY = 1.5,
+    SizeZ = 5.5,
     StrategicIconName = 'icon_structure1_generic',
     StrategicIconSortPriority = 230,
     Wreckage = {

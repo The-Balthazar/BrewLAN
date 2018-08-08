@@ -180,6 +180,7 @@
 * T3 Optics Tracking Facility.
 * T3 Nuke Mine.
 * T3 Mobile AA/TMD.
+* T3 Mobile Radar.
 
 #### Functional:
 * T3 Heavy Point Defense.
@@ -189,7 +190,6 @@
 
 #### Pending:
 * T3 Anti Shield.
-* T3 Mobile Radar.
 
 ## Experimentals:
 |                  |UEF            |Aeon           |Cybran         |Seraphim       |

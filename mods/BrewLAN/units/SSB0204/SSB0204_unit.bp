@@ -229,9 +229,9 @@ UnitBlueprint {
     SelectionCenterOffsetX = .2,
     SelectionCenterOffsetZ = -.1,
     SelectionThickness = 0.4,
-    SizeX = 1.2,
-    SizeY = 1.6,
-    SizeZ = 1.2,
+    SizeX = 0.8,
+    SizeY = 2.4,
+    SizeZ = 0.8,
     StrategicIconName = 'icon_structure2_engineer',
     StrategicIconSortPriority = 225,
     Wreckage = {

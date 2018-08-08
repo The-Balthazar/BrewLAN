@@ -178,7 +178,7 @@ function GateWallUnit(SuperClass)
                         end
                     end
                 end
-                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY * 0.1, bp.SizeZ)
+                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * 0.5, bp.SizeY * 0.1, bp.SizeZ * 0.5)
             end
             if order == 'close' then
                 self.Slider:SetGoal(0, 0, 0)
@@ -196,7 +196,7 @@ function GateWallUnit(SuperClass)
                         end
                     end
                 end
-                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX, bp.SizeY, bp.SizeZ)
+                self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * 0.5, bp.SizeY, bp.SizeZ * 0.5)
             end
         end,
 

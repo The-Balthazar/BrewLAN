@@ -90,7 +90,6 @@ UnitBlueprint {
         'SORTECONOMY',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = -0.25,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -274,9 +273,9 @@ UnitBlueprint {
     SelectionSizeX = 1.55,
     SelectionSizeZ = 1.55,
     SelectionThickness = 0.45,
-    SizeX = 1.75,
-    SizeY = 2.1,
-    SizeZ = 1.875,
+    SizeX = 2.5,
+    SizeY = 2,
+    SizeZ = 2.5,
     StrategicIconName = 'icon_structure3_mass',
     StrategicIconSortPriority = 240,
     Weapon = {

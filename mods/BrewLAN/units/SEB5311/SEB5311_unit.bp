@@ -78,6 +78,11 @@ UnitBlueprint {
                     bonetype = 'West',
                     conflict = nil,
                 },
+                Tower = {
+                    visibility = 'show',
+                    bonetype = 'Tower',
+                    conflict = nil,
+                },
             },
         },
         DamageEffects = {

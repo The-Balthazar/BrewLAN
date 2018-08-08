@@ -171,9 +171,9 @@ UnitBlueprint {
     SelectionSizeX = 4.25,
     SelectionSizeZ = 4,
     SelectionThickness = 0.24,
-    SizeX = 5,
-    SizeY = 2,
-    SizeZ = 5,
+    SizeX = 6,
+    SizeY = 1.75,
+    SizeZ = 6,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 175,
     Veteran = {

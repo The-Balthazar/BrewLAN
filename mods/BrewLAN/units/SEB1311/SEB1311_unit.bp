@@ -100,7 +100,6 @@ UnitBlueprint {
         'SORTECONOMY',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -185,10 +184,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 200,
                     ShaderName = 'Unit',
-                    --MeshName = '/units/ueb1301/ueb1301_lod0.scm',
-                    --AlbedoName = '/units/ueb1301/ueb1301_albedo.dds',
-                    --SpecularName = '/units/ueb1301/ueb1301_specteam.dds',
-                    --NormalsName = '/units/ueb1301/ueb1301_normalsTS.dds',
                 },
                 {
                     LODCutoff = 300,
@@ -339,9 +334,9 @@ UnitBlueprint {
     SelectionSizeX = 3.1,
     SelectionSizeZ = 3.1,
     SelectionThickness = 0.35,
-    SizeX = 3,
-    SizeY = 2.5,
-    SizeZ = 3,
+    SizeX = 3.5,
+    SizeY = 3.5,
+    SizeZ = 3.5,
     StrategicIconName = 'icon_structure3_energy',
     StrategicIconSortPriority = 240,
     Weapon = {

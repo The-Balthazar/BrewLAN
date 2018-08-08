@@ -176,9 +176,9 @@ UnitBlueprint {
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
     SelectionThickness = 0.48,
-    SizeX = 3,
-    SizeY = 3,
-    SizeZ = 3,
+    SizeX = 2.5,
+    SizeY = 1.5,
+    SizeZ = 2.5,
     StrategicIconName = 'icon_structure3_artillery',
     StrategicIconSortPriority = 205,
     Veteran = {
@@ -281,6 +281,20 @@ UnitBlueprint {
             TurretYawSpeed = 10,
             Turreted = true,
             WeaponCategory = 'Indirect Fire',
+        },
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Air = false,
+            Land = true,
+            Seabed = true,
+            Sub = false,
+            Water = false,
         },
     },
 }

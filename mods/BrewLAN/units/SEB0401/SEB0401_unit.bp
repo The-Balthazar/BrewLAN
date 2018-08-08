@@ -101,7 +101,7 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
         'GATE',
     },
-    CollisionOffsetY = -2,
+    CollisionOffsetY = -1,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -331,7 +331,7 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         OccupyRects = {
-            
+
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -6,
             0,
@@ -368,9 +368,9 @@ UnitBlueprint {
     SelectionSizeX = 10.5,
     SelectionSizeZ = 6.5,
     SelectionThickness = 0.1,
-    SizeX = 17,
-    SizeY = 2,
-    SizeZ = 11,
+    SizeX = 16,
+    SizeY = 6,
+    SizeZ = 10,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 210,
     Wreckage = {

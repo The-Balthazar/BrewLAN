@@ -138,6 +138,7 @@ Description['srl0324'] = "<LOC Unit_Description_BrewLAN_T3L016>High-end mobile i
 Description['sel0325'] = "<LOC Unit_Description_BrewLAN_T3L017>Mobile anti-naval vehicle."
 Description['sal0325'] = "<LOC Unit_Description_BrewLAN_T3L018>Mobile hovering anti-naval vehicle."
 Description['sal0324'] = "<LOC Unit_Description_BrewLAN_T3L019>Hovering sensor array. Consumes large quantities of power to function."
+Description['ssl0324'] = "<LOC Unit_Description_BrewLAN_T3L019>Hovering sensor array. Consumes large quantities of power to function."
 Description['ssl0320'] = "<LOC Unit_Description_BrewLAN_T3L020>Hovering mobile anti-air and tactical missile defense."
 
 --Tech 3 buildings

@@ -326,6 +326,7 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'amph',
+        SelectionPriority = 2,
         TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC srs0319_name>Stillson Class',
         UnitWeight = 1,

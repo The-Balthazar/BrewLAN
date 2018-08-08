@@ -123,7 +123,16 @@ MineStructureUnit = Class(StructureUnit) {
 
 NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
-        DeathWeapon = Class(DeathNukeWeapon) {},
+        DeathWeapon = Class(DefaultWeapons.BareBonesWeapon) {
+            OnFire = function(self)
+            end,
+
+            Fire = function(self)
+                local myBlueprint = self:GetBlueprint()
+                local myProjectile = self.unit:CreateProjectile(myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
+                myProjectile:PassDamageData(self:GetDamageTable())
+            end,
+        },
         Suicide = Class(DeathNukeWeapon) {
             Fire = function(self, ...)
                 local radius = self:GetBlueprint().NukeInnerRingRadius or self:GetBlueprint().DamageRadius

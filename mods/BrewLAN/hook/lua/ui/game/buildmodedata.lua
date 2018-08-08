@@ -9,6 +9,7 @@ do
 
     UEFT1Air['G'] = 'sea0105'
     UEFT1Air['P'] = 'sea0106'
+    UEFT2Air['S'] = 'sea0201'
     UEFT3Air['P'] = 'sea0307'
 
     --Engineer boats
@@ -23,10 +24,17 @@ do
     CybranT3Land['K'] = 'srl0321' --anti-strat
     CybranT3Land['M'] = 'srl0311' --MRL
     CybranT3Land['C'] = 'srl0316' --Stealth
+    CybranT3Land['Y'] = 'srl0324' --recon
 
     CybranT1Air['P'] = 'sra0106'
+    CybranT2Air['S'] = 'sra0201'
     CybranT3Air['T'] = 'sra0306'
     CybranT3Air['P'] = 'sra0307'
+
+    --Engineer boats
+    CybranT1Sea['F'] = 'srs0119'
+    CybranT2Sea['F'] = 'srs0219'
+    CybranT3Sea['F'] = 'srs0319'
 
     AeonT1Land['F'] = 'sal0119'
     AeonT2Land['F'] = 'sal0209'
@@ -36,6 +44,7 @@ do
     AeonT3Land['K'] = 'sal0321'
     AeonT3Land['N'] = 'sal0320' --AA
     AeonT3Land['V'] = 'sal0322' --Shield
+    AeonT3Land['Y'] = 'sal0324' --recon
 
     AeonT1Air['G'] = 'saa0105'
     AeonT1Air['P'] = 'saa0106'
@@ -56,6 +65,7 @@ do
     UEFT4Eng['I'] = 'seb2404'--Ivan
     UEFT4Eng['G'] = 'seb0401'--Gantry
     UEFT4Eng['P'] = 'seb3404'--Panopticon
+    UEFT4Eng['E'] = 'seb2401'--Excalibur
 
     AeonT1Eng['V'] = 'sab4102'
     AeonT1Eng['G'] = 'sab5104'
@@ -85,6 +95,7 @@ do
     CybranT4Eng['A'] = 'srb2401'
     CybranT4Eng['C'] = 'srb4402'
     CybranT4Eng['T'] = 'srb0401'
+    CybranT4Eng['Y'] = 'srl0401'
 
     --T2 storage
     AeonT2Eng['Y'] = 'sab1205'
@@ -209,9 +220,11 @@ do
         SeraphimT3Land['O'] = 'ssl0311'
         SeraphimT3Land['K'] = 'ssl0321'
         SeraphimT3Land['N'] = 'ssl0320'--AA
+        SeraphimT3Land['Y'] = 'ssl0324'--Recon
 
         SeraphimT1Air['P'] = 'ssa0106'
         SeraphimT1Air['G'] = 'ssa0105'
+        SeraphimT2Air['S'] = 'ssa0201'
         SeraphimT3Air['G'] = 'ssa0305'
         SeraphimT3Air['T'] = 'ssa0306'
         SeraphimT3Air['P'] = 'ssa0307'
@@ -227,10 +240,13 @@ do
         SeraphimT3Eng['D'] = 'ssb2306'
         SeraphimT3Eng['O'] = 'sss0305'
         SeraphimT3Eng['S'] = 'ssb3301'
+        SeraphimT3Eng['T'] = 'sss0306'
+        SeraphimT3Eng['J'] = 'ssb4317'
 
         SeraphimT4Eng['R'] = 'ssb2404'
         SeraphimT4Eng['S'] = 'ssb5401'
         SeraphimT4Eng['F'] = 'ssl0403'
+        SeraphimT4Eng['I'] = 'ssb0401'
         -- Seraphim T1 shield
         buildModeKeys['ssb4102'] = {['U'] = 'xsb4202',}
 
@@ -279,6 +295,16 @@ do
             [3] = SeraphimT3FEng,
             [4] = SeraphimT4Eng
         }
+
+        ------------------------------------------------------------------------
+        -- Boring Gantry tables
+        ------------------------------------------------------------------------
+        buildModeKeys['ssb0401'] = {
+            [1] = SeraphimT1Sea,
+            [2] = SeraphimT2Sea,
+            [3] = SeraphimT3Sea,
+            [4] = SeraphimT4Eng
+        }
     end
 
     ----------------------------------------------------------------------------
@@ -291,9 +317,9 @@ do
         [4] = CybranT4Eng,
     }
     buildModeKeys['sab0401'] = {
-        [1] = AeonT1Land,
-        [2] = AeonT2Land,
-        [3] = AeonT3Land,
+        [1] = AeonT1Air,
+        [2] = AeonT2Air,
+        [3] = AeonT3Air,
         [4] = AeonT4Eng,
     }
     ----------------------------------------------------------------------------

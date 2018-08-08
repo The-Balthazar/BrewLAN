@@ -98,7 +98,6 @@ UnitBlueprint {
         'REBUILDER',
         'MOBILEBUILDERONLY'
     },
-    CollisionOffsetZ = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Experimental',
@@ -512,9 +511,9 @@ UnitBlueprint {
     SelectionSizeX = 1.4*2.15,
     SelectionSizeZ = 1.8*2,
     SelectionThickness = 0.34,
-    SizeX = 6,
-    SizeY = 4,
-    SizeZ = 6,
+    SizeX = 5.5,
+    SizeY = 3.5,
+    SizeZ = 7,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 45,
     Transport = {

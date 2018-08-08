@@ -45,7 +45,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'SORTDEFENSE',
     },
-#    CollisionOffsetZ = 1.65,
     Defense = {
         AirThreatLevel = 50,
         ArmorType = 'Structure',
@@ -166,7 +165,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.2,
     SelectionThickness = .6,
     SizeX = 1.3,
-    SizeY = 1.3,
+    SizeY = 2.8,
     SizeZ = 1.3,
     StrategicIconName = 'icon_structure3_directfire',
     StrategicIconSortPriority = 205,

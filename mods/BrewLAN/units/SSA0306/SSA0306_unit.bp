@@ -127,8 +127,8 @@ UnitBlueprint {
         'BUBBLESHIELDSPILLOVERCHECK',
     },
     CollisionOffsetX = 0,
-    CollisionOffsetY = -1.5,
-    CollisionOffsetZ = 1.5,
+    CollisionOffsetY = -0.5,
+    CollisionOffsetZ = 0,
     Defense = {
         AirThreatLevel = 14,
         ArmorType = 'Light',

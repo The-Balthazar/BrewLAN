@@ -60,11 +60,24 @@ UnitBlueprint {
     },
     Description = '<LOC ueb1101_desc>Power Generator',
     Display = {
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewresearch/units/ssb1101/ssb1101_Adeath.sca',
+                AnimationRateMax = 0.3,
+                AnimationRateMin = 0.4,
+                Weight = 10,
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 135,
+                    LODCutoff = 130,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    LODCutoff = 260,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
                 },
@@ -159,9 +172,9 @@ UnitBlueprint {
     SelectionCenterOffsetX = 0.06,
     SelectionSizeZ = 0.65,
     SelectionThickness = 0.6,
-    SizeX = 0.6,
+    SizeX = 0.9,
     SizeY = 2.5,
-    SizeZ = 0.6,
+    SizeZ = 0.9,
     StrategicIconName = 'icon_structure1_energy',
     StrategicIconSortPriority = 250,
     Wreckage = {

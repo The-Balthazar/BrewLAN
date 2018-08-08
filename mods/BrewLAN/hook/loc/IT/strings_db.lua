@@ -175,7 +175,7 @@ sab2222_name="Montagna"
 ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="Una miniera di all-terrain armato con una testata nucleare a pieno rendimento. detonazione manuale richiesto. Visibile solo Omni."
 
--- scudi T2; Cybran che non ha ancora fisico Corporatura originariamente.
+-- scudi T2 Cybran; che non ha ancora fisico Corporatura originariamente.
 Unit_Description_BrewLAN_T2D002="Genera uno scudo protettivo attorno unità e strutture nel suo raggio. Shield può essere aggiornato due volte."
 Unit_Description_BrewLAN_T2D003="Genera uno scudo pesante intorno unità e le strutture all'interno del suo raggio."
 
@@ -285,7 +285,7 @@ sel0321_name="astro"
 srl0321_name="Riccio"
 sal0321_name="Scarabeo"
 ssl0321_name="Ythhu"
-Unit_Description_BrewLAN_T3L004="Mobile di difesa missilistica strategica. Costruire costi includono primo missile, ma il veicolo è priva di un privato di fabbricazione per la produzione di missili supplementari senza assistenza."
+Unit_Description_BrewLAN_T3L004="Mobile di difesa missilistica strategica. Costruire costi includono primo missile, ma il veicolo non ha una suite di fabbricazione per la produzione di missili supplementari senza assistenza."
 Unit_Description_BrewLAN_T3L008="Mobile di difesa missilistica strategica. Spara una salva di tre missili contro ogni bersaglio. Costruire costi comprendono prima salva."
 
 --piattaforma sonar serafini T3

@@ -167,9 +167,9 @@ UnitBlueprint {
     SelectionSizeX = 1.8,
     SelectionSizeZ = 1.8,
     SelectionThickness = 0.38,
-    SizeX = 1,
+    SizeX = 2,
     SizeY = 5.1,
-    SizeZ = 1,
+    SizeZ = 2,
     StrategicIconName = 'icon_structure3_counterintel',
     StrategicIconSortPriority = 200,
     Wreckage = {

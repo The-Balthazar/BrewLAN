@@ -54,9 +54,9 @@ SRL0324 = Class(CLandUnit) {
                 bp.CollisionOffsetX or 0,
                 bp.CollisionOffsetY or 0,
                 bp.CollisionOffsetZ or 0,
-                bp.SizeX,
-                bp.SizeY,
-                bp.SizeZ
+                bp.SizeX * 0.5,
+                bp.SizeY * 0.5,
+                bp.SizeZ * 0.5
             )
         end
     end,
@@ -69,11 +69,11 @@ SRL0324 = Class(CLandUnit) {
             self:SetCollisionShape(
                 'Box',
                 bp.CollisionOffsetX or 0,
-                bp.CollisionOffsetY or 0,
+                (bp.CollisionOffsetY or 0) * 3,
                 bp.CollisionOffsetZ or 0,
-                bp.SizeX,
-                bp.SizeY * 4,
-                bp.SizeZ
+                bp.SizeX * 0.5,
+                bp.SizeY * 1.5,
+                bp.SizeZ * 0.5
             )
             self:DestroyBlinkingLights()
             self:CreateBlinkingLights('Green')

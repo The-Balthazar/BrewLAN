@@ -198,9 +198,9 @@ UnitBlueprint {
     SelectionSizeX = 0.65*1.5,
     SelectionSizeZ = 0.65*1.5,
     SelectionThickness = 0.375,
-    SizeX = 0.8*1.5,
+    SizeX = 0.8*1.8,
     SizeY = 0.4*1.5,
-    SizeZ = 0.8*1.5,
+    SizeZ = 0.8*1.8,
     StrategicIconName = 'icon_structure2_energy',
     StrategicIconSortPriority = 250,
     Weapon = {

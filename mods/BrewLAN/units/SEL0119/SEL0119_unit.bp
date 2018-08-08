@@ -303,7 +303,7 @@ UnitBlueprint {
     SelectionSizeZ = 0.6*.8,
     SelectionThickness = 0.7,
     SizeX = 0.7*.8,
-    SizeY = 1*.8,
+    SizeY = 1*.7,
     SizeZ = 0.7*.8,
     StrategicIconName = 'icon_land1_engineer',
     StrategicIconSortPriority = 95,

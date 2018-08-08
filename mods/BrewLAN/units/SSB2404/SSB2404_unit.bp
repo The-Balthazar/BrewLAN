@@ -56,8 +56,7 @@ UnitBlueprint {
         'SORTSTRATEGIC',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = -0.25,
-    CollisionOffsetZ = -1.5,
+    CollisionOffsetZ = 0.25,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -196,9 +195,9 @@ UnitBlueprint {
     SelectionSizeX = 2.9,
     SelectionSizeZ = 2.9,
     SelectionThickness = 0.39,
-    SizeX = 3.5,
-    SizeY = 4,
-    SizeZ = 3.5,
+    SizeX = 5,
+    SizeY = 8,
+    SizeZ = 5,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 175,
     Veteran = {

@@ -30,9 +30,6 @@ UnitBlueprint {
         'SHOWQUEUE',
         'GATE',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -207,9 +204,9 @@ UnitBlueprint {
     SelectionSizeX = 3.4,
     SelectionSizeZ = 3.4,
     SelectionThickness = 0.3,
-    SizeX = 6,
-    SizeY = 1.7,
-    SizeZ = 6,
+    SizeX = 5,
+    SizeY = 3,
+    SizeZ = 5,
     StrategicIconName = 'icon_structure3_intel',
     StrategicIconSortPriority = 225,
     Wreckage = {

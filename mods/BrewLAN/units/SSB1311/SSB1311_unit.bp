@@ -241,9 +241,9 @@ UnitBlueprint {
     SelectionSizeX = 2.75,
     SelectionSizeZ = 2.75,
     SelectionThickness = 0.36,
-    SizeX = 4,
-    SizeY = 2.75,
-    SizeZ = 4,
+    SizeX = 3,
+    SizeY = 4.5,
+    SizeZ = 3,
     StrategicIconName = 'icon_structure3_energy',
     StrategicIconSortPriority = 240,
     Weapon = {

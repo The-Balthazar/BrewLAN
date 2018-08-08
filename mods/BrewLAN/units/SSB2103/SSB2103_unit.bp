@@ -171,9 +171,9 @@ UnitBlueprint {
     SelectionSizeX = 0.55,
     SelectionSizeZ = 0.55,
     SelectionThickness = 0.5,
-    SizeX = 0.6,
-    SizeY = 0.8,
-    SizeZ = 0.6,
+    SizeX = 0.4,
+    SizeY = 1.4,
+    SizeZ = 0.4,
     StrategicIconName = 'icon_structure1_artillery',
     StrategicIconSortPriority = 180,
     Veteran = {

@@ -224,9 +224,9 @@ UnitBlueprint {
     SelectionSizeX = 0.5,
     SelectionSizeZ = 0.8,
     SelectionThickness = 0.5,
-    SizeX = 0.7,
-    SizeY = 0.5,
-    SizeZ = 0.9,
+    SizeX = 0.8,
+    SizeY = 0.7,
+    SizeZ = 1.2,
     StrategicIconName = 'icon_land3_engineer',
     StrategicIconSortPriority = 125,
     Transport = {

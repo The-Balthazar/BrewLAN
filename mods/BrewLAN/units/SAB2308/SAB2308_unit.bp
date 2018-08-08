@@ -201,9 +201,9 @@ UnitBlueprint {
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.3,
-    SizeX = 1.5*2,
-    SizeY = 2.2*2,
-    SizeZ = 1.5*2,
+    SizeX = 2.5,
+    SizeY = 2.2,
+    SizeZ = 2.5,
     StrategicIconName = 'icon_structure3_antinavy',
     StrategicIconSortPriority = 200,
     Veteran = {

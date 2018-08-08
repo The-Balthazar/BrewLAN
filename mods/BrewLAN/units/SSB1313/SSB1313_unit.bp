@@ -236,7 +236,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.55,
     SelectionThickness = 0.45,
     SizeX = 1.75,
-    SizeY = 1.75,
+    SizeY = 2.5,
     SizeZ = 1.75,
     StrategicIconName = 'icon_structure3_mass',
     StrategicIconSortPriority = 240,

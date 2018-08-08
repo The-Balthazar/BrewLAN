@@ -267,9 +267,9 @@ UnitBlueprint {
     SelectionSizeZ = 3.1,
     SelectionThickness = 0.35,
     --SelectionCenterOffsetZ = 1,
-    SizeX = 5*1.1,
-    SizeY = 5*1.1,
-    SizeZ = 5*1.1,
+    SizeX = 3.8,
+    SizeY = 6,
+    SizeZ = 3.8,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 100,
     Wreckage = {

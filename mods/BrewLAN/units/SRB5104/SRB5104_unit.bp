@@ -170,9 +170,9 @@ UnitBlueprint {
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionThickness = 1,
-    SizeX = 1,
-    SizeY = 1.5,
-    SizeZ = 1,
+    SizeX = 1.5,
+    SizeY = 1.6,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_structure1_air',
     StrategicIconSortPriority = 175,
     Transport = {
