@@ -482,11 +482,11 @@ seb3404_desc="实验传感器阵列"
 seb3404_name="圆形监狱"
 Unit_Description_BrewLAN_T4B008="实验传感器阵列。给出了其操作半径内的敌方单位是可见的可用的传感器，如雷达的视线。每单位额外保养成本被窥探上。移动单位和大单位成本更窥探。"
 
-sab0401_desc="实验空气厂"
+sab0401="实验空气厂"
 sab0401_name="独立引擎"
 Unit_Description_BrewLAN_T4B009="构建空中单位。"
 
-srb0401_desc="试验田厂"
+srb0401="试验田厂"
 srb0401_name="节肢工廠"
 Unit_Description_BrewLAN_T4B010="构造土地的单位。"
 

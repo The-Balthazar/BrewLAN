@@ -482,11 +482,11 @@ seb3404_desc="Experimentální Senzorová Síť"
 seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Experimentální senzorová síť. Poskytuje viditelnost nepřátelských jednotek ve svém operačním dosahu. Údržba vyžaduje více energie pro každou další sledovanou jednotku. Mobilní a velké jednotky vyžadují více energie ke sledování."
 
-sab0401_desc="Experimentální Letecká Továrna"
+sab0401="Experimentální Letecká Továrna"
 sab0401_name="Motor Nezávislosti"
 Unit_Description_BrewLAN_T4B009="Vyrábí letecké jednotky"
 
-srb0401_desc="Experimentální Továrna Pozemních Jednotek"
+srb0401="Experimentální Továrna Pozemních Jednotek"
 srb0401_name="Arthrolab"
 Unit_Description_BrewLAN_T4B010="Vyrábí pozemní jednotky"
 

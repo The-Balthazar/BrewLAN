@@ -482,11 +482,11 @@ seb3404_desc="Sensor Array Experimental"
 seb3404_name="panóptico"
 Unit_Description_BrewLAN_T4B008="array sensor Experimental. Da línea de visión para unidades enemigas dentro de su radio operativo que son visibles para los sensores disponibles, tales como radar. Los gastos de conservación adicionales por unidad siendo espiados. unidades móviles y grandes unidades cuestan más para espiar."
 
-sab0401_desc="Fábrica Aire Experimental"
+sab0401="Fábrica Aire Experimental"
 sab0401_name="independencia del motor"
 Unit_Description_BrewLAN_T4B009="Construye unidades de aire."
 
-srb0401_desc="Experimental Fábrica Tierra"
+srb0401="Experimental Fábrica Tierra"
 srb0401_name="Arthrolab"
 Unit_Description_BrewLAN_T4B010="Construye unidades de tierra."
 

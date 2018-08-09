@@ -128,7 +128,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC seb1101_name>Spiny Boi',
+        UnitName = '<LOC srb1101_name>Spiny Boi',
         UnitWeight = 1,
     },
     Interface = {

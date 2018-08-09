@@ -482,11 +482,11 @@ seb3404_desc="Experimentelle Sensor Matrix"
 seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Experimentelles Sensorarray. Gibt Sichtlinie für feindliche Einheiten in ihrem Aktionsradius, die sichtbar sind, um erhältliche Sensoren, wie Radar. Unterhaltskosten zusätzlich pro Einheit bespitzelt. Mobile Einheiten und große Einheiten kosten mehr bespitzeln."
 
-sab0401_desc="Experimentelle Luftwaffenfabrik"
+sab0401="Experimentelle Luftwaffenfabrik"
 sab0401_name="Unabhängigkeit"
 Unit_Description_BrewLAN_T4B009="Konstruiert Lufteinheiten."
 
-srb0401_desc="Experimentelle Fabrik Land"
+srb0401="Experimentelle Fabrik Land"
 srb0401_name="Gliederfüßerfabrik"
 Unit_Description_BrewLAN_T4B010="Konstruiert Landeinheiten."
 

@@ -482,11 +482,11 @@ seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
 Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius that are visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and large units cost more to spy on."
 
-sab0401_desc="Experimental Air Factory"
+sab0401="Experimental Air Factory"
 sab0401_name="Independence Engine"
 Unit_Description_BrewLAN_T4B009="Constructs air units."
 
-srb0401_desc="Experimental Land Factory"
+srb0401="Experimental Land Factory"
 srb0401_name="Arthrolab"
 Unit_Description_BrewLAN_T4B010="Constructs land units."
 

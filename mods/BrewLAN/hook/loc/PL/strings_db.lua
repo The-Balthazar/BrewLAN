@@ -482,11 +482,11 @@ seb3404_desc="Tablica eksperymentalny czujnika"
 seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Eksperymentalna macierz czujników. Daje pole widzenia dla wrogich jednostek należących do jej promienia operacyjnego, które są widoczne na dostępnych czujników, takich jak radar. koszty utrzymania dodatkowych na jednostkę jest szpiegował. Mobilne jednostki i duże jednostki kosztować więcej szpiegować."
 
-sab0401_desc="Eksperymentalna Air fabryczne"
+sab0401="Eksperymentalna Air fabryczne"
 sab0401_name="niezależność Silnik"
 Unit_Description_BrewLAN_T4B009="Konstruuje jednostki powietrzne."
 
-srb0401_desc="Eksperymentalna grunty fabryczne"
+srb0401="Eksperymentalna grunty fabryczne"
 srb0401_name="Arthrolab"
 Unit_Description_BrewLAN_T4B010="Konstruuje jednostki lądowe."
 

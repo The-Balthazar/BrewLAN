@@ -482,11 +482,11 @@ seb3404_desc="Array Sensor sperimentale"
 seb3404_name="Panopticon"
 Unit_Description_BrewLAN_T4B008="Sperimentale matrice di sensori. Dà linea di vista per le unità nemiche entro il raggio operativo che sono visibili ai sensori disponibili, come radar. costi di manutenzione aggiuntivi per unità spiati. unità mobili e grandi unità costano di più per spiare."
 
-sab0401_desc="Sperimentale Air fabbrica"
+sab0401="Sperimentale Air fabbrica"
 sab0401_name="indipendenza del motore"
 Unit_Description_BrewLAN_T4B009="Costruisce unità aeree."
 
-srb0401_desc="Sperimentale Terra Fabbrica"
+srb0401="Sperimentale Terra Fabbrica"
 srb0401_name="Arthrolab"
 Unit_Description_BrewLAN_T4B010="Costruisce unità di terra."
 

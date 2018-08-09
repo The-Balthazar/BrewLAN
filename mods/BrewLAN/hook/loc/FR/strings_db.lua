@@ -482,11 +482,11 @@ seb3404_desc="Ensemble de capteurs expérimentaux"
 seb3404_name="Panoptique"
 Unit_Description_BrewLAN_T4B008="Sondes expérimentales. Donne la ligne de visée pour les unités ennemies dans son rayon opérationnel visible aux capteurs disponibles, tels que le radar. Frais d'entretien supplémentaires par unité étant espionné. Les unités mobiles et les unités coûteuses coûtent plus cher à espionner."
 
-sab0401_desc="Usine d'avions expérimentaux"
+sab0401="Usine d'avions expérimentaux"
 sab0401_name="indépendance du moteur"
 Unit_Description_BrewLAN_T4B009="Unités aériennes construit."
 
-srb0401_desc="Expérimentale Terre usine"
+srb0401="Expérimentale Terre usine"
 srb0401_name="Arthrosine"
 Unit_Description_BrewLAN_T4B010="Unités terrestres construit."
 
