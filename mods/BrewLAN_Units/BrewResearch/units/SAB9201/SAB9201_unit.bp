@@ -165,7 +165,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         ConstructionBar = true,
-        FactionName = 'AEON',
+        FactionName = 'Aeon',
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',

@@ -1,4 +1,4 @@
-local SLandFactoryUnit = import('/lua/seraphimunits.lua').SLandFactoryUnit
+local SLandFactoryUnit = import('/lua/defaultunits.lua').ResearchFactoryUnit
 
 SSB9201 = Class(SLandFactoryUnit) {}
 

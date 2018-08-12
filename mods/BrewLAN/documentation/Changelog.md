@@ -2,6 +2,21 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2018-08-09|0.8★ (No functional sim changes to BrewLAN, but changes to sub-mods)
+
+* Localisation fixes.
+* R&D: Sim-side localisation fix.
+
+  ### 2018-08-12
+
+  * R&D: Sorian and Vanilla AI behaviour
+    * AI will now build a single research centre, and will rebuild if destroyed.
+    * It will run through research at random, with intervals so it doesn't drain the economy.
+    * Regular AI gets a 30% discount on research, AIx gets 60% and a 25% speed increase.
+  * R&D: Research centres now all share a script.
+    * This script also handles the AI research after it's built.
+  * R&D: Ghetto research simulation now only triggers if the AI doesn't have the research platoon.
+
 ## 2018-08-08|0.8
 
 * Release version. The big 0.8. Git revision 666. BrewLAN is 9 years old in 2 and a half weeks.

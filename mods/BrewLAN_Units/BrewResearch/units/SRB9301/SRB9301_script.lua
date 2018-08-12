@@ -1,4 +1,4 @@
-local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
+local CLandFactoryUnit = import('/lua/defaultunits.lua').ResearchFactoryUnit
 
 SRB9301 = Class(CLandFactoryUnit) {}
 

@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- Research item stuff
-    --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 local Game = import('/lua/game.lua')
 local BrewLANPath = Game.BrewLANPath()
 local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
@@ -105,6 +105,148 @@ ResearchItem = Class(DummyUnit) {
         DummyUnit.OnDestroy(self)
     end,
 }
+--------------------------------------------------------------------------------
+-- Research Center AI
+--------------------------------------------------------------------------------
+ResearchFactoryUnit = Class(FactoryUnit) {
+
+    OnStopBeingBuilt = function(self, builder, layer)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain.BrainType != 'Human' then
+            if builder.ResearchList then
+                self.ResearchList = table.copy(builder.ResearchList)
+            end
+            self:ForkThread(self.ResearchThread)
+            self:AICheatsBuffs()
+        end
+        FactoryUnit.OnStopBeingBuilt(self, builder, layer)
+    end,
+
+    StartBuildFx = function( self, unitBeingBuilt )
+        local bp = string.lower(self:GetBlueprint().General.FactionName or 'nothing')
+        if bp == 'aeon' then
+            local thread = self:ForkThread( EffectUtil.CreateAeonFactoryBuildingEffects, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, 'Attachpoint', self.BuildEffectsBag )
+            unitBeingBuilt.Trash:Add(thread)
+        elseif bp == 'uef' then
+            WaitTicks(1)
+            --unitBeingBuilt:SetMesh(unitBeingBuilt:GetBlueprint().Display.BuildMeshBlueprint, true)
+            for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
+                self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/effects/emitters/flashing_blue_glow_01_emit.bp' ) )
+                self.BuildEffectsBag:Add( self:ForkThread( EffectUtil.CreateDefaultBuildBeams, unitBeingBuilt, {v}, self.BuildEffectsBag ) )
+            end
+        elseif bp == 'cybran' then
+            local buildbots = EffectUtil.SpawnBuildBots( self, unitBeingBuilt, table.getn(self:GetBlueprint().General.BuildBones.BuildEffectBones), self.BuildEffectsBag )
+            EffectUtil.CreateCybranEngineerBuildEffects( self, self:GetBlueprint().General.BuildBones.BuildEffectBones, buildbots, self.BuildEffectsBag )
+        elseif bp == 'seraphim' then
+    		local BuildBones = self:GetBlueprint().General.BuildBones.BuildEffectBones
+            local thread = self:ForkThread( EffectUtil.CreateSeraphimFactoryBuildingEffects, unitBeingBuilt, BuildBones, 'Attachpoint', self.BuildEffectsBag )
+            unitBeingBuilt.Trash:Add(thread)
+        end
+        if FactoryUnit.StartBuildFx then
+            FactoryUnit.StartBuildFx(self, unitBeingBuilt)
+        end
+    end,
+
+    ResearchThread = function(self)
+        while not self.Dead do
+            if self:IsIdleState() then
+                WaitTicks(math.random(1, GetGameTimeSeconds()))
+                self:Research()
+            else
+                WaitTicks(100)
+            end
+        end
+    end,
+
+    GetResearchItem = function(self)
+        local selfbp = self:GetBlueprint()
+        if not self.ResearchList then
+            self.ResearchList = {}
+            for id, bp in __blueprints do
+                if bp.Categories then
+                    if selfbp.General.FactionName == bp.General.FactionName and table.find(bp.Categories, 'BUILTBYRESEARCH') then
+                        table.insert(self.ResearchList, bp.BlueprintId)
+                    end
+                end
+            end
+        end
+        --WARN(repr(self.ResearchList))
+        local currentResearch = {}
+        for i, id in self.ResearchList do
+            if __blueprints[id] and self:CanBuild(id) then
+                table.insert(currentResearch, id)
+            end
+        end
+        --WARN(repr(currentResearch))
+        local choicei = math.random(1, table.getn(currentResearch))
+        LOG("AI starting research for " .. (__blueprints[currentResearch[choicei]].Description or "unknown research item") .. ".")
+        return currentResearch[choicei]
+    end,
+
+    Research = function(self)
+        local aiBrain = self:GetAIBrain()
+        local bp = self:GetBlueprint()
+        --Upgrade if we can first
+        if bp.General.UpgradesTo and __blueprints[bp.General.UpgradesTo] and self:CanBuild(bp.General.UpgradesTo) then
+            IssueUpgrade({self}, bp.General.UpgradesTo)
+        else
+            aiBrain:BuildUnit(self, self:GetResearchItem(), 1)
+        end
+    end,
+
+    AICheatsBuffs = function(self)
+        local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
+        local aiBrain = self:GetAIBrain()
+        if aiBrain.CheatEnabled then
+            if not Buffs['ResearchAIxBuff'] then
+                BuffBlueprint {
+                    Name = 'ResearchAIxBuff',
+                    DisplayName = 'ResearchAIxBuff',
+                    BuffType = 'RESEARCH',
+                    Stacks = 'REPLACE',
+                    Duration = -1,
+                    Affects = {
+                        BuildRate = {
+                            Add = 0,
+                            Mult = 1.25,
+                        },
+                        EnergyActive = {
+                            Add = -0.6,
+                            Mult = 1,
+                        },
+                        MassActive = {
+                            Add = -0.6,
+                            Mult = 1,
+                        },
+                    },
+                }
+            end
+            Buff.ApplyBuff(self, 'ResearchAIxBuff')
+        else
+            if not Buffs['ResearchAIBuff'] then
+                BuffBlueprint {
+                    Name = 'ResearchAIBuff',
+                    DisplayName = 'ResearchAIBuff',
+                    BuffType = 'RESEARCH',
+                    Stacks = 'REPLACE',
+                    Duration = -1,
+                    Affects = {
+                        EnergyActive = {
+                            Add = -0.3,
+                            Mult = 1,
+                        },
+                        MassActive = {
+                            Add = -0.3,
+                            Mult = 1,
+                        },
+                    },
+                }
+            end
+            Buff.ApplyBuff(self, 'ResearchAIBuff')
+        end
+    end
+}
+
 --------------------------------------------------------------------------------
 -- Wind turbine stuff
 --------------------------------------------------------------------------------

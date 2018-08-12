@@ -1,9 +1,5 @@
-local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
+local TLandFactoryUnit = import('/lua/defaultunits.lua').ResearchFactoryUnit
 
-SEB9201 = Class(TLandFactoryUnit) {
-    OnCreate = function(self)
-        TLandFactoryUnit.OnCreate(self)
-    end,
-}
+SEB9201 = Class(TLandFactoryUnit) {}
 
 TypeClass = SEB9201
