@@ -32,7 +32,6 @@ Units that I wanted to make, but either I didn't want directly in BrewLAN, or ca
 * Functionally separates the hardware and software of tech levels and blueprints.
 * Adds research centres, tech level researches and unit unlock researches.
 * Dumping ground for units that don't fit in Bubble Tea of Caffe Corretto.
-* AI gets some timed hacks for research so they can work without being told how properly.
 * Currently missing planned units:
   * Seraphim dedicated omni sensor.
   * Light tech 2 power generators; halfway point between T1 and T2.

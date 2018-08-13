@@ -85,7 +85,6 @@
 ### Aeon:
 * T3 Air Transport
 * T3 Armored Assault Tank
-  * Would prefer with orders assigned to the blips.
 * T3 Heavy Point Defense.
 * T3 Nuke Mine
   * Lacks a unique model.
@@ -120,7 +119,6 @@
   * Would like to separate the Cloak/Stealth functions
   * Have it re-increase its stealth range while cloak off.
 * T3 Mobile strat defense.
-  * Lacks a unique model & icon.
 * T3 Cloakable Mass Fabricator.
 * T3 Cloakable Power Generator.
 * T3 Cloakable Mass Extractor.

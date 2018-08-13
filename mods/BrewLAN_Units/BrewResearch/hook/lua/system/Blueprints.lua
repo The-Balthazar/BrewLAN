@@ -89,16 +89,20 @@ function RebalanceExistingBlueprints(all_bps)
                 bp.Intel.OmniRadius = nil
 
                 --Remove omni categories
-                table.removeByValue(bp.Categories, 'OMNI')
-                table.removeByValue(bp.Categories, 'OVERLAYOMNI')
-                if not table.find(bp.Categories, 'RADAR') then
-                    table.insert(bp.Categories, 'RADAR')
+                if bp.Categories and type(bp.Categories) == 'table' then
+                    table.removeByValue(bp.Categories, 'OMNI')
+                    table.removeByValue(bp.Categories, 'OVERLAYOMNI')
+                    if not table.find(bp.Categories, 'RADAR') then
+                        table.insert(bp.Categories, 'RADAR')
+                    end
                 end
 
                 --Remove omni visiual elements
-                table.removeByValue(bp.Display.Abilities, 'Omni')
-                table.removeByValue(bp.Display.Abilities, 'Omni Sensor')
-                table.removeByValue(bp.Display.Abilities, '<LOC ability_omni>Omni Sensor')
+                if bp.Display.Abilities and type(bp.Display.Abilities) == 'table' then
+                    table.removeByValue(bp.Display.Abilities, 'Omni')
+                    table.removeByValue(bp.Display.Abilities, 'Omni Sensor')
+                    table.removeByValue(bp.Display.Abilities, '<LOC ability_omni>Omni Sensor')
+                end
                 if bp.General.OrderOverrides.RULEUTC_IntelToggle then
                     bp.General.OrderOverrides.RULEUTC_IntelToggle.bitmapId = 'radar'
                     bp.General.OrderOverrides.RULEUTC_IntelToggle.helpText = 'toggle_radar'

@@ -17,6 +17,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * This script also handles the AI research after it's built.
   * R&D: Ghetto research simulation now only triggers if the AI doesn't have the research platoon.
 
+  ### 2018-08-12
+
+  * R&D: Made work with LOUD.
+
 ## 2018-08-08|0.8
 
 * Release version. The big 0.8. Git revision 666. BrewLAN is 9 years old in 2 and a half weeks.

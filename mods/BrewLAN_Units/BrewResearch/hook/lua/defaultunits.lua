@@ -110,6 +110,8 @@ ResearchItem = Class(DummyUnit) {
 --------------------------------------------------------------------------------
 ResearchFactoryUnit = Class(FactoryUnit) {
 
+    BuildLevel = 0,
+
     OnStopBeingBuilt = function(self, builder, layer)
         local aiBrain = self:GetAIBrain()
         if aiBrain.BrainType != 'Human' then
@@ -122,23 +124,25 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         FactoryUnit.OnStopBeingBuilt(self, builder, layer)
     end,
 
-    StartBuildFx = function( self, unitBeingBuilt )
-        local bp = string.lower(self:GetBlueprint().General.FactionName or 'nothing')
-        if bp == 'aeon' then
-            local thread = self:ForkThread( EffectUtil.CreateAeonFactoryBuildingEffects, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, 'Attachpoint', self.BuildEffectsBag )
+    StartBuildFx = function(self, unitBeingBuilt)
+        local bp = self:GetBlueprint()
+        local faction = string.lower(bp.General.FactionName or 'nothing')
+        local EffectUtil = import('/lua/effectutilities.lua')
+        if faction == 'aeon' then
+            local thread = self:ForkThread( EffectUtil.CreateAeonFactoryBuildingEffects, unitBeingBuilt, bp.General.BuildBones.BuildEffectBones, 'Attachpoint', self.BuildEffectsBag )
             unitBeingBuilt.Trash:Add(thread)
-        elseif bp == 'uef' then
+        elseif faction == 'uef' then
             WaitTicks(1)
             --unitBeingBuilt:SetMesh(unitBeingBuilt:GetBlueprint().Display.BuildMeshBlueprint, true)
-            for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
+            for k, v in bp.General.BuildBones.BuildEffectBones do
                 self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/effects/emitters/flashing_blue_glow_01_emit.bp' ) )
                 self.BuildEffectsBag:Add( self:ForkThread( EffectUtil.CreateDefaultBuildBeams, unitBeingBuilt, {v}, self.BuildEffectsBag ) )
             end
-        elseif bp == 'cybran' then
-            local buildbots = EffectUtil.SpawnBuildBots( self, unitBeingBuilt, table.getn(self:GetBlueprint().General.BuildBones.BuildEffectBones), self.BuildEffectsBag )
-            EffectUtil.CreateCybranEngineerBuildEffects( self, self:GetBlueprint().General.BuildBones.BuildEffectBones, buildbots, self.BuildEffectsBag )
-        elseif bp == 'seraphim' then
-    		local BuildBones = self:GetBlueprint().General.BuildBones.BuildEffectBones
+        elseif faction == 'cybran' then
+            local buildbots = EffectUtil.SpawnBuildBots( self, unitBeingBuilt, table.getn(bp.General.BuildBones.BuildEffectBones), self.BuildEffectsBag )
+            EffectUtil.CreateCybranEngineerBuildEffects( self, bp.General.BuildBones.BuildEffectBones, buildbots, self.BuildEffectsBag )
+        elseif faction == 'seraphim' then
+    		local BuildBones = bp.General.BuildBones.BuildEffectBones
             local thread = self:ForkThread( EffectUtil.CreateSeraphimFactoryBuildingEffects, unitBeingBuilt, BuildBones, 'Attachpoint', self.BuildEffectsBag )
             unitBeingBuilt.Trash:Add(thread)
         end
