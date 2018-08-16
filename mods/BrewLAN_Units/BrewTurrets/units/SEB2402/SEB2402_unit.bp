@@ -1,4 +1,15 @@
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            0,
+            'TurretA',
+            'TurretB',
+            'TurretC',
+            'TurretD',
+            'Crystal',
+            'Generator',
+        },
+    },
     Audio = {
         DeathExplosion = Sound {
             Bank = 'UELDestroy',
@@ -48,7 +59,9 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'OVERLAYANTIAIR',
         'SORTDEFENSE',
+        'RESEARCHLOCKED',
     },
+    CollisionOffsetY = -1,
     Defense = {
         AirThreatLevel = 400,
         ArmorType = 'Structure',
@@ -160,7 +173,7 @@ UnitBlueprint {
         FlattenSkirt = true,
         MaxSteerForce = 0,
         MeshExtentsX = 6.5,
-        MeshExtentsY = 2,
+        MeshExtentsY = 4,
         MeshExtentsZ = 6.5,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
@@ -175,7 +188,7 @@ UnitBlueprint {
     SelectionThickness = 0.24,
     SelectionMeshUseTopAmount = 0.100769769069,--to be exact.
     SizeX = 6,
-    SizeY = 0.75,
+    SizeY = 1.75,
     SizeZ = 6,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 175,

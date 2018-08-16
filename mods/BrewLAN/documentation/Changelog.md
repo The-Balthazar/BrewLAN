@@ -34,6 +34,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Caffe Corretto: Added the weapons of Maelstrom and the disabled prototype disarmer turret to the default weapons files.
   * Debug Tools: Created a version of the DPS test unit that flies, for AA tests.
   * R&D: Deleted the hacky AI script.
+  * Caffe Corretto: Finished the Maelstrom.
 
 ## 2018-08-08|0.8
 
