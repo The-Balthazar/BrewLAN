@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="Powerful, short range, defensive turret. 
 --This is used by the Tesla Coil
 tooltipbrewturrets0000="Toggle weapon power"
 tooltipbrewturrets0001="Enables or disables main weapon power."
+
+seb2402_name="Maelstrom"
+seb2402_desc="Experimental Anti-Air Defense"
+Unit_Description_BrewLAN_Turrets_0008="Defensive anti-air weapon. Provides devastating short-range damage. Consumes power with each shot."

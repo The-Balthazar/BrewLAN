@@ -21,6 +21,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Made work with LOUD.
 
+  ### 2018-08-14
+
+  * Caffe Corretto: Added Maelstrom. UEF Experimental AA. Effects unfinished.
+
+  ### 2018-08-15
+
+  * Debug Tools: Added a function to check units have the correct background image.
+
+  ### 2018-08-16
+
+  * Caffe Corretto: Added the weapons of Maelstrom and the disabled prototype disarmer turret to the default weapons files.
+  * Debug Tools: Created a version of the DPS test unit that flies, for AA tests.
+  * R&D: Deleted the hacky AI script.
+
 ## 2018-08-08|0.8
 
 * Release version. The big 0.8. Git revision 666. BrewLAN is 9 years old in 2 and a half weeks.

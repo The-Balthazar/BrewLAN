@@ -10,7 +10,8 @@ local OldModBlueprints = ModBlueprints
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
 
-    LoggerGonnaLog(all_blueprints.Unit)
+    CheckAllUnitBackgroundImages(all_blueprints.Unit)
+    CheckAllUnitThreatValues(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -23,13 +24,19 @@ function ShouldWeLogThis(id, bp)
         'uaa0310',
         'sea0401',
         'url0203',
-    }]]--
-    --return units and table.find(units, id)
+    }
+    return units and table.find(units, id)]]
     return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'PRODUCTBREWLAN') or table.find(bp.Categories, 'PRODUCTBREWLANTURRETS') or table.find(bp.Categories, 'PRODUCTBREWLANSHIELDS') or table.find(bp.Categories, 'PRODUCTBREWLANRND'))
     --return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3') or table.find(bp.Categories, 'EXPERIMENTAL') )
 end
 
-function LoggerGonnaLog(all_bps)
+function CheckAllUnitBackgroundImages(all_bps)
+    for id, bp in all_bps do
+        CheckUnitHasCorrectIconBackground(id, bp)
+    end
+end
+
+function CheckAllUnitThreatValues(all_bps)
     local LOGOutput = {}
     for id, bp in all_bps do
     --for i, id in units do local bp = all_bps[id]
@@ -266,14 +273,58 @@ function CalculatedDPS(weapon)
     return Damage * (1 / DamageInterval) or 0
 end
 
+function CheckUnitHasCorrectIconBackground(id, bp)
+    local icon = string.lower(bp.General.Icon or 'land')
+    local MT = bp.Physics.MotionType
+    local BLC = bp.Physics.BuildOnLayerCaps -- LAYER_Air LAYER_Land
+    local cats = bp.Categories
+    local errorString = "unit: " .. id .. " (" .. LOC(bp.Description) .. ") has the wrong icon background (bp.General.Icon) reports: '" .. icon .. "' should be "
+
+    if (
+        MT == 'RULEUMT_Air' -- Fliers
+        or MT == 'RULEUMT_None' and table.find(cats, 'FACTORY') and table.find(cats, 'AIR') --Aircraft factories
+    ) then
+        if icon != 'air' then
+            LOG(errorString .. "'air'.")
+            --LOG(repr(BLC))
+        end
+    elseif (
+        MT == 'RULEUMT_Water' --Main two
+        or MT == 'RULEUMT_SurfacingSub'
+        or MT == 'RULEUMT_None' and not BLC.LAYER_Land and (BLC.LAYER_Seabed or BLC.LAYER_Sub or BLC.LAYER_Water) --buildings buildable in or on water, but not land
+        or MT == 'RULEUMT_None' and table.find(cats, 'FACTORY') and table.find(cats, 'NAVAL') --Naval factories, if not specifically covered by the above, which they should be.
+    ) then
+        if icon != 'sea' then
+            LOG(errorString .. "'sea'.")
+            --LOG(repr(BLC))
+        end
+    elseif (
+        (MT == 'RULEUMT_Hover' or MT == 'RULEUMT_AmphibiousFloating' or MT == 'RULEUMT_Amphibious' )
+        or MT == 'RULEUMT_None' and BLC.LAYER_Land and (BLC.LAYER_Seabed or BLC.LAYER_Sub or BLC.LAYER_Water) --buildings buildable in or on water as well as on land.
+    ) then
+        if icon != 'amph' then
+            LOG(errorString .. "'amph'.")
+            --LOG(repr(BLC))
+        end
+    elseif (
+        MT == 'RULEUMT_Land'
+        or MT == 'RULEUMT_None' and BLC.LAYER_Land and not (BLC.LAYER_Seabed or BLC.LAYER_Sub or BLC.LAYER_Water) --buildings buildable on land, but not in or on the water.
+    ) then
+        if icon != 'land' then
+            LOG(errorString .. "'land'.")
+            --LOG(repr(BLC))
+        end
+    end
+end
+
 function LOC(s)
-    if string.sub(s, 1, 4)=='<LOC' then
+    if type(s) == 'string' and string.sub(s, 1, 4)=='<LOC' then
         local i = string.find(s,">")
         if i then
             s = string.sub(s, i+1)
         end
     end
-    return s
+    return s or 'nil'
 end
 
 end
