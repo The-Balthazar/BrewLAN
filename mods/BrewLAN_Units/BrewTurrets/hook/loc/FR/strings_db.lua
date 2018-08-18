@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="gamme puissante, courte, tourelle défens
 --Il est utilisé par la bobine de Tesla
 tooltipbrewturrets0000="Basculer puissance d'arme"
 tooltipbrewturrets0001="Active ou désactive l'alimentation principale de l'arme."
+
+seb2402_name="Maelstrom"
+seb2402_desc="Experimental Anti-Air Défense"
+Unit_Description_BrewLAN_Turrets_0008="arme anti-aérienne défensive. Fournit des dégâts à courte portée dévastatrice. Consomme chaque tir puissance."

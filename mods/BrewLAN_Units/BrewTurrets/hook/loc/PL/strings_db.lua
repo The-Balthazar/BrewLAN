@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="Mocny, krótki zasięg, wieżyczka obronn
 --Jest to wykorzystywane przez Tesla Coil
 tooltipbrewturrets0000="Przełączanie zasilania broń"
 tooltipbrewturrets0001="Włącza lub wyłącza zasilanie broni."
+
+seb2402_name="Wir"
+seb2402_desc="Eksperymentalna Anti-Air Defence"
+Unit_Description_BrewLAN_Turrets_0008="Obronna broń anty-powietrze. Zapewnia katastrofalne szkody krótkiego zasięgu. Zużywa moc przy każdym zdjęciu."

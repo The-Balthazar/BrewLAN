@@ -36,6 +36,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Deleted the hacky AI script.
   * Caffe Corretto: Finished the Maelstrom.
 
+  ### 2018-08-18
+
+  * Added the Maelstrom icon to the scd, and added translations for it.
+
 ## 2018-08-08|0.8
 
 * Release version. The big 0.8. Git revision 666. BrewLAN is 9 years old in 2 and a half weeks.

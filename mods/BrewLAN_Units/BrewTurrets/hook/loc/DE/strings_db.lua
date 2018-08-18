@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="Leistungsstarke, kurze Reichweite, defens
 --Dies wird durch die Tesla Coil verwendet
 tooltipbrewturrets0000="Toggle Waffe Macht"
 tooltipbrewturrets0001="Aktiviert oder deaktiviert die Hauptwaffe Macht."
+
+seb2402_name="Sog"
+seb2402_desc="Experimentelle Anti-Air Defense"
+Unit_Description_BrewLAN_Turrets_0008="Defensive Anti-Luft-Waffe. Bietet verheerende Schäden mit kurzer Reichweite. Verbraucht Energie mit jedem Schuss."

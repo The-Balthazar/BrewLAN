@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="Silný, krátkého dosahu, obranný věž
 --To je používán Tesla Coil
 tooltipbrewturrets0000="Přepnout zbraň výkon"
 tooltipbrewturrets0001="Zapíná nebo vypíná hlavní zbraň moc."
+
+seb2402_name="Vír"
+seb2402_desc="Experimentální Anti-Air Defense"
+Unit_Description_BrewLAN_Turrets_0008="Obranná zbraň, anti-vzduch. Poskytuje devastující poškození na krátkou vzdálenost. Spotřebovává energii u každého snímku."

@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="De gran alcance, de corto alcance, la tor
 --Esto es usado por la bobina de Tesla
 tooltipbrewturrets0000="arma de potencia de conmutación"
 tooltipbrewturrets0001="Activa o desactiva la alimentación principal arma."
+
+seb2402_name="Maelstrom"
+seb2402_desc="Experimental de Defensa Antiaérea"
+Unit_Description_BrewLAN_Turrets_0008="arma antiaérea defensiva. Proporciona devastadores daños de corto alcance. Consume energía en cada disparo."

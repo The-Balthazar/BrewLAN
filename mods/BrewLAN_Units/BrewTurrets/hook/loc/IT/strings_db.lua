@@ -30,3 +30,7 @@ Unit_Description_BrewLAN_Turrets_0007="Potente, a corto raggio, torretta difensi
 --Questo è usato dalla bobina di Tesla
 tooltipbrewturrets0000="Potenza arma Toggle"
 tooltipbrewturrets0001="Attiva o disattiva il potere arma principale."
+
+seb2402_name="Vortice"
+seb2402_desc="Sperimentale anti-Air Defense"
+Unit_Description_BrewLAN_Turrets_0008="Defensive arma anti-air. Fornisce devastanti danni a corto raggio. Consuma il potere con ogni colpo."
