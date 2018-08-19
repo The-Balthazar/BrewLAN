@@ -10,7 +10,7 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.EnergyProductionBuffRemove,
     Affects = {
         EnergyProduction = {
-            Add = 0.3,
+            Add = 0.25/4,
             Mult = 1.0,
         },
     },

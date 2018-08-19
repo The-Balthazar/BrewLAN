@@ -1,39 +1,39 @@
 #****************************************************************************
 #**
-#**  Summary  :  UEF T3 Engineering Resource Generator/Fabricator 
+#**  Summary  :  UEF T3 Engineering Resource Generator/Fabricator
 #**
 #****************************************************************************
-                                                                       
-local CConstructionStructureUnit = import('/lua/cybranunits.lua').CConstructionStructureUnit   
-local EffectUtil = import('/lua/EffectUtilities.lua')                
+
+local CConstructionStructureUnit = import('/lua/cybranunits.lua').CConstructionStructureUnit
+local EffectUtil = import('/lua/EffectUtilities.lua')
 local Utilities = import('/lua/utilities.lua')
 
-TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) { 
+TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
-        CConstructionStructureUnit.OnStopBeingBuilt(self,builder,layer)   
+        CConstructionStructureUnit.OnStopBeingBuilt(self,builder,layer)
         ChangeState(self, self.ActiveState)
     end,
-    
+
     CreateBuildEffects = function( self, unitBeingBuilt, order )
         local UpgradesFrom = unitBeingBuilt:GetBlueprint().General.UpgradesFrom
         --If we are assisting an upgrading unit, or repairing a unit, play seperate effects
         if (order == 'Repair' and not unitBeingBuilt:IsBeingBuilt()) or (UpgradesFrom and UpgradesFrom != 'none' and self:IsUnitState('Guarding'))then
             EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
         else
-            EffectUtil.CreateUEFBuildSliceBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )        
-        end           
-    end,      
+            EffectUtil.CreateUEFBuildSliceBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+        end
+    end,
     
     OnDamage = function(self, instigator, amount, vector, damageType)
         CConstructionStructureUnit.OnDamage(self, instigator, amount, vector, damageType)
-                
+
         self:PlaySound(self:GetBlueprint().Audio.PanicLoop)
         if instigator then
             if instigator and IsUnit(instigator) then
-                local layer = instigator:GetCurrentLayer()             
+                local layer = instigator:GetCurrentLayer()
                 local bp = self:GetBlueprint()
                 local distance = Utilities.GetDistanceBetweenTwoEntities(self, instigator)
-                if distance > bp.Intel.VisionRadius * 3 then 
+                if distance > bp.Intel.VisionRadius * 3 then
                     --LOG("Shit that's far: ".. distance)
                     return
                 elseif layer == 'Land' or self.AlternateWater  then
@@ -49,23 +49,23 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
                     end
                 else
                     return --what are we fighting here I dont even.
-                end   
+                end
                 --LOG("Instigator layer: ".. layer)
                 ChangeState(self, self.PanicState)
             end
         end
-    end,  
-        
+    end,
+
     PanicState = State {
         Main = function(self)
-            local pos = self:GetPosition()  
+            local pos = self:GetPosition()
             local aiBrain = self:GetAIBrain()
-            
+
             local bp = self:GetBlueprint()
             local x = bp.Physics.SkirtSizeX / 2 + 1
             local z = bp.Physics.SkirtSizeZ / 2 + 1
             local sign = -1 + 2 * math.random(0, 1)
-            
+
             if math.random(0, 1) > 0 then
                 self.BuildGoalX = sign * x
                 self.BuildGoalZ = math.random(-z, z)
@@ -73,10 +73,10 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
                 self.BuildGoalX = math.random(-x, x)
                 self.BuildGoalZ = sign * z
             end
-            
+
             LOG( "Help, help, I'm being repressed!" )
             aiBrain:BuildStructure(self, self.BuildThis or 'ueb2101', {pos[1]+self.BuildGoalX, pos[3]+self.BuildGoalZ, 0})
-        end,   
+        end,
         OnStopBuild = function(self, unitBuilding)
             CConstructionStructureUnit.OnStopBuild(self, unitBuilding)
             ChangeState(self, self.ActiveState)
@@ -86,7 +86,7 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
             ChangeState(self, self.ActiveState)
         end,
     },
-              
+
     ActiveState = State {
         Main = function(self)
         end,
@@ -94,8 +94,8 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
         OnInActive = function(self)
             ChangeState(self, self.InActiveState)
         end,
-    },    
-    
+    },
+
     InActiveState = State {
         Main = function(self)
         end,
@@ -103,5 +103,5 @@ TEngineeringResourceStructureUnit = Class(CConstructionStructureUnit) {
         OnActive = function(self)
             ChangeState(self, self.ActiveState)
         end,
-    },   
+    },
 }

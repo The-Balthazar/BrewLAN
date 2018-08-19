@@ -103,7 +103,7 @@ UnitBlueprint {
         'HIGHALTAIR',
         'TECH1',
         'ANTINAVY',
-        'BOMBER',
+        'TORPEDOBOMBER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYSONAR',
@@ -130,9 +130,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'UEA0204',
-                        },
+                        Bones = {0},
                         Scale = 0.7,
                         Type = 'SeaIdle02',
                     },
@@ -143,9 +141,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'UEA0204',
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -153,9 +149,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'UEA0204',
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -173,9 +167,7 @@ UnitBlueprint {
             WaterAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'UEA0204',
-                        },
+                        Bones = {0},
                         Type = 'Surface02',
                     },
                 },

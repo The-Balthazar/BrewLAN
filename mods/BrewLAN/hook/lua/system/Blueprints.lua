@@ -9,7 +9,7 @@ local OldModBlueprints = ModBlueprints
 local BrewLANPath = function()
     for i, mod in __active_mods do
         --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
-        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000080" then
+        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000082" then
             return mod.location
         end
     end
@@ -21,6 +21,7 @@ function ModBlueprints(all_blueprints)
     BrewLANGlobalCategoryAdditions(all_blueprints.Unit)
     BrewLANBuildCatChanges(all_blueprints.Unit)
     BrewLANGantryBuildList(all_blueprints.Unit)
+    BrewLANGantryTechShareCheck(all_blueprints.Unit)
     BrewLANHeavyWallBuildList(all_blueprints.Unit)
     --BrewLANNameCalling(all_blueprints.Unit)
     UpgradeableToBrewLAN(all_blueprints.Unit)
@@ -153,7 +154,6 @@ function CheckBuildCatConsistsOfRealCats(real_categories, buildcat)
         return false
     end
 end
-
 
 --------------------------------------------------------------------------------
 -- Fixes for land-built factories being able to build non-land engineers non-specifically.
@@ -366,20 +366,55 @@ function BrewLANGantryBuildList(all_bps)
 end
 
 --------------------------------------------------------------------------------
+-- Allowing other experimentals that look like they fit to be gantry buildable
+--------------------------------------------------------------------------------
+
+function BrewLANGantryTechShareCheck(all_bps)
+    for id, bp in all_bps do
+        if bp.Categories then
+            if not table.find(bp.Categories,'GANTRYSHARETECH')
+            and (table.find(bp.Categories,'FACTORY') or table.find(bp.Categories,'ENGINEER'))
+            and (table.find(bp.Categories,'TECH3') or table.find(bp.Categories,'EXPERIMENTAL') or table.find(bp.Categories,'COMMAND'))
+            then
+                if bp.Economy.BuildableCategory then
+                    for i, buildcat in bp.Economy.BuildableCategory do
+                        if string.find(buildcat, 'FACTORY') or string.find(buildcat, 'ENGINEER') or string.find(buildcat, 'COMMANDER') then
+                            table.insert(bp.Categories, 'GANTRYSHARETECH')
+                        end
+                    end
+                end
+            end
+        end
+    end
+    local Explicit = {
+        'xrl0403',
+        'ssl0403',
+    }
+    for i, cat in Explicit do
+        if all_bps[cat] and all_bps[cat].Economy.BuildableCategory then
+            table.insert(all_bps[cat].Categories, 'GANTRYSHARETECH')
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
 -- Propperly choosing what should be buildable by the heavy walls.
 --------------------------------------------------------------------------------
 
 function BrewLANHeavyWallBuildList(all_bps)
     for id, bp in all_bps do
-        --Check its not hard coded to be buildable, then check it meets the standard requirements.
         if bp.Categories then
+            --Check its not hard coded to be buildable.
             if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
+            --and check it's not something we don't want on a wall.
             and not table.find(bp.Categories, 'WALL')
             and not table.find(bp.Categories, 'HEAVYWALL')
             and not table.find(bp.Categories, 'MEDIUMWALL')
             and not table.find(bp.Categories, 'MINE')
+            --Also make sure it's not going to want to move.
             and table.find(bp.Categories, 'STRUCTURE')
             then
+                --then check it meets the standard requirements
                 if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
                 or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
                 or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')

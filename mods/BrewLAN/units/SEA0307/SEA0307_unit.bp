@@ -102,7 +102,7 @@ UnitBlueprint {
         'HIGHALTAIR',
         'TECH3',
         'ANTINAVY',
-        'BOMBER',
+        'TORPEDOBOMBER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYSONAR',
@@ -130,9 +130,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'BEA0307',
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -140,9 +138,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'BEA0307',
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },

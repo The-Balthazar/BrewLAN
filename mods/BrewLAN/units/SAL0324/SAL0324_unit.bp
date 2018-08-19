@@ -60,6 +60,7 @@ UnitBlueprint {
         'TECH3',
         'OMNI',
         'HOVER',
+        'AMPHIBIOUS',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYOMNI',

@@ -192,7 +192,7 @@ do
         -- Fix for bombers killing themselves against the Iron Curtain
         --
         OnDamage = function(self, instigator, amount, vector, damageType, ...)
-            if EntityCategoryContains(categories.BOMBER, self) and self:GetCurrentLayer() == 'Air' and damageType == 'NormalBomb' then
+            if damageType == 'NormalBomb' and EntityCategoryContains(categories.BOMBER, self) and self:GetCurrentLayer() == 'Air' then
                 UnitOld.OnDamage(self, instigator, amount * 0.05 , vector, damageType, unpack(arg))
             else
                 UnitOld.OnDamage(self, instigator, amount, vector, damageType, unpack(arg))

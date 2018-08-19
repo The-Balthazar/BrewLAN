@@ -264,27 +264,59 @@ local SyncroniseThread = function(self, interval, event, data)
     end
 end
 --------------------------------------------------------------------------------
+local WindEnergyMin = false
+local WindEnergyRange = false
+--These are defined here so they are global for the turbines, and only 1 has to define it.
 WindEnergyCreationUnit = Class(EnergyCreationUnit) {
+
     OnStopBeingBuilt = function(self,builder,layer)
         EnergyCreationUnit.OnStopBeingBuilt(self,builder,layer)
+        ------------------------------------------------------------------------
+        -- Pre-setup
+        ------------------------------------------------------------------------
         self:SetProductionPerSecondEnergy(0)
         self.Spinners = {
             --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
             CreateRotator(self, 'Tower', 'z', 0, 5, 1),
             CreateRotator(self, 'Rotors', 'z', nil, 0, 100, 0),
         }
+        ------------------------------------------------------------------------
+        -- Calculate energy values
+        ------------------------------------------------------------------------
+        if not WindEnergyMin and not WindEnergyRange then
+            LOG("Defining wind turbine energy output value range.")
+            local bp = self:GetBlueprint().Economy
+            local mean = bp.ProductionPerSecondEnergy or 17.5
+            local min = bp.ProductionPerSecondEnergyMin or 5
+            local max = bp.ProductionPerSecondEnergyMax or 30
+            if (min + max) / 2 == mean then
+                --Then nothing has messed with the numbers, or something messed with all of them.
+                WindEnergyMin = min
+                WindEnergyRange = max - min
+            else
+                --Something has messed with the numbers, and we should move to match.
+                local mult = mean / 17.5
+                WindEnergyMin = min * mult
+                WindEnergyRange = (max - min) * mult
+            end
+        end
+        ------------------------------------------------------------------------
+        -- Run the thread
+        ------------------------------------------------------------------------
         self:ForkThread(SyncroniseThread,30,self.OnWeatherInterval,self)
     end,
 
     OnWeatherInterval = function(self)
         self.Spinners[1]:SetGoal(ScenarioInfo.WindStats.Direction)
-        self.Spinners[2]:SetTargetSpeed(-400 * ((1/30) * ScenarioInfo.WindStats.Power))
-        self:SetProductionPerSecondEnergy(ScenarioInfo.WindStats.Power)
+        self.Spinners[2]:SetTargetSpeed(-65 - (335 * ScenarioInfo.WindStats.Power))
+        self:SetProductionPerSecondEnergy(
+            (WindEnergyMin + WindEnergyRange * ScenarioInfo.WindStats.Power)
+            *
+            (self.EnergyProdAdjMod or 1)
+        )
     end,
 
     OnKilled = function(self, instigator, type, overKillRatio)
-        local bp = self:GetBlueprint()
-        --Allow restarting of me, the RND item, if I was never finished.
         if self.Spinners then
             self.Spinners[2]:Destroy()
         end

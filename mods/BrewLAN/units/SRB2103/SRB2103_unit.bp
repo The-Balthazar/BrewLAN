@@ -42,7 +42,6 @@ UnitBlueprint {
         'BUILTBYTIER3COMMANDER',
         'CYBRAN',
         'STRUCTURE',
-        'STRATEGIC',
         'TECH1',
         'INDIRECTFIRE',
         'ARTILLERY',

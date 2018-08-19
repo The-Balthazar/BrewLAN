@@ -35,11 +35,8 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYDIRECTFIRE',
         'OVERLAYMISC',
-        'INTELLIGENCE',
-        'COUNTERINTELLIGENCE',
         'SERAPHIM',
         'STRUCTURE',
-        'DEFENSE',
         'TECH3',
         'NUKE',
         'MINE',
@@ -110,7 +107,6 @@ UnitBlueprint {
         SizeZ = 0,
     },
     General = {
-        CapCost = 0.1,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

@@ -21,7 +21,7 @@ function ParagonAdjacency(all_bps)
     local BrewLAN = false
     for i, mod in __active_mods do
         --UID also hard referenced in /hook/lua/game.lua and mod_info.lua
-        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000080" then
+        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000082" then
             BrewLAN = true
             break
         end

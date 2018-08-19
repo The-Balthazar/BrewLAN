@@ -31,7 +31,6 @@ UnitBlueprint {
         'SELECTABLE',
         'CYBRAN',
         'STRUCTURE',
-        'DEFENSE',
         'DRAGBUILD',
         'SIZE4',
         'TECH3',
@@ -178,7 +177,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        CapCost = 0,
+        CapCost = 0.15,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {

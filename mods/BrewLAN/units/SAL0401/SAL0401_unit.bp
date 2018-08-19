@@ -44,14 +44,16 @@ UnitBlueprint {
         'AEON',
         'MOBILE',
         'LAND',
+        'AMPHIBIOUS',
+        'HOVER',
         'EXPERIMENTAL',
-        'DIRECTFIRE',
+        'INDIRECTFIRE',
         'ARTILLERY',
+        'BOMBARDMENT',
         'NEEDMOBILEBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
-        'HOVER',
         'OVERLAYDIRECTFIRE',
         'OVERLAYCOUNTERMEASURE',
     },
@@ -255,7 +257,6 @@ UnitBlueprint {
             LAYER_Air = false,
             LAYER_Land = true,
             LAYER_Orbit = false,
-            LAYER_Seabed = false,
             LAYER_Sub = false,
             LAYER_Water = true,
         },
@@ -417,7 +418,6 @@ UnitBlueprint {
             ProjectileId = '/projectiles/SIMAntiMissile01/SIMAntiMissile01_proj.bp',
             ProjectileLifetime = 3,
             ProjectileLifetimeUsesMultiplier = 2,
-            ProjectilesPerOnFire = 1,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -459,7 +459,6 @@ UnitBlueprint {
             TurretYawSpeed = 720,
             Turreted = true,
             WeaponCategory = 'Defense',
-            WeaponUnpacks = false,
         },
         {
             AboveWaterTargetsOnly = true,

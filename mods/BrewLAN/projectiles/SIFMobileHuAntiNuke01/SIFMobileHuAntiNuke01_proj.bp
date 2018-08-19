@@ -10,7 +10,6 @@ ProjectileBlueprint {
         'PROJECTILE',
         'ANTIMISSILE',
         'NOSPLASHDAMAGE',
-        'SERAPHIM',
     },
     Description = 'Seraphim Anti Nuclear Missile',
     Display = {

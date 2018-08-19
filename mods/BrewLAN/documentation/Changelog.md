@@ -2,6 +2,61 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2018-08-18|0.8.2
+
+* Increased the cap cost of mines and walls:
+  * Shield walls and tech 2 walls now cost 0.1 cap.
+  * Armoured walls and gates cost 0.15 cap.
+  * Cybran stacked walls cost 0.075 cap. (0.225 cap with both parts included)
+  * Nuke mines now cost 1 cap.
+* Fixed rebuild for seraphim tech 2 mass storage.
+* Removed engineer category from engineering stations.
+* Removed showqueue category from the Iron Curtain.
+* Removed strategic category from tech 1 air staging.
+* Fixes size category for tech 1 air staging.
+* Removed defence and shield categories from shield walls.
+* Removed defence categories from walls.
+* Removed productsc1 category from Cybran tech 1 air staging.
+* Removed defence and faction categories from BrewLAN projectiles.
+* Added water vision to the Seraphim optic.
+* Adopted LOUD weapon rigging changes for Aster.
+* Reduced the size of the Aster anti-nuke.
+* Changed the order of checks for the bomber self damage fix for performance.
+* Improved performance on Gantry util for stolen tech.
+* Gantry stolen tech clause now cares for experimental engineers, tech 3 factories, and experimental factories.
+  * This means other factions gantries, and the Fatboy now count.
+* Gave the Seraphim mobile optic the amphibious category.
+
+  ### 2018-08-19
+
+  * Gave the Moldovite the amphibious and submersible categories and updated it's target priorities.
+  * Gave the Armillary the amphibious category and updated it's target priorities.
+  * Moldovite can now leave a wreckage on the seabed.
+  * Fixed Rupture having the structure armour class.
+  * Removed defence category from Rupture, and gave it the amphibious category.
+  * Gave the Metatron the amphibious category.
+  * Changed some categories on the Absolution.
+  * Replaced the radar and sonar categories with scout on the UX Dragonlady.
+  * Replaced the bomber category with the torpedobomber category on the Albatross and Seagull.
+  * Changed the target priorities of the Centurion, and changed the rigging of the missile launchers.
+  * Removed the strategic categories from the tech 1 artilleries.
+  * Removed the defence, intelligence, and counterintelligence categories from the mines.
+  * Merged the weapon scripts of the Solaris, and simplified their target priorities.
+  * R&D: Wind turbines now respect adjacency bonuses and resource multiplier modifications.
+  * R&D: Wind turbines have been given adjacency bonuses to one another.
+  * R&D: Lowered the max wind output of a turbine, pre-bonuses, to 25.
+  * Moved the most of the new gantry tech share checks to launch, and added some additional checks at that time.
+    * Armoured walls, research centres, megalith eggs, BrewLAN and FAF satellite facilities, the BlackOps Rift Arch, and LOUD Quantum Teleporters no longer apply.
+    * ACUs now apply.
+    * The Megalith and Iyadesu are now explicitly allowed.
+    * Fatboy, Ivan, Tempest, CZAR and Atlantis and other aircraft carriers, still apply.
+    * Quantum Gates apply when mods allow them to function as regular factories.
+
+## 2018-08-09|81-FAF-develop (FAF exclusive release)
+
+* Fixed transports.
+* FAF Vault icon fix.
+
 ## 2018-08-09|0.8★ (No functional sim changes to BrewLAN, but changes to sub-mods)
 
 * Localisation fixes.
@@ -40,7 +95,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added the Maelstrom icon to the scd, and added translations for it.
 
-## 2018-08-08|0.8
+## 2018-08-08|0.8 (v80 on FAF)
 
 * Release version. The big 0.8. Git revision 666. BrewLAN is 9 years old in 2 and a half weeks.
 

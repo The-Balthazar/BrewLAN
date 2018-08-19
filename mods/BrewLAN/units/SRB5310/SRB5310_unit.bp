@@ -33,8 +33,6 @@ UnitBlueprint {
         'STRUCTURE',
         'CONSTRUCTION',
         'FACTORY',
-        'DEFENSE',
-        --'RALLYPOINT',
         'SHOWQUEUE',
         'DRAGBUILD',
         'SIZE4',
@@ -207,7 +205,7 @@ UnitBlueprint {
                 0,
             },
         },
-        CapCost = 0,
+        CapCost = 0.15,
         Category = 'Defense',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

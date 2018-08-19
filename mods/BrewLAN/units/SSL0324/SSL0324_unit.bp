@@ -47,6 +47,7 @@ UnitBlueprint {
         'INTELLIGENCE',
         'TECH3',
         'OMNI',
+        'AMPHIBIOUS',
         'HOVER',
         'VISIBLETORECON',
         'RECLAIMABLE',

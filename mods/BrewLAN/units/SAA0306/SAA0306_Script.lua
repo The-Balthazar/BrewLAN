@@ -21,12 +21,7 @@ SAA0306 = Class(AAirUnit) {
     },
 
     Weapons = {
-        AAFizz01 = Class(AAATemporalFizzWeapon) {},
-        AAFizz02 = Class(AAATemporalFizzWeapon) {},
-        AAFizz03 = Class(AAATemporalFizzWeapon) {},
-        AAFizz04 = Class(AAATemporalFizzWeapon) {},
-        AAFizz05 = Class(AAATemporalFizzWeapon) {},
-        AAFizz06 = Class(AAATemporalFizzWeapon) {},
+        AAFizz = Class(AAATemporalFizzWeapon) {},
     },
 
     OnStopBeingBuilt = function(self,builder,layer)

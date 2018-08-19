@@ -1,5 +1,5 @@
 UnitBlueprint {
-    Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
+    Adjacency = 'T1WindGeneratorAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
             Bank = 'URB',
@@ -102,7 +102,9 @@ UnitBlueprint {
         BuildCostEnergy = 500,
         BuildCostMass = 25,
         BuildTime = 40,
-        ProductionPerSecondEnergy = 17.5,--This is just for the UI, the value is overwritten. It's 5-30.
+        ProductionPerSecondEnergy = 15,--Mean value.
+        ProductionPerSecondEnergyMin = 5,
+        ProductionPerSecondEnergyMax = 25,
         RebuildBonusIds = {
             'srb1101',
         },

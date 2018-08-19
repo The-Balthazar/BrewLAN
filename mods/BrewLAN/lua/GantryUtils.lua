@@ -8,16 +8,21 @@ function BuildModeChange(self, mode)
     ------------------------------------------------------------------------
     local aiBrain = self:GetAIBrain()
     local pos = self.CachePosition or self:GetPosition()
+    local ParseEntityCategory = ParseEntityCategory
     local engineers
-    if pos then
-        engineers = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, self:GetPosition(), 30, 'Ally' )
+    if pos and categories.GANTRYSHARETECH then
+        engineers = aiBrain:GetUnitsAroundPoint(
+            (categories.GANTRYSHARETECH),
+            pos, 30, 'Ally'
+        )
+    elseif pos then
+        engineers = aiBrain:GetUnitsAroundPoint(
+            (categories.ENGINEER + categories.FACTORY) *
+            (categories.TECH3 + categories.EXPERIMENTAL),
+            pos, 30, 'Ally'
+        )
     end
-    local stolentech = {
-        CYBRAN = false,
-        AEON = false,
-        SERAPHIM = false,
-        UEF = false,
-    }
+    local stolentech = {CYBRAN = false, AEON = false, SERAPHIM = false, UEF = false}
     for race, val in stolentech do
         if EntityCategoryContains(ParseEntityCategory(race), self) then
             stolentech[race] = true
@@ -25,11 +30,10 @@ function BuildModeChange(self, mode)
     end
     if type(engineers) == 'table' then
         for k, v in engineers do
-            if EntityCategoryContains(categories.TECH3, v) then
-                for race, val in stolentech do
-                    if EntityCategoryContains(ParseEntityCategory(race), v) then
-                        stolentech[race] = true
-                    end
+            for race, val in stolentech do
+                if EntityCategoryContains(ParseEntityCategory(race), v) then
+                    stolentech[race] = true
+                    --a break here would be less checks, but would cause issues with units with multiple faction categories.
                 end
             end
         end

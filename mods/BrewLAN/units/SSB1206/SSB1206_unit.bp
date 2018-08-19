@@ -139,7 +139,7 @@ UnitBlueprint {
         BuildCostMass = 3000,
         BuildTime = 3750,
         RebuildBonusIds = {
-            'bsb1206',
+            'ssb1206',
         },
         StorageMass = 12500,
     },

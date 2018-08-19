@@ -23,13 +23,11 @@ UnitBlueprint {
         'BUILTBYTIER3FIELD',
         'AEON',
         'STRUCTURE',
-        'DEFENSE',
         'DRAGBUILD',
         'TECH3',
         'SIZE4',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHIELD',
         'SORTDEFENSE',
         'SHIELDWALL',
     },
@@ -159,7 +157,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        CapCost = 0,
+        CapCost = 0.1,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {

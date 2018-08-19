@@ -7,7 +7,6 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'UEF',
         'PROJECTILE',
         'NOSPLASHDAMAGE',
         'ANTIMISSILE',
@@ -25,12 +24,12 @@ ProjectileBlueprint {
             },
         },
         StrategicIconSize = 1,
-        UniformScale = 1.2,
+        UniformScale = 0.6,
     },
     Economy = {
-        BuildCostEnergy = 360000/3,
-        BuildCostMass = 3600/3,
-        BuildTime = 16200/3,
+        BuildCostEnergy = 360000/2,
+        BuildCostMass = 3600/2,
+        BuildTime = 16200/2,
     },
     General = {
         Category = 'Defense',

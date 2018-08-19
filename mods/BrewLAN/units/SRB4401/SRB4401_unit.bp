@@ -41,7 +41,6 @@ UnitBlueprint {
         'SIZE16',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHOWQUEUE',
         'OVERLAYDEFENSE',
         'SORTDEFENSE',
     },
@@ -83,7 +82,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
         },
-        #AnimationUpgrade = '/units/urb4207/urb4207_aopen.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

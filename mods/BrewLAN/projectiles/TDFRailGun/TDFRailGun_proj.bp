@@ -17,7 +17,6 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'UEF',
         'PROJECTILE',
         'DIRECTFIRE',
     },
@@ -33,7 +32,6 @@ ProjectileBlueprint {
     General = {
         Category = 'Direct Fire',
         EntityCategory = {
-            'UEF',
             'PROJECTILE',
             'DIRECTFIRE',
         },
