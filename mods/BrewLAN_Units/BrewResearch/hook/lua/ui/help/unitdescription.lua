@@ -71,15 +71,15 @@ Description['srb0307'] = "<LOC Unit_Description_RND_015>Produces seaplanes"
 Description['ssb0307'] = "<LOC Unit_Description_RND_015>Produces seaplanes"
 
 --Replacement units for research locked vanilla units
-Description['sab1101'] = "<LOC Unit_Description_RND_011>Produces a fluctuating quantity of energy."
-Description['seb1101'] = "<LOC Unit_Description_RND_011>Produces a fluctuating quantity of energy."
-Description['srb1101'] = "<LOC Unit_Description_RND_011>Produces a fluctuating quantity of energy."
-Description['ssb1101'] = "<LOC Unit_Description_RND_011>Produces a fluctuating quantity of energy."
+Description['sab1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
+Description['seb1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
+Description['srb1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
+Description['ssb1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
 
-Description['sab1102'] = "<LOC Unit_Description_RND_017>Produces an undulating quantity of energy. More effective in large bodies of water."
-Description['seb1102'] = "<LOC Unit_Description_RND_017>Produces an undulating quantity of energy. More effective in large bodies of water."
-Description['srb1102'] = "<LOC Unit_Description_RND_017>Produces an undulating quantity of energy. More effective in large bodies of water."
-Description['ssb1102'] = "<LOC Unit_Description_RND_017>Produces an undulating quantity of energy. More effective in large bodies of water."
+Description['sab1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
+Description['seb1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
+Description['srb1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
+Description['ssb1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
 
 --Unlockable units
 Description['sra0211'] = "<LOC Unit_Description_RND_008>Intermediate bomber aircraft."

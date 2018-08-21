@@ -65,6 +65,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Adjacency buff increased from 25% to 40%.
   * R&D: Tweaked the costs of tidal generators, and added strings for them.
   * Debug Tools: Make the DPS test units function on LOUD.
+  * R&D: Added the Seraphim tidal generator.
+  * R&D: Changed the description of the wind turbines to "Wind Generator" from "Power Generator".
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

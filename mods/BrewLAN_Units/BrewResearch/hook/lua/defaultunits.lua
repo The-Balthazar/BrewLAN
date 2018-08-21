@@ -397,10 +397,9 @@ TidalEnergyCreationUnit = Class(EnergyCreationUnit) {
         ------------------------------------------------------------------------
         -- Run the thread
         ------------------------------------------------------------------------
-        if TidalEnergyRange < 0.1 then
-            self:SetProductionPerSecondEnergy(TidalEnergyMin)
-            self.Spinners[1]:SetTargetSpeed( - TidalEnergyMin * 10 )
-        else
+        self:SetProductionPerSecondEnergy(TidalEnergyMin)
+        self.Spinners[1]:SetTargetSpeed( - TidalEnergyMin * 10 )
+        if TidalEnergyRange >= 0.1 then
             self:ForkThread(SyncroniseThread,60,self.OnWeatherInterval,self)
         end
     end,
