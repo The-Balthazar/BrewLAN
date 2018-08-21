@@ -14,7 +14,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
     OnCreate = function(self)
         AShieldStructureUnit.OnCreate(self)
         local pos = self:GetPosition()
-        LOG("Terrain type: " .. GetTerrainType( pos[1], pos[3] ).Style .. " POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3])
+        LOG("Terrain type: " .. (GetTerrainType( pos[1], pos[3] ).Style or "nil") .. " POS: " .. pos[1] .. ", " .. pos[2] .. ", " .. pos[3])
         self.DPScalcs = {}
         self:SetCustomName('True Brick')
         --Get lag fraction
@@ -36,6 +36,11 @@ ZZZ0001 = Class(AShieldStructureUnit) {
         end
         ]]--
         --LOG(repr(_G)) --how to kill the universe in 13 characters.
+    end,
+
+    OnDamage = function(self, instigator, amount, vector, damageType)
+        self:DoOnDamagedCallbacks(instigator)
+        self:DoTakeDamage(instigator, amount, vector, damageType)
     end,
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)

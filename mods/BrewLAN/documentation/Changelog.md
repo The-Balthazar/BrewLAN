@@ -52,6 +52,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Fatboy, Ivan, Tempest, CZAR and Atlantis and other aircraft carriers, still apply.
     * Quantum Gates apply when mods allow them to function as regular factories.
 
+  ### 2018-08-20
+
+  * R&D: Created the scripts for, and defined the balance for, tidal generators.
+
+  ### 2018-08-20
+
+  * R&D: Changed wind generator balance:
+    * Health increased to 330 from 200.
+    * Mass cost increased to 30 from 25.
+    * Build time increased to 85 from 40.
+    * Adjacency buff increased from 25% to 40%.
+  * R&D: Tweaked the costs of tidal generators, and added strings for them.
+  * Debug Tools: Make the DPS test units function on LOUD.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

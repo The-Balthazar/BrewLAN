@@ -9,6 +9,7 @@ function BuildModeChange(self, mode)
     local aiBrain = self:GetAIBrain()
     local pos = self.CachePosition or self:GetPosition()
     local ParseEntityCategory = ParseEntityCategory
+    local EntityCategoryContains = EntityCategoryContains
     local engineers
     if pos and categories.GANTRYSHARETECH then
         engineers = aiBrain:GetUnitsAroundPoint(

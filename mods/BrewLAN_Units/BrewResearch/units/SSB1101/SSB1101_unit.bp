@@ -52,8 +52,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 4,
-        Health = 200,
-        MaxHealth = 200,
+        Health = 330,
+        MaxHealth = 330,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -107,8 +107,8 @@ UnitBlueprint {
     Economy = {
         AdjacentStructureEnergyMod = -2,
         BuildCostEnergy = 500,
-        BuildCostMass = 25,
-        BuildTime = 40,
+        BuildCostMass = 30,
+        BuildTime = 85,
         ProductionPerSecondEnergy = 15,--Mean value.
         ProductionPerSecondEnergyMin = 5,
         ProductionPerSecondEnergyMax = 25,
