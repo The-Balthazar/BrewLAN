@@ -897,7 +897,7 @@ end
 
 function BrewLANRelativisticLinksUpdate(all_bps)
     if string.lower(BrewLANPath() ) != "/mods/brewlan" then
-        all_bps.Unit.zzz0001.Desync = {
+        all_bps.Unit.zzz2220.Desync = {
             "BrewLAN reports you installed it",
             "wrong; it should be at:",
             "/mods/brewlan",

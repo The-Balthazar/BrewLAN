@@ -68,6 +68,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added the Seraphim tidal generator.
   * R&D: Changed the description of the wind turbines to "Wind Generator" from "Power Generator".
 
+  ### 2018-08-21
+
+  * Defined the Centurions weapons as non-exclusive so they can fire together.
+    * This actually makes a huge difference.
+  * Removed the tarmac from the tidal generator.
+  * Gave the Seraphim research centres distance models.
+  * Changed the particle effects on the tidal generator.
+  * Fixed the function that updates install directory causing a crash if Debug Tools isn't active.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.
