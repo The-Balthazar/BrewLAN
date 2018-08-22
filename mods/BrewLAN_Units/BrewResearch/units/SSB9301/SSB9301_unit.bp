@@ -102,7 +102,7 @@ UnitBlueprint {
                     ShaderName = 'Seraphim',
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     AlbedoName = '/units/xsb0304/xsb0304_albedo.dds',
-                    NormalsName = '/units/xsb0304/xsb0304_normalsts.dds',
+                    NormalsName = '/mods/brewlan_units/brewresearch/units/ssb9101/ssb9101_normalsts.dds',
                     SpecularName = '/units/xsb0304/xsb0304_specteam.dds',
                 },
                 {
@@ -110,7 +110,7 @@ UnitBlueprint {
                     ShaderName = 'Seraphim',
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     AlbedoName = '/units/xsb0304/xsb0304_albedo.dds',
-                    NormalsName = '/units/xsb0304/xsb0304_normalsts.dds',
+                    NormalsName = '/mods/brewlan_units/brewresearch/units/ssb9101/ssb9101_normalsts.dds',
                     SpecularName = '/units/xsb0304/xsb0304_specteam.dds',
                 },
                 {
@@ -118,7 +118,7 @@ UnitBlueprint {
                     ShaderName = 'Seraphim',
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     AlbedoName = '/units/xsb0304/xsb0304_albedo.dds',
-                    NormalsName = '/units/xsb0304/xsb0304_normalsts.dds',
+                    NormalsName = '/mods/brewlan_units/brewresearch/units/ssb9101/ssb9101_normalsts.dds',
                     SpecularName = '/units/xsb0304/xsb0304_specteam.dds',
                 },
             },

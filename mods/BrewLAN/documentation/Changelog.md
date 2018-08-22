@@ -72,10 +72,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Defined the Centurions weapons as non-exclusive so they can fire together.
     * This actually makes a huge difference.
-  * Removed the tarmac from the tidal generator.
-  * Gave the Seraphim research centres distance models.
-  * Changed the particle effects on the tidal generator.
+  * R&D: Removed the tarmac from the tidal generator.
+  * R&D: Gave the Seraphim research centres distance models.
+  * R&D: Changed the particle effects on the tidal generator.
   * Fixed the function that updates install directory causing a crash if Debug Tools isn't active.
+
+  ### 2018-08-22
+
+  * Stargate now warps projectiles.
+  * Replaced normals on the Stargate.
+  * R&D: Replaced the normals on the Seraphim research centres.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
