@@ -111,6 +111,10 @@ UnitBlueprint {
             'seb5104',
         },
     },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
     General = {
         Category = 'Strategic',
         Classification = 'RULEUC_MiscSupport',

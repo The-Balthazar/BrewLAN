@@ -203,7 +203,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
             Damage = 5000,
-            DamageRadius = 0,
+            DamageRadius = 5,
             DamageType = 'Railgun',
 
             DisplayName = 'Maelstrom Cannon',

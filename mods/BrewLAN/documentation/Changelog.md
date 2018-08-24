@@ -104,6 +104,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added an additional distance model for the Centurion between the current two.
   * Fixed inverted polys on the gatling gun on the Centurion.
   * Textured the gatling gun on the Centurion.
+  * Excalibur now has an explosion radius where the projectile stops.
+  * Fixed the footprint on the UEF and Cybran tech 1 air staging.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
