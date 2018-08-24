@@ -29,6 +29,8 @@ SAA0306 = Class(AAirUnit) {
         for i = 1, 6 do
             self:HideBone('Shutter' .. i, true)
         end
+        local bp = self:GetBlueprint()
+        self:SetCollisionShape( 'Box', 0, 0, 0, bp.SizeUnpackedX * 0.5, bp.SizeUnpackedY * 0.5, bp.SizeUnpackedZ * 0.5)
     end,
 
     OnShieldEnabled = function(self)

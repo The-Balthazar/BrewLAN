@@ -71,7 +71,6 @@ UnitBlueprint {
         'UEF',
         'STRUCTURE',
         'ECONOMIC',
-        'ENGINEER',
         'TECH3',
         'CONSTRUCTION',
         'REPAIR',

@@ -83,6 +83,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Replaced normals on the Stargate.
   * R&D: Replaced the normals on the Seraphim research centres.
 
+  ### 2018-08-23
+
+  * Performance improvements for Panopticon.
+  * Reduced the collision and build pool sizes of the Solaris while it's under construction.
+  * Stargate warped projectiles now routed underground to prevent polytrails between the two gates.
+
+  ### 2018-08-24
+
+  * Tweaked the targeting on the Centurion.
+    * Rear flak cannon now has a much larger AoE, less damage, and a considerably higher firing tolerance.
+  * More Panopticon optimisation.
+  * Added water vision to the Panopticon blips.
+  * R&D: Added a Seraphim tech 2 power generator as a half way point between tech 1 and tech 2.
+  * R&D: Research locked the default Seraphim tech 2 power generator.
+  * Removed the engineer category from the engineering resource buildings.
+  * R&D: Added the Seraphim tidal gen and light tech 2 gen to AI build lists.
+  * R&D: Created adjacency buff definitions for the light tech 2 power gen.
+  * R&D: Added strings for future unlockable aircraft.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

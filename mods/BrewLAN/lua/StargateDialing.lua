@@ -44,6 +44,9 @@ function StargateDialing(SuperClass)
                 local oPos = other:GetPosition()
                 local sPos = self:GetPosition()                     --z inverted so projectiles appear opposite side.
                 local rPos = {oPos[1] - sPos[1], oPos[2] - sPos[2], sPos[3] - oPos[3]}
+                local tPos = self.DialingData.TargetGate:GetPosition()
+                Warp(other, {sPos[1],sPos[2]-50,sPos[3]})--Route the projectile underground.
+                Warp(other, {tPos[1],tPos[2]-50,tPos[3]})--Prevents poly-trails being visible between the two warp points.
                 Warp(other, self.DialingData.TargetGate:CalculateWorldPositionFromRelative(rPos) )
                 if self.DialingData.TargetGate.DialingData.Iris then
                     self.DialingData.TargetGate:OnIrisImpact(other)

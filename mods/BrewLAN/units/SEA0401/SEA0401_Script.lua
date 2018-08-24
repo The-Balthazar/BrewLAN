@@ -3,6 +3,7 @@
 --------------------------------------------------------------------------------
 local               TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local               TWeapons = import('/lua/terranweapons.lua')
+local                 Weapon = import('/lua/sim/weapon.lua').Weapon
 --------------------------------------------------------------------------------
 local TAAFlakArtilleryCannon = TWeapons.TAAFlakArtilleryCannon
 local           TSAMLauncher = TWeapons.TSAMLauncher

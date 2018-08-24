@@ -10,13 +10,18 @@ SEB3404 = Class(TStructureUnit) {
 
     OnStopBeingBuilt = function(self, ...)
         TStructureUnit.OnStopBeingBuilt(self, unpack(arg) )
-        self.PanopticonUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+        local bp = self:GetBlueprint()
+        self.PanopticonUpkeep = bp.Economy.MaintenanceConsumptionPerSecondEnergy
         self:SetScriptBit('RULEUTC_WeaponToggle', true)
         self:ForkThread(
             function()
+                local army = self:GetArmy()
+                local aiBrain = self:GetAIBrain()
+                local maxrange = self:GetIntelRadius('radar') or bp.Intel.RadarRadius or 6000
+
                 while true do
                     if self.Intel == true then
-                        self:IntelSearch()
+                        self:IntelSearch(bp, army, aiBrain, maxrange)
                     end
                     WaitSeconds(1)
                 end
@@ -61,11 +66,13 @@ SEB3404 = Class(TStructureUnit) {
                 speed = 2,
             },
         })
-        for i, v in {{'Panopticon','Domes'},{'Large_Dish','Dish_Scaffolds'}} do
+        local drawscale = bp.Display.UniformScale or 1
+        local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+        for i, v in {Panopticon = 'Domes', Large_Dish = 'Dish_Scaffolds'} do
             local entity = import('/lua/sim/Entity.lua').Entity({Owner = self,})
-            entity:AttachBoneTo( -1, self, v[1] )
-            entity:SetMesh(import( '/lua/game.lua' ).BrewLANPath() .. '/units/SEB3404/SEB3404_' .. v[2] .. '_mesh')
-            entity:SetDrawScale(self:GetBlueprint().Display.UniformScale)
+            entity:AttachBoneTo( -1, self, i )
+            entity:SetMesh(BrewLANPath .. '/units/SEB3404/SEB3404_' .. v .. '_mesh')
+            entity:SetDrawScale(drawscale)
             entity:SetVizToAllies('Intel')
             entity:SetVizToNeutrals('Intel')
             entity:SetVizToEnemies('Intel')
@@ -73,18 +80,32 @@ SEB3404 = Class(TStructureUnit) {
         end
     end,
 
-    IntelSearch = function(self)
-        local aiBrain = self:GetAIBrain()
-        local maxrange = self:GetIntelRadius('radar') or self:GetBlueprint().Intel.RadarRadius or 6000
+    IntelSearch = function(self, bp, army, aiBrain, maxrange)
+        local FindAllUnits = function(aiBrain, category, range, cloakcheck)
+            local Ftable = {}
+            for i, unit in aiBrain:GetUnitsAroundPoint(category, (self.CachePosition or self:GetPosition()), range, 'Enemy' ) do
+                if cloakcheck and unit:IsIntelEnabled('Cloak') then
+                    --LOG("Counterintel guy")
+                else
+                    table.insert(Ftable, unit)
+                end
+            end
+            return Ftable
+        end
         -- Find visible things to attach vis entities to
-        local LocalUnits = self:FindAllUnits(categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, maxrange, true)
+        local LocalUnits = FindAllUnits(aiBrain, categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, maxrange, true)
         ------------------------------------------------------------------------
         -- IF self.ActiveConsumptionRestriction Sort the table by distance
         ------------------------------------------------------------------------
         if self.ActiveConsumptionRestriction then
             local DistanceSortedLocalUnits = {}
+            local pos = self.CachePosition or self:GetPosition()
+            --Local'd for performance.
+            local mathfloor = math.floor
+            local VDist2Sq = VDist2Sq
             for i, v in LocalUnits do
-                local uniqueDistanceKey = math.floor(VDist2Sq(v:GetPosition()[1], v:GetPosition()[3], self:GetPosition()[1], self:GetPosition()[3]) ) .. "." .. v:GetEntityId()
+                local vpos = v.CachePosition or v:GetPosition()
+                local uniqueDistanceKey = mathfloor(VDist2Sq(vpos[1], vpos[3], pos[1], pos[3]) ) .. "." .. v:GetEntityId()
                 DistanceSortedLocalUnits[uniqueDistanceKey] = v
                 v = nil
             end
@@ -93,33 +114,37 @@ SEB3404 = Class(TStructureUnit) {
         ------------------------------------------------------------------------
         -- Calculate the overall cost and cut off point for the energy restricted radius
         ------------------------------------------------------------------------
-        local NewUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
-        local SpareEnergy = self:GetAIBrain():GetEconomyIncome( 'ENERGY' ) - self:GetAIBrain():GetEconomyRequested('ENERGY') + self.PanopticonUpkeep
+        local NewUpkeep = bp.Economy.MaintenanceConsumptionPerSecondEnergy
+        local SpareEnergy = aiBrain:GetEconomyIncome( 'ENERGY' ) - aiBrain:GetEconomyRequested('ENERGY') + self.PanopticonUpkeep
+        local SpyBlipRadius = self:GetBlueprint().Intel.SpyBlipRadius or 2
+        local stringlower = string.lower
+        local mathmin = math.min
+        local mathmax = math.max
         for i, v in LocalUnits do
 
             --Calculate costs per unit as we go
             local ebp = v:GetBlueprint()
             local cost
-            if string.lower(ebp.Physics.MotionType or 'NOPE') == string.lower('RULEUMT_None') then
+            if stringlower(ebp.Physics.MotionType or 'NOPE') == stringlower('RULEUMT_None') then
                 --If building cost
-                cost = math.min(math.max((ebp.Economy.BuildCostEnergy or 10000) / 10000, 1), 100)
+                cost = mathmin(mathmax((ebp.Economy.BuildCostEnergy or 10000) / 10000, 1), 100)
                 LocalUnits[i].cost = cost
             else
                 --If mobile cost
-                cost = math.min(math.max((ebp.Economy.BuildCostEnergy or 10000) / 1000, 10), 1000)
+                cost = mathmin(mathmax((ebp.Economy.BuildCostEnergy or 10000) / 1000, 10), 1000)
                 LocalUnits[i].cost = cost
             end
 
             --Do things with those calculated costs
             if self.ActiveConsumptionRestriction and NewUpkeep + cost > SpareEnergy then
                 if i == 1 then
-                    NewUpkeep = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+                    NewUpkeep = bp.Economy.MaintenanceConsumptionPerSecondEnergy
                 end
 
                 break
             else
                 NewUpkeep = NewUpkeep + cost
-                self:AttachVisEntityToTargetUnit(v)
+                self:AttachVisEntityToTargetUnit(v, SpyBlipRadius, army)
 
             end
         end
@@ -128,32 +153,21 @@ SEB3404 = Class(TStructureUnit) {
         self:SetEnergyMaintenanceConsumptionOverride(self.PanopticonUpkeep)
     end,
 
-    AttachVisEntityToTargetUnit = function(self, unit)
-        local location = unit:GetPosition()
+    AttachVisEntityToTargetUnit = function(self, unit, radius, army)
+        local location = unit.CachePosition or unit:GetPosition()
         local spec = {
             X = location[1],
             Z = location[3],
-            Radius = self:GetBlueprint().Intel.SpyBlipRadius or 2,
+            Radius = radius,
             LifeTime = 1,
             Omni = false,
             Radar = false,
             Vision = true,
-            Army = self:GetAIBrain():GetArmyIndex(),
+            WaterVision = true,
+            Army = army,
         }
         local visentity = VizMarker(spec)
         visentity:AttachTo(unit, -1)
-    end,
-
-    FindAllUnits = function(self, category, range, cloakcheck)
-        local Ftable = {}
-        for i, unit in self:GetAIBrain():GetUnitsAroundPoint(category, self:GetPosition(), range, 'Enemy' ) do
-            if cloakcheck and unit:IsIntelEnabled('Cloak') then
-                --LOG("Counterintel guy")
-            else
-                table.insert(Ftable, unit)
-            end
-        end
-        return Ftable
     end,
 
     OnScriptBitSet = function(self, bit)
@@ -193,4 +207,5 @@ SEB3404 = Class(TStructureUnit) {
         TStructureUnit.OnCaptured(self, captor)
     end,
 }
+
 TypeClass = SEB3404

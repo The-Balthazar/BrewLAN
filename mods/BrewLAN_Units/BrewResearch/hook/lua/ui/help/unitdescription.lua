@@ -71,29 +71,46 @@ Description['srb0307'] = "<LOC Unit_Description_RND_015>Produces seaplanes"
 Description['ssb0307'] = "<LOC Unit_Description_RND_015>Produces seaplanes"
 
 --Replacement units for research locked vanilla units
+
+--Wind turbines
 Description['sab1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
 Description['seb1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
 Description['srb1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
 Description['ssb1101'] = "<LOC Unit_Description_RND_011>Generates a fluctuating quantity of energy."
-
+--Tidal generators
 Description['sab1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
 Description['seb1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
 Description['srb1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
 Description['ssb1102'] = "<LOC Unit_Description_RND_017>Generates an undulating quantity of energy. More effective with large bodies of water."
+--Tech 2 light generator
+Description['sab1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power generator. Construct next to other structures for adjacency bonus."
+Description['seb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power generator. Construct next to other structures for adjacency bonus."
+Description['srb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power generator. Construct next to other structures for adjacency bonus."
+Description['ssb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power generator. Construct next to other structures for adjacency bonus."
 
 --Unlockable units
+
+--Tech 2 combat fighters
+Description['sea0212'] = "<LOC Unit_Description_RND_019>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
+Description['sra0212'] = "<LOC Unit_Description_RND_019>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
+Description['ssa0212'] = "<LOC Unit_Description_RND_019>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
+--Tech 2 fighter/bomber
+Description['saa0213'] = "<LOC Unit_Description_RND_020>Combination fighter/bomber designed to engage both land and aerial units."
+--Tech 2 tactical bombers
 Description['sra0211'] = "<LOC Unit_Description_RND_008>Intermediate bomber aircraft."
 Description['sea0211'] = "<LOC Unit_Description_RND_009>Intermediate bomber aircraft."
 Description['ssa0211'] = "<LOC Unit_Description_RND_010>Intermediate bomber aircraft."
 
+--Tech 3 omni sensor arrays
 Description['sab3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 Description['seb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 Description['srb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 Description['ssb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 
+--Experimental mobile artillery: Retributor
 Description['srl0403'] = "<LOC Unit_Description_RND_016>Large mobile heavy artillery. Must be stationary and on land to fire the artillery. Consumes large amounts of energy per shot."
 
---Description['something'] = "<LOC Unit_Description_RND_016>"
+--Description['something'] = "<LOC Unit_Description_RND_021>"
 
 do
     for id, bp in __blueprints do
