@@ -101,6 +101,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added the Seraphim tidal gen and light tech 2 gen to AI build lists.
   * R&D: Created adjacency buff definitions for the light tech 2 power gen.
   * R&D: Added strings for future unlockable aircraft.
+  * Added an additional distance model for the Centurion between the current two.
+  * Fixed inverted polys on the gatling gun on the Centurion.
+  * Textured the gatling gun on the Centurion.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
