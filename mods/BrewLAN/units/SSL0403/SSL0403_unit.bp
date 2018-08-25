@@ -1,4 +1,11 @@
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'Exhaust_Ring',
+            'Small_Arm_003',
+            'Small_Arm_004',
+        },
+    },
     Audio = {
         AmbientMove = Sound {
             Bank = 'XSL',
@@ -106,7 +113,7 @@ UnitBlueprint {
         MaxHealth = 18450,
         RegenRate = 10,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 750,
+        SurfaceThreatLevel = 83,
     },
     Description = '<LOC ssl0403_desc>Experimental Resurrection Engineer',
     Display = {
@@ -511,7 +518,7 @@ UnitBlueprint {
     SelectionSizeX = 1.4*2.15,
     SelectionSizeZ = 1.8*2,
     SelectionThickness = 0.34,
-    SizeX = 5.5,
+    SizeX = 2.5,
     SizeY = 3.5,
     SizeZ = 7,
     StrategicIconName = 'icon_experimental_generic',

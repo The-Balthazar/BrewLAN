@@ -34,6 +34,19 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
+	BlueprintId="uab4302",		-- Antinuke
+    Display = {
+        Tarmacs = {
+            {
+                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_aeon_01_albedo.dds',
+                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_aeon_01_normals.dds',
+            },
+        },
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
 	BlueprintId="xab1401",		##Paragon
     Adjacency = 'ParagonAdjacencyBuffs',
 }
@@ -78,5 +91,3 @@ UnitBlueprint {
 }
 
 #Aeon Aircrafts	----------------------------------#
-
-

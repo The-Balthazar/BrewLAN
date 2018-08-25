@@ -116,6 +116,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Re-balanced the Aeon decoy plane.
   * Improved the CZAR speed matching of the Aeon decoy plane.
   * R&D: Added UEF tech 2 light power generator.
+  * Added an Aeon tarmac for size 8 buildings.
+    * Set the tech 2 storages and the Patron to use it.
+  * Made the collision box of the Iyadesu narrower so it matches closer with main body, and includes less dead air.
+  * Defined target nodes on the Iyadesu.
+  * Added a Seraphim tarmac for size 8 buildings.
+    * Applied to the tech 2 storages, tech 2 light power generator, and nuke defence.
+  * Created a custom tarmac for the Stargate.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

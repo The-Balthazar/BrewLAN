@@ -2,6 +2,18 @@
 -- Buildings
 --------------------------------------------------------------------------------
 
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsb4302",		-- Antinuke
+    Display = {
+        Tarmacs = {
+            {
+                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_seraphim_01_albedo.dds',
+                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_seraphim_01_normals.dds',
+            },
+        },
+    },
+}
 --------------------------------------------------------------------------------
 -- Units
 --------------------------------------------------------------------------------

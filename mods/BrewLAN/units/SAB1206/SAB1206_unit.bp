@@ -112,11 +112,11 @@ UnitBlueprint {
         SpawnRandomRotation = true,
         Tarmacs = {
             {
-                Albedo = 'Tarmacs/Tar6x_aeon_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 6.4,
-                Normal = 'Tarmacs/Tar6x_aeon_01_normals',
+                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_aeon_01_albedo.dds',
+                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_aeon_01_normals.dds',
                 Orientations = {
                     0,
                     90,
