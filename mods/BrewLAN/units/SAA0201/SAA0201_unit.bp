@@ -89,14 +89,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYCOUNTERINTEL',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'SPECIALHIGHPRI',
     },
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Light',
         EconomyThreatLevel = 250,
-        Health = 1050,
-        MaxHealth = 1050,
+        Health = 540,
+        MaxHealth = 540,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -105,6 +107,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_jamming>Jamming',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
         },
         LayerChangeEffects = {
             AirLand = {
@@ -166,9 +170,9 @@ UnitBlueprint {
         UniformScale = 0.39,
     },
     Economy = {
-        BuildCostEnergy = 5000 * 1.8,
-        BuildCostMass = 195 * 1.8 - 1,
-        BuildTime = 900 * 2,
+        BuildCostEnergy = 4550,
+        BuildCostMass = 120,
+        BuildTime = 650,
         MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
@@ -212,11 +216,13 @@ UnitBlueprint {
     },
     Intel = {
         JamRadius = {
-            Max = 64,
-            Min = 10,
+            Max = 30,
+            Min = 0,
         },
-        JammerBlips = 19,
-        VisionRadius = 32,
+        JammerBlips = 10,
+        SonarRadius = 30,
+        RadarRadius = 64,
+        VisionRadius = 55,
     },
     Interface = {
         HelpText = '<LOC sair0201>Decoy Plane',
@@ -233,7 +239,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        Elevation = 25,
+        Elevation = 20,
         FuelRechargeRate = 15,
         FuelUseTime = 1500,
         GroundCollisionOffset = 1.6,
@@ -247,7 +253,7 @@ UnitBlueprint {
     SelectionSizeX = 0.55,
     SelectionSizeZ = 0.55,
     SelectionThickness = 0.42,
-    SizeSphere = 1.6 * 0.8,
+    SizeSphere = 2.375,
     SizeX = 0.8,
     SizeY = 0.25,
     SizeZ = .8,

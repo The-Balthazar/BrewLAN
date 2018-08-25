@@ -107,6 +107,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Excalibur now has an explosion radius where the projectile stops.
   * Fixed the footprint on the UEF and Cybran tech 1 air staging.
 
+  ### 2018-08-25
+
+  * Fixed the size spheres of the recon and decoy planes so they can be reliably shot.
+  * Reduced the size spheres of the tech 1 gunships, torpedo bombers, tech 2 bomber, and Seraphim tech 3 gunship.
+  * R&D: Reduced the size spheres of the tech 2 bombers.
+  * Removed the size sphere from the Centurion.
+  * Re-balanced the Aeon decoy plane.
+  * Improved the CZAR speed matching of the Aeon decoy plane.
+  * R&D: Added UEF tech 2 light power generator.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

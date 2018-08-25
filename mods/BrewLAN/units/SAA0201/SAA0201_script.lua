@@ -14,12 +14,15 @@ SAA0201 = Class(AAirUnit) {
     OnScriptBitSet = function(self, bit)
         AAirUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
-
-            ##local CZARmove = GetBlueprint(all_bps.Unit.uaa0310.Air)
-
-            self:SetSpeedMult(0.26666666666667)     # change the speed of the unit by this mult
-            self:SetAccMult(0.25)       # change the acceleration of the unit by this mult
-            self:SetTurnMult(0.25)      # change the turn ability of the unit by this mult
+            local speedMult = 0.26666666666667
+            local accelMult = 0.25
+            local turnMult = 0.25
+            if __blueprints.uaa0310.MaxAirspeed and __blueprints.saa0201.MaxAirspeed then
+                speedMult = __blueprints.uaa0310.MaxAirspeed / __blueprints.saa0201.MaxAirspeed
+            end
+            self:SetSpeedMult(speedMult)
+            self:SetAccMult(accelMult)
+            self:SetTurnMult(turnMult)
         end
     end,
     OnScriptBitClear = function(self, bit)

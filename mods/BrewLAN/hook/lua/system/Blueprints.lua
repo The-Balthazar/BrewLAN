@@ -721,7 +721,7 @@ function BrewLANMatchBalancing(all_bps)
         sea0201 = {TargetID = {'uea0101', 'uea0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
         ssa0201 = {TargetID = {'xsa0101', 'xsa0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
         sra0201 = {TargetID = {'ura0101', 'ura0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
-        saa0201 = {TargetID = {'uaa0101', 'uaa0302'}, Affects = {'Transport'}},
+        --saa0201 = {TargetID = {'uaa0101', 'uaa0302'}, Affects = {'Economy', 'Intel', 'Transport'}}, --Can't have multiple shared keys, don't feel like rewriting to accomodate.
         saa0201 = {TargetID = 'uaa0303', Affects = {'Air'}}, --It's imporant that it moves like an ASF
 
 ------- ED5 built by field engineer balancing

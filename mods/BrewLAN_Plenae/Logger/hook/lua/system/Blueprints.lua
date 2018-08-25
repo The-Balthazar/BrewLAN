@@ -12,6 +12,7 @@ function ModBlueprints(all_blueprints)
 
     CheckAllUnitBackgroundImages(all_blueprints.Unit)
     CheckAllUnitThreatValues(all_blueprints.Unit)
+    CheckCollisionSphereLargeEnoughForMaxSpeed(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -33,6 +34,21 @@ end
 function CheckAllUnitBackgroundImages(all_bps)
     for id, bp in all_bps do
         CheckUnitHasCorrectIconBackground(id, bp)
+    end
+end
+
+function CheckCollisionSphereLargeEnoughForMaxSpeed(all_bps)
+    for id, bp in all_bps do
+    	if bp.SizeSphere and bp.Air.MaxAirspeed and ShouldWeLogThis(id, bp) then
+            local correctMin = bp.Air.MaxAirspeed * 0.095
+            if bp.SizeSphere < correctMin then
+        		LOG(id ..  " has a size sphere of " .. bp.SizeSphere .. ", but needs at least " .. correctMin)
+            elseif bp.SizeSphere > correctMin + 0.1 then
+                LOG(id ..  " has a size sphere of " .. bp.SizeSphere .. ", but could have as low as " .. correctMin)
+            end
+    		--bp.SizeSphere = math.max( 0.9, bp.Air.MaxAirspeed * 0.095 )
+    		--LOG("*AI DEBUG "..bp.Description.." has a new sphere of "..bp.SizeSphere)
+    	end
     end
 end
 
