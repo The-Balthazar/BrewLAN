@@ -123,6 +123,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added a Seraphim tarmac for size 8 buildings.
     * Applied to the tech 2 storages, tech 2 light power generator, and nuke defence.
   * Created a custom tarmac for the Stargate.
+  * Created the terrain type variants for the new Seraphim tarmacs, so they actually display on most default maps.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
