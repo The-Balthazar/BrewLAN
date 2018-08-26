@@ -16,7 +16,7 @@ SSB1401 = Class(AStructureUnit) {
 
     OnStopBeingBuilt = function(self, builder, layer)
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
-        self.Trash:Add(CreateRotator(self, 'Orb', 'y', nil, 0, 15, 80 + Random(0, 20) * (1 - 2 * Random(0,1))))
+        self.Trash:Add(CreateRotator(self, 'Orb', 'y', nil, 0, 15, (80 + Random(0, 20)) * (1 - 2 * Random(0,1))))
         for i = 1, 2 do
             self.Trash:Add(CreateAttachedEmitter( self, 'Orb', self:GetArmy(), '/effects/emitters/aeon_rgen_ambient_0' .. i .. '_emit.bp'))
         end

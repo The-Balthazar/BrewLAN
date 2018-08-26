@@ -1,14 +1,4 @@
-#****************************************************************************
-#**
-#**  File     :  /data/units/XAB1401/XAB1401_script.lua
-#**  Author(s):  Jessica St. Croix, Dru Staltman
-#**
-#**  Summary  :  Aeon Quantum Resource Generator
-#**
-#**  Copyright � 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
 local AStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
-local FxAmbient = import('/lua/effecttemplates.lua').AResourceGenAmbient
 local AIFParagonDeathWeapon = {}
 
 if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
@@ -67,14 +57,6 @@ SEB1401 = Class(AStructureUnit) {
             end
         end,
     },
-
-    GetRandomDir = function(self)
-        local num = Random(0, 2)
-        if num > 1 then
-            return 1
-        end
-        return -1
-    end,
 }
 
 TypeClass = SEB1401

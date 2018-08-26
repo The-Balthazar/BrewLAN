@@ -128,6 +128,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Created the terrain type variants for the new Seraphim tarmacs, so they actually display on most default maps.
   * Paragon Game: Gave the Seraphim Paragon a unique model.
+  * Paragon Game: Gave the Cybran Paragon a unique model.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
