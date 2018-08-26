@@ -1,12 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /data/units/XAB1401/XAB1401_script.lua
-#**  Author(s):  Jessica St. Croix, Dru Staltman
-#**
-#**  Summary  :  Aeon Quantum Resource Generator
-#**
-#**  Copyright � 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
 local AStructureUnit = import('/lua/cybranunits.lua').CEnergyCreationUnit
 local FxAmbient = import('/lua/effecttemplates.lua').AResourceGenAmbient
 local AIFParagonDeathWeapon = {}
@@ -26,8 +17,7 @@ SRB1401 = Class(AStructureUnit) {
     OnStopBeingBuilt = function(self, builder, layer)
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
 
-        local num = self:GetRandomDir()
-        --self.BallManip = CreateRotator(self, 'Orb', 'y', nil, 0, 15, 80 + Random(0, 20) * num)
+        --self.BallManip = CreateRotator(self, 'Orb', 'y', nil, 0, 15, 80 + Random(0, 20) * (1 - 2 * Random(0,1)))
         --self.Trash:Add(self.BallManip)
 
         ChangeState( self, self.ResourceOn )
@@ -76,14 +66,6 @@ SRB1401 = Class(AStructureUnit) {
             end
         end,
     },
-
-    GetRandomDir = function(self)
-        local num = Random(0, 2)
-        if num > 1 then
-            return 1
-        end
-        return -1
-    end,
 }
 
 TypeClass = SRB1401

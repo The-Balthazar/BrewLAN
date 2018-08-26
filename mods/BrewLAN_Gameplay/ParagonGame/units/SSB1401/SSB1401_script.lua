@@ -1,14 +1,4 @@
-#****************************************************************************
-#**
-#**  File     :  /data/units/XAB1401/XAB1401_script.lua
-#**  Author(s):  Jessica St. Croix, Dru Staltman
-#**
-#**  Summary  :  Aeon Quantum Resource Generator
-#**
-#**  Copyright � 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
 local AStructureUnit = import('/lua/seraphimunits.lua').SEnergyCreationUnit
-local FxAmbient = import('/lua/effecttemplates.lua').AResourceGenAmbient
 local AIFParagonDeathWeapon = {}
 
 if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
@@ -26,17 +16,13 @@ SSB1401 = Class(AStructureUnit) {
 
     OnStopBeingBuilt = function(self, builder, layer)
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
-
-        local num = self:GetRandomDir()
-        --self.BallManip = CreateRotator(self, 'Orb', 'y', nil, 0, 15, 80 + Random(0, 20) * num)
-        --self.Trash:Add(self.BallManip)
+        self.Trash:Add(CreateRotator(self, 'Orb', 'y', nil, 0, 15, 80 + Random(0, 20) * (1 - 2 * Random(0,1))))
+        for i = 1, 2 do
+            self.Trash:Add(CreateAttachedEmitter( self, 'Orb', self:GetArmy(), '/effects/emitters/aeon_rgen_ambient_0' .. i .. '_emit.bp'))
+        end
 
         ChangeState( self, self.ResourceOn )
         self:ForkThread(self.ResourceMonitor)
-
-        --for k, v in FxAmbient do
-        --    CreateAttachedEmitter( self, 'Orb', self:GetArmy(), v )
-        --end
     end,
 
     ResourceOn = State {
@@ -77,14 +63,6 @@ SSB1401 = Class(AStructureUnit) {
             end
         end,
     },
-
-    GetRandomDir = function(self)
-        local num = Random(0, 2)
-        if num > 1 then
-            return 1
-        end
-        return -1
-    end,
 }
 
 TypeClass = SSB1401

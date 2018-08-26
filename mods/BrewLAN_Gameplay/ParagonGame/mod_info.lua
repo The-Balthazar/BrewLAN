@@ -1,6 +1,6 @@
 name = "Paragon Game"
-uid = "BREWLANS-22b4-4936-820e-PARAGON0020"
-version = 2
+uid = "BREWLANS-22b4-4936-820e-PARAGON0030"
+version = 3
 copyright = "© 2012–2018 Sean Wheeldon"
 description = "Few vs Many. The few get a Paragon and a SACU each. Only they can build new Paragons and can always build one, regardless of race."
 author = "Balthazar"
