@@ -20,9 +20,11 @@ DisarmBeam = Class(UltraChromaticBeamGeneratorCollisionBeam) {
                 randwep.TurretBonePitch,
                 randwep.TurretBoneYaw,
             }
-            for i, v in bones do
-                if targetEntity:IsValidBone(v) then
-                    targetEntity:HideBone(v, true)
+            if randwep.Turreted then
+                for i, v in bones do
+                    if targetEntity:IsValidBone(v) then
+                        targetEntity:HideBone(v, true)
+                    end
                 end
             end
         end

@@ -147,7 +147,7 @@ SSL0403 = Class(SConstructionUnit) {
 
     CheckBuildRestrictionsAllow = function(self, WorkID)
         local Restrictions = ScenarioInfo.Options.RestrictedCategories
-        if table.getn(Restrictions) == 0 then
+        if table.getn(Restrictions or {}) == 0 then
             return true
         elseif VersionIsFAF then
             return not import('/lua/game.lua').IsRestricted(WorkID)

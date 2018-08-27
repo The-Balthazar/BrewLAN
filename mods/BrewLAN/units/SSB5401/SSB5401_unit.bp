@@ -11,16 +11,6 @@ UnitBlueprint {
             Cue = 'XSB0304_Active',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-        Construct = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB0304_Construct_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ConstructLoop = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB0304_Construct_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
         DeathExplosion = Sound {
             Bank = 'XSL_Destroy',
             Cue = 'XSB_Destroy_Lrg_PreDestroy',

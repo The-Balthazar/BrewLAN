@@ -6,6 +6,12 @@ local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
 local AAATemporalFizzWeapon = import('/lua/aeonweapons.lua').AAATemporalFizzWeapon
 local explosion = import('/lua/defaultexplosions.lua')
 
+local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+if VersionIsFAF then
+    AAirUnit = import('/lua/defaultunits.lua').AirTransport
+end
+
 SAA0306 = Class(AAirUnit) {
     DestroyNoFallRandomChance = 1.1,
 

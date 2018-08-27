@@ -130,6 +130,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Paragon Game: Gave the Seraphim Paragon a unique model.
   * Paragon Game: Gave the Cybran Paragon a unique model.
 
+  ### 2018-08-27
+
+  * R&D: Fixed the research item descriptor field "Built by field engineer" having the wrong LOC and showing as "Built by engineer" instead.
+  * Paragon Game: Fixed localisation and a few other minor things.
+  * Removed unused sound effects from the Stargate.
+  * Paragon Game: Improved the pre-set shield spawn positions.
+  * Paragon Game: Changed the mod description.
+  * New module: Gantry Homogeniser. Kills the factional diversity in the Gantries, and lets them all build anything.
+  * Caffe Corretto: Disarmer weapon will no longer hide the bones of unturreted weapons.
+  * Fixed the Iyadesu CheckBuildRestrictionsAllow function crashing if ScenarioInfo.Options.RestrictedCategories returns nil.
+  * Merged the v81-FAF-develop changes.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

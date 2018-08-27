@@ -321,7 +321,7 @@ function RNDGiveIndicativeAbilities(all_bps, newid, ref)
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_engineer>Built by engineer')
     end
     if TableFindSubstrings(ref.Categories,'BUILTBY','FIELD') then
-        table.insert(bp.Display.Abilities,'<LOC ability_rnd_engineer>Built by field engineer')
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_field>Built by field engineer')
     end
     if TableFindSubstrings(ref.Categories,'BUILTBY','COMMANDER') then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_command>Built by command unit')

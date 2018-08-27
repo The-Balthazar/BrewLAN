@@ -1,13 +1,6 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/XSA0104/XSA0104_script.lua
-#**  Author(s):  Greg Kohne, Aaron Lundquist
-#**
-#**  Summary  : Seraphim T2 Transport Script
-#**
-#**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  : Seraphim T2 Transport Script
+--------------------------------------------------------------------------------
 local SAirUnit = import('/lua/seraphimunits.lua').SAirUnit
 local explosion = import('/lua/defaultexplosions.lua')
 local util = import('/lua/utilities.lua')
@@ -15,17 +8,22 @@ local SeraphimWeapons = import('/lua/seraphimweapons.lua')
 local SAALosaareAutoCannonWeaponAirUnit = SeraphimWeapons.SAALosaareAutoCannonWeaponAirUnit
 local SDFHeavyPhasicAutoGunWeapon = SeraphimWeapons.SDFHeavyPhasicAutoGunWeapon
 
+local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+if VersionIsFAF then
+    SAirUnit = import('/lua/defaultunits.lua').AirTransport
+end
+
 SSA0306 = Class(SAirUnit) {
 
     AirDestructionEffectBones = { 'BSA0306','Left_Attachpoint08','Right_Attachpoint02'},
 
     Weapons = {
         AutoGun = Class(SDFHeavyPhasicAutoGunWeapon) {},
-        AALeft = Class(SAALosaareAutoCannonWeaponAirUnit) {},
-        AARight = Class(SAALosaareAutoCannonWeaponAirUnit) {},
+        AA = Class(SAALosaareAutoCannonWeaponAirUnit) {},
     },
 
-    # Override air destruction effects so we can do something custom here
+    -- Override air destruction effects so we can do something custom here
     CreateUnitAirDestructionEffects = function( self, scale )
         self:ForkThread(self.AirDestructionEffectsThread, self )
     end,

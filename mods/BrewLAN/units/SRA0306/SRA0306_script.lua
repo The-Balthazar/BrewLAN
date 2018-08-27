@@ -9,6 +9,12 @@ local cWeapons = import('/lua/cybranweapons.lua')
 local CAAAutocannon = cWeapons.CAAAutocannon
 local CEMPAutoCannon = cWeapons.CEMPAutoCannon
 
+local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+if VersionIsFAF then
+    CAirUnit = import('/lua/defaultunits.lua').AirTransport
+end
+
 SRA0306 = Class(CAirUnit) {
     Weapons = {
         AAAutocannon = Class(CAAAutocannon) {},

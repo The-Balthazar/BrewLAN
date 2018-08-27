@@ -293,10 +293,10 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'amph',
         ToggleCaps = {
-            RULEUTC_WeaponToggle= true,
+            RULEUTC_WeaponToggle = true,
         },
         OrderOverrides = {
-            RULEUTC_WeaponToggle= {
+            RULEUTC_WeaponToggle = {
                 bitmapId = 'airsf',
                 helpText = 'buildair',
             },

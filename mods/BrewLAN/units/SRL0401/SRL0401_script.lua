@@ -3,11 +3,26 @@ local cWeapons = import('/lua/cybranweapons.lua')
 local CDFElectronBolterWeapon = cWeapons.CDFElectronBolterWeapon
 local CANTorpedoLauncherWeapon = cWeapons.CANTorpedoLauncherWeapon
 
-SRL0401 = Class(CLandUnit) {
+local BaseTransport = {}
+local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+if VersionIsFAF then
+    BaseTransport = import('/lua/defaultunits.lua').BaseTransport
+end
+
+SRL0401 = Class(CLandUnit, BaseTransport) {
     Weapons = {
         Turret = Class(CDFElectronBolterWeapon) {},
         Torpedo = Class(CANTorpedoLauncherWeapon) {},
     },
+
+    OnCreate = function(self)
+        CLandUnit.OnCreate(self)
+        if VersionIsFAF then
+            self.slots = {}
+            self.transData = {}
+        end
+    end,
 
 	OnLayerChange = function(self, new, old)
 		CLandUnit.OnLayerChange(self, new, old)
@@ -68,7 +83,11 @@ SRL0401 = Class(CLandUnit) {
         if not self.Dying then
             pos = unit:GetPosition()
         end
-        CLandUnit.OnTransportDetach(self, attachBone, unit)
+        if VersionIsFAF then
+            BaseTransport.OnTransportDetach(self, attachBone, unit)
+        else
+            CLandUnit.OnTransportDetach(self, attachBone, unit)
+        end
         if not self.Dying then
             self:ForkThread( --This prevents units getting dumped into the earth.
                 function()

@@ -1,20 +1,8 @@
 UnitBlueprint {
     Audio = {
-        DeathExplosion = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Resource',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        DeathExplosion = Sound {Bank = 'URLDestroy', Cue = 'URB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed = Sound {Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound {Bank = 'Interface', Cue = 'Cybran_Select_Resource', LodCutoff = 'UnitMove_LodCutoff'},
     },
     BuildIconSortPriority = 140,
     Categories = {
@@ -35,18 +23,11 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTECONOMY',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 5238,
         Health = 5000,
         MaxHealth = 5000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC xab1401_desc>Experimental Resource Generator',
     Display = {
@@ -86,7 +67,7 @@ UnitBlueprint {
                 Normal = 'Tarmacs/Tar12x_cybran_01_normals',
                 Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
-                Width = 12,
+                Width = 12.8,
             },
         },
         UniformScale = 0.10,
@@ -133,10 +114,9 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = false,
         },
-        UnitName = '<LOC prb1401_name>Demiurge',
+        UnitName = '<LOC srb1401_name>Demiurge',
         TechLevel = 'RULEUTL_Basic',
         UnitWeight = 1,
-        UpgradesFrom = 'urb1104',
     },
     Interface = {
         HelpText = '<LOC xab1401_help>Experimental Resource Generator',
@@ -202,12 +182,7 @@ UnitBlueprint {
             NukeOuterRingTotalTime = 0,
             ProjectileId = '/projectiles/AIFQuantumWarhead02/AIFQuantumWarhead02_proj.bp',
             RackBones = {
-                {
-                    MuzzleBones = {
-                        0,
-                    },
-                    RackBone = 0,
-                },
+                {MuzzleBones = {0}, RackBone = 0},
             },
             RackRecoilDistance = 0,
             RateOfFire = 1,

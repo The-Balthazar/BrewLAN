@@ -133,7 +133,13 @@ AIBrain = Class(AIBrain) {
                             --Let future generations know that we failed to get a good paragon position
                         end
                     else
-                        unit = self:CreateUnitNearSpot(u[1], self.PARAGONPOS[1], self.PARAGONPOS[3] )
+                        local relativepos = {
+                            { 2,-8},
+                            { 8, 2},
+                            {-2, 8},
+                            {-8,-2},
+                        }
+                        unit = self:CreateUnitNearSpot(u[1], self.PARAGONPOS[1] + (relativepos[count + 1][1] or 0), self.PARAGONPOS[3] + (relativepos[count + 1][2] or 0) )
                     end
                     if unit and j == 1 then
                         self.PARAGONPOS = unit:GetPosition()
