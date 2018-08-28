@@ -142,6 +142,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the Iyadesu CheckBuildRestrictionsAllow function crashing if ScenarioInfo.Options.RestrictedCategories returns nil.
   * Merged the v81-FAF-develop changes.
 
+  ### 2018-08-28
+
+  * R&D: Added Aeon tech 2 light power generator.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

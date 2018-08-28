@@ -79,16 +79,42 @@ Unit_Description_RND_015="produkuje hydroplány"
 ----------------------------------------
 
 --Větrné turbíny
+sb1101_desc="větrné generátory"
 seb1101_name="Turbína"
 sab1101_name="Svítilna"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Větrná turbína Asistovaná
-Unit_Description_RND_011="Vytváří variabilní množství energie."
+Unit_Description_RND_011="Generuje kolísající množství energie."
+
+--přílivové generátory
+sb1102_desc="přílivový generátor"
+seb1102_name="Tide Pod"
+sab1102_name="Tok"
+ssb1102_name="Uyaluos"
+srb1102_name="Red Lagoon"
+Unit_Description_RND_017="Generuje zvlněný množství energie. Efektivnější s velkými vodními plochami."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
+
+--Generátory (250 výstupů)
+--Serafové nerotačních napájecí gens jsou tzv Uya-Iya
+--Cybran a Aeon tech 2 mají žádné jméno
+seb1201_name="EG-100 fúzního reaktoru"
+Unit_Description_RND_018="Od nejnižšího k elektrickým generátorem střední úrovni. Postavit vedle dalších struktur pro přilehlosti bonus."
+
+
+sa0212_desc=xaa0202_desc
+sea0212_name="Raptor"
+sra0212_name="Dioscuri"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="Mid-level stíhačka. Výborné schopnosti AA. Účinný proti nepřátelské vrtulníky a bombardérů."
+
+sa0213_desc=dea0202_desc
+saa0213_name="Jasnost"
+Unit_Description_RND_020="Kombinace stíhací / bombardovací navržen tak, aby se zapojily pozemků a vzdušných jednotek."
 
 --Vyhrazené taktické bombardéry
 saa0211_desc="Taktický Bombardér"

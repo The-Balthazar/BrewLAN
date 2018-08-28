@@ -79,16 +79,42 @@ Unit_Description_RND_015="生产水上飞机"
 ----------------------------------------
 
 --风力发电机
+sb1101_desc="风力发电机"
 seb1101_name="涡轮"
 sab1101_name="灯"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --风辅助发电机
-Unit_Description_RND_011="产生能量的变化量。"
+Unit_Description_RND_011="产生能量的波动量。"
+
+--潮汐发电机
+sb1102_desc="潮汐发电机"
+seb1102_name="波德潮"
+sab1102_name="流"
+ssb1102_name="Uyaluos"
+srb1102_name="红湖"
+Unit_Description_RND_017="产生能量的起伏量。更有效地与大面积的水域。"
 
 ----------------------------------------
 --技术2
 ----------------------------------------
+
+--功率发生器（250输出）
+--塞拉芬非旋转动力一族都称为UYA，IYA
+--的Cybran和永旺科技2的没有名字
+seb1201_name="EG-100融合反应堆"
+Unit_Description_RND_018="低到中等水平的发电机。建设旁边其他结构邻接奖金。"
+
+
+sa0212_desc=xaa0202_desc
+sea0212_name="猛禽"
+sra0212_name="狄俄斯库"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="中级空战斗机。优秀的AA性能。有效对抗敌方武装直升机和轰炸机。"
+
+sa0213_desc=dea0202_desc
+saa0213_name="明朗"
+Unit_Description_RND_020="联合战斗/轰炸机的设计搞陆地和空中单位。"
 
 --专用战术轰炸机
 saa0211_desc="战术轰炸机"

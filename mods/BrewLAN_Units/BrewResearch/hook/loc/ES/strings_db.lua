@@ -79,16 +79,42 @@ Unit_Description_RND_015="produce hidroaviones"
 ----------------------------------------
 
 --Turbinas de viento
+sb1101_desc="Generador de viento"
 seb1101_name="Turbina"
 sab1101_name="Lámpara"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Aerogenerador Asistida
-Unit_Description_RND_011="Produce una cantidad variable de energía."
+Unit_Description_RND_011="Genera una cantidad fluctuante de energía."
+
+--generadores de marea
+sb1102_desc="Generador de marea"
+seb1102_name="Pod marea"
+sab1102_name="Fluir"
+ssb1102_name="Uyaluos"
+srb1102_name="Laguna Colorada"
+Unit_Description_RND_017="Genera una cantidad ondulante de energía. Más eficaz con grandes masas de agua."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
+
+--Los generadores de energía (250 de salida)
+--Seraphim gens de energía no rotativos están llamados Uya-iya
+--Cybran y Aeon tecnología de 2 no tienen nombre
+seb1201_name="EG-100 Fusion Reactor"
+Unit_Description_RND_018="Menor a generador de energía de nivel medio. Construir junto a otras estructuras para la bonificación de adyacencia."
+
+
+sa0212_desc=xaa0202_desc
+sea0212_name="Raptor"
+sra0212_name="dioscuri"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="De nivel medio de combate aire. Excelente capacidad de AA. Eficaz contra helicópteros de combate y bombarderos enemigos."
+
+sa0213_desc=dea0202_desc
+saa0213_name="Lucidez"
+Unit_Description_RND_020="luchador combinación / bombardero diseñado para involucrar a la tierra y unidades aéreas."
 
 --Bombarderos tácticos dedicados
 saa0211_desc="bombardero táctico"

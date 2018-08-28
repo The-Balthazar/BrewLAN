@@ -79,16 +79,42 @@ Unit_Description_RND_015="produziert Seeflugzeuge"
 ----------------------------------------
 
 --Windkraftanlagen
+sb1101_desc="Windgenerator"
 seb1101_name="Turbine"
 sab1101_name="Lampe"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Wind Turbine Assisted
-Unit_Description_RND_011="Erzeugt eine variable Energiemenge."
+Unit_Description_RND_011="Erzeugt eine schwankende Energiemenge."
+
+--Tidal Generatoren
+sb1102_desc="Tidal Generator"
+seb1102_name="Tide Pod"
+sab1102_name="Fließen"
+ssb1102_name="Uyaluos"
+srb1102_name="Red Lagoon"
+Unit_Description_RND_017="Erzeugt eine wellige Energiemenge. Effizientere mit großen Gewässern."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
+
+--Stromerzeuger (250 Ausgang)
+--Seraphim Nicht-Drehkraft gens sind alle Uya-iya genannt
+--Cybran und Aeon Tech-2 ist habe keinen Namen
+seb1201_name="EG-100 Fusionsreaktor"
+Unit_Description_RND_018="Niedrig bis mittlere Ebene Stromerzeuger. Konstruieren Sie neben anderen Strukturen für adjacency Bonus."
+
+
+sa0212_desc=xaa0202_desc
+sea0212_name="Raubvogel"
+sra0212_name="Dioskuren"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="Mid-Level-Luft Kämpfer. Ausgezeichnete AA-Funktionen. Wirksam gegen feindliche Kampfhubschrauber und Bomber."
+
+sa0213_desc=dea0202_desc
+saa0213_name="Klarheit"
+Unit_Description_RND_020="Kombination Kämpfer / Bomber entworfen Land und Lufteinheiten zu engagieren."
 
 --Dedicated Tactical Bombers
 saa0211_desc="Taktischer Bomber"

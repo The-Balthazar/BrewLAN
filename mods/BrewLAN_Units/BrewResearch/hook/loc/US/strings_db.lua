@@ -79,16 +79,42 @@ Unit_Description_RND_015="Produces seaplanes"
 ----------------------------------------
 
 --Wind turbines
+sb1101_desc="Wind Generator"
 seb1101_name="Turbine"
 sab1101_name="Lamp"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Wind Assisted Turbine
-Unit_Description_RND_011="Produces a variable quantity of energy."
+Unit_Description_RND_011="Generates a fluctuating quantity of energy."
+
+--Tidal generators
+sb1102_desc="Tidal Generator"
+seb1102_name="Tide Pod"
+sab1102_name="Flow"
+ssb1102_name="Uyaluos"
+srb1102_name="Red Lagoon"
+Unit_Description_RND_017="Generates an undulating quantity of energy. More effective with large bodies of water."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
+
+--Power Generators (250 output)
+--Seraphim non-rotary power gens are all called Uya-iya
+--Cybran and Aeon tech 2's have no name
+seb1201_name="EG–100 Fusion Reactor"
+Unit_Description_RND_018="Low to mid-level power generator. Construct next to other structures for adjacency bonus."
+
+
+sa0212_desc="Combat Fighter"
+sea0212_name="Raptor"
+sra0212_name="Dioscuri"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
+
+sa0213_desc="Fighter/Bomber"
+saa0213_name="Lucidity"
+Unit_Description_RND_020="Combination fighter/bomber designed to engage both land and aerial units."
 
 --Dedicated Tactical Bombers
 saa0211_desc="Tactical Bomber"

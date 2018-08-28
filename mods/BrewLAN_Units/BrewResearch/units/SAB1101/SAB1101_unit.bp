@@ -53,7 +53,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC ueb1101_desc>Power Generator',
+    Description = '<LOC sb1101_desc>Wind Generator',
     Display = {
         AnimationDeath = {
             {
@@ -130,7 +130,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Interface = {
-        HelpText = '<LOC usb1101_help>Power Generator',
+        HelpText = '<LOC sb1101_desc>Wind Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,

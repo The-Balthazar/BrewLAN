@@ -63,7 +63,7 @@ function RestrictExistingBlueprints(all_bps)
         'xsb1101',
         --Tech 2 power generators, slow down tech 2 with the half reactors.
         'ueb1201',
-        --'uab1201',
+        'uab1201',
         --'urb1201',
         'xsb1201',
     }

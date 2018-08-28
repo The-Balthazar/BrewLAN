@@ -79,16 +79,42 @@ Unit_Description_RND_015="produkuje wodnosamolotów"
 ----------------------------------------
 
 --Turbiny wiatrowe
+sb1101_desc="Generator wiatru"
 seb1101_name="Turbina"
 sab1101_name="Lampa"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Turbina wiatrowa Assisted
-Unit_Description_RND_011="Tworzy zmienną ilość energii."
+Unit_Description_RND_011="Generuje wahania w ilości energii."
+
+--generatory pływowe
+sb1102_desc="Tidal Generator"
+seb1102_name="Pod Tide"
+sab1102_name="Pływ"
+ssb1102_name="Uyaluos"
+srb1102_name="Red Lagoon"
+Unit_Description_RND_017="Generuje falisty ilość energii. Bardziej efektywne z dużych zbiorników wodnych."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
+
+--Agregaty prądotwórcze (250 wyjście)
+--wszystko Seraphim non-obrotowe gens zasilane są nazywane Uya-Iya
+--Cybran i Aeon Tech 2 mają żadnej nazwy
+seb1201_name="EG-100 fuzyjna"
+Unit_Description_RND_018="Od najniższej do generatora prądu średniego szczebla. Skonstruować obok innych struktur premii przylegania."
+
+
+sa0212_desc=xaa0202_desc
+sea0212_name="raptor"
+sra0212_name="Dioscuri"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="Połowie poziomu myśliwski powietrza. Doskonałe możliwości AA. Skuteczny przeciwko gunships i bombowców wroga."
+
+sa0213_desc=dea0202_desc
+saa0213_name="Jasność"
+Unit_Description_RND_020="Połączenie myśliwiec / bombowiec zaprojektowany do zaangażowania zarówno gruntów i jednostek powietrznych."
 
 --Dedykowane Bombowce taktyczne
 saa0211_desc="taktyczny bombowiec"

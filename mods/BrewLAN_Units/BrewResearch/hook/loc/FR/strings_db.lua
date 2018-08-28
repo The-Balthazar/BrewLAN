@@ -79,16 +79,42 @@ Unit_Description_RND_015="produit hydravions"
 ----------------------------------------
 
 --Éoliennes
+sb1101_desc="Générateur de vent"
 seb1101_name="Turbine"
 sab1101_name="Lampe"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Éolienne assistée
-Unit_Description_RND_011="Produit une quantité variable d'énergie."
+Unit_Description_RND_011="Fluctuant génère une quantité d'énergie."
+
+--hydroliennes
+sb1102_desc="marémotrice"
+seb1102_name="Pod Tide"
+sab1102_name="Couler"
+ssb1102_name="Uyaluos"
+srb1102_name="Lagoon rouge"
+Unit_Description_RND_017="Génère une quantité d'énergie ondulée. Plus efficace avec de grandes étendues d'eau."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
+
+--Les générateurs de puissance (250 sorties)
+--Seraphim alimentation non rotatifs gens sont tous appelés Uya-iya
+--Cybran et Aeon Tech 2 ont aucun nom de
+seb1201_name="EG-100 Fusion Reactor"
+Unit_Description_RND_018="Faible au générateur de puissance de niveau intermédiaire. Construire à côté d'autres structures pour le bonus de contiguïté."
+
+
+sa0212_desc=xaa0202_desc
+sea0212_name="Raptor"
+sra0212_name="Dioscures"
+ssa0212_name="Iayath"
+Unit_Description_RND_019="combattant de l'air de niveau intermédiaire. Excellentes capacités AA. Efficace contre des hélicoptères de combat ennemis et des bombardiers."
+
+sa0213_desc=dea0202_desc
+saa0213_name="Lucidité"
+Unit_Description_RND_020="chasseur / bombardier Combinaison conçu pour engager à la fois la terre et les unités aériennes."
 
 --Dédié Bombers tactique
 saa0211_desc="Bombardier Tactique"

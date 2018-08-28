@@ -134,7 +134,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Interface = {
-        HelpText = '<LOC ueb1101_help>Power Generator',
+        HelpText = '<LOC sb1101_desc>Wind Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
