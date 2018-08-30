@@ -164,6 +164,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Research completion buff no longer applies if the research failed or was cancelled.
   * R&D: Research completion buffs are now passed on to upgrades.
   * R&D: Added upgrade animations for UEF research centres.
+  * R&D: Added Cybran tech 2 light power generator.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

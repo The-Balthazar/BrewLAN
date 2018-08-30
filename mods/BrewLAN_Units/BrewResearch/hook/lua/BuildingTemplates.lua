@@ -16,6 +16,6 @@ do
 
     table.insert(BuildingTemplates[1], {'T2EnergyProduction', 'seb1201'})
     table.insert(BuildingTemplates[2], {'T2EnergyProduction', 'sab1201'})
-    --table.insert(BuildingTemplates[3], {'T2EnergyProduction', 'srb1201'})
+    table.insert(BuildingTemplates[3], {'T2EnergyProduction', 'srb1201'})
     table.insert(BuildingTemplates[4], {'T2EnergyProduction', 'ssb1201'})
 end
