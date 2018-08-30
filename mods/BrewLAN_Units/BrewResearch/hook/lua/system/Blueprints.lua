@@ -293,20 +293,24 @@ function RNDGiveCategoriesAndDefineCosts(all_bps, newid, ref)
         if table.find(ref.Categories, v) then
             --If the source has the cat, the research item also needs it.
             table.insert(bp.Categories, v)
-            -- if I is less than 4 we are dealing with T1, T2, or T3
-            if i < 4 then
-                --If we haven't pre-defined a multiplier, the nultiplier is the tech level.
-                --Units should only exist in one of the first three cats, so this shouldn't stack.
+            if i < 5 then -- if I is less than 5 we are dealing with T1, T2, T3, or Experimental
+                local CostMults = {1, 1.25, 1.5, 1} --Resource cost multiplier per tech level.
+                local maxOutput = { --Maximum research output of a tech 1
+                    {5, 50},
+                    {10, 100},
+                    {15, 150},
+                    {20, 200},
+                }
+                --If we haven't got a pre-defined cost multiplier, then we use the defaults defined in CostMults.
+                --Units should only exist in one of the first four cats, so this shouldn't stack, except for mods that dont count Experimental as == Tech 4
                 if not (ref.Economy.ResearchMultEnergy or ref.Economy.ResearchMult) then
-                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * i
+                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * CostMults[1]
                 end
                 if not (ref.Economy.ResearchMultMass or ref.Economy.ResearchMult) then
-                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * i
+                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * CostMults[1]
                 end
-                if not (ref.Economy.ResearchMultTime or ref.Economy.ResearchMult) then
-                    bp.Economy.BuildTime = bp.Economy.BuildTime * math.max(1, i * 0.5)
-                end
-                --Experimentals escape this, because they cost stupid amounts already. Pay once is enough.
+                --Research times based on max cost per second instead.
+                bp.Economy.BuildTime = math.floor(math.max(bp.Economy.BuildCostMass / maxOutput[i][1] * 50, bp.Economy.BuildCostEnergy / maxOutput[i][2] * 50 ))
             end
         end
     end
@@ -314,22 +318,30 @@ end
 
 function RNDGiveIndicativeAbilities(all_bps, newid, ref)
     local bp = all_bps[newid]
+    local TFS = TableFindSubstrings
+    local TF = table.find
+    local CATs = ref.Categories
     if ref.General.UpgradesFrom then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_updade>Built as upgrade')
     end
-    if TableFindSubstrings(ref.Categories,'BUILTBY','ENGINEER') then
+    if TFS(CATs,'BUILTBY','ENGINEER') then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_engineer>Built by engineer')
     end
-    if TableFindSubstrings(ref.Categories,'BUILTBY','FIELD') then
+    if TFS(CATs,'BUILTBY','FIELD')
+    or TFS(CATs,'BUILTBY','ENGINEER') and (TF(CATs, 'DEFENSE') or TF(CATs, 'INDIRECTFIRE'))
+    then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_field>Built by field engineer')
     end
-    if TableFindSubstrings(ref.Categories,'BUILTBY','COMMANDER') then
+    if TFS(CATs,'BUILTBY','COMMANDER') then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_command>Built by command unit')
     end
-    if TableFindSubstrings(ref.Categories,'BUILTBY','FACTORY') then
+    if TFS(CATs,'BUILTBY','FACTORY') then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_factory>Built by factory')
     end
-    if TableFindSubstrings(ref.Categories,'BUILTBY','WALL') then
+    if TF(CATs, 'BUILTBYGANTRY') or TF(CATs, 'BUILTBYIENGINE') or TF(CATs, 'BUILTBYARTHROLAB') or TF(CATs, 'BUILTBYSOUIYA') then
+        table.insert(bp.Display.Abilities,'<LOC ability_rnd_gantry>Built by experimental factory')
+    end
+    if TFS(CATs,'BUILTBY','WALL') then
         table.insert(bp.Display.Abilities,'<LOC ability_rnd_wall>Built on wall')
     end
 end

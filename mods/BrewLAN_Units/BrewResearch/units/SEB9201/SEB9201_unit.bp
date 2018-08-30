@@ -59,6 +59,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_upgradable>Upgradeable',
         },
+        AnimationUpgrade = '/mods/brewlan_units/brewresearch/units/seb9201/seb9201_aupgrade.sca',
         BlinkingLights = {
             {
                 BLBone = 'Build_001',
@@ -130,7 +131,7 @@ UnitBlueprint {
         BuildCostEnergy = 15000,
         BuildCostMass = 1500,
         BuildTime = 3000,
-        BuildRate = 200,
+        BuildRate = 100,
         BuildableCategory = {
             'seb9301',
             'BUILTBYTIER2RESEARCH UEF',

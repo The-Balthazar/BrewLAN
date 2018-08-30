@@ -130,7 +130,7 @@ UnitBlueprint {
         BuildCostEnergy = 2500,
         BuildCostMass = 250,
         BuildTime = 250,
-        BuildRate = 100,
+        BuildRate = 50,
         BuildableCategory = {
             'ssb9201',
             'BUILTBYTIER1RESEARCH SERAPHIM',

@@ -89,6 +89,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 135000*3,
+        ResearchMultEnergy = 0.3333333333,
         BuildCostMass = 1200*1.5,
         BuildTime = 600*2,
         RebuildBonusIds = {

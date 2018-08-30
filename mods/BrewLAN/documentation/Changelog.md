@@ -145,6 +145,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-08-28
 
   * R&D: Added Aeon tech 2 light power generator.
+  * R&D: Updated language strings.
+
+  ### 2018-08-29
+
+  * R&D: Added a "Built by experimental factory" ability for relevant research items.
+  * R&D: 'Build by field engineer' now shows up on some research items not exclusive to field engineers.
+  * R&D: Changed the default research cost mults from 1, 1, 2, 1 to 1, 1.25, 1.5, 1 for T1, 2, 3, & experimental.
+  * R&D: Lowered the build rate of research centres.
+  * R&D: Changed the research times of items to be based on the total output of the research centres.
+  * R&D: Each Research centre now gain research discounts based on the total number of research items that specific centre has completed.
+    * The buffs are a 1% reduction in mass, energy, and time for tech 1 research items, 2% for tech 2, 3% for tech 3, and 5% for experimental.
+    * They are multiplicative for mass and energy, but additive for build speed, meaning diminishing returns for each.
+  * Lowered the research energy cost multiplier of nuke mines to a third.
+
+  ### 2018-08-30
+
+  * R&D: Research completion buff no longer applies if the research failed or was cancelled.
+  * R&D: Research completion buffs are now passed on to upgrades.
+  * R&D: Added upgrade animations for UEF research centres.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

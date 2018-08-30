@@ -123,7 +123,7 @@ UnitBlueprint {
         BuildCostEnergy = 15000,
         BuildCostMass = 1500,
         BuildTime = 3000,
-        BuildRate = 200,
+        BuildRate = 100,
         BuildableCategory = {
             'sab9301',
             'BUILTBYTIER2RESEARCH AEON',

@@ -120,7 +120,7 @@ UnitBlueprint {
         BuildCostEnergy = 2500,
         BuildCostMass = 250,
         BuildTime = 250,
-        BuildRate = 100,
+        BuildRate = 50,
         BuildableCategory = {
             'srb9201',
             'BUILTBYTIER1RESEARCH CYBRAN',

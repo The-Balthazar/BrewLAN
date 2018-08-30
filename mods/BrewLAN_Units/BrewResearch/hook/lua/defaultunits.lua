@@ -105,8 +105,11 @@ ResearchItem = Class(DummyUnit) {
         DummyUnit.OnDestroy(self)
     end,
 }
+
 --------------------------------------------------------------------------------
 -- Research Center AI
+--------------------------------------------------------------------------------
+local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 --------------------------------------------------------------------------------
 ResearchFactoryUnit = Class(FactoryUnit) {
 
@@ -151,6 +154,64 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         end
     end,
 
+    OnStopBuild = function(self, unitbuilding, order)
+        if not Buffs['ResearchItemBuff5'] then
+            for i = 1, 5 do
+                if i != 4 then
+                    BuffBlueprint {
+                        Name = 'ResearchItemBuff' .. i, DisplayName = 'ResearchItemBuff' .. i,
+                        BuffType = 'RESEARCH', Stacks = 'ALWAYS', Duration = -1,
+                        Affects = {
+                            BuildRate    = {Add = (i/100), Mult = 1},
+                            EnergyActive = {Add = 0, Mult = 1-(i/100)},
+                            MassActive   = {Add = 0, Mult = 1-(i/100)},
+                        },
+                    }
+                end
+            end
+        end
+        if unitbuilding:GetFractionComplete() == 1 then
+            if EntityCategoryContains(categories.EXPERIMENTAL, unitbuilding) then
+                Buff.ApplyBuff(self, 'ResearchItemBuff5')
+            elseif EntityCategoryContains(categories.TECH3, unitbuilding) then
+                Buff.ApplyBuff(self, 'ResearchItemBuff3')
+            elseif EntityCategoryContains(categories.TECH2, unitbuilding) then
+                Buff.ApplyBuff(self, 'ResearchItemBuff2')
+            elseif EntityCategoryContains(categories.TECH1, unitbuilding) then
+                Buff.ApplyBuff(self, 'ResearchItemBuff1')
+            end
+        end
+        FactoryUnit.OnStopBuild(self, unitbuilding, order)
+    end,
+
+    UpgradingState = State(FactoryUnit.UpgradingState) {
+        OnStopBuild = function(self, unitbuilding, order)
+            if unitbuilding:GetFractionComplete() == 1 and order == 'Upgrade' then
+                if self.Buffs.BuffTable.RESEARCH then
+                    for buff, data in self.Buffs.BuffTable.RESEARCH do
+                        if Buffs[buff] then --Ensure that the data structure is the same as we are expecting.
+                            for i = 1, (data.Count or 1) do
+                                LOG('Passing on buff: ' .. buff)
+                                Buff.ApplyBuff(unitbuilding, buff)
+                            end
+                        end
+                    end
+                end
+            end
+            FactoryUnit.UpgradingState.OnStopBuild(self, unitbuilding, order)
+        end,
+    },
+
+    ----------------------------------------------------------------------------
+    -- AI research control
+    ----------------------------------------------------------------------------
+
+    -- Persistent research thread
+    -- "Decides" when to do research
+        -- Checks every 10 seconds if we are idle
+        -- If we ar wait a random number of ticks
+        -- that increases later into the game
+        -- then research
     ResearchThread = function(self)
         while not self.Dead do
             if self:IsIdleState() then
@@ -162,6 +223,27 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         end
     end,
 
+    -- Ran every time "ResearchThread" decides we need to research
+        -- Prioritises upgrading if it's available
+        -- else calls GetResearchItem to decide what to research
+    Research = function(self)
+        local aiBrain = self:GetAIBrain()
+        local bp = self:GetBlueprint()
+        --Upgrade if we can first
+        if bp.General.UpgradesTo and __blueprints[bp.General.UpgradesTo] and self:CanBuild(bp.General.UpgradesTo) then
+            IssueUpgrade({self}, bp.General.UpgradesTo)
+        else
+            aiBrain:BuildUnit(self, self:GetResearchItem(), 1)
+        end
+    end,
+
+    -- Ran via Research to "decide" what we should research
+        -- The first time it's ran per research center it generates a comprehensive list of all things this can research
+        -- It loops through that list to see what it can currently research
+        -- Then it picks one of those at random to build.
+        -- Research items self restrict, so there is no damger of repeat items unless nessessary.
+        -- Currently doesn't handle running out of things to research very well.
+        -- Should probably inform the AI brain that we are done and we no longer need a research center.
     GetResearchItem = function(self)
         local selfbp = self:GetBlueprint()
         if not self.ResearchList then
@@ -187,19 +269,9 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         return currentResearch[choicei]
     end,
 
-    Research = function(self)
-        local aiBrain = self:GetAIBrain()
-        local bp = self:GetBlueprint()
-        --Upgrade if we can first
-        if bp.General.UpgradesTo and __blueprints[bp.General.UpgradesTo] and self:CanBuild(bp.General.UpgradesTo) then
-            IssueUpgrade({self}, bp.General.UpgradesTo)
-        else
-            aiBrain:BuildUnit(self, self:GetResearchItem(), 1)
-        end
-    end,
-
+    --Applied OnStopBeingBuilt.
+    --Passed on with the other buffs on upgrade.
     AICheatsBuffs = function(self)
-        local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
         local aiBrain = self:GetAIBrain()
         if aiBrain.CheatEnabled then
             if not Buffs['ResearchAIxBuff'] then
@@ -207,21 +279,13 @@ ResearchFactoryUnit = Class(FactoryUnit) {
                     Name = 'ResearchAIxBuff',
                     DisplayName = 'ResearchAIxBuff',
                     BuffType = 'RESEARCH',
-                    Stacks = 'REPLACE',
+                    Stacks = 'ALWAYS',
                     Duration = -1,
                     Affects = {
-                        BuildRate = {
-                            Add = 0,
-                            Mult = 1.25,
-                        },
-                        EnergyActive = {
-                            Add = -0.6,
-                            Mult = 1,
-                        },
-                        MassActive = {
-                            Add = -0.6,
-                            Mult = 1,
-                        },
+                        --Research buffs are passed on as upgrades, so the final upgrade gets 3 instances of these.
+                        BuildRate = {Add = 0, Mult = 1 + (0.25 / 3)},
+                        EnergyActive = {Add = -0.2, Mult = 1},
+                        MassActive = {Add = -0.2, Mult = 1},
                     },
                 }
             end
@@ -232,17 +296,12 @@ ResearchFactoryUnit = Class(FactoryUnit) {
                     Name = 'ResearchAIBuff',
                     DisplayName = 'ResearchAIBuff',
                     BuffType = 'RESEARCH',
-                    Stacks = 'REPLACE',
+                    Stacks = 'ALWAYS',
                     Duration = -1,
                     Affects = {
-                        EnergyActive = {
-                            Add = -0.3,
-                            Mult = 1,
-                        },
-                        MassActive = {
-                            Add = -0.3,
-                            Mult = 1,
-                        },
+                        --Research buffs are passed on as upgrades, so the final upgrade gets 3 instances of these.
+                        EnergyActive = {Add = -0.1, Mult = 1},
+                        MassActive = {Add = -0.1, Mult = 1},
                     },
                 }
             end
