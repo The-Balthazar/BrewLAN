@@ -166,6 +166,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added upgrade animations for UEF research centres.
   * R&D: Added Cybran tech 2 light power generator.
 
+  ### 2018-08-31
+
+  * Fixed the treadmarks on Cybran field engineers.
+  * R&D: Cybran Tech 1&2 field engineers can no longer build both the ED4 and ED5.
+  * The field engineer tech SCU upgrade now specifically restricts the regular tech 3 resource buildings, but only when the advanced ones exist.
+    * This fixes the issue with them on getting nothing with R&D and on LOUD.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

@@ -1,65 +1,17 @@
 UnitBlueprint {
     Audio = {
-        AmbientMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        CaptureLoop = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Capture_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Construct = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Construct_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ConstructLoop = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Construct_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URL_Destroy_Land',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        HoverKilledOnWater = Sound {
-            Bank = 'Explosions',
-            Cue = 'Expl_Water_Lrg_01',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ReclaimLoop = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Reclaim_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartCapture = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Capture_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartReclaim = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Reclaim_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Vehicle',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        AmbientMove   = Sound {Bank = 'URL', Cue = 'URL0208_Move_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        CaptureLoop   = Sound {Bank = 'URL', Cue = 'URL0208_Capture_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        Construct     = Sound {Bank = 'URL', Cue = 'URL0208_Construct_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        ConstructLoop = Sound {Bank = 'URL', Cue = 'URL0208_Construct_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed     = Sound {Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        HoverKilledOnWater = Sound {Bank = 'Explosions', Cue = 'Expl_Water_Lrg_01', LodCutoff = 'UnitMove_LodCutoff'},
+        ReclaimLoop  = Sound {Bank = 'URL', Cue = 'URL0208_Reclaim_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        StartCapture = Sound {Bank = 'URL', Cue = 'URL0208_Capture_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove    = Sound {Bank = 'URL', Cue = 'URL0208_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StartReclaim = Sound {Bank = 'URL', Cue = 'URL0208_Reclaim_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StopMove     = Sound {Bank = 'URL', Cue = 'URL0208_Move_Stop', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection  = Sound {Bank = 'Interface', Cue = 'Cybran_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff'},
     },
     Buffs = {
         Regen = {
@@ -70,7 +22,7 @@ UnitBlueprint {
             Level5 = 10,
         },
     },
-    BuildIconSortPriority = 15,
+    BuildIconSortPriority = 11,
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',
@@ -96,13 +48,10 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 41,
         Health = 1010,
         MaxHealth = 1010,
-        RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 3,
     },
     Description = '<LOC uel0209_desc>Field Engineer',
@@ -118,9 +67,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'BRL0209',
-                        },
+                        Bones = {0},
                         Scale = 0.7,
                         Type = 'SeaIdle02',
                     },
@@ -150,10 +97,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust_Left',
-                            'Exhaust_Right',
-                        },
+                        Bones = {'Exhaust_Left', 'Exhaust_Right'},
                         Type = 'GroundKickup01',
                     },
                 },
@@ -162,16 +106,12 @@ UnitBlueprint {
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                            BoneName = 'BRL0209',
+                            BoneName = 0,
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.27,
-                            TreadMarksSizeX = 0.75,
+                            TreadMarksSizeX = 0.72,
                             TreadMarksSizeZ = 0.4,
-                            TreadOffset = {
-                                0,
-                                0,
-                                0,
-                            },
+                            TreadOffset = {0, 0, -0.3},
                         },
                     },
                 },
@@ -179,23 +119,17 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'Front_Right_Wake',
-                        },
+                        Bones = {'Front_Right_Wake'},
                         Scale = 0.6,
                         Type = 'LeftFrontWake',
                     },
                     {
-                        Bones = {
-                            'Front_Left_Wake',
-                        },
+                        Bones = {'Front_Left_Wake'},
                         Scale = 0.6,
                         Type = 'RightFrontWake',
                     },
                     {
-                        Bones = {
-                            'BRL0209',
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },

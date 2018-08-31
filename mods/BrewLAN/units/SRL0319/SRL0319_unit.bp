@@ -1,73 +1,25 @@
 UnitBlueprint {
     Audio = {
-        AmbientMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        CaptureLoop = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Capture_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Construct = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Construct_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ConstructLoop = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Construct_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URL_Destroy_Land',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        HoverKilledOnWater = Sound {
-            Bank = 'Explosions',
-            Cue = 'Expl_Water_Lrg_01',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ReclaimLoop = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Reclaim_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartCapture = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Capture_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartReclaim = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Reclaim_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0208_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Vehicle',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        AmbientMove   = Sound {Bank = 'URL', Cue = 'URL0208_Move_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        CaptureLoop   = Sound {Bank = 'URL', Cue = 'URL0208_Capture_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        Construct     = Sound {Bank = 'URL', Cue = 'URL0208_Construct_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        ConstructLoop = Sound {Bank = 'URL', Cue = 'URL0208_Construct_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed     = Sound {Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        HoverKilledOnWater = Sound {Bank = 'Explosions', Cue = 'Expl_Water_Lrg_01', LodCutoff = 'UnitMove_LodCutoff'},
+        ReclaimLoop  = Sound {Bank = 'URL', Cue = 'URL0208_Reclaim_Loop', LodCutoff = 'UnitMove_LodCutoff'},
+        StartCapture = Sound {Bank = 'URL', Cue = 'URL0208_Capture_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove    = Sound {Bank = 'URL', Cue = 'URL0208_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StartReclaim = Sound {Bank = 'URL', Cue = 'URL0208_Reclaim_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StopMove     = Sound {Bank = 'URL', Cue = 'URL0208_Move_Stop', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection  = Sound {Bank = 'Interface', Cue = 'Cybran_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff'},
     },
     Buffs = {
         Regen = {
-            Level1 = 2*1.5,
-            Level2 = 4*1.5,
-            Level3 = 6*1.5,
-            Level4 = 8*1.5,
-            Level5 = 10*1.5,
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
         },
     },
     BuildIconSortPriority = 11,
@@ -95,13 +47,10 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 80,
         Health = 2140,
         MaxHealth = 2140,
-        RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 5,
     },
     Description = '<LOC uel0209_desc>Field Engineer',
@@ -117,9 +66,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'BRL0209',
-                        },
+                        Bones = {0},
                         Scale = 0.7,
                         Type = 'SeaIdle02',
                     },
@@ -152,10 +99,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust_Left',
-                            'Exhaust_Right',
-                        },
+                        Bones = {'Exhaust_Left', 'Exhaust_Right'},
                         Type = 'GroundKickup01',
                     },
                 },
@@ -164,16 +108,12 @@ UnitBlueprint {
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                            BoneName = 'BRL0209',
+                            BoneName = 0,
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.27,
-                            TreadMarksSizeX = 0.75,
+                            TreadMarksSizeX = 0.89,
                             TreadMarksSizeZ = 0.4,
-                            TreadOffset = {
-                                0,
-                                0,
-                                0,
-                            },
+                            TreadOffset = {0, 0, -0.3},
                         },
                     },
                 },
@@ -181,23 +121,17 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'Front_Right_Wake',
-                        },
+                        Bones = {'Front_Right_Wake'},
                         Scale = 0.6,
                         Type = 'LeftFrontWake',
                     },
                     {
-                        Bones = {
-                            'Front_Left_Wake',
-                        },
+                        Bones = {'Front_Left_Wake'},
                         Scale = 0.6,
                         Type = 'RightFrontWake',
                     },
                     {
-                        Bones = {
-                            'BRL0209',
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
@@ -206,7 +140,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        UniformScale = 0.1175*1.25,
+        UniformScale = 0.146875,
     },
     Economy = {
         BuildCostEnergy = 3625,
@@ -280,8 +214,8 @@ UnitBlueprint {
         HelpText = '<LOC uel0209_help>Field Engineer',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.3*1.25,
-    LifeBarSize = 0.75*1.25,
+    LifeBarOffset = 0.375,
+    LifeBarSize = 0.9375,
     Physics = {
         BackUpDistance = 4,
         BankingSlope = 0,
@@ -306,23 +240,23 @@ UnitBlueprint {
     },
     SelectionCenterOffsetX = 0,
     SelectionCenterOffsetZ = 0,
-    SelectionSizeX = 0.45*1.25,
-    SelectionSizeZ = 0.45*1.25,
+    SelectionSizeX = 0.5625,
+    SelectionSizeZ = 0.5625,
     SelectionThickness = 0.85,
-    SizeX = 0.7*1.25,
-    SizeY = 0.9*1.25,
-    SizeZ = 0.6*1.25,
+    SizeX = 0.875,
+    SizeY = 1.125,
+    SizeZ = 0.75,
     StrategicIconName = 'icon_land3_engineer',
     StrategicIconSortPriority = 95,
     Transport = {
         TransportClass = 3,
     },
     Veteran = {
-        Level1 = 6*1.5,
-        Level2 = 12*1.5,
-        Level3 = 18*1.5,
-        Level4 = 24*1.5,
-        Level5 = 30*1.5,
+        Level1 = 9,
+        Level2 = 18,
+        Level3 = 27,
+        Level4 = 36,
+        Level5 = 45,
     },
     Weapon = {
         {
