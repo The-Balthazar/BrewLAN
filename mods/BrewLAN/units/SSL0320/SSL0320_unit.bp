@@ -59,7 +59,7 @@ UnitBlueprint {
     },
     CollisionOffsetZ = 0,
     Defense = {
-        AirThreatLevel = 3,
+        AirThreatLevel = 15,
         ArmorType = 'Normal',
         EconomyThreatLevel = 0,
         Health = 4160,

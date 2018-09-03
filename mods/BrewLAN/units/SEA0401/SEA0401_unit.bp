@@ -121,7 +121,7 @@ UnitBlueprint {
         'CANNOTUSEAIRSTAGING',
     },
     Defense = {
-        AirThreatLevel = 296,
+        AirThreatLevel = 226,
         ArmorType = 'Light',
         EconomyThreatLevel = 25,
         Health = 100000,

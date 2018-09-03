@@ -173,6 +173,29 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * The field engineer tech SCU upgrade now specifically restricts the regular tech 3 resource buildings, but only when the advanced ones exist.
     * This fixes the issue with them on getting nothing with R&D and on LOUD.
 
+  ### 2018-09-01
+
+  * New mod. Spomeniki.
+
+  ### 2018-09-02
+
+  * Spomeniki: New Spomenik.
+  * Spomeniki: Tweaked spawn algorithms.
+  * Allowed the Iyadesu to get blueprints from props if they have an associated BP.
+  * Spomeniki: Added Ytho: Heavy Point Defence. Only buildable by the Iyadesu after reclaiming Spomenik Naroda.
+  * Spomeniki: New Spomenik.
+  * Spomeniki: Shrunk Naroda slightly.
+
+  ### 2018-09-03
+
+  * Spomeniki: Associated the disabled Cybran Decoy Plane with Spomenik Mramor.
+  * Updated the stats of the disabled Cybran Decoy Plane, and changed the model from the spy plane model to an unused variant of the ASF.
+  * Debug Tools: Now lists lod0 models in the units directory without a directly associated blueprint.
+  * Updated the threat values of various units.
+  * Updated the stats of the disabled UEF Decoy Plane, and changed the model from the spy plane model to the ASF model.
+  * Corrected the ground collision offset after previous size-sphere changes to: Beguiler, UX Dragonlady, Selia, Souioz, Tornado, Pigeon, Respirer, Saksinokka, and Gannet.
+  * UEF and Cybran Decoy Planes now get their stats movement matched to ASFs on game launch. They are still disabled. Cybran one can be built via Spomeniki.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

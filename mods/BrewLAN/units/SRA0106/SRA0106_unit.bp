@@ -121,9 +121,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'URA0101',
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -131,9 +129,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'URA0101',
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -232,14 +228,9 @@ UnitBlueprint {
         Elevation = 18,
         FuelRechargeRate = 5,
         FuelUseTime = 500,
-        GroundCollisionOffset = 1.6,
-        --MaxAcceleration = 10,
+        GroundCollisionOffset = 1.425,
         MaxSpeed = 0.5,
-        --MaxSteerForce = 100,
-        --MinSpeedPercent = 0.85,
         MotionType = 'RULEUMT_Air',
-        --TurnRadius = 100,
-        --TurnRate = 100,
     },
     SelectionSizeX = 0.5,
     SelectionSizeZ = 0.45,

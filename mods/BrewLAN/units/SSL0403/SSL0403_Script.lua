@@ -98,6 +98,8 @@ SSL0403 = Class(SConstructionUnit) {
         local TargetId = target.AssociatedBP or target:GetBlueprint().BlueprintId
         if TargetId and not string.find(TargetId, "/") then
             self.ReclaimID = {id = TargetId}
+        elseif target:GetBlueprint().AssociatedBP then
+            self.ReclaimID = {id = target:GetBlueprint().AssociatedBP}
         end
         self:MoveArms()
         SConstructionUnit.OnStartReclaim(self, target)

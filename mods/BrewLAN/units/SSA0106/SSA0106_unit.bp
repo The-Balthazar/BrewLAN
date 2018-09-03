@@ -105,7 +105,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYSONAR',
     },
-    CollisionOffsetZ = 0.1,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Light',
@@ -247,7 +246,7 @@ UnitBlueprint {
         Elevation = 18,
         FuelRechargeRate = 5,
         FuelUseTime = 500,
-        GroundCollisionOffset = 1.6,
+        GroundCollisionOffset = 1.425,
         MaxSpeed = 0.5,
         MeshExtentsX = 1.25,
         MeshExtentsY = 0.25,

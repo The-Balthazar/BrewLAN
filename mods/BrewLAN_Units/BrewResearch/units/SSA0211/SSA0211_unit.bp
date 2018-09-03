@@ -111,14 +111,11 @@ UnitBlueprint {
     },
     CollisionOffsetZ = 0.2,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+        EconomyThreatLevel = 1,
         Health = 1235,
         MaxHealth = 1235,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 10,
+        SurfaceThreatLevel = 12,
     },
     Description = '<LOC saa0211_desc>Tactical Bomber',
     Display = {

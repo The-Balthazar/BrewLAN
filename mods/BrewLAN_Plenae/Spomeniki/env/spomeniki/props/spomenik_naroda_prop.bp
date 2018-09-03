@@ -1,0 +1,48 @@
+PropBlueprint {
+    AssociatedBP = 'ssb23sn',
+    Categories = {
+        'RECLAIMABLE',
+    },
+    CollisionOffsetY = 1.5*0.75,
+    Defense = {
+        Health = 150,
+        MaxHealth = 150,
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                {LODCutoff = 1000, ShaderName = 'Unit'},
+            },
+        },
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar6x_01_albedo',
+                Normal = 'Tarmacs/Tar6x_01_normals',
+                FadeOut = 150,
+                Length = 6.4,
+                Width = 6.4,
+            },
+        },
+        UniformScale = 0.06*0.75,
+    },
+    Economy = {
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 450,
+        ReclaimTime = 5,
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+        SizeX = 2,
+        SizeZ = 2,
+    },
+    Interface = {
+        HelpText = 'Spomenik',
+    },
+    Physics = {
+        BlockPath = true,
+    },
+    SizeX = 7.5*0.75,
+    SizeY = 2*0.75,
+    SizeZ = 2.3*0.75,
+}

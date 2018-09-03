@@ -1,0 +1,13 @@
+MeshBlueprint {
+    LODs = {
+        {
+            LODCutoff = 500,
+            LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+            ShaderName = 'Seraphim',
+            AlbedoName = '/units/XSL0401/XSL0401_albedo.dds',
+            NormalsName = '/units/XSL0401/XSL0401_normalsts.dds',
+            SpecularName = '/units/XSL0401/XSL0401_specteam.dds',
+        },
+    },
+    SortOrder = 1000,
+}

@@ -13,6 +13,7 @@ function ModBlueprints(all_blueprints)
     CheckAllUnitBackgroundImages(all_blueprints.Unit)
     CheckAllUnitThreatValues(all_blueprints.Unit)
     CheckCollisionSphereLargeEnoughForMaxSpeed(all_blueprints.Unit)
+    FindUnusedFiles(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -27,7 +28,7 @@ function ShouldWeLogThis(id, bp)
         'url0203',
     }
     return units and table.find(units, id)]]
-    return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'PRODUCTBREWLAN') or table.find(bp.Categories, 'PRODUCTBREWLANTURRETS') or table.find(bp.Categories, 'PRODUCTBREWLANSHIELDS') or table.find(bp.Categories, 'PRODUCTBREWLANRND'))
+    return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'PRODUCTBREWLAN') or table.find(bp.Categories, 'PRODUCTBREWLANTURRETS') or table.find(bp.Categories, 'PRODUCTBREWLANSHIELDS') or table.find(bp.Categories, 'PRODUCTBREWLANRND') or table.find(bp.Categories, 'PRODUCTSPOMENIKI'))
     --return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3') or table.find(bp.Categories, 'EXPERIMENTAL') )
 end
 
@@ -50,6 +51,19 @@ function CheckCollisionSphereLargeEnoughForMaxSpeed(all_bps)
     		--LOG("*AI DEBUG "..bp.Description.." has a new sphere of "..bp.SizeSphere)
     	end
     end
+end
+
+function FindUnusedFiles(all_bps)
+    local models = DiskFindFiles('/units/', '*lod0.scm')
+    local bps = DiskFindFiles('/units/', '*.bp')
+    local modelsnobp = {}
+    for i, path in models do
+        if not table.find(bps, string.gsub(path, 'lod0.scm', 'unit.bp' )) then
+            table.insert(modelsnobp, path)
+        end
+    end
+    WARN("Potentially long list of unused lod0 models:")
+    LOG(repr(modelsnobp))
 end
 
 function CheckAllUnitThreatValues(all_bps)
