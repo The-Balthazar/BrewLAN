@@ -8,7 +8,7 @@ srb4401="Generador de escudo experimental"
 seb4401_name="BFS - Incondicional"
 Unit_Description__BubbleTea_A4_02="Genera una fuerte escudo alrededor de las unidades y estructuras dentro de su radio operativo."
 
---ssb4401_desc="Generador de escudo experimental"
+ssb4401_desc="Experimental Escudo de celosía"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="Experimental Escudo aviones no tripulados"
 ssb4401_large_name="Iaathanah"

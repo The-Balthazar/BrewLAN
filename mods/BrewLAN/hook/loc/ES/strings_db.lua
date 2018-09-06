@@ -42,7 +42,7 @@ tooltipbrewlan0016="toggle pulso Interrupción"
 tooltipbrewlan0017="Mueva el pulso de interrupción Omni encendido o apagado."
 
 --Información sobre herramientas para el Rez comando / recuperar.
---tooltipbrewlan0018="Recuperar (E)"
+--tooltipbrewlan0018="Reclamar"
 tooltipbrewlan0019="Recuperar una unidad o restos y conocer su plan."
 
 --Información sobre herramientas para el Stargate
@@ -117,6 +117,8 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="instalación de aire puesta en escena de luz. Las reparaciones y reposta aeronave en particular."
 
 --Los ingenieros de campo
+sl0119_desc="Ingeniero de campo"
+sal0119_desc="Ingeniero de defensa"
 sel0119_name="Criajo"
 sal0119_name="vivifier"
 srl0119_name="outy"
@@ -139,6 +141,7 @@ saa0211_desc="bombardero táctico"
 Unit_Description_BrewLAN_T2A001="De nivel medio bombardero táctico. Equipado con una luz Quark bomba y el radar."
 
 --Los ingenieros de campo
+sl0209_desc="Ingeniero de campo"
 sal0209_desc="Ingeniero de defensa"
 sal0209_name="Mayordomo"
 srl0209_name="Wilson"
@@ -185,10 +188,10 @@ srb5210_name="Mamparo"
 ssb5210_name="Haas-Haas"
 Unit_Description_BrewLAN_T2B001="Restringe el movimiento de las unidades enemigas y pueden sostener cantidades extremas de daños. Se conecta a otras secciones de pared pesados ​​adyacentes."
 
+ssl0222_desc="Generador de escudo móvil"
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="generador de escudo móvil."
 
---El campo de la nave Ingeniería
 ss0219_desc="El campo de la nave Ingeniería"
 ses0219_name="Clase Fixxie"
 srs0219_name="Clase Barwick"
@@ -214,15 +217,21 @@ Unit_Description_BrewLAN_T3A009="Armadura ligera avión señuelo. Equipado con u
 Unit_Description_BrewLAN_T3A010="Armadura ligera avión señuelo sigilo. Equipado con un potente equipo de radar de interferencia diseñados para crear múltiples señales de radar falsos. movimientos de combate de superioridad aérea imita."
 Unit_Description_BrewLAN_T3A011="Armadura ligera avión señuelo. Equipado con un potente equipo de radar de interferencia diseñados para crear múltiples señales de radar falsos. movimientos de combate de superioridad aérea imita."
 
+ssb0x04_desc="Estación de ingeniería"
+ssb0x04_name="Iya"
+Unit_Description_BrewLAN_T2D006="Repara, recupera, ayuda o captura automáticamente cualquier unidad ubicada en su radio de operación."
+Unit_Description_BrewLAN_T2D007="Repara, recupera, ayuda o captura automáticamente cualquier unidad dentro de su radio de acción."
+Unit_Description_BrewLAN_T2D008="Repara, recupera, ayuda o captura automáticamente cualquier unidad ubicada en su radio de operación."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 --------------------------------------------------------------------------------
 
-sair0305="cañonera pesada"
+sair0305="Cañonera pesada"
 ssa0305_name="Vulthuum"
-Unit_Description_BrewLAN_T3A001="helicóptero de combate pesado. Armado con autoguns fásicos y armas poderosas rango AA pero cortos."
+Unit_Description_BrewLAN_T3A001="helicóptero de combate pesado. Armado con Phasic auto-pistolas y armas poderosas rango AA pero cortos."
 
-sair0306="Transporte Aéreo pesada"
+sair0306="Transporte aéreo pesado"
 saa0306_name="Solaris"
 sra0306_name="noche Skimmer"
 ssa0306_name="Vishuum"
@@ -242,10 +251,11 @@ sal0311_desc="Tanque de Asalto Blindado"
 sal0311_name="moldavita"
 Unit_Description_BrewLAN_T3L002="tanque de asalto fuertemente blindado. Baja tasa de fuego, diseñado como una unidad de apoyo pesado."
 
-ssl0311_desc="Bot Asalto pesado"
+ssl0311_desc="Robot de asalto pesado"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Blindado bot asalto asedio. Armado con doble Aire-au Bolters."
 
+sb2306_desc="Defensa de punto pesada"
 srb2306_name="infierno"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="Mobile defensa antimisiles estratégica. Constr
 Unit_Description_BrewLAN_T3L008="Mobile defensa antimisiles estratégica. Se dispara una salva de tres misiles en cada objetivo. Construir costos incluyen primera salva."
 
 --plataforma de sonar Serafines T3
+sss0305_desc="Plataforma de sónar"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="sistema de sonar con la gama excepcional. Detecta y rastrea las unidades navales. Equipado con un teletransportador personal."
+ability_personal_teleporter="Teletransportador personal"
 
 --Los ingenieros de campo
+sl0319_desc="Ingeniero de campo"
+sal0319_desc="Ingeniero de defensa"
 sel0319_name="Custodio"
 sal0319_name="Bilmon"
 srl0319_name="Casa"
@@ -352,32 +366,47 @@ srb5311_name="Procyon Oferta"
 seb5311_name="Grada"
 Unit_Description_BrewLAN_T3B0020="manual puerta; puede permitir el paso a través de su área y sostener cantidades extremas de daños."
 
+seb2308_desc="Lanzatorpedos"
 seb2308_name="Arpón"
 Unit_Description_BrewLAN_T3B0025="torre de lanzamiento de torpedos pesados. Puede ser construido en tierra y en el fondo del mar."
+sab2308_desc="Lanzatorpedos"
 sab2308_name="inundación repentina"
 Unit_Description_BrewLAN_T3B0027="sistema muy pesado de largo alcance contra la defensa naval. Diseñado para involucrar a los más poderosos de las unidades navales."
+sss0306_desc="Plataforma torpedo pesado"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Al pasar por el sistema de torpedos. Capaz de destruir el mayor de los buques enemigos."
 
 ssb3301_desc="Fondo para el seguimiento de la óptica"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Ofrece la línea de visión de una unidad de amigo o enemigo objetivo. Puede dirigirse repuntes de radar. No se puede orientar el espacio vacío."
 
---Generador de escudo móviles
+sal0322_desc="Gen. de escudo móvil"
 sal0322_name="llama de Lotus"
+Unit_Description_BrewLAN_T3L021="Generador de escudo móvil."
+
+sel0322_desc="Generador de escudo móvil"
 sel0322_name="Ella"
---descripciones cortas y largas ambos el mismo que por defecto.
+Unit_Description_BrewLAN_T3L022="Generador de escudo móvil."
 
 --antiaérea móvil
 sal0320_desc="Anti-defensa aérea móvil"
 sal0320_name="armilar"
 Unit_Description_BrewLAN_T3L012="Al pasar por el sistema de defensa antiaérea móvil. Consume energía en cada disparo."
+
+sel0324_desc="SAM lanzador móvil"
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="lanzador de misiles antiaéreo móvil. Equipado con el equipo de exploración avanzada."
+
 --srl0320_desc=--Lanzador de misiles móviles
+srl0320_desc="SAM lanzador móvil"
 srl0320_name="Escabullirse"
 Unit_Description_BrewLAN_T3L009="camuflado lanzador de misiles móviles tierra-aire. Debe hacerse visible a los ataques."
+
+ssl0320_desc="Anti-defensa aérea móvil"
 ssl0320_name="Atha-Ythia"
 Unit_Description_BrewLAN_T3L020="Al pasar por móvil contra el aire y la defensa de misiles tácticos."
 
+seb4303_desc="Escudo antiartillería"
 seb4303_name="Retroceso"
 Unit_Description_BrewLAN_T3B0028="red de defensa artillería estacionaria. Equipado con un sistema de identificación de amenazas y de seguimiento integrado."
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57 Croc"
 sal0325_name="Limbo"
 Unit_Description_BrewLAN_T3L017="Mobile vehículo anti-naval."
 Unit_Description_BrewLAN_T3L018="Mobile flotando vehículo anti-naval."
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Al pasar por el sistema de torpedos. Capaz de destruir el mayor de los buques enemigos."
 
 ssb4317_desc="radar Jammer"
 ssb4317_name="Yathesel"

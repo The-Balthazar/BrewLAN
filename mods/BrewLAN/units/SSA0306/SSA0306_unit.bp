@@ -1,9 +1,7 @@
 UnitBlueprint {
     AI = {
         BeaconName = 'XSB5102',
-        TargetBones = {
-            'BSA0306',
-        },
+        TargetBones = {0},
     },
     Air = {
         AutoLandTime = 1,
@@ -126,13 +124,10 @@ UnitBlueprint {
         'CANNOTUSEAIRSTAGING',
         'BUBBLESHIELDSPILLOVERCHECK',
     },
-    CollisionOffsetX = 0,
     CollisionOffsetY = -0.5,
-    CollisionOffsetZ = 0,
     Defense = {
         AirThreatLevel = 14,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 4300,
         MaxHealth = 4300,
         RegenRate = 0,
@@ -152,10 +147,9 @@ UnitBlueprint {
             ShieldVerticalOffset = -1,
             TransportShield = true,
         },
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 7,
     },
-    Description = '<LOC xea0306_desc>Heavy Air Transport',
+    Description = '<LOC sair0306>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -167,9 +161,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'BSA0306',
-                        },
+                        Bones = {0},
                         Scale = 4,
                         Type = 'Landing01',
                     },
@@ -178,9 +170,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'BSA0306',
-                        },
+                        Bones = {0},
                         Scale = 4,
                         Type = 'TakeOff01',
                     },
@@ -212,15 +202,11 @@ UnitBlueprint {
         MovementEffects = {
             Air = {
                 Contrails = {
-                    Bones = {
-                        'Exhaust',
-                    },
+                    Bones = {'Exhaust'},
                 },
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust',
-                        },
+                        Bones = {'Exhaust'},
                         Scale = 2.5,
                         Type = 'AirMoveExhaust03',
                     },
@@ -376,12 +362,11 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'TECH3 BOMBER',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
@@ -454,12 +439,11 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'TECH3 BOMBER',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

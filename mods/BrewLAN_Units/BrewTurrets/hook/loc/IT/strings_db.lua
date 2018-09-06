@@ -9,7 +9,7 @@ seb5381_desc="Danni Boost Nodo"
 Unit_Description_BrewLAN_Turrets_0002="affare armamento statico adiacente incrementato il danno. Questo aumenta notevolmente il consumo di energia per il colpo."
 
 seb2320_name="Hiro"
-seb2320_desc="Heavy Point Difesa"
+seb2320_desc="Punto di difesa pesante"
 Unit_Description_BrewLAN_Turrets_0003="Pesante torre difensiva. Armato con un fascio di plasma."
 
 seb2211_name="Stouty"
@@ -24,7 +24,7 @@ seb2401_desc="Sperimentale Point Difesa"
 Unit_Description_BrewLAN_Turrets_0006="torretta difensiva. Armato di un enorme cannone protone."
 
 srb2391_name="Bobina di Tesla"
-srb2391_desc=xeb2306_desc
+srb2391_desc="Punto di difesa pesante"
 Unit_Description_BrewLAN_Turrets_0007="Potente, a corto raggio, torretta difensiva. Memorizza gradualmente l'energia e scarichi tutto con ogni scatto. Più efficace contro grandi bersagli quando dato il tempo di carica. Altamente inefficace a fuoco sostenuto."
 
 --Questo è usato dalla bobina di Tesla

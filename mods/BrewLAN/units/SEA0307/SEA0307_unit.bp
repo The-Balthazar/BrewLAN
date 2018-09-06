@@ -119,7 +119,7 @@ UnitBlueprint {
         SubThreatLevel = 38,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC uea0204_desc>Torpedo Bomber',
+    Description = '<LOC sair0307>Torpedo Bomber',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -235,7 +235,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC uea0204_help>Torpedo Bomber',
+        HelpText = '<LOC sair0307>Torpedo Bomber',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.75,

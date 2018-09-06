@@ -8,7 +8,7 @@ srb4401="Experimental Shield Generator"
 seb4401_name="BFS - Stalwart"
 Unit_Description__BubbleTea_A4_02="Generates a heavy shield around units and structures within its operational radius."
 
---ssb4401_desc="Experimental Shield Generator"
+ssb4401_desc="Experimental Shield Lattice"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="Experimental Shield Drone"
 ssb4401_large_name="Iaathanah"

@@ -24,7 +24,7 @@ seb2401_desc="Experimentální obrana"
 Unit_Description_BrewLAN_Turrets_0006="Obranný věžička. Vyzbrojeni masivní protonovým dělem."
 
 srb2391_name="Tesla Coil"
-srb2391_desc=xeb2306_desc
+srb2391_desc="Těžký obranný bod "
 Unit_Description_BrewLAN_Turrets_0007="Silný, krátkého dosahu, obranný věžička. Postupně ukládá energii a odvádí vše s každým výstřelem. Nejúčinnější proti velkým cílům když daný čas nabíjení. Velmi neefektivní při trvalé ohně."
 
 --To je používán Tesla Coil

@@ -48,6 +48,7 @@ ability_rnd_command="Construit par unité de commande"
 ability_rnd_engineer="Construit par l'ingénieur"
 ability_rnd_field="Construit par l'ingénieur sur le terrain"
 ability_rnd_factory="Construit par usine"
+ability_rnd_gantry="Construit par usine expérimentale"
 ability_rnd_wall="Construit sur le mur"
 ability_rnd_upgrade="Construit comme mise à niveau"
 
@@ -106,13 +107,13 @@ seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Faible au générateur de puissance de niveau intermédiaire. Construire à côté d'autres structures pour le bonus de contiguïté."
 
 
-sa0212_desc=xaa0202_desc
+sa0212_desc="Chasseur de combat"
 sea0212_name="Raptor"
 sra0212_name="Dioscures"
 ssa0212_name="Iayath"
-Unit_Description_RND_019="combattant de l'air de niveau intermédiaire. Excellentes capacités AA. Efficace contre des hélicoptères de combat ennemis et des bombardiers."
+Unit_Description_RND_019="Chasseur intermédiaire. Excellentes capacités antiaériennes. Efficace contre les vaisseaux d'attaque et les bombardiers."
 
-sa0213_desc=dea0202_desc
+sa0213_desc="Chasseur-bombardier"
 saa0213_name="Lucidité"
 Unit_Description_RND_020="chasseur / bombardier Combinaison conçu pour engager à la fois la terre et les unités aériennes."
 
@@ -122,20 +123,44 @@ sea0211_name="Tornade"
 ssa0211_name="Sinn"
 sra0211_name="Condor"
 Unit_Description_RND_008="avions bombardier intermédiaire."
---Classés séparément au cas où je les rendre intéressants
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="avions bombardier intermédiaire."
+Unit_Description_RND_010="avions bombardier intermédiaire."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Capteurs Omni dédiés
+sb3301_desc="Matrice d'omni-capteurs"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="Ensemble de capteurs. Capable d'identifier des cibles à travers la furtivité et manteau et efface blips brouilleurs."
+
+--T3.5 bombardiers avancés
+sa0314_desc="pénétrateur"
+sa0314_desc="pénétrateur Bomber"
+
+sea0314_name="Lancier"
+saa0314_name="Cri"
+sra0314_name="sanguine Tyran"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--T3.5 combattants avancés
+sa0313_desc="pénétration Fighter"
+sea0313_name="Matou"
+saa0313_name="Helios"
+sra0313_name="Patron de twilight"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --transports ekranoplan
 ss0326_desc="Transport lourd GEV"

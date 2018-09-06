@@ -44,16 +44,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 2,
         Health = 3500,
         MaxHealth = 3500,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC uas0305_desc>Sonar Platform',
+    Description = '<LOC sss0305_desc>Sonar Platform',
     Display = {
         Abilities = {
             '<LOC ability_sonar>Sonar',
@@ -63,9 +60,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'SeaIdle02',
                     },
                 },
@@ -99,9 +94,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
@@ -109,7 +102,7 @@ UnitBlueprint {
             },
         },
         SpawnRandomRotation = true,
-        UniformScale = 0.05*1.2,
+        UniformScale = 0.06,
     },
     Economy = {
         BuildCostEnergy = 15000,
@@ -169,7 +162,7 @@ UnitBlueprint {
         WaterVisionRadius = 24,
     },
     Interface = {
-        HelpText = '<LOC uas0305_help>Sonar Platform',
+        HelpText = '<LOC sss0305_desc>Sonar Platform',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
@@ -191,19 +184,19 @@ UnitBlueprint {
         MaxSpeed = 4.5,
         MaxSpeedReverse = 0,
         MaxSteerForce = 5,
-        MeshExtentsX = 1.5*1.2,
-        MeshExtentsY = 1*1.2,
-        MeshExtentsZ = 1.5*1.2,
+        MeshExtentsX = 1.8,
+        MeshExtentsY = 1.2,
+        MeshExtentsZ = 1.8,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Water',
         TurnRadius = 5,
         TurnRate = 100,
     },
-    SelectionSizeX = 0.6*1.2,
-    SelectionSizeZ = 0.6*1.2,
+    SelectionSizeX = 0.72,
+    SelectionSizeZ = 0.72,
     SelectionThickness = 0.66,
     SizeX = 1,
-    SizeY = 1*1.2,
+    SizeY = 1.2,
     SizeZ = 1,
     StrategicIconName = 'icon_structure3_intel',
     StrategicIconSortPriority = 235,

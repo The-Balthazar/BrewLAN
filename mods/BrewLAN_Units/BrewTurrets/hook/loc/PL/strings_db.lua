@@ -9,7 +9,7 @@ seb5381_desc="Obrażenia Rozbudowa węzła"
 Unit_Description_BrewLAN_Turrets_0002="Przylegające statyczny sprawa broni zwiększono obrażenia. To znacznie zwiększa zużycie energii na strzał."
 
 seb2320_name="Hiro"
-seb2320_desc="Ciężki punkt obrony"
+seb2320_desc="Ciężka obrona punktowa"
 Unit_Description_BrewLAN_Turrets_0003="Ciężki wieża obronna. Uzbrojony w wiązki plazmy."
 
 seb2211_name="Stouty"
@@ -24,7 +24,7 @@ seb2401_desc="Eksperymentalny punkt obrony"
 Unit_Description_BrewLAN_Turrets_0006="Wieżyczka obronna. Uzbrojony w masywnej protonów armaty."
 
 srb2391_name="Cewka Tesli"
-srb2391_desc=xeb2306_desc
+srb2391_desc="Ciężka obrona punktowa"
 Unit_Description_BrewLAN_Turrets_0007="Mocny, krótki zasięg, wieżyczka obronna. Stopniowo magazynuje energię i odprowadza wszystko z każdym strzale. Najbardziej skuteczne wobec wielkich celów, gdy dany czas ładowania. Wysoce nieskuteczne przy długotrwałym ognia."
 
 --Jest to wykorzystywane przez Tesla Coil

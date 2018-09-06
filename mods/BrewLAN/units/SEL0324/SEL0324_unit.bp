@@ -68,14 +68,11 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 11,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
         Health = 5250,
         MaxHealth = 5250,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC sal0320_desc>Mobile Anti-Air Defense',
+    Description = '<LOC sel0324_desc>Mobile Anti-Air SAM Launcher',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -86,9 +83,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Dish',
-                        },
+                        Bones = {'Dish'},
                         Type = 'Radar01',
                     },
                 },
@@ -134,11 +129,7 @@ UnitBlueprint {
                             TreadMarksInterval = 0.6,
                             TreadMarksSizeX = 1.25,
                             TreadMarksSizeZ = 1,
-                            TreadOffset = {
-                                0,
-                                0,
-                                0,
-                            },
+                            TreadOffset = {0, 0, 0},
                         },
                     },
                 },
@@ -146,7 +137,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXL0010',
         SpawnRandomRotation = false,
-        UniformScale = 0.032*.7,
+        UniformScale = 0.0224,
     },
     Economy = {
         BuildCostEnergy = 11085,
@@ -196,7 +187,7 @@ UnitBlueprint {
         VisionRadius = 35,
     },
     Interface = {
-        HelpText = '<LOC sel0320_desc>Mobile Anti-Air Defense',
+        HelpText = '<LOC sel0324_desc>Mobile Anti-Air SAM Launcher',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1,
@@ -303,12 +294,12 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'TECH3 BOMBER',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
+                'MOBILE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

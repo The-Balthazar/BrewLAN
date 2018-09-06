@@ -1,21 +1,28 @@
 do
-    table.insert(BuildingTemplates[1], {'T1ResearchCentre', 'seb9101'})
-    table.insert(BuildingTemplates[2], {'T1ResearchCentre', 'sab9101'})
-    table.insert(BuildingTemplates[3], {'T1ResearchCentre', 'srb9101'})
-    table.insert(BuildingTemplates[4], {'T1ResearchCentre', 'ssb9101'})
-
-    table.insert(BuildingTemplates[1], {'T1EnergyProduction', 'seb1101'})
-    table.insert(BuildingTemplates[2], {'T1EnergyProduction', 'sab1101'})
-    table.insert(BuildingTemplates[3], {'T1EnergyProduction', 'srb1101'})
-    table.insert(BuildingTemplates[4], {'T1EnergyProduction', 'ssb1101'})
-
-    --table.insert(BuildingTemplates[1], {'T1EnergyProduction', 'seb1102'})
-    --table.insert(BuildingTemplates[2], {'T1EnergyProduction', 'sab1102'})
-    --table.insert(BuildingTemplates[3], {'T1EnergyProduction', 'srb1102'})
-    table.insert(BuildingTemplates[4], {'T1EnergyProduction', 'ssb1102'})
-
-    table.insert(BuildingTemplates[1], {'T2EnergyProduction', 'seb1201'})
-    table.insert(BuildingTemplates[2], {'T2EnergyProduction', 'sab1201'})
-    table.insert(BuildingTemplates[3], {'T2EnergyProduction', 'srb1201'})
-    table.insert(BuildingTemplates[4], {'T2EnergyProduction', 'ssb1201'})
+    local inserts = {
+        {
+            'T1ResearchCentre',
+            --UEF       CYBRAN    AEON      SERAPHIM
+            {'seb9101','sab9101','srb9101','ssb9101'},
+        },
+        {
+            'T1EnergyProduction',
+            {'seb1101','sab1101','srb1101','ssb1101'},
+        },
+        {
+            'T1EnergyProduction',
+            {false--[['seb1102']],false--[['sab1102']],false--[['srb1102']],'ssb1102'},
+        },
+        {
+            'T2EnergyProduction',
+            {'seb1201','sab1201','srb1201','ssb1201'},
+        },
+    }
+    for group, data in inserts do
+        for i, id in data[2] do
+            if BuildingTemplates[i] and id then-- and __blueprints[id] then
+                table.insert(BuildingTemplates[i], {data[1], id})
+            end
+        end
+    end
 end

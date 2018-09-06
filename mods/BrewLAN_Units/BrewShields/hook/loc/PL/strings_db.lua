@@ -8,7 +8,7 @@ srb4401="Eksperymentalna Tarcza Generator"
 seb4401_name="BFS - Stalwart"
 Unit_Description__BubbleTea_A4_02="Generuje ciężką tarczę wokół jednostek i struktur wewnątrz promienia operacyjnego."
 
---ssb4401_desc="Eksperymentalna Tarcza Generator"
+ssb4401_desc="Eksperymentalna Tarcza Lattice"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="Eksperymentalna Tarcza Drone"
 ssb4401_large_name="Iaathanah"

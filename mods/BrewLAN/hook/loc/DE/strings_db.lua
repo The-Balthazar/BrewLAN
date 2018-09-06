@@ -117,6 +117,8 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Repariert und Betankt kleine Flugzeuge, ein Landeplatz"
 
 --Field engineers
+sl0119_desc="Feldtechniker"
+sal0119_desc="Defensiv Techniker"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
@@ -139,6 +141,7 @@ saa0211_desc="Taktischer Bomber"
 Unit_Description_BrewLAN_T2A001="Mittlerer taktischer Bomber. Ausgestattet mit einer leichten strategischen Bombe und Radar"
 
 --Field Engineer
+sl0209_desc="Feldtechniker"
 sal0209_desc="Defensiv Techniker"
 sal0209_name="Butler"
 srl0209_name="Wilson"
@@ -185,10 +188,10 @@ srb5210_name="Panzerdamm"
 ssb5210_name="Haas-haas"
 Unit_Description_BrewLAN_T2B001="Bremst den Vorstoß des Feindes. Kann extremem Mengen an Schaden standhalten. Verbindet sich automatisch mit angrenzenden Mauerabschnitten."
 
+ssl0222_desc="Mobiler Schildgenerator"
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
 
---Field Engineering Schiff
 ss0219_desc="Kampftechniker Schiff"
 ses0219_name="Fixxie-Klasse"
 srs0219_name="Barwick Klasse"
@@ -213,6 +216,12 @@ Unit_Description_BrewLAN_T3A006="Leicht gepanzertes, Radar störendes Flugzeug. 
 Unit_Description_BrewLAN_T3A009="Leicht gepanzertes, Radar störendes Flugzeug. Ausgestattet mit einem starken Störsender der mehrere falsche Radar Signaturen erzeugt."
 Unit_Description_BrewLAN_T3A010="Leicht gepanzertes, Radar störendes Flugzeug. Ausgestattet mit einem starken Störsender der mehrere falsche Radar Signaturen erzeugt sowie einem persönlichen Tarnfeldgenerator."
 Unit_Description_BrewLAN_T3A011="Leicht gepanzertes, Radar störendes Flugzeug. Ausgestattet mit einem starken Störsender der mehrere falsche Radar Signaturen erzeugt."
+
+ssb0x04_desc="Technische Station"
+ssb0x04_name="Iya"
+Unit_Description_BrewLAN_T2D006="Kann Einheiten innerhalb der Reichweite automatisch reparieren, wiederverwerten, unterstützen oder erobern."
+Unit_Description_BrewLAN_T2D007="Kann Einheiten in seinem Radius automatisch reparieren, wiederverwerten, unterstützen oder erobern."
+Unit_Description_BrewLAN_T2D008="Kann Einheiten innerhalb der Reichweite automatisch reparieren, wiederverwerten, unterstützen oder erobern."
 
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -246,6 +255,7 @@ ssl0311_desc="Schwerer Angriffsbot"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Schwerer Angriffsbot. Ausgestattet mit Dual Aire-au Boltern und einem Schildgenerator."
 
+sb2306_desc="Schwere Punktverteidigung"
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="Mobile strategische Raketenabwehr. Baukosten be
 Unit_Description_BrewLAN_T3L008="Mobile strategische Raketenabwehr. Feuert eine Salve von 3-Raketen auf jedes Ziel. Baukosten beinhalten die erste Salve."
 
 --Seraphim T3 sonar platform
+sss0305_desc="Sonarplattform"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Sonar System mit außergewöhnlicher Reichweite. Ausgestattet mit einem persönlichen Teleporter."
+ability_personal_teleporter="Persönlicher Teleporter"
 
 --Field engineers
+sl0319_desc="Feldtechniker"
+sal0319_desc="Defensiv Techniker"
 sel0319_name="Custodian"
 sal0319_name="Bilmon"
 srl0319_name="House"
@@ -352,32 +366,47 @@ srb5311_name="Procyon Offering"
 seb5311_name="Harrow"
 Unit_Description_BrewLAN_T3B0020="Manuell kontrolliertes Tor; erlaubt Passage und hält starkem Beschuss stand."
 
+seb2308_desc="Torpedowerfer"
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Schwerer Torpedo feuernder Verteidigungsturm. Kann an Land oder am Meeresboden gebaut werden."
+sab2308_desc="Torpedowerfer"
 sab2308_name="Flash Flood"
 Unit_Description_BrewLAN_T3B0027="Superschweres langstrecken Anti-Marine Verteidigungssystem. Konzipiert um die mächtigsten Marineeinheiten zu bekämpfen."
+sss0306_desc="Schwere Torpedo-Plattform"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Schwebend Torpedo-System. Lage sind, die größte feindliche Schiffe zu zerstören."
 
 ssb3301_desc="Optik-Tracking Einrichtung"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Enthüllt das Sichtfeld einer feindlichen oder verbündeten Einheit. Kann nur auf Einheiten oder Radarsignaturen angewandt werden."
 
---Mobile Shield Generator
+sal0322_desc="Mobiler Schildgenerator"
 sal0322_name="Flame Lotus"
+Unit_Description_BrewLAN_T3L021="Mobiler Schildgenerator."
+
+sel0322_desc="Mobiler Schildgenerator"
 sel0322_name="Ella"
---Short and long descriptions both the same as default.
+Unit_Description_BrewLAN_T3L022="Mobiler Schildgenerator."
 
 --Mobile Anti-Luft
 sal0320_desc="Mobile Luftabwehr"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Schwebendes mobiles Luftabwehr System. Verbraucht mit jedem Schuss Energie."
+
+sel0324_desc="Mobile SAM Launcher"
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Mobile Anti-Luft-Raketenwerfer. Ausgestattet mit erweiterten Scan-Geräten."
+
 --srl0320_desc=--Mobiler Raketen Werfer
+srl0320_desc="Mobile SAM Launcher"
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile und getarnte Anti-Luft-Raketenwerfer. Muss sich aber enttarnen um zu feuern."
+
+ssl0320_desc="Mobile Luftabwehr"
 ssl0320_name="Atha-Ythia"
 Unit_Description_BrewLAN_T3L020="Schwebend Mobile Anti-Luft-und taktische Raketenabwehr."
 
+seb4303_desc="Artillerieabwehrnetz"
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationäres Artillerie Abwehrsystem. Ausgestattet mit integriertem Gefahrenidentifikations- und tracking System."
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57 Croc"
 sal0325_name="Limbus"
 Unit_Description_BrewLAN_T3L017="Mobile Anti-Marinefahrzeug."
 Unit_Description_BrewLAN_T3L018="Mobile schweben anti-Marinefahrzeug."
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Schwebend Torpedo-System. Lage sind, die größte feindliche Schiffe zu zerstören."
 
 ssb4317_desc="Radar-Störsender"
 ssb4317_name="Yathesel"

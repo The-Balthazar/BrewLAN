@@ -8,7 +8,7 @@ srb4401="Experimentální Generátor Štítu"
 seb4401_name="BFS - Stoupenec"
 Unit_Description__BubbleTea_A4_02="Vytváří silný štít kolem jednotek a budov ve svém operačním dosahu."
 
---ssb4401_desc="Experimentální Shield Generator"
+ssb4401_desc="Experimentální Shield Mříž"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="Experimentální Shield Drone"
 ssb4401_large_name="Iaathanah"

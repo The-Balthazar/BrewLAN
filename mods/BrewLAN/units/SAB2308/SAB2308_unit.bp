@@ -23,11 +23,11 @@ UnitBlueprint {
     },
     Buffs = {
         Regen = {
-            Level1 = 2*1.5,
-            Level2 = 4*1.5,
-            Level3 = 6*1.5,
-            Level4 = 8*1.5,
-            Level5 = 10*1.5,
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
         },
     },
     BuildIconSortPriority = 130,
@@ -51,16 +51,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -1,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 0,
         Health = 20000,
         MaxHealth = 20000,
         RegenRate = 0,
         SubThreatLevel = 5,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC uab2205_desc>Torpedo Launcher',
+    Description = '<LOC sab2308_desc>Heavy Torpedo Launcher',
     Display = {
         Abilities = {
             '<LOC ability_sonar>Sonar',
@@ -97,9 +94,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'UAB2205',
-                        },
+                        Bones = {0},
                         Type = 'SeaIdle02',
                     },
                 },
@@ -108,29 +103,18 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 100,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 300,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 100, ShaderName = 'Aeon'},
+                {LODCutoff = 300, ShaderName = 'Aeon'},
+                {LODCutoff = 500, ShaderName = 'Aeon'},
             },
         },
         UniformScale = 0.45,
     },
     Economy = {
-        BuildCostEnergy = 25000*1.5,
-        BuildCostMass = 3000*1.5,
-        BuildTime = 3000*1.5,
-        RebuildBonusIds = {
-            'sab2308',
-        },
+        BuildCostEnergy = 37500,
+        BuildCostMass = 4500,
+        BuildTime = 4500,
+        RebuildBonusIds = {'sab2308'},
     },
     Footprint = {
         MinWaterDepth = 0.75,
@@ -169,11 +153,11 @@ UnitBlueprint {
         WaterVisionRadius = 45,
     },
     Interface = {
-        HelpText = '<LOC uab2205_help>Torpedo Launcher',
+        HelpText = '<LOC sab2308_desc>Heavy Torpedo Launcher',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.6*2,
-    LifeBarSize = 1.25*2,
+    LifeBarOffset = 1.2,
+    LifeBarSize = 2.5,
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {

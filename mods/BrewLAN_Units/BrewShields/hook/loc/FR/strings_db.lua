@@ -8,7 +8,7 @@ srb4401="Générateur de bouclier expérimental"
 seb4401_name="BFS - Stalwart"
 Unit_Description__BubbleTea_A4_02="Génère un bouclier lourd autour des unités et des structures à l'intérieur de son rayon d'action."
 
---ssb4401_desc="Générateur expérimental Bouclier"
+ssb4401_desc="Bouclier expérimental treillis"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="Bouclier expérimental Drone"
 ssb4401_large_name="Iaathanah"

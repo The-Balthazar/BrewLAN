@@ -41,7 +41,7 @@ UnitBlueprint {
         Health = 5000,
         MaxHealth = 5000,
     },
-    Description = '<LOC xab1401_desc>Experimental Resource Generator',
+    Description = '<LOC sb1401_desc>Experimental Resource Generator',
     Display = {
         Abilities = {
             '<LOC ability_deathaoe>Volatile',

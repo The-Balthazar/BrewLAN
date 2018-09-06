@@ -53,11 +53,10 @@ UnitBlueprint {
         'DUMMYGSRWEAPON',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 5,
-        Health = 200*5,
-        MaxHealth = 200*5,
+        Health = 1000,
+        MaxHealth = 1000,
         RegenRate = 0,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
@@ -66,18 +65,16 @@ UnitBlueprint {
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 11000*.5,
+            ShieldMaxHealth = 5500,
             ShieldRechargeTime = 26,
-            ShieldRegenRate = 65*3,
+            ShieldRegenRate = 195,
             ShieldRegenStartTime = 1,
             ShieldSize = 20,
             ShieldSpillOverDamageMod = 0.5,
             ShieldVerticalOffset = -3,
         },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC ual0307_desc>Mobile Shield Generator',
+    Description = '<LOC sal0322_desc>Mobile Shield Generator',
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
@@ -88,14 +85,8 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.25, 0},
                         Type = 'AeonGroundFX01',
                     },
                 },
@@ -104,36 +95,20 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 100,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 215,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 100, Scrolling = true, ShaderName = 'Aeon'},
+                {LODCutoff = 215, Scrolling = true, ShaderName = 'Aeon'},
             },
         },
         MovementEffects = {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.25, 0},
                         Type = 'AeonGroundFX01',
                     },
                 },
@@ -145,44 +120,28 @@ UnitBlueprint {
                             TreadMarksInterval = 0.045,
                             TreadMarksSizeX = 0.22,
                             TreadMarksSizeZ = 1.6,
-                            TreadOffset = {
-                                -0.33,
-                                0,
-                                -0.6,
-                            },
+                            TreadOffset = {-0.33, 0, -0.6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.045,
                             TreadMarksSizeX = 0.22,
                             TreadMarksSizeZ = 1.6,
-                            TreadOffset = {
-                                0.33,
-                                0,
-                                -0.6,
-                            },
+                            TreadOffset = {0.33, 0, -0.6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.045,
                             TreadMarksSizeX = 0.22,
                             TreadMarksSizeZ = 1.6,
-                            TreadOffset = {
-                                -0.33,
-                                0,
-                                -0.4,
-                            },
+                            TreadOffset = {-0.33, 0, -0.4},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.045,
                             TreadMarksSizeX = 0.22,
                             TreadMarksSizeZ = 1.6,
-                            TreadOffset = {
-                                0.33,
-                                0,
-                                -0.4,
-                            },
+                            TreadOffset = {0.33, 0, -0.4},
                         },
                     },
                 },
@@ -190,9 +149,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 0.3,
                         Type = 'BackWake',
                     },
@@ -204,10 +161,10 @@ UnitBlueprint {
         UniformScale = 0.02,
     },
     Economy = {
-        BuildCostEnergy = 1080*5,
-        BuildCostMass = 144*5,
-        BuildTime = 720*5,
-        MaintenanceConsumptionPerSecondEnergy = 125*2,
+        BuildCostEnergy = 5400,
+        BuildCostMass = 720,
+        BuildTime = 3600,
+        MaintenanceConsumptionPerSecondEnergy = 250,
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
@@ -249,7 +206,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC ual0307_help>Mobile Shield Generator',
+        HelpText = '<LOC sal0322_desc>Mobile Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,

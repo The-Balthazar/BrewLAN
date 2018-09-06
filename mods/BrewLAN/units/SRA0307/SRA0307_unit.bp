@@ -3,7 +3,7 @@ UnitBlueprint {
         GuardReturnRadius = 125,
         GuardScanRadius = 100,
         TargetBones = {
-            'BRA0307',
+            0,
             'Wing_R02',
             'Wing_L02',
         },
@@ -112,17 +112,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.2,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 3500,
         MaxHealth = 3500,
         RegenRate = 0,
         SubThreatLevel = 38,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC ura0204_desc>Torpedo Bomber',
-#    Description = '<LOC sair0307>Heavy Torpedo Bomber',
+    Description = '<LOC sair0307>Heavy Torpedo Bomber',
     Display = {
         Abilities = {
             '<LOC ability_personalstealth>Personal Stealth',
@@ -133,9 +129,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'BRA0307',
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -143,9 +137,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'BRA0307',
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -192,7 +184,6 @@ UnitBlueprint {
                 },
                 Cruise = true,
                 Idle = true,
-                #Landed = true,
             },
         },
         PlaceholderMeshName = 'UXA0008',
@@ -249,8 +240,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-	HelpText = '<LOC ura0204_help>Torpedo Bomber',
-#        HelpText = '<LOC sair0307>Torpedo Bomber',
+        HelpText = '<LOC sair0307>Torpedo Bomber',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.85,

@@ -64,8 +64,6 @@ UnitBlueprint {
         Health = 7100,
         MaxHealth = 7100,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sal0320_desc>Mobile Anti-Air Defense',
     Display = {
@@ -78,14 +76,8 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.15,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.15, 0},
                         Scale = 1.15,
                         Type = 'AeonGroundFX01',
                     },
@@ -95,38 +87,21 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 100,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 100, ShaderName = 'Aeon'},
+                {LODCutoff = 200, ShaderName = 'Aeon'},
+                {LODCutoff = 400, ShaderName = 'Aeon'},
             },
         },
         MovementEffects = {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.15,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.15, 0},
                         Scale = 1.15,
                         Type = 'AeonGroundFX01',
                     },
@@ -135,9 +110,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
@@ -176,7 +149,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'amph',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC sal0320_name>Alchemist',
+        UnitName = '<LOC sal0320_name>Armillary',
         UnitWeight = 1,
     },
     Intel = {
@@ -310,8 +283,8 @@ UnitBlueprint {
             TargetCheckInterval = 1.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR HIGHPRIAIR',
-                'AIR EXPERIMENTAL',
+                'HIGHPRIAIR',
+                'EXPERIMENTAL',
                 'BOMBER',
                 'GROUNDATTACK',
                 'TRANSPORTATION',

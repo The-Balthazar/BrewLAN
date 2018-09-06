@@ -124,7 +124,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 60,
     },
-    Description = '<LOC xea0306_desc>Heavy Air Transport',
+    Description = '<LOC sair0306>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -141,14 +141,8 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'Char01',
-                        },
-                        Offset = {
-                            0,
-                            -1.5,
-                            -1,
-                        },
+                        Bones = {'Char01'},
+                        Offset = {0, -1.5, -1},
                         Scale = 2,
                         Type = 'Landing01',
                     },
@@ -157,14 +151,8 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'Char01',
-                        },
-                        Offset = {
-                            0,
-                            -1.5,
-                            -1,
-                        },
+                        Bones = {'Char01'},
+                        Offset = {0, -1.5, -1},
                         Scale = 2,
                         Type = 'TakeOff01',
                     },
@@ -255,7 +243,7 @@ UnitBlueprint {
         VisionRadius = 34,
     },
     Interface = {
-        HelpText = '<LOC xea0306_help>Heavy Air Transport',
+        HelpText = '<LOC sair0306>Heavy Air Transport',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.25,

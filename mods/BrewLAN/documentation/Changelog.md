@@ -195,6 +195,33 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Updated the stats of the disabled UEF Decoy Plane, and changed the model from the spy plane model to the ASF model.
   * Corrected the ground collision offset after previous size-sphere changes to: Beguiler, UX Dragonlady, Selia, Souioz, Tornado, Pigeon, Respirer, Saksinokka, and Gannet.
   * UEF and Cybran Decoy Planes now get their stats movement matched to ASFs on game launch. They are still disabled. Cybran one can be built via Spomeniki.
+  * R&D: Fixed a crash on *Supreme Commander* related to Seraphim not existing.
+  * Moved some data to local for GetConstructEconomyModel to improve performance.
+  * Did some additional arcane bullshit in GetConstructEconomyModel so it works on the original Supreme Commander.
+
+  ### 2018-09-04
+
+  * Spomeniki: New Spomenik.
+  * Spomeniki: Changed the mod description.
+  * New mod: Stolen Tech. Contains implementations of features from other things. Not as stolen as the name makes out.
+
+  ### 2018-09-05
+
+  * Started work towards having BrewLAN, its sub-mods, and its language documents no longer reference pre-existing entries in the language documents for unit names, descriptions and build descriptions.
+
+  ### 2018-09-06
+
+  * Removed the unused upgrade animations for the Aeon and UEF T1 shields.
+  * Baked a number of stats into blueprints that were previously multipliers.
+  * Simplified target priorities for a number of weapons.
+  * Continued language and localisation changes.
+    * Notable changes include:
+      * Aeon and UEF mobile shield generator build descriptions in Polish, Chinese and Czech no longer reference Asylum and Parashield.
+      * Tech 3 torpedo launchers and bombers are now prefixed with "Heavy", the Seraphim launcher being listed as a "Heavy Torpedo Platform" to match the conventions of the mobile sonars.
+      * Cybran and UEF tech 3 mobile AA are now listed as "Mobile SAM Launcher"
+      * Bubble Tea: Seraphim shield now listed as "Experimental Shield Lattice"
+      * The second upgrade of Seraphim engineering stations are no longer have weirdly long in Polish, Chinese, Czech. One of them also referenced the Hive.
+  * Reworked GetConstructEconomyModel so that is references the original when making changes, doesn't require the arcane bullshit to work on the original, and is a fraction of the length.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

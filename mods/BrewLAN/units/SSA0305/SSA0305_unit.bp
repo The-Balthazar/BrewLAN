@@ -103,14 +103,11 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 6,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 5980,
         MaxHealth = 5980,
-        RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 15,
     },
-    Description = '<LOC uea0305_desc>Heavy Gunship',
+    Description = '<LOC sair0305>Heavy Gunship',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -119,9 +116,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSA0203',
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -129,9 +124,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSA0203',
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -148,9 +141,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 215,
                     ShaderName = 'Seraphim',
-                  #  MeshName = '/units/xsa0203/xsa0203_lod1.scm', #needs a custom Lod1 mesh
                     AlbedoName = '/units/xsa0203/xsa0203_lod1_albedo.dds',
-                  #  NormalsName = '/units/xsa0203/xsa0203_lod1_normalsTS.dds', #seemed fine without before
                     SpecularName = '/units/xsa0203/xsa0203_lod1_specteam.dds',
                 },
             },
@@ -160,7 +151,7 @@ UnitBlueprint {
                 Contrails = {
                     Bones = {
                         'Contrail_Left01',
-			'Contrail_Right',
+                        'Contrail_Right',
                     },
                 },
                 Effects = {
@@ -216,7 +207,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC uea0305_help>Heavy Gunship',
+        HelpText = '<LOC sair0305>Heavy Gunship',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.6,
@@ -315,11 +306,11 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
+                'HIGHPRIAIR',
+                'TECH3 BOMBER',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
                 'AIR MOBILE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',

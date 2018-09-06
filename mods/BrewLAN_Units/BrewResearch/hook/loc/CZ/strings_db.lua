@@ -48,6 +48,7 @@ ability_rnd_command="Postavený řídící jednotkou"
 ability_rnd_engineer="Postavený inženýr"
 ability_rnd_field="Postavený pole inženýr"
 ability_rnd_factory="Postavený továrně"
+ability_rnd_gantry="Postavený experimentální továrny"
 ability_rnd_wall="Postaven na zeď"
 ability_rnd_upgrade="Postaven jako upgradem"
 
@@ -106,13 +107,13 @@ seb1201_name="EG-100 fúzního reaktoru"
 Unit_Description_RND_018="Od nejnižšího k elektrickým generátorem střední úrovni. Postavit vedle dalších struktur pro přilehlosti bonus."
 
 
-sa0212_desc=xaa0202_desc
+sa0212_desc="Bojová stíhačka "
 sea0212_name="Raptor"
 sra0212_name="Dioscuri"
 ssa0212_name="Iayath"
-Unit_Description_RND_019="Mid-level stíhačka. Výborné schopnosti AA. Účinný proti nepřátelské vrtulníky a bombardérů."
+Unit_Description_RND_019="Swift Wind je levnější než Corona, je ale rychlejší a má lepší palebnou sílu než Conservator. Je vynikající na boj nablízko a zaplňuje mezeru mezi stíhačkami T1 a T3. "
 
-sa0213_desc=dea0202_desc
+sa0213_desc="Stíhací bombardér"
 saa0213_name="Jasnost"
 Unit_Description_RND_020="Kombinace stíhací / bombardovací navržen tak, aby se zapojily pozemků a vzdušných jednotek."
 
@@ -122,20 +123,44 @@ sea0211_name="Tornádo"
 ssa0211_name="Sinn"
 sra0211_name="Kondor"
 Unit_Description_RND_008="Intermediate bombardovací letoun."
---Udržovány odděleně pro případ, že aby byly zajímavé
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="Intermediate bombardovací letoun."
+Unit_Description_RND_010="Intermediate bombardovací letoun."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Dedikované Omni Senzory
+sb3301_desc="Omnisenzorické pole"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallrem"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="snímací pole. Schopny identifikovat cíle přes stealth a plášť a vymaže jammer tečky."
+
+--T3.5 Pokročilé bombardéry
+sa0314_desc="Penetrator"
+sa0314_desc="Penetrator Bomber"
+
+sea0314_name="Kopiník"
+saa0314_name="Výkřik"
+sra0314_name="optimistický Tyran"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--T3.5 pokročilé bojovníci
+sa0313_desc="penetrace Fighter"
+sea0313_name="Kocour"
+saa0313_name="Helios"
+sra0313_name="Twilight Patron"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --Ekranoplan transporty
 ss0326_desc="Heavy GEV Transport"

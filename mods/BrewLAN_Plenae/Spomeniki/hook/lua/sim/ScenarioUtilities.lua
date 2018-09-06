@@ -19,6 +19,9 @@ do
             {
                 path .. '_mramor_prop.bp',
             },
+            {
+                path .. '_rojah_prop.bp',
+            },
         }
         local mapsize = ScenarioInfo.size
         local groupcount = math.max(mapsize[1], mapsize[2]) / 128

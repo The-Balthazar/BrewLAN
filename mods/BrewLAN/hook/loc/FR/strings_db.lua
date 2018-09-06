@@ -117,6 +117,8 @@ srb5104_name="Ravitailleur"
 Unit_Description_BrewLAN_T1U001="Plate-forme d'aéro-lancement légère. Répare et recharge en carburant."
 
 --Field engineers
+sl0119_desc="Ingénieur militaire"
+sal0119_desc="Ingénieur de défense"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
@@ -139,6 +141,7 @@ saa0211_desc="Bombardier Tactique"
 Unit_Description_BrewLAN_T2A001="Bombardier tactique. Équipé d'une bombe Quark légère et d'un radar."
 
 --Field Engineers
+sl0209_desc="Ingénieur militaire"
 sal0209_desc="Ingénieur de défense"
 sal0209_name="Majordome"
 srl0209_name="Wilson"
@@ -185,10 +188,10 @@ srb5210_name="Bulkhead"
 ssb5210_name="Haas-haas"
 Unit_Description_BrewLAN_T2B001="Bloque les mouvements des unités ennemies. Peut absorber beaucoup de dégâts et se connecte automatiquement aux murs adjacents."
 
+ssl0222_desc="Générateur de bouclier mobile"
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Générateur de bouclier mobile."
 
---Ingénierie de navire
 ss0219_desc="Bateau d'ingénierie"
 ses0219_name="Classe Fixxie"
 srs0219_name="Barwick classe"
@@ -213,6 +216,12 @@ Unit_Description_BrewLAN_T3A006="Avion leurre. Équipé d'un brouilleur de radar
 Unit_Description_BrewLAN_T3A009="Avion leurre. Équipé d'un brouilleur de radar puissant qui génère de faux signaux. Imite les mouvements d'un chasseur de supériorité aérienne."
 Unit_Description_BrewLAN_T3A010="Avion leurre furtif. Équipé d'un brouilleur de radar puissant qui génère de faux signaux. Imite les mouvements d'un chasseur de supériorité aérienne."
 Unit_Description_BrewLAN_T3A011="Avion leurre. Équipé d'un brouilleur de radar puissant qui génère de faux signaux. Imite les mouvements d'un chasseur de supériorité aérienne."
+
+ssb0x04_desc="Poste d'ingénierie"
+ssb0x04_name="Iya"
+Unit_Description_BrewLAN_T2D006="Répare, exploite, assiste ou capture automatiquement toute unité située dans sa zone d'action."
+Unit_Description_BrewLAN_T2D007="Répare, exploite, assiste ou capture automatiquement toute unité située dans sa zone d'action."
+Unit_Description_BrewLAN_T2D008="Répare, exploite, assiste ou capture automatiquement toute unité située dans sa zone d'action."
 
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -246,6 +255,7 @@ ssl0311_desc="Robot d'assaut lourd"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Robot d'assaut lourd. Équipé d'un bouclier personnel et armé de doubles bolters Aireau."
 
+sb2306_desc="Pointe de défense lourde"
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="Système de défense anti missile stratégique 
 Unit_Description_BrewLAN_T3L008="Système de défense anti missile stratégique mobile. Tire une salve de 3 missiles. Le prix inclus la première salve."
 
 --Seraphim T3 sonar platform
+sss0305_desc="Plate-forme sonar"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Système sonar avec portée exceptionnelle. Équipé d'un système de téléportation."
+ability_personal_teleporter="Téléporteur personnel"
 
 --Field engineers
+sl0319_desc="Ingénieur militaire"
+sal0319_desc="Ingénieur de défense"
 sel0319_name="Custodien"
 sal0319_name="Bilmon"
 srl0319_name="Maison"
@@ -352,32 +366,47 @@ srb5311_name="Portail de Procyon"
 seb5311_name="Herse"
 Unit_Description_BrewLAN_T3B0020="Porte contrôlée manuellement. Peut absorber énormément de dégâts."
 
+seb2308_desc="Lance-torpilles"
 seb2308_name="Harpon"
 Unit_Description_BrewLAN_T3B0025="Tourelle lance torpilles lourde. Peut être construite sur la terre et sur l'eau."
+sab2308_desc="Lance-torpilles"
 sab2308_name="Crue subite"
 Unit_Description_BrewLAN_T3B0027="Système de défense navale lourd à très longue portée. Conçu pour détruire les unités navales les plus puissantes."
+sss0306_desc="Lourde Torpedo Plate-forme"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Planant système de torpille. Capable de détruire le plus grand des navires ennemis."
 
 ssb3301_desc="Installation de repérage"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offres une ligne de vue sur une unité amie ou ennemie ciblée. Vous ne pouvez pas cibler un espace vide."
 
---Mobile Shield Generator
+sal0322_desc="Générateur de bouclier mobile"
 sal0322_name="Flamme Lotus"
+Unit_Description_BrewLAN_T3L021="Générateur de bouclier mobile."
+
+sel0322_desc="Générateur de bouclier mobile"
 sel0322_name="Ella"
---Short and long descriptions both the same as default.
+Unit_Description_BrewLAN_T3L022="Générateur de bouclier mobile."
 
 --anti-air mobile
 sal0320_desc="Défense anti-aérienne mobile"
 sal0320_name="Armillaire"
 Unit_Description_BrewLAN_T3L012="Système de défense anti-aérien mobile pivotant. Consomme de l'énergie à chaque prise de vue."
+
+sel0324_desc="SAM lanceur mobile"
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="lance-missiles anti-air mobile. Doté d'un équipement de balayage de pointe."
+
 --srl0320_desc=--Système anti-aérien furtif
+srl0320_desc="SAM lanceur mobile"
 srl0320_name="Fronde"
 Unit_Description_BrewLAN_T3L009="lanceur de missiles sol-air mobile camouflé. Doit devenir visible à l'attaque."
+
+ssl0320_desc="Défense anti-aérienne mobile"
 ssl0320_name="Atha-Ythia"
 Unit_Description_BrewLAN_T3L020="Planant anti-aérien mobile et la défense contre les missiles tactiques."
 
+seb4303_desc="Grille de défense antiartillerie"
 seb4303_name="Recul"
 Unit_Description_BrewLAN_T3B0028="Grille de défense d'artillerie stationnaire. Équipé d'un système intégré d'identification et de suivi des menaces."
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57 Croc"
 sal0325_name="Limbes"
 Unit_Description_BrewLAN_T3L017="véhicule anti-marine mobile."
 Unit_Description_BrewLAN_T3L018="Mobile en vol stationnaire véhicule anti-marine."
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Planant système de torpille. Capable de détruire le plus grand des navires ennemis."
 
 ssb4317_desc="radar Jammer"
 ssb4317_name="Yathesel"

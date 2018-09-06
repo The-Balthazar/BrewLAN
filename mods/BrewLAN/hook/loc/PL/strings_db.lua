@@ -42,7 +42,7 @@ tooltipbrewlan0016="Zakłócenia impulsowe przełączanie"
 tooltipbrewlan0017="Przełącz zakłócenia impuls Omni włączyć lub wyłączyć."
 
 --Podpowiedzi dla Rez komendę / odzyskać.
---tooltipbrewlan0018="Odzyskać (E)"
+--tooltipbrewlan0018="Odzyskać"
 tooltipbrewlan0019="Odzyskać jednostkę lub wraku i uczyć się jego plan."
 
 --Podpowiedzi dla Stargate
@@ -117,6 +117,8 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Światło zakład inscenizacja powietrze. Naprawy i refuels poszczególnych samolotów."
 
 --inżynierów,
+sl0119_desc="Inżynier polowy"
+sal0119_desc="Inżynier obrony"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="pola OUTY"
@@ -139,6 +141,7 @@ saa0211_desc="taktyczny bombowiec"
 Unit_Description_BrewLAN_T2A001="Bombowiec średniego szczebla taktycznego. Wyposażone w lekką Quark bomby i radaru."
 
 --Inżynierowie polowe
+sl0209_desc="Inżynier polowy"
 sal0209_desc="Inżynier obrony"
 sal0209_name="Lokaj"
 srl0209_name="Wilson"
@@ -185,10 +188,10 @@ srb5210_name="Przegroda"
 ssb5210_name="Haas-Haas"
 Unit_Description_BrewLAN_T2B001="Ogranicza przemieszczanie się wrogich jednostek i może wytrzymać ekstremalne ilości obrażeń. Łączy się z innymi sąsiednimi sekcjami ścianki ciężkich."
 
+ssl0222_desc="Mobilny generator tarczy"
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Komórka generator tarczy."
 
---Inżynieria Pole statku
 ss0219_desc="Inżynieria Pole statku"
 ses0219_name="Fixxie Class"
 srs0219_name="Klasa Barwick"
@@ -214,15 +217,21 @@ Unit_Description_BrewLAN_T3A009="Lekko opancerzony samolot wabika. Wyposażony w
 Unit_Description_BrewLAN_T3A010="Lekko opancerzony skradania wabika samolotu. Wyposażony w potężny sprzęt zagłuszający radar zaprojektowany do tworzenia wielu fałszywych sygnałów radarowych. Naśladuje ruchy przewagi powietrznej myśliwców."
 Unit_Description_BrewLAN_T3A011="Lekko opancerzony samolot wabika. Wyposażony w potężny sprzęt zagłuszający radar zaprojektowany do tworzenia wielu fałszywych sygnałów radarowych. Naśladuje ruchy przewagi powietrznej myśliwców."
 
+ssb0x04_desc="Stacja inżynieryjna"
+ssb0x04_name="Iya"
+Unit_Description_BrewLAN_T2D006=" Automatycznie naprawia, odzyskuje, pomaga i zajmuje każdą jednostkę w swoim zasięgu."
+Unit_Description_BrewLAN_T2D007=" Automatycznie naprawia, odzyskuje, pomaga i zajmuje każdą jednostkę w swoim zasięgu."
+Unit_Description_BrewLAN_T2D008=" Automatycznie naprawia, odzyskuje, pomaga i zajmuje każdą jednostkę w swoim zasięgu."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 --------------------------------------------------------------------------------
 
-sair0305="ciężki Gunship"
+sair0305="Ciężki śmigłowiec bojowy"
 ssa0305_name="Vulthuum"
-Unit_Description_BrewLAN_T3A001="Ciężki helikoptera. Uzbrojony fazowego autoguns i potężne, ale broń krótką zakres AA."
+Unit_Description_BrewLAN_T3A001="Ciężki helikoptera. Uzbrojeni w karabiny auto fazowych i potężne, ale broń krótką zakres AA."
 
-sair0306="Ciężki transport lotniczy"
+sair0306="Ciężki transporter lotniczy"
 saa0306_name="Solaris"
 sra0306_name="noc Skimmer"
 ssa0306_name="Vishuum"
@@ -230,7 +239,7 @@ Unit_Description_BrewLAN_T3A002="Ciężki transport lotniczy. Uzbrojony w cięż
 Unit_Description_BrewLAN_T3A003="Ciężki transport lotniczy. Oferuje 32 zaciski transportowe, ciężkiej broni i generator tarczy. Może przewozić do 32 jednostek."
 Unit_Description_BrewLAN_T3A004="Ciężki transport lotniczy. Uzbrojony w potężną tarczą i ciężkiej broni anty-powietrznych. Może przewozić do 72 jednostek."
 
-sair0307="Ciężki Torpedo Bomber"
+sair0307="Torpedowiec"
 sra0307_name="Zenit"
 sea0307_name="Albatros"
 ssa0307_name="Souioz"
@@ -242,10 +251,11 @@ sal0311_desc="Pancerny Atak Tank"
 sal0311_name="Moldavite"
 Unit_Description_BrewLAN_T3L002="Silnie opancerzony czołg szturmowy. Niski wskaźnik pożaru, zaprojektowany jako ciężkie jednostki wsparcia."
 
-ssl0311_desc="Ciężki Atak Bot"
+ssl0311_desc="Oblężniczy szturmowy bot"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Ekranowane Siege atak bot. Uzbrojony w dwa Aire-au Brytfanna."
 
+sb2306_desc="Ciężka obrona punktowa"
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="Komórka strategiczny obrony przeciwrakietowej.
 Unit_Description_BrewLAN_T3L008="Komórka strategiczny obrony przeciwrakietowej. Wystrzeliwuje salwę trzech rakiet w każdym celu. Budowanie koszty obejmują pierwszą salwę."
 
 --Seraphim T3 platforma sonar
+sss0305_desc="Platforma sonarowa"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="System sonar z wyjątkowym zasięgu. Wykrywa i śledzi jednostki morskie. Wyposażony w osobisty teleporter."
+ability_personal_teleporter="Osobisty teleport"
 
 --inżynierów,
+sl0319_desc="Inżynier polowy"
+sal0319_desc="Inżynier obrony"
 sel0319_name="Kustosz"
 sal0319_name="Bilmon"
 srl0319_name="Dom"
@@ -352,32 +366,47 @@ srb5311_name="Procyon Oferowanie"
 seb5311_name="Brona"
 Unit_Description_BrewLAN_T3B0020="Ręcznie sterowane bramy; może umożliwić przejście przez jego obszarze i utrzymać ekstremalnych ilości uszkodzeń."
 
+seb2308_desc="Wyrzutnia torped"
 seb2308_name="Harpun"
 Unit_Description_BrewLAN_T3B0025="Ciężki torpeda uruchomienie wieży. Może być zbudowany na lądzie i na dnie morza."
+sab2308_desc="Wyrzutnia torped"
 sab2308_name="Gwałtowny potop"
 Unit_Description_BrewLAN_T3B0027="Bardzo ciężki dalekiego zasięgu anty-morski system obrony. Zaprojektowany, aby angażować najpotężniejszych jednostek morskich."
+sss0306_desc="Ciężki Torpedo Platform"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Najechanie systemu torpedy. Zdolne do niszczenia największy statków wroga."
 
 ssb3301_desc="Śledzenie obiektu optyka"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Oferuje linię-of-sight ukierunkowanego przyjaznego lub wrogiego zespołu. Można kierować blips radarowych. Nie można kierować na pustą przestrzeń."
 
---Komórka Tarcza Generator
+sal0322_desc="Mobilny gen. tarczy ochronnej"
 sal0322_name="płomień Lotus"
+Unit_Description_BrewLAN_T3L021="Amfibia mobilny generator tarczy."
+
+sel0322_desc="Mobilny generator tarczy ochronnej"
 sel0322_name="Ella"
---Krótkie i długie opisy zarówno samo jako domyślne.
+Unit_Description_BrewLAN_T3L022="Amfibia mobilny generator tarczy."
 
 --Komórka anty-powietrze
 sal0320_desc="Mobile Anti-Air Defence"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Najechanie mobilny system obrony przeciw powietrznej. Zużywa moc przy każdym zdjęciu."
+
+sel0324_desc="Komórka SAM Launcher"
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Komórka anty-air missile launcher. Wyposażony w zaawansowane urządzenia skanującego."
+
 --srl0320_desc=--Komórka Missile Launcher
+srl0320_desc="Komórka SAM Launcher"
 srl0320_name="Poroniony płód"
 Unit_Description_BrewLAN_T3L009="Komórka zakamuflowana ziemia-powietrze wyrzutnię rakiet. Musi stać się widoczny do ataku."
+
+ssl0320_desc="Mobile Anti-Air Defence"
 ssl0320_name="Atha-Ythia"
 Unit_Description_BrewLAN_T3L020="Najechanie Mobile Anti-powietrze i taktycznych obrony przeciwrakietowej."
 
+seb4303_desc="Tarcza przeciw artyleryjska"
 seb4303_name="Odrzut"
 Unit_Description_BrewLAN_T3B0028="Stacjonarna siatka artylerii obrony. Wyposażony w zintegrowany system identyfikacji i śledzenia zagrożeniem."
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57 Croc"
 sal0325_name="Otchłań"
 Unit_Description_BrewLAN_T3L017="Mobile Anti-Naval pojazdu."
 Unit_Description_BrewLAN_T3L018="Komórka unosić anty-morską pojazdu."
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Najechanie systemu torpedy. Zdolne do niszczenia największy statków wroga."
 
 ssb4317_desc="Radar Jammer"
 ssb4317_name="Yathesel"

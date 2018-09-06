@@ -42,7 +42,7 @@ tooltipbrewlan0016="转换干扰脉冲模式"
 tooltipbrewlan0017="打开或关闭全方位干扰脉冲。"
 
 --用于雷兹工具提示/回收命令。
---tooltipbrewlan0018="回收（E）"
+--tooltipbrewlan0018="回收"
 tooltipbrewlan0019="回收单位或残骸，及学习它的蓝图。"
 
 --工具提示星际之门
@@ -117,6 +117,8 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="轻空气分级设备。维修和加油个人飞机。"
 
 --现场工程师
+sl0119_desc="戰地工程師"
+sal0119_desc="国防工程师"
 sel0119_name="沃利"
 sal0119_name="Vivifier"
 srl0119_name="OUTY"
@@ -139,6 +141,7 @@ saa0211_desc="战术轰炸机"
 Unit_Description_BrewLAN_T2A001="中级战术轰炸机。配备了轻夸克炸弹和雷达。"
 
 --现场工程师
+sl0209_desc="戰地工程師"
 sal0209_desc="国防工程师"
 sal0209_name="男管家"
 srl0209_name="威尔逊"
@@ -185,10 +188,10 @@ srb5210_name="舱壁"
 ssb5210_name="哈斯哈斯"
 Unit_Description_BrewLAN_T2B001="限制的敌方单位移动和能够承受极端数额的损害。连接到其它相邻的厚壁部分。"
 
+ssl0222_desc="機動護盾產生器"
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="移动盾发生器。"
 
---现场工程船
 ss0219_desc="现场工程船"
 ses0219_name="Fixxie类"
 srs0219_name="巴威克类"
@@ -214,15 +217,21 @@ Unit_Description_BrewLAN_T3A009="轻装甲诱饵飞机。配备了用于创建�
 Unit_Description_BrewLAN_T3A010="轻装甲隐形飞机诱饵。配备了用于创建多个假雷达信号强大的雷达干扰设备。模仿空中优势战斗机的动作。"
 Unit_Description_BrewLAN_T3A011="轻装甲诱饵飞机。配备了用于创建多个假雷达信号强大的雷达干扰设备。模仿空中优势战斗机的动作。"
 
+ssb0x04_desc="工程站"
+ssb0x04_name="艾亞"
+Unit_Description_BrewLAN_T2D006="自動維修、 開採、協助或是佔領任何作業半徑內的單位。"
+Unit_Description_BrewLAN_T2D007="自動維修、 開採、協助或是佔領任何作業半徑內的單位。"
+Unit_Description_BrewLAN_T2D008="自動維修、 開採、協助或是佔領任何作業半徑內的單位。"
+
 --------------------------------------------------------------------------------
 -- 科技3
 --------------------------------------------------------------------------------
 
-sair0305="重型武装直升机"
+sair0305="重型砲艇"
 ssa0305_name="Vulthuum"
-Unit_Description_BrewLAN_T3A001="重型武装直升机。手持阶段性autoguns和强大，但是短程AA武器。"
+Unit_Description_BrewLAN_T3A001="重型武装直升机。武装与阶段性自动枪和强大的，但短距离AA武器。"
 
-sair0306="重型航空运输"
+sair0306="重型空中運輸機"
 saa0306_name="索拉里斯"
 sra0306_name="夜撇油器"
 ssa0306_name="Vishuum"
@@ -230,7 +239,7 @@ Unit_Description_BrewLAN_T3A002="重型空中运输。武装与重防人防，�
 Unit_Description_BrewLAN_T3A003="重型空中运输。特点32个运输夹具，重型武器和盾牌发生器。最多可携带32台。"
 Unit_Description_BrewLAN_T3A004="重型空中运输。武装与强大的盾牌和重型防空武器。最多可携带72台。"
 
-sair0307="重型鱼雷轰炸机"
+sair0307="魚雷轟炸機"
 sra0307_name="顶点"
 sea0307_name="信天翁"
 ssa0307_name="Souioz"
@@ -242,10 +251,11 @@ sal0311_desc="装甲突击坦克"
 sal0311_name="捷克陨石"
 Unit_Description_BrewLAN_T3L002="重装甲突击坦克。火率低，设计成一个沉重的依托单位。"
 
-ssl0311_desc="重型突击博特"
+ssl0311_desc="重型攻擊機械人"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="屏蔽攻城突击机器人。装备有双艾尔-AU烤盘。"
 
+sb2306_desc="重型點防禦"
 srb2306_name="哈迪斯"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="移动战略导弹防御。建设成本包括�
 Unit_Description_BrewLAN_T3L008="移动战略导弹防御。火灾在每一个目标的三枚导弹齐射。建设成本包括第一齐射。"
 
 --塞拉芬T3声纳平台
+sss0305_desc="聲納平台"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="声纳系统具有出色的范围。检测和跟踪海军部队。配备了个人传送点。"
+ability_personal_teleporter="個人傳送器"
 
 --现场工程师
+sl0319_desc="戰地工程師"
+sal0319_desc="国防工程师"
 sel0319_name="保管人"
 sal0319_name="Bilmon"
 srl0319_name="屋"
@@ -352,32 +366,47 @@ srb5311_name="南河发售"
 seb5311_name="耙"
 Unit_Description_BrewLAN_T3B0020="手动控制的栅极;可允许通过其通道区和维持极端量的损害。"
 
+seb2308_desc="魚雷發射器"
 seb2308_name="鱼叉"
 Unit_Description_BrewLAN_T3B0025="重型鱼雷发射塔架。可建土地和在海底。"
+sab2308_desc="魚雷發射器"
 sab2308_name="暴洪"
 Unit_Description_BrewLAN_T3B0027="非常沉重的长程反舰艇防御系统。旨在从事最强大的海军部队的。"
+sss0306_desc="重型鱼雷平台"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="悬停鱼雷系统。可摧毁的最大敌人船只的。"
 
 ssb3301_desc="光学跟踪设备"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="供应线的视线有针对性的友方或者敌方单位。可以针对雷达的光点。不能针对空的空间。"
 
---移动盾发生器
+sal0322_desc="機動護盾產生器"
 sal0322_name="火焰莲花"
+Unit_Description_BrewLAN_T3L021="两栖移动盾发生器。"
+
+sel0322_desc="機動護盾產生器"
 sel0322_name="艾拉"
---短期和长期的描述都一样的默认值。
+Unit_Description_BrewLAN_T3L022="两栖移动盾发生器。"
 
 --移动防空
 sal0320_desc="移动反防空"
 sal0320_name="环形的"
 Unit_Description_BrewLAN_T3L012="悬停移动防空防御系统。电力消耗每拍摄一张照片。"
+
+sel0324_desc="移动SAM启动"
 sel0324_name="NG3长弓"
 Unit_Description_BrewLAN_T3L015="移动防空导弹发射装置。配备了先进的扫描设备。"
+
 --srl0320_desc=--移动导弹发射器
+srl0320_desc="移动SAM启动"
 srl0320_name="早产"
 Unit_Description_BrewLAN_T3L009="移动伪装表面对空导弹发射装置。必须成为攻击可见。"
+
+ssl0320_desc="移动反防空"
 ssl0320_name="ATHA-Ythia"
 Unit_Description_BrewLAN_T3L020="悬停移动防空，战术导弹防御系统。"
 
+seb4303_desc="反火砲護盾"
 seb4303_name="畏缩"
 Unit_Description_BrewLAN_T3B0028="固定式火炮防御网。配备有集成的威胁识别和跟踪系统。"
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57鳄鱼"
 sal0325_name="凌波"
 Unit_Description_BrewLAN_T3L017="手机防的海军车辆。"
 Unit_Description_BrewLAN_T3L018="移动徘徊抗海军车辆。"
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="悬停鱼雷系统。可摧毁的最大敌人船只的。"
 
 ssb4317_desc="雷达干扰机"
 ssb4317_name="Yathesel"

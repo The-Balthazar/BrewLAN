@@ -48,6 +48,7 @@ ability_rnd_command="Construido por unidad de mando"
 ability_rnd_engineer="Construido por el ingeniero"
 ability_rnd_field="Construido por el ingeniero de campo"
 ability_rnd_factory="Construido por la fábrica"
+ability_rnd_gantry="Construido por la fábrica experimental"
 ability_rnd_wall="Construido en la pared"
 ability_rnd_upgrade="Construido como actualización"
 
@@ -106,13 +107,13 @@ seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Menor a generador de energía de nivel medio. Construir junto a otras estructuras para la bonificación de adyacencia."
 
 
-sa0212_desc=xaa0202_desc
+sa0212_desc="Caza de combate"
 sea0212_name="Raptor"
 sra0212_name="dioscuri"
 ssa0212_name="Iayath"
-Unit_Description_RND_019="De nivel medio de combate aire. Excelente capacidad de AA. Eficaz contra helicópteros de combate y bombarderos enemigos."
+Unit_Description_RND_019="Caza aéreo de nivel medio. Excelente armamento antiaéreo. Eficaz contra cañoneras y bombarderos enemigos."
 
-sa0213_desc=dea0202_desc
+sa0213_desc="Caza/bombardero"
 saa0213_name="Lucidez"
 Unit_Description_RND_020="luchador combinación / bombardero diseñado para involucrar a la tierra y unidades aéreas."
 
@@ -122,20 +123,44 @@ sea0211_name="Tornado"
 ssa0211_name="Sinn"
 sra0211_name="Cóndor"
 Unit_Description_RND_008="bombarderos intermedia."
---Mantenido por separado en caso de que los hacen interesantes
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="bombarderos intermedia."
+Unit_Description_RND_010="bombarderos intermedia."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Los sensores dedicados Omni
+sb3301_desc="Matriz de omnisensores"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="matriz de sensores. Capaz de identificar objetivos a través del sigilo y el manto y borra repuntes jammer."
+
+--bombarderos avanzados T3.5
+sa0314_desc="penetrador"
+sa0314_desc="bombardero penetrador"
+
+sea0314_name="Lancero"
+saa0314_name="Grito"
+sra0314_name="Tirano Sanguina"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--cazas avanzados T3.5
+sa0313_desc="penetración de combate"
+sea0313_name="Gato"
+saa0313_name="Helios"
+sra0313_name="crepúsculo Patrón"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --transportes ekranoplan
 ss0326_desc="Transporte Pesado GEV"

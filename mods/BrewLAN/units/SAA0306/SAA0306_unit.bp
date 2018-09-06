@@ -1,9 +1,7 @@
 UnitBlueprint {
     AI = {
         BeaconName = 'UAB5102',
-        TargetBones = {
-            'BAA0306',
-        },
+        TargetBones = {0},
     },
     Air = {
         AutoLandTime = 1,
@@ -142,10 +140,8 @@ UnitBlueprint {
             TransportShield = true,
         },
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC xea0306_desc>Heavy Air Transport',
+    Description = '<LOC sair0306>Heavy Air Transport',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -157,22 +153,12 @@ UnitBlueprint {
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {
-                            'BAA0306',
-                        },
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {
-                            'BAA0306',
-                        },
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
         },
@@ -187,7 +173,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = false,
-        UniformScale = 0.05*2.6,
+        UniformScale = 0.13,
     },
     Economy = {
         BuildCostEnergy = 72000,
@@ -238,7 +224,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC xea0306_help>Heavy Air Transport',
+        HelpText = '<LOC sair0306>Heavy Air Transport',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.5,

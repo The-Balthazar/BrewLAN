@@ -8,7 +8,7 @@ srb4401="Experimenteller Schildgenerator"
 seb4401_name="BFS - Stalwart"
 Unit_Description__BubbleTea_A4_02="Erzeugt eine schwere Abschirmung um Einheiten und Strukturen in seinem Aktionsradius."
 
---ssb4401_desc="Experimental Schildgenerator"
+ssb4401_desc="Experimental-Schild Lattice"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="Experimental-Schild Drone"
 ssb4401_large_name="Iaathanah"

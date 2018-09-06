@@ -54,7 +54,6 @@ UnitBlueprint {
         'DUMMYGSRWEAPON',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 3,
         Health = 200,
@@ -67,18 +66,16 @@ UnitBlueprint {
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 10000*0.45,
-            ShieldRechargeTime = 45/2,
-            ShieldRegenRate = 133/2,
+            ShieldMaxHealth = 4500,
+            ShieldRechargeTime = 37.5,
+            ShieldRegenRate = 66.5,
             ShieldRegenStartTime = 1,
             ShieldSize = 16,
             ShieldSpillOverDamageMod = 0.5,
             ShieldVerticalOffset = -3,
         },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC xsl0307_desc>Mobile Shield Generator',
+    Description = '<LOC ssl0222_desc>Mobile Shield Generator',
     Display = {
         Abilities = {
             '<LOC ability_shielddome>Shield Dome',
@@ -87,14 +84,8 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSL0307',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                 },
@@ -102,25 +93,13 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSL0307',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                     {
-                        Bones = {
-                            'XSL0307',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.25, 0},
                         Scale = 1.2,
                         Type = 'SeaIdle02',
                     },
@@ -154,21 +133,13 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSL0307',
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            'XSL0307',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                 },
@@ -178,13 +149,9 @@ UnitBlueprint {
                         {
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.09,
-                            TreadMarksSizeX = 0.8*.6,
-                            TreadMarksSizeZ = 0.7*.6,
-                            TreadOffset = {
-                                0,
-                                0,
-                                -0.2,
-                            },
+                            TreadMarksSizeX = 0.48,
+                            TreadMarksSizeZ = 0.42,
+                            TreadOffset = {0, 0, -0.2},
                         },
                     },
                 },
@@ -192,12 +159,12 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXL0009',
         SpawnRandomRotation = true,
-        UniformScale = 0.045*.6,
+        UniformScale = 0.027,
     },
     Economy = {
-        BuildCostEnergy = 4800/5,
-        BuildCostMass = 640/5,
-        BuildTime = 3200/5,
+        BuildCostEnergy = 960,
+        BuildCostMass = 128,
+        BuildTime = 640,
         MaintenanceConsumptionPerSecondEnergy = 150,
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
@@ -240,7 +207,7 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC xsl0307_help>Mobile Shield Generator',
+        HelpText = '<LOC ssl0222_desc>Mobile Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
@@ -262,9 +229,9 @@ UnitBlueprint {
         MaxSpeed = 4,
         MaxSpeedReverse = 0,
         MaxSteerForce = 1000,
-        MeshExtentsX = 1*.6,
-        MeshExtentsY = 0.65*.6,
-        MeshExtentsZ = 1*.6,
+        MeshExtentsX = 0.6,
+        MeshExtentsY = 0.39,
+        MeshExtentsZ = 0.6,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Land',
         RotateBodyWhileMoving = true,

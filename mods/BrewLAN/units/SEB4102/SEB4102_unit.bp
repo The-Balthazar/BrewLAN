@@ -70,11 +70,9 @@ UnitBlueprint {
     Description = '<LOC sbui4102>Light Shield Generator',
     Display = {
         Abilities = {
-           # '<LOC ability_aquatic>Aquatic',
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_upgradable>Upgradeable',
         },
-        #AnimationUpgrade = '/mods/BrewLAN/units/seb4102/seb4102_upgrade.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

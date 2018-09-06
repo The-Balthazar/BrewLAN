@@ -48,6 +48,7 @@ ability_rnd_command="durch Befehlseinheit gebaut"
 ability_rnd_engineer="Erbaut von Ingenieur"
 ability_rnd_field="Erbaut von Außendiensttechniker"
 ability_rnd_factory="Gebaut von Fabrik"
+ability_rnd_gantry="Errichtet durch experimentelle Fabrik"
 ability_rnd_wall="Aufgebaut auf Wand"
 ability_rnd_upgrade="Erbaut als Upgrade"
 
@@ -106,13 +107,13 @@ seb1201_name="EG-100 Fusionsreaktor"
 Unit_Description_RND_018="Niedrig bis mittlere Ebene Stromerzeuger. Konstruieren Sie neben anderen Strukturen für adjacency Bonus."
 
 
-sa0212_desc=xaa0202_desc
+sa0212_desc="Kampfjäger"
 sea0212_name="Raubvogel"
 sra0212_name="Dioskuren"
 ssa0212_name="Iayath"
-Unit_Description_RND_019="Mid-Level-Luft Kämpfer. Ausgezeichnete AA-Funktionen. Wirksam gegen feindliche Kampfhubschrauber und Bomber."
+Unit_Description_RND_019="Kampfflieger mittlerer Stufe. Ausgezeichnete Flugabwehr. Wirkungsvoll gegen feindliche Flieger und Bomber."
 
-sa0213_desc=dea0202_desc
+sa0213_desc="Jagdbomber"
 saa0213_name="Klarheit"
 Unit_Description_RND_020="Kombination Kämpfer / Bomber entworfen Land und Lufteinheiten zu engagieren."
 
@@ -122,20 +123,44 @@ sea0211_name="Tornado"
 ssa0211_name="Sinn"
 sra0211_name="Kondor"
 Unit_Description_RND_008="Zwischen Bomber."
---Verwalten separat falls ich mache sie interessant
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="Zwischen Bomber."
+Unit_Description_RND_010="Zwischen Bomber."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Dedicated Omni Sensoren
+sb3301_desc="Omni-Sensorenreihe"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="Sensor-Array. Fähig zur Ziele durch stealth und Mantel identifiziert und löscht Störsender Blips."
+
+--T3.5 Erweiterte Bomber
+sa0314_desc="Penetrator"
+sa0314_desc="Penetrator Bomber"
+
+sea0314_name="Ulan"
+saa0314_name="Schrei"
+sra0314_name="Sanguine Tyrant"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--T3.5 für Fortgeschrittene
+sa0313_desc="Penetration-Kämpfer"
+sea0313_name="Kater"
+saa0313_name="Helios"
+sra0313_name="twilight-Patron"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --Ekranoplan Transporte
 ss0326_desc="Schwerer GEV Transport"

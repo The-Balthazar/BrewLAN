@@ -8,7 +8,7 @@ srb4401="实验盾发生器"
 seb4401_name="BFS斯塔尔瓦特"
 Unit_Description__BubbleTea_A4_02="产生它的操作半径内围绕单元和结构重屏蔽。"
 
---ssb4401_desc="实验盾发生器"
+ssb4401_desc="实验盾牌格"
 ssb4401_name="Iaathan"
 ssb4401_drone_desc="实验盾无人机"
 ssb4401_large_name="Iaathanah"

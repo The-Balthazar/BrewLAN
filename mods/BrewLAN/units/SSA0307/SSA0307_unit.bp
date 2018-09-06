@@ -105,16 +105,13 @@ UnitBlueprint {
     },
     CollisionOffsetZ = 0.1,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 3850,
         MaxHealth = 3850,
         RegenRate = 0,
         SubThreatLevel = 23,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC xsa0204_desc>Torpedo Bomber',
+    Description = '<LOC sair0307>Torpedo Bomber',
     Display = {
         Abilities = {
             '<LOC ability_sonar>Sonar',
@@ -124,9 +121,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSA0204',
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -134,9 +129,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            'XSA0204',
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -185,7 +178,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXA0008',
         SpawnRandomRotation = true,
-        UniformScale = 0.09*1.25,
+        UniformScale = 0.1125,
     },
     Economy = {
         BuildCostEnergy = 55000,
@@ -226,7 +219,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC xsa0204_help>Torpedo Bomber',
+        HelpText = '<LOC sair0307>Torpedo Bomber',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5625,

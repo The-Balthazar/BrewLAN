@@ -53,18 +53,13 @@ UnitBlueprint {
     },
     CollisionOffsetZ = -0.2,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
         Health = 1150,
         MaxHealth = 1150,
         RegenRate = 0,
         Shield = {
             ImpactEffects = 'SeraphimShieldHit01',
             OwnerShieldMesh = '/mods/BrewLAN/units/ssl0311/ssl0311_PersonalShield_mesh',
-           # ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
-           # Mesh = '/effects/entities/SeraphimShield01/SeraphimShield01_mesh',
-           # MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             PersonalShield = true,
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
@@ -76,10 +71,9 @@ UnitBlueprint {
             ShieldVerticalOffset = 0,
             StartsOff = true,
         },
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 17,
     },
-    Description = '<LOC ual0303_desc>Heavy Assault Bot',
+    Description = '<LOC ssl0311_desc>Heavy Assault Bot',
     Display = {
         Abilities = {
             '<LOC ability_personalshield>Personal Shield',
@@ -218,7 +212,7 @@ UnitBlueprint {
         VisionRadius = 22,
     },
     Interface = {
-        HelpText = '<LOC ual0303_help>Heavy Assault Bot',
+        HelpText = '<LOC ssl0311_desc>Heavy Assault Bot',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.2,
@@ -298,15 +292,11 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Right_Muzzle',
-                    },
+                    MuzzleBones = {'Right_Muzzle'},
                     RackBone = 'Right_Arm',
                 },
                 {
-                    MuzzleBones = {
-                        'Left_Muzzle',
-                    },
+                    MuzzleBones = {'Left_Muzzle'},
                     RackBone = 'Left_Arm',
                 },
             },

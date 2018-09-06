@@ -117,6 +117,8 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Malá údržba letectva. Opravuje a doplňuje palivo jednotlivým letounům"
 
 --Polní technici
+sl0119_desc="Polní ženista "
+sal0119_desc="Obranný Technik"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
@@ -139,6 +141,7 @@ saa0211_desc="Taktický Bombardér"
 Unit_Description_BrewLAN_T2A001="Taktický bombardér střední úrovně. Vybaven lehkou Kvarkovou bombou a radarem."
 
 --Polní Technici
+sl0209_desc="Polní ženista "
 sal0209_desc="Obranný Technik"
 sal0209_name="Komorník"
 srl0209_name="Wilson"
@@ -185,10 +188,10 @@ srb5210_name="Přepážka"
 ssb5210_name="Haas-Haas"
 Unit_Description_BrewLAN_T2B001="Omezuje pohyb nepřátelských jednotek a vydrží extrémní množství poškození. Spojuje se s dalšími přilehlými úseky těžkých zdí."
 
+ssl0222_desc="Mobilní generátor štítů "
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobilní generátor šítu"
 
---Loď Polní Techniky
 ss0219_desc="Loď Polní Techniky"
 ses0219_name="Třída Fixxie"
 srs0219_name="Třída Barwick"
@@ -213,6 +216,12 @@ Unit_Description_BrewLAN_T3A006="Lehce obrněný návnadový letoun. Vybaven sil
 Unit_Description_BrewLAN_T3A009="Lehce obrněný návnadový letoun. Vybaven silnou rušičkou radaru navrženou pro vytvoření vícero falešných radarových signálů. Imituje pohyby jednotky vzdušné převahy."
 Unit_Description_BrewLAN_T3A010="Lehce obrněný návnadový letoun. Vybaven silnou rušičkou radaru navrženou pro vytvoření vícero falešných radarových signálů. Imituje pohyby jednotky vzdušné převahy."
 Unit_Description_BrewLAN_T3A011="Lehce obrněný návnadový letoun. Vybaven silnou rušičkou radaru navrženou pro vytvoření vícero falešných radarových signálů. Imituje pohyby jednotky vzdušné převahy."
+
+ssb0x04_desc="Ženijni stanice "
+ssb0x04_name="Iya "
+Unit_Description_BrewLAN_T2D006=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním rádiu. "
+Unit_Description_BrewLAN_T2D007=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním rádiu. "
+Unit_Description_BrewLAN_T2D008=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním rádiu. "
 
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -246,6 +255,7 @@ ssl0311_desc="Těžký Útočný Bot"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Obléhací útočný bot se štítem. Vyzbrojen duálními Aire-au boltery."
 
+sb2306_desc="Těžký obranný bod "
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="Mobilní strategická raketová obrana. Stavebn
 Unit_Description_BrewLAN_T3L008="Mobilní strategická raketová obrana. Vystřeluje salvu tří raket na každý cíl. Stavební náklady zahrnují první salvu."
 
 --T3 Serafimská sonarová platforma
+sss0305_desc="Sonarová platforma"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Sonarový systém s mimořádným dosahem. Detekuje a sleduje námořní jednotky. Vybaven osobním teleportérem."
+ability_personal_teleporter="Osobní teleport"
 
 --Polní Technici
+sl0319_desc="Polní ženista "
+sal0319_desc="Obranný Technik"
 sel0319_name="Správce"
 sal0319_name="Bilmon"
 srl0319_name="House"
@@ -352,32 +366,47 @@ srb5311_name="Nabídka Procyonu"
 seb5311_name="Brány"
 Unit_Description_BrewLAN_T3B0020="Ručně ovládáná brána. Umožňuje průchod a vydrží extrémní množství poškození."
 
+seb2308_desc="Torpédomet"
 seb2308_name="Harpuna"
 Unit_Description_BrewLAN_T3B0025="Těžká věž, vypalující torpéda. Může být postavena na souši a mořském dně."
+sab2308_desc="Odpalovač torpéd "
 sab2308_name="Náhlá Povodeň"
 Unit_Description_BrewLAN_T3B0027="Velmi těžký dalekonosný systém protinámořní obrany. Navržen proti nejmocnějším námořním jednotkám."
+sss0306_desc="Heavy Torpedo Platform"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Vznášedlo s torpédovým systémem. Schopný zničit největší plavidla."
 
 ssb3301_desc="Zařízení Optického Sledování"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Nabízí viditelnost přátelské nebo nepřátelské cílové jednotky. Může zaměřit radarové tečky. Nemůže zaměřit prázdný prostor."
 
---Mobilní Generátor Štítu
+sal0322_desc="Mobilní generátor štítu"
 sal0322_name="Plammený Lotus"
+Unit_Description_BrewLAN_T3L021="Obojživelný mobilní štít generátor."
+
+sel0322_desc="Mobilní generátor štítu"
 sel0322_name="Ella"
---Krátké a dlouhé popisky oba stejné jako výchozí
+Unit_Description_BrewLAN_T3L022="Obojživelný mobilní štít generátor."
 
 --Protiletecká Vozidla"
 sal0320_desc="Mobilní Protiletecká Obrana"
 sal0320_name="Armilární Sféra"
 Unit_Description_BrewLAN_T3L012="Vznášející se mobilní protiletecký obranný systém. Spotřebovává energii s každým výstřelem."
+
+sel0324_desc="Mobilní Protiletecká Obrana"
 sel0324_name="NG3 Luk"
 Unit_Description_BrewLAN_T3L015="Mobilní protiletecký odpalovač raket. Vybaven pokročilým skenovacím zařízením."
+
 --srl0320_desc=--Mobilní Raketomet
+srl0320_desc="Mobilní Protiletecká Obrana"
 srl0320_name="Tulák"
 Unit_Description_BrewLAN_T3L009="Maskovaný mobilní protiletecký raketomet. Musí se demaskovat při útoku."
+
+ssl0320_desc="Mobilní Protiletecká Obrana"
 ssl0320_name="Atha-Ythia"
 Unit_Description_BrewLAN_T3L020="Vznášející mobilní anti-vzduch a taktické raketové obrany."
 
+seb4303_desc="Protidělostřelecký štít"
 seb4303_name="Nárazník"
 Unit_Description_BrewLAN_T3B0028="Síť dělostřelecké obrany. Vybavena integrovaným sledovacím systémem a vyhodnocení ohrožení."
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57 Herka"
 sal0325_name="Limbo"
 Unit_Description_BrewLAN_T3L017="Mobilní protinámořní vozidlo"
 Unit_Description_BrewLAN_T3L018="Mobilní protinámořní vznášedlo"
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Vznášedlo s torpédovým systémem. Schopný zničit největší plavidla."
 
 ssb4317_desc="Radar Jammer"
 ssb4317_name="Yathesel"

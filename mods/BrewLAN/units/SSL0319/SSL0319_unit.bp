@@ -69,7 +69,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 6,
     },
-    Description = '<LOC uel0209_desc>Field Engineer',
+    Description = '<LOC sl0319_desc>Field Engineer',
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
@@ -190,7 +190,7 @@ UnitBlueprint {
         SonarStealth = true,
     },
     Interface = {
-        HelpText = '<LOC uel0209_desc>Field Engineer',
+        HelpText = '<LOC sl0319_desc>Field Engineer',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,

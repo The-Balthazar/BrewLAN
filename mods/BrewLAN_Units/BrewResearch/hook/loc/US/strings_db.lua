@@ -48,6 +48,7 @@ ability_rnd_command="Built by command unit"
 ability_rnd_engineer="Built by engineer"
 ability_rnd_field="Built by field engineer"
 ability_rnd_factory="Built by factory"
+ability_rnd_gantry="Built by experimental factory"
 ability_rnd_wall="Built on wall"
 ability_rnd_upgrade="Built as upgrade"
 
@@ -122,20 +123,44 @@ sea0211_name="Tornado"
 ssa0211_name="Sinn"
 sra0211_name="Condor"
 Unit_Description_RND_008="Intermediate bomber aircraft."
---Maintained separately in case I make them interesting
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="Intermediate bomber aircraft."
+Unit_Description_RND_010="Intermediate bomber aircraft."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Dedicated Omni Sensors
+sb3301_desc="Omni Sensor Array"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
+
+--T3.5 Advanced bombers
+sa0314_desc="Penetrator"
+sa0314_desc="Penetrator Bomber"
+--I haven't decided which to go for
+sea0314_name="Lancer"
+saa0314_name="Shrieker"
+sra0314_name="Sanguine Tyrant"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--T3.5 advanced fighters
+sa0313_desc="Penetration Fighter"
+sea0313_name="Tomcat"
+saa0313_name="Helios"
+sra0313_name="Twilight Patron"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --Ekranoplan transports
 ss0326_desc="Heavy GEV Transport"

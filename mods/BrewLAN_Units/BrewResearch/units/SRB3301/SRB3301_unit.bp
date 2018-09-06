@@ -47,7 +47,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC ueb3104_desc>Omni Sensor Array',
+    Description = '<LOC sb3301_desc>Omni Sensor Array',
     Display = {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',

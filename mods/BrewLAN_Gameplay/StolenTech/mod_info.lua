@@ -1,0 +1,13 @@
+name = "Stolen Tech"
+uid = "16678e1e-7fc9-11e5-8bcf-STOLENTECH00"
+version = 0
+copyright = "© Various"
+description = "Some FA, FAF, & LOUD features for SC and FA. With a BrewLAN flavour."
+author = "Sean Wheeldon"
+--icon = "/mods/BrewLAN_Gameplay/TeaD/mod_icon.dds"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+before = {  }
+after = {  }

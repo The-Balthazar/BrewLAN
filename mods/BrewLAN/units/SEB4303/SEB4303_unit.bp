@@ -56,7 +56,7 @@ UnitBlueprint {
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 24000,
             ShieldRechargeTime = 23,
-            ShieldRegenRate = 131*1.6,
+            ShieldRegenRate = 210,
             ShieldRegenStartTime = 1,
             ShieldSize = 70,
             ShieldVerticalOffset = 0,
@@ -64,7 +64,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC deb4303_desc>Artillery Defense Grid',
+    Description = '<LOC seb4303_desc>Artillery Defense Grid',
     Display = {
         Abilities = {
             '<LOC ability_artillerydef>Artillery Defense',
@@ -80,15 +80,8 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Unit',
-
-                },
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit',
-                },
+                {LODCutoff = 200, ShaderName = 'Unit'},
+                {LODCutoff = 400, ShaderName = 'Unit'},
             },
         },
         PlaceholderMeshName = 'UXB0018',
@@ -100,12 +93,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar8x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -117,9 +105,7 @@ UnitBlueprint {
         BuildCostMass = 2200,
         BuildTime = 2700,
         MaintenanceConsumptionPerSecondEnergy = 250,
-        RebuildBonusIds = {
-            'seb4303',
-        },
+        RebuildBonusIds = {'seb4303'},
     },
     Footprint = {
         SizeX = 3,
@@ -158,7 +144,6 @@ UnitBlueprint {
         },
         UnitName = '<LOC seb4303_name>Recoil',
         UnitWeight = 1,
-        --UpgradesFrom = 'ueb4202',
     },
     Intel = {
         VisionRadius = 20,

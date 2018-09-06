@@ -48,6 +48,7 @@ ability_rnd_command="Costruito per unità di comando"
 ability_rnd_engineer="Costruito da ingegnere"
 ability_rnd_field="Costruito da tecnico di campo"
 ability_rnd_factory="Costruito da fabbrica"
+ability_rnd_gantry="Costruito da fabbrica sperimentale"
 ability_rnd_wall="Costruito su muro"
 ability_rnd_upgrade="Costruito come aggiornamento"
 
@@ -106,13 +107,13 @@ seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Dal minimo al generatore di potenza di medio livello. Costruire accanto ad altre strutture per il bonus di adiacenza."
 
 
-sa0212_desc=xaa0202_desc
+sa0212_desc="Caccia da combattimento"
 sea0212_name="Raptor"
 sra0212_name="Dioscuri"
 ssa0212_name="Iayath"
-Unit_Description_RND_019="Mid-level combattente dell'aria. capacità AA eccellenti. Efficace contro elicotteri nemici e bombardieri."
+Unit_Description_RND_019="Caccia aereo di livello medio. Eccellenti capacità antiaeree. Efficace contro le corazzate e i bombardieri nemici."
 
-sa0213_desc=dea0202_desc
+sa0213_desc="Caccia/bombardiere"
 saa0213_name="Lucidità"
 Unit_Description_RND_020="Combinazione caccia / bombardiere progettato per coinvolgere terra e unità aeree."
 
@@ -122,20 +123,44 @@ sea0211_name="Tornado"
 ssa0211_name="Sinn"
 sra0211_name="Condor"
 Unit_Description_RND_008="aereo bombardiere Intermedio."
---Mantenuto a parte nel caso in cui li faccio interessante
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="aereo bombardiere Intermedio."
+Unit_Description_RND_010="aereo bombardiere Intermedio."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Dedicati Omni Sensors
+sb3301_desc="Rete omni-sensori"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="matrice di sensori. In grado di identificare bersagli attraverso stealth e mantello e cancella blips jammer."
+
+--bombardieri avanzati T3.5
+sa0314_desc="Penetrator"
+sa0314_desc="Penetrator Bomber"
+
+sea0314_name="lanciere"
+saa0314_name="Strillare"
+sra0314_name="Tyrant Sanguine"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--combattenti avanzate T3.5
+sa0313_desc="penetrazione Fighter"
+sea0313_name="micio"
+saa0313_name="Helios"
+sra0313_name="Crepuscolo Patron"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --trasporti ekranoplan
 ss0326_desc="Trasporti GEV pesante"

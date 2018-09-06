@@ -9,7 +9,7 @@ seb5381_desc="伤害升压节点"
 Unit_Description_BrewLAN_Turrets_0002="相邻的静态武器交易伤害增加。这大大增加了每次出手的能源消耗。"
 
 seb2320_name="浩"
-seb2320_desc="重点防御"
+seb2320_desc="重型點防禦"
 Unit_Description_BrewLAN_Turrets_0003="重型防御塔。手持等离子体束。"
 
 seb2211_name="Stouty"
@@ -24,7 +24,7 @@ seb2401_desc="实验点防御"
 Unit_Description_BrewLAN_Turrets_0006="防御炮塔。手持一个巨大的质子炮。"
 
 srb2391_name="特斯拉线圈"
-srb2391_desc=xeb2306_desc
+srb2391_desc="重型點防禦"
 Unit_Description_BrewLAN_Turrets_0007="功能强大，航程短，防御炮塔。它逐渐储存能量，并排放在每次拍摄的一切。给定的时间进行充电时，最有效的针对大型目标。影响效率的持续火力。"
 
 --这是所使用的特斯拉线圈

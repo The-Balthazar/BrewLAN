@@ -48,6 +48,7 @@ ability_rnd_command="Zbudowany przez jednostki dowodzenia"
 ability_rnd_engineer="Zbudowany przez inżyniera"
 ability_rnd_field="Zbudowany przez inżyniera"
 ability_rnd_factory="Zbudowany przez fabrykę"
+ability_rnd_gantry="Zbudowany przez fabrykę eksperymentalnej"
 ability_rnd_wall="Zbudowany na ścianie"
 ability_rnd_upgrade="Zbudowany jako uaktualnienie"
 
@@ -106,13 +107,13 @@ seb1201_name="EG-100 fuzyjna"
 Unit_Description_RND_018="Od najniższej do generatora prądu średniego szczebla. Skonstruować obok innych struktur premii przylegania."
 
 
-sa0212_desc=xaa0202_desc
+sa0212_desc="Myśliwiec bojowy"
 sea0212_name="raptor"
 sra0212_name="Dioscuri"
 ssa0212_name="Iayath"
-Unit_Description_RND_019="Połowie poziomu myśliwski powietrza. Doskonałe możliwości AA. Skuteczny przeciwko gunships i bombowców wroga."
+Unit_Description_RND_019="Tańszy od Korony, ale szybszy i lepiej uzbrojony od Conservatora, Szybki Wiatr, doskonale nadaje się do walki powietrznej, wypełniając lukę między myśliwcami T1 i T3."
 
-sa0213_desc=dea0202_desc
+sa0213_desc="Myśliwiec szturmowy"
 saa0213_name="Jasność"
 Unit_Description_RND_020="Połączenie myśliwiec / bombowiec zaprojektowany do zaangażowania zarówno gruntów i jednostek powietrznych."
 
@@ -122,20 +123,44 @@ sea0211_name="Tornado"
 ssa0211_name="Sinn"
 sra0211_name="Kondor"
 Unit_Description_RND_008="Pośredni samolot bombowy."
---Utrzymywane oddzielnie w przypadku I uczynić je ciekawy
-Unit_Description_RND_009=Unit_Description_RND_008
-Unit_Description_RND_010=Unit_Description_RND_008
+Unit_Description_RND_009="Pośredni samolot bombowy."
+Unit_Description_RND_010="Pośredni samolot bombowy."
 
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
 --Dedykowane Omni Czujniki
+sb3301_desc="Łańcuch omnisensorowy"
 seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="macierz czujników. W stanie zidentyfikować cele poprzez skradanie i płaszcz i czyści jammer blips."
+
+--Travian 3.5 Zaawansowane bombowce
+sa0314_desc="Penetrator"
+sa0314_desc="Penetrator Bomber"
+
+sea0314_name="Ułan"
+saa0314_name="Wrzask"
+sra0314_name="sangwina Tyrant"
+ssa0314_name="Sinnaino"
+--[description]
+--[description]
+--[description]
+--[description]
+
+--Travian 3.5 zaawansowanych myśliwców
+sa0313_desc="penetracja Fighter"
+sea0313_name="Kocur"
+saa0313_name="Helios"
+sra0313_name="Zmierzch Patron"
+ssa0313_name="Ialosaare"
+--[description]
+--[description]
+--[description]
+--[description]
 
 --ekranoplan transporty
 ss0326_desc="Ciężki transport GEV"

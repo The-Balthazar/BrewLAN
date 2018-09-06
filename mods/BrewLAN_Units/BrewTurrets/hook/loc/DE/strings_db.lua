@@ -9,7 +9,7 @@ seb5381_desc="Damage-Boost-Knoten"
 Unit_Description_BrewLAN_Turrets_0002="Angrenzend statische Waffen verursachen erhöhten Schaden. Dies erhöht den Energieverbrauch pro Schuss."
 
 seb2320_name="Hiro"
-seb2320_desc="Schwerpunkt Defense"
+seb2320_desc="Schwere Punktverteidigung"
 Unit_Description_BrewLAN_Turrets_0003="Schwerer Wehrturm. mit einem Plasmastrahl bewaffnet."
 
 seb2211_name="Stouty"
@@ -24,7 +24,7 @@ seb2401_desc="Experimental-Point Defense"
 Unit_Description_BrewLAN_Turrets_0006="Defensive Turm. mit einer massiven Protonenkanone bewaffnet."
 
 srb2391_name="Tesla-Spule"
-srb2391_desc=xeb2306_desc
+srb2391_desc="Schwere Punktverteidigung"
 Unit_Description_BrewLAN_Turrets_0007="Leistungsstarke, kurze Reichweite, defensive Türmchen. Er speichert nach und nach Energie und entlädt alles mit jedem Schuss. Am wirkungsvollsten gegen große Ziele Zeit, als gegeben zu berechnen. bei Dauerfeuer sehr ineffektiv."
 
 --Dies wird durch die Tesla Coil verwendet

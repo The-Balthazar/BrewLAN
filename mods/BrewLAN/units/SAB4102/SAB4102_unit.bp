@@ -74,7 +74,6 @@ UnitBlueprint {
     Description = '<LOC sbui4102>Light Shield Generator',
     Display = {
         Abilities = {
-            #'<LOC ability_aquatic>Aquatic',
             '<LOC ability_shielddome>Shield Dome',
             '<LOC ability_upgradable>Upgradeable',
         },
@@ -86,7 +85,6 @@ UnitBlueprint {
                 Weight = 1,
             },
         },
-        #AnimationUpgrade = '/mods/BrewLAN/units/sab4102/sab4102_aupgrade.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -166,7 +164,6 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
-        #Icon = 'amph',
         Icon = 'land',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {

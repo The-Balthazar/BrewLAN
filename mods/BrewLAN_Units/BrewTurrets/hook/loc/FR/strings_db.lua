@@ -9,7 +9,7 @@ seb5381_desc="Dommages Boost Node"
 Unit_Description_BrewLAN_Turrets_0002="À côté de beaucoup d'armes statiques dégâts augmentés. Cela augmente considérablement la consommation d'énergie par coup."
 
 seb2320_name="Hiro"
-seb2320_desc="Défense Difficile Point"
+seb2320_desc="Pointe de défense lourde"
 Unit_Description_BrewLAN_Turrets_0003="tour de défense lourde. Armé d'un faisceau de plasma."
 
 seb2211_name="Stouty"
@@ -24,7 +24,7 @@ seb2401_desc="Défense expérimentale point"
 Unit_Description_BrewLAN_Turrets_0006="tourelle défensive. Armé d'un canon à protons massif."
 
 srb2391_name="Tesla Coil"
-srb2391_desc=xeb2306_desc
+srb2391_desc="Pointe de défense lourde"
 Unit_Description_BrewLAN_Turrets_0007="gamme puissante, courte, tourelle défensive. Il stocke progressivement l'énergie et décharge tout à chaque tir. Le plus efficace contre les grands objectifs quand donné le temps de charger. Très inefficace au feu durable."
 
 --Il est utilisé par la bobine de Tesla

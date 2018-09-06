@@ -128,7 +128,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC sal0209_desc>Defence Engineer',
+    Description = '<LOC sal0119_desc>Defence Engineer',
     Display = {
         Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
@@ -281,7 +281,7 @@ UnitBlueprint {
         RadarRadius = 30,
     },
     Interface = {
-        HelpText = '<LOC sal0209_desc>Defence Engineer',
+        HelpText = '<LOC sal0119_desc>Defence Engineer',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,

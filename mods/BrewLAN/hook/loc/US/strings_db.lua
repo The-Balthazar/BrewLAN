@@ -42,7 +42,7 @@ tooltipbrewlan0016="Disruption pulse toggle"
 tooltipbrewlan0017="Toggle the Omni disruption pulse on or off."
 
 --Tooltips for the Rez/reclaim command.
---tooltipbrewlan0018="Reclaim (E)"
+--tooltipbrewlan0018="Reclaim"
 tooltipbrewlan0019="Reclaim a unit or wreckage and learn its blueprint."
 
 --Tooltips for the Stargate
@@ -117,6 +117,8 @@ srb5104_name="Ravitailler"
 Unit_Description_BrewLAN_T1U001="Light air staging facility. Repairs and refuels individual aircrafts."
 
 --Field engineers
+sl0119_desc="Field Engineer"
+sal0119_desc="Defense Engineer"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
@@ -139,6 +141,7 @@ saa0211_desc="Tactical Bomber"
 Unit_Description_BrewLAN_T2A001="Mid-level tactical bomber. Equipped with a light Quark bomb and radar."
 
 --Field Engineers
+sl0209_desc="Field Engineer"
 sal0209_desc="Defense Engineer"
 sal0209_name="Butler"
 srl0209_name="Wilson"
@@ -185,10 +188,10 @@ srb5210_name="Bulkhead"
 ssb5210_name="Haas-haas"
 Unit_Description_BrewLAN_T2B001="Restricts movement of enemy units and can sustain extreme amounts of damage. Connects to other adjacent heavy wall sections."
 
+ssl0222_desc="Mobile Shield Generator"
 ssl0222_name="Athanne"
 Unit_Description_BrewLAN_T2L004="Mobile shield generator."
 
---Field Engineering Ship
 ss0219_desc="Field Engineering Ship"
 ses0219_name="Fixxie Class"
 srs0219_name="Barwick Class"
@@ -214,13 +217,19 @@ Unit_Description_BrewLAN_T3A009="Lightly armored decoy plane. Equipped with powe
 Unit_Description_BrewLAN_T3A010="Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Unit_Description_BrewLAN_T3A011="Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 
+ssb0x04_desc="Engineering Station"
+ssb0x04_name="Iya"
+Unit_Description_BrewLAN_T2D006=" Automatically repairs or assists any unit within its operational radius. Upgradable twice."
+Unit_Description_BrewLAN_T2D007=" Automatically repairs or assists any unit within its operational radius. Upgradable."
+Unit_Description_BrewLAN_T2D008=" Automatically repairs or assists any unit within its operational radius."
+
 --------------------------------------------------------------------------------
 -- Tech 3
 --------------------------------------------------------------------------------
 
 sair0305="Heavy Gunship"
 ssa0305_name="Vulthuum"
-Unit_Description_BrewLAN_T3A001="Heavy gunship. Armed with Phasic autoguns and powerful but short range AA weapons."
+Unit_Description_BrewLAN_T3A001="Heavy gunship. Armed with Phasic auto-guns and powerful but short range AA weapons."
 
 sair0306="Heavy Air Transport"
 saa0306_name="Solaris"
@@ -246,6 +255,7 @@ ssl0311_desc="Heavy Assault Bot"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Shielded Siege assault bot. Armed with dual Aire-au Bolters."
 
+sb2306_desc="Heavy Point Defense"
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -289,10 +299,14 @@ Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Build costs i
 Unit_Description_BrewLAN_T3L008="Mobile strategic missile defense. Fires a salvo of three missiles at each target. Build costs include first salvo."
 
 --Seraphim T3 sonar platform
+sss0305_desc="Sonar Platform"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Sonar system with exceptional range. Detects and tracks naval units. Equipped with a personal teleporter."
+ability_personal_teleporter="Personal Teleporter"
 
 --Field engineers
+sl0319_desc="Field Engineer"
+sal0319_desc="Defense Engineer"
 sel0319_name="Custodian"
 sal0319_name="Bilmon"
 srl0319_name="House"
@@ -352,32 +366,47 @@ srb5311_name="Procyon Offering"
 seb5311_name="Harrow"
 Unit_Description_BrewLAN_T3B0020="Manually controlled gate; can allow passage through its area and sustain extreme amounts of damage."
 
+seb2308_desc="Heavy Torpedo Launcher"
 seb2308_name="Harpoon"
 Unit_Description_BrewLAN_T3B0025="Heavy torpedo launching tower. Can be built on land and on the seabed."
+sab2308_desc="Heavy Torpedo Launcher"
 sab2308_name="Flash Flood"
 Unit_Description_BrewLAN_T3B0027="Very heavy long-range anti-naval defense system. Designed to engage the most powerful of naval units."
+sss0306_desc="Heavy Torpedo Platform"
+sss0306_name="Uosthuum"
+Unit_Description_BrewLAN_T3S004="Hovering torpedo system. Capable of destroying the largest of enemy vessels."
 
 ssb3301_desc="Optics Tracking Facility"
 ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offers line-of-sight of a targeted friendly or enemy unit. Can target radar blips. Cannot target empty space."
 
---Mobile Shield Generator
+sal0322_desc="Mobile Shield Generator"
 sal0322_name="Flame Lotus"
+Unit_Description_BrewLAN_T3L021="Amphibious mobile shield generator."
+
+sel0322_desc="Mobile Shield Generator"
 sel0322_name="Ella"
---Short and long descriptions both the same as default.
+Unit_Description_BrewLAN_T3L022="Amphibious mobile shield generator."
 
 --Mobile anti-air
 sal0320_desc="Mobile Anti-Air Defense"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Hovering mobile anti-air defence system. Consumes power with each shot."
+
+sel0324_desc="Mobile SAM Launcher"
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="Mobile anti-air missile launcher. Equipped with advanced scanning equipment."
+
 --srl0320_desc=--Mobile Missile Launcher
+srl0320_desc="Mobile SAM Launcher"
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile cloaking anti-air missile launcher. Must decloak to fire."
+
+ssl0320_desc="Mobile Anti-Air Defense"
 ssl0320_name="Atha-Ythia"
 Unit_Description_BrewLAN_T3L020="Hovering mobile anti-air and tactical missile defense."
 
+seb4303_desc="Artillery Defense Grid"
 seb4303_name="Recoil"
 Unit_Description_BrewLAN_T3B0028="Stationary artillery defense grid. Equipped with an integrated threat identification and tracking system."
 
@@ -411,9 +440,6 @@ sel0325_name="PT-57 Croc"
 sal0325_name="Limbo"
 Unit_Description_BrewLAN_T3L017="Mobile anti-naval vehicle."
 Unit_Description_BrewLAN_T3L018="Mobile hovering anti-naval vehicle."
-
-sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Hovering torpedo system. Capable of destroying the largest of enemy vessels."
 
 ssb4317_desc="Radar Jammer"
 ssb4317_name="Yathesel"

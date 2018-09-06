@@ -69,9 +69,9 @@ Description['sab2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nu
 Description['ssb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nuclear mine. Visible only to Omni."
 
 --Tech 2 construction units
-Description['ssb0104'] = "<LOC Unit_Description_0451> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
-Description['ssb0204'] = "<LOC Unit_Description_0324> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
-Description['ssb0304'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['ssb0104'] = "<LOC Unit_Description_BrewLAN_T2D006> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['ssb0204'] = "<LOC Unit_Description_BrewLAN_T2D007> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['ssb0304'] = "<LOC Unit_Description_BrewLAN_T2D008> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 
 --Tech 2 protection units
 Description['urb4205'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."
@@ -122,8 +122,6 @@ Description['srl0319'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious
 Description['ssl0319'] = "<LOC Unit_Description_BrewLAN_T3L006>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry, has sonar stealth, and can build specialist defenses."
 Description['sal0319'] = "<LOC Unit_Description_BrewLAN_T3L007>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with a personal shield and can build specialist defenses."
 Description['sel0321'] = "<LOC Unit_Description_BrewLAN_T3L008>Mobile strategic missile defense. Fires a salvo of three missiles at its targets. Build costs include first missile salvo."
-Description['sel0322'] = "<LOC Unit_Description_0034>Mobile shield generator."
-Description['sal0322'] = "<LOC Unit_Description_0231>Mobile shield generator."
 Description['srl0320'] = "<LOC Unit_Description_BrewLAN_T3L009>Mobile cloaking anti-air missile launcher. Must decloak to fire."
 Description['srl0316'] = "<LOC Unit_Description_BrewLAN_T3L010>Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
 Description['srl0311'] = "<LOC Unit_Description_BrewLAN_T3L011>Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
@@ -140,6 +138,8 @@ Description['sal0325'] = "<LOC Unit_Description_BrewLAN_T3L018>Mobile hovering a
 Description['sal0324'] = "<LOC Unit_Description_BrewLAN_T3L019>Hovering sensor array. Consumes large quantities of power to function."
 Description['ssl0324'] = "<LOC Unit_Description_BrewLAN_T3L019>Hovering sensor array. Consumes large quantities of power to function."
 Description['ssl0320'] = "<LOC Unit_Description_BrewLAN_T3L020>Hovering mobile anti-air and tactical missile defense."
+Description['sel0322'] = "<LOC Unit_Description_BrewLAN_T3L021>Mobile shield generator."
+Description['sal0322'] = "<LOC Unit_Description_BrewLAN_T3L022>Mobile shield generator."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."

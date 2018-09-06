@@ -1,8 +1,6 @@
 UnitBlueprint {
     AI = {
-        TargetBones = {
-            'UAB2205',
-        },
+        TargetBones = {0},
     },
     Audio = {
         Destroyed = Sound {
@@ -54,18 +52,14 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'SORTDEFENSE',
     },
-    CollisionOffsetY = 0,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 0,
         Health = 11500,
         MaxHealth = 11500,
         RegenRate = 0,
         SubThreatLevel = 13,
-        SurfaceThreatLevel = 0,
     },
-    Description = '<LOC xsb2205_desc>Torpedo Launcher',
+    Description = '<LOC sss0306_desc>Heavy Torpedo Platform',
     Display = {
         Abilities = {
             '<LOC ability_hover>Hover',
@@ -80,7 +74,6 @@ UnitBlueprint {
                 Weight = 1,
             },
         },
-        --AnimationOpen = '/units/UAB2205/UAB2205_Aopen.sca',
         DamageEffects = {
             {
                 Bone = 0,
@@ -111,17 +104,8 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                 },
@@ -129,31 +113,13 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
+                        Offset = {0, -0.25, 0},
                         Scale = 1.2,
                         Type = 'SeaIdle02',
                     },
@@ -186,27 +152,13 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
                         Scale = 0.5,
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                 },
@@ -214,26 +166,12 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
-                        Offset = {
-                            0,
-                            -0.25,
-                            0,
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
+                        Offset = {0, -0.25, 0},
                         Type = 'SeraphimGroundFX01',
                     },
                     {
-                        Bones = {
-                            'Foot_001',
-                            'Foot_002',
-                            'Foot_003',
-                            'Foot_004',
-                        },
+                        Bones = {'Foot_001', 'Foot_002', 'Foot_003', 'Foot_004'},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
@@ -248,7 +186,6 @@ UnitBlueprint {
         BuildTime = 3000,
     },
     Footprint = {
-        --MinWaterDepth = 1.5,
         SizeX = 2,
         SizeZ = 2,
     },
@@ -284,7 +221,7 @@ UnitBlueprint {
         WaterVisionRadius = 20,
     },
     Interface = {
-        HelpText = '<LOC xsb2205_help>Torpedo Launcher',
+        HelpText = '<LOC sss0306_desc>Heavy Torpedo Platform',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.1,
@@ -328,11 +265,11 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure3_antinavy',
     StrategicIconSortPriority = 200,
     Veteran = {
-        Level1 = 12*1.5,
-        Level2 = 24*1.5,
-        Level3 = 36*1.5,
-        Level4 = 48*1.5,
-        Level5 = 60*1.5,
+        Level1 = 18,
+        Level2 = 36,
+        Level3 = 54,
+        Level4 = 72,
+        Level5 = 90,
     },
     Transport = {
         TransportClass = 3,
@@ -348,7 +285,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 201*1.8,
+            Damage = 362,
             DamageType = 'Normal',
             DisplayName = 'Heavy Cavitation Torpedo Cluster',
             FireTargetLayerCapsTable = {
@@ -387,7 +324,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
-                'STRUCTURE DEFENSE',
+                'DEFENSE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
