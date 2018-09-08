@@ -223,6 +223,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * The second upgrade of Seraphim engineering stations are no longer have weirdly long in Polish, Chinese, Czech. One of them also referenced the Hive.
   * Reworked GetConstructEconomyModel so that is references the original when making changes, doesn't require the arcane bullshit to work on the original, and is a fraction of the length.
 
+  ### 2018-09-07
+
+  * R&D: Created Sanguine Tyrant: Cybran Tech 3 Penetrator Bomber.
+
+  ### 2018-09-08
+
+  * R&D: Sanguine Tyrant weapon systems and balance.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.
