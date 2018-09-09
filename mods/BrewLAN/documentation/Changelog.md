@@ -231,6 +231,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Sanguine Tyrant weapon systems and balance.
 
+  ### 2018-09-09
+
+  * Debug Tools: No longer logs unit data when Cybran construction drones are created.
+  * R&D: Sanguine Tyrant changes:
+    * Lowered health to 7215 from 7400.
+    * Gave it functioning anti-missile flares.
+    * Removed the old non-functioning anti-missile flares.
+    * Tweaked the target priorities of the torpedoes.
+    * Allowed it to wear hats.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

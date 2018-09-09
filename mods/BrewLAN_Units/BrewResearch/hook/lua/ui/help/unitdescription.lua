@@ -102,7 +102,7 @@ Description['sea0211'] = "<LOC Unit_Description_RND_009>Intermediate bomber airc
 Description['ssa0211'] = "<LOC Unit_Description_RND_010>Intermediate bomber aircraft."
 
 --Tech 3 penetrator bombers
-Description['sra0314'] = "<LOC Unit_Description_RND_021>Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface missiles, torpedoes, and anti-missiles flares."
+Description['sra0314'] = "<LOC Unit_Description_RND_021>Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and anti-missile flares."
 
 --Tech 3 omni sensor arrays
 Description['sab3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."

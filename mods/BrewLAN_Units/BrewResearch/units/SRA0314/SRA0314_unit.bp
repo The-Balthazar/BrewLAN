@@ -22,7 +22,7 @@ UnitBlueprint {
         KTurn = 0.8,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 22.5,
+        MaxAirspeed = 22.5,--Ensure you correct the ROF of the standoff missiles if you change this.
         MinAirspeed = 17.5,
         PredictAheadForBombDrop = 3,
         StartTurnDistance = 5,
@@ -116,13 +116,16 @@ UnitBlueprint {
     CollisionOffsetY = 0,
     Defense = {
         AirThreatLevel = 0,
+        MissileDetector = {
+            AttachBone = 'MissileDetector',
+        },
         ArmorType = 'Light',
-        EconomyThreatLevel = 2,
-        Health = 3700*2,
-        MaxHealth = 3700*2,
+        EconomyThreatLevel = 3,
+        Health = 7215,
+        MaxHealth = 7215,
         RegenRate = 5,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 91,
+        SubThreatLevel = 30,
+        SurfaceThreatLevel = 64,
     },
     Description = '<LOC sa0314_desc>Penetrator Bomber',
     Display = {
@@ -164,9 +167,7 @@ UnitBlueprint {
                 },
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust_M',
-                        },
+                        Bones = {'Exhaust_M'},
                         Type = 'AirMoveExhaust',
                     },
                 },
@@ -193,8 +194,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.25,
-        SizeX = 1,
-        SizeZ = 1,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
         Category = 'Bomber',
@@ -277,7 +278,7 @@ UnitBlueprint {
         Level5 = 100,
     },
     Weapon = {
-        {
+        {   --Bombs
             AboveWaterTargetsOnly = true,
             Audio = {
                 Fire = Sound {
@@ -343,7 +344,7 @@ UnitBlueprint {
             Turreted = false,
             WeaponCategory = 'Bomb',
         },
-        {
+        {   --Standoff Missiles
             AboveWaterTargetsOnly = true,
             Audio = {
                 Fire = Sound {
@@ -358,12 +359,11 @@ UnitBlueprint {
             DamageFriendly = true,
             DamageRadius = 2,
             DamageType = 'Normal',
-            DisplayName = 'Iridium Tyrant ASM',
+            DisplayName = 'Iridium-Tyrant Standoff ASM Barrage',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Seabed',
                 Land = 'Land|Water|Seabed',
             },
-            --FiringRandomness = 2,
             FiringTolerance = 30,
             Label = 'Missile',
             NotExclusive = true,
@@ -378,26 +378,17 @@ UnitBlueprint {
             RackBones = {
                 {
                     HideMuzzle = true,
-                    MuzzleBones = {
-                        'AGM_001',
-                        'AGM_002',
-                    },
+                    MuzzleBones = {'AGM_001', 'AGM_002'},
                     RackBone = 'AGM_001',
                 },
                 {
                     HideMuzzle = true,
-                    MuzzleBones = {
-                        'AGM_003',
-                        'AGM_004',
-                    },
+                    MuzzleBones = {'AGM_003', 'AGM_004'},
                     RackBone = 'AGM_003',
                 },
                 {
                     HideMuzzle = true,
-                    MuzzleBones = {
-                        'AGM_005',
-                        'AGM_006',
-                    },
+                    MuzzleBones = {'AGM_005', 'AGM_006'},
                     RackBone = 'AGM_005',
                 },
             },
@@ -435,7 +426,7 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Missile',
         },
-        {
+        {   --Torpedoes
             Audio = {
                 Fire = Sound {
                     Bank = 'URAWeapon',
@@ -443,7 +434,6 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 150,
@@ -472,9 +462,7 @@ UnitBlueprint {
             ProjectilesPerOnFire = 2,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Bomb_Rear',
-                    },
+                    MuzzleBones = {'Bomb_Rear'},
                     RackBone = 'Bomb_Rear',
                 },
             },
@@ -489,7 +477,7 @@ UnitBlueprint {
             TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
+                'NAVAL',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
@@ -497,63 +485,6 @@ UnitBlueprint {
             TrackingRadius = 1.15,
             Turreted = false,
             WeaponCategory = 'Anti Navy',
-        },
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'UALWeapon',
-                    Cue = 'UAB4201_Anti_Missile',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-            Damage = 30,
-            DamageType = 'Normal',
-            DisplayName = 'Anti Missile Flare',
-            EffectiveRadius = 10,
-            FireTargetLayerCapsTable = {
-                Air = 'Air',
-            },
-            FiringTolerance = 360,
-            Flare = {
-                Category = 'MISSILE',
-                Radius = 15,
-            },
-            Label = 'Flare',
-            NotExclusive = true,
-            MaxRadius = 30,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 5,
-            ProjectileId = '/projectiles/AIMFlare01/AIMFlare01_proj.bp',
-            ProjectileLifetime = 4,
-            ProjectilesPerOnFire = 1,
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'Flare_L',
-                        'Flare_R',
-                    },
-                    RackBone = 'Flare_L',
-                },
-            },
-            RackFireTogether = false,
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 10,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RangeCategory = 'UWRC_Countermeasure',
-            RateOfFire = 0.32,
-            --TargetCheckInterval = 0.1,
-            TargetCheckInterval = 0.5,
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            TargetRestrictOnlyAllow = 'ANTIAIR MISSILE',--
-            TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
-            Turreted = false,
-            WeaponCategory = 'Defense',
         },
         {
             AboveWaterTargetsOnly = true,
