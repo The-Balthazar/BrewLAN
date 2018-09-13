@@ -103,6 +103,7 @@ Description['ssa0211'] = "<LOC Unit_Description_RND_010>Intermediate bomber airc
 
 --Tech 3 penetrator bombers
 Description['sra0314'] = "<LOC Unit_Description_RND_021>Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and anti-missile flares."
+Description['sea0314'] = "<LOC Unit_Description_RND_022>Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and anti-missile flares."
 
 --Tech 3 omni sensor arrays
 Description['sab3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
@@ -113,7 +114,7 @@ Description['ssb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of
 --Experimental mobile artillery: Retributor
 Description['srl0403'] = "<LOC Unit_Description_RND_016>Large mobile heavy artillery. Must be stationary and on land to fire the artillery. Consumes large amounts of energy per shot."
 
---Description['something'] = "<LOC Unit_Description_RND_022>"
+--Description['something'] = "<LOC Unit_Description_RND_023>"
 
 do
     for id, bp in __blueprints do

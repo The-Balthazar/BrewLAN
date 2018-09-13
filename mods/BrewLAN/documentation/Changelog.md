@@ -241,6 +241,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Tweaked the target priorities of the torpedoes.
     * Allowed it to wear hats.
 
+  ### 2018-09-12
+
+  * R&D: Created most of the model for Lancer.
+
+  ### 2018-09-13
+
+  * R&D: Finished the UEF Tech 3 Penetrator Bomber: Lancer.
+  * R&D: Increased the fuel of the Sanguine Tyrant.
+  * R&D: Defined a minimum range for the standoff missiles, so they hopefully miss less on attacks of opportunity.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.
