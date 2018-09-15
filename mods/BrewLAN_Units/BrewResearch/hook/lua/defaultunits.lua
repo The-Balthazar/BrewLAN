@@ -170,7 +170,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
                 end
             end
         end
-        if unitbuilding:GetFractionComplete() == 1 then
+        if unitbuilding.GetFractionComplete and unitbuilding:GetFractionComplete() == 1 then
             if EntityCategoryContains(categories.EXPERIMENTAL, unitbuilding) then
                 Buff.ApplyBuff(self, 'ResearchItemBuff5')
             elseif EntityCategoryContains(categories.TECH3, unitbuilding) then
@@ -186,7 +186,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
 
     UpgradingState = State(FactoryUnit.UpgradingState) {
         OnStopBuild = function(self, unitbuilding, order)
-            if unitbuilding:GetFractionComplete() == 1 and order == 'Upgrade' then
+            if unitbuilding.GetFractionComplete and unitbuilding:GetFractionComplete() == 1 and order == 'Upgrade' then
                 if self.Buffs.BuffTable.RESEARCH then
                     for buff, data in self.Buffs.BuffTable.RESEARCH do
                         if Buffs[buff] then --Ensure that the data structure is the same as we are expecting.

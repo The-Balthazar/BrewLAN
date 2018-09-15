@@ -251,6 +251,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Increased the fuel of the Sanguine Tyrant.
   * R&D: Defined a minimum range for the standoff missiles, so they hopefully miss less on attacks of opportunity.
 
+  ### 2018-09-15
+
+  * R&D: Fixed the tail UV mapping on the Lancer.
+  * R&D: Fixed Lancer's script crashing if not spawned in. (derp)
+  * R&D: Fixed a crash related to a race condition with GetFractionComplete on research centre items.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

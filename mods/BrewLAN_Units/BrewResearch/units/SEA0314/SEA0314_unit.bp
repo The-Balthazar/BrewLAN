@@ -279,7 +279,7 @@ UnitBlueprint {
         Level5 = 100,
     },
     Weapon = {
-        {
+        {   --Bombs
             AboveWaterTargetsOnly = true,
             Audio = {
                 Fire = Sound {

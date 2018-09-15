@@ -33,6 +33,7 @@ SEA0314 = Class(TAirUnit, MissileFlare) {
     end,
 
     RotateSet = function(self, rotors, angle)
+        if not rotors then return false end
         for i, rotor in rotors do
             rotor:SetGoal(angle)
             rotor:SetSpeed(45)
