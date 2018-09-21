@@ -257,6 +257,22 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Fixed Lancer's script crashing if not spawned in. (derp)
   * R&D: Fixed a crash related to a race condition with GetFractionComplete on research centre items.
 
+  ### 2018-09-17
+
+  * Spomeniki: Made the monuments more likely to be spawned on the high points of the map.
+  * R&D: Allowed Lancer to wear a hat.
+
+  ### 2018-09-18
+
+  * R&D: Added texture detail to the Lancer's wheels.
+  * Spomeniki: Added a minimum distance between each spomenik.
+  * Spomeniki: Made the 3 fists spomekik less likely, so it has the same chance as the others.
+
+  ### 2018-09-19
+
+  * Removed some old code from the drop-pod projectile code.
+  * Gave the Absolution an attack reticule.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

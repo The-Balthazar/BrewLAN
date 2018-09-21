@@ -9,11 +9,6 @@ do
                 path .. '_fist_c_prop.bp',
             },
             {
-                path .. '_fist_c_prop.bp',
-                path .. '_fist_b_prop.bp',
-                path .. '_fist_a_prop.bp',
-            },
-            {
                 path .. '_naroda_prop.bp',
             },
             {
@@ -24,23 +19,26 @@ do
             },
         }
         local mapsize = ScenarioInfo.size
+        local usedpositions = {}
         local groupcount = math.max(mapsize[1], mapsize[2]) / 128
         for i = 1, groupcount do
             local group = monuments[math.random(1, table.getn(monuments))]
-            local grouppos = RandWithinBounds(15)
+            local grouppos = FilteredRandWithinBounds(15, usedpositions)
             local groupangle = math.random(0,360)
             local start = math.random()
-            for i = 1, 2 do -- Try to not be in the water, but not very hard
+            for i = 1, 10 do -- Try to not be in the water, but not very hard
                 if GetTerrainHeight(unpack(grouppos)) < GetSurfaceHeight(unpack(grouppos)) then
-                    grouppos = RandWithinBounds(15)
+                    grouppos = FilteredRandWithinBounds(15, usedpositions)
                 end
             end
-            for i = 1, 2 do -- Try to be on higher ground, but not very hard
-                local newpos = RandWithinBounds(15)
+            for i = 1, 10 do -- Try to be on higher ground, but not very hard
+                local newpos = FilteredRandWithinBounds(15, usedpositions)
                 if GetTerrainHeight(unpack(newpos)) > GetTerrainHeight(unpack(grouppos)) then
                     grouppos = newpos
                 end
             end
+
+            table.insert(usedpositions, grouppos)
             for i, prop in group do
                 local groupsize = table.getn(group)
                 local itempos = {unpack(grouppos)}
@@ -72,6 +70,26 @@ do
     end
 
     function RandWithinBounds(bounds)
-        return {math.random((bounds or 15), ScenarioInfo.size[1] -(bounds or 15)), math.random((bounds or 15), ScenarioInfo.size[2] -(bounds or 15))}
+        return math.random((bounds or 15), ScenarioInfo.size[1] -(bounds or 15)), math.random((bounds or 15), ScenarioInfo.size[2] -(bounds or 15))
+    end
+
+    function FilteredRandWithinBounds(bounds, usedpositions)
+        local minDistanceSq = 400
+        local posX, posY = RandWithinBounds(bounds)
+
+        local distanceCheck = function(posX, posY, usedpositions, minDistanceSq)
+            for i, pos in usedpositions do
+                if VDist2Sq(pos[1], pos[2], posX, posY) < minDistanceSq then
+                    return false
+                end
+            end
+            return true
+        end
+
+        while not distanceCheck(posX, posY, usedpositions, minDistanceSq) do
+            posX, posY = RandWithinBounds(bounds)
+        end
+
+        return {posX, posY}
     end
 end

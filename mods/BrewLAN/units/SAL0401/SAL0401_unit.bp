@@ -54,6 +54,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
+        'SHOWATTACKRETICLE',
         'OVERLAYDIRECTFIRE',
         'OVERLAYCOUNTERMEASURE',
     },

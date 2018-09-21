@@ -16,23 +16,20 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
     OnImpact = function(self, TargetType, TargetEntity)
         if TargetType == 'Shield' then
             TArtilleryAntiMatterProjectile.OnImpact(self, TargetType, TargetEntity)
-            --Damage(self, {0,0,0}, TargetEntity, __blueprints[self.Data].Economy.BuildCostMass, 'Normal')
             if self.Data then
                 DamageArea(self, self:GetPosition(), self.DamageData.DamageRadius, __blueprints[self.Data[1]].Economy.BuildCostMass * (self.Data[2] or 1) , 'Normal', self.DamageData.DamageFriendly)
             end
-            --self.DropUnit(self,true)
         else
             TArtilleryAntiMatterProjectile.OnImpact(self, TargetType, TargetEntity)
-            self.DropUnit(self)
+            self:DropUnit()
         end
     end,
 
-    DropUnit = function(self, hitshield)
+    DropUnit = function(self)
         local pos = self:GetPosition()
         if self.Data[1] then
             local DroppedUnit = CreateUnitHPR(self.Data[1],self:GetArmy(),pos[1], pos[2], pos[3],0, math.random(0,360), 0)
-            if
-            not hitshield and
+            if 
             (
                 -- If we are on land                           and they say land                                             or the bitwise string is odd
                 DroppedUnit:GetCurrentLayer() == "Land" and (__blueprints[self.Data[1]].Physics.BuildOnLayerCaps == "Land" or math.mod(tonumber(__blueprints[self.Data[1]].Physics.BuildOnLayerCaps), 2) == 1)
@@ -56,10 +53,6 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
                                     Add = 0,
                                     Mult = self.Data[2],
                                 },
-                                --Health = {   --The 'Health' buff is both unnessessary and bugged
-                                --    Add = 0,
-                                --    Mult = self.Data[2],
-                                --},
                             },
                         }
                     end
