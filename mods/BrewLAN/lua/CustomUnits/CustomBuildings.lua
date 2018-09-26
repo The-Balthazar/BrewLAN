@@ -1,80 +1,5 @@
 UnitList = {
 --------------------------------------------------------------------------------
--- Gantry things
---------------------------------------------------------------------------------
-T1LandFactory = {
-    UEF = 		{'seb0401', 40},
-    Aeon = 		{'sab0401', 10},
-    Cybran = 	{'srb0401', 40},
-    Seraphim = 	{'ssb0401', 10},
-},
-T2LandFactory = {
-    UEF =		{'seb0401', 50},
-    Aeon =		{'sab0401', 10},
-    Cybran =	{'srb0401', 50},
-    Seraphim = 	{'ssb0401', 10},
-},
-T3LandFactory = {
-    UEF =		{'seb0401', 60},
-    Aeon =		{'sab0401', 10},
-    Cybran =	{'srb0401', 60},
-    Seraphim = 	{'ssb0401', 10},
-},
-T1AirFactory = {
-    UEF =		{'seb0401', 40},
-    Aeon =		{'sab0401', 40},
-    Cybran =	{'srb0401', 10},
-    Seraphim = 	{'ssb0401', 10},
-},
-T2AirFactory = {
-    UEF =		{'seb0401', 50},
-    Aeon =		{'sab0401', 50},
-    Cybran =	{'srb0401', 10},
-    Seraphim = 	{'ssb0401', 10},
-},
-T3AirFactory = {
-    UEF =		{'seb0401', 60},
-    Aeon =		{'sab0401', 60},
-    Cybran =	{'srb0401', 10},
-    Seraphim = 	{'ssb0401', 10},
-},
-T1SeaFactory = {
-    UEF =		{'seb0401', 40},
-    Aeon =		{'sab0401', 10},
-    Cybran =	{'srb0401', 10},
-    Seraphim = 	{'ssb0401', 90},
-},
-T2SeaFactory = {
-    UEF =		{'seb0401', 50},
-    Aeon =		{'sab0401', 10},
-    Cybran =	{'srb0401', 10},
-    Seraphim = 	{'ssb0401', 95},
-},
-T3SeaFactory = {
-    UEF =		{'seb0401', 60},
-    Aeon =		{'sab0401', 10},
-    Cybran =	{'srb0401', 10},
-    Seraphim = 	{'ssb0401', 100},
-},
-T3QuantumGate = {
-    UEF =		{'seb0401', 60},
-    Aeon =		{'sab0401', 60},
-    Cybran =	{'srb0401', 60},
-    Seraphim = 	{'ssb0401', 60},
-},
---------------------------------------------------------------------------------
--- Shields
---------------------------------------------------------------------------------
-T2ShieldDefense = {
-    Cybran =	{'urb4205', 75}, #ED3
-    --UEF =		{'seb4102', 10},
-    --Aeon =		{'sab4102', 10},
-    --Seraphim =	{'ssb4102', 10},
-},
-T3ShieldDefense = {
-    Cybran =	{'srb4401', 50}, #Iron Curtain
-},
---------------------------------------------------------------------------------
 -- Tech 3 Buildings
 --------------------------------------------------------------------------------
 T3AADefense = {
@@ -170,12 +95,6 @@ T3LandArtillery = {
 },
 T4LandExperimental1 = {
     Seraphim =  {'ssl0403', 3},
-},
-T4AirExperimental1 = {
-    UEF = 		{'seb0401', 100},
-    Aeon =		{'sab0401', 100},
-    Cybran = 	{'srb0401', 100},
-    Seraphim = 	{'ssb0401', 100},
 },
 T3AirTransport = {
     Cybran =    {'srl0401', 20},

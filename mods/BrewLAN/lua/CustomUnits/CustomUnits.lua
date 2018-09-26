@@ -30,20 +30,20 @@ T4Artillery =                {Aeon = {'xab2307', 100},Cybran = {'srb2401', 100},
 -- Absolution
 --------------------------------------------------------------------------------
 T4LandExperimental1 = {
-    Aeon = {'sal0401', 100},
-    UEF = {'seb0401', 100},
-    Cybran = {'srb0401', 100},
-    Seraphim = {'srb0401', 50},
+    Aeon = {'sal0401', 50},
+    --UEF = {'seb0401', 100},
+    --Cybran = {'srb0401', 100},
+    Seraphim = {'srb0403', 50},
 },
 T4LandExperimental2 = {
-    Aeon = {'sal0401', 100},
-    UEF = {'seb0401', 100},
-    Cybran = {'srb0401', 100},
-    Seraphim = {'srb0401', 50},
+    Aeon = {'sal0401', 50},
+    --UEF = {'seb0401', 100},
+    --Cybran = {'srb0401', 100},
+    Seraphim = {'srl0403', 50},
 },
 T4SeaExperimental1 =  {
     Aeon = {'sal0401', 25},
-    Seraphim = {'ssl0401', 100},
+    --Seraphim = {'ssl0401', 100},
 },
 --------------------------------------------------------------------------------
 -- Centurion
@@ -62,6 +62,7 @@ T3AirGunship = {
 },
 T3AirBomber = {
     Seraphim = {'ssa0305', 20},
+    Aeon = {'saa0211', 30},
 },
 T3TorpedoBomber = {
     Cybran = {'sra0307', 100},
@@ -73,10 +74,10 @@ T2TorpedoBomber = {
     UEF = {'sea0307', 33},
     Seraphim = {'ssa0307', 33},
 },
-T3AirScout ={
+T3AirScout = {
     Aeon = {'saa0201', 10},
 },
-T3AirFighter ={
+T3AirFighter = {
     Aeon = {'saa0201', 10},
 },
 --------------------------------------------------------------------------------
@@ -119,7 +120,6 @@ T3LandAA = {
 --------------------------------------------------------------------------------
 T1AirBomber =     {Aeon = {'saa0211', 40},},
 T2FighterBomber = {Aeon = {'saa0211', 30},},
-T3AirBomber =     {Aeon = {'saa0211', 30},},
 --------------------------------------------------------------------------------
 -- T1 Aircraft
 --------------------------------------------------------------------------------
@@ -136,12 +136,6 @@ T1AirTransport = {
 --------------------------------------------------------------------------------
 T2RadarJammer = {
     Cybran =	{'srb4313', 45},
-},
-T3ShieldDefense = {
-    Cybran =	{'urb4206', 100}, #ED4
-},
-T2ShieldDefense = {
-    Cybran =	{'urb4205', 50}, #ED3
 },
 T2Artillery = {
     UEF =		{'seb2401', 10},

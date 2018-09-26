@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------
+-- Experimental Factories
+--------------------------------------------------------------------------------
+AINames = {
+    seb0401 = {
+        'Tentacles',
+        'Fatboys \'R\' Us',
+        'Mom\'s Friendly Robot Company',
+        'MomCorp',
+        'The Lab',
+        'Craneyard',
+        'Foundry',
+        'Octavius',
+        'Legion HQ',
+        'Forge',
+        'Factory',
+        'Legion Academy',
+        'Robots \'R\' Us',
+        'La Creperie',
+    },
+    sab0401 = {
+        'Area 51',
+        'CZARs \'R\' Us',
+        'Dome',
+        'Gas Tower',
+        'Smith\'s Bane',
+        'Foundry',
+        'Octavius',
+        'Donut Factory',
+        'Forge',
+        'Factory',
+        'Land Hog',
+        'Donuts \'R\' Us',
+        'La Creperie',
+    },
+    srb0401 = {
+        'Monkeys \'R\' Us',
+        'Spike',
+        'Spiderplant',
+        'Foundry',
+        'Crabplant',
+        'Crab Factory',
+        'Forge',
+        'Factory',
+        'Land Hog',
+        'Crabs \'R\' Us',
+        'Nest',
+        'Web',
+    },
+    ssb0401 = {
+        'Subs \'R\' Us',
+        'Factory',
+        'A\'wHat?',
+        'Forge',
+        'Hexavio',
+    }
+}

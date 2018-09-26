@@ -273,6 +273,38 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed some old code from the drop-pod projectile code.
   * Gave the Absolution an attack reticule.
 
+  ### 2018-09-21
+
+  * Caffe Corretto: Added SACUs to the list of units the Tesla Coil can't stun.
+  * Caffe Corretto: Tesla Coil now does a death discharge rather than a death EMP that didn't work.
+  * Caffe Corretto: Power Adjacency now increases the maintenance consumption and damage of the Tesla Coil.
+  * Caffe Corretto: Created a distance model for the Tesla Coil.
+
+  ### 2018-09-23
+
+  * Added real AI support for building Gantries. Regular and Sorian.
+  * Bubble Tea: Removed the several categories from the drones of the lattice shield to prevent the AI from giving them orders.
+  * Bubble Tea: Changed the threat values of the Seraphim shield so it's split between the drones.
+  * Bubble Tea: Defined an icon override for the Seraphim shield drones with EIO active.
+  * GantryUtils no longer causes an issue without Sorian AI active.
+  * Fixed a case of AI unit data overwriting.
+
+  ### 2018-09-25
+
+  * Allowed vanilla non-cheating AI to build the BrewLAN optics buildings.
+  * Cybran vanilla and Sorian AI will now build the ED3 and ED4 directly.
+  * Vanilla and Sorian AI will now specifically build shields and engineering stations around Gantries.
+  * Removed the old UEF Gantry built AI engineer control scripts.
+  * Cybran vanilla and Sorian AI will now specifically build the Iron Curtain.
+  * Seraphim vanilla and Sorian AI will now build engineering stations.
+  * Allowed the Aeon vanillla and Sorian AI to upgrade T2 shields to T3 shields.
+
+  ### 2018-09-26
+
+  * Allowed the vanilla and Sorian AI to build and upgrade tech 1 shields.
+  * Bubble Tea: Vanilla and Sorian AI now specifically build the shields, instead of occasionally building them instead of T3 shields.
+  * Removed the category 'ENGINEER' from the Hives.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

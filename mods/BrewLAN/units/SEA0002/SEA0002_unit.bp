@@ -53,6 +53,7 @@ UnitBlueprint {
         'AIR',
         'HIGHALTAIR',
         'TECH3',
+        'OPTICS',
         'INTELLIGENCE',
         'SATELLITE',
         'SATELLITEWITHNOPARENTALSUPERVISION',

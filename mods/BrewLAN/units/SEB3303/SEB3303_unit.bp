@@ -19,7 +19,7 @@ UnitBlueprint {
         'FACTORY',
         'RALLYPOINT',
         'INTELLIGENCE',
-        --'ORBITALSYSTEM',
+        'OPTICS',
         'SATELLITEUPLINK',
         'SIZE16',
         'VISIBLETORECON',

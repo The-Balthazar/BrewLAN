@@ -87,10 +87,7 @@ function AIStartOrders(self)
         self.Time = GetGameTimeSeconds()
         BuildModeChange(self)
         aiBrain:BuildUnit(self, ChooseExpimental(self), 1)
-        --This probably causes a crash without sorian ai.
-        --Probably fine because regular AI can't build this
-        --But it could happen with another custom AI.
-        local AINames = import('/lua/AI/sorianlang.lua').AINames
+        local AINames = import('AI/AINames.lua').AINames
         if AINames[uID] then
             local num = Random(1, table.getn(AINames[uID]))
             self:SetCustomName(AINames[uID][num])

@@ -205,7 +205,9 @@ function BrewLANCategoryChanges(all_bps)
         xab3301 = {'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
         xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager
         xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', },--Kennel
-        xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','TECH3', r = 'TECH2' },--Hive
+        xrb0104 = {r = 'ENGINEER'},
+        xrb0204 = {r = 'ENGINEER'},
+        xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','TECH3', r = {'TECH2', 'ENGINEER'} },--Hive
         --Crab eggs.
         xrl0004 = {'TECH3', r = 'TECH2'},
 

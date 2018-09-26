@@ -28,7 +28,7 @@ function ShouldWeLogThis(id, bp)
         'url0203',
     }
     return units and table.find(units, id)]]
-    return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'PRODUCTBREWLAN') or table.find(bp.Categories, 'PRODUCTBREWLANTURRETS') or table.find(bp.Categories, 'PRODUCTBREWLANSHIELDS') or table.find(bp.Categories, 'PRODUCTBREWLANRND') or table.find(bp.Categories, 'PRODUCTSPOMENIKI'))
+    return --[[table.find(bp.Categories, 'SELECTABLE') and]] (table.find(bp.Categories, 'PRODUCTBREWLAN') or table.find(bp.Categories, 'PRODUCTBREWLANTURRETS') or table.find(bp.Categories, 'PRODUCTBREWLANSHIELDS') or table.find(bp.Categories, 'PRODUCTBREWLANRND') or table.find(bp.Categories, 'PRODUCTSPOMENIKI'))
     --return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3') or table.find(bp.Categories, 'EXPERIMENTAL') )
 end
 
