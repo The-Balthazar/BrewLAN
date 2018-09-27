@@ -304,6 +304,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Allowed the vanilla and Sorian AI to build and upgrade tech 1 shields.
   * Bubble Tea: Vanilla and Sorian AI now specifically build the shields, instead of occasionally building them instead of T3 shields.
   * Removed the category 'ENGINEER' from the Hives.
+  * Made the railgun more reliable.
+  * Fixed some duplicate platoon names.
+  * Simplified the blueprints and changed the target priorities and categories of a number of units.
+  * Walls no longer get rebuild bonus on the other factions equivalents.
+  * Increased the rate of fire of Ivan by 50%.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

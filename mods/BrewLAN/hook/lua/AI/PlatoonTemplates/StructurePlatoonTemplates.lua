@@ -6,11 +6,14 @@ PlatoonTemplate {
             { 'seb4102', 0, 1, 'support', 'None' }
         },
         Aeon = {
-            { 'sab4102', 0, 1, 'attack', 'None' }
+            { 'sab4102', 0, 1, 'support', 'None' }
         },
         Seraphim = {
-            { 'ssb4102', 0, 1, 'attack', 'None' }
+            { 'ssb4102', 0, 1, 'support', 'None' }
         },
+    },
+    GlobalSquads = {
+        { categories.seb4102 + categories.sab4102 + categories.ssb4102, 0, 1, 'support', 'None' }
     }
 }
 
@@ -21,5 +24,8 @@ PlatoonTemplate {
         Aeon = {
             { 'uab4202', 0, 1, 'support', 'None' }
         },
+    },
+    GlobalSquads = {
+        { categories.uab4202, 0, 1, 'support', 'None' }
     }
 }

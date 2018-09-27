@@ -86,8 +86,7 @@ UnitBlueprint {
         'HIGHALTAIR',
         'TECH2',
         'INTELLIGENCE',
-        'RADAR',
-        'SONAR',
+        'SCOUT',
         'COUNTERINTELLIGENCE',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -99,17 +98,13 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0.1,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 360,
         MaxHealth = 360,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sra0201_desc>Recon Plane',
     Display = {
         Abilities = {
-            --'<LOC ability_personalstealth>Personal Stealth',
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
             '<LOC ability_stealthfield>Stealth Field',

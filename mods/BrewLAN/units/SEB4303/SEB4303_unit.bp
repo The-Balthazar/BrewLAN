@@ -32,6 +32,7 @@ UnitBlueprint {
         'DEFENSE',
         'TECH3',
         'SHIELD',
+        'ANTIARTILLERY',
         'DRAGBUILD',
         'SIZE12',
         'VISIBLETORECON',
@@ -40,7 +41,6 @@ UnitBlueprint {
         'SORTDEFENSE',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 309,
         Health = 1250,
@@ -61,8 +61,6 @@ UnitBlueprint {
             ShieldSize = 70,
             ShieldVerticalOffset = 0,
         },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC seb4303_desc>Artillery Defense Grid',
     Display = {

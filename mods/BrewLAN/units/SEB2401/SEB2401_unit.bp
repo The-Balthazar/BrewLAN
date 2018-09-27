@@ -193,8 +193,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            --AutoInitiateAttackCommand = true,
-            BallisticArc = 'RULEUBA_None',
+            BallisticArc = 'RULEUBA_LowArc',
 
             CameraShakeDuration = 0.1,
             CameraShakeMax = 3,
@@ -206,7 +205,7 @@ UnitBlueprint {
             DamageRadius = 5,
             DamageType = 'Railgun',
 
-            DisplayName = 'Maelstrom Cannon',
+            DisplayName = 'Excal Railgun',
             EnergyDrainPerSecond = 10000,
             EnergyRequired = 10000,
             FireTargetLayerCapsTable = {
@@ -222,12 +221,9 @@ UnitBlueprint {
             MuzzleChargeDelay = 0,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 3000,
+            MuzzleVelocity = 1000,
             NeedPrep = true,
             ProjectileId = '/mods/brewlan/projectiles/TDFRailGun/TDFRailGun_proj.bp',
-
-            --ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
-            ProjectilesPerOnFire = 1,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -266,10 +262,7 @@ UnitBlueprint {
             TurretYawRange = 180,
             TurretYawSpeed = 8,
             Turreted = true,
-            --UseFiringSolutionInsteadOfAimBone = true,
             WeaponCategory = 'Direct Fire',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
         {
             Damage = 4000,

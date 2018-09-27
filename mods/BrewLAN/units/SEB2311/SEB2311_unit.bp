@@ -1,6 +1,5 @@
 UnitBlueprint {
     AI = {
-#        AttackAngle = 60,
         TargetBones = {
             'SEB2311',
             'Front_Turret02',
@@ -41,7 +40,7 @@ UnitBlueprint {
         'STRUCTURE',
         'DEFENSE',
         'TECH3',
-        'DIRECTFIRE',
+        'INDIRECTFIRE',
         'DRAGBUILD',
         'SIZE4',
         'VISIBLETORECON',
@@ -50,15 +49,12 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'SORTDEFENSE',
     },
-    CollisionOffsetY = 0,
     Defense = {
-        AirThreatLevel = 50,
         ArmorType = 'Structure',
         EconomyThreatLevel = 98,
         Health = 16875,
         MaxHealth = 16875,
         RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 5,
     },
     Description = '<LOC sbui2311_desc>Anti-Armor Point Defense',
@@ -91,12 +87,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 6.4,
                 Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 6.4,
             },
@@ -104,12 +95,10 @@ UnitBlueprint {
         UniformScale = 0.13,
     },
     Economy = {
-        BuildCostEnergy = 54000*.55,
-        BuildCostMass = 9000*.3333334,
-        BuildTime = 18000*.15,
-        RebuildBonusIds = {
-            'seb2311',
-        },
+        BuildCostEnergy = 29700,
+        BuildCostMass = 3000,
+        BuildTime = 2700,
+        RebuildBonusIds = {'seb2311'},
     },
     Footprint = {
         SizeX = 2,
@@ -234,7 +223,6 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = '/projectiles/TDFGauss03/TDFGauss03_proj.bp',
-            ProjectilesPerOnFire = 3,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -271,14 +259,12 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = 0.05,
             SlavedToBody = false,
-  #          SlavedToBodyArcRange = 135,
             TargetCheckInterval = 3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'EXPERIMENTAL MOBILE',
-                'TECH3 MOBILE',
-                'TECH2 MOBILE',
-                'TECH1 MOBILE',
+                'EXPERIMENTAL',
+                'BATTLESHIP',
+                'MOBILE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

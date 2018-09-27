@@ -148,9 +148,7 @@ UnitBlueprint {
         BuildCostMass = 20,
         BuildTime = 40,
         MaintenanceConsumptionPerSecondEnergy = 5,
-        RebuildBonusIds = {
-            'sab5301',
-        },
+        RebuildBonusIds = {'sab5301'},
     },
     Footprint = {
         SizeX = 2,

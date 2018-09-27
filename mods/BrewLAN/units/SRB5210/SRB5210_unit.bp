@@ -41,9 +41,6 @@ UnitBlueprint {
         'SORTDEFENSE',
         'MEDIUMWALL',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
         Health = 20000,
@@ -88,31 +85,6 @@ UnitBlueprint {
                     conflict = nil,
                     beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
                 },
-                --[[Tower = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },
-                North_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'North',
-                },
-                South_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'South',
-                },
-                East_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'East',
-                },
-                West_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'West',
-                },--]]
             },
         },
         DamageEffects = {
@@ -132,14 +104,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 250,
-                    ShaderName = 'Insect',
-                    --MeshName = '/mods/BrewLAN/units/srb5312/srb5312_lod0.scm',
-                    --AlbedoName = '/units/XRC8001/XRC8001_albedo.dds',
-                    --NormalsName = '/units/XRC8001/XRC8001_normalsts.dds',
-                    --SpecularName = '/units/XRC8001/XRC8001_specteam.dds',
-                },
+                {LODCutoff = 250, ShaderName = 'Insect'},
             },
         },
         PlaceholderMeshName = 'UXB0000',
@@ -150,12 +115,7 @@ UnitBlueprint {
         BuildCostEnergy = 10*5,
         BuildCostMass = 2*5,
         BuildTime = 10,
-        RebuildBonusIds = {
-            'sab5210',
-            'seb5210',
-            'srb5210',
-            'ssb5210',
-        },
+        RebuildBonusIds = {'srb5210'},
     },
     Footprint = {
         SizeX = 2,

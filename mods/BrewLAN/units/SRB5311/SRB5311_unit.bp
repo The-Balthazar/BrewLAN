@@ -42,9 +42,6 @@ UnitBlueprint {
         'HEAVYGATEOPEN',
         'WALL',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
         Health = 40000,
@@ -150,12 +147,7 @@ UnitBlueprint {
                 Length = 12.8,
                 Width = 12.8,
                 Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
             },
         },
@@ -165,12 +157,7 @@ UnitBlueprint {
         BuildCostEnergy = 750,
         BuildCostMass = 250,
         BuildTime = 50,
-        RebuildBonusIds = {
-            'sab5311',
-            'seb5311',
-            'srb5311',
-            'ssb5311',
-        },
+        RebuildBonusIds = {'srb5311'},
     },
     Footprint = {
         SizeX = 1,

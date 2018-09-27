@@ -37,7 +37,7 @@ function ChangeBaseTemplate(group)
         ChallengeMain = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },
@@ -62,7 +62,7 @@ function ChangeBaseTemplate(group)
         RushMainAir = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },
@@ -75,7 +75,7 @@ function ChangeBaseTemplate(group)
         RushMainBalanced = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },
@@ -88,7 +88,7 @@ function ChangeBaseTemplate(group)
         RushMainLand = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },
@@ -101,7 +101,7 @@ function ChangeBaseTemplate(group)
         RushMainNaval = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },
@@ -128,7 +128,7 @@ function ChangeBaseTemplate(group)
         TechMain = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },
@@ -142,7 +142,7 @@ function ChangeBaseTemplate(group)
         TurtleMain = {
             Builders = {
                 'GantrySupport',
-                'T1Shields',
+                'T1ShieldsBuilder',
                 'BrewLANShieldUpgrades',
                 'CybranT4Shields',
             },

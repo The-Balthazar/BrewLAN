@@ -46,9 +46,6 @@ UnitBlueprint {
         'SORTDEFENSE',
         'MEDIUMWALL',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
         Health = 20000,
@@ -111,35 +108,13 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        --[[Tarmacs = {
-            {
-                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_albedo.dds',
-                DeathLifetime = 300,
-                FadeOut = 150,
-                Length = 6.4,
-                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
-                RemoveWhenDead = false,
-                Width = 6.4,
-            },
-        }, ]]--
         UniformScale = 0.05*.66666666666666666,
     },
     Economy = {
         BuildCostEnergy = 10*5,
         BuildCostMass = 2*5,
         BuildTime = 10,
-        RebuildBonusIds = {
-            'sab5210',
-            'seb5210',
-            'srb5210',
-            'ssb5210',
-        },
+        RebuildBonusIds = {'ssb5210'},
     },
     Footprint = {
         SizeX = 2,

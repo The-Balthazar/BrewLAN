@@ -1,9 +1,9 @@
 BuilderGroup {
-    BuilderGroupName = 'T1Shields',
+    BuilderGroupName = 'T1ShieldsBuilder',
     BuildersType = 'EngineerBuilder',
     Builder {
-        BuilderName = 'T1 Shield',
-        PlatoonTemplate = 'T1EngineerBuilder',
+        BuilderName = 'T1 Shield Builder',
+        PlatoonTemplate = 'EngineerBuilder',
         Priority = 950,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 7, categories.SHIELD * categories.STRUCTURE}},
@@ -67,7 +67,7 @@ BuilderGroup {
     BuilderGroupName = 'BrewLANShieldUpgrades',
     BuildersType = 'PlatoonFormBuilder',
     Builder {
-        BuilderName = 'T1 Shield',
+        BuilderName = 'T1 Shield Upgrade',
         PlatoonTemplate = 'T1Shield',
         Priority = 5,
         InstanceCount = 5,
@@ -80,7 +80,7 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'T2 Shield Aeon',
+        BuilderName = 'T2 Shield Aeon Upgrade',
         PlatoonTemplate = 'T2ShieldAeon',
         Priority = 5,
         InstanceCount = 2,

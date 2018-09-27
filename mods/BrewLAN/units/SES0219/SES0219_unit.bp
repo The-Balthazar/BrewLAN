@@ -59,13 +59,8 @@ UnitBlueprint {
         'MOBILE',
         'NAVAL',
         'TECH2',
-        'INTELLIGENCE',
-        'COUNTERINTELLIGENCE',
-        'RADAR',
-        'SONAR',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'FRIGATE',
         'OVERLAYANTIAIR',
         'OVERLAYCOUNTERINTEL',
         'OVERLAYRADAR',
@@ -78,9 +73,6 @@ UnitBlueprint {
         EconomyThreatLevel = 121,
         Health = 3025,
         MaxHealth = 3025,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0319_desc>Field Engineering Ship',
     Display = {
@@ -109,9 +101,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'UES0103',
-                        },
+                        Bones = {0},
                         Type = 'SeaIdle01',
                     },
                 },
@@ -120,10 +110,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Unit',
-                },
+                {LODCutoff = 140, ShaderName = 'Unit'},
                 {
                     LODCutoff = 250,
                     ShaderName = 'Unit',
@@ -170,7 +157,6 @@ UnitBlueprint {
         BuildCostMass = 750,
         BuildTime = 1975,
         BuildRate = 30,
-        --MaintenanceConsumptionPerSecondEnergy = 5,
         BuildableCategory = {
             'BUILTBYTIER2ENGINEER NAVAL UEF',
             'BUILTBYTIER2ENGINEER ANTINAVY UEF',
@@ -345,12 +331,8 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'AIR',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

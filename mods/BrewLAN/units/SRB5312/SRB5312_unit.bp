@@ -39,9 +39,6 @@ UnitBlueprint {
         'SORTDEFENSE',
         'HEAVYWALL',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
         Health = 40000,
@@ -157,46 +154,18 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        Tarmacs = {
-            {
-                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_albedo.dds',
-                DeathLifetime = 300,
-                FadeOut = 150,
-                Length = 12.8,
-                Width = 12.8,
-                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
-                RemoveWhenDead = false,
-            },
-        },
         UniformScale = 0.05,
     },
     Economy = {
         BuildCostEnergy = 500,
         BuildCostMass = 250,
         BuildTime = 50,
-        RebuildBonusIds = {
-            'sab5310',
-            'seb5310',
-            'srb5310',
-            'ssb5310',
-        },
     },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
     General = {
-        BuildBones = {
-            BuildEffectBones = {
-                0,
-            },
-        },
         CapCost = 0.075,
         Category = 'Defense',
         Classification = 'RULEUC_Factory',

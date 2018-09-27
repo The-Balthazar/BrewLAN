@@ -93,10 +93,8 @@ UnitBlueprint {
         'MOBILE',
         'NAVAL',
         'TECH3',
-        'ANTISUB',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'DESTROYER',
         'OVERLAYANTIAIR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
@@ -142,9 +140,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'UES0201',
-                        },
+                        Bones = {0},
                         Offset = {
                             0,
                             0,
@@ -160,10 +156,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Unit',
-                },
+                {LODCutoff = 140, ShaderName = 'Unit'},
                 {
                     LODCutoff = 300,
                     ShaderName = 'Unit',
@@ -224,7 +217,6 @@ UnitBlueprint {
             'BUILTBYTIER3FIELD SHIELD UEF',
             'BUILTBYTIER3FIELD MINE UEF',
         },
-        --MaintenanceConsumptionPerSecondEnergy = 15,
         StorageEnergy = 500,
         StorageMass = 50,
     },
@@ -385,12 +377,9 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'AIR',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
@@ -408,8 +397,6 @@ UnitBlueprint {
             TurretYawSpeed = 180,
             Turreted = true,
             WeaponCategory = 'Anti Air',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
         {
             Audio = {
@@ -499,11 +486,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TrackingRadius = 1.15,
-            TurretDualManipulators = false,
             Turreted = false,
             WeaponCategory = 'Anti Navy',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
         {
             Audio = {
@@ -517,9 +501,7 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 2,
             DamageType = 'Normal',
-            DepthCharge = {
-                Radius = 9,
-            },
+            DepthCharge = {Radius = 9},
             DisplayName = 'Smart Charge AntiTorpedo',
             FireTargetLayerCapsTable = {
                 Water = 'Sub|Water|Seabed',
@@ -578,7 +560,6 @@ UnitBlueprint {
                 },
             },
             RackFireTogether = false,
-            RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
@@ -591,17 +572,8 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
             TrackingRadius = 1.5,
-            TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 0,
-            TurretPitchSpeed = 0,
-            TurretYaw = 0,
-            TurretYawRange = 0,
-            TurretYawSpeed = 0,
             Turreted = false,
             WeaponCategory = 'Defense',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
     },
 }
