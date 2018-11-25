@@ -38,7 +38,7 @@ UnitBlueprint {
     CollisionOffsetY = 0,
     CollisionOffsetZ = 0,
     Defense = {
-    ArmorType = 'Structure',
+        ArmorType = 'Structure',
         EconomyThreatLevel = 9,
         Health = 500,
         MaxHealth = 500,
@@ -68,12 +68,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar8x_seraphim_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -81,9 +76,9 @@ UnitBlueprint {
         UniformScale = 0.05,
     },
     Economy = {
-        BuildCostEnergy = 4000*3,
-        BuildCostMass = 320*2,
-        BuildTime = 400*2,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 640,
+        BuildTime = 800,
         MaintenanceConsumptionPerSecondEnergy = 500,
         RebuildBonusIds = {
             'ssb4317',

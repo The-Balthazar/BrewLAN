@@ -297,7 +297,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed the old UEF Gantry built AI engineer control scripts.
   * Cybran vanilla and Sorian AI will now specifically build the Iron Curtain.
   * Seraphim vanilla and Sorian AI will now build engineering stations.
-  * Allowed the Aeon vanillla and Sorian AI to upgrade T2 shields to T3 shields.
+  * Allowed the Aeon vanilla and Sorian AI to upgrade T2 shields to T3 shields.
 
   ### 2018-09-26
 
@@ -309,6 +309,92 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Simplified the blueprints and changed the target priorities and categories of a number of units.
   * Walls no longer get rebuild bonus on the other factions equivalents.
   * Increased the rate of fire of Ivan by 50%.
+
+  ### 2018-09-27
+
+  * R&D: Lowered the energy cost of Penetrator Bomber research by 80%.
+  * R&D: Lowered the build time of the Penetrator Bombers by 25%.
+
+  ### 2018-09-28
+
+  * R&D: Started the Seraphim Penetrator Bomber.
+
+  ### 2018-09-29
+
+  * R&D: Finished the Seraphim Penetrator Bomber.
+  * Re-added the weapon category to the Ivan.
+  * EIO: Changed indirect fire weapon calculation so it works if they have no weapon category.
+  * EIO: Changed anti-navy and anti-air weapon calculations so they work if they have no weapon category.
+  * EIO: Created all the remaining missing icon variations. All very unlikely, some potentially impossible.
+  * Updated the readme file.
+
+  ### 2018-09-30
+
+  * EIO: Added an extra icon line for nuke weapon experimentals.
+  * EIO: Created a double size icon range. Patreon exclusive until full release.
+
+  ### 2018-10-02
+
+  * Renamed BrewUI and the Gantry Hax mods.
+  * Created a new module to house the BrewLAN AI functions.
+  * Moved the majority of the AI functions from BrewLAN to BrewLAN: AI.
+  * Removed unnecessary categories from more units.
+  * Gave the Abyss Crawler water vision.
+  * Gave water vision to the Seraphim Gantry.
+  * Mines will no longer leave wreckages.
+  * Seraphim tech 3 point defence is now categorised as size 4 not size 8.
+  * Gave the Seraphim field engineers water vision.
+
+  ### 2018-10-03
+
+  * Aeon, Cybran and Seraphim Tech 1 torpedo bombers no longer count as bombers for AI.
+  * Gave the Aeon tech 1 gunship a distance model.
+  * Aeon tech 1 gunship now counts as tech 1 for air staging.
+  * Removed an errant extra turret on the model of the Aeon tech 1 gunship left over from the old model.
+  * Defined forced build spin for the Lancer so it doesn't clip with the factory.
+  * Defined forced build spin for the Retributor and Abyss Crawler so they can't be in he Arthrolab sideways.
+  * Fixed the Abyss Crawler.
+
+  ### 2018-10-06
+
+  * Aeon shielded mass extractor now disables it's shield when it disables production.
+
+  ### 2018-10-18
+
+  * R&D: Created the model and texture for the Aeon penetrator bomber.
+
+  ### 2018-10-19
+
+  * R&D: Added the Shrieker: Aeon Penetrator Bomber.
+  * R&D: Improved the explosion on the missiles on the Sanguine Tyrant.
+
+  ### 2018-10-20
+
+  * R&D: Penetrator flares will now only deploy while airborne.
+
+  ### 2018-10-29
+
+  * R&D: Started work on the Cybran Penetration Fighter: Twilight Patron.
+
+  ### 2018-11-01
+
+  * R&D: Increased the flight height of the Twilight Patron so that bombers stop accidentally killing them.
+  * R&D: Increased the texture resolution of the Twilight Patron.
+  * R&D: Twilight Patron now cloaks while landed.
+
+  ### 2018-11-04
+
+  * Fixed my hooks of the Sorian AI platoons not correctly returning vanilla experimental behaviours.
+
+  ### 2018-11-15
+
+  * Stolen Tech: Changed the spawn menu filters so it doesn't rely so heavily on blueprint ID to filter units.
+
+  ### 2018-11-25
+
+  * AI: Refactored platoon.lua to use the original function first, whatever that may be.
+  * AI: Added data for some FAF specific base templates.
+  * Fixed a UI issue preventing the Stargate and Seraphim optics from working with FAF Nomads enabled.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

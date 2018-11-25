@@ -50,7 +50,6 @@ UnitBlueprint {
         'RECLAIM',
         'FIELDENGINEER',
         'CAPTURE',
-        'DIRECTFIRE',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -187,6 +186,7 @@ UnitBlueprint {
     Intel = {
         RadarRadius = 30,
         VisionRadius = 20,
+        WaterVisionRadius = 20,
         SonarStealth = true,
     },
     Interface = {
@@ -295,10 +295,8 @@ UnitBlueprint {
             TargetCheckInterval = 0.75,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'TECH1 MOBILE',
-                'TECH2 MOBILE',
-                'TECH3 MOBILE',
-                'STRUCTURE DEFENSE',
+                'MOBILE',
+                'DEFENSE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

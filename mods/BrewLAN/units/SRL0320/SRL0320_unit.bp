@@ -80,32 +80,17 @@ UnitBlueprint {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_personalstealth>Personal Stealth',
         },
-        AnimationOpen = '/units/URL0304/URL0304_Aactivate.sca',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 100,
-                    Scrolling = true,
-                    ShaderName = 'Insect',
-                },
-                {
-                    LODCutoff = 300,
-                    Scrolling = true,
-                    ShaderName = 'Insect',
-                },
+                {LODCutoff = 100, Scrolling = true, ShaderName = 'Insect'},
+                {LODCutoff = 300, Scrolling = true, ShaderName = 'Insect'},
             },
         },
         MovementEffects = {
             Land = {
                 Effects = {
-                    {
-                        Bones = {
-                            'Dustkickup1',
-                            'Dustkickup2',
-                        },
-                        Type = 'GroundKickup01',
-                    },
+                    {Bones = {'Dustkickup1', 'Dustkickup2'}, Type = 'GroundKickup01'},
                 },
                 Treads = {
                     ScrollTreads = true,
@@ -268,7 +253,6 @@ UnitBlueprint {
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
-                'TECH3 BOMBER',
                 'BOMBER',
                 'GROUNDATTACK',
                 'TRANSPORTATION',

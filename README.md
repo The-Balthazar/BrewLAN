@@ -1,7 +1,7 @@
 # BrewLAN
 
 **BrewLAN** is a mod for *Supreme Commander: Forged Alliance* that has been in on and
-off development by a team of one for over half a decade. It adds a wide variety
+off development by a team of one for nearly a decade. It adds a wide variety
 of new units for all factions, as well as offering several new game modes and
 features. The core design goals for the mod are simple; to add new, interesting,
 and visually aesthetic units which complement those already in existence and to
@@ -9,47 +9,64 @@ maximize technical compatibility with other mods. For more information, screensh
 and the community, visit its [ModDB page](http://www.moddb.com/mods/brewlan).
 
 ## Installation
-To install BrewLAN merge the contents of the /mods/ and /gamedata/ folders with that
-of *Supreme Commander: Forged Alliance*. Your mods folder may not pre-exist, create
-one if it doesn't.
+If you are installing manually, make sure to remove any old versions of BrewLAN files first, then merge the contents of the `/maps/`, `/mods/`, and `/gamedata/` folders with that of *Supreme Commander: Forged Alliance*. If you have a fresh install, there may not be a `mods` folder.
 
-Possible locations for the mods folder are:
-* `...\Steam\SteamApps\common\supreme commander forged alliance\mods\`
-* `...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\mods\`
-* `...\My Documents\My Games\Gas Powered Games\Supreme Commander Forged Alliance\mods\`
+Default locations are:
+* `%ProgramFiles(x86)%\Steam\SteamApps\common\supreme commander forged alliance\`
+* `%ProgramFiles(x86)%\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\`
 
-Probable locations for the gamedata are:
+Alternatively, the `/mods/` and `/maps` folders can be installed into your documents folder. The `/gamedata/` folder can only be installed in the main directory. The documents folder location for the English language version of the game is:
 
-* `...\Steam\SteamApps\common\supreme commander forged alliance\gamedata\`
-* `...\Program Files\THQ\Gas Powered Games\Supreme Commander - Forged Alliance\gamedata\`
+* `%UserProfile%\My Documents\My Games\Gas Powered Games\Supreme Commander Forged Alliance\`
 
-Most issues are caused by incorrect installation, if done correctly the following files, amongst others, should exist:
+## Verification
+If you did everything correctly, assuming installation entirely in the game directory rather than split between your documents and the directory, your game install should look like:
+* Supreme Commander Forged Alliance
+    * bin
+        * ForgedAlliance.exe or SupremeCommander.exe on steam
+        * ... (a bunch of .dll files and other files)
+    * gamedata
+        * brewlan.scd
+        * cratedrop.scd
+        * crystalhill.scd
+        * experimentalicons.scd
+        * tead.scd
+        * lua.scd
+        * units.scd
+        * ... (a bunch of other .scd files)
+    * maps
+        * BREW_REEF
+        * BREW_DEV
+        * SCMP_001
+        * ... (a bunch of other folders containing scenario data)
+    * mods
+        * BrewLAN
+        * BrewLAN_Gameplay
+        * BrewLAN_Modules
+        * BrewLAN_Plenae
+        * BrewLAN_RNG
+        * BrewLAN_Units
+        * ... (potentially other mod folders).
+    * ... ('movies', 'sounds' and other folders)
 
-* `...\supreme commander forged alliance\mods\BrewLAN\mod_info.lua`
-* `...\supreme commander forged alliance\gamedata\brewlan.scd`
+If your installation looks like `/mods/brewlan/mods/brewlan` or `/mods/mods/` then there is an issue.
 
 ## Credits
-Created by Sean Wheeldon (Balthazar/Balthassar)
+Created by Sean "Balthazar" Wheeldon
 
-### Beta testers
-- Jonathan "Bilmon" Butler
-- Adam "Outy" Butler
-- Christopher "Burning Star IV" Hicks
-- John "CyberJesus" Williams
-- Daniel "mr.deagle" _\<redacted\>_ – Code critique, additional code & puffreading
-- Simon "106.Bluebird" Jenner – German localisation
-- Dagordae
-- Wrsaith
-- Leviathan
-- ww.dk
-- Blackrobe
-- Scoobie
+### Contributors
+- Daniel "mr.deagle" _\<redacted\>_ – Chinese localisation, code critique, additional code, puffreading
+- Sprouto – Code critique, additional code
 - Ajay "theonewhonevergivesa" – Russian localisation
-- Saxxonknight
-
-### Additional
+- Simon "106.Bluebird" Jenner – German localisation
 - asdrubaelvect29 – French localisation
 - Marc "Explo" Tassetti – French localisation
+- Jaisse – French localisation
+- Oaks – Czech localisation
 
-### Donators
+### Donators & Patreon supporters
 - Saxxonknight
+- Ben Pankow
+- Mirko Gebauer
+- Mogwai
+- Neutral Effect

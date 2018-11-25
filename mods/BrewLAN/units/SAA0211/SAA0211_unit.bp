@@ -110,13 +110,11 @@ UnitBlueprint {
     },
     CollisionOffsetZ = 0.2,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
         EconomyThreatLevel = 1,
         Health = 1225,
         MaxHealth = 1225,
         RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 13,
     },
     Description = '<LOC saa0211_desc>Tactical Bomber',
@@ -135,34 +133,16 @@ UnitBlueprint {
         MovementEffects = {
             Air = {
                 Contrails = {
-                    Bones = {
-                        'Left_Contrail',
-                        'Right_Contrail',
-                    },
+                    Bones = {'Left_Contrail', 'Right_Contrail'},
                 },
                 Effects = {
-                    {
-                        Bones = {
-                            'Exhaust',
-                        },
-                        Type = 'AirMoveExhaust01',
-                    },
-                    {
-                        Bones = {
-                            'BAA0211',
-                        },
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {'Exhaust'}, Type = 'AirMoveExhaust01'},
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
             Land = {
                 Effects = {
-                    {
-                        Bones = {
-                            'BAA0211',
-                        },
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
         },
@@ -289,9 +269,7 @@ UnitBlueprint {
             ProjectileId = '/projectiles/AIFBombQuark01/AIFBombQuark01_proj.bp',
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Muzzle',
-                    },
+                    MuzzleBones = {'Muzzle'},
                     RackBone = 'Muzzle',
                 },
             },
@@ -306,10 +284,9 @@ UnitBlueprint {
             TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'TECH4',
-                'TECH3 STRUCTURE',
-                'TECH2 STRUCTURE',
-                'TECH1 STRUCTURE',
+                'ECONOMIC',
+                'DEFENSE',
+                'STRUCTURE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

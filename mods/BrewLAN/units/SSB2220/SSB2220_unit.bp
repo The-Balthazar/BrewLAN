@@ -37,8 +37,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -83,9 +81,6 @@ UnitBlueprint {
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
         UniformScale = 0.02,
-    },
-    DoNotCollideList = {
-        'ALLUNITS',
     },
     Economy = {
         BuildCostEnergy = 1800*.2,
@@ -202,21 +197,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             Turreted = false,
             WeaponCategory = 'Kamikaze',
-        },
-    },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.1,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        UseCustomMesh = true,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

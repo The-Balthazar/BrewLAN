@@ -123,10 +123,8 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 120,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 130, ShaderName = 'Aeon'},
+                {LODCutoff = 260, ShaderName = 'Aeon'},
             },
         },
         MovementEffects = {
@@ -219,8 +217,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 65,
     Transport = {
         AirClass = true,
-        ClassGenericUpTo = 2,
-        TransportClass = 2,
+        TransportClass = 1,
     },
     Veteran = {
         Level1 = 3,

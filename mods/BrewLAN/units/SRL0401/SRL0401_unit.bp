@@ -83,6 +83,7 @@ UnitBlueprint {
             {Animation = '/mods/BrewLAN/units/srl0401/SRL0401_Adeath_Closed.sca', State = 'Closed'},
         },
         AnimationOpen = '/mods/BrewLAN/units/srl0401/srl0401_Aopen.sca',
+        ForcedBuildSpin = 0,
         LayerChangeEffects = {
             SeabedLand = {
                 Effects = {
@@ -270,6 +271,7 @@ UnitBlueprint {
         ReactivateTime = 4,
         SonarStealthFieldRadius = 12,
         VisionRadius = 34,
+        WaterVisionRadius = 30,
     },
     Interface = {
         HelpText = '<LOC srs0402_desc>Experimental Transport',
@@ -586,8 +588,8 @@ UnitBlueprint {
             Air = false,
             Land = true,
             Seabed = true,
-            Sub = true,
-            Water = true,
+            Sub = false,
+            Water = false,
         },
     },
 }

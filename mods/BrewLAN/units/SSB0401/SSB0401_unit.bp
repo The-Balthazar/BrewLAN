@@ -247,10 +247,10 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssb0401_name>Souiya',
         UnitWeight = 1,
-        --UpgradesFrom = 'xsb0203',
     },
     Intel = {
         VisionRadius = 20,
+        WaterVisionRadius = 20,
     },
     Interface = {
         HelpText = '<LOC ssb0401_desc>Experimental Naval Factory',

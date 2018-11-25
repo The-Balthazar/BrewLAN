@@ -1,6 +1,6 @@
 name = "Experimental Icons Overhaul"
-uid = "2529ea71-93ef-41a6-b552-EXPERICON00007"
-version = 0.7
+uid = "2529ea71-93ef-41a6-b552-EXPERICON00009"
+version = 0.9
 copyright = "© 2015–2018 Sean Wheeldon"
 description = "If you can't see the mod icon then it can't detect the SCD file, and probably wont work. Your installation is likely wrong."
 author = "Balthazar"

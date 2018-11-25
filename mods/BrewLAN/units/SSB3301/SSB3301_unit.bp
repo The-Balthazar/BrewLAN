@@ -5,6 +5,12 @@ UnitBlueprint {
             helpText = 'scry_spy_target',
         },
     },
+    SpecialAbilities = { --For FAF Nomads compatibility
+        TargetLocation = {
+            AreaOfEffect = 10,
+            MaxRadius = -1,
+        },
+    },
     Audio = {
         ActiveLoop = Sound {
             Bank = 'XAB',
@@ -128,12 +134,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_seraphim_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -146,9 +147,7 @@ UnitBlueprint {
         BuildTime = 1800,
         InitialRemoteViewingEnergyDrain = 10000,
         MaintenanceConsumptionPerSecondEnergy = 5000,
-        RebuildBonusIds = {
-            'ssb3301',
-        },
+        RebuildBonusIds = {'ssb3301'},
     },
     Footprint = {
         SizeX = 3,

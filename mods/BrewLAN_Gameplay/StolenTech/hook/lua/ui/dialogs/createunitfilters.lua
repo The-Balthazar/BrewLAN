@@ -7,9 +7,7 @@ Filters = {
             local desc = string.lower(LOC(bp.Description or ''))
             local name = string.lower(LOC(bp.General.UnitName or ''))
             text = string.lower(text)
-            if string.find(unitID, text) or string.find(desc, text) or string.find(name, text) then
-                return true
-            end
+            return string.find(unitID, text) or string.find(desc, text) or string.find(name, text)
         end,
     },
     {
@@ -20,50 +18,35 @@ Filters = {
                 title = 'Aeon',
                 key = 'aeon',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 2, 2) == 'a' then
-                        return true
-                    end
-                    return false
+                    return table.find(__blueprints[unitID].Categories, 'AEON') --string.sub(unitID, 2, 2) == 'a'
                 end,
             },
             {
                 title = 'UEF',
                 key = 'uef',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 2, 2) == 'e' then
-                        return true
-                    end
-                    return false
+                    return table.find(__blueprints[unitID].Categories, 'UEF') -- string.sub(unitID, 2, 2) == 'e'
                 end,
             },
             {
                 title = 'Cybran',
                 key = 'cybran',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 2, 2) == 'r' then
-                        return true
-                    end
-                    return false
+                    return table.find(__blueprints[unitID].Categories, 'CYBRAN') -- string.sub(unitID, 2, 2) == 'r'
                 end,
             },
             {
                 title = 'Seraphim',
                 key = 'seraphim',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 2, 2) == 's' then
-                        return true
-                    end
-                    return false
+                    return table.find(__blueprints[unitID].Categories, 'SERAPHIM') -- string.sub(unitID, 2, 2) == 's'
                 end,
             },
             {
                 title = 'Operation',
                 key = 'ops',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 1, 1) == 'o' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 1, 1) == 'o'
                 end,
             },
         },
@@ -76,40 +59,28 @@ Filters = {
                 title = 'SC1',
                 key = 'sc1',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 1, 1) == 'u' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 1, 1) == 'u'
                 end,
             },
             {
                 title = 'Download',
                 key = 'dl',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 1, 1) == 'd' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 1, 1) == 'd'
                 end,
             },
             {
                 title = 'XPack 1',
                 key = 'scx1',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 1, 1) == 'x' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 1, 1) == 'x'
                 end,
             },
             {
                 title = 'BrewLAN',
                 key = 'bl',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 1, 1) == 's' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 1, 1) == 's'
                 end,
             },
         },
@@ -122,60 +93,44 @@ Filters = {
                 title = 'Land',
                 key = 'land',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 3, 3) == 'l' then
-                        return true
-                    end
-                    return false
+                    local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
+                    return MT == 'ruleumt_amphibious' or MT == 'ruleumt_hover' or (MT == 'ruleumt_amphibiousfloating' and not table.find(__blueprints[unitID].Categories, 'NAVAL')) or MT == 'ruleumt_land'  -- string.sub(unitID, 3, 3) == 'l'
                 end,
             },
             {
                 title = 'Air',
                 key = 'air',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 3, 3) == 'a' then
-                        return true
-                    end
-                    return false
+                    return string.lower(__blueprints[unitID].Physics.MotionType or 'no') == 'ruleumt_air' -- string.sub(unitID, 3, 3) == 'a'
                 end,
             },
             {
                 title = 'Naval',
                 key = 'naval',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 3, 3) == 's' then
-                        return true
-                    end
-                    return false
+                    local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
+                    return MT == 'ruleumt_water' or (MT == 'ruleumt_amphibiousfloating' and not table.find(__blueprints[unitID].Categories, 'LAND')) or MT == 'ruleumt_surfacingsub' -- string.sub(unitID, 3, 3) == 's'
                 end,
             },
             {
                 title = 'Base',
                 key = 'base',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 3, 3) == 'b' then
-                        return true
-                    end
-                    return false
+                    return string.lower(__blueprints[unitID].Physics.MotionType or 'no') == 'ruleumt_none' -- string.sub(unitID, 3, 3) == 'b'
                 end,
             },
             {
                 title = 'Civilian',
                 key = 'civ',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 3, 3) == 'c' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 3, 3) == 'c'
                 end,
             },
             {
                 title = 'Research',
                 key = 'rnd',
                 sortFunc = function(unitID)
-                    if string.sub(unitID, 3, 3) == 'r' or string.sub(unitID, -3, -1) == 'rnd' then
-                        return true
-                    end
-                    return false
+                    return string.sub(unitID, 3, 3) == 'r' or string.sub(unitID, -3, -1) == 'rnd'
                 end,
             },
         },

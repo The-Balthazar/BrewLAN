@@ -43,7 +43,6 @@ UnitBlueprint {
         'SERAPHIM',
         'MOBILE',
         'LAND',
-        'DEFENSE',
         'TECH3',
         'ANTIMISSILE',
         'SILO',
@@ -52,14 +51,11 @@ UnitBlueprint {
     },
     CollisionOffsetZ = -0.1,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 85,
         Health = 2800,
         MaxHealth = 2800,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sel0321_desc>Mobile Strategic Missile Defense',
     Display = {
@@ -92,9 +88,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'GroundKickup01',
                     },
@@ -107,33 +101,21 @@ UnitBlueprint {
                             TreadMarksInterval = 0.09,
                             TreadMarksSizeX = .3,
                             TreadMarksSizeZ = 2,
-                            TreadOffset = {
-                                0,
-                                -.2,
-                                -.2,
-                            },
+                            TreadOffset = {0, -.2, -.2},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.09,
                             TreadMarksSizeX = .3,
                             TreadMarksSizeZ = 2,
-                            TreadOffset = {
-                                .65,
-                                -1.1,
-                                -1.1,
-                            },
+                            TreadOffset = {.65, -1.1, -1.1},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.09,
                             TreadMarksSizeX = .3,
                             TreadMarksSizeZ = 2,
-                            TreadOffset = {
-                                -.65,
-                                -1.1,
-                                -1.1,
-                            },
+                            TreadOffset = {-.65, -1.1, -1.1},
                         },
                     },
                 },
@@ -268,9 +250,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     HideMuzzle = true,
-                    MuzzleBones = {
-                        'missile',
-                    },
+                    MuzzleBones = {'missile'},
                     RackBone = 'missile',
                 },
             },

@@ -1,4 +1,4 @@
-name = "BrewLAN: Gantry AIx 3"
+name = "BrewLAN: AIx Gantry Hax C"
 uid = "25D57D85-7D84-27HT-A503-BR3WGA3000002"
 version = 0.2
 copyright = "© 2015–2018 Sean Wheeldon"

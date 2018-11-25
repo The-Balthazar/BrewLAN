@@ -94,7 +94,7 @@ UnitBlueprint {
         'HIGHALTAIR',
         'TECH1',
         'ANTINAVY',
-        'BOMBER',
+        'TORPEDOBOMBER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYSONAR',

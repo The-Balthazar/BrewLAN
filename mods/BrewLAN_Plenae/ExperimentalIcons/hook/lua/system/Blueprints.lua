@@ -91,6 +91,7 @@ function ExperimentalIconOverhaul(all_bps)
                     artillery = {0, 'artillery'},
                     land = {0, 'directfire'},
                     naval = {0, 'antinavy'},
+                    nuke = {0, 'nuke'},
                     missile = {0, 'missile'},
                     kamikaze = {0, 'bomb'},
                 }
@@ -125,25 +126,48 @@ function ExperimentalIconOverhaul(all_bps)
                         if type(stringtosan) == 'string' then
                             return string.lower(stringtosan)
                         else
-                            return 'unknowntype'
+                            return '0'
                         end
                     end
                     local sanWcat = SAN(weapon.WeaponCategory)
                     local sanRcat = SAN(weapon.RangeCategory)
-                    if string.find(sanWcat, 'anti air') or sanRcat == 'uwrc_antiair' then
-                        layer.air[1] = layer.air[1] + DPS(weapon)
-                    elseif sanRcat == 'uwrc_indirectfire' or string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile') then
-                        if string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') then
-                            layer.artillery[1] = layer.artillery[1] + DPS(weapon)
-                        elseif string.find(sanWcat, 'missile') then
-                            layer.missile[1] = layer.missile[1] + DPS(weapon)
+                    local sanOnly = SAN(weapon.TargetRestrictOnlyAllow)
+                    local sanDisa = SAN(weapon.TargetRestrictDisallow)
+                    local sanType = SAN(weapon.TargetType)
+                    local sanBArc = SAN(weapon.BallisticArc)
+                    local layerCaps = '0'
+                    if weapon.FireTargetLayerCapsTable then
+                        for fromlayer, targetlayers in weapon.FireTargetLayerCapsTable do
+                            if string.len(targetlayers or '0') > string.len(layerCaps or '0') then
+                                layerCaps = string.lower(targetlayers or '0')
+                            end
                         end
-                    elseif (string.find(sanWcat, 'direct fire') or string.find(sanWcat, 'bomb')) or sanRcat == 'uwrc_directfire' then
-                        layer.land[1] = layer.land[1] + DPS(weapon)
-                    elseif string.find(sanWcat, 'anti navy') or sanRcat == 'uwrc_antinavy' then
-                        layer.naval[1] = layer.naval[1] + DPS(weapon)
-                    elseif string.find(sanWcat, 'kamikaze') then
-                        layer.kamikaze[1] = layer.kamikaze[1] + DPS(weapon)
+                    end
+                    if not string.find(sanType, 'projectile') then
+                        if string.find(sanWcat, 'anti air') or sanRcat == 'uwrc_antiair' or string.find(sanOnly, 'air') or layerCaps == 'air' then
+                            layer.air[1] = layer.air[1] + DPS(weapon)
+                        elseif sanRcat == 'uwrc_indirectfire' or string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or string.find(sanWcat, 'missile') then
+                            if (string.find(sanWcat, 'indirect fire') or string.find(sanWcat, 'artillery') or weapon.ArtilleryShieldBlocks) then--and not string.find(sanBArc, 'none') then
+                                layer.artillery[1] = layer.artillery[1] + DPS(weapon)
+                                --Artillery that don't have the ArtilleryShieldBlocks bool or a weapon category will also get categorised this way.
+                                --I could do it more conclusively by checking the projectile, but I'm not doing that.
+                            elseif weapon.CountedProjectile and (weapon.NukeInnerRingDamage >= 10000 or weapon.Damage >= 10000) and (weapon.NukeInnerRingRadius >= 15 or weapon.DamageRadius >= 15) or weapon.NukeWeapon then
+                                layer.nuke[1] = layer.nuke[1] + DPS(weapon)
+                            else--if string.find(sanWcat, 'missile') or sanWcat == '0' then
+                                layer.missile[1] = layer.missile[1] + DPS(weapon)
+                            end
+                        elseif string.find(sanWcat, 'anti navy') or sanRcat == 'uwrc_antinavy' or string.find(sanDisa, 'hover') or string.find(layerCaps, 'sub') then
+                            layer.naval[1] = layer.naval[1] + DPS(weapon)
+                        elseif string.find(sanWcat, 'kamikaze') then
+                            --This is the category is basically impossible to identify without a weapon category tag.
+                            layer.kamikaze[1] = layer.kamikaze[1] + DPS(weapon)
+                        elseif (string.find(sanWcat, 'direct fire') or string.find(sanWcat, 'bomb')) or sanRcat == 'uwrc_directfire' or (weapon.NeedToComputeBombDrop or weapon.FixBombTrajectory) or string.find(layerCaps, 'land') then
+                            if (weapon.NukeInnerRingDamage >= 10000 or weapon.Damage >= 10000) and (weapon.NukeInnerRingRadius >= 15 or weapon.DamageRadius >= 15) then
+                                layer.nuke[1] = layer.nuke[1] + DPS(weapon)
+                            else
+                                layer.land[1] = layer.land[1] + DPS(weapon)
+                            end
+                        end
                     end
                 end
                 local best = {0, 'directfire'}

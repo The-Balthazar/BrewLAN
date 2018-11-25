@@ -1,11 +1,7 @@
 UnitBlueprint {
     AI = {
         GuardReturnRadius = 130,
-        TargetBones = {
-            'URS0201',
-            'Muzzle_Back',
-            'Muzzle_Front',
-        },
+        TargetBones = {0, 'Muzzle_Back', 'Muzzle_Front'},
     },
     Audio = {
         AmbientMoveLand = Sound {
@@ -88,17 +84,11 @@ UnitBlueprint {
         'MOBILE',
         'NAVAL',
         'TECH3',
-        'ANTISUB',
-        'ANTINAVY',
-        'DIRECTFIRE',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'FAVORSWATER',
-        'DESTROYER',
         'OVERLAYSONAR',
         'OVERLAYRADAR',
-        'OVERLAYDEFENSE',
-        'OVERLAYANTINAVY',
     },
     CollisionOffsetY = -0.29,
     Defense = {
@@ -107,9 +97,7 @@ UnitBlueprint {
         EconomyThreatLevel = 227,
         Health = 6050,
         MaxHealth = 6050,
-        RegenRate = 0,
         SubThreatLevel = 6,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0319_desc>Field Engineering Ship',
     Display = {
@@ -148,13 +136,7 @@ UnitBlueprint {
         IdleEffects = {
             Water = {
                 Effects = {
-                    {
-                        Bones = {
-                            'URS0201',
-                        },
-                        Scale = 1.16,
-                        Type = 'SeaIdle01',
-                    },
+                    {Bones = {0}, Scale = 1.16, Type = 'SeaIdle01'},
                 },
             },
         },
@@ -167,22 +149,14 @@ UnitBlueprint {
         LayerChangeEffects = {
             WaterLand = {
                 Effects = {
-                    {
-                        Bones = {
-                            'URS0201',
-                        },
-                        Type = 'Surface01',
-                    },
+                    {Bones = {0}, Type = 'Surface01'},
                 },
             },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Insect',
-                },
+                {LODCutoff = 140, ShaderName = 'Insect'},
                 {
                     LODCutoff = 300,
                     ShaderName = 'Insect',
@@ -196,60 +170,20 @@ UnitBlueprint {
             Land = {
                 Footfall = {
                     Bones = {
-                        {
-                            FootBone = 'Exhaust_Leg_L01',
-                            Scale = 0.58,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'Exhaust_Leg_L02',
-                            Scale = 0.58,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'Exhaust_Leg_L03',
-                            Scale = 0.58,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'Exhaust_Leg_R01',
-                            Scale = 0.58,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'Exhaust_Leg_R02',
-                            Scale = 0.58,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'Exhaust_Leg_R03',
-                            Scale = 0.58,
-                            Type = 'FootFall01',
-                        },
+                        {FootBone = 'Exhaust_Leg_L01', Scale = 0.58, Type = 'FootFall01'},
+                        {FootBone = 'Exhaust_Leg_L02', Scale = 0.58, Type = 'FootFall01'},
+                        {FootBone = 'Exhaust_Leg_L03', Scale = 0.58, Type = 'FootFall01'},
+                        {FootBone = 'Exhaust_Leg_R01', Scale = 0.58, Type = 'FootFall01'},
+                        {FootBone = 'Exhaust_Leg_R02', Scale = 0.58, Type = 'FootFall01'},
+                        {FootBone = 'Exhaust_Leg_R03', Scale = 0.58, Type = 'FootFall01'},
                     },
                 },
             },
             Water = {
                 Effects = {
-                    {
-                        Bones = {
-                            'WakeFront_L',
-                        },
-                        Type = 'LeftFrontWake',
-                    },
-                    {
-                        Bones = {
-                            'WakeFront_R',
-                        },
-                        Type = 'RightFrontWake',
-                    },
-                    {
-                        Bones = {
-                            'WakeBack',
-                        },
-                        Scale = 0.93,
-                        Type = 'BackWake',
-                    },
+                    {Bones = {'WakeFront_L'}, Type = 'LeftFrontWake'},
+                    {Bones = {'WakeFront_R'}, Type = 'RightFrontWake'},
+                    {Bones = {'WakeBack'}, Scale = 0.93, Type = 'BackWake'},
                 },
             },
         },
@@ -281,7 +215,6 @@ UnitBlueprint {
             'BUILTBYTIER2ENGINEER ANTIMISSILE CYBRAN',
             'BUILTBYTIER3ENGINEER ANTINAVY CYBRAN',
             'BUILTBYTIER3ENGINEER ANTIAIR CYBRAN',
-            --'BUILTBYTIER3ENGINEER SHIELD CYBRAN',
             'BUILTBYTIER3ENGINEER MINE CYBRAN',
             'BUILTBYTIER3FIELD NAVAL CYBRAN',
             'BUILTBYTIER2FIELD ANTIMISSILE CYBRAN',
@@ -290,7 +223,6 @@ UnitBlueprint {
             'BUILTBYTIER3FIELD SHIELD CYBRAN',
             'BUILTBYTIER3FIELD MINE CYBRAN',
         },
-        --MaintenanceConsumptionPerSecondEnergy = 15,
         StorageEnergy = 500,
         StorageMass = 50,
     },
@@ -438,12 +370,10 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
@@ -513,7 +443,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
-                'STRUCTURE DEFENSE',
+                'DEFENSE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
@@ -574,12 +504,6 @@ UnitBlueprint {
             TargetType = 'RULEWTT_Projectile',
             TrackingRadius = 1.5,
             TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 0,
-            TurretPitchSpeed = 0,
-            TurretYaw = 0,
-            TurretYawRange = 0,
-            TurretYawSpeed = 0,
             Turreted = false,
             WeaponCategory = 'Defense',
             WeaponRepackTimeout = 0,

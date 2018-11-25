@@ -306,6 +306,7 @@ UnitBlueprint {
             TurretYawRange = 180,
             TurretYawSpeed = 3,
             Turreted = true,
+            WeaponCategory = 'Artillery',
         },
     },
     Wreckage = {

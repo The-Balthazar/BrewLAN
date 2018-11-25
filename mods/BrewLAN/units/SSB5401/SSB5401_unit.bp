@@ -5,6 +5,12 @@ UnitBlueprint {
             helpText = 'stargate_dial',
         },
     },
+    SpecialAbilities = { --For FAF Nomads compatibility
+        TargetLocation = {
+            AreaOfEffect = 10,
+            MaxRadius = -1,
+        },
+    },
     Audio = {
         ActiveLoop = Sound {
             Bank = 'XSB',

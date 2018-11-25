@@ -102,7 +102,7 @@ UnitBlueprint {
         'HIGHALTAIR',
         'TECH1',
         'ANTINAVY',
-        'BOMBER',
+        'TORPEDOBOMBER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYSONAR',
@@ -122,22 +122,12 @@ UnitBlueprint {
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {
-                            0,
-                        },
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {
-                            0,
-                        },
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
         },
@@ -152,18 +142,10 @@ UnitBlueprint {
         MovementEffects = {
             Air = {
                 Contrails = {
-                    Bones = {
-                        'Contrail_L',
-                        'Contrail_R',
-                    },
+                    Bones = {'Contrail_L', 'Contrail_R'},
                 },
                 Effects = {
-                    {
-                        Bones = {
-                            'Exhaust',
-                        },
-                        Type = 'AirMoveExhaust01',
-                    },
+                    {Bones = {'Exhaust'}, Type = 'AirMoveExhaust01'},
                 },
             },
         },
@@ -172,9 +154,9 @@ UnitBlueprint {
         UniformScale = 0.04,
     },
     Economy = {
-        BuildCostEnergy = 4800*0.25,
-        BuildCostMass = 240*0.25,
-        BuildTime = 1600*0.25,
+        BuildCostEnergy = 1200,
+        BuildCostMass = 60,
+        BuildTime = 400,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -289,13 +271,7 @@ UnitBlueprint {
             ProjectileLifetime = 20,
             ProjectilesPerOnFire = 2,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Torpedo',
-                        'Torpedo',
-                    },
-                    RackBone = 'Torpedo',
-                },
+                {MuzzleBones = {'Torpedo', 'Torpedo'}, RackBone = 'Torpedo'},
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,

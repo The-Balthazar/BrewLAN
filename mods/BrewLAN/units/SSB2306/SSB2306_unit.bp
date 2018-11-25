@@ -42,7 +42,7 @@ UnitBlueprint {
         'TECH3',
         'DIRECTFIRE',
         'DRAGBUILD',
-        'SIZE12',
+        'SIZE4',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'OVERLAYDIRECTFIRE',
@@ -136,7 +136,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC ssb2306_name>Othuushala', --Uttaushala
+        UnitName = '<LOC ssb2306_name>Othuushala',
         UnitWeight = 1,
     },
     Intel = {

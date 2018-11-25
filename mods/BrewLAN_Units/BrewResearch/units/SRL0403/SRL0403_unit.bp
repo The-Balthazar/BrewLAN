@@ -100,6 +100,7 @@ UnitBlueprint {
         },
         --AnimationDeath = {},
         --AnimationOpen = '/mods/BrewLAN/units/srl0401/srl0401_Aopen.sca',
+        ForcedBuildSpin = 0,
         LayerChangeEffects = {
             SeabedLand = {
                 Effects = {

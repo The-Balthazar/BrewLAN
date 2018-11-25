@@ -85,6 +85,7 @@ UnitBlueprint {
         'AIR',
         'HIGHALTAIR',
         'TECH2',
+        'SCOUT',
         'COUNTERINTELLIGENCE',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -94,14 +95,11 @@ UnitBlueprint {
         'SPECIALHIGHPRI',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
         EconomyThreatLevel = 250,
         Health = 540,
         MaxHealth = 540,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sair0201>Decoy Plane',
     Display = {
@@ -133,7 +131,6 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 120,
-                    Scrolling = true,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/xaa0305/xaa0305_albedo.dds',
                     NormalsName = '/units/xaa0305/xaa0305_normalsTS.dds',

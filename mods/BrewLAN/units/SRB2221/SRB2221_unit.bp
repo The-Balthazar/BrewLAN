@@ -36,13 +36,10 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 0,
         Health = 100,
         MaxHealth = 100,
         RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 450,
     },
     Description = '<LOC sbui2221>Proximity Mine',
@@ -77,9 +74,6 @@ UnitBlueprint {
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
         UniformScale = 0.15,
-    },
-    DoNotCollideList = {
-        'ALLUNITS',
     },
     Economy = {
         BuildCostEnergy = 1800,
@@ -202,21 +196,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             Turreted = false,
             WeaponCategory = 'Kamikaze',
-        },
-    },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.1,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        UseCustomMesh = true,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

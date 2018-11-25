@@ -50,6 +50,7 @@ UnitBlueprint {
         'LAND',
         'TECH3',
         'ANTIAIR',
+        'AMPHIBIOUS',
         'ANTIMISSILE',
         'HOVER',
         'VISIBLETORECON',
@@ -61,12 +62,9 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 15,
         ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
         Health = 4160,
         MaxHealth = 4160,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sal0320_desc>Mobile Anti-Air Defense',
     Display = {
@@ -292,9 +290,7 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'TMD_Muzzle',
-                    },
+                    MuzzleBones = {'TMD_Muzzle'},
                     RackBone = 'TMD_Barrel',
                 },
             },
@@ -356,9 +352,7 @@ UnitBlueprint {
             ProjectilesPerOnFire = 2,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'AA_Muzzle',
-                    },
+                    MuzzleBones = {'AA_Muzzle'},
                     RackBone = 'AA_Barrel',
                 },
             },
@@ -374,12 +368,10 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

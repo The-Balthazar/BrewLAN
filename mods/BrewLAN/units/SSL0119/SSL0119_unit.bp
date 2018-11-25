@@ -52,7 +52,6 @@ UnitBlueprint {
         'RECLAIM',
         'FIELDENGINEER',
         'CAPTURE',
-        'DIRECTFIRE',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -119,11 +118,7 @@ UnitBlueprint {
                             TreadMarksInterval = 0.09,
                             TreadMarksSizeX = 0.8,
                             TreadMarksSizeZ = 0.7,
-                            TreadOffset = {
-                                0,
-                                0,
-                                -0.2,
-                            },
+                            TreadOffset = {0, 0, -0.2},
                         },
                     },
                 },
@@ -186,6 +181,7 @@ UnitBlueprint {
     Intel = {
         RadarRadius = 30,
         VisionRadius = 20,
+        WaterVisionRadius = 20,
         SonarStealth = true,
     },
     Interface = {
@@ -288,10 +284,8 @@ UnitBlueprint {
             TargetCheckInterval = 0.75,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'TECH1 MOBILE',
-                'TECH2 MOBILE',
-                'TECH3 MOBILE',
-                'STRUCTURE DEFENSE',
+                'MOBILE',
+                'DEFENSE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },

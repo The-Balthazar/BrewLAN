@@ -15,7 +15,8 @@ do
         end,
 
         OnCollisionCheck = function(self, other)
-            if EntityCategoryContains(categories.MISSILE * categories.ANTIAIR, other)
+            if self.Owner:GetCurrentLayer() == 'Air'
+            and EntityCategoryContains(categories.MISSILE * categories.ANTIAIR, other)
             --and other != self.EnemyProj
             and IsEnemy(self.Army, other:GetArmy()) and self.Owner.DeployFlares then
                 self.Owner:DeployFlares()

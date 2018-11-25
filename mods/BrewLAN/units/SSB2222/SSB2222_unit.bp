@@ -97,11 +97,6 @@ UnitBlueprint {
         ResearchMultEnergy = 0.3333333333,
         BuildCostMass = 1200*1.5,
         BuildTime = 600*2,
-        RebuildBonusIds = {
-            'ssb2220',
-            'ssb2221',
-            'ssb2222',
-        },
     },
     Footprint = {
         SizeX = 0,
@@ -222,12 +217,7 @@ UnitBlueprint {
 
             ProjectileId = '/mods/brewlan/effects/entities/InainoWarheadEffectController/InainoWarheadEffectController_proj.bp',
             RackBones = {
-                {
-                    MuzzleBones = {
-                        0,
-                    },
-                    RackBone = 0,
-                },
+                {MuzzleBones = {0}, RackBone = 0},
             },
             RangeCategory = 'UWRC_DirectFire',
             TargetRestrictDisallow = 'UNTARGETABLE',
@@ -250,12 +240,7 @@ UnitBlueprint {
             MuzzleVelocity = 0,
             ProjectileId = '/effects/Entities/SCUDeath01/SCUDeath01_proj.bp',
             RackBones = {
-                {
-                    MuzzleBones = {
-                        0,
-                    },
-                    RackBone = 0,
-                },
+                {MuzzleBones = {0}, RackBone = 0},
             },
             RackRecoilDistance = 0,
             RateOfFire = 1,
@@ -263,21 +248,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             Turreted = false,
             WeaponCategory = 'Death',
-        },
-    },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.1,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        UseCustomMesh = true,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

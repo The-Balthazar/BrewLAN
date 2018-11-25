@@ -1,23 +1,21 @@
-local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
+--------------------------------------------------------------------------------
+local CLandTransport = import('/lua/cybranunits.lua').CLandUnit
+--------------------------------------------------------------------------------
+local VersionIsFAF = import(import('/lua/game.lua').BrewLANPath() .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+if VersionIsFAF then CLandTransport = Class(CLandTransport, import('/lua/defaultunits.lua').BaseTransport) {} end
+--------------------------------------------------------------------------------
 local cWeapons = import('/lua/cybranweapons.lua')
 local CDFElectronBolterWeapon = cWeapons.CDFElectronBolterWeapon
 local CANTorpedoLauncherWeapon = cWeapons.CANTorpedoLauncherWeapon
-
-local BaseTransport = {}
-local BrewLANPath = import('/lua/game.lua').BrewLANPath()
-local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
-if VersionIsFAF then
-    BaseTransport = import('/lua/defaultunits.lua').BaseTransport
-end
-
-SRL0401 = Class(CLandUnit, BaseTransport) {
+--------------------------------------------------------------------------------
+SRL0401 = Class(CLandTransport) {
     Weapons = {
         Turret = Class(CDFElectronBolterWeapon) {},
         Torpedo = Class(CANTorpedoLauncherWeapon) {},
     },
 
     OnCreate = function(self)
-        CLandUnit.OnCreate(self)
+        CLandTransport.OnCreate(self)
         if VersionIsFAF then
             self.slots = {}
             self.transData = {}
@@ -25,7 +23,7 @@ SRL0401 = Class(CLandUnit, BaseTransport) {
     end,
 
 	OnLayerChange = function(self, new, old)
-		CLandUnit.OnLayerChange(self, new, old)
+		CLandTransport.OnLayerChange(self, new, old)
 		if new == 'Land' then
             self:SetSpeedMult(1)
 		elseif new == 'Seabed' then
@@ -34,7 +32,7 @@ SRL0401 = Class(CLandUnit, BaseTransport) {
 	end,
 
     OnStopBeingBuilt = function(self,builder,layer)
-        CLandUnit.OnStopBeingBuilt(self,builder,layer)
+        CLandTransport.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()
         self:EnableUnitIntel('RadarStealthField')
         self:EnableUnitIntel('SonarStealthField')
@@ -71,7 +69,7 @@ SRL0401 = Class(CLandUnit, BaseTransport) {
     Kill = function(self, ...)
         self.Dying = true
         self:TransportDetachAllUnits(false)
-        CLandUnit.Kill(self, unpack(arg))
+        CLandTransport.Kill(self, unpack(arg))
     end,
 
     OnAttachedKilled = function(self, attached)
@@ -83,11 +81,7 @@ SRL0401 = Class(CLandUnit, BaseTransport) {
         if not self.Dying then
             pos = unit:GetPosition()
         end
-        if VersionIsFAF then
-            BaseTransport.OnTransportDetach(self, attachBone, unit)
-        else
-            CLandUnit.OnTransportDetach(self, attachBone, unit)
-        end
+        CLandTransport.OnTransportDetach(self, attachBone, unit)
         if not self.Dying then
             self:ForkThread( --This prevents units getting dumped into the earth.
                 function()
@@ -102,7 +96,7 @@ SRL0401 = Class(CLandUnit, BaseTransport) {
     end,
 
     OnMotionHorzEventChange = function(self, new, old)
-        CLandUnit.OnMotionHorzEventChange(self, new, old)
+        CLandTransport.OnMotionHorzEventChange(self, new, old)
         if new == 'Stopping' then
             self.AnimationManipulator:SetRate(4)
             self.Closed = nil
@@ -129,7 +123,7 @@ SRL0401 = Class(CLandUnit, BaseTransport) {
             self.Trash:Add(self.DeathAnimManip)
             WaitFor(self.DeathAnimManip)
         else
-            CLandUnit.PlayAnimationThread(self, anim, rate)
+            CLandTransport.PlayAnimationThread(self, anim, rate)
         end
     end,
 }
