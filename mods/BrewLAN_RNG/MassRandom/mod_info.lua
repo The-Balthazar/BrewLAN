@@ -1,0 +1,10 @@
+name = "Mass Point RNG"
+uid = "25D57D85-7D84-27HT-A502-MASSRNG00002"
+version = 0
+copyright = "© 2018 Sean Wheeldon"
+description = "Each mass point is replaced with 0-4 mass points."
+author = "Balthazar"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false

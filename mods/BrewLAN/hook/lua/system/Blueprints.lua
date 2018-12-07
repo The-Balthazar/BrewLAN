@@ -292,7 +292,7 @@ function BrewLANSatelliteUplinkForVanillaUnits(all_bps)
         sab3301 = 3,
         seb3301 = 3,
         srb3301 = 3,
-        ssb3301 = 3,
+        ssb3302 = 3,
     }
     for id, cap in units do
         if all_bps[id] and all_bps[id].Categories then

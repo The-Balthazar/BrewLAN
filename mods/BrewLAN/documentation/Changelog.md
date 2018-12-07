@@ -396,6 +396,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * AI: Added data for some FAF specific base templates.
   * Fixed a UI issue preventing the Stargate and Seraphim optics from working with FAF Nomads enabled.
 
+  ### 2018-11-28
+
+  * BrewLAN/R&D: Seraphim optics no longer gets the Satellite Uplink ability meant for the Seraphim dedicated omni that doesn't exist yet.
+
+  ### 2018-12-06
+
+  * Lucky Dip: Changed the description.
+  * New mod: Mass Point Random; mass points are replaced with 0-5 mass points. Extracted from the unreleased infested mod.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.
