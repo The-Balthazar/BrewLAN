@@ -1,0 +1,11 @@
+name = "BrewLAN: RNG mods"
+uid = "190261d0-4bb0-11e2-bcSC-BLRNGMODSS01"
+version = 1
+copyright = "© 2009–2018 Sean Wheeldon"
+description = "Container for the BrewLAN extra unit sub-mods; Cost Variance, Crate Drop, Lucky Dip, and others."
+author = "Sean Wheeldon"
+icon = "/mods/BrewLAN_RNG/folder.png"
+selectable = false
+enabled = false
+exclusive = false
+ui_only = false

@@ -405,6 +405,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Lucky Dip: Changed the description.
   * New mod: Mass Point Random; mass points are replaced with 0-5 mass points. Extracted from the unreleased infested mod.
 
+  ### 2018-12-07
+
+  * Moved the BrewLAN AI module into the modules sub-folder.
+
+  ### 2018-12-08
+
+  * R&D: Made the Twilight Patron more accurate.
+
+  ### 2018-12-10
+
+  * Created mod info files that are hidden in game for the mod categorisation directories.
+  * R&D: You now get starting research based on starting units.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

@@ -123,7 +123,7 @@ Filters = {
                 title = 'Civilian',
                 key = 'civ',
                 sortFunc = function(unitID)
-                    return string.sub(unitID, 3, 3) == 'c'
+                    return string.sub(unitID, 3, 3) == 'c' or not (table.find(__blueprints[unitID].Categories, 'UEF') or table.find(__blueprints[unitID].Categories, 'AEON') or table.find(__blueprints[unitID].Categories, 'CYBRAN') or table.find(__blueprints[unitID].Categories, 'SERAPHIM') )
                 end,
             },
             {

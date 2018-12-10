@@ -6,7 +6,7 @@ do
     function CreateInitialArmyGroup(strArmy, createCommander)
         if createCommander then
             AddBuildRestriction(strArmy, categories.RESEARCHLOCKED + categories.RESEARCHLOCKEDTECH1 + categories.TECH2 + categories.TECH3 + categories.EXPERIMENTAL)
-            --GetArmyBrain(strArmy):AISimulateResearch()
+            GetArmyBrain(strArmy):StartingResearch()
         end
         return OldCreateInitialArmyGroup(strArmy, createCommander)
     end

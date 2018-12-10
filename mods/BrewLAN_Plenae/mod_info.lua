@@ -1,0 +1,11 @@
+name = "BrewLAN: Plenae"
+uid = "190261d0-4bb0-11e2-bcSC-BLPLENUS0001"
+version = 1
+copyright = "© 2009–2018 Sean Wheeldon"
+description = "Container for BrewLAN aesthetic mods, including; Damage Numbers, Baristas, and Spomeniki."
+author = "Sean Wheeldon"
+icon = "/mods/BrewLAN_Plenae/folder.png"
+selectable = false
+enabled = false
+exclusive = false
+ui_only = false
