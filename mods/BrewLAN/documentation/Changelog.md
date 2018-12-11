@@ -416,7 +416,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-12-10
 
   * Created mod info files that are hidden in game for the mod categorisation directories.
+    * These are specifically for the FAF vault release. They do nothing elsewhere.
   * R&D: You now get starting research based on starting units.
+
+  ### 2018-12-11
+
+  * Changed experimental factory unit assignment so they no longer receive FAF factory upgrade options that they can't use.
+    * Side effect of this is that the Aeon and Seraphim experimental factories can now build field engineers.
+  * Changed the build icon sort priority of the Aeon tech 2 defence engineer. 
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

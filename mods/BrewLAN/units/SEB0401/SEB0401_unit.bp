@@ -242,11 +242,8 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 7034,
         BuildableCategory = {
-            'BUILTBYLANDTIER3FACTORY UEF',
-            'BUILTBYTIER3FACTORY UEF',
-            'TRANSPORTBUILTBYTIER3FACTORY UEF',
-            'BUILTBYGANTRY UEF',
-            'BUILTBYGANTRY EXPERIMENTAL',
+            'BUILTBYEXPERIMENTALFACTORY UEF',
+            'BUILTBYGANTRY',
         },
         RebuildBonusIds = {
             'seb0401',

@@ -197,10 +197,8 @@ UnitBlueprint {
         BuildRate = 60*8.5,
         BuildTime = 6000,
         BuildableCategory = {
-            'BUILTBYTIER3FACTORY SERAPHIM',
-            'TRANSPORTBUILTBYTIER3FACTORY SERAPHIM',
-            'BUILTBYSOUIYA SERAPHIM',
-            'BUILTBYSOUIYA EXPERIMENTAL',
+            'BUILTBYEXPERIMENTALFACTORY SERAPHIM',
+            'BUILTBYSOUIYA',
         },
         InitialRallyX = 0,
         InitialRallyZ = 10,

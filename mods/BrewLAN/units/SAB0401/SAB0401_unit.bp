@@ -236,10 +236,8 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 7000,
         BuildableCategory = {
-            'BUILTBYTIER3FACTORY AEON',
-            'TRANSPORTBUILTBYTIER3FACTORY AEON',
-            'BUILTBYIENGINE AEON',
-            'BUILTBYIENGINE EXPERIMENTAL',
+            'BUILTBYEXPERIMENTALFACTORY AEON',
+            'BUILTBYIENGINE'
         },
         RebuildBonusIds = {
             'sab0401',

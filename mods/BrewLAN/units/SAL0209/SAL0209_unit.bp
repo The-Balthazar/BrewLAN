@@ -67,7 +67,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    BuildIconSortPriority = 15,
+    BuildIconSortPriority = 11,
     Categories = {
         'PRODUCTBREWLAN',
         'SELECTABLE',

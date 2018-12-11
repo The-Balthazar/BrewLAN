@@ -318,6 +318,7 @@ function BrewLANGantryBuildList(all_bps)
             }
         end
     end
+    --Gantry experimental build list
     for id, bp in all_bps do
         --Check it has a category table first
         for gantryId, info in Gantries do
@@ -365,6 +366,24 @@ function BrewLANGantryBuildList(all_bps)
             end
         end
     end
+
+    --This section is entirely because, as usual for a FAF function being over zealous, FAF support factories get fucking everywhere.
+    for id, bp in all_bps do
+        for gantryId, info in Gantries do
+            if BrewLANCheckGantryShouldBuild(bp.Categories) and string.upper(bp.Physics.MotionType or 'RULEUMT_NONE') != 'RULEUMT_NONE' then
+                table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
+            end
+        end
+    end
+end
+
+function BrewLANCheckGantryShouldBuild(catArray)
+    for i, cat in catArray do
+        if string.find(cat, 'BUILTBY') and string.find(cat, 'FACTORY') then
+            return true
+        end
+    end
+    return false
 end
 
 --------------------------------------------------------------------------------

@@ -169,11 +169,8 @@ UnitBlueprint {
         BuildRate = 60*4,
         BuildTime = 6580,
         BuildableCategory = {
-            'BUILTBYLANDTIER3FACTORY CYBRAN',
-            'BUILTBYTIER3FACTORY CYBRAN',
-            'TRANSPORTBUILTBYTIER3FACTORY CYBRAN',
-            'BUILTBYARTHROLAB CYBRAN',
-            'BUILTBYARTHROLAB EXPERIMENTAL',
+            'BUILTBYEXPERIMENTALFACTORY CYBRAN',
+            'BUILTBYARTHROLAB',
         },
         RebuildBonusIds = {
             'srb0401',
