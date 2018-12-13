@@ -229,6 +229,7 @@ UnitBlueprint {
                 Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar20x_01_normals.dds',
                 Orientations = {
                     0,
+                    180,
                 },
                 RemoveWhenDead = false,
                 Width = 12.8*2,

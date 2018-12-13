@@ -423,7 +423,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Changed experimental factory unit assignment so they no longer receive FAF factory upgrade options that they can't use.
     * Side effect of this is that the Aeon and Seraphim experimental factories can now build field engineers.
-  * Changed the build icon sort priority of the Aeon tech 2 defence engineer. 
+  * Changed the build icon sort priority of the Aeon tech 2 defence engineer.
+
+  ### 2018-12-12
+
+  * Allowed the Gantry tarmac to appear rotated 180.
+  * Added the following mods that used to be exclusive to the April 1st release and requestathon releases:
+    * Knife Fight
+    * Sudden Death
+    * Invisible War
+    * Scathing Beetles
+    * Water Guard
+  * Knife fight now has two knife options for units.
+  * Scathing Beetles now works for both BrewLAN and Vanilla, and only affects anything if either is still using the original projectile.
 
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 

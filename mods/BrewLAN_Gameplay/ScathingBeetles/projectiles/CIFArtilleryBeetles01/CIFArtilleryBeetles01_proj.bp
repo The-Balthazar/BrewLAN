@@ -1,0 +1,73 @@
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'Impacts',
+            Cue = 'CYB_Expl_Med_Impact',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Land_Gen_CYBRAN',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Water_Splash_CYBRAN',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'CYBRAN',
+        'PROJECTILE',
+        'INDIRECTFIRE',
+    },
+    Display = {
+        CameraFollowTimeout = 5,
+        CameraFollowsProjectile = true,
+        ImpactEffects = {
+            Type = 'Large01',
+        },
+        Mesh = {
+            LODs = {
+                {
+                    LODCutoff = 150,
+                    ShaderName = 'Insect',
+                    MeshName = '/units/xrl0302/xrl0302_lod0.scm',
+                    AlbedoName = '/units/xrl0302/xrl0302_albedo.dds',
+                    NormalsName = '/units/xrl0302/xrl0302_normalsts.dds',
+                    SpecularName = '/units/xrl0302/xrl0302_specteam.dds',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    MeshName = '/units/xrl0302/xrl0302_lod1.scm',
+                    AlbedoName = '/units/xrl0302/xrl0302_lod1_albedo.dds',
+                    NormalsName = '/units/xrl0302/xrl0302_lod1_normalsts.dds',
+                    SpecularName = '/units/xrl0302/xrl0302_lod1_specteam.dds',
+                },
+            },
+        },
+        StrategicIconSize = 3,
+        UniformScale = 0.054,
+    },
+    General = {
+        Category = 'Artillery',
+        EntityCategory = {
+            'CYBRAN',
+            'PROJECTILE',
+            'INDIRECTFIRE',
+        },
+        Faction = 'Cybran',
+        TechLevel = 3,
+        Weapon = 'Extra Mobile Bomb',
+    },
+    Interface = {
+        HelpText = 0,
+    },
+    Physics = {
+        DestroyOnWater = true,
+        LeadTarget = false,
+        TurnRate = 360,
+        VelocityAlign = true,
+    },
+}

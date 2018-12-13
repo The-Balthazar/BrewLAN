@@ -1,0 +1,11 @@
+MeshBlueprint {
+    LODs = {
+        {
+            ShaderName = 'Unit',
+            LODCutoff = 1000,
+        },
+    },
+    IconFadeInZoom = 4,
+    SortOrder = 1000,
+    StraddleWater = true,
+}
