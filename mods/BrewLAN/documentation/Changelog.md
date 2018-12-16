@@ -437,6 +437,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Knife fight now has two knife options for units.
   * Scathing Beetles now works for both BrewLAN and Vanilla, and only affects anything if either is still using the original projectile.
 
+  ### 2018-12-13
+
+  * New mod, Rock Paper Scissors.
+  * R&D: Research items now have defined build icon sort priorities.
+  * R&D: Added a basic hovercraft factory for testing.
+
+  ### 2018-12-14
+
+  * R&D: Created the model for the Aeon Hovercraft Factory.
+
+  ### 2018-12-15
+
+  * R&D: Finished the Aeon Hovercraft Factories.
+
+  ### 2018-12-15
+
+  * RPS: Finished the script to generate the armor definitions table, which was more complicated than I was planning.
+  * RPS: Corrected the blueprint script not properly handling experimental footfall damage.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

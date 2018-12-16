@@ -12,6 +12,7 @@ function ModBlueprints(all_blueprints)
     RNDPrepareScript(all_blueprints.Unit)
     RestrictExistingBlueprints(all_blueprints.Unit)
     RebalanceExistingBlueprints(all_blueprints.Unit)
+    RNDDefineNewFactoryBuildCategories(all_blueprints.Unit)
     GenerateResearchItemBPs(all_blueprints.Unit)
 end
 
@@ -135,6 +136,17 @@ function RebalanceExistingBlueprints(all_bps)
 end
 
 --------------------------------------------------------------------------------
+-- Create build categories for the amphib/sub/seaplane factories
+--------------------------------------------------------------------------------
+function RNDDefineNewFactoryBuildCategories(all_bps)
+    for id, bp in all_bps do
+        if TableFindSubstrings(bp.Categories, 'BUILTBY', 'FACTORY') and (string.upper(bp.Physics.MotionType or 'nope') == 'RULEUMT_HOVER' or string.lower(bp.Physics.MotionType or 'nope') == 'ruleumt_amphibiousfloating') then
+            table.insert(bp.Categories, 'BUILTBYAMPHFACTORY')
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
 -- Make some research items
 --------------------------------------------------------------------------------
 function GenerateResearchItemBPs(all_bps)
@@ -155,6 +167,7 @@ function GenerateResearchItemBPs(all_bps)
         local techresearch = {
             RESEARCHLOCKEDTECH1 = {
                 techid = 1,
+                BuildIconSortPriority = 0,
                 Economy = {
                     BuildCostEnergy = 130,
                     BuildCostMass = 26,
@@ -166,6 +179,7 @@ function GenerateResearchItemBPs(all_bps)
             },
             TECH2 = {
                 techid = 2,
+                BuildIconSortPriority = 0,
                 Economy = {
                     BuildCostEnergy = 8040,
                     BuildCostMass = 960,
@@ -177,6 +191,7 @@ function GenerateResearchItemBPs(all_bps)
             },
             TECH3 = {
                 techid = 3,
+                BuildIconSortPriority = 0,
                 Economy = {
                     BuildCostEnergy = 31500,
                     BuildCostMass = 3640,
@@ -188,6 +203,7 @@ function GenerateResearchItemBPs(all_bps)
             },
             EXPERIMENTAL = {
                 techid = 4,
+                BuildIconSortPriority = 0,
                 Economy = {
                     BuildCostEnergy = 123415,
                     BuildCostMass = 13800,
@@ -224,6 +240,7 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
     all_bps[newid] = {
         BlueprintId = newid,
         ResearchId = id,
+        BuildIconSortPriority = bp.BuildIconSortPriority or 5,
         Categories = {
             'PRODUCTBREWLANRND',
             'BUILTBYRESEARCH',
