@@ -4,7 +4,7 @@
 do
     function CreateProps()
         for i, tblData in pairs(Scenario['Props']) do
-            if tblData.type != "Mass" then
+            if tblData.type ~= "Mass" then
                 CreatePropHPR(
                     tblData.prop,
                     tblData.Position[1], tblData.Position[2], tblData.Position[3],
@@ -18,7 +18,7 @@ do
         local markers = GetMarkers()
         for i, tblData in pairs(markers) do
             if tblData.resource then
-                if tblData.type != "Mass" then
+                if tblData.type ~= "Mass" then
                     CreateSingleResource(tblData)
                 else
                     local coordsTbl = {

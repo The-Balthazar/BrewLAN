@@ -19,7 +19,7 @@ end
 
 function SuddenDeath(all_bps)
     local RegularWeapon = function(weapon, bp)
-        return weapon.RangeCategory != 'UWRC_Countermeasure'
+        return weapon.RangeCategory ~= 'UWRC_Countermeasure'
     end
     local setThings = function(bp,num)
         if bp.Defense.MaxHealth and bp.Defense.Health then
@@ -27,7 +27,7 @@ function SuddenDeath(all_bps)
             bp.Defense.Health = num
             bp.Defense.RegenRate = math.floor((num/20)+0.5)
         end
-        if bp.Defense.Shield.ShieldMaxHealth and bp.Defense.Shield.ShieldMaxHealth != 1 then
+        if bp.Defense.Shield.ShieldMaxHealth and bp.Defense.Shield.ShieldMaxHealth ~= 1 then
             bp.Defense.Shield.ShieldMaxHealth = num
             bp.Defense.Shield.ShieldRegenRate = 1 + math.floor((num/20)+0.5)
         end

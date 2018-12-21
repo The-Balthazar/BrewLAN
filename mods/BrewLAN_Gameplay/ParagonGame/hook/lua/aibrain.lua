@@ -34,7 +34,7 @@ AIBrain = Class(AIBrain) {
             --Picking who should get a paragon
             for name, army in ScenarioInfo.ArmySetup do
                 if not army.Civilian then
-                    if self:CountTeamSize(teams, army.Team ) == minTeamQuantity or ScenarioInfo.Options.TeamLock != 'locked' then
+                    if self:CountTeamSize(teams, army.Team ) == minTeamQuantity or ScenarioInfo.Options.TeamLock ~= 'locked' then
                         army.ShouldGetParagon = true
                         LOG("HELLO MY NAME IS ARMY_" .. army.ArmyIndex .. " and i am on one of the smallest teams, or teams aren't locked" )
                     end

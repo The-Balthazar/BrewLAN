@@ -9,7 +9,7 @@ DisarmBeam = Class(UltraChromaticBeamGeneratorCollisionBeam) {
             local bp = targetEntity:GetBlueprint()
             local weps = {}
             for i, v in bp.Weapon do
-                if v.RackBones and v.WeaponCategory != 'Death' then -- and targetEntity:GetWeaponByLabel(v.Label):IsEnabled() then
+                if v.RackBones and v.WeaponCategory ~= 'Death' then -- and targetEntity:GetWeaponByLabel(v.Label):IsEnabled() then
                     table.insert(weps, i)
                 end
             end

@@ -19,7 +19,7 @@ end
 
 function KnivesAtDawn(all_bps)
     local NormalKnifeWeapon = function(weapon, bp)
-        return weapon.WeaponCategory != 'Death' and not weapon.NeedToComputeBombDrop and not ((table.find(bp.Categories, 'STRUCTURE') or table.find(bp.Categories, 'LAND') or table.find(bp.Categories, 'NAVAL') ) and weapon.RangeCategory == 'UWRC_AntiAir' ) and weapon.RangeCategory != 'UWRC_Countermeasure'
+        return weapon.WeaponCategory ~= 'Death' and not weapon.NeedToComputeBombDrop and not ((table.find(bp.Categories, 'STRUCTURE') or table.find(bp.Categories, 'LAND') or table.find(bp.Categories, 'NAVAL') ) and weapon.RangeCategory == 'UWRC_AntiAir' ) and weapon.RangeCategory ~= 'UWRC_Countermeasure'
     end
     for id, bp in all_bps do
         local SizeMult = 1 / (bp.Display.UniformScale or 1)

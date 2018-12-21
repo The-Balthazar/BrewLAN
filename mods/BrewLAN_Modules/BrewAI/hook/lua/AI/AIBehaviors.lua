@@ -137,13 +137,13 @@ CenturionBehaviorBrewLAN = function(self)
             
             if not ACUsAboveWater[1] then
                 targetLocation = GetClosestThingToThing(experimental, ACUsAboveWater)
-                while targetLocation and targetLocation:GetCurrentLayer() != 'Seabed' do  
+                while targetLocation and targetLocation:GetCurrentLayer() ~= 'Seabed' do  
                     IssueClearCommands({experimental})
                     IssueAggressiveMove({experimental}, targetLocation)           
                     WaitSeconds(25)
                 end
             else     
-                if targetLocation and targetLocation != oldTargetLocation then
+                if targetLocation and targetLocation ~= oldTargetLocation then
                     IssueClearCommands({experimental})
                     IssueAggressiveMove({experimental}, targetLocation)           
                     WaitSeconds(25)

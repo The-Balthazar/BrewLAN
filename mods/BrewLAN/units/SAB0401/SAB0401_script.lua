@@ -125,7 +125,7 @@ SAB0401 = Class(AAirFactoryUnit) {
                 if math.random(1,15) == 10 then
                     --bRotator:SetGoal(math.random(1,3) * 22.5 - 22.5 )
                     for i, slider in nSliders do
-                        if math.random(1,8) != 8 then
+                        if math.random(1,8) ~= 8 then
                             bSliderPos = pMaxHeight * RandomFloat(0,1) * ((1 - uBBF) * .75)
                             slider:SetGoal(0, bSliderPos ,0)
                         end

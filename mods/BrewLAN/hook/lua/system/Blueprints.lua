@@ -245,7 +245,7 @@ function BrewLANCategoryChanges(all_bps)
                             end
                         end
                     end
-                    if i != 'r' then
+                    if i ~= 'r' then
                         table.insert(all_bps[k].Categories, v[i])
                     end
                 end
@@ -370,7 +370,7 @@ function BrewLANGantryBuildList(all_bps)
     --This section is entirely because, as usual for a FAF function being over zealous, FAF support factories get fucking everywhere.
     for id, bp in all_bps do
         for gantryId, info in Gantries do
-            if BrewLANCheckGantryShouldBuild(bp.Categories) and string.upper(bp.Physics.MotionType or 'RULEUMT_NONE') != 'RULEUMT_NONE' then
+            if BrewLANCheckGantryShouldBuild(bp.Categories) and string.upper(bp.Physics.MotionType or 'RULEUMT_NONE') ~= 'RULEUMT_NONE' then
                 table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
             end
         end
@@ -784,7 +784,7 @@ function BrewLANMatchBalancing(all_bps)
             if all_bps[unitid] and (all_bps[tid[1]] and all_bps[tid[2]] or all_bps[tid]) then
                 LOG("Syncronising balance for " .. unitid)
                 for i, tablename in Affects do
-                    if tablename != 'Shield' then
+                    if tablename ~= 'Shield' then
                         for key, val in  all_bps[unitid][tablename] do
                             if type(val) == 'number' and (type(all_bps[tid[1]][tablename][key]) == 'number' and type(all_bps[tid[2]][tablename][key]) == 'number' or type(all_bps[tid][tablename][key]) == 'number') then
                                 local mult, rawnumber
@@ -918,7 +918,7 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANRelativisticLinksUpdate(all_bps)
-    if string.lower(BrewLANPath() ) != "/mods/brewlan" then
+    if string.lower(BrewLANPath() ) ~= "/mods/brewlan" then
         all_bps.Unit.zzz2220.Desync = {
             "BrewLAN reports you installed it",
             "wrong; it should be at:",

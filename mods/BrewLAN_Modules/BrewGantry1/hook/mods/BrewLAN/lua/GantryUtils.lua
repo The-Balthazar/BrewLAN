@@ -9,7 +9,7 @@ do
         -- AIX cheats
         ------------------------------------------------------------------------
         local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
+        if aiBrain.BrainType ~= 'Human' and aiBrain.CheatEnabled then
             self:SetBuildRate( self:GetBlueprint().Economy.BuildRate * (math.min(2.5+(GetGameTimeSeconds()/120-self.Time/120), 25)) )
             if not self.Multiplier then
                 self.Multiplier = 1

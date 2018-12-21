@@ -62,7 +62,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
             local duration = GetGameTimeSeconds() - enttable.startTime
             local intro = (", " .. tostring(duration) .. ", " .. unitdetails)
 
-            if enttable.Message != math.floor(enttable.totalDamageSustain / duration + 0.5) .. ", " .. math.floor(enttable.totalDamageBurst / duration + 0.5) then
+            if enttable.Message ~= math.floor(enttable.totalDamageSustain / duration + 0.5) .. ", " .. math.floor(enttable.totalDamageBurst / duration + 0.5) then
                 enttable.Message = math.floor(enttable.totalDamageSustain / duration + 0.5) .. ", " .. math.floor(enttable.totalDamageBurst / duration + 0.5)
                 LOG(intro .. enttable.Message )
                 if math.floor(enttable.totalDamageSustain / duration + 0.5) == math.floor(enttable.totalDamageBurst / duration + 0.5) then

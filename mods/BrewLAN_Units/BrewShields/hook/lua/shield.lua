@@ -64,7 +64,7 @@ ProjectedShield = Class(Shield){
             beams[i] = AttachBeamEntityToEntity(self, 0, Pillar, 'Gem', self:GetArmy(), Pillar:GetBlueprint().Defense.Shield.ShieldTargetBeam)
         end
         Warp( ImpactMesh, self:GetPosition())
-        if self.ImpactMeshBp != '' then
+        if self.ImpactMeshBp ~= '' then
             ImpactMesh:SetMesh(self.ImpactMeshBp)
             ImpactMesh:SetDrawScale(self.Size)
             ImpactMesh:SetOrientation(OrientFromDir(Vector(-vector.x,-vector.y,-vector.z)),true)

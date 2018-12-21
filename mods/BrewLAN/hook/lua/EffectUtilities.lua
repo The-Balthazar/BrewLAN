@@ -1,6 +1,6 @@
 function IntelDishAnimationThread(self, bones)
     if not self then return end
-    if type(bones) != 'table' then return end
+    if type(bones) ~= 'table' then return end
     --[[
     Bones wants to look like this:
     bones = {

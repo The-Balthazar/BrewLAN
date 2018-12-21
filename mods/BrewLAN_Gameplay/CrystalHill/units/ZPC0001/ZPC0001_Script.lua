@@ -54,15 +54,15 @@ ZPC0001 = Class(SStructureUnit) {
         local aiBrain = self:GetAIBrain()
         local radius = self:GetBlueprint().Intel.VisionRadius or 20
         while not self.WinnerMessage do
-            if self.Count(self) != 0 and self.Count(self, 'Ally' ) == 0 then
+            if self.Count(self) ~= 0 and self.Count(self, 'Ally' ) == 0 then
                 local Units = aiBrain:GetUnitsAroundPoint(categories.SELECTABLE - categories.WALL - categories.SATELLITE - categories.UNTARGETABLE, pos, radius)
-                if Units[1] and IsUnit(Units[1]) and Units[1]:GetArmy() != self:GetArmy() then
+                if Units[1] and IsUnit(Units[1]) and Units[1]:GetArmy() ~= self:GetArmy() then
                     ChangeUnitArmy(self,Units[1]:GetArmy())
                 end
             end
             local remaining = (ScenarioInfo.Crystal.EndTimeMins * 60) - GetGameTimeSeconds()
             local overtimeremaining = ((ScenarioInfo.Crystal.EndTimeOvertimeMins or ScenarioInfo.Crystal.EndTimeMins) * 60) - GetGameTimeSeconds()
-            if remaining < 10 and self.Count(self, 'Enemy') != 0 then
+            if remaining < 10 and self.Count(self, 'Enemy') ~= 0 then
                 ScenarioInfo.Crystal.EndTimeOvertimeMins = (GetGameTimeSeconds() + ScenarioInfo.Crystal.OvertimeGraceSeconds) / 60
                 Sync.CrystalEndTimeOvertimeMins = ScenarioInfo.Crystal.EndTimeOvertimeMins
             elseif remaining < 0 and self.Count(self, 'Enemy') == 0 and overtimeremaining < 0 then
@@ -77,7 +77,7 @@ ZPC0001 = Class(SStructureUnit) {
                     end
                 elseif ScenarioInfo.Options.TeamLock == "unlocked" then
                     for i, brain in ArmyBrains do
-                        if self:GetArmy() != brain:GetArmyIndex() then
+                        if self:GetArmy() ~= brain:GetArmyIndex() then
                             brain:OnDefeat()
                         else
                             allies = allies + 1
@@ -142,7 +142,7 @@ ZPC0001 = Class(SStructureUnit) {
             elseif fealty == "Enemy" then
                 -- Only non-self units
                 for index, brain in ArmyBrains do
-                    if brain:GetArmyIndex() != self:GetArmy() then
+                    if brain:GetArmyIndex() ~= self:GetArmy() then
                         for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, searchCat, pos, radius) do
                             table.insert(units, unit)
                         end
@@ -155,7 +155,7 @@ ZPC0001 = Class(SStructureUnit) {
         end
         local count = 0
         for k, v in units do
-            if v:GetEntityId() != self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) then
+            if v:GetEntityId() ~= self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) then
                 count = count + 1
             end
         end

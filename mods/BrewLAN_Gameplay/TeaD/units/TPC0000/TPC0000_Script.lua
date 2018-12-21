@@ -35,7 +35,7 @@ TPC0000 = Class(SStructureUnit) {
             Units = aiBrain:GetUnitsAroundPoint( categories.CREEP, pos, radius)
             if Units then
                 for i,v in Units do 
-                    if v:GetEntityId() != self:GetEntityId() then 
+                    if v:GetEntityId() ~= self:GetEntityId() then 
                         if not EntityCategoryContains(categories.PATHFINDER + categories.DAMAGETEST, v) then
                             if EntityCategoryContains(categories.BIGBOSS, v) then
                                 self:SetHealth(self, self:GetHealth() - 30)

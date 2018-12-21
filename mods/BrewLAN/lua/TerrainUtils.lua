@@ -2,7 +2,7 @@ function GetTerrainSlopeAngles(pos, box)
     --Reject if pos isn't a table, or if box isn't a number or table, unless there is no box
     --We are just going to asume pos is a co-ord if its a table.
     if
-      type(pos) != "table"
+      type(pos) ~= "table"
     or not
       (
         type(box) == "nil"

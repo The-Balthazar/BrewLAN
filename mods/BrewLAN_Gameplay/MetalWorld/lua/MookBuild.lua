@@ -3,7 +3,7 @@ function AiTrix(SuperClass)
         OnStopBeingBuilt = function(self,builder,layer)
             SuperClass.OnStopBeingBuilt(self,builder,layer)     
             local aiBrain = self:GetAIBrain()
-            if aiBrain.BrainType != 'Human' then 
+            if aiBrain.BrainType ~= 'Human' then 
                 local fI = aiBrain:GetFactionIndex()
                 local powerfabs = {
                     'ueb1101',

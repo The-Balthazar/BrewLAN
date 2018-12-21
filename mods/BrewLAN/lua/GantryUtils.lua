@@ -82,7 +82,7 @@ end
 --------------------------------------------------------------------------------
 function AIStartOrders(self)
     local aiBrain = self:GetAIBrain()
-    if aiBrain.BrainType != 'Human' then
+    if aiBrain.BrainType ~= 'Human' then
         local uID = self:GetUnitId()
         self.Time = GetGameTimeSeconds()
         BuildModeChange(self)
@@ -97,7 +97,7 @@ end
 
 function AIControl(self, unitBeingBuilt)
     local aiBrain = self:GetAIBrain()
-    if aiBrain.BrainType != 'Human' then
+    if aiBrain.BrainType ~= 'Human' then
         if self.AIUnitControl then
             self.AIUnitControl(self, unitBeingBuilt, aiBrain)
         end
@@ -199,7 +199,7 @@ end
 --------------------------------------------------------------------------------
 function AIStartCheats(self, Buff)
     local aiBrain = self:GetAIBrain()
-    if aiBrain.BrainType != 'Human' then
+    if aiBrain.BrainType ~= 'Human' then
         if aiBrain.CheatEnabled then
             if not Buffs['GantryAIxBaseBonus'] then
                 BuffBlueprint {

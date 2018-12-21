@@ -20,9 +20,9 @@ AIBrain = Class(AIBrain) {
         local AiTeam = true
         --If we are on the free team (-), which is index 1, and an AI, we are a lonely AI
         if
-          not (ScenarioInfo.ArmySetup[strArmy].Team == 1 and GetArmyBrain(strArmy).BrainType != 'Human')
+          not (ScenarioInfo.ArmySetup[strArmy].Team == 1 and GetArmyBrain(strArmy).BrainType ~= 'Human')
           or
-          GetArmyBrain(strArmy).BrainType != 'Human' and ScenarioInfo.ArmySetup[strArmy].Team > 1 then
+          GetArmyBrain(strArmy).BrainType ~= 'Human' and ScenarioInfo.ArmySetup[strArmy].Team > 1 then
             for name, army in ScenarioInfo.ArmySetup do
                 if army.Human == true and army.Team == ScenarioInfo.ArmySetup[strArmy].Team then
                     AiTeam = false
@@ -57,7 +57,7 @@ AIBrain = Class(AIBrain) {
                             ForkThread(function()
                                 WaitTicks(5)
                                 local message = "Bad Map Detected"
-                                if mapdist[1] != "badmap" then
+                                if mapdist[1] ~= "badmap" then
                                     message = mapdist[1]
                                 end
                                 Sync.TeaDMessage = {

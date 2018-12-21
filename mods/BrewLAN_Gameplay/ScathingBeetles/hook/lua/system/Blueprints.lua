@@ -26,7 +26,7 @@ do
             local bp = all_bps[id]
             if bp then
                 for i, weapon in bp.Weapon do
-                    if not weapon.WeaponCategory != 'Death'
+                    if not weapon.WeaponCategory ~= 'Death'
                     and string.lower(weapon.ProjectileId or 'nope') == '/projectiles/cifartilleryproton01/cifartilleryproton01_proj.bp' then
                         weapon.ProjectileId = BeetlesLocation() .. '/projectiles/CIFArtilleryBeetles01/CIFArtilleryBeetles01_proj.bp'
                     end

@@ -117,7 +117,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
 
     OnStopBeingBuilt = function(self, builder, layer)
         local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' then
+        if aiBrain.BrainType ~= 'Human' then
             if builder.ResearchList then
                 self.ResearchList = table.copy(builder.ResearchList)
             end
@@ -157,7 +157,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
     OnStopBuild = function(self, unitbuilding, order)
         if not Buffs['ResearchItemBuff5'] then
             for i = 1, 5 do
-                if i != 4 then
+                if i ~= 4 then
                     BuffBlueprint {
                         Name = 'ResearchItemBuff' .. i, DisplayName = 'ResearchItemBuff' .. i,
                         BuffType = 'RESEARCH', Stacks = 'ALWAYS', Duration = -1,

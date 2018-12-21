@@ -23,7 +23,7 @@ do
     function AIStartCheats(self, Buff)
         OldAIStartCheats(self, Buff)
         local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
+        if aiBrain.BrainType ~= 'Human' and aiBrain.CheatEnabled then
             self.massIncome = 0
             self.energyIncome = 0
             self:ForkThread(
@@ -52,7 +52,7 @@ do
         -- AIX cheats
         ------------------------------------------------------------------------
         local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
+        if aiBrain.BrainType ~= 'Human' and aiBrain.CheatEnabled then
             -- AI supah4x0r
             self.massIncome = (self.massIncome or 0) + massIncrement
             self.energyIncome = (self.energyIncome or 0) + energyIncrement

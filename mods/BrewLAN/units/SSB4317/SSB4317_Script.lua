@@ -80,7 +80,7 @@ SSB4317 = Class(SStructureUnit) {
     end,
 
     DestroyChildren = function(self, var)
-        if type(var) != "boolean" then
+        if type(var) ~= "boolean" then
             if self.Holograms[var] then
                 self.Holograms[var]:Destroy()
                 self.Holograms[var] = nil

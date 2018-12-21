@@ -128,8 +128,8 @@ function StargateDialing(SuperClass)
             --end
 
             if targetgate                                   --Check we have a target
-            and targetgate != self                          --Check not trying to dial self
-            and targetgate != self.DialingData.TargetGate   --Check not redialing the same gate
+            and targetgate ~= self                          --Check not trying to dial self
+            and targetgate ~= self.DialingData.TargetGate   --Check not redialing the same gate
             and targetgate.DialingData.WormholeThread       --Check the target is built and ready
             and not targetgate.DialingData.ActiveWormhole   --Check the target isn't already dialing out
             and not targetgate.DialingData.IncomingWormhole --Check the target isn't already being dialed into
@@ -276,7 +276,7 @@ function StargateDialing(SuperClass)
             -- First time triggers
             --------------------------------------------------------------------
             if not self.DailingAnimation then self.DailingAnimation = CreateRotator(self, 'Ring', 'z') end
-            if target != self and not target.DailingAnimation then target.DailingAnimation = CreateRotator(target, 'Ring', 'z') end
+            if target ~= self and not target.DailingAnimation then target.DailingAnimation = CreateRotator(target, 'Ring', 'z') end
             --------------------------------------------------------------------
             -- Dial turn function
             --------------------------------------------------------------------
@@ -302,7 +302,7 @@ function StargateDialing(SuperClass)
             for i, chevron in Chevrons do
                 Dial(self.DailingAnimation, {i, chevron, self.DialingData.CurrentPosition})
                 self.DialingData.CurrentPosition = chevron
-                if self != target then
+                if self ~= target then
                     Dial(target.DailingAnimation, {i, chevron, target.DialingData.CurrentPosition})
                     target.DialingData.CurrentPosition = chevron
                 end

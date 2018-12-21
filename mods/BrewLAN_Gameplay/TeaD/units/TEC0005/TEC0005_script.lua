@@ -20,7 +20,7 @@ TEC0005 = Class(TShieldLandUnit) {
                 self.TerrainLayerTransitionThread:Destroy()
                 self.TerrainLayerTransitionThread = nil
             end
-            if (new == 'Land') and (old != 'None') then
+            if (new == 'Land') and (old ~= 'None') then
                 self.TerrainLayerTransitionThread = self:ForkThread(self.TransformThread, false)
             elseif (new == 'Water') then
                 self.TerrainLayerTransitionThread = self:ForkThread(self.TransformThread, true)

@@ -89,7 +89,7 @@ local function CreateNameFilter(data)
                 elseif activeFilters[self.key][self.filterKey] then
                     local otherChecked = false
                     for _, control in group.items do
-                        if control != self then
+                        if control ~= self then
                             if control:IsChecked() then
                                 otherChecked = true
                                 break
@@ -234,14 +234,14 @@ function CreateDialog(x, y)
     local function SetFilters(filterTable)
         for filterGroup, groupControls in filterGroups do
             local key = groupControls.check.key
-            if filterTable[key] != nil then
+            if filterTable[key] ~= nil then
                 LOG('setting key: ', key, ' to: ', filterTable[key].value)
-                if groupControls.check:IsChecked() != filterTable[key].value then
+                if groupControls.check:IsChecked() ~= filterTable[key].value then
                     groupControls.check:SetCheck(filterTable[key].value)
                 end
                 if groupControls.items then
                     for choiceIndex, choiceControl in groupControls.items do
-                        if filterTable[key].choices[choiceControl.filterKey] != nil and choiceControl:IsChecked() != filterTable[key].choices[choiceControl.filterKey] then
+                        if filterTable[key].choices[choiceControl.filterKey] ~= nil and choiceControl:IsChecked() ~= filterTable[key].choices[choiceControl.filterKey] then
                             choiceControl:SetCheck(filterTable[key].choices[choiceControl.filterKey])
                         end
                     end

@@ -45,7 +45,7 @@ do
                                         performUpgrade = true
                                     elseif blueprint.General.UpgradesFrom == unitBp.General.UpgradesTo then
                                         performUpgrade = true
-                                    elseif blueprint.General.UpgradesFromBase != "none" then
+                                    elseif blueprint.General.UpgradesFromBase ~= "none" then
                                         --try testing against the base
                                         if blueprint.General.UpgradesFromBase == unitBp.BlueprintId then
                                             performUpgrade = true
@@ -220,7 +220,7 @@ do
                                     performUpgrade = true                                                                                             --
                                 elseif blueprint.General.UpgradesFrom == unitBp.General.UpgradesTo then                                               --
                                     performUpgrade = true                                                                                             --
-                                elseif blueprint.General.UpgradesFromBase != "none" then                                                              --
+                                elseif blueprint.General.UpgradesFromBase ~= "none" then                                                              --
                                     -- try testing against the base                                                                                   --
                                     if blueprint.General.UpgradesFromBase == unitBp.BlueprintId then                                                  --
                                         performUpgrade = true                                                                                         --

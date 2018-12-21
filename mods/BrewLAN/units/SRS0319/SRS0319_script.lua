@@ -57,7 +57,7 @@ SRS0319 = Class(CSeaUnit) {
 
     OnLayerChange = function(self, new, old)
         CSeaUnit.OnLayerChange(self, new, old)
-        if( old != 'None' ) then
+        if( old ~= 'None' ) then
             if( self.AT1 ) then
                 self.AT1:Destroy()
                 self.AT1 = nil
@@ -113,7 +113,7 @@ SRS0319 = Class(CSeaUnit) {
     OnKilled = function(self, instigator, type, overkillRatio)
         self.Trash:Destroy()
         self.Trash = TrashBag()
-        if(self:GetCurrentLayer() != 'Water') then
+        if(self:GetCurrentLayer() ~= 'Water') then
             self:GetBlueprint().Display.AnimationDeath = self:GetBlueprint().Display.LandAnimationDeath
         else
             self:GetBlueprint().Display.AnimationDeath = self:GetBlueprint().Display.WaterAnimationDeath
@@ -122,7 +122,7 @@ SRS0319 = Class(CSeaUnit) {
     end,
 
      DeathThread = function(self, overkillRatio)
-        if (self:GetCurrentLayer() != 'Water') then
+        if (self:GetCurrentLayer() ~= 'Water') then
             self:PlayUnitSound('Destroyed')
             local army = self:GetArmy()
             if self.PlayDestructionEffects then

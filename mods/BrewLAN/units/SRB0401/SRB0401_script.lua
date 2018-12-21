@@ -218,7 +218,7 @@ SRB0401 = Class(CLandFactoryUnit) {
         while true do
             if self.AnimateArms then
                 for i, v in self.ArmRotators1 do
-                    if math.random(1,3) != 3 then
+                    if math.random(1,3) ~= 3 then
                         v:SetGoal(55 + math.random(0,10))
                     end
                 end

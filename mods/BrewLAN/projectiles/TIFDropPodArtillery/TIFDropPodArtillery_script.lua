@@ -34,12 +34,12 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
                 -- If we are on land                           and they say land                                             or the bitwise string is odd
                 DroppedUnit:GetCurrentLayer() == "Land" and (__blueprints[self.Data[1]].Physics.BuildOnLayerCaps == "Land" or math.mod(tonumber(__blueprints[self.Data[1]].Physics.BuildOnLayerCaps), 2) == 1)
                 or --or if we are not on land              and the unit doesn't say land                                then it will survive anywhere else since the other options are all "in or on the water"
-                DroppedUnit:GetCurrentLayer() != "Land" and __blueprints[self.Data[1]].Physics.BuildOnLayerCaps != "Land"
+                DroppedUnit:GetCurrentLayer() ~= "Land" and __blueprints[self.Data[1]].Physics.BuildOnLayerCaps ~= "Land"
             )
             then
                 local target = self:GetCurrentTargetPosition()
                 IssueMove( {DroppedUnit},  {target[1] + Random(-3, 3), target[2], target[3]+ Random(-3, 3)} )
-                if self.Data[2] and type(self.Data[2]) == "number" and self.Data[2] != 1 then
+                if self.Data[2] and type(self.Data[2]) == "number" and self.Data[2] ~= 1 then
                     local buffname = 'IvanHealthBuff' .. self.Data[2]
                     if not Buffs[buffname] then
                         BuffBlueprint {

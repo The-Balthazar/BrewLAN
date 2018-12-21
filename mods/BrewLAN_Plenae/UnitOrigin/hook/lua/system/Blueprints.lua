@@ -22,7 +22,7 @@ function OriginAbility(all_bps)
         --If it's a selectable unit
         if bp.Categories and table.find(bp.Categories, 'SELECTABLE') then
             local Source = bp.Source
-            if string.sub(Source, 1, 7) != "/units/" then
+            if string.sub(Source, 1, 7) ~= "/units/" then
                 for i, mod in __active_mods do
                     local dirlen = string.len(mod.location)
                     if mod.location == string.sub(Source, 1, dirlen ) and string.sub(Source, dirlen + 1, dirlen + 1) == "/" then

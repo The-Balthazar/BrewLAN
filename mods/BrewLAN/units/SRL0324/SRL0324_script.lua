@@ -152,7 +152,7 @@ SRL0324 = Class(CLandUnit) {
         end,
 
         OnMotionHorzEventChange = function(self, new, old)
-            if new != 'Stopped' then
+            if new ~= 'Stopped' then
                 ChangeState( self, self.VisibleState )
                 --LOG("OnMotionHorzEventChange become visible")
             end

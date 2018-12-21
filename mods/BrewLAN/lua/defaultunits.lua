@@ -170,7 +170,7 @@ StackingBuilderUnit = Class(FactoryUnit) {
         local bp = self:GetBlueprint()
         local bpAnim = bp.Display.AnimationFinishBuildLand
         --self:DestroyBuildRotator()
-        if order != 'Upgrade' then
+        if order ~= 'Upgrade' then
             ChangeState(self, self.RollingOffState)
         else
             self:SetBusy(false)

@@ -27,7 +27,7 @@ function RNDPrepareScript(all_bps)
             table.insert(bp.Economy.BuildableCategory, bp.General.UpgradesTo)
             table.remove(all_bps[bp.General.UpgradesTo].Categories, TableFindSubstrings(all_bps[bp.General.UpgradesTo].Categories, 'BUILTBY', 'FACTORY'))
         end
-        if bp.Categories and id != 'zzz6969' then -- zzz6969 is a cat dump unit for compatibility
+        if bp.Categories and id ~= 'zzz6969' then -- zzz6969 is a cat dump unit for compatibility
             --Create extended tech 1 restriction and allow the ACU to build them after the research
             if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER') and not table.find(bp.Categories, 'BUILTBYCOMMANDER') then
                 table.insert(bp.Categories, 'RESEARCHLOCKEDTECH1')
@@ -89,7 +89,7 @@ function RebalanceExistingBlueprints(all_bps)
         local bp = all_bps[id]
         local omnibp = all_bps[omniID]
         if bp and omnibp then
-            if bp.Intel.OmniRadius and bp.Intel.OmniRadius != 0 and bp.Economy.MaintenanceConsumptionPerSecondEnergy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
+            if bp.Intel.OmniRadius and bp.Intel.OmniRadius ~= 0 and bp.Economy.MaintenanceConsumptionPerSecondEnergy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
                 --Scale omni radii
                 omnibp.Intel.OmniRadius = bp.Intel.OmniRadius * 1.5
                 bp.Intel.OmniRadius = nil
@@ -220,7 +220,7 @@ function GenerateResearchItemBPs(all_bps)
                 local id = tech
                 bp.Categories[2] = string.upper(faction)
                 bp.Categories[3] = 'SORTCONSTRUCTION'
-                if tech != 'RESEARCHLOCKEDTECH1' then
+                if tech ~= 'RESEARCHLOCKEDTECH1' then
                     bp.Categories[4] = 'CONSTRUCTIONSORTDOWN'
                 end
                 if not bp.General then

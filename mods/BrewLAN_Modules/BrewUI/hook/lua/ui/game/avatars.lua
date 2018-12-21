@@ -35,7 +35,7 @@ function CreateIdleTab(unitData, id, expandFunc, ...)
         LayoutHelpers.AtVerticalCenterIn(bg.expandCheck, bg)
         bg.expandCheck.OnCheck = function(self, checked)
             if checked then
-                if expandedCheck and expandedCheck != bg.id and GetCheck(expandedCheck) then
+                if expandedCheck and expandedCheck ~= bg.id and GetCheck(expandedCheck) then
                     GetCheck(expandedCheck):SetCheck(false)
                 end
                 expandedCheck = bg.id

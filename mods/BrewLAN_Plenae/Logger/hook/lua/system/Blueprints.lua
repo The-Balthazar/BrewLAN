@@ -215,7 +215,7 @@ function CheckAllUnitThreatValues(all_bps)
 
             --Get rid of unused threat values
             for i, v in {'HealthThreat','PersonalShieldThreat', 'UnknownWeaponThreat'} do
-                if LOGOutput[id].Defense[v] and LOGOutput[id].Defense[v] != 0 then
+                if LOGOutput[id].Defense[v] and LOGOutput[id].Defense[v] ~= 0 then
                     LOG("Unused " .. v .. " " .. LOGOutput[id].Defense[v])
                     LOGOutput[id].Defense[v] = nil
                 end
@@ -314,7 +314,7 @@ function CheckUnitHasCorrectIconBackground(id, bp)
         MT == 'RULEUMT_Air' -- Fliers
         or MT == 'RULEUMT_None' and table.find(cats, 'FACTORY') and table.find(cats, 'AIR') --Aircraft factories
     ) then
-        if icon != 'air' then
+        if icon ~= 'air' then
             LOG(errorString .. "'air'.")
             --LOG(repr(BLC))
         end
@@ -324,7 +324,7 @@ function CheckUnitHasCorrectIconBackground(id, bp)
         or MT == 'RULEUMT_None' and not BLC.LAYER_Land and (BLC.LAYER_Seabed or BLC.LAYER_Sub or BLC.LAYER_Water) --buildings buildable in or on water, but not land
         or MT == 'RULEUMT_None' and table.find(cats, 'FACTORY') and table.find(cats, 'NAVAL') --Naval factories, if not specifically covered by the above, which they should be.
     ) then
-        if icon != 'sea' then
+        if icon ~= 'sea' then
             LOG(errorString .. "'sea'.")
             --LOG(repr(BLC))
         end
@@ -332,7 +332,7 @@ function CheckUnitHasCorrectIconBackground(id, bp)
         (MT == 'RULEUMT_Hover' or MT == 'RULEUMT_AmphibiousFloating' or MT == 'RULEUMT_Amphibious' )
         or MT == 'RULEUMT_None' and BLC.LAYER_Land and (BLC.LAYER_Seabed or BLC.LAYER_Sub or BLC.LAYER_Water) --buildings buildable in or on water as well as on land.
     ) then
-        if icon != 'amph' then
+        if icon ~= 'amph' then
             LOG(errorString .. "'amph'.")
             --LOG(repr(BLC))
         end
@@ -340,7 +340,7 @@ function CheckUnitHasCorrectIconBackground(id, bp)
         MT == 'RULEUMT_Land'
         or MT == 'RULEUMT_None' and BLC.LAYER_Land and not (BLC.LAYER_Seabed or BLC.LAYER_Sub or BLC.LAYER_Water) --buildings buildable on land, but not in or on the water.
     ) then
-        if icon != 'land' then
+        if icon ~= 'land' then
             LOG(errorString .. "'land'.")
             --LOG(repr(BLC))
         end

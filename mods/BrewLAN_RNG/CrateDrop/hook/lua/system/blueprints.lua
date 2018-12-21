@@ -21,7 +21,7 @@ do
                 end
                 --Check its not a ship or a building. Not relying on categories means we can still get things like the Salem.
                 if buildThis then
-                    if bp.Physics.MotionType != 'RULEUMT_None' and bp.Physics.MotionType != 'RULEUMT_SurfacingSub' and bp.Physics.MotionType != "RULEUMT_Water" then
+                    if bp.Physics.MotionType ~= 'RULEUMT_None' and bp.Physics.MotionType ~= 'RULEUMT_SurfacingSub' and bp.Physics.MotionType ~= "RULEUMT_Water" then
                         table.insert(all_bps.zzcrate.RandomBuildableUnits, id)
                         --Random engineers
                         if table.find(bp.Categories, 'ENGINEER') then

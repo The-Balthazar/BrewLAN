@@ -60,7 +60,7 @@ SAB4401 = Class(AShieldStructureUnit) {
                 local targetunits = aiBrain:GetUnitsAroundPoint(categories.STRUCTURE, self:GetPosition(), self:GetBlueprint().Defense.Shield.ShieldProjectionRadius or 60, 'Ally' )
                 for i, unit in targetunits do
                     -- not self                                     -- not already targetted by this                  --is finished                        -- Not units with shields, except where created by Pillars but not already targeted by this
-                    if unit:GetEntityId() != self:GetEntityId() and not unit.Projectors[self:GetEntityId()] and unit:GetFractionComplete() == 1 and (not unit.MyShield or unit.Projectors and not unit.Projectors[self:GetEntityId()]) then
+                    if unit:GetEntityId() ~= self:GetEntityId() and not unit.Projectors[self:GetEntityId()] and unit:GetFractionComplete() == 1 and (not unit.MyShield or unit.Projectors and not unit.Projectors[self:GetEntityId()]) then
                         self:CreateProjectedShieldBubble(unit)
                     end
                 end
@@ -94,7 +94,7 @@ SAB4401 = Class(AShieldStructureUnit) {
         local aiBrain = self:GetAIBrain()
         local targetunits = aiBrain:GetUnitsAroundPoint(categories.STRUCTURE, self:GetPosition(), self:GetBlueprint().Defense.Shield.ShieldProjectionRadius or 60 )
         for i, unit in targetunits do
-            if unit:GetEntityId() != self:GetEntityId() and unit.Projectors then
+            if unit:GetEntityId() ~= self:GetEntityId() and unit.Projectors then
                 unit.Projectors[self:GetEntityId()] = nil
                 local keepshield = false
                 for index, pillar in unit.Projectors do

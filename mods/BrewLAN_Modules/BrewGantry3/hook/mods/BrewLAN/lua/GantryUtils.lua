@@ -51,7 +51,7 @@ do
         -- AIX cheats
         ------------------------------------------------------------------------
         local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType != 'Human' and aiBrain.CheatEnabled then
+        if aiBrain.BrainType ~= 'Human' and aiBrain.CheatEnabled then
             -- AI supah4x0r
             Buff.ApplyBuff(self, 'GantryAIxIncrementBonus')
             local timeAlive = GetGameTimeSeconds() - self.Time

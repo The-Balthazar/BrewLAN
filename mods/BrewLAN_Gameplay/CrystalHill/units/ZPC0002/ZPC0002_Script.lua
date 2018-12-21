@@ -39,7 +39,7 @@ ZPC0002 = Class(SStructureUnit) {
         local Units
         while true do
             local Units = aiBrain:GetUnitsAroundPoint(categories.SELECTABLE - categories.WALL - categories.SATELLITE - categories.UNTARGETABLE, pos, radius)
-            while aiBrain:GetNoRushTicks() != 0 do
+            while aiBrain:GetNoRushTicks() ~= 0 do
                 -- Just in case the map has a spawn in the middle
                 WaitSeconds(10)
             end
@@ -52,7 +52,7 @@ ZPC0002 = Class(SStructureUnit) {
                             break
                         end
                     end
-                    if v:GetEntityId() != self:GetEntityId() and not civilian then
+                    if v:GetEntityId() ~= self:GetEntityId() and not civilian then
                         pos = self:GetPosition()
                         CreateUnitHPR('ZPC0001',v:GetArmy(), pos[1],pos[2],pos[3],0,0,0)
                         self:Destroy()

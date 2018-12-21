@@ -295,7 +295,7 @@ do
                 local goodtogo = false
                 if Unit:GetBlueprint().Weapon then
                     for i, v in Unit:GetBlueprint().Weapon do
-                        if v.WeaponCategory != 'Death' and v.Damage > 0 then
+                        if v.WeaponCategory ~= 'Death' and v.Damage > 0 then
                             goodtogo = true
                             break
                         end
@@ -528,7 +528,7 @@ do
                     table.insert(Unit.Hats, import('/lua/sim/Entity.lua').Entity() )
                     local hat = Unit.Hats[table.getn(Unit.Hats)]
                     local hatType
-                    if table.find(hatTypes, noRerollFail) and noRerollFail != 'Hat' then
+                    if table.find(hatTypes, noRerollFail) and noRerollFail ~= 'Hat' then
                         hatType = hatTypes[table.find(hatTypes, noRerollFail)]
                     else
                         hatType = hatTypes[math.random(2, table.getn(hatTypes) )]
@@ -670,7 +670,7 @@ do
     end
 
     function notificationPingis(pos, army, ping, text)
-        if type(pos) != 'table' or type(pos[1]) != 'number' then
+        if type(pos) ~= 'table' or type(pos[1]) ~= 'number' then
             return
         end
         --Make sure we have a real ping name
@@ -694,7 +694,7 @@ do
             'Weapon',
         }
         --LOG(table.find(pings, ping))
-        if type(ping) == 'string' and not table.find(pings, ping) or type(ping) != 'string' then
+        if type(ping) == 'string' and not table.find(pings, ping) or type(ping) ~= 'string' then
             ping = pings[1]
         end
         CreateUnitHPR(

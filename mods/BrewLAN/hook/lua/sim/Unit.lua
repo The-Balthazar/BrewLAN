@@ -13,7 +13,7 @@ do
             --
             -- For buildings that don't flatten skirt to slope with the terrain
             --
-            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope and self:GetCurrentLayer() != 'Water' then
+            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope and self:GetCurrentLayer() ~= 'Water' then
                 local Angles = GetTerrainAngles(self:GetPosition(),{bp.Footprint.SizeX or bp.Physics.SkirtSizeX, bp.Footprint.SizeZ or bp.Physics.SkirtSizeZ})
                 local Axis1, Axis2 = 'z', 'x'
                 local Axis = bp.Physics.SlopeToTerrainAxis

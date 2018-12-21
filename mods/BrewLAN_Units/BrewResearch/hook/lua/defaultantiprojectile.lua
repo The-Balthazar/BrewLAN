@@ -17,7 +17,7 @@ do
         OnCollisionCheck = function(self, other)
             if self.Owner:GetCurrentLayer() == 'Air'
             and EntityCategoryContains(categories.MISSILE * categories.ANTIAIR, other)
-            --and other != self.EnemyProj
+            --and other ~= self.EnemyProj
             and IsEnemy(self.Army, other:GetArmy()) and self.Owner.DeployFlares then
                 self.Owner:DeployFlares()
             end
@@ -59,7 +59,7 @@ do
 
         -- We only divert projectiles, and wait for them to time out.
         OnCollisionCheck = function(self,other)
-            if EntityCategoryContains(categories.MISSILE * categories.ANTIAIR, other) and self.Army != other:GetArmy() then
+            if EntityCategoryContains(categories.MISSILE * categories.ANTIAIR, other) and self.Army ~= other:GetArmy() then
                 other:SetNewTarget(self)
                 other:SetTurnRate(540)--720)
             end

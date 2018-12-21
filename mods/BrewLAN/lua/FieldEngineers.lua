@@ -76,7 +76,7 @@ function AssistThread(self)
             --Insert some kind of table sort for most damaged here
             local units = self:GetAIBrain():GetUnitsAroundPoint(categories.SELECTABLE, self:GetPosition(), 30, 'Ally' )
             for i, v in units do
-                if v:GetHealthPercent() != 1 then
+                if v:GetHealthPercent() ~= 1 then
                     IssueRepair({self}, v)
                 end
             end

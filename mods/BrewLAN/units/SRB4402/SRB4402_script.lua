@@ -66,7 +66,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                 end
                 for k, v in LocalUnits do
                     if
-                    --self.unit:GetEntityId() != v:GetEntityId()
+                    --self.unit:GetEntityId() ~= v:GetEntityId()
                     --and
                     v:IsIntelEnabled('Omni')
                     and

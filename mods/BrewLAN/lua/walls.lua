@@ -45,7 +45,7 @@ function CardinalWallUnit(SuperClass)
                     self:CreateTarmac(true, true, true, false, false)
                 end
             end
-            if bp.General.FactionName != 'UEF' then
+            if bp.General.FactionName ~= 'UEF' then
                 self:BoneUpdate(self.Info.bones)
             end
             SuperClass.OnCreate(self)
@@ -94,7 +94,7 @@ function CardinalWallUnit(SuperClass)
                     self:SetAllBones('conflict', i, 'hide')
                 end
             end
-            if TowerCalc != 200 then
+            if TowerCalc ~= 200 then
                 self:SetAllBones('conflict', 'Tower', 'hide')
             end
             if self:GetBlueprint().Display.AdjacencyBeamConnections then
