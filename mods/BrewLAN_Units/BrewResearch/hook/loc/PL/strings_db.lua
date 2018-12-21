@@ -139,17 +139,19 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="macierz czujników. W stanie zidentyfikować cele poprzez skradanie i płaszcz i czyści jammer blips."
 
 --Travian 3.5 Zaawansowane bombowce
-sa0314_desc="Penetrator"
+--sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
-
 sea0314_name="Ułan"
 saa0314_name="Wrzask"
 sra0314_name="sangwina Tyrant"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
+Unit_Description_RND_024="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
+Unit_Description_RND_021="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
+Unit_Description_RND_023="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
+
+--anty-anty-SAM i AAM race
+ability_missiledef="Missile Defense"
 
 --Travian 3.5 zaawansowanych myśliwców
 sa0313_desc="penetracja Fighter"
@@ -159,7 +161,7 @@ sra0313_name="Zmierzch Patron"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Top-end dalekiego zasięgu myśliwiec Stealth. Wyposażony w ciężkich armat cząstek. Zdolne do polowania samoloty szpiegowskie."
 --[description]
 
 --ekranoplan transporty

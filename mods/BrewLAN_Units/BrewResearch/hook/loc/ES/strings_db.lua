@@ -139,17 +139,19 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="matriz de sensores. Capaz de identificar objetivos a través del sigilo y el manto y borra repuntes jammer."
 
 --bombarderos avanzados T3.5
-sa0314_desc="penetrador"
+--sa0314_desc="penetrador"
 sa0314_desc="bombardero penetrador"
-
 sea0314_name="Lancero"
 saa0314_name="Grito"
 sra0314_name="Tirano Sanguina"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
+Unit_Description_RND_024="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
+Unit_Description_RND_021="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
+Unit_Description_RND_023="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
+
+--anti-AAM bengalas anti-SAM y
+ability_missiledef="la defensa del misil"
 
 --cazas avanzados T3.5
 sa0313_desc="penetración de combate"
@@ -159,7 +161,7 @@ sra0313_name="crepúsculo Patrón"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Tapa-fin de largo alcance avión furtivo. Equipado con cañones de partículas pesadas. Capaz de cazar aviones espía."
 --[description]
 
 --transportes ekranoplan

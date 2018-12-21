@@ -14,7 +14,7 @@ srb9301_name="Heisenfazilität"
 --Äon
 sab9101_name="Einblick"
 sab9201_name="Beratung"
-sab9301_name="Aufklärung"
+sab9301_name="Erleuchtung"
 --Seraphim
 ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab"
@@ -139,17 +139,19 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="Sensor-Array. Fähig zur Ziele durch stealth und Mantel identifiziert und löscht Störsender Blips."
 
 --T3.5 Erweiterte Bomber
-sa0314_desc="Penetrator"
+--sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
-
 sea0314_name="Ulan"
 saa0314_name="Schrei"
 sra0314_name="Sanguine Tyrant"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_024="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_021="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_023="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+
+--anti-SAM und anti-AAM Flares
+ability_missiledef="Raketenabwehr"
 
 --T3.5 für Fortgeschrittene
 sa0313_desc="Penetration-Kämpfer"
@@ -159,7 +161,7 @@ sra0313_name="twilight-Patron"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen. Fähig zu Spionageflugzeuge jagen."
 --[description]
 
 --Ekranoplan Transporte

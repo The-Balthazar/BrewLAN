@@ -139,17 +139,19 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
 
 --T3.5 Advanced bombers
-sa0314_desc="Penetrator"
+--sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
---I haven't decided which to go for
 sea0314_name="Lancer"
 saa0314_name="Shrieker"
 sra0314_name="Sanguine Tyrant"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
+Unit_Description_RND_024="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
+Unit_Description_RND_021="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
+Unit_Description_RND_023="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
+
+--anti-SAM and anti-AAM flares
+ability_missiledef="Missile Defense"
 
 --T3.5 advanced fighters
 sa0313_desc="Penetration Fighter"
@@ -159,7 +161,7 @@ sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Top-end long-range stealth fighter. Equipped with heavy particle cannons. Capable of hunting spy planes."
 --[description]
 
 --Ekranoplan transports

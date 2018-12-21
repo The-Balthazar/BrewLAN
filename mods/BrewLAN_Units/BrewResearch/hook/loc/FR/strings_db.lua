@@ -139,17 +139,19 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="Ensemble de capteurs. Capable d'identifier des cibles à travers la furtivité et manteau et efface blips brouilleurs."
 
 --T3.5 bombardiers avancés
-sa0314_desc="pénétrateur"
+--sa0314_desc="pénétrateur"
 sa0314_desc="pénétrateur Bomber"
-
 sea0314_name="Lancier"
 saa0314_name="Cri"
 sra0314_name="sanguine Tyran"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
+Unit_Description_RND_024="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
+Unit_Description_RND_021="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
+Unit_Description_RND_023="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
+
+--anti-SAM et des fusées éclairantes anti-Aam
+ability_missiledef="missile Defense"
 
 --T3.5 combattants avancés
 sa0313_desc="pénétration Fighter"
@@ -159,7 +161,7 @@ sra0313_name="Patron de twilight"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes. Capable d'avions d'espionnage de chasse."
 --[description]
 
 --transports ekranoplan

@@ -139,17 +139,19 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="matrice di sensori. In grado di identificare bersagli attraverso stealth e mantello e cancella blips jammer."
 
 --bombardieri avanzati T3.5
-sa0314_desc="Penetrator"
+--sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
-
 sea0314_name="lanciere"
 saa0314_name="Strillare"
 sra0314_name="Tyrant Sanguine"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Top-end lungo raggio furtività bombardiere strategico. Equipaggiati con bombe, aria-superficie missili distanziatori, siluri e razzi antimissile posteriori."
+Unit_Description_RND_024="Top-end lungo raggio furtività bombardiere strategico. Equipaggiati con bombe, aria-superficie missili distanziatori, siluri e razzi antimissile posteriori."
+Unit_Description_RND_021="Top-end lungo raggio furtività bombardiere strategico. Equipaggiati con bombe, aria-superficie missili distanziatori, siluri e razzi antimissile posteriori."
+Unit_Description_RND_023="Top-end lungo raggio furtività bombardiere strategico. Equipaggiati con bombe, aria-superficie missili distanziatori, siluri e razzi antimissile posteriori."
+
+--anti-SAM e razzi anti-AAM
+ability_missiledef="missile Defense"
 
 --combattenti avanzate T3.5
 sa0313_desc="penetrazione Fighter"
@@ -159,7 +161,7 @@ sra0313_name="Crepuscolo Patron"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Top-end lungo raggio caccia stealth. Dotato di cannoni particelle pesanti. Capace di caccia aerei spia."
 --[description]
 
 --trasporti ekranoplan

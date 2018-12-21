@@ -1,17 +1,17 @@
 --ISO_639-1_code=CS
---Translator: 
+--Translator: Oaks
 
---výzkumná centra
+--Výzkumná centra
 seb9301_desc="Výzkumné centrum"
 --UEF
-seb9101_name="Tyson Campus"
-seb9201_name="Sagan Campus"
-seb9301_name="Hawking Campus"
+seb9101_name="Campus Tyson"
+seb9201_name="Campus Sagan"
+seb9301_name="Campus Hawking"
 --Cybran
-srb9101_name="Einstein Facility"
-srb9201_name="Schrodinger Facility"
-srb9301_name="Heisenberg Facility"
---věčnost
+srb9101_name="Zařízení Einstein"
+srb9201_name="Zařízení Schrodinger"
+srb9301_name="Zařízení Heisenberg"
+--Aeon
 sab9101_name="Vhled"
 sab9201_name="Vedení"
 sab9301_name="Osvícení"
@@ -20,12 +20,12 @@ ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab"
 ssb9301_name="Iyathluub"
 
-Unit_Description_RND_005="Základní výzkum zařízení. Granty přístup k novým jednotkám a vyšších úrovní tech."
-Unit_Description_RND_006="Intermediate výzkumné zařízení. Zvýšila rychlost výzkumu a trvanlivost."
-Unit_Description_RND_007="Advanced výzkumné zařízení. Zvýšila rychlost výzkumu a trvanlivost."
+Unit_Description_RND_005="Základní výzkumné zařízení. Poskytuj přístup k novým jednotkám a vyšším technologickým úrovním."
+Unit_Description_RND_006="Středně pokročilé výzkumné zařízení. Poskytuje rychlejší výzkum a více bodů zdraví."
+Unit_Description_RND_007="Vysoce pokročilé výzkumné zařízení. Poskytuje rychlejší výzkum a více bodů zdraví."
 
---Věda Centers
-seb9302_desc="Science Center"
+--Centra Vědy
+seb9302_desc="Centrum Vědy"
 
 seb9202_name="TBD"
 seb9302_name="TBD"
@@ -114,7 +114,7 @@ ssa0212_name="Iayath"
 Unit_Description_RND_019="Swift Wind je levnější než Corona, je ale rychlejší a má lepší palebnou sílu než Conservator. Je vynikající na boj nablízko a zaplňuje mezeru mezi stíhačkami T1 a T3. "
 
 sa0213_desc="Stíhací bombardér"
-saa0213_name="Jasnost"
+saa0213_name="jasnost"
 Unit_Description_RND_020="Kombinace stíhací / bombardovací navržen tak, aby se zapojily pozemků a vzdušných jednotek."
 
 --Vyhrazené taktické bombardéry
@@ -139,27 +139,29 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="snímací pole. Schopny identifikovat cíle přes stealth a plášť a vymaže jammer tečky."
 
 --T3.5 Pokročilé bombardéry
-sa0314_desc="Penetrator"
-sa0314_desc="Penetrator Bomber"
-
-sea0314_name="Kopiník"
-saa0314_name="Výkřik"
-sra0314_name="optimistický Tyran"
+--sa0314_desc="Penetrator"
+sa0314_desc="Průnikový Bombardér"
+sea0314_name="Lancer"
+saa0314_name="Shrieker"
+sra0314_name="Sanguine Tyrant"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
+Unit_Description_RND_024="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
+Unit_Description_RND_021="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
+Unit_Description_RND_023="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
 
---T3.5 pokročilé bojovníci
-sa0313_desc="penetrace Fighter"
-sea0313_name="Kocour"
+--anti-SAM a anti-AAM světlice
+ability_missiledef="Raketová Obrana"
+
+--T3,5 pokročilé stíhačky
+sa0313_desc="Průniková Stíhačka"
+sea0313_name="Tomcat"
 saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="Top-end dalekonosný stealth bojovník. Vybaveno s těžkými děly částic. Schopný lovu špionážní letadla."
 --[description]
 
 --Ekranoplan transporty

@@ -80,11 +80,11 @@ Unit_Description_RND_015="生产水上飞机"
 ----------------------------------------
 
 --风力发电机
-sb1101_desc="风力发电机"
+sb1101_desc="風力發動機"
 seb1101_name="涡轮"
 sab1101_name="灯"
-ssb1101_name="Uyalai"
-srb1101_name="W.A.T"
+ssb1101_name="烏亞拉依"
+srb1101_name="瓦特"
 --风辅助发电机
 Unit_Description_RND_011="产生能量的波动量。"
 
@@ -92,7 +92,7 @@ Unit_Description_RND_011="产生能量的波动量。"
 sb1102_desc="潮汐发电机"
 seb1102_name="波德潮"
 sab1102_name="流"
-ssb1102_name="Uyaluos"
+ssb1102_name="烏亞魯歐西"
 srb1102_name="红湖"
 Unit_Description_RND_017="产生能量的起伏量。更有效地与大面积的水域。"
 
@@ -139,27 +139,29 @@ ssb3302_name="Selaez"
 Unit_Description_RND_012="传感器阵列。能够识别通过隐身斗篷和目标，并清除干扰光点。"
 
 --T3.5先进的轰炸机
-sa0314_desc="侵彻"
+--sa0314_desc="侵彻"
 sa0314_desc="侵彻炸弹"
-
 sea0314_name="蓝瑟"
 saa0314_name="尖叫"
-sra0314_name="乐观的暴君"
+sra0314_name="血暴君"
 ssa0314_name="Sinnaino"
---[description]
---[description]
---[description]
---[description]
+Unit_Description_RND_022="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
+Unit_Description_RND_024="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
+Unit_Description_RND_021="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
+Unit_Description_RND_023="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
+
+--抗SAM和反AAM耀斑
+ability_missiledef="导弹防御系统"
 
 --T3.5先进战机
 sa0313_desc="穿透战斗机"
-sea0313_name="Tomcat的"
+sea0313_name="雄貓"
 saa0313_name="赫利俄斯"
 sra0313_name="暮光之城守护神"
 ssa0313_name="Ialosaare"
 --[description]
 --[description]
---[description]
+Unit_Description_RND_025="最高端的远程隐形战斗机。配备了重粒子炮。能够狩猎侦察机。"
 --[description]
 
 --Ekranoplan运输
