@@ -456,6 +456,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * RPS: Finished the script to generate the armor definitions table, which was more complicated than I was planning.
   * RPS: Corrected the blueprint script not properly handling experimental footfall damage.
 
+  ### 2018-12-23
+
+  * R&D: Removed some dependencies on BrewLAN.
+
+  ### 2018-12-23
+
+  * Caffe Corretto: Removed hard requirement for BrewLAN.
+
 ## 2018-08-09|81-FAF-develop (FAF exclusive release)
 
 * Fixed transports.

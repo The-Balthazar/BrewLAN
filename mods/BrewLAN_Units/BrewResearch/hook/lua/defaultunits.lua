@@ -2,8 +2,7 @@
 -- Research item stuff
 --------------------------------------------------------------------------------
 local Game = import('/lua/game.lua')
-local BrewLANPath = Game.BrewLANPath()
-local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+local VersionIsFAF = function() return string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 end
 --------------------------------------------------------------------------------
 ResearchItem = Class(DummyUnit) {
     OnCreate = function(self)
@@ -65,7 +64,7 @@ ResearchItem = Class(DummyUnit) {
         elseif VersionIsFAF then
             --FAF restrictions
             local restrictedCategories = categories.NOTHINGIMPORTANT
-            for id, bool in import('/lua/game.lua').GetRestrictions().Global do
+            for id, bool in Game.GetRestrictions().Global do
                 restrictedCategories = restrictedCategories + categories[id]
                 --Also restrict research items of blocked things.
                 --The there is no easy way to do this the other ways.
@@ -109,7 +108,9 @@ ResearchItem = Class(DummyUnit) {
 --------------------------------------------------------------------------------
 -- Research Center AI
 --------------------------------------------------------------------------------
-local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
+local Buff = {}
+--Wizardry to make FA buff scripts not break the game on original SupCom.
+if not string.sub(GetVersion(),1,3) == '1.1' or string.sub(GetVersion(),1,3) == '1.0' then Buff = import('/lua/sim/Buff.lua') else Buff.ApplyBuff = function() end end
 --------------------------------------------------------------------------------
 ResearchFactoryUnit = Class(FactoryUnit) {
 
