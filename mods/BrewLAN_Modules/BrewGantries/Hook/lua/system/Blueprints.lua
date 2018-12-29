@@ -40,26 +40,6 @@ function BrewLANGantryHomogeniser(all_bps)
             bp.General.OrderOverrides.RULEUTC_WeaponToggle = {bitmapId = 'airsf', helpText = 'buildair'}
 
             --------------------------------------------------------------------
-            -- Check we have all the build categories for transports and field engineers
-            --------------------------------------------------------------------
-            if bp.Economy.BuildableCategory and type(bp.Economy.BuildableCategory) == 'table' then
-                local landcat, transcat
-                for i, buildcat in bp.Economy.BuildableCategory do
-                    if string.find(buildcat, 'BUILTBYLANDTIER3FACTORY') then
-                        landcat = true
-                    elseif string.find(buildcat, 'TRANSPORTBUILTBYTIER3FACTORY') then
-                        transcat = true
-                    end
-                end
-                if not landcat then
-                    table.insert(bp.Economy.BuildableCategory, 'BUILTBYLANDTIER3FACTORY ' .. string.upper(bp.General.FactionName or 'NOTHING'))
-                end
-                if not transcat then
-                    table.insert(bp.Economy.BuildableCategory, 'TRANSPORTBUILTBYTIER3FACTORY ' .. string.upper(bp.General.FactionName or 'NOTHING'))
-                end
-            end
-
-            --------------------------------------------------------------------
             -- Make sure we can be built both on land and in or on water
             --------------------------------------------------------------------
             --if not bp.General.Icon or bp.General.Icon == 'land' then bp.General.Icon = 'amph' end

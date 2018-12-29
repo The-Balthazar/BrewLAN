@@ -1,6 +1,6 @@
 name = "BrewLAN"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000082" -- this is UID hard coded into hook/lua/game.lua and hook/lua/system/blueprints.lua
-version = 0.82
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N000083" -- this is UID hard coded into hook/lua/game.lua and hook/lua/system/blueprints.lua
+version = 0.83
 copyright = "© 2009–2018 Sean Wheeldon"
 description = "Adds a large number of units and changes a number of existing units."
 author = "Balthazar"
@@ -63,6 +63,7 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N000080RC1", --0.79900002479553 (0.8 release candidate.)
     "25D57D85-7D84-27HT-A501-BR3WL4N000080", --0.8 release version
     "25D57D85-7D84-27HT-A501-BR3WL4N000081FAF", --FAF v81.
+    "25D57D85-7D84-27HT-A501-BR3WL4N000082", --0.8.2 git beta
 }
 before = {  }
 after = {  }

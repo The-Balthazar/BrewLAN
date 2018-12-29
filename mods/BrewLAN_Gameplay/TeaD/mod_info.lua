@@ -1,9 +1,9 @@
 name = "TeaD"
 uid = "16678e1e-7fc9-11e5-8bcf-TEAD00000006"
 version = 0.6
-copyright = "� 2015�2017 Sean Wheeldon"
+copyright = "© 2015–2018 Sean Wheeldon"
 description = "Tower Defence. Make sure to have an AI-only team for the creeps."
-author = "Sean Wheeldon"
+author = "Balthazar"
 icon = "/mods/BrewLAN_Gameplay/TeaD/mod_icon.dds"
 selectable = true
 enabled = true

@@ -2,6 +2,12 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2018-12-29|0.8.3
+
+* Incremented version numbers for static public release.
+* R&D: Removed hard requirement for BrewLAN.
+* Gantry Homogeniser: Removed the no longer necessary build cat script.
+
 ## 2018-08-18|0.8.2
 
 * Increased the cap cost of mines and walls:
@@ -460,7 +466,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Removed some dependencies on BrewLAN.
 
-  ### 2018-12-23
+  ### 2018-12-29
 
   * Caffe Corretto: Removed hard requirement for BrewLAN.
 
