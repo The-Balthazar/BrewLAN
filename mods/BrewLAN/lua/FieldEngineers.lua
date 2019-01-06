@@ -23,14 +23,16 @@ function SCUFieldUpgrade(SuperClass)
             local restriction = categories.urb4206
             --Prevent duplication of advanced resouorce buildings.
             for i, v in {'a', 'e', 'r', 's'} do
+                local pack = 'u'
+                if v == 's' then pack = 'x' end
                 if categories['s'..v..'b1311'] then
-                    restriction = restriction + ParseEntityCategory('u'..v..'b1301')
+                    restriction = restriction + ParseEntityCategory(pack..v..'b1301')
                 end
                 if categories['s'..v..'b1312'] then
-                    restriction = restriction + ParseEntityCategory('u'..v..'b1302')
+                    restriction = restriction + ParseEntityCategory(pack..v..'b1302')
                 end
                 if categories['s'..v..'b1313'] then
-                    restriction = restriction + ParseEntityCategory('u'..v..'b1303')
+                    restriction = restriction + ParseEntityCategory(pack..v..'b1303')
                 end
             end
             if enh == 'Field' then
