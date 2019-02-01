@@ -1,8 +1,8 @@
 name = "Metal World"
-uid = "25D57D85-7D84-27HT-A501-METALWI0000011"
-version = 1.1
+uid = "25D57D85-7D84-27HT-A501-METALWI0000013"
+version = 1.3
 copyright = "© 2014–2018 Sean Wheeldon"
-description = "Removes the restriction from mass extractors, removes mass points, and makes Sorian AI go crazy."
+description = "Removes the restriction from mass extractors, removes mass points."
 author = "Balthazar"
 icon = "/mods/BrewLAN_Gameplay/metalworld/mod_icon.dds"
 selectable = true

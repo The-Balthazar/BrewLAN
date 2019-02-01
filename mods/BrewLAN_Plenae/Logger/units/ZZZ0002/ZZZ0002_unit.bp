@@ -5,6 +5,7 @@ UnitBlueprint {
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER1COMMANDER',
         'BUILTBYTIER1FIELD',
+        'BUILTBYCOMMANDER',
         'UEF',
         'AEON',
         'CYBRAN',
@@ -29,15 +30,12 @@ UnitBlueprint {
     Description = 'Speaker',
     Display = {
         Abilities = {
-            'Volume Control',
+            'BrewLAN install validator',
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 400, ShaderName = 'Aeon'},
             },
         },
         PlaceholderMeshName = 'UXB0018',
@@ -49,12 +47,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar8x_aeon_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },

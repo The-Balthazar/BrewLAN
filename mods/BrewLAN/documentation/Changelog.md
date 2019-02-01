@@ -2,6 +2,35 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2019-01-06|0.8.4.1
+
+* Fixed the Seraphim SACU having access to the un-upgraded tech 3 resource buildings after the field engineer upgrade.
+
+  ### 2018-01-20
+
+  * R&D: Removed the research for the disabled UEF hovercraft factory.
+  * Replaced the CQUEMOV function with another that chooses units specifically instead of based on categories.
+    * It now affects BrewLAN (and sub-mod) mobile experimental units, the observation satellite, and the UEF engineering resource buildings.
+
+  ### 2018-01-26
+
+  * Debug Tools: Added an installation check function to the speaker unit.
+
+  ### 2018-01-27
+
+  * Debug Tools: Created an icon for the flying DPS tester unit.
+  * Debug Tools: Listed the installation validation ability on the speaker unit.
+
+  ### 2018-01-31
+
+  * Debug Tools: Added the reported version number to the BrewLAN validation check.
+  * Metal World: Removed the weird AI hacks to get them to do anything at all.
+  * Metal World: LOUD, Sorian, and vanilla AI now have proper defined behaviour.
+
+## 2019-01-03|84 (FAF minor patch)
+
+* Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
+
 ## 2018-12-29|0.8.3
 
 * Incremented version numbers for static public release.

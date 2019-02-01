@@ -3,7 +3,7 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 function CreateProps()
-    for i, tblData in pairs(Scenario['Props']) do
+    for i, tblData in pairs(ScenarioInfo.Env.Scenario['Props']) do
         if tblData.type ~= "Mass" then
             CreatePropHPR(
                 tblData.prop,
@@ -12,11 +12,12 @@ function CreateProps()
             )
         end
     end
+    ScenarioInfo.Env.Scenario['Props'] = nil
 end
 
 function CreateResources()
     local markers = GetMarkers()
-    for i, tblData in pairs(markers) do   
+    for i, tblData in pairs(markers) do
         if tblData.resource then
             if tblData.type ~= "Mass" then
                 CreateResourceDeposit(
@@ -25,7 +26,7 @@ function CreateResources()
                     tblData.size
                 )
 
-                # fixme: texture names should come from editor
+                -- fixme: texture names should come from editor
                 local albedo, sx, sz, lod
                 albedo = "/env/common/splats/hydrocarbon_marker.dds"
                 sx = 6
@@ -37,13 +38,13 @@ function CreateResources()
                     Random(0,360), 0, 0
                 )
                 CreateSplat(
-                    tblData.position,           # Position
-                    0,                          # Heading (rotation)
-                    albedo,                     # Texture name for albedo
-                    sx, sz,                     # SizeX/Z
-                    lod,                        # LOD
-                    0,                          # Duration (0 == does not expire)
-                    -1 ,                         # army (-1 == not owned by any single army)
+                    tblData.position,           -- Position
+                    0,                          -- Heading (rotation)
+                    albedo,                     -- Texture name for albedo
+                    sx, sz,                     -- SizeX/Z
+                    lod,                        -- LOD
+                    0,                          -- Duration (0 == does not expire)
+                    -1 ,                         -- army (-1 == not owned by any single army)
                     0
                 )
             end

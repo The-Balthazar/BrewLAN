@@ -9,7 +9,7 @@ local OldModBlueprints = ModBlueprints
 local BrewLANPath = function()
     for i, mod in __active_mods do
         --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
-        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000083" then
+        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N0000841" then
             return mod.location
         end
     end
@@ -846,6 +846,23 @@ function BrewLANFAFExclusiveChanges(all_bps)
                     bp.Wreckage.WreckageLayers.Sub = true
                     bp.Wreckage.WreckageLayers.Water = true
                 end
+
+                if not table.find(bp.Categories, 'CQUEMOV') and table.find({
+                    --BrewLAN units
+                    'sal0401',
+                    'sea0002',
+                    'sea0401',
+                    'seb1311',
+                    'seb1312',
+                    'seb1313',
+                    'srl0401',
+                    'ssl0403',
+                    --R&D units
+                    'srl0403',
+                }, id) then
+                    table.insert(bp.Categories, 'CQUEMOV')
+                end
+
             end
             --T3 torps anti-naval damage * 0.76
         end

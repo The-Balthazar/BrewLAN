@@ -1,6 +1,6 @@
 name = "Research & Daiquiris"
-uid = "25D57D85-9JA7-D842-BREW-RESEARCH00004"
-version = 0.4
+uid = "25D57D85-9JA7-D842-BREW-RESEARCH00005"
+version = 0.5
 copyright = "© 2018 Sean Wheeldon"
 description = "Separates the hardware and software for tech levels, and adds research for unlocking tech tevels and units."
 author = "Balthazar"
@@ -9,9 +9,9 @@ selectable = true
 enabled = true
 exclusive = false
 ui_only = false
---requires = {"25D57D85-7D84-27HT-A501-BR3WL4N000083"}
+--requires = {"25D57D85-7D84-27HT-A501-BR3WL4N0000841"}
 --requiresNames = {
---    ["25D57D85-7D84-27HT-A501-BR3WL4N000083"] = "BrewLAN",
+--    ["25D57D85-7D84-27HT-A501-BR3WL4N0000841"] = "BrewLAN",
 --}
 conflicts = { }
 before = { }
