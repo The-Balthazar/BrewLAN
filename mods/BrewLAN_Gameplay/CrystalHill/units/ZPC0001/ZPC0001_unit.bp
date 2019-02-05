@@ -1,7 +1,6 @@
-UnitBlueprint {         
+UnitBlueprint {
     AI = {
-
-        # this AI block is only added to make the construction preview work for the unit's vision range.
+        -- this AI block is only added to make the construction preview work for the unit's vision range.
         GuardScanRadius = 20,
         StagingPlatformScanRadius = 20,
     },
@@ -22,11 +21,11 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    Categories = {        
+    Categories = {
         'INVULNERABLE',
         'PRODUCTCRYSTALHILL',
         'STRUCTURE',
-        'VISIBLETORECON',     
+        'VISIBLETORECON',
         'OVERLAYMISC',
         'UNSELECTABLE',
         'UNTARGETABLE',
@@ -53,10 +52,9 @@ UnitBlueprint {
                     LODCutoff = 1000,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Unit',
-                    MeshName = '/units/XSC9002/XSC9002_lod0.scm',
-                    AlbedoName = '/units/XSC9002/XSC9002_albedo.dds',
-                    NormalsName = '/units/XSC9002/XSC9002_normalsts.dds',
-                    --SpecularName = '/units/XSC9002/XSC9002_specteam.dds',
+                    MeshName = '../zpc0002/zpc0002_lod0.scm',
+                    AlbedoName = '../zpc0002/zpc0002_albedo.dds',
+                    NormalsName = '../zpc0002/zpc0002_normalsts.dds',
                 },
             },
         },
@@ -69,12 +67,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8/2,
                 Glow = '/env/Crystalline/decals/scx1_proto01_crev06_spec.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8/2,
             },
@@ -111,7 +104,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
         UnitWeight = 1,
-    },  
+    },
     Intel = {
         VisionRadius = 20,
     },
@@ -136,7 +129,7 @@ UnitBlueprint {
         MeshExtentsY = 1,
         MeshExtentsZ = 1,
         MotionType = 'RULEUMT_None',
-    },    
+    },
     ScenarioInfo = {
         WinTimeMinsReq = 20,
         ResetTimeMinimum = 5,

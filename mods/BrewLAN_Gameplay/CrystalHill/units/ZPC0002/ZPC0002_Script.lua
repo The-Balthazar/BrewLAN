@@ -3,11 +3,7 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local SStructureUnit = import('/lua/seraphimunits.lua').SStructureUnit
-local WarpIn = import('/units/xsl0001/xsl0001_script.lua').XSL0001.WarpInEffectThread
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
---local Announcement = import('/lua/ui/game/announcement.lua').CreateAnnouncement
---local Bitmap = import('/lua/maui/bitmap.lua').Bitmap
---local UIUtil = import('/lua/ui/uiutil.lua')
 
 ZPC0002 = Class(SStructureUnit) {
 
@@ -20,7 +16,7 @@ ZPC0002 = Class(SStructureUnit) {
         end
         self:ForkThread(self.TeamChange)
         SStructureUnit.OnCreate(self)
-        self:ForkThread(WarpIn)
+        self:ForkThread(self.WarpInEffectThread)
         for i, brain in ArmyBrains do
             self.Trash:Add(VizMarker({
                 X = self:GetPosition()[1],
@@ -30,6 +26,24 @@ ZPC0002 = Class(SStructureUnit) {
                 Army = brain:GetArmyIndex(),
             }))
         end
+    end,
+
+    WarpInEffectThread = function(self)
+        self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+        WaitTicks(22)
+        self:ShowBone(0, true)
+
+        local UnitTeleportSteam01 = import('/lua/EffectTemplates.lua').UnitTeleportSteam01
+        local totalBones = self:GetBoneCount() - 1
+        local army = self:GetArmy()
+
+        for k, v in UnitTeleportSteam01 do
+            for bone = 1, totalBones do
+                CreateAttachedEmitter(self,bone,army, v)
+            end
+        end
+
+        WaitSeconds(6)
     end,
 
     TeamChange = function(self)

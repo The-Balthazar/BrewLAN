@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    Categories = {        
+    Categories = {
         'INVULNERABLE',
         'PRODUCTCRYSTALHILL',
         'STRUCTURE',
@@ -46,10 +46,6 @@ UnitBlueprint {
                     LODCutoff = 1000,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Unit',
-                    MeshName = '/units/XSC9002/XSC9002_lod0.scm',
-                    AlbedoName = '/units/XSC9002/XSC9002_albedo.dds',
-                    NormalsName = '/units/XSC9002/XSC9002_normalsts.dds',
-                    SpecularName = '/units/XSC9002/XSC9002_specteam.dds',
                 },
             },
         },
@@ -62,12 +58,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8/2,
                 Glow = '/env/Crystalline/decals/scx1_proto01_crev06_spec.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8/2,
             },
@@ -104,7 +95,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
         UnitWeight = 1,
-    },  
+    },
     Intel = {
         VisionRadius = 20,
     },

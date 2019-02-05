@@ -27,6 +27,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Metal World: Removed the weird AI hacks to get them to do anything at all.
   * Metal World: LOUD, Sorian, and vanilla AI now have proper defined behaviour.
 
+  ### 2018-02-05
+
+  * Crystal Hill: Removed the script reference to the Seraphim ACU for the warp-in effect.
+  * Crystal Hill: Removed the dependency to civilian structures for the Crystal.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
