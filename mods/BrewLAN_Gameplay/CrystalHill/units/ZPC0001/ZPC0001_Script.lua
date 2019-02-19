@@ -155,7 +155,17 @@ ZPC0001 = Class(SStructureUnit) {
         end
         local count = 0
         for k, v in units do
-            if v:GetEntityId() ~= self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) then
+
+            local CivTest = function(v)
+                for name, data in ScenarioInfo.ArmySetup do
+                    if name == v:GetAIBrain().Name then
+                        return data.Civilian
+                    end
+                end
+                return false
+            end
+
+            if v:GetEntityId() ~= self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) and not CivTest(v) then
                 count = count + 1
             end
         end
@@ -165,7 +175,8 @@ ZPC0001 = Class(SStructureUnit) {
     OnDamage = function()
     end,
 
-    OnKilled = function(self, instigator, type, overkillRatio)
+    OnKilled = function()
     end,
 }
+
 TypeClass = ZPC0001

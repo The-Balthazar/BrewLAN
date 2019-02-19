@@ -80,7 +80,8 @@ ZPC0002 = Class(SStructureUnit) {
     OnDamage = function()
     end,
 
-    OnKilled = function(self, instigator, type, overkillRatio)
+    OnKilled = function()
     end,
 }
+
 TypeClass = ZPC0002

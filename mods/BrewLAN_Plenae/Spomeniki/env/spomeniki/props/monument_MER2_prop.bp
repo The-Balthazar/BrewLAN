@@ -1,0 +1,43 @@
+PropBlueprint {
+    AssociatedBP = 'snlmer2',
+    Categories = {
+        'RECLAIMABLE',
+    },
+    CollisionOffsetY = -0.7,
+    Defense = {
+        Health = 50,
+        MaxHealth = 50,
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                {
+                    LODCutoff = 1000, ShaderName = 'Unit',
+                    MeshName = 'monument_mer_lod0.scm',
+                    AlbedoName = 'monument_mer_albedo.dds',
+                    SpecularName = 'monument_mer_specteam.dds',
+                    NormalsName = 'monument_mer_normalsts.dds',
+                },
+            },
+        },
+        UniformScale = 0.03,
+    },
+    Economy = {
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 35,
+        ReclaimTime = 5,
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
+    Interface = {
+        HelpText = 'Spomenik',
+    },
+    Physics = {
+        BlockPath = true,
+    },
+    SizeX = 0.45,
+    SizeY = 1.25,
+    SizeZ = 0.5,
+}

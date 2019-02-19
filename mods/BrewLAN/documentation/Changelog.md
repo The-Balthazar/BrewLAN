@@ -32,6 +32,33 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Crystal Hill: Removed the script reference to the Seraphim ACU for the warp-in effect.
   * Crystal Hill: Removed the dependency to civilian structures for the Crystal.
 
+  ### 2018-02-12
+
+  * Crystal Hill: Civilians can no longer take the Crystal after the first capture.
+  * Crystal Hill: Removed unnecessary data from the blueprint files of the Crystal units.
+  * Crystal Hill: Changed the footprint size and collision size of the Crystal units.
+
+  ### 2018-02-13
+
+  * Crystal Hill: Created some AI markers on the crystal.
+
+  ### 2018-02-15
+
+  * Spomeniki: Created a monument to Spirit and Opportunity.
+
+  ### 2018-02-16
+
+  * Spomeniki: Created a usable Opportunity unit.
+
+  ### 2018-02-18
+
+  * Spomeniki: Finished the script for Opportunity.
+
+  ### 2018-02-19
+
+  * Spomeniki: Created a usable Spirit unit. It's the same as Opportunity but produces less power and has a different texture.
+  * Spomeniki: Added build descriptions and icons for Spirit and Opportunity.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

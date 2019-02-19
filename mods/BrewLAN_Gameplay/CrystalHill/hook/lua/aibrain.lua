@@ -3,21 +3,13 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 do
---[[local OldBuildScoutLocations = AIBrain.BuildScoutLocations
-local OldBuildScoutLocationsSorian = AIBrain.BuildScoutLocationsSorian
-local CystalInterest = {
-    Position = {ScenarioInfo.size[1]/2, 0, ScenarioInfo.size[2]/2},
-    Type = 'StructuresNotMex',
-    LastScouted = 0,
-    LastUpdate = 0,
-    Threat = 75,
-    Permanent = true,
-}]]--
 AIBrain = Class(AIBrain) {
     SpawnCrystal = function(self)
+        --Define default positions
         local posX = ScenarioInfo.size[1]/2
         local posY = 0
         local posZ = ScenarioInfo.size[2]/2
+        --Look for some pre-defined positions
         local predefinedpos = false
         local objectivemarkers = import('/lua/ai/AIUtilities.lua').AIGetMarkersAroundLocation( self, 'Objective', {posX, posY, posZ}, ScenarioInfo.size[1] * 0.7071 )
         if objectivemarkers[1] then
@@ -26,8 +18,11 @@ AIBrain = Class(AIBrain) {
             predefinedpos = true
             LOG("Using map-defined crystal location.")
         end
+        --Set up to spawn the thing
         self:ForkThread(function()
-            WaitSeconds(1)
+            --Wait a second so starting units are there.
+            WaitTicks(1)
+            --If we don't have a pre-defined position, then steal the pos of a civilian structure near where we want, if available
             if not predefinedpos then
                 local civs = self:GetUnitsAroundPoint(categories.STRUCTURE, Vector(posX, 0, posZ), 5)
                 if civs[1] then
@@ -43,63 +38,25 @@ AIBrain = Class(AIBrain) {
                     end
                 end
             end
-            CreateUnitHPR('ZPC0002', self:GetArmyIndex(), posX, posY, posZ, 0, 0, 0):CreateTarmac(true,true,true,false,false)
-        end)
-        self.PreBuilt = true
-    end,
---[[
-    BuildScoutLocations = function(self)
-        OldBuildScoutLocations(self)
-        if not self.InterestList then self.InterestList = {} end
-        if not self.InterestList.HighPriority then self.InterestList.HighPriority = {} end
-        table.insert(self.InterestList.HighPriority,CystalInterest)
-        --AIBrain:AICrystalTactical(self)
-    end,
-
-    BuildScoutLocationsSorian = function(self)
-        OldBuildScoutLocationsSorian(self)
-        if not self.InterestList then self.InterestList = {} end
-        if not self.InterestList.HighPriority then self.InterestList.HighPriority = {} end
-        table.insert(self.InterestList.HighPriority,CystalInterest)
-        --AIBrain:AICrystalTactical(self)
-    end,
-
-    AICrystalTactical = function(self)
-        local SIS = ScenarioInfo.size
-        for x = -40, 40, 20 do
-            for z = -40, 40, 20 do
-                if not (x == 0 and z == 0) then
-                    --LOG("THIS IS THE WAY WE LOG, THIS IS THE WAY WE LOG, NOT WITH A BANG, BUT WITH A")
-                    if not AIBrain.TacticalBases then AIBrain.TacticalBases = {} end
-                    --LOG(AIBrain.TacticalBases)
-                    local nextbase = (table.getn(AIBrain.TacticalBases) + 1)
-                    local tempPos = Vector((SIS[1]/2) + x, 0, (SIS[2]/2) + z)
-                    table.insert(AIBrain.TacticalBases,
-                        {
-                        Position = tempPos,
-                        Name = 'TacticalBase'..nextbase,
-                        }
-                    )
+            --Where ever we decided, spawn it there.
+            local HillUnit = CreateUnitHPR('ZPC0002', self:GetArmyIndex(), posX, posY, posZ, 0, 0, 0)
+            HillUnit:CreateTarmac(true,true,true,false,false)
+            --If we didn't have a pre-defined thing, assume there are no markers for this and make a bunch.
+            if not predefinedpos then
+                local pos = HillUnit:GetPosition()
+                for i, v in {'Objective', 'Combat Zone', 'Defensive Point', 'Expansion Area'} do
+                    ScenarioInfo.Env.Scenario.MasterChain._MASTERCHAIN_.Markers[v .. ' Crystal Hill'] = {
+                        --[[color = 'ff800000',
+                        hint = true,
+                        prop = '/env/common/props/markers/M_CombatZone_prop.bp',
+                        orientation = {0, 0, 0},]]
+                        type = v,
+                        position = pos,
+                    }
                 end
             end
-        end
+        end)
+        --self.PreBuilt = true
     end,
-
-    tprint = function(self, tbl, indent)
-        if not indent then indent = 0 end
-        for k, v in pairs(tbl) do
-            formatting = string.rep("  ", indent) .. k .. ": "
-            if type(v) == "table" then
-                LOG(formatting)
-                self:tprint(v, indent+1)
-            elseif type(v) == 'boolean' then
-                LOG(formatting .. tostring(v))
-            elseif type(v) == 'string' or type(v) == 'number' then
-                LOG(formatting .. v)
-            else
-                LOG(formatting .. type(v))
-            end
-        end
-    end,]]--
 }
 end

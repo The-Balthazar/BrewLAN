@@ -17,6 +17,10 @@ do
             {
                 path .. '_rojah_prop.bp',
             },
+            {
+                '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/monument_mer1_prop.bp',
+                '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/monument_mer2_prop.bp',
+            }
         }
         local mapsize = ScenarioInfo.size
         local usedpositions = {}
