@@ -140,6 +140,7 @@ Description['ssl0324'] = "<LOC Unit_Description_BrewLAN_T3L019>Hovering sensor a
 Description['ssl0320'] = "<LOC Unit_Description_BrewLAN_T3L020>Hovering mobile anti-air and tactical missile defense."
 Description['sel0322'] = "<LOC Unit_Description_BrewLAN_T3L021>Mobile shield generator."
 Description['sal0322'] = "<LOC Unit_Description_BrewLAN_T3L022>Mobile shield generator."
+Description['sel0326'] = "<LOC Unit_Description_BrewLAN_T3L023>Mobile platform for refueling and repairing aircraft. Air patrols will automatically use platform."
 
 --Tech 3 buildings
 Description['srb2306'] = "<LOC Unit_Description_BrewLAN_T3B001>Heavy defensive tower. Attacks land- and sea-based units with a powerful sweeping laser. Does not engage aircraft or submerged units. Requires cumulative amounts of energy to maintain prolonged fire; will overheat if active for too long."

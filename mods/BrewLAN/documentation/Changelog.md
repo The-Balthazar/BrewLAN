@@ -59,6 +59,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spomeniki: Created a usable Spirit unit. It's the same as Opportunity but produces less power and has a different texture.
   * Spomeniki: Added build descriptions and icons for Spirit and Opportunity.
 
+  ### 2018-02-20
+
+  * Spomeniki: MER script now resets the position of the dish array when closing the panels.
+
+  ### 2018-02-21
+
+  * New mod that makes wreckages disappear after a time, based on their cost and other factors.
+
+  ### 2018-02-23
+
+  * Added the UEF tech 3 mobile air staging platform.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

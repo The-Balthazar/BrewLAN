@@ -79,6 +79,9 @@ SNLMER1 = Class(TConstructionUnit) {
     ClosingState = State {
         Main = function(self)
             self:SetProductionPerSecondEnergy( self:GetBlueprint().Economy.ProductionPerSecondEnergy * 0.5 )
+            if self.Dish then
+                self.Dish:SetGoal(0)
+            end
             if self.Animator then
                 self.Animator:SetRate(-1)
                 WaitFor(self.Animator)

@@ -1,25 +1,28 @@
 do
     local OldCreateProps = CreateProps
     function CreateProps()
-        local path = '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/spomenik'
+        local path = '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/'
+        local spath = path..'spomenik_'
+        local mpath = path..'monument_'
+
         local monuments = {
             {
-                path .. '_fist_a_prop.bp',
-                path .. '_fist_b_prop.bp',
-                path .. '_fist_c_prop.bp',
+                spath..'fist_a_prop.bp',
+                spath..'fist_b_prop.bp',
+                spath..'fist_c_prop.bp',
             },
             {
-                path .. '_naroda_prop.bp',
+                spath..'naroda_prop.bp',
             },
             {
-                path .. '_mramor_prop.bp',
+                spath..'mramor_prop.bp',
             },
             {
-                path .. '_rojah_prop.bp',
+                spath..'rojah_prop.bp',
             },
             {
-                '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/monument_mer1_prop.bp',
-                '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/monument_mer2_prop.bp',
+                mpath..'mer1_prop.bp',
+                mpath..'mer2_prop.bp',
             }
         }
         local mapsize = ScenarioInfo.size
