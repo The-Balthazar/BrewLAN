@@ -51,6 +51,7 @@ MineStructureUnit = Class(StructureUnit) {
                         for k, v in effects do
                             CreateEmitterAtBone(self.unit,-2,army,v)
                         end
+                        break
                     end
                 end
                 if not self.SplatTexture then

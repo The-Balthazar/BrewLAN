@@ -56,7 +56,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC sbui5104>Air Staging Facility',
+    Description = '<LOC sbui5104>Light Air Staging Facility',
     Display = {
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
@@ -139,7 +139,7 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC srb5104_name>',
+        UnitName = '<LOC srb5104_name>Ravitailler',
         UnitWeight = 1,
     },
     Interface = {

@@ -52,7 +52,7 @@ UnitBlueprint {
         MaxHealth = 200,
         RegenRate = 0,
     },
-    Description = '<LOC sbui5104>Air Staging Facility',
+    Description = '<LOC sbui5104>Light Air Staging Facility',
     Display = {
         Abilities = {
             '<LOC ability_airstaging>Air Staging',

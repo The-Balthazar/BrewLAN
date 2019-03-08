@@ -132,7 +132,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC seb2401_name>Daddy',
+        UnitName = '<LOC seb2401_name>Excalibur',
         UnitWeight = 1,
     },
     Intel = {

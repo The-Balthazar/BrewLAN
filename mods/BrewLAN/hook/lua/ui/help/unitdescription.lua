@@ -128,7 +128,6 @@ Description['srl0311'] = "<LOC Unit_Description_BrewLAN_T3L011>Mobile multiple r
 Description['sal0320'] = "<LOC Unit_Description_BrewLAN_T3L012>Hovering mobile anti-air defence system. Consumes power with each shot."
 Description['srl0318'] = "<LOC Unit_Description_BrewLAN_T3L013>Mobile spiderbot. Armed with a long range EMP beam weapon."
 Description['sal0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
-Description['ssl0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
 Description['sel0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
 Description['srl0323'] = "<LOC Unit_Description_BrewLAN_T3L014>Mobile tactical missile defense. Protection is limited to unit's operational area."
 Description['sel0324'] = "<LOC Unit_Description_BrewLAN_T3L015>Mobile anti-air missile launcher. Equipped with advanced scanning equipment."

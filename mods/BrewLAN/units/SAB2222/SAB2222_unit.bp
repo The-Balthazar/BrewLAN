@@ -45,7 +45,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 7000,
     },
-    Description = '<LOC sbui2222>Nuke Mine',
+    Description = '<LOC sbui2222>Nuclear Mine',
     Display = {
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
@@ -126,7 +126,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC sab2222_name>Silencer',
+        UnitName = '<LOC sab2222_name>Mountain',
         UnitWeight = 1,
     },
     Intel = {
@@ -138,7 +138,7 @@ UnitBlueprint {
         SonarRadius = 29,
     },
     Interface = {
-        HelpText = '<LOC sbui2222>Nuke Mine',
+        HelpText = '<LOC sbui2222>Nuclear Mine',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.2,

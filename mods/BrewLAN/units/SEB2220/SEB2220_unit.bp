@@ -108,7 +108,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC seb2220_name>AM-12 Trap',
+        UnitName = '<LOC seb2220_name>AP-12 Trapper',
         UnitWeight = 1,
     },
     Intel = {

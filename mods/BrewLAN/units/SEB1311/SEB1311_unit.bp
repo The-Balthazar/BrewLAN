@@ -298,7 +298,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        UnitName = '<LOC seb1311_name>Von Mayer Reactor',
+        UnitName = '<LOC seb1311_name>Bessemer Reactor',
         UnitWeight = 1,
     },
     Intel = {

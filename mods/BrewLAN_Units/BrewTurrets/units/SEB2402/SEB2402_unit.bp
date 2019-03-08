@@ -147,7 +147,7 @@ UnitBlueprint {
         Icon = 'amph',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC seb2402_name>Mummy',
+        UnitName = '<LOC seb2402_name>Maelstrom',
         UnitWeight = 1,
     },
     Intel = {

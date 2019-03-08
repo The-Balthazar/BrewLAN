@@ -64,10 +64,11 @@ Created by Sean "Balthazar" Wheeldon
 - Jaisse – French localisation
 - Oaks – Czech localisation
 
-### Donators & Patreon supporters
+### Financial supporters
 - Saxxonknight
 - Ben Pankow
 - Mirko Gebauer
 - Mogwai
 - Neutral Effect
 - 🦕 Marcin Mikołajczak
+- Guillaume Chapeau

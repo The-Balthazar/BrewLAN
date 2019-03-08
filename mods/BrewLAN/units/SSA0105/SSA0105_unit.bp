@@ -198,7 +198,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'air',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC ssa0105_name>',
+        UnitName = '<LOC ssa0105_name>Vulesel',
         UnitWeight = 1,
     },
     Intel = {

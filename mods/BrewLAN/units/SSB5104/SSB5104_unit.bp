@@ -65,7 +65,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = '<LOC sbuisera5104>Air Staging Beacon',
+    Description = '<LOC sbuisera5104>Light Air Staging Beacon',
     Display = {
         Abilities = {
             '<LOC ability_airstaging>Air Staging',

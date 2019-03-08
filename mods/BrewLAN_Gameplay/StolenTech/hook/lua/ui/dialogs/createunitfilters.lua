@@ -94,7 +94,7 @@ Filters = {
                 key = 'land',
                 sortFunc = function(unitID)
                     local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
-                    return MT == 'ruleumt_amphibious' or MT == 'ruleumt_hover' or (MT == 'ruleumt_amphibiousfloating' and not table.find(__blueprints[unitID].Categories, 'NAVAL')) or MT == 'ruleumt_land'  -- string.sub(unitID, 3, 3) == 'l'
+                    return (MT == 'ruleumt_amphibious' or MT == 'ruleumt_hover' or (MT == 'ruleumt_amphibiousfloating' and not table.find(__blueprints[unitID].Categories, 'NAVAL')) or MT == 'ruleumt_land') and not (string.sub(unitID, 3, 3) == 'r' or string.sub(unitID, -3, -1) == 'rnd') -- string.sub(unitID, 3, 3) == 'l'
                 end,
             },
             {

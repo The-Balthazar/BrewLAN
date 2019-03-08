@@ -228,7 +228,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
-        UnitName = '<LOC sra0211_name>Reaper',
+        UnitName = '<LOC sra0211_name>Condor',
         UnitWeight = 1,
     },
     Intel = {

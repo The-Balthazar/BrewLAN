@@ -116,7 +116,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC seb2221_name>AM-12 Anti-Armor',
+        UnitName = '<LOC seb2221_name>AM-24 Anti-Armor',
         UnitWeight = 1,
     },
     Intel = {

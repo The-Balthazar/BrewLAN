@@ -209,7 +209,7 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
         },
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC srl0324_name>Citron',
+        UnitName = '<LOC srl0324_name>Adramelech',
         UnitWeight = 1,
     },
     Intel = {

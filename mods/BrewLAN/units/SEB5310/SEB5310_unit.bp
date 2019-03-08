@@ -193,7 +193,7 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC seb5310_name>Cidadel',
+        UnitName = '<LOC seb5310_name>Citadel',
         UnitWeight = 1,
     },
     Intel = {

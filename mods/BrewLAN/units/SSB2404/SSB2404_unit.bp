@@ -140,7 +140,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        UnitName = '<LOC ssb2404_name>Gaah',
+        UnitName = '<LOC ssb2404_name>Suthanus',
         UnitWeight = 1,
     },
     Intel = {

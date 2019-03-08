@@ -75,6 +75,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed the transport attach node on the UEF mobile air staging, tweaked the tread-marks, and added a name.
 
+  ### 2018-03-01
+
+  * Stolen Tech: Fixed research items appearing in land units list.
+
+  ### 2018-03-06
+
+  * Paragon Game: Fixed Aeon engineering station having Seraphim build effects.
+  * Updated UEF mobile air staging name based on vote results.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

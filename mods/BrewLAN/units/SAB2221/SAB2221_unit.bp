@@ -117,7 +117,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
-        UnitName = '<LOC sab2221_name>',
+        UnitName = '<LOC sab2221_name>Mound',
         UnitWeight = 1,
     },
     Intel = {

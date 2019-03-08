@@ -131,7 +131,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC ssb2303_name>Thaam-atha',
+        UnitName = '<LOC ssb2103_name>Thaam-atha',
         UnitWeight = 1,
     },
     Intel = {
