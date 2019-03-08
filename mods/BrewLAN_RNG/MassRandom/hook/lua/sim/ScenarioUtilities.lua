@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 do
     function CreateProps()
-        for i, tblData in pairs(Scenario['Props']) do
+        for i, tblData in pairs(ScenarioInfo.Env.Scenario['Props']) do
             if tblData.type ~= "Mass" then
                 CreatePropHPR(
                     tblData.prop,
