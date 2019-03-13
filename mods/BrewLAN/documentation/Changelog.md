@@ -87,6 +87,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-03-08
 
   * Updated various strings to match the language document.
+  * Mass Random: Fixed in LOUD.
+
+  ### 2018-03-13
+
+  * R&D: Fixed the Lancer landing half inside air staging platforms.
+  * Fixes towards aircraft getting trapped on the mobile air staging if it starts moving while they are landed on it.
+    * It no longer traps the aircraft, but it bricks the pad instead.
 
 ## 2019-01-03|84 (FAF minor patch)
 

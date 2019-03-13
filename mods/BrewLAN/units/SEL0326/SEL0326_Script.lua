@@ -1,18 +1,19 @@
-local TAirStagingPlatformUnit = import('/lua/terranunits.lua').TAirStagingPlatformUnit
+local TLandUnit = import('/lua/terranunits.lua').TLandUnit
 
-SEL0326 = Class(TAirStagingPlatformUnit) {
-    --[[OnCreate = function(self)
-        TAirStagingPlatformUnit.OnCreate(self)
-        self:PlatformToggle(true)
-    end,]]
+SEL0326 = Class(TLandUnit) {
+
+    OnCreate = function(self)
+        TLandUnit.OnCreate(self )
+        --self.slots = {}
+    end,
 
     OnStopBeingBuilt = function(self, ...)
-        TAirStagingPlatformUnit.OnStopBeingBuilt(self, unpack(arg) )
+        TLandUnit.OnStopBeingBuilt(self, unpack(arg) )
         self:PlatformToggle(true)
     end,
 
     OnStartTransportBeamUp = function(self, transport, bone)
-        TAirStagingPlatformUnit.OnStartTransportBeamUp(self, transport, bone)
+        TLandUnit.OnStartTransportBeamUp(self, transport, bone)
         self:PlatformToggle(false)
         self.LastTransportedTime = GetGameTimeSeconds()
     end,
@@ -20,12 +21,21 @@ SEL0326 = Class(TAirStagingPlatformUnit) {
     OnMotionHorzEventChange = function(self, new, old)
         if new ~= 'Stopped' then
             self:PlatformToggle(false)
-            --LOG("OnMotionHorzEventChange become visible")
+             --This doesn't free up the platform node for future use
+            local cargo = self:GetCargo()
+            for _, unit in cargo do
+                --unit:DoUnitCallbacks('OnDetachedFromTransport', self)
+                unit:DetachFrom()
+            end
+            --[[for i = 1, self:GetBoneCount() do
+                if string.sub(self:GetBoneName(i) or 'nope',1,11) == 'Attachpoint' then
+                    self:DetachAll(i)
+                end
+            end]]
         elseif new == 'Stopped' and (self.LastTransportedTime or 0) + 2 < GetGameTimeSeconds() then
             self:PlatformToggle(true)
-            --LOG("OnMotionHorzEventChange become invisible", new, old)
         end
-        TAirStagingPlatformUnit.OnMotionHorzEventChange(self, new, old)
+        TLandUnit.OnMotionHorzEventChange(self, new, old)
     end,
 
     PlatformToggle = function(self, toggle)
