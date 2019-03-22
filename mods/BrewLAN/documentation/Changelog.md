@@ -95,6 +95,22 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixes towards aircraft getting trapped on the mobile air staging if it starts moving while they are landed on it.
     * It no longer traps the aircraft, but it bricks the pad instead.
 
+  ### 2018-03-14
+
+  * R&D: Fixed the Seraphim and Aeon Penetration bombers not being able to land on air staging.
+  * Fixed the UEF air staging trapping aircraft, or breaking when kicking out units, at the cost of ignoring move orders if occupied.
+
+  ### 2018-03-21
+
+  * Darkness no longer affects SACUs.
+  * Minor optimisation for the Darkness.
+
+  ### 2018-03-22
+
+  * Removed obsolete anti-Panopticon code from the Darkess.
+  * Additional optimisation for the Darkness.
+  * Darkness now implicitly excludes the Orbos and Galactic Colossus with a category instead of explicitly by unit ID.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

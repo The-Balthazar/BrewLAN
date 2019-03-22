@@ -2,11 +2,6 @@ local TLandUnit = import('/lua/terranunits.lua').TLandUnit
 
 SEL0326 = Class(TLandUnit) {
 
-    OnCreate = function(self)
-        TLandUnit.OnCreate(self )
-        --self.slots = {}
-    end,
-
     OnStopBeingBuilt = function(self, ...)
         TLandUnit.OnStopBeingBuilt(self, unpack(arg) )
         self:PlatformToggle(true)
@@ -21,19 +16,39 @@ SEL0326 = Class(TLandUnit) {
     OnMotionHorzEventChange = function(self, new, old)
         if new ~= 'Stopped' then
             self:PlatformToggle(false)
-             --This doesn't free up the platform node for future use
+
+            --This cancels the move order, which would break AI platoon orders, but doesn't break the units.
+            for _, unit in self:GetCargo() do
+                --LOG("YEEET")
+                IssueClearCommands({self}) -- Without this, the transport order is ignored.
+                IssueTransportUnload( {self}, self:GetPosition() )
+                break
+            end
+            --This doesn't free up the platform node for future use
+            --[[
             local cargo = self:GetCargo()
             for _, unit in cargo do
                 --unit:DoUnitCallbacks('OnDetachedFromTransport', self)
                 unit:DetachFrom()
+                self.ForceDeploy = true
             end
-            --[[for i = 1, self:GetBoneCount() do
+            ]]
+            --This also doesn't free up the platform node for future use
+            --[[
+            for i = 1, self:GetBoneCount() do
                 if string.sub(self:GetBoneName(i) or 'nope',1,11) == 'Attachpoint' then
                     self:DetachAll(i)
+                    self.ForceDeploy = true
                 end
-            end]]
+            end
+            ]]
         elseif new == 'Stopped' and (self.LastTransportedTime or 0) + 2 < GetGameTimeSeconds() then
-            self:PlatformToggle(true)
+            self:PlatformToggle(true)--[[
+            --This doesn't work to refresh the pads.
+            if self.ForceDeploy then
+                IssueTransportUnload( {self}, self:GetPosition() )
+                self.ForceDeploy = nil
+            end]]
         end
         TLandUnit.OnMotionHorzEventChange(self, new, old)
     end,

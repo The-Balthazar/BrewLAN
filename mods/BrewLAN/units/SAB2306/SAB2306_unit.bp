@@ -41,6 +41,7 @@ UnitBlueprint {
         'STRUCTURE',
         'DEFENSE',
         'TECH3',
+        'DARKNESSIMMUNE',
         'DIRECTFIRE',
         'DRAGBUILD',
         'SIZE12',

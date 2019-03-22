@@ -17,7 +17,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                 local Range = self.MaxRadius or 2000
                 local LocalUnits = {}
                 for index, brain in ArmyBrains do
-                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS, Mypos, Range) do
+                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS - categories.COMMAND - categories.SUBCOMMANDER - categories.DARKNESSIMMUNE, Mypos, Range) do
                         table.insert(LocalUnits, unit)
                     end
                 end
@@ -65,32 +65,8 @@ SRB4402 = Class(CRadarJammerUnit) {
                     }
                 end
                 for k, v in LocalUnits do
-                    if
-                    --self.unit:GetEntityId() ~= v:GetEntityId()
-                    --and
-                    v:IsIntelEnabled('Omni')
-                    and
-                    not EntityCategoryContains(categories.COMMAND + categories.ual0401 + categories.sab2306, v)
-                    --and
-                    --v:GetIntelRadius('Omni') > 50
-                    then
+                    if v:IsIntelEnabled('Omni') then --and not EntityCategoryContains(categories.DARKNESSIMMUNE, v) and self.unit:GetEntityId() ~= v:GetEntityId() and v:GetIntelRadius('Omni') > 50
                         Buff.ApplyBuff(v, 'DarknessOmniNerf')
-                    end
-                    if v.PanopticonMarker then
-                        --LOG(VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) .. " sdfgdf " .. self.unit:GetBlueprint().Intel.RadarStealthFieldRadius)
-                        local active = false
-                        for i, marker in v.PanopticonMarker do
-                            active = true
-                            break
-                        end
-                        if active and VDist2(v:GetPosition()[1], v:GetPosition()[3], self.unit:GetPosition()[1], self.unit:GetPosition()[3] ) < self.unit:GetBlueprint().Intel.RadarStealthFieldRadius then
-                            --LOG("KILL IT DEAD")
-                            for i, marker in v.PanopticonMarker do
-                                v.PanopticonMarker[i]:Destroy()
-                                v.PanopticonMarker[i] = nil
-                            end
-                            v.PanopticonMarker = {}
-                        end
                     end
                 end
             end,
