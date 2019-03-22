@@ -7,6 +7,7 @@ local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon
 local Utilities = import('/lua/utilities.lua')
 local Buff = import('/lua/sim/Buff.lua')
 local AIUtils = import('/lua/ai/aiutilities.lua')
+local tableinsert = table.insert
 
 SRB4402 = Class(CRadarJammerUnit) {
     Weapons = {
@@ -18,7 +19,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                 local LocalUnits = {}
                 for index, brain in ArmyBrains do
                     for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS - categories.COMMAND - categories.SUBCOMMANDER - categories.DARKNESSIMMUNE, Mypos, Range) do
-                        table.insert(LocalUnits, unit)
+                        tableinsert(LocalUnits, unit)
                     end
                 end
                 local army = self.unit:GetArmy()

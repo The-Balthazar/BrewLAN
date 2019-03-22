@@ -107,9 +107,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2018-03-22
 
-  * Removed obsolete anti-Panopticon code from the Darkess.
+  * Removed obsolete anti-Panopticon code from the Darkness.
   * Additional optimisation for the Darkness.
   * Darkness now implicitly excludes the Orbos and Galactic Colossus with a category instead of explicitly by unit ID.
+  * Novax no longer automatically builds the first satellite so people are more aware that it can build more than one.
+  * Removed the obsolete code for automatically rebuilding satellites from the Novax, which hasn't functioned since the change to a satellite pop cap.
 
 ## 2019-01-03|84 (FAF minor patch)
 

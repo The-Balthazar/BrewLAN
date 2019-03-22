@@ -9,16 +9,8 @@ SEB3303 = Class(TStructureUnit) {
         self.AnimManip:PlayAnim( '/units/XEB2402/XEB2402_aopen.sca' )
         self.Trash:Add(self.AnimManip)
         self:PlayUnitSound('MoveArms')
-        self:Rebuild()
     end,
 
-    Rebuild = function(self, pos)
-        if pos then
-			IssueClearFactoryCommands({self})
-            IssueFactoryRallyPoint({self}, pos)
-        end
-        self:GetAIBrain():BuildUnit(self, 'sea0002', 1)
-    end,
 
     FinishBuildThread = function(self, unitBeingBuilt, order )
         self:SetBusy(true)
