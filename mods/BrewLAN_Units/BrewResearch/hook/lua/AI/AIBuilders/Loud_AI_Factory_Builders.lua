@@ -8,6 +8,7 @@ BuilderGroup {
         Priority = 900,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'RNDResearchIsNotComplete', {} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.2} },
             { LUTL, 'UnitCapCheckLess', { .85 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.RESEARCHCENTRE } },
@@ -22,5 +23,20 @@ BuilderGroup {
                 BuildStructures = {'T1ResearchCentre'}
             }
         }
-    }
+    },
+
+    Builder {
+        BuilderName = 'Engineer Research Reclaim',
+        PlatoonTemplate = 'EngineerStructureReclaimerGeneral',
+		PlatoonAddFunctions = { { LUTL, 'NameEngineerUnits'}, },
+        Priority = 700,
+        BuilderType = { 'T1','T2','T3','Commander' },
+        BuilderConditions = {
+            { MIBC, 'RNDResearchIsComplete', {} },
+			{ LUTL, 'NoBaseAlert', { 'LocationType' }},
+        },
+        BuilderData = {
+			Reclaim = {categories.STRUCTURE * categories.RESEARCHCENTRE},
+        },
+    },
 }

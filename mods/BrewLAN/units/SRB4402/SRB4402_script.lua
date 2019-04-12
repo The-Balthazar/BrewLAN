@@ -8,6 +8,24 @@ local Utilities = import('/lua/utilities.lua')
 local Buff = import('/lua/sim/Buff.lua')
 local AIUtils = import('/lua/ai/aiutilities.lua')
 local tableinsert = table.insert
+local CreateAttachedEmitter = CreateAttachedEmitter
+local WaitSeconds = WaitSeconds
+
+if not Buffs['DarknessOmniNerf'] then
+    BuffBlueprint {
+        Name = 'DarknessOmniNerf',
+        DisplayName = 'DarknessOmniNerf',
+        BuffType = 'OmniRadius',
+        Stacks = 'ALWAYS',
+        Duration = 20.1,
+        Affects = {
+            OmniRadius = {
+                Add = 0,
+                Mult = 0.6,
+            },
+        },
+    }
+end
 
 SRB4402 = Class(CRadarJammerUnit) {
     Weapons = {
@@ -18,12 +36,21 @@ SRB4402 = Class(CRadarJammerUnit) {
                 local Range = self.MaxRadius or 2000
                 local LocalUnits = {}
                 for index, brain in ArmyBrains do
-                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS - categories.COMMAND - categories.SUBCOMMANDER - categories.DARKNESSIMMUNE, Mypos, Range) do
+                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS - categories.COMMAND - categories.SUBCOMMANDER - categories.DARKNESSIMMUNE - categories.MINE - categories.WALL - categories.MEDIUMWALL - categories.HEAVYWALL - categories.BENIGN, Mypos, Range) do
                         tableinsert(LocalUnits, unit)
                     end
                 end
-                local army = self.unit:GetArmy()
+                for k, v in LocalUnits do
+                    if v:IsIntelEnabled('Omni') then
+                        Buff.ApplyBuff(v, 'DarknessOmniNerf')
+                    end
+                end
                 self:PlaySound(self:GetBlueprint().Audio.Fire)
+                self:PlayDarknessAnimation()
+                self:CreateDarknessEffects()
+            end,
+
+            PlayDarknessAnimation = function(self)
                 if self.ArmWaitThread then
                     KillThread(self.ArmWaitThread)
                 end
@@ -40,35 +67,18 @@ SRB4402 = Class(CRadarJammerUnit) {
                         end
                     end
                 )
-                CreateAttachedEmitter(self.unit, 0, army, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter( 20 ):OffsetEmitter( 0, 4, 0 )
+            end,
+
+            CreateDarknessEffects = function(self)
+                local army = self.unit:GetArmy()
                 local epathR = '/effects/emitters/destruction_explosion_concussion_ring_03_emit.bp'
+                local epathQ = '/effects/emitters/cybran_qai_shutdown_ambient_0'
+                CreateAttachedEmitter(self.unit, 0, army, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter( 20 ):OffsetEmitter( 0, 4, 0 )
                 CreateAttachedEmitter(self.unit, 'XRC2201', army, epathR):OffsetEmitter( 0, 4, 0 )
                 CreateAttachedEmitter(self.unit, 'XRC2201', army, epathR):ScaleEmitter( 3 ):OffsetEmitter( 0, 4, 0 )
                 CreateAttachedEmitter(self.unit, 'XRC2201', army, epathR):ScaleEmitter( 6 ):OffsetEmitter( 0, 4, 0 )
-                local epathQ = '/effects/emitters/cybran_qai_shutdown_ambient_'
-                CreateAttachedEmitter(self.unit, 0, army, epathQ .. '01_emit.bp')
-                CreateAttachedEmitter(self.unit, 0, army, epathQ .. '02_emit.bp')
-                CreateAttachedEmitter(self.unit, 0, army, epathQ .. '03_emit.bp')
-                CreateAttachedEmitter(self.unit, 0, army, epathQ .. '04_emit.bp')
-                if not Buffs['DarknessOmniNerf'] then
-                    BuffBlueprint {
-                        Name = 'DarknessOmniNerf',
-                        DisplayName = 'DarknessOmniNerf',
-                        BuffType = 'OmniRadius',
-                        Stacks = 'ALWAYS',
-                        Duration = 20.1,
-                        Affects = {
-                            OmniRadius = {
-                                Add = 0,
-                                Mult = 0.6,
-                            },
-                        },
-                    }
-                end
-                for k, v in LocalUnits do
-                    if v:IsIntelEnabled('Omni') then --and not EntityCategoryContains(categories.DARKNESSIMMUNE, v) and self.unit:GetEntityId() ~= v:GetEntityId() and v:GetIntelRadius('Omni') > 50
-                        Buff.ApplyBuff(v, 'DarknessOmniNerf')
-                    end
+                for i = 1, 4 do
+                    CreateAttachedEmitter(self.unit, 0, army, epathQ .. i .. '_emit.bp')
                 end
             end,
         },
@@ -87,7 +97,6 @@ SRB4402 = Class(CRadarJammerUnit) {
             self.CreateTerrainTypeEffects( self, self.IntelEffects, 'FXIdle',  self:GetCurrentLayer(), nil, self.IntelEffectsBag )
             self.IntelFxOn = true
         end
-        self.NerfedUnits = {}
         self.Intel = true
         self:ForkThread(self.FirePulse, self)
     end,

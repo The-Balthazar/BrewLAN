@@ -11,7 +11,6 @@ SEB3303 = Class(TStructureUnit) {
         self:PlayUnitSound('MoveArms')
     end,
 
-
     FinishBuildThread = function(self, unitBeingBuilt, order )
         self:SetBusy(true)
         self:SetBlockCommandQueue(true)

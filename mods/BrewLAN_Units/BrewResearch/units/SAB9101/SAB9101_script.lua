@@ -1,5 +1,5 @@
-local ALandFactoryUnit = import('/lua/defaultunits.lua').ResearchFactoryUnit
+local AResearchFactoryUnit = import('/lua/aeonunits.lua').AResearchFactoryUnit
 
-SAB9101 = Class(ALandFactoryUnit) {}
+SAB9101 = Class(AResearchFactoryUnit) {}
 
 TypeClass = SAB9101

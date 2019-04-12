@@ -113,6 +113,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Novax no longer automatically builds the first satellite so people are more aware that it can build more than one.
   * Removed the obsolete code for automatically rebuilding satellites from the Novax, which hasn't functioned since the change to a satellite pop cap.
 
+  ### 2018-04-07
+
+  * Removed some more redundant code from the Darkness, and refactored it so it's easier to read.
+  * Darkness will no longer try to affect mines, walls, and benign tagged units.
+
+  ### 2018-04-09
+
+  * R&D: Split off the factional differences of the research centres to child classes to remove the need to check self faction on SFX start.
+
+  ### 2018-04-12
+
+  * R&D: Starting research is now based on starting factories and engineers, not any random unit.
+  * R&D: Added basic framework for the AI research manager to receive research orders.
+  * R&D: Moved the majority of the AI control of the research centre to the AIBrain.
+  * R&D: AI's will no longer rebuild research centres after they have completed all research.
+  * R&D: AI's can now reclaim research centres if they are done with them.
+  * R&D: AI will no longer research if they are low on resources.
+  * ~~R&D: AI's are now completely prevented from building more than one research centre, since instructing them so wasn't enough.~~
+    * AI engineers will apparently build something they aren't allowed to if it is queued up already.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

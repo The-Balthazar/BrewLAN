@@ -32,6 +32,13 @@ ResearchItem = Class(DummyUnit) {
                 RemoveBuildRestriction(self:GetArmy(), categories.EXPERIMENTAL * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
             end
         end
+
+        --Tell the manager this is done if we're an AI and presumably have a manager.
+        local AIBrain = self:GetAIBrain()
+        if AIBrain.BrainType ~= 'Human' then
+            AIBrain.BrewRND.MarkResearchComplete(AIBrain, bp.BlueprintId)
+        end
+
         --Before the rest, because the rest is Destroy(self)
         DummyUnit.OnStopBeingBuilt(self,builder,layer)
     end,
@@ -112,65 +119,41 @@ local Buff = {}
 --Wizardry to make FA buff scripts not break the game on original SupCom.
 if not string.sub(GetVersion(),1,3) == '1.1' or string.sub(GetVersion(),1,3) == '1.0' then Buff = import('/lua/sim/Buff.lua') else Buff.ApplyBuff = function() end end
 --------------------------------------------------------------------------------
+--Create research count discount buffs.
+--Might as well do this here.
+if not Buffs['ResearchItemBuff5'] then
+    for i = 1, 5 do
+        if i ~= 4 then
+            BuffBlueprint {
+                Name = 'ResearchItemBuff' .. i, DisplayName = 'ResearchItemBuff' .. i,
+                BuffType = 'RESEARCH', Stacks = 'ALWAYS', Duration = -1,
+                Affects = {
+                    BuildRate    = {Add = (i/100), Mult = 1},
+                    EnergyActive = {Add = 0, Mult = 1-(i/100)},
+                    MassActive   = {Add = 0, Mult = 1-(i/100)},
+                },
+            }
+        end
+    end
+end
+--------------------------------------------------------------------------------
 ResearchFactoryUnit = Class(FactoryUnit) {
 
-    BuildLevel = 0,
+    -- Prevents LOUD factory manager errors.
+    SetupComplete = true,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.BrainType ~= 'Human' then
-            if builder.ResearchList then
-                self.ResearchList = table.copy(builder.ResearchList)
-            end
-            self:ForkThread(self.ResearchThread)
-            self:AICheatsBuffs()
+        --If we're an AI
+        local AIBrain = self:GetAIBrain()
+        if AIBrain.BrainType ~= 'Human' then
+            self.ResearchThread = self:ForkThread(self.ResearchThread) --Create the research thread
+            self:AICheatsBuffs()                 --CHEAT!
         end
         FactoryUnit.OnStopBeingBuilt(self, builder, layer)
     end,
 
-    StartBuildFx = function(self, unitBeingBuilt)
-        local bp = self:GetBlueprint()
-        local faction = string.lower(bp.General.FactionName or 'nothing')
-        local EffectUtil = import('/lua/effectutilities.lua')
-        if faction == 'aeon' then
-            local thread = self:ForkThread( EffectUtil.CreateAeonFactoryBuildingEffects, unitBeingBuilt, bp.General.BuildBones.BuildEffectBones, 'Attachpoint', self.BuildEffectsBag )
-            unitBeingBuilt.Trash:Add(thread)
-        elseif faction == 'uef' then
-            WaitTicks(1)
-            --unitBeingBuilt:SetMesh(unitBeingBuilt:GetBlueprint().Display.BuildMeshBlueprint, true)
-            for k, v in bp.General.BuildBones.BuildEffectBones do
-                self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/effects/emitters/flashing_blue_glow_01_emit.bp' ) )
-                self.BuildEffectsBag:Add( self:ForkThread( EffectUtil.CreateDefaultBuildBeams, unitBeingBuilt, {v}, self.BuildEffectsBag ) )
-            end
-        elseif faction == 'cybran' then
-            local buildbots = EffectUtil.SpawnBuildBots( self, unitBeingBuilt, table.getn(bp.General.BuildBones.BuildEffectBones), self.BuildEffectsBag )
-            EffectUtil.CreateCybranEngineerBuildEffects( self, bp.General.BuildBones.BuildEffectBones, buildbots, self.BuildEffectsBag )
-        elseif faction == 'seraphim' then
-    		local BuildBones = bp.General.BuildBones.BuildEffectBones
-            local thread = self:ForkThread( EffectUtil.CreateSeraphimFactoryBuildingEffects, unitBeingBuilt, BuildBones, 'Attachpoint', self.BuildEffectsBag )
-            unitBeingBuilt.Trash:Add(thread)
-        end
-        if FactoryUnit.StartBuildFx then
-            FactoryUnit.StartBuildFx(self, unitBeingBuilt)
-        end
-    end,
-
     OnStopBuild = function(self, unitbuilding, order)
-        if not Buffs['ResearchItemBuff5'] then
-            for i = 1, 5 do
-                if i ~= 4 then
-                    BuffBlueprint {
-                        Name = 'ResearchItemBuff' .. i, DisplayName = 'ResearchItemBuff' .. i,
-                        BuffType = 'RESEARCH', Stacks = 'ALWAYS', Duration = -1,
-                        Affects = {
-                            BuildRate    = {Add = (i/100), Mult = 1},
-                            EnergyActive = {Add = 0, Mult = 1-(i/100)},
-                            MassActive   = {Add = 0, Mult = 1-(i/100)},
-                        },
-                    }
-                end
-            end
-        end
+        --Give buff based on what we researched
         if unitbuilding.GetFractionComplete and unitbuilding:GetFractionComplete() == 1 then
             if EntityCategoryContains(categories.EXPERIMENTAL, unitbuilding) then
                 Buff.ApplyBuff(self, 'ResearchItemBuff5')
@@ -187,6 +170,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
 
     UpgradingState = State(FactoryUnit.UpgradingState) {
         OnStopBuild = function(self, unitbuilding, order)
+            --Pass on buffs to the replacement
             if unitbuilding.GetFractionComplete and unitbuilding:GetFractionComplete() == 1 and order == 'Upgrade' then
                 if self.Buffs.BuffTable.RESEARCH then
                     for buff, data in self.Buffs.BuffTable.RESEARCH do
@@ -209,72 +193,41 @@ ResearchFactoryUnit = Class(FactoryUnit) {
 
     -- Persistent research thread
     -- "Decides" when to do research
-        -- Checks every 10 seconds if we are idle
-        -- If we ar wait a random number of ticks
-        -- that increases later into the game
+        -- Checks every 5 seconds if we are idle
+        -- Checks with the AI brain if we're allowed to research
         -- then research
     ResearchThread = function(self)
-        while not self.Dead do
-            if self:IsIdleState() then
-                WaitTicks(math.random(1, GetGameTimeSeconds()))
+        local AIBrain = self:GetAIBrain()
+        while not self.Dead and AIBrain.BrewRND.IsResearchRemaining(AIBrain) do
+            if self:IsIdleState() and AIBrain.BrewRND.IsAbleToResearch(AIBrain) then
                 self:Research()
+                WaitTicks(10)
             else
                 WaitTicks(100)
             end
         end
+        WARN("An AI has finished researching.")
     end,
 
     -- Ran every time "ResearchThread" decides we need to research
         -- Prioritises upgrading if it's available
         -- else calls GetResearchItem to decide what to research
     Research = function(self)
-        local aiBrain = self:GetAIBrain()
+        local AIBrain = self:GetAIBrain()
         local bp = self:GetBlueprint()
         --Upgrade if we can first
         if bp.General.UpgradesTo and __blueprints[bp.General.UpgradesTo] and self:CanBuild(bp.General.UpgradesTo) then
             IssueUpgrade({self}, bp.General.UpgradesTo)
         else
-            aiBrain:BuildUnit(self, self:GetResearchItem(), 1)
+            AIBrain:BuildUnit(self, AIBrain.BrewRND.GetResearchItem(AIBrain, self), 1)
         end
-    end,
-
-    -- Ran via Research to "decide" what we should research
-        -- The first time it's ran per research center it generates a comprehensive list of all things this can research
-        -- It loops through that list to see what it can currently research
-        -- Then it picks one of those at random to build.
-        -- Research items self restrict, so there is no damger of repeat items unless nessessary.
-        -- Currently doesn't handle running out of things to research very well.
-        -- Should probably inform the AI brain that we are done and we no longer need a research center.
-    GetResearchItem = function(self)
-        local selfbp = self:GetBlueprint()
-        if not self.ResearchList then
-            self.ResearchList = {}
-            for id, bp in __blueprints do
-                if bp.Categories then
-                    if selfbp.General.FactionName == bp.General.FactionName and table.find(bp.Categories, 'BUILTBYRESEARCH') then
-                        table.insert(self.ResearchList, bp.BlueprintId)
-                    end
-                end
-            end
-        end
-        --WARN(repr(self.ResearchList))
-        local currentResearch = {}
-        for i, id in self.ResearchList do
-            if __blueprints[id] and self:CanBuild(id) then
-                table.insert(currentResearch, id)
-            end
-        end
-        --WARN(repr(currentResearch))
-        local choicei = math.random(1, table.getn(currentResearch))
-        LOG("AI starting research for " .. (__blueprints[currentResearch[choicei]].Description or "unknown research item") .. ".")
-        return currentResearch[choicei]
     end,
 
     --Applied OnStopBeingBuilt.
     --Passed on with the other buffs on upgrade.
     AICheatsBuffs = function(self)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain.CheatEnabled then
+        local AIBrain = self:GetAIBrain()
+        if AIBrain.CheatEnabled then
             if not Buffs['ResearchAIxBuff'] then
                 BuffBlueprint {
                     Name = 'ResearchAIxBuff',
