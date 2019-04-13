@@ -119,24 +119,6 @@ local Buff = {}
 --Wizardry to make FA buff scripts not break the game on original SupCom.
 if not string.sub(GetVersion(),1,3) == '1.1' or string.sub(GetVersion(),1,3) == '1.0' then Buff = import('/lua/sim/Buff.lua') else Buff.ApplyBuff = function() end end
 --------------------------------------------------------------------------------
---Create research count discount buffs.
---Might as well do this here.
-if not Buffs['ResearchItemBuff5'] then
-    for i = 1, 5 do
-        if i ~= 4 then
-            BuffBlueprint {
-                Name = 'ResearchItemBuff' .. i, DisplayName = 'ResearchItemBuff' .. i,
-                BuffType = 'RESEARCH', Stacks = 'ALWAYS', Duration = -1,
-                Affects = {
-                    BuildRate    = {Add = (i/100), Mult = 1},
-                    EnergyActive = {Add = 0, Mult = 1-(i/100)},
-                    MassActive   = {Add = 0, Mult = 1-(i/100)},
-                },
-            }
-        end
-    end
-end
---------------------------------------------------------------------------------
 ResearchFactoryUnit = Class(FactoryUnit) {
 
     -- Prevents LOUD factory manager errors.
@@ -228,37 +210,8 @@ ResearchFactoryUnit = Class(FactoryUnit) {
     AICheatsBuffs = function(self)
         local AIBrain = self:GetAIBrain()
         if AIBrain.CheatEnabled then
-            if not Buffs['ResearchAIxBuff'] then
-                BuffBlueprint {
-                    Name = 'ResearchAIxBuff',
-                    DisplayName = 'ResearchAIxBuff',
-                    BuffType = 'RESEARCH',
-                    Stacks = 'ALWAYS',
-                    Duration = -1,
-                    Affects = {
-                        --Research buffs are passed on as upgrades, so the final upgrade gets 3 instances of these.
-                        BuildRate = {Add = 0, Mult = 1 + (0.25 / 3)},
-                        EnergyActive = {Add = -0.2, Mult = 1},
-                        MassActive = {Add = -0.2, Mult = 1},
-                    },
-                }
-            end
             Buff.ApplyBuff(self, 'ResearchAIxBuff')
         else
-            if not Buffs['ResearchAIBuff'] then
-                BuffBlueprint {
-                    Name = 'ResearchAIBuff',
-                    DisplayName = 'ResearchAIBuff',
-                    BuffType = 'RESEARCH',
-                    Stacks = 'ALWAYS',
-                    Duration = -1,
-                    Affects = {
-                        --Research buffs are passed on as upgrades, so the final upgrade gets 3 instances of these.
-                        EnergyActive = {Add = -0.1, Mult = 1},
-                        MassActive = {Add = -0.1, Mult = 1},
-                    },
-                }
-            end
             Buff.ApplyBuff(self, 'ResearchAIBuff')
         end
     end

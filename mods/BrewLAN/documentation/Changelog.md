@@ -133,6 +133,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * ~~R&D: AI's are now completely prevented from building more than one research centre, since instructing them so wasn't enough.~~
     * AI engineers will apparently build something they aren't allowed to if it is queued up already.
 
+  ### 2018-04-13
+
+  * R&D: Moved the buff definitions to the buff definitions document.
+  * R&D: Research request function will now parse requests for units that are category locked not individual unit locked.
+  * R&D: AI build structure functions can now request specific research orders.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
