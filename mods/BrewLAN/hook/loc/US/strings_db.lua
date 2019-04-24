@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="Radar disruption facility. Creates a large number of false radar signals within its operational area, causing a distraction and disrupting enemy targeting."
 ssa00002_desc="Hologram"
 
+sl0326_desc="Mobile Air Staging Platform"
+sel0326_name="Bird Nest"
+Unit_Description_BrewLAN_T3L023="Mobile platform for refueling and repairing aircraft. Air patrols will automatically use platform."
+
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
 Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius that are visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and large units cost more to spy on."
+
+Panopticon_array_slot="Array"
+Unit_Description_BrewLAN_T4B008-sre="Increases radar radius."
+Unit_Description_BrewLAN_T4B008-sresre="Increases radar and omni radius."
+Unit_Description_BrewLAN_T4B008-xbndl="Reveals radar blips."
+brewlan_panopticon_small_001="Activate radar dish"
+brewlan_panopticon_small_002="Activate the \"Marcin\" dish"
+brewlan_panopticon_small_003="Activate the \"Gebauer\" dish"
+brewlan_panopticon_small_004="Activate radar dish"
+brewlan_panopticon_med_001="Activate the \"Chapeau\" dish"
+brewlan_panopticon_med_002="Activate the \"Pankow\" dish"
+brewlan_panopticon_med_003="Activate the \"Mogwai\" dish"
+brewlan_panopticon_med_004="Activate the \"Neutral\" dish"
+brewlan_panopticon_xbl_001="Activate the \"Saxxon\" dish"
+brewlan_panopticon_small_001r="Deactivate the \"Guillaume\" dish"
+brewlan_panopticon_small_002r="Deactivate the \"Marcin\" dish"
+brewlan_panopticon_small_003r="Deactivate the \"Gebauer\" dish"
+brewlan_panopticon_small_004r="Deactivate radar dish"
+brewlan_panopticon_med_001r="Deactivate the \"Chapeau\" dish"
+brewlan_panopticon_med_002r="Deactivate the \"Pankow\" dish"
+brewlan_panopticon_med_003r="Deactivate the \"Mogwai\" dish"
+brewlan_panopticon_med_004r="Deactivate the \"Neutral\" dish"
+brewlan_panopticon_xbl_001r="Deactivate the \"Saxxon\" dish"
 
 sab0401="Experimental Air Factory"
 sab0401_name="Independence Engine"

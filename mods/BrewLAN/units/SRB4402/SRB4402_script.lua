@@ -5,27 +5,11 @@
 local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit
 local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon
 local Utilities = import('/lua/utilities.lua')
-local Buff = import('/lua/sim/Buff.lua')
+local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 local AIUtils = import('/lua/ai/aiutilities.lua')
 local tableinsert = table.insert
 local CreateAttachedEmitter = CreateAttachedEmitter
 local WaitSeconds = WaitSeconds
-
-if not Buffs['DarknessOmniNerf'] then
-    BuffBlueprint {
-        Name = 'DarknessOmniNerf',
-        DisplayName = 'DarknessOmniNerf',
-        BuffType = 'OmniRadius',
-        Stacks = 'ALWAYS',
-        Duration = 20.1,
-        Affects = {
-            OmniRadius = {
-                Add = 0,
-                Mult = 0.6,
-            },
-        },
-    }
-end
 
 SRB4402 = Class(CRadarJammerUnit) {
     Weapons = {

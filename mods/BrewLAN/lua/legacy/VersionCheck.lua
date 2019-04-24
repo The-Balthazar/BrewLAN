@@ -33,4 +33,6 @@ if not VersionIsSC() then --If not original Steam SupCom
 else
     Buff.ApplyBuff = function()
     end
+    Buff.RemoveBuff = function()
+    end
 end

@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="impianto di interruzione del radar. Crea un gran numero di falsi segnali radar nella propria area operativa, causando una distrazione e interrompere nemico targeting."
 ssa00002_desc="Ologramma"
 
+sl0326_desc="Piattaforma Staging mobile Air"
+sel0326_name="Nido di uccello"
+Unit_Description_BrewLAN_T3L023="piattaforma mobile per il rifornimento e la riparazione degli aeromobili. pattuglie aeree useranno automaticamente piattaforma."
+
+
 --------------------------------------------------------------------------------
 -- sperimentazione
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 seb3404_desc="Array Sensor sperimentale"
 seb3404_name="Panopticon"
 Unit_Description_BrewLAN_T4B008="Sperimentale matrice di sensori. Dà linea di vista per le unità nemiche entro il raggio operativo che sono visibili ai sensori disponibili, come radar. costi di manutenzione aggiuntivi per unità spiati. unità mobili e grandi unità costano di più per spiare."
+
+Panopticon_array_slot="schieramento"
+Unit_Description_BrewLAN_T4B008-sre="Aumenta il raggio radar."
+Unit_Description_BrewLAN_T4B008-sresre="Aumenta radar e raggio omni."
+Unit_Description_BrewLAN_T4B008-xbndl="Rivela segnali radar."
+brewlan_panopticon_small_001="Attiva piatto radar"
+brewlan_panopticon_small_002="Attivare il piatto Marcin"
+brewlan_panopticon_small_003="Attivare il piatto Gebauer"
+brewlan_panopticon_small_004="Attiva piatto radar"
+brewlan_panopticon_med_001="Attivare il piatto Chapeau"
+brewlan_panopticon_med_002="Attivare il piatto Pankow"
+brewlan_panopticon_med_003="Attivare il piatto Mogwai"
+brewlan_panopticon_med_004="Attivare il piatto Neutral"
+brewlan_panopticon_xbl_001="Attivare il piatto Saxon"
+brewlan_panopticon_small_001r="Disattivare il piatto Guillaume"
+brewlan_panopticon_small_002r="Disattivare il piatto Marcin"
+brewlan_panopticon_small_003r="Disattivare il piatto Gebauer"
+brewlan_panopticon_small_004r="Disattivare piatto radar"
+brewlan_panopticon_med_001r="Disattivare il piatto Chapeau"
+brewlan_panopticon_med_002r="Disattivare il piatto Pankow"
+brewlan_panopticon_med_003r="Disattivare il piatto Mogwai"
+brewlan_panopticon_med_004r="Disattivare il piatto Neutral"
+brewlan_panopticon_xbl_001r="Disattivare il piatto Saxon"
 
 sab0401="Sperimentale Air fabbrica"
 sab0401_name="indipendenza del motore"

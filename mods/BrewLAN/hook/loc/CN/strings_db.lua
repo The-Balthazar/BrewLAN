@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="雷达干扰设施。创建大量其业务区域内虚假的雷达信号，造成分心和扰乱敌人定位。"
 ssa00002_desc="全息照相"
 
+sl0326_desc="移动式空气分段运输平台"
+sel0326_name="燕窝"
+Unit_Description_BrewLAN_T3L023="加油和修理飞机的移动平台。空中巡逻，将自动使用的平台。"
+
+
 --------------------------------------------------------------------------------
 -- 实验部分
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " （多管火箭炮）"
 seb3404_desc="实验传感器阵列"
 seb3404_name="圆形监狱"
 Unit_Description_BrewLAN_T4B008="实验传感器阵列。给出了其操作半径内的敌方单位是可见的可用的传感器，如雷达的视线。每单位额外保养成本被窥探上。移动单位和大单位成本更窥探。"
+
+Panopticon_array_slot="排列"
+Unit_Description_BrewLAN_T4B008-sre="提高雷达半径。"
+Unit_Description_BrewLAN_T4B008-sresre="增加了雷达，全方位半径。"
+Unit_Description_BrewLAN_T4B008-xbndl="揭示了雷达的光点。"
+brewlan_panopticon_small_001="激活雷达菜"
+brewlan_panopticon_small_002="激活马尔钦菜"
+brewlan_panopticon_small_003="激活格鲍尔菜"
+brewlan_panopticon_small_004="激活雷达菜"
+brewlan_panopticon_med_001="激活起首菜"
+brewlan_panopticon_med_002="激活潘科菜"
+brewlan_panopticon_med_003="激活MOGWAI菜"
+brewlan_panopticon_med_004="激活中性菜"
+brewlan_panopticon_xbl_001="激活撒克逊菜"
+brewlan_panopticon_small_001r="停用纪尧姆菜"
+brewlan_panopticon_small_002r="停用马尔钦菜"
+brewlan_panopticon_small_003r="停用格鲍尔菜"
+brewlan_panopticon_small_004r="停用雷达菜"
+brewlan_panopticon_med_001r="停用起首菜"
+brewlan_panopticon_med_002r="停用潘科菜"
+brewlan_panopticon_med_003r="停用MOGWAI菜"
+brewlan_panopticon_med_004r="停用中性菜"
+brewlan_panopticon_xbl_001r="停用撒克逊菜"
 
 sab0401="实验空气厂"
 sab0401_name="独立引擎"

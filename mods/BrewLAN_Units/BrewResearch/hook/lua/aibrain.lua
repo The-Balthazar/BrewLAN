@@ -93,7 +93,7 @@ AIBrain = Class(AIBrain) {
 
         --Check if we should research
         IsAbleToResearch = function(self)
-            return GTEEOT(self, 0.5, 0.9)
+            return GTEEOT(self, 0.8, 1.2)
         end,
 
         --Return the first thing we can deal with from the requests list, or a random thing off the full list.

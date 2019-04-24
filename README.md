@@ -66,9 +66,9 @@ Created by Sean "Balthazar" Wheeldon
 
 ### Financial supporters
 - Saxxonknight
+- Guillaume Chapeau
 - Ben Pankow
-- Mirko Gebauer
 - Mogwai
 - Neutral Effect
 - 🦕 Marcin Mikołajczak
-- Guillaume Chapeau
+- Mirko Gebauer

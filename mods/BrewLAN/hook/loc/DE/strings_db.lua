@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="Radar Störung Möglichkeiten. Erzeugt eine große Anzahl von falschen Radarsignalen innerhalb seines Betriebsbereiches, eine Ablenkung und stört Feind und verursachte Targeting."
 ssa00002_desc="Hologramm"
 
+sl0326_desc="Mobile Air Staging-Plattform"
+sel0326_name="Vogelnest"
+Unit_Description_BrewLAN_T3L023="Mobile-Plattform für die Betankung und die Reparatur Flugzeuge. Luftpatrouillen automatisch Plattform nutzen."
+
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " (Raketenwerfer)"
 seb3404_desc="Experimentelle Sensor Matrix"
 seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Experimentelles Sensorarray. Gibt Sichtlinie für feindliche Einheiten in ihrem Aktionsradius, die sichtbar sind, um erhältliche Sensoren, wie Radar. Unterhaltskosten zusätzlich pro Einheit bespitzelt. Mobile Einheiten und große Einheiten kosten mehr bespitzeln."
+
+Panopticon_array_slot="Feld"
+Unit_Description_BrewLAN_T4B008-sre="Erhöht Radarradius."
+Unit_Description_BrewLAN_T4B008-sresre="Erhöht Radar und omni-Radius."
+Unit_Description_BrewLAN_T4B008-xbndl="Enthüllt Radar Blips."
+brewlan_panopticon_small_001="Aktivieren Radarschüssel"
+brewlan_panopticon_small_002="Aktiviere die Marcin dish"
+brewlan_panopticon_small_003="Aktiviere die Gebauer dish"
+brewlan_panopticon_small_004="Aktivieren Radarschüssel"
+brewlan_panopticon_med_001="Aktiviere die Chapeau dish"
+brewlan_panopticon_med_002="Aktiviere die Pankow dish"
+brewlan_panopticon_med_003="Aktiviere die Mogwai dish"
+brewlan_panopticon_med_004="Aktiviere die Neutral dish"
+brewlan_panopticon_xbl_001="Aktiviere die Saxon dish"
+brewlan_panopticon_small_001r="Deaktivieren des Guillaume dish"
+brewlan_panopticon_small_002r="Deaktivieren des Marcin dish"
+brewlan_panopticon_small_003r="Deaktivieren des Gebauer dish"
+brewlan_panopticon_small_004r="Deaktivieren Radarschüssel"
+brewlan_panopticon_med_001r="Deaktivieren des Chapeau dish"
+brewlan_panopticon_med_002r="Deaktivieren des Pankow dish"
+brewlan_panopticon_med_003r="Deaktivieren des Mogwai dish"
+brewlan_panopticon_med_004r="Deaktivieren des Neutral dish"
+brewlan_panopticon_xbl_001r="Deaktivieren der Saxon dish"
 
 sab0401="Experimentelle Luftwaffenfabrik"
 sab0401_name="Unabhängigkeit"

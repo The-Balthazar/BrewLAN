@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="Radar zakład zakłócenie. Tworzy dużą liczbę fałszywych sygnałów radarowych w obrębie swojego obszaru działania, powodując rozproszenie i psując wroga kierowania."
 ssa00002_desc="hologram"
 
+sl0326_desc="Platforma mobilna Air Staging"
+sel0326_name="Ptasie gniazdo"
+Unit_Description_BrewLAN_T3L023="Mobilna platforma do tankowania i naprawy samolotów. patrole powietrzne automatycznie skorzysta z platformy."
+
+
 --------------------------------------------------------------------------------
 -- doświadczalnej
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 seb3404_desc="Tablica eksperymentalny czujnika"
 seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Eksperymentalna macierz czujników. Daje pole widzenia dla wrogich jednostek należących do jej promienia operacyjnego, które są widoczne na dostępnych czujników, takich jak radar. koszty utrzymania dodatkowych na jednostkę jest szpiegował. Mobilne jednostki i duże jednostki kosztować więcej szpiegować."
+
+Panopticon_array_slot="Szyk"
+Unit_Description_BrewLAN_T4B008-sre="Zwiększa promień radaru."
+Unit_Description_BrewLAN_T4B008-sresre="Zwiększa radar i Omni promień."
+Unit_Description_BrewLAN_T4B008-xbndl="Ujawnia blips radarowych."
+brewlan_panopticon_small_001="Aktywować antenę radarową"
+brewlan_panopticon_small_002="Aktywuj danie Marcin"
+brewlan_panopticon_small_003="Aktywuj danie Gebauer"
+brewlan_panopticon_small_004="Aktywować antenę radarową"
+brewlan_panopticon_med_001="Aktywuj danie Chapeau"
+brewlan_panopticon_med_002="Aktywuj danie Pankow"
+brewlan_panopticon_med_003="Aktywuj danie Mogwai"
+brewlan_panopticon_med_004="Aktywuj neutralnej danie"
+brewlan_panopticon_xbl_001="Aktywuj danie Saxon"
+brewlan_panopticon_small_001r="Dezaktywować danie Guillaume"
+brewlan_panopticon_small_002r="Dezaktywować danie Marcin"
+brewlan_panopticon_small_003r="Dezaktywować danie Gebauer"
+brewlan_panopticon_small_004r="Dezaktywować antenę radarową"
+brewlan_panopticon_med_001r="Dezaktywować danie Chapeau"
+brewlan_panopticon_med_002r="Dezaktywować danie Pankow"
+brewlan_panopticon_med_003r="Dezaktywować danie Mogwai"
+brewlan_panopticon_med_004r="Dezaktywować neutralnej danie"
+brewlan_panopticon_xbl_001r="Dezaktywować danie Saxon"
 
 sab0401="Eksperymentalna Air fabryczne"
 sab0401_name="niezależność Silnik"

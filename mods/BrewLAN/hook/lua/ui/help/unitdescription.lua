@@ -203,6 +203,11 @@ Description['ssb0401'] = "<LOC Unit_Description_BrewLAN_T4B011>Constructs naval 
 Description['seb2401'] = "<LOC Unit_Description_BrewLAN_T4B012>Experimental defensive building. Consumes large amounts of power with each shot."
 Description['srl0401'] = "<LOC Unit_Description_BrewLAN_T4L003>Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
 
+--Panopticon upgrades
+Description['seb3404-sre'] = "<LOC Unit_Description_BrewLAN_T4B008-sre>Increases radar radius."
+Description['seb3404-sresre'] = "<LOC Unit_Description_BrewLAN_T4B008-sresre>Increases radar and omni radius."
+Description['seb3404-xbndl'] = "<LOC Unit_Description_BrewLAN_T4B008-xbndl>Reveals radar blips."
+
 --Megalith eggs
 Description['srl0001'] = "<LOC Unit_Description_0152>Amphibious destroyer. Armed with a single Dual-Proton cannon, AA auto-cannon and torpedo tubes."
 Description['srl0002'] = "<LOC Unit_Description_BrewLAN_T3L005>Tech 3 amphibious construction, repair, capture, reclamation, and mine layer unit. It is equipped with minor weaponry and counter-intelligence equipment and can build specialist defenses."

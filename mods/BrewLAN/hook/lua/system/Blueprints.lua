@@ -278,6 +278,19 @@ function BrewLANGlobalCategoryAdditions(all_bps)
     end
 end
 
+function BrewLANCheckRULEUCaseCorrectness(all_bps)
+    for id, bp in all_bps do
+        --Sanitise the motion type field since it's case sensitive for the engine, but it is if things check it.
+        --This is mostly for the sake of the Panopticon, so it doesn't have to run a string function on thousands of units.
+        if bp.Physics.MotionType and type(bp.Physics.MotionType) == "string" then
+            if string.lower(bp.Physics.MotionType) == 'ruleumt_none' and not bp.Physics.MotionType == 'RULEUMT_None' then
+                bp.Physics.MotionType = 'RULEUMT_None'
+            end
+        end
+    end
+end
+
+
 --------------------------------------------------------------------------------
 -- Satellite uplink
 --------------------------------------------------------------------------------

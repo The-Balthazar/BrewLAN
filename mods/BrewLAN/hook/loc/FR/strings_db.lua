@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="installation de perturbation du radar. Crée un grand nombre de faux signaux radar dans sa zone opérationnelle, ce qui provoque une distraction et perturber l'ennemi de ciblage."
 ssa00002_desc="Hologram"
 
+sl0326_desc="Plate-forme d'étagement de l'air mobile"
+sel0326_name="Nid d'oiseau"
+Unit_Description_BrewLAN_T3L023="Plate-forme mobile pour le ravitaillement et la réparation des aéronefs. Les patrouilles aériennes utiliseront automatiquement la plate-forme."
+
+
 --------------------------------------------------------------------------------
 -- Experimentals
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " (LRM)"
 seb3404_desc="Ensemble de capteurs expérimentaux"
 seb3404_name="Panoptique"
 Unit_Description_BrewLAN_T4B008="Sondes expérimentales. Donne la ligne de visée pour les unités ennemies dans son rayon opérationnel visible aux capteurs disponibles, tels que le radar. Frais d'entretien supplémentaires par unité étant espionné. Les unités mobiles et les unités coûteuses coûtent plus cher à espionner."
+
+Panopticon_array_slot="tableau"
+Unit_Description_BrewLAN_T4B008-sre="Augmente le rayon du radar."
+Unit_Description_BrewLAN_T4B008-sresre="Augmente radar et le rayon omni."
+Unit_Description_BrewLAN_T4B008-xbndl="Révèle échos radar."
+brewlan_panopticon_small_001="Activer antenne radar"
+brewlan_panopticon_small_002="Activer le plat Marcin"
+brewlan_panopticon_small_003="Activer le plat Gebauer"
+brewlan_panopticon_small_004="Activer antenne radar"
+brewlan_panopticon_med_001="Activez le plat Chapeau"
+brewlan_panopticon_med_002="Activer le plat Pankow"
+brewlan_panopticon_med_003="Activer le plat Mogwai"
+brewlan_panopticon_med_004="Activer le plat neutre"
+brewlan_panopticon_xbl_001="Activer le plat saxon"
+brewlan_panopticon_small_001r="Le plat Guillaume Désactiver"
+brewlan_panopticon_small_002r="Le plat Marcin Désactiver"
+brewlan_panopticon_small_003r="Désactiver le plat Gebauer"
+brewlan_panopticon_small_004r="Antenne radar Désactiver"
+brewlan_panopticon_med_001r="Désactiver le plat Chapeau"
+brewlan_panopticon_med_002r="Désactiver le plat Pankow"
+brewlan_panopticon_med_003r="Désactiver le plat Mogwai"
+brewlan_panopticon_med_004r="Désactiver le plat neutre"
+brewlan_panopticon_xbl_001r="Le plat saxon Désactiver"
 
 sab0401="Usine d'avions expérimentaux"
 sab0401_name="indépendance du moteur"

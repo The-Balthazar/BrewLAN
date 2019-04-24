@@ -446,6 +446,11 @@ ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="Zařízení radarové rušičky. Vytváří velký počet falešných radarových signálů v rámci své působnosti, což způsobuje rozptýlení a narušuje zaměřění nepřítelem."
 ssa00002_desc="Hologram"
 
+sl0326_desc="Mobilní Air Staging Platform"
+sel0326_name="Ptačí hnízdo"
+Unit_Description_BrewLAN_T3L023="Mobilní platforma pro tankování a opravy letadel. Vzduchové hlídky budou automaticky používat platformu."
+
+
 --------------------------------------------------------------------------------
 --Experimentalní jednotky
 --------------------------------------------------------------------------------
@@ -507,6 +512,29 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 seb3404_desc="Experimentální Senzorová Síť"
 seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Experimentální senzorová síť. Poskytuje viditelnost nepřátelských jednotek ve svém operačním dosahu. Údržba vyžaduje více energie pro každou další sledovanou jednotku. Mobilní a velké jednotky vyžadují více energie ke sledování."
+
+Panopticon_array_slot="řada"
+Unit_Description_BrewLAN_T4B008-sre="Zvyšuje poloměr radaru."
+Unit_Description_BrewLAN_T4B008-sresre="Zvyšuje radar a omni poloměr."
+Unit_Description_BrewLAN_T4B008-xbndl="Odhalí radar tečky."
+brewlan_panopticon_small_001="Aktivace radaru misku"
+brewlan_panopticon_small_002="Aktivace Marcin misku"
+brewlan_panopticon_small_003="Aktivace Gebauer misku"
+brewlan_panopticon_small_004="Aktivace radaru misku"
+brewlan_panopticon_med_001="Aktivace Chapeau misku"
+brewlan_panopticon_med_002="Aktivace Pankow misku"
+brewlan_panopticon_med_003="Aktivace Mogwai misku"
+brewlan_panopticon_med_004="Aktivace Neutrální misku"
+brewlan_panopticon_xbl_001="Aktivovat Saxon misku"
+brewlan_panopticon_small_001r="Deaktivace Guillaume misku"
+brewlan_panopticon_small_002r="Deaktivace Marcin misku"
+brewlan_panopticon_small_003r="Deaktivace Gebauer misku"
+brewlan_panopticon_small_004r="Deaktivace radarové misku"
+brewlan_panopticon_med_001r="Deaktivace Chapeau misku"
+brewlan_panopticon_med_002r="Deaktivace Pankow misku"
+brewlan_panopticon_med_003r="Deaktivace Mogwai misku"
+brewlan_panopticon_med_004r="Deaktivace Neutrální misku"
+brewlan_panopticon_xbl_001r="Deaktivovat Saxon misku"
 
 sab0401="Experimentální Letecká Továrna"
 sab0401_name="Stroj Nezávislosti"

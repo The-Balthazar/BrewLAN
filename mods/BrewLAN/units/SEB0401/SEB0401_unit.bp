@@ -222,17 +222,14 @@ UnitBlueprint {
         SpawnRandomRotation = false,
         Tarmacs = {
             {
-                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar20x_01_albedo.dds',
+                Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar18x_02_albedo.dds',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 12.8,
-                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar20x_01_normals.dds',
-                Orientations = {
-                    0,
-                    180,
-                },
+                Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar18x_02_normals.dds',
+                Orientations = {0, 180},
                 RemoveWhenDead = false,
-                Width = 12.8*2,
+                Width = 25.6,
             },
         },
         UniformScale = 0.28,

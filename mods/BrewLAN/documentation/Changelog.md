@@ -139,6 +139,40 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Research request function will now parse requests for units that are category locked not individual unit locked.
   * R&D: AI build structure functions can now request specific research orders.
 
+  ### 2018-04-14
+
+  * R&D: Increased the amount of resources an AI needs to decide to start doing a research.
+
+  ### 2018-04-16
+
+  * Started an enhancement based rework of the Panopticon.
+
+  ### 2018-04-22
+
+  * Allowed the infrastructure of the Panopticon animation threads to allow for inactive arrays.
+  * Finished setup of the reworked Panopticon animation thread to accept dish activations through enhancements.
+    * R&D: Updated copy of said script.
+  * Reworked the Panopticon blip visual intel thread to only exist when the enhancement is on.
+
+  ### 2018-04-23
+
+  * More optimisations for the Panopticon.
+  * The Panopticon active consumption button is now only present when it does something.
+  * Replaced the tarmac of the Panopticon with a slightly smaller one.
+  * Slightly increased the size of the Gantry tarmac to fill the footprint better.
+
+  ### 2018-04-24
+
+  * Moved the Panopticon string sanitisation to game launch for better performance during.
+  * Created the buff definitions for the Panopticon enhancements.
+  * Finished the Panopticon enhancements to include the buffs.
+  * Set the Panopticon intel to its base level without buffs.
+  * Extended the legacy check document to support the RemoveBuff function.
+  * Made the Darkness use the legacy check buff document so it doesn't crash on original SC.
+    * It wont work, but it wont crash either.
+  * Moved the darkness debuff definition to the buffdefinitions file.
+  * Moved the Panopticon dish animation definitions to it's blueprint.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
