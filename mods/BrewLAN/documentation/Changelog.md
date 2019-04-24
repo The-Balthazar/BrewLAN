@@ -172,6 +172,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * It wont work, but it wont crash either.
   * Moved the darkness debuff definition to the buffdefinitions file.
   * Moved the Panopticon dish animation definitions to it's blueprint.
+  * Updated the language documents.
 
 ## 2019-01-03|84 (FAF minor patch)
 
