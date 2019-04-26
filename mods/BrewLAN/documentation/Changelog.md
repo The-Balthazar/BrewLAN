@@ -174,6 +174,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Moved the Panopticon dish animation definitions to it's blueprint.
   * Updated the language documents.
 
+  ### 2018-04-25
+
+  * Removed the blank enhancement tabs from the Panopticon.
+  * Made the Gantry/Heavy wall construction button overwrite slightly more efficient.
+  * Created graphics and strings for a custom enhancements tab for the Panopticon.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

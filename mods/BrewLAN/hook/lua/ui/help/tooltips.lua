@@ -67,6 +67,12 @@ Tooltips['toggle_omni_distruption'] = {
     keyID = "toggle_omni_distruption",
 }
 
+--Panopticon
+Tooltips['construction_tab_enhancement_panopticon_array'] = {
+    title = "<LOC tooltipbrewlan0033>Customise [Array]",
+    description = "",
+}
+
 --Iydadesu
 Tooltips['rez_reclaim'] = {
     title = "<LOC tooltipui0032>Reclaim (E)",

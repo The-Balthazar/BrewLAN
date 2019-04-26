@@ -363,21 +363,8 @@ UnitBlueprint {
         -- Slot definitions -- Mostly does nothing
         ------------------------------------------------------------------------
         Slots = {
-            Back = {
-                name = '<LOC Panopticon_array_slot>Array',--name = '<LOC _Back>',
-                x = 38,
-                y = -10,
-            },
-            LCH = {
-                name = '<LOC _LCH>',
-                x = 105,
-                y = 30,
-            },
-            RCH = {
-                name = '<LOC _RCH>',
-                x = -10,
-                y = 30,
-            },
+            Back = true,
+            --Array = true,
         },
     },
     Footprint = {

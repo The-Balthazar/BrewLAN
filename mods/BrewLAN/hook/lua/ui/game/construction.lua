@@ -4,7 +4,8 @@
 --|   Author: Balthassar
 --|
 --+-----------------------------------------------------------------------------
-local VersionIsSC = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local VersionIsSC = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
 do
     if not VersionIsSC then --If not original Steam SupCom
         local OldOnClickHandler = OnClickHandler
@@ -12,7 +13,7 @@ do
             local item = button.Data
             local changeclick = false
             for i,v in sortedOptions.selection do
-                if EntityCategoryContains(categories.GANTRY, v) or EntityCategoryContains(categories.HEAVYWALL, v) or EntityCategoryContains(categories.MEDIUMWALL, v) then
+                if EntityCategoryContains(categories.GANTRY + categories.HEAVYWALL + categories.MEDIUMWALL, v) then
                     changeclick = true
                 elseif EntityCategoryContains(categories.MOBILEBUILDERONLY, v) then
                     local blueprint = __blueprints[item.id]
