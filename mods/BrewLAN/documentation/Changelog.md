@@ -180,6 +180,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Made the Gantry/Heavy wall construction button overwrite slightly more efficient.
   * Created graphics and strings for a custom enhancements tab for the Panopticon.
 
+  ### 2018-04-27
+
+  * Replaced the model, textures, and animations of the Gantry.
+
+  ### 2018-04-28
+
+  * Set the Gantry arms to adjust based on the size of the unit being produced.
+  * Removed the SIZE30 adjacency buff definitions since the Gantry is SIZE36 now.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

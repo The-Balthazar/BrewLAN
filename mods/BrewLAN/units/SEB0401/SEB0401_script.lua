@@ -23,6 +23,13 @@ SEB0401 = Class(TLandFactoryUnit) {
     OnCreate = function(self)
         TLandFactoryUnit.OnCreate(self)
         BuildModeChange(self)
+        self.AimBones = {}
+        for i = 1, 8 do
+            --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
+            local m = math.abs(((math.mod(i-1,4)+1)*2)-5)
+            --self.AimBones[i] = {CreateRotator(self, 'ArmA_00'..i, 'z', 0, 20 * m, 5 * m), 'ArmA_00'..i}
+            self.AimBones[i] = CreateRotator(self, 'ArmA_00'..i, 'z', 0, 20 * m, 5 * m)
+        end
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
@@ -120,6 +127,17 @@ SEB0401 = Class(TLandFactoryUnit) {
             self.Trash:Add(self.BuildAnimManip)
         end
         self.BuildAnimManip:SetRate(1)
+
+        local size = math.min(math.max((unitBeingBuilt:GetBlueprint().SizeZ or 1) * 0.5, 1), 10)--0.1666
+        for i, ro in self.AimBones do
+            --local tmin = function(t1, t2) return {t1[1]-t2[1], t1[2]-t2[2], t1[3]-t2[3]} end
+            --local rel = tmin(self:GetPosition(), self:GetPosition(ro[2]))
+
+            local m = (((math.mod(i-1,4)+1)*2)-5) -- * size -- -12.5 *
+            ro:SetGoal(-2.5 * m * (5-size) )
+            --LOG(repr(rel),math.atan(rel[3]/rel[1]) * -57.2958)
+            --ro[1]:SetGoal(math.atan((size - rel[3])/rel[1]) * -57.2958)
+        end
     end,
 
     StopBuildFx = function(self)
