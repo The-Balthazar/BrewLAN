@@ -16,7 +16,8 @@ SEB3404 = Class(TStructureUnit) {
 
         local bpD = self:GetBlueprint().Display
         self:ForkThread(AnimationThread,bpD.DishAnimations)
-
+        self:SetMaintenanceConsumptionActive()
+        
         for i, v in {Panopticon = 'Domes', Large_Dish = 'Dish_Scaffolds'} do
             local entity = import('/lua/sim/Entity.lua').Entity({Owner = self})
             entity:AttachBoneTo( -1, self, i )
@@ -112,7 +113,6 @@ SEB3404 = Class(TStructureUnit) {
             end
         end
         self.PanopticonUpkeep = NewUpkeep
-        self:SetMaintenanceConsumptionActive()
         self:SetEnergyMaintenanceConsumptionOverride(self.PanopticonUpkeep)
     end,
 

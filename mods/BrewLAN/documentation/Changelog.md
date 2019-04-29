@@ -189,6 +189,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Set the Gantry arms to adjust based on the size of the unit being produced.
   * Removed the SIZE30 adjacency buff definitions since the Gantry is SIZE36 now.
 
+  ### 2018-04-29
+
+  * Fixed the Panopticon having free intel when first built.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
