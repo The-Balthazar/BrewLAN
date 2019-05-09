@@ -10,7 +10,6 @@ UnitBlueprint {
         'AEON',
         'CYBRAN',
         'SERAPHIM',
-        'EXPERIMENTAL',
         'SELECTABLE',
         'STRUCTURE',
         'DEFENSE',

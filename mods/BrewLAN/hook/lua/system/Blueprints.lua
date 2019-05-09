@@ -35,6 +35,7 @@ function ModBlueprints(all_blueprints)
     BrewLANRelativisticLinksUpdate(all_blueprints)
     BrewLANMegalithEggs(all_blueprints.Unit)
     BrewLANSatelliteUplinkForVanillaUnits(all_blueprints.Unit)
+    BrewLANCheckRULEUCaseCorrectness(all_blueprints.Unit)
     ExtractFrozenMeshBlueprint(all_blueprints.Unit)
 end
 

@@ -31,7 +31,7 @@ SEB94VV = Class(TStructureUnit) {
     end,
 
     VictoryCountdownThread = function(self)
-        WaitSeconds(60*10)
+        WaitSeconds(600)
         LOG("VENI VEDI VICI")
         if ScenarioInfo.Options.TeamLock == "locked" then
             for i, brain in ArmyBrains do

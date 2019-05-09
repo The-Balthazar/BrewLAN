@@ -81,6 +81,7 @@ do
                 OldOnClickHandler(button, modifiers, unpack(arg))
             end
         end
+
     elseif VersionIsSC then
         ------------------------------------------------------------------------------------------------------------------------------------------------
         -- LEGACY CRAP HO!                                                                                                                            --

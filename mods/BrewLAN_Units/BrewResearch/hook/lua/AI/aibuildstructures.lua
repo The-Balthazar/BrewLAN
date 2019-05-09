@@ -6,7 +6,7 @@ function AIExecuteBuildStructure(aiBrain, builder, buildingType, ...)
         local targetID = ConvertBuildingType(aiBrain, buildingType)
         if targetID then
             for i, id in targetID do
-                WARN("SENDING AI RESEARCH REQUEST: " .. id)
+                --WARN("SENDING AI RESEARCH REQUEST: " .. id)
                 aiBrain.BrewRND.AddResearchRequest(aiBrain, id)
             end
         end
