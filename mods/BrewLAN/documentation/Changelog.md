@@ -200,6 +200,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2018-05-09
 
   * Finished graphics for the Panopticon array enhancement buttons for all factions.
+  * R&D: Created the majority of the model for a UEF Penetration Fighter.
+
+  ### 2018-05-10
+
+  * R&D: Finished the UEF Penetration Fighter, Tomcat, graphically. It's missing weapons.
+  * R&D: Added anti-missile flares to the penetration fighters.
 
 ## 2019-01-03|84 (FAF minor patch)
 

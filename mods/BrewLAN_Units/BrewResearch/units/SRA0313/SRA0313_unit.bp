@@ -108,6 +108,9 @@ UnitBlueprint {
     },
     CollisionOffsetZ = 0,
     Defense = {
+        MissileDetector = {
+            AttachBone = 'MissileDetector',
+        },
         AirThreatLevel = 20,
         ArmorType = 'Light',
         EconomyThreatLevel = 0,
@@ -121,6 +124,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
+            '<LOC ability_missiledef>Missile Defense',
             '<LOC ability_personalstealth>Personal Stealth',
         },
         LayerChangeEffects = {
