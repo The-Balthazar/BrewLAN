@@ -2,10 +2,23 @@
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local MissileFlare = import('/lua/defaultunits.lua').BaseDirectionalAntiMissileFlare
 --------------------------------------------------------------------------------
-local terranweapons = import('/lua/terranweapons.lua')
+local TIFCruiseMissileLauncher = import('/lua/terranweapons.lua').TIFCruiseMissileLauncher
+--------------------------------------------------------------------------------
+local SCCollisionBeam = import('/lua/defaultcollisionbeams.lua').SCCollisionBeam
+local DefaultBeamWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultBeamWeapon
+local ePath = string.gsub(__blueprints.sea0313.Source, 'units/sea0313/sea0313_unit.bp', 'effects/emitters/tomcat_particle_cannon_')
 --------------------------------------------------------------------------------
 SEA0313 = Class(TAirUnit, MissileFlare) {
     Weapons = {
+        ParticleCannon = Class(DefaultBeamWeapon) {
+            BeamType = Class(SCCollisionBeam) {
+                FxBeam         = {ePath .. 'beam_01_emit.bp', ePath .. 'beam_02_emit.bp'},
+                FxBeamEndPoint = {ePath .. 'end_01_emit.bp',  ePath .. 'end_02_emit.bp'},
+                FxBeamEndPointScale = 1,
+            },
+            FxMuzzleFlash = {ePath .. 'muzzle_01_emit.bp'},
+        },
+        Missile = Class(TIFCruiseMissileLauncher) {},
     },
 
     FlareBones = {'Flare'},
