@@ -243,13 +243,7 @@ do
                         --------------------------------------------------------------------------------------------------------------------------------
                         local OverrideBuild = false
                         for i, v in selectedUnits do
-                            if
-                              EntityCategoryContains(categories.GANTRY, v)
-                            or
-                              EntityCategoryContains(categories.HEAVYWALL, v)
-                            or
-                              EntityCategoryContains(categories.MEDIUMWALL, v)
-                            then
+                            if EntityCategoryContains(categories.GANTRY + categories.HEAVYWALL + categories.MEDIUMWALL, v) then
                                 OverrideBuild = true
                                 break
                             elseif EntityCategoryContains(categories.MOBILEBUILDERONLY, v) then
@@ -264,7 +258,7 @@ do
                         or
                           OverrideBuild == 'Command'
                         then
-        					       import('/lua/ui/game/commandmode.lua').StartCommandMode(buildCmd, {name=self._blueprintId})
+        					import('/lua/ui/game/commandmode.lua').StartCommandMode(buildCmd, {name=self._blueprintId})
                         else
                             IssueBlueprintCommand("UNITCOMMAND_BuildFactory", self._blueprintId, count)
                         end

@@ -211,6 +211,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Finished the Tomcat.
 
+  ### 2018-05-12
+
+  * Created some dormant code for use with Domino's mod support to create an 'Array' enhancement tab for the Panopticon.
+  * Made the legacy section of the Gantry/Heavy wall build click modifier more efficient.
+
+  ### 2018-05-22
+
+  * Fixed BrewLANGantryBuildList looping through things 4x more than it should be and potentially passing nil.
+
+  ### 2018-05-25
+
+  * R&D: Added the UEF T2 Combat Fighter, Raptor.
+    * Fans of realism may not like that I chose to make the Tomcat stronger than the Raptor. Tomcat is cooler.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

@@ -37,6 +37,7 @@ function ModBlueprints(all_blueprints)
     BrewLANSatelliteUplinkForVanillaUnits(all_blueprints.Unit)
     BrewLANCheckRULEUCaseCorrectness(all_blueprints.Unit)
     ExtractFrozenMeshBlueprint(all_blueprints.Unit)
+    BrewLANChangesForDominoModSupport(all_blueprints.Unit)
 end
 
 --------------------------------------------------------------------------------
@@ -384,10 +385,8 @@ function BrewLANGantryBuildList(all_bps)
 
     --This section is entirely because, as usual for a FAF function being over zealous, FAF support factories get fucking everywhere.
     for id, bp in all_bps do
-        for gantryId, info in Gantries do
-            if BrewLANCheckGantryShouldBuild(bp.Categories) and string.upper(bp.Physics.MotionType or 'RULEUMT_NONE') ~= 'RULEUMT_NONE' then
-                table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
-            end
+        if bp.Categories and BrewLANCheckGantryShouldBuild(bp.Categories) and string.upper(bp.Physics.MotionType or 'RULEUMT_NONE') ~= 'RULEUMT_NONE' then
+            table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
         end
     end
 end
@@ -1059,6 +1058,38 @@ function ExtractFrozenMeshBlueprint(all_bps)
         end
     end
 end
+
+--------------------------------------------------------------------------------
+-- Do you want to build a snowman?
+--------------------------------------------------------------------------------
+
+function BrewLANChangesForDominoModSupport(all_bps)
+    --Disabled because I don't have a working version of Domino's to test.
+
+    local modsuppport = false
+    --[[for i, mod in __active_mods do
+        if string.find(string.lower(mod.name),"domino mod support") then
+            modsupport = true
+            break
+        end
+    end]]
+
+    if modsuppport and all_bps.seb3404 then
+        for name, enh in all_bps.seb3404.Enhancements do
+            if name == 'Slots' then
+                enh.LCH = nil
+                enh.Array = {
+        			name = '<LOC _Array>',
+        			x = 5,
+        			y = 10,
+        		}
+            else
+                enh.Slot = 'Array'
+            end
+        end
+    end
+end
+
 
 --------------------------------------------------------------------------------
 --
