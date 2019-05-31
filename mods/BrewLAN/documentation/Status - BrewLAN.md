@@ -94,8 +94,8 @@
   * Lacks a unique model.
 * T3 Shielded Power Generator.
 * T3 Shielded Mass Extractor.
-* T3 Mobile strat defense.
-* T3 Torp launcher.
+* T3 Mobile Strategic Missile Defense.
+* T3 Torpedo launcher.
   * Gonna give the torpedoes a random decay chance after about 70% of its max range.
 * T3 Shield wall.
 * T3 Mobile Shield Gen.
@@ -104,6 +104,7 @@
 
 #### Pending:
 * T3 Mobile Torpedo.
+* T3 Mobile Air Staging Platform.
 
 ### Cybran:
 * T3 Air Transport.
@@ -118,7 +119,7 @@
 * T3 Cloakable Stealth Field Generator.
   * Would like to separate the Cloak/Stealth functions
   * Have it re-increase its stealth range while cloak off.
-* T3 Mobile strat defense.
+* T3 Mobile Strategic Missile Defense.
 * T3 Cloakable Mass Fabricator.
 * T3 Cloakable Power Generator.
 * T3 Cloakable Mass Extractor.
@@ -132,7 +133,7 @@
 #### Finished:
 * T3 Field engineer.
 * T3 Anti-Armor Point Defense.
-* T3 Mobile strat defense.
+* T3 Mobile Strategic Missile Defense.
 * T3 Armored Wall Section.
 * T3 Armored Gate Section.
 * T3 Mobile Shield Gen.
@@ -143,6 +144,7 @@
 * T3 Satellite Launch Complex.
   * A model that isn't the Novax would be nice, but not an issue since BrewLAN disables the Novax.
 * T3 Observation Satellite.
+* T3 Mobile Air Staging Platform.
 
 #### Functional:
 * T3 Torpedo Bomber.
@@ -170,8 +172,8 @@
 * T3 Air Transport.
 * T3 Field engineer.
 * T3 Anti-Armor Point Defense.
-* T3 Mobile strat defense.
-* T3 Shield wall.
+* T3 Mobile Strategic Missile Defense.
+* T3 Shield Wall.
 * T3 Armored Mass Fabricator.
 * T3 Armored Power Generator.
 * T3 Armored Mass Extractor.
@@ -188,6 +190,7 @@
 
 #### Pending:
 * T3 Anti Shield.
+* T3 Mobile Air Staging Platform.
 
 ## Experimentals:
 |                  |UEF            |Aeon           |Cybran         |Seraphim       |
@@ -226,42 +229,42 @@
 
 ### UEF
 Experimental Assault Thing ( *** )
-  * Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
-    * Possibly a two part splitting bot. Cain and Abel or something cool.
+* Either in the shape of a large Titan or more humanoid shaped OR a large assault tank.
+  * Possibly a two part splitting bot. Cain and Abel or something cool.
 
 Panopticon: Experimental Sensor Array
-  * Gives vision of enemy non-ACU non-SACU, non-wall, non-mine, non-cloaked unit that you know about.
-  * Has a massive radar radius, which it uses to see choose vision targets.
-    * Darkness used to be a hard counter, but with the rework I added a large stealth field, which is a soft counter.
+* Gives vision of enemy non-ACU non-SACU, non-wall, non-mine, non-cloaked unit that you know about.
+* Has a massive radar radius, which it uses to see choose vision targets.
+  * Darkness used to be a hard counter, but with the rework I added a large stealth field, which is a soft counter.
 
 Centurion: Experimental AA gunship
-  * I don't like the model.
+* I don't like the model.
 
 Ivan: Experimental Drop-Pod Artillery
-  * Functionally a factory that deletes the things it makes then adds the unit code to the projectiles which spawn them in the other side.
-    * Currently kills units that hit a shield; shield damaged by mass value, plus static drop-pod impact value.
-    * Range should probably decrease for large ammos maybe?
-    * Possibly pass kills, or a subset of kills, or first kill of the produced units back to the cannon?
-    * Units it has in storage have a chance of being spawned under it if it dies, or is reclaimed.
-      * Causes an issue related to restarting skirmish games that can result in 'ghost' units appearing in the next game where it was.
-        * Caused by spawning objects with the ondestroyed call, which triggers after game end.
-    * Gets a 40% discount on built units. Units spawn with 40% less max health.
-    * Has no UI representation of what it has ready to fire, but has a visual representation of how much is ready to fire.
+* Functionally a factory that deletes the things it makes then adds the unit code to the projectiles which spawn them in the other side.
+* Currently kills units that hit a shield; shield damaged by mass value, plus static drop-pod impact value.
+* Range should probably decrease for large ammos maybe?
+* Possibly pass kills, or a subset of kills, or first kill of the produced units back to the cannon?
+* Units it has in storage have a chance of being spawned under it if it dies, or is reclaimed.
+  * Causes an issue related to restarting skirmish games that can result in 'ghost' units appearing in the next game where it was.
+    * Caused by spawning objects with the ondestroyed call, which triggers after game end.
+* Gets a 40% discount on built units. Units spawn with 40% less max health.
+* Has no UI representation of what it has ready to fire, but has a visual representation of how much is ready to fire.
 
 Gantry: Experimental Factory
-  * Almost completely 100% Fully functional.
-    * Still to do:
-      * Hook \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
-      * Maybe add some kind of pedestal effect for building aircraft upon, especially on water.
-        * Would need to wait for the current unit to be completed, especially if its a ship.
-        * Would also need some visual justification for it while not there, or to maybe comprised of energy effects.
-      * Add a OnDamaged twitch animation, so it looks like its in pain? Maybe a bit sadistic.
-      * The Atlantis gets stuck in it. IssueDive is used to get it out, but it loses its orders along the way.
-      * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.
-        * Alternatively, why are you wasting your Gantry making junk?
-      * The current implementation of the 'build mode' switch prevents it from building units from other modes.
-        * Possibly to have it swap modes briefly as a work around?
-        * Alternatively, find a UI-only implementation.
+* Almost completely 100% Fully functional.
+* Still to do:
+  * Hook \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
+  * Maybe add some kind of pedestal effect for building aircraft upon, especially on water.
+    * Would need to wait for the current unit to be completed, especially if its a ship.
+    * Would also need some visual justification for it while not there, or to maybe comprised of energy effects.
+  * Add a OnDamaged twitch animation, so it looks like its in pain? Maybe a bit sadistic.
+  * The Atlantis gets stuck in it. IssueDive is used to get it out, but it loses its orders along the way.
+  * Small non-air units take forever to leave. Maybe use scripts from the Fatboy to quickly move them.
+    * Alternatively, why are you wasting your Gantry making junk?
+  * The current implementation of the 'build mode' switch prevents it from building units from other modes.
+    * Possibly to have it swap modes briefly as a work around?
+    * Alternatively, find a UI-only implementation.
 
 ### Seraphim
 Chappa'ai: Totally-not-a-stargate Experimental Quantum Gateway
@@ -272,11 +275,11 @@ Chappa'ai: Totally-not-a-stargate Experimental Quantum Gateway
     * Allow projectiles to warp through.
 
 Experimental Mine? ( *** )
-  * To be an experimental for the field engie.
-  * Possible functions:
-    * Releasing a residual energy signature.
-    * Self replicating mines.
-    * Damage over time effect.
+* To be an experimental for the field engie.
+* Possible functions:
+  * Releasing a residual energy signature.
+  * Self replicating mines.
+  * Damage over time effect.
 
 Iyadesu: Experimental Reconstruction Engineer
 *  Formerly Experimental Engineer (Prior to r205)
@@ -292,8 +295,8 @@ Iyadesu: Experimental Reconstruction Engineer
   * Can potentially circumvent build restrictions, if a map has a wreckage of a restricted unit.
 
 Suthanus: Experimental Rapid-Fire Artillery
-  * Fully functioning.
-  * Needs a new name for dupe name reasons.
+* Fully functioning.
+* Needs a new name for dupe name reasons.
 
 Souiya: Experimental Naval Factory
 * Lacks unique model.
@@ -303,9 +306,9 @@ Souiya: Experimental Naval Factory
 
 ### Aeon
 Absolution: Experimental Siege Tank
-  * Mostly finished texture that needs more details.
-  * Has its big cannon and two TMD's.
-  * Totally isn't an eldar grav tank. Nope nope nope.
+* Mostly finished texture that needs more details.
+* Has its big cannon and two TMD's.
+* Totally isn't an eldar grav tank. Nope nope nope.
 
 Independence Engine: Experimental Air Factory
 * Scary AF under AIx control.
@@ -314,26 +317,26 @@ Independence Engine: Experimental Air Factory
 ### Cybran
 
 Iron Curtain: Experimental Shield Generator
-  * Used to want the shield to shrink on damage. Not sure anymore.
-    * Would need to adapt the force shield script for this.
-  * Only one of my experimental shields with a derivative mesh. Would like to change that.
+* Used to want the shield to shrink on damage. Not sure anymore.
+  * Would need to adapt the force shield script for this.
+* Only one of my experimental shields with a derivative mesh. Would like to change that.
 
 Scathis Mk 2: Experimental Rapid-fire Artillery
   * Uses most of the parts of the original.
 
 Darkness: Experimental Omni Disruption Facility
-  * Uses the model of the QAI Mainframe from the campaign.
-  * Was briefly called Oscuras before reverting back to Darkness.
-    * I realized that any unit for which I try to avoid referring to it by name, has a bad name. Sorry Kris.
-    * AI can still call it Oscuras. If they ever actually build it.
+* Uses the model of the QAI Mainframe from the campaign.
+* Was briefly called Oscuras before reverting back to Darkness.
+  * I realized that any unit for which I try to avoid referring to it by name, has a bad name. Sorry Kris.
+  * AI can still call it Oscuras. If they ever actually build it.
 
 Arthrolab: Experimental Land Factory
-  * Has no death animation.
-  * Doesn't appear on idle factory tab.
+* Has no death animation.
+* Doesn't appear on idle factory tab.
 
 Abyss Crawler: Experimental Transport
-  * Ferry doesn't work.
-  * Need to improve survivability of cargo on death.
+* Ferry doesn't work.
+* Need to improve survivability of cargo on death.
 
 ## Modded vanilla units:
 ### All Factions:
@@ -563,36 +566,36 @@ Experimental Engineering Station - Probably not a good idea now that they've bee
 
 ## Previously documented abandoned ideas:
 UEF Doomsday Machine: Experimental Point Defense
-  * Was supposed to be a callback to the old TA unit.
-    * An uninteresting idea badly implemented. Removed.
-    * Was only still in the source files for nostalgia.
-      * Removed as of r146
-  * Slot eventually filled by Excalibur, which was inspired by the Annihilator from TA, and I would have called that but the vote said Excalibur.
+* Was supposed to be a callback to the old TA unit.
+  * An uninteresting idea badly implemented. Removed.
+  * Was only still in the source files for nostalgia.
+    * Removed as of r146
+* Slot eventually filled by Excalibur, which was inspired by the Annihilator from TA, and I would have called that but the vote said Excalibur.
 
 UEF Engineering Facility 'The Pound'
-  * A facility that houses a large number of Rover drones.
-  * Do you want lag? Because this is how you get lag.
+* A facility that houses a large number of Rover drones.
+* Do you want lag? Because this is how you get lag.
 
 Aeon Restoration Field Generator:
-  * Supposed to have been an alternative to the engineering station that Aeon aren't getting.
-  * This might make an appearance in R&D.
+* Supposed to have been an alternative to the engineering station that Aeon aren't getting.
+* This might make an appearance in R&D.
 
 UEF/Cybran/Seraphim Decoy Planes
-  * Staying Aeon only.
+* Staying Aeon only.
 
 Abyssal Persecutor: Experimental Battleship
-  * Idea 1:
-    * a cross between the Sea Shadow and a Houbei class missile boat.
-    * Stealth, and tac missiles.
-    * Possible strat missiles.
-    * Possible cloak, disabled during firing and or really high power cost.
-  * Idea 2:
-    * A Battleship with legs.
-  * Idea 3:
-    * Carrier/battleship. With legs.
-    * Unique T3 fighter/bombers.
-  * Slot filled by the Abyss Crawler.
-  * Removed as of r647.
+* Idea 1:
+  * a cross between the Sea Shadow and a Houbei class missile boat.
+  * Stealth, and tac missiles.
+  * Possible strat missiles.
+  * Possible cloak, disabled during firing and or really high power cost.
+* Idea 2:
+  * A Battleship with legs.
+* Idea 3:
+  * Carrier/battleship. With legs.
+  * Unique T3 fighter/bombers.
+* Slot filled by the Abyss Crawler.
+* Removed as of r647.
 
 Aeon/Seraphim Field Engineering Boat & Ships
-  * These are likely staying exclusive to UEF and Cybran.
+* These are likely staying exclusive to UEF and Cybran.

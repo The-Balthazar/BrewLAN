@@ -1,47 +1,13 @@
 UnitBlueprint {
-    AI = {
-    },
     Audio = {
-        Activate = Sound {
-            Bank = 'URL',
-            Cue = 'URL0304_Move_Extend',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        AmbientMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0304_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URL_Destroy_Land',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0304_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'URL',
-            Cue = 'URL0304_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Tank',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Cloak = Sound {
-            Bank = 'XSL_Destroy',
-            Cue = 'XSL0402_Death',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        Decloak = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0402_Spawn',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
+           Activate = Sound {Bank = 'URL',         Cue = 'URL0304_Move_Extend', LodCutoff = 'UnitMove_LodCutoff'},
+        AmbientMove = Sound {Bank = 'URL',         Cue = 'URL0304_Move_Loop',   LodCutoff = 'UnitMove_LodCutoff'},
+          Destroyed = Sound {Bank = 'URLDestroy',  Cue = 'URL_Destroy_Land',    LodCutoff = 'UnitMove_LodCutoff'},
+          StartMove = Sound {Bank = 'URL',         Cue = 'URL0304_Move_Start',  LodCutoff = 'UnitMove_LodCutoff'},
+           StopMove = Sound {Bank = 'URL',         Cue = 'URL0304_Move_Stop',   LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound {Bank = 'Interface',   Cue = 'Cybran_Select_Tank',  LodCutoff = 'UnitMove_LodCutoff'},
+              Cloak = Sound {Bank = 'XSL_Destroy', Cue = 'XSL0402_Death',       LodCutoff = 'Weapon_LodCutoff'},
+            Decloak = Sound {Bank = 'XSL',         Cue = 'XSL0402_Spawn',       LodCutoff = 'Weapon_LodCutoff'},
     },
     Buffs = {
         Regen = {
@@ -90,17 +56,24 @@ UnitBlueprint {
         MovementEffects = {
             Land = {
                 Effects = {
-                    {Bones = {'Dustkickup1', 'Dustkickup2'}, Type = 'GroundKickup01'},
+                    {Bones = {'Back_Left_M', 'Back_Right_M'}, Type = 'GroundKickup01'},
                 },
                 Treads = {
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                            TreadMarks = 'tank_treads06_albedo',
+                            TreadMarks = 'tank_treads07_albedo',
                             TreadMarksInterval = 0.2,
-                            TreadMarksSizeX = 1.8,
-                            TreadMarksSizeZ = 3,
-                            TreadOffset = {0, 0, -1},
+                            TreadMarksSizeX = 0.35,
+                            TreadMarksSizeZ = 0.3,
+                            TreadOffset = {0.725, 0, -1},
+                        },
+                        {
+                            TreadMarks = 'tank_treads07_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 0.35,
+                            TreadMarksSizeZ = 0.3,
+                            TreadOffset = {-0.725, 0, -1},
                         },
                     },
                 },

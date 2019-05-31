@@ -1,0 +1,10 @@
+MeshBlueprint {
+    LODs = {
+        {
+            ShaderName = 'PhalanxEffect',
+            LODCutoff = 500,
+        },
+    },
+    IconFadeInZoom = 100,
+    UniformScale = 0.1,
+}

@@ -225,6 +225,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Added the UEF T2 Combat Fighter, Raptor.
     * Fans of realism may not like that I chose to make the Tomcat stronger than the Raptor. Tomcat is cooler.
 
+  ### 2018-05-28
+
+  * Started work on an Aeon Experimental Teleporter.
+
+  ### 2018-05-29
+
+  * Started a new mod that swaps the tech levels of units around. It's messy.
+
+  ### 2018-05-30
+
+  * Replaced the model and texture of the Slink.
+
+  ### 2018-05-31
+
+  * Prevented the Slink from spamming sound effects every 5 seconds that it's disabled.
+  * R&D: Replaced the textures of the Cybran Research Centres.
+  * R&D: Refactored textures to be relative instead of absolute path.
+  * R&D: Changed the window texture on the UEF Research Centres.
+  * R&D: Added models to the tech level research units so they can be seen while constructing.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

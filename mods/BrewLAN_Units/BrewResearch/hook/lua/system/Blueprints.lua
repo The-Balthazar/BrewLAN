@@ -229,6 +229,8 @@ function GenerateResearchItemBPs(all_bps)
                 bp.General.FactionName = faction
                 RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
                 RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
+                all_bps[newid].Display.BuildMeshBlueprint = '/mods/brewlan_units/brewresearch/meshes/tech'..bp.techid..'_mesh'
+                all_bps[newid].Display.MeshBlueprint = '/mods/brewlan_units/brewresearch/meshes/tech'..bp.techid..'_mesh'
                 --LOG(repr(all_bps[newid]))
             end
         end
@@ -261,7 +263,7 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
             Abilities = {
                 '<LOC ability_rnd_unlock>Research Unlock',
             },
-            UniformScale = (bp.Display.UniformScale or 1) / sizescale, --calculate properly based on footprint size
+            UniformScale = (bp.Display.UniformScale or 0.2) / sizescale, --calculate properly based on footprint size
         },
         Footprint = {
             SizeX = 2,

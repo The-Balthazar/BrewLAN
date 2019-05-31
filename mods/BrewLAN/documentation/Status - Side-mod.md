@@ -30,12 +30,30 @@ Units that I wanted to make, but either I didn't want directly in BrewLAN, or ca
 
 ### Research & Daiquiris
 * Functionally separates the hardware and software of tech levels and blueprints.
-* Adds research centres, tech level researches and unit unlock researches.
-* Dumping ground for units that don't fit in Bubble Tea of Caffe Corretto.
+* You unlock tech levels by researching them, and everything gets to build the new things.
+* Contains units that don't fit in Bubble Tea or Caffe Corretto.
+* Adds tech level research and generates research items for some units.
+* Adds new units:
+  * Tech 1-3 Research Centre (3 per faction)
+  * Tech 1-3 Hovercraft Factory (3 for Aeon)
+  * Tech 1 Wind Turbine (Each faction)
+  * Tech 1 Tidal Generator (Seraphim)
+  * Tech 2 Light Power Generators (Each faction)
+  * Tech 2 Tactical Bomber (UEF/Cybran/Seraphim)
+  * Tech 2 Combat Fighter (UEF)
+  * Tech 3 Omni-Sensor (UEF/Aeon/Cybran)
+    * Standard Tech 3 Omni-Sensor structures are now just radar.
+  * Tech 3 Penetrator Bombers (Each faction)
+  * Tech 3 Penetration Fighters (UEF/Cybran)
+  * Experimental Mobile Artillery (Cybran)
 * Currently missing planned units:
-  * Seraphim dedicated omni sensor.
-  * Light tech 2 power generators; halfway point between T1 and T2.
-  * Hovercraft and submarine factories.
+  * Penetration Fighters (Aeon/Seraphim)
+  * Fighter/Bomber (Aeon)
+  * Combat Fighters (Cybran/Seraphim)
+  * Dedicated omni sensor (Seraphim)
+  * Tidal Generator (UEF/Cybran/Aeon)
+  * Hovercraft Factory (Seraphim) maybe (UEF/Cybran)
+  * Submarine factory (UEF/Cybran/Aeon/Seraphim)
   * Possibly an implementation of seaplane factories.
 
 ## Gameplay

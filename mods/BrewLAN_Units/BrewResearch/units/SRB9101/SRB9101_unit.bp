@@ -79,13 +79,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 130,
-                    ShaderName = 'Insect',
-                    AlbedoName = '/units/urc1201/urc1201_albedo.dds',
-                    NormalsName = '/units/urc1201/urc1201_normalsts.dds',
-                    SpecularName = '/units/urc1201/urc1201_specteam.dds',
-                },
+                {LODCutoff = 130, ShaderName = 'Insect'},
                 {
                     LODCutoff = 260,
                     ShaderName = 'Insect',
