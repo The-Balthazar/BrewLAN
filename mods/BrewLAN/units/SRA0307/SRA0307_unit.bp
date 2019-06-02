@@ -2,11 +2,6 @@ UnitBlueprint {
     AI = {
         GuardReturnRadius = 125,
         GuardScanRadius = 100,
-        TargetBones = {
-            0,
-            'Wing_R02',
-            'Wing_L02',
-        },
     },
     Air = {
         AutoLandTime = 1,
@@ -128,51 +123,31 @@ UnitBlueprint {
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Insect',
-                },
-                {
-                    LODCutoff = 215,
-                    ShaderName = 'Insect',
-                    AlbedoName = '/units/ura0204/ura0204_lod1_albedo.dds',
-                    NormalsName = '/units/ura0204/ura0204_lod1_normalsTS.dds',
-                    SpecularName = '/units/ura0204/ura0204_lod1_specteam.dds',
-                },
+                {LODCutoff = 128, ShaderName = 'Insect'},
+                {LODCutoff = 256, ShaderName = 'Insect'},
+                {LODCutoff = 512, ShaderName = 'Insect'},
             },
         },
         MovementEffects = {
             Air = {
                 Contrails = {
-                    Bones = {
-                        'Contrail_GunL',
-                        'Contrail_GunR',
-                    },
+                    Bones = {'Contrail_GunL', 'Contrail_GunR'},
                 },
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust_L',
-                            'Exhaust_R',
-                        },
+                        Bones = {'Exhaust_L', 'Exhaust_R'},
                         Type = 'AirMoveExhaust01',
                     },
                 },
@@ -188,7 +163,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXA0008',
         SpawnRandomRotation = true,
-        UniformScale = 0.038,
+        UniformScale = 0.033,
     },
     Economy = {
         BuildCostEnergy = 55000,
@@ -240,7 +215,7 @@ UnitBlueprint {
         VisionRadius = 32,
     },
     Interface = {
-        HelpText = '<LOC sair0307>Torpedo Bomber',
+        HelpText = '<LOC sair0307>Heavy Torpedo Bomber',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.85,
@@ -285,11 +260,7 @@ UnitBlueprint {
     Weapon = {
         {
             Audio = {
-                Fire = Sound {
-                    Bank = 'URAWeapon',
-                    Cue = 'URA0204_Torpedo_Nanite',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URAWeapon', Cue = 'URA0204_Torpedo_Nanite', LodCutoff = 'Weapon_LodCutoff'},
             },
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
@@ -318,10 +289,7 @@ UnitBlueprint {
             ProjectileLifetime = 20,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'TorpedoL',
-                        'TorpedoR',
-                    },
+                    MuzzleBones = {'TorpedoL', 'TorpedoR'},
                     RackBone = 'TorpedoL',
                 },
             },

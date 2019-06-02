@@ -245,6 +245,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Changed the window texture on the UEF Research Centres.
   * R&D: Added models to the tech level research units so they can be seen while constructing.
 
+  ### 2018-06-01
+
+  * Replaced the normals and fixed smoothing groups on the Zenith.
+  * Shrunk the Zenith slightly.
+
+  ### 2018-06-02
+
+  * Replaced the distance model of the Zenith with two new ones.
+  * Created a unique model and texture for the Gannet.
+  * Created new icons for the Slink and Gannet.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

@@ -99,17 +99,12 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYSONAR',
     },
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 160,
         MaxHealth = 160,
         RegenRate = 0,
         SubThreatLevel = 5,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sair0106>Light Torpedo Bomber',
     Display = {
@@ -120,55 +115,43 @@ UnitBlueprint {
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 120,
-                    ShaderName = 'Insect',
-                    AlbedoName = '/units/ura0101/ura0101_albedo.dds',
-                    NormalsName = '/units/ura0101/ura0101_normalsTS.dds',
-                    SpecularName = '/units/ura0101/ura0101_specteam.dds',
-                },
-                {
-                    LODCutoff = 215,
-                    ShaderName = 'Insect',
-                    SpecularName = '/units/ura0101/ura0101_lod1.scm',
-                    AlbedoName = '/units/ura0101/ura0101_lod1_albedo.dds',
-                    NormalsName = '/units/ura0101/ura0101_lod1_normalsTS.dds',
-                    SpecularName = '/units/ura0101/ura0101_lod1_specteam.dds',
-                },
+                {LODCutoff = 64, ShaderName = 'Insect'},
+                {LODCutoff = 128, ShaderName = 'Insect'},
+                {LODCutoff = 256, ShaderName = 'Insect'},
             },
         },
         MovementEffects = {
             Air = {
                 Contrails = {
-                    Bones = {
-                        'Left_Contrail',
-                        'Right_Contrail',
-                    },
+                    Bones = {'Contrail_001', 'Contrail_002'},
                     ZOffset = 0,
                 },
+                Effects = {
+                    {
+                        Bones = {'Engine_001', 'Engine_002'},
+                        Type = 'AirMoveExhaust01',
+                    },
+                },
+            },
+            BeamExhaust = {
+                Bones = {'Engine_001', 'Engine_002'},
+                Cruise = true,
+                Idle = true,
             },
         },
-        PlaceholderMeshName = 'UXA0010',
-        SpawnRandomRotation = true,
-        UniformScale = 0.075,
+        UniformScale = 0.018,
     },
     Economy = {
         BuildCostEnergy = 4800*0.25,
@@ -248,11 +231,7 @@ UnitBlueprint {
     Weapon = {
         {
             Audio = {
-                Fire = Sound {
-                    Bank = 'URAWeapon',
-                    Cue = 'URA0204_Torpedo_Nanite',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'URAWeapon', Cue = 'URA0204_Torpedo_Nanite', LodCutoff = 'Weapon_LodCutoff'},
             },
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
@@ -282,10 +261,8 @@ UnitBlueprint {
             ProjectilesPerOnFire = 2,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        0,
-                    },
-                    RackBone = 0,
+                    MuzzleBones = {'Bomb'},
+                    RackBone = 'Bomb',
                 },
             },
             RackFireTogether = false,
