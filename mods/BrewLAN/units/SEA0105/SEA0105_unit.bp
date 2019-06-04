@@ -116,15 +116,13 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_transport>Transport',
         },
-        ForcedBuildSpin = 0,
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
                     {
                         Bones = {
-                            'Exhaust_Front01',
-                            'Exhaust_Front02',
-                            'Exhaust_Back02',
+                            'Engine_L',
+                            'Engine_R',
                         },
                         Type = 'Landing01',
                     },
@@ -134,9 +132,8 @@ UnitBlueprint {
                 Effects = {
                     {
                         Bones = {
-                            'Exhaust_Front01',
-                            'Exhaust_Front02',
-                            'Exhaust_Back02',
+                            'Engine_L',
+                            'Engine_R',
                         },
                         Type = 'TakeOff01',
                     },
@@ -146,28 +143,15 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0203/uea0203_albedo.dds',
-                    NormalsName = '/units/uea0203/uea0203_normalsTS.dds',
-                    SpecularName = '/units/uea0203/uea0203_specteam.dds',
-                },
-                {
-                    LODCutoff = 215,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0203/uea0203_lod1_albedo.dds',
-                    NormalsName = '/units/uea0203/uea0203_lod1_normalsTS.dds',
-                    SpecularName = '/units/uea0203/uea0203_lod1_specteam.dds',
-                },
+                {LODCutoff = 128, ShaderName = 'Unit'},
+                {LODCutoff = 256, ShaderName = 'Unit'},
             },
         },
         MovementEffects = {
             BeamExhaust = {
                 Bones = {
-                    'Exhaust_Front01',
-                    'Exhaust_Front02',
-                    'Exhaust_Back02',
+                    'Engine_L',
+                    'Engine_R',
                 },
                 Cruise = true,
                 Idle = true,
@@ -175,7 +159,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXA0009',
         SpawnRandomRotation = false,
-        UniformScale = 0.07,
+        UniformScale = 0.0045,
     },
     Economy = {
         BuildCostEnergy = 5000,
@@ -240,9 +224,9 @@ UnitBlueprint {
         MeshExtentsZ = 3,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 0.5,
-    SelectionSizeZ = 0.7,
-    SelectionThickness = 0.47,
+    SelectionSizeX = 0.25,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.5,
     SizeSphere = 1.14,
     SizeX = 1,
     SizeY = 0.5,
@@ -265,16 +249,12 @@ UnitBlueprint {
         {
             AboveWaterTargetsOnly = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'UEAWeapon',
-                    Cue = 'UEA0203_Riot_Gun',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound {Bank = 'UEAWeapon', Cue = 'UEA0203_Riot_Gun', LodCutoff = 'Weapon_LodCutoff'},
             },
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 16,
+            Damage = 8,
             DamageType = 'Normal',
             DisplayName = 'Light Riot Gun',
             FireTargetLayerCapsTable = {
@@ -283,7 +263,7 @@ UnitBlueprint {
             },
             FiringRandomness = 0.09,
             FiringTolerance = 2,
-            Label = 'Turret01',
+            Label = 'Turret',
             MaxRadius = 16,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -293,10 +273,8 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Muzzle',
-                    },
-                    RackBone = 'Muzzle',
+                    MuzzleBones = {'Turret_L_Muzzle'},
+                    RackBone = 'Turret_L_Barrel',
                 },
             },
             RackFireTogether = false,
@@ -315,9 +293,69 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'Muzzle',
-            TurretBoneYaw = 'Muzzle',
+            TurretBoneMuzzle = 'Turret_L_Muzzle',
+            TurretBonePitch = 'Turret_L_Barrel',
+            TurretBoneYaw = 'Turret_L',
+            TurretDualManipulators = false,
+            TurretPitch = -20,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 360,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+            Turreted = true,
+            WeaponCategory = 'Direct Fire',
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound {Bank = 'UEAWeapon', Cue = 'UEA0203_Riot_Gun', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            AutoInitiateAttackCommand = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            Damage = 8,
+            DamageType = 'Normal',
+            DisplayName = 'Light Riot Gun',
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+            FiringRandomness = 0.09,
+            FiringTolerance = 2,
+            Label = 'Turret',
+            MaxRadius = 16,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 40,
+            ProjectileId = '/projectiles/TDFMachineGun01/TDFMachineGun01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectilesPerOnFire = 1,
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_R_Muzzle'},
+                    RackBone = 'Turret_R_Barrel',
+                },
+            },
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RangeCategory = 'UWRC_DirectFire',
+            RateOfFire = 3,
+            TargetCheckInterval = 0.16,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_R_Muzzle',
+            TurretBonePitch = 'Turret_R_Barrel',
+            TurretBoneYaw = 'Turret_R',
             TurretDualManipulators = false,
             TurretPitch = -20,
             TurretPitchRange = 45,

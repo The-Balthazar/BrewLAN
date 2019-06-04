@@ -256,6 +256,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Created a unique model and texture for the Gannet.
   * Created new icons for the Slink and Gannet.
 
+  ### 2018-06-03
+
+  * Created a new model for the Pigeon.
+
+  ### 2018-06-04
+
+  * Textured the new Pigeon model.
+  * Refactored weapons on the Pigeon to match model.
+  * Replaced the icon of the Pigeon.
+  * Pigeon now adopts an aggressive pitch when attacking.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
