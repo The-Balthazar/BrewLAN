@@ -1,24 +1,23 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UAB1106/UAB1106_script.lua
-#**  Author(s):  Jessica St. Croix, David Tomandl, John Comes
-#**
-#**  Summary  :  Aeon Mass Storage
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local AMassStorageUnit = import('/lua/aeonunits.lua').AMassStorageUnit
 
 SAB1206 = Class(AMassStorageUnit) {
 
-    OnStopBeingBuilt = function(self,builder,layer)
-        AMassStorageUnit.OnStopBeingBuilt(self,builder,layer)
-        self.Trash:Add(CreateStorageManip(self, 'B01', 'MASS', 0, 0, 0, 0, 0, .41))
+    OnCreate = function(self)
+        AMassStorageUnit.OnCreate(self)
+        self:SetCollisionShape(
+            'Sphere',
+            __blueprints.sab1205.CollisionSphereOffsetX or 0,
+            __blueprints.sab1205.CollisionSphereOffsetY or 0,
+            __blueprints.sab1205.CollisionSphereOffsetZ or 0,
+            __blueprints.sab1205.SizeSphere
+        )
     end,
 
-    AnimThread = function(self)
-        
+    OnStopBeingBuilt = function(self,builder,layer)
+        AMassStorageUnit.OnStopBeingBuilt(self,builder,layer)
+        for i = 1, 5 do
+            self.Trash:Add(CreateStorageManip(self, 'B0'..i, 'MASS', 0, 0, 0, 0, 23 * __blueprints.sab1206.Display.UniformScale, 0))
+        end
     end,
 }
 
