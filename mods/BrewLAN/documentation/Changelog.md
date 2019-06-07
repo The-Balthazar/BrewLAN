@@ -277,6 +277,24 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Redesigned the Aeon mass storage.
   * Set the collision model of the Aeon mass storage to be spherical.
 
+  ### 2018-06-07
+
+  * Aeon T2 Mass Storage now brings its outer segments up earlier.
+  * Fixed the weird damage effects of:
+    * UEF T2 wall
+    * UEF T3 wall
+    * UEF T3 wall gate
+    * Aeon T2 wall
+    * Seraphim T2 wall
+    * Cybran T2 wall
+    * Cybran T3 wall
+    * Cybran T3 tall boi wall
+    * Cybran T3 wall gate
+  * Recreated the textures and UV mapping of the Aeon tech 1 air staging.
+  * Fixed the UV mapping and normals of the Aspis.
+  * Gave the Aspis better death animations.
+  * Fixed the distance model of the Aspis not respecting animations.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

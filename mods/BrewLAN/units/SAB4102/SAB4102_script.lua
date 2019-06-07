@@ -2,7 +2,6 @@
 --  Summary  :  Aeon Shield Generator Script
 --------------------------------------------------------------------------------
 local AShieldStructureUnit = import('/lua/aeonunits.lua').AShieldStructureUnit
-local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 --------------------------------------------------------------------------------
 SAB4102 = Class(AShieldStructureUnit) {
 
@@ -15,8 +14,6 @@ SAB4102 = Class(AShieldStructureUnit) {
 
     OnCreate = function(self)
         AShieldStructureUnit.OnCreate(self)
-        self:HideBone('Flap03', true)
-        self:HideBone('Flap04', true)
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
@@ -62,24 +59,9 @@ SAB4102 = Class(AShieldStructureUnit) {
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-	    self.ShieldEffectsBag = {}
-	end
+    	    self.ShieldEffectsBag = {}
+    	end
     end,
-
-    UpgradingState = State(AShieldStructureUnit.UpgradingState) {
-        Main = function(self)
-            self:ShowBone('Flap03', true)
-            self:ShowBone('Flap04', true)
-            AShieldStructureUnit.UpgradingState.Main(self)
-        end,
-        EnableShield = function(self)
-            AShieldStructureUnit.EnableShield(self)
-        end,
-
-        DisableShield = function(self)
-            AShieldStructureUnit.DisableShield(self)
-        end,
-    },
 
     OnKilled = function(self, instigator, type, overkillRatio)
         AShieldStructureUnit.OnKilled(self, instigator, type, overkillRatio)

@@ -79,7 +79,19 @@ UnitBlueprint {
         },
         AnimationDeath = {
             {
-                Animation = '/mods/BrewLAN/units/sab4102/sab4102_ADeath.sca',
+                Animation = '/mods/BrewLAN/units/sab4102/sab4102_ADeath01.sca',
+                AnimationRateMax = 0.5,
+                AnimationRateMin = 0.5,
+                Weight = 1,
+            },
+            {
+                Animation = '/mods/BrewLAN/units/sab4102/sab4102_ADeath02.sca',
+                AnimationRateMax = 0.5,
+                AnimationRateMin = 0.5,
+                Weight = 1,
+            },
+            {
+                Animation = '/mods/BrewLAN/units/sab4102/sab4102_ADeath03.sca',
                 AnimationRateMax = 0.5,
                 AnimationRateMin = 0.5,
                 Weight = 1,
@@ -93,7 +105,7 @@ UnitBlueprint {
                     Scrolling = true,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/uab4202/uab4202_albedo.dds',
-                    NormalsName = '/units/uab4202/uab4202_normalsts.dds',
+                    --NormalsName = '/units/uab4202/uab4202_normalsts.dds',
                     SpecularName = '/units/uab4202/uab4202_specteam.dds',
                 },
                 {

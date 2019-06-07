@@ -79,20 +79,6 @@ UnitBlueprint {
                 },
             },
         },
-        DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 1,
-                OffsetY = 2.5,
-                OffsetZ = 0.25,
-            },
-            {
-                Bone = 0,
-                OffsetX = -1,
-                OffsetY = 2.5,
-                OffsetZ = 0.25,
-            },
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -108,11 +94,11 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = true,
-        UniformScale = 0.05*.66666666666666666,
+        UniformScale = 0.0333333333333333333333333,
     },
     Economy = {
-        BuildCostEnergy = 10*5,
-        BuildCostMass = 2*5,
+        BuildCostEnergy = 50,
+        BuildCostMass = 10,
         BuildTime = 10,
         RebuildBonusIds = {'ssb5210'},
     },

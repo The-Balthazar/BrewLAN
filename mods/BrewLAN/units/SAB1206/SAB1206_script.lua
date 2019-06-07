@@ -15,8 +15,10 @@ SAB1206 = Class(AMassStorageUnit) {
 
     OnStopBeingBuilt = function(self,builder,layer)
         AMassStorageUnit.OnStopBeingBuilt(self,builder,layer)
+        local s = 23
         for i = 1, 5 do
-            self.Trash:Add(CreateStorageManip(self, 'B0'..i, 'MASS', 0, 0, 0, 0, 23 * __blueprints.sab1206.Display.UniformScale, 0))
+            if i == 2 then s = 5.75 end
+            self.Trash:Add(CreateStorageManip(self, 'B0'..i, 'MASS', 0, 0, 0, 0, s * __blueprints.sab1206.Display.UniformScale, 0))
         end
     end,
 }

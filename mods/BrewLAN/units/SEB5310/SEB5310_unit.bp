@@ -103,20 +103,6 @@ UnitBlueprint {
             },
         },
         BuildAttachBone = 'Build_Node',
-        DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 1,
-                OffsetY = 2.5,
-                OffsetZ = 0.25,
-            },
-            {
-                Bone = 0,
-                OffsetX = -1,
-                OffsetY = 2.5,
-                OffsetZ = 0.25,
-            },
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
