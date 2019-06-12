@@ -341,6 +341,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Recreated the launch unpack animation so it points higher up.
     * Added glowing lights to the body under the wings.
     * Gave it a simple death animation.
+    * Fixed two pairs of minor shader issues on it's wings.
 
 ## 2019-01-03|84 (FAF minor patch)
 
