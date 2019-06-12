@@ -44,12 +44,10 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 2,
         Health = 150,
         MaxHealth = 150,
-        RegenRate = 0,
         Shield = {
             ImpactEffects = 'UEFShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -64,8 +62,6 @@ UnitBlueprint {
             ShieldSize = 15.2,
             ShieldVerticalOffset = -2.2,
         },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sbui4102>Light Shield Generator',
     Display = {
@@ -76,13 +72,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/ueb4202/ueb4202_albedo.dds',
-                    NormalsName = '/units/ueb4202/ueb4202_normalsts.dds',
-                    SpecularName = '/units/ueb4202/ueb4202_specteam.dds',
-                },
+                {LODCutoff = 200, ShaderName = 'Unit'},
                 {
                     LODCutoff = 300,
                     ShaderName = 'Unit',
@@ -92,8 +82,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0018',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 DeathLifetime = 300,
@@ -101,12 +89,7 @@ UnitBlueprint {
                 Length = 12.8,
                 Albedo = '/env/Common/decals/Tarmacs/Tar8x_01_albedo.dds',
                 Normal = '/env/Common/decals/Tarmacs/Tar8x_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -119,14 +102,8 @@ UnitBlueprint {
         BuildRate = 10,
         BuildTime = 300,
         MaintenanceConsumptionPerSecondEnergy = 100,
-        BuildableCategory = {
-            'ueb4202',
-        },
-        RebuildBonusIds = {
-            'seb4102',
-            'ueb4202',
-            'ueb4301',
-        },
+        BuildableCategory = {'ueb4202'},
+        RebuildBonusIds = {'seb4102'},
     },
     Footprint = {
         SizeX = 3,

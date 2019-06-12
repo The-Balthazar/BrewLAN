@@ -38,6 +38,11 @@ function ModBlueprints(all_blueprints)
     BrewLANCheckRULEUCaseCorrectness(all_blueprints.Unit)
     ExtractFrozenMeshBlueprint(all_blueprints.Unit)
     BrewLANChangesForDominoModSupport(all_blueprints.Unit)
+
+    --Eventually refactor it this way to speed up loading
+    for id, bp in all_blueprints.Unit do
+        BrewLANGenerateFootprintDummy(all_blueprints.Unit, id, bp)
+    end
 end
 
 --------------------------------------------------------------------------------
@@ -1060,7 +1065,7 @@ function ExtractFrozenMeshBlueprint(all_bps)
 end
 
 --------------------------------------------------------------------------------
--- Do you want to build a snowman?
+-- Stuff for panopticon custom tab. Disabled currently because it didn't work for me.
 --------------------------------------------------------------------------------
 
 function BrewLANChangesForDominoModSupport(all_bps)
@@ -1090,6 +1095,93 @@ function BrewLANChangesForDominoModSupport(all_bps)
     end
 end
 
+
+--------------------------------------------------------------------------------
+-- Generate footprint dummies for dealing with path blocking.
+--------------------------------------------------------------------------------
+
+
+function BrewLANGenerateFootprintDummy(all_bps, id, bp)
+    --These are used by the Aeon teleporter.
+    --But also by the mines and any unit that wants to clear it's path blocking.
+    if type(bp.Physics.MotionType) == 'string' and string.lower(bp.Physics.MotionType) == 'ruleumt_none' then
+        local X = math.ceil(bp.Footprint.SizeX or bp.SizeX or 1)
+        local Z = math.ceil(bp.Footprint.SizeZ or bp.SizeZ or 1)
+        local SOX = bp.Physics.SkirtOffsetX or 0
+        local SOZ = bp.Physics.SkirtOffsetZ or 0
+        local SSX = bp.Physics.SkirtSizeX or 1
+        local SSZ = bp.Physics.SkirtSizeZ or 1
+        local OR = bp.Physics.OccupyRects
+
+        local dummyID = 'ZZZFD'..X..Z..SOX..SOZ..SSX..SSZ
+
+        if OR then
+            for i, v in OR do
+                dummyID = dummyID..v
+            end
+        end
+
+        if not all_bps[dummyID] then
+            all_bps[dummyID] = {
+                BlueprintId = dummyID,
+                BuildIconSortPriority = 5,
+                Categories = {
+                    'INVULNERABLE',
+                    'STRUCTURE',
+                    'BENIGN',
+                    'UNSELECTABLE',
+                    'UNTARGETABLE',
+                    'UNSPAWNABLE',
+                },
+                Defense = {Health = 0, MaxHealth = 0},
+                Description = 'Footprint Dummy Unit',
+                Display = {
+                    BuildMeshBlueprint = BrewLANPath() .. '/meshes/nil_mesh',
+                    MeshBlueprint = BrewLANPath() .. '/meshes/nil_mesh',
+                    UniformScale = 0,
+                    HideLifebars = true,
+                },
+                Footprint = {SizeX = X, SizeZ = Z},
+                Economy = {
+                    BuildCostEnergy = 1,
+                    BuildCostMass = 1,
+                    BuildTime = 1,
+                },
+                General = {
+                    CapCost = 0,
+                    --FactionName = 'nil',
+                    --Icon = 'land',
+                    TechLevel = 'RULEUTL_Advanced',
+                    UnitWeight = 1,
+                },
+                Intel = {
+                    VisionRadius = 0,
+                },
+                Physics = {
+                    BuildOnLayerCaps = {
+                        LAYER_Land = true,
+                        LAYER_Seabed = true,
+                        LAYER_Water = true,
+                    },
+                    SkirtOffsetX = SOX,
+                    SkirtOffsetZ = SOZ,
+                    SkirtSizeX = SSX,
+                    SkirtSizeZ = SSZ,
+                    MotionType = 'RULEUMT_None',
+                    OccupyRects = OR,
+                },
+                ScriptClass = 'StructureUnit',
+                ScriptModule = '/lua/defaultunits.lua',
+                SizeX = X,
+                SizeY = 1,
+                SizeZ = Z,
+                Source = all_bps.sab5401.Source,
+            }
+            LOG("Creating footprint dummy unit: " .. dummyID)
+        end
+        bp.FootprintDummyId = dummyID
+    end
+end
 
 --------------------------------------------------------------------------------
 --

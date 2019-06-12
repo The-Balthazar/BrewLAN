@@ -33,7 +33,7 @@ else
 end
 
 local function getItems()
-    local idlist = EntityCategoryGetUnitList(categories.ALLUNITS)
+    local idlist = EntityCategoryGetUnitList(categories.ALLUNITS - categories.UNSPAWNABLE)
     table.sort(idlist)
 
     return idlist

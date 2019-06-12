@@ -5,11 +5,9 @@ local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 
 SEB4102 = Class(TShieldStructureUnit) {
 
-
     ShieldEffects = {
         '/effects/emitters/terran_shield_generator_t2_01_emit.bp',
         '/effects/emitters/terran_shield_generator_t2_02_emit.bp',
-        ###'/effects/emitters/terran_shield_generator_t2_03_emit.bp',
     },
 
     OnStopBeingBuilt = function(self,builder,layer)
@@ -54,7 +52,6 @@ SEB4102 = Class(TShieldStructureUnit) {
             self.Rotator1:SetSpinDown(true)
             TShieldStructureUnit.UpgradingState.Main(self)
         end,
-
 
         EnableShield = function(self)
             TShieldStructureUnit.EnableShield(self)

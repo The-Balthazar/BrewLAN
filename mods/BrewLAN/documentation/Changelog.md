@@ -295,6 +295,53 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Gave the Aspis better death animations.
   * Fixed the distance model of the Aspis not respecting animations.
 
+  ### 2018-06-08
+
+  * Set up script to generate dummy units with each possible footprint layout configuration. and tie each unit to one.
+
+  ### 2018-06-09
+
+  * Aeon Experimental Teleporter now uses footprint dummies for structure teleporter functions.
+  * Mines now use the auto generated footprint dummies for removing path blocking.
+  * Gate path blocker unit now uses a shared nil model from the footprint dummies rather than a copy of one.
+
+  ### 2018-06-10
+
+  * Seraphim T1&2 mines now have their own textures, and are more efficiently UV'd.
+  * Seraphim T2 mine distance model now has less polies.
+
+  ### 2018-06-11
+
+  * Stolen Tech: No longer lists BrewLAN dummy units on the spawn menu.
+  * Seraphim T1 shield generator changes:
+    * Fixed the shader groups.
+    * Slowed the activation animation so it looks less derpballs. (This required recreation for reasons)
+    * Removed the ability to rebuild on T3 and T2 shield wrecks so you don't waste loads of mass.
+    * Shrunk it slightly.
+    * Replaced the death animation.
+    * Made the death animation only play if it was active when it died.
+  * Changed the selection overlay for the Seraphim T1 light artillery.
+  * Replaced the UV and textures of the Seraphim T1 light air staging.
+  * Replaced the LOD1 of the Seraphim light air staging, and fixed the death animation not applying to it.
+
+  ### 2018-06-12
+
+  * Recreated the textures and model of the LSD-Pulse.
+  * LSD-Pulse can no longer get rebuild bonus on T2 & T3 wrecks.
+  * Added some internal glowing lights to the Moldovite.
+  * Fixed a small smoothing issue on the back of the Moldovites turret.
+  * Scarab changes:
+    * Re-rigged the legs and body.
+    * Replaced the walk animation.
+    * Removed it's ability to walk backwards.
+    * Increased the firing tolerance so it's more likely to fire at missiles coming from behind it.
+    * Removed it's ability to turn on the spot.
+    * Added a leg fold animation when it is put in transport.
+    * Added an adorable transport detach animation.
+    * Recreated the launch unpack animation so it points higher up.
+    * Added glowing lights to the body under the wings.
+    * Gave it a simple death animation.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

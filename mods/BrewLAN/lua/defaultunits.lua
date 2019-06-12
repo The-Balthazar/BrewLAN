@@ -80,7 +80,7 @@ MineStructureUnit = Class(StructureUnit) {
         self:EnableIntel('RadarStealth')
         self:EnableIntel('SonarStealth')
         local pos = self:GetPosition()
-        self.blocker = CreateUnitHPR('ZZZ2220',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
+        self.blocker = CreateUnitHPR(self:GetBlueprint().FootprintDummyId,self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
         self.Trash:Add(self.blocker)
     end,
 

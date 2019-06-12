@@ -54,7 +54,6 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 4,
         Health = 250,
@@ -73,8 +72,6 @@ UnitBlueprint {
             ShieldSize = 17,
             ShieldVerticalOffset = -1,
         },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sbui4102>Light Shield Generator',
     Display = {
@@ -112,36 +109,26 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0018',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_seraphim_01_albedo',
-                DeathLifetime = 300,
-                FadeOut = 150,
-                Length = 12.8,
                 Normal = 'Tarmacs/Tar8x_seraphim_01_normals',
+                DeathLifetime = 300, FadeOut = 150,
+                Length = 12.8, Width = 12.8,
                 Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
-                Width = 12.8,
             },
         },
-        UniformScale = 0.05,
+        UniformScale = 0.045,
     },
     Economy = {
         BuildCostEnergy = 4000,
         BuildCostMass = 400,
         BuildRate = 10,
         BuildTime = 400,
-        BuildableCategory = {
-            'xsb4202',
-        },
+        BuildableCategory = {'xsb4202'},
         MaintenanceConsumptionPerSecondEnergy = 125,
-        RebuildBonusIds = {
-	    'ssb4102',
-            'xsb4202',
-            'xsb4301',
-        },
+        RebuildBonusIds = {'ssb4102'},
     },
     Footprint = {
         SizeX = 3,
