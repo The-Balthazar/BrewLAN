@@ -341,7 +341,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Recreated the launch unpack animation so it points higher up.
     * Added glowing lights to the body under the wings.
     * Gave it a simple death animation.
-    * Fixed two pairs of minor shader issues on it's wings.
+    * Fixed two pairs of minor UV issues on it's wings.
+
+  ### 2018-06-13
+
+  * Impaler changes:
+    * Made it slightly more aerodynamic; it's now fatter at the front and thinner at the back.
+    * Fixed minor smoothing issues at the wing backs.
+    * Fixed a normals issue down the centre seam.
+  * Raptor changes:
+    * Lowered the model.
+    * Fixed the size used during building and research.
+  * Nuke mines now have the ability to auto-fire, and default to hold fire.
 
 ## 2019-01-03|84 (FAF minor patch)
 

@@ -134,6 +134,7 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
                 myProjectile:PassDamageData(self:GetDamageTable())
             end,
         },
+
         Suicide = Class(DeathNukeWeapon) {
             Fire = function(self, ...)
                 local radius = self:GetBlueprint().NukeInnerRingRadius or self:GetBlueprint().DamageRadius
@@ -146,6 +147,16 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
             end,
         },
     },
+
+    OnCreate = function(self,builder,layer)
+        MineStructureUnit.OnCreate(self,builder,layer)
+        self:SetFireState(1)
+        --[[
+            0 return fire
+            2 ground fire
+            1 hold fire
+        ]]
+    end,
 }
 
 --------------------------------------------------------------------------------

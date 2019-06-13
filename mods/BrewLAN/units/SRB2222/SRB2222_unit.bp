@@ -1,6 +1,5 @@
 UnitBlueprint {
     AI = {
-        #Nuke falloff range for build preview.
         GuardScanRadius = 40,
         StagingPlatformScanRadius = 40,
     },
@@ -78,15 +77,13 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,
         UniformScale = 0.04,
     },
     Economy = {
-        BuildCostEnergy = 135000*3,
+        BuildCostEnergy = 405000,
         ResearchMultEnergy = 0.3333333333,
-        BuildCostMass = 1200*1.5,
-        BuildTime = 600*2,
+        BuildCostMass = 1800,
+        BuildTime = 1200,
     },
     Footprint = {
         SizeX = 0,
@@ -106,7 +103,7 @@ UnitBlueprint {
             RULEUCC_Pause = false,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
+            RULEUCC_RetaliateToggle = true,
             RULEUCC_SiloBuildNuke = false,
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
@@ -173,7 +170,6 @@ UnitBlueprint {
     SizeX = .5,
     SizeY = 0.2,
     SizeZ = .5,
-    #StrategicIconName = '/textures/ui/common/game/unit-over/icon-nuke_bmp.dds',
     StrategicIconName = 'icon_structure3_bomb',
     StrategicIconSortPriority = 210,
     Weapon = {
@@ -202,9 +198,8 @@ UnitBlueprint {
                 Sub = 'Land|Water|Seabed|Sub',
             },
             FiringTolerance = 360,
-            --FireOnSelfDestruct = true,
+            FireOnSelfDestruct = true,
             Label = 'Suicide',
-            ManualFire = 1,
             MaxRadius = 30,
 
             NukeInnerRingDamage = 70000,
@@ -222,6 +217,10 @@ UnitBlueprint {
                 {MuzzleBones = {0}, RackBone = 0},
             },
             RangeCategory = 'UWRC_DirectFire',
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
             TargetRestrictDisallow = 'UNTARGETABLE',
             Turreted = false,
             WeaponCategory = 'Kamikaze',

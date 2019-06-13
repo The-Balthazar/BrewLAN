@@ -1,12 +1,9 @@
 UnitBlueprint {
     Audio = {
         Destroyed = Sound {
-                    Bank = 'XSA_Weapon',
-                    Cue = 'XSA0304_Zhanasse_Bomb',
-                    LodCutoff = 'Weapon_LodCutoff',
-            #Bank = 'XSL_Destroy',
-            #Cue = 'XSB_Destroy_Huge',
-            #LodCutoff = 'UnitMove_LodCutoff',
+            Bank = 'XSA_Weapon',
+            Cue = 'XSA0304_Zhanasse_Bomb',
+            LodCutoff = 'Weapon_LodCutoff',
         },
         DoneBeingBuilt = Sound {
             Bank = 'XSB',
@@ -44,13 +41,9 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 0,
         Health = 100,
         MaxHealth = 100,
-        RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 450,
     },
     Description = '<LOC sbui2221>Proximity Mine',
@@ -78,8 +71,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,
         UniformScale = 0.05,
     },
     Economy = {
