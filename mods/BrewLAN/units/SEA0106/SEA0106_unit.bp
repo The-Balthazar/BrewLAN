@@ -111,14 +111,10 @@ UnitBlueprint {
     CollisionOffsetY = -0.2,
     CollisionOffsetZ = -0.1,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 175,
         MaxHealth = 175,
-        RegenRate = 0,
         SubThreatLevel = 5,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sair0106>Light Torpedo Bomber',
     Display = {
@@ -140,49 +136,29 @@ UnitBlueprint {
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
             AirWater = {
                 Effects = {
-                    {
-                        Bones = {
-                            'UEA0204',
-                        },
-                        Type = 'Submerge02',
-                    },
+                    {Bones = {0}, Type = 'Submerge02'},
                 },
             },
             WaterAir = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Surface02',
-                    },
+                    {Bones = {0}, Type = 'Surface02'},
                 },
             },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0204/uea0204_albedo.dds',
-                    NormalsName = '/units/uea0204/uea0204_normalsTS.dds',
-                    SpecularName = '/units/uea0204/uea0204_specteam.dds',
-                },
+                {LODCutoff = 140, ShaderName = 'Unit'},
                 {
                     LODCutoff = 215,
                     ShaderName = 'Unit',
@@ -218,14 +194,12 @@ UnitBlueprint {
                 Idle = false,
             },
         },
-        PlaceholderMeshName = 'UXA0008',
-        SpawnRandomRotation = false,
         UniformScale = 0.04,
     },
     Economy = {
-        BuildCostEnergy = 4800*0.25,
-        BuildCostMass = 240*0.25,
-        BuildTime = 1600*0.25,
+        BuildCostEnergy = 1200,
+        BuildCostMass = 60,
+        BuildTime = 400,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -286,7 +260,7 @@ UnitBlueprint {
         MeshExtentsZ = 1.25,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 1.1*.85,
+    SelectionSizeX = 1.1*.65,
     SelectionSizeZ = 0.6*.85,
     SelectionThickness = 0.4,
     SizeSphere = 1.425,

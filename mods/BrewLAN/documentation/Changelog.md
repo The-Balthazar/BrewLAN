@@ -354,6 +354,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Fixed the size used during building and research.
   * Nuke mines now have the ability to auto-fire, and default to hold fire.
 
+  ### 2018-06-14
+
+  * Improved the UV mapping and textures on Resupply.
+  * Resupply can now wear a hat.
+  * Seagul changes:
+    * Small texture reworks.
+    * Replaced normals.
+    * Fixed smoothing.
+    * Changed team colour areas.
+    * Reduced selection overlay area.
+  * Fixed a minor UV error on the Pigeon, and added more texture details.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
