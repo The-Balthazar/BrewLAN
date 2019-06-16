@@ -6,106 +6,106 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Fixed the Seraphim SACU having access to the un-upgraded tech 3 resource buildings after the field engineer upgrade.
 
-  ### 2018-01-20
+  ### 2019-01-20
 
   * R&D: Removed the research for the disabled UEF hovercraft factory.
   * Replaced the CQUEMOV function with another that chooses units specifically instead of based on categories.
     * It now affects BrewLAN (and sub-mod) mobile experimental units, the observation satellite, and the UEF engineering resource buildings.
 
-  ### 2018-01-26
+  ### 2019-01-26
 
   * Debug Tools: Added an installation check function to the speaker unit.
 
-  ### 2018-01-27
+  ### 2019-01-27
 
   * Debug Tools: Created an icon for the flying DPS tester unit.
   * Debug Tools: Listed the installation validation ability on the speaker unit.
 
-  ### 2018-01-31
+  ### 2019-01-31
 
   * Debug Tools: Added the reported version number to the BrewLAN validation check.
   * Metal World: Removed the weird AI hacks to get them to do anything at all.
   * Metal World: LOUD, Sorian, and vanilla AI now have proper defined behaviour.
 
-  ### 2018-02-05
+  ### 2019-02-05
 
   * Crystal Hill: Removed the script reference to the Seraphim ACU for the warp-in effect.
   * Crystal Hill: Removed the dependency to civilian structures for the Crystal.
 
-  ### 2018-02-12
+  ### 2019-02-12
 
   * Crystal Hill: Civilians can no longer take the Crystal after the first capture.
   * Crystal Hill: Removed unnecessary data from the blueprint files of the Crystal units.
   * Crystal Hill: Changed the footprint size and collision size of the Crystal units.
 
-  ### 2018-02-13
+  ### 2019-02-13
 
   * Crystal Hill: Created some AI markers on the crystal.
 
-  ### 2018-02-15
+  ### 2019-02-15
 
   * Spomeniki: Created a monument to Spirit and Opportunity.
 
-  ### 2018-02-16
+  ### 2019-02-16
 
   * Spomeniki: Created a usable Opportunity unit.
 
-  ### 2018-02-18
+  ### 2019-02-18
 
   * Spomeniki: Finished the script for Opportunity.
 
-  ### 2018-02-19
+  ### 2019-02-19
 
   * Spomeniki: Created a usable Spirit unit. It's the same as Opportunity but produces less power and has a different texture.
   * Spomeniki: Added build descriptions and icons for Spirit and Opportunity.
 
-  ### 2018-02-20
+  ### 2019-02-20
 
   * Spomeniki: MER script now resets the position of the dish array when closing the panels.
 
-  ### 2018-02-21
+  ### 2019-02-21
 
   * New mod that makes wreckages disappear after a time, based on their cost and other factors.
 
-  ### 2018-02-23
+  ### 2019-02-23
 
   * Added the UEF tech 3 mobile air staging platform.
 
-  ### 2018-02-24
+  ### 2019-02-24
 
   * Fixed the transport attach node on the UEF mobile air staging, tweaked the tread-marks, and added a name.
 
-  ### 2018-03-01
+  ### 2019-03-01
 
   * Stolen Tech: Fixed research items appearing in land units list.
 
-  ### 2018-03-06
+  ### 2019-03-06
 
   * Paragon Game: Fixed Aeon engineering station having Seraphim build effects.
   * Updated UEF mobile air staging name based on vote results.
 
-  ### 2018-03-08
+  ### 2019-03-08
 
   * Updated various strings to match the language document.
   * Mass Random: Fixed in LOUD.
 
-  ### 2018-03-13
+  ### 2019-03-13
 
   * R&D: Fixed the Lancer landing half inside air staging platforms.
   * Fixes towards aircraft getting trapped on the mobile air staging if it starts moving while they are landed on it.
     * It no longer traps the aircraft, but it bricks the pad instead.
 
-  ### 2018-03-14
+  ### 2019-03-14
 
   * R&D: Fixed the Seraphim and Aeon Penetration bombers not being able to land on air staging.
   * Fixed the UEF air staging trapping aircraft, or breaking when kicking out units, at the cost of ignoring move orders if occupied.
 
-  ### 2018-03-21
+  ### 2019-03-21
 
   * Darkness no longer affects SACUs.
   * Minor optimisation for the Darkness.
 
-  ### 2018-03-22
+  ### 2019-03-22
 
   * Removed obsolete anti-Panopticon code from the Darkness.
   * Additional optimisation for the Darkness.
@@ -113,16 +113,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Novax no longer automatically builds the first satellite so people are more aware that it can build more than one.
   * Removed the obsolete code for automatically rebuilding satellites from the Novax, which hasn't functioned since the change to a satellite pop cap.
 
-  ### 2018-04-07
+  ### 2019-04-07
 
   * Removed some more redundant code from the Darkness, and refactored it so it's easier to read.
   * Darkness will no longer try to affect mines, walls, and benign tagged units.
 
-  ### 2018-04-09
+  ### 2019-04-09
 
   * R&D: Split off the factional differences of the research centres to child classes to remove the need to check self faction on SFX start.
 
-  ### 2018-04-12
+  ### 2019-04-12
 
   * R&D: Starting research is now based on starting factories and engineers, not any random unit.
   * R&D: Added basic framework for the AI research manager to receive research orders.
@@ -133,7 +133,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * ~~R&D: AI's are now completely prevented from building more than one research centre, since instructing them so wasn't enough.~~
     * AI engineers will apparently build something they aren't allowed to if it is queued up already.
 
-  ### 2018-04-13
+  ### 2019-04-13
 
   * R&D: Moved the buff definitions to the buff definitions document.
   * R&D: Research request function will now parse requests for units that are category locked not individual unit locked.
@@ -143,25 +143,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Increased the amount of resources an AI needs to decide to start doing a research.
 
-  ### 2018-04-16
+  ### 2019-04-16
 
   * Started an enhancement based rework of the Panopticon.
 
-  ### 2018-04-22
+  ### 2019-04-22
 
   * Allowed the infrastructure of the Panopticon animation threads to allow for inactive arrays.
   * Finished setup of the reworked Panopticon animation thread to accept dish activations through enhancements.
     * R&D: Updated copy of said script.
   * Reworked the Panopticon blip visual intel thread to only exist when the enhancement is on.
 
-  ### 2018-04-23
+  ### 2019-04-23
 
   * More optimisations for the Panopticon.
   * The Panopticon active consumption button is now only present when it does something.
   * Replaced the tarmac of the Panopticon with a slightly smaller one.
   * Slightly increased the size of the Gantry tarmac to fill the footprint better.
 
-  ### 2018-04-24
+  ### 2019-04-24
 
   * Moved the Panopticon string sanitisation to game launch for better performance during.
   * Created the buff definitions for the Panopticon enhancements.
@@ -174,70 +174,70 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Moved the Panopticon dish animation definitions to it's blueprint.
   * Updated the language documents.
 
-  ### 2018-04-25
+  ### 2019-04-25
 
   * Removed the blank enhancement tabs from the Panopticon.
   * Made the Gantry/Heavy wall construction button overwrite slightly more efficient.
   * Created graphics and strings for a custom enhancements tab for the Panopticon.
 
-  ### 2018-04-27
+  ### 2019-04-27
 
   * Replaced the model, textures, and animations of the Gantry.
 
-  ### 2018-04-28
+  ### 2019-04-28
 
   * Set the Gantry arms to adjust based on the size of the unit being produced.
   * Removed the SIZE30 adjacency buff definitions since the Gantry is SIZE36 now.
 
-  ### 2018-04-29
+  ### 2019-04-29
 
   * Fixed the Panopticon having free intel when first built.
 
-  ### 2018-04-30
+  ### 2019-04-30
 
   * New mod: Ultimate Superweapons. Adds Age of Empires style wonders to the game. Currently barebones.
 
-  ### 2018-05-09
+  ### 2019-05-09
 
   * Finished graphics for the Panopticon array enhancement buttons for all factions.
   * R&D: Created the majority of the model for a UEF Penetration Fighter.
 
-  ### 2018-05-10
+  ### 2019-05-10
 
   * R&D: Finished the UEF Penetration Fighter, Tomcat, graphically. It's missing weapons.
   * R&D: Added anti-missile flares to the penetration fighters.
 
-  ### 2018-05-11
+  ### 2019-05-11
 
   * R&D: Finished the Tomcat.
 
-  ### 2018-05-12
+  ### 2019-05-12
 
   * Created some dormant code for use with Domino's mod support to create an 'Array' enhancement tab for the Panopticon.
   * Made the legacy section of the Gantry/Heavy wall build click modifier more efficient.
 
-  ### 2018-05-22
+  ### 2019-05-22
 
   * Fixed BrewLANGantryBuildList looping through things 4x more than it should be and potentially passing nil.
 
-  ### 2018-05-25
+  ### 2019-05-25
 
   * R&D: Added the UEF T2 Combat Fighter, Raptor.
     * Fans of realism may not like that I chose to make the Tomcat stronger than the Raptor. Tomcat is cooler.
 
-  ### 2018-05-28
+  ### 2019-05-28
 
   * Started work on an Aeon Experimental Teleporter.
 
-  ### 2018-05-29
+  ### 2019-05-29
 
   * Started a new mod that swaps the tech levels of units around. It's messy.
 
-  ### 2018-05-30
+  ### 2019-05-30
 
   * Replaced the model and texture of the Slink.
 
-  ### 2018-05-31
+  ### 2019-05-31
 
   * Prevented the Slink from spamming sound effects every 5 seconds that it's disabled.
   * R&D: Replaced the textures of the Cybran Research Centres.
@@ -245,39 +245,39 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Changed the window texture on the UEF Research Centres.
   * R&D: Added models to the tech level research units so they can be seen while constructing.
 
-  ### 2018-06-01
+  ### 2019-06-01
 
   * Replaced the normals and fixed smoothing groups on the Zenith.
   * Shrunk the Zenith slightly.
 
-  ### 2018-06-02
+  ### 2019-06-02
 
   * Replaced the distance model of the Zenith with two new ones.
   * Created a unique model and texture for the Gannet.
   * Created new icons for the Slink and Gannet.
 
-  ### 2018-06-03
+  ### 2019-06-03
 
   * Created a new model for the Pigeon.
 
-  ### 2018-06-04
+  ### 2019-06-04
 
   * Textured the new Pigeon model.
   * Refactored weapons on the Pigeon to match model.
   * Replaced the icon of the Pigeon.
   * Pigeon now adopts an aggressive pitch when attacking.
 
-  ### 2018-06-05
+  ### 2019-06-05
 
   * Redesigned the Aeon energy storage.
   * Set the collision model of the Aeon energy storage to be spherical.
 
-  ### 2018-06-06
+  ### 2019-06-06
 
   * Redesigned the Aeon mass storage.
   * Set the collision model of the Aeon mass storage to be spherical.
 
-  ### 2018-06-07
+  ### 2019-06-07
 
   * Aeon T2 Mass Storage now brings its outer segments up earlier.
   * Fixed the weird damage effects of:
@@ -295,22 +295,22 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Gave the Aspis better death animations.
   * Fixed the distance model of the Aspis not respecting animations.
 
-  ### 2018-06-08
+  ### 2019-06-08
 
   * Set up script to generate dummy units with each possible footprint layout configuration. and tie each unit to one.
 
-  ### 2018-06-09
+  ### 2019-06-09
 
   * Aeon Experimental Teleporter now uses footprint dummies for structure teleporter functions.
   * Mines now use the auto generated footprint dummies for removing path blocking.
   * Gate path blocker unit now uses a shared nil model from the footprint dummies rather than a copy of one.
 
-  ### 2018-06-10
+  ### 2019-06-10
 
   * Seraphim T1&2 mines now have their own textures, and are more efficiently UV'd.
   * Seraphim T2 mine distance model now has less polies.
 
-  ### 2018-06-11
+  ### 2019-06-11
 
   * Stolen Tech: No longer lists BrewLAN dummy units on the spawn menu.
   * Seraphim T1 shield generator changes:
@@ -324,7 +324,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Replaced the UV and textures of the Seraphim T1 light air staging.
   * Replaced the LOD1 of the Seraphim light air staging, and fixed the death animation not applying to it.
 
-  ### 2018-06-12
+  ### 2019-06-12
 
   * Recreated the textures and model of the LSD-Pulse.
   * LSD-Pulse can no longer get rebuild bonus on T2 & T3 wrecks.
@@ -343,7 +343,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Gave it a simple death animation.
     * Fixed two pairs of minor UV issues on it's wings.
 
-  ### 2018-06-13
+  ### 2019-06-13
 
   * Impaler changes:
     * Made it slightly more aerodynamic; it's now fatter at the front and thinner at the back.
@@ -354,7 +354,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Fixed the size used during building and research.
   * Nuke mines now have the ability to auto-fire, and default to hold fire.
 
-  ### 2018-06-14
+  ### 2019-06-14
 
   * Improved the UV mapping and textures on Resupply.
   * Resupply can now wear a hat.
@@ -365,6 +365,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Changed team colour areas.
     * Reduced selection overlay area.
   * Fixed a minor UV error on the Pigeon, and added more texture details.
+
+  ### 2019-06-16
+
+  * R&D: Reduced Penetrator bomber flare spam in situations involving excess bombers and missiles.
 
 ## 2019-01-03|84 (FAF minor patch)
 
