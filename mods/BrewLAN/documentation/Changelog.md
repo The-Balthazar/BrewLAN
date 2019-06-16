@@ -369,6 +369,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2019-06-16
 
   * R&D: Reduced Penetrator bomber flare spam in situations involving excess bombers and missiles.
+  * R&D: Prevented the creation of flares after killed, but before crashing.
 
 ## 2019-01-03|84 (FAF minor patch)
 
