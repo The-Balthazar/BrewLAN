@@ -308,7 +308,7 @@ end
 
 function RNDGiveCategoriesAndDefineCosts(all_bps, newid, ref)
     local bp = all_bps[newid]
-    for i, v in {'TECH1','TECH2','TECH3','EXPERIMENTAL', 'UEF', 'CYBRAN', 'SERAPHIM', 'AEON', 'SORTSTRATEGIC', 'SORTCONSTRUCTION', 'SORTDEFENSE', 'SORTECONOMY', 'SORTINTEL', 'CONSTRUCTIONSORTDOWN', 'RESEARCHLOCKEDTECH1'} do
+    for i, v in {'TECH1','TECH2','TECH3','EXPERIMENTAL', 'UEF', 'CYBRAN', 'SERAPHIM', 'AEON', 'SORTSTRATEGIC', 'SORTCONSTRUCTION', 'SORTDEFENSE', 'SORTECONOMY', 'SORTINTEL', 'CONSTRUCTIONSORTDOWN', 'RESEARCHLOCKEDTECH1', 'AIR', 'LAND', 'NAVAL'} do
         if table.find(ref.Categories, v) then
             --If the source has the cat, the research item also needs it.
             table.insert(bp.Categories, v)

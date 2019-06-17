@@ -134,9 +134,10 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {LODCutoff = 200, ShaderName = 'Unit'},
+                {LODCutoff = 256, ShaderName = 'Unit'},
+                {LODCutoff = 512, ShaderName = 'Unit'},
                 {
-                    LODCutoff = 500,
+                    LODCutoff = 1024,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/uec1905/uec1905_lod1_albedo.dds',
                     NormalsName = '/units/uec1905/uec1905_lod1_normalsts.dds',

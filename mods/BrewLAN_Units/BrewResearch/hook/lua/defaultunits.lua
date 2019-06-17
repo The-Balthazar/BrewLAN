@@ -2,7 +2,7 @@
 -- Research item stuff
 --------------------------------------------------------------------------------
 local Game = import('/lua/game.lua')
-local VersionIsFAF = function() return string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 end
+local VersionIsFAF = string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603
 --------------------------------------------------------------------------------
 ResearchItem = Class(DummyUnit) {
     OnCreate = function(self)

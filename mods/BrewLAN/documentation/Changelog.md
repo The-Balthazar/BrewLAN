@@ -371,6 +371,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Reduced Penetrator bomber flare spam in situations involving excess bombers and missiles.
   * R&D: Prevented the creation of flares after killed, but before crashing.
 
+  ### 2019-06-17
+
+  * R&D: Fixed it running the FAF version of the restriction check code any time there were restrictions.
+  * R&D: Research items now receive the AIR/LAND/NAVAL categories of their parents so they can be restricted along with them.
+  * Added an intermediate distance model for the Gantry and made it visible further away.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
