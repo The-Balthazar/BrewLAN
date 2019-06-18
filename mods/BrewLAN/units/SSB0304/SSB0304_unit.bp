@@ -70,14 +70,11 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 125,
         Health = 2750,
         MaxHealth = 2750,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ssb0x04_desc>Engineering Station',
     Display = {
@@ -91,22 +88,14 @@ UnitBlueprint {
                     LODCutoff = 130,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    AlbedoName = '/units/xsb2303/xsb2303_albedo.dds',
-                    NormalsName = '/units/xsb2303/xsb2303_normalsts.dds',
-                    SpecularName = '/units/xsb2303/xsb2303_specteam.dds',
                 },
                 {
                     LODCutoff = 260,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    AlbedoName = 'ssb0304_lod1_albedo.dds',
-                    NormalsName = 'ssb0304_lod1_normalsts.dds',
-                    SpecularName = 'ssb0304_lod1_specteam.dds',
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0015',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_seraphim_01_albedo',

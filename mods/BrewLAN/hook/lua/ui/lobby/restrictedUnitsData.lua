@@ -4,7 +4,7 @@
 -- Modded By: Balthazar
 --------------------------------------------------------------------------------
 do
-    local Units = { 
+    local Units = {
         ------------------------------------------------------------------------
         -- Default unit restrictions
         ------------------------------------------------------------------------
@@ -29,7 +29,7 @@ do
             "sab1313",
         },
         FABS = {
-            "sab1313", 
+            "sab1313",
             "seb1313",
             "srb1313",
             "ssb1313",
@@ -46,11 +46,20 @@ do
             "srl0321",
             "ssl0321",
         },
+        INTEL = {
+            --Panopticon
+            "seb3404",
+            --Mobile sensors
+            --"sel0324", --also mobile SAM. INTEL restriction disables it's radar.
+            "sal0324",
+            "srl0324",
+            "ssl0324",
+        },
         ------------------------------------------------------------------------
         -- FAF unit restrictions
         ------------------------------------------------------------------------
         WALL = {
-            "MEDIUMWALL", 
+            "MEDIUMWALL",
             "MEDIUMWALLGATE",
             "HEAVYWALL",
             "HEAVYWALLGATE",
@@ -78,22 +87,22 @@ do
             "ssb3301", --Seraphim Optics Tracking Facility
             "seb3404", --PANOPTICON
         },
-    }  
+    }
     for k, v in Units do
         --Checks the table exists, for the sake of FAF restrictions
         if restrictedUnits[k] then
-            for i in v do  
+            for i in v do
                 --Checks the unit exists, just in case and the new FaF restriction check
                 if categories[v[i]] and restrictedUnits[k].categories then
                     table.insert(restrictedUnits[k].categories, v[i])
                 --Are we FaF?
                 elseif categories[v[i]] and restrictedUnits[k].categoryExpression then
-                    restrictedUnits[k].categoryExpression = restrictedUnits[k].categoryExpression .. " + " .. v[i] 
+                    restrictedUnits[k].categoryExpression = restrictedUnits[k].categoryExpression .. " + " .. v[i]
                 end
             end
         end
     end
-    --Fixes the console exclusive UEF artillery shield breaking the no-bubbles restriction 
+    --Fixes the console exclusive UEF artillery shield breaking the no-bubbles restriction
     if not categories.deb4303 and restrictedUnits.BUBBLES.categories then
         table.removeByValue(restrictedUnits.BUBBLES.categories, "deb4303")
     end

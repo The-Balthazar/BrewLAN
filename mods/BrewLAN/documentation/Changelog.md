@@ -376,6 +376,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Fixed it running the FAF version of the restriction check code any time there were restrictions.
   * R&D: Research items now receive the AIR/LAND/NAVAL categories of their parents so they can be restricted along with them.
   * Added an intermediate distance model for the Gantry and made it visible further away.
+  * R&D: Added R&D items for restricted items to their respective restricted items lists.
+  * Bubble Tea: Added shields to "no bubbles" restriction. Yes, this disables everything the mod adds.
+  * R&D: Added the Retributor to the "game enders" restriction.
+  * Added Panpticon and non-UEF mobile sensors to no-intel restriction.
+    * They were all covered by the OMNI category anyway, but this has function for R&D.
+  * UEF mobile anti-air loses it's radar ability with the no-intel restriction.
+
+  ### 2019-06-18
+
+  * Redid the UV and textures of the Seraphim engineering stations, and replaced the distance models.
 
 ## 2019-01-03|84 (FAF minor patch)
 

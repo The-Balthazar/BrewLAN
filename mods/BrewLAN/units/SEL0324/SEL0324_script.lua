@@ -17,6 +17,9 @@ SEL0324 = Class(TLandUnit) {
         self:SetScriptBit('RULEUTC_IntelToggle', true)
         self:RequestRefreshUI()
         self.RadarEnabled = false
+        if type(ScenarioInfo.Options.RestrictedCategories) == 'table' and table.find(ScenarioInfo.Options.RestrictedCategories, 'INTEL') then
+            self:RemoveToggleCap('RULEUTC_IntelToggle')
+        end
     end,
 
     OnIntelEnabled = function(self)
