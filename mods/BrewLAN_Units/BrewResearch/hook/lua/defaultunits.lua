@@ -19,7 +19,7 @@ ResearchItem = Class(DummyUnit) {
             if self:CheckBuildRestrictionsAllow(bp.ResearchId) then
                 RemoveBuildRestriction(self:GetArmy(), categories[bp.ResearchId] )
             else
-                LOG("WARNING: Research item for " .. categories[bp.ResearchId] .. " was just completed, however lobby restrictions forbid it. Item shouldn't have been researchable.")
+                LOG("WARNING: Research item for " .. bp.ResearchId .. " was just completed, however lobby restrictions forbid it. Item shouldn't have been researchable.")
             end
         else -- else we are a category, not a unitID
             RemoveBuildRestriction(self:GetArmy(), (categories[bp.ResearchId] * categories[string.upper(bp.General.FactionName or 'SELECTABLE')]) - categories.RESEARCHLOCKED - categories[bp.BlueprintId] - (self:BuildRestrictionCategories()) )

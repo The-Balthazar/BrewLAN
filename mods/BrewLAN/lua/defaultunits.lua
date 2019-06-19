@@ -8,7 +8,6 @@ local EnergyStorageUnit = DefaultUnits.EnergyStorageUnit
 --------------------------------------------------------------------------------
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
 local DefaultWeapons = import('/lua/sim/DefaultWeapons.lua')
-local DeathNukeWeapon = import(BrewLANPath .. '/lua/sim/defaultweapons.lua').DeathNukeWeapon
 local EnergyStorageVariableDeathWeapon = import(BrewLANPath .. '/lua/weapons.lua').EnergyStorageVariableDeathWeapon
 local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 --------------------------------------------------------------------------------
@@ -23,8 +22,9 @@ local EBPSRA = '/effects/emitters/seraphim_rifter_artillery_hit_'
 
 MineStructureUnit = Class(StructureUnit) {
     Weapons = {
-        Suicide = Class(DefaultWeapons.KamikazeWeapon) {
+        Suicide = Class(DefaultWeapons.BareBonesWeapon) {
 
+            -- Default explosion effects for children to overwrite
             FxDeathLand = EffectTemplates.DefaultHitExplosion01,
             FxDeathWater = {
                 EBPSRA .. '01w_emit.bp',
@@ -37,10 +37,12 @@ MineStructureUnit = Class(StructureUnit) {
             FxDeathSeabed = EffectTemplates.DefaultProjectileWaterImpact,
 
             OnFire = function(self)
+                -- Gather data, ect
                 local bp = self:GetBlueprint()
                 local radius = bp.DamageRadius
                 local army = self.unit:GetArmy()
-                local pos = self.unit:GetPosition()
+
+                -- Do explosion effects
                 local FxDeath = {
                     Land = self.FxDeathLand,
                     Water = self.FxDeathWater,
@@ -54,21 +56,31 @@ MineStructureUnit = Class(StructureUnit) {
                         break
                     end
                 end
+
+                -- Do decal splats
                 if not self.SplatTexture then
                     CreateScorchMarkSplat( self.unit, bp.DamageRadius * 0.5, army)
                 else
                     if self.SplatTexture.Albedo then                                                                                                                                                                                    --LOD          Lifetime
-                        CreateDecal( pos, GetRandomFloat(0,2*math.pi), (self.SplatTexture.Albedo[1] or self.SplatTexture.Albedo), '', 'Albedo', radius * (self.SplatTexture.Albedo[2] or 4), radius * (self.SplatTexture.Albedo[2] or 4), radius * 60, bp.Damage * 15, army )
+                        CreateDecal( self.unit.CachePosition, GetRandomFloat(0,2*math.pi), (self.SplatTexture.Albedo[1] or self.SplatTexture.Albedo), '', 'Albedo', radius * (self.SplatTexture.Albedo[2] or 4), radius * (self.SplatTexture.Albedo[2] or 4), radius * 60, bp.Damage * 15, army )
                     end
                     if self.SplatTexture.AlphaNormals then
-                        CreateDecal( pos, GetRandomFloat(0,2*math.pi), (self.SplatTexture.AlphaNormals[1] or self.SplatTexture.AlphaNormals), '', 'Alpha Normals', radius * (self.SplatTexture.AlphaNormals[2] or 2), radius * (self.SplatTexture.AlphaNormals[2] or 2), radius * 30, bp.Damage * 15, army )
+                        CreateDecal( self.unit.CachePosition, GetRandomFloat(0,2*math.pi), (self.SplatTexture.AlphaNormals[1] or self.SplatTexture.AlphaNormals), '', 'Alpha Normals', radius * (self.SplatTexture.AlphaNormals[2] or 2), radius * (self.SplatTexture.AlphaNormals[2] or 2), radius * 30, bp.Damage * 15, army )
                     end
                 end
-                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
-                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
-                DamageRing(self.unit, pos, 0.1, radius, 10, 'Fire', false, false)
+
+                -- Damage props.
+                local DamageArea = DamageArea
+                DamageArea(self.unit, self.unit.CachePosition, radius * 0.5, 1, 'Force', true)
+                DamageArea(self.unit, self.unit.CachePosition, radius * 0.5, 1, 'Force', true)
+                DamageRing(self.unit, self.unit.CachePosition, 0.1, radius, 10, 'Fire', false, false)
+
+                --Do the thing!
+                DamageArea(self.unit, self.unit.CachePosition, radius, bp.Damage, bp.DamageType or 'Normal', bp.DamageFriendly or false)
+                self.unit:PlayUnitSound('Destroyed')
+                self.unit:Destroy()
+
                 self.unit.DeathWeaponEnabled = false
-                DefaultWeapons.KamikazeWeapon.OnFire(self)
             end,
         },
     },
@@ -79,8 +91,10 @@ MineStructureUnit = Class(StructureUnit) {
         self:EnableIntel('Cloak')
         self:EnableIntel('RadarStealth')
         self:EnableIntel('SonarStealth')
-        local pos = self:GetPosition()
-        self.blocker = CreateUnitHPR(self:GetBlueprint().FootprintDummyId,self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
+        if not self.CachePosition then
+            self.CachePosition = table.copy(moho.entity_methods.GetPosition(self))
+        end
+        self.blocker = CreateUnitHPR(self:GetBlueprint().FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
         self.Trash:Add(self.blocker)
     end,
 
@@ -124,26 +138,39 @@ MineStructureUnit = Class(StructureUnit) {
 
 NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
+        Suicide = Class(DefaultWeapons.BareBonesWeapon) { --MineStructureUnit.Weapons.Suicide would inherit too much we don't want.
+            OnFire = function(self)
+                local bp = self:GetBlueprint()
+
+                --Explosion effects
+                local proj = self.unit:CreateProjectile(bp.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
+                proj:ForkThread(proj.EffectThread)
+                if __blueprints[bp.ProjectileId].Audio.NukeExplosion then self:PlaySound(__blueprints[bp.ProjectileId].Audio.NukeExplosion) end
+
+                local DamageArea = DamageArea
+                DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius, bp.NukeInnerRingDamage, 'Nuke', true, true)
+                DamageArea(self.unit, self.unit.CachePosition, bp.NukeOuterRingDamage, bp.NukeOuterRingRadius, 'Nuke', true, true)
+
+                --Cosmetic damage to props
+                DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius * 0.5, 1, 'Force', true)
+                DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius * 0.5, 1, 'Force', true)
+                DamageRing(self.unit, self.unit.CachePosition, 0.1, bp.NukeInnerRingRadius, 10, 'Fire', false, false)
+
+                self.unit.DeathWeaponEnabled = false
+            end,
+        },
+
         DeathWeapon = Class(DefaultWeapons.BareBonesWeapon) {
             OnFire = function(self)
             end,
 
             Fire = function(self)
-                local myBlueprint = self:GetBlueprint()
-                local myProjectile = self.unit:CreateProjectile(myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
-                myProjectile:PassDamageData(self:GetDamageTable())
-            end,
-        },
-
-        Suicide = Class(DeathNukeWeapon) {
-            Fire = function(self, ...)
-                local radius = self:GetBlueprint().NukeInnerRingRadius or self:GetBlueprint().DamageRadius
-                local pos = self.unit:GetPosition()
-                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
-                DamageArea(self.unit, pos, radius * 0.5, 1, 'Force', true)
-                DamageRing(self.unit, pos, 0.1, radius, 10, 'Fire', false, false)
-                self.unit.DeathWeaponEnabled = false
-                DeathNukeWeapon.Fire(self, unpack(arg) )
+                --Not totaly sure this is ever set true.
+                if self.unit.DeathWeaponEnabled ~= false then
+                    local myBlueprint = self:GetBlueprint()
+                    local myProjectile = self.unit:CreateProjectile(myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
+                    myProjectile:PassDamageData(self:GetDamageTable())
+                end
             end,
         },
     },

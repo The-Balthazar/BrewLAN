@@ -387,6 +387,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Redid the UV and textures of the Seraphim engineering stations, and replaced the distance models.
 
+  ### 2019-06-19
+
+  * R&D: Added the regular Omni sensors and dedicated omni sensors to the Intel restriction.
+  * R&D: Fixed the log warning for researching an item that shouldn't be researched not working.
+  * Added the Seraphim optics tracking facility,  UEF observation satellite, and Seraphim T3 Sonar to the Intel restriction.
+  * Fixed the nuke mine detonate on ctrl-k on FAF feature.
+  * Refactored mines to use cached positions rather than doing extra function calls on detonate.
+  * Refactored nuke mines to be more efficient on detonation.
+  * Removed to no-longer used files from FAF previously used for compatibility.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

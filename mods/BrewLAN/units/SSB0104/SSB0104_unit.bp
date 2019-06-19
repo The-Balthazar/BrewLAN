@@ -127,13 +127,9 @@ UnitBlueprint {
         BuildCostMass = 500,
         BuildRate = 15,
         BuildTime = 900,
-        BuildableCategory = {
-            'ssb0204',
-        },
+        BuildableCategory = {'ssb0204'},
         MaxBuildDistance = 15,
-        RebuildBonusIds = {
-            'ssb0104',
-        },
+        RebuildBonusIds = {'ssb0104'},
     },
     Footprint = {
         SizeX = 1,

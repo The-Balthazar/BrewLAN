@@ -54,6 +54,12 @@ do
             "sal0324",
             "srl0324",
             "ssl0324",
+            --Seraphim optics
+            "ssb3301",
+            --Observation satellite
+            "sea0002",
+            --Seraphim sonar
+            "sss0305",
         },
         ------------------------------------------------------------------------
         -- FAF unit restrictions

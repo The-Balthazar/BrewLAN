@@ -48,36 +48,12 @@ UnitBlueprint {
         },
     },
     Audio = {
-        Construct = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB0301_Construct_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ConstructLoop = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB0301_Construct_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DeathExplosion = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DoneBeingBuilt = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB0301_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Aeon_Select_Factory',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        Construct      = Sound {Bank = 'UAB',        Cue = 'UAB0301_Construct_Start',    LodCutoff = 'UnitMove_LodCutoff'},
+        ConstructLoop  = Sound {Bank = 'UAB',        Cue = 'UAB0301_Construct_Loop',     LodCutoff = 'UnitMove_LodCutoff'},
+        DeathExplosion = Sound {Bank = 'UALDestroy', Cue = 'UAB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed      = Sound {Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt = Sound {Bank = 'UAB',        Cue = 'UAB0301_Activate',           LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection    = Sound {Bank = 'Interface',  Cue = 'Aeon_Select_Factory',        LodCutoff = 'UnitMove_LodCutoff'},
     },
     BuildIconSortPriority = 70,
     Categories = {
@@ -103,14 +79,11 @@ UnitBlueprint {
     },
     CollisionOffsetY = 5,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 2091,
         Health = 80000,
         MaxHealth = 80000,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sab0401>Experimental Air Factory',
     Display = {
@@ -119,38 +92,14 @@ UnitBlueprint {
         },
         AnimationPermOpen = '/mods/BrewLAN/units/sab0401/SAB0401_aopen.sca',
         BlinkingLights = {
-            {
-                BLBone = 'Blinking_001',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_002',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_003',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_004',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_005',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_006',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_007',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Blinking_008',
-                BLScale = 6,
-            },
+            {BLBone = 'Blinking_001', BLScale = 6},
+            {BLBone = 'Blinking_002', BLScale = 6},
+            {BLBone = 'Blinking_003', BLScale = 6},
+            {BLBone = 'Blinking_004', BLScale = 6},
+            {BLBone = 'Blinking_005', BLScale = 6},
+            {BLBone = 'Blinking_006', BLScale = 6},
+            {BLBone = 'Blinking_007', BLScale = 6},
+            {BLBone = 'Blinking_008', BLScale = 6},
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -208,40 +157,29 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0007',
-        SpawnRandomRotation = false,
         Tarmacs = {
             {
                 Albedo = '/mods/brewlan/env/common/decals/Tarmacs/Tar48x_aeon_01_albedo.dds',
-                DeathLifetime = 300,
-                FadeOut = 450,
-                Length = 12.8*3.15,
                 Normal = '/mods/brewlan/env/common/decals/Tarmacs/Tar48x_aeon_01_normals.dds',
                 Glow = '/mods/brewlan/env/common/decals/Tarmacs/Tar48x_aeon_01_spec.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                DeathLifetime = 300,  FadeOut = 450,
+                Length = 40.32,   Width = 40.32,
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
-                Width = 12.8*3.15,
             },
         },
-        UniformScale = 0.14*2.1,
+        UniformScale = 0.294,
     },
     Economy = {
         BuildCostEnergy = 315000,
         BuildCostMass = 7090,
-        BuildRate = 60*4,
+        BuildRate = 240,
         BuildTime = 7000,
         BuildableCategory = {
             'BUILTBYEXPERIMENTALFACTORY AEON',
             'BUILTBYIENGINE'
         },
-        RebuildBonusIds = {
-            'sab0401',
-        },
+        RebuildBonusIds = {'sab0401'},
         StorageEnergy = 10000,
         StorageMass = 1000,
         InitialRallyZ = 20,
@@ -309,8 +247,6 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         OccupyRects = {
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
@@ -350,11 +286,7 @@ UnitBlueprint {
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 30,
         SkirtSizeZ = 30,
-        TurnRate = 0,
     },
-    --SelectionMeshScaleX = 0.5,
-    --SelectionMeshScaleZ = 0.5,
-    --SelectionMeshUseTopAmount = 0.15,
     SelectionSizeX = 15,
     SelectionSizeZ = 15,
     SelectionThickness = 0.1,

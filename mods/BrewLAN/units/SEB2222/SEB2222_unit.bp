@@ -191,13 +191,8 @@ UnitBlueprint {
 
             NukeInnerRingDamage = 70000,
             NukeInnerRingRadius = 30,
-            NukeInnerRingTicks = 24,
-            NukeInnerRingTotalTime = 0,
-
             NukeOuterRingDamage = 500,
             NukeOuterRingRadius = 40,
-            NukeOuterRingTicks = 20,
-            NukeOuterRingTotalTime = 0,
 
             ProjectileId = '/effects/Entities/UEFNukeEffectController01/UEFNukeEffectController01_proj.bp',
             RackBones = {
