@@ -62,8 +62,8 @@ UnitBlueprint {
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
-            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
-            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            Mesh = '/mods/brewlan_units/brewshields/effects/entities/sab4401projectedshield01/sab4401shield01_mesh',
+            MeshZ = '/mods/brewlan_units/brewshields/effects/entities/sab4401projectedshield01/sab4401projectedshieldZ_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 180000,
@@ -71,7 +71,7 @@ UnitBlueprint {
             ShieldRegenRate = 300,
             ShieldRegenStartTime = 1,
             ShieldSize = 7.9,
-            ShieldVerticalOffset = 0,
+            ShieldVerticalOffset = -0.25,
             ShieldProjectionRadius = 35,
             ShieldTargetBeam = '/effects/emitters/collossus_tractor_beam_01_emit.bp',
         },
@@ -79,7 +79,7 @@ UnitBlueprint {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
             Mesh = '/mods/brewlan_units/brewshields/effects/entities/sab4401projectedshield01/sab4401projectedshield01_mesh',
-            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            MeshZ = '/mods/brewlan_units/brewshields/effects/entities/sab4401projectedshield01/sab4401projectedshieldZ_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 180000,
@@ -155,14 +155,8 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Aeon',
-                },
+                {LODCutoff = 200, ShaderName = 'Aeon'},
+                {LODCutoff = 400, ShaderName = 'Aeon'},
             },
         },
         PlaceholderMeshName = 'UXB0018',
@@ -170,16 +164,11 @@ UnitBlueprint {
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
+                Normal = 'Tarmacs/Tar12x_aeon_01_normals',
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 12.8,
-                Normal = 'Tarmacs/Tar12x_aeon_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },

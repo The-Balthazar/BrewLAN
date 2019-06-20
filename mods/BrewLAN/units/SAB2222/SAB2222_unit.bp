@@ -57,7 +57,6 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 50,
-                    Scrolling = true,
                     ShaderName = 'Aeon',
                     MeshName = '/units/uab1301/uab1301_lod0.scm',
                     AlbedoName = '/units/uab1301/uab1301_albedo.dds',

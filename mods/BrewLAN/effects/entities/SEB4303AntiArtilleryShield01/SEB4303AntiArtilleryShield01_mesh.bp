@@ -3,13 +3,13 @@ MeshBlueprint {
         {
             MeshName = 'SEB4303AntiArtilleryShield01_lod0.scm',
             AlbedoName =    '/effects/entities/DEB4303AntiArtilleryShield01/DEB4303AntiArtilleryShield01_Albedo.dds',
-            SpecularName =  'SEB4303AntiArtilleryShield01_Specular.dds',
             SecondaryName = '/effects/entities/DEB4303AntiArtilleryShield01/DEB4303AntiArtilleryShield01_Secondary.dds',
-            ShaderName = 'ShieldUEF',
+            SpecularName =  'SEB4303AntiArtilleryShield01_Specular.dds',
+            ShaderName = 'ShieldUEF',--ShaderName = 'ShieldUEF',
             LODCutoff = 1000,
         },
     },
     IconFadeInZoom = 4,
-    SortOrder = 1000,
+    SortOrder = 1002,
     StraddleWater = true,
 }

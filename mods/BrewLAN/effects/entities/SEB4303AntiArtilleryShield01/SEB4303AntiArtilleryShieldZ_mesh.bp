@@ -1,0 +1,12 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'SEB4303AntiArtilleryShield01_lod0.scm',
+            ShaderName = 'ShieldFill',
+            LODCutoff = 1000,
+        },
+    },
+    IconFadeInZoom = 4,
+    SortOrder = 1001,
+    StraddleWater = true,
+}

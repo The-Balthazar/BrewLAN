@@ -109,9 +109,11 @@ SAB4401 = Class(AShieldStructureUnit) {
             end
         end
         --Stop the animations
-        for i, v in self.Manipulators do
-            --v[4]:SetSpinDown(true)
-            v[4]:SetTargetSpeed(0)
+        if not self.Dead then
+            for i, v in self.Manipulators do
+                --v[4]:SetSpinDown(true)
+                v[4]:SetTargetSpeed(0)
+            end
         end
         --Kill the effects.
         if self.ShieldEffectsBag then

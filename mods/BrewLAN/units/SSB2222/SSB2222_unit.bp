@@ -71,7 +71,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    Scrolling = true,
                     ShaderName = 'Seraphim',
                     AlbedoName = '/units/XSC2201/XSC2201_albedo.dds',
                     NormalsName = '/units/XSC2201/XSC2201_normalsTS.dds',

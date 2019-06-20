@@ -17,13 +17,11 @@
 * T1 Field engineer
 * T1 Pressure Mine
 * T1 Torpedo Bomber
-  * Would like to give a more unique appearance.
 * T1 Field Engineering Boat.
   * Would like to give a more unique appearance.
 
 ### UEF:
 * T1 Light Gunship
-  * Would like to give a more unique appearance.
 * T1 Light Artillery
 * T1 Light Shield Gen
 * T1 Torpedo Bomber

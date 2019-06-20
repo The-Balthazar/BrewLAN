@@ -397,6 +397,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Refactored nuke mines to be more efficient on detonation.
   * Removed to no-longer used files from FAF previously used for compatibility.
 
+  ### 2019-06-20
+
+  * Regular shields are now visible under artillery shields.
+  * Artillery shield visual model now closer matches it's collision model.
+  * Bubble Tea: Fixed a script error when the Pillar of Prominence dies.
+  * Bubble Tea: Fixed the alignment of its internal shield.
+  * Bubble Tea: Aeon shield and it's projections now visible under regular shields.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

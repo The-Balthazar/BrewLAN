@@ -51,7 +51,8 @@ UnitBlueprint {
             ImpactEffects = 'UEFAntiArtilleryShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
             Mesh = '/mods/brewlan/effects/entities/SEB4303AntiArtilleryShield01/SEB4303AntiArtilleryShield01_mesh',
-            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            MeshZ = '/mods/brewlan/effects/entities/SEB4303AntiArtilleryShield01/SEB4303AntiArtilleryShieldZ_mesh',
+            --MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 24000,
@@ -82,8 +83,6 @@ UnitBlueprint {
                 {LODCutoff = 400, ShaderName = 'Unit'},
             },
         },
-        PlaceholderMeshName = 'UXB0018',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_01_albedo',
