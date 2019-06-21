@@ -1,26 +1,8 @@
 UnitBlueprint {
-    AI = {
-        TargetBones = {
-            'Target01',
-            'Target02',
-        },
-    },
     Audio = {
-        Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DoneBeingBuilt = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB2303_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Gun',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        Destroyed = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt =   Sound {Bank = 'UEB', Cue = 'UEB2303_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection =  Sound {Bank = 'Interface', Cue = 'UEF_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
     },
     Buffs = {
         Regen = {
@@ -56,13 +38,11 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.1,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 11,
         Health = 1500,
         MaxHealth = 1500,
         RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 5,
     },
     Description = '<LOC sbui2103>Light Artillery Installation',
@@ -70,10 +50,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 120,
-                    ShaderName = 'Unit',
-                },
+                {LODCutoff = 120, ShaderName = 'Unit'},
                 {
                     LODCutoff = 215,
                     ShaderName = 'Unit',
@@ -83,17 +60,13 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0004',
-        SpawnRandomRotation = true,
         UniformScale = 0.155,
     },
     Economy = {
         BuildCostEnergy = 7500,
         BuildCostMass = 900,
         BuildTime = 900,
-        RebuildBonusIds = {
-            'seb2103',
-        },
+        RebuildBonusIds = {'seb2103'},
         ResearchMult = 0.5,
     },
     Footprint = {
@@ -145,17 +118,14 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,
         MeshExtentsX = 1.1,
         MeshExtentsY = .9,
         MeshExtentsZ = 1.5,
-        MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = 0,
         SkirtOffsetZ = 0,
         SkirtSizeX = 1,
         SkirtSizeZ = 1,
-        TurnRate = 0,
     },
     SelectionCenterOffsetZ = -0.16,
     SelectionSizeX = 0.55,
@@ -209,14 +179,14 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Turret_Muzzle',
-                    },
-                    RackBone = 'Turret_Recoil',
+                    MuzzleBones = {'Turret_Muzzle',},
+                    RackBone = 'Turret_Barrel_B1',
+                    TelescopeBone = 'Turret_Barrel_B2',
+                    TelescopeRecoilDistance = -2,
                 },
             },
             RackFireTogether = false,
-            RackRecoilDistance = -1.2,
+            RackRecoilDistance = -1.5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
@@ -233,7 +203,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'Turret_Muzzle',
-            TurretBonePitch = 'Turret_Barrel',
+            TurretBonePitch = 'Barrel',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
             TurretPitch = 30,

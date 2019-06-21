@@ -404,6 +404,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Bubble Tea: Fixed a script error when the Pillar of Prominence dies.
   * Bubble Tea: Fixed the alignment of its internal shield.
   * Bubble Tea: Aeon shield and it's projections now visible under regular shields.
+  * Redesigned the UEF T1 artillery.
 
 ## 2019-01-03|84 (FAF minor patch)
 

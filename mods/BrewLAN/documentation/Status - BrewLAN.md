@@ -122,7 +122,6 @@
 * T3 Cloakable Power Generator.
 * T3 Cloakable Mass Extractor.
 * T3 Mobile cloaking AA.
-  * Unfinished appearance.
 * T3 Mobile stealth Gen.
 * T3 Mobile Rocket Platform.
 * T3 Mobile Radar.
