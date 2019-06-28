@@ -80,6 +80,14 @@ UnitBlueprint {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_shielddome>Shield Dome',
         },
+        AnimationDeath = {
+            {
+                Animation = '/mods/BrewLAN/units/sal0322/sal0322_Adeath.sca',
+                AnimationRateMax = 1.6,
+                AnimationRateMin = 1.5,
+                Weight = 100,
+            },
+        },
         AnimationOpen = '/mods/BrewLAN/units/SAL0322/SAL0322_aopen.sca',
         IdleEffects = {
             Land = {
@@ -119,29 +127,15 @@ UnitBlueprint {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.045,
                             TreadMarksSizeX = 0.22,
-                            TreadMarksSizeZ = 1.6,
-                            TreadOffset = {-0.33, 0, -0.6},
+                            TreadMarksSizeZ = 3.3,
+                            TreadOffset = {-0.33, 0, -1.6},
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.045,
                             TreadMarksSizeX = 0.22,
-                            TreadMarksSizeZ = 1.6,
-                            TreadOffset = {0.33, 0, -0.6},
-                        },
-                        {
-                            TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.045,
-                            TreadMarksSizeX = 0.22,
-                            TreadMarksSizeZ = 1.6,
-                            TreadOffset = {-0.33, 0, -0.4},
-                        },
-                        {
-                            TreadMarks = 'tank_treads03_albedo',
-                            TreadMarksInterval = 0.045,
-                            TreadMarksSizeX = 0.22,
-                            TreadMarksSizeZ = 1.6,
-                            TreadOffset = {0.33, 0, -0.4},
+                            TreadMarksSizeZ = 3.3,
+                            TreadOffset = {0.33, 0, -1.6},
                         },
                     },
                 },
@@ -156,8 +150,12 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0009',
-        SpawnRandomRotation = true,
+        TransportAnimation = {
+            {Weight = 100, Animation = '/mods/BrewLAN/units/SAL0322/SAL0322_Atransportfold.sca'},
+        },
+        TransportDropAnimation = {
+            {Weight = 100, Animation = '/mods/BrewLAN/units/SAL0322/SAL0322_Atransportunfold.sca'},
+        },
         UniformScale = 0.02,
     },
     Economy = {

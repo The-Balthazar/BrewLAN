@@ -406,6 +406,45 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Bubble Tea: Aeon shield and it's projections now visible under regular shields.
   * Redesigned the UEF T1 artillery.
 
+  ### 2019-06-21
+
+  * Replaced the icons of the UEF T2 storages.
+
+  ### 2019-06-23
+
+  * Little Bertha changes:
+    * Fixed the shading
+    * Fixed and replaced the normal map
+    * Cleaned up the UV map
+    * Tweaked the albedo and specular
+    * Replaced the distance model
+  * Replaced the textures of the AP-12 Trapper with more appropriate lower resolution textures.
+
+  ### 2019-06-24
+
+  * Fixed the normal map on the Wally and Custodian.
+  * Fixed the shading groups on the Wally and Custodian.
+  * R&D: Removed some unnecessary data from the Aeon research centres and gave it relative texture links.
+  * Added extra detail to the Guardian model.
+  * Recreated the Guardian texture.
+
+  ### 2019-06-25
+
+  * Reused the old Guardian models as distance models.
+  * Flame Lotus changes:
+    * Redid the UV mapping and texture of the outside.
+    * Aligned and simplified the treadmarks.
+    * Gave it transport attach, detach, and death animations.
+    * Replaced the distance model to match the new texture.
+
+  ### 2019-06-27
+
+  * Started the recreation of the Aeon Mobile Sensor.
+
+  ### 2019-06-28
+
+  * Finished the rework of the Aeon Mobile Sensor.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

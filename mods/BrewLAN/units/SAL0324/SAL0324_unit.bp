@@ -1,12 +1,4 @@
 UnitBlueprint {
-    AI = {
-        TargetBones = {
-            0,
-            'B01',
-            'B02',
-            'B03',
-        },
-    },
     Audio = {
         AmbientMove = Sound {
             Bank = 'UAL',
@@ -67,39 +59,22 @@ UnitBlueprint {
         'OVERLAYRADAR',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 44,
         Health = 250,
         MaxHealth = 250,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC srl0324_desc>Mobile Sensor Array',
     Display = {
+        AnimationActive = '/mods/BrewLAN/units/SAL0324/SAL0324_aactive.sca',
         Abilities = {
             '<LOC ability_hover>Hover',
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
         },
-        AnimationDeath = {
-            {
-                Animation = '/mods/brewlan/units/sal0324/sal0324_Adeath.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-        },
-        --AnimationOpen = '/mods/brewlan/units/SRL0324/SRL0324_AOpen.sca',
         BlinkingLights = {
-            {
-                BLBone = 'AttachPoint',
-                BLOffsetX = 0,
-                BLOffsetY = 0,
-                BLOffsetZ = 0,
-                BLScale = 1,
-            },
+            {BLBone = 'Antenna', BLScale = 1},
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -109,21 +84,13 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.15,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.15, 0},
                         Scale = 1.15,
                         Type = 'AeonGroundFX01',
                     },
                     {
-                        Bones = {
-                            'B01',
-                        },
+                        Bones = {'Antenna'},
                         Type = 'Radar01',
                     },
                 },
@@ -132,42 +99,21 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 130,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab3104/uab3104_albedo.dds',
-                    NormalsName = '/units/uab3104/uab3104_normalsts.dds',
-                    SpecularName = '/units/uab3104/uab3104_specteam.dds',
-                },
-                {
-                    LODCutoff = 300,
-                    Scrolling = true,
-                    ShaderName = 'Aeon',
-                    AlbedoName = '/units/uab3104/uab3104_lod1_albedo.dds',
-                    NormalsName = '/units/uab3104/uab3104_lod1_normalsts.dds',
-                    SpecularName = '/units/uab3104/uab3104_lod1_specteam.dds',
-                },
+                {LODCutoff = 128, ShaderName = 'Aeon'},
+                {LODCutoff = 256, ShaderName = 'Aeon'},
+                {LODCutoff = 512, ShaderName = 'Aeon'},
             },
         },
         MovementEffects = {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.15,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.15, 0},
                         Scale = 1.15,
                         Type = 'AeonGroundFX01',
                     },
@@ -176,18 +122,17 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0003',
-        SpawnRandomRotation = true,
-        UniformScale = 0.25,
+        TransportAnimation = {
+            {Weight = 100, Animation = '/mods/BrewLAN/units/SAL0324/SAL0324_Afold.sca'},
+        },
+        UniformScale = 0.013,
     },
     Economy = {
         BuildCostEnergy = 30000*0.9,
@@ -258,23 +203,26 @@ UnitBlueprint {
         MaxBrake = 3.5,
         MaxSpeed = 3.5,
         MaxSpeedReverse = 0,
-        MaxSteerForce = 10,
+        MaxSteerForce = 1000,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Hover',
         RotateBodyWhileMoving = true,
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.5,
+        RotateOnSpotThreshold = 0.1,
+        TurnFacingRate = 120,
         TurnRadius = 0,
         TurnRate = 120,
+        WobbleFactor = 0.001,
+        WobbleSpeed = 0.001,
     },
     SelectionCenterOffsetX = 0,
     SelectionCenterOffsetZ = 0,
-    SelectionSizeX = 0.8,
-    SelectionSizeZ = 0.8,
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.65,
     SelectionThickness = 0.55,
-    SizeX = 0.8,
-    SizeY = 3,
-    SizeZ = 0.8,
+    SizeX = 0.6,
+    SizeY = 1.3,
+    SizeZ = 1.2,
     StrategicIconName = 'icon_land3_intel',
     StrategicIconSortPriority = 115,
     Transport = {

@@ -63,14 +63,18 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 200,
+                    LODCutoff = 128,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 256,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/UES0302/UES0302_albedo.dds',
-                    NormalsName = '/units/UES0302/UES0302_normalsts.dds',
+                    NormalsName = '/units/UES0302/UES0302_normalsTS.dds',
                     SpecularName = '/units/UES0302/UES0302_specteam.dds',
                 },
                 {
-                    LODCutoff = 415,
+                    LODCutoff = 512,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/UES0302/UES0302_lod1_albedo.dds',
                     NormalsName = '/units/UES0302/UES0302_lod1_normalsTS.dds',
@@ -78,8 +82,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXS0005',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_albedo.dds',

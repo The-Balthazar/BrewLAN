@@ -119,9 +119,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'XEL0209',
-                        },
+                        Bones = {0},
                         Scale = 0.7,
                         Type = 'SeaIdle02',
                     },
@@ -137,7 +135,7 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                     AlbedoName = '/units/xel0209/xel0209_albedo.dds',
                     SpecularName = '/units/xel0209/xel0209_specteam.dds',
-                    NormalsName = '/mods/brewlan/units/sel0119/sel0119_normalsts.dds',
+                    NormalsName = '../sel0119/sel0119_normalsts.dds',
                 },
                 {
                     LODCutoff = 215,
@@ -153,10 +151,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Dust01',
-                            'Dust02',
-                        },
+                        Bones = {'Dust01', 'Dust02'},
                         Type = 'GroundKickup01',
                     },
                 },
@@ -164,16 +159,12 @@ UnitBlueprint {
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                            BoneName = 'XEL0209',
+                            BoneName = 0,
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.3,
                             TreadMarksSizeX = 0.7,
                             TreadMarksSizeZ = 0.4,
-                            TreadOffset = {
-                                0,
-                                0,
-                                0,
-                            },
+                            TreadOffset = {0,0,0},
                         },
                     },
                 },
@@ -181,18 +172,13 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'Dust01',
-                            'Dust02',
-                        },
+                        Bones = {'Dust01', 'Dust02'},
                         Scale = 0.4,
                         Type = 'BackWake',
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = false,
         UniformScale = 0.05*1.25,
     },
     Economy = {

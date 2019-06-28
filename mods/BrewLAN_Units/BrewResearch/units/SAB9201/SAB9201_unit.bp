@@ -45,14 +45,11 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 320,
         Health = 6000,
         MaxHealth = 6000,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC seb9301_desc>Research Centre',
     Display = {
@@ -88,21 +85,19 @@ UnitBlueprint {
                 {
                     LODCutoff = 130,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/mods/brewlan_units/brewresearch/units/sab9101/sab9101_albedo.dds',
-                    NormalsName = '/mods/brewlan_units/brewresearch/units/sab9101/sab9101_normalsts.dds',
-                    SpecularName = '/mods/brewlan_units/brewresearch/units/sab9101/sab9101_specteam.dds',
+                    AlbedoName = '../sab9101/sab9101_albedo.dds',
+                    NormalsName = '../sab9101/sab9101_normalsts.dds',
+                    SpecularName = '../sab9101/sab9101_specteam.dds',
                 },
                 {
                     LODCutoff = 260,
                     ShaderName = 'Aeon',
-                    AlbedoName = '/mods/brewlan_units/brewresearch/units/sab9101/sab9101_albedo.dds',
-                    NormalsName = '/mods/brewlan_units/brewresearch/units/sab9101/sab9101_normalsts.dds',
-                    SpecularName = '/mods/brewlan_units/brewresearch/units/sab9101/sab9101_specteam.dds',
+                    AlbedoName = '../sab9101/sab9101_albedo.dds',
+                    NormalsName = '../sab9101/sab9101_normalsts.dds',
+                    SpecularName = '../sab9101/sab9101_specteam.dds',
                 },
             },
         },
-        PlaceholderMeshName = 'UEB0101',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
@@ -110,9 +105,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_aeon_01_normals',
-                Orientations = {
-                    0,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -128,9 +121,7 @@ UnitBlueprint {
             'sab9301',
             'BUILTBYTIER2RESEARCH AEON',
         },
-        RebuildBonusIds = {
-            'sab9201',
-        },
+        RebuildBonusIds = {'sab9201'},
     },
     Footprint = {
         SizeX = 5,
