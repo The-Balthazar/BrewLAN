@@ -445,6 +445,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Finished the rework of the Aeon Mobile Sensor.
 
+  ### 2019-07-04
+
+  * Finished the redesign of the Albatross.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

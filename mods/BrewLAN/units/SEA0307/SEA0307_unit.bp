@@ -107,17 +107,15 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYSONAR',
     },
-    CollisionOffsetY = -0.2,
-    CollisionOffsetZ = -0.1,
+    CollisionOffsetY = -0.1,
+    --CollisionOffsetZ = -0.1,
     Defense = {
         AirThreatLevel = 5,
         ArmorType = 'Light',
-        EconomyThreatLevel = 0,
         Health = 3950,
         MaxHealth = 3950,
         RegenRate = 0,
         SubThreatLevel = 38,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sair0307>Torpedo Bomber',
     Display = {
@@ -126,58 +124,51 @@ UnitBlueprint {
             '<LOC ability_sonar>Sonar',
             '<LOC ability_torpedo>Torpedoes',
         },
+        AnimationLand = '/mods/BrewLAN/units/SEA0307/SEA0307_Aunfold.sca',
         LayerChangeEffects = {
             AirLand = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Landing01',
-                    },
+                    {Bones = {0}, Type = 'Landing01'},
                 },
             },
             LandAir = {
                 Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'TakeOff01',
-                    },
+                    {Bones = {0}, Type = 'TakeOff01'},
+                },
+            },
+            AirWater = {
+                Effects = {
+                    {Bones = {0}, Type = 'Surface01'},
+                },
+            },
+            WaterAir = {
+                Effects = {
+                    {Bones = {0}, Type = 'Surface01'},
+                    {Bones = {0}, Type = 'TakeOff01'},
                 },
             },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 140,
-                    ShaderName = 'Unit',
-                    #AlbedoName = '/units/uea0304/uea0304_albedo.dds',
-                    #NormalsName = '/units/uea0304/uea0304_normalsTS.dds',
-                    #SpecularName = '/units/uea0304/uea0304_specteam.dds',
-                },
-                {
-                    LODCutoff = 215,
-                    ShaderName = 'Unit',
-                    MeshName = '/units/uea0304/uea0304_lod1.scm',
-                    AlbedoName = '/units/uea0304/uea0304_lod1_albedo.dds',
-                    NormalsName = '/units/uea0304/uea0304_lod1_normalsTS.dds',
-                    SpecularName = '/units/uea0304/uea0304_lod1_specteam.dds',
-                },
+                {LODCutoff = 256, ShaderName = 'Unit'},
+                {LODCutoff = 512, ShaderName = 'Unit'},
             },
         },
         MovementEffects = {
             Air = {
                 Contrails = {
                     Bones = {
-                        'Contrail_Left',
-                        'Contrail_Right',
+                        'Contrail_L',
+                        'Contrail_R',
                     },
                     ZOffset = 0,
                 },
                 Effects = {
                     {
                         Bones = {
-                    	    'Exhaust_Left',
-                    	    'Exhaust_Right',
+                    	    'Engine_L',
+                    	    'Engine_R',
                         },
                         Type = 'AirExhaust01',
                     },
@@ -185,16 +176,14 @@ UnitBlueprint {
             },
             BeamExhaust = {
                 Bones = {
-                    'Exhaust_Left',
-                    'Exhaust_Right',
+                    'Engine_L',
+                    'Engine_R',
                 },
                 Cruise = true,
                 Idle = true,
             },
         },
-        PlaceholderMeshName = 'UXA0008',
-        SpawnRandomRotation = false,
-        UniformScale = 0.035,
+        UniformScale = 0.01225,
     },
     Economy = {
         BuildCostEnergy = 55000,
@@ -260,13 +249,13 @@ UnitBlueprint {
         MeshExtentsZ = 2,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 1.2,
-    SelectionSizeZ = 1,
+    SelectionSizeX = 0.7,
+    SelectionSizeZ = 1.1,
     SelectionThickness = 0.38,
     SizeSphere = 2,
-    SizeX = 2,
-    SizeY = 0.5,
-    SizeZ = 1.6,
+    SizeX = 1,
+    SizeY = 0.6,
+    SizeZ = 1.7,
     StrategicIconName = 'icon_bomber3_antinavy',
     StrategicIconSortPriority = 65,
     Transport = {
@@ -315,10 +304,10 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Projectile',
-                        'Projectile',
+                        'Bomb',
+                        'Bomb',
                     },
-                    RackBone = 'Projectile',
+                    RackBone = 'Bomb',
                 },
             },
             RackFireTogether = false,
@@ -374,10 +363,8 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Left_Muzzle_AA',
-                    },
-                    RackBone = 'Left_Barrel_AA',
+                    MuzzleBones = {'Muzzle_L'},
+                    RackBone = 'Barrel_L',
                 },
             },
             RackFireTogether = false,
@@ -392,17 +379,16 @@ UnitBlueprint {
             TargetCheckInterval = 0.16,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR MOBILE',
-                'AIR MOBILE -INTELLIGENCE',
+                'AIR',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE,LAND,STRUCTURE,NAVAL',
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE',
             TargetRestrictOnlyAllow = 'AIR',
             TrackingRadius = 1.4,
-            TurretBoneMuzzle = 'Left_Muzzle_AA',
-            TurretBonePitch = 'Left_Barrel_AA',
-            TurretBoneYaw = 'Left_Barrel_AA',
+            TurretBoneMuzzle = 'Muzzle_L',
+            TurretBonePitch = 'Barrel_L',
+            TurretBoneYaw = 'Turret_L',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 40,
@@ -445,10 +431,8 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Right_Muzzle_AA',
-                    },
-                    RackBone = 'Right_Barrel_AA',
+                    MuzzleBones = {'Muzzle_R'},
+                    RackBone = 'Barrel_R',
                 },
             },
             RackFireTogether = false,
@@ -471,9 +455,9 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,LAND,STRUCTURE,NAVAL',
             TargetRestrictOnlyAllow = 'AIR',
             TrackingRadius = 1.4,
-            TurretBoneMuzzle = 'Right_Muzzle_AA',
-            TurretBonePitch = 'Right_Barrel_AA',
-            TurretBoneYaw = 'Right_Barrel_AA',
+            TurretBoneMuzzle = 'Muzzle_R',
+            TurretBonePitch = 'Barrel_R',
+            TurretBoneYaw = 'Turret_R',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 40,
