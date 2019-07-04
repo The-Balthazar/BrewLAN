@@ -448,6 +448,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2019-07-04
 
   * Finished the redesign of the Albatross.
+  * Replaced the icons of the Flame Lotus, Harpoon, and Guardian.
 
 ## 2019-01-03|84 (FAF minor patch)
 
