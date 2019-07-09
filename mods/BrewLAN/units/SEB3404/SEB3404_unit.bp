@@ -38,6 +38,7 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
             '<LOC ability_satellite_uplink>Satellite Uplink',
+            '<LOC ability_satellite_cap_inf>Satellite Capacity Unrestricted',
         },
         DishAnimations = {
             {

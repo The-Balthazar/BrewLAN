@@ -450,6 +450,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Finished the redesign of the Albatross.
   * Replaced the icons of the Flame Lotus, Harpoon, and Guardian.
 
+  ### 2019-07-05
+
+  * Spy satellite now no longer has an intel toggle button until it's fully set up, rather than ignoring input from it's intel button until that time.
+  * Added a counterintelligence satellite.
+  * Split the listed abilities for satellite capacity indications so include the number provided.
+  * Nightshade rebalance:
+    * Increased radius to 50 from 20.
+    * Decreased maintenance cost to 715 from 875.
+    * Increased health to 450 from 300.
+
+  ### 2019-07-09
+
+  * Added UEF mobile anti-tactical defence.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

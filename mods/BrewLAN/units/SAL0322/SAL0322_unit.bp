@@ -237,8 +237,6 @@ UnitBlueprint {
         TurnFacingRate = 120,
         TurnRadius = 0,
         TurnRate = 150,
-        WobbleFactor = 0.015,
-        WobbleSpeed = 0.001,
     },
     SelectionSizeX = 0.55,
     SelectionSizeZ = 0.55,

@@ -16,18 +16,11 @@ SEA0002 = Class(TAirUnit) {
 
     PreLaunchSetup = function(self, parent)
         self:SetScriptBit('RULEUTC_IntelToggle', true)
+        self:RemoveToggleCap('RULEUTC_IntelToggle')
     end,
 
     Setup = function(self, parent)
         ChangeState( self, self.OpenState )
-    end,
-
-    OnScriptBitClear = function(self, bit)
-        if bit == 3 and not self.IntelDisables then
-            LOG("Someone tried to enable satellite intel before it's ready.")
-        else
-            TAirUnit.OnScriptBitClear(self, bit)
-        end
     end,
 
     OpenState = State() {
@@ -42,6 +35,7 @@ SEA0002 = Class(TAirUnit) {
             self.OpenAnim:PlayAnim( '/units/XEA0002/xea0002_aopen02.sca' )
             WaitFor( self.OpenAnim )
             self:CreateVisEntity()
+            self:AddToggleCap('RULEUTC_IntelToggle')
             self:SetScriptBit('RULEUTC_IntelToggle', false)
         end,
     },
@@ -110,16 +104,6 @@ SEA0002 = Class(TAirUnit) {
         self:SetAccMult(1)
         self:SetTurnMult(1)
     end,
-
-    --[[ disabled because self.Parent is no longer defined.
-    OnKilled = function(self, instigator, type, overkillRatio)
-        if self.IsDying then return end
-        self.IsDying = true
-        if instigator and self.Parent then --Don't do anything on a suicide.
-            self.Parent:Rebuild(self:GetPosition())
-        end
-        TAirUnit.OnKilled(self, instigator, type, overkillRatio)
-    end,]]
 }
 
 TypeClass = SEA0002

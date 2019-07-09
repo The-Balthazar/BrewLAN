@@ -320,6 +320,7 @@ function BrewLANSatelliteUplinkForVanillaUnits(all_bps)
             table.insert(all_bps[id].Categories, 'SATELLITEUPLINK')
             if not all_bps[id].Display.Abilities then all_bps[id].Display.Abilities = {} end
             table.insert(all_bps[id].Display.Abilities, '<LOC ability_satellite_uplink>Satellite Uplink')
+            table.insert(all_bps[id].Display.Abilities, '<LOC ability_satellite_cap_'.. cap ..'>Satellite Capacity: +' .. cap)
             all_bps[id].General.SatelliteCapacity = cap
         end
     end

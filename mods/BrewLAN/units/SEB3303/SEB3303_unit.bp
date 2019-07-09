@@ -44,6 +44,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_satellite_uplink>Satellite Uplink',
+            '<LOC ability_satellite_cap_2>Satellite Capacity: +2',
         },
         BlinkingLights = {
             {

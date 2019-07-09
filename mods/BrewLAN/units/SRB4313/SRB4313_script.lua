@@ -39,14 +39,8 @@ SRB4313 = Class(CRadarJammerUnit) {
 
     IntelEffects = {
 		{
-			Bones = {
-				'Emitter',
-			},
-			Offset = {
-				0,
-				0,
-				0,
-			},
+			Bones = {'Emitter'},
+			Offset = {0, 0, 0},
 			Type = 'Jammer01',
 		},
     },
