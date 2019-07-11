@@ -1,5 +1,6 @@
 local TLandUnit = import('/lua/terranunits.lua').TLandUnit
 local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher
+local RadarRestricted = type(ScenarioInfo.Options.RestrictedCategories) == 'table' and table.find(ScenarioInfo.Options.RestrictedCategories, 'INTEL')
 
 SEL0324 = Class(TLandUnit) {
     Weapons = {
@@ -8,30 +9,42 @@ SEL0324 = Class(TLandUnit) {
 
     OnCreate = function(self)
         TLandUnit.OnCreate(self)
+        if math.random(1,3) ~= 2 then
+            self:HideBone('Neck', true)
+            CreateSlider(self, 'AttachPoint', 0, -0.37, 0, 1, true)
+        end
+        if RadarRestricted then
+            self:HideBone('Satellite', true)
+        end
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
         TLandUnit.OnStopBeingBuilt(self, builder, layer)
-        self:ForkThread(self.RadarAnimation)
+        if RadarRestricted then
+            self:RemoveToggleCap('RULEUTC_IntelToggle')
+        else
+            self.RadarEnabled = false
+            self:ForkThread(self.RadarAnimation)
+        end
         self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_IntelToggle', true)
         self:RequestRefreshUI()
-        self.RadarEnabled = false
-        if type(ScenarioInfo.Options.RestrictedCategories) == 'table' and table.find(ScenarioInfo.Options.RestrictedCategories, 'INTEL') then
-            self:RemoveToggleCap('RULEUTC_IntelToggle')
-        end
     end,
 
     OnIntelEnabled = function(self)
         TLandUnit.OnIntelEnabled(self)
-        self.RadarEnabled = true
-        self:CreateIdleEffects()
+        if not RadarRestricted then
+            self.RadarEnabled = true
+            self.RadarEffects = CreateAttachedEmitter(self,'Dish',self:GetArmy(),'/effects/emitters/radar_ambient_01_emit.bp')
+        end
     end,
 
     OnIntelDisabled = function(self)
         TLandUnit.OnIntelDisabled(self)
-        self.RadarEnabled = false
-        self:DestroyIdleEffects()
+        if not RadarRestricted then
+            self.RadarEnabled = false
+            self.RadarEffects:Destroy()
+        end
     end,
 
     RadarAnimation = function(self)

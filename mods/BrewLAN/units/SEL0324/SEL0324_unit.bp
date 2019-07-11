@@ -79,34 +79,12 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
         },
-        IdleEffects = {
-            Land = {
-                Effects = {
-                    {
-                        Bones = {'Dish'},
-                        Type = 'Radar01',
-                    },
-                },
-            },
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 130,
-                    Scrolling = true,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 260,
-                    Scrolling = true,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 390,
-                    Scrolling = true,
-                    ShaderName = 'Unit',
-                },
+                {LODCutoff = 130, Scrolling = true, ShaderName = 'Unit'},
+                {LODCutoff = 260, Scrolling = true, ShaderName = 'Unit'},
+                {LODCutoff = 390, Scrolling = true, ShaderName = 'Unit',},
             },
         },
         MovementEffects = {
@@ -127,7 +105,7 @@ UnitBlueprint {
                             BoneName = 0,
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.6,
-                            TreadMarksSizeX = 1.25,
+                            TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 1,
                             TreadOffset = {0, 0, 0},
                         },
@@ -135,8 +113,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0010',
-        SpawnRandomRotation = false,
         UniformScale = 0.0224,
     },
     Economy = {
@@ -217,13 +193,13 @@ UnitBlueprint {
         TurnRadius = 0,
         TurnRate = 60,
     },
-    SelectionCenterOffsetX = 0.01,
-    SelectionCenterOffsetZ = 0.1,
+    --SelectionCenterOffsetX = 0.01,
+    SelectionCenterOffsetZ = -0.02,
     SelectionSizeX = 0.7,
-    SelectionSizeZ = 1,
+    SelectionSizeZ = 0.9,
     SelectionThickness = 0.37,
     SizeX = 1,
-    SizeY = 1.5,
+    SizeY = 1,
     SizeZ = 1.25,
     StrategicIconName = 'icon_land3_antiair',
     StrategicIconSortPriority = 125,

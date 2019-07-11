@@ -464,6 +464,21 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added UEF mobile anti-tactical defence.
 
+  ### 2019-07-11
+
+  * Longbow changes:
+    * Recreated the UV.
+    * Replaced the textures.
+    * Implemented the originally planned feature to have it not always spawn with a head.
+    * It now spawns without the dish graphic with the no intel restriction.
+    * It no longer creates the intel animation thread under the no intel restriction.
+    * Aligned the treadmarks.
+    * Reduced the height of the collision box.
+    * Aligned the selection box.
+    * Moved the intel effect from the idle effects to the intel script to make it more reliable.
+    * Replaced the distance models.
+  * Fixed the shading on the door flaps on the distance models of the unnamed UEF mobile anti-tac.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
