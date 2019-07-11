@@ -12,6 +12,9 @@ SEL0324 = Class(TLandUnit) {
         if math.random(1,3) ~= 2 then
             self:HideBone('Neck', true)
             CreateSlider(self, 'AttachPoint', 0, -0.37, 0, 1, true)
+            CreateSlider(self, 'Hat', -0.13, -0.31, 0, 1, true)
+            CreateRotator(self, 'Hat', 'z', -40, 1000, 1000)
+            --(self, 'Hat', 'y', nil, 0, 50, 0)
         end
         if RadarRestricted then
             self:HideBone('Satellite', true)
