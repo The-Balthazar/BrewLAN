@@ -142,6 +142,7 @@
   * A model that isn't the Novax would be nice, but not an issue since BrewLAN disables the Novax.
 * T3 Observation Satellite.
 * T3 Mobile Air Staging Platform.
+* T3 Mobile tactical missile defense
 
 #### Functional:
 * T3 Torpedo Bomber.
@@ -160,7 +161,6 @@
 * T3 Engineering Station (3)
   * A third upgrade of the kennel, with build crane instead of drones.
 * T3 Mobile torpedo
-* T3 Mobile tactical missile defense
 
 ### Seraphim:
 #### Finished:

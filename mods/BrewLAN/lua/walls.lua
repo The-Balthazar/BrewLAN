@@ -7,6 +7,9 @@ local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 function CardinalWallUnit(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
+            if not self.CachePosition then
+                self.CachePosition = table.copy(moho.entity_methods.GetPosition(self))
+            end
             local bp = self:GetBlueprint()
             self.Info = {
                 ents = {
@@ -60,7 +63,7 @@ function CardinalWallUnit(SuperClass)
 
         OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
             local dirs = { 'South', 'East', 'East', 'North', 'North', 'West', 'West', 'South'}
-            local MyX, MyY, MyZ = unpack(self:GetPosition())
+            local MyX, MyY, MyZ = unpack(self.CachePosition)
             local AX, AY, AZ = unpack(adjacentUnit:GetPosition())
             local cat = self:GetBlueprint().Display.AdjacencyConnection
             if EntityCategoryContains(categories[cat], adjacentUnit) then
@@ -157,6 +160,7 @@ function GateWallUnit(SuperClass)
 
         OnStopBeingBuilt = function(self,builder,layer)
             SuperClass.OnStopBeingBuilt(self, builder, layer)
+
             self:ToggleGate('open')
         end,
 
@@ -165,11 +169,17 @@ function GateWallUnit(SuperClass)
             local scale = 1 / bp.Display.UniformScale or 1
             local depth = bp.SizeY * scale * 0.95
             if order == 'open' then
+                self:SetIntelRadius('vision', bp.Intel.OpenVisionRadius or 0)
                 self.Slider:SetGoal(0, -depth, 0)
                 self.Slider:SetSpeed(200)
                 if self.blocker then
-                   self.blocker:Destroy()
-                   self.blocker = nil
+                    self.blocker:Destroy()
+                    self.blocker = nil
+                else
+                    --First time run
+                    self.blocker = CreateUnitHPR(bp.FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
+                    self.blocker:Destroy()
+                    self.blocker = nil
                 end
                 if bp.AI.TargetBones then
                     for i, bone in bp.AI.TargetBones do
@@ -181,12 +191,12 @@ function GateWallUnit(SuperClass)
                 self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * 0.5, bp.SizeY * 0.1, bp.SizeZ * 0.5)
             end
             if order == 'close' then
+                self:SetIntelRadius('vision', bp.Intel.VisionRadius or 5)
                 self.Slider:SetGoal(0, 0, 0)
                 self.Slider:SetSpeed(200)
                 if not self.blocker then
-                   local pos = self:GetPosition()
-                   self.blocker = CreateUnitHPR('ZZZ5301',self:GetArmy(),pos[1],pos[2],pos[3],0,0,0)
-                   self.Trash:Add(self.blocker)
+                    self.blocker = CreateUnitHPR(bp.FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
+                    self.Trash:Add(self.blocker)
                 end
                 if bp.AI.TargetBones then
                     for i, bone in bp.AI.TargetBones do

@@ -479,6 +479,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Replaced the distance models.
   * Fixed the shading on the door flaps on the distance models of the unnamed UEF mobile anti-tac.
 
+  ### 2019-07-12
+
+  * Refactored wall scripts to use cached positions.
+  * Refactored gate scripts to use the auto generated footprint dummies.
+  * Removed the wall dummy unit.
+  * Fixed the broken BrewLAN installation fix function that broke when I removed the mine dummy unit.
+  * BrewLAN will now complain in message form to you after 2 seconds if it's installed incorrectly.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.

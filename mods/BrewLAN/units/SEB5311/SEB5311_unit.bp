@@ -43,9 +43,6 @@ UnitBlueprint {
         'HEAVYGATEOPEN',
         'WALL',
     },
-    CollisionOffsetX = 0,
-    CollisionOffsetY = 0,
-    CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
         Health = 40000,
@@ -105,8 +102,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_albedo.dds',
@@ -128,8 +123,8 @@ UnitBlueprint {
         RebuildBonusIds = {'seb5311'},
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
+        SizeX = 3,
+        SizeZ = 3,
     },
     General = {
         CapCost = 0.15,
@@ -172,7 +167,8 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-        VisionRadius = 0,
+        OpenVisionRadius = 0,
+        VisionRadius = 5,
     },
     Interface = {
         HelpText = '<LOC srb5311_desc>Armored Gate Segment',
@@ -205,8 +201,8 @@ UnitBlueprint {
         MeshExtentsZ = 3.2,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
-        SkirtOffsetX = -1,
-        SkirtOffsetZ = -1,
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
         SkirtSizeX = 3,
         SkirtSizeZ = 3,
         TurnRate = 0,
