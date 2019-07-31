@@ -38,26 +38,14 @@ SRB1311 = Class(CEnergyCreationUnit) {
 
     IntelEffects = {
         {
-            Bones = {
-                'SRB1311',
-            },
-            Offset = {
-                1.5,
-                3,
-                0,
-            },
+            Bones = {0},
+            Offset = {1.5, 3, 0},
             Scale = 5,
             Type = 'Cloak01',
         },
         {
-            Bones = {
-                'SRB1311',
-            },
-            Offset = {
-                -1.5,
-                3,
-                0,
-            },
+            Bones = {0},
+            Offset = {-1.5, 3, 0},
             Scale = 5,
             Type = 'Cloak01',
         },

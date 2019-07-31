@@ -54,7 +54,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_sonar>Sonar',
-            '<LOC enhancements_0020>Personal Teleporter',
+            '<LOC ability_personal_teleporter>Personal Teleporter',
         },
         IdleEffects = {
             Water = {

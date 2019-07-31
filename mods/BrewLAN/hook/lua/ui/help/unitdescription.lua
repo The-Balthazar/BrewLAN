@@ -203,6 +203,7 @@ Description['srb0401'] = "<LOC Unit_Description_BrewLAN_T4B010>Constructs land u
 Description['ssb0401'] = "<LOC Unit_Description_BrewLAN_T4B011>Constructs naval units."
 Description['seb2401'] = "<LOC Unit_Description_BrewLAN_T4B012>Experimental defensive building. Consumes large amounts of power with each shot."
 Description['srl0401'] = "<LOC Unit_Description_BrewLAN_T4L003>Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
+Description['sab5401'] = "<LOC Unit_Description_BrewLAN_T4B013>Experimental teleportation device. Teleports itself and each mobile unit and structure within its operational radius to targeted locations for a great energy cost. Has a cooldown period after use."
 
 --Panopticon upgrades
 Description['seb3404-sre'] = "<LOC Unit_Description_BrewLAN_T4B008_sre>Increases radar radius."

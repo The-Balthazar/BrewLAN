@@ -487,6 +487,43 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the broken BrewLAN installation fix function that broke when I removed the mine dummy unit.
   * BrewLAN will now complain in message form to you after 2 seconds if it's installed incorrectly.
 
+  ### 2019-07-22
+
+  * The build effect of the Seraphim Tech 3 Transport is no longer offset badly to the side.
+
+  ### 2019-07-26
+
+  * Added a target flatness check for the Aeon experimental teleporter.
+
+  ### 2019-07-27
+
+  * Refactored flatness check of Aeon teleporter so it wont interfere with the pathing of existing units at the target.
+
+  ### 2019-07-30
+
+  * Teleporter now deals with the following:
+    * Adjacency of warped structures, and structures that were adjacent to them. (although not newly adjacent things)
+    * The tarmacs of warped structures.
+    * The cached positions of warped structures.
+    * Flattening the area for structures in the new area.
+    * All of the above for itself as well as things it teleports.
+  * More teleporter things:
+    * Refactored again to allow for a period of economy drain, and to dynamically calculate said drain.
+    * Changed to use the actual teleport order, rather than the target area order.
+    * Added a cool-down period after use. Period is defined by charge time.
+    * Allowed to cancel.
+    * Failed teleports that didn't fail because of a destroyed facility result in a cooldown proportional to how complete it was, and how long the cooldown would have been.
+    * Targeting now respects the BlackOps anti-teleport units.
+    * Gave it a build description.
+    * Gave it a temporary icon to go with its temporary model.
+  * Seraphim sonar now uses the correct localisation string for the personal teleporter ability.
+
+  ### 2019-07-31
+
+  * Teleporter now deals with the following:
+    * Co-ordinates outside of map boundaries.
+    * Pre-existing structures at the target.
+
 ## 2019-01-03|84 (FAF minor patch)
 
 * Created a function to add the FAF category CQUEMOV to function to mobile experimental mobile units.
