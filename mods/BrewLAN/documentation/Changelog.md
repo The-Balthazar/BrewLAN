@@ -523,6 +523,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Teleporter now deals with the following:
     * Co-ordinates outside of map boundaries.
     * Pre-existing structures at the target.
+  * BrewLAN modules mods are now contained within BrewLAN, and the BrewLAN_Modules folder has been retired.
+
+  ### 2019-08-01
+
+  * Fixed the teleporter using the wrong starting co-orinate for one axis of the occupancy check.
+  * Re-organised the directory structure of BrewLAN UI, and renamed BrewLAN UI to BrewLAN UI: Engineering Tab.
+  * Moved the UI parts (the only released parts) of the Stolen Tech mod to within the BrewUI folder as a UI mod called BrewLAN UI: Spawn Menu.
+  * Retired the Stolen Tech mod.
 
 ## 2019-01-03|84 (FAF minor patch)
 

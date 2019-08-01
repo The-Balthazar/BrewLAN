@@ -171,7 +171,7 @@ SAB5401 = Class(AStructureUnit) {
                 for i, OccUnit in self.OccupancyCheck do
                     local OccUnitpos = OccUnit:GetPosition()
                     local OccUnitBp = OccUnit:GetBlueprint()
-                    local posGS = {OccUnitpos[1] - (OccUnitBp.Physics.SkirtSizeX * 0.5) + 0.5, target[3] - (OccUnitBp.Physics.SkirtSizeZ * 0.5) + 0.5}
+                    local posGS = {OccUnitpos[1] - (OccUnitBp.Physics.SkirtSizeX * 0.5) + 0.5, OccUnitpos[3] - (OccUnitBp.Physics.SkirtSizeZ * 0.5) + 0.5}
                     for x = 0, (OccUnitBp.Physics.SkirtSizeX - 1) * 2 do
                         for z = 0, (OccUnitBp.Physics.SkirtSizeZ - 1) * 2 do
                             if not coordarray[posGS[1] + (x * 0.5)] then
@@ -195,7 +195,7 @@ SAB5401 = Class(AStructureUnit) {
             for x = 0, unitbp.Physics.SkirtSizeX do
                 for z = 0, unitbp.Physics.SkirtSizeZ do
                     if self.OccupancyCheck[posGS[1] + x][posGS[2] + z] then
-                        LOG("Position blocked")
+                        LOG("Position "..posGS[1] + x..", "..posGS[2] + z.. " blocked")
                         return false
                     end
                     local H = GetTerrainHeight(posGS[1] + x, posGS[2] + z)

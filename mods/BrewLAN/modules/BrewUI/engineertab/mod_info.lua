@@ -1,0 +1,14 @@
+name = "BrewLAN UI: Engineer Tab"
+uid = "25D57D85-7D84-27HT-A501-BR3WUIET00003"
+version = 0.3
+copyright = "© 2009–2019 Sean Wheeldon"
+description = "BrewLAN engineer tab. Has no effect without BrewLAN; can be left on. May conflict with mods with a \"/hook/lua/ui/game/avatars.lua\" file while BrewLAN is active."
+author = "Balthazar"
+icon = "/mods/BrewLAN/modules/BrewUI/engineertab/BrewUI.png"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = true
+conflicts = {  }
+before = {  }
+after = {  }
