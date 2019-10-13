@@ -6,13 +6,12 @@ SAB5301 = Class( AShieldStructureUnit ) {
 
     ShieldEffects = {
         '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',  -- tight floor pulse
-        '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',-- eclipse thing
+        '/effects/emitters/aeon_shield_generator_t2_02_emit.bp',  -- eclipse thing
         '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',  -- fuzzy circle
-        --'/effects/emitters/aeon_shield_generator_t3_04_emit.bp',-- floor spread
     },
     OnStopBeingBuilt = function(self,builder,layer)
         AShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
-		  self.ShieldEffectsBag = {}
+		self.ShieldEffectsBag = {}
     end,
 
     OnShieldEnabled = function(self)
@@ -37,8 +36,8 @@ SAB5301 = Class( AShieldStructureUnit ) {
             for k, v in self.ShieldEffectsBag do
                 v:Destroy()
             end
-		      self.ShieldEffectsBag = {}
-		  end
+            self.ShieldEffectsBag = {}
+        end
     end,
 
     OnKilled = function(self, instigator, type, overkillRatio)

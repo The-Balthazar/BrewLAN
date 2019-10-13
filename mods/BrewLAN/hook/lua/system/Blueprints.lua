@@ -1116,6 +1116,11 @@ function BrewLANGenerateFootprintDummy(all_bps, id, bp)
 
         local dummyID = 'ZZZFD'..X..Z..SOX..SOZ..SSX..SSZ
 
+        --This doesn't appear to affect the yellow pathing box of factories.
+        if table.find(bp.Categories, 'FACTORY') then
+            dummyID = 'Z' .. dummyID
+        end
+
         if OR then
             for i, v in OR do
                 dummyID = dummyID..v
@@ -1171,13 +1176,20 @@ function BrewLANGenerateFootprintDummy(all_bps, id, bp)
                     MotionType = 'RULEUMT_None',
                     OccupyRects = OR,
                 },
-                ScriptClass = 'StructureUnit',
+                ScriptClass = 'FootprintDummyUnit',
                 ScriptModule = '/lua/defaultunits.lua',
                 SizeX = X,
                 SizeY = 1,
                 SizeZ = Z,
                 Source = all_bps.sab5401.Source,
             }
+
+            if string.sub(dummyID,1,4) == 'ZZZZ' then
+                --table.insert(all_bps[dummyID].Categories, 'FACTORY')
+                all_bps[dummyID].Display.BuildAttachBone = 0
+                all_bps[dummyID].Economy.BuildableCategory = {dummyID}
+            end
+
             LOG("Creating footprint dummy unit: " .. dummyID)
         end
         bp.FootprintDummyId = dummyID

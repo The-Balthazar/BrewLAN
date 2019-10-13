@@ -31,8 +31,14 @@ SEB94VV = Class(TStructureUnit) {
     end,
 
     VictoryCountdownThread = function(self)
-        WaitSeconds(600)
+        local vsex = 600
+        local vnum = 1/vsex
+        for i = 1, vsex do
+            self:SetWorkProgress(vnum*i)
+            WaitSeconds(1)
+        end
         LOG("VENI VEDI VICI")
+
         if ScenarioInfo.Options.TeamLock == "locked" then
             for i, brain in ArmyBrains do
                 if not IsAlly(self:GetArmy(), brain:GetArmyIndex()) then
@@ -46,6 +52,7 @@ SEB94VV = Class(TStructureUnit) {
                 end
             end
         end
+        self:SetWorkProgress(0)
     end,
 }
 

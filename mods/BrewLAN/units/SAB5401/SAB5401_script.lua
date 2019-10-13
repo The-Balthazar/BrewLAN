@@ -20,10 +20,6 @@ SAB5401 = Class(AStructureUnit) {
             RemoveEconomyEvent( self, self.TeleportDrain)
             self.TeleportDrain = nil
         end
-        if self.TeleportThread then
-            KillThread(self.TeleportThread)
-            self.TeleportThread = nil
-        end
         self:StopUnitAmbientSound('TeleportLoop')
         self:CleanupTeleportChargeEffects()
         if not self.Dead then
@@ -71,6 +67,7 @@ SAB5401 = Class(AStructureUnit) {
                 --check target area
                 if self:WarpTargetCheck(unit,  unitbp, target, unitpos, location) then
                     unit.TeleportTargetPos = target
+                    unit.TeleportOldPos = table.copy(unit:GetPosition())
                     local cost = (unitbp.Economy.BuildCostMass * (unitbp.Economy.TeleportMassMod or 0.01)) + (unitbp.Economy.BuildCostEnergy * (unitbp.Economy.TeleportEnergyMod or 0.01))
                     energycost = energycost + cost
                     timecost = math.max(timecost, cost * (unitbp.Economy.TeleportTimeMod or 0.01) * 0.1)
@@ -97,23 +94,29 @@ SAB5401 = Class(AStructureUnit) {
         self:CleanupTeleportChargeEffects()
 
         for i, unit in nearby do
-            if unit then
-                self:WarpUnit(unit, unit:GetBlueprint(), unit.TeleportTargetPos, unit:GetPosition())
-                unit.TeleportTargetPos = nil
+            if unit and not unit.Dead then
+                self:WarpUnit(unit)
             end
         end
         --Adjacency effects can only be done after everything has been teleported
+        --Adjacency data is easiest to get as part of the path blocking code, so that is also done now.
         for i, unit in nearby do
-            if unit then
-                self:UpdateOldAdjacency(unit, nearby)
+            if unit and not unit.Dead then
+                self:UpdateAdjacencyPathBlocking(unit, unit:GetBlueprint(), unit.TeleportTargetPos, unit.TeleportOldPos, nearby)
+                unit.TeleportTargetPos = nil
+                unit.TeleportOldPos = nil
             end
         end
 
         self:ForkThread(self.CooldownThread)
-        self.TeleportThread = nil
     end,
 
     CooldownThread = function(self)
+        if self.TeleportThread then
+            KillThread(self.TeleportThread)
+            self.TeleportThread = nil
+        end
+        self.OccupancyCheck = nil
         local Interval = 1 -- number of ticks between each cooldown update
         local CooldownPerInterval = 1 / ((self.CooldownTime * 10) / Interval)
         local cooldownProgress = self:GetWorkProgress()
@@ -123,9 +126,7 @@ SAB5401 = Class(AStructureUnit) {
             WaitTicks(Interval)
         end
         self:SetWorkProgress(0.0)
-        self.TeleportThread = nil
-        self.OccupancyCheck = nil
-		self:AddCommandCap('RULEUCC_Teleport')
+        self:AddCommandCap('RULEUCC_Teleport')
     end,
 
     WarpUnitCheck = function(self, unit, unitbp)
@@ -168,12 +169,10 @@ SAB5401 = Class(AStructureUnit) {
                 end
                 local coordarray = {}
 
-                for i, OccUnit in self.OccupancyCheck do
-                    local OccUnitpos = OccUnit:GetPosition()
-                    local OccUnitBp = OccUnit:GetBlueprint()
-                    local posGS = {OccUnitpos[1] - (OccUnitBp.Physics.SkirtSizeX * 0.5) + 0.5, OccUnitpos[3] - (OccUnitBp.Physics.SkirtSizeZ * 0.5) + 0.5}
-                    for x = 0, (OccUnitBp.Physics.SkirtSizeX - 1) * 2 do
-                        for z = 0, (OccUnitBp.Physics.SkirtSizeZ - 1) * 2 do
+                local AddCoOrdsToArray = function(OccUnitpos, OccUnitBp)
+                    local posGS = {OccUnitpos[1] - (OccUnitBp.SkirtSizeX * 0.5) + 0.5, OccUnitpos[3] - (OccUnitBp.SkirtSizeZ * 0.5) + 0.5}
+                    for x = 0, (OccUnitBp.SkirtSizeX - 1) * 2 do
+                        for z = 0, (OccUnitBp.SkirtSizeZ - 1) * 2 do
                             if not coordarray[posGS[1] + (x * 0.5)] then
                                 coordarray[posGS[1] + (x * 0.5)] = {}
                             end
@@ -182,7 +181,23 @@ SAB5401 = Class(AStructureUnit) {
                     end
                 end
 
-                --TODO: insert hydrocarbon and mass points here-ish for blocking calculations
+                for i, OccUnit in self.OccupancyCheck do
+                    local OccUnitpos = OccUnit:GetPosition()
+                    local OccUnitBp = OccUnit:GetBlueprint()
+                    AddCoOrdsToArray(OccUnitpos, OccUnitBp.Physics)
+                end
+
+                --Add mass points and hydrocarbons to banned location list.
+                local AIGetMarkerLocations = import('/lua/ai/aiutilities.lua').AIGetMarkerLocations
+                for groupi, group in {AIGetMarkerLocations(nil, 'Hydrocarbon'), AIGetMarkerLocations(nil, 'Mass')} do
+                    for i, marker in group do
+                        if string.sub(marker.Name,1,1) == 'M' then
+                            AddCoOrdsToArray(marker.Position, {SkirtSizeX = 2, SkirtSizeZ = 2})
+                        elseif string.sub(marker.Name,1,1) == 'H' then
+                            AddCoOrdsToArray(marker.Position, {SkirtSizeX = 6, SkirtSizeZ = 6})
+                        end
+                    end
+                end
 
                 self.OccupancyCheck = coordarray
             end
@@ -207,8 +222,6 @@ SAB5401 = Class(AStructureUnit) {
                 LOG("Ground is too lumpy")
                 return false
             end
-
-
         end
 
         -- anti-teleport check, done last because this isn't a cheap calculation
@@ -236,76 +249,83 @@ SAB5401 = Class(AStructureUnit) {
         return true
     end,
 
-    MovePathBlocking = function(self, dummyID, target, oldpos)
-        local dummyunit = CreateUnitHPR(dummyID, self:GetArmy(), target[1], target[2], target[3], 0, 0, 0)
-        Warp(dummyunit, oldpos)
-        dummyunit:Destroy()
-        --Potentially deal with new adjacencies with the dummy
-    end,
-
-    WarpUnit = function(self, unit, unitbp, target, oldpos)
-
-        Warp(unit, target)
+    WarpUnit = function(self, unit)
+        Warp(unit, unit.TeleportTargetPos)
         unit:SetImmobile(false)
+        local unitbp = unit:GetBlueprint()
 
             --TODO: (in blueprint.lua) Set up a separate footprint unit for each factory, and also work out what sets them appart pathing-wise.
 
             --TODO: deal with the build effects of warped factories
 
         if unitbp.FootprintDummyId then
-            --Update path blocking in new and old position
-            self:MovePathBlocking(unitbp.FootprintDummyId, target, oldpos)
             --Remove tarmac so we can move it
             unit:DestroyTarmac()
             --Recreate tarmac and area flatenning in new area
             if unit:GetCurrentLayer() == 'Land' and unitbp.Physics.FlattenSkirt then unit:FlattenSkirt() unit:CreateTarmac(true,true,true,false,false) end
             --cached position
-            if unit.CachePosition then unit.CachePosition = table.copy(target) end
+            if unit.CachePosition then unit.CachePosition = table.copy(unit.TeleportTargetPos) end
         end
     end,
 
-    UpdateOldAdjacency = function(self, unit, nearby)
-        if unit.AdjacencyBeamsBag then
-            for i, info in unit.AdjacencyBeamsBag do
-                local AdjUnit = info.Unit
-                --[[LOUD specific bit]] if type(AdjUnit) == "number" then AdjUnit = GetEntityById(AdjUnit) end
-                if not table.find(nearby, AdjUnit) then
-                    --The important part
-                    unit:OnNotAdjacentTo(AdjUnit)
-                    AdjUnit:OnNotAdjacentTo(unit)
+    UpdateAdjacencyPathBlocking = function(self, unit, unitbp, newpos, oldpos, warpedunits)
+        if unitbp.FootprintDummyId then
+            --Update path blocking with dummy trick, and get the adjacency data while we're at it.
+            local dummyunit = CreateUnitHPR(unitbp.FootprintDummyId, self:GetArmy(), newpos[1], newpos[2], newpos[3], 0, 0, 0)
+            Warp(dummyunit, oldpos)
+            local AdjacencyData = dummyunit.AdjacentData
 
-                    --Cleaning the visual crap up, because DestroyAdjacentEffects doesn't care if both are still alive.
-                    unit.AdjacencyBeamsBag[i].Trash:Destroy()
-                    unit.AdjacencyBeamsBag[i] = nil
-                    if AdjUnit.AdjacencyBeamsBag then
-                        for i, info in AdjUnit.AdjacencyBeamsBag do
-                            if info.Unit == unit or info.Unit == GetEntityById(unit) then
+            local CheckUnitInTable = function(unittable, AdjUnit)
+                for i, unit in unittable do
+                    if GetEntityId(unit) == GetEntityId(AdjUnit) then
+                        return true
+                    end
+                end
+                return false
+            end
+
+            local DestroyAdjacentEffects = function(units, recreate)
+                --Cleaning the visual crap up, because the DestroyAdjacentEffects method doesn't care if both are still alive.
+                for _, unit in units do
+                    if unit.AdjacencyBeamsBag then
+                        for i, info in unit.AdjacencyBeamsBag do
+                            --LOUD data structure check
+                            local infounit = info.Unit
+                            if type(infounit) == "number" then infounit = GetEntityById(infounit) end
+
+                            if CheckUnitInTable(units, infounit) then
                                 info.Trash:Destroy()
-                                AdjUnit.AdjacencyBeamsBag[i] = nil
+                                unit.AdjacencyBeamsBag[i] = nil
+                                if recreate then
+                                    unit:CreateAdjacentEffect(infounit)
+                                end
                             end
                         end
                     end
-                else
-                    --This entire else section can be removed in LOUD, since they are attached to the units and don't need recreating
-
-                    -- Moving old effects is a lot of hassle
-                    --Kill
-                    unit.AdjacencyBeamsBag[i].Trash:Destroy()
-                    unit.AdjacencyBeamsBag[i] = nil
-                    if AdjUnit.AdjacencyBeamsBag then
-                        for i, info in AdjUnit.AdjacencyBeamsBag do
-                            if info.Unit == unit or info.Unit == GetEntityById(unit) then
-                                info.Trash:Destroy()
-                                AdjUnit.AdjacencyBeamsBag[i] = nil
-                            end
-                        end
-                    end
-
-                    -- Then recreate
-                    unit:CreateAdjacentEffect(AdjUnit)
-
                 end
             end
+
+            --Remove the old adjac
+            if AdjacencyData then
+                for i, AdjUnit in AdjacencyData do
+
+                    if CheckUnitInTable(warpedunits, AdjUnit) then
+                        LOG("Fellow warped unit " .. AdjUnit:GetBlueprint().Description)
+                        --If both warped then just update the adjacency effects
+                        DestroyAdjacentEffects({unit, AdjUnit}, true)
+                    else
+                        --If the new one didn't then it's a new adjacency
+
+                        unit:OnAdjacentTo(AdjUnit, unit)
+                        AdjUnit:OnAdjacentTo(unit, unit)
+                    end
+                end
+            end
+
+            --Easier to handle OnNotAdjacentTo at the footprint dummy, since passing the data back is a farce.
+            dummyunit.ForceDestroyAdjacentEffects = DestroyAdjacentEffects
+            dummyunit.Parent = unit
+            dummyunit:Destroy()
         end
     end,
 }

@@ -531,6 +531,27 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Re-organised the directory structure of BrewLAN UI, and renamed BrewLAN UI to BrewLAN UI: Engineering Tab.
   * Moved the UI parts (the only released parts) of the Stolen Tech mod to within the BrewUI folder as a UI mod called BrewLAN UI: Spawn Menu.
   * Retired the Stolen Tech mod.
+  * Teleporter now respects mass and hydrocarbon points.
+
+  ### 2019-08-02
+
+  * Teleporter changes:
+    * It will no longer try to do things to units that have died during the charge.
+    * Reworked path blocking updates and adjacency calculations:
+      * Merged both together, and used data from the path blocking updates for adjacency updates.
+      * It now properly breaks old adjacencies in situations where it was a one way thing only tracked by a unit not warped.
+      * It can now create new adjacencies at the new position.
+        * In theory.
+
+  ### 2019-08-06
+
+  * Debug Tools: Added a function that is LOUD's EvenFlow rewritten to require the minimum amount of calculations required, and to be much shorter.
+  * Debug Tools: Added a function that checks blueprint build time values against what EvenFlow would set them to and outputs that data as table log sorted by how different the two numbers are.
+
+  ### 2019-10-13
+
+  * Superweapons: Added icons and a progress bar for the player.
+  * Disabled the Aeon teleporter for public release.
 
 ## 2019-01-03|84 (FAF minor patch)
 

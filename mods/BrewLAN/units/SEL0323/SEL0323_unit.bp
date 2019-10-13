@@ -112,7 +112,7 @@ UnitBlueprint {
         Icon = 'amph',
         --SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC sel0323_name>D2',
+        UnitName = '<LOC sel0323_name>Trickshot',
         UnitWeight = 1,
     },
     Intel = {
