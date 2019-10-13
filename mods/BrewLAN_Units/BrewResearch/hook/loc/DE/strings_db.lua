@@ -13,7 +13,7 @@ srb9201_name="Schrödinger-Einrichtung"
 srb9301_name="Heisenfazilität"
 --Äon
 sab9101_name="Einblick"
-sab9201_name="Beratung"
+sab9201_name="Handlungsempfehlung"
 sab9301_name="Erleuchtung"
 --Seraphim
 ssb9101_name="Iyathlabistle"
@@ -43,7 +43,7 @@ sb9302_desc="Bietet adjacency Boni zu Forschungszentren, Forschungszeit abnimmt.
 sb9303_desc="Bietet adjacency Boni zu Forschungszentren, Forschungskosten zu senken."
 
 --Forschung Artikel Informationen
-ability_rnd_unlock="Forschung Schalte"
+ability_rnd_unlock="Forschung freischalten"
 ability_rnd_command="durch Befehlseinheit gebaut"
 ability_rnd_engineer="Erbaut von Ingenieur"
 ability_rnd_field="Erbaut von Außendiensttechniker"
@@ -79,7 +79,7 @@ Unit_Description_RND_015="produziert Seeflugzeuge"
 -- Tech 1
 ----------------------------------------
 
---Windkraftanlagen
+--Windräder
 sb1101_desc="Windgenerator"
 seb1101_name="Turbine"
 sab1101_name="Lampe"
@@ -136,7 +136,7 @@ seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
-Unit_Description_RND_012="Sensor-Array. Fähig zur Ziele durch stealth und Mantel identifiziert und löscht Störsender Blips."
+Unit_Description_RND_012="Sensor-Array. Fähig zur Ziele durch tarnung und Mantel identifiziert und löscht Störsender Blips."
 
 --T3.5 Erweiterte Bomber
 --sa0314_desc="Penetrator"
@@ -159,9 +159,9 @@ sea0313_name="Kater"
 saa0313_name="Helios"
 sra0313_name="twilight-Patron"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="Top-End-Long Range Stealth Fighter. Ausgestattet mit zwei Burst Schrauben Railguns, Luft-Luft-Raketen und Anti-Raketen-Fackeln."
 --[description]
---[description]
-Unit_Description_RND_025="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen. Fähig zu Spionageflugzeuge jagen."
+Unit_Description_RND_025="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen und Raketen Fackeln. Fähig zu Spionageflugzeuge jagen."
 --[description]
 
 --Ekranoplan Transporte

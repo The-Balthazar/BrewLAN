@@ -2,7 +2,7 @@
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒    ░░░░¦--¦   BrewLAN French strings table
 --¦▒▒▒▒    ░░░░¦--¦   Author: Balthassar
---¦▒▒▒▒    ░░░░¦--¦   Translator: asdrubaelvect29, jaisse
+--¦▒▒▒▒    ░░░░¦--¦   Translator: asdrubaelvect29, jaisse, gilles33377
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -10,13 +10,13 @@
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
-tooltipbrewlan0000="Bouton production unités aériennes"
+tooltipbrewlan0000="Bouton de production d'unités aériennes"
 tooltipbrewlan0001="Active ou désactive la production d'unités aériennes"
 
 --Tooltips for the T3 decoy planes.
 tooltipbrewlan0002="Bouton vitesse"
 tooltipbrewlan0003="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux CZAR"
-tooltipbrewlan0004="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux Eventreur d’âmes"
+tooltipbrewlan0004="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux Éventreur d'âmes"
 tooltipbrewlan0005="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux Ahwassa"
 tooltipbrewlan0006="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux AC-500 Centurion"
 
@@ -29,7 +29,7 @@ tooltipbrewlan0009="Nettoyer la zone de construction"
 tooltipbrewlan0010="Retrait des structures ou autre de la zone de construction."
 
 --Tooltops for the Seraphim spy facility
-tooltipbrewlan0011="Scry"
+tooltipbrewlan0011="Sonder"
 tooltipbrewlan0012="Choisir une unité pour l'espionner."
 
 --Tooltips for the open/closeable kind of gate.
@@ -39,7 +39,7 @@ tooltipbrewlan0015="Ouverture automatique activée."
 
 --Tooltips for the Omni disrupter.
 tooltipbrewlan0016="Bouton impulsion perturbatrice"
-tooltipbrewlan0017="Impulsion perturbatrice marche/arrêt."
+tooltipbrewlan0017="Activer/Désactiver l'impulsion perturbatrice."
 
 --Tooltips for the Rez/reclaim command.
 --tooltipbrewlan0018="Reconstruction/Capture (E)"
@@ -49,7 +49,7 @@ tooltipbrewlan0019="Reconstruit une épave ou capture une unité ennemie."
 tooltipbrewlan0020="Passerelle"
 tooltipbrewlan0021="Sélectionnez un portail quantique pour créer un lien de transport vers lui."
 tooltipbrewlan0022="Active ou désactive le bouclier de sécurité."
-tooltipbrewlan0023="Fermer le passage"
+tooltipbrewlan0023="Couper le lien"
 tooltipbrewlan0024="Coupe le lien avec l'autre portail."
 
 --Tooltips for the Ivan
@@ -61,12 +61,15 @@ floatingtextIVAN01="Ordre répétitif activé"
 floatingtextIVAN02="Ordre répétitif désactivé"
 
 --Tooltips for the Panopticon
-tooltipbrewlan0029="Basculer la veille économique"
+tooltipbrewlan0029="Active la veille économique"
 tooltipbrewlan0030="Bien que active, cette unité réduira dynamiquement son rayon d'espionnage opérationnel à un niveau économiquement viable."
 
 --Séraphin mobile AA / TMD
-tooltipbrewlan0031="Priorité à bascule Weapon"
-tooltipbrewlan0032="Basculer entre la priorité de cible anti-aérienne et la priorité de la cible des missiles tactiques."
+tooltipbrewlan0031="Changer la priorité des armes"
+tooltipbrewlan0032="Basculer la priorité sur les cibles anti-aérienne ou sur les missiles tactiques."
+
+--onglet amélioration de Panopticon
+tooltipbrewlan0033="Personnaliser [tableau]"
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements
@@ -74,7 +77,7 @@ tooltipbrewlan0032="Basculer entre la priorité de cible anti-aérienne et la pr
 
 Unit_Description_BrewLAN_E001="Ajoute à l'UBCS les capacités de construction de l'ingénieur militaire."
 brewlan_enhancements_1="Kit d'ingénierie militaire"
-brewlan_enhancements_2="Retirer le Kit d'ingénierie militaire"
+brewlan_enhancements_2="Retirer le kit d'ingénierie militaire"
 
 --------------------------------------------------------------------------------
 -- Tech 1
@@ -129,7 +132,7 @@ Unit_Description_BrewLAN_T1L003="Unité amphibie tech 1, construit, répare, cap
 
 ss0119_desc="Bateau d'ingénierie"
 ses0119_name="Classe Mendy"
-srs0119_name="Franklin classe"
+srs0119_name="Classe Franklin"
 Unit_Description_BrewLAN_T1S001="Unité de construction, de réparation, de capture, de récupération et de couche minière tech 1."
 
 --------------------------------------------------------------------------------
@@ -166,7 +169,7 @@ Unit_Description_BrewLAN_T2D005="Pour tous les terrains, dégâts légers, explo
 
 sbui2221="Mine de proximité"
 seb2221_name="AM-24 Anti-Armure"
-srb2221_name="Chuchotement"
+srb2221_name="Whisper"
 sab2221_name="Monticule"
 ssb2221_name="Zhanasee"
 Unit_Description_BrewLAN_T2D001="Pour tous les terrains, dégâts lourds, détonation radar, mine de proximité. Visible uniquement avec capteur omni."
@@ -194,7 +197,7 @@ Unit_Description_BrewLAN_T2L004="Générateur de bouclier mobile."
 
 ss0219_desc="Bateau d'ingénierie"
 ses0219_name="Classe Fixxie"
-srs0219_name="Barwick classe"
+srs0219_name="Classe Barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
 Unit_Description_BrewLAN_T2S002="Tech 2 construction navale, la réparation, la capture, reclaimation, et l'unité de mouilleur de mines."
 
@@ -278,17 +281,28 @@ seb3303b_desc="Complexe de lancement de satellite"
 Unit_Description_BrewLAN_T3B002="Produit et lance des satellites"
 
 ability_satellite_uplink="Uplink satellite"
+ability_satellite_cap_0="Capacité satellite: 0"
+ability_satellite_cap_1="Capacité satellite: +1"
+ability_satellite_cap_2="Capacité satellite: 2"
+ability_satellite_cap_3="Capacité satellite: 3"
+ability_satellite_cap_4="Capacité satellite: 4"
+ability_satellite_cap_5="Capacité satellite: +5"
+ability_satellite_cap_inf="Capacité satellite Unrestricted"
 
 sea0002_desc="Centre de contrôle de satellite"
 sea0002_name="Étoile brulante"
 Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Fournit des images satellites en orbite visuelle. Nécessite une liaison satellite dédiée à recevoir les données."
 
+sea0003_desc="satellite counterintelligence"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Causes un grand nombre de signaux radar faux avec les caractéristiques de vol de combattants de supériorité aérienne apparaître underneith il. N'a pas la capacité de collecte de inteligence."
+
 --alternatives Sniper
 sel0320_desc="Véhicule de liaison satellite"
 sel0320_name="Archimède"
 srl0318_name="Aracme"
-Unit_Description_BrewLAN_T3L003="Véhicule de liaison satellite. Marque les cible pour un soutien orbital."
-Unit_Description_BrewLAN_T3L013="spiderbot Mobile. Armé d'une longue portée arme de faisceau EMP."
+Unit_Description_BrewLAN_T3L003="Véhicule de liaison satellite. Marque les cibles pour un soutien orbital."
+Unit_Description_BrewLAN_T3L013="Robot-Araignée Mobile. Armé d'une arme de faisceau longue portée EMP."
 
 sel0321_desc="Système de défense anti missile stratégique"
 sel0321_name="Aster"
@@ -296,7 +310,7 @@ srl0321_name="Hérisson"
 sal0321_name="Scarabée"
 ssl0321_name="Ythhu"
 Unit_Description_BrewLAN_T3L004="Système de défense anti missile stratégique mobile. Le prix inclus le premier missile, cependant le véhicule doit être assisté pour construire d'autres missiles."
-Unit_Description_BrewLAN_T3L008="Système de défense anti missile stratégique mobile. Tire une salve de 3 missiles. Le prix inclus la première salve."
+Unit_Description_BrewLAN_T3L008="Système de défense anti-missile stratégique mobile. Tire une salve de 3 missiles. La construction inclus la première salve."
 
 --Seraphim T3 sonar platform
 sss0305_desc="Plate-forme sonar"
@@ -354,7 +368,7 @@ Unit_Description_BrewLAN_T3B0011="Génère une zone d'invisibilité. Masque les 
 ssb5301_desc="Mur avec bouclier"
 ssb5301_name="Athahaas"
 sab5301_name="Aegis"
-Unit_Description_BrewLAN_T3B0018="Bloque les mouvements des unités ennemies. Généré un bouclier."
+Unit_Description_BrewLAN_T3B0018="Restreint les mouvements des unités ennemies. Génère un bouclier autour de lui."
 
 srb5310_desc="Mur blindé"
 srb5310_name="Barrière de Procyon"
@@ -378,7 +392,7 @@ Unit_Description_BrewLAN_T3S004="Planant système de torpille. Capable de détru
 
 ssb3301_desc="Installation de repérage"
 ssb3301_name="Aezselen"
-Unit_Description_BrewLAN_T3B0026="Offres une ligne de vue sur une unité amie ou ennemie ciblée. Vous ne pouvez pas cibler un espace vide."
+Unit_Description_BrewLAN_T3B0026="Offre une ligne de vue sur une unité amie ou ennemie ciblée. Vous ne pouvez pas cibler un espace vide."
 
 sal0322_desc="Générateur de bouclier mobile"
 sal0322_name="Flamme Lotus"
@@ -393,14 +407,14 @@ sal0320_desc="Défense anti-aérienne mobile"
 sal0320_name="Armillaire"
 Unit_Description_BrewLAN_T3L012="Système de défense anti-aérien mobile pivotant. Consomme de l'énergie à chaque prise de vue."
 
-sel0324_desc="SAM lanceur mobile"
+sel0324_desc="Lanceur mobile SAM"
 sel0324_name="NG3 Longbow"
 Unit_Description_BrewLAN_T3L015="lance-missiles anti-air mobile. Doté d'un équipement de balayage de pointe."
 
 --srl0320_desc=--Système anti-aérien furtif
-srl0320_desc="SAM lanceur mobile"
+srl0320_desc="Lanceur mobile SAM"
 srl0320_name="Fronde"
-Unit_Description_BrewLAN_T3L009="lanceur de missiles sol-air mobile camouflé. Doit devenir visible à l'attaque."
+Unit_Description_BrewLAN_T3L009="Lanceur de missiles mobile sol-air camouflé. Doit se dé-camoufler pour tirer."
 
 ssl0320_desc="Défense anti-aérienne mobile"
 ssl0320_name="Atha-Ythia"
@@ -420,13 +434,14 @@ Unit_Description_BrewLAN_T3L011="Lanceur de fusée mobile multiple. Temps de rec
 
 ss0319_desc="Bateau d'ingénierie"
 ses0319_name="Classe Patch"
-srs0319_name="Stillson classe"
+srs0319_name="Classe Stillson"
 Unit_Description_BrewLAN_T3S002="Tech 3 de construction navale, de réparation, de capture et de récupération. Équipé d'une baie de torpilles, d'une défense anti-torpille et d'une seule arme anti-aérienne."
 Unit_Description_BrewLAN_T3S003="Tech 3 construction navale, la réparation, la capture, reclaimation, et l'unité de mouilleur de mines."
 
-sl0323_desc="Missile Defense mobile tactique"
+sl0323_desc="Défense anti-missile tactique mobile"
 sal0323_name="Rupture"
-Unit_Description_BrewLAN_T3L014="défense antimissile tactique mobile. La protection est limitée à la zone opérationnelle de l'unité."
+sel0323_name="Trickshot"
+Unit_Description_BrewLAN_T3L014="Défense anti-missile tactique mobile. La protection est limitée à la zone opérationnelle de l'unité."
 
 srl0324_desc="Tableau capteur mobile"
 srl0324_name="Adramelech"
@@ -435,18 +450,18 @@ ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="système d'intelligence mobile haut de gamme. À l'arrêt, il est visible que de omni et fournit un radar et une vaste couverture omnidirectionnelle."
 Unit_Description_BrewLAN_T3L019="Planant réseau de capteurs. Consomme de grandes quantités d'énergie pour fonctionner."
 
-sl0325_desc="Mobile Lance-torpilles"
+sl0325_desc="Lance-torpilles Mobile"
 sel0325_name="PT-57 Croc"
 sal0325_name="Limbes"
 Unit_Description_BrewLAN_T3L017="véhicule anti-marine mobile."
 Unit_Description_BrewLAN_T3L018="Mobile en vol stationnaire véhicule anti-marine."
 
-ssb4317_desc="radar Jammer"
+ssb4317_desc="Brouilleur de Radar"
 ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="installation de perturbation du radar. Crée un grand nombre de faux signaux radar dans sa zone opérationnelle, ce qui provoque une distraction et perturber l'ennemi de ciblage."
 ssa00002_desc="Hologram"
 
-sl0326_desc="Plate-forme d'étagement de l'air mobile"
+sl0326_desc="Plate-forme de ravitaillement aérien mobile"
 sel0326_name="Nid d'oiseau"
 Unit_Description_BrewLAN_T3L023="Plate-forme mobile pour le ravitaillement et la réparation des aéronefs. Les patrouilles aériennes utiliseront automatiquement la plate-forme."
 
@@ -479,7 +494,7 @@ Unit_Description_BrewLAN_T4S001="Navire de combat expérimental amphibie."
 
 srs0402_desc="Transport expérimental"
 srs0402_name="Abyss sur chenilles"
-Unit_Description_BrewLAN_T4L003="transport amphibie expérimental. Voyages sous l'eau plus rapidement. Equipé de puissance modérée des armes à usage général."
+Unit_Description_BrewLAN_T4L003="Transport amphibie expérimental. Voyage sous l'eau plus rapidement. Équipé d'armes à puissance modéré."
 
 seb0401="Usine Expérimentale"
 seb0401_name="Portique"
@@ -515,7 +530,7 @@ Unit_Description_BrewLAN_T4B008="Sondes expérimentales. Donne la ligne de visé
 
 Panopticon_array_slot="tableau"
 Unit_Description_BrewLAN_T4B008_sre="Augmente le rayon du radar."
-Unit_Description_BrewLAN_T4B008_sresre="Augmente radar et le rayon omni."
+Unit_Description_BrewLAN_T4B008_sresre="Augmente la portée du radar et du rayon omni."
 Unit_Description_BrewLAN_T4B008_xbndl="Révèle échos radar."
 brewlan_panopticon_small_001="Activer antenne radar"
 brewlan_panopticon_small_002="Activer le plat Marcin"
@@ -536,18 +551,18 @@ brewlan_panopticon_med_003r="Désactiver le plat Mogwai"
 brewlan_panopticon_med_004r="Désactiver le plat neutre"
 brewlan_panopticon_xbl_001r="Le plat saxon Désactiver"
 
-sab0401="Usine d'avions expérimentaux"
+sab0401="Usine Aérienne Expérimentale"
 sab0401_name="indépendance du moteur"
-Unit_Description_BrewLAN_T4B009="Unités aériennes construit."
+Unit_Description_BrewLAN_T4B009="Construit des unités aériennes."
 
-srb0401="Expérimentale Terre usine"
+srb0401="Usine Terrestre Expérimentale"
 srb0401_name="Arthrosine"
-Unit_Description_BrewLAN_T4B010="Unités terrestres construit."
+Unit_Description_BrewLAN_T4B010="Construit des unités terrestres."
 
-ssb0401_desc="Experimental Naval usine"
+ssb0401_desc="Usine Navale Expérimentale"
 ssb0401_name="Souiya"
-Unit_Description_BrewLAN_T4B011="Unités navales construit."
+Unit_Description_BrewLAN_T4B011="Construit des unités navales."
 
 seb2401_desc="Défense expérimentale point"
 seb2401_name="Excalibur"
-Unit_Description_BrewLAN_T4B012="bâtiment défensif expérimental. Consomme de grandes quantités de puissance à chaque tir."
+Unit_Description_BrewLAN_T4B012="Bâtiment défensif expérimental. Consomme de grandes quantités de puissance à chaque tir."

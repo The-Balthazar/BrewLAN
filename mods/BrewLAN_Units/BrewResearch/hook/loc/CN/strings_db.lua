@@ -159,9 +159,9 @@ sea0313_name="雄貓"
 saa0313_name="赫利俄斯"
 sra0313_name="暮光之城守护神"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="最高端的远程隐形战机。配备双螺旋一阵轨道炮，空 - 空导弹和反导弹弹。"
 --[description]
---[description]
-Unit_Description_RND_025="最高端的远程隐形战斗机。配备了重粒子炮。能够狩猎侦察机。"
+Unit_Description_RND_025="最高端的远程隐形战斗机。配备了重粒子炮，反导弹弹。能够狩猎侦察机。"
 --[description]
 
 --Ekranoplan运输

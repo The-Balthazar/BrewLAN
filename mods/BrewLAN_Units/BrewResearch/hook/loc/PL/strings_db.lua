@@ -159,9 +159,9 @@ sea0313_name="Kocur"
 saa0313_name="Helios"
 sra0313_name="Zmierzch Patron"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="Top-end myśliwiec Stealth dalekiego zasięgu. Wyposażone Twin pękniętych śrubowych railguns, powietrze-powietrze, pociski i rakiety antyrakietowych."
 --[description]
---[description]
-Unit_Description_RND_025="Top-end dalekiego zasięgu myśliwiec Stealth. Wyposażony w ciężkich armat cząstek. Zdolne do polowania samoloty szpiegowskie."
+Unit_Description_RND_025="Top-end dalekiego zasięgu myśliwiec Stealth. Wyposażony w ciężkich armat cząstek i flar antyrakietowych. Zdolne do polowania samoloty szpiegowskie."
 --[description]
 
 --ekranoplan transporty

@@ -2,6 +2,11 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
+## 2010-10-13|0.8.9
+
+* Incremented numbers for static public release.
+* Updated translation documents.
+
 ## 2019-01-06|0.8.4.1
 
 * Fixed the Seraphim SACU having access to the un-upgraded tech 3 resource buildings after the field engineer upgrade.

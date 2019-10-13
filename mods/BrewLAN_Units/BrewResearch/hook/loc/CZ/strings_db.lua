@@ -12,7 +12,7 @@ srb9101_name="Zařízení Einstein"
 srb9201_name="Zařízení Schrodinger"
 srb9301_name="Zařízení Heisenberg"
 --Aeon
-sab9101_name="Vhled"
+sab9101_name="Porozumění"
 sab9201_name="Vedení"
 sab9301_name="Osvícení"
 --Seraphim
@@ -159,9 +159,9 @@ sea0313_name="Tomcat"
 saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="Top-end dlouhý dosah stealth bojovník. Vybavena twin Burst spirálovými railguns, air-to-air rakety a anti-raketových světlic."
 --[description]
---[description]
-Unit_Description_RND_025="Top-end dalekonosný stealth bojovník. Vybaveno s těžkými děly částic. Schopný lovu špionážní letadla."
+Unit_Description_RND_025="Top-end dalekonosný stealth bojovník. Vybaveno s těžkými děly částic, a anti-raketových světlice. Schopný lovu špionážní letadla."
 --[description]
 
 --Ekranoplan transporty

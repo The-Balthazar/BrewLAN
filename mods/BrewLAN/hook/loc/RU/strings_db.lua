@@ -29,7 +29,7 @@ tooltipbrewlan0009="Очистить строительную площадку."
 tooltipbrewlan0010="Убрать все задния или обломки из области строительства."
 
 --Для шпионского сооружения Серафимов
-tooltipbrewlan0011="Наблюдение."
+tooltipbrewlan0011="Открыть туман войны"
 tooltipbrewlan0012="Выберите единицу, за которой производить слежку."
 
 --Для открытия / закрытия ворот.
@@ -67,6 +67,9 @@ tooltipbrewlan0030="Когда включено, этот юнит будет д
 --Мобильная ПВО/ПРО Серафим
 tooltipbrewlan0031="Переключить приоритет целей"
 tooltipbrewlan0032="Переключить приоритет целей между воздушными целями или тактическими ракетами."
+
+--Вкладка повышение Паноптикум
+tooltipbrewlan0033="Настройка [массив]"
 
 --------------------------------------------------------------------------------
 -- Модули для АКБП
@@ -278,10 +281,21 @@ seb3303b_desc="Комплекс запуска спутников"
 Unit_Description_BrewLAN_T3B002="Производит и запускает спутники."
 
 ability_satellite_uplink="Спутниковая связь"
+ability_satellite_cap_0="Количество спутников: +0"
+ability_satellite_cap_1="Количество спутников: +1"
+ability_satellite_cap_2="Количество спутников: +2"
+ability_satellite_cap_3="Количество спутников: +3"
+ability_satellite_cap_4="Количество спутников: +4"
+ability_satellite_cap_5="Количество спутников: +5"
+ability_satellite_cap_inf="Количество спутников неограничено"
 
 sea0002_desc="Спутниковое наблюдение"
 sea0002_name="\"Пылающая звезда\""
 Unit_Description_BrewLAN_T3A012="Спутниковая система наблюдения. Предоставляет визуальное наблюдение с орбиты. Требует отдельную спутниковую связь для получения с нее данных."
+
+sea0003_desc="Спутник РЭБ"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Спутниковая система радиоэлектронной борьбы. Создает большое количество ложных радарных откликов, имитирующих истребители Т3 под собой. Не имеет возможности проводить разведку."
 
 --Альтернативы ботам-снайперам
 sel0320_desc="Передвижной центр спутниковой связи"
@@ -426,6 +440,7 @@ Unit_Description_BrewLAN_T3S003="ТУ3 судно - строит, ремонти
 
 sl0323_desc="Мобильная тактическая ПРО"
 sal0323_name="\"Разрыв\""
+sel0323_name="Trickshot"
 Unit_Description_BrewLAN_T3L014="Самоходный комплекс тактической ПРО. Защита ограничена радиусом действия комплекса."
 
 srl0324_desc="Самоходный массив сенсоров"
@@ -513,28 +528,28 @@ seb3404_desc="Экспериментальный массив сенсоров"
 seb3404_name="\"Паноптикум\""
 Unit_Description_BrewLAN_T4B008="Экспериментальный массив сенсоров. Следит за боевыми единицами противника в своем радиусе действия, обнаруженными другими средствами обнаружения, например, радаром. Слежение за каждой боевой единицей требует затрат энергии. Слежка за мобильными и крупными единицами требует больших затрат."
 
-Panopticon_array_slot="массив"
-Unit_Description_BrewLAN_T4B008_sre="Увеличивает радиус радара."
-Unit_Description_BrewLAN_T4B008_sresre="Увеличивает радар и всенаправленной радиус."
-Unit_Description_BrewLAN_T4B008_xbndl="Раскрывает радиолокационный Blips."
-brewlan_panopticon_small_001="Активировать радиолокационную антенну"
-brewlan_panopticon_small_002="Активируйте блюдо Marcin"
-brewlan_panopticon_small_003="Активируйте блюдо Gebauer"
-brewlan_panopticon_small_004="Активировать радиолокационную антенну"
-brewlan_panopticon_med_001="Активируйте блюдо Шапо"
-brewlan_panopticon_med_002="Активируйте блюдо Pankow"
-brewlan_panopticon_med_003="Активируйте блюдо Mogwai"
-brewlan_panopticon_med_004="Активируйте Нейтральная блюдо"
-brewlan_panopticon_xbl_001="Активируйте блюдо саксонское"
-brewlan_panopticon_small_001r="Деактивировать блюдо Guillaume"
-brewlan_panopticon_small_002r="Деактивировать блюдо Marcin"
-brewlan_panopticon_small_003r="Деактивировать блюдо Gebauer"
-brewlan_panopticon_small_004r="Деактивировать радиолокационную антенну"
-brewlan_panopticon_med_001r="Деактивировать блюдо Шапо"
-brewlan_panopticon_med_002r="Деактивировать блюдо Pankow"
-brewlan_panopticon_med_003r="Деактивировать блюдо Mogwai"
-brewlan_panopticon_med_004r="Деактивировать Нейтральная блюдо"
-brewlan_panopticon_xbl_001r="Деактивировать блюдо саксонское"
+Panopticon_array_slot="Массив"
+Unit_Description_BrewLAN_T4B008_sre="Увеличивает дальность радара"
+Unit_Description_BrewLAN_T4B008_sresre="Увеличивает дальность радара и всеволнового сенсора"
+Unit_Description_BrewLAN_T4B008_xbndl="Показывает радарные отклики"
+brewlan_panopticon_small_001="Активировать антенну радара"
+brewlan_panopticon_small_002="Активировать антенну \"Марсин\""
+brewlan_panopticon_small_003="Активировать антенну \"Гебайер\""
+brewlan_panopticon_small_004="Активировать антенну радара"
+brewlan_panopticon_med_001="Активировать антенну \"Шапо\""
+brewlan_panopticon_med_002="Активировать антенну \"Панков\""
+brewlan_panopticon_med_003="Активировать антенну \"Могуей\""
+brewlan_panopticon_med_004="Активировать антенну \"Нейтрал\""
+brewlan_panopticon_xbl_001="Активировать антенну \"Саксон\""
+brewlan_panopticon_small_001r="Деактивировать антенну \"Гиллом\""
+brewlan_panopticon_small_002r="Деактивировать антенну \"Марсин\""
+brewlan_panopticon_small_003r="Деактивировать антенну \"Гебайер\""
+brewlan_panopticon_small_004r="Деактивировать антенну радара"
+brewlan_panopticon_med_001r="Деактивировать антенну \"Шапо\""
+brewlan_panopticon_med_002r="Деактивировать антенну \"Панков\""
+brewlan_panopticon_med_003r="Деактивировать антенну \"Могуей\""
+brewlan_panopticon_med_004r="Деактивировать антенну \"Нейтрал\""
+brewlan_panopticon_xbl_001r="Деактивировать антенну \"Саксон\""
 
 sab0401="Экспериментальный авиазавод"
 sab0401_name="\"Машина Независимости\""

@@ -159,9 +159,9 @@ sea0313_name="Matou"
 saa0313_name="Helios"
 sra0313_name="Patron de twilight"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="Haut de gamme à longue portée de combat furtif. Equipé d'éclatement double railguns hélicoïdales, missiles air-air, et les fusées anti-missiles."
 --[description]
---[description]
-Unit_Description_RND_025="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes. Capable d'avions d'espionnage de chasse."
+Unit_Description_RND_025="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes et des fusées anti-missiles. Capable d'avions d'espionnage de chasse."
 --[description]
 
 --transports ekranoplan

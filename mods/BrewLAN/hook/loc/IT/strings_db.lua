@@ -15,8 +15,8 @@ tooltipbrewlan0001="Abilita o disabilita produzione di unità aeree"
 
 --Descrizioni comandi per il T3 decoy piani.
 tooltipbrewlan0002="velocità dell'aria Toggle"
-tooltipbrewlan0003="Attiva la rappresentazione di una superiorità aerea o di uno zar"
-tooltipbrewlan0004="Attiva la rappresentazione di una superiorità aerea o un Soulripper"
+tooltipbrewlan0003="Attiva la rappresentazione di una superiorità aerea o di uno CZAR"
+tooltipbrewlan0004="Attiva la rappresentazione di una superiorità aerea o un Soul Ripper"
 tooltipbrewlan0005="Attiva la rappresentazione di una superiorità aerea o un Ahwassa"
 tooltipbrewlan0006="Attiva la rappresentazione di una superiorità aerea o un Centurion AC-500"
 
@@ -29,7 +29,7 @@ tooltipbrewlan0009="zona di costruzione chiaro"
 tooltipbrewlan0010="Rimuove qualsiasi struttura o rimane dalla zona di accumulo."
 
 --Tooltips per l'impianto spia Serafini
-tooltipbrewlan0011="Scry"
+tooltipbrewlan0011="Preveggenza"
 tooltipbrewlan0012="Scegli un'unità per spiare"
 
 --Descrizioni comandi per l'/ tipo chiudibile aperta della porta.
@@ -67,6 +67,9 @@ tooltipbrewlan0030="Quando è attiva, l'unità ridurrà dinamicamente suo raggio
 --Seraphim mobile AA / TMD
 tooltipbrewlan0031="Toggle Arma priorità"
 tooltipbrewlan0032="Commutare tra la priorità della destinazione anti-aria e priorità della destinazione missile tattico."
+
+--scheda valorizzazione Panopticon
+tooltipbrewlan0033="Personalizzare [Array]"
 
 --------------------------------------------------------------------------------
 -- Miglioramenti Supporto comandante
@@ -278,10 +281,21 @@ seb3303b_desc="Satellite Launch Complex"
 Unit_Description_BrewLAN_T3B002="Produce e lancia satelliti"
 
 ability_satellite_uplink="Uplink satellitare"
+ability_satellite_cap_0="Capacità satellitare: 0"
+ability_satellite_cap_1="Capacità satellitare: 1"
+ability_satellite_cap_2="Capacità satellitare: 2"
+ability_satellite_cap_3="Capacità satellitare: 3"
+ability_satellite_cap_4="Capacità satellitare: 4"
+ability_satellite_cap_5="Capacità satellitare: 5"
+ability_satellite_cap_inf="Capacità satellitare senza restrizioni"
 
 sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
 Unit_Description_BrewLAN_T3A012="Satellite-based sistema di osservazione. Fornisce immagini satellitari visiva dall'orbita. Richiede un uplink satellitare dedicato per ricevere i dati da esso."
+
+sea0003_desc="controspionaggio Satellite"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Satellite-based sistema di controspionaggio. Provoca un gran numero di falsi segnali radar con caratteristiche di volo di combattenti superiorità aerea ad apparire underneith esso. Non ha la capacità per la raccolta inteligence."
 
 --alternative Sniper
 sel0320_desc="Mobile satellitare Uplink"
@@ -426,6 +440,7 @@ Unit_Description_BrewLAN_T3S003="Tech 3 navale costruzione, riparazione, la catt
 
 sl0323_desc="Cellulare Tactical Missile Defense"
 sal0323_name="Rottura"
+sel0323_name="Trickshot"
 Unit_Description_BrewLAN_T3L014="Mobile di difesa missilistica tattico. La protezione è limitata ad area operativa dell'unità."
 
 srl0324_desc="Array Sensor mobile"
@@ -511,9 +526,9 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Array Sensor sperimentale"
 seb3404_name="Panopticon"
-Unit_Description_BrewLAN_T4B008="Sperimentale matrice di sensori. Dà linea di vista per le unità nemiche entro il raggio operativo che sono visibili ai sensori disponibili, come radar. costi di manutenzione aggiuntivi per unità spiati. unità mobili e grandi unità costano di più per spiare."
+Unit_Description_BrewLAN_T4B008="Sperimentale matrice di sensori. Quando pienamente attivato, fornisce linea di vista per le unità nemiche entro il raggio operativo che sono visibili ai sensori disponibili, come radar. costi di manutenzione aggiuntivi per unità spiati. unità mobili e grandi unità costano di più per spiare."
 
-Panopticon_array_slot="schieramento"
+Panopticon_array_slot="Vettore"
 Unit_Description_BrewLAN_T4B008_sre="Aumenta il raggio radar."
 Unit_Description_BrewLAN_T4B008_sresre="Aumenta radar e raggio omni."
 Unit_Description_BrewLAN_T4B008_xbndl="Rivela segnali radar."

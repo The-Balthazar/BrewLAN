@@ -16,7 +16,7 @@ tooltipbrewlan0001="Zapíná nebo vypíná produkci leteckých jednotek"
 "Popisky pro T3 návnadové letouny"
 tooltipbrewlan0002="Přepnout vzdušnou rychlost"
 tooltipbrewlan0003="Přepíná imitaci jednotky letecké převahy nebo CZAR"
-tooltipbrewlan0004="Přepíná imitaci jednotky letecké převahy nebo Soulripper"
+tooltipbrewlan0004="Přepíná imitaci jednotky letecké převahy nebo Soul Ripper"
 tooltipbrewlan0005="Přepíná imitaci jednotky letecké převahy nebo Ahwassa"
 tooltipbrewlan0006="Přepíná imitaci jednotky letecké převahy nebo Centurion AC-500"
 
@@ -29,7 +29,7 @@ tooltipbrewlan0009="Vyčistit stavební plochu"
 tooltipbrewlan0010="Odstraní všechny budovy nebo zbytky ze stavební plochy"
 
 "Popisky pro Serafimské sledovací zařízení"
-tooltipbrewlan0011="Sledování"
+tooltipbrewlan0011="Předpovídání"
 tooltipbrewlan0012="Vyberte jednotku pro sledování"
 
 --Popisky pro otevíratelné/uzavíratelné typy brány
@@ -67,6 +67,9 @@ tooltipbrewlan0030="Sleduje spotřebu energie. Aktivní dynamicky snižuje dosah
 --Serafimské protilecké vozidlo/taktická raketová mobilní obrana
 tooltipbrewlan0031="Přepnout prioritu palby"
 tooltipbrewlan0032="Přepíná prioritu palby na vzdušné cíle a taktické rakety."
+
+--Karta Vylepšení Panoptikum
+tooltipbrewlan0033="Přizpůsobení [Array]"
 
 --------------------------------------------------------------------------------
 -- Vylepšení Podpůrného Velitele
@@ -278,10 +281,21 @@ seb3303b_desc="Komplex Vypouštění Družic""
 Unit_Description_BrewLAN_T3B002="Vyrábí a vystřeluje družice."
 
 ability_satellite_uplink="Satelitní Uplink"
+ability_satellite_cap_0="Satellite Kapacita: 0"
+ability_satellite_cap_1="Satellite Kapacita: 1"
+ability_satellite_cap_2="Satellite Kapacita: 2"
+ability_satellite_cap_3="Satellite Kapacita: 3"
+ability_satellite_cap_4="Satellite Kapacita: 4"
+ability_satellite_cap_5="Satellite Kapacita: 5"
+ability_satellite_cap_inf="Satelitní kapacita Neomezená"
 
 sea0002_desc="Pozorvací Družice"
 sea0002_name="Hořící Hvězda"
 Unit_Description_BrewLAN_T3A012="Družicový pozorovací systém. Poskytuje vizuální satelitních snímkky z oběžné dráhy. Vyžaduje satelitní uplink pro příjem dat z něj."
+
+sea0003_desc="kontrarozvědky Satellite"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Družicový systém kontrarozvědka. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi vzdušné převahy bojovníků objevovat underneith ní. Nemá prostor pro shromažďování inteligence."
 
 --alternativy Sniperů
 sel0320_desc="Mobilní Satelitní Uplink"
@@ -426,6 +440,7 @@ Unit_Description_BrewLAN_T3S003="Tech 3 námořní konstrukční, opravovací, z
 
 sl0323_desc="Mobilní Taktická Raketová Obrana"
 sal0323_name="Trhač"
+sel0323_name="Trickshot"
 Unit_Description_BrewLAN_T3L014="Mobilní taktická raketová obrana. Ochrana je omezena na operační plochu jednotky."
 
 srl0324_desc="Mobilní Senzorové Pole"

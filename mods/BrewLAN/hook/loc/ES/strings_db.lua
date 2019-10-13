@@ -15,8 +15,8 @@ tooltipbrewlan0001="Activa o desactiva la producción de unidades de aire"
 
 --Información sobre herramientas para el T3 señuelo aviones.
 tooltipbrewlan0002="la velocidad del aire de palanca"
-tooltipbrewlan0003="Alterna suplantación de una superioridad aérea o un zar"
-tooltipbrewlan0004="Alterna suplantación de una superioridad aérea o una Soulripper"
+tooltipbrewlan0003="Alterna suplantación de una superioridad aérea o un CZAR"
+tooltipbrewlan0004="Alterna suplantación de una superioridad aérea o una Soul Ripper"
 tooltipbrewlan0005="Alterna suplantación de una superioridad aérea o un Ahwassa"
 tooltipbrewlan0006="Alterna suplantación de una superioridad de aire o un Centurion AC-500"
 
@@ -29,7 +29,7 @@ tooltipbrewlan0009="Área de construcción clara"
 tooltipbrewlan0010="Elimina cualquier estructura o restos de la superficie construida."
 
 --Información sobre herramientas para la instalación de espionaje Serafines
-tooltipbrewlan0011="scry"
+tooltipbrewlan0011="Ver"
 tooltipbrewlan0012="Elija una unidad para espiar"
 
 --Información sobre herramientas para el tipo abierto / que se puede cerrar de la puerta.
@@ -67,6 +67,9 @@ tooltipbrewlan0030="Si bien activa, esta unidad se reducirá dinámicamente su r
 --Serafines móvil AA / TMD
 tooltipbrewlan0031="Prioridad de palanca Arma"
 tooltipbrewlan0032="Alternar entre la prioridad de destino anti-aire y prioridad de destino misil táctico."
+
+--pestaña mejora panóptico
+tooltipbrewlan0033="Personalizar [Array]"
 
 --------------------------------------------------------------------------------
 -- mejoras comandante apoyo
@@ -278,10 +281,21 @@ seb3303b_desc="Complejo de Lanzamiento de Satélites"
 Unit_Description_BrewLAN_T3B002="Produce y lanza satélites"
 
 ability_satellite_uplink="de señal de satélite"
+ability_satellite_cap_0="Capacidad de satélite: 0"
+ability_satellite_cap_1="Capacidad de satélite: 1"
+ability_satellite_cap_2="Capacidad de satélites: 2"
+ability_satellite_cap_3="Capacidad de satélite: 3"
+ability_satellite_cap_4="Capacidad de satélite: 4"
+ability_satellite_cap_5="Capacidad de satélite: 5"
+ability_satellite_cap_inf="Capacidad de satélite sin restricciones"
 
 sea0002_desc="satélite de observación"
 sea0002_name="Burning Star"
 Unit_Description_BrewLAN_T3A012="basado en satélites del sistema de observación. Proporciona imágenes de satélite visual desde la órbita. Requiere una conexión vía satélite dedicada a recibir datos de él."
+
+sea0003_desc="satélite contrainteligencia"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="basado en satélites del sistema de contrainteligencia. Provoca un gran número de señales de radar falsos con características de vuelo de caza de superioridad aérea a aparecer underneith ella. No tiene capacidad para la recolección de inteligencia."
 
 --alternativas de francotirador
 sel0320_desc="Móviles por satélite de enlace ascendente"
@@ -426,7 +440,8 @@ Unit_Description_BrewLAN_T3S003="Tech 3, construcción, reparación, captura, Re
 
 sl0323_desc="Mobile Tactical Defensa de Misiles"
 sal0323_name="Ruptura"
-Unit_Description_BrewLAN_T3L014="de defensa de misiles tácticos móvil. La protección es limitada a la zona operativa de la unidad."
+sel0323_name="Disparo con efecto"
+Unit_Description_BrewLAN_T3L014="de defensa de misiles tácticos móvil. La protección es limitada al área de operaciones de la unidad."
 
 srl0324_desc="Sensor Array móvil"
 srl0324_name="Adramelech"
@@ -511,7 +526,7 @@ srl0006_desc=srl0000_desc .. " (LMR)"
 
 seb3404_desc="Sensor Array Experimental"
 seb3404_name="panóptico"
-Unit_Description_BrewLAN_T4B008="array sensor Experimental. Da línea de visión para unidades enemigas dentro de su radio operativo que son visibles para los sensores disponibles, tales como radar. Los gastos de conservación adicionales por unidad siendo espiados. unidades móviles y grandes unidades cuestan más para espiar."
+Unit_Description_BrewLAN_T4B008="array sensor Experimental. Cuando está totalmente activado, proporciona la línea de visión para unidades enemigas dentro de su radio operativo que son visibles para los sensores disponibles, tales como radar. Los gastos de conservación adicionales por unidad siendo espiados. unidades móviles y grandes unidades cuestan más para espiar."
 
 Panopticon_array_slot="Formación"
 Unit_Description_BrewLAN_T4B008_sre="Aumenta el radio de radar."

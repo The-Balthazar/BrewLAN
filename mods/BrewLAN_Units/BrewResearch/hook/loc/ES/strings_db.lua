@@ -13,8 +13,8 @@ srb9201_name="Instalación Schrodinger"
 srb9301_name="Facilidad de Heisenberg"
 --Eón
 sab9101_name="Visión"
-sab9201_name="Dirección"
-sab9301_name="Ilustración"
+sab9201_name="Guia"
+sab9301_name="Iluminación"
 --Serafines
 ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab"
@@ -27,17 +27,17 @@ Unit_Description_RND_007="centro de investigación avanzada. Ha aumentado la vel
 --Centros de Ciencia
 seb9302_desc="Centro de ciencia"
 
-seb9202_name="TBD"
-seb9302_name="TBD"
+seb9202_name="a ser determinado"
+seb9302_name="a ser determinado"
 
-srb9202_name="TBD"
-srb9302_name="TBD"
+srb9202_name="a ser determinado"
+srb9302_name="a ser determinado"
 
-sab9202_name="TBD"
-sab9302_name="TBD"
+sab9202_name="a ser determinado"
+sab9302_name="a ser determinado"
 
-ssb9202_name="TBD"
-ssb9302_name="TBD"
+ssb9202_name="a ser determinado"
+ssb9302_name="a ser determinado"
 
 sb9302_desc="Proporciona bonos de adyacencia a los centros de investigación, disminuyendo el tiempo de investigación."
 sb9303_desc="Proporciona bonos de adyacencia a los centros de investigación, la disminución de los costos de investigación."
@@ -159,9 +159,9 @@ sea0313_name="Gato"
 saa0313_name="Helios"
 sra0313_name="crepúsculo Patrón"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="Tapa-fin de largo alcance avión furtivo. Equipado con railguns doble ráfaga helicoidales, misiles aire-aire, y bengalas antimisiles."
 --[description]
---[description]
-Unit_Description_RND_025="Tapa-fin de largo alcance avión furtivo. Equipado con cañones de partículas pesadas. Capaz de cazar aviones espía."
+Unit_Description_RND_025="Tapa-fin de largo alcance avión furtivo. Equipado con cañones de partículas pesadas, y bengalas antimisiles. Capaz de cazar aviones espía."
 --[description]
 
 --transportes ekranoplan

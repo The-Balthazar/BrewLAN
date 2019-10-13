@@ -159,9 +159,9 @@ sea0313_name="Tomcat"
 saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
+Unit_Description_RND_026="Top-end long range stealth fighter. Equipped with twin burst helical railguns, air-to-air missiles, and anti-missile flares."
 --[description]
---[description]
-Unit_Description_RND_025="Top-end long-range stealth fighter. Equipped with heavy particle cannons. Capable of hunting spy planes."
+Unit_Description_RND_025="Top-end long-range stealth fighter. Equipped with heavy particle cannons, and anti-missile flares. Capable of hunting spy planes."
 --[description]
 
 --Ekranoplan transports

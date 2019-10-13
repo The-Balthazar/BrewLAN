@@ -16,7 +16,7 @@ tooltipbrewlan0001="Enables or disables production of air units"
 --Tooltips for the T3 decoy planes.
 tooltipbrewlan0002="Toggle air speed"
 tooltipbrewlan0003="Toggles impersonation of an air superiority or a CZAR"
-tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soulripper"
+tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soul Ripper"
 tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
 tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
 
@@ -67,6 +67,9 @@ tooltipbrewlan0030="While active, this unit will dynamically reduce its operatio
 --Seraphim Mobile AA/TMD
 tooltipbrewlan0031="Toggle Weapon Priority"
 tooltipbrewlan0032="Toggle between anti-air target priority and tactical missile target priority."
+
+--Panopticon enhancement tab
+tooltipbrewlan0033="Customise [Array]"
 
 --------------------------------------------------------------------------------
 -- Support commander enhancements
@@ -278,10 +281,21 @@ seb3303b_desc="Satellite Launch Complex"
 Unit_Description_BrewLAN_T3B002="Produces and launches satellites"
 
 ability_satellite_uplink="Satellite Uplink"
+ability_satellite_cap_0="Satellite Capacity: +0"
+ability_satellite_cap_1="Satellite Capacity: +1"
+ability_satellite_cap_2="Satellite Capacity: +2"
+ability_satellite_cap_3="Satellite Capacity: +3"
+ability_satellite_cap_4="Satellite Capacity: +4"
+ability_satellite_cap_5="Satellite Capacity: +5"
+ability_satellite_cap_inf="Satellite Capacity Unrestricted"
 
 sea0002_desc="Observation Satellite"
 sea0002_name="Burning Star"
 Unit_Description_BrewLAN_T3A012="Satellite-based observation system. Provides visual satellite imagery from orbit. Requires a dedicated satellite uplink to receive data from it."
+
+sea0003_desc="Counterintelligence Satellite"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters to appear underneith it. Has no capacity for inteligence gathering."
 
 --Sniper alternatives
 sel0320_desc="Mobile Satellite Uplink"
@@ -426,6 +440,7 @@ Unit_Description_BrewLAN_T3S003="Tech 3 naval construction, repair, capture, rec
 
 sl0323_desc="Mobile Tactical Missile Defense"
 sal0323_name="Rupture"
+sel0323_name="Trickshot"
 Unit_Description_BrewLAN_T3L014="Mobile tactical missile defense. Protection is limited to unit's operational area."
 
 srl0324_desc="Mobile Sensor Array"
@@ -511,7 +526,7 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Experimental Sensor Array"
 seb3404_name="Panopticon"
-Unit_Description_BrewLAN_T4B008="Experimental sensor array. Gives line of sight for enemy units within its operational radius that are visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and large units cost more to spy on."
+Unit_Description_BrewLAN_T4B008="Experimental sensor array. When fully activated, provides line of sight for enemy units within its operational radius that are visible to available sensors, such as radar. Upkeep costs additional per-unit being spied on. Mobile units and large units cost more to spy on."
 
 Panopticon_array_slot="Array"
 Unit_Description_BrewLAN_T4B008_sre="Increases radar radius."

@@ -15,8 +15,8 @@ tooltipbrewlan0001="Włącza lub wyłącza wytwarzanie jednostek powietrznych"
 
 --Podpowiedzi dla T3 wabik samolotów.
 tooltipbrewlan0002="Włącz prędkość powietrza"
-tooltipbrewlan0003="Włącza podszywanie się o przewagę w powietrzu lub CZAR"
-tooltipbrewlan0004="Włącza podszywanie się o przewagę w powietrzu lub Soulripper"
+tooltipbrewlan0003="Włącza podszywanie się o przewagę w powietrzu lub CAR"
+tooltipbrewlan0004="Włącza podszywanie się o przewagę w powietrzu lub Rozpruwacz dusz"
 tooltipbrewlan0005="Włącza podszywanie się o przewagę w powietrzu lub Ahwassa"
 tooltipbrewlan0006="Włącza podszywanie się o przewagę w powietrzu lub AC-500 Centurion"
 
@@ -29,7 +29,7 @@ tooltipbrewlan0009="Przezroczysty obszar build"
 tooltipbrewlan0010="Usuwa wszelkie struktury lub pozostaje z terenu budowy."
 
 --Podpowiedzi dla zakładu szpiegowskiej Seraphim
-tooltipbrewlan0011="Wróżyć z kuli szklanej"
+tooltipbrewlan0011="Jasnowidzenie"
 tooltipbrewlan0012="Wybierz jednostkę do szpiegowania"
 
 --Podpowiedzi dla otwartego / zamykaną rodzaju bramy.
@@ -67,6 +67,9 @@ tooltipbrewlan0030="Podczas gdy aktywna, to urządzenie będzie dynamicznie zmni
 --Seraphim Komórka AA / TMD
 tooltipbrewlan0031="Przegubowe Broń Priorytet"
 tooltipbrewlan0032="Przełączać się między anty-powietrze priorytetu docelowej i taktycznego priorytetu docelowej pocisk."
+
+--Zakładka wzmocnienie Panopticon
+tooltipbrewlan0033="Dostosować [tablicy]"
 
 --------------------------------------------------------------------------------
 -- Udoskonalenia wsparcie dowódcy
@@ -266,7 +269,7 @@ Unit_Description_BrewLAN_T3B004="Ciężki wieża obronna. Ataki jednostek lądow
 sbui2311_desc="Anti-Armor punkt obrony"
 seb2311_name="Opiekun"
 ssb2311_name="Sinn Unthe"
-srb2311_name="Punisher"
+srb2311_name="karzący, wymierzający karę"
 sab2311_name="Nihiloid"
 Unit_Description_BrewLAN_T3B005="Bardzo ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężny pancernik klasy Gaussa armaty."
 Unit_Description_BrewLAN_T3B006="Bardzo ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężnej broni energetycznej."
@@ -278,10 +281,21 @@ seb3303b_desc="Satellite Launch Complex"
 Unit_Description_BrewLAN_T3B002="Produkuje i wprowadza na rynek satelity"
 
 ability_satellite_uplink="Uplink satelitarna"
+ability_satellite_cap_0="Pojemność satelitarna: +0"
+ability_satellite_cap_1="Pojemność satelitarna: +1"
+ability_satellite_cap_2="Pojemność satelitarna: +2"
+ability_satellite_cap_3="Pojemność satelitarna: +3"
+ability_satellite_cap_4="Pojemność satelitarna: +4"
+ability_satellite_cap_5="Pojemność satelitarna: +5"
+ability_satellite_cap_inf="Pojemność satelitarna Nieograniczony"
 
 sea0002_desc="obserwacja satelitarna"
 sea0002_name="spalanie Gwiazda"
 Unit_Description_BrewLAN_T3A012="Satelitarnie system obserwacji. Zapewnia wizualną obrazów satelitarnych z orbity. Wymaga dedykowanego połączenie satelitarne do odbioru danych z niego."
+
+sea0003_desc="kontrwywiad satelitarna"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Satelitarny system System kontrwywiadu. Powoduje dużą liczbę fałszywych sygnałów radarowych o charakterystyce lotu myśliwców przewagi powietrznej pojawiać underneith niego. Ma zdolność do gromadzenia inteligencji."
 
 --Snajper alternatywy
 sel0320_desc="Komórka Satellite Uplink"
@@ -399,7 +413,7 @@ Unit_Description_BrewLAN_T3L015="Komórka anty-air missile launcher. Wyposażony
 
 --srl0320_desc=--Komórka Missile Launcher
 srl0320_desc="Komórka SAM Launcher"
-srl0320_name="Poroniony płód"
+srl0320_name="Przesmykiwać się"
 Unit_Description_BrewLAN_T3L009="Komórka zakamuflowana ziemia-powietrze wyrzutnię rakiet. Musi stać się widoczny do ataku."
 
 ssl0320_desc="Mobile Anti-Air Defence"
@@ -426,6 +440,7 @@ Unit_Description_BrewLAN_T3S003="Tech 3 marynarki budowa, naprawa, przechwytywan
 
 sl0323_desc="Komórka Tactical Missile Defence"
 sal0323_name="Pęknięcie"
+sel0323_name="Trickshot"
 Unit_Description_BrewLAN_T3L014="Komórka taktycznych obrony przeciwrakietowej. Ochrona jest ograniczona do obszaru operacyjnego urządzenia."
 
 srl0324_desc="Sensor Array mobilna"
@@ -511,7 +526,7 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Tablica eksperymentalny czujnika"
 seb3404_name="Panoptikum"
-Unit_Description_BrewLAN_T4B008="Eksperymentalna macierz czujników. Daje pole widzenia dla wrogich jednostek należących do jej promienia operacyjnego, które są widoczne na dostępnych czujników, takich jak radar. koszty utrzymania dodatkowych na jednostkę jest szpiegował. Mobilne jednostki i duże jednostki kosztować więcej szpiegować."
+Unit_Description_BrewLAN_T4B008="Eksperymentalna macierz czujników. Kiedy w pełni aktywna, zapewnia pole widzenia dla wrogich jednostek należących do jej promienia operacyjnego, które są widoczne na dostępnych czujników, takich jak radar. koszty utrzymania dodatkowych na jednostkę jest szpiegował. Mobilne jednostki i duże jednostki kosztować więcej szpiegować."
 
 Panopticon_array_slot="Szyk"
 Unit_Description_BrewLAN_T4B008_sre="Zwiększa promień radaru."

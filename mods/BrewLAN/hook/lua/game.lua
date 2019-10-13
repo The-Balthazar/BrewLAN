@@ -29,7 +29,7 @@ do
     --------------------------------------------------------------------------------
     BrewLANPath = function()
         for i, mod in __active_mods do
-            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N0000841" then
+            if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000089" then
                 return mod.location
             end
         end

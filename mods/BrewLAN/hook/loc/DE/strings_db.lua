@@ -10,8 +10,8 @@
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
-tooltipbrewlan0000="Produktion umschalten"
-tooltipbrewlan0001="Aktiviert oder deaktiviert Produktion"
+tooltipbrewlan0000="Luftproduktion umschalten"
+tooltipbrewlan0001="Aktiviert oder deaktiviert die Produktion von Lufteinheiten"
 
 --Tooltips for the T3 decoy planes.
 tooltipbrewlan0002="Fluggeschwindigkeit umschalten"
@@ -29,7 +29,7 @@ tooltipbrewlan0009="Bau-Umgebung räumen"
 tooltipbrewlan0010="Entfernt alle Gebäude und/oder Rückstände von der Baufläche."
 
 --Tooltops for the Seraphim spy facility
-tooltipbrewlan0011="Scry"
+tooltipbrewlan0011="Hellsehen"
 tooltipbrewlan0012="Wähle eine Einheit die ausspioniert werden soll"
 
 --Tooltips for the open/closeable kind of gate.
@@ -65,8 +65,11 @@ tooltipbrewlan0029="Wirtschaftliche Beobachtung Ein- /Ausschalten"
 tooltipbrewlan0030="Wenn aktiviert wird der Spionageradius dynamisch an ein wirtschaftlich aufrechterhaltbares Level angepasst."
 
 --Seraphim Mobil AA / TMD
-tooltipbrewlan0031="Toggle Waffe Priorität"
+tooltipbrewlan0031="Waffenpriorität umschalten"
 tooltipbrewlan0032="Umschalten zwischen anti-Luft Zielpriorität und taktischer Raketenzielpriorität."
+
+--Panopticon Erweiterung Tab
+tooltipbrewlan0033="Anpassen von [Array]"
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements
@@ -118,7 +121,7 @@ Unit_Description_BrewLAN_T1U001="Luftstützpunkt. Repariert und Betankt kleine F
 
 --Field engineers
 sl0119_desc="Feldtechniker"
-sal0119_desc="Defensiv Techniker"
+sal0119_desc="Verteidigungstechniker"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
 srl0119_name="Outy"
@@ -127,7 +130,7 @@ Unit_Description_BrewLAN_T1L001="Tech 1 amphibische Bau- , Reparatur- , Übernah
 Unit_Description_BrewLAN_T1L002="Tech 1 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit geringfügiger Bewaffnung sowie Sonar und einem persönlichen Tarnfeldgenerator. Kann spezial Verteitigung bauen"
 Unit_Description_BrewLAN_T1L003="Tech 1 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit einem persönlichen Schild ausgestattet. Kann spezial Verteidigung bauen"
 
-ss0119_desc="Gefechtstechniker Boot"
+ss0119_desc="Feldtechnikerboot"
 ses0119_name="Mendy Klasse"
 srs0119_name="Franklin Klasse"
 Unit_Description_BrewLAN_T1S001="Tech 1 konstruktions-, reparatur-, übernahme-, zurückgewinnungs- und Minenleger Einheit."
@@ -142,7 +145,7 @@ Unit_Description_BrewLAN_T2A001="Mittlerer taktischer Bomber. Ausgestattet mit e
 
 --Field Engineer
 sl0209_desc="Feldtechniker"
-sal0209_desc="Defensiv Techniker"
+sal0209_desc="Verteidigungstechniker"
 sal0209_name="Butler"
 srl0209_name="Wilson"
 ssl0219_name="Iyazyn"
@@ -182,7 +185,7 @@ Unit_Description_BrewLAN_T2D004="Eine nukleare Annäherungsmine für jedes Terra
 Unit_Description_BrewLAN_T2D002="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius. Kann zweimal Aufgerüstet werden."
 Unit_Description_BrewLAN_T2D003="Erzeugt einen schützenden Schild um Einheiten und Gebäude innerhalb des Radius."
 
-sbui5210="Schwerer Mauern Abschnitt"
+sbui5210="Schwerer Mauerabschnitt"
 seb5210_name="Zerstörende Sackgasse"
 srb5210_name="Panzerdamm"
 ssb5210_name="Haas-haas"
@@ -190,20 +193,20 @@ Unit_Description_BrewLAN_T2B001="Bremst den Vorstoß des Feindes. Kann extremem 
 
 ssl0222_desc="Mobiler Schildgenerator"
 ssl0222_name="Athanne"
-Unit_Description_BrewLAN_T2L004="Mobilee Schield Generator."
+Unit_Description_BrewLAN_T2L004="Mobiler Schildgenerator."
 
-ss0219_desc="Kampftechniker Schiff"
+ss0219_desc="Feldtechnikerschiff"
 ses0219_name="Fixxie-Klasse"
 srs0219_name="Barwick Klasse"
 Unit_Description_BrewLAN_T2S001="Tech 2 marine konstruktions-, reparatur-, übernahme- und zurückgewinnungs Einheit. Ausgerüstet mit einer Luftabwehrwaffe."
 Unit_Description_BrewLAN_T2S002="Tech 2 Schiffsbau, Reparatur, zu erfassen, reclaimation und Einheit Mine Schicht."
 
 sea0201_desc="Aufklärungsflugzeug"
-sea0201_name="UX Dragon"
+sea0201_name="UX Dragonlady"
 ssa0201_name="Selia"
-Unit_Description_BrewLAN_T2A002="Tactical Aufklärungsflugzeuge."
+Unit_Description_BrewLAN_T2A002="Taktisches Aufklärungsflugzeug"
 
-sra0201_desc="Stealth-Flugzeug"
+sra0201_desc="Tarnflugzeug"
 sra0201_name="Blade Raven"
 Unit_Description_BrewLAN_T2A003="Tactical Gegen Intelligenz und Aufklärungsflugzeuge. Ausgestattet mit einem Stealth-Feldgenerator."
 
@@ -273,15 +276,26 @@ Unit_Description_BrewLAN_T3B006="Superschweres Verteitigungsgeschütz. Attackier
 Unit_Description_BrewLAN_T3B007="Superschweres Verteitigungsgeschütz. Attackiert Land- und Seeeinheiten mit einer Protonen-Kanone der Schlachtschiff-Klasse."
 Unit_Description_BrewLAN_T3B008="Superschweres Verteitigungsgeschütz. Attackiert Land- und Seeeinheiten mit einer Oblivion-Kanone der Schlachtschiff-Klasse"
 
-seb3303_desc="Beobachtungs Satelliten System"
+seb3303_desc="Beobachtungssatelitensystem"
 seb3303b_desc="Satellite Launch Complex"
 Unit_Description_BrewLAN_T3B002="Produziert und startet Satelliten"
 
 ability_satellite_uplink="Satelliten-Uplink"
+ability_satellite_cap_0="Satelliten-Kapazität: 0"
+ability_satellite_cap_1="Satelliten-Kapazität: 1"
+ability_satellite_cap_2="Satelliten-Kapazität: 2"
+ability_satellite_cap_3="Satelliten-Kapazität: 3"
+ability_satellite_cap_4="Satelliten-Kapazität: 4"
+ability_satellite_cap_5="Satelliten-Kapazität: 5"
+ability_satellite_cap_inf="Satellitenkapazität Unrestricted"
 
 sea0002_desc="Beobachtungs Satellit"
 sea0002_name="Brennender Stern"
 Unit_Description_BrewLAN_T3A012="Satellitengestützte Beobachtungssystem. Bietet visuelle Satellitenbilder aus dem Orbit. Benötigt einen eigenen Satelliten-Uplink-Daten von ihm zu empfangen."
+
+sea0003_desc="Abschirmdienst Satellite"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="Satellitengestützte Spionageabwehr System. Verursacht eine große Anzahl von gefälschten Radarsignalen mit Flugeigenschaften von Luftüberlegenheitskämpfer underneith es erscheinen. Bietet keinen Platz für inteligence Versammlung."
 
 --Sniper bot alternatives
 sel0320_desc="Mobiler Satelliten-Uplink"
@@ -295,18 +309,18 @@ sel0321_name="Aster"
 srl0321_name="Hedgehog"
 sal0321_name="Scarab"
 ssl0321_name="Ythhu"
-Unit_Description_BrewLAN_T3L004="Mobile strategische Raketenabwehr. Baukosten beinhalten die erste Abwehrrakete jedoch können weitere Raketen nur mit Unterstüzung durch Techniker o.ä. produziert werden."
-Unit_Description_BrewLAN_T3L008="Mobile strategische Raketenabwehr. Feuert eine Salve von 3-Raketen auf jedes Ziel. Baukosten beinhalten die erste Salve."
+Unit_Description_BrewLAN_T3L004="Bewegliche strategische Raketenabwehr. Baukosten beinhalten die erste Abwehrrakete jedoch können weitere Raketen nur mit Unterstüzung durch Techniker o.ä. produziert werden."
+Unit_Description_BrewLAN_T3L008="Bewegliche strategische Raketenabwehr. Feuert eine Salve von 3-Raketen auf jedes Ziel. Baukosten beinhalten die erste Salve."
 
 --Seraphim T3 sonar platform
 sss0305_desc="Sonarplattform"
 sss0305_name="Aezhou"
-Unit_Description_BrewLAN_T3S001="Sonar System mit außergewöhnlicher Reichweite. Ausgestattet mit einem persönlichen Teleporter."
+Unit_Description_BrewLAN_T3S001="Sonarsystem mit außergewöhnlicher Reichweite. Ausgestattet mit einem persönlichen Teleporter."
 ability_personal_teleporter="Persönlicher Teleporter"
 
 --Field engineers
 sl0319_desc="Feldtechniker"
-sal0319_desc="Defensiv Techniker"
+sal0319_desc="Verteidigungstechniker"
 sel0319_name="Custodian"
 sal0319_name="Bilmon"
 srl0319_name="House"
@@ -315,28 +329,28 @@ Unit_Description_BrewLAN_T3L005="Tech 3 amphibische Bau- , Reparatur- , Übernah
 Unit_Description_BrewLAN_T3L006="Tech 3 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit geringfügiger Bewaffnung sowie Sonar und einem persönlichen Tarnfeldgenerator. Kann spezial Verteitigung bauen"
 Unit_Description_BrewLAN_T3L007="Tech 3 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Mit einem persönlichen Schild ausgestattet. Kann spezial Verteidigung bauen"
 
-srb1311_desc="Tarnbarer Energie Generator"
-seb1311_desc="Technischer Energie Generator"
-sab1311_desc="Geschildeter Energie Generator"
-ssb1311_desc="Gepanzerter Energie Generator"
+srb1311_desc="Tarnbarer Energiegenerator"
+seb1311_desc="Technischer Energiegenerator"
+sab1311_desc="Geschildeter Energiegenerator"
+ssb1311_desc="Gepanzerter Energiegenerator"
 sab1311_name="Von Mayer Reaktor"
 seb1311_name="Bessemer Reaktor"
 srb1311_name="Faraday Reaktor"
 ssb1311_name="Uya-iyathan"
-Unit_Description_BrewLAN_T3B009="Großes, Energie erzeugendes Gebäude. Hat die Fähigkeit sich zu Tarnen, was den Energieausstoß drastisch mindert "
+Unit_Description_BrewLAN_T3B009="Großes, energieerzeugendes Gebäude. Hat die Fähigkeit sich zu Tarnen, was den Energieausstoß drastisch mindert "
 Unit_Description_BrewLAN_T3B0012="Großes, Energie erzeugendes Gebäude. Hat die Fähigkeit umliegende Gebäude zu reparieren. Baut automatisch Verteidigungen wenn beschädigt."
 Unit_Description_BrewLAN_T3B0014="Großes, Energie erzeugendes Gebäude. Besitzt ein starkes Schild welches einen kleinen Teil des Energieaustoßes beansprucht."
 Unit_Description_BrewLAN_T3B0016="Großes, Energie erzeugendes Gebäude. Besitzt überlegene Panzerung und regenerative Kräfte."
 
-sab1312_desc="Geschildeter Masse Extraktor"
-seb1312_desc="Technischer Masse Extraktor"
-srb1312_desc="Tarnbarer Masse Extraktor"
-ssb1312_desc="Gepanzerter Masse Extraktor"
-seb1312_name="Masse Pumpe 3E"
-Unit_Description_BrewLAN_T3B0021="High-end Masse extraktor. Muss auf Massevorkommen plaziert werden. Generiert ein Schild das groß genug ist um sich selbst und vier Speicher zu schützen."
-Unit_Description_BrewLAN_T3B0022="High-end Masse extraktor. Muss auf Massevorkommen plaziert werden. Hat die Fähigkeit umliegende Gebäude zu reparieren. Baut automatisch Verteidigungen wenn beschädigt."
-Unit_Description_BrewLAN_T3B0023="High-end Masse extraktor. Muss auf Massevorkommen plaziert werden. Getarnt."
-Unit_Description_BrewLAN_T3B0024="High-end Masse extraktor. Muss auf Massevorkommen plaziert werden. Besitzt überlegene Panzerung und regenerative Kräfte."
+sab1312_desc="Abgeschirmter Masseextraktor"
+seb1312_desc="Technischer Masseextraktor"
+srb1312_desc="Tarnbarer Masseextraktor"
+ssb1312_desc="Gepanzerter Masseextraktor"
+seb1312_name="Massepumpe 3E"
+Unit_Description_BrewLAN_T3B0021="Hochleistungs Masseextraktor. Muss auf Massevorkommen platziert werden. Generiert einen Schild der groß genug ist um sich selbst und vier Speicher zu schützen."
+Unit_Description_BrewLAN_T3B0022="Hochleistungs Masseextraktor. Muss auf Massevorkommen plaziert werden. Hat die Fähigkeit umliegende Gebäude zu reparieren. Baut automatisch Verteidigungen wenn beschädigt."
+Unit_Description_BrewLAN_T3B0023="Hochleistungs Masseextraktor. Muss auf Massevorkommen plaziert werden. Getarnt."
+Unit_Description_BrewLAN_T3B0024="Hochleistungs Masseextraktor. Muss auf Massevorkommen plaziert werden. Besitzt überlegene Panzerung und regenerative Kräfte."
 
 srb1313_desc="Tarnbarer Masse Fabrikator"
 seb1313_desc="Technischer Masse Fabrikator"
@@ -351,7 +365,7 @@ srb4313_desc="Tarnbarer Tarnfeldgenerator"
 srb4313_name="Nightshade"
 Unit_Description_BrewLAN_T3B0011="Erzeugt ein Tarnfeld. Versteckt Einheiten und Gebäude vor Radar und Sonar aufklärung. Getarnt."
 
-ssb5301_desc="Schild Mauer"
+ssb5301_desc="Schildmauer"
 ssb5301_name="Athahaas"
 sab5301_name="Aegis"
 Unit_Description_BrewLAN_T3B0018="Verlangsamt den Vorstoß des Feindes. Erzeugt ein kleines Schild um zusätzlichen Schutz vor feindlichem Feuer zu bieten."
@@ -393,12 +407,12 @@ sal0320_desc="Mobile Luftabwehr"
 sal0320_name="Armillary"
 Unit_Description_BrewLAN_T3L012="Schwebendes mobiles Luftabwehr System. Verbraucht mit jedem Schuss Energie."
 
-sel0324_desc="Mobile SAM Launcher"
-sel0324_name="NG3 Longbow"
+sel0324_desc="Mobile SAM-Luftabwehr"
+sel0324_name="NG3 Langbogen"
 Unit_Description_BrewLAN_T3L015="Mobile Anti-Luft-Raketenwerfer. Ausgestattet mit erweiterten Scan-Geräten."
 
 --srl0320_desc=--Mobiler Raketen Werfer
-srl0320_desc="Mobile SAM Launcher"
+srl0320_desc="Mobile Flugabwehrplatform"
 srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile und getarnte Anti-Luft-Raketenwerfer. Muss sich aber enttarnen um zu feuern."
 
@@ -414,7 +428,7 @@ srl0316_desc="Tarnbares Mobiles Tarnfeldsystem"
 srl0316_name="Operative"
 Unit_Description_BrewLAN_T3L010="Mobiler getarnter Tarnfeldgenerator. Verdeckt nahegelegene Einheiten für Radar und Sonar. Nur Sichtbar für Omnisensoren."
 
-srl0311_desc="Mobile Raketen Plattform"
+srl0311_desc="Mobile Raketenplattform"
 srl03ll_name="Hexatron"
 Unit_Description_BrewLAN_T3L011="Mobiler Mehrfach-Raketenwerfer. Lange Nachladezeit. Entwickelt um Schilde und taktische Raketenabwehr mit großen Salven zu überwältigen."
 
@@ -424,9 +438,10 @@ srs0319_name="Stillson Klasse"
 Unit_Description_BrewLAN_T3S002="Tech 3 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestatted mit einem Torpedowerfer, Torpedoabwehr und einer Luftabwehrkanone."
 Unit_Description_BrewLAN_T3S003="Tech 3 Schiffsbau, Reparatur, zu erfassen, reclaimation und Einheit Mine Schicht."
 
-sl0323_desc="Mobile Tactical Missile Defense"
+sl0323_desc="Mobile Abwehr gegen taktische Raketen"
 sal0323_name="Bruch"
-Unit_Description_BrewLAN_T3L014="Mobile taktische Raketenabwehr. Der Schutz ist auf Einheit Einsatzgebiet begrenzt."
+sel0323_name="Trickshot"
+Unit_Description_BrewLAN_T3L014="Mobile taktische Raketenabwehr. Der Schutz ist auf das Einheiteneinsatzgebiet begrentzt."
 
 srl0324_desc="Mobile Sensor Array"
 srl0324_name="Adramelech"
@@ -455,10 +470,10 @@ Unit_Description_BrewLAN_T3L023="Mobile-Plattform für die Betankung und die Rep
 -- Experimentals
 --------------------------------------------------------------------------------
 
-ssl0403_desc="Experimenteller Kampf-Techniker"
+ssl0403_desc="Experimenteller Aufbautechniker"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimentelle amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Ausgestattet mit mittlerer Bewaffnung und Verteidigung. Kann spezial Ausrüstung bauen."
-ssa00001_desc="Drohn"
+ssa00001_desc="Drohne"
 
 sea0401_desc="Experimentelles Luftabwehr Kanonenboot"
 sea0401_name="AC-500 Centurion"
@@ -477,7 +492,7 @@ srs0401="Experimentelles Schlachtschiff"
 srs0401_name="Abyssal Prosecutor"
 Unit_Description_BrewLAN_T4S001="Experimentelles amphibisches Schlachtschiff."
 
-srs0402_desc="experimentelle Transport"
+srs0402_desc="Experimenteller Transporter"
 srs0402_name="Abyss Crawler"
 Unit_Description_BrewLAN_T4L003="Experimentelle amphibischen Transport. Reist schneller unter Wasser. Ausgestattet mit mäßiger Leistung Allzweckwaffen."
 
@@ -487,7 +502,7 @@ Unit_Description_BrewLAN_T4B004="Experimentelle multi-funktions Fabrik. Ändert 
 
 sal0401="Experimenteller Belagerungspanzer"
 sal0401_name="Absolution"
-Unit_Description_BrewLAN_T4L002="Experimenteller schwebernder Belagerungspanzer. Bewaffnet mit einer leistungsfähigen Oblivion-Kanone und taktischer Raketenabwehr."
+Unit_Description_BrewLAN_T4L002="Experimenteller schwebender Belagerungspanzer. Bewaffnet mit einer leistungsfähigen Oblivion-Kanone und taktischer Raketenabwehr."
 
 seb2404="Experimentelle Drop-Pod Artillerie"
 seb2404_name="Ivan"
@@ -499,7 +514,7 @@ Unit_Description_BrewLAN_T4B006="Experimentelle Gegenspionage Einrichtung. Erzeu
 
 ssb5401_desc="Exterimentelles Quantum Tor"
 ssb5401_name="Chappa'ai"
-Unit_Description_BrewLAN_T4B007="Experimentelles Quantum Tore. Dazu fähig Einheiten augenblicklich zu jedem anderen Tor auf dem Schlachtfeld zu teleportieren."
+Unit_Description_BrewLAN_T4B007="Experimentelles Quantum Tore. Dazu fähig Einheiten augenblicklich zu jedem anderen Tore auf dem Schlachtfeld zu teleportieren."
 
 srl0000_desc="Krabbenei"
 srl0001_desc=srl0000_desc .. " (Zerstörer)"
@@ -511,7 +526,7 @@ srl0006_desc=srl0000_desc .. " (Raketenwerfer)"
 
 seb3404_desc="Experimentelle Sensor Matrix"
 seb3404_name="Panoptikum"
-Unit_Description_BrewLAN_T4B008="Experimentelles Sensorarray. Gibt Sichtlinie für feindliche Einheiten in ihrem Aktionsradius, die sichtbar sind, um erhältliche Sensoren, wie Radar. Unterhaltskosten zusätzlich pro Einheit bespitzelt. Mobile Einheiten und große Einheiten kosten mehr bespitzeln."
+Unit_Description_BrewLAN_T4B008="Experimentelles Sensorarray. Wenn es vollständig aktiviert, stellt die Sichtlinie für feindliche Einheiten in ihrem Aktionsradius, den verfügbaren Sensoren, wie Radar sichtbar sind. Unterhaltskosten zusätzlich pro Einheit bespitzelt. Mobile Einheiten und große Einheiten kosten mehr bespitzeln."
 
 Panopticon_array_slot="Feld"
 Unit_Description_BrewLAN_T4B008_sre="Erhöht Radarradius."

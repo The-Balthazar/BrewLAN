@@ -16,8 +16,8 @@ tooltipbrewlan0001="在空军武器生产模式和陸軍/海軍武器生产模�
 --对于T3提示诱骗飞机。
 tooltipbrewlan0002="转换空速"
 tooltipbrewlan0003="空中优势或沙皇切换模拟"
-tooltipbrewlan0004="空中优势或Soulripper的模拟切换"
-tooltipbrewlan0005="空中优势或Ahwassa的模拟切换"
+tooltipbrewlan0004="空中优势或死神的模拟切换"
+tooltipbrewlan0005="空中优势或阿瓦薩的模拟切换"
 tooltipbrewlan0006="空中优势或AC-500百夫长切换模拟"
 
 --工具提示的地雷。
@@ -29,7 +29,7 @@ tooltipbrewlan0009="清除生产区"
 tooltipbrewlan0010="删除任何结构或从构建区域保持。"
 
 --工具提示塞拉芬间谍设备
-tooltipbrewlan0011="监控"
+tooltipbrewlan0011="預視"
 tooltipbrewlan0012="选择并暗中监视一个单位"
 
 --工具提示打开/关闭的一种门。
@@ -67,6 +67,9 @@ tooltipbrewlan0030="如果有效，此单元将动态其操作间谍半径降低
 --塞拉芬移动AA / TMD
 tooltipbrewlan0031="切换武器优先"
 tooltipbrewlan0032="防空目标优先级和战术导弹目标优先级之间进行切换。"
+
+--全景敞视增强标签
+tooltipbrewlan0033="定制[阵列]"
 
 --------------------------------------------------------------------------------
 -- 支持司令增强
@@ -278,10 +281,21 @@ seb3303b_desc="卫星发射复合"
 Unit_Description_BrewLAN_T3B002="生产和发射卫星"
 
 ability_satellite_uplink="卫星上行"
+ability_satellite_cap_0="卫星容量：+0"
+ability_satellite_cap_1="卫星容量：+1"
+ability_satellite_cap_2="卫星容量：+2"
+ability_satellite_cap_3="卫星容量：+3"
+ability_satellite_cap_4="卫星容量：+4"
+ability_satellite_cap_5="卫星容量：+5"
+ability_satellite_cap_inf="卫星容量无限制"
 
 sea0002_desc="观测卫星"
 sea0002_name="燃星"
 Unit_Description_BrewLAN_T3A012="卫星观测系统。提供从轨道可视卫星图像。需要专用的卫星上行链路，从它接收数据。"
+
+sea0003_desc="反间谍卫星"
+sea0003_name="Vaxis"
+Unit_Description_BrewLAN_T3A013="基于卫星的反间谍系统。导致大量与空中优势战斗机的飞行特性的假雷达信号的出现underneith它。对智力没有收集能力。"
 
 --狙击手的替代品
 sel0320_desc="移动卫星通信"
@@ -426,6 +440,7 @@ Unit_Description_BrewLAN_T3S003="技术3海军建设，修理，捕获，复垦�
 
 sl0323_desc="移动战术导弹防御系统"
 sal0323_name="破裂"
+sel0323_name="花样射球"
 Unit_Description_BrewLAN_T3L014="移动战术导弹防御系统。保护仅限于单位的业务领域。"
 
 srl0324_desc="移动传感器阵列"
@@ -465,8 +480,8 @@ sea0401_name="AC-500百夫长"
 Unit_Description_BrewLAN_T4A001="实验武装直升机具有广泛的防空能力。最有效的与其他武装直升机。"
 
 srb2401_desc="实验速射火炮"
-srb2401_name="Scathis Mark II的"
-ssb2404_name="Suthanus"
+srb2401_name="冷酷标记二"
+ssb2404_name="蘇桑努斯"
 Unit_Description_BrewLAN_T4B002="实验速射火炮。消耗大量的能源与每个镜头。"
 
 srb4401="实验盾发生器"
@@ -511,7 +526,7 @@ srl0006_desc=srl0000_desc .. " （多管火箭炮）"
 
 seb3404_desc="实验传感器阵列"
 seb3404_name="圆形监狱"
-Unit_Description_BrewLAN_T4B008="实验传感器阵列。给出了其操作半径内的敌方单位是可见的可用的传感器，如雷达的视线。每单位额外保养成本被窥探上。移动单位和大单位成本更窥探。"
+Unit_Description_BrewLAN_T4B008="实验传感器阵列。当完全激活，提供了视线其业务半径内的敌方单位是可见的可用的传感器，诸如雷达。每单位额外保养成本被窥探上。移动单位和大单位成本更窥探。"
 
 Panopticon_array_slot="排列"
 Unit_Description_BrewLAN_T4B008_sre="提高雷达半径。"
