@@ -76,7 +76,7 @@ SEA0003 = Class(TAirUnit) {
     OnIntelDisabled = function(self)
         TAirUnit.OnIntelDisabled(self)
         if self.Hologram then
-            for i, v in self.Hologram o
+            for i, v in self.Hologram do
                 v:Destroy()
             end
             self.Hologram = nil
