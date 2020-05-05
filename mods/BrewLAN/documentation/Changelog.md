@@ -2,7 +2,20 @@
 
 All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
-## 2010-10-13|0.8.9
+## 2020-03-30|0.8.9.1
+
+* Debug tools: Prevented the DPS test units from trying to rename projectiles.
+
+  ### 2020-04-27
+
+  * Started rework of Abyss Cralker to have legs instead.
+
+  ### 2020-05-05
+
+  * Altered the leg animation of the Abyss Crawler to be 8 phase rather than 2 phase.
+  * Adjusted the turn circle and other movement characteristics of the Abyss Crawler to work better with the walk animation.
+
+## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
 * Updated translation documents.
