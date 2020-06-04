@@ -110,7 +110,7 @@ UnitBlueprint {
                     Scrolling = true,
                     ShaderName = 'Insect',
                     AlbedoName = '/units/urb1106/urb1106_albedo.dds',
-                    NormalsName = '/units/urb1106/urb1106_normalsts.dds',
+                    --NormalsName = '/units/urb1106/urb1106_normalsts.dds',
                     SpecularName = '/units/urb1106/urb1106_specteam.dds',
                 },
                 {

@@ -8,12 +8,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2020-04-27
 
-  * Started rework of Abyss Cralker to have legs instead.
+  * Started rework of Abyss Crawler to have legs instead.
 
   ### 2020-05-05
 
   * Altered the leg animation of the Abyss Crawler to be 8 phase rather than 2 phase.
   * Adjusted the turn circle and other movement characteristics of the Abyss Crawler to work better with the walk animation.
+
+  ### 2020-05-13
+
+  * Changed tarmac calls happening before the parent OnCreate class, which now breaks FAF, because they rejected my fix for the timing issue they added in that function.
+  * Added a break in the blueprints.lua to prevent duplicate categories.
+
+  ### 2020-05-17
+
+  * Fixed the shading groups on the Cybran T2 mass storage.
+
+  ### 2020-06-04
+
+  * Rebalanced the Aeon engineering station, moved it from Paragon Game to BrewLAN, and recreated the appearance.
 
 ## 2019-10-13|0.8.9
 

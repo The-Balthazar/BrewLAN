@@ -421,6 +421,7 @@ function BrewLANGantryTechShareCheck(all_bps)
                     for i, buildcat in bp.Economy.BuildableCategory do
                         if string.find(buildcat, 'FACTORY') or string.find(buildcat, 'ENGINEER') or string.find(buildcat, 'COMMANDER') then
                             table.insert(bp.Categories, 'GANTRYSHARETECH')
+                            break
                         end
                     end
                 end
