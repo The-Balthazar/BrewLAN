@@ -72,6 +72,7 @@ Description['ssb2222'] = "<LOC Unit_Description_BrewLAN_T2D004>An all-terrain nu
 Description['ssb0104'] = "<LOC Unit_Description_BrewLAN_T2D006> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 Description['ssb0204'] = "<LOC Unit_Description_BrewLAN_T2D007> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 Description['ssb0304'] = "<LOC Unit_Description_BrewLAN_T2D008> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
+Description['sab0104'] = "<LOC Unit_Description_0452> Automatically repairs, reclaims, assists or captures any unit within its operational radius."
 
 --Tech 2 protection units
 Description['urb4205'] = "<LOC Unit_Description_BrewLAN_T2D002>Generates a protective shield around units and structures within its radius. Shield can be upgraded twice."

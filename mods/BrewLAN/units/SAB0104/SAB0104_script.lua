@@ -22,7 +22,7 @@ SAB0104 = Class(CConstructionStructureUnit) {
     end,
 
     CreateBuildEffects = function(self, unitBeingBuilt, order)
-        CreateAeonCommanderBuildingEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+        CreateAeonCommanderBuildingEffects( self, unitBeingBuilt, __blueprints.sab0104.General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
     end,
 
     PlayAnimationThread = function(self, anim, rate)

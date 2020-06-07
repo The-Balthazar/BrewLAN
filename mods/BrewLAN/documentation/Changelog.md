@@ -28,6 +28,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Rebalanced the Aeon engineering station, moved it from Paragon Game to BrewLAN, and recreated the appearance.
 
+  ### 2020-06-06
+
+  * Fixed the strategic icon of the Aeon engineering station.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
