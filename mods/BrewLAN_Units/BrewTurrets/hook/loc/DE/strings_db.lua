@@ -2,7 +2,7 @@
 --Translated by: Google
 srb5380_name="Todesschuss"
 srb5380_desc="Genauigkeit Boost-Knoten"
-Unit_Description_BrewLAN_Turrets_0001="Angrenzend statische Waffen verbringen mehr dem Ziel, in einer höheren Genauigkeit führt. Mehrere Knoten stapeln."
+Unit_Description_BrewLAN_Turrets_0001="Angrenzend statische Waffen verbringen mehr streben, was zu einer höheren Genauigkeit. Mehrere Knoten stapeln."
 
 seb5381_name="Super heiß"
 seb5381_desc="Damage-Boost-Knoten"
@@ -25,7 +25,7 @@ Unit_Description_BrewLAN_Turrets_0006="Defensive Turm. mit einer massiven Proton
 
 srb2391_name="Tesla-Spule"
 srb2391_desc="Schwere Punktverteidigung"
-Unit_Description_BrewLAN_Turrets_0007="Leistungsstarke, kurze Reichweite, defensive Türmchen. Er speichert nach und nach Energie und entlädt alles mit jedem Schuss. Am wirkungsvollsten gegen große Ziele Zeit, als gegeben zu berechnen. bei Dauerfeuer sehr ineffektiv."
+Unit_Description_BrewLAN_Turrets_0007="Leistungsstarke, kurze Reichweite, defensive Türmchen. Er speichert nach und nach Energie und entlädt sich alles mit jedem Schuss. Am wirkungsvollsten gegen große Ziele Zeit, als gegeben zu berechnen. bei Dauerfeuer sehr ineffektiv."
 
 --Dies wird durch die Tesla Coil verwendet
 tooltipbrewturrets0000="Toggle Waffe Macht"
@@ -33,4 +33,8 @@ tooltipbrewturrets0001="Aktiviert oder deaktiviert die Hauptwaffe Macht."
 
 seb2402_name="Sog"
 seb2402_desc="Experimentelle Anti-Air Defense"
-Unit_Description_BrewLAN_Turrets_0008="Defensive Anti-Luft-Waffe. Bietet verheerende Schäden mit kurzer Reichweite. Verbraucht Energie mit jedem Schuss."
+Unit_Description_BrewLAN_Turrets_0008="Defensive Anti-Luft-Waffe. Nahbereichs-Schaden bietet verheerend. Verbraucht Energie mit jedem Schuss."
+
+srb2403_name="Tartarus"
+srb2403_desc="Experimentelle Punktverteidigung"
+"Verteidigungsturm, mit einer hohen Intensität Mikrowellenlaser bewaffnet."

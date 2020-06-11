@@ -2,9 +2,9 @@
 --Translated by: Google
 srb5380_name="Abattu"
 srb5380_desc="Précision Boost nœud"
-Unit_Description_BrewLAN_Turrets_0001="armement statique adjacente passent plus en vue, ce qui une plus grande précision. empiler plusieurs noeuds."
+Unit_Description_BrewLAN_Turrets_0001="dépenses à côté d'armement statique visant plus, ce qui entraîne une précision plus élevée. empiler plusieurs noeuds."
 
-seb5381_name="Très chaud"
+seb5381_name="Ardent"
 seb5381_desc="Dommages Boost Node"
 Unit_Description_BrewLAN_Turrets_0002="À côté de beaucoup d'armes statiques dégâts augmentés. Cela augmente considérablement la consommation d'énergie par coup."
 
@@ -25,7 +25,7 @@ Unit_Description_BrewLAN_Turrets_0006="tourelle défensive. Armé d'un canon à 
 
 srb2391_name="Tesla Coil"
 srb2391_desc="Pointe de défense lourde"
-Unit_Description_BrewLAN_Turrets_0007="gamme puissante, courte, tourelle défensive. Il stocke progressivement l'énergie et décharge tout à chaque tir. Le plus efficace contre les grands objectifs quand donné le temps de charger. Très inefficace au feu durable."
+Unit_Description_BrewLAN_Turrets_0007="gamme puissante, courte, tourelle défensive. Il stocke progressivement l'énergie et les rejets tout à chaque tir. Le plus efficace contre les grands objectifs quand donné le temps de charger. Très inefficace au feu durable."
 
 --Il est utilisé par la bobine de Tesla
 tooltipbrewturrets0000="Basculer puissance d'arme"
@@ -33,4 +33,8 @@ tooltipbrewturrets0001="Active ou désactive l'alimentation principale de l'arme
 
 seb2402_name="Maelstrom"
 seb2402_desc="Experimental Anti-Air Défense"
-Unit_Description_BrewLAN_Turrets_0008="arme anti-aérienne défensive. Fournit des dégâts à courte portée dévastatrice. Consomme chaque tir puissance."
+Unit_Description_BrewLAN_Turrets_0008="arme anti-aérienne défensive. Fournit dévastateurs dégâts à courte portée. Consomme chaque tir puissance."
+
+srb2403_name="Tartare"
+srb2403_desc="Défense expérimentale point"
+"tourelle défensive. Armé d'un laser à micro-ondes de haute intensité."

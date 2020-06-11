@@ -2,7 +2,7 @@
 --Translated by: Google
 srb5380_name="绝杀"
 srb5380_desc="精度升压节点"
-Unit_Description_BrewLAN_Turrets_0001="相邻的静态武器花费更长的目标，从而获得更高的精度。多个节点叠加。"
+Unit_Description_BrewLAN_Turrets_0001="相邻的静态武器花费更长的瞄准，从而获得更高的精度。多个节点叠加。"
 
 seb5381_name="超热"
 seb5381_desc="伤害升压节点"
@@ -25,7 +25,7 @@ Unit_Description_BrewLAN_Turrets_0006="防御炮塔。手持一个巨大的质�
 
 srb2391_name="特斯拉线圈"
 srb2391_desc="重型點防禦"
-Unit_Description_BrewLAN_Turrets_0007="功能强大，航程短，防御炮塔。它逐渐储存能量，并排放在每次拍摄的一切。给定的时间进行充电时，最有效的针对大型目标。影响效率的持续火力。"
+Unit_Description_BrewLAN_Turrets_0007="功能强大，航程短，防御炮塔。它逐渐储存能量和放电的一切每次拍摄。给定的时间进行充电时，最有效的针对大型目标。影响效率的持续火力。"
 
 --这是所使用的特斯拉线圈
 tooltipbrewturrets0000="切换武器威力"
@@ -33,4 +33,8 @@ tooltipbrewturrets0001="启用或禁用主武器威力。"
 
 seb2402_name="漩涡"
 seb2402_desc="实验反防空"
-Unit_Description_BrewLAN_Turrets_0008="防御防空武器。提供破坏性短程损坏。电力消耗每拍摄一张照片。"
+Unit_Description_BrewLAN_Turrets_0008="防御防空武器。提供毁灭性短程损坏。电力消耗每拍摄一张照片。"
+
+srb2403_name="塔耳塔洛斯"
+srb2403_desc="实验点防御"
+"防御炮塔。手持高强度微波激光。"

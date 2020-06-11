@@ -69,7 +69,7 @@ tooltipbrewlan0031="Přepnout prioritu palby"
 tooltipbrewlan0032="Přepíná prioritu palby na vzdušné cíle a taktické rakety."
 
 --Karta Vylepšení Panoptikum
-tooltipbrewlan0033="Přizpůsobení [Array]"
+tooltipbrewlan0033="Upravit [Array]"
 
 --------------------------------------------------------------------------------
 -- Vylepšení Podpůrného Velitele
@@ -80,7 +80,7 @@ brewlan_enhancements_1="Souprava Polního Technika"
 brewlan_enhancements_2="Odebrat Soupravu Polního Technika"
 
 --------------------------------------------------------------------------------
--- Tech 1
+-- Tech 1
 --------------------------------------------------------------------------------
 
 sair0105="Lehký Bitevník"
@@ -227,7 +227,7 @@ Unit_Description_BrewLAN_T2D007=" Automaticky opravuje, recykluje, asistuje nebo
 Unit_Description_BrewLAN_T2D008=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním dosahu. "
 
 --------------------------------------------------------------------------------
--- Tech 3
+-- Tech 3
 --------------------------------------------------------------------------------
 
 sair0305="Těžký Bitevník"
@@ -532,10 +532,10 @@ Panopticon_array_slot="řada"
 Unit_Description_BrewLAN_T4B008_sre="Zvyšuje poloměr radaru."
 Unit_Description_BrewLAN_T4B008_sresre="Zvyšuje radar a omni poloměr."
 Unit_Description_BrewLAN_T4B008_xbndl="Odhalí radar tečky."
-brewlan_panopticon_small_001="Aktivace radaru misku"
+brewlan_panopticon_small_001="Aktivovat radar misky"
 brewlan_panopticon_small_002="Aktivace Marcin misku"
 brewlan_panopticon_small_003="Aktivace Gebauer misku"
-brewlan_panopticon_small_004="Aktivace radaru misku"
+brewlan_panopticon_small_004="Aktivovat radar misky"
 brewlan_panopticon_med_001="Aktivace Chapeau misku"
 brewlan_panopticon_med_002="Aktivace Pankow misku"
 brewlan_panopticon_med_003="Aktivace Mogwai misku"
@@ -544,7 +544,7 @@ brewlan_panopticon_xbl_001="Aktivovat Saxon misku"
 brewlan_panopticon_small_001r="Deaktivace Guillaume misku"
 brewlan_panopticon_small_002r="Deaktivace Marcin misku"
 brewlan_panopticon_small_003r="Deaktivace Gebauer misku"
-brewlan_panopticon_small_004r="Deaktivace radarové misku"
+brewlan_panopticon_small_004r="Deaktivovat radar misky"
 brewlan_panopticon_med_001r="Deaktivace Chapeau misku"
 brewlan_panopticon_med_002r="Deaktivace Pankow misku"
 brewlan_panopticon_med_003r="Deaktivace Mogwai misku"

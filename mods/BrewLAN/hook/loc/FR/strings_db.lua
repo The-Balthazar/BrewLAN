@@ -6,7 +6,7 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- infobulles
+-- infobulles
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
@@ -201,7 +201,7 @@ srs0219_name="Classe Barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
 Unit_Description_BrewLAN_T2S002="Tech 2 construction navale, la réparation, la capture, reclaimation, et l'unité de mouilleur de mines."
 
-sea0201_desc="Avion Recon"
+sea0201_desc="Avion de reconnaissance"
 sea0201_name="UX Dragonlady"
 ssa0201_name="Selia"
 Unit_Description_BrewLAN_T2A002="Avions de reconnaissance tactique."
@@ -277,10 +277,10 @@ Unit_Description_BrewLAN_T3B007="Tourelle de défense très lourde. Attaque les 
 Unit_Description_BrewLAN_T3B008="Tourelle de défense très lourde. Attaque les unités de surface terrestres / navales avec un canon Oblivion puissant."
 
 seb3303_desc="Centre de contrôle de satellite"
-seb3303b_desc="Complexe de lancement de satellite"
-Unit_Description_BrewLAN_T3B002="Produit et lance des satellites"
+seb3303b_desc="Complexe de lancement satellite"
+Unit_Description_BrewLAN_T3B002="Produit et lancements de satellites"
 
-ability_satellite_uplink="Uplink satellite"
+ability_satellite_uplink="satellite Uplink"
 ability_satellite_cap_0="Capacité satellite: 0"
 ability_satellite_cap_1="Capacité satellite: +1"
 ability_satellite_cap_2="Capacité satellite: 2"
@@ -395,7 +395,7 @@ ssb3301_name="Aezselen"
 Unit_Description_BrewLAN_T3B0026="Offre une ligne de vue sur une unité amie ou ennemie ciblée. Vous ne pouvez pas cibler un espace vide."
 
 sal0322_desc="Générateur de bouclier mobile"
-sal0322_name="Flamme Lotus"
+sal0322_name="Lotus de feu"
 Unit_Description_BrewLAN_T3L021="Générateur de bouclier mobile."
 
 sel0322_desc="Générateur de bouclier mobile"
@@ -454,11 +454,11 @@ sl0325_desc="Lance-torpilles Mobile"
 sel0325_name="PT-57 Croc"
 sal0325_name="Limbes"
 Unit_Description_BrewLAN_T3L017="véhicule anti-marine mobile."
-Unit_Description_BrewLAN_T3L018="Mobile en vol stationnaire véhicule anti-marine."
+Unit_Description_BrewLAN_T3L018="vol stationnaire mobile véhicule anti-marine."
 
 ssb4317_desc="Brouilleur de Radar"
 ssb4317_name="Yathesel"
-Unit_Description_BrewLAN_T3B0029="installation de perturbation du radar. Crée un grand nombre de faux signaux radar dans sa zone opérationnelle, ce qui provoque une distraction et perturber l'ennemi de ciblage."
+Unit_Description_BrewLAN_T3B0029="installation de perturbation du radar. Crée un grand nombre de faux signaux radar dans sa zone opérationnelle, ce qui provoque une distraction et perturber le ciblage de l'ennemi."
 ssa00002_desc="Hologram"
 
 sl0326_desc="Plate-forme de ravitaillement aérien mobile"
@@ -544,7 +544,7 @@ brewlan_panopticon_xbl_001="Activer le plat saxon"
 brewlan_panopticon_small_001r="Le plat Guillaume Désactiver"
 brewlan_panopticon_small_002r="Le plat Marcin Désactiver"
 brewlan_panopticon_small_003r="Désactiver le plat Gebauer"
-brewlan_panopticon_small_004r="Antenne radar Désactiver"
+brewlan_panopticon_small_004r="Deactivate antenne radar"
 brewlan_panopticon_med_001r="Désactiver le plat Chapeau"
 brewlan_panopticon_med_002r="Désactiver le plat Pankow"
 brewlan_panopticon_med_003r="Désactiver le plat Mogwai"

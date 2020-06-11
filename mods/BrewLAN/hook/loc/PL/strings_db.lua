@@ -6,15 +6,15 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- podpowiedzi
+-- podpowiedzi
 --------------------------------------------------------------------------------
 
 --Podpowiedzi dla suwnicy
 tooltipbrewlan0000="produkcja powietrza Przegubowe"
 tooltipbrewlan0001="Włącza lub wyłącza wytwarzanie jednostek powietrznych"
 
---Podpowiedzi dla T3 wabik samolotów.
-tooltipbrewlan0002="Włącz prędkość powietrza"
+--Podpowiedzi dla samolotów T3 wabików.
+tooltipbrewlan0002="Prędkość powietrza Przegubowe"
 tooltipbrewlan0003="Włącza podszywanie się o przewagę w powietrzu lub CAR"
 tooltipbrewlan0004="Włącza podszywanie się o przewagę w powietrzu lub Rozpruwacz dusz"
 tooltipbrewlan0005="Włącza podszywanie się o przewagę w powietrzu lub Ahwassa"
@@ -26,7 +26,7 @@ tooltipbrewlan0008="Natychmiast zdetonować ładunek."
 
 --Podpowiedzi dla ścian budowniczy
 tooltipbrewlan0009="Przezroczysty obszar build"
-tooltipbrewlan0010="Usuwa wszelkie struktury lub pozostaje z terenu budowy."
+tooltipbrewlan0010="Usuwa żadnych struktur lub pozostałości z terenu budowy."
 
 --Podpowiedzi dla zakładu szpiegowskiej Seraphim
 tooltipbrewlan0011="Jasnowidzenie"
@@ -34,31 +34,31 @@ tooltipbrewlan0012="Wybierz jednostkę do szpiegowania"
 
 --Podpowiedzi dla otwartego / zamykaną rodzaju bramy.
 tooltipbrewlan0013="Otwarte zamknięte"
-tooltipbrewlan0014="Przegubowe brama otwarta czy zamknięta"
+tooltipbrewlan0014="Przegubowe brama otwarta lub zamknięta"
 tooltipbrewlan0015="Auto otwarty włączona."
 
 --Podpowiedzi dla zaburzających Omni.
 tooltipbrewlan0016="Zakłócenia impulsowe przełączanie"
-tooltipbrewlan0017="Przełącz zakłócenia impuls Omni włączyć lub wyłączyć."
+tooltipbrewlan0017="Przegubowe zakłócenia impulsu Omni włączyć lub wyłączyć."
 
---Podpowiedzi dla Rez komendę / odzyskać.
+--Podpowiedzi dla poleceniu / odzysk reż.
 --tooltipbrewlan0018="Odzyskać"
 tooltipbrewlan0019="Odzyskać jednostkę lub wraku i uczyć się jego plan."
 
 --Podpowiedzi dla Stargate
 tooltipbrewlan0020="Brama Dial"
-tooltipbrewlan0021="Wybór bramy kwantową docelową z którego można stworzyć jedną stronę Link transportu."
+tooltipbrewlan0021="Wybiera brama cel kwantowa z którego można stworzyć jedną stronę Link transportu."
 tooltipbrewlan0022="Włącz lub wyłącz tarczy uniemożliwia dostęp do lub z bramy."
 tooltipbrewlan0023="Zatrzymaj link"
 tooltipbrewlan0024="Zamyka wychodzącego linku."
 
 --Podpowiedzi dla Iwana
-tooltipbrewlan0025="Przegubowe Powtarzanie Zleceń"
-tooltipbrewlan0026="Podczas gdy włączona, gdy artyleria zakończeniu wypalania, będzie ponowne utworzenie jednostki po prostu zwolniony. I kontynuować wypalanie czy powtarzający się cel ataku jest ustawiony."
-tooltipbrewlan0027="powtarzanie atak"
+tooltipbrewlan0025="Przegubowe Powtarzanie Zamówienia"
+tooltipbrewlan0026="Podczas gdy włączona, gdy artyleria zakończeniu wypalania, będzie ponowne utworzenie jednostki po prostu zwolniony. I kontynuować wypalanie czy powtarzanie celem ataku jest ustawiony."
+tooltipbrewlan0027="powtarzający się atak"
 tooltipbrewlan0028="Rozpoczyna cykl powtórzyć atak w miejscu docelowym lub aktualizuje cel w bieżącym cyklu."
-floatingtextIVAN01="Powtarzanie włączone zlecenia"
-floatingtextIVAN02="Powtarzanie Zamówienia wyłączone"
+floatingtextIVAN01="włączona powtarzające zlecenia"
+floatingtextIVAN02="Powtarzające Zamówienia wyłączone"
 
 --Podpowiedzi dla Panopticon
 tooltipbrewlan0029="Przegubowe Economy Watch"
@@ -66,21 +66,21 @@ tooltipbrewlan0030="Podczas gdy aktywna, to urządzenie będzie dynamicznie zmni
 
 --Seraphim Komórka AA / TMD
 tooltipbrewlan0031="Przegubowe Broń Priorytet"
-tooltipbrewlan0032="Przełączać się między anty-powietrze priorytetu docelowej i taktycznego priorytetu docelowej pocisk."
+tooltipbrewlan0032="Przełączanie między priorytetu docelowego anty-powietrze i taktycznego priorytetu docelowej pocisk."
 
 --Zakładka wzmocnienie Panopticon
-tooltipbrewlan0033="Dostosować [tablicy]"
+tooltipbrewlan0033="Dostosowywanie [Tablica]"
 
 --------------------------------------------------------------------------------
--- Udoskonalenia wsparcie dowódcy
+-- Udoskonalenia wsparcie dowódcy
 --------------------------------------------------------------------------------
 
-Unit_Description_BrewLAN_E001="Dodaje inżynier pola budować zdolności do SACU."
+Unit_Description_BrewLAN_E001="Dodaje możliwości budowania inżyniera do SACU."
 brewlan_enhancements_1="Pole Inżynieria Suite"
 brewlan_enhancements_2="Usuń dziedzinie inżynierii Suite"
 
 --------------------------------------------------------------------------------
--- Tech 1
+-- Tech 1
 --------------------------------------------------------------------------------
 
 sair0105="światło Gunship"
@@ -96,14 +96,14 @@ saa0106_name="Saksinokka"
 sea0106_name="Mewa"
 sra0106_name="Gannet"
 ssa0106_name="Sou-ioz"
-Unit_Description_BrewLAN_T1A004="Bombowiec torpedowy. Zaprojektowany, aby angażować niskopoziomowe jednostki morskie."
+Unit_Description_BrewLAN_T1A004="Torpedo Bomber. Zaprojektowany, aby angażować niskopoziomowe jednostki morskie."
 
 sbui2103="Instalacja Artylerii Lekkiej"
 sab2103_name="Charis"
 seb2103_name="Poker"
 srb2103_name="trochę Bertha"
 ssb2103_name="Thaam-atha"
-Unit_Description_BrewLAN_T1D001="Światło stacjonarne artyleryjski. Zaprojektowany, aby angażować niskiej do jednostek średniego szczebla."
+Unit_Description_BrewLAN_T1D001="Światło stacjonarne artyleryjski. Zaprojektowany, aby angażować najniższej do jednostek średniego szczebla."
 
 sbui4102="Lekka Tarcza Generator"
 sab4102_name="Aspis"
@@ -111,13 +111,13 @@ seb4102_name="LSD - Pulse"
 ssb4102_name="Atha-korzeń ryżowy"
 Unit_Description_BrewLAN_T1P001="Generuje tarczę ochronną wokół jednostek i struktur w obrębie jego promienia. Aktualizowanym dwa razy."
 
-sbui5104="Światło Air Staging Instrument"
+sbui5104="Światło Inscenizacja Air Instrument"
 sbuisera5104="Światło Air Staging Beacon"
 ssb5104_name="Iathu-uhthe"
 sab5104_name="Piedestał"
 seb5104_name="zaopatrzenia"
 srb5104_name="Ravitailler"
-Unit_Description_BrewLAN_T1U001="Światło zakład inscenizacja powietrze. Naprawy i refuels poszczególnych samolotów."
+Unit_Description_BrewLAN_T1U001="Światło zakład inscenizacja powietrze. Naprawy i refuels poszczególnych statków powietrznych."
 
 --inżynierów,
 sl0119_desc="Inżynier polowy"
@@ -136,20 +136,20 @@ srs0119_name="Franklin Class"
 Unit_Description_BrewLAN_T1S001="Tech 1 budowa, naprawa, chwytania, rekultywacja, a jednostka warstwa kopalni."
 
 --------------------------------------------------------------------------------
--- Tech 2
+-- Tech 2
 --------------------------------------------------------------------------------
 
 saa0211_name="Impaler"
 saa0211_desc="taktyczny bombowiec"
-Unit_Description_BrewLAN_T2A001="Bombowiec średniego szczebla taktycznego. Wyposażone w lekką Quark bomby i radaru."
+Unit_Description_BrewLAN_T2A001="Bombowiec średniego szczebla taktycznego. Wyposażone w lekkie bomby Quark i radaru."
 
---Inżynierowie polowe
+--pole Engineers
 sl0209_desc="Inżynier polowy"
 sal0209_desc="Inżynier obrony"
 sal0209_name="Lokaj"
 srl0209_name="Wilson"
 ssl0219_name="Iyazyn"
-Unit_Description_BrewLAN_T2L001="Tech 2 amfibia budowa, naprawa, chwytania, rekultywacja, a jednostka warstwa kopalni. Uzbrojony w ciężkim Boltera, wewnętrzny radar, i stealth."
+Unit_Description_BrewLAN_T2L001="Tech 2 amfibia budowa, naprawa, chwytania, rekultywacja, a jednostka warstwa kopalni. Uzbrojony w Boltera ciężkiego, wewnętrzny radar, i stealth."
 Unit_Description_BrewLAN_T2L002="Tech 2 amfibia budowa, naprawa, chwytania, rekultywacja, a jednostka warstwa kopalni. Wyposażony prywatnego tarczę i radar."
 Unit_Description_BrewLAN_T2L003="Tech 2 amfibia budowa, naprawa, chwytania, rekultywacja, a jednostka warstwa kopalni. Jest wyposażony w niewielkim broni, ma sonaru ukrycia, a może zbudować specjalistycznych obronne."
 
@@ -160,7 +160,7 @@ Unit_Description_BrewLAN_T2R002="Przechowuje duże ilości masy. Skonstruować o
 Unit_Description_BrewLAN_T2R001="Przechowuje duże ilości energii. Skonstruować obok agregatów prądotwórczych dla premii przylegania."
 
 --kopalnie
-sbui2220="Kopalnia ciśnienie"
+sbui2220="ciśnienie Mine"
 seb2220_name="AP 12 Traper"
 srb2220_name="Mruczeć"
 sab2220_name="Kretowisko"
@@ -181,15 +181,15 @@ sab2222_name="Góra"
 ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="Minami terenowy uzbrojony w pełnym wymiarze dochodowości głowicy nuklearnej. wymagana instrukcja detonacji. Widoczne tylko dla Omni."
 
--- Cybran tarcze T2; nie mieli opis kompilacji pierwotnie.
+-- Tarcze Cybran T2; nie mieli opis kompilacji pierwotnie.
 Unit_Description_BrewLAN_T2D002="Generuje tarczę ochronną wokół jednostek i struktur w obrębie jego promienia. Tarcza może być uaktualniony dwukrotnie."
 Unit_Description_BrewLAN_T2D003="Generuje ciężką tarczę wokół jednostek i struktur w obrębie jego promienia."
 
-sbui5210="Ciężki Sekcja ścienna"
+sbui5210="Ciężki Ściana Sekcja"
 seb5210_name="Ogólne Zniszczenie Impasse"
 srb5210_name="Przegroda"
 ssb5210_name="Haas-Haas"
-Unit_Description_BrewLAN_T2B001="Ogranicza przemieszczanie się wrogich jednostek i może wytrzymać ekstremalne ilości obrażeń. Łączy się z innymi sąsiednimi sekcjami ścianki ciężkich."
+Unit_Description_BrewLAN_T2B001="Ogranicza ruch jednostek wroga i może wytrzymać ekstremalne ilości obrażeń. Łączy się do pozostałych sekcji i grubych ściankach sąsiednich."
 
 ssl0222_desc="Mobilny generator tarczy"
 ssl0222_name="Athanne"
@@ -227,7 +227,7 @@ Unit_Description_BrewLAN_T2D007=" Automatycznie naprawia, odzyskuje, pomaga i za
 Unit_Description_BrewLAN_T2D008=" Automatycznie naprawia, odzyskuje, pomaga i zajmuje każdą jednostkę w swoim zasięgu."
 
 --------------------------------------------------------------------------------
--- Tech 3
+-- Tech 3
 --------------------------------------------------------------------------------
 
 sair0305="Ciężki śmigłowiec bojowy"
@@ -246,13 +246,13 @@ sair0307="Torpedowiec"
 sra0307_name="Zenit"
 sea0307_name="Albatros"
 ssa0307_name="Souioz"
-Unit_Description_BrewLAN_T3A005="Wysoki poziom Stealth bombowiec torpedowy. Przeznaczony do zaangażowania na wysokim szczeblu jednostki morskie i przerastają obronne torpedowe z dużymi salwami."
+Unit_Description_BrewLAN_T3A005="Wysokiego szczebla Stealth bombowiec torpedowy. Przeznaczony do zaangażowania na wysokim szczeblu jednostki morskie i obronne przerastają torpedowe z dużymi salwami."
 Unit_Description_BrewLAN_T3A007="Wysoki poziom bombowiec torpedowy. Zaprojektowany, aby zaangażować potężne jednostki morskie. Wyposażony w lekkiej obrony przeciw powietrznej."
 Unit_Description_BrewLAN_T3A008="Wysoki poziom bombowiec torpedowy. Zaprojektowany, aby zaangażować potężne jednostki morskie."
 
 sal0311_desc="Pancerny Atak Tank"
 sal0311_name="Moldavite"
-Unit_Description_BrewLAN_T3L002="Silnie opancerzony czołg szturmowy. Niski wskaźnik pożaru, zaprojektowany jako ciężkie jednostki wsparcia."
+Unit_Description_BrewLAN_T3L002="Silnie opancerzony czołg szturmowy. Niski wskaźnik pożaru, zaprojektowany jako jednostka wsparcia ciężkie."
 
 ssl0311_desc="Oblężniczy szturmowy bot"
 ssl0311_name="Ilshatha"
@@ -263,13 +263,13 @@ srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężny laser zamiatania. Nie angażować samolotu lub jednostek podwodnych. Wymaga skumulowane ilości energii dla utrzymania długotrwałego pożaru; przegrzeje jeśli aktywny zbyt długo."
-Unit_Description_BrewLAN_T3B003="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o działko plazmowe Gatling. Nie angażować samolotu lub jednostek podwodnych."
+Unit_Description_BrewLAN_T3B003="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o Gatling armaty osocza. Nie angażować samolotu lub jednostek podwodnych."
 Unit_Description_BrewLAN_T3B004="Ciężki wieża obronna. Ataki jednostek lądowych, morskich jednostek opartych na samolot i niskich wysokościach z potężnego lasera. Nie angażują dużą wysokość samolotu lub jednostek podwodnych."
 
 sbui2311_desc="Anti-Armor punkt obrony"
 seb2311_name="Opiekun"
 ssb2311_name="Sinn Unthe"
-srb2311_name="karzący, wymierzający karę"
+srb2311_name="Punisher"
 sab2311_name="Nihiloid"
 Unit_Description_BrewLAN_T3B005="Bardzo ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężny pancernik klasy Gaussa armaty."
 Unit_Description_BrewLAN_T3B006="Bardzo ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężnej broni energetycznej."
@@ -278,16 +278,16 @@ Unit_Description_BrewLAN_T3B008="Bardzo ciężki wieża obronna. Ataki lądowych
 
 seb3303_desc="Observation Satellite Uplink"
 seb3303b_desc="Satellite Launch Complex"
-Unit_Description_BrewLAN_T3B002="Produkuje i wprowadza na rynek satelity"
+Unit_Description_BrewLAN_T3B002="Produkuje i uruchamiania satelitów"
 
-ability_satellite_uplink="Uplink satelitarna"
+ability_satellite_uplink="Satellite Uplink"
 ability_satellite_cap_0="Pojemność satelitarna: +0"
 ability_satellite_cap_1="Pojemność satelitarna: +1"
 ability_satellite_cap_2="Pojemność satelitarna: +2"
 ability_satellite_cap_3="Pojemność satelitarna: +3"
 ability_satellite_cap_4="Pojemność satelitarna: +4"
 ability_satellite_cap_5="Pojemność satelitarna: +5"
-ability_satellite_cap_inf="Pojemność satelitarna Nieograniczony"
+ability_satellite_cap_inf="Nieograniczona pojemność satelitarną"
 
 sea0002_desc="obserwacja satelitarna"
 sea0002_name="spalanie Gwiazda"
@@ -301,7 +301,7 @@ Unit_Description_BrewLAN_T3A013="Satelitarny system System kontrwywiadu. Powoduj
 sel0320_desc="Komórka Satellite Uplink"
 sel0320_name="Archimedes"
 srl0318_name="Aracme"
-Unit_Description_BrewLAN_T3L003="Mobilny uplink satelitarny pojazdów. Wyznacza cele dla laserowo orbitalnej na ogień po."
+Unit_Description_BrewLAN_T3L003="Mobilny uplink satelitarny pojazdów. Znaki cele lasera orbitalnej na ogień po."
 Unit_Description_BrewLAN_T3L013="Komórka spiderbot. Uzbrojony w dalekiego zasięgu wiązki EMP broni."
 
 sel0321_desc="Komórka Strategic Missile Defence"
@@ -309,13 +309,13 @@ sel0321_name="Aster"
 srl0321_name="Jeż"
 sal0321_name="Skarabeusz"
 ssl0321_name="Ythhu"
-Unit_Description_BrewLAN_T3L004="Komórka strategiczny obrony przeciwrakietowej. Budowanie koszty obejmują pierwszy pocisk, jednak pojazd nie posiada zestaw fabryczny do samodzielnego wyprodukowania dodatkowych pocisków."
-Unit_Description_BrewLAN_T3L008="Komórka strategiczny obrony przeciwrakietowej. Wystrzeliwuje salwę trzech rakiet w każdym celu. Budowanie koszty obejmują pierwszą salwę."
+Unit_Description_BrewLAN_T3L004="Komórka strategiczny obrony przeciwrakietowej. Koszty build to pierwszy pocisk, jednak pojazd nie posiada zestaw fabryczny do samodzielnego wyprodukowania dodatkowych pocisków."
+Unit_Description_BrewLAN_T3L008="Komórka strategiczny obrony przeciwrakietowej. Wystrzeliwuje salwę trzech rakiet w każdym celu. Koszty build to pierwsza salwa."
 
---Seraphim T3 platforma sonar
+--Platforma Seraphim T3 sonaru
 sss0305_desc="Platforma sonarowa"
 sss0305_name="Aezhou"
-Unit_Description_BrewLAN_T3S001="System sonar z wyjątkowym zasięgu. Wykrywa i śledzi jednostki morskie. Wyposażony w osobisty teleporter."
+Unit_Description_BrewLAN_T3S001="System sonar z wyjątkowym zasięgu. Wykrywa i tory jednostki morskie. Wyposażony w osobisty teleporter."
 ability_personal_teleporter="Osobisty teleport"
 
 --inżynierów,
@@ -347,8 +347,8 @@ seb1312_desc="Inżynieria Mass Extractor"
 srb1312_desc="Camouflaged Mass Extractor"
 ssb1312_desc="Opancerzony Mass Extractor"
 seb1312_name="Pompa masa 3E"
-Unit_Description_BrewLAN_T3B0021="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Generuje kopułę tarczy wystarczająco duże, aby pokryć siebie i 4 małe magazyny."
-Unit_Description_BrewLAN_T3B0022="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Posiada zdolność do naprawy pobliskich budynków. Automatycznie buduje mechanizmy obronne, gdy uszkodzony."
+Unit_Description_BrewLAN_T3B0021="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Generuje powłoka ochronna na tyle duża, aby pokryć siebie i 4 małe magazyny."
+Unit_Description_BrewLAN_T3B0022="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Posiada zdolność do naprawy w pobliżu budynków. Automatycznie buduje mechanizmy obronne, gdy uszkodzony."
 Unit_Description_BrewLAN_T3B0023="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Widoczne tylko dla Omni."
 Unit_Description_BrewLAN_T3B0024="High-end wyciąg Mass. Muszą być skonstruowane depozytów masowych. Posiada lepszą zbroję i ma zdolności regeneracyjne SELF."
 
@@ -356,26 +356,26 @@ srb1313_desc="Camouflaged Mass Wykonawca"
 seb1313_desc="Inżynieria Mass Wykonawca"
 sab1313_desc="Ekranowane Mass Wykonawca"
 ssb1313_desc="Opancerzony Mass Wykonawca"
-Unit_Description_BrewLAN_T3B0010="Duża struktura produkcja masowa. Posiada zdolność do kamuflażu, który zużywa dodatkową energię."
-Unit_Description_BrewLAN_T3B0013="Duża struktura produkcja masowa. Posiada zdolność do naprawy pobliskich budynków. Automatycznie buduje mechanizmy obronne, gdy uszkodzony."
-Unit_Description_BrewLAN_T3B0015="Duża struktura produkcja masowa. Posiada potężną tarczę, która zużywa dodatkową energię."
-Unit_Description_BrewLAN_T3B0017="Duża struktura produkcja masowa. Posiada doskonałą zbroję i ma zdolności regeneracyjne SELF."
+Unit_Description_BrewLAN_T3B0010="Duża masa struktura produkcji. Posiada zdolność do kamuflażu, który zużywa dodatkową energię."
+Unit_Description_BrewLAN_T3B0013="Duża masa struktura produkcji. Posiada zdolność do naprawy pobliskich budynków. Automatycznie buduje mechanizmy obronne, gdy uszkodzony."
+Unit_Description_BrewLAN_T3B0015="Duża masa struktura produkcji. Posiada potężną tarczę, która zużywa dodatkową energię."
+Unit_Description_BrewLAN_T3B0017="Duża masa struktura produkcji. Posiada doskonałą zbroję i ma zdolności regeneracyjne SELF."
 
-srb4313_desc="Zamaskowany Stealth Generator Pole"
+srb4313_desc="Camouflaged Stealth Generator Pole"
 srb4313_name="Nocny cień"
-Unit_Description_BrewLAN_T3B0011="Generuje pole maskujące i ma prywatnego kamuflażu. Ukrywa jednostek i struktur w jej zasięgu operacyjnym z radaru i sonaru, ale nie z czujników wizualnych, sam generator jest widoczny tylko dla Omni."
+Unit_Description_BrewLAN_T3B0011="Generuje pole maskujące i ma prywatnego kamuflażu. Skóry jednostek i struktur w jego zasięgu operacyjnym z radaru i sonaru, ale nie z czujników wizualnych, sam generator jest widoczny tylko dla Omni."
 
 ssb5301_desc="Tarcza Ściana Sekcja"
 ssb5301_name="Athahaas"
 sab5301_name="Egida"
-Unit_Description_BrewLAN_T3B0018="Ogranicza przemieszczanie się wrogich jednostek. Realizacje mała tarcza kopuła nad sobą, aby zaoferować dodatkową ochronę przed ogniem wroga."
+Unit_Description_BrewLAN_T3B0018="Ogranicza przemieszczanie się wrogich jednostek. Projekty mała tarcza kopuła nad sobą, aby zaoferować dodatkową ochronę przed ogniem wroga."
 
 srb5310_desc="Opancerzony Ściana Sekcja"
 srb5310_name="Procyon Defiance"
 seb5310_name="Cytadela"
-Unit_Description_BrewLAN_T3B0019="Ogranicza przemieszczanie się wrogich jednostek. Może wytrzymać ekstremalne ilości obrażeń. Łączy się z innymi sąsiednimi sekcjami ścianki pancernych."
+Unit_Description_BrewLAN_T3B0019="Ogranicza przemieszczanie się wrogich jednostek. Może wytrzymać ekstremalne ilości obrażeń. Łączy się z innymi sąsiednimi sekcjami ścianki opancerzonych."
 
-srb5311_desc="Sekcja opancerzony Brama"
+srb5311_desc="Opancerzony Brama Sekcja"
 srb5311_name="Procyon Oferowanie"
 seb5311_name="Brona"
 Unit_Description_BrewLAN_T3B0020="Ręcznie sterowane bramy; może umożliwić przejście przez jego obszarze i utrzymać ekstremalnych ilości uszkodzeń."
@@ -385,14 +385,14 @@ seb2308_name="Harpun"
 Unit_Description_BrewLAN_T3B0025="Ciężki torpeda uruchomienie wieży. Może być zbudowany na lądzie i na dnie morza."
 sab2308_desc="Wyrzutnia torped"
 sab2308_name="Gwałtowny potop"
-Unit_Description_BrewLAN_T3B0027="Bardzo ciężki dalekiego zasięgu anty-morski system obrony. Zaprojektowany, aby angażować najpotężniejszych jednostek morskich."
+Unit_Description_BrewLAN_T3B0027="Bardzo ciężki dalekiego zasięgu zwalczania okrętów systemu obronnego. Zaprojektowany, aby angażować najpotężniejszych jednostek morskich."
 sss0306_desc="Ciężki Torpedo Platform"
 sss0306_name="Uosthuum"
 Unit_Description_BrewLAN_T3S004="Najechanie systemu torpedy. Zdolne do niszczenia największy statków wroga."
 
-ssb3301_desc="Śledzenie obiektu optyka"
+ssb3301_desc="Instrument optyka Tracking"
 ssb3301_name="Aezselen"
-Unit_Description_BrewLAN_T3B0026="Oferuje linię-of-sight ukierunkowanego przyjaznego lub wrogiego zespołu. Można kierować blips radarowych. Nie można kierować na pustą przestrzeń."
+Unit_Description_BrewLAN_T3B0026="Oferty line-of-sight ukierunkowanego przyjaznego lub wrogiego zespołu. Można kierować blips radarowych. Nie można kierować na pustą przestrzeń."
 
 sal0322_desc="Mobilny gen. tarczy ochronnej"
 sal0322_name="płomień Lotus"
@@ -424,9 +424,9 @@ seb4303_desc="Tarcza przeciw artyleryjska"
 seb4303_name="Odrzut"
 Unit_Description_BrewLAN_T3B0028="Stacjonarna siatka artylerii obrony. Wyposażony w zintegrowany system identyfikacji i śledzenia zagrożeniem."
 
-srl0316_desc="Zamaskowany mobilny system Stealth Pole"
+srl0316_desc="Camouflaged Komórka Stealth systemu Pole"
 srl0316_name="Operacyjny"
-Unit_Description_BrewLAN_T3L010="Komórka zakamuflowana generator stealth. Ukrywa pobliskie jednostki z radaru i sonaru. Widoczne tylko dla Omni."
+Unit_Description_BrewLAN_T3L010="Komórka zakamuflowana generator stealth. Skóry z pobliskich jednostek radar i sonar. Widoczne tylko dla Omni."
 
 srl0311_desc="Platforma mobilna Rocket"
 srl03ll_name="Hexatron"
@@ -447,14 +447,14 @@ srl0324_desc="Sensor Array mobilna"
 srl0324_name="adramelech"
 sal0324_name="Metatron"
 ssl0324_name="Yenesel"
-Unit_Description_BrewLAN_T3L016="High-end mobilny system inteligencja. Natomiast stacjonarna jest widoczny tylko dla omni, i zapewnia szeroki zasięg radaru i Omni."
-Unit_Description_BrewLAN_T3L019="Unoszące się szereg czujników. Zużywa duże ilości mocy, aby funkcjonować."
+Unit_Description_BrewLAN_T3L016="High-end mobilny system inteligencja. Choć stacjonarny jest on widoczny tylko w Omni i zapewnia szeroki zasięg radaru i Omni."
+Unit_Description_BrewLAN_T3L019="Unoszące się szereg czujników. Zużywa duże ilości mocy do funkcji."
 
 sl0325_desc="Komórka Torpedo Launcher"
 sel0325_name="PT-57 Croc"
 sal0325_name="Otchłań"
 Unit_Description_BrewLAN_T3L017="Mobile Anti-Naval pojazdu."
-Unit_Description_BrewLAN_T3L018="Komórka unosić anty-morską pojazdu."
+Unit_Description_BrewLAN_T3L018="Komórka unosić anty-Naval pojazdu."
 
 ssb4317_desc="Radar Jammer"
 ssb4317_name="Yathesel"
@@ -467,7 +467,7 @@ Unit_Description_BrewLAN_T3L023="Mobilna platforma do tankowania i naprawy samol
 
 
 --------------------------------------------------------------------------------
--- doświadczalnej
+-- doświadczalnej
 --------------------------------------------------------------------------------
 
 ssl0403_desc="Eksperymentalna Rekonstrukcja Engineer"
@@ -506,7 +506,7 @@ Unit_Description_BrewLAN_T4L002="Eksperymentalna unosić Siege Tank Assault. Wyp
 
 seb2404="Eksperymentalny Spadek-Pod Artillery"
 seb2404_name="Ivan"
-Unit_Description_BrewLAN_T4B005="Eksperymentalna szybkiego ognia artyleryjskiego. Pożary rozwijanej strąki zawierające ręcznie skonstruowanych jednostek lądowych głąb liniami wroga, powodując drobne uszkodzenia uderzenia. Drop-strąki są uruchamiane w pierwszej kolejności w ostatnim zewnątrz."
+Unit_Description_BrewLAN_T4B005="Eksperymentalna szybkiego ognia artyleryjskiego. Pożary rozwijanej strąki zawierające ręcznie skonstruowanych jednostek lądowych głąb liniami wroga, powodując uszkodzenie niewielki wpływ. Drop-strąki są uruchamiane w pierwszej kolejności w ostatnim zewnątrz."
 
 srb4402_desc="Eksperymentalna Omni Zakłócanie obiektu"
 srb4402_name="Ciemność"
@@ -514,7 +514,7 @@ Unit_Description_BrewLAN_T4B006="Obiekt doświadczalny kontrwywiadu. Generuje im
 
 ssb5401_desc="Eksperymentalna Quantum Brama"
 ssb5401_name="Chappa'ai"
-Unit_Description_BrewLAN_T4B007="Eksperymentalna kwantowa urządzenia bramy. Zdolne do transportowania jednostek natychmiast po mapie do innych bram."
+Unit_Description_BrewLAN_T4B007="Eksperymentalna Przyrząd wejściowy kwantowej. Zdolne do transportowania jednostek natychmiast po mapie do innych bram."
 
 srl0000_desc="Crab Egg"
 srl0001_desc=srl0000_desc .. " (Niszczyciel)"
@@ -526,16 +526,16 @@ srl0006_desc=srl0000_desc .. " (MRL)"
 
 seb3404_desc="Tablica eksperymentalny czujnika"
 seb3404_name="Panoptikum"
-Unit_Description_BrewLAN_T4B008="Eksperymentalna macierz czujników. Kiedy w pełni aktywna, zapewnia pole widzenia dla wrogich jednostek należących do jej promienia operacyjnego, które są widoczne na dostępnych czujników, takich jak radar. koszty utrzymania dodatkowych na jednostkę jest szpiegował. Mobilne jednostki i duże jednostki kosztować więcej szpiegować."
+Unit_Description_BrewLAN_T4B008="Eksperymentalna macierz czujników. Kiedy w pełni aktywna, zapewnia pole widzenia dla wrogich jednostek należących do jej promienia operacyjnego, które są widoczne na dostępnych czujników, takich jak radar. Utrzymanie kosztuje dodatkowy per-jednostka istota szpiegował. Mobilne jednostki i duże jednostki kosztować więcej szpiegować."
 
 Panopticon_array_slot="Szyk"
 Unit_Description_BrewLAN_T4B008_sre="Zwiększa promień radaru."
-Unit_Description_BrewLAN_T4B008_sresre="Zwiększa radar i Omni promień."
+Unit_Description_BrewLAN_T4B008_sresre="Zwiększa promień radar i wielokierunkowy."
 Unit_Description_BrewLAN_T4B008_xbndl="Ujawnia blips radarowych."
-brewlan_panopticon_small_001="Aktywować antenę radarową"
+brewlan_panopticon_small_001="Aktywuj danie radar"
 brewlan_panopticon_small_002="Aktywuj danie Marcin"
 brewlan_panopticon_small_003="Aktywuj danie Gebauer"
-brewlan_panopticon_small_004="Aktywować antenę radarową"
+brewlan_panopticon_small_004="Aktywuj danie radar"
 brewlan_panopticon_med_001="Aktywuj danie Chapeau"
 brewlan_panopticon_med_002="Aktywuj danie Pankow"
 brewlan_panopticon_med_003="Aktywuj danie Mogwai"
@@ -544,7 +544,7 @@ brewlan_panopticon_xbl_001="Aktywuj danie Saxon"
 brewlan_panopticon_small_001r="Dezaktywować danie Guillaume"
 brewlan_panopticon_small_002r="Dezaktywować danie Marcin"
 brewlan_panopticon_small_003r="Dezaktywować danie Gebauer"
-brewlan_panopticon_small_004r="Dezaktywować antenę radarową"
+brewlan_panopticon_small_004r="Dezaktywacja danie radar"
 brewlan_panopticon_med_001r="Dezaktywować danie Chapeau"
 brewlan_panopticon_med_002r="Dezaktywować danie Pankow"
 brewlan_panopticon_med_003r="Dezaktywować danie Mogwai"
@@ -557,7 +557,7 @@ Unit_Description_BrewLAN_T4B009="Konstruuje jednostki powietrzne."
 
 srb0401="Eksperymentalna grunty fabryczne"
 srb0401_name="Arthrolab"
-Unit_Description_BrewLAN_T4B010="Konstruuje jednostki lądowe."
+Unit_Description_BrewLAN_T4B010="Konstrukty wylądować jednostek."
 
 ssb0401_desc="Eksperymentalna Naval fabryczne"
 ssb0401_name="Souiya"

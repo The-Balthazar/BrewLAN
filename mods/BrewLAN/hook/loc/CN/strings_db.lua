@@ -6,27 +6,27 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- 提示
+-- 提示
 --------------------------------------------------------------------------------
 
 --工具提示龙门
 tooltipbrewlan0000="转换生产模式"
 tooltipbrewlan0001="在空军武器生产模式和陸軍/海軍武器生产模式間切換"
 
---对于T3提示诱骗飞机。
+--工具提示为T3诱饵飞机。
 tooltipbrewlan0002="转换空速"
 tooltipbrewlan0003="空中优势或沙皇切换模拟"
 tooltipbrewlan0004="空中优势或死神的模拟切换"
 tooltipbrewlan0005="空中优势或阿瓦薩的模拟切换"
 tooltipbrewlan0006="空中优势或AC-500百夫长切换模拟"
 
---工具提示的地雷。
+--工具提示地雷。
 tooltipbrewlan0007="引爆"
 tooltipbrewlan0008="立刻引爆裝置"
 
 --工具提示建设者墙壁
 tooltipbrewlan0009="清除生产区"
-tooltipbrewlan0010="删除任何结构或从构建区域保持。"
+tooltipbrewlan0010="删除从构建区域的任何结构或遗体。"
 
 --工具提示塞拉芬间谍设备
 tooltipbrewlan0011="預視"
@@ -39,9 +39,9 @@ tooltipbrewlan0015="自动开关功能已经被启用"
 
 --工具提示全方位破坏者。
 tooltipbrewlan0016="转换干扰脉冲模式"
-tooltipbrewlan0017="打开或关闭全方位干扰脉冲。"
+tooltipbrewlan0017="开启或关闭全方位干扰脉冲。"
 
---用于雷兹工具提示/回收命令。
+--工具提示用于雷兹/回收命令。
 --tooltipbrewlan0018="回收"
 tooltipbrewlan0019="回收单位或残骸，及学习它的蓝图。"
 
@@ -52,9 +52,9 @@ tooltipbrewlan0022="转换屏蔽开关模式，阻止所有进出。"
 tooltipbrewlan0023="关闭连接"
 tooltipbrewlan0024="关闭传送器之間的输出连接。"
 
---工具提示为伊万
+--工具提示伊万
 tooltipbrewlan0025="切换重复订单"
-tooltipbrewlan0026="虽然启用，一旦炮兵已经完成发射，它将重新创建它刚刚解雇的单位。并继续射击，如果重复攻击目标设定。"
+tooltipbrewlan0026="虽然启用，一旦炮兵射击完，它将重新创建它刚刚解雇的单位。并继续使用重复性攻击目标设定射击。"
 tooltipbrewlan0027="重复攻击"
 tooltipbrewlan0028="在目标位置开始重复发作周期，或更新当前周期的目标。"
 floatingtextIVAN01="重复订单启用"
@@ -69,18 +69,18 @@ tooltipbrewlan0031="切换武器优先"
 tooltipbrewlan0032="防空目标优先级和战术导弹目标优先级之间进行切换。"
 
 --全景敞视增强标签
-tooltipbrewlan0033="定制[阵列]"
+tooltipbrewlan0033="自定义[阵列]"
 
 --------------------------------------------------------------------------------
--- 支持司令增强
+-- 支持司令增强
 --------------------------------------------------------------------------------
 
-Unit_Description_BrewLAN_E001="增加了现场工程师建造能力，以南部非洲关税同盟。"
+Unit_Description_BrewLAN_E001="增加了现场工程师构建能力南部非洲关税同盟。"
 brewlan_enhancements_1="现场工程套房"
 brewlan_enhancements_2="删除字段工程套件"
 
 --------------------------------------------------------------------------------
--- 技术人员1
+-- 技术人员1
 --------------------------------------------------------------------------------
 
 sair0105="轻型武装直升机"
@@ -136,7 +136,7 @@ srs0119_name="富兰克林类"
 Unit_Description_BrewLAN_T1S001="技术1建造，修理，捕获，回收和矿层单元。"
 
 --------------------------------------------------------------------------------
--- 技术2
+-- 技术2
 --------------------------------------------------------------------------------
 
 saa0211_name="穿刺"
@@ -156,8 +156,8 @@ Unit_Description_BrewLAN_T2L003="Tech 2的水陆两用建造，修理，捕获�
 --质量和能量储存
 seb1206_name="CJ-00F4T-2"
 seb1205_name="PW4TH12-ST电容器"
-Unit_Description_BrewLAN_T2R002="存储大量的质量。构建旁提取或加工商在邻接的奖金。"
-Unit_Description_BrewLAN_T2R001="存储大量的能量。建设旁边发电机在邻接的奖金。"
+Unit_Description_BrewLAN_T2R002="存储大量的质量。未来构建以提取或加工商在邻接的奖金。"
+Unit_Description_BrewLAN_T2R001="存储大量的能量。未来构建以电力发电机邻接奖金。"
 
 --矿业
 sbui2220="矿山压力"
@@ -179,9 +179,9 @@ seb2222_name="AM-36三位一体"
 srb2222_name="消音器"
 sab2222_name="山"
 ssb2222_name="Inaino"
-Unit_Description_BrewLAN_T2D004="全地形矿山装备了全当量核弹头。必须手动引爆。可见只有全方位。"
+Unit_Description_BrewLAN_T2D004="全地形矿山装备了全当量核弹头。手动引爆必需的。可见只有全方位。"
 
--- 的Cybran T2屏蔽;他们没有必须构建描述最初。
+-- 的Cybran T2屏蔽;他们没有必须构建描述最初。
 Unit_Description_BrewLAN_T2D002="产生它的半径内周围单位和建筑的保护罩。盾可以两次升级。"
 Unit_Description_BrewLAN_T2D003="产生它的半径内周围单位和建筑重盾。"
 
@@ -189,7 +189,7 @@ sbui5210="厚壁科"
 seb5210_name="一般破坏僵局"
 srb5210_name="舱壁"
 ssb5210_name="哈斯哈斯"
-Unit_Description_BrewLAN_T2B001="限制的敌方单位移动和能够承受极端数额的损害。连接到其它相邻的厚壁部分。"
+Unit_Description_BrewLAN_T2B001="敌方单位限制运动，可承受极端数额的损害。连接到其它相邻的厚壁部分。"
 
 ssl0222_desc="機動護盾產生器"
 ssl0222_name="Athanne"
@@ -227,7 +227,7 @@ Unit_Description_BrewLAN_T2D007="自動維修、 開採、協助或是佔領任�
 Unit_Description_BrewLAN_T2D008="自動維修、 開採、協助或是佔領任何作業半徑內的單位。"
 
 --------------------------------------------------------------------------------
--- 科技3
+-- 科技3
 --------------------------------------------------------------------------------
 
 sair0305="重型砲艇"
@@ -263,7 +263,7 @@ srb2306_name="哈迪斯"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="重型防御塔。攻击陆基和海基单位提供了强大的扫描激光器。不从事航空器或淹没单位。需要累积量的能量来维持长期的火;会过热，如果活跃太久。"
-Unit_Description_BrewLAN_T3B003="重型防御塔。攻击陆基和海基单位与加特林等离子大炮。不从事航空器或淹没单位。"
+Unit_Description_BrewLAN_T3B003="重型防御塔。攻击陆基和海基单位与加特林机炮等离子。不从事航空器或淹没单位。"
 Unit_Description_BrewLAN_T3B004="重型防御塔。攻击陆基单位，海基单位和低空飞机强大的激光。不从事高空飞机或淹没单位。"
 
 sbui2311_desc="反装甲点防御"
@@ -301,7 +301,7 @@ Unit_Description_BrewLAN_T3A013="基于卫星的反间谍系统。导致大量�
 sel0320_desc="移动卫星通信"
 sel0320_name="阿基米德"
 srl0318_name="Aracme"
-Unit_Description_BrewLAN_T3L003="一种移动卫星上行链路车辆。标记目标轨道的激光射击在。"
+Unit_Description_BrewLAN_T3L003="一种移动卫星上行链路车辆。标记目标在轨道激光火灾。"
 Unit_Description_BrewLAN_T3L013="移动spiderbot。带着对长距离EMP束武器。"
 
 sel0321_desc="移动战略导弹防御"
@@ -309,8 +309,8 @@ sel0321_name="翠菊"
 srl0321_name="猬"
 sal0321_name="圣甲虫"
 ssl0321_name="Ythhu"
-Unit_Description_BrewLAN_T3L004="移动战略导弹防御。建设成本包括第一枚导弹，但车辆缺乏制造套件，以产生额外的导弹无助。"
-Unit_Description_BrewLAN_T3L008="移动战略导弹防御。火灾在每一个目标的三枚导弹齐射。建设成本包括第一齐射。"
+Unit_Description_BrewLAN_T3L004="移动战略导弹防御。建造成本包括第一枚导弹，但车辆缺乏制造套件，以产生额外的导弹无助。"
+Unit_Description_BrewLAN_T3L008="移动战略导弹防御。火灾在每一个目标的三枚导弹齐射。建造成本包括第一齐射。"
 
 --塞拉芬T3声纳平台
 sss0305_desc="聲納平台"
@@ -338,7 +338,7 @@ seb1311_name="转炉反应堆"
 srb1311_name="法拉第电抗器"
 ssb1311_name="UYA-iyathan"
 Unit_Description_BrewLAN_T3B009="大型发电结构。具有的能力，伪装，这消耗它的操作输出的很大一部分。"
-Unit_Description_BrewLAN_T3B0012="大型发电结构。拥有修理附近建筑物的能力。当损坏的自动构建防御。"
+Unit_Description_BrewLAN_T3B0012="大型发电结构。具备的能力，修复附近的建筑物。当损坏的自动构建防御。"
 Unit_Description_BrewLAN_T3B0014="大型发电结构。具有功能强大的屏蔽，这消耗它的操作输出的一小部分。"
 Unit_Description_BrewLAN_T3B0016="大型发电结构。拥有卓越的装甲和具有自再生功能。"
 
@@ -357,18 +357,18 @@ seb1313_desc="工程质量加工厂"
 sab1313_desc="屏蔽质量加工厂"
 ssb1313_desc="装甲质量加工厂"
 Unit_Description_BrewLAN_T3B0010="大质量的制造结构。拥有能力伪装，这会消耗额外的功率。"
-Unit_Description_BrewLAN_T3B0013="大质量的制造结构。拥有修理附近建筑物的能力。当损坏的自动构建防御。"
+Unit_Description_BrewLAN_T3B0013="大质量的制造结构。具备的能力，修复附近的建筑物。当损坏的自动构建防御。"
 Unit_Description_BrewLAN_T3B0015="大质量的制造结构。拥有强大的盾牌，这会消耗更多的功率。"
 Unit_Description_BrewLAN_T3B0017="大质量的制造结构。拥有卓越的装甲和具有自再生功能。"
 
 srb4313_desc="伪装隐形力场发生器"
 srb4313_name="茄科"
-Unit_Description_BrewLAN_T3B0011="生成一个隐形的学科，具有个人伪装。隐藏单元和结构从雷达和声纳其工作范围内，但不能从视觉传感器，发电机本身仅仅是全可见。"
+Unit_Description_BrewLAN_T3B0011="生成一个隐形的学科，具有个人伪装。皮单元和从雷达和声纳其操作范围内的结构，但不能从视觉传感器，发电机本身才可见于OMNI。"
 
 ssb5301_desc="盾墙段"
 ssb5301_name="Athahaas"
 sab5301_name="庇护"
-Unit_Description_BrewLAN_T3B0018="限制的敌方单位移动。项目小盾的圆顶上本身提供从敌人的炮火额外的保护。"
+Unit_Description_BrewLAN_T3B0018="限制的敌方单位移动。项目小盾圆顶本身上面提供从敌人的炮火额外的保护。"
 
 srb5310_desc="装甲壁部分"
 srb5310_name="南河反抗"
@@ -392,7 +392,7 @@ Unit_Description_BrewLAN_T3S004="悬停鱼雷系统。可摧毁的最大敌人�
 
 ssb3301_desc="光学跟踪设备"
 ssb3301_name="Aezselen"
-Unit_Description_BrewLAN_T3B0026="供应线的视线有针对性的友方或者敌方单位。可以针对雷达的光点。不能针对空的空间。"
+Unit_Description_BrewLAN_T3B0026="报价行的视线有针对性的友方或者敌方单位。可以针对雷达的光点。不能针对空的空间。"
 
 sal0322_desc="機動護盾產生器"
 sal0322_name="火焰莲花"
@@ -414,7 +414,7 @@ Unit_Description_BrewLAN_T3L015="移动防空导弹发射装置。配备了先�
 --srl0320_desc=--移动导弹发射器
 srl0320_desc="移动SAM启动"
 srl0320_name="早产"
-Unit_Description_BrewLAN_T3L009="移动伪装表面对空导弹发射装置。必须成为攻击可见。"
+Unit_Description_BrewLAN_T3L009="移动伪装表面对空导弹发射装置。必须成为可见的攻击。"
 
 ssl0320_desc="移动反防空"
 ssl0320_name="ATHA-Ythia"
@@ -426,11 +426,11 @@ Unit_Description_BrewLAN_T3B0028="固定式火炮防御网。配备有集成的�
 
 srl0316_desc="伪装移动隐形场系统"
 srl0316_name="手术"
-Unit_Description_BrewLAN_T3L010="移动伪装隐形发生器。隐藏雷达和声纳附近单位。可见只有全。"
+Unit_Description_BrewLAN_T3L010="移动伪装隐形发生器。附近从雷达和声纳隐藏。可见只有OMNI。"
 
 srl0311_desc="移动火箭平台"
 srl03ll_name="Hexatron"
-Unit_Description_BrewLAN_T3L011="移动多管火箭炮。长期重载时间。设计压倒敌人的盾牌和战术导弹防御系统与大型火炮。"
+Unit_Description_BrewLAN_T3L011="移动多管火箭炮。长期重载时间。设计压倒敌人的盾牌，并与大型火炮战术导弹防御系统。"
 
 ss0319_desc="现场工程船"
 ses0319_name="补丁类"
@@ -448,17 +448,17 @@ srl0324_name="亚得米勒"
 sal0324_name="塔特"
 ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="高端移动智能系统。虽然固定它是可见的只有全方位，并提供广泛的雷达，全方位覆盖。"
-Unit_Description_BrewLAN_T3L019="悬停传感器阵列。消耗大量的功率工作的。"
+Unit_Description_BrewLAN_T3L019="悬停传感器阵列。消耗大量功率的发挥作用。"
 
 sl0325_desc="移动鱼雷发射"
 sel0325_name="PT-57鳄鱼"
 sal0325_name="凌波"
 Unit_Description_BrewLAN_T3L017="手机防的海军车辆。"
-Unit_Description_BrewLAN_T3L018="移动徘徊抗海军车辆。"
+Unit_Description_BrewLAN_T3L018="移动悬停抗海军车辆。"
 
 ssb4317_desc="雷达干扰机"
 ssb4317_name="Yathesel"
-Unit_Description_BrewLAN_T3B0029="雷达干扰设施。创建大量其业务区域内虚假的雷达信号，造成分心和扰乱敌人定位。"
+Unit_Description_BrewLAN_T3B0029="雷达干扰设施。创建大量其业务区域内虚假的雷达信号，造成分心和扰乱敌人靶向。"
 ssa00002_desc="全息照相"
 
 sl0326_desc="移动式空气分段运输平台"
@@ -467,7 +467,7 @@ Unit_Description_BrewLAN_T3L023="加油和修理飞机的移动平台。空中�
 
 
 --------------------------------------------------------------------------------
--- 实验部分
+-- 实验部分
 --------------------------------------------------------------------------------
 
 ssl0403_desc="实验重建工程师"
@@ -494,7 +494,7 @@ Unit_Description_BrewLAN_T4S001="实验两栖战舰。"
 
 srs0402_desc="实验传输"
 srs0402_name="深渊履带"
-Unit_Description_BrewLAN_T4L003="实验两栖运输。旅行更快的水下。配备中等功率的通用武器。"
+Unit_Description_BrewLAN_T4L003="实验两栖运输。水下游记快。配备中等功率的通用武器。"
 
 seb0401="实验厂"
 seb0401_name="龙门"
@@ -506,7 +506,7 @@ Unit_Description_BrewLAN_T4L002="实验徘徊攻城攻击性战车。配备了�
 
 seb2404="实验落荚炮兵"
 seb2404_name="伊万"
-Unit_Description_BrewLAN_T4B005="实验速射火炮。火灾落豆荚含有手动构造土地单位深入敌线，造成轻微冲击损伤。落荚在第一个推出先进后出的顺序。"
+Unit_Description_BrewLAN_T4B005="实验速射火炮。火灾落豆荚含有手动构造土地单位深入敌线，造成轻微冲击损伤。落荚在去年出的顺序第一启动。"
 
 srb4402_desc="实验全扰乱设施"
 srb4402_name="黑暗"
@@ -526,11 +526,11 @@ srl0006_desc=srl0000_desc .. " （多管火箭炮）"
 
 seb3404_desc="实验传感器阵列"
 seb3404_name="圆形监狱"
-Unit_Description_BrewLAN_T4B008="实验传感器阵列。当完全激活，提供了视线其业务半径内的敌方单位是可见的可用的传感器，诸如雷达。每单位额外保养成本被窥探上。移动单位和大单位成本更窥探。"
+Unit_Description_BrewLAN_T4B008="实验传感器阵列。当完全激活，提供了视线其业务半径内的敌方单位是可见的可用的传感器，诸如雷达。维修费用额外每单位被窥探上。移动单位和大单位成本更窥探。"
 
 Panopticon_array_slot="排列"
 Unit_Description_BrewLAN_T4B008_sre="提高雷达半径。"
-Unit_Description_BrewLAN_T4B008_sresre="增加了雷达，全方位半径。"
+Unit_Description_BrewLAN_T4B008_sresre="增加雷达，全方位半径。"
 Unit_Description_BrewLAN_T4B008_xbndl="揭示了雷达的光点。"
 brewlan_panopticon_small_001="激活雷达菜"
 brewlan_panopticon_small_002="激活马尔钦菜"
@@ -557,7 +557,7 @@ Unit_Description_BrewLAN_T4B009="构建空中单位。"
 
 srb0401="试验田厂"
 srb0401_name="节肢工廠"
-Unit_Description_BrewLAN_T4B010="构造土地的单位。"
+Unit_Description_BrewLAN_T4B010="构建地面单位。"
 
 ssb0401_desc="实验海军厂"
 ssb0401_name="Souiya"

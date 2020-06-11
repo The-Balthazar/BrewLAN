@@ -13,7 +13,7 @@ srb9201_name="Schrödinger-Einrichtung"
 srb9301_name="Heisenfazilität"
 --Äon
 sab9101_name="Einblick"
-sab9201_name="Handlungsempfehlung"
+sab9201_name="Orientierungshilfe"
 sab9301_name="Erleuchtung"
 --Seraphim
 ssb9101_name="Iyathlabistle"
@@ -52,7 +52,7 @@ ability_rnd_gantry="Errichtet durch experimentelle Fabrik"
 ability_rnd_wall="Aufgebaut auf Wand"
 ability_rnd_upgrade="Erbaut als Upgrade"
 
---Forschungskategorien kategorien~~POS=HEADCOMP
+--Forschungskategorien
 srnd9100_desc="Tech herausragende Forschungsarbeiten"
 srnd9200_desc="Tech herausragende Forschungsarbeiten"
 srnd9300_desc="Tech herausragende Forschungsarbeiten"
@@ -67,7 +67,7 @@ Unit_Description_RND_004="Unlocks Versuchseinheiten und Einheit Forschung."
 --Forschung Unlock-Fabriken
 sb0105_desc="Hovercraft-Fabrik"
 Unit_Description_RND_013="Produziert amphibische Einheiten."
---Insbesondere nur amphib Oberfläche und schweben. Inklusive ekranoplans.
+--Insbesondere die Oberfläche nur amphib und schweben. Inklusive ekranoplans.
 sb0106_desc="U-Boot-Fabrik"
 Unit_Description_RND_014="Produziert Taucheinheiten."
 --U-Boote und vielleicht Meeresboden amphibischen
@@ -76,7 +76,7 @@ Unit_Description_RND_015="produziert Seeflugzeuge"
 --Seaplane Fabrik vielleicht nicht gemacht bekommen.
 
 ----------------------------------------
--- Tech 1
+-- Tech 1
 ----------------------------------------
 
 --Windräder
@@ -101,7 +101,7 @@ Unit_Description_RND_017="Erzeugt eine wellige Energiemenge. Effizientere mit gr
 ----------------------------------------
 
 --Stromerzeuger (250 Ausgang)
---Seraphim Nicht-Drehkraft gens sind alle Uya-iya genannt
+--Seraphim Nicht-Drehkraft gens sind alle genannt Uya-iya
 --Cybran und Aeon Tech-2 ist habe keinen Namen
 seb1201_name="EG-100 Fusionsreaktor"
 Unit_Description_RND_018="Niedrig bis mittlere Ebene Stromerzeuger. Konstruieren Sie neben anderen Strukturen für adjacency Bonus."
@@ -115,7 +115,7 @@ Unit_Description_RND_019="Kampfflieger mittlerer Stufe. Ausgezeichnete Flugabweh
 
 sa0213_desc="Jagdbomber"
 saa0213_name="Klarheit"
-Unit_Description_RND_020="Kombination Kämpfer / Bomber entworfen Land und Lufteinheiten zu engagieren."
+Unit_Description_RND_020="Kombination Kämpfer / Bomber entwickelt, um sowohl Land und Lufteinheiten zu engagieren."
 
 --Dedicated Tactical Bombers
 saa0211_desc="Taktischer Bomber"
@@ -145,10 +145,10 @@ sea0314_name="Ulan"
 saa0314_name="Schrei"
 sra0314_name="Sanguine Tyrant"
 ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-Unit_Description_RND_024="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-Unit_Description_RND_021="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-Unit_Description_RND_023="Top-End-Stealth-Langstrecken-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_022="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_024="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_021="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_RND_023="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
 
 --anti-SAM und anti-AAM Flares
 ability_missiledef="Raketenabwehr"
@@ -159,7 +159,7 @@ sea0313_name="Kater"
 saa0313_name="Helios"
 sra0313_name="twilight-Patron"
 ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-End-Long Range Stealth Fighter. Ausgestattet mit zwei Burst Schrauben Railguns, Luft-Luft-Raketen und Anti-Raketen-Fackeln."
+Unit_Description_RND_026="Top-End-Bereich lange Stealth-Kämpfer. Ausgestattet mit zwei Burst-Schrauben Railguns, Luft-Luft-Raketen und Anti-Raketen-Fackeln."
 --[description]
 Unit_Description_RND_025="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen und Raketen Fackeln. Fähig zu Spionageflugzeuge jagen."
 --[description]
@@ -184,4 +184,4 @@ srl0403_name="Retributor"
 Unit_Description_RND_016="Große Handy schwere Artillerie. Muss stationär und an Land die Artillerie zu feuern. Verbraucht große Mengen an Energie pro Schuss"
 
 tooltipbrewlanRND0000="Toggle Artillerie"
-tooltipbrewlanRND0001="Aktiviert oder deaktiviert die Haupt-Artillerie. Deaktivieren der verhindert, dass die Artillerie von potenziell Zugfolgen Cancelling."
+tooltipbrewlanRND0001="Aktiviert oder deaktiviert die Haupt-Artillerie. Die Deaktivierung verhindert, dass die Artillerie von potenziell Zugfolgen Cancelling."

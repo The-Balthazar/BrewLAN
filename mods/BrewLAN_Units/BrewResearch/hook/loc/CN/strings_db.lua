@@ -70,13 +70,13 @@ Unit_Description_RND_013="生产两栖单位。"
 --具体而言只是表面amphib，和悬停。包括ekranoplans。
 sb0106_desc="潜艇厂"
 Unit_Description_RND_014="生产潜水单位。"
---潜艇和海底也许两栖
+--潜艇和可能的海床两栖
 sb0106_desc="水上飞机厂"
 Unit_Description_RND_015="生产水上飞机"
 --水上飞机工厂可能无法得到制造。
 
 ----------------------------------------
--- 技术人员1
+-- 技术人员1
 ----------------------------------------
 
 --风力发电机
@@ -104,7 +104,7 @@ Unit_Description_RND_017="产生能量的起伏量。更有效地与大面积的
 --塞拉芬非旋转动力一族都称为UYA，IYA
 --的Cybran和永旺科技2的没有名字
 seb1201_name="EG-100融合反应堆"
-Unit_Description_RND_018="低到中等水平的发电机。建设旁边其他结构邻接奖金。"
+Unit_Description_RND_018="低到中等水平的发电机。未来构建以其他结构邻接奖金。"
 
 
 sa0212_desc="戰鬥機"
@@ -159,7 +159,7 @@ sea0313_name="雄貓"
 saa0313_name="赫利俄斯"
 sra0313_name="暮光之城守护神"
 ssa0313_name="Ialosaare"
-Unit_Description_RND_026="最高端的远程隐形战机。配备双螺旋一阵轨道炮，空 - 空导弹和反导弹弹。"
+Unit_Description_RND_026="最高端的远程隐形战机。配备双螺旋爆轨道炮，空 - 空导弹和反导弹弹。"
 --[description]
 Unit_Description_RND_025="最高端的远程隐形战斗机。配备了重粒子炮，反导弹弹。能够狩猎侦察机。"
 --[description]
@@ -184,4 +184,4 @@ srl0403_name="Retributor"
 Unit_Description_RND_016="大型移动重炮。必须是固定和陆地火炮兵。消耗大量的每次发射的能量"
 
 tooltipbrewlanRND0000="切换大炮"
-tooltipbrewlanRND0001="启用或禁用主炮。禁用防止火炮从潜在消除移动订单。"
+tooltipbrewlanRND0001="启用或禁用主炮。从潜在的取消订单移动禁用防止火炮。"

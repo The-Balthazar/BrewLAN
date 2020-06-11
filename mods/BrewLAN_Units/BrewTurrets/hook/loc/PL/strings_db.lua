@@ -2,7 +2,7 @@
 --Translated by: Google
 srb5380_name="Deadshot"
 srb5380_desc="Dokładność Rozbudowa węzła"
-Unit_Description_BrewLAN_Turrets_0001="Przylegające statyczne broni spędzić dłuższy celowania, co skutkuje większą dokładnością. Wiele węzłów stos."
+Unit_Description_BrewLAN_Turrets_0001="Przylegające statyczne broni wydatki mające już, co skutkuje większą dokładnością. Wiele węzłów stos."
 
 seb5381_name="Super gorące"
 seb5381_desc="Obrażenia Rozbudowa węzła"
@@ -25,12 +25,16 @@ Unit_Description_BrewLAN_Turrets_0006="Wieżyczka obronna. Uzbrojony w masywnej 
 
 srb2391_name="Cewka Tesli"
 srb2391_desc="Ciężka obrona punktowa"
-Unit_Description_BrewLAN_Turrets_0007="Mocny, krótki zasięg, wieżyczka obronna. Stopniowo magazynuje energię i odprowadza wszystko z każdym strzale. Najbardziej skuteczne wobec wielkich celów, gdy dany czas ładowania. Wysoce nieskuteczne przy długotrwałym ognia."
+Unit_Description_BrewLAN_Turrets_0007="Mocny, krótki zasięg, wieżyczka obronna. Stopniowo magazynuje energię i zrzutów wszystko z każdym strzale. Najbardziej skuteczne wobec wielkich celów, gdy dany czas ładowania. Wysoce nieskuteczne przy długotrwałym ognia."
 
 --Jest to wykorzystywane przez Tesla Coil
-tooltipbrewturrets0000="Przełączanie zasilania broń"
+tooltipbrewturrets0000="moc broń Przegubowe"
 tooltipbrewturrets0001="Włącza lub wyłącza zasilanie broni."
 
 seb2402_name="Wir"
 seb2402_desc="Eksperymentalna Anti-Air Defence"
 Unit_Description_BrewLAN_Turrets_0008="Obronna broń anty-powietrze. Zapewnia katastrofalne szkody krótkiego zasięgu. Zużywa moc przy każdym zdjęciu."
+
+srb2403_name="Tartar"
+srb2403_desc="Eksperymentalny punkt obrony"
+"Wieżyczka obronna. Uzbrojony w mikrofalowego lasera o wysokiej intensywności."

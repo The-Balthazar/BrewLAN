@@ -6,7 +6,7 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- Tooltips
+-- Tooltips
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
@@ -69,7 +69,7 @@ tooltipbrewlan0031="Waffenpriorität umschalten"
 tooltipbrewlan0032="Umschalten zwischen anti-Luft Zielpriorität und taktischer Raketenzielpriorität."
 
 --Panopticon Erweiterung Tab
-tooltipbrewlan0033="Anpassen von [Array]"
+tooltipbrewlan0033="Anpassen [Array]"
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements
@@ -448,17 +448,17 @@ srl0324_name="Adramelech"
 sal0324_name="Metatron"
 ssl0324_name="Yenesel"
 Unit_Description_BrewLAN_T3L016="High-End-Handy-Intelligence-System. Im Stand ist es nur omni sichtbar und bietet umfangreiches Radar und omni-Abdeckung."
-Unit_Description_BrewLAN_T3L019="Schwebend Sensorarray. Verbraucht große Energiemengen zu funktionieren."
+Unit_Description_BrewLAN_T3L019="Schwebend Sensorarray. Verbraucht große Mengen an Energie zu Funktion."
 
 sl0325_desc="Mobile Torpedo Launcher"
 sel0325_name="PT-57 Croc"
 sal0325_name="Limbus"
 Unit_Description_BrewLAN_T3L017="Mobile Anti-Marinefahrzeug."
-Unit_Description_BrewLAN_T3L018="Mobile schweben anti-Marinefahrzeug."
+Unit_Description_BrewLAN_T3L018="Mobile Schweben anti-Marinefahrzeug."
 
 ssb4317_desc="Radar-Störsender"
 ssb4317_name="Yathesel"
-Unit_Description_BrewLAN_T3B0029="Radar Störung Möglichkeiten. Erzeugt eine große Anzahl von falschen Radarsignalen innerhalb seines Betriebsbereiches, eine Ablenkung und stört Feind und verursachte Targeting."
+Unit_Description_BrewLAN_T3B0029="Radar Störung Möglichkeiten. Erzeugt eine große Anzahl von falschen Radarsignalen innerhalb seines Betriebsbereiches, eine Ablenkung und stört Feind Targeting verursacht."
 ssa00002_desc="Hologramm"
 
 sl0326_desc="Mobile Air Staging-Plattform"
@@ -557,7 +557,7 @@ Unit_Description_BrewLAN_T4B009="Konstruiert Lufteinheiten."
 
 srb0401="Experimentelle Fabrik Land"
 srb0401_name="Gliederfüßerfabrik"
-Unit_Description_BrewLAN_T4B010="Konstruiert Landeinheiten."
+Unit_Description_BrewLAN_T4B010="Konstrukte landen Einheiten."
 
 ssb0401_desc="Experimental Naval usine"
 ssb0401_name="Souiya"

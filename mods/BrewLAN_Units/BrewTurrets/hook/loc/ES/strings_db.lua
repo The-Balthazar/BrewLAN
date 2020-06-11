@@ -2,7 +2,7 @@
 --Translated by: Google
 srb5380_name="Deadshot"
 srb5380_desc="Nodo exactitud Boost"
-Unit_Description_BrewLAN_Turrets_0001="armamento estática adyacente pasar más tiempo con el objetivo, lo que resulta en una mayor precisión. Múltiples nodos se acumulan."
+Unit_Description_BrewLAN_Turrets_0001="Adyacente estática armamento pasar más tiempo con el objetivo, lo que resulta en una mayor precisión. Múltiples nodos se acumulan."
 
 seb5381_name="Super caliente"
 seb5381_desc="Nodo aumento de daño"
@@ -25,12 +25,16 @@ Unit_Description_BrewLAN_Turrets_0006="torreta defensiva. Armado con un enorme c
 
 srb2391_name="Bobina de Tesla"
 srb2391_desc="Defensa de punto pesada"
-Unit_Description_BrewLAN_Turrets_0007="De gran alcance, de corto alcance, la torreta defensiva. Almacena gradualmente la energía y se descarga todo con cada disparo. Más eficaz contra objetivos grandes cuando se les da tiempo para cargar. Altamente ineficaz en el fuego sostenido."
+Unit_Description_BrewLAN_Turrets_0007="De gran alcance, de corto alcance, la torreta defensiva. Almacena poco a poco todo lo que la energía y los vertidos en cada disparo. Más eficaz contra objetivos grandes cuando se les da tiempo para cargar. Altamente ineficaz en el fuego sostenido."
 
 --Esto es usado por la bobina de Tesla
 tooltipbrewturrets0000="arma de potencia de conmutación"
 tooltipbrewturrets0001="Activa o desactiva la alimentación principal arma."
 
-seb2402_name="Maelstrom"
+seb2402_name="Remolino"
 seb2402_desc="Experimental de Defensa Antiaérea"
 Unit_Description_BrewLAN_Turrets_0008="arma antiaérea defensiva. Proporciona devastadores daños de corto alcance. Consume energía en cada disparo."
+
+srb2403_name="Tártaro"
+srb2403_desc="Punto experimental Defensa"
+"torreta defensiva. Armado con un láser de microondas de alta intensidad."

@@ -6,7 +6,7 @@ seb9301_desc="Centro de Investigación"
 --UEF
 seb9101_name="Campus Tyson"
 seb9201_name="Campus Sagan"
-seb9301_name="Campus Hawking"
+seb9301_name="Campus de la venta ambulante"
 --Cybran
 srb9101_name="Instalación Einstein"
 srb9201_name="Instalación Schrodinger"
@@ -27,17 +27,17 @@ Unit_Description_RND_007="centro de investigación avanzada. Ha aumentado la vel
 --Centros de Ciencia
 seb9302_desc="Centro de ciencia"
 
-seb9202_name="a ser determinado"
-seb9302_name="a ser determinado"
+seb9202_name="TBD"
+seb9302_name="TBD"
 
-srb9202_name="a ser determinado"
-srb9302_name="a ser determinado"
+srb9202_name="TBD"
+srb9302_name="TBD"
 
-sab9202_name="a ser determinado"
-sab9302_name="a ser determinado"
+sab9202_name="TBD"
+sab9302_name="TBD"
 
-ssb9202_name="a ser determinado"
-ssb9302_name="a ser determinado"
+ssb9202_name="TBD"
+ssb9302_name="TBD"
 
 sb9302_desc="Proporciona bonos de adyacencia a los centros de investigación, disminuyendo el tiempo de investigación."
 sb9303_desc="Proporciona bonos de adyacencia a los centros de investigación, la disminución de los costos de investigación."
@@ -53,10 +53,10 @@ ability_rnd_wall="Construido en la pared"
 ability_rnd_upgrade="Construido como actualización"
 
 --categorías de investigación
-srnd9100_desc="Investigación Nivel de Tecnología"
-srnd9200_desc="Investigación Nivel de Tecnología"
-srnd9300_desc="Investigación Nivel de Tecnología"
-srnd9400_desc="Tech Research experimental Nivel"
+srnd9100_desc="Nivel de Tecnología de Investigación"
+srnd9200_desc="Nivel de Tecnología de Investigación"
+srnd9300_desc="Nivel de Tecnología de Investigación"
+srnd9400_desc="Nivel de Tecnología de Investigación Experimental"
 
 Unit_Description_RND_001="1 desbloquea unidades adicionales tecnología e investigaciones unidad."
 Unit_Description_RND_002="Desbloquea tecnología 2 unidades e investigaciones unidad."
@@ -64,10 +64,10 @@ Unit_Description_RND_003="Desbloquea Tech 3 unidades e investigaciones unidad."
 Unit_Description_RND_004="Desbloquea unidades experimentales e investigaciones unidad."
 
 
---fábricas de desbloqueo de Investigación
+--fábricas de desbloqueo de investigación
 sb0105_desc="aerodeslizador fábrica"
 Unit_Description_RND_013="Produce unidades anfibias."
---Específicamente simplemente amphib la superficie, y se ciernen. Incluye ekranoplans.
+--Específicamente simplemente amphib, y libración superficie. Incluye ekranoplans.
 sb0106_desc="fábrica submarino"
 Unit_Description_RND_014="Produce unidades sumergibles."
 --Los submarinos y anfibios quizá lecho marino
@@ -76,7 +76,7 @@ Unit_Description_RND_015="produce hidroaviones"
 --fábrica de hidroaviones no puede ser que consiga hecho.
 
 ----------------------------------------
--- Tech 1
+-- Tech 1
 ----------------------------------------
 
 --Turbinas de viento
@@ -101,7 +101,7 @@ Unit_Description_RND_017="Genera una cantidad ondulante de energía. Más eficaz
 ----------------------------------------
 
 --Los generadores de energía (250 de salida)
---Seraphim gens de energía no rotativos están llamados Uya-iya
+--gens de energía que no rotan serafines son todos llamados Uya-iya
 --Cybran y Aeon tecnología de 2 no tienen nombre
 seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Menor a generador de energía de nivel medio. Construir junto a otras estructuras para la bonificación de adyacencia."
@@ -138,34 +138,34 @@ sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="matriz de sensores. Capaz de identificar objetivos a través del sigilo y el manto y borra repuntes jammer."
 
---bombarderos avanzados T3.5
+--T3.5 bombarderos avanzados
 --sa0314_desc="penetrador"
 sa0314_desc="bombardero penetrador"
 sea0314_name="Lancero"
 saa0314_name="Grito"
-sra0314_name="Tirano Sanguina"
+sra0314_name="Sanguina tirano"
 ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
-Unit_Description_RND_024="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
-Unit_Description_RND_021="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
-Unit_Description_RND_023="Tapa-fin de largo alcance del bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y bengalas antimisiles de montaje trasero."
+Unit_Description_RND_022="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
+Unit_Description_RND_024="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
+Unit_Description_RND_021="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
+Unit_Description_RND_023="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
 
---anti-AAM bengalas anti-SAM y
+--anti-SAM y bengalas anti-AAM
 ability_missiledef="la defensa del misil"
 
---cazas avanzados T3.5
+--T3.5 avanzó combatientes
 sa0313_desc="penetración de combate"
 sea0313_name="Gato"
 saa0313_name="Helios"
 sra0313_name="crepúsculo Patrón"
 ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Tapa-fin de largo alcance avión furtivo. Equipado con railguns doble ráfaga helicoidales, misiles aire-aire, y bengalas antimisiles."
+Unit_Description_RND_026="Tapa-fin de largo alcance avión furtivo. Equipado con dobles railguns ráfaga helicoidales, misiles aire-aire, y bengalas antimisiles."
 --[description]
-Unit_Description_RND_025="Tapa-fin de largo alcance avión furtivo. Equipado con cañones de partículas pesadas, y bengalas antimisiles. Capaz de cazar aviones espía."
+Unit_Description_RND_025="Top-extremo largo alcance avión furtivo. Equipado con cañones de partículas pesadas, y bengalas antimisiles. Capaz de cazar aviones espía."
 --[description]
 
 --transportes ekranoplan
-ss0326_desc="Transporte Pesado GEV"
+ss0326_desc="Transporte pesado GEV"
 ses0326_name="КМ66 Seamonster"
 srs0326_name="alas delta"
 sas0326_name="Lun Mallard"
@@ -179,9 +179,9 @@ srl0402_desc="Experimental Tanque de asedio"
 srl0402_name="Hombrecito"
 --Reemplazado por el Retributor
 
-srl0403_desc="Artillería móvil experimental"
+srl0403_desc="Experimental móvil Artillería"
 srl0403_name="Retributor"
 Unit_Description_RND_016="Ampliación de la artillería pesada móvil. Deberá permanecer inmóvil y en tierra para disparar la artillería. Consume grandes cantidades de energía por disparo"
 
 tooltipbrewlanRND0000="artillería de palanca"
-tooltipbrewlanRND0001="Activa o desactiva la artillería principal. Desactivación impide la artillería desde potencialmente cancelación de órdenes de movimiento."
+tooltipbrewlanRND0001="Activa o desactiva la artillería principal. La desactivación evita que la artillería desde potencialmente cancelación de órdenes de movimiento."

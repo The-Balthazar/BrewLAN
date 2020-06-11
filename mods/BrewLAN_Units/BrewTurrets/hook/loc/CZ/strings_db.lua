@@ -34,3 +34,7 @@ tooltipbrewturrets0001="Zapíná/vypíná napájení zbraně."
 seb2402_name="Maelstrom"
 seb2402_desc="Experimentální Protiletecká Obranna"
 Unit_Description_BrewLAN_Turrets_0008="Obranná protiletecká zbraň. Poskytuje devastující poškození na krátkou vzdálenost. Spotřebovává energii s každým výstřelem."
+
+srb2403_name="Tartarus"
+srb2403_desc="Experimentální Point Defense"
+"Obranný věžička. Vyzbrojený vysoké intenzity mikrovlnného laseru."

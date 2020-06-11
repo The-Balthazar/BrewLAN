@@ -56,7 +56,7 @@ ability_rnd_upgrade="Construit comme mise à niveau"
 srnd9100_desc="Tech Niveau de recherche"
 srnd9200_desc="Tech Niveau de recherche"
 srnd9300_desc="Tech Niveau de recherche"
-srnd9400_desc="Recherche expérimentale Tech Niveau"
+srnd9400_desc="Niveau expérimental Tech Research"
 
 Unit_Description_RND_001="Déverrouille technologie supplémentaires 1 unités et la recherche de l'unité."
 Unit_Description_RND_002="Déverrouille Tech 2 unités et la recherche de l'unité."
@@ -64,19 +64,19 @@ Unit_Description_RND_003="Déverrouille technologie 3 unités et la recherche de
 Unit_Description_RND_004="Déverrouille unités expérimentales et de recherche de l'unité."
 
 
---déverrouillage de la recherche usines
+--Recherche déverrouillage usines
 sb0105_desc="aéroglisseur usine"
 Unit_Description_RND_013="Produit unités amphibies."
 --Plus précisément la surface juste Amphib et vol stationnaire. Comprend ekranoplans.
-sb0106_desc="Usine sous-marine"
+sb0106_desc="usine sous-marin"
 Unit_Description_RND_014="Produit des unités submersibles."
---Et peut-être amphibie Submarines fonds marins
+--Et peut-être amphibie Submarines des fonds marins
 sb0106_desc="hydravion usine"
 Unit_Description_RND_015="produit hydravions"
 --usine Hydravion pourrait ne pas se faire.
 
 ----------------------------------------
--- Tech 1
+-- Tech 1
 ----------------------------------------
 
 --Éoliennes
@@ -85,7 +85,7 @@ seb1101_name="Turbine"
 sab1101_name="Lampe"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
---Éolienne assistée
+--Wind Turbine assistée
 Unit_Description_RND_011="Fluctuant génère une quantité d'énergie."
 
 --hydroliennes
@@ -101,10 +101,10 @@ Unit_Description_RND_017="Génère une quantité d'énergie ondulée. Plus effic
 ----------------------------------------
 
 --Les générateurs de puissance (250 sorties)
---Seraphim alimentation non rotatifs gens sont tous appelés Uya-iya
---Cybran et Aeon Tech 2 ont aucun nom de
+--Gén Séraphims de puissance non rotatifs sont tous appelés Uya-iya
+--Cybrans et Aeon Tech 2 ont aucun nom de
 seb1201_name="EG-100 Fusion Reactor"
-Unit_Description_RND_018="Faible au générateur de puissance de niveau intermédiaire. Construire à côté d'autres structures pour le bonus de contiguïté."
+Unit_Description_RND_018="Faible au générateur de puissance de niveau intermédiaire. Construire à côté d'autres structures pour bonus de contiguïté."
 
 
 sa0212_desc="Chasseur de combat"
@@ -117,7 +117,7 @@ sa0213_desc="Chasseur-bombardier"
 saa0213_name="Lucidité"
 Unit_Description_RND_020="chasseur / bombardier Combinaison conçu pour engager à la fois la terre et les unités aériennes."
 
---Dédié Bombers tactique
+--Bombers tactiques dédiés
 saa0211_desc="Bombardier Tactique"
 sea0211_name="Tornade"
 ssa0211_name="Sinn"
@@ -136,7 +136,7 @@ seb3301_name="Coleman"
 srb3301_name="Qain"
 sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
-Unit_Description_RND_012="Ensemble de capteurs. Capable d'identifier des cibles à travers la furtivité et manteau et efface blips brouilleurs."
+Unit_Description_RND_012="tableau capteur. Capable d'identifier des cibles à travers la furtivité et cape et efface brouilleurs soubresauts."
 
 --T3.5 bombardiers avancés
 --sa0314_desc="pénétrateur"
@@ -145,21 +145,21 @@ sea0314_name="Lancier"
 saa0314_name="Cri"
 sra0314_name="sanguine Tyran"
 ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
-Unit_Description_RND_024="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
-Unit_Description_RND_021="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
-Unit_Description_RND_023="Haut de gamme à longue portée bombardier stratégique furtif. Equipé de bombes, de missiles d'écartement air-sol, torpilles, et montés à l'arrière des fusées anti-missiles."
+Unit_Description_RND_022="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
+Unit_Description_RND_024="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
+Unit_Description_RND_021="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
+Unit_Description_RND_023="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
 
---anti-SAM et des fusées éclairantes anti-Aam
+--anti-SAM et des fusées éclairantes anti-AAM
 ability_missiledef="missile Defense"
 
---T3.5 combattants avancés
+--T3.5 combattants avancé
 sa0313_desc="pénétration Fighter"
 sea0313_name="Matou"
 saa0313_name="Helios"
 sra0313_name="Patron de twilight"
 ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Haut de gamme à longue portée de combat furtif. Equipé d'éclatement double railguns hélicoïdales, missiles air-air, et les fusées anti-missiles."
+Unit_Description_RND_026="haut de gamme à long portée des chasseurs furtifs. Equipé de railguns hélicoïdales salves doubles, missiles air-air, et les fusées anti-missiles."
 --[description]
 Unit_Description_RND_025="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes et des fusées anti-missiles. Capable d'avions d'espionnage de chasse."
 --[description]
@@ -179,9 +179,9 @@ srl0402_desc="Experimental Char de siège"
 srl0402_name="Petit homme"
 --Remplacé par la Retributor
 
-srl0403_desc="Artillerie mobile expérimentale"
+srl0403_desc="Artillerie expérimentale mobile"
 srl0403_name="Retributor"
 Unit_Description_RND_016="Grande artillerie lourde mobile. Doit être stationnaire et sur la terre au feu de l'artillerie. Consomme de grandes quantités d'énergie par coup"
 
 tooltipbrewlanRND0000="Basculer artillerie"
-tooltipbrewlanRND0001="Active ou désactive l'artillerie principale. Empêche la désactivation de l'artillerie d'annuler éventuellement les commandes de mouvement."
+tooltipbrewlanRND0001="Active ou désactive l'artillerie principale. La désactivation empêche l'artillerie d'annuler éventuellement les commandes de mouvement."

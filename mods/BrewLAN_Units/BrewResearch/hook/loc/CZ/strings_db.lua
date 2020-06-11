@@ -42,7 +42,7 @@ ssb9302_name="TBD"
 sb9302_desc="Poskytuje sousedů bonusy výzkumných center, snižuje čas na výzkum."
 sb9303_desc="Poskytuje sousedů bonusy výzkumných center, snižování nákladů na výzkum."
 
---Informace o výzkum položka
+--Informace o položky výzkum
 ability_rnd_unlock="Výzkum Unlock"
 ability_rnd_command="Postavený řídící jednotkou"
 ability_rnd_engineer="Postavený inženýr"
@@ -59,24 +59,24 @@ srnd9300_desc="Tech Research Level"
 srnd9400_desc="Experimentální Tech Research Level"
 
 Unit_Description_RND_001="Odemkne další tech 1 jednotky a jednotky výzkumu."
-Unit_Description_RND_002="Odemkne tech 2 jednotky a jednotky výzkumu."
-Unit_Description_RND_003="Odemkne tech 3 jednotky a jednotky výzkumu."
+Unit_Description_RND_002="Odemkne tech 2 jednotek a jednotek výzkumu."
+Unit_Description_RND_003="Odemkne tech 3 jednotek a jednotek výzkumu."
 Unit_Description_RND_004="Odemkne experimentální jednotky a jednotky výzkumu."
 
 
---Výzkum odemknout továrny
+--odemknout továrny výzkumné
 sb0105_desc="vznášedlo Factory"
 Unit_Description_RND_013="Produkuje obojživelné jednotky."
---Konkrétně jen povrch amphib, a vznášet se. Zahrnuje Ekranoplanu.
+--Konkrétně jen povrchové amphib a vznášet se. Zahrnuje Ekranoplanu.
 sb0106_desc="ponorka Factory"
 Unit_Description_RND_014="Produkuje ponorných jednotek."
---Ponorky a možná dna obojživelná
+--Ponorky a možná mořského dna obojživelná
 sb0106_desc="hydroplán Factory"
 Unit_Description_RND_015="produkuje hydroplány"
 --nemusí dostat také hydroplánem z továrny.
 
 ----------------------------------------
--- Tech 1
+-- Tech 1
 ----------------------------------------
 
 --Větrné turbíny
@@ -101,10 +101,10 @@ Unit_Description_RND_017="Generuje zvlněný množství energie. Efektivnější
 ----------------------------------------
 
 --Generátory (250 výstupů)
---Serafové nerotačních napájecí gens jsou tzv Uya-Iya
+--Serafové nerotačních energie gens jsou tzv Uya-Iya
 --Cybran a Aeon tech 2 mají žádné jméno
 seb1201_name="EG-100 fúzního reaktoru"
-Unit_Description_RND_018="Od nejnižšího k elektrickým generátorem střední úrovni. Postavit vedle dalších struktur pro přilehlosti bonus."
+Unit_Description_RND_018="Od nejnižšího k elektrickým generátorem střední úrovni. Postavit vedle jiných staveb přilehlosti bonus."
 
 
 sa0212_desc="Bojová stíhačka "
@@ -117,7 +117,7 @@ sa0213_desc="Stíhací bombardér"
 saa0213_name="jasnost"
 Unit_Description_RND_020="Kombinace stíhací / bombardovací navržen tak, aby se zapojily pozemků a vzdušných jednotek."
 
---Vyhrazené taktické bombardéry
+--Dedikované taktické bombardéry
 saa0211_desc="Taktický Bombardér"
 sea0211_name="Tornádo"
 ssa0211_name="Sinn"
@@ -159,7 +159,7 @@ sea0313_name="Tomcat"
 saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-end dlouhý dosah stealth bojovník. Vybavena twin Burst spirálovými railguns, air-to-air rakety a anti-raketových světlic."
+Unit_Description_RND_026="Top-end dlouhým doletem stealth bojovník. Vybaven dvojitými roztržení spirálovými railguns, air-to-air rakety a anti-raketových světlic."
 --[description]
 Unit_Description_RND_025="Top-end dalekonosný stealth bojovník. Vybaveno s těžkými děly částic, a anti-raketových světlice. Schopný lovu špionážní letadla."
 --[description]
@@ -184,4 +184,4 @@ srl0403_name="Retributor"
 Unit_Description_RND_016="Velký mobilní těžké dělostřelectvo. Musí být v klidu a na zemi ke střelbě dělostřelectvo. Spotřebuje velké množství energie na výstřel"
 
 tooltipbrewlanRND0000="toggle dělostřelectvo"
-tooltipbrewlanRND0001="Zapíná nebo vypíná hlavní dělostřelectvo. Zablokování zabraňuje dělostřelectvo před potenciálně zrušení přesunu objednávky."
+tooltipbrewlanRND0001="Zapíná nebo vypíná hlavní dělostřelectvo. Deaktivace brání dělostřelectvo před potenciálně zrušení přesunu objednávky."

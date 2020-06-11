@@ -42,7 +42,7 @@ ssb9302_name="TBD"
 sb9302_desc="Zapewnia premie przylegania do ośrodków badawczych, skrócenie czasu badań."
 sb9303_desc="Zapewnia premie przylegania do ośrodków badawczych, zmniejszenie kosztów badań."
 
---Informacje element badawczy
+--Badania informacje pozycja
 ability_rnd_unlock="Badania Unlock"
 ability_rnd_command="Zbudowany przez jednostki dowodzenia"
 ability_rnd_engineer="Zbudowany przez inżyniera"
@@ -53,30 +53,30 @@ ability_rnd_wall="Zbudowany na ścianie"
 ability_rnd_upgrade="Zbudowany jako uaktualnienie"
 
 --kategorie badawcze
-srnd9100_desc="Badania Level Tech"
-srnd9200_desc="Badania Level Tech"
-srnd9300_desc="Badania Level Tech"
-srnd9400_desc="Badania eksperymentalne Level Tech"
+srnd9100_desc="Tech Level Badania"
+srnd9200_desc="Tech Level Badania"
+srnd9300_desc="Tech Level Badania"
+srnd9400_desc="Eksperymentalne badania Tech Level"
 
 Unit_Description_RND_001="Odblokowuje dodatkowe Tech 1 jednostki i badania jednostkowych."
-Unit_Description_RND_002="Odblokowuje tech 2 jednostki i badania jednostkowych."
-Unit_Description_RND_003="Odblokowuje tech 3 jednostki i badania jednostkowych."
+Unit_Description_RND_002="Unlocków tech 2 jednostki oraz badania jednostkowego."
+Unit_Description_RND_003="Unlocków tech 3 jednostki oraz badania jednostkowego."
 Unit_Description_RND_004="Odblokowuje jednostki eksperymentalne oraz badania jednostkowych."
 
 
---Badania fabryki Unlock
+--fabryki Unlock badawcze
 sb0105_desc="poduszkowiec fabryczne"
 Unit_Description_RND_013="Produkuje jednostek desantowych."
---Konkretnie tylko powierzchnia Amphib i unoszą. Zawiera ekranoplans.
+--Konkretnie tylko powierzchnia Amphib i hover. Zawiera ekranoplans.
 sb0106_desc="Fabryka podwodny"
 Unit_Description_RND_014="Produkuje jednostki podwodne."
---Okręty podwodne i może dna ziemnowodny
+--Okręty desantowe i może dnie morza
 sb0106_desc="Fabryka wodnosamolotów"
 Unit_Description_RND_015="produkuje wodnosamolotów"
 --Fabryka wodnosamolotów może nie dać się.
 
 ----------------------------------------
--- Tech 1
+-- Tech 1
 ----------------------------------------
 
 --Turbiny wiatrowe
@@ -101,8 +101,8 @@ Unit_Description_RND_017="Generuje falisty ilość energii. Bardziej efektywne z
 ----------------------------------------
 
 --Agregaty prądotwórcze (250 wyjście)
---wszystko Seraphim non-obrotowe gens zasilane są nazywane Uya-Iya
---Cybran i Aeon Tech 2 mają żadnej nazwy
+--Seraphim non-obrotowe gens zasilane są nazywane Uya-Iya
+--Cybran i Aeon tech 2 mają żadnej nazwy
 seb1201_name="EG-100 fuzyjna"
 Unit_Description_RND_018="Od najniższej do generatora prądu średniego szczebla. Skonstruować obok innych struktur premii przylegania."
 
@@ -138,19 +138,19 @@ sab3301_name="Heimdallr"
 ssb3302_name="Selaez"
 Unit_Description_RND_012="macierz czujników. W stanie zidentyfikować cele poprzez skradanie i płaszcz i czyści jammer blips."
 
---Travian 3.5 Zaawansowane bombowce
+--Bombowce Travian 3.5 Zaawansowane
 --sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
 sea0314_name="Ułan"
 saa0314_name="Wrzask"
 sra0314_name="sangwina Tyrant"
 ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
-Unit_Description_RND_024="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
-Unit_Description_RND_021="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
-Unit_Description_RND_023="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i lusterko zamontowane rac przeciw rakietowych."
+Unit_Description_RND_022="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
+Unit_Description_RND_024="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
+Unit_Description_RND_021="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
+Unit_Description_RND_023="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
 
---anty-anty-SAM i AAM race
+--SAM i anty-anty-race AAM
 ability_missiledef="Missile Defense"
 
 --Travian 3.5 zaawansowanych myśliwców
@@ -159,9 +159,9 @@ sea0313_name="Kocur"
 saa0313_name="Helios"
 sra0313_name="Zmierzch Patron"
 ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-end myśliwiec Stealth dalekiego zasięgu. Wyposażone Twin pękniętych śrubowych railguns, powietrze-powietrze, pociski i rakiety antyrakietowych."
+Unit_Description_RND_026="Top-end długo wahać myśliwiec Stealth. Wyposażona w dwa pękniętych railguns śrubowych, powietrze-powietrze, pociski i rakiety antyrakietowych."
 --[description]
-Unit_Description_RND_025="Top-end dalekiego zasięgu myśliwiec Stealth. Wyposażony w ciężkich armat cząstek i flar antyrakietowych. Zdolne do polowania samoloty szpiegowskie."
+Unit_Description_RND_025="Top-end dalekosiężnej myśliwiec Stealth. Wyposażony w ciężkich armat cząstek i flar antyrakietowych. Zdolne do polowania samoloty szpiegowskie."
 --[description]
 
 --ekranoplan transporty

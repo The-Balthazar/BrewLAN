@@ -32,6 +32,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed the strategic icon of the Aeon engineering station.
 
+  ### 2020-06-10
+
+  * R&D: Removed the adjacency definitions for the old size of Gantry.
+
+  ### 2020-06-11
+
+  * Crystal Hill: Lobby options now loaded by FAF.
+    * Renamed some of the variables for clarity.
+  * TeaD: Lobby options will now loaded by FAF.
+  * Crate Drop: Lobby options will now break the lobby options of the other two on FAF, for no good reason I can identify.
+  * Update the language documents. Mostly for the lobby strings move from SCD.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
