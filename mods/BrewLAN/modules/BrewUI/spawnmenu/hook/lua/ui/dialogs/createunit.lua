@@ -25,6 +25,35 @@ local defaultEditField = false
 local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
 
+local ModListTabs = function()
+    local listicle = { }
+    for i, mod in __active_mods do
+        if mod.name then
+            local givetab = false
+            local dirlen = string.len(mod.location)
+            for id, bp in __blueprints do
+                if mod.location == string.sub(bp.Source, 1, dirlen) and string.sub(bp.Source, dirlen + 1, dirlen + 1) == "/" then
+                    givetab = true
+                    break
+                end
+            end
+            if givetab then
+                local key = string.gsub(string.lower(mod.name),"%s+", "_")
+                specialFilterControls[key] = mod.location
+                table.insert(listicle, {
+                    title = mod.name,
+                    key = key,
+                    sortFunc = function(unitID, modloc)
+                        local modloclen = string.len(modloc)
+                        return modloc == string.sub(__blueprints[unitID].Source, 1, modloclen) and string.sub(__blueprints[unitID].Source, modloclen + 1, modloclen + 1) == "/"
+                    end,
+                })
+            end
+        end
+    end
+    return listicle
+end
+
 local nameFilters = {
     {
         title = 'Search',
@@ -77,7 +106,7 @@ local nameFilters = {
                 end,
             },
         },
-    },
+    },--[[
     {
         title = 'Product',
         key = 'product',
@@ -103,14 +132,12 @@ local nameFilters = {
                     return string.sub(unitID, 1, 1) == 'x'
                 end,
             },
-            {
-                title = 'BrewLAN',
-                key = 'bl',
-                sortFunc = function(unitID)
-                    return string.sub(unitID, 1, 1) == 's'
-                end,
-            },
         },
+    },]]
+    {
+        title = 'Mod',
+        key = 'mod',
+        choices = ModListTabs(),
     },
     {
         title = 'Type',
@@ -807,7 +834,11 @@ function RefreshList()
                 for filterIndex, filter in filters do
                     local specialText = ''
                     if specialFilterControls[filterIndex] then
-                        specialText = specialFilterControls[filterIndex]:GetText()
+                        if type(specialFilterControls[filterIndex]) == "string" then
+                            specialText = specialFilterControls[filterIndex]
+                        else
+                            specialText = specialFilterControls[filterIndex]:GetText()
+                        end
                     end
                     if filter(v, specialText) then
                         valid = true

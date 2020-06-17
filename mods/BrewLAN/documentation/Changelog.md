@@ -44,6 +44,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Crate Drop: Lobby options will now break the lobby options of the other two on FAF, for no good reason I can identify.
   * Update the language documents. Mostly for the lobby strings move from SCD.
 
+  ### 2020-06-17
+
+  * Spawn Menu: Gave it the ability to dynamically categorise by mod.
+  * Spawn Menu: Removed the Product category.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
