@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="Defensive arma anti-air. Fornisce devasta
 
 srb2403_name="Tartaro"
 srb2403_desc="Sperimentale Point Difesa"
-"torretta difensiva. Armato con un laser a microonde ad alta intensità."
+--"torretta difensiva. Armato con un laser a microonde ad alta intensità."

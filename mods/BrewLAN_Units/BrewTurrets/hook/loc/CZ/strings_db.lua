@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="Obranná protiletecká zbraň. Poskytuje 
 
 srb2403_name="Tartarus"
 srb2403_desc="Experimentální Point Defense"
-"Obranný věžička. Vyzbrojený vysoké intenzity mikrovlnného laseru."
+--"Obranný věžička. Vyzbrojený vysoké intenzity mikrovlnného laseru."

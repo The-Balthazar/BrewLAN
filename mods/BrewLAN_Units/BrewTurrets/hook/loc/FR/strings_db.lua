@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="arme anti-aérienne défensive. Fournit d
 
 srb2403_name="Tartare"
 srb2403_desc="Défense expérimentale point"
-"tourelle défensive. Armé d'un laser à micro-ondes de haute intensité."
+--"tourelle défensive. Armé d'un laser à micro-ondes de haute intensité."

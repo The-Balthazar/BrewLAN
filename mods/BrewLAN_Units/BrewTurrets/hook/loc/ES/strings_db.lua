@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="arma antiaérea defensiva. Proporciona de
 
 srb2403_name="Tártaro"
 srb2403_desc="Punto experimental Defensa"
-"torreta defensiva. Armado con un láser de microondas de alta intensidad."
+--"torreta defensiva. Armado con un láser de microondas de alta intensidad."

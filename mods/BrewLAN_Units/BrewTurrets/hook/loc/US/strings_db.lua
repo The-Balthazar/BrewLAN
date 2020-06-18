@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="Defensive anti-air weapon. Provides devas
 
 srb2403_name="Tartarus"
 srb2403_desc="Experimental Point Defence"
-"Defensive turret. Armed with a high intensity microwave laser."
+--"Defensive turret. Armed with a high intensity microwave laser."

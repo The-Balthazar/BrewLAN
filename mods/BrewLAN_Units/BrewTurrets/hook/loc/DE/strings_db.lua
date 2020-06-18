@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="Defensive Anti-Luft-Waffe. Nahbereichs-Sc
 
 srb2403_name="Tartarus"
 srb2403_desc="Experimentelle Punktverteidigung"
-"Verteidigungsturm, mit einer hohen Intensität Mikrowellenlaser bewaffnet."
+--"Verteidigungsturm, mit einer hohen Intensität Mikrowellenlaser bewaffnet."

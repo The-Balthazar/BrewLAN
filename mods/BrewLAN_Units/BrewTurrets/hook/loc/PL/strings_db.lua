@@ -37,4 +37,4 @@ Unit_Description_BrewLAN_Turrets_0008="Obronna broń anty-powietrze. Zapewnia ka
 
 srb2403_name="Tartar"
 srb2403_desc="Eksperymentalny punkt obrony"
-"Wieżyczka obronna. Uzbrojony w mikrofalowego lasera o wysokiej intensywności."
+--"Wieżyczka obronna. Uzbrojony w mikrofalowego lasera o wysokiej intensywności."
