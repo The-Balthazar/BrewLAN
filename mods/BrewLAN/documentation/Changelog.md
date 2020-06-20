@@ -49,6 +49,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn Menu: Gave it the ability to dynamically categorise by mod.
   * Spawn Menu: Removed the Product category.
 
+  ### 2020-06-20
+
+  * Spawn Menu: Added code for truncating long mod names semi-intelligently.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

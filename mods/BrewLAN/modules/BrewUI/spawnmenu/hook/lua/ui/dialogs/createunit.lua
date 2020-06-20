@@ -39,9 +39,47 @@ local ModListTabs = function()
             end
             if givetab then
                 local key = string.gsub(string.lower(mod.name),"%s+", "_")
+                local titleFit = function(name)
+                    local l = 12
+                    if string.len(name) <= l then return name end --If it's short, just gief
+
+                    name = string.gsub(name, "%([^()]*%)", "") --Remove any brackets
+                    name = string.gsub(name, "[ \s]+$", "") --Remove trailing spaces, because I can't be arsed to work out how to do both in one regex
+                    if string.len(name) <= l then return name end
+
+                    local commonlong = { --Shrink some common long words to be recognisble
+                        Additional = 'Add',
+                        Advanced = 'Adv',
+                        Balance = 'Bal',
+                        BlackOps = 'BO',
+                        Command = 'Com',
+                        Commander = 'Cdr',
+                        Commanders = 'Cdrs',
+                        Experiment = 'Exp',
+                        Experimental = 'Exp',
+                        Infrastructure = 'Infr',
+                        Supreme = 'Sup',
+                        Veterancy = 'Vet',
+                    }
+                    for long, short in commonlong do name = string.gsub(name, long, short) end
+                    if string.len(name) <= l then return name end
+
+                    if string.find(string.sub(name, l+1, -1), " ") then -- If there are words that would be entirely cut off, initialise after the first
+                        local fsp = string.find(name, " ")
+                        local name = string.sub(name, 1, fsp) .. string.gsub(string.sub(name, fsp+1, -1), "[a-z]+", "")
+                        if string.len(name) <= l then
+                            return name
+                        else --If it still isn't short enough, just initialise everything.
+                            return string.gsub(name, "[a-z]+", "")
+                        end
+                    else--If there are no spaces after the cutoff, cutoff.
+                        return string.sub(name, 1, l)
+                    end
+                end
+
                 specialFilterControls[key] = mod.location
                 table.insert(listicle, {
-                    title = mod.name,
+                    title = titleFit(mod.name),
                     key = key,
                     sortFunc = function(unitID, modloc)
                         local modloclen = string.len(modloc)
