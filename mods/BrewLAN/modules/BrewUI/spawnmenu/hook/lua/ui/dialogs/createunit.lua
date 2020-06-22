@@ -263,6 +263,22 @@ local nameFilters = {
     },
 }
 
+do
+    local killmodslist
+    for i, filter in nameFilters do
+        if filter.key == 'mod' then
+            if filter.choices and table.getn(filter.choices) == 0 then
+                killmodslist = i
+            end
+            break
+        end
+    end
+    if killmodslist then
+        table.remove(nameFilters, killmodslist)
+        killmodslist = nil
+    end
+end
+
 local function getItems()
     local idlist = EntityCategoryGetUnitList(categories.ALLUNITS - categories.UNSPAWNABLE)
     table.sort(idlist)
@@ -273,11 +289,20 @@ end
 local function CreateNameFilter(data)
     local group = Group(dialog)
     group.Width:Set(dialog.Width)
-    group.Height:Set(30)
+    if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
+        group.Height:Set(30 + math.floor(table.getn(data.choices)/6) * 25)
+    else
+        group.Height:Set(30)
+    end
 
     group.check = UIUtil.CreateCheckboxStd(group, '/dialogs/check-box_btn/radio')
     LayoutHelpers.AtLeftIn(group.check, group)
-    LayoutHelpers.AtVerticalCenterIn(group.check, group)
+    if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
+        LayoutHelpers.AtTopIn(group.check, group, 2)
+    else
+        LayoutHelpers.AtVerticalCenterIn(group.check, group)
+    end
+
     group.check.key = data.key
     if filterSet[data.key] == nil then
         filterSet[data.key] = {value = false, choices = {}}
@@ -288,7 +313,11 @@ local function CreateNameFilter(data)
 
     group.label = UIUtil.CreateText(group, data.title, 14, UIUtil.bodyFont)
     LayoutHelpers.RightOf(group.label, group.check)
-    LayoutHelpers.AtVerticalCenterIn(group.label, group)
+    if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
+        LayoutHelpers.AtTopIn(group.label, group, 7)
+    else
+        LayoutHelpers.AtVerticalCenterIn(group.label, group)
+    end
 
     if data.choices then
         group.items = {}
@@ -297,10 +326,17 @@ local function CreateNameFilter(data)
             group.items[index] = UIUtil.CreateCheckboxStd(group, '/dialogs/toggle_btn/toggle')
             if index == 1 then
                 LayoutHelpers.AtLeftTopIn(group.items[index], group, 95)
-            else
+            elseif index < 7 then
                 LayoutHelpers.RightOf(group.items[index], group.items[index-1])
+            else
+                LayoutHelpers.Below(group.items[index], group.items[index-6])
             end
-            LayoutHelpers.AtVerticalCenterIn(group.items[index], group)
+            if index < 7 then
+                LayoutHelpers.AtTopIn(group.items[index], group)
+            --else
+                --LayoutHelpers.AtBottomIn(group.items[index], group)
+                --LayoutHelpers.AtVerticalCenterIn(group.items[index], group)
+            end
 
             group.items[index].label = UIUtil.CreateText(group.items[index], v.title, 10, UIUtil.bodyFont)
             LayoutHelpers.AtCenterIn(group.items[index].label, group.items[index])
@@ -414,7 +450,7 @@ function CreateDialog(x, y)
 
     dialog = Bitmap(GetFrame(0))
     dialog:SetSolidColor('CC000000')
-    dialog.Height:Set(600)
+    dialog.Height:Set(800)
     dialog.Width:Set(600)
     dialog.Left:Set(function() return math.max(math.min(x, GetFrame(0).Right() - dialog.Width()), 0) end)
     dialog.Top:Set(function() return math.max(math.min(y, GetFrame(0).Bottom() - dialog.Height()), 0) end)
