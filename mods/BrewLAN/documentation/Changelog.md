@@ -57,6 +57,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spawn Menu: Added code for wrapping the mod name buttons and expanding the text area.
 
+  ### 2020-06-23
+
+  * Spawn Menu: Fixed an error if BrewLAN isn't enabled.
+  * Spawn Menu: Renamed the Mod tab to Source, and added a 'Core Game' initial option.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

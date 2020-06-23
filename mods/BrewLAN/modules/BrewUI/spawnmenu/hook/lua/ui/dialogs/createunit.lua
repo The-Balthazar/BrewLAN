@@ -26,7 +26,16 @@ local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
 
 local ModListTabs = function()
-    local listicle = { }
+    local listicle = {
+        {
+            title = 'Core Game',
+            key = 'vanilla',
+            sortFunc = function(unitID, modloc)
+                return string.sub(__blueprints[unitID].Source, 1, 7) == "/units/"
+            end,
+        }
+    }
+
     for i, mod in __active_mods do
         if mod.name then
             local givetab = false
@@ -173,7 +182,7 @@ local nameFilters = {
         },
     },]]
     {
-        title = 'Mod',
+        title = 'Source',
         key = 'mod',
         choices = ModListTabs(),
     },
@@ -262,7 +271,7 @@ local nameFilters = {
         },
     },
 }
-
+--[[
 do
     local killmodslist
     for i, filter in nameFilters do
@@ -277,10 +286,15 @@ do
         table.remove(nameFilters, killmodslist)
         killmodslist = nil
     end
-end
+end]]
 
 local function getItems()
-    local idlist = EntityCategoryGetUnitList(categories.ALLUNITS - categories.UNSPAWNABLE)
+    local idlist
+    if categories.UNSPAWNABLE then
+        idlist = EntityCategoryGetUnitList(categories.ALLUNITS - categories.UNSPAWNABLE)
+    else
+        idlist = EntityCategoryGetUnitList(categories.ALLUNITS)
+    end
     table.sort(idlist)
 
     return idlist
@@ -333,9 +347,6 @@ local function CreateNameFilter(data)
             end
             if index < 7 then
                 LayoutHelpers.AtTopIn(group.items[index], group)
-            --else
-                --LayoutHelpers.AtBottomIn(group.items[index], group)
-                --LayoutHelpers.AtVerticalCenterIn(group.items[index], group)
             end
 
             group.items[index].label = UIUtil.CreateText(group.items[index], v.title, 10, UIUtil.bodyFont)
