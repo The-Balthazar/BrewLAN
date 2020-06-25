@@ -62,6 +62,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn Menu: Fixed an error if BrewLAN isn't enabled.
   * Spawn Menu: Renamed the Mod tab to Source, and added a 'Core Game' initial option.
 
+  ### 2020-06-25
+
+  * R&D: Added the Seraphim Pentration Fighter.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

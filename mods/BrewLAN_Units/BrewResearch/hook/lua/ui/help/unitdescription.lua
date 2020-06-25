@@ -110,6 +110,7 @@ Description['saa0314'] = "<LOC Unit_Description_RND_024>Top-end long-range steal
 --Tech 3 penetration fighters
 Description['sra0313'] = "<LOC Unit_Description_RND_025>Top-end long-range stealth fighter. Equipped with heavy particle cannons, and anti-missile flares. Capable of hunting spy planes."
 Description['sea0313'] = "<LOC Unit_Description_RND_026>Top-end long range stealth fighter. Equipped with twin burst helical railguns, air-to-air missiles, and anti-missile flares."
+Description['ssa0313'] = "<LOC Unit_Description_RND_027>Top-end long-range stealth fighter. Equipped with a Losaare autocannon, a phason weapon, and anti-missile flares."
 
 --Tech 3 omni sensor arrays
 Description['sab3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
@@ -120,7 +121,7 @@ Description['ssb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of
 --Experimental mobile artillery: Retributor
 Description['srl0403'] = "<LOC Unit_Description_RND_016>Large mobile heavy artillery. Must be stationary and on land to fire the artillery. Consumes large amounts of energy per shot."
 
---Description['something'] = "<LOC Unit_Description_RND_027>"
+--Description['something'] = "<LOC Unit_Description_RND_028>"
 
 do
     for id, bp in __blueprints do
