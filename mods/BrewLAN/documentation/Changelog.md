@@ -66,6 +66,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Added the Seraphim Pentration Fighter.
 
+  ### 2020-07-07
+
+  * Crate Drop: Minimum crates is now 1. Affects maps smaller than 5k.
+  * Crate Drop: Will now reroll if Unit:AddKills() isn't a function. (FAF) 
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

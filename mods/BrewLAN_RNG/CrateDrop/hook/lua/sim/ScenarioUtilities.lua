@@ -5,7 +5,7 @@ do
     local OldCreateInitialArmyGroup = CreateInitialArmyGroup
     local FindCreateDropPath = function()
         for i, mod in __active_mods do
-            if mod.uid == "BREWLANS-a0a7-426d-88f2-CRATESZ00010" then
+            if mod.uid == "BREWLANS-a0a7-426d-88f2-CRATESZ00011" then
                 return mod.location
             end
         end
@@ -16,7 +16,7 @@ do
         if not ScenarioInfo.DodecahedronCrate then
             ScenarioInfo.DodecahedronCrate = { }
             ScenarioInfo.DodecahedronCrate.Threads = {}
-            local crateNum = math.log(math.min(ScenarioInfo.size[1],ScenarioInfo.size[2]))/math.log(2) - 6
+            local crateNum = math.max(math.log(math.min(ScenarioInfo.size[1],ScenarioInfo.size[2]))/math.log(2) - 6, 1)
             LOG(crateNum .. " CRATES" .. " " .. ScenarioInfo.size[1] .. " " .. ScenarioInfo.size[2])
             for i = 1, crateNum do
                 ScenarioInfo.DodecahedronCrate.Threads[i] = ForkThread(crateThread,crateNum)
@@ -460,7 +460,7 @@ do
             function(Unit, pos)
                 LOG("Kills")
                 local UnitVet = Unit:GetBlueprint().Veteran
-                if UnitVet then
+                if UnitVet and Unit.AddKills then
                     local kchoice = 0
                     for k, v in UnitVet do
                         kchoice = kchoice + 1
@@ -477,7 +477,7 @@ do
                     end
                     notificationPingis(pos, Unit:GetArmy(), 'Veterancy', '<LOC SCORE_0017>Kills' )
                 else
-                    WARN("Unit has no defined veterancy levels to recieve useful kills. Rerolling.")
+                    WARN("Unit has no defined veterancy levels to recieve useful kills, or Unit:AddKills isn't a function. Rerolling.")
                     PhatLewt(Unit, pos)
                 end
             end,
