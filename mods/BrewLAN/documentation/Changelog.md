@@ -69,7 +69,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2020-07-07
 
   * Crate Drop: Minimum crates is now 1. Affects maps smaller than 5k.
-  * Crate Drop: Will now reroll if Unit:AddKills() isn't a function. (FAF) 
+  * Crate Drop: Will now reroll if Unit:AddKills() isn't a function. (FAF)
+
+  ### 2020-07-15
+
+  * Finished the model for the new Seraphim Experimental Sniper Bot.
 
 ## 2019-10-13|0.8.9
 
