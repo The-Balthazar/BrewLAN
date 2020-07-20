@@ -186,16 +186,12 @@ Description['srs0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval cons
 Description['sss0319'] = "<LOC Unit_Description_BrewLAN_T3S003>Tech 3 naval construction, repair, capture, reclaimation, and mine layer unit."
 Description['sss0306'] = "<LOC Unit_Description_BrewLAN_T3S004>Hovering torpedo system. Capable of destroying the largest of enemy vessels."
 
---Experimentals
+--Experimentals structures
 Description['srb2401'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['ssb2404'] = "<LOC Unit_Description_BrewLAN_T4B002>Experimental rapid-fire artillery. Consumes massive amounts of Energy with each shot."
 Description['srb4401'] = "<LOC Unit_Description_BrewLAN_T4B003>Experimental shield generator. Protects a large area."
 Description['seb0401'] = "<LOC Unit_Description_BrewLAN_T4B004>Experimental multi-purpose factory. Dynamically changes buildable units based on environment. Can be toggled to build aircraft in any environment."
 Description['seb2404'] = "<LOC Unit_Description_BrewLAN_T4B005>Experimental rapid-fire artillery. Fires drop-pods containing manually constructed land units deep into enemy lines, causing minor impact damage. Drop-pods are launched in a first in last out order."
-Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them."
-Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
-Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amphibious battleship."
-Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
 Description['srb4402'] = "<LOC Unit_Description_BrewLAN_T4B006>Experimental counterintelligence facility. Generates a pulse that reduces the maximun penetration depth of most active Omni sensors."
 Description['ssb5401'] = "<LOC Unit_Description_BrewLAN_T4B007>Experimental quantum gateway device. Capable of instantly transporting units across the map to other gates."
 Description['seb3404'] = "<LOC Unit_Description_BrewLAN_T4B008>Experimental sensor array. Displays the location of enemy units. Upkeep costs per-unit being watched. Sensors can't penetrate areas of heavy sensor-distruption."
@@ -203,8 +199,17 @@ Description['sab0401'] = "<LOC Unit_Description_BrewLAN_T4B009>Constructs air un
 Description['srb0401'] = "<LOC Unit_Description_BrewLAN_T4B010>Constructs land units."
 Description['ssb0401'] = "<LOC Unit_Description_BrewLAN_T4B011>Constructs naval units."
 Description['seb2401'] = "<LOC Unit_Description_BrewLAN_T4B012>Experimental defensive building. Consumes large amounts of power with each shot."
-Description['srl0401'] = "<LOC Unit_Description_BrewLAN_T4L003>Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
 Description['sab5401'] = "<LOC Unit_Description_BrewLAN_T4B013>Experimental teleportation device. Teleports itself and each mobile unit and structure within its operational radius to targeted locations for a great energy cost. Has a cooldown period after use."
+
+--Experimental land units
+Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them."
+Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
+Description['srl0401'] = "<LOC Unit_Description_BrewLAN_T4L003>Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
+Description['ssl0404'] = "<LOC Unit_Description_BrewLAN_T4L004>Experimental mobile sniper bot. Only visible to omni while static and not firing."
+
+--Experimental other
+Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."
+Description['srs0401'] = "<LOC Unit_Description_BrewLAN_T4S001>Experimental amphibious battleship."
 
 --Panopticon upgrades
 Description['seb3404-sre'] = "<LOC Unit_Description_BrewLAN_T4B008_sre>Increases radar radius."

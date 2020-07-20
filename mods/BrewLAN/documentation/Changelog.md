@@ -75,6 +75,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Finished the model for the new Seraphim Experimental Sniper Bot.
 
+  ### 2020-07-20
+
+  * Basically finished the Seraphim Experimental Sniper Bot.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
