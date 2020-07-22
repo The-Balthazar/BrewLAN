@@ -79,6 +79,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Basically finished the Seraphim Experimental Sniper Bot.
 
+  ### 2020-07-22
+
+  * Spawn Menu: Fixed a minor spacing issue when exactly 6n-1 mods were enabled.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

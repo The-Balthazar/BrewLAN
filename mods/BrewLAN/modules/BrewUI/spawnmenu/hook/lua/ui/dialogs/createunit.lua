@@ -304,7 +304,7 @@ local function CreateNameFilter(data)
     local group = Group(dialog)
     group.Width:Set(dialog.Width)
     if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
-        group.Height:Set(30 + math.floor(table.getn(data.choices)/6) * 25)
+        group.Height:Set(30 + math.floor((table.getn(data.choices)-1)/6) * 25)
     else
         group.Height:Set(30)
     end
