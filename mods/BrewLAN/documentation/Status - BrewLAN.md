@@ -78,84 +78,101 @@
 * T2 Heavy Wall.
 * T2 Mobile Shield Gen.
 
-## Tech 3:
+## Tech 3 units:
 
 ### Aeon:
-* T3 Air Transport
+#### Air
+* T3 Heavy Air Transport
+
+#### Land
 * T3 Armored Assault Tank
+* T3 Field engineer
+* T3 Mobile Strategic Missile Defense.
+* T3 Mobile Shield Gen.
+* T3 Mobile AA.
+* T3 Mobile Radar.
+
+#### Structure
 * T3 Heavy Point Defense.
 * T3 Nuke Mine
   * Lacks a unique model.
-* T3 Field engineer
 * T3 Anti-Armor Point Defense.
 * T3 Shielded Mass Fabricator.
   * Lacks a unique model.
 * T3 Shielded Power Generator.
 * T3 Shielded Mass Extractor.
-* T3 Mobile Strategic Missile Defense.
 * T3 Torpedo launcher.
   * Gonna give the torpedoes a random decay chance after about 70% of its max range.
 * T3 Shield wall.
-* T3 Mobile Shield Gen.
-* T3 Mobile AA.
-* T3 Mobile Radar.
 
 #### Pending:
 * T3 Mobile Torpedo.
 * T3 Mobile Air Staging Platform.
 
 ### Cybran:
+#### Air
 * T3 Air Transport.
 * T3 Torpedo Bomber.
+
+#### Land
+* T3 Field engineer
+* T3 Mobile Strategic Missile Defense.
+* T3 Mobile cloaking AA.
+* T3 Mobile stealth Gen.
+* T3 Mobile Rocket Platform.
+* T3 Mobile Radar.
+
+#### Structure
 * T3 Heavy Point Defense.
   * Would like to give it a more unique appearance.
 * T3 Nuke Mine
-* T3 Field engineer
 * T3 Anti-Armor Point Defense.
 * T3 Armored Wall Section.
 * T3 Armored Gate Section.
 * T3 Cloakable Stealth Field Generator.
   * Would like to separate the Cloak/Stealth functions
   * Have it re-increase its stealth range while cloak off.
-* T3 Mobile Strategic Missile Defense.
 * T3 Cloakable Mass Fabricator.
 * T3 Cloakable Power Generator.
 * T3 Cloakable Mass Extractor.
-* T3 Mobile cloaking AA.
-* T3 Mobile stealth Gen.
-* T3 Mobile Rocket Platform.
-* T3 Mobile Radar.
 
 ### UEF:
-#### Finished:
+#### Air
+* T3 Torpedo Bomber
+
+#### Land
 * T3 Field engineer.
-* T3 Anti-Armor Point Defense.
 * T3 Mobile Strategic Missile Defense.
+  * Replace model
+* T3 Mobile Shield Gen.
+  * Replace model?
+* T3 Mobile AA & Radar.
+* T3 Mobile Air Staging Platform.
+* T3 Mobile Tactical Missile Defense.
+* T3 Mobile Satellite Uplink (Sniper bot alternative)
+  * Replace model
+
+#### Navy
+* T3 Field Engineering Ship.
+  * Replace model
+
+#### Finished:
+* T3 Anti-Armor Point Defense.
 * T3 Armored Wall Section.
 * T3 Armored Gate Section.
-* T3 Mobile Shield Gen.
-* T3 Field Engineering Ship.
 * T3 Anti-Artillery Shield.
-* T3 Mobile AA & Radar.
 * T3 Torpedo launcher.
 * T3 Satellite Launch Complex.
-  * A model that isn't the Novax would be nice, but not an issue since BrewLAN disables the Novax.
-* T3 Observation Satellite.
-* T3 Mobile Air Staging Platform.
-* T3 Mobile tactical missile defense
-
-#### Functional:
-* T3 Torpedo Bomber.
-  * Ugly.
-* T3 Mobile Satellite Uplink (UEF Sniper Bot alternative)
+  * T3 Observation Satellite.
+  * T3 Counterintelligence Satellite.
 * T3 Nuke Mine.
+  * Replace model
 
 #### Bugged:
-* Potentially gamebreaking:
-  * The following stop producing if their active consumption is greater than active production: (Vanilla code issue)
-    * T3 Engineering Power Generator.
-    * T3 Engineering Mass Fabricator (lacks a unique model, aims from nothing).
-    * T3 Engineering Mass Extractor (lacks a unique model, aims from nothing).
+* The following stop producing if their active consumption is greater than active production: (Vanilla code issue)
+  * T3 Engineering Power Generator.
+  * T3 Engineering Mass Fabricator (lacks a unique model, aims from nothing).
+  * T3 Engineering Mass Extractor (lacks a unique model, aims from nothing).
 
 #### Pending:
 * T3 Engineering Station (3)
@@ -163,27 +180,32 @@
 * T3 Mobile torpedo
 
 ### Seraphim:
-#### Finished:
-* T3 Torpedo Bomber.
-* T3 Gunship 'Vulthuum'
-* T3 Air Transport.
+#### Air:
+* T3 Heavy Torpedo Bomber.
+* T3 Heavy Gunship.
+* T3 Heavy Air Transport.
+
+#### Land:
 * T3 Field engineer.
-* T3 Anti-Armor Point Defense.
 * T3 Mobile Strategic Missile Defense.
+* T3 Mobile AA/TMD.
+* T3 Mobile Radar.
+* T3 Heavy Assault Bot.
+
+#### Structure:
+* T3 Anti-Armor Point Defense.
 * T3 Shield Wall.
 * T3 Armored Mass Fabricator.
 * T3 Armored Power Generator.
 * T3 Armored Mass Extractor.
 * T3 Optics Tracking Facility.
 * T3 Nuke Mine.
-* T3 Mobile AA/TMD.
-* T3 Mobile Radar.
-
-#### Functional:
 * T3 Heavy Point Defense.
+  * Replace model
 * T3 Sonar.
-* T3 Heavy Assault Bot.
+  * Replace model?
 * T3 Torp launcher.
+  * Replace model
 
 #### Pending:
 * T3 Anti Shield.
@@ -205,6 +227,7 @@
 |                  |               |               |               |               |
 |**Assault**       |`*`            |*G. Colossus*  |*Mokeylord*    |*Ythotha*      |
 |**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|Iyadesu     (F)|
+|**Support 2**     |               |               |               |Sisha-Ah       |
 |**Flying**        |Centurion      |*CZAR*     (AF)|*Soulripper*   |*Ahwassa*      |
 |**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|Abyss Crawler  |`Amph sub?`    |
 
@@ -290,6 +313,9 @@ Iyadesu: Experimental Reconstruction Engineer
   * Loses its recipes if it loses its drones.
   * Drones help to build.
   * Can potentially circumvent build restrictions, if a map has a wreckage of a restricted unit.
+
+Sisha-Ah: Experimental Sniper Bot
+* Long range, high damage, amphibious bot, with a restrictive cone of fire.
 
 Suthanus: Experimental Rapid-Fire Artillery
 * Fully functioning.

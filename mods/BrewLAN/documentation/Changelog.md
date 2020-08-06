@@ -83,6 +83,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spawn Menu: Fixed a minor spacing issue when exactly 6n-1 mods were enabled.
 
+  ### 2020-08-06
+
+  * Caffe Corretto: Fixed the smoothing groups on the UEF T2&3 AAPDs and T3 PD, and replaced the icons.
+  * Updated the distance models and icon for the Abyss Crawler.
+  * Created icons for several unselectable and placeholder units.
+  * Updated and rearranged status doc.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

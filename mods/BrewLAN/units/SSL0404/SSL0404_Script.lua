@@ -2,8 +2,6 @@ local SWalkingLandUnit = import('/lua/seraphimunits.lua').SWalkingLandUnit
 local ChonkChromBeam = import('/lua/seraphimweapons.lua').BrewLANUltraChonkChromBeamGenerator
 local TracerChromBeam = import('/lua/seraphimweapons.lua').BrewLANTracerChromBeamGenerator
 local EffectUtil = import('/lua/EffectUtilities.lua')
---local RemoteViewing = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/RemoteViewing.lua').RemoteViewing
---SWalkingLandUnit = RemoteViewing(SWalkingLandUnit)
 
 SSL0404 = Class(SWalkingLandUnit) {
 
@@ -41,34 +39,7 @@ SSL0404 = Class(SWalkingLandUnit) {
 		self:DisableUnitIntel('Cloak')
 		self.Cloaked = false
         ChangeState( self, self.InvisState ) -- If spawned in we want the unit to be invis, normally the unit will immediately start moving
-        --self:ForkThread(self.VisualThread)
     end,
---[[
-    VisualThread = function(self)
-        local pos = self:GetPosition()
-        local bp = self:GetBlueprint().Intel
-        self.VisEnt = VizMarker({
-            X = pos[1],
-            Z = pos[3],
-            Radius = bp.VisionRadius or 45,
-            LifeTime = -1,
-            Vision = true,
-            Army = self:GetArmy(),
-        })
-        self.VisEnt:AttachTo(self, 'Intel_Node')
-        self.Trash:Add(self.VisEnt)
-        while true do
-            coroutine.yield(50)
-            self.VisSlider = CreateSlider(self, 'Intel_Node', 0, 0, 0, 300)
-            if self.MoveIntel and self.VisSlider and not self.Stopped then
-                self.VisSlider:SetGoal(0, 0, 300)
-                self.Stopped = true
-            elseif self.VisSlider and self.Stopped then
-                self.VisSlider:SetGoal(0, 0, 0)
-                self.Stopped = false
-            end
-        end
-    end,]]
 
     InvisState = State() {
         Main = function(self)
@@ -88,9 +59,6 @@ SSL0404 = Class(SWalkingLandUnit) {
         OnMotionHorzEventChange = function(self, new, old)
             if new != 'Stopped' then
                 ChangeState( self, self.VisibleState )
-                --self.MoveIntel = false
-            --else
-                --self.MoveIntel = true
             end
             SWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
         end,
@@ -112,9 +80,6 @@ SSL0404 = Class(SWalkingLandUnit) {
         OnMotionHorzEventChange = function(self, new, old)
             if new == 'Stopped' then
                 ChangeState( self, self.InvisState )
-                --self.MoveIntel = true
-            --else
-                --self.MoveIntel = false
             end
             SWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
         end,
