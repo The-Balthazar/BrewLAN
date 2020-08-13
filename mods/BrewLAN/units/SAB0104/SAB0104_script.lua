@@ -1,28 +1,23 @@
-local CConstructionStructureUnit = import('/lua/cybranunits.lua').CConstructionStructureUnit
-local CreateAeonCommanderBuildingEffects = import('/lua/EffectUtilities.lua').CreateAeonCommanderBuildingEffects
+local AConstructionStructureUnit = import('/lua/aeonunits.lua').AConstructionStructureUnit
 
-SAB0104 = Class(CConstructionStructureUnit) {
-    OnCreate = function(self)
-        CConstructionStructureUnit.OnCreate(self)
-        self.BuildingOpenAnimManip = CreateAnimator(self)
-        self.BuildingOpenAnimManip:SetPrecedence(1)
-        self.BuildingOpenAnimManip:PlayAnim(__blueprints.sab0104.Display.AnimationBuild, false):SetRate(0)
-    end,
+SAB0104 = Class(AConstructionStructureUnit) {
+    --OnCreate = function(self)
+        --AConstructionStructureUnit.OnCreate(self)
+        --self.BuildingOpenAnimManip = CreateAnimator(self)
+        --self.BuildingOpenAnimManip:SetPrecedence(1)
+        --self.BuildingOpenAnimManip:PlayAnim(__blueprints.sab0104.Display.AnimationBuild, false):SetRate(0)
+    --end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
-        CConstructionStructureUnit.OnStartBuild(self, unitBeingBuilt, order)
-        self.BuildingOpenAnimManip:SetRate(3)
+        AConstructionStructureUnit.OnStartBuild(self, unitBeingBuilt, order)
+        --self.BuildingOpenAnimManip:SetRate(1)
         self.PanelsOpen = true
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
-        CConstructionStructureUnit.OnStopBuild(self, unitBeingBuilt)
-        self.BuildingOpenAnimManip:SetRate(-3)
+        AConstructionStructureUnit.OnStopBuild(self, unitBeingBuilt)
+        --self.BuildingOpenAnimManip:SetRate(-1)
         self.PanelsOpen = nil
-    end,
-
-    CreateBuildEffects = function(self, unitBeingBuilt, order)
-        CreateAeonCommanderBuildingEffects( self, unitBeingBuilt, __blueprints.sab0104.General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
     end,
 
     PlayAnimationThread = function(self, anim, rate)
@@ -35,8 +30,9 @@ SAB0104 = Class(CConstructionStructureUnit) {
                 WaitFor(self.DeathAnimManip)
             end
         else
-            CConstructionStructureUnit.PlayAnimationThread(self, anim, rate)
+            AConstructionStructureUnit.PlayAnimationThread(self, anim, rate)
         end
     end,
 }
+
 TypeClass = SAB0104

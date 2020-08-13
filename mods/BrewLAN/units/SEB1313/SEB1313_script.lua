@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 --  Summary  :  UEF T3 Mass Fabricator
 --------------------------------------------------------------------------------
-local TEngineeringResourceStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/uefunits.lua').TEngineeringResourceStructureUnit
+local TEngineeringResourceStructureUnit = import('/lua/terranunits.lua').TEngineeringResourceStructureUnit
 
 SEB1313 = Class(TEngineeringResourceStructureUnit) {
 

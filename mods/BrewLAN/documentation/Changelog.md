@@ -90,6 +90,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Created icons for several unselectable and placeholder units.
   * Updated and rearranged status doc.
 
+  ### 2020-08-08
+
+  * Fixed UEF ACU and SACU drones causing a script error when a parent Iyadesu dies.
+
+  ### 2020-08-10
+
+  * Restructured the scripts for engineering structure units.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

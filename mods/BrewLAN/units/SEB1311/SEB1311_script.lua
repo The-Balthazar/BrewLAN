@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 --  Summary  :  UEF Tier 3 Power Generator Script
 --------------------------------------------------------------------------------
-local TEngineeringResourceStructureUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/uefunits.lua').TEngineeringResourceStructureUnit
+local TEngineeringResourceStructureUnit = import('/lua/terranunits.lua').TEngineeringResourceStructureUnit
 
 SEB1311 = Class(TEngineeringResourceStructureUnit) {
 

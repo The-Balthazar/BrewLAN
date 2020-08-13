@@ -85,7 +85,7 @@ UnitBlueprint {
             '<LOC ability_aquatic>Aquatic',
             '<LOC ability_engineeringsuite>Engineering Suite',
         },
-        AnimationBuild = '/mods/brewlan/units/sab0104/sab0104_aopen.sca',
+        AnimationOpen = '/mods/brewlan/units/sab0104/sab0104_aopen.sca',
         AnimationDeath = {
             {
                 Animation = '/mods/brewlan/units/sab0104/sab0104_Adeath.sca',
