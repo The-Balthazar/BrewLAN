@@ -220,6 +220,7 @@ UnitBlueprint {
         BuildCostEnergy = 57600*1.3,
         BuildCostMass = 3240*1.3,
         BuildRate = 15,
+        MaxBuildDistance = 15,
         BuildTime = 5400*1.3,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',

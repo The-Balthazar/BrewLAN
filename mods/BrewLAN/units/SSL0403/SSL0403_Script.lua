@@ -2,8 +2,9 @@
 --  Summary:  Iyadesu Script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-local SConstructionUnit = import('/lua/seraphimunits.lua').SConstructionUnit
-local SLandUnit = import('/lua/seraphimunits.lua').SLandUnit
+local sfile = import('/lua/seraphimunits.lua')
+local SConstructionUnit = sfile.SConstructionUnit
+local SDirectionalWalkingLandUnit = sfile.SDirectionalWalkingLandUnit
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local SDFUltraChromaticBeamGenerator = import('/lua/seraphimweapons.lua').SDFUltraChromaticBeamGenerator
 local tablefind = table.find -- local this to lower the overhead slightly.
@@ -211,27 +212,7 @@ SSL0403 = Class(SConstructionUnit) {
     end,
 
     OnMotionHorzEventChange = function( self, new, old )
-        SConstructionUnit.OnMotionHorzEventChange(self, new, old)
-
-        if ( old == 'Stopped' ) then
-            if (not self.Animator) then
-                self.Animator = CreateAnimator(self, true)
-            end
-            local bpDisplay = self:GetBlueprint().Display
-            if bpDisplay.AnimationWalk then
-                self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
-                self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
-            end
-        elseif ( new == 'Stopped' ) then
-            -- only keep the animator around if we are dying and playing a death anim
-            -- or if we have an idle anim
-            if(self.IdleAnim and not self.Dead) then
-                self.Animator:PlayAnim(self.IdleAnim, true)
-            elseif(not self.DeathAnim or not self.Dead) then
-                self.Animator:Destroy()
-                self.Animator = false
-            end
-        end
+        SDirectionalWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
     end,
 }
 

@@ -1,6 +1,5 @@
 do
     local Units = {
-        GAMEENDERS = {"srl0403"},
         INTEL = {
             --Original omni sensors, no longer covered by 'OMNI' cat
             'uab3104',

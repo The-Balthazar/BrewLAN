@@ -95,15 +95,20 @@ SAB0401 = Class(AAirFactoryUnit) {
     --end,
 
     PlatformRaisingThread = function(self)
-        --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
+        --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed, [worldspace]
         --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
-        local pSlider = CreateSlider(self, 'Platform', 0, 0, 0, 10)
+        local pSlider = CreateSlider(self, 'Platform', 0, 0, 0, 2.94, true)
         --local bRotator = CreateRotator(self, 'Builder_Node', 'y', 0, 1000, 100, 1000)
         local nSliders = {}
         for i = 1, 8 do
-            nSliders[i] = CreateSlider(self, 'Builder_00' .. i, 0, 0, 0, 50)
+            nSliders[i] = CreateSlider(self, 'Builder_00' .. i, 0, 0, 0, 14.7, true)
         end
-        local pMaxHeight = 32
+
+        local GetPMaxHeight = function(unitBeingBuilt)
+            local platformPos = 1.47 -- 5 * __blueprints.sab0401.Display.UniformScale
+            local pMaxHeight = 9.408 -- 32 * __blueprints.sab0401.Display.UniformScale
+            return math.min(pMaxHeight, math.max((unitBeingBuilt:GetBlueprint().Physics.Elevation or 0), 0) - platformPos)
+        end
 
         local unitBeingBuilt
         local buildState = 'start'
@@ -121,12 +126,12 @@ SAB0401 = Class(AAirFactoryUnit) {
                 else
                     uBBF = 0
                 end
-                pSliderPos = uBBF * pMaxHeight
+                pSliderPos = uBBF * GetPMaxHeight(unitBeingBuilt)
                 if math.random(1,15) == 10 then
                     --bRotator:SetGoal(math.random(1,3) * 22.5 - 22.5 )
                     for i, slider in nSliders do
                         if math.random(1,8) ~= 8 then
-                            bSliderPos = pMaxHeight * RandomFloat(0,1) * ((1 - uBBF) * .75)
+                            bSliderPos = GetPMaxHeight(unitBeingBuilt) * RandomFloat(0,1) * ((1 - uBBF) * .75)
                             slider:SetGoal(0, bSliderPos ,0)
                         end
                     end

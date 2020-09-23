@@ -1,0 +1,16 @@
+name = "BrewLAN: Magnum Dong"
+uid = "25D57D85-9JA7-D842-BREW-MAGNUMD000001"
+version = 1
+copyright = "© 2020–2020 Sean Wheeldon"
+description = "Adds great girthy experimental fighty things."
+author = "Balthazar"
+icon = "/mods/BrewLAN_Units/BrewMonsters/mod_icon.png"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+requires = { }
+requiresNames = { }
+conflicts = { }
+before = { }
+after = { }

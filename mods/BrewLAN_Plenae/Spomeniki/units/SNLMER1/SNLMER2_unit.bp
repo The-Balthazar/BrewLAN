@@ -65,7 +65,7 @@ UnitBlueprint {
     Categories = {
         'PRODUCTSPOMENIKI',
         'SELECTABLE',
-        'BUILTBYTIER1FACTORY',
+        --'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',
         'BUILTBYTIER3FACTORY',
         'NASA',

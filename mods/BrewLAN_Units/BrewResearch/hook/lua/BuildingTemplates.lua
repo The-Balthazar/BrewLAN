@@ -11,7 +11,7 @@ do
         },
         {
             'T1EnergyProduction',
-            {false--[['seb1102']],false--[['sab1102']],false--[['srb1102']],'ssb1102'},
+            {'seb1102',false--[['sab1102']],false--[['srb1102']],'ssb1102'},
         },
         {
             'T2EnergyProduction',

@@ -77,14 +77,14 @@ SRB0401 = Class(CLandFactoryUnit) {
         --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
         --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
         self.Sliders = {
-            CreateSlider(self, 'Arm1', 0, 0, 0, 50),
-            CreateSlider(self, 'Arm2', 0, 0, 0, 150),
-            CreateSlider(self, 'Arm3', 0, 0, 0, 50),
-            CreateSlider(self, 'Platform',0,0,0,100),
+            CreateSlider(self, 'Arm1', 0, 0, 0, 3.5, true),
+            CreateSlider(self, 'Arm2', 0, 0, 0, 10.5, true),
+            CreateSlider(self, 'Arm3', 0, 0, 0, 3.5, true),
+            CreateSlider(self, 'Platform',0,0,0,7, true),
             CreateRotator(self, 'Platform', 'y', 0, 0, 4, 0),
-            CreateSlider(self, 'Arm1B', 0, 0, 0, 50),
-            CreateSlider(self, 'Arm2B', 0, 0, 0, 50),
-            CreateSlider(self, 'Arm3B', 0, 0, 0, 50),
+            CreateSlider(self, 'Arm1B', 0, 0, 0, 3.5, true),
+            CreateSlider(self, 'Arm2B', 0, 0, 0, 3.5, true),
+            CreateSlider(self, 'Arm3B', 0, 0, 0, 3.5, true),
         }
         self.ArmRotators1 = {
             'Arm1_CraneB021',
@@ -147,7 +147,7 @@ SRB0401 = Class(CLandFactoryUnit) {
             self.ShowThread:Destroy()
         end
         local bp = unitBeingBuilt:GetBlueprint()
-        local ScaleMult = 1/self:GetBlueprint().Display.UniformScale
+        --local ScaleMult = 1/self:GetBlueprint().Display.UniformScale
         local UnitSize = {
             bp.Physics.SkirtSizeX or bp.SizeX, --Width
             bp.SizeY, --Height
@@ -159,10 +159,10 @@ SRB0401 = Class(CLandFactoryUnit) {
         end
         --I want to add something so that when it is a short wide unit, the min pos for length pos is 0, but no units are this shape that I know of.
         local MovementSizes = {
-            math.min(math.max(UnitSize[1]-1,0),6)*ScaleMult*0.5, --Width
-            math.min(math.max(UnitSize[2]-2,0),4.25)*ScaleMult, --Height
-            math.min(math.max(UnitSize[3]-1,0),10)*ScaleMult*0.5, --Platform
-            math.min(math.max(UnitSize[3]-1,1),10)*ScaleMult, --Rear arm
+            math.min(math.max(UnitSize[1]-1,0),6)*0.5, --Width
+            math.min(math.max(UnitSize[2]-2,0),4.25), --Height
+            math.min(math.max(UnitSize[3]-1,0),10)*0.5, --Platform
+            math.min(math.max(UnitSize[3]-1,1),10), --Rear arm
         }
         unitBeingBuilt:HideBone(0, true)
         --ArmN

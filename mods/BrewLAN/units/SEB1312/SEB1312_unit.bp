@@ -152,6 +152,7 @@ UnitBlueprint {
         BuildCostMass = 4600*1.25,
         BuildTime = 2875*1.25,
         BuildRate = 15,
+        MaxBuildDistance = 15,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
             'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF',

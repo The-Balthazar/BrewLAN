@@ -224,7 +224,7 @@ local SyncroniseThread = function(self, interval, event, data)
     local time = GetGameTick()
     local wait = interval - math.mod(time,interval) + 1
     WaitTicks(wait)
-    while true do
+    while not self.Dead do
         event(data)
         WaitTicks(interval + 1)
     end
@@ -270,20 +270,23 @@ WindEnergyCreationUnit = Class(EnergyCreationUnit) {
         ------------------------------------------------------------------------
         -- Run the thread
         ------------------------------------------------------------------------
-        self:ForkThread(SyncroniseThread,30,self.OnWeatherInterval,self)
+        self.ControlThread = self:ForkThread(SyncroniseThread,30,self.OnWeatherInterval,self)
     end,
 
     OnWeatherInterval = function(self)
-        self.Spinners[1]:SetGoal(ScenarioInfo.WindStats.Direction)
-        self.Spinners[2]:SetTargetSpeed(-65 - (335 * ScenarioInfo.WindStats.Power))
-        self:SetProductionPerSecondEnergy(
-            (WindEnergyMin + WindEnergyRange * ScenarioInfo.WindStats.Power)
-            *
-            (self.EnergyProdAdjMod or 1)
-        )
+        if not self.Dead then
+            self.Spinners[1]:SetGoal(ScenarioInfo.WindStats.Direction)
+            self.Spinners[2]:SetTargetSpeed(-65 - (335 * ScenarioInfo.WindStats.Power))
+            self:SetProductionPerSecondEnergy(
+                (WindEnergyMin + WindEnergyRange * ScenarioInfo.WindStats.Power)
+                *
+                (self.EnergyProdAdjMod or 1)
+            )
+        end
     end,
 
     OnKilled = function(self, instigator, type, overKillRatio)
+        KillThread(self.ControlThread)
         if self.Spinners then
             self.Spinners[2]:Destroy()
         end
@@ -381,43 +384,5 @@ TidalEnergyCreationUnit = Class(EnergyCreationUnit) {
             self.Spinners[1]:Destroy()
         end
         EnergyCreationUnit.OnKilled(self, instigator, type, overKillRatio)
-    end,
-}
-
---------------------------------------------------------------------------------
--- Scripts for directional anti-AA-missile flares for aircraft
---------------------------------------------------------------------------------
-local AntiWeapons = import('/lua/defaultantiprojectile.lua')
-local AAFlare = AntiWeapons.AAFlare
-local MissileDetector = AntiWeapons.MissileDetector
---------------------------------------------------------------------------------
-local MissileDetectorRadius = {}
---------------------------------------------------------------------------------
-BaseDirectionalAntiMissileFlare = Class() {
-    CreateMissileDetector = function(self)
-        local bp = self:GetBlueprint()
-        local MDbp = bp.Defense.MissileDetector
-
-        if not MissileDetectorRadius[bp.BlueprintId] and MDbp then
-            LOG("Calculating missile detector radius for " .. bp.BlueprintId)
-            MissileDetectorRadius[bp.BlueprintId] = math.sqrt(math.pow(VDist3(self:GetPosition(),self:GetPosition(MDbp.AttachBone)),2) + math.pow(bp.SizeSphere, 2))
-        elseif not MissileDetectorRadius and not MDbp then
-            MissileDetectorRadius[bp.BlueprintId] = 3
-            WARN("Missile Detector data not set up correctly.")
-        end
-
-        self.Trash:Add(MissileDetector {
-            Owner = self,
-            Radius = MissileDetectorRadius[bp.BlueprintId],
-            AttachBone = MDbp.AttachBone,
-        })
-    end,
-
-    DeployFlares = function(self)
-        AAFlare {
-            Owner = self,
-            Radius = 3,
-            AttachBone = self.FlareBones[math.random(1,table.getn(self.FlareBones))] or 0,
-        }
     end,
 }

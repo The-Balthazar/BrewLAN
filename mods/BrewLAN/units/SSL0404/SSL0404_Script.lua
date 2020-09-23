@@ -1,9 +1,9 @@
-local SWalkingLandUnit = import('/lua/seraphimunits.lua').SWalkingLandUnit
+local SDirectionalWalkingLandUnit = import('/lua/seraphimunits.lua').SDirectionalWalkingLandUnit
 local ChonkChromBeam = import('/lua/seraphimweapons.lua').BrewLANUltraChonkChromBeamGenerator
 local TracerChromBeam = import('/lua/seraphimweapons.lua').BrewLANTracerChromBeamGenerator
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
-SSL0404 = Class(SWalkingLandUnit) {
+SSL0404 = Class(SDirectionalWalkingLandUnit) {
 
     Weapons = {
         MainGun = Class(ChonkChromBeam) {},
@@ -23,16 +23,16 @@ SSL0404 = Class(SWalkingLandUnit) {
     },
 
     StartBeingBuiltEffects = function(self, builder, layer)
-		SWalkingLandUnit.StartBeingBuiltEffects(self, builder, layer)
+		SDirectionalWalkingLandUnit.StartBeingBuiltEffects(self, builder, layer)
 		self:ForkThread( EffectUtil.CreateSeraphimExperimentalBuildBaseThread, builder, self.OnBeingBuiltEffectsBag )
     end,
 
     OnAnimCollision = function(self, bone, x, y, z)
-        SWalkingLandUnit.OnAnimCollision(self, bone, x, y, z)
+        SDirectionalWalkingLandUnit.OnAnimCollision(self, bone, x, y, z)
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        SWalkingLandUnit.OnStopBeingBuilt(self, builder, layer)
+        SDirectionalWalkingLandUnit.OnStopBeingBuilt(self, builder, layer)
 
         --These start enabled, so before going to InvisState, disabled them.. they'll be reenabled shortly
         self:DisableUnitIntel('RadarStealth')
@@ -60,7 +60,7 @@ SSL0404 = Class(SWalkingLandUnit) {
             if new != 'Stopped' then
                 ChangeState( self, self.VisibleState )
             end
-            SWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
+            SDirectionalWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
         end,
     },
 
@@ -81,7 +81,7 @@ SSL0404 = Class(SWalkingLandUnit) {
             if new == 'Stopped' then
                 ChangeState( self, self.InvisState )
             end
-            SWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
+            SDirectionalWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
         end,
     },
 }

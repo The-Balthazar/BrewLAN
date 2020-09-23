@@ -55,10 +55,10 @@ function BuildModeChange(self, mode)
             self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
         else
             if Layer == 'Land' then
-                self:AddBuildRestriction(categories.NAVAL)
+                self:AddBuildRestriction(categories.NAVAL - categories.LAND)
                 self:AddBuildRestriction(categories.MOBILESONAR)
             elseif Layer == 'Water' or Layer == 'Seabed' then
-                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+                self:AddBuildRestriction(categories.LAND - categories.ENGINEER - categories.NAVAL)
             end
             self:AddBuildRestriction(categories.AIR)
         end
@@ -67,10 +67,10 @@ function BuildModeChange(self, mode)
     ------------------------------------------------------------------------
     else
         if Layer == 'Land' then
-            self:AddBuildRestriction(categories.NAVAL)
+            self:AddBuildRestriction(categories.NAVAL - categories.LAND)
             self:AddBuildRestriction(categories.MOBILESONAR)
         elseif Layer == 'Water' or Layer == 'Seabed' then
-            self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
+            self:AddBuildRestriction(categories.LAND - categories.ENGINEER - categories.NAVAL)
             --AI's can't handle the Atlantis
             self:AddBuildRestriction(categories.ues0401)
         end

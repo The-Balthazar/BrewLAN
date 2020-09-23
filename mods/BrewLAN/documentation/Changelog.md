@@ -77,11 +77,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2020-07-20
 
-  * Basically finished the Seraphim Experimental Sniper Bot.
+  * Finished the Seraphim Experimental Sniper Bot.
 
   ### 2020-07-22
 
   * Spawn Menu: Fixed a minor spacing issue when exactly 6n-1 mods were enabled.
+
+  ### 2020-08-03
+
+  * R&D: Started the Cybran T3.5 Gunship.
+
+  ### 2020-08-05
+
+  * R&D: Finished the appearance of the Cybran T3.5 Gunship.
 
   ### 2020-08-06
 
@@ -94,9 +102,56 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed UEF ACU and SACU drones causing a script error when a parent Iyadesu dies.
 
+  ### 2020-08-09
+
+  * MD: Started the Seraphim abomination class experimental.
+
   ### 2020-08-10
 
   * Restructured the scripts for engineering structure units.
+
+  ### 2020-09-11
+
+  * MD: Finished the model of the Seraphim abomination class experimental.
+  * Set up infastructure for walking units to have the walk animations reverse when going backwards.
+  * Gave the following walking units the ability to go backwards, or fixed moonwalking for:
+    * Sisha-Ah: Experimental Sniper Bot - Can now go backwards
+    * Iyadesu: Experimental Reconstruction Engineer - No longer moon-claws
+    * Abyss Crawler: Experimental Transport - Can once again go backwards
+
+  ### 2020-09-14
+
+  * Fixed the Absolution not being able to path through structures.
+  * Changed Gantry restriction filtering so that units with both the LAND and NAVAL categories are buildable during both modes.
+  * UI Spawn menu: Changed filters so amph-floating units aren't restricted from the land category if they also have the naval category, and visa versa.
+  * R&D: Fixed the Seraphim penetration fighter icon having no alpha.
+
+  ### 2020-09-17
+
+  * R&D: Fixed wind turbines dying just before updating causing an error.
+
+  ### 2020-09-21
+
+  * MD: Finished the Seraphim abomination Suedath-Zmara, after over 40 hours total work hours.
+
+  ### 2020-09-22
+
+  * Rebranded unit mods to have the "BrewLAN: " prefix.
+  * Optimised the Arthrolab to use worldspace sliders instead of personal sliders with a multiplier.
+  * Independence Engine now limits the platform height to the flight elevation of the unit being built.
+  * R&D: Seraphim tidal generator will now leave a wreck.
+
+  ### 2020-09-23
+
+  * R&D: Added UEF Tidal Generator.
+  * Moved the aircraft from R&D to a new mod *BrewLAN: Penetration*.
+  * Moved the Retributor from R&D to *BrewLAN: Magnum Dong*, the big spooky experimental units mod.
+  * Air: AI that use the Sorian CustomUnits docs will now build the T3.5 aircraft, and the T2 UEF Combat Fighter.
+  * Spawn Menu: Name filter will now always reduce "BrewLAN:" to "BL:".
+  * Spawn Menu: Added a non default faction category
+  * Spawn Menu: Simplified the 'Type' category filters, and added a 'Surface' category for floaters and hover units.
+  * Spawn Menu: Refined the search criteria for research items.
+  * Spomeniki: Fixed the T2 categorised Mars rovers having tech 1 factory built categories.
 
 ## 2019-10-13|0.8.9
 

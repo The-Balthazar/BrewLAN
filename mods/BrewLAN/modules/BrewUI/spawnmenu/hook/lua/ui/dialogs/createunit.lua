@@ -25,6 +25,15 @@ local defaultEditField = false
 local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
 
+local tablesubstringfind = function(array, val)
+    for i, v in array do
+        if string.find(v, val) then
+            return true
+        end
+    end
+    return false
+end
+
 local ModListTabs = function()
     local listicle = {
         {
@@ -61,6 +70,7 @@ local ModListTabs = function()
                         Advanced = 'Adv',
                         Balance = 'Bal',
                         BlackOps = 'BO',
+                        ['BrewLAN:'] = 'BL:',
                         Command = 'Com',
                         Commander = 'Cdr',
                         Commanders = 'Cdrs',
@@ -146,10 +156,10 @@ local nameFilters = {
                 end,
             },
             {
-                title = 'Operation',
-                key = 'ops',
+                title = 'Other',
+                key = 'otherfac',
                 sortFunc = function(unitID)
-                    return string.sub(unitID, 1, 1) == 'o'
+                    return tablesubstringfind(__blueprints[unitID].Categories, 'BUILT') and not (table.find(__blueprints[unitID].Categories, 'UEF') or table.find(__blueprints[unitID].Categories, 'AEON') or table.find(__blueprints[unitID].Categories, 'CYBRAN') or table.find(__blueprints[unitID].Categories, 'SERAPHIM') )
                 end,
             },
         },
@@ -195,14 +205,15 @@ local nameFilters = {
                 key = 'land',
                 sortFunc = function(unitID)
                     local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
-                    return (MT == 'ruleumt_amphibious' or MT == 'ruleumt_hover' or (MT == 'ruleumt_amphibiousfloating' and not table.find(__blueprints[unitID].Categories, 'NAVAL')) or MT == 'ruleumt_land') and not (string.sub(unitID, 3, 3) == 'r' or string.sub(unitID, -3, -1) == 'rnd') -- string.sub(unitID, 3, 3) == 'l'
+                    return (MT == 'ruleumt_amphibious' or MT == 'ruleumt_land') and __blueprints[unitID].ScriptClass ~= 'ResearchItem'
                 end,
             },
             {
-                title = 'Air',
-                key = 'air',
+                title = 'Surface',
+                key = 'surface',
                 sortFunc = function(unitID)
-                    return string.lower(__blueprints[unitID].Physics.MotionType or 'no') == 'ruleumt_air' -- string.sub(unitID, 3, 3) == 'a'
+                    local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
+                    return MT == 'ruleumt_amphibiousfloating' or MT == 'ruleumt_hover'
                 end,
             },
             {
@@ -210,7 +221,14 @@ local nameFilters = {
                 key = 'naval',
                 sortFunc = function(unitID)
                     local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
-                    return MT == 'ruleumt_water' or (MT == 'ruleumt_amphibiousfloating' and not table.find(__blueprints[unitID].Categories, 'LAND')) or MT == 'ruleumt_surfacingsub' -- string.sub(unitID, 3, 3) == 's'
+                    return MT == 'ruleumt_water' or MT == 'ruleumt_surfacingsub' -- string.sub(unitID, 3, 3) == 's'
+                end,
+            },
+            {
+                title = 'Air',
+                key = 'air',
+                sortFunc = function(unitID)
+                    return string.lower(__blueprints[unitID].Physics.MotionType or 'no') == 'ruleumt_air' -- string.sub(unitID, 3, 3) == 'a'
                 end,
             },
             {
@@ -224,14 +242,15 @@ local nameFilters = {
                 title = 'Civilian',
                 key = 'civ',
                 sortFunc = function(unitID)
-                    return string.sub(unitID, 3, 3) == 'c' or not (table.find(__blueprints[unitID].Categories, 'UEF') or table.find(__blueprints[unitID].Categories, 'AEON') or table.find(__blueprints[unitID].Categories, 'CYBRAN') or table.find(__blueprints[unitID].Categories, 'SERAPHIM') )
+                    local cat = __blueprints[unitID].Categories
+                    return not tablesubstringfind(cat, 'BUILT') and not (table.find(cat, 'TECH1') or table.find(cat, 'TECH2') or table.find(cat, 'TECH3') or table.find(cat, 'EXPERIMENTAL'))
                 end,
             },
             {
                 title = 'Research',
                 key = 'rnd',
                 sortFunc = function(unitID)
-                    return string.sub(unitID, 3, 3) == 'r' or string.sub(unitID, -3, -1) == 'rnd'
+                    return __blueprints[unitID].ScriptClass == 'ResearchItem'
                 end,
             },
         },

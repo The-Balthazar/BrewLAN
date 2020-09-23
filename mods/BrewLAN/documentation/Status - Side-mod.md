@@ -3,11 +3,18 @@
 ## BrewLAN modules
 Mods that require BrewLAN to be functional. For the most part these are totally dormant if they are enabled and BrewLAN isn't.
 
-### BrewUI
-* Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
+### BrewLAN UI
+#### Engineer Tab
+Field engineer UI changes. Completely inactive without BrewLAN, even while enabled.
 * Overwrites the two functions completely when active.
 * Completely optional, for compatibility.
 * Is overwritten by the support commander upgrade manager thing in GazUI and such.
+
+#### Spawn Menu
+Replaces the alt-f2 cheat spawn menu.
+* Has filters for active mods.
+* Works on all versions of Supreme Commander including the original.
+* A slight variant is included with both FAF and LOUD.
 
 ### BrewLAN: Gantry AIx 1–3
 * These are difficulty increasing AIx cheat mods that affect the Gantry, and give it increased production speed. With different caveats.
@@ -16,20 +23,23 @@ Mods that require BrewLAN to be functional. For the most part these are totally 
   3. Like 2, but offers discounts instead of resources.
 * These also function as demonstrations on modding other mods non-destructively.
 
+### BrewLAN: Gantry Homogeniser
+Makes all the faction Gantries function the same. Graphically this looks weird with some of them.
+
 ## Extra units
 Units that I wanted to make, but either I didn't want directly in BrewLAN, or caused such a difference in gameplay that they should be optional.
 
-### Bubble Tea
-* Adds experimental shields.
-  * Aeon shield doesn't work on FAF.
+### BrewLAN: Bubble Tea
+Adds experimental shields.
+* Aeon shield doesn't work on FAF.
 
-### Caffe Corretto
-* Adds lots of extra turrets.
+### BrewLAN: Caffe Corretto
+Adds lots of extra turrets.
 * Turrets are built by field engineers, so requires BrewLAN.
 * Has no criteria for being 'finished' as a mod; it's just turrets.
 
-### Research & Daiquiris
-* Functionally separates the hardware and software of tech levels and blueprints.
+### BrewLAN: Research & Daiquiris
+Functionally separates the hardware and software of tech levels and blueprints.
 * You unlock tech levels by researching them, and everything gets to build the new things.
 * Contains units that don't fit in Bubble Tea or Caffe Corretto.
 * Adds tech level research and generates research items for some units.
@@ -37,32 +47,41 @@ Units that I wanted to make, but either I didn't want directly in BrewLAN, or ca
   * Tech 1-3 Research Centre (3 per faction)
   * Tech 1-3 Hovercraft Factory (3 for Aeon)
   * Tech 1 Wind Turbine (Each faction)
-  * Tech 1 Tidal Generator (Seraphim)
+  * Tech 1 Tidal Generator (UEF and Seraphim)
   * Tech 2 Light Power Generators (Each faction)
-  * Tech 2 Tactical Bomber (UEF/Cybran/Seraphim)
-  * Tech 2 Combat Fighter (UEF)
   * Tech 3 Omni-Sensor (UEF/Aeon/Cybran)
     * Standard Tech 3 Omni-Sensor structures are now just radar.
-  * Tech 3 Penetrator Bombers (Each faction)
-  * Tech 3 Penetration Fighters (UEF/Cybran)
-  * Experimental Mobile Artillery (Cybran)
 * Currently missing planned units:
-  * Penetration Fighters (Aeon/Seraphim)
-  * Fighter/Bomber (Aeon)
-  * Combat Fighters (Cybran/Seraphim)
   * Dedicated omni sensor (Seraphim)
-  * Tidal Generator (UEF/Cybran/Aeon)
+  * Tidal Generator (Cybran/Aeon)
   * Hovercraft Factory (Seraphim) maybe (UEF/Cybran)
   * Submarine factory (UEF/Cybran/Aeon/Seraphim)
   * Possibly an implementation of seaplane factories.
+
+### BrewLAN: Penetration
+Adds alternative tech 2 air units, and extended tech 3 air units:
+* Tech 2 Tactical Bomber (UEF/Cybran/Seraphim)
+* Tech 2 Combat Fighter (UEF)
+* Tech 3 Penetrator Bombers (Each faction)
+* Tech 3 Penetration Fighters (UEF/Cybran)
+* Tech 3 Interdiction Gunships (Cybran)
+Planned:
+* Penetration Fighter (Aeon)
+* Fighter/Bomber (Aeon)
+* Combat Fighters (Cybran/Seraphim)
+
+### BrewLAN: Magnum Dong
+Adds new experimental units:
+* Experimental Heavy Arthrobot (Seraphim)
+* Experimental Mobile Artillery (Cybran)
 
 ## Gameplay
 Mods that alter gameplay in a fixed way, and new game modes.
 
 ### Antimass
-* Swaps mass and energy production.
-  * Multiplies the new energy production by 10.
-  * Divides the new mass production by 10.
+Swaps mass and energy production.
+* Multiplies the new energy production by 10.
+* Divides the new mass production by 10.
 
 ### Corrosive Ocean
 * Being in the water cause exponential damage.

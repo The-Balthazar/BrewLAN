@@ -48,7 +48,7 @@ ConstructionStructureUnit = Class(StructureUnit) {
         elseif self.BuildingOpenAnimManip then
             self.AnimationManipulator:SetRate(-1)
         end
-        
+
         self.BuildingUnit = false
     end,
 
@@ -136,6 +136,20 @@ ConstructionStructureUnit = Class(StructureUnit) {
 
     CreateCaptureEffects = function( self, target )
 		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+    end,
+}
+
+DirectionalWalkingLandUnit = Class(WalkingLandUnit) {
+    OnMotionHorzEventChange = function( self, new, old )
+        WalkingLandUnit.OnMotionHorzEventChange(self, new, old)
+
+        if ( old == 'Stopped' ) then
+            local bpDisplay = self:GetBlueprint().Display
+            if bpDisplay.AnimationWalk and self.Animator then
+                self.Animator:SetDirectionalAnim(true)
+                self.Animator:SetRate(bpDisplay.AnimationWalkRate)
+            end
+         end
     end,
 }
 
