@@ -125,12 +125,15 @@ SDFGapingMaw = Class(DefaultBeamWeapon) {
         self.unit:DetachAll(self:GetBlueprint().MuzzleSpecial or 0)
         self:ResetTarget()
         self.AimControl:SetResetPoseTime(2)
-        coroutine.yield(math.max(1,
-            self.NomAnimator:GetAnimationDuration()
-            / self.NomAnimator:GetRate()
-            * (1 - self.NomAnimator:GetAnimationFraction())
-            * 10)
-        )
+        local animfrac = self.NomAnimator:GetAnimationFraction()
+        if animfrac ~= 1 and animfrac ~= 0 then
+            coroutine.yield(
+                self.NomAnimator:GetAnimationDuration()
+                / self.NomAnimator:GetRate()
+                * (1 - animfrac)
+                * 10
+            )
+        end
         self.NomAnimator:SetAnimationFraction(0)
         self.NomAnimator:SetRate(0)
         if self.unit and not self.unit.Dead and target and not yeetcount > 0 then
