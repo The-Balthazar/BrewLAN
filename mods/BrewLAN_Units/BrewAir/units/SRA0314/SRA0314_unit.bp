@@ -374,7 +374,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 35,
             PrefersPrimaryWeaponTarget = true,
-            ProjectileId = '/mods/brewlan_units/brewresearch/projectiles/CPM_Tyrant_AGM/CPM_Tyrant_AGM_proj.bp',
+            ProjectileId = '/mods/brewlan_units/brewair/projectiles/CPM_Tyrant_AGM/CPM_Tyrant_AGM_proj.bp',
             ProjectileLifetime = 20,
             ProjectileLifetimeUsesMultiplier = 1.15,
             RackBones = {

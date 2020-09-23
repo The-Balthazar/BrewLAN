@@ -372,7 +372,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 35,
             PrefersPrimaryWeaponTarget = true,
-            ProjectileId = '/mods/brewlan_units/brewresearch/projectiles/APM_Helix_AGM/APM_Helix_AGM_proj.bp',
+            ProjectileId = '/mods/brewlan_units/brewair/projectiles/APM_Helix_AGM/APM_Helix_AGM_proj.bp',
             ProjectileLifetime = 20,
             ProjectileLifetimeUsesMultiplier = 1.15,
             RackBones = {

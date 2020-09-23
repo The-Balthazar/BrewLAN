@@ -299,7 +299,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
             NeedToComputeBombDrop = true,
-            ProjectileId = '/mods/brewlan_units/brewresearch/projectiles/TIFTacticalBomb01/TIFTacticalBomb01_proj.bp',
+            ProjectileId = '/mods/brewlan_units/brewair/projectiles/TIFTacticalBomb01/TIFTacticalBomb01_proj.bp',
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
