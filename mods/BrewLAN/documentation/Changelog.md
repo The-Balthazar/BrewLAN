@@ -153,6 +153,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn Menu: Refined the search criteria for research items.
   * Spomeniki: Fixed the T2 categorised Mars rovers having tech 1 factory built categories.
 
+  ### 2020-09-24
+
+  * Adjusted the balance of the Seraphim Experimental Sniper.
+  * Adjusted the walk animation of the Seraphim Experimental Sniper so it no longer noticeably self intersects with the body.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

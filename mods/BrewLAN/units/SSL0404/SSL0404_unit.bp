@@ -1,20 +1,6 @@
 UnitBlueprint {
-    --[[Abilities = {
-        TargetLocation = {
-            bitmapId = 'skry-target',
-            helpText = 'scry_spy_target',
-        },
-    },
-    SpecialAbilities = { --For FAF Nomads compatibility
-        TargetLocation = {
-            AreaOfEffect = 10,
-            MaxRadius = -1,
-        },
-    },]]
     AI = {
-        TargetBones = {
-            'Body',
-        },
+        TargetBones = {'Body'},
     },
     Audio = {
         FootFallGeneric = Sound {
@@ -66,7 +52,7 @@ UnitBlueprint {
         'SERAPHIM',
         'MOBILE',
         'LAND',
-        --'OPTICS',
+        'SNIPER',
         'DIRECTFIRE',
         'EXPERIMENTAL',
         'NEEDMOBILEBUILD',
@@ -74,7 +60,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYDIRECTFIRE',
         'DRAGBUILD',
-        --'SHOWATTACKRETICLE',
     },
     CollisionOffsetY = 1,
     CollisionOffsetZ = -0.5,
@@ -82,8 +67,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Experimental',
         EconomyThreatLevel = 2268,
-        Health = 5000,
-        MaxHealth = 5000,
+        Health = 21000,
+        MaxHealth = 21000,
         RegenRate = 20,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 12,
@@ -93,13 +78,10 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_cloak>Cloaking',
-            --'<LOC ability_deploys>Deploys',
             '<LOC ability_massive>Massive',
             '<LOC ability_personalstealth>Personal Stealth',
-            --'<LOC ability_radar>Radar',
             '<LOC ability_deathaoe>Volatile',
         },
-        --AnimationActivate = '/units/XSL0401/XSL0401_activate.sca',
         AnimationDeath = {
             {
                 Animation = '/mods/brewlan/units/ssl0404/ssl0404_adeath01.sca',
@@ -109,7 +91,7 @@ UnitBlueprint {
             },
         },
         AnimationWalk = '/mods/brewlan/units/ssl0404/ssl0404_awalk01.sca',
-        AnimationWalkRate = 3,
+        AnimationWalkRate = 2.88,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -242,8 +224,6 @@ UnitBlueprint {
         BuildCostEnergy = 260420,
         BuildCostMass = 23800,
         BuildTime = 17850,
-        --InitialRemoteViewingEnergyDrain = 10000,
-        --MaintenanceConsumptionPerSecondEnergy = 5000,
     },
     General = {
         Category = 'Direct Fire',
@@ -264,24 +244,12 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'amph',
-        --[[OrderOverrides = {
-            RULEUTC_IntelToggle = {
-                bitmapId = 'skry-toggle',
-                helpText = 'toggle_scrying',
-            },
-        },
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },]]
         TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssl0404_name>Sisha-Ah',
         UnitWeight = 1,
     },
     Intel = {
-        --ReactivateTime = 10,
-        --RemoteViewingRadius = 25,
         Cloak = true,
-        --RadarRadius = 50,
         RadarStealth = true,
         StealthWaitTime = 2,
         VisionRadius = 40,
@@ -304,9 +272,9 @@ UnitBlueprint {
             LAYER_Water = false,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.5,
-        MaxBrake = 2.5,
-        MaxSpeed = 2.5,
+        MaxAcceleration = 1.6,
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
         MaxSpeedReverse = 1.5,
         MaxSteerForce = 10,
         MeshExtentsX = 4,
@@ -364,7 +332,7 @@ UnitBlueprint {
             BeamCollisionDelay = 0,
             BeamLifetime = 1,
             CollideFriendly = false,
-            Damage = 4000,
+            Damage = 2400,
             DamageRadius = 0,
             DamageType = 'Normal',
             DisplayName = 'Experimental Phason Beam Generator',
