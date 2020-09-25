@@ -1,7 +1,6 @@
 local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArtilleryAntiMatterProjectile02
 local utilities = import('/lua/utilities.lua')
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
-local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
 
@@ -27,42 +26,21 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
 
     DropUnit = function(self)
         local pos = self:GetPosition()
-        if self.Data[1] then
-            local DroppedUnit = CreateUnitHPR(self.Data[1],self:GetArmy(),pos[1], pos[2], pos[3],0, math.random(0,360), 0)
-            if 
+        if self.Data then
+            self:DetachAll(1, true)
+            Warp(self.Data,pos)-- sometimes they get stuck in the air and this confuses them
+            self.Data:ShowBone(0,true)
+            local DropBP = self.Data:GetBlueprint()
+            local DropLayer = self.Data:GetCurrentLayer()
+            if not
             (
                 -- If we are on land                           and they say land                                             or the bitwise string is odd
-                DroppedUnit:GetCurrentLayer() == "Land" and (__blueprints[self.Data[1]].Physics.BuildOnLayerCaps == "Land" or math.mod(tonumber(__blueprints[self.Data[1]].Physics.BuildOnLayerCaps), 2) == 1)
+                DropLayer == "Land" and (DropBP.Physics.BuildOnLayerCaps == "Land" or math.mod(tonumber(DropBP.Physics.BuildOnLayerCaps), 2) == 1)
                 or --or if we are not on land              and the unit doesn't say land                                then it will survive anywhere else since the other options are all "in or on the water"
-                DroppedUnit:GetCurrentLayer() ~= "Land" and __blueprints[self.Data[1]].Physics.BuildOnLayerCaps ~= "Land"
+                DropLayer ~= "Land" and DropBP.Physics.BuildOnLayerCaps ~= "Land"
             )
             then
-                local target = self:GetCurrentTargetPosition()
-                IssueMove( {DroppedUnit},  {target[1] + Random(-3, 3), target[2], target[3]+ Random(-3, 3)} )
-                if self.Data[2] and type(self.Data[2]) == "number" and self.Data[2] ~= 1 then
-                    local buffname = 'IvanHealthBuff' .. self.Data[2]
-                    if not Buffs[buffname] then
-                        BuffBlueprint {
-                            Name = buffname,
-                            DisplayName = 'IvanHealthBuff',
-                            BuffType = 'IvanHealthBuff',
-                            Stacks = 'ALWAYS',
-                            Duration = -1,
-                            Affects = {
-                                MaxHealth = {
-                                    Add = 0,
-                                    Mult = self.Data[2],
-                                },
-                            },
-                        }
-                    end
-                    --DroppedUnit:SetHealth(self, DroppedUnit:GetMaxHealth() * self.Data[2] )
-                    --DroppedUnit:SetMaxHealth(DroppedUnit:GetMaxHealth() * self.Data[2] )
-                    Buff.ApplyBuff(DroppedUnit, buffname)
-                end
-            else
-                --Its landed somewhere it says it shouldn't be
-                DroppedUnit:Kill()
+                self.Data:Kill()
             end
         else
             --we were never told what the thing was
@@ -76,10 +54,11 @@ TIFDropPodArtilleryMechMarine = Class(TArtilleryAntiMatterProjectile) {
             rotation = math.random(1,360)
         end
         CreatePropHPR(
-            import( '/lua/game.lua' ).BrewLANPath() .. '/env/uef/props/UEF_Ivan_Droppod_Remains_prop.bp',
+            BrewLANPath .. '/env/uef/props/UEF_Ivan_Droppod_Remains_prop.bp',
             pos[1], GetTerrainHeight(pos[1],pos[3]), pos[3],
             rotation, Angles[2], -Angles[1]
         )
+        self.Data = nil
         self:Kill()
     end,
 }

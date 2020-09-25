@@ -14,26 +14,12 @@ UnitBlueprint {
         },
     },
     Audio = {
-        DeathExplosion = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'UELDestroy',
-            Cue = 'UEB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DoneBeingBuilt = Sound {
-            Bank = 'UEB',
-            Cue = 'UEB2302_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'UEF_Select_Gun',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        DeathExplosion = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+             Destroyed = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff'},
+           UISelection = Sound {Bank = 'Interface',  Cue = 'UEF_Select_Gun',             LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt = Sound {Bank = 'UEB',        Cue = 'UEB2302_Activate',           LodCutoff = 'UnitMove_LodCutoff'},
+             Construct = Sound {Bank = 'UEB',        Cue = 'UEB0301_Construct_Start',    LodCutoff = 'UnitMove_LodCutoff'},
+         ConstructLoop = Sound {Bank = 'UEB',        Cue = 'UEB0301_Construct_Loop',     LodCutoff = 'UnitMove_LodCutoff'},
     },
     Buffs = {
         Regen = {
@@ -66,6 +52,8 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'OVERLAYINDIRECTFIRE',
         'SORTSTRATEGIC',
+        'CARRIER', -- Required for propper storage, causes a crash without
+        'RALLYPOINT', -- Allows launched units to be given orders like from a factory
     },
     Defense = {
         ArmorType = 'Structure',
@@ -151,29 +139,30 @@ UnitBlueprint {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = false,
             RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
             RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
+            RULEUCC_Transport = true, --Required for storage, disabled on create to remove the button, but still lets us store
         },
         FactionName = 'UEF',
         Icon = 'land',
-        OrderOverrides = {
+        --[[OrderOverrides = {
             RULEUTC_WeaponToggle = {
                 bitmapId = 'patrol', -- maybe use 'retaliate' after it actually fires on the target eventually make own icon with drop pod and rotating arrows
                 helpText = 'toggle_repeat_orders',
             },
-        },
+        },]]
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        ToggleCaps = {
+        --[[ToggleCaps = {
             RULEUTC_WeaponToggle = true,
-        },
+        },]]
         UnitName = '<LOC seb2404_name>Ivan',
         UnitWeight = 1,
     },
@@ -213,11 +202,15 @@ UnitBlueprint {
     SelectionSizeX = 4.25,
     SelectionSizeZ = 4,
     SelectionThickness = 0.24,
+    SelectionMeshUseTopAmount = 0.6,
     SizeX = 6,
     SizeY = 4,
     SizeZ = 6,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 175,
+    Transport = {
+        StorageSlots = 999,
+    },
     Veteran = {
         Level1 = 30,
         Level2 = 60,
@@ -264,7 +257,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
             FiringRandomness = 0.22,
-            FiringTolerance = .5,
+            FiringTolerance = 0,
             Label = 'MainGun',
             MaxRadius = 2000,
             MinRadius = 100,

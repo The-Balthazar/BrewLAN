@@ -1,172 +1,155 @@
 --------------------------------------------------------------------------------
--- YOU SEE IVAN, WHEN GUN FIRE SMALLER GUN 
+-- YOU SEE IVAN, WHEN GUN FIRE SMALLER GUN
 --------------------------------------------------------------------------------
 local TStructureUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
+local Buff = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').Buff
+
+if __blueprints.seb2404.Economy.BuilderDiscountMult and __blueprints.seb2404.Economy.BuilderDiscountMult ~= 1 then
+    if not Buffs['IvanHealthBuff'] then
+        BuffBlueprint {
+            Name = 'IvanHealthBuff',
+            DisplayName = 'IvanHealthBuff',
+            BuffType = 'IvanHealthBuff',
+            Stacks = 'ALWAYS',
+            Duration = -1,
+            Affects = {
+                MaxHealth = {
+                    Add = 0,
+                    Mult = __blueprints.seb2404.Economy.BuilderDiscountMult,
+                },
+            },
+        }
+    end
+end
 
 SEB2404 = Class(TStructureUnit) {
-    
+
     Weapons = {
         MainGun = Class(TIFArtilleryWeapon) {
             FxMuzzleFlashScale = 3,
-            
+
             RackSalvoFireReadyState = State(TIFArtilleryWeapon.RackSalvoFireReadyState) {
                 Main = function(self)
-                    if self.unit.AmmoList[1] then
-                        if self.unit.RepeatOrders and not self.unit.FactoryOrdersList then
-                            self.unit.FactoryOrdersList = {}
-                            for k, v in self.unit.AmmoList do
-                                self.unit.FactoryOrdersList[k] = v
-                            end
-                        end
-                        TIFArtilleryWeapon.RackSalvoFireReadyState.Main(self)
-                    else
-                        IssueClearCommands({self.unit})  
-                        if self.unit.RepeatOrders and self.unit.FactoryOrdersList then
-                            self.unit:PostFireOrders()   
-                            self.unit.FactoryOrdersBackup = {} 
-                            for k, v in self.unit.FactoryOrdersList do
-                                self.unit.FactoryOrdersBackup[k] = v
-                            end
-                            self.unit.FactoryOrdersList = nil   
-                        end     
+                    self.WeaponCanFire = false
+                    self.unit:SetBusy(false)
+                    while not self.unit:GetCargo()[1] do
+                        coroutine.yield(5)
                     end
-                end,    
+                    --A wait for would be better here
+                    self.unit:SetBusy(true)
+                    --self.WeaponCanFire = true
+                    TIFArtilleryWeapon.RackSalvoFireReadyState.Main(self)
+                end,
             },
-                               
-            CreateProjectileAtMuzzle = function(self, muzzle)   
+
+            CreateProjectileAtMuzzle = function(self, muzzle)
                 local proj = TIFArtilleryWeapon.CreateProjectileAtMuzzle(self, muzzle)
                 local data = false
-                if self.unit.AmmoList[1] then
-                    local num = table.getn(self.unit.AmmoList)
-                    data = {self.unit.AmmoList[num], self.unit:GetBlueprint().Economy.BuilderDiscountMult or 1 }
-                    table.remove(self.unit.AmmoList,num)
-                end  
+                local Cargo = self.unit:GetCargo()
+                if Cargo[1] then
+                    local num = table.getn(Cargo)
+                    data = Cargo[num]
+                end
                 self.unit:HideBone('DropPod', true)
-                self.unit:AmmoStackThread()
                 if proj and not proj:BeenDestroyed() then
+                    data:DetachFrom(true)
+                    data:AttachBoneTo(0, proj, 1)
+                    --data[1]:ShowBone(0,true)
                     proj:PassData(data)
                 end
-            end,   
-        },          
+                self.unit:AmmoStackThread()
+            end,
+        },
     },
-    
-    PostFireOrders = function(self)
-        for k, v in self.FactoryOrdersList do
-            self:GetAIBrain():BuildUnit(self, v, 1)   
-        end
-    end,
-             
+
     OnCreate = function(self)
-        TStructureUnit.OnCreate(self)   
-        self.Sync.Abilities = self:GetBlueprint().Abilities
-        self.Sync.Abilities.TargetLocation.Active = true
+        TStructureUnit.OnCreate(self)
         self:HideBone('DropPod', true)
         self.DropPod0Slider = CreateSlider(self, 'DropPod', 0, 0, 55, 100)
+        self:RemoveCommandCap('RULEUCC_Transport')
     end,
-    
+
+    OnPaused = function(self)
+        TStructureUnit.OnPaused(self)
+        --When factory is paused take some action
+        self:StopUnitAmbientSound( 'ConstructLoop' )
+    end,
+
+    OnUnpaused = function(self)
+        TStructureUnit.OnUnpaused(self)
+        if self.UnitBeingBuilt then
+            self:PlayUnitAmbientSound( 'ConstructLoop' )
+        end
+    end,
+
     OnStopBeingBuilt = function(self,builder,layer)
-        TStructureUnit.OnStopBeingBuilt(self,builder,layer)   
+        TStructureUnit.OnStopBeingBuilt(self,builder,layer)
         --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
         CreateSlider(self, 'AmmoExtender', 0, 0, 110, 100)
+        ChangeState(self, self.IdleState)
     end,
-    
-    OnStartBuild = function(self, unitBuilding, order)
-        TStructureUnit.OnStartBuild(self, unitBuilding, order) 
-        self.DropPod0Slider:SetGoal(0,0,50)
-        unitBuilding:HideBone(0, true)          
-    end,          
 
-    OnStopBuild = function(self, unitBeingBuilt)          
-        if unitBeingBuilt:GetFractionComplete() == 1 then
-            if not self.AmmoList then self.AmmoList = {} end
-            table.insert(self.AmmoList,unitBeingBuilt:GetBlueprint().BlueprintId)
-            unitBeingBuilt:Destroy()     
-            self:AmmoStackThread()
-        end    
-        if self.AmmoList[1] then
-            if table.getn(self.AmmoList) >= self.FireNextOrders.count and self.RepeatOrders then
-                IssueClearFactoryCommands({self})  
-                IssueAttack({self}, self.FireNextOrders.target)
-            end
-        end      
-        TStructureUnit.OnStopBuild(self, unitBeingBuilt)
-    end,     
-
-    OnFailedToBuild = function(self)          
+    OnFailedToBuild = function(self)
+        TStructureUnit.OnFailedToBuild(self)
         self:AmmoStackThread()
-        TStructureUnit.OnFailedToBuild(self)  
-    end,
-    
-    OnScriptBitSet = function(self, bit)
-        TStructureUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then 
-            self.RepeatOrders = true
-            FloatingEntityText(self:GetEntityId(),'<LOC floatingtextIVAN01>Repeating orders enabled')
-        end
+        ChangeState(self, self.IdleState)
     end,
 
-    OnScriptBitClear = function(self, bit)
-        TStructureUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then 
-            self.RepeatOrders = false   
-            FloatingEntityText(self:GetEntityId(),'<LOC floatingtextIVAN02>Repeating orders disabled')
-        end
-    end,
-    
-    OnTargetLocation = function(self, location)                        
-        
-        --If there are already orders, and we are still set to repeat, assume we are updating the location for the same orders.
-        if self.FireNextOrders and self.RepeatOrders and self.FactoryOrdersBackup[1] then
-            self.FireNextOrders.target = location
-            
-            --If we are part way through the build, continue where we left off
-            if self.AmmoList[1] then
-                for k, v in self.FactoryOrdersBackup do
-                    if not self.AmmoList[k] then
-                        self:GetAIBrain():BuildUnit(self, v, 1)   
-                    end
-                end 
-                      
-            --And then double check we aren't already over the ammo count for some reason.
-                if self.FireNextOrders.count < table.getn(self.AmmoList) then
-                    self.FireNextOrders.count = table.getn(self.AmmoList)
-                end
-            
-            --Otherwise we need to redo the whole list
-            elseif self.FactoryOrdersList then     
-                for k, v in self.FactoryOrdersList do
-                    self:GetAIBrain():BuildUnit(self, v, 1)  
-                end
+    IdleState = State {
+        Main = function(self)
+            self:DetachAll('DropPod')
+            self:SetBusy(false)
+        end,
+
+        OnStartBuild = function(self, unitBuilding, order)
+            TStructureUnit.OnStartBuild(self, unitBuilding, order)
+            self.UnitBeingBuilt = unitBuilding
+            --self:ChangeBlinkingLights('Yellow')
+            ChangeState(self, self.BuildingState)
+        end,
+    },
+
+    BuildingState = State {
+        Main = function(self)
+            self:SetBusy(true)
+            self.DropPod0Slider:SetGoal(0,0,50)
+
+            if Buffs['IvanHealthBuff'] then
+                Buff.ApplyBuff(self.UnitBeingBuilt, 'IvanHealthBuff')
             end
-        
-        --If there is no ammo, set to fire on repeat of whatever the first thing built is.     
-        elseif not self.AmmoList[1] then
-            self.FireNextOrders = {
-                count = 1,
-                target = location,
-            }
-        
-        --Otherwise we probably have a load, and no orders, so FIRE ZE CANNON.
+            self:DetachAll('DropPod')
+            self.UnitBeingBuilt:HideBone(0, true)
+        end,
+
+        OnStopBuild = function(self, unitBeingBuilt, order )
+            TStructureUnit.OnStopBuild(self, unitBeingBuilt, order )
+            --ChangeState(self, self.FinishedBuildingState)
+            self:ForkThread(self.FinishBuildThread, unitBeingBuilt, order )
+        end,
+    },
+
+    FinishBuildThread = function(self, unitBeingBuilt, order )
+        self:SetBusy(true)
+        unitBeingBuilt:DetachFrom(true)
+        self:DetachAll('DropPod')
+        if self:TransportHasAvailableStorage() then
+            --coroutine.yield(1)
+            self:AddUnitToStorage(unitBeingBuilt)
         else
-            self.FireNextOrders = {
-                count = table.getn(self.AmmoList),
-                target = location,
-            }
-            IssueAttack({self}, location)
+            local worldPos = self:CalculateWorldPositionFromRelative({0, 0, -20})
+            IssueMoveOffFactory({unitBeingBuilt}, worldPos)
+            unitBeingBuilt:ShowBone(0,true)
         end
-        
-        --Regardless, we want repeat on now.
-        if not self.RepeatOrders then
-            self:SetScriptBit('RULEUTC_WeaponToggle', true)
-        end
+        self:SetBusy(false)
+        self:AmmoStackThread()
+        self:RequestRefreshUI()
+        self.UnitBeingBuilt = nil
+        ChangeState(self, self.IdleState)
     end,
-    
+
     AmmoStackThread = function(self)
-        local ammocount = 0
-        if self.AmmoList then
-            ammocount = table.getn(self.AmmoList)
-        end 
+        local ammocount = table.getn(self:GetCargo())
         if not self.AmmoStackGoals then
             self.AmmoStackGoals = {
                 ["DropPod001"] = 55,
@@ -181,15 +164,15 @@ SEB2404 = Class(TStructureUnit) {
         for k, v in self.AmmoSliders do
             v:SetGoal(0,0,self.AmmoStackGoals[k] - math.min(ammocount, 4) * 55)
         end
-        if ammocount > 0 then 
+        if ammocount > 0 then
             self:ShowBone('DropPod', true)
             self.DropPod0Slider:SetGoal(0,0,0)
         elseif ammocount == 0 then
-            self.DropPod0Slider:SetGoal(0,0,50)  
+            self.DropPod0Slider:SetGoal(0,0,50)
         end
         self:LCDUpdate(ammocount)
     end,
-    
+
     LCDUpdate = function(self, ammocount)
           ---7---
         --       --
@@ -210,7 +193,7 @@ SEB2404 = Class(TStructureUnit) {
                     {[1] = "LCD005", [2] = true,},
                     {[1] = "LCD006", [2] = true,},
                     {[1] = "LCD007", [2] = true,},
-                },   
+                },
                 [2] = {
                     {[1] = "LCD008", [2] = true,},
                     {[1] = "LCD009", [2] = true,},
@@ -244,10 +227,10 @@ SEB2404 = Class(TStructureUnit) {
         self:LCDnumber(tens, 2)
         self:LCDnumber(huns, 1)
     end,
-    
+
     LCDnumber = function(self, num, mag)
         local deees = {
-          [1] = {0, 2, 6, 8,}, 
+          [1] = {0, 2, 6, 8,},
           [2] = {0, 4, 5, 6, 8, 9,},
           [3] = {0, 1, 3, 4, 5, 6, 7, 8, 9,},
           [4] = {0, 1, 2, 3, 4, 7, 8, 9},
@@ -264,8 +247,8 @@ SEB2404 = Class(TStructureUnit) {
                     self.LCD[mag][k][2] = false
                 end
             end
-        end   
-        
+        end
+
         --self:tprint(self.LCD)
         for k, v in self.LCD do
             for i, s in v do
@@ -274,50 +257,6 @@ SEB2404 = Class(TStructureUnit) {
                 else
                     s[3]:SetGoal(0,0,-1)
                 end
-            end
-        end
-    end,
-    
-    OnKilled = function(self, instigator, type, overkillRatio)
-        if self.AmmoList[1] then
-            for k,v in self.AmmoList do  
-                local pos = self:GetPosition()
-                local dude = CreateUnitHPR(v,self:GetArmy(),pos[1] + math.random(-2,2), pos[2], pos[3] + math.random(-2,2),0 , math.random(0,360), 0)
-                local health = math.min(math.max((math.random(-300,100)/100)+(dude:GetHealth()/4500),0),1) * math.min(math.random(0,120)/100,1)
-                if health == 0 then
-                    dude:Kill()
-                else          
-                    dude:SetHealth(dude,dude:GetHealth()*health)
-                end
-            end
-            self.AmmoList = {}
-        end
-        TStructureUnit.OnKilled(self, instigator, type, overkillRatio)
-    end,
-    
-    OnDestroy = function(self)
-        if self.AmmoList[1] then
-            for k,v in self.AmmoList do  
-                local pos = self:GetPosition()
-                CreateUnitHPR(v,self:GetArmy(),pos[1] + math.random(-2,2), pos[2], pos[3] + math.random(-2,2),0, math.random(0,360), 0)
-            end
-        end
-        TStructureUnit.OnDestroy(self)
-    end,    
-    
-    tprint = function(self, tbl, indent)
-        if not indent then indent = 0 end
-        for k, v in pairs(tbl) do
-            formatting = string.rep("  ", indent) .. k .. ": "
-            if type(v) == "table" then
-                LOG(formatting)
-                self:tprint(v, indent+1)
-            elseif type(v) == 'boolean' then
-                LOG(formatting .. tostring(v))		
-            elseif type(v) == 'string' or type(v) == 'number' then
-                LOG(formatting .. v)
-            else
-                LOG(formatting .. type(v))
             end
         end
     end,

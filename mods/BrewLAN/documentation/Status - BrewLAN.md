@@ -229,7 +229,7 @@
 |**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|Iyadesu     (F)|
 |**Support 2**     |               |               |               |Sisha-Ah       |
 |**Flying**        |Centurion      |*CZAR*     (AF)|*Soulripper*   |*Ahwassa*      |
-|**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|Abyss Crawler  |`Amph sub?`    |
+|**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|Abyss Crawler  |`Zmara?`       |
 
 |Key|Value
 |:-:|---|

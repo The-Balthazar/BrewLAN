@@ -157,6 +157,27 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Adjusted the balance of the Seraphim Experimental Sniper.
   * Adjusted the walk animation of the Seraphim Experimental Sniper so it no longer noticeably self intersects with the body.
+  * Removed the heading arc limitations from the Solaris.
+  * Reduced the selection area of the Ivan so it no longer counts sections below the ground.
+
+  ### 2020-09-25
+
+  * Reworked Ivan, mechanically:
+    * Removed the scripted repeat orders function and buttons.
+      * It now just does it if it's not told to stop.
+        * Bug: Building 3 or more while it has active attack orders results in it a volley of firing 3 before continuing building, and giving max velocity to the last of the three, usually causing it to leave the map.
+        * If more than 3 are being made, excess will be stockpiled.
+    * Gave it the ability to pause.
+    * Added construction sound effects.
+    * Capped the number of prepared drop-pods to 999.
+    * It no longer deletes units when it finishes building them:
+      * Created units are stored like a carrier
+      * Drop pods are given the actual units to transport rather than just the ID
+      * You can now see what is actually inside the Ivan
+      * You can now see what is in the drop pod projectiles
+    * On shield-hit behaviour for the new style is currently undefined.
+    * Units can be removed from the structure directly, with weird undesired effects.
+    * Stored units surviving the artillery getting destroyed is currently non-functioning.
 
 ## 2019-10-13|0.8.9
 
