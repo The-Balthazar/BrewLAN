@@ -61,6 +61,17 @@ do
 
 
         --
+        -- Shield impacts for drop pods
+        --
+        FallenFromPod = function(self, ImpactY)
+            local pos = self:GetPosition()
+            local FallenD = ImpactY - pos[2]
+            self:SetStunned(FallenD * 3)
+            --Damage(self, pos, self, 300, 'Normal')
+        end,
+
+
+        --
         -- Checks for satellite allowances
         --
         OnSatelliteCapacityChange = function(self, deathcheck)
@@ -194,9 +205,9 @@ do
         --
         OnDamage = function(self, instigator, amount, vector, damageType, ...)
             if damageType == 'NormalBomb' and EntityCategoryContains(categories.BOMBER, self) and self:GetCurrentLayer() == 'Air' then
-                UnitOld.OnDamage(self, instigator, amount * 0.05 , vector, damageType, unpack(arg))
+                UnitOld.OnDamage(self, instigator, amount * 0.05 , vector, 'Normal', unpack(arg))
             else
-                UnitOld.OnDamage(self, instigator, amount, vector, damageType, unpack(arg))
+                UnitOld.OnDamage(self, instigator, amount, vector, 'Normal', unpack(arg))
             end
         end,
 

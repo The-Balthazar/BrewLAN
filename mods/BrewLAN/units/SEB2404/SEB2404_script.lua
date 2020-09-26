@@ -54,8 +54,13 @@ SEB2404 = Class(TStructureUnit) {
                 self.unit:HideBone('DropPod', true)
                 if proj and not proj:BeenDestroyed() then
                     data:DetachFrom(true)
+
+                    if data:ShieldIsOn() and not data:GetBlueprint().Defense.Shield.PersonalShield then
+                        data:DisableShield()
+                        data:DisableDefaultToggleCaps()
+                    end
+
                     data:AttachBoneTo(0, proj, 1)
-                    --data[1]:ShowBone(0,true)
                     proj:PassData(data)
                 end
                 self.unit:AmmoStackThread()

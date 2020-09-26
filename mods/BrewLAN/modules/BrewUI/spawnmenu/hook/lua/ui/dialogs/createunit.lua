@@ -289,6 +289,60 @@ local nameFilters = {
             },
         },
     },
+    {
+        title = 'Menu Sort',
+        key = 'sort',
+        choices = {
+            {
+                title = 'Construction',
+                key = 'const',
+                sortFunc = function(unitID)
+                    return table.find(__blueprints[unitID].Categories, 'SORTCONSTRUCTION')
+                end,
+            },
+            {
+                title = 'Economy',
+                key = 'eco',
+                sortFunc = function(unitID)
+                    return table.find(__blueprints[unitID].Categories, 'SORTECONOMY')
+                end,
+            },
+            {
+                title = 'Defense',
+                key = 'fence',
+                sortFunc = function(unitID)
+                    return table.find(__blueprints[unitID].Categories, 'SORTDEFENSE')
+                end,
+            },
+            {
+                title = 'Strategic',
+                key = 'strat',
+                sortFunc = function(unitID)
+                    return table.find(__blueprints[unitID].Categories, 'SORTSTRATEGIC')
+                end,
+            },
+            {
+                title = 'Intel',
+                key = 'inside',
+                sortFunc = function(unitID)
+                    return table.find(__blueprints[unitID].Categories, 'SORTINTEL')
+                end,
+            },
+            {
+                title = 'Other',
+                key = 'othersort',
+                sortFunc = function(unitID)
+                    return table.find(__blueprints[unitID].Categories, 'SORTOTHER') or not (
+                        table.find(__blueprints[unitID].Categories, 'SORTCONSTRUCTION') or
+                        table.find(__blueprints[unitID].Categories, 'SORTECONOMY') or
+                        table.find(__blueprints[unitID].Categories, 'SORTDEFENSE') or
+                        table.find(__blueprints[unitID].Categories, 'SORTSTRATEGIC') or
+                        table.find(__blueprints[unitID].Categories, 'SORTINTEL')
+                    )
+                end,
+            },
+        },
+    },
 }
 --[[
 do

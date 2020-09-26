@@ -179,6 +179,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Units can be removed from the structure directly, with weird undesired effects.
     * Stored units surviving the artillery getting destroyed is currently non-functioning.
 
+  ### 2020-09-26
+
+  * Added an extra filter field to the cheat spawn menu for menu sort.
+  * The fix for bombers killing themselves against the Iron Curtain now passes normal damage.
+  * Bubble shields now disable when getting shoved in Ivan drop pods.
+  * Units that come out of drop pods can now be targeted correctly.
+  * Personal shields get reset if the unit was in a drop pod that impacted a shield.
+  * Units that have fallen out of drop pods that impacted a shield are now stunned for a duration proportional to the fall distance.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
