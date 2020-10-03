@@ -67,7 +67,8 @@ do
             local pos = self:GetPosition()
             local FallenD = ImpactY - pos[2]
             self:SetStunned(FallenD * 3)
-            --Damage(self, pos, self, 300, 'Normal')
+            local bp = self:GetBlueprint()
+            self:OnDamage(self, (bp.Defense.MaxHealth or 300) * (bp.SizeX or 1) * (bp.SizeY or 1) * (bp.SizeZ or 1) * (FallenD / 15), pos, 'Normal')
         end,
 
 

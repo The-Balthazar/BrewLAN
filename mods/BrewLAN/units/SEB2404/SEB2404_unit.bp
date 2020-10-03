@@ -1,10 +1,10 @@
-UnitBlueprint {
+UnitBlueprint {--[[
     Abilities = {
         TargetLocation = {
             bitmapId = 'activate-weapon',
             helpText = 'reapeat_attack_target',
         },
-    },
+    },]]
     AI = {
         TargetBones = {
             'Target01',
@@ -65,20 +65,8 @@ UnitBlueprint {
     Description = '<LOC seb2404>Experimental Drop-Pod Artillery',
     Display = {
         BlinkingLights = {
-            {
-                BLBone = 'Light1',
-                BLOffsetX = 0,
-                BLOffsetY = 0,
-                BLOffsetZ = 0,
-                BLScale = 1,
-            },
-            {
-                BLBone = 'Light2',
-                BLOffsetX = 0,
-                BLOffsetY = 0,
-                BLOffsetZ = 0,
-                BLScale = 1,
-            },
+            {BLBone = 'Light1', BLScale = 1},
+            {BLBone = 'Light2', BLScale = 1},
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -93,8 +81,6 @@ UnitBlueprint {
                 {LODCutoff = 500, ShaderName = 'Unit'},
             },
         },
-        PlaceholderMeshName = 'UXB0004',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_01_albedo',
@@ -137,15 +123,15 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
+            --RULEUCC_CallTransport = false,
+            --RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
+            --RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
+            --RULEUCC_Reclaim = false,
+            --RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
             RULEUCC_Transport = true, --Required for storage, disabled on create to remove the button, but still lets us store
@@ -160,9 +146,9 @@ UnitBlueprint {
         },]]
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        --[[ToggleCaps = {
-            RULEUTC_WeaponToggle = true,
-        },]]
+        --ToggleCaps = {
+        --    RULEUTC_WeaponToggle = true,
+        --},
         UnitName = '<LOC seb2404_name>Ivan',
         UnitWeight = 1,
     },
@@ -187,17 +173,17 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        MaxSteerForce = 0,
+        --MaxSteerForce = 0,
         MeshExtentsX = 7,
         MeshExtentsY = 4,
         MeshExtentsZ = 7.25,
-        MinSpeedPercent = 0,
+        --MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
-        TurnRate = 0,
+        --TurnRate = 0,
     },
     SelectionSizeX = 4.25,
     SelectionSizeZ = 4,
@@ -222,6 +208,8 @@ UnitBlueprint {
         {
             AimsStraightOnDisable = true,
             ArtilleryShieldBlocks = true,
+            AlwaysRecheckTarget = false,
+            AttackGroundTries = 10, -- Sets the volley size when given repeat ordes and an attack ground order.
             Audio = {
                 BarrelLoop = Sound {
                     Bank = 'UEB',
@@ -258,7 +246,9 @@ UnitBlueprint {
             },
             FiringRandomness = 0.22,
             FiringTolerance = 0,
+            IgnoresAlly = false,
             Label = 'MainGun',
+            LeadTarget = false,
             MaxRadius = 2000,
             MinRadius = 100,
             MuzzleSalvoDelay = 0,
@@ -286,7 +276,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = 0.75,
-            TargetCheckInterval = 8,
+            TargetCheckInterval = 0,
             TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'Turret_muzzle',
             TurretBonePitch = 'Turret_pitch',
