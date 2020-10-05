@@ -188,6 +188,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Personal shields get reset if the unit was in a drop pod that impacted a shield.
   * Units that have fallen out of drop pods that impacted a shield are now stunned for a duration proportional to the fall distance.
 
+  ### 2020-09-28
+
+  * Increased Ivan attack ground tries, so it will fire volleys of 10 before it goes back to building again.
+  * Drop pod units that impact shields now take fall damage proportional to the distance, their size, and their max health.
+
+  ### 2020-10-03
+
+  * Ivan now uses a separate dummy unit to store units so that deployed units aren't destroyed when the Ivan is.
+
+  ### 2020-10-05
+
+  * Units in drop-pod storage can now survive the artillery dying again.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

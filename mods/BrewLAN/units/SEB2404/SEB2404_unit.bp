@@ -1,10 +1,4 @@
-UnitBlueprint {--[[
-    Abilities = {
-        TargetLocation = {
-            bitmapId = 'activate-weapon',
-            helpText = 'reapeat_attack_target',
-        },
-    },]]
+UnitBlueprint {
     AI = {
         TargetBones = {
             'Target01',
@@ -107,10 +101,7 @@ UnitBlueprint {--[[
             'BUILTBYLANDTIER3FACTORY UEF MOBILE',
         },
     },
-    Footprint = {
-        SizeX = 5,
-        SizeZ = 5,
-    },
+    Footprint = {SizeX = 5, SizeZ = 5},
     General = {
         BuildBones = {
             BuildEffectBones = {
@@ -123,32 +114,18 @@ UnitBlueprint {--[[
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            --RULEUCC_CallTransport = false,
-            --RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            --RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            --RULEUCC_Reclaim = false,
-            --RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
             RULEUCC_Transport = true, --Required for storage, disabled on create to remove the button, but still lets us store
         },
         FactionName = 'UEF',
         Icon = 'land',
-        --[[OrderOverrides = {
-            RULEUTC_WeaponToggle = {
-                bitmapId = 'patrol', -- maybe use 'retaliate' after it actually fires on the target eventually make own icon with drop pod and rotating arrows
-                helpText = 'toggle_repeat_orders',
-            },
-        },]]
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        --ToggleCaps = {
-        --    RULEUTC_WeaponToggle = true,
-        --},
         UnitName = '<LOC seb2404_name>Ivan',
         UnitWeight = 1,
     },
@@ -173,17 +150,14 @@ UnitBlueprint {--[[
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
-        --MaxSteerForce = 0,
         MeshExtentsX = 7,
         MeshExtentsY = 4,
         MeshExtentsZ = 7.25,
-        --MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
-        --TurnRate = 0,
     },
     SelectionSizeX = 4.25,
     SelectionSizeZ = 4,

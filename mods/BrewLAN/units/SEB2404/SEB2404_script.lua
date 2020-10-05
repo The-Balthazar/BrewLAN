@@ -22,6 +22,7 @@ if __blueprints.seb2404.Economy.BuilderDiscountMult and __blueprints.seb2404.Eco
         }
     end
 end
+local DummyStorage = {}
 
 SEB2404 = Class(TStructureUnit) {
 
@@ -33,7 +34,7 @@ SEB2404 = Class(TStructureUnit) {
                 Main = function(self)
                     self.WeaponCanFire = false
                     self.unit:SetBusy(false)
-                    while not self.unit:GetCargo()[1] do
+                    while not self.unit.AmmoList[1] do
                         coroutine.yield(5)
                     end
                     --A wait for would be better here
@@ -46,15 +47,15 @@ SEB2404 = Class(TStructureUnit) {
             CreateProjectileAtMuzzle = function(self, muzzle)
                 local proj = TIFArtilleryWeapon.CreateProjectileAtMuzzle(self, muzzle)
                 local data = false
-                local Cargo = self.unit:GetCargo()
+                local Cargo = self.unit.AmmoList
                 if Cargo[1] then
                     local num = table.getn(Cargo)
                     data = Cargo[num]
+                    table.remove(self.unit.AmmoList,num)
                 end
                 self.unit:HideBone('DropPod', true)
                 if proj and not proj:BeenDestroyed() then
                     data:DetachFrom(true)
-
                     if data:ShieldIsOn() and not data:GetBlueprint().Defense.Shield.PersonalShield then
                         data:DisableShield()
                         data:DisableDefaultToggleCaps()
@@ -89,6 +90,10 @@ SEB2404 = Class(TStructureUnit) {
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
+        if not DummyStorage[self:GetArmy()] then
+            DummyStorage[self:GetArmy()] = CreateUnitHPR('seb2404_storage', self:GetArmy(), -1, -1, -1, 0, 0, 0)
+        end
+        self.AmmoList = {}
         TStructureUnit.OnStopBeingBuilt(self,builder,layer)
         --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
         CreateSlider(self, 'AmmoExtender', 0, 0, 110, 100)
@@ -101,9 +106,11 @@ SEB2404 = Class(TStructureUnit) {
         ChangeState(self, self.IdleState)
     end,
 
+    BuildAttachBone = 'DropPod',
+
     IdleState = State {
         Main = function(self)
-            self:DetachAll('DropPod')
+            self:DetachAll(self.BuildAttachBone)
             self:SetBusy(false)
         end,
 
@@ -123,7 +130,8 @@ SEB2404 = Class(TStructureUnit) {
             if Buffs['IvanHealthBuff'] then
                 Buff.ApplyBuff(self.UnitBeingBuilt, 'IvanHealthBuff')
             end
-            self:DetachAll('DropPod')
+            self.UnitBeingBuilt:AttachBoneTo(0, self, self.BuildAttachBone)
+            --self:DetachAll('DropPod')
             self.UnitBeingBuilt:HideBone(0, true)
         end,
 
@@ -135,12 +143,14 @@ SEB2404 = Class(TStructureUnit) {
     },
 
     FinishBuildThread = function(self, unitBeingBuilt, order )
+        --This thread triggers twice for whatever reason
         self:SetBusy(true)
         unitBeingBuilt:DetachFrom(true)
-        self:DetachAll('DropPod')
-        if self:TransportHasAvailableStorage() then
-            --coroutine.yield(1)
-            self:AddUnitToStorage(unitBeingBuilt)
+        self:DetachAll(self.BuildAttachBone)
+        coroutine.yield(1)
+        if self:TransportHasAvailableStorage() and self.UnitBeingBuilt then
+            table.insert(self.AmmoList, unitBeingBuilt)
+            DummyStorage[self:GetArmy()]:AddUnitToStorage(unitBeingBuilt)
         else
             local worldPos = self:CalculateWorldPositionFromRelative({0, 0, -20})
             IssueMoveOffFactory({unitBeingBuilt}, worldPos)
@@ -154,7 +164,7 @@ SEB2404 = Class(TStructureUnit) {
     end,
 
     AmmoStackThread = function(self)
-        local ammocount = table.getn(self:GetCargo())
+        local ammocount = table.getn(self.AmmoList)
         if not self.AmmoStackGoals then
             self.AmmoStackGoals = {
                 ["DropPod001"] = 55,
@@ -264,6 +274,37 @@ SEB2404 = Class(TStructureUnit) {
                 end
             end
         end
+    end,
+
+    OnKilled = function(self, instigator, type, overkillRatio)
+        local pos = self:GetPosition()
+        if self.AmmoList[1] then
+            for k, v in self.AmmoList do
+                v:DetachFrom(true)
+                Warp(v, {pos[1] + math.random(-2,2), pos[2], pos[3] + math.random(-2,2)})
+                local health = math.min(math.max((math.random(-300,100)/100)+(v:GetHealth()/4500),0),1) * math.min(math.random(0,120)/100,1)
+                if health == 0 then
+                    v:Kill()
+                else
+                    v:SetHealth(self,v:GetHealth()*health)
+                    v:SetCanTakeDamage(true)
+                    v:SetReclaimable(true)
+                    v:SetCapturable(true)
+                    v:MarkWeaponsOnTransport(v, false)
+                end
+                self.AmmoList[k] = nil
+            end
+        end
+        TStructureUnit.OnKilled(self, instigator, type, overkillRatio)
+    end,
+
+    OnDestroy = function(self)
+        if self.AmmoList[1] then
+            for k, v in self.AmmoList do
+                v:Destroy()
+            end
+        end
+        TStructureUnit.OnDestroy(self)
     end,
 }
 
