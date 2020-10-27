@@ -1,7 +1,7 @@
 function RNDResearchIsNotComplete(aiBrain)
-    return not aiBrain.BrewRND.ResearchIsComplete
+    return not aiBrain.BrewResearchIsComplete
 end
 
 function RNDResearchIsComplete(aiBrain)
-    return aiBrain.BrewRND.ResearchIsComplete
+    return aiBrain.BrewResearchIsComplete
 end

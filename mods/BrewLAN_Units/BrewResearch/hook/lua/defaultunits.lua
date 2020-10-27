@@ -35,7 +35,7 @@ ResearchItem = Class(DummyUnit) {
 
         --Tell the manager this is done if we're an AI and presumably have a manager.
         local AIBrain = self:GetAIBrain()
-        if AIBrain.BrainType ~= 'Human' then
+        if AIBrain.BrainType ~= 'Human' and AIBrain.BrewRND then
             AIBrain.BrewRND.MarkResearchComplete(AIBrain, bp.BlueprintId)
         end
 
@@ -158,7 +158,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
                     for buff, data in self.Buffs.BuffTable.RESEARCH do
                         if Buffs[buff] then --Ensure that the data structure is the same as we are expecting.
                             for i = 1, (data.Count or 1) do
-                                LOG('Passing on buff: ' .. buff)
+                                --LOG('Passing on buff: ' .. buff)
                                 Buff.ApplyBuff(unitbuilding, buff)
                             end
                         end
@@ -180,7 +180,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         -- then research
     ResearchThread = function(self)
         local AIBrain = self:GetAIBrain()
-        while not self.Dead and AIBrain.BrewRND.IsResearchRemaining(AIBrain) do
+        while not self.Dead and not AIBrain.BrewResearchIsComplete and AIBrain.BrewRND and AIBrain.BrewRND.IsResearchRemaining(AIBrain) do
             if self:IsIdleState() and AIBrain.BrewRND.IsAbleToResearch(AIBrain) then
                 self:Research()
                 WaitTicks(10)
@@ -200,7 +200,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         --Upgrade if we can first
         if bp.General.UpgradesTo and __blueprints[bp.General.UpgradesTo] and self:CanBuild(bp.General.UpgradesTo) then
             IssueUpgrade({self}, bp.General.UpgradesTo)
-        else
+        elseif AIBrain.BrewRND then
             AIBrain:BuildUnit(self, AIBrain.BrewRND.GetResearchItem(AIBrain, self), 1)
         end
     end,

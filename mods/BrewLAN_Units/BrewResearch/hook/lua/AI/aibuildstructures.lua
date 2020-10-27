@@ -2,7 +2,7 @@ local OldAIExecuteBuildStructure = AIExecuteBuildStructure
 
 function AIExecuteBuildStructure(aiBrain, builder, buildingType, ...)
     local OldFunction = OldAIExecuteBuildStructure(aiBrain, builder, buildingType, unpack(arg))
-    if not OldFunction and not aiBrain.BrewRND.ResearchIsComplete then
+    if not OldFunction and not aiBrain.BrewResearchIsComplete and aiBrain.BrewRND then
         local targetID = ConvertBuildingType(aiBrain, buildingType)
         if targetID then
             for i, id in targetID do

@@ -143,7 +143,7 @@ do
                 --other:OnImpact( 'Unit', self)
                 other.DamageData.DamageRadius = 0-- 0 the radius so that the damage doesn't happen somewhere random.
                 other:DoDamage( other:GetLauncher(), other.DamageData, self)
-                other:DoMetaImpact(other.damageData )
+                --other:DoMetaImpact(other.damageData )
                 other:DoUnitImpactBuffs(other.targetEntity)
 
                 local ImpactEffects = {}

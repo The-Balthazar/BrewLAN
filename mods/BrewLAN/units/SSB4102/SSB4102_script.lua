@@ -44,7 +44,9 @@ SSB4102 = Class(SShieldStructureUnit) {
 
     OnKilled = function(self, instigator, type, overkillRatio)
         SShieldStructureUnit.OnKilled(self, instigator, type, overkillRatio)
-        self.AnimationManipulator:Destroy()
+        if self.AnimationManipulator then
+            self.AnimationManipulator:Destroy()
+        end
         CleanShieldBag(self)
     end,
 

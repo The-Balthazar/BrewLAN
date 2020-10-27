@@ -201,6 +201,32 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Units in drop-pod storage can now survive the artillery dying again.
 
+  ### 2020-10-08
+
+  * Scarab can now walk backwards.
+  * Fixed drop pod units being able to see what's below the pod while in the air.
+  * Ivan no longer uses the dummy unit storage method and now fakes it locally.
+  * Ivan now has a deploy button for ejecting units from the base.
+    * The target location isn't respected.
+  * Units fired from Ivan no longer have visio of the ground below the drop pod.
+
+  ### 2020-10-20
+
+  * UEF T3 anti-tactical: Trickshot changes:
+    * Shrunk by around 28%.
+    * Moved the treads slightly further out on the model.
+    
+  ### 2020-10-27
+
+  * R&D: Moved wind thread generation out of CreateResources and into CreateInitialArmyGroup so it doesn't get killed by Adaptive maps.
+  * R&D: Moved the R&D AI init functions into OnCreateAI and CreateBrainShared and out of CreateInitialArmyGroup.
+  * R&D: Restructured BrewRND AI table so it no longer creates instancing issues.
+  * R&D: Instances of the BrewRND AI table now gets `nil`'d once all research is complete.
+  * Seraphim T1 shield, on death now checks it has an animator to destroy before trying to destroy it.
+  * R&D: Removed some unused values from the research centre bp's.
+  * R&D: Prevented research centres from being added to factory builder managers.
+  * R&D: Commented out some log and warning events.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

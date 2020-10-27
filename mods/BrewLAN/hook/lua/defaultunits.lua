@@ -142,14 +142,9 @@ ConstructionStructureUnit = Class(StructureUnit) {
 DirectionalWalkingLandUnit = Class(WalkingLandUnit) {
     OnMotionHorzEventChange = function( self, new, old )
         WalkingLandUnit.OnMotionHorzEventChange(self, new, old)
-
-        if ( old == 'Stopped' ) then
-            local bpDisplay = self:GetBlueprint().Display
-            if bpDisplay.AnimationWalk and self.Animator then
-                self.Animator:SetDirectionalAnim(true)
-                self.Animator:SetRate(bpDisplay.AnimationWalkRate)
-            end
-         end
+        if ( old == 'Stopped' ) and self.Animator then
+            self.Animator:SetDirectionalAnim(true)
+        end
     end,
 }
 

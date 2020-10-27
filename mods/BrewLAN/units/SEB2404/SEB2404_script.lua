@@ -5,24 +5,22 @@ local TStructureUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
 local Buff = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').Buff
 
-if __blueprints.seb2404.Economy.BuilderDiscountMult and __blueprints.seb2404.Economy.BuilderDiscountMult ~= 1 then
-    if not Buffs['IvanHealthBuff'] then
-        BuffBlueprint {
-            Name = 'IvanHealthBuff',
-            DisplayName = 'IvanHealthBuff',
-            BuffType = 'IvanHealthBuff',
-            Stacks = 'ALWAYS',
-            Duration = -1,
-            Affects = {
-                MaxHealth = {
-                    Add = 0,
-                    Mult = __blueprints.seb2404.Economy.BuilderDiscountMult,
-                },
-            },
-        }
-    end
+if __blueprints.seb2404.Economy.BuilderDiscountMult
+and __blueprints.seb2404.Economy.BuilderDiscountMult ~= 1
+and not Buffs['IvanHealthBuff'] then
+    BuffBlueprint {
+        Name = 'IvanHealthBuff',
+        DisplayName = 'IvanHealthBuff',
+        BuffType = 'IvanHealthBuff',
+        Stacks = 'ALWAYS',
+        Duration = -1,
+        Affects = {
+            MaxHealth = {Add = 0, Mult = __blueprints.seb2404.Economy.BuilderDiscountMult},
+        },
+    }
 end
-local DummyStorage = {}
+--local DummyStorage = {}--This is populated whenever any player builds an Ivan for the first time.
+--I didn't want to deal with issues regarding players dying, although I also never tested shared storage for that same reason.
 
 SEB2404 = Class(TStructureUnit) {
 
@@ -73,7 +71,7 @@ SEB2404 = Class(TStructureUnit) {
         TStructureUnit.OnCreate(self)
         self:HideBone('DropPod', true)
         self.DropPod0Slider = CreateSlider(self, 'DropPod', 0, 0, 55, 100)
-        self:RemoveCommandCap('RULEUCC_Transport')
+        --self:RemoveCommandCap('RULEUCC_Transport')
     end,
 
     OnPaused = function(self)
@@ -90,11 +88,12 @@ SEB2404 = Class(TStructureUnit) {
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
-        if not DummyStorage[self:GetArmy()] then
-            DummyStorage[self:GetArmy()] = CreateUnitHPR('seb2404_storage', self:GetArmy(), -1, -1, -1, 0, 0, 0)
-        end
+        local army = self:GetArmy()
+        --if not DummyStorage[army] then
+        --    DummyStorage[army] = CreateUnitHPR('seb2404_storage', army, -1, -1, -1, 0, 0, 0)
+        --end
         self.AmmoList = {}
-        TStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        TStructureUnit.OnStopBeingBuilt(self, builder, layer)
         --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
         CreateSlider(self, 'AmmoExtender', 0, 0, 110, 100)
         ChangeState(self, self.IdleState)
@@ -144,23 +143,44 @@ SEB2404 = Class(TStructureUnit) {
 
     FinishBuildThread = function(self, unitBeingBuilt, order )
         --This thread triggers twice for whatever reason
-        self:SetBusy(true)
-        unitBeingBuilt:DetachFrom(true)
-        self:DetachAll(self.BuildAttachBone)
-        coroutine.yield(1)
-        if self:TransportHasAvailableStorage() and self.UnitBeingBuilt then
-            table.insert(self.AmmoList, unitBeingBuilt)
-            DummyStorage[self:GetArmy()]:AddUnitToStorage(unitBeingBuilt)
-        else
-            local worldPos = self:CalculateWorldPositionFromRelative({0, 0, -20})
-            IssueMoveOffFactory({unitBeingBuilt}, worldPos)
-            unitBeingBuilt:ShowBone(0,true)
+        --unitBeingBuilt:DetachFrom(true)
+        if self.UnitBeingBuilt then
+            self.UnitBeingBuilt = nil
+            --self:SetBusy(true)
+            if self:TransportHasAvailableStorage() then
+                self:DetachAll(self.BuildAttachBone)
+                --coroutine.yield(1) -- this is needed if it's being added to storage
+                table.insert(self.AmmoList, unitBeingBuilt)
+                unitBeingBuilt:AttachBoneTo(0, self, 'DropPod001')
+                unitBeingBuilt:OnAddToStorage(self)
+                unitBeingBuilt:DisableIntel('Vision')
+                --self:AddUnitToStorage(unitBeingBuilt)
+                --DummyStorage[self:GetArmy()]:AddUnitToStorage(unitBeingBuilt)
+            else
+                local worldPos = self:CalculateWorldPositionFromRelative({0, 0, -20})
+                IssueMoveOffFactory({unitBeingBuilt}, worldPos)
+                unitBeingBuilt:ShowBone(0,true)
+            end
         end
         self:SetBusy(false)
         self:AmmoStackThread()
         self:RequestRefreshUI()
-        self.UnitBeingBuilt = nil
         ChangeState(self, self.IdleState)
+    end,
+
+    OnTransportDetach = function(self, attachBone, unit)
+        TStructureUnit.OnTransportDetach(self, attachBone, unit)
+        local x, y, z = unit:GetPositionXYZ()
+        self:ForkThread(function()
+            coroutine.yield(1)
+            if unit then
+                Warp(unit, {x, y, z})
+            end
+        end)
+        unit:OnRemoveFromStorage(self)
+        unit:EnableIntel('Vision')
+        table.removeByValue(self.AmmoList, unit)
+        self:AmmoStackThread()
     end,
 
     AmmoStackThread = function(self)
