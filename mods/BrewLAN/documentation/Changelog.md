@@ -215,7 +215,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * UEF T3 anti-tactical: Trickshot changes:
     * Shrunk by around 28%.
     * Moved the treads slightly further out on the model.
-    
+  * Started work on an auto-path node generation script.
+
+  ### 2020-10-21
+
+  * Progressed on path node generation script, accurate unpathable map, ect.
+
+  ### 2020-10-23
+
+  * Finished the LoS function for the path node generation script.
+
   ### 2020-10-27
 
   * R&D: Moved wind thread generation out of CreateResources and into CreateInitialArmyGroup so it doesn't get killed by Adaptive maps.
@@ -226,6 +235,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Removed some unused values from the research centre bp's.
   * R&D: Prevented research centres from being added to factory builder managers.
   * R&D: Commented out some log and warning events.
+
+  ### 2020-10-31
+
+  * Finished the basic features of the path marker generator script. Still to do:
+    * It doesn't check for unpassable terrain types.
+    * It doesn't check for water, and just outputs amph nodes.
+    * It doesn't generate midway markers for long path sections.
+    * It doesn't generate for large flat areas a long distance from any unpassable features.
+    * It doesn't deal with "alcoves" inside a single unpassable feature.
 
 ## 2019-10-13|0.8.9
 
