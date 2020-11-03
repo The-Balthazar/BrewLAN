@@ -245,6 +245,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * It doesn't generate for large flat areas a long distance from any unpassable features.
     * It doesn't deal with "alcoves" inside a single unpassable feature.
 
+  ### 2020-11-03
+
+  * Pathfinder script changes:
+    * Now uses VDist2Sq instead of VDist2 (speeds it up by around 30-50%).
+    * Now takes into account unpassable terrain types.
+    * Now uses heap instead of stack for tracking contiguous areas (prevents stack overflow on some maps).
+    * Removed some unnecessary data tracking that is no longer referenced by the script.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

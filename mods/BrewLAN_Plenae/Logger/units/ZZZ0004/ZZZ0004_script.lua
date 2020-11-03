@@ -7,25 +7,6 @@ ZZZ0004 = Class(Unit) {
         self:ForkThread(self.MapTerrainDeltaTable)
     end,
 
-    TranslateAllMarkers = function(self, xtran, ytran)
-        coroutine.yield(1)
-        xtran, ytran = 128, 128
-        local newmarkers = {}
-        for mID, mData in Scenario.MasterChain._MASTERCHAIN_.Markers do
-            newmarkers[mID] = {}
-            for k, v in mData do
-                if k == 'position' then --GetTerrainHeight
-                    newmarkers[mID]['position'] = {v[1] + xtran, v[2], v[3] + ytran, type = v[type]}
-                elseif type(v) == 'table' then
-                    newmarkers[mID][k] = table.copy(v)
-                else
-                    newmarkers[mID][k] = v
-                end
-            end
-        end
-        LOG(repr(newmarkers))
-    end,
-
     MapTerrainDeltaTable = function(self)
         coroutine.yield(1)
         ------------------------------------------------------------------------
@@ -38,33 +19,35 @@ ZZZ0004 = Class(Unit) {
         local maxGroundVariation = 0.75
         --local maxPlatoonDistance = 140
         local markerCheckDistance = 100
+        local markerCheckDistanceSq = math.pow(markerCheckDistance, 2)
         --local markerMaxOverlapRatio = 0.7
         ------------------------------------------------------------------------
-        local pointOfInterestTypes = {'Start Location', 'Mass', 'Hydrocarbon'}
-        -- Togles --------------------------------------------------------------
+        --local pointOfInterestTypes = {'Start Location', 'Mass', 'Hydrocarbon'}
+        -- Unpassable areas map cleanup toggles --------------------------------
         local doCleanup = true
         local cleanupPasses = 1
-        local doDespeckle = true -- removes single unconnected grids of unpassable
-        local doDeIsland = false -- removes single unconnected grids of passable
-        local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent
-        local doMinDistCheck = 10
-        local doRemoveIsolatedMarkers = true
+        local doDespeckle = true -- removes single unconnected grids of unpassable (8 point check)
+        local doDeIsland = false -- removes single unconnected grids of passable (4 point check)
+        local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check)
+        -- Other cleanup toggles -----------------------------------------------
+        local doMinDistCheck = 15 -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two.
+        local doRemoveIsolatedMarkers = true -- If a marker has no connections, YEET
         ------------------------------------------------------------------------
         -- Data storage
-        local deltamap = {} --Populate with the local evalation differencees
+        --local deltamap = {} --Populate with the local evalation differencees
         local passmap = {}  --Populate with false for impassible or distance to nearest false
         local voronoimap = {} --Populate with zones around unpassable areas as a voronoi map
-        local voronoiedgelist = {} --hashmap of voronoi zone IDs that touch the border
-        local markermap = {} --Map of markers
+        local voronoiedgelist = {} --hashmap of voronoi zone IDs that touch the border; for adjacency cross reference
+        --local markermap = {} --Map of markers
         local markerlist = {} --List of markers
-        local pointsOfInterest = {} --Populated with an array of 2 point co-ords of interesting markers
+        --local pointsOfInterest = {} --Populated with an array of 2 point co-ords of interesting markers
         ------------------------------------------------------------------------
         -- Global functions called potentially over a million times (remove some overhead)
-        local GTH, VDist2 = GetTerrainHeight, VDist2
+        local GTH, VDist2Sq = GetTerrainHeight, VDist2Sq
         local max, min, abs, floor = math.max, math.min, math.abs, math.floor
         local insert, remove, getn, copy, find, merged = table.insert, table.remove, table.getn, table.copy, table.find, table.merged
         ------------------------------------------------------------------------
-        -- tiny helper functions I use a bunch
+        -- tiny generic helper functions I use, or might use in more than once place
         local btb = function(v) return v and 1 or 0 end --bool to binary
         local tcount = function(t) local c=0; for i, j in t do c=c+1 end return c end --more reliable getn
         local tintersect = function(t1,t2) --intersection of tables
@@ -112,16 +95,16 @@ ZZZ0004 = Class(Unit) {
         ------------------------------------------------------------------------
         -- Identify unpathable areas, and set up for passmap distance calcs
         for x = 0, ScenarioInfo.size[1]+1 do --Start one below and one above map size in order to;
-            deltamap[x] = {}
+            --deltamap[x] = {}
             passmap[x] = {}
-            markermap[x] = {}
+            --markermap[x] = {}
             voronoimap[x] = {}
             for y = 0, ScenarioInfo.size[2]+1 do
                 --Create a ring of unpassable around the outside
                 if x == 0 or y == 0 or x == ScenarioInfo.size[1]+1 or y == ScenarioInfo.size[2]+1 then
-                    deltamap[x][y] = 255
+                    --deltamap[x][y] = 255
                     passmap[x][y] = false
-                    markermap[x][y] = "border"
+                    --markermap[x][y] = "border"
                     voronoimap[x][y] = "border"
                 else
                     --Get heights around point
@@ -133,16 +116,21 @@ ZZZ0004 = Class(Unit) {
                     --This specifically ignores diagonal difference, which appears to be the way it's done in game
                     local delta = max(abs(a-b), abs(b-c), abs(c-d), abs(d-a))
 
-                    deltamap[x][y] = delta
-                    if delta <= maxGroundVariation then
+                    local terrainTypeCheck = function(x,y)
+                        local tt = GetTerrainType(x,y)
+                        return tt ~= 'Dirt09' and tt ~= 'Lava01'
+                    end
+
+                    --deltamap[x][y] = delta
+                    if delta <= maxGroundVariation and terrainTypeCheck(x,y) then
                         --previously `passmap[x][y] = delta <= maxGroundVariation`
                         --Set up for the vector check for min dist from false
-                        passmap[x][y] = markerCheckDistance
-                        markermap[x][y] = 0
+                        passmap[x][y] = markerCheckDistanceSq
+                        --markermap[x][y] = 0
                         voronoimap[x][y] = ''
                     else
                         passmap[x][y] = false
-                        markermap[x][y] = false
+                        --markermap[x][y] = false
                         voronoimap[x][y] = false
                     end
                 end
@@ -151,7 +139,7 @@ ZZZ0004 = Class(Unit) {
 
         ------------------------------------------------------------------------
         -- CLEANUP -- remove a few troublesome artifacts that cause issues, and mean nothing. Probably
-        if doCleanup then
+        if doCleanup and cleanupPasses ~= 0 then
             for i = 1, cleanupPasses do
                 for x, ydata in passmap do
                     for y, pass in ydata do
@@ -160,10 +148,10 @@ ZZZ0004 = Class(Unit) {
                             if not pass
                             and passmap[x][y-1] and passmap[x-1][y-1] and passmap[x-1][y] and passmap[x-1][y+1]
                             and passmap[x][y+1] and passmap[x+1][y-1] and passmap[x+1][y] and passmap[x+1][y+1]
-                            and deltamap[x][y] <= maxGroundVariation * 1.5
+                            --and deltamap[x][y] <= maxGroundVariation * 1.5
                             then
                                 --remove isolated false sections unless they are hefty
-                                passmap[x][y] = markerCheckDistance
+                                passmap[x][y] = markerCheckDistanceSq
                                 voronoimap[x][y] = ''
                                 --LOG("removing isolated unpathable grid")
                             end
@@ -196,14 +184,17 @@ ZZZ0004 = Class(Unit) {
                 end
             end
         end
+
         ------------------------------------------------------------------------
-        -- To do: contiguous area check (sort of done, in the voronoi check, but concentric unpassable areas will cause artifacting)
+        --TODO: contiguous area check (sort of done, in the voronoi check, but concentric unpassable areas will cause artifacting)
 
 
         ------------------------------------------------------------------------
-        -- Generate a Voronoi style map of the... map;
-        -- Sweep through all unpassable areas, walking through all contiguous areas and marking them as so,
-        -- then mark off distances to high points, and which high point is closer
+        -- Calculates content for passmap and voronoimap
+        -- Passmap is distance to the nearest unpathable
+        -- Voronoimap is which block of unpathable it's from
+            -- Sweeps through all unpassable areas, walking through all contiguous areas and marking them as so,
+            -- then mark off distances to high points, and which high point is closer
         do
              -- do block to limit MapDistance function existance
             local MapDistanceVoronoi = function(passmap, voronoimap, xtarget, ytarget, maxdist, blockid)
@@ -219,7 +210,7 @@ ZZZ0004 = Class(Unit) {
                         if passmap[x][y] then
                             --Calculate the distance to origin
                             --maxdist is pre-polulated already, so no need to reference here
-                            local dist = VDist2(x,y,xtarget,ytarget)
+                            local dist = VDist2Sq(x,y,xtarget,ytarget)
                             if dist < passmap[x][y] then
                                 passmap[x][y] = dist
                                 voronoimap[x][y] = blockid
@@ -228,12 +219,16 @@ ZZZ0004 = Class(Unit) {
                     end
                 end
             end
+            local CrawlerPath = {}
             local MapCrawler
             MapCrawler = function(passmap, voronoimap, x, y, markerCheckDistance, blockid)
                 for _, adj in {{0,0},{0,-1},{0,1},{-1,-1},{-1,0},{-1,1},{1,-1},{1,0},{1,1}} do
                     --Make a list of areas that touch the border, and shouldn't count towards adjacency
-                    if markermap[x+adj[1] ][y+adj[2] ] == 'border' and not voronoiedgelist[blockid] then
+                    if voronoimap[x+adj[1] ][y+adj[2] ] == 'border' and not voronoiedgelist[blockid] then
                         voronoiedgelist[blockid] = true
+
+                        --Split "border" zone where another unpassable zone touches it
+                        --so we can drop this whole 'voronoiedgelist' thing
                     end
                     if not voronoimap[x+adj[1] ][y+adj[2] ] then -- not passmap[x+adj[1] ][y+adj[2] ] and
 
@@ -246,7 +241,8 @@ ZZZ0004 = Class(Unit) {
                         then
                             MapDistanceVoronoi(passmap, voronoimap, x+adj[1], y+adj[2], markerCheckDistance, blockid)
                         end
-                        MapCrawler(passmap, voronoimap, x+adj[1], y+adj[2], markerCheckDistance, blockid)
+                        insert(CrawlerPath, {x+adj[1], y+adj[2]})
+                        --MapCrawler(passmap, voronoimap, x+adj[1], y+adj[2], markerCheckDistance, blockid)
                     end
                 end
             end
@@ -257,16 +253,24 @@ ZZZ0004 = Class(Unit) {
                     if not pass and not voronoimap[x][y] then
                         blockid = blockid + 1
                         MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid)
+                        while CrawlerPath[1] do
+                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid)
+                            remove(CrawlerPath, 1)
+                        end
                     elseif not pass and voronoimap[x][y] == 'border' then
-                        MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, 'border')
+                        MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, 'nearborder')
                     end
                 end
             end
         end
         --LOG(repr(voronoiedgelist))
+        --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
+        ------------------------------------------------------------------------
+        -- Find all 2x2 areas containing 3 zones, and try to put a merker there
         do
-            for x = 1, getn(voronoimap) - 1 do
-                for y = 1, getn(voronoimap[1]) - 1 do
+            --Start at 2 so we don't ever find 'border' with this, only nearborder
+            for x = 2, getn(voronoimap) - 1 do
+                for y = 2, getn(voronoimap[1]) - 1 do
                     local zones = {
                         [voronoimap[x][y] ] = true,
                         [voronoimap[x][y-1] ] = true,
@@ -285,7 +289,7 @@ ZZZ0004 = Class(Unit) {
                         local CreateMarker = function(x, y)
                             local mnum = tcount(markerlist)
                             local markername = 'MARKER_'..mnum
-                            markermap[x][y] = markername
+                            --markermap[x][y] = markername
                             markerlist[markername] = {
                                 color = 'ff00ffff',
                                 hint = true,
@@ -308,22 +312,57 @@ ZZZ0004 = Class(Unit) {
                             local test = true
                             if tcount(markerlist) > 1 then
                                 for m2name, m2data in markerlist do
+                                    -- Square distance check to make it quicker
                                     if abs(x - m2data.position[1]) < doMinDistCheck
                                     and abs(y - m2data.position[3]) < doMinDistCheck
                                     then
+                                        --Move to the average of what the two points would have been
                                         markerlist[m2name].position[1] = floor((x + m2data.position[1]) / 2)
                                         markerlist[m2name].position[3] = floor((y + m2data.position[3]) / 2)
+                                        markerlist[m2name].position[2] = GTH(markerlist[m2name].position[1], markerlist[m2name].position[3])
+                                        --merge the adjacency zones list
                                         markerlist[m2name].zones = merged(m2data.zones, zones)
+                                        --set this marker as the active so it's passed through the connections checks again.
                                         m1name = m2name
                                         m1data = m2data
                                         test = false
                                         break
+                                    --elseif m2data.positionsMerged then
+                                        --for i, mpos in m2data.positionsMerged
+
+                                        --The plan with this bit was to make order of opperations not matter for merging nodes
+                                        --so instead of the current system:
+                                          --go through the voronoi for good marker locations,
+                                          --cross reference position for existing markers that are too close
+                                          --move the first chosen too close marker to the average between the two
+                                          --add adj data to the existing marker
+                                          -- do adj stuff
+                                        --the plan was;
+                                          --instead of move there and then, add the pos to an extra array and average them all later
+                                          --and to check against each pos in the array when doing the dist check
+                                          --The issue with that is, in a situation where two nodes weren't too close,
+                                          --but then a third that wants to be right between both, and is too close to both
+                                          --------example-----
+                                          --yx2345 --(an example of when this could happen)
+                                          --2 #1#  --marker 1 at 3,2, marker 2 at 4,5, marker 3 at 5,3 suddenly fucks shit up
+                                          --3 ###3
+                                          --4  ###
+                                          --5  #2#
+                                          --------
+                                          --suddenly we're in a situation where order matters again,
+                                          --since I want to minimise removing nodes
+                                          --this means all collisions need listing first, before any would be made.
+                                          --Or at very least, adj data needs setting up after all that, since that's the part that's fuck to redo
                                     end
                                 end
                             end
                             if test then
                                 m1name, m1data = CreateMarker(x,y)
+                            --else
+
                             end
+                        else
+                            m1name, m1data = CreateMarker(x,y)
                         end
                         if tcount(markerlist) > 1 then
                             --for m1name, m1data in markerlist do
@@ -342,9 +381,10 @@ ZZZ0004 = Class(Unit) {
                                         end
 
                                         local test = true
-                                        if zonetest.border then
+                                        if zonetest.nearborder then
                                             for z, b in zonetest do
-                                                if z ~= 'border' and voronoiedgelist[z] then
+                                                if z ~= 'nearborder' and voronoiedgelist[z] then
+                                                    --This check can fail if there is a single path blocking area in the centre, that's adjacent to the border
                                                     test = false
                                                     break
                                                 end
@@ -428,7 +468,7 @@ ZZZ0004 = Class(Unit) {
             end
         end
 
-        --if true then self.ConvertXYTableToYXTabDelim(markerlist) ; return end
+        --if true then self.ConvertXYTableToYXCommaDelim(markerlist) ; return end
         if true then self.PrintMarkerListFormatting(markerlist) ; return end
 
 
@@ -486,7 +526,7 @@ ZZZ0004 = Class(Unit) {
             end
         end
 
-        if true then self.ConvertXYTableToYXTabDelim(voronoimap) ; return end
+        if true then self.ConvertXYTableToYXCommaDelim(voronoimap) ; return end
         ------------------------------------------------------------------------
         -- Generate a list of "highest" points
         local highpointsmap = table.deepcopy(passmap)
@@ -515,7 +555,7 @@ ZZZ0004 = Class(Unit) {
                 end
             end
         end
-        --if highpointsmap then self.ConvertXYTableToYXTabDelim(highpointsmap); return end
+        --if highpointsmap then self.ConvertXYTableToYXCommaDelim(highpointsmap); return end
 
         ------------------------------------------------------------------------
 
@@ -788,11 +828,33 @@ ZZZ0004 = Class(Unit) {
 ]]
 
 
-        --self.ConvertXYTableToYXTabDelim(markermap)
+        --self.ConvertXYTableToYXCommaDelim(markermap)
         --return markermap
     end,
 
+    ----------------------------------------------------------------------------
+    -- Function I used once for that 40k setons that was the 20k with more stuff around it
+    --[[TranslateAllMarkers = function(self, xtran, ytran)
+        coroutine.yield(1)
+        xtran, ytran = 128, 128
+        local newmarkers = {}
+        for mID, mData in Scenario.MasterChain._MASTERCHAIN_.Markers do
+            newmarkers[mID] = {}
+            for k, v in mData do
+                if k == 'position' then --GetTerrainHeight
+                    newmarkers[mID]['position'] = {v[1] + xtran, v[2], v[3] + ytran, type = v[type]}
+                elseif type(v) == 'table' then
+                    newmarkers[mID][k] = table.copy(v)
+                else
+                    newmarkers[mID][k] = v
+                end
+            end
+        end
+        self.PrintMarkerListFormatting(newmarkers)
+    end,]]
 
+    ----------------------------------------------------------------------------
+    -- Format basic table data of markers as a string just the way maps like it
     PrintMarkerListFormatting = function(markers)
         local st = ''
         for name, marker in markers do
@@ -816,9 +878,10 @@ ZZZ0004 = Class(Unit) {
         LOG(st)
     end,
 
-
-    ConvertXYTableToYXTabDelim = function(map)
-        --Transpose the table
+    ----------------------------------------------------------------------------
+    -- Logging one of the data tables as CSV data
+    ConvertXYTableToYXCommaDelim = function(map)
+        --Transpose the table so it's the correct way round for a spreadsheet view
         local TYX = {}
         local getn = table.getn
         for i = 0, getn(map[1]) do
