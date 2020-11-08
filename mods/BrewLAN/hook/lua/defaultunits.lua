@@ -156,9 +156,11 @@ FootprintDummyUnit = Class(StructureUnit) {
     end,
 
     OnNotAdjacentTo = function(self, AdjUnit)
-        self.Parent.OnNotAdjacentTo(self.Parent, AdjUnit)
-        AdjUnit:OnNotAdjacentTo(self.Parent)
-        self.ForceDestroyAdjacentEffects({self.Parent, AdjUnit})
+        if self.Parent then
+            self.Parent.OnNotAdjacentTo(self.Parent, AdjUnit)
+            AdjUnit:OnNotAdjacentTo(self.Parent)
+            self.ForceDestroyAdjacentEffects({self.Parent, AdjUnit})
+        end
         StructureUnit.OnNotAdjacentTo(self, AdjUnit)
     end,
 }

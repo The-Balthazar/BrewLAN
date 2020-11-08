@@ -30,8 +30,8 @@ do
                 end
                 self.TerrainSlope = {
                 --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
-                    CreateRotator(self, 0, Axis1, -Angles[1], 1000, 1000, 1000),
-                    CreateRotator(self, 0, Axis2, Angles[2], 1000, 1000, 1000)
+                    CreateRotator(self, 0, Axis1, -Angles[1], 99999),
+                    CreateRotator(self, 0, Axis2, Angles[2], 99999)
                 }
             end
             if not bp.Physics.FlattenSkirt and bp.Physics.AltitudeToTerrain then

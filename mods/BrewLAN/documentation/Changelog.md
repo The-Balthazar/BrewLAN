@@ -252,6 +252,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Now takes into account unpassable terrain types.
     * Now uses heap instead of stack for tracking contiguous areas (prevents stack overflow on some maps).
     * Removed some unnecessary data tracking that is no longer referenced by the script.
+  * Did more work on the model and texture of Trickshot.
+
+  ### 2020-11-08
+
+  * Wall and gate script changes:
+    * Gate slider now uses world-space units instead of unit-space * the difference.
+    * Tarmac texture now applied at the same time as other units, instead of on create.
+    * GetBlueprint references cleaned up and replaced for efficiency.
+  * Footprint dummy unit no longer causes errors when used by mines and wall gates for path blocking/unblocking.
 
 ## 2019-10-13|0.8.9
 
