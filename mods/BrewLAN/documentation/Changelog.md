@@ -262,6 +262,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * GetBlueprint references cleaned up and replaced for efficiency.
   * Footprint dummy unit no longer causes errors when used by mines and wall gates for path blocking/unblocking.
 
+  ### 2020-11-12
+
+  * New mod: *BreLAN: Tea Party*, for the new commissioned unit: Deluge Class; an Aeon dreadnought-type battlecruiser.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

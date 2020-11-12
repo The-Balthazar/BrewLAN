@@ -1,0 +1,16 @@
+MeshBlueprint {
+    --IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = 'sas0401_personalshield_lod0.scm',
+            AlbedoName = '/effects/Entities/AeonShield01/AeonShield01_Albedo.dds',
+            NormalsName = '/effects/Entities/AeonShield01/AeonShield01_Normals.dds',
+            SpecularName = '/effects/Entities/AeonShield01/AeonShield01_Specular.dds',
+            LookupName = '/effects/entities/PhaseShield/PhaseShieldLookup.dds',
+            ShaderName = 'ShieldAeon',
+            LODCutoff = 1000,
+        },
+    },
+    IconFadeInZoom = 4,
+    SortOrder = 1000,
+}

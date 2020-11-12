@@ -1,0 +1,14 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = 'sas0401_psimpact_star3.scm',
+            AlbedoName = '/effects/Entities/ShieldSection01/ShieldSection01_Albedo.dds',
+            SpecularName = '/effects/Entities/ShieldSection01/ShieldSection01_Normals.dds',
+            ShaderName = 'ShieldImpact',
+            LODCutoff = 1000,
+        },
+    },
+    IconFadeInZoom = 4,
+    SortOrder = 500,
+    StraddleWater = true,
+}
