@@ -264,7 +264,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2020-11-12
 
-  * New mod: *BreLAN: Tea Party*, for the new commissioned unit: Deluge Class; an Aeon dreadnought-type battlecruiser.
+  * New mod: *BrewLAN: Tea Party*, for the new commissioned unit: Deluge Class; an Aeon dreadnought-type battlecruiser.
+
+  ### 2020-11-14
+
+  * Turrets: Created a new proof-of-concept adjacency node that buffs the health of units built by a factory.
+
+  ### 2020-11-15
+
+  * Turrets: Created a Cybran factory adjacency node that activates or deactivates factory built unit stealth and/or cloak.
+  * Turrets: Refined the factory health node to use the new factory adjacency node scripts.
 
 ## 2019-10-13|0.8.9
 
