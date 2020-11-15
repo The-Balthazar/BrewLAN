@@ -58,14 +58,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = -1,
     Defense = {
-        AirThreatLevel = 16,
+        AirThreatLevel = 75,
         ArmorType = 'Normal',
         --EconomyThreatLevel = 0,
         Health = 17150,
         MaxHealth = 17150,
         RegenRate = 5,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 225,
+        --SubThreatLevel = 0,
+        SurfaceThreatLevel = 472,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             Mesh = '/mods/brewlan_units/brewteaparty/units/sas0401/sas0401_personalshield_mesh',
@@ -77,9 +77,10 @@ UnitBlueprint {
             ShieldRechargeTime = 36,
             ShieldRegenRate = 280,
             ShieldRegenStartTime = 1,
-            ShieldSize = 0.13,
             ShieldVerticalOffset = -1.4,
             StartOn = true,
+            ShieldSize = 0.13,  --Needs to match uniform scale
+            --Collision size based on unit size, impact effects hard coded expecting this size.
         },
     },
     Description = '<LOC sas0401_desc>Experimental Battlecruiser',
@@ -133,7 +134,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.13,
+        UniformScale = 0.13,--Needs to match shield size
     },
     Economy = {
         BuildCostEnergy = 337025,
@@ -141,10 +142,6 @@ UnitBlueprint {
         BuildTime = 8000,
         MaintenanceConsumptionPerSecondEnergy = 1266,
     },
-    --Footprint = {
-    --    SizeX = 5,
-    --    SizeZ = 16,
-    --},
     General = {
         Category = 'Experimental',
         Classification = 'RULEUC_MilitaryShip',
@@ -160,10 +157,7 @@ UnitBlueprint {
             RULEUTC_ShieldToggle = true,
         },
         OrderOverrides = {
-            RULEUTC_ShieldToggle = {
-                bitmapId = 'shield-personal',
-                helpText = 'toggle_shield_personal',
-            },
+            RULEUTC_ShieldToggle = {bitmapId = 'shield-personal', helpText = 'toggle_shield_personal'},
         },
         FactionName = 'Aeon',
         Icon = 'sea',
@@ -172,6 +166,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
+        FreeIntel = true,
         RadarRadius = 150,
         SonarRadius = 250,
         VisionRadius = 50,
@@ -186,9 +181,7 @@ UnitBlueprint {
     Physics = {
         BackUpDistance = 10,
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
+        BuildOnLayerCaps = {LAYER_Water = true},
         CatchUpAcc = 10,
         DragCoefficient = 0.2,
         MaxAcceleration = 0.5,
