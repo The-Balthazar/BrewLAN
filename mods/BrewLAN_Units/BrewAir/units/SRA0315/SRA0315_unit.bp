@@ -1,0 +1,513 @@
+UnitBlueprint {
+    AI = {
+        GuardReturnRadius = 125,
+        GuardScanRadius = 100,
+    },
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 0.1,
+        BankForward = false,
+        CanFly = true,
+        CirclingDirChangeFrequencySec = 0.7,
+        CirclingElevationChangeRatio = 0.2,
+        CirclingRadiusChangeMaxRatio = 0.7,
+        CirclingRadiusChangeMinRatio = 0.5,
+        CirclingTurnMult = 3,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1.8,
+        LiftFactor = 7,
+        MaxAirspeed = 15,
+        MinAirspeed = 13,
+        StartTurnDistance = 5,
+    },
+    Audio = {
+        AirUnitWaterImpact = Sound { Bank = 'Explosions', Cue = 'Expl_Water_Lrg_01',      LodCutoff = 'UnitMove_LodCutoff' },
+               AmbientMove = Sound { Bank = 'XRA',        Cue = 'XRA0305_Move_Loop',      LodCutoff = 'UnitMove_LodCutoff' },
+                 Destroyed = Sound { Bank = 'URADestroy', Cue = 'URA_Destroy_Med',        LodCutoff = 'UnitMove_LodCutoff' },
+                    Killed = Sound { Bank = 'URADestroy', Cue = 'URA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
+                   Landing = Sound { Bank = 'XRA',        Cue = 'XRA0305_Move_Land',      LodCutoff = 'UnitMove_LodCutoff' },
+                 Refueling = Sound { Bank = 'UEA',        Cue = 'UEA_Repair_Refuel',      LodCutoff = 'UnitMove_LodCutoff' },
+                 StartMove = Sound { Bank = 'XRA',        Cue = 'XRA0305_Move_Start',     LodCutoff = 'UnitMove_LodCutoff' },
+                  StopMove = Sound { Bank = 'XRA',        Cue = 'XRA0305_Move_Stop',      LodCutoff = 'UnitMove_LodCutoff' },
+                  Thruster = Sound { Bank = 'XRA',        Cue = 'XRA0305_Move_Thruster',  LodCutoff = 'UnitMove_LodCutoff' },
+               UISelection = Sound { Bank = 'Interface',  Cue = 'Cybran_Select_Air',      LodCutoff = 'UnitMove_LodCutoff' },
+    },
+    Buffs = {
+        Regen = {
+            Level1 = 4,
+            Level2 = 8,
+            Level3 = 12,
+            Level4 = 16,
+            Level5 = 20,
+        },
+    },
+    BuildIconSortPriority = 52,
+    Categories = {
+        'PRODUCTBREWAIR',
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'AIR',
+        'TECH3',
+        'GROUNDATTACK',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYANTIAIR',
+        'OVERLAYCOUNTERINTEL',
+        'OVERLAYDIRECTFIRE',
+        'RESEARCHLOCKED'
+    },
+    Defense = {
+        MissileDetector = {
+            AttachBone = 'MissileDetector',
+        },
+        AirThreatLevel = 2,
+        ArmorType = 'Light',
+        Health = 8260,
+        MaxHealth = 8260,
+        RegenRate = 5,
+        SurfaceThreatLevel = 51,
+    },
+    Description = '<LOC sra0315_desc>Interdiction Gunship',
+    Display = {
+        Abilities = {
+            '<LOC ability_missiledef>Missile Defense',
+            '<LOC ability_personalstealth>Personal Stealth',
+            '<LOC ability_radar>Radar',
+        },
+        IdleEffects = {
+            Air = {
+                Effects = {
+                    {
+                        Bones = {0},
+                        Scale = 1.25,
+                        Offset = { 0, -0.25, 0 },
+                        Type = 'Hover04',
+                    },
+                },
+            },
+        },
+        LayerChangeEffects = {
+            AirLand = {
+                Effects = {
+                    {
+                        Bones = {0},
+                        Type = 'Landing01',
+                    },
+                },
+            },
+            LandAir = {
+                Effects = {
+                    {
+                        Bones = {0},
+                        Type = 'TakeOff01',
+                    },
+                },
+            },
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 150, ShaderName = 'Insect' },
+                { LODCutoff = 215, ShaderName = 'Insect' },
+            },
+        },
+        MovementEffects = {
+            Air = {
+                Contrails = {
+                    Bones = {
+                        'Tail_L',
+                        'Tail_R',
+                        'Tail_LL',
+                        'Tail_RR',
+                    },
+                },
+                Effects = {
+                    {
+                        Bones = {0},
+                        Scale = 1.25,
+                        Offset = { 0, -0.25, 0 },
+                        Type = 'Hover04',
+                    },
+                },
+            },
+        },
+        UniformScale = 0.015,
+    },
+    Economy = {
+        BuildCostEnergy = 94500,
+        BuildCostMass = 3024,
+        BuildTime = 15120,
+        MaintenanceConsumptionPerSecondEnergy = 45,
+    },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    General = {
+        Category = 'Gunship',
+        Classification = 'RULEUC_MilitaryAircraft',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            --RULEUCC_Capture = false,
+            RULEUCC_Dock = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            --RULEUCC_Nuke = false,
+            RULEUCC_Patrol = true,
+            --RULEUCC_Reclaim = false,
+            --RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+            --RULEUCC_Transport = false,
+        },
+        FactionName = 'Cybran',
+        Icon = 'air',
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-personal',
+                helpText = 'toggle_stealth_personal',
+            },
+        },
+        TechLevel = 'RULEUTL_Secret',
+        ToggleCaps = {
+            RULEUTC_StealthToggle = true,
+        },
+        UnitName = '<LOC sra0315_name>Xiphos',
+        UnitWeight = 1,
+    },
+    Intel = {
+        RadarStealth = true,
+        Cloak = true,
+        RadarRadius = 50,
+        VisionRadius = 32,
+    },
+    Interface = {
+        HelpText = '<LOC sra0315_desc>Heavy Gunship',
+    },
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.8,
+    LifeBarSize = 1.5,
+    Physics = {
+        BankingSlope = 0.5,
+        BuildOnLayerCaps = {
+            LAYER_Air = true,
+            LAYER_Land = false,
+            LAYER_Orbit = false,
+            LAYER_Seabed = false,
+            LAYER_Sub = false,
+            LAYER_Water = false,
+        },
+        Elevation = 10,
+        FuelRechargeRate = 15,
+        FuelUseTime = 1200,
+        GroundCollisionOffset = 1.6,
+        MaxAcceleration = 10,
+        MaxSpeed = 10,
+        MaxSteerForce = 100,
+        MeshExtentsX = 2,
+        MeshExtentsY = 0.8,
+        MeshExtentsZ = 2.25,
+        MinSpeedPercent = 0.85,
+        MotionType = 'RULEUMT_Air',
+        TurnRadius = 100,
+        TurnRate = 100,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1.2,
+    SelectionThickness = 0.35,
+    SizeSphere = 1.6,
+    SizeX = 1.2,
+    SizeY = 0.5,
+    SizeZ = 1.8,
+    StrategicIconName = 'icon_gunship3_directfire',
+    StrategicIconSortPriority = 55,
+    Transport = {
+        AirClass = true,
+        TransportClass = 3,
+    },
+    Veteran = {
+        Level1 = 18,
+        Level2 = 36,
+        Level3 = 54,
+        Level4 = 72,
+        Level5 = 90,
+    },
+    Weapon = { --  Firing cycles based on the golden ratio to keep them out of sync as much as possible
+        {
+            Label = 'MainLaser',
+            DamageType = 'Normal',
+            DisplayName = 'Particle Cannon',
+            WeaponCategory = 'Direct Fire',
+
+            Audio = {
+                 BeamLoop = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop',   LodCutoff = 'Weapon_LodCutoff'},
+                BeamStart = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Beam_Start',  LodCutoff = 'Weapon_LodCutoff'},
+                 BeamStop = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop',   LodCutoff = 'Weapon_LodCutoff'},
+                   Unpack = Sound {Bank = 'URLWeapon', Cue = 'URL0402_Beam_Charge', LodCutoff = 'Weapon_LodCutoff'},
+             },
+
+            BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_DirectFire',
+
+            ContinuousBeam = true,
+            RateOfFire = 1,
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,
+            Damage = 75,
+            MaxRadius = 50,
+
+            AutoInitiateAttackCommand = true,
+            --PrefersPrimaryWeaponTarget = false,
+            NotExclusive = true,
+
+            CollideFriendly = false,
+            DamageFriendly = false,
+
+            FiringRandomness = 0, FiringTolerance = 10,
+            MuzzleSalvoDelay = 0.1, MuzzleSalvoSize = 10,
+
+            RackFireTogether = false, RackRecoilDistance = 0, RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0, RackSalvoReloadTime = 0, RackSalvoSize = 1, RackSlavedToTurret = false,
+
+            AboveWaterTargetsOnly = true,
+            FireTargetLayerCapsTable = { Air = 'Air|Land|Water|Seabed', Land = 'Land|Water|Seabed'},
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0.3,
+            TargetPriorities = { 'SPECIALHIGHPRI', 'STRUCTURE DEFENSE', 'MOBILE', 'SPECIALLOWPRI', 'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
+            TrackingRadius = 1.15,
+
+            RackBones = { { MuzzleBones = {'Front'}, RackBone = 'Front' } },
+            TurretBoneMuzzle = 'Front', TurretBonePitch = 'Front', TurretBoneYaw = 'Front',
+            TurretPitch = 0, TurretPitchRange = 40, TurretPitchSpeed = 60,
+            TurretYaw = 0,     TurretYawRange = 20,   TurretYawSpeed = 60,
+            Turreted = true,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+        },
+
+        {
+            Label = 'SmallLaser',
+            DamageType = 'Normal',
+            DisplayName = 'Particle Cannon',
+            WeaponCategory = 'Direct Fire',
+
+            Audio = { Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' } },
+
+            BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 0.06172839506, --16.2 sec cycle
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,
+            Damage = 42,
+            MaxRadius = 50,
+
+            PrefersPrimaryWeaponTarget = false,
+            NotExclusive = true,
+
+            CollideFriendly = false,
+            DamageFriendly = false,
+
+            FiringRandomness = 0, FiringTolerance = 10,
+            MuzzleSalvoDelay = 0.1, MuzzleSalvoSize = 16,
+
+            RackFireTogether = false, RackRecoilDistance = 0, RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0, RackSalvoReloadTime = 0, RackSalvoSize = 1, RackSlavedToTurret = false,
+
+            AlwaysRecheckTarget = true,
+            AboveWaterTargetsOnly = true,
+            FireTargetLayerCapsTable = { Air = 'Air|Land|Water|Seabed', Land = 'Air|Land|Water|Seabed'},
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0,
+            TargetPriorities = { 'SPECIALHIGHPRI', 'TECH3', 'SPECIALLOWPRI', 'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
+            TrackingRadius = 1.15,
+
+            RackBones = { { MuzzleBones = {'Wing_Mid_L001'}, RackBone = 'Wing_Mid_L001' } },
+            TurretBoneMuzzle = 'Wing_Mid_L001', TurretBonePitch = 'Wing_Mid_L001', TurretBoneYaw = 'Wing_Mid_L001',
+            TurretPitch = 0, TurretPitchRange = 40, TurretPitchSpeed = 60,
+            TurretYaw = 0,     TurretYawRange = 10,   TurretYawSpeed = 60,
+            Turreted = true,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+        },
+        {
+            Label = 'SmallLaser',
+            DamageType = 'Normal',
+            DisplayName = 'Particle Cannon',
+            WeaponCategory = 'Direct Fire',
+
+            Audio = { Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' } },
+
+            BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 0.1612903226, --6.2 second cycle
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,
+            Damage = 42,
+            MaxRadius = 50,
+
+            PrefersPrimaryWeaponTarget = false,
+            NotExclusive = true,
+
+            CollideFriendly = false,
+            DamageFriendly = false,
+
+            FiringRandomness = 0, FiringTolerance = 10,
+            MuzzleSalvoDelay = 0.1, MuzzleSalvoSize = 6,
+
+            RackFireTogether = false, RackRecoilDistance = 0, RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0, RackSalvoReloadTime = 0, RackSalvoSize = 1, RackSlavedToTurret = false,
+
+            AlwaysRecheckTarget = true,
+            AboveWaterTargetsOnly = true,
+            FireTargetLayerCapsTable = { Air = 'Air|Land|Water|Seabed', Land = 'Air|Land|Water|Seabed'},
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0,
+            TargetPriorities = { 'SPECIALHIGHPRI', 'TECH2', 'SPECIALLOWPRI', 'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
+            TrackingRadius = 1.15,
+
+            RackBones = { { MuzzleBones = {'Wing_Mid_L002'}, RackBone = 'Wing_Mid_L002' } },
+            TurretBoneMuzzle = 'Wing_Mid_L002', TurretBonePitch = 'Wing_Mid_L002', TurretBoneYaw = 'Wing_Mid_L002',
+            TurretPitch = 0, TurretPitchRange = 40, TurretPitchSpeed = 60,
+            TurretYaw = 0,     TurretYawRange = 10,   TurretYawSpeed = 60,
+            Turreted = true,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+        },
+        {
+            Label = 'SmallLaser',
+            DamageType = 'Normal',
+            DisplayName = 'Particle Cannon',
+            WeaponCategory = 'Direct Fire',
+
+            Audio = { Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' } },
+
+            BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 0.2631578947, -- 3.8 second cycle
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,
+            Damage = 42,
+            MaxRadius = 50,
+
+            PrefersPrimaryWeaponTarget = false,
+            NotExclusive = true,
+
+            CollideFriendly = false,
+            DamageFriendly = false,
+
+            FiringRandomness = 0, FiringTolerance = 10,
+            MuzzleSalvoDelay = 0.1, MuzzleSalvoSize = 4,
+
+            RackFireTogether = false, RackRecoilDistance = 0, RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0, RackSalvoReloadTime = 0, RackSalvoSize = 1, RackSlavedToTurret = false,
+
+            AlwaysRecheckTarget = true,
+            AboveWaterTargetsOnly = true,
+            FireTargetLayerCapsTable = { Air = 'Land|Water|Seabed', Land = 'Land|Water|Seabed'},
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0,
+            TargetPriorities = { 'SPECIALHIGHPRI', 'TECH1', 'SPECIALLOWPRI', 'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+
+            RackBones = { { MuzzleBones = {'Wing_Mid_R001'}, RackBone = 'Wing_Mid_R001' } },
+            TurretBoneMuzzle = 'Wing_Mid_R001', TurretBonePitch = 'Wing_Mid_R001', TurretBoneYaw = 'Wing_Mid_R001',
+            TurretPitch = 0, TurretPitchRange = 40, TurretPitchSpeed = 60,
+            TurretYaw = 0,     TurretYawRange = 10,   TurretYawSpeed = 60,
+            Turreted = true,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+        },
+        {
+            Label = 'SmallLaser',
+            DamageType = 'Normal',
+            DisplayName = 'Particle Cannon',
+            WeaponCategory = 'Direct Fire',
+
+            Audio = { Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' } },
+
+            BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 0.03816793893, --26.2 second firing cycle
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,
+            Damage = 42,
+            MaxRadius = 50,
+
+            PrefersPrimaryWeaponTarget = false,
+            NotExclusive = true,
+
+            CollideFriendly = false,
+            DamageFriendly = false,
+
+            FiringRandomness = 0, FiringTolerance = 10,
+            MuzzleSalvoDelay = 0.1, MuzzleSalvoSize = 26,
+
+            RackFireTogether = false, RackRecoilDistance = 0, RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0, RackSalvoReloadTime = 0, RackSalvoSize = 1, RackSlavedToTurret = false,
+
+            AlwaysRecheckTarget = true,
+            AboveWaterTargetsOnly = true,
+            FireTargetLayerCapsTable = { Air = 'Land|Water|Seabed', Land = 'Land|Water|Seabed'},
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0,
+            TargetPriorities = { 'SPECIALHIGHPRI', 'EXPERIMENTAL', 'TECH3', 'SPECIALLOWPRI', 'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+
+            RackBones = { { MuzzleBones = {'Wing_Mid_R002'}, RackBone = 'Wing_Mid_R002' } },
+            TurretBoneMuzzle = 'Wing_Mid_R002', TurretBonePitch = 'Wing_Mid_R002', TurretBoneYaw = 'Wing_Mid_R002',
+            TurretPitch = 0, TurretPitchRange = 40, TurretPitchSpeed = 60,
+            TurretYaw = 0,     TurretYawRange = 10,   TurretYawSpeed = 60,
+            Turreted = true,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 500,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Air = false,
+            Land = true,
+            Seabed = false,
+            Sub = false,
+            Water = false,
+        },
+    },
+}

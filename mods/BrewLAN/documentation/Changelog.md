@@ -275,6 +275,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Turrets: Created a Cybran factory adjacency node that activates or deactivates factory built unit stealth and/or cloak.
   * Turrets: Refined the factory health node to use the new factory adjacency node scripts.
 
+  ### 2020-11-17
+
+  * Brew Air: Fixed the cloak on the penetration fighters.
+  * Brew Air: Finished Xiphos: Cybran T3 Interdiction Gunship.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

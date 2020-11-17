@@ -51,7 +51,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 32,
     Categories = {
-        'PRODUCTBREWLANRND',
+        'PRODUCTBREWAIR',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'UEF',
@@ -171,6 +171,7 @@ UnitBlueprint {
     },
     Intel = {
         RadarStealth = true,
+        Cloak = true,
         VisionRadius = 32,
     },
     Interface = {

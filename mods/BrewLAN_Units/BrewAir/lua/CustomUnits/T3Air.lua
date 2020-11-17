@@ -14,4 +14,10 @@ UnitList = {
         Cybran = {'sra0313', 30},
         Seraphim = {'ssa0313', 30},
     },
+    T3AirGunship = {
+        --UEF = {'sea0315', 30},
+        --Aeon = {'saa0315', 30},
+        Cybran = {'sra0315', 30},
+        --Seraphim = {'ssa0315', 30},
+    },
 }

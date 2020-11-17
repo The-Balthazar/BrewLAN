@@ -93,7 +93,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 42,
     Categories = {
-        'PRODUCTBREWLANRND',
+        'PRODUCTBREWAIR',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'AEON',
