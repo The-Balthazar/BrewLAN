@@ -280,6 +280,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Brew Air: Fixed the cloak on the penetration fighters.
   * Brew Air: Finished Xiphos: Cybran T3 Interdiction Gunship.
 
+  ### 2020-11-18
+
+  * Fixed Trickshot having Structure armour instead of Normal armour.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

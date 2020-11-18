@@ -47,7 +47,7 @@ UnitBlueprint {
         'OVERLAYDEFENSE',
     },
     Defense = {
-        ArmorType = 'Structure',
+        ArmorType = 'Normal',
         EconomyThreatLevel = 4,
         Health = 2750,
         MaxHealth = 2750,
