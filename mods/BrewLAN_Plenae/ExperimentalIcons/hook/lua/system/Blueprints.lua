@@ -61,7 +61,14 @@ function ExperimentalIconOverhaul(all_bps)
             --------------------------------------------------------------------
             -- Define the foreground icon
             --------------------------------------------------------------------
-            local iconbackup = icon
+            --local iconbackup = icon
+            local HasNonDeathWeapons = function(weapons)
+                --We have weapons, and given only 1 weapon it's not a death weapon
+                return weapons[1] and not ( not weapons[2] and (weapons[1].Label == 'DeathWeapon' or weapons[1].Label == 'DeathImpact') )
+                    --return false
+                --end
+                --return true
+            end
             if table.find(bp.Categories, 'FIELDENGINEER') or table.find(bp.Categories, 'ENGINEER') then
                 icon = icon .. 'engineer'
             elseif table.find(bp.Categories, 'TRANSPORTATION') then
@@ -84,7 +91,7 @@ function ExperimentalIconOverhaul(all_bps)
                 or table.find(bp.Categories, 'NUKE')
                 or table.find(bp.Categories, 'SILO')
             )
-            and bp.Weapon then
+            and HasNonDeathWeapons(bp.Weapon) then
                 --FIGHT FOR YOUR ICON! LITERALLY!
                 local layer = {
                     air = {0, 'antiair'},
@@ -205,7 +212,7 @@ function ExperimentalIconOverhaul(all_bps)
                 if bp.Economy.BuildableCategory and type(bp.Economy.BuildableCategory[1]) == "string" then
                     for i, layer in buildlayers do
                         for _, buildcat in bp.Economy.BuildableCategory do
-                            if string.find(buildcat, layer) then
+                            if string.find(buildcat, layer) or all_bps[buildcat] and all_bps[buildcat].Categories and table.find(all_bps[buildcat].Categories, layer) then
                                 bits[i] = '1'
                                 break
                             end

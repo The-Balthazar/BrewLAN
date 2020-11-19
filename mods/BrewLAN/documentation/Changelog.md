@@ -283,6 +283,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2020-11-18
 
   * Fixed Trickshot having Structure armour instead of Normal armour.
+  * Brew Air: New Cybran experimental based off the Arsenal Bird.
+
+  ### 2020-11-19
+
+  * EIO: Factory type check will now check the categories of blueprint-ID defined build categories.
+  * EIO: Will now ignore weapon categories on a unit if it only has death weapons.
 
 ## 2019-10-13|0.8.9
 
