@@ -22,3 +22,6 @@ Description['ssa0313'] = "<LOC Unit_Description_RND_027>Top-end long-range steal
 
 --Tech 3 interdiction gunships
 Description['sra0315'] = "<LOC Unit_Description_RND_028>Heavy interdiction and close-air-support attack craft. Armed with multiple air-to-ground laser weapons, and anti-missile flares."
+
+Description['sra0401'] = "<LOC Unit_Description_RND_029>Massive airborne aircraft carrier. Can create, transport, and deploy large numbers of fighter/bomber craft."
+Description['sra0402'] = "<LOC Unit_Description_RND_030>Combination fighter/bomber aircraft designed to engage both air and surface units."
