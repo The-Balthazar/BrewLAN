@@ -99,6 +99,7 @@ function ExperimentalIconOverhaul(all_bps)
                     land = {0, 'directfire'},
                     naval = {0, 'antinavy'},
                     nuke = {0, 'nuke'},
+                    nukesmall = {0, 'nuke_small'},
                     missile = {0, 'missile'},
                     kamikaze = {0, 'bomb'},
                 }
@@ -159,7 +160,11 @@ function ExperimentalIconOverhaul(all_bps)
                                 --Artillery that don't have the ArtilleryShieldBlocks bool or a weapon category will also get categorised this way.
                                 --I could do it more conclusively by checking the projectile, but I'm not doing that.
                             elseif weapon.CountedProjectile and (weapon.NukeInnerRingDamage >= 10000 or weapon.Damage >= 10000) and (weapon.NukeInnerRingRadius >= 15 or weapon.DamageRadius >= 15) or weapon.NukeWeapon then
-                                layer.nuke[1] = layer.nuke[1] + DPS(weapon)
+                                if (weapon.NukeInnerRingDamage >= 50000 or weapon.Damage >= 50000) then
+                                    layer.nuke[1] = layer.nuke[1] + DPS(weapon)
+                                else
+                                    layer.nukesmall[1] = layer.nukesmall[1] + DPS(weapon)
+                                end
                             else--if string.find(sanWcat, 'missile') or sanWcat == '0' then
                                 layer.missile[1] = layer.missile[1] + DPS(weapon)
                             end
@@ -170,7 +175,11 @@ function ExperimentalIconOverhaul(all_bps)
                             layer.kamikaze[1] = layer.kamikaze[1] + DPS(weapon)
                         elseif (string.find(sanWcat, 'direct fire') or string.find(sanWcat, 'bomb')) or sanRcat == 'uwrc_directfire' or (weapon.NeedToComputeBombDrop or weapon.FixBombTrajectory) or string.find(layerCaps, 'land') then
                             if (weapon.NukeInnerRingDamage >= 10000 or weapon.Damage >= 10000) and (weapon.NukeInnerRingRadius >= 15 or weapon.DamageRadius >= 15) then
-                                layer.nuke[1] = layer.nuke[1] + DPS(weapon)
+                                if (weapon.NukeInnerRingDamage >= 50000 or weapon.Damage >= 50000) then
+                                    layer.nuke[1] = layer.nuke[1] + DPS(weapon)
+                                else
+                                    layer.nukesmall[1] = layer.nukesmall[1] + DPS(weapon)
+                                end
                             else
                                 layer.land[1] = layer.land[1] + DPS(weapon)
                             end

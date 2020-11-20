@@ -289,6 +289,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * EIO: Factory type check will now check the categories of blueprint-ID defined build categories.
   * EIO: Will now ignore weapon categories on a unit if it only has death weapons.
+  * EIO: Now distinguishes between 10k+ damage and 50k+ nuke weapons. (Large icons only)
+
+  ### 2020-11-20
+
+  * EIO: Re-exported all icons with better compression.
+  * EIO: Small icons now has the nuke size differentiation.
+  * EIO: Large is now available to the public.
 
 ## 2019-10-13|0.8.9
 
