@@ -1,0 +1,11 @@
+name = "Cityscapes"
+uid = "190261d0-4bb0-11e2-bcSC-CITIES000001"
+version = 1
+copyright = "© 2020–2020 Sean Wheeldon"
+description = "Randomly generates civilian cities."
+author = "Balthazar"
+--icon = "/mods/BrewLAN_Plenae/folder.png"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false

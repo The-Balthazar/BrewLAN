@@ -297,6 +297,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * EIO: Small icons now has the nuke size differentiation.
   * EIO: Large is now available to the public.
 
+  ### 2020-11-23
+
+  * New mod: *Cityscapes*. Generates civilian cities at unused player locations on maps with a defined civilian player.
+
+  ### 2020-11-24
+
+  * Cityscapes: The very basics of UEF city generation is complete.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
