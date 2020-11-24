@@ -20,19 +20,22 @@ AIBrain = Class(oldAIBrain) {
         end
 
         self:ForkThread(function()
-            coroutine.yield(10)
-
-
+            coroutine.yield(1)
+            --------------------------------------------------------------------
+            -- Find potential city locations
+            --------------------------------------------------------------------
             local AIGetMarkerLocations = import('/lua/ai/aiutilities.lua').AIGetMarkerLocations
-
             local OpenStartZones = {}
-
             for i, army in AIGetMarkerLocations(nil, 'Start Location') do
                 if not ScenarioInfo.ArmySetup[army.Name] then
                     OpenStartZones[army.Name] = army.Position
                 end
             end
 
+            --------------------------------------------------------------------
+            -- Plan cities
+            --------------------------------------------------------------------
+            local Cities = {}
             for armyname, MarkerPos in OpenStartZones do
                 --place the city centre
                 local centreUnit = self:CreateUnitNearSpot('zzcityblock', MarkerPos[1], MarkerPos[3])
@@ -67,114 +70,146 @@ AIBrain = Class(oldAIBrain) {
 
                     CrawlIntersections(CityCentrePos, {0,0}, 0)
 
-                    for x, xtable in cityI do
-                        for y, sectionunit in xtable do
-                            local army = self:GetArmyIndex()
-                            local pos = sectionunit:GetPosition()
-                            local CreateRoad = function(pos, rot, nom, army)
-                                local path = '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_'
-                                local ds, lod = 10.66, 500 --decal size, lod cutoff
-                                CreateDecal(pos, rot or 0, path .. nom .. '_Albedo.dds', '', 'Albedo', ds, ds, lod, 0, army, 0)
-                                CreateDecal(pos, rot or 0, path .. nom .. '_Normals.dds', '', 'Alpha Normals', ds, ds, lod, 0, army, 0)
+                    table.insert(Cities, cityI)
+                end
+            end
+
+            --------------------------------------------------------------------
+            -- Cleanup city areas
+            --------------------------------------------------------------------
+            for i, cityI in Cities do
+                for x, xtable in cityI do
+                    for y, sectionunit in xtable do
+                        --local army = self:GetArmyIndex()
+                        local pos = sectionunit:GetPosition()
+                        sectionunit:Destroy()
+                        cityI[x][y] = pos
+
+                        --Clear props from the road
+                        for i, v in { {1.5, 5}, {5, 1.5} } do
+                            for i, v in GetReclaimablesInRect( Rect(pos[1]-v[1], pos[1]+v[1], pos[3]-v[2], pos[3]+v[2]) ) or {} do
+                                if v and IsProp(v) then --and not string.find(v:GetBlueprint().BlueprintId, 'uef') then--SetPropCollision
+                                    v:Destroy()
+                                end
                             end
-
-                            if false then
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, 1.57, '2WS_01',  army) --stright |
-                            elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, 0, '2WS_01',  army) --stright --
-
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, 0, '2WC_01',  army) --corner bottom right
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, 1.57, '2WC_01',  army) --corner
-                            elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, -1.57, '2WC_01',  army) --corner
-                            elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, math.pi, '2WC_01',  army) --corner top left
-
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, 1.57, '3W_01',  army) --3 way right
-                            elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, -1.57, '3W_01',  army) --3 way left
-                            elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, 0, '3W_01',  army) --3 way down
-                            elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, math.pi, '3W_01',  army) --3 way up
-
-                            elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, -1.57, '1W_01',  army) --1 way left?
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, 1.57, '1W_01',  army) --1 way right?
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                                CreateRoad(pos, math.pi, '1W_01',  army) --1 way up
-                            elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, 0, '1W_01',  army) --1 way down
-
-                            elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                                CreateRoad(pos, 0, '4W_01',  army)--4way
-
-                            end
-                            local Structures3x3 = {
-                                {'uec1101', Weight = 7 },
-                                {'uec1201', Weight = 2 },
-                                {'uec1301', Weight = 2 },
-                                {'uec1501', Weight = 2 },
-                                {'xec1401', Weight = 1 },
-                                {'xec1501', Weight = 0.25 },
-                            }
-                            ChooseWeightedBp = function(selection)
-                                local totWeight = 0
-                                for k, v in selection do if v.Weight then totWeight = totWeight + v.Weight end end
-                                local val = 1
-                                local num = Random(0, totWeight)
-                                for k, v in selection do if v.Weight then val = val + v.Weight end if num < val then return v[1] end end
-                            end
-
-                            for i, v in { {-3,-3}, {-3,3}, {3,3}, {3,-3} } do
-                                CreateUnitHPR(
-                                    ChooseWeightedBp(Structures3x3), army,
-                                     pos[1] + v[1], pos[2], pos[3] + v[2],
-                                     0, Random(0,3) * 1.5707963267948966192313216916398, 0
-                                )
-                            end
-                                --[[CreatePropHPR(
-                                    '/env/UEF/Props/UEF_Bus_prop.bp',
-                                    pos[1]+0.4, pos[2], pos[3]+0.4,
-                                    Random(0,360), 0, 0
-                                )]]
                         end
                     end
                 end
             end
+            --Wait to prevent deleting the panning units from removing the path blocking of future structures spawned this tick.
+            coroutine.yield(1)
 
-            --LOG(repr(OpenStartZones))
+            --------------------------------------------------------------------
+            -- Cleanup city areas
+            --------------------------------------------------------------------
+            for i, cityI in Cities do
+                for x, xtable in cityI do
+                    for y, pos in xtable do
+                        local army = self:GetArmyIndex()
+                        local CreateRoad = function(pos, rot, nom, army)
+                            local path = '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_'
+                            local ds, lod = 10.66, 500 --decal size, lod cutoff
+                            CreateDecal(pos, rot or 0, path .. nom .. '_Albedo.dds', '', 'Albedo', ds, ds, lod, 0, army, 0)
+                            CreateDecal(pos, rot or 0, path .. nom .. '_Normals.dds', '', 'Alpha Normals', ds, ds, lod, 0, army, 0)
+                        end
 
---[[
-            local CityCentre = {(ScenarioInfo.size[1]/2)+0.5, (ScenarioInfo.size[2]/2)+0.5}--{math.random(1,ScenarioInfo.size[1]), math.random(1,ScenarioInfo.size[2])}
+                        if false then
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, 1.57, '2WS_01',  army) --stright |
+                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, 0, '2WS_01',  army) --stright --
 
-            local tableadd = function(t1, t2) return {t1[1] + t2[1], t1[2] + t2[2]} end
-            local PosV2toV3 = function(t1) return {t1[1], GetTerrainHeight(t1[1], t1[2]), t1[2]} end
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, 0, '2WC_01',  army) --corner bottom right
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, 1.57, '2WC_01',  army) --corner
+                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, -1.57, '2WC_01',  army) --corner
+                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, math.pi, '2WC_01',  army) --corner top left
 
-            for i, v in { {-5,-5}, {-5,5}, {5,5}, {5,-5} } do
-            --for i, v in { {-12.8,-12.8}, {-12.8,12.8}, {12.8,12.8}, {12.8,-12.8} } do
-                local army = self:GetArmyIndex()
-                local pos = PosV2toV3(tableadd(CityCentre, v))
-                --WARN(repr(PosV2toV3(tableadd(CityCentre, v))))
-                CreateDecal(PosV2toV3(tableadd(CityCentre, v)), 0, '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_4W_01_Albedo.dds', '', 'Albedo', 10.1, 10.1, 500, 0, army, 0)
-                --local tarmacHndl = CreateDecal(self:GetPosition(), orient, tarmac.Glow .. GetTarmac(faction, terrainName), '', 'Glow', w, l, fadeout, lifeTime or 0, army, 0)
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, 1.57, '3W_01',  army) --3 way right
+                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, -1.57, '3W_01',  army) --3 way left
+                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, 0, '3W_01',  army) --3 way down
+                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, math.pi, '3W_01',  army) --3 way up
 
-                CreatePropHPR(
-                    '/env/UEF/Props/UEF_Bus_prop.bp',
-                    pos[1]+0.4, pos[2], pos[3]+0.4,
-                    Random(0,360), 0, 0
-                )
-                CreateUnitHPR(
-                    'uec1101', army,
-                     CityCentre[1] + v[1] * 0.4, 0, CityCentre[2] + v[2] * 0.4,
-                     0, Random(0,3) * 1.5707963267948966192313216916398, 0
-                )
-            end]]
+                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, -1.57, '1W_01',  army) --1 way left?
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, 1.57, '1W_01',  army) --1 way right?
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
+                            CreateRoad(pos, math.pi, '1W_01',  army) --1 way up
+                        elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, 0, '1W_01',  army) --1 way down
+
+                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
+                            CreateRoad(pos, 0, '4W_01',  army)--4way
+
+                        end
+                        local Structures3x3 = {
+                            {'uec1101', Weight = 7 },
+                            {'uec1201', Weight = 2 },
+                            {'uec1301', Weight = 2 },
+                            {'uec1501', Weight = 2 },
+                            {'xec1401', Weight = 1 },
+                            {'xec1501', Weight = 0.25 },
+                        }
+                        local ChooseWeightedBp = function(selection)
+                            local totWeight = 0
+                            for k, v in selection do if v.Weight then totWeight = totWeight + v.Weight end end
+                            local val = 1
+                            local num = Random(0, totWeight)
+                            for k, v in selection do if v.Weight then val = val + v.Weight end if num < val then return v[1] end end
+                        end
+
+                        local Corners = function(d, b) return { {-d,-(b or d)}, {-d,(b or d)}, {d,(b or d)}, {d,-(b or d)} } end
+                        local Edges = function(d, b) return { {-d, 0}, {d, 0}, {0, -(b or d)}, {0, (b or d)} } end
+                        local rOOP = function(pos, off, ran)
+                            local x = pos[1] + off[1] + (math.random()*2-1)*ran[1]
+                            local z = pos[3] + off[2] + (math.random()*2-1)*ran[2]
+                            return x, GetTerrainHeight(x, z), z
+                        end
+
+                        --Spawn basic structures
+                        for i, v in Corners(3) do
+                            local unit = CreateUnitHPR(
+                                ChooseWeightedBp(Structures3x3), army,
+                                pos[1] + v[1], pos[2], pos[3] + v[2],
+                                0, Random(0,3) * 1.57, 0
+                            )
+                            unit.CreateTarmac = function()end
+                        end
+                        --Spawn street lights
+                        for i, v in Corners(1.66) do
+                            --WARN(pos[1]+v[1], GetTerrainHeight(pos[1]+v[1], pos[3]+v[2]), pos[3]+v[2])
+                            CreatePropHPR(
+                                '/env/UEF/Props/UEF_Streetlight_01_prop.bp',
+                                pos[1]+v[1], GetTerrainHeight(pos[1]+v[1], pos[3]+v[2]), pos[3]+v[2],
+                                0, 0, 0
+                            )
+                        end
+                        local Vehicles = {
+                            {'/env/uef/props/uef_car1_prop.bp', Weight = 4 },
+                            {'/env/uef/props/uef_bus_prop.bp', Weight = 1 },
+                            {'/env/uef/props/uef_truck_prop.bp', Weight = 0.5 },
+                        }
+                        for i, v in Edges(3) do
+                            if math.random() > 0.6 then
+                                local x, y, z = rOOP(pos,v,{2,1})
+                                CreatePropHPR(
+                                    ChooseWeightedBp(Vehicles),
+                                    x, y, z,
+                                    Random(0,360), 0, 0
+                                )
+                            end
+                        end
+                    end
+                end
+            end
         end)
     end,
 

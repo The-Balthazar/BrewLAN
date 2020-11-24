@@ -304,6 +304,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2020-11-24
 
   * Cityscapes: The very basics of UEF city generation is complete.
+  * Cityscapes: Now clears props from roads, cleans up the planning units, spawns lamp posts, and spawns vehicles.
 
 ## 2019-10-13|0.8.9
 
