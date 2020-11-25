@@ -3,6 +3,7 @@ local oldAIBrain = AIBrain
 AIBrain = Class(oldAIBrain) {
     OnCreateAI = function(self, planName)
         oldAIBrain.OnCreateAI(self, planName)
+        --Line 4947
         local civilian = false
         for name,data in ScenarioInfo.ArmySetup do
             if name == self.Name then
@@ -47,7 +48,12 @@ AIBrain = Class(oldAIBrain) {
                     --function to crawl for a good area for the city
                     local CrawlIntersections
                     CrawlIntersections = function(refPos, refGrid, total)
-                        for i, dir in {{-10, 0}, {0, -10}, {10, 0}, {0, 10}} do
+                        local dirs = {}
+                        for i, v in {{-10, 0}, {0, -10}, {10, 0}, {0, 10}} do
+                            table.insert(dirs, math.random(1,table.getn(dirs)), v)
+                        end
+                        --table.sort(dirs, function(a,b) return math.random() > 0.5 end)
+                        for i, dir in dirs do
                             local postest = self:CreateUnitNearSpot('zzcityblock', refPos[1] + dir[1], refPos[3] + dir[2])
                             if postest and IsUnit(postest) then
                                 local pos = postest:GetPosition()
@@ -58,11 +64,12 @@ AIBrain = Class(oldAIBrain) {
                                         cityI[refGrid[1] + dir[1] * 0.1] = {}
                                     end
                                     cityI[refGrid[1] + dir[1] * 0.1][refGrid[2] + dir[2] * 0.1] = postest
-                                    if total < 10 then
+                                    if total < math.random(6,12) then
                                         CrawlIntersections(pos, {refGrid[1] + dir[1] * 0.1, refGrid[2] + dir[2] * 0.1}, total + 1)
                                     end
                                 else
                                     postest:Destroy()
+                                    coroutine.yield(1)
                                 end
                             end
                         end
@@ -113,50 +120,36 @@ AIBrain = Class(oldAIBrain) {
                             CreateDecal(pos, rot or 0, path .. nom .. '_Normals.dds', '', 'Alpha Normals', ds, ds, lod, 0, army, 0)
                         end
 
-                        if false then
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, 1.57, '2WS_01',  army) --stright |
-                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, 0, '2WS_01',  army) --stright --
+                        local RoadTiles = {
+                            --left right up down 1 2 4 8
+                            --[['0000']] [0] = {0, '0W_01'}, --0 road
+                            --[['0001']] [1] = {0, '1W_01'}, --1 way down
+                            --[['0010']] [2] = {math.pi, '1W_01'}, --1 way up
+                            --[['0011']] [3] = {1.57, '2WS_01'},  --stright |
+                            --[['0100']] [4] = {1.57, '1W_01'}, --1 way right?
+                            --[['0101']] [5] = {0, '2WC_01'}, --corner bottom right
+                            --[['0110']] [6] = {1.57, '2WC_01'}, --corner up right
+                            --[['0111']] [7] = {1.57, '3W_01'}, --3 way right (no path left)
+                            --[['1000']] [8] = {-1.57, '1W_01'}, --1 way left?
+                            --[['1001']] [9] = {-1.57, '2WC_01'}, --corner bottom left
+                            --[['1010']] [10] = {math.pi, '2WC_01'}, --corner top left
+                            --[['1011']] [11] = {-1.57, '3W_01'}, --3 way left (no path right)
+                            --[['1100']] [12] = {0, '2WS_01'}, --stright --
+                            --[['1101']] [13] = {0, '3W_01'}, --3 way down (no path up)
+                            --[['1110']] [14] = {math.pi, '3W_01'}, --3 way up (no path down)
+                            --[['1111']] [15] = {0, '4W_01'}, --4 way intersection
+                        }
+                        local binarySwitch = function(a,b,c,d) return (a and 8 or 0) + (b and 4 or 0) + (c and 2 or 0) + (d and 1 or 0) end
+                        local bin = binarySwitch((cityI[x-1] and cityI[x-1][y]), (cityI[x+1] and cityI[x+1][y]), cityI[x][y-1], cityI[x][y+1])
+                        CreateRoad(pos, RoadTiles[bin][1], RoadTiles[bin][2],  army)
 
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, 0, '2WC_01',  army) --corner bottom right
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, 1.57, '2WC_01',  army) --corner
-                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, -1.57, '2WC_01',  army) --corner
-                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, math.pi, '2WC_01',  army) --corner top left
-
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, 1.57, '3W_01',  army) --3 way right
-                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, -1.57, '3W_01',  army) --3 way left
-                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, 0, '3W_01',  army) --3 way down
-                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, math.pi, '3W_01',  army) --3 way up
-
-                        elseif (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, -1.57, '1W_01',  army) --1 way left?
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, 1.57, '1W_01',  army) --1 way right?
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and not cityI[x][y+1] then
-                            CreateRoad(pos, math.pi, '1W_01',  army) --1 way up
-                        elseif not (cityI[x-1] and cityI[x-1][y]) and not (cityI[x+1] and cityI[x+1][y]) and not cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, 0, '1W_01',  army) --1 way down
-
-                        elseif (cityI[x-1] and cityI[x-1][y]) and (cityI[x+1] and cityI[x+1][y]) and cityI[x][y-1] and cityI[x][y+1] then
-                            CreateRoad(pos, 0, '4W_01',  army)--4way
-
-                        end
                         local Structures3x3 = {
-                            {'uec1101', Weight = 7 },
-                            {'uec1201', Weight = 2 },
-                            {'uec1301', Weight = 2 },
-                            {'uec1501', Weight = 2 },
-                            {'xec1401', Weight = 1 },
-                            {'xec1501', Weight = 0.25 },
+                            {'uec1101', Weight = 108 },
+                            {'uec1201', Weight = 32 },
+                            {'uec1301', Weight = 32 },
+                            {'uec1501', Weight = 32 },
+                            {'xec1401', Weight = 16 },
+                            {'xec1501', Weight = 1 },
                         }
                         local ChooseWeightedBp = function(selection)
                             local totWeight = 0
@@ -176,12 +169,17 @@ AIBrain = Class(oldAIBrain) {
 
                         --Spawn basic structures
                         for i, v in Corners(3) do
-                            local unit = CreateUnitHPR(
-                                ChooseWeightedBp(Structures3x3), army,
-                                pos[1] + v[1], pos[2], pos[3] + v[2],
-                                0, Random(0,3) * 1.57, 0
-                            )
-                            unit.CreateTarmac = function()end
+                            if math.random(1,10) ~= 10 then
+                                --Pop cap can screw us here, so lets check just in case
+                                local k, unit = pcall(CreateUnitHPR,
+                                    ChooseWeightedBp(Structures3x3), army,
+                                    pos[1] + v[1], pos[2], pos[3] + v[2],
+                                    0, Random(0,3) * 1.57, 0
+                                )
+                                if k then
+                                    unit.CreateTarmac = function()end
+                                end
+                            end
                         end
                         --Spawn street lights
                         for i, v in Corners(1.66) do
@@ -193,9 +191,9 @@ AIBrain = Class(oldAIBrain) {
                             )
                         end
                         local Vehicles = {
-                            {'/env/uef/props/uef_car1_prop.bp', Weight = 4 },
-                            {'/env/uef/props/uef_bus_prop.bp', Weight = 1 },
-                            {'/env/uef/props/uef_truck_prop.bp', Weight = 0.5 },
+                            {'/env/uef/props/uef_car1_prop.bp', Weight = 56 },
+                            {'/env/uef/props/uef_bus_prop.bp', Weight = 16 },
+                            {'/env/uef/props/uef_truck_prop.bp', Weight = 1 },
                         }
                         for i, v in Edges(3) do
                             if math.random() > 0.6 then

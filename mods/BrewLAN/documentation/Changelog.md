@@ -306,6 +306,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: The very basics of UEF city generation is complete.
   * Cityscapes: Now clears props from roads, cleans up the planning units, spawns lamp posts, and spawns vehicles.
 
+  ### 2020-11-25
+
+  * Cityscapes: City generation planning now has waits when removing a failed segment to prevent it from affecting future attempts.
+  * Cityscapes: City generation planning now randomises the order of directions it will crawl.
+  * Cityscapes: City generation planning now ends after a random number of crawls instead of fixed, leading to less diamonds.
+  * Cityscapes: Structure selection weights changed so that the Samantha Clarke statue can actually actualy spawn.
+  * Cityscapes: Vehicle selection weights changed so that the truck can actually spawn.
+  * Cityscapes: Replaced the ifelse block on roads with a binary table switch.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
