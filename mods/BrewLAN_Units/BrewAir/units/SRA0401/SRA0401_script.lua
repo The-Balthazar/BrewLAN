@@ -12,16 +12,6 @@ URA0401 = Class(CAirUnit) {
         'Exhaust_008',
     },
 
-    OnStopBeingBuilt = function(self,builder,layer)
-        CAirUnit.OnStopBeingBuilt(self,builder,layer)
-        ChangeState(self, self.IdleState)
-    end,
-
-    OnFailedToBuild = function(self)
-        CAirUnit.OnFailedToBuild(self)
-        ChangeState(self, self.IdleState)
-    end,
-
     OnStartBuild = function(self, unitBuilding, order)
         CAirUnit.OnStartBuild(self, unitBuilding, order)
         unitBuilding:AttachTo(self, 0)

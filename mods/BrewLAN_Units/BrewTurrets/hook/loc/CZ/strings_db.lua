@@ -1,4 +1,7 @@
 --ISO_639-1_code=CS
+
+
+
 --Translated by: Oaks
 srb5380_name="Deadshot"
 srb5380_desc="Uzel Zvýšené Přesnosti"
@@ -7,6 +10,19 @@ Unit_Description_BrewLAN_Turrets_0001="Přilehlé statické zbraně zaměřují 
 seb5381_name="Superhot"
 seb5381_desc="Uzel Zvýšeného Poškození"
 Unit_Description_BrewLAN_Turrets_0002="Přilehlé statické zbraně působí vyšší poškození. Toto výrazně zvyšuje spotřebuje energie na výstřel."
+
+seb5382_name="Benson"
+seb5382_desc="Factory Health Node"
+Unit_Description_BrewLAN_Turrets_0010="Blízkost fanoušek uzel. Postaveno přilehlými továrních staveb bude mít účinky na zdraví."
+
+srb5383_name="Ztraceni"
+srb5383_desc="Factory Stealth Toggle Node"
+Unit_Description_BrewLAN_Turrets_0011="Blízkost fanoušek uzel. Postaveno přilehlými továrních staveb bude mít nějaké stealth schopnosti nastavit aktivní nebo neaktivní, místo jejich výchozího stavu."
+
+tooltipbrewturrets0002="Factory stavět Stealth přepínač"
+tooltipbrewturrets0003="Soupravy jednotky vybudovéné přilehlých továren mít stealth aktivován."
+tooltipbrewturrets0004="Továrna stavět plášť přepínač"
+tooltipbrewturrets0005="Soupravy jednotky build přilehlými továrnách, že plášť zapnutý."
 
 seb2320_name="Hiro"
 seb2320_desc="Plasmový kannon"

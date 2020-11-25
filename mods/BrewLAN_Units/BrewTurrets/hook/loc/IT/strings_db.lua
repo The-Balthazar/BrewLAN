@@ -1,4 +1,7 @@
 --ISO_639-1_code=IT
+
+
+
 --Translated by: Google
 srb5380_name="Deadshot"
 srb5380_desc="Precisione Boost Nodo"
@@ -7,6 +10,19 @@ Unit_Description_BrewLAN_Turrets_0001="Adiacente armi spesa statica più puntand
 seb5381_name="superhot"
 seb5381_desc="Danni Boost Nodo"
 Unit_Description_BrewLAN_Turrets_0002="affare armamento statico adiacente incrementato il danno. Questo aumenta notevolmente il consumo di energia per il colpo."
+
+seb5382_name="Benson"
+seb5382_desc="Fabbrica Salute Nodo"
+Unit_Description_BrewLAN_Turrets_0010="Adiacenza nodo buff. Unità costruite da strutture di fabbrica adiacenti avranno sanitaria supplementare."
+
+srb5383_name="Lo smarrito"
+srb5383_desc="Azione furtiva della fabbrica Toggle Nodo"
+Unit_Description_BrewLAN_Turrets_0011="Adiacenza nodo buff. Unità costruite da strutture di fabbrica adiacenti avranno alcuna abilità furtive impostati attivo o non attivo al posto del loro stato di default."
+
+tooltipbrewturrets0002="accumulo azione furtiva della fabbrica a ginocchiera"
+tooltipbrewturrets0003="unità Fascicolazione dalle fabbriche adiacenti di avere Stealth abilitato."
+tooltipbrewturrets0004="Fabbrica di costruzione mantello ginocchiera"
+tooltipbrewturrets0005="unità Fascicolazione dalle fabbriche adiacenti di aver abilitato il mantello."
 
 seb2320_name="Hiro"
 seb2320_desc="Punto di difesa pesante"

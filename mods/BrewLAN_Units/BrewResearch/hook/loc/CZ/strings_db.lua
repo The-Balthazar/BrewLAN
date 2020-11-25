@@ -107,62 +107,10 @@ seb1201_name="EG-100 fúzního reaktoru"
 Unit_Description_RND_018="Od nejnižšího k elektrickým generátorem střední úrovni. Postavit vedle jiných staveb přilehlosti bonus."
 
 
-sa0212_desc="Bojová stíhačka "
-sea0212_name="Raptor"
-sra0212_name="Dioscuri"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Swift Wind je levnější než Corona, je ale rychlejší a má lepší palebnou sílu než Conservator. Je vynikající na boj nablízko a zaplňuje mezeru mezi stíhačkami T1 a T3. "
-
-sa0213_desc="Stíhací bombardér"
-saa0213_name="jasnost"
-Unit_Description_RND_020="Kombinace stíhací / bombardovací navržen tak, aby se zapojily pozemků a vzdušných jednotek."
-
---Dedikované taktické bombardéry
-saa0211_desc="Taktický Bombardér"
-sea0211_name="Tornádo"
-ssa0211_name="Sinn"
-sra0211_name="Kondor"
-Unit_Description_RND_008="Intermediate bombardovací letoun."
-Unit_Description_RND_009="Intermediate bombardovací letoun."
-Unit_Description_RND_010="Intermediate bombardovací letoun."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Dedikované Omni Senzory
-sb3301_desc="Omnisenzorické pole"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallrem"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="snímací pole. Schopny identifikovat cíle přes stealth a plášť a vymaže jammer tečky."
-
---T3.5 Pokročilé bombardéry
---sa0314_desc="Penetrator"
-sa0314_desc="Průnikový Bombardér"
-sea0314_name="Lancer"
-saa0314_name="Shrieker"
-sra0314_name="Sanguine Tyrant"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
-Unit_Description_RND_024="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
-Unit_Description_RND_021="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
-Unit_Description_RND_023="Špičkový maskovaný strategický bombardér dlouhého doletu. Vybaven bombami, dalekonosnými raketami vzduch-země, torpédy a protiraketovými světlicemi na zádi."
-
---anti-SAM a anti-AAM světlice
-ability_missiledef="Raketová Obrana"
-
---T3,5 pokročilé stíhačky
-sa0313_desc="Průniková Stíhačka"
-sea0313_name="Tomcat"
-saa0313_name="Helios"
-sra0313_name="Twilight Patron"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-end dlouhým doletem stealth bojovník. Vybaven dvojitými roztržení spirálovými railguns, air-to-air rakety a anti-raketových světlic."
---[description]
-Unit_Description_RND_025="Top-end dalekonosný stealth bojovník. Vybaveno s těžkými děly částic, a anti-raketových světlice. Schopný lovu špionážní letadla."
---[description]
 
 --Ekranoplan transporty
 ss0326_desc="Heavy GEV Transport"
@@ -171,17 +119,16 @@ srs0326_name="Deltawing"
 sas0326_name="Lun Mallard"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Experimentální
-----------------------------------------
 
-srl0402_desc="Experimentální Siege Tank"
-srl0402_name="Mužíček"
---Nahrazen Retributor
 
-srl0403_desc="Experimentální mobilní dělostřelectvo"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Velký mobilní těžké dělostřelectvo. Musí být v klidu a na zemi ke střelbě dělostřelectvo. Spotřebuje velké množství energie na výstřel"
 
-tooltipbrewlanRND0000="toggle dělostřelectvo"
-tooltipbrewlanRND0001="Zapíná nebo vypíná hlavní dělostřelectvo. Deaktivace brání dělostřelectvo před potenciálně zrušení přesunu objednávky."
+
+
+
+
+
+
+
+
+
+

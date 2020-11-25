@@ -107,62 +107,10 @@ seb1201_name="EG-100 fuzyjna"
 Unit_Description_RND_018="Od najniższej do generatora prądu średniego szczebla. Skonstruować obok innych struktur premii przylegania."
 
 
-sa0212_desc="Myśliwiec bojowy"
-sea0212_name="raptor"
-sra0212_name="Dioscuri"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Tańszy od Korony, ale szybszy i lepiej uzbrojony od Conservatora, Szybki Wiatr, doskonale nadaje się do walki powietrznej, wypełniając lukę między myśliwcami T1 i T3."
-
-sa0213_desc="Myśliwiec szturmowy"
-saa0213_name="Jasność"
-Unit_Description_RND_020="Połączenie myśliwiec / bombowiec zaprojektowany do zaangażowania zarówno gruntów i jednostek powietrznych."
-
---Dedykowane Bombowce taktyczne
-saa0211_desc="taktyczny bombowiec"
-sea0211_name="Tornado"
-ssa0211_name="Sinn"
-sra0211_name="Kondor"
-Unit_Description_RND_008="Pośredni samolot bombowy."
-Unit_Description_RND_009="Pośredni samolot bombowy."
-Unit_Description_RND_010="Pośredni samolot bombowy."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Dedykowane Omni Czujniki
-sb3301_desc="Łańcuch omnisensorowy"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallr"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="macierz czujników. W stanie zidentyfikować cele poprzez skradanie i płaszcz i czyści jammer blips."
-
---Bombowce Travian 3.5 Zaawansowane
---sa0314_desc="Penetrator"
-sa0314_desc="Penetrator Bomber"
-sea0314_name="Ułan"
-saa0314_name="Wrzask"
-sra0314_name="sangwina Tyrant"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
-Unit_Description_RND_024="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
-Unit_Description_RND_021="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
-Unit_Description_RND_023="Top-end dalekiego zasięgu Stealth bombowiec strategiczny. Wyposażona bomby powietrze-powierzchnia pocisków wsporników, torpedy, i montowanych z tyłu rac anty pocisków."
-
---SAM i anty-anty-race AAM
-ability_missiledef="Missile Defense"
-
---Travian 3.5 zaawansowanych myśliwców
-sa0313_desc="penetracja Fighter"
-sea0313_name="Kocur"
-saa0313_name="Helios"
-sra0313_name="Zmierzch Patron"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-end długo wahać myśliwiec Stealth. Wyposażona w dwa pękniętych railguns śrubowych, powietrze-powietrze, pociski i rakiety antyrakietowych."
---[description]
-Unit_Description_RND_025="Top-end dalekosiężnej myśliwiec Stealth. Wyposażony w ciężkich armat cząstek i flar antyrakietowych. Zdolne do polowania samoloty szpiegowskie."
---[description]
 
 --ekranoplan transporty
 ss0326_desc="Ciężki transport GEV"
@@ -171,17 +119,16 @@ srs0326_name="Deltawing"
 sas0326_name="Lun Krzyżówka"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Eksperymentalny
-----------------------------------------
 
-srl0402_desc="Eksperymentalna Siege Tank"
-srl0402_name="Mały człowiek"
---Zastąpiony Retributor
 
-srl0403_desc="Eksperymentalna Komórka Artillery"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Duży mobilny ciężka artyleria. Musi być nieruchomy i na ziemi, aby ogień artylerii. Zużywa duże ilości energii na strzał"
 
-tooltipbrewlanRND0000="Przegubowe artyleryjski"
-tooltipbrewlanRND0001="Włącza lub wyłącza głównej artylerii. Wyłączenie zapobiega artylerii z potencjalnie anulowanie zleceń pojedynek."
+
+
+
+
+
+
+
+
+
+

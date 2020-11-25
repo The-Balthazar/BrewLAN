@@ -1,4 +1,7 @@
 --ISO_639-1_code=PL
+
+
+
 --Translated by: Google
 srb5380_name="Deadshot"
 srb5380_desc="Dokładność Rozbudowa węzła"
@@ -7,6 +10,19 @@ Unit_Description_BrewLAN_Turrets_0001="Przylegające statyczne broni wydatki maj
 seb5381_name="Super gorące"
 seb5381_desc="Obrażenia Rozbudowa węzła"
 Unit_Description_BrewLAN_Turrets_0002="Przylegające statyczny sprawa broni zwiększono obrażenia. To znacznie zwiększa zużycie energii na strzał."
+
+seb5382_name="Benson"
+seb5382_desc="Fabryka Zdrowia Node"
+Unit_Description_BrewLAN_Turrets_0010="Adjacency węzeł buff. Zbudowany przez sąsiednich struktur fabrycznych będzie miał dodatkowe zdrowie."
+
+srb5383_name="Zagubiony"
+srb5383_desc="Fabryka Stealth Przegubowe Node"
+Unit_Description_BrewLAN_Turrets_0011="Adjacency węzeł buff. Zbudowany przez sąsiednich struktur fabrycznych będzie miał żadnych zdolności ukrywania ustawiony aktywne lub nieaktywne zamiast domyślnego stanu."
+
+tooltipbrewturrets0002="zbuduje fabrykę Stealth przełączania"
+tooltipbrewturrets0003="Zestawy jednostki budowane przez sąsiednich fabryk mieć włączony Stealth."
+tooltipbrewturrets0004="Fabryka build płaszcz przełączania"
+tooltipbrewturrets0005="Zestawy jednostki budowane przez sąsiednich fabryk, że płaszcz włączona."
 
 seb2320_name="Hiro"
 seb2320_desc="Ciężka obrona punktowa"

@@ -1,4 +1,7 @@
 --ISO_639-1_code=ES
+
+
+
 --Translated by: Google
 srb5380_name="Deadshot"
 srb5380_desc="Nodo exactitud Boost"
@@ -7,6 +10,19 @@ Unit_Description_BrewLAN_Turrets_0001="Adyacente estática armamento pasar más 
 seb5381_name="Super caliente"
 seb5381_desc="Nodo aumento de daño"
 Unit_Description_BrewLAN_Turrets_0002="Adyacente acuerdo armamento estática aumentado el daño. Esto aumenta enormemente el consumo de energía por disparo."
+
+seb5382_name="Benson"
+seb5382_desc="Nodo de Salud de la fábrica"
+Unit_Description_BrewLAN_Turrets_0010="Adyacencia nodo buff. Unidades construidas por las estructuras de fábrica adyacentes tendrán adicional de salud."
+
+srb5383_name="El perdido"
+srb5383_desc="Cautela de la fábrica Toggle Nodo"
+Unit_Description_BrewLAN_Turrets_0011="Adyacencia nodo buff. Unidades construidas por las estructuras de fábrica adyacentes tendrán ninguna habilidad de sigilo conjunto activo o inactivo en lugar de su estado predeterminado."
+
+tooltipbrewturrets0002="de palanca acumulación cautela de la fábrica"
+tooltipbrewturrets0003="Creación de juegos unidades por las fábricas adyacentes a la cautela tiene habilitada."
+tooltipbrewturrets0004="Fábrica de palanca acumulación manto"
+tooltipbrewturrets0005="Creación de juegos unidades por las fábricas adyacentes han permitido a capa."
 
 seb2320_name="Hiro"
 seb2320_desc="Defensa de punto pesada"

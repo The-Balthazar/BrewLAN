@@ -313,7 +313,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: City generation planning now ends after a random number of crawls instead of fixed, leading to less diamonds.
   * Cityscapes: Structure selection weights changed so that the Samantha Clarke statue can actually actualy spawn.
   * Cityscapes: Vehicle selection weights changed so that the truck can actually spawn.
-  * Cityscapes: Replaced the ifelse block on roads with a binary table switch.
+  * Cityscapes: Replaced the if-else block on roads with a binary table switch.
+  * New mod: *BrewLAN: Bletchley Park*, houses intel units that used to be packaged with R&D.
+  * Re-keyed the build description LOC tags for units moved out of R&D.
 
 ## 2019-10-13|0.8.9
 

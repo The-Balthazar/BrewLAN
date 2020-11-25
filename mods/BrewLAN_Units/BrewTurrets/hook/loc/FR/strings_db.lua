@@ -1,4 +1,7 @@
 --ISO_639-1_code=FR
+
+
+
 --Translated by: Google
 srb5380_name="Abattu"
 srb5380_desc="Précision Boost nœud"
@@ -6,7 +9,20 @@ Unit_Description_BrewLAN_Turrets_0001="dépenses à côté d'armement statique v
 
 seb5381_name="Ardent"
 seb5381_desc="Dommages Boost Node"
-Unit_Description_BrewLAN_Turrets_0002="À côté de beaucoup d'armes statiques dégâts augmentés. Cela augmente considérablement la consommation d'énergie par coup."
+Unit_Description_BrewLAN_Turrets_0002="Augmente les dégâts de l'armement statique adjacent."
+
+seb5382_name="Benson"
+seb5382_desc="Usine Santé Noeud"
+Unit_Description_BrewLAN_Turrets_0010="Adjacence noeud de chamois. Les logements construits par des structures adjacentes d'usine auront la santé supplémentaires."
+
+srb5383_name="La perte"
+srb5383_desc="Usine Furtif bascule Noeud"
+Unit_Description_BrewLAN_Turrets_0011="Adjacence noeud de chamois. Les logements construits par des structures adjacentes d'usine auront des capacités furtives mis actifs ou inactifs au lieu de leur état par défaut."
+
+tooltipbrewturrets0002="Basculement de construction de l'usine"
+tooltipbrewturrets0003="unités de construction par les usines Ensembles adjacents d'avoir activé la furtivité."
+tooltipbrewturrets0004="Usine de construction bascule manteau"
+tooltipbrewturrets0005="unités de construction par les usines Ensembles adjacents d'avoir permis manteau."
 
 seb2320_name="Hiro"
 seb2320_desc="Pointe de défense lourde"

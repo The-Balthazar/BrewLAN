@@ -15,10 +15,10 @@ tooltipbrewlan0001="Active ou désactive la production d'unités aériennes"
 
 --Tooltips for the T3 decoy planes.
 tooltipbrewlan0002="Bouton vitesse"
-tooltipbrewlan0003="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux CZAR"
-tooltipbrewlan0004="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux Éventreur d'âmes"
-tooltipbrewlan0005="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux Ahwassa"
-tooltipbrewlan0006="Bouton transformation en un faux chasseur de supériorité aérienne ou en un faux AC-500 Centurion"
+tooltipbrewlan0003="Ajuste la vitesse pour correspondre a celle d'un chasseur de supériorité aérienne ou en un faux CZAR"
+tooltipbrewlan0004="Ajuste la vitesse pour correspondre a celle d'un chasseur de supériorité aérienne ou en un Éventreur d'âmes"
+tooltipbrewlan0005="Ajuste la vitesse pour correspondre a celle d'un chasseur de supériorité aérienne ou en un Ahwassa"
+tooltipbrewlan0006="Ajuste la vitesse pour correspondre a celle d'un chasseur de supériorité aérienne ou en un AC-500 Centurion"
 
 --Tooltips for the landmines.
 tooltipbrewlan0007="Détonation"
@@ -156,8 +156,8 @@ Unit_Description_BrewLAN_T2L003="Unité amphibie tech 2, construit, répare, cap
 --Mass and energy storages
 seb1206_name="CJ-00F4T-2"
 seb1205_name="PW4TH12-ST Capaciteur"
-Unit_Description_BrewLAN_T2R002="Stock une grande quantité de masse. Construire à côté des extracteurs de masse pour un bonus de proximité."
-Unit_Description_BrewLAN_T2R001="Stock une grande quantité d'énergie. Construire à côté des générateurs d'énergie pour un bonus de proximité."
+Unit_Description_BrewLAN_T2R002="Stocke une grande quantité de masse. Construisez-le à côté des extracteurs de masse pour obtenir un bonus de proximité."
+Unit_Description_BrewLAN_T2R001="Stocke une grande quantité d'énergie. Construisez-le à côté des générateurs d'énergie pour obtenir un bonus de proximité."
 
 --Mines
 sbui2220="Mine à pression"
@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Fournit d
 
 sea0003_desc="satellite counterintelligence"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Causes un grand nombre de signaux radar faux avec les caractéristiques de vol de combattants de supériorité aérienne apparaître underneith il. N'a pas la capacité de collecte de inteligence."
+Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Causes un grand nombre de signaux radar faux avec les caractéristiques de vol de combattants de supériorité aérienne apparaître en dessous. N'a pas la capacité de collecte de renseignements."
 
 --alternatives Sniper
 sel0320_desc="Véhicule de liaison satellite"
@@ -447,7 +447,7 @@ srl0324_desc="Tableau capteur mobile"
 srl0324_name="Adramelech"
 sal0324_name="Metatron"
 ssl0324_name="Yenesel"
-Unit_Description_BrewLAN_T3L016="système d'intelligence mobile haut de gamme. À l'arrêt, il est visible que de omni et fournit un radar et une vaste couverture omnidirectionnelle."
+Unit_Description_BrewLAN_T3L016="Système d'intelligence mobile haut de gamme. À l'arrêt, il est visible que de l'omni et fournit un radar ainsi qu'une vaste couverture omnidirectionnelle."
 Unit_Description_BrewLAN_T3L019="Planant réseau de capteurs. Consomme de grandes quantités d'énergie pour fonctionner."
 
 sl0325_desc="Lance-torpilles Mobile"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="Construit des unités navales."
 seb2401_desc="Défense expérimentale point"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="Bâtiment défensif expérimental. Consomme de grandes quantités de puissance à chaque tir."
+
+ssl0404_desc="Robot Sniper expérimental"
+ssl0404_name="Sisha-Ah"
+Unit_Description_BrewLAN_T4L004="Robot Sniper mobile expérimental. Uniquement visible de l'OMNI en position statique et non mise à feu."

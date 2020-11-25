@@ -17,8 +17,8 @@ tooltipbrewlan0001="Włącza lub wyłącza wytwarzanie jednostek powietrznych"
 tooltipbrewlan0002="Prędkość powietrza Przegubowe"
 tooltipbrewlan0003="Włącza podszywanie się o przewagę w powietrzu lub CAR"
 tooltipbrewlan0004="Włącza podszywanie się o przewagę w powietrzu lub Rozpruwacz dusz"
-tooltipbrewlan0005="Włącza podszywanie się o przewagę w powietrzu lub Ahwassa"
-tooltipbrewlan0006="Włącza podszywanie się o przewagę w powietrzu lub AC-500 Centurion"
+tooltipbrewlan0005="Reguluje prędkość powietrza dopasować przewagi powietrznej lub Ahwassa"
+tooltipbrewlan0006="Reguluje prędkość powietrza dopasować przewagi powietrznej lub AC-500 Centurion"
 
 --Podpowiedzi dla min.
 tooltipbrewlan0007="Detonować"
@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="Satelitarnie system obserwacji. Zapewnia wizual
 
 sea0003_desc="kontrwywiad satelitarna"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Satelitarny system System kontrwywiadu. Powoduje dużą liczbę fałszywych sygnałów radarowych o charakterystyce lotu myśliwców przewagi powietrznej pojawiać underneith niego. Ma zdolność do gromadzenia inteligencji."
+Unit_Description_BrewLAN_T3A013="Satelitarny system System kontrwywiadu. Powoduje dużą liczbę fałszywych sygnałów radarowych o charakterystyce lotu myśliwców przewagi powietrznej pojawiać się pod nią. Ma zdolność do gromadzenia danych wywiadowczych."
 
 --Snajper alternatywy
 sel0320_desc="Komórka Satellite Uplink"
@@ -413,7 +413,7 @@ Unit_Description_BrewLAN_T3L015="Komórka anty-air missile launcher. Wyposażony
 
 --srl0320_desc=--Komórka Missile Launcher
 srl0320_desc="Komórka SAM Launcher"
-srl0320_name="Przesmykiwać się"
+srl0320_name="Poroniony płód"
 Unit_Description_BrewLAN_T3L009="Komórka zakamuflowana ziemia-powietrze wyrzutnię rakiet. Musi stać się widoczny do ataku."
 
 ssl0320_desc="Mobile Anti-Air Defence"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="Konstruuje jednostki morskie."
 seb2401_desc="Eksperymentalny punkt obrony"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="Eksperymentalny budynek obronny. Zużywa duże ilości energii przy każdym strzale."
+
+ssl0404_desc="Eksperymentalna snajper Bot"
+ssl0404_name="Sisha-Ah"
+Unit_Description_BrewLAN_T4L004="Eksperymentalna mobile snajper bot. Widoczne tylko dla Omni natomiast statyczne i nie wypalanie."

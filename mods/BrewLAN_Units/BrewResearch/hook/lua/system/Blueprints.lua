@@ -11,7 +11,7 @@ function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
     RNDPrepareScript(all_blueprints.Unit)
     RestrictExistingBlueprints(all_blueprints.Unit)
-    RebalanceExistingBlueprints(all_blueprints.Unit)
+    --RebalanceExistingBlueprints(all_blueprints.Unit)
     RNDDefineNewFactoryBuildCategories(all_blueprints.Unit)
     GenerateResearchItemBPs(all_blueprints.Unit)
 end
@@ -78,7 +78,7 @@ end
 --------------------------------------------------------------------------------
 -- Rebalance a few vanilla units
 --------------------------------------------------------------------------------
-function RebalanceExistingBlueprints(all_bps)
+--[[function RebalanceExistingBlueprints(all_bps)
     local t3radars = {
         uab3104 = 'sab3301',
         ueb3104 = 'seb3301',
@@ -133,7 +133,7 @@ function RebalanceExistingBlueprints(all_bps)
             end
         end
     end
-end
+end]]
 
 --------------------------------------------------------------------------------
 -- Create build categories for the amphib/sub/seaplane factories

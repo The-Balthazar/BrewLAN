@@ -107,62 +107,10 @@ seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Menor a generador de energía de nivel medio. Construir junto a otras estructuras para la bonificación de adyacencia."
 
 
-sa0212_desc="Caza de combate"
-sea0212_name="Raptor"
-sra0212_name="dioscuri"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Caza aéreo de nivel medio. Excelente armamento antiaéreo. Eficaz contra cañoneras y bombarderos enemigos."
-
-sa0213_desc="Caza/bombardero"
-saa0213_name="Lucidez"
-Unit_Description_RND_020="luchador combinación / bombardero diseñado para involucrar a la tierra y unidades aéreas."
-
---Bombarderos tácticos dedicados
-saa0211_desc="bombardero táctico"
-sea0211_name="Tornado"
-ssa0211_name="Sinn"
-sra0211_name="Cóndor"
-Unit_Description_RND_008="bombarderos intermedia."
-Unit_Description_RND_009="bombarderos intermedia."
-Unit_Description_RND_010="bombarderos intermedia."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Los sensores dedicados Omni
-sb3301_desc="Matriz de omnisensores"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallr"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="matriz de sensores. Capaz de identificar objetivos a través del sigilo y el manto y borra repuntes jammer."
-
---T3.5 bombarderos avanzados
---sa0314_desc="penetrador"
-sa0314_desc="bombardero penetrador"
-sea0314_name="Lancero"
-saa0314_name="Grito"
-sra0314_name="Sanguina tirano"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
-Unit_Description_RND_024="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
-Unit_Description_RND_021="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
-Unit_Description_RND_023="Top-extremo sigilo largo alcance bombardero estratégico. Equipado con bombas, misiles de los separadores de aire-superficie, torpedos, y de montaje trasero bengalas antimisiles."
-
---anti-SAM y bengalas anti-AAM
-ability_missiledef="la defensa del misil"
-
---T3.5 avanzó combatientes
-sa0313_desc="penetración de combate"
-sea0313_name="Gato"
-saa0313_name="Helios"
-sra0313_name="crepúsculo Patrón"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Tapa-fin de largo alcance avión furtivo. Equipado con dobles railguns ráfaga helicoidales, misiles aire-aire, y bengalas antimisiles."
---[description]
-Unit_Description_RND_025="Top-extremo largo alcance avión furtivo. Equipado con cañones de partículas pesadas, y bengalas antimisiles. Capaz de cazar aviones espía."
---[description]
 
 --transportes ekranoplan
 ss0326_desc="Transporte pesado GEV"
@@ -171,17 +119,16 @@ srs0326_name="alas delta"
 sas0326_name="Lun Mallard"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Experimental
-----------------------------------------
 
-srl0402_desc="Experimental Tanque de asedio"
-srl0402_name="Hombrecito"
---Reemplazado por el Retributor
 
-srl0403_desc="Experimental móvil Artillería"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Ampliación de la artillería pesada móvil. Deberá permanecer inmóvil y en tierra para disparar la artillería. Consume grandes cantidades de energía por disparo"
 
-tooltipbrewlanRND0000="artillería de palanca"
-tooltipbrewlanRND0001="Activa o desactiva la artillería principal. La desactivación evita que la artillería desde potencialmente cancelación de órdenes de movimiento."
+
+
+
+
+
+
+
+
+
+

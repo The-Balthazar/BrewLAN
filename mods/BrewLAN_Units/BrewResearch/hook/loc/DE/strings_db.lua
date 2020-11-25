@@ -14,7 +14,7 @@ srb9301_name="Heisenfazilität"
 --Äon
 sab9101_name="Einblick"
 sab9201_name="Orientierungshilfe"
-sab9301_name="Erleuchtung"
+sab9301_name="Aufklärung"
 --Seraphim
 ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab"
@@ -107,62 +107,10 @@ seb1201_name="EG-100 Fusionsreaktor"
 Unit_Description_RND_018="Niedrig bis mittlere Ebene Stromerzeuger. Konstruieren Sie neben anderen Strukturen für adjacency Bonus."
 
 
-sa0212_desc="Kampfjäger"
-sea0212_name="Raubvogel"
-sra0212_name="Dioskuren"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Kampfflieger mittlerer Stufe. Ausgezeichnete Flugabwehr. Wirkungsvoll gegen feindliche Flieger und Bomber."
-
-sa0213_desc="Jagdbomber"
-saa0213_name="Klarheit"
-Unit_Description_RND_020="Kombination Kämpfer / Bomber entwickelt, um sowohl Land und Lufteinheiten zu engagieren."
-
---Dedicated Tactical Bombers
-saa0211_desc="Taktischer Bomber"
-sea0211_name="Tornado"
-ssa0211_name="Sinn"
-sra0211_name="Kondor"
-Unit_Description_RND_008="Zwischen Bomber."
-Unit_Description_RND_009="Zwischen Bomber."
-Unit_Description_RND_010="Zwischen Bomber."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Dedicated Omni Sensoren
-sb3301_desc="Omni-Sensorenreihe"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallr"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="Sensor-Array. Fähig zur Ziele durch tarnung und Mantel identifiziert und löscht Störsender Blips."
-
---T3.5 Erweiterte Bomber
---sa0314_desc="Penetrator"
-sa0314_desc="Penetrator Bomber"
-sea0314_name="Ulan"
-saa0314_name="Schrei"
-sra0314_name="Sanguine Tyrant"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-Unit_Description_RND_024="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-Unit_Description_RND_021="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-Unit_Description_RND_023="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
-
---anti-SAM und anti-AAM Flares
-ability_missiledef="Raketenabwehr"
-
---T3.5 für Fortgeschrittene
-sa0313_desc="Penetration-Kämpfer"
-sea0313_name="Kater"
-saa0313_name="Helios"
-sra0313_name="twilight-Patron"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-End-Bereich lange Stealth-Kämpfer. Ausgestattet mit zwei Burst-Schrauben Railguns, Luft-Luft-Raketen und Anti-Raketen-Fackeln."
---[description]
-Unit_Description_RND_025="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen und Raketen Fackeln. Fähig zu Spionageflugzeuge jagen."
---[description]
 
 --Ekranoplan Transporte
 ss0326_desc="Schwerer GEV Transport"
@@ -171,17 +119,16 @@ srs0326_name="Deltawing"
 sas0326_name="Lun Mallard"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Experimental
-----------------------------------------
 
-srl0402_desc="Experimentelle Belagerungspanzer"
-srl0402_name="Kleiner Mann"
---Ersetzt mit dem Retributor
 
-srl0403_desc="Experimental Mobil Artillerie"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Große Handy schwere Artillerie. Muss stationär und an Land die Artillerie zu feuern. Verbraucht große Mengen an Energie pro Schuss"
 
-tooltipbrewlanRND0000="Toggle Artillerie"
-tooltipbrewlanRND0001="Aktiviert oder deaktiviert die Haupt-Artillerie. Die Deaktivierung verhindert, dass die Artillerie von potenziell Zugfolgen Cancelling."
+
+
+
+
+
+
+
+
+
+

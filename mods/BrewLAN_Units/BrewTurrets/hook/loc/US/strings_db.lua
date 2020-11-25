@@ -1,4 +1,7 @@
 --ISO_639-1_code=EN
+
+
+
 --Caffe Corretto EN-US strings
 srb5380_name="Deadshot"
 srb5380_desc="Accuracy Boost Node"
@@ -7,6 +10,19 @@ Unit_Description_BrewLAN_Turrets_0001="Adjacent static weaponry spend longer aim
 seb5381_name="Superhot"
 seb5381_desc="Damage Boost Node"
 Unit_Description_BrewLAN_Turrets_0002="Adjacent static weaponry deal increased damage. This greatly increases energy consumption per shot."
+
+seb5382_name="Benson"
+seb5382_desc="Factory Health Node"
+Unit_Description_BrewLAN_Turrets_0010="Adjacency buff node. Units built by adjacent factory structures will have additional health."
+
+srb5383_name="The Lost"
+srb5383_desc="Factory Stealth Toggle Node"
+Unit_Description_BrewLAN_Turrets_0011="Adjacency buff node. Units built by adjacent factory structures will have any stealth abilities set active or inactive instead of their default state."
+
+tooltipbrewturrets0002="Factory build stealth toggle"
+tooltipbrewturrets0003="Sets units build by adjacent factories to have stealth enabled."
+tooltipbrewturrets0004="Factory build cloak toggle"
+tooltipbrewturrets0005="Sets units build by adjacent factories to have cloak enabled."
 
 seb2320_name="Hiro"
 seb2320_desc="Heavy Point Defense"

@@ -107,62 +107,10 @@ seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Dal minimo al generatore di potenza di medio livello. Costruire accanto ad altre strutture per il bonus di adiacenza."
 
 
-sa0212_desc="Caccia da combattimento"
-sea0212_name="Raptor"
-sra0212_name="Dioscuri"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Caccia aereo di livello medio. Eccellenti capacità antiaeree. Efficace contro le corazzate e i bombardieri nemici."
-
-sa0213_desc="Caccia/bombardiere"
-saa0213_name="Lucidità"
-Unit_Description_RND_020="Combinazione caccia / bombardiere progettato per coinvolgere terra e unità aeree."
-
---Bombardieri tattici dedicati
-saa0211_desc="Bomber Tactical"
-sea0211_name="Tornado"
-ssa0211_name="Sinn"
-sra0211_name="Condor"
-Unit_Description_RND_008="aereo bombardiere Intermedio."
-Unit_Description_RND_009="aereo bombardiere Intermedio."
-Unit_Description_RND_010="aereo bombardiere Intermedio."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Dedicati Omni Sensors
-sb3301_desc="Rete omni-sensori"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallr"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="matrice di sensori. In grado di identificare bersagli attraverso stealth e mantello e cancella blips jammer."
-
---bombardieri T3.5 avanzate
---sa0314_desc="Penetrator"
-sa0314_desc="Penetrator Bomber"
-sea0314_name="lanciere"
-saa0314_name="Strillare"
-sra0314_name="Sanguine Tyrant"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-end lungo raggio furtività bombardiere strategico. Dotate bombe, aria-superficie missili standoff, siluri, e montato posteriormente razzi anti-missile."
-Unit_Description_RND_024="Top-end lungo raggio furtività bombardiere strategico. Dotate bombe, aria-superficie missili standoff, siluri, e montato posteriormente razzi anti-missile."
-Unit_Description_RND_021="Top-end lungo raggio furtività bombardiere strategico. Dotate bombe, aria-superficie missili standoff, siluri, e montato posteriormente razzi anti-missile."
-Unit_Description_RND_023="Top-end lungo raggio furtività bombardiere strategico. Dotate bombe, aria-superficie missili standoff, siluri, e montato posteriormente razzi anti-missile."
-
---anti-SAM e razzi anti-AAM
-ability_missiledef="missile Defense"
-
---T3.5 avanzata combattenti
-sa0313_desc="penetrazione Fighter"
-sea0313_name="micio"
-saa0313_name="Helios"
-sra0313_name="Crepuscolo Patron"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-end lungo raggio caccia stealth. Dotate di due railguns scoppio elicoidali, aria-aria missili e razzi anti-missile."
---[description]
-Unit_Description_RND_025="Top-end lungo raggio caccia stealth. Dotato di cannoni particelle pesanti, e razzi anti-missile. Capace di caccia aerei spia."
---[description]
 
 --trasporti ekranoplan
 ss0326_desc="Heavy GEV Trasporti"
@@ -171,17 +119,16 @@ srs0326_name="DeltaWing"
 sas0326_name="lun Mallard"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Sperimentale
-----------------------------------------
 
-srl0402_desc="Sperimentale Siege serbatoio"
-srl0402_name="Piccolo uomo"
---Sostituito con il Retributor
 
-srl0403_desc="Sperimentale mobile Artiglieria"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Grande artiglieria pesante mobile. Deve essere fermo e sulla terra per sparare l'artiglieria. Consuma grandi quantità di energia per il colpo"
 
-tooltipbrewlanRND0000="Toggle artiglieria"
-tooltipbrewlanRND0001="Attiva o disattiva l'artiglieria principale. Disabilitazione impedisce dell'artiglieria da potenzialmente annullamento degli ordini di movimento."
+
+
+
+
+
+
+
+
+
+

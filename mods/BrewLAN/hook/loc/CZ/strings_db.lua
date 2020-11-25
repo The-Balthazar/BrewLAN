@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="Družicový pozorovací systém. Poskytuje vizu
 
 sea0003_desc="kontrarozvědky Satellite"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Družicový systém kontrarozvědka. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi vzdušné převahy bojovníků objevovat underneith ní. Nemá prostor pro shromažďování inteligence."
+Unit_Description_BrewLAN_T3A013="Družicový systém kontrarozvědka. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi vzdušné převahy bojovníků se objeví pod ním. Nemá prostor pro shromažďování informací."
 
 --alternativy Sniperů
 sel0320_desc="Mobilní Satelitní Uplink"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="Vyrábí námořní jednotky"
 seb2401_desc="Experimentální obrana"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="Experimentální obranná budova. Vyžaduje vysoké dávky energie při každém výstřelu."
+
+ssl0404_desc="Experimentální Sniper Bot"
+ssl0404_name="Sisha-Ah"
+Unit_Description_BrewLAN_T4L004="Experimentální mobilní sniper bot. Viditelné pouze pro omni zatímco statické a nespouští."

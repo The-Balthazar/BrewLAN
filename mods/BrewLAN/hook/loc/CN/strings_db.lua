@@ -15,10 +15,10 @@ tooltipbrewlan0001="在空军武器生产模式和陸軍/海軍武器生产模�
 
 --工具提示为T3诱饵飞机。
 tooltipbrewlan0002="转换空速"
-tooltipbrewlan0003="空中优势或沙皇切换模拟"
+tooltipbrewlan0003="调整空气速度相匹配的空气优势或沙皇"
 tooltipbrewlan0004="空中优势或死神的模拟切换"
 tooltipbrewlan0005="空中优势或阿瓦薩的模拟切换"
-tooltipbrewlan0006="空中优势或AC-500百夫长切换模拟"
+tooltipbrewlan0006="调整空气速度相匹配的空气优势或AC-500的Centurion"
 
 --工具提示地雷。
 tooltipbrewlan0007="引爆"
@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="卫星观测系统。提供从轨道可视卫�
 
 sea0003_desc="反间谍卫星"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="基于卫星的反间谍系统。导致大量与空中优势战斗机的飞行特性的假雷达信号的出现underneith它。对智力没有收集能力。"
+Unit_Description_BrewLAN_T3A013="基于卫星的反间谍系统。导致大量与空中优势战斗机的飞行特性的假雷达信号的出现在它下面。有情报收集不收取定金。"
 
 --狙击手的替代品
 sel0320_desc="移动卫星通信"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="构造海军部队。"
 seb2401_desc="实验点防御"
 seb2401_name="神剑"
 Unit_Description_BrewLAN_T4B012="实验防御建筑。消耗大量的每次拍摄的功率。"
+
+ssl0404_desc="实验狙击手博特"
+ssl0404_name="撕杀，阿"
+Unit_Description_BrewLAN_T4L004="实验移动狙击机器人。仅向OMNI同时可进行静态和不点火。"

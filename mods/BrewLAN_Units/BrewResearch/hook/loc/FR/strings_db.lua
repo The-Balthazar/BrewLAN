@@ -107,62 +107,10 @@ seb1201_name="EG-100 Fusion Reactor"
 Unit_Description_RND_018="Faible au générateur de puissance de niveau intermédiaire. Construire à côté d'autres structures pour bonus de contiguïté."
 
 
-sa0212_desc="Chasseur de combat"
-sea0212_name="Raptor"
-sra0212_name="Dioscures"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Chasseur intermédiaire. Excellentes capacités antiaériennes. Efficace contre les vaisseaux d'attaque et les bombardiers."
-
-sa0213_desc="Chasseur-bombardier"
-saa0213_name="Lucidité"
-Unit_Description_RND_020="chasseur / bombardier Combinaison conçu pour engager à la fois la terre et les unités aériennes."
-
---Bombers tactiques dédiés
-saa0211_desc="Bombardier Tactique"
-sea0211_name="Tornade"
-ssa0211_name="Sinn"
-sra0211_name="Condor"
-Unit_Description_RND_008="avions bombardier intermédiaire."
-Unit_Description_RND_009="avions bombardier intermédiaire."
-Unit_Description_RND_010="avions bombardier intermédiaire."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Capteurs Omni dédiés
-sb3301_desc="Matrice d'omni-capteurs"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallr"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="tableau capteur. Capable d'identifier des cibles à travers la furtivité et cape et efface brouilleurs soubresauts."
-
---T3.5 bombardiers avancés
---sa0314_desc="pénétrateur"
-sa0314_desc="pénétrateur Bomber"
-sea0314_name="Lancier"
-saa0314_name="Cri"
-sra0314_name="sanguine Tyran"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
-Unit_Description_RND_024="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
-Unit_Description_RND_021="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
-Unit_Description_RND_023="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
-
---anti-SAM et des fusées éclairantes anti-AAM
-ability_missiledef="missile Defense"
-
---T3.5 combattants avancé
-sa0313_desc="pénétration Fighter"
-sea0313_name="Matou"
-saa0313_name="Helios"
-sra0313_name="Patron de twilight"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="haut de gamme à long portée des chasseurs furtifs. Equipé de railguns hélicoïdales salves doubles, missiles air-air, et les fusées anti-missiles."
---[description]
-Unit_Description_RND_025="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes et des fusées anti-missiles. Capable d'avions d'espionnage de chasse."
---[description]
 
 --transports ekranoplan
 ss0326_desc="Transport lourd GEV"
@@ -171,17 +119,16 @@ srs0326_name="DeltaWing"
 sas0326_name="Lun Mallard"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Expérimental
-----------------------------------------
 
-srl0402_desc="Experimental Char de siège"
-srl0402_name="Petit homme"
---Remplacé par la Retributor
 
-srl0403_desc="Artillerie expérimentale mobile"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Grande artillerie lourde mobile. Doit être stationnaire et sur la terre au feu de l'artillerie. Consomme de grandes quantités d'énergie par coup"
 
-tooltipbrewlanRND0000="Basculer artillerie"
-tooltipbrewlanRND0001="Active ou désactive l'artillerie principale. La désactivation empêche l'artillerie d'annuler éventuellement les commandes de mouvement."
+
+
+
+
+
+
+
+
+
+

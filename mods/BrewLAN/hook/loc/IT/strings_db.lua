@@ -17,8 +17,8 @@ tooltipbrewlan0001="Abilita o disabilita produzione di unità aeree"
 tooltipbrewlan0002="velocità dell'aria Toggle"
 tooltipbrewlan0003="Attiva la rappresentazione di una superiorità aerea o di uno CZAR"
 tooltipbrewlan0004="Attiva la rappresentazione di una superiorità aerea o un Soul Ripper"
-tooltipbrewlan0005="Attiva la rappresentazione di una superiorità aerea o un Ahwassa"
-tooltipbrewlan0006="Attiva la rappresentazione di una superiorità aerea o un Centurion AC-500"
+tooltipbrewlan0005="Regola velocità dell'aria per abbinare una superiorità aerea o un Ahwassa"
+tooltipbrewlan0006="Regola velocità dell'aria per abbinare una superiorità aerea o un Centurion AC-500"
 
 --Le descrizioni comandi per le mine.
 tooltipbrewlan0007="Detonare"
@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="Satellite-based sistema di osservazione. Fornis
 
 sea0003_desc="controspionaggio Satellite"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Satellite-based sistema di controspionaggio. Provoca un gran numero di falsi segnali radar con caratteristiche di volo di combattenti superiorità aerea ad apparire underneith esso. Non ha la capacità per la raccolta inteligence."
+Unit_Description_BrewLAN_T3A013="Satellite-based sistema di controspionaggio. Provoca un gran numero di falsi segnali radar con caratteristiche di volo di combattenti superiorità aerea ad apparire sotto di esso. Non ha capacità di raccolta di informazioni."
 
 --alternative Sniper
 sel0320_desc="Mobile satellitare Uplink"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="Costruisce unità navali."
 seb2401_desc="Sperimentale Point Difesa"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="Sperimentale edificio difensivo. Consuma grandi quantità di energia a ogni scatto."
+
+ssl0404_desc="Sperimentale Sniper Bot"
+ssl0404_name="Sisha-Ah"
+Unit_Description_BrewLAN_T4L004="Sperimentale cecchino bot mobile. Visibile solo Omni, mentre statica e non sparare."

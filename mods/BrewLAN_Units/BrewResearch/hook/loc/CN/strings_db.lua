@@ -107,62 +107,10 @@ seb1201_name="EG-100融合反应堆"
 Unit_Description_RND_018="低到中等水平的发电机。未来构建以其他结构邻接奖金。"
 
 
-sa0212_desc="戰鬥機"
-sea0212_name="猛禽"
-sra0212_name="狄俄斯库"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="「疾風」的造價比「光冠」還便宜，不過有比「保護者」更佳的速度和火力，它用有優異的纏鬥能力並且能填補T1和T3戰鬥機之間的空缺。"
-
-sa0213_desc="戰機/轟炸機"
-saa0213_name="明朗"
-Unit_Description_RND_020="联合战斗/轰炸机的设计搞陆地和空中单位。"
-
---专用战术轰炸机
-saa0211_desc="战术轰炸机"
-sea0211_name="龙卷风"
-ssa0211_name="辛恩"
-sra0211_name="秃鹰"
-Unit_Description_RND_008="中间轰炸机。"
-Unit_Description_RND_009="中间轰炸机。"
-Unit_Description_RND_010="中间轰炸机。"
-
 ----------------------------------------
 --科技3
 ----------------------------------------
 
---专用全方位传感器
-sb3301_desc="全方位偵測器陣列"
-seb3301_name="科尔曼"
-srb3301_name="凯因"
-sab3301_name="海姆达尔"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="传感器阵列。能够识别通过隐身斗篷和目标，并清除干扰光点。"
-
---T3.5先进的轰炸机
---sa0314_desc="侵彻"
-sa0314_desc="侵彻炸弹"
-sea0314_name="蓝瑟"
-saa0314_name="尖叫"
-sra0314_name="血暴君"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
-Unit_Description_RND_024="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
-Unit_Description_RND_021="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
-Unit_Description_RND_023="最高端的远程隐形战略轰炸机。配有炸弹，空 - 面防区外导弹，鱼雷和后置式反导弹弹。"
-
---抗SAM和反AAM耀斑
-ability_missiledef="导弹防御系统"
-
---T3.5先进战机
-sa0313_desc="穿透战斗机"
-sea0313_name="雄貓"
-saa0313_name="赫利俄斯"
-sra0313_name="暮光之城守护神"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="最高端的远程隐形战机。配备双螺旋爆轨道炮，空 - 空导弹和反导弹弹。"
---[description]
-Unit_Description_RND_025="最高端的远程隐形战斗机。配备了重粒子炮，反导弹弹。能够狩猎侦察机。"
---[description]
 
 --Ekranoplan运输
 ss0326_desc="重型运输GEV"
@@ -171,17 +119,16 @@ srs0326_name="Deltawing"
 sas0326_name="伦野鸭"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---试验
-----------------------------------------
 
-srl0402_desc="实验攻城坦克"
-srl0402_name="小男孩"
---与Retributor取代
 
-srl0403_desc="实验自行火炮"
-srl0403_name="Retributor"
-Unit_Description_RND_016="大型移动重炮。必须是固定和陆地火炮兵。消耗大量的每次发射的能量"
 
-tooltipbrewlanRND0000="切换大炮"
-tooltipbrewlanRND0001="启用或禁用主炮。从潜在的取消订单移动禁用防止火炮。"
+
+
+
+
+
+
+
+
+
+

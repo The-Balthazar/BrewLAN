@@ -107,62 +107,10 @@ seb1201_name="EG–100 Fusion Reactor"
 Unit_Description_RND_018="Low to mid-level power generator. Construct next to other structures for adjacency bonus."
 
 
-sa0212_desc="Combat Fighter"
-sea0212_name="Raptor"
-sra0212_name="Dioscuri"
-ssa0212_name="Iayath"
-Unit_Description_RND_019="Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
-
-sa0213_desc="Fighter/Bomber"
-saa0213_name="Lucidity"
-Unit_Description_RND_020="Combination fighter/bomber designed to engage both land and aerial units."
-
---Dedicated Tactical Bombers
-saa0211_desc="Tactical Bomber"
-sea0211_name="Tornado"
-ssa0211_name="Sinn"
-sra0211_name="Condor"
-Unit_Description_RND_008="Intermediate bomber aircraft."
-Unit_Description_RND_009="Intermediate bomber aircraft."
-Unit_Description_RND_010="Intermediate bomber aircraft."
-
 ----------------------------------------
 --Tech 3
 ----------------------------------------
 
---Dedicated Omni Sensors
-sb3301_desc="Omni Sensor Array"
-seb3301_name="Coleman"
-srb3301_name="Qain"
-sab3301_name="Heimdallr"
-ssb3302_name="Selaez"
-Unit_Description_RND_012="Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
-
---T3.5 Advanced bombers
---sa0314_desc="Penetrator"
-sa0314_desc="Penetrator Bomber"
-sea0314_name="Lancer"
-saa0314_name="Shrieker"
-sra0314_name="Sanguine Tyrant"
-ssa0314_name="Sinnaino"
-Unit_Description_RND_022="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
-Unit_Description_RND_024="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
-Unit_Description_RND_021="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
-Unit_Description_RND_023="Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and rear-mounted anti-missile flares."
-
---anti-SAM and anti-AAM flares
-ability_missiledef="Missile Defense"
-
---T3.5 advanced fighters
-sa0313_desc="Penetration Fighter"
-sea0313_name="Tomcat"
-saa0313_name="Helios"
-sra0313_name="Twilight Patron"
-ssa0313_name="Ialosaare"
-Unit_Description_RND_026="Top-end long range stealth fighter. Equipped with twin burst helical railguns, air-to-air missiles, and anti-missile flares."
---[description]
-Unit_Description_RND_025="Top-end long-range stealth fighter. Equipped with heavy particle cannons, and anti-missile flares. Capable of hunting spy planes."
---[description]
 
 --Ekranoplan transports
 ss0326_desc="Heavy GEV Transport"
@@ -171,17 +119,16 @@ srs0326_name="Deltawing"
 sas0326_name="Lun Mallard"
 sss0326_name="Vishwiseyen"
 
-----------------------------------------
---Experimental
-----------------------------------------
 
-srl0402_desc="Experimental Siege Tank"
-srl0402_name="Little Man"
---Replaced with the Retributor
 
-srl0403_desc="Experimental Mobile Artillery"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Large mobile heavy artillery. Must be stationary and on land to fire the artillery. Consumes large amounts of energy per shot"
 
-tooltipbrewlanRND0000="Toggle artillery"
-tooltipbrewlanRND0001="Enables or disables main artillery. Disabling prevents the artillery from potentially cancelling move orders."
+
+
+
+
+
+
+
+
+
+

@@ -17,8 +17,8 @@ tooltipbrewlan0001="Habilita o inhabilita la producción de unidades de aire"
 tooltipbrewlan0002="la velocidad del aire de palanca"
 tooltipbrewlan0003="Alterna suplantación de una superioridad aérea o un CZAR"
 tooltipbrewlan0004="Alterna suplantación de una superioridad aérea o una Soul Ripper"
-tooltipbrewlan0005="Alterna suplantación de una superioridad aérea o un Ahwassa"
-tooltipbrewlan0006="Alterna suplantación de una superioridad de aire o un Centurion AC-500"
+tooltipbrewlan0005="Se ajusta la velocidad del aire para que coincida con una superioridad de aire o un Ahwassa"
+tooltipbrewlan0006="Se ajusta la velocidad del aire para que coincida con una superioridad de aire o un Centurion AC-500"
 
 --Información sobre herramientas de las minas terrestres.
 tooltipbrewlan0007="Detonar"
@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="basado en satélites del sistema de observació
 
 sea0003_desc="contrainteligencia satélite"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="basado en satélites del sistema de contrainteligencia. Provoca un gran número de señales de radar falsos con características de vuelo de caza de superioridad aérea a aparecer underneith ella. No tiene capacidad para la recolección de inteligencia."
+Unit_Description_BrewLAN_T3A013="basado en satélites del sistema de contrainteligencia. Provoca un gran número de señales de radar falsos con características de vuelo de caza de superioridad aérea a aparecer debajo de ella. No tiene capacidad para la recogida de información."
 
 --alternativas de francotirador
 sel0320_desc="Móviles por satélite de enlace ascendente"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="Construye unidades navales."
 seb2401_desc="Punto experimental Defensa"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="edificio defensivo experimental. Consume grandes cantidades de energía en cada disparo."
+
+ssl0404_desc="Experimental Sniper Bot"
+ssl0404_name="Sisha-Ah"
+Unit_Description_BrewLAN_T4L004="Experimental bot francotirador móvil. Sólo es visible a Omni mientras estático y no disparar."

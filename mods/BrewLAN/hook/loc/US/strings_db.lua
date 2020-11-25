@@ -15,10 +15,10 @@ tooltipbrewlan0001="Enables or disables production of air units"
 
 --Tooltips for the T3 decoy planes.
 tooltipbrewlan0002="Toggle air speed"
-tooltipbrewlan0003="Toggles impersonation of an air superiority or a CZAR"
-tooltipbrewlan0004="Toggles impersonation of an air superiority or a Soul Ripper"
-tooltipbrewlan0005="Toggles impersonation of an air superiority or an Ahwassa"
-tooltipbrewlan0006="Toggles impersonation of an air superiority or an AC-500 Centurion"
+tooltipbrewlan0003="Adjusts air speed to match an air superiority or a CZAR"
+tooltipbrewlan0004="Adjusts air speed to match an air superiority or a Soul Ripper"
+tooltipbrewlan0005="Adjusts air speed to match an air superiority or an Ahwassa"
+tooltipbrewlan0006="Adjusts air speed to match an air superiority or an AC-500 Centurion"
 
 --Tooltips for the landmines.
 tooltipbrewlan0007="Detonate"
@@ -295,7 +295,7 @@ Unit_Description_BrewLAN_T3A012="Satellite-based observation system. Provides vi
 
 sea0003_desc="Counterintelligence Satellite"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters to appear underneith it. Has no capacity for inteligence gathering."
+Unit_Description_BrewLAN_T3A013="Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters to appear underneath it. Has no capacity for intelligence gathering."
 
 --Sniper alternatives
 sel0320_desc="Mobile Satellite Uplink"
@@ -566,3 +566,7 @@ Unit_Description_BrewLAN_T4B011="Constructs naval units."
 seb2401_desc="Experimental Point Defence"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="Experimental defensive building. Consumes large amounts of power with each shot."
+
+ssl0404_desc="Experimental Sniper Bot"
+ssl0404_name="Sisha-Ah"
+Unit_Description_BrewLAN_T4L004="Experimental mobile sniper bot. Only visible to omni while static and not firing."

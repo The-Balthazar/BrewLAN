@@ -1,6 +1,6 @@
 do
     local Units = {
-        INTEL = {
+        --[[INTEL = {
             --Original omni sensors, no longer covered by 'OMNI' cat
             'uab3104',
             'ueb3104',
@@ -11,7 +11,7 @@ do
             'seb3301',
             'srb3301',
             --'ssb3302',
-        },
+        },]]
     }
     for group, data in pairs(restrictedUnits) do
         if data.categories then

@@ -88,15 +88,7 @@ Description['seb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power g
 Description['srb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power generator. Construct next to other structures for adjacency bonus."
 Description['ssb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power generator. Construct next to other structures for adjacency bonus."
 
---Unlockable units
-
---Tech 3 omni sensor arrays
-Description['sab3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
-Description['seb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
-Description['srb3301'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
-Description['ssb3302'] = "<LOC Unit_Description_RND_012>Sensor array. Capable of identifying targets through stealth and cloak and clears jammer blips."
-
---Description['something'] = "<LOC Unit_Description_RND_029>"
+--Description['something'] = "<LOC Unit_Description_RND_031>"
 
 do
     for id, bp in __blueprints do

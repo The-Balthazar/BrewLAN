@@ -1,4 +1,7 @@
 --ISO_639-1_code=DE
+
+
+
 --Translated by: Google
 srb5380_name="Todesschuss"
 srb5380_desc="Genauigkeit Boost-Knoten"
@@ -7,6 +10,19 @@ Unit_Description_BrewLAN_Turrets_0001="Angrenzend statische Waffen verbringen me
 seb5381_name="Super heiß"
 seb5381_desc="Damage-Boost-Knoten"
 Unit_Description_BrewLAN_Turrets_0002="Angrenzend statische Waffen verursachen erhöhten Schaden. Dies erhöht den Energieverbrauch pro Schuss."
+
+seb5382_name="Benson"
+seb5382_desc="Fabrik Gesundheit Knoten"
+Unit_Description_BrewLAN_Turrets_0010="Adjacency Schwabbelscheibe Knoten. Einheiten durch benachbarte Fabrikstrukturen aufgebaut werden zusätzliche Gesundheit haben."
+
+srb5383_name="Der Verlorene"
+srb5383_desc="Fabrik Stealth Toggle Knoten"
+Unit_Description_BrewLAN_Turrets_0011="Adjacency Schwabbelscheibe Knoten. Einheiten durch benachbarte Fabrikstrukturen aufgebaut haben alle Stealth-Fähigkeiten gesetzt aktiv oder inaktiv statt ihrer Standardzustand."
+
+tooltipbrewturrets0002="Fabrik bauen Stealth Toggle"
+tooltipbrewturrets0003="Sets Einheiten bauen durch benachbarte Fabriken haben Stealth aktiviert."
+tooltipbrewturrets0004="Fabrik bauen Umhang Toggle"
+tooltipbrewturrets0005="Sets Einheiten bauen durch benachbarte Fabriken haben Mantel aktiviert."
 
 seb2320_name="Hiro"
 seb2320_desc="Schwere Punktverteidigung"
