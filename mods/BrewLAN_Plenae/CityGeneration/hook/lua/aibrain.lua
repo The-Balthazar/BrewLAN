@@ -122,22 +122,22 @@ AIBrain = Class(oldAIBrain) {
 
                         local RoadTiles = {
                             --left right up down 1 2 4 8
-                            --[['0000']] [0] = {0, '0W_01'}, --0 road
-                            --[['0001']] [1] = {0, '1W_01'}, --1 way down
-                            --[['0010']] [2] = {math.pi, '1W_01'}, --1 way up
-                            --[['0011']] [3] = {1.57, '2WS_01'},  --stright |
-                            --[['0100']] [4] = {1.57, '1W_01'}, --1 way right?
-                            --[['0101']] [5] = {0, '2WC_01'}, --corner bottom right
-                            --[['0110']] [6] = {1.57, '2WC_01'}, --corner up right
-                            --[['0111']] [7] = {1.57, '3W_01'}, --3 way right (no path left)
-                            --[['1000']] [8] = {-1.57, '1W_01'}, --1 way left?
-                            --[['1001']] [9] = {-1.57, '2WC_01'}, --corner bottom left
-                            --[['1010']] [10] = {math.pi, '2WC_01'}, --corner top left
-                            --[['1011']] [11] = {-1.57, '3W_01'}, --3 way left (no path right)
-                            --[['1100']] [12] = {0, '2WS_01'}, --stright --
-                            --[['1101']] [13] = {0, '3W_01'}, --3 way down (no path up)
+                            --[['0000']] [ 0] = {0,       '0W_01'}, --0 road
+                            --[['0001']] [ 1] = {0,       '1W_01'}, --1 way down
+                            --[['0010']] [ 2] = {math.pi, '1W_01'}, --1 way up
+                            --[['0011']] [ 3] = {1.57,    '2WS_01'},--stright |
+                            --[['0100']] [ 4] = {1.57,    '1W_01'}, --1 way right?
+                            --[['0101']] [ 5] = {0,       '2WC_01'},--corner bottom right
+                            --[['0110']] [ 6] = {1.57,    '2WC_01'},--corner up right
+                            --[['0111']] [ 7] = {1.57,    '3W_01'}, --3 way right (no path left)
+                            --[['1000']] [ 8] = {-1.57,   '1W_01'}, --1 way left?
+                            --[['1001']] [ 9] = {-1.57,   '2WC_01'},--corner bottom left
+                            --[['1010']] [10] = {math.pi, '2WC_01'},--corner top left
+                            --[['1011']] [11] = {-1.57,   '3W_01'}, --3 way left (no path right)
+                            --[['1100']] [12] = {0,       '2WS_01'},--stright --
+                            --[['1101']] [13] = {0,       '3W_01'}, --3 way down (no path up)
                             --[['1110']] [14] = {math.pi, '3W_01'}, --3 way up (no path down)
-                            --[['1111']] [15] = {0, '4W_01'}, --4 way intersection
+                            --[['1111']] [15] = {0,       '4W_01'}, --4 way intersection
                         }
                         local binarySwitch = function(a,b,c,d) return (a and 8 or 0) + (b and 4 or 0) + (c and 2 or 0) + (d and 1 or 0) end
                         local bin = binarySwitch((cityI[x-1] and cityI[x-1][y]), (cityI[x+1] and cityI[x+1][y]), cityI[x][y-1], cityI[x][y+1])
