@@ -316,6 +316,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Replaced the if-else block on roads with a binary table switch.
   * New mod: *BrewLAN: Bletchley Park*, houses intel units that used to be packaged with R&D.
   * Re-keyed the build description LOC tags for units moved out of R&D.
+  * Cityscapes: Added textures for 0-way road connection.
+
+  ### 2020-11-27
+
+  * R&D: AI's that don't properly handle the builder limit restriction for building research centres will now cancel additional centres.
+  * R&D: All research items now are glowy messes instead of using default shaders.
 
 ## 2019-10-13|0.8.9
 

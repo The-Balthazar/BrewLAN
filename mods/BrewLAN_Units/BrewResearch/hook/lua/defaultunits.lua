@@ -124,6 +124,15 @@ ResearchFactoryUnit = Class(FactoryUnit) {
     -- Prevents LOUD factory manager errors.
     SetupComplete = true,
 
+    OnStartBeingBuilt = function(self, creator, layer)
+        local AIBrain = self:GetAIBrain()
+        --LOG(table.getn(AIBrain:GetListOfUnits(categories.RESEARCHCENTRE, false)))
+        if AIBrain.BrainType ~= 'Human' and table.getn(AIBrain:GetListOfUnits(categories.RESEARCHCENTRE, false) ) > 0 then
+            self:Destroy()
+        end
+        FactoryUnit.OnStartBeingBuilt(self, creator, layer)
+    end,
+
     OnStopBeingBuilt = function(self, builder, layer)
         --If we're an AI
         local AIBrain = self:GetAIBrain()
