@@ -38,15 +38,44 @@ SAS0401 = Class(ASeaUnit) {
         AntiTorpedo = Class(AIFQuasarAntiTorpedoWeapon) {},
     },
 
+    HidePanels = function(self)
+        for i = 1, 9 do self:HideBone('Panel_00'..i, false) end
+        for i = 0, 2 do self:HideBone('Panel_01'..i, false) end
+        --[[for i, bone in {
+            'Panel_001',
+            'Panel_002',
+            'Panel_003',
+            'Panel_004',
+            'Panel_005',
+            'Panel_006',
+            'Panel_007',
+            'Panel_008',
+            'Panel_009',
+            'Panel_010',
+            'Panel_011',
+            'Panel_012',
+        } do
+            self:HideBone(bone, false)
+        end]]
+        self:SetCustomName('Indulge Class')
+    end,
+
     OnCreate = function(self)
         ASeaUnit.OnCreate(self)
         --Yes, this means it's shared between all players.
         ShipNumber = ShipNumber + 1
         --First two ever get a cool pair of names.
-        if ShipNumber == 1 then
-            self:SetCustomName('Scylla')
-        elseif ShipNumber == 2 then
-            self:SetCustomName('Charybdis')
+        local UniqueShips = {
+            [1] = 'Scylla',
+            [2] = 'Charybdis',
+            [69] = self.HidePanels,
+        }
+        if UniqueShips[ShipNumber] then
+            if type(UniqueShips[ShipNumber]) == 'string' then
+                self:SetCustomName(UniqueShips[ShipNumber])
+            elseif type(UniqueShips[ShipNumber]) == 'function' then
+                UniqueShips[ShipNumber](self)
+            end
         end
         if math.mod(ShipNumber, 2) == 1 then
             --Flip directional turrets every other one built

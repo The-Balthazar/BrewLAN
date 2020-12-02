@@ -323,6 +323,22 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: AI's that don't properly handle the builder limit restriction for building research centres will now cancel additional centres.
   * R&D: All research items now are glowy messes instead of using default shaders.
 
+  ### 2020-11-28
+
+  * TeaParty: Deluge now has a unique 69th variant.
+
+  ### 2020-12-01
+
+  * Created new mod icons for Cityscapes and TeaParty.
+
+  ### 2020-12-02
+
+  * Cityscapes: Fixed prop removal co-ordinates
+  * Cityscapes: Fixed the 4 way road being flipped.
+  * Cityscapes: Agricultural structures can now spawn in blocks.
+  * Cityscapes: Added basic walls around the cities.
+  * Cityscapes: Added turrets along border walls.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

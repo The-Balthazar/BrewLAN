@@ -84,17 +84,32 @@ AIBrain = Class(oldAIBrain) {
             --------------------------------------------------------------------
             -- Cleanup city areas
             --------------------------------------------------------------------
+            local CityData = {}
             for i, cityI in Cities do
                 for x, xtable in cityI do
                     for y, sectionunit in xtable do
-                        --local army = self:GetArmyIndex()
                         local pos = sectionunit:GetPosition()
                         sectionunit:Destroy()
                         cityI[x][y] = pos
 
+                        --Data stuff
+
+                        --Count the number of grid cells
+                        if not CityData[i] then CityData[i] = {} end
+                        CityData[i].NoGrids = (CityData[i].NoGrids or 0) + 1
+
+                        --make a list of all the 2x2 grid areas, track the bottom corner grid, and count them
+                        if not CityData[i].Grids2 then CityData[i].Grids2 = {} end
+                        --if            -- left up             up                  left
+                        if (cityI[x-1] and cityI[x-1][y-1] and cityI[x-1][y] ) and cityI[x][y-1] then
+                            --pre-randomise the order
+                            table.insert(CityData[i].Grids2, math.random(1,table.getn(CityData[i].Grids2)), {x,y})
+                            CityData[i].NoGrids2 = (CityData[i].NoGrids2 or 0) + 1
+                        end
+
                         --Clear props from the road
                         for i, v in { {1.5, 5}, {5, 1.5} } do
-                            for i, v in GetReclaimablesInRect( Rect(pos[1]-v[1], pos[1]+v[1], pos[3]-v[2], pos[3]+v[2]) ) or {} do
+                            for i, v in GetReclaimablesInRect( Rect(pos[1]-v[1], pos[3]-v[2], pos[1]+v[1], pos[3]+v[2]) ) or {} do
                                 if v and IsProp(v) then --and not string.find(v:GetBlueprint().BlueprintId, 'uef') then--SetPropCollision
                                     v:Destroy()
                                 end
@@ -106,13 +121,42 @@ AIBrain = Class(oldAIBrain) {
             --Wait to prevent deleting the panning units from removing the path blocking of future structures spawned this tick.
             coroutine.yield(1)
 
+            local army = self:GetArmyIndex()
+
             --------------------------------------------------------------------
-            -- Cleanup city areas
+            -- Spawn large structures
+            --------------------------------------------------------------------
+            for i, cityI in Cities do
+                --local army = self:GetArmyIndex()
+                local num = CityData[i].NoGrids2
+                num = math.max(math.ceil(math.random(num/6, num/5)), 1)
+                for gi, grid in CityData[i].Grids2 do
+                    if gi <= num then
+                        local x, y = grid[1], grid[2]
+                        local pos = cityI[x][y]
+                        local unit = CreateUnitHPR(
+                            'uec1401', army,
+                            pos[1] - 5, pos[2], pos[3] - 5,
+                            0, Random(0,3) * 1.57, 0
+                        )
+                        unit.CreateTarmac = function()end
+                        unit.LargeStructure = true
+                        --if not CityData[i].Grid2Map then CityData[i].Grid2Map = {} end
+                        --if not CityData[i].Grid2Map[x] then CityData[i].Grid2Map[x] = {} end
+                        --CityData[i].Grid2Map[x][y] = unit
+                    else
+                        CityData[i].Grids2[gi] = nil
+                    end
+                end
+                --WARN(repr(CityData[i].Grid2Map))
+            end
+
+            --------------------------------------------------------------------
+            -- Spawn roads, small structures, and props
             --------------------------------------------------------------------
             for i, cityI in Cities do
                 for x, xtable in cityI do
                     for y, pos in xtable do
-                        local army = self:GetArmyIndex()
                         local CreateRoad = function(pos, rot, nom, army)
                             local path = '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_'
                             local ds, lod = 10.66, 500 --decal size, lod cutoff
@@ -168,16 +212,32 @@ AIBrain = Class(oldAIBrain) {
                         end
 
                         --Spawn basic structures
-                        for i, v in Corners(3) do
+                        for i, v in Corners(1) do
                             if math.random(1,10) ~= 10 then
-                                --Pop cap can screw us here, so lets check just in case
-                                local k, unit = pcall(CreateUnitHPR,
-                                    ChooseWeightedBp(Structures3x3), army,
-                                    pos[1] + v[1], pos[2], pos[3] + v[2],
-                                    0, Random(0,3) * 1.57, 0
-                                )
-                                if k then
-                                    unit.CreateTarmac = function()end
+                                --WARN(x + math.max(0, v[1]),y + math.max(0, v[2]) )
+                                local units = GetUnitsInRect(pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5)
+                                local check = true
+                                if units then
+                                    for i, unit in units do
+                                        if unit.LargeStructure then
+                                            check = false
+                                            break
+                                        end
+                                    end
+                                end
+                                --local checkX, checkY = x + math.max(0, v[1]), y + math.max(0, v[2])
+                                --WARN(checkX, checkY)
+                                if check then--not (CityData[i].Grid2Map[x + math.max(0, v[1])] and CityData[i].Grid2Map[checkX][checkY] then
+
+                                    --Pop cap can screw us here, so lets check just in case
+                                    local k, unit = pcall(CreateUnitHPR,
+                                        ChooseWeightedBp(Structures3x3), army,
+                                        pos[1] + v[1]*3, pos[2], pos[3] + v[2]*3,
+                                        0, Random(0,3) * 1.57, 0
+                                    )
+                                    if k then
+                                        unit.CreateTarmac = function()end
+                                    end
                                 end
                             end
                         end
@@ -203,6 +263,46 @@ AIBrain = Class(oldAIBrain) {
                                     x, y, z,
                                     Random(0,360), 0, 0
                                 )
+                            end
+                        end
+                        --wall edges
+                        for i, v in Edges(1) do
+                            if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
+                                for i = -4, 4 do
+                                    pcall(CreateUnitHPR,
+                                        'seb5101', army,
+                                        pos[1] + (v[1]*5) + (i*v[2]), pos[2], pos[3] + (v[2]*5) + (i*v[1]),
+                                        0, 0, 0
+                                    )
+                                end
+                            end
+                        end
+                        --Wall corner parts
+                        for i, v in Corners(1) do
+                            if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
+                                local X, Y = pos[1] + (v[1]*5), pos[3] + (v[2]*5)
+                                ------------------------------------------------
+                                local SpawnNoOverlap = function(X, Y, unitID)
+                                    for i, unit in GetUnitsInRect(X,Y,X,Y) or {} do
+                                        local upos = unit:GetPosition()
+                                        if upos[1] == X and upos[3] == Y then
+                                            return false
+                                        end
+                                    end
+                                    pcall(CreateUnitHPR,
+                                        unitID, army,
+                                        X, GetTerrainHeight(X,Y), Y,
+                                        0, 0, 0
+                                    )
+                                end
+                                ------------------------------------------------
+                                SpawnNoOverlap(X+v[1], Y+v[2], 'seb5101')
+                                SpawnNoOverlap(X, Y, 'ueb2101')
+                                for k, j in Edges(1) do
+                                    if not (cityI[x+j[1] ] and cityI[x+j[1] ][y+j[2] ]) then
+                                        SpawnNoOverlap(X+j[1], Y+j[2], 'seb5101')
+                                    end
+                                end
                             end
                         end
                     end
