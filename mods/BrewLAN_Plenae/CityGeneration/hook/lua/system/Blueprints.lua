@@ -26,6 +26,23 @@ function CityscapesChanges(all_bps)
         'uec1501',
         'xec1401',
         'xec1501',
+
+        'uac1101',
+        'uac1201',
+        'uac1301',
+        'uac1401',
+        'uac1501',
+        'uac1901',
+        'xac2201',
+
+        'urc1101',
+        'urc1201',
+        'urc1301',
+        'urc1401',
+        'urc1501',
+        'urc1901',
+        'urc1902',
+        'xrc2201',
     }
     for i, id in units do
         local bp = all_bps[id]

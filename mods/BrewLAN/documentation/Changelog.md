@@ -346,6 +346,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: City generation is now split into simultaneous threads, one per city.
   * Cityscapes: Individual city threads will now abort the city if it fails to spawn a power generator.
   * Cityscapes: Small structures are now processed before roads to allow small cities to also be cancelled if they fail to spawn a generator.
+  * Cityscapes: Added an icon and build description for the civilian city wall.
+  * Cityscapes: Refactored code so that it can support random factions per city.
+  * Cityscapes: Added basic versions of Aeon and Cybran faction city generation as reskins of the UEF. They don't look as good yet.
+  * Cityscapes: UEF city generation now includes the large admin structure.
 
 ## 2019-10-13|0.8.9
 
