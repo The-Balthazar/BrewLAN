@@ -341,6 +341,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Civilian structures involved in city generation now have no pop cap cost.
   * Cityscapes: Each city now has a power generator based on its size.
 
+  ### 2020-12-03
+
+  * Cityscapes: City generation is now split into simultaneous threads, one per city.
+  * Cityscapes: Individual city threads will now abort the city if it fails to spawn a power generator.
+  * Cityscapes: Small structures are now processed before roads to allow small cities to also be cancelled if they fail to spawn a generator.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
