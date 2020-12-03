@@ -338,6 +338,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Agricultural structures can now spawn in blocks.
   * Cityscapes: Added basic walls around the cities.
   * Cityscapes: Added turrets along border walls.
+  * Cityscapes: Civilian structures involved in city generation now have no pop cap cost.
+  * Cityscapes: Each city now has a power generator based on its size.
 
 ## 2019-10-13|0.8.9
 

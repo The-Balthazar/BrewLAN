@@ -3,7 +3,7 @@ local oldAIBrain = AIBrain
 AIBrain = Class(oldAIBrain) {
     OnCreateAI = function(self, planName)
         oldAIBrain.OnCreateAI(self, planName)
-        --Line 4947
+        --this is Line 4947   --sub 4941
         local civilian = false
         for name,data in ScenarioInfo.ArmySetup do
             if name == self.Name then
@@ -121,26 +121,131 @@ AIBrain = Class(oldAIBrain) {
             --Wait to prevent deleting the panning units from removing the path blocking of future structures spawned this tick.
             coroutine.yield(1)
 
+            --------------------------------------------------------------------
+            -- Util data and functions
+            --------------------------------------------------------------------
             local army = self:GetArmyIndex()
+
+            -- For creating loops around square or rectangular offsets
+            -- returns an array of co-ord offsets
+            -- expects one or two numbers (x, z)
+            local Corners = function(d, b) return { {d,-(b or d)}, {-d,-(b or d)}, {-d,(b or d)}, {d,(b or d)} } end
+            local Edges = function(d, b) return { {-d, 0}, {d, 0}, {0, -(b or d)}, {0, (b or d)} } end
+            local Ring = function(d, b)
+                b = b or d
+                local array = {}
+                for i = -d + 1, d - 1 do
+                    table.insert(array, {i,b})
+                    table.insert(array, {i,-b})
+                end
+                for i = -b, b do
+                    table.insert(array, {d,i})
+                    table.insert(array, {-d,i})
+                end
+                return array
+            end
+            -- returns a weighted blueprint from an array
+            -- Expects an array with entries like {'bp', Weight = [int]}
+            local ChooseWeightedBp = function(selection)
+                local totWeight = 0
+                            --specify ipairs so we can have keys not part of this.
+                for k, v in ipairs(selection) do if v.Weight then totWeight = totWeight + v.Weight end end
+                local val = 1
+                local num = Random(0, totWeight)
+                for k, v in ipairs(selection) do if v.Weight then val = val + v.Weight end if num < val then return v[1] end end
+            end
+            -- returns the next blueprint from an array
+            -- Expects the same as weighted, but doesn't use .Weight
+            local ChooseCyclingBp = function(selection)
+                if not selection.Cycle then selection.Cycle = 0 end
+                selection.Cycle = selection.Cycle + 1
+                if selection.Cycle > table.getn(selection) then
+                    selection.Cycle = math.mod(selection.Cycle, table.getn(selection))
+                end
+                return selection[selection.Cycle][1]
+            end
+
+            -- returns a random position within given distances of a fixed offset of a position
+            -- returns x,y,z where x and z are semi-random, and y is the terrain height at that position
+            -- expects a 3 point vector of start pos, a 2 point vector of the fixed offset, and a 2 point vector of the variation random bounds
+            local rOOP = function(pos, off, ran)
+                local x = pos[1] + off[1] + (math.random()*2-1)*ran[1]
+                local z = pos[3] + off[2] + (math.random()*2-1)*ran[2]
+                return x, GetTerrainHeight(x, z), z --used by props, so we want exact 3 point.
+            end
+
+            -- Places and returns a unit from a bp or a weighted list of bps
+            -- expects [string or table] [vector2 pos] [0-3 number]
+            local SafeSpawn = function(unitbp, pos, dir)
+                if type(unitbp) == 'table' then
+                    unitbp = ChooseWeightedBp(unitbp)
+                end
+                local k, unit = pcall(CreateUnitHPR, unitbp, army,
+                    pos[1], 0, pos[3], -- GetTerrainHeight(pos[1],pos[3]) --units don't care about height
+                    0, (dir or Random(0,3)) * 1.57, 0
+                )
+                if k then
+                    unit.CreateTarmac = function()end
+                end
+                return unit
+            end
+
+            -- Calls SafeSpawn after checking noting already has the exact same target position
+            -- expectes [number], [number], [string or table], [number or nil]
+            local SpawnNoOverlap = function(X, Y, unitID, dir)
+                for i, unit in GetUnitsInRect(X,Y,X,Y) or {} do
+                    local upos = unit:GetPosition()
+                    if upos[1] == X and upos[3] == Y then
+                        return false
+                    end
+                end
+                SafeSpawn(unitID, {X, nil, Y}, dir or 0)
+            end
+
+            -- Spawns a ring of walls with gaps in the middle of the edges, 1 TMD, and up to of each 2 AA and PD
+            --expects [vector] [number] [number]
+            local SmallRingDefense = function(pos, wall, turret)
+                for i, v in Ring(wall) do
+                    if v[1] ~= 0 and v[2] ~= 0 then
+                        SafeSpawn('seb5101', {pos[1]+v[1], nil, pos[3]+v[2]}, 0)
+                    end
+                end
+                local rc = math.random(1,4)
+                for i, v in Corners(turret) do
+                    if i == rc then
+                        SafeSpawn('ueb4201', {pos[1]+v[1], nil, pos[3]+v[2]})
+                    elseif v[1] == v[2] then
+                        SafeSpawn('ueb2101', {pos[1]+v[1], nil, pos[3]+v[2]})
+                    else
+                        SafeSpawn('ueb2204', {pos[1]+v[1], nil, pos[3]+v[2]})
+                    end
+                end
+            end
 
             --------------------------------------------------------------------
             -- Spawn large structures
             --------------------------------------------------------------------
             for i, cityI in Cities do
                 --local army = self:GetArmyIndex()
-                local num = CityData[i].NoGrids2
-                num = math.max(math.ceil(math.random(num/6, num/5)), 1)
+                local num = CityData[i].NoGrids2 or 0
+                num = math.max(math.ceil(math.random(num/6, num/5)), math.min(1,num) )
                 for gi, grid in CityData[i].Grids2 do
                     if gi <= num then
                         local x, y = grid[1], grid[2]
-                        local pos = cityI[x][y]
-                        local unit = CreateUnitHPR(
-                            'uec1401', army,
-                            pos[1] - 5, pos[2], pos[3] - 5,
-                            0, Random(0,3) * 1.57, 0
-                        )
-                        unit.CreateTarmac = function()end
-                        unit.LargeStructure = true
+                        local pos = table.copy(cityI[x][y]); pos[1] = pos[1]-5; pos[3] = pos[3]-5
+                        local unit
+                        if not CityData[i].PowerPlant and CityData[i].NoGrids > 64 then
+                            unit = SafeSpawn('ueb1301', pos)
+                            CityData[i].PowerPlant = unit
+                            SmallRingDefense(pos, 3, 3)
+                        elseif not CityData[i].PowerPlant and CityData[i].NoGrids > 12 then
+                            unit = SafeSpawn('ueb1201', pos)
+                            CityData[i].PowerPlant = unit
+                            SmallRingDefense(pos, 3, 2)
+                        else
+                            unit = SafeSpawn('uec1401', pos)
+                        end
+                        if unit then unit.LargeStructure = true end
                         --if not CityData[i].Grid2Map then CityData[i].Grid2Map = {} end
                         --if not CityData[i].Grid2Map[x] then CityData[i].Grid2Map[x] = {} end
                         --CityData[i].Grid2Map[x][y] = unit
@@ -195,24 +300,9 @@ AIBrain = Class(oldAIBrain) {
                             {'xec1401', Weight = 16 },
                             {'xec1501', Weight = 1 },
                         }
-                        local ChooseWeightedBp = function(selection)
-                            local totWeight = 0
-                            for k, v in selection do if v.Weight then totWeight = totWeight + v.Weight end end
-                            local val = 1
-                            local num = Random(0, totWeight)
-                            for k, v in selection do if v.Weight then val = val + v.Weight end if num < val then return v[1] end end
-                        end
-
-                        local Corners = function(d, b) return { {-d,-(b or d)}, {-d,(b or d)}, {d,(b or d)}, {d,-(b or d)} } end
-                        local Edges = function(d, b) return { {-d, 0}, {d, 0}, {0, -(b or d)}, {0, (b or d)} } end
-                        local rOOP = function(pos, off, ran)
-                            local x = pos[1] + off[1] + (math.random()*2-1)*ran[1]
-                            local z = pos[3] + off[2] + (math.random()*2-1)*ran[2]
-                            return x, GetTerrainHeight(x, z), z
-                        end
 
                         --Spawn basic structures
-                        for i, v in Corners(1) do
+                        for _, v in Corners(1) do
                             if math.random(1,10) ~= 10 then
                                 --WARN(x + math.max(0, v[1]),y + math.max(0, v[2]) )
                                 local units = GetUnitsInRect(pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5)
@@ -225,24 +315,26 @@ AIBrain = Class(oldAIBrain) {
                                         end
                                     end
                                 end
-                                --local checkX, checkY = x + math.max(0, v[1]), y + math.max(0, v[2])
-                                --WARN(checkX, checkY)
-                                if check then--not (CityData[i].Grid2Map[x + math.max(0, v[1])] and CityData[i].Grid2Map[checkX][checkY] then
 
-                                    --Pop cap can screw us here, so lets check just in case
-                                    local k, unit = pcall(CreateUnitHPR,
-                                        ChooseWeightedBp(Structures3x3), army,
-                                        pos[1] + v[1]*3, pos[2], pos[3] + v[2]*3,
-                                        0, Random(0,3) * 1.57, 0
-                                    )
-                                    if k then
-                                        unit.CreateTarmac = function()end
+                                if check then--not (CityData[i].Grid2Map[x + math.max(0, v[1])] and CityData[i].Grid2Map[checkX][checkY] then
+                                    if not CityData[i].PowerPlant then
+                                        if CityData[i].NoGrids > 6 and __blueprints.seb1201 then
+                                            CityData[i].PowerPlant = SafeSpawn('seb1201', {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
+                                        elseif CityData[i].NoGrids > 1 then
+                                            for _, j in Corners(0.75) do
+                                                CityData[i].PowerPlant = SafeSpawn('ueb1101', {pos[1]+v[1]*3+j[1], nil, pos[3]+v[2]*3+j[2]})
+                                            end
+                                        else
+                                            CityData[i].PowerPlant = SafeSpawn('ueb1101', {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
+                                        end
+                                    else
+                                        SafeSpawn(Structures3x3, {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
                                     end
                                 end
                             end
                         end
                         --Spawn street lights
-                        for i, v in Corners(1.66) do
+                        for _, v in Corners(1.66) do
                             --WARN(pos[1]+v[1], GetTerrainHeight(pos[1]+v[1], pos[3]+v[2]), pos[3]+v[2])
                             CreatePropHPR(
                                 '/env/UEF/Props/UEF_Streetlight_01_prop.bp',
@@ -255,7 +347,7 @@ AIBrain = Class(oldAIBrain) {
                             {'/env/uef/props/uef_bus_prop.bp', Weight = 16 },
                             {'/env/uef/props/uef_truck_prop.bp', Weight = 1 },
                         }
-                        for i, v in Edges(3) do
+                        for _, v in Edges(3) do
                             if math.random() > 0.6 then
                                 local x, y, z = rOOP(pos,v,{2,1})
                                 CreatePropHPR(
@@ -266,38 +358,23 @@ AIBrain = Class(oldAIBrain) {
                             end
                         end
                         --wall edges
-                        for i, v in Edges(1) do
+                        for _, v in Edges(1) do
                             if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
                                 for i = -4, 4 do
-                                    pcall(CreateUnitHPR,
-                                        'seb5101', army,
-                                        pos[1] + (v[1]*5) + (i*v[2]), pos[2], pos[3] + (v[2]*5) + (i*v[1]),
-                                        0, 0, 0
-                                    )
+                                    SafeSpawn('seb5101', {pos[1] + (v[1]*5) + (i*v[2]), nil, pos[3] + (v[2]*5) + (i*v[1])}, 0)
                                 end
                             end
                         end
+                        local Turrets = {
+                            {'ueb2101', Weight = 1 },
+                            {'ueb2104', Weight = 1 },
+                        }
                         --Wall corner parts
                         for i, v in Corners(1) do
                             if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
                                 local X, Y = pos[1] + (v[1]*5), pos[3] + (v[2]*5)
-                                ------------------------------------------------
-                                local SpawnNoOverlap = function(X, Y, unitID)
-                                    for i, unit in GetUnitsInRect(X,Y,X,Y) or {} do
-                                        local upos = unit:GetPosition()
-                                        if upos[1] == X and upos[3] == Y then
-                                            return false
-                                        end
-                                    end
-                                    pcall(CreateUnitHPR,
-                                        unitID, army,
-                                        X, GetTerrainHeight(X,Y), Y,
-                                        0, 0, 0
-                                    )
-                                end
-                                ------------------------------------------------
                                 SpawnNoOverlap(X+v[1], Y+v[2], 'seb5101')
-                                SpawnNoOverlap(X, Y, 'ueb2101')
+                                SpawnNoOverlap(X, Y, ChooseCyclingBp(Turrets), i)
                                 for k, j in Edges(1) do
                                     if not (cityI[x+j[1] ] and cityI[x+j[1] ][y+j[2] ]) then
                                         SpawnNoOverlap(X+j[1], Y+j[2], 'seb5101')
