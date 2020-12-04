@@ -1,0 +1,88 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uec1101',  --Residence
+    Defense = {
+        Health = 5600,
+        MaxHealth = 5600,
+    },
+    Economy = {
+        BuildCostEnergy = 4270,
+        BuildCostMass = 448,
+        BuildTime = 343,
+    },
+    Physics = {
+        SkirtSizeX = 3, SkirtOffsetX = 0,
+        SkirtSizeZ = 3, SkirtOffsetZ = 0,
+    },
+}
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uec1201',  --Science
+    CollisionOffsetY = -0.4,
+    SizeX = 2.25,
+    SizeY = 2.25,
+    SizeZ = 1.2,
+    Economy = {
+        BuildCostEnergy = 5124,
+        BuildCostMass = 90,
+        BuildTime = 412,
+    },
+    Physics = {
+        SkirtSizeX = 3, SkirtOffsetX = 0,
+        SkirtSizeZ = 3, SkirtOffsetZ = 0,
+    },
+}
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uec1301',  --Small admin
+    Defense = {
+        Health = 1865,
+        MaxHealth = 1865,
+    },
+    Economy = {
+        BuildCostEnergy = 1575,
+        BuildCostMass = 150,
+        BuildTime = 115,
+    },
+    Physics = {
+        SkirtSizeX = 3, SkirtOffsetX = 0,
+        SkirtSizeZ = 3, SkirtOffsetZ = 0,
+    },
+    SizeX = 2.6,
+    SizeY = 1,
+    SizeZ = 2.6,
+}
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uec1401',  --Agricultural
+    Defense = {
+        Health = 9335,
+        MaxHealth = 9335,
+    },
+    Economy = {
+        BuildCostEnergy = 7117,
+        BuildCostMass = 747,
+        BuildTime = 572,
+    },
+    Physics = {
+        SkirtSizeX = 5, SkirtOffsetX = 0,
+        SkirtSizeZ = 5, SkirtOffsetZ = 0,
+    },
+}
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uec1501',  --Manufacturing
+    Defense = {
+        Health = 2240,
+        MaxHealth = 2240,
+    },
+    Economy = {
+        BuildCostEnergy = 1780,
+        BuildCostMass = 234,
+        BuildTime = 178,
+    },
+    Physics = {
+        SkirtSizeX = 3, SkirtOffsetX = 0,
+        SkirtSizeZ = 3, SkirtOffsetZ = 0,
+    },
+}

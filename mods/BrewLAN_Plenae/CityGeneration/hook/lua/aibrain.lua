@@ -84,6 +84,7 @@ AIBrain = Class(oldAIBrain) {
             --table.insert(Cities, cityI)
         end
 
+        if self.PopCapReached then return end
         --------------------------------------------------------------------
         -- Cleanup city areas
         --------------------------------------------------------------------
@@ -124,6 +125,7 @@ AIBrain = Class(oldAIBrain) {
         --Wait to prevent deleting the panning units from removing the path blocking of future structures spawned this tick.
         coroutine.yield(1)
 
+        if self.PopCapReached then return end
         --------------------------------------------------------------------
         -- Util data and functions
         --------------------------------------------------------------------
@@ -152,13 +154,14 @@ AIBrain = Class(oldAIBrain) {
                     {'uec1301', Weight = 32 },
                     {'uec1501', Weight = 32 },
                     {'xec1401', Weight = 16 },
-                    {'xec1501', Weight = 1 },
                 },
                 Structures7x7 = {
-                    {'uec1401', Weight = 2 },
-                    {'xec1301', Weight = 1 },
+                    {'uec1401', Weight = 8 },
+                    {'xec1301', Weight = 4 },
+                    {'sec1101', Weight = 3 },
+                    {'xec1501', Weight = 1 },
                 },
-                LargeStructureBlocks = {6, 5}, -- a 6th to a 5th of all full blocks
+                LargeStructureBlocks = {5, 4}, -- a 5th to a 4th of all full blocks
                 RoadPath = '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_',
                 RoadSize = 10.66,
                 RoadLOD = 500,
@@ -305,9 +308,7 @@ AIBrain = Class(oldAIBrain) {
             },
         }
 
-        FUnits = FUnits[math.random(1, table.getn(FUnits))]
-
-
+        FUnits = FUnits[1]--FUnits[math.random(1, table.getn(FUnits))]
 
         -- For creating loops around square or rectangular offsets
         -- returns an array of co-ord offsets
@@ -370,6 +371,8 @@ AIBrain = Class(oldAIBrain) {
             if k then
                 unit.CreateTarmac = function()end
                 return unit
+            else
+                self.PopCapReached = true
             end
         end
 
@@ -464,22 +467,22 @@ AIBrain = Class(oldAIBrain) {
                         end
 
                         if check then--not (CityData.Grid2Map[x + math.max(0, v[1])] and CityData.Grid2Map[checkX][checkY] then
-                            if not CityData.PowerPlant then
+                            if not CityData.PowerPlant and not self.PopCapReached then
                                 local RDPG = FUnits.Power[3]
-                                if type(RDPD) ~= 'string' then
+                                if type(RDPG) ~= 'string' then
                                     RDPG = ChooseWeightedBp(RDPG)
                                 end
                                 if CityData.NoGrids > 6 and __blueprints[RDPG] then
                                     CityData.PowerPlant = SafeSpawn(RDPG, {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
-                                    if not CityData.PowerPlant then return end
+                                    --if not CityData.PowerPlant then return end -- too late to abort without a trace
                                 elseif CityData.NoGrids > 1 then
                                     for _, j in Corners(0.75) do
                                         CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {pos[1]+v[1]*3+j[1], nil, pos[3]+v[2]*3+j[2]})
-                                        if not CityData.PowerPlant then return end
+                                        --if not CityData.PowerPlant then return end -- too late to abort without a trace
                                     end
                                 else
                                     CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
-                                    if not CityData.PowerPlant then return end
+                                    --if not CityData.PowerPlant then return end -- too late to abort without a trace
                                 end
                             else
                                 SafeSpawn(FUnits.Structures3x3, {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})

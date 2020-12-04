@@ -351,6 +351,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Added basic versions of Aeon and Cybran faction city generation as reskins of the UEF. They don't look as good yet.
   * Cityscapes: UEF city generation now includes the large admin structure.
 
+  ### 2020-12-04
+
+  * Fixed the following blueprints.lua functions from causing crash on diskwatch of merge bps.
+    * R&D: TableFindSubstrings
+    * BubbleTea: BubbleTeaRubbsOffGazUI
+  * Cityscapes: Moved the Samantha Clarke statue from small structures to large, so it gets an entire block.
+  * Cityscapes: Did a balance pass on UEF building health and costs, corrected hitboxes, reduced skirts, and unified LOD cutoffs.
+  * Cityscapes: Added a kitbashed large residential building.
+  * Cityscapes: Changed the popcap break condition.
+  * Cityscapes: Changed the normals on the UEF wall.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

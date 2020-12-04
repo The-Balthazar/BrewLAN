@@ -55,7 +55,7 @@ UnitBlueprint {
                     LODCutoff = 500,
                     ShaderName = 'Unit',
                     AlbedoName = '/units/ueb5101/ueb5101_albedo.dds',
-                    NormalsName = '/units/ueb5101/ueb5101_normalsts.dds',
+                    --NormalsName = '/units/ueb5101/ueb5101_normalsts.dds',
                     SpecularName = '/units/ueb5101/ueb5101_specteam.dds',
                 },
             },

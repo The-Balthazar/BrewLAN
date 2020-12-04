@@ -1,0 +1,97 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xec1301',  --Large admin building
+    Display = {
+        Mesh = {
+            LODs = {
+                [2] = { LODCutoff = 300 },
+            },
+        },
+    },
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    LifeBarOffset = 2.7,
+    LifeBarSize = 4,
+    Physics = {
+        SkirtSizeX = 6, SkirtOffsetX = -0.5,
+        SkirtSizeZ = 6, SkirtOffsetZ = -0.5,
+    },
+    --Economy = { BuildCostEnergy = 6100, BuildCostMass = 634, BuildTime = 490 },
+    SelectionSizeX = 3.55, SelectionCenterOffsetX = -0.35,
+    SelectionSizeZ = 1.8,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 3,
+    SizeZ = 2,
+}
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xec1401',  --High Command
+    Display = {
+        Mesh = {
+            LODs = {
+                [1] = { LODCutoff = 300 },
+                [2] = false, --It has no model
+            },
+        },
+    },
+    Defense = {
+        Health = 4000,
+        MaxHealth = 4000,
+    },
+    Economy = {
+        BuildCostEnergy = 3050,
+        BuildCostMass = 320,
+        BuildTime = 245,
+    },
+    Physics = {
+        SkirtSizeX = 3, SkirtOffsetX = 0,
+        SkirtSizeZ = 3, SkirtOffsetZ = 0,
+    },
+    SelectionThickness = 0.5,
+    SelectionSizeX = 1.7,
+    SelectionSizeZ = 1.7,
+    SizeX = 2.5,
+    SizeY = 3,
+    SizeZ = 1.5,
+    CollisionOffsetZ = 0.25,
+}
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xec1501',  --Statue
+    Display = {
+        Mesh = {
+            LODs = {
+                [1] = { LODCutoff = 300 },
+                [2] = false, --It has no model
+            },
+        },
+    },
+    Defense = {
+        Health = 5000,
+        MaxHealth = 5000,
+    },
+    Economy = {
+        BuildCostEnergy = 20,
+        BuildCostMass = 720,
+        BuildTime = 1113,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    LifeBarOffset = 1,
+    LifeBarSize = 1.6,
+    Physics = {
+        SkirtSizeX = 2, SkirtOffsetX = -0.5,
+        SkirtSizeZ = 2, SkirtOffsetZ = -0.5,
+    },
+    SelectionThickness = 0.7,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 0.7, SelectionCenterOffsetZ = -0.35,
+    SizeX = 1.2,
+    SizeY = 5,
+    SizeZ = 0.7,
+}
