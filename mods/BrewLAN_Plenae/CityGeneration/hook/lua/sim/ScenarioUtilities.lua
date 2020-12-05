@@ -1,8 +1,10 @@
+-- line 1532
 CityData = {
     {   --UEF
         FunctionName = 'CreateSquareBlockCity',
         BlockDummy = 'zzcityblock9',
         BlockSpacing = 10,
+        CityRadius = {6,12}, --generation will stop between these two numbers from centre
         Wall = 'seb5101',
         Turrets = {
             {'ueb2101', Weight = 1 },
@@ -55,17 +57,20 @@ CityData = {
             --[['1111']] [15] = {0,       '4W_01'}, --4 way intersection
         },
         Streetlight = '/env/UEF/Props/UEF_Streetlight_01_prop.bp',
+        Fence = '/env/uef/props/uef_fence_prop.bp',
         Vehicles = {
-            {'/env/uef/props/uef_car1_prop.bp', Weight = 56 },
-            {'/env/uef/props/uef_bus_prop.bp', Weight = 16 },
-            {'/env/uef/props/uef_truck_prop.bp', Weight = 1 },
+            {'/env/uef/props/uef_car1_prop.bp', Weight = 14 },
+            {'/env/uef/props/uef_bus_prop.bp', Weight = 4 },
+            {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_truck_prop.bp', Weight = 3 },
         },
     },
 }
 
 function GetRandomCityFactionGenerator()
-    local no = math.random(1, table.getn(CityData) )
-    return __modules['/lua/sim/scenarioutilities.lua'][CityData[no].FunctionName], CityData[no]
+    if CityData[1] then
+        local no = math.random(1, table.getn(CityData) )
+        return __modules['/lua/sim/scenarioutilities.lua'][CityData[no].FunctionName], CityData[no]
+    end
 end
 
 function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
@@ -87,25 +92,34 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
         local CrawlIntersections
         CrawlIntersections = function(refPos, refGrid, total)
             local dirs = {}
-            for i, v in {{-FUnits.BlockSpacing, 0}, {0, -FUnits.BlockSpacing}, {FUnits.BlockSpacing, 0}, {0, FUnits.BlockSpacing}} do
+            for i, v in {{-1, 0}, {0, -1}, {1, 0}, {0, 1}} do
                 table.insert(dirs, math.random(1,table.getn(dirs)), v)
             end
             --table.sort(dirs, function(a,b) return math.random() > 0.5 end)
             for i, dir in dirs do
-                local postest = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, refPos[1] + dir[1], refPos[3] + dir[2])
+                local blockSX, blockSZ = refPos[1] + dir[1] * FUnits.BlockSpacing, refPos[3] + dir[2] * FUnits.BlockSpacing
+                local newGX, newGZ = refGrid[1] + dir[1], refGrid[2] + dir[2]
+                local postest
+                --Don't try if we're doubling up anyway
+                if not (cityI[newGX] and cityI[newGX][newGZ]) then
+                    postest = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, blockSX, blockSZ)
+                end
+
                 if postest and IsUnit(postest) then
                     local pos = postest:GetPosition()
 
-                    if pos[1] == refPos[1] + dir[1] and pos[3] == refPos[3] + dir[2] then
+                    if not cityI[newGX] then
+                        cityI[newGX] = {}
+                    end
+
+                    if pos[1] == blockSX and pos[3] == blockSZ then
                         --LOG("SAFE!")
-                        if not cityI[refGrid[1] + dir[1] * 0.1] then
-                            cityI[refGrid[1] + dir[1] * 0.1] = {}
-                        end
-                        cityI[refGrid[1] + dir[1] * 0.1][refGrid[2] + dir[2] * 0.1] = postest
-                        if total < math.random(6,12) then
-                            CrawlIntersections(pos, {refGrid[1] + dir[1] * 0.1, refGrid[2] + dir[2] * 0.1}, total + 1)
+                        cityI[newGX][newGZ] = postest
+                        if total < math.random(FUnits.CityRadius[1],FUnits.CityRadius[2]) then
+                            CrawlIntersections(pos, {newGX, newGZ}, total + 1)
                         end
                     else
+                        cityI[newGX][newGZ] = 'bad'
                         postest:Destroy()
                         coroutine.yield(1)
                     end
@@ -122,6 +136,14 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
     --------------------------------------------------------------------
     -- Cleanup city areas
     --------------------------------------------------------------------
+    for x, xtable in cityI do
+        for y, sectionunit in xtable do
+            if sectionunit == 'bad' then
+                cityI[x][y] = nil
+            end
+        end
+    end
+
     local CityData = {}
     --for i, cityI in Cities do
     for x, xtable in cityI do
@@ -165,10 +187,6 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
     --------------------------------------------------------------------
     local army = AIbrain:GetArmyIndex()
 
-    --local FUnits = __blueprints.zzcityblock.CityData
-
-    --FUnits = FUnits[1]--FUnits[math.random(1, table.getn(FUnits))]
-
     -- For creating loops around square or rectangular offsets
     -- returns an array of co-ord offsets
     -- expects one or two numbers (x, z)
@@ -209,12 +227,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
     end
 
     -- returns a random position within given distances of a fixed offset of a position
-    -- returns x,y,z where x and z are semi-random, and y is the terrain height at that position
+    -- returns {x,y,z} where x and z are semi-random, and y just pos[2]
     -- expects a 3 point vector of start pos, a 2 point vector of the fixed offset, and a 2 point vector of the variation random bounds
     local rOOP = function(pos, off, ran)
         local x = pos[1] + off[1] + (math.random()*2-1)*ran[1]
         local z = pos[3] + off[2] + (math.random()*2-1)*ran[2]
-        return x, GetTerrainHeight(x, z), z --used by props, so we want exact 3 point.
+        return {x, pos[2], z}
     end
 
     -- Places and returns a unit from a bp or a weighted list of bps
@@ -267,6 +285,61 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
         end
     end
 
+    local SafeProp = function(bp, pos, dir, ...)
+        if type(bp) == 'table' then
+            bp = ChooseWeightedBp(bp)
+        end
+        local v1,v2 = 0,0
+        if arg then
+            for i, v in ipairs(arg) do
+                v1 = v1 + v[1]
+                v2 = v2 + v[2]
+            end
+        end
+        CreatePropHPR(
+            bp,
+            pos[1]+v1, GetTerrainHeight(pos[1]+v1, pos[3]+v2), pos[3]+v2,
+            dir or Random(0,360), 0, 0
+        )
+    end
+
+    local RingFence = function(pos, d, b, gap)
+        for i, v in Ring(d, b) do
+            local gapt
+            if gap then
+                gapt = {
+                    v[2] == -(b or d),
+                    v[1] == d,
+                    v[2] == (b or d),
+                    v[1] == -d,
+                }
+            end
+            if not (v[1] == v[2] or v[1] == -v[2] ) and not (gap and gapt[gap]) then
+                local x,y,z = unpack(pos)
+                x = x + v[1]
+                z = z + v[2]
+                y = GetTerrainHeight(x,z)
+                local ori = 0
+                if v[1] == d or v[1] == -d then
+                    ori = 90
+                end
+                CreatePropHPR( FUnits.Fence, x, y, z, ori, 0, 0 )
+            end
+        end
+    end
+
+    local SpawnCarparkCars = function(pos, dir, scale, ratio)
+        for i, v in Ring(2) do
+            if math.abs(v[dir]) > 1 and math.random(1,5) ~= 5 then
+                v[1] = v[1] * (scale or 0.55) + (math.random()-0.5) * 0.2
+                v[2] = v[2] * (scale or 0.55) + (math.random()-0.5) * 0.2
+                v[dir] = v[dir] * (ratio or 0.8)
+                local ori = (dir + 2 * math.random(0,1)) * 90 + math.random(-5,5)
+                SafeProp(FUnits.Vehicles, pos, ori, v)
+            end
+        end
+    end
+
     --------------------------------------------------------------------
     -- Spawn large structures
     --------------------------------------------------------------------
@@ -291,11 +364,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
                 SmallRingDefense(pos, 3, 2)
             else
                 unit = SafeSpawn(FUnits.Structures7x7, pos)
+                local unitbp = unit:GetBlueprint()
+                if unitbp.SizeX < 6 and unitbp.SizeZ < 6 and math.random(1,3) ~= 3 then
+                    RingFence(pos, 3)
+                end
             end
             if unit then unit.LargeStructure = true end
-            --if not CityData.Grid2Map then CityData.Grid2Map = {} end
-            --if not CityData.Grid2Map[x] then CityData.Grid2Map[x] = {} end
-            --CityData.Grid2Map[x][y] = unit
         else
             CityData.Grids2[gi] = nil
         end
@@ -312,41 +386,48 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
 
             -- spawn structures before roads so that we an abort if we fail to make a generator before we've made a mark.
             for _, v in Corners(1) do
-                if math.random(1,10) ~= 10 then
-                    --WARN(x + math.max(0, v[1]),y + math.max(0, v[2]) )
-                    local units = GetUnitsInRect(pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5)
-                    local check = true
-                    if units then
-                        for i, unit in units do
-                            if unit.LargeStructure then
-                                check = false
-                                break
-                            end
+                --local position of this structure? centre
+                local cbpos = {pos[1] + v[1]*3, pos[2], pos[3] + v[2]*3}
+                --Make sure we didn't already spawn a big thing here
+                local units = GetUnitsInRect(pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5)
+                local check = true
+                if units then
+                    for i, unit in units do
+                        if unit.LargeStructure then
+                            check = false
+                            break
                         end
                     end
+                end
 
-                    if check then--not (CityData.Grid2Map[x + math.max(0, v[1])] and CityData.Grid2Map[checkX][checkY] then
-                        if not CityData.PowerPlant and not AIbrain.PopCapReached then
-                            local RDPG = FUnits.Power[3]
-                            if type(RDPG) ~= 'string' then
-                                RDPG = ChooseWeightedBp(RDPG)
-                            end
-                            if CityData.NoGrids > 6 and __blueprints[RDPG] then
-                                CityData.PowerPlant = SafeSpawn(RDPG, {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
-                                --if not CityData.PowerPlant then return end -- too late to abort without a trace
-                            elseif CityData.NoGrids > 1 then
-                                for _, j in Corners(0.75) do
-                                    CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {pos[1]+v[1]*3+j[1], nil, pos[3]+v[2]*3+j[2]})
-                                    --if not CityData.PowerPlant then return end -- too late to abort without a trace
-                                end
-                            else
-                                CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
-                                --if not CityData.PowerPlant then return end -- too late to abort without a trace
+                if check and math.random(1,10) ~= 10 then
+                    --Assuming we're not at pop cap (rare, but can happen here), try to spawn a power gen if we don't have one
+                    if not CityData.PowerPlant and not AIbrain.PopCapReached then
+                        local RDPG = FUnits.Power[3]
+                        if type(RDPG) ~= 'string' then
+                            RDPG = ChooseWeightedBp(RDPG)
+                        end
+                        if CityData.NoGrids > 6 and __blueprints[RDPG] then
+                            CityData.PowerPlant = SafeSpawn(RDPG, cbpos)
+                        elseif CityData.NoGrids > 1 then
+                            for _, j in Corners(0.75) do
+                                CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {cbpos[1]+j[1], nil, cbpos[3]+j[2]})
                             end
                         else
-                            SafeSpawn(FUnits.Structures3x3, {pos[1] + v[1]*3, nil,  pos[3] + v[2]*3})
+                            CityData.PowerPlant = SafeSpawn(FUnits.Power[4], cbpos)
                         end
+                        if CityData.PowerPlant then
+                            RingFence(cbpos, 1.5)
+                        end
+                    else
+                        -- Spawn a regular ass structure
+                        SafeSpawn(FUnits.Structures3x3, cbpos)
                     end
+                elseif check and math.random(1,4) == 4 then
+                    --If we decided to leave this blank, spawn a carpark
+                    local dir = math.random(1,2)
+                    SpawnCarparkCars(cbpos, dir)
+                    RingFence(cbpos, 1.5, nil, dir + 2 * math.random(0,1))
                 end
             end
 
@@ -364,27 +445,40 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
             CreateRoad(pos, FUnits.RoadTiles[bin][1], FUnits.RoadTiles[bin][2],  army)
 
             ----------------------------------------------------------------
-            --Spawn street lights
+            -- Spawn street lights
             ----------------------------------------------------------------
-            for _, v in Corners(1.66) do
-                --WARN(pos[1]+v[1], GetTerrainHeight(pos[1]+v[1], pos[3]+v[2]), pos[3]+v[2])
-                CreatePropHPR(
-                    FUnits.Streetlight,
-                    pos[1]+v[1], GetTerrainHeight(pos[1]+v[1], pos[3]+v[2]), pos[3]+v[2],
-                    0, 0, 0
-                )
-            end
-            for _, v in Edges(3) do
-                if math.random() > 0.6 then
-                    local x, y, z = rOOP(pos,v,{2,1})
-                    CreatePropHPR(
-                        ChooseWeightedBp(FUnits.Vehicles),
-                        x, y, z,
-                        Random(0,360), 0, 0
-                    )
+            if FUnits.Streetlight then
+                local lamp = function(pos, v)
+                    SafeProp(FUnits.Streetlight,{pos[1]+v[1], nil, pos[3]+v[2]}, 0)
+                end
+                for _, v in Corners(1.66) do
+                    lamp(pos, v)
+                end
+                if (cityI[x+1] and cityI[x+1][y]) then
+                    for i, v in {{5, 1.66}, {5, -1.66}} do lamp(pos, v) end
+                end
+                if cityI[x][y+1] then
+                    for i, v in {{-1.66, 5}, {1.66, -5}} do lamp(pos, v) end
                 end
             end
-            --wall edges
+            ----------------------------------------------------------------
+            -- Spawn street cars
+            ----------------------------------------------------------------
+            if FUnits.Vehicles then
+                for _, v in Edges(3) do
+                    if math.random() > 0.6 then
+                        SafeProp(FUnits.Vehicles, rOOP(pos,v,{2,1}))
+                    end
+                end
+                if bin == 1 or bin == 2 then
+                    SpawnCarparkCars(pos, 1, 0.4, 1.6)
+                elseif bin == 4 or bin == 8 then
+                    SpawnCarparkCars(pos, 2, 0.4, 1.6)
+                end
+            end
+            ----------------------------------------------------------------
+            -- Wall perimetre
+            ----------------------------------------------------------------
             for _, v in Edges(1) do
                 if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
                     for i = -4, 4 do
@@ -407,4 +501,5 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
             end
         end
     end
+    LOG("City size: " .. CityData.NoGrids)
 end

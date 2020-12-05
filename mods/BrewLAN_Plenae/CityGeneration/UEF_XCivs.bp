@@ -33,7 +33,7 @@ UnitBlueprint {
         Mesh = {
             LODs = {
                 [1] = { LODCutoff = 300 },
-                [2] = false, --It has no model
+                [2] = { LODCutoff = 301 },--It has no model
             },
         },
     },
@@ -65,7 +65,7 @@ UnitBlueprint {
         Mesh = {
             LODs = {
                 [1] = { LODCutoff = 300 },
-                [2] = false, --It has no model
+                [2] = { LODCutoff = 301 }, --It has no model
             },
         },
     },

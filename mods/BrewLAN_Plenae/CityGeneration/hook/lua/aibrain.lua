@@ -30,7 +30,9 @@ AIBrain = Class(oldAIBrain) {
         if table.getsize(OpenStartZones) > 0 then
             for armyname, MarkerPos in OpenStartZones do
                 local CityFunction, CityData = import('/lua/sim/ScenarioUtilities.lua').GetRandomCityFactionGenerator()
-                self:ForkThread(CityFunction, CityData, table.copy(MarkerPos))
+                if CityFunction and CityData then
+                    self:ForkThread(CityFunction, CityData, table.copy(MarkerPos))
+                end
             end
         end
     end,

@@ -1,0 +1,42 @@
+PropBlueprint {
+    Categories = {
+        'RECLAIMABLE',
+    },
+    Defense = {
+        Health = 50,
+        MaxHealth = 50,
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                {
+                    MeshName = '/env/UEF/Props/UEF_truck_lod0.scm',
+                    AlbedoName = '/env/UEF/Props/UEF_truck_Albedo.dds',
+	  	    		SpecularName = '/env/UEF/Props/UEF_truck_SpecTeam.dds',
+                    NormalsName = '/env/UEF/Props/UEF_truck_normalsts.dds',
+                    LODCutoff = 200,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 300,
+        ReclaimTime = 5,
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
+    Interface = {
+        HelpText = 'UEF Truck',
+    },
+    Physics = {
+        BlockPath = true,
+    },
+    SizeX = .5,
+    SizeY = .5,
+    SizeZ = 1,
+}

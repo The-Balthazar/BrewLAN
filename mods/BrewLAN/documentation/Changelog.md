@@ -367,6 +367,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * TeaParty: Fixed a tautological check.
   * Cityscapes: Moved city data and generation function out of the script and into ScenarioUtilities.lua.
   * Cityscapes: Moved the Aeon and Cybran city data out into their own mods.
+  * Cityscapes: Generation crawler will no longer retry places if it already crawled to them from a different direction.
+    * This speeds up generation by around a factor of 4 or more.
+  * Cityscapes: Fence props will now spawn around some large structures, and small power generators.
+  * Cityscapes: "car park" prop groups can now spawn in some empty spaces and in dead-end painted carparks.
+  * Cityscapes: City radius setting now moved into data.
 
 ## 2019-10-13|0.8.9
 
