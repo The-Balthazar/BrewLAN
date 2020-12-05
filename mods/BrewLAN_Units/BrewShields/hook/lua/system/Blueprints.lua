@@ -19,7 +19,7 @@ end
 
 function BubbleTeaRubbsOffGazUI(all_bps)
     for id, bp in all_bps do
-        if table.find(bp.Categories, 'STRUCTURE') and not bp.Defense.Shield then
+        if bp.Categories and table.find(bp.Categories, 'STRUCTURE') and not bp.Defense.Shield then
             if not bp.Defense then bp.Defense = {} end
             bp.Defense.Shield = {ShieldMaxHealth = 1}
         end

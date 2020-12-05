@@ -362,6 +362,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Changed the popcap break condition.
   * Cityscapes: Changed the normals on the UEF wall.
 
+  ### 2020-12-05
+
+  * TeaParty: Fixed a tautological check.
+  * Cityscapes: Moved city data and generation function out of the script and into ScenarioUtilities.lua.
+  * Cityscapes: Moved the Aeon and Cybran city data out into their own mods.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

@@ -365,10 +365,12 @@ function RNDGiveIndicativeAbilities(all_bps, newid, ref)
     end
 end
 
-function TableFindSubstrings(table, string1, string2)
-    for i, cat in table do
-        if string.find(cat,string1) and string.find(cat,string2 or string1) then
-            return i
+function TableFindSubstrings(array, string1, string2)
+    if array then
+        for i, cat in array do
+            if string.find(cat,string1) and string.find(cat,string2 or string1) then
+                return i
+            end
         end
     end
 end

@@ -8,7 +8,7 @@ local ADFDisruptorCannonWeapon = WeaponsFile.ADFDisruptorWeapon
 local AIFQuasarAntiTorpedoWeapon = WeaponsFile.AIFQuasarAntiTorpedoWeapon
 --------------------------------------------------------------------------------
 local CleanShieldBag = function(self) if self.ShieldEffect then self.ShieldEffect:Destroy() self.ShieldEffect = nil end end
-local NegPos = function(b) if math.random(0, 1) then return b else return -b end end --return b * (1 - 2 * math.random(0, 1))
+local NegPos = function(b) if math.random(0, 1) > 0.5 then return b else return -b end end --return b * (1 - 2 * math.random(0, 1))
 --------------------------------------------------------------------------------
 local ShipNumber = 0
 
