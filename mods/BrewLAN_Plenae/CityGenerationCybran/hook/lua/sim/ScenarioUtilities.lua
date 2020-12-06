@@ -1,9 +1,11 @@
 pcall(function() --pcall so this doesn't crash without the required game enabled
     table.insert(CityData,
         {   --Cybran
+            BlueprintId = 'Cybran_SquareBlockCity',
             FunctionName = 'CreateSquareBlockCity',
             BlockDummy = 'zzcityblock9',
             BlockSpacing = 10,
+            CityRadius = {6,12},
             Wall = 'urb5101',
             Turrets = {
                 {'urb2101', Weight = 1 },

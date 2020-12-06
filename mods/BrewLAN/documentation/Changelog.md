@@ -372,6 +372,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Fence props will now spawn around some large structures, and small power generators.
   * Cityscapes: "car park" prop groups can now spawn in some empty spaces and in dead-end painted carparks.
   * Cityscapes: City radius setting now moved into data.
+  * Cityscapes: Replaced the truck prop with one that's the correct size, and made it more common.
+
+  ### 2020-12-06
+
+  * Cityscapes: The unit spawn function will now run the weighted bp get function recursively for nested blueprint sets.
+  * Cityscapes: Added a BlueprintId value to the city blueprint for external reference.
+  * Cityscapes: Generation script can now handle both props and units.
+  * Spomeniki: Now adds most of it's props into the Cityscapes UEF city generation.
 
 ## 2019-10-13|0.8.9
 

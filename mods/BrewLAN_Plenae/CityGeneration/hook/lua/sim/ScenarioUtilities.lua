@@ -1,6 +1,7 @@
 -- line 1532
 CityData = {
     {   --UEF
+        BlueprintId = 'UEF_SquareBlockCity',
         FunctionName = 'CreateSquareBlockCity',
         BlockDummy = 'zzcityblock9',
         BlockSpacing = 10,
@@ -235,21 +236,43 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
         return {x, pos[2], z}
     end
 
+    local SafeProp = function(bp, pos, dir, ...)
+        if type(bp) == 'table' then
+            bp = ChooseWeightedBp(bp)
+        end
+        local v1,v2 = 0,0
+        if arg then
+            for i, v in ipairs(arg) do
+                v1 = v1 + v[1]
+                v2 = v2 + v[2]
+            end
+        end
+        return CreatePropHPR(
+            bp,
+            pos[1]+v1, GetTerrainHeight(pos[1]+v1, pos[3]+v2), pos[3]+v2,
+            dir or Random(0,360), 0, 0
+        )
+    end
+
     -- Places and returns a unit from a bp or a weighted list of bps
     -- expects [string or table] [vector2 pos] [0-3 number]
     local SafeSpawn = function(unitbp, pos, dir)
-        if type(unitbp) == 'table' then
+        while type(unitbp) == 'table' do
             unitbp = ChooseWeightedBp(unitbp)
         end
-        local k, unit = pcall(CreateUnitHPR, unitbp, army,
-            pos[1], 0, pos[3], -- GetTerrainHeight(pos[1],pos[3]) --units don't care about height
-            0, (dir or Random(0,3)) * 1.57, 0
-        )
-        if k then
-            unit.CreateTarmac = function()end
-            return unit
+        if string.sub(unitbp, 1, 1) == '/' then
+            return SafeProp(unitbp, pos, dir or Random(0,3) * 90)
         else
-            AIbrain.PopCapReached = true
+            local k, unit = pcall(CreateUnitHPR, unitbp, army,
+                pos[1], 0, pos[3], -- GetTerrainHeight(pos[1],pos[3]) --units don't care about height
+                0, (dir or Random(0,3)) * 1.57, 0
+            )
+            if k then
+                if unit.CreateTarmac then unit.CreateTarmac = function() end end
+                return unit
+            else
+                AIbrain.PopCapReached = true
+            end
         end
     end
 
@@ -285,25 +308,8 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
         end
     end
 
-    local SafeProp = function(bp, pos, dir, ...)
-        if type(bp) == 'table' then
-            bp = ChooseWeightedBp(bp)
-        end
-        local v1,v2 = 0,0
-        if arg then
-            for i, v in ipairs(arg) do
-                v1 = v1 + v[1]
-                v2 = v2 + v[2]
-            end
-        end
-        CreatePropHPR(
-            bp,
-            pos[1]+v1, GetTerrainHeight(pos[1]+v1, pos[3]+v2), pos[3]+v2,
-            dir or Random(0,360), 0, 0
-        )
-    end
-
     local RingFence = function(pos, d, b, gap)
+        if not FUnits.Fence then return end
         for i, v in Ring(d, b) do
             local gapt
             if gap then
@@ -389,7 +395,8 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
                 --local position of this structure? centre
                 local cbpos = {pos[1] + v[1]*3, pos[2], pos[3] + v[2]*3}
                 --Make sure we didn't already spawn a big thing here
-                local units = GetUnitsInRect(pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5)
+                local r1,r2,r3,r4 = pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5
+                local units = table.cat(GetUnitsInRect(r1,r2,r3,r4) or {}, GetReclaimablesInRect(Rect(r1,r2,r3,r4)) or {})
                 local check = true
                 if units then
                     for i, unit in units do

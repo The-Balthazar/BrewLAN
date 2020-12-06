@@ -1,3 +1,34 @@
+--------------------------------------------------------------------------------
+-- For inserting spom's into cities
+pcall(function()
+    for i, citybp in CityData do
+        if citybp.BlueprintId == 'UEF_SquareBlockCity' then
+            for j, s7data in citybp.Structures7x7 do
+                if s7data[1] == 'xec1501' then
+                    local spom = '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/spomenik_'
+                    CityData[i].Structures7x7[j][i] = {
+                        {'xec1501', Weight = 1},
+                        {spom..'naroda_prop.bp', Weight = 1 },
+                        {spom..'mramor_prop.bp', Weight = 1 },
+                        {spom..'rojah_prop.bp', Weight = 1 },
+                        { {
+                            {spom..'fist_a_prop.bp', Weight = 1 },
+                            {spom..'fist_b_prop.bp', Weight = 1 },
+                            {spom..'fist_c_prop.bp', Weight = 1 },
+                        }, Weight = 1 },
+                    }
+                    break
+                end
+            end
+            break
+        end
+    end
+end)
+
+
+
+
+--Vanilla spom code.
 do
     local OldCreateProps = CreateProps
     function CreateProps()

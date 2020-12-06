@@ -1,9 +1,11 @@
 pcall(function() --pcall so this doesn't crash without the required game enabled
     table.insert(CityData,
         {   --Aeon
+            BlueprintId = 'Aeon_SquareBlockCity',
             FunctionName = 'CreateSquareBlockCity',
             BlockDummy = 'zzcityblock9',
             BlockSpacing = 10,
+            CityRadius = {6,12},
             Wall = 'uab5101',
             Turrets = {
                 {'uab2101', Weight = 1 },
@@ -30,7 +32,7 @@ pcall(function() --pcall so this doesn't crash without the required game enabled
                 {'xac2201', Weight = 3 },
                 {'uac1901', Weight = 1 },
             },
-            LargeStructureBlocks = {3, 2}, -- a 6th to a 5th of all full blocks
+            LargeStructureBlocks = {3, 2}, -- a 3rd to half of all full blocks
             RoadPath = '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_',
             RoadSize = 10.66,
             RoadLOD = 500,
