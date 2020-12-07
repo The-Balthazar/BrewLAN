@@ -74,7 +74,8 @@ function GetRandomCityFactionGenerator()
     end
 end
 
-function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
+function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
+    CityRadius = CityRadius or FUnits.CityRadius
     coroutine.yield(1)
     --------------------------------------------------------------------
     -- Find potential city locations
@@ -116,7 +117,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos)
                     if pos[1] == blockSX and pos[3] == blockSZ then
                         --LOG("SAFE!")
                         cityI[newGX][newGZ] = postest
-                        if total < math.random(FUnits.CityRadius[1],FUnits.CityRadius[2]) then
+                        if total < math.random(CityRadius[1], CityRadius[2]) then
                             CrawlIntersections(pos, {newGX, newGZ}, total + 1)
                         end
                     else

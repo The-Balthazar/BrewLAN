@@ -29,16 +29,16 @@ UnitBlueprint {
         Winged = true,
     },
     Audio = {
-        AirUnitWaterImpact = Sound { Bank = 'Explosions', Cue = 'Expl_Water_Lrg_01', LodCutoff = 'UnitMove_LodCutoff' },
-        AmbientMove = Sound { Bank = 'XSA', Cue = 'XSA0303_Move_Loop', LodCutoff = 'UnitMove_LodCutoff' },
-        Destroyed = Sound { Bank = 'XSA_Destroy', Cue = 'XSA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
-        Killed = Sound { Bank = 'XSA_Destroy', Cue = 'XSA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
-        Landing = Sound { Bank = 'XSA', Cue = 'XSA0303_Move_Land', LodCutoff = 'UnitMove_LodCutoff' },
-        Refueling = Sound { Bank = 'XSB', Cue = 'XSB5202_Repair_Refuel', LodCutoff = 'UnitMove_LodCutoff' },
-        StartMove = Sound { Bank = 'XSA', Cue = 'XSA0303_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
-        StopMove = Sound { Bank = 'XSA', Cue = 'XSA0303_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
-        Thruster = Sound { Bank = 'XSA', Cue = 'XSA0303_Move_Thruster', LodCutoff = 'UnitMove_LodCutoff' },
-        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Air', LodCutoff = 'UnitMove_LodCutoff' },
+        AirUnitWaterImpact = Sound { Bank = 'Explosions',  Cue = 'Expl_Water_Lrg_01',      LodCutoff = 'UnitMove_LodCutoff' },
+                 Destroyed = Sound { Bank = 'XSA_Destroy', Cue = 'XSA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
+                    Killed = Sound { Bank = 'XSA_Destroy', Cue = 'XSA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
+               AmbientMove = Sound { Bank = 'XSA',         Cue = 'XSA0303_Move_Loop',      LodCutoff = 'UnitMove_LodCutoff' },
+                   Landing = Sound { Bank = 'XSA',         Cue = 'XSA0303_Move_Land',      LodCutoff = 'UnitMove_LodCutoff' },
+                 Refueling = Sound { Bank = 'XSB',         Cue = 'XSB5202_Repair_Refuel',  LodCutoff = 'UnitMove_LodCutoff' },
+                 StartMove = Sound { Bank = 'XSA',         Cue = 'XSA0303_Move_Start',     LodCutoff = 'UnitMove_LodCutoff' },
+                  StopMove = Sound { Bank = 'XSA',         Cue = 'XSA0303_Move_Stop',      LodCutoff = 'UnitMove_LodCutoff' },
+                  Thruster = Sound { Bank = 'XSA',         Cue = 'XSA0303_Move_Thruster',  LodCutoff = 'UnitMove_LodCutoff' },
+               UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Air', LodCutoff = 'UnitMove_LodCutoff' },
     },
     Buffs = {
         Regen = {
@@ -67,9 +67,7 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     Defense = {
-        MissileDetector = {
-            AttachBone = 'MissileDetector',
-        },
+        MissileDetector = { AttachBone = 'MissileDetector' },
         AirThreatLevel = 20,
         ArmorType = 'Light',
         Health = 4950,
@@ -124,10 +122,7 @@ UnitBlueprint {
         MovementEffects = {
             Air = {
                 Contrails = {
-                    Bones = {
-                        'Tip_1',
-                        'Tip_Big',
-                    },
+                    Bones = { 'Tip_1', 'Tip_Big' },
                 },
                 Effects = {
                     {
@@ -157,17 +152,12 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'air',
@@ -189,20 +179,14 @@ UnitBlueprint {
         Cloak = true,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC sa0313_desc>Penetration Fighter',
-    },
+    Interface = { HelpText = '<LOC sa0313_desc>Penetration Fighter' },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.95,
     LifeBarSize = 1.25,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
+            LAYER_Land = true,
         },
         Elevation = 25,
         FuelRechargeRate = 5,
@@ -345,13 +329,6 @@ UnitBlueprint {
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Muzzle',
             TurretBoneYaw = 'Muzzle',
-            --TurretDualManipulators = false,
-            --TurretPitch = 0,
-            --TurretPitchRange = 180,
-            --TurretPitchSpeed = 1000,
-            --TurretYaw = 0,
-            --TurretYawRange = 180,
-            --TurretYawSpeed = 1000,
             Turreted = false,
             WeaponCategory = 'Direct Fire Experimental',
         },
@@ -373,12 +350,6 @@ UnitBlueprint {
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
-        },
+        WreckageLayers = { Land = true },
     },
 }

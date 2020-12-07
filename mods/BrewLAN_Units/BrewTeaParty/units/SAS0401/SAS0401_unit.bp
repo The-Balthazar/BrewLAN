@@ -46,9 +46,8 @@ UnitBlueprint {
         'NAVAL',
         'EXPERIMENTAL',
         'DIRECTFIRE',
-        'ANTIMISSILE',--Torrent has this, apparently just for the torp defence? Guess that counts?
         'INDIRECTFIRE',
-        'SHIELD',
+        'PERSONALSHIELD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
@@ -676,6 +675,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SHIELD',
+                'PERSONALSHIELD',
                 'DEFENSE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',
@@ -740,6 +740,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SHIELD',
+                'PERSONALSHIELD',
                 'DEFENSE',
                 'SPECIALLOWPRI',
                 'ALLUNITS',

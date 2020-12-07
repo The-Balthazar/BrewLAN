@@ -381,6 +381,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Generation script can now handle both props and units.
   * Spomeniki: Now adds most of it's props into the Cityscapes UEF city generation.
 
+  ### 2020-12-07
+
+  * Tea Party: Deluge shield impact script now scales with size changes that may happen to it.
+  * Tea Party: Added a launch script to give anti-shield weapons better target priorities.
+  * Crate Drop: Fixed the FAF lobby option from breaking all FAF lobby options.
+  * Cityscapes: Generation script now has a radius override.
+  * Cityscapes: Location selector script now has lobby options.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

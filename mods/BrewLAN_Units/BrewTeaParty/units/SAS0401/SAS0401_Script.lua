@@ -8,7 +8,7 @@ local ADFDisruptorCannonWeapon = WeaponsFile.ADFDisruptorWeapon
 local AIFQuasarAntiTorpedoWeapon = WeaponsFile.AIFQuasarAntiTorpedoWeapon
 --------------------------------------------------------------------------------
 local CleanShieldBag = function(self) if self.ShieldEffect then self.ShieldEffect:Destroy() self.ShieldEffect = nil end end
-local NegPos = function(b) if math.random(0, 1) > 0.5 then return b else return -b end end --return b * (1 - 2 * math.random(0, 1))
+local NegPos = function(b) if math.random(0, 1) == 1 then return b else return -b end end --return b * (1 - 2 * math.random(0, 1))
 --------------------------------------------------------------------------------
 local ShipNumber = 0
 
@@ -41,22 +41,6 @@ SAS0401 = Class(ASeaUnit) {
     HidePanels = function(self)
         for i = 1, 9 do self:HideBone('Panel_00'..i, false) end
         for i = 0, 2 do self:HideBone('Panel_01'..i, false) end
-        --[[for i, bone in {
-            'Panel_001',
-            'Panel_002',
-            'Panel_003',
-            'Panel_004',
-            'Panel_005',
-            'Panel_006',
-            'Panel_007',
-            'Panel_008',
-            'Panel_009',
-            'Panel_010',
-            'Panel_011',
-            'Panel_012',
-        } do
-            self:HideBone(bone, false)
-        end]]
         self:SetCustomName('Indulge Class')
     end,
 
@@ -98,10 +82,17 @@ SAS0401 = Class(ASeaUnit) {
     -- Shield functions
     CreateShield = function(self, shieldSpec)
         ASeaUnit.CreateShield(self, shieldSpec)
-        local bp = self:GetBlueprint()
-        self.MyShield.CollisionSizeX = bp.SizeX / 2 + 1 --2.65
-        self.MyShield.CollisionSizeY = bp.SizeY / 2 + 1
-        self.MyShield.CollisionSizeZ = bp.SizeZ / 2 + 1 --11.9
+        local bp = self:GetBlueprint()                  --BL     --LOUD
+        self.MyShield.CollisionSizeX = bp.SizeX / 2 + 1 --2.65   --2
+        self.MyShield.CollisionSizeY = bp.SizeY / 2 + 1 --2.4    --1.75
+        self.MyShield.CollisionSizeZ = bp.SizeZ / 2 + 1 --10.9   --6.35
+
+        self.MyShield.ImpactVals = {
+            self.MyShield.CollisionSizeZ * 0.55,
+            self.MyShield.CollisionSizeZ * -0.6422,
+            self.MyShield.CollisionSizeZ * -0.3211,
+            self.MyShield.CollisionSizeX * 0.9433,
+        }
 
         --SizeX = 3.3,
         --SizeY = 2.8,
@@ -161,16 +152,16 @@ SAS0401 = Class(ASeaUnit) {
             -- and I can't be aresed to make them dynamic
             --------------------------------------------------------------------
             local impactmeshbp = self.ImpactMeshBp
-            if v[3] > 6 then
+            if v[3] > self.ImpactVals[1] then
                 impactmeshbp = impactmeshbp .. 'aft_mesh'
-            elseif v[3] < -7 then
+            elseif v[3] < self.ImpactVals[2] then
                 impactmeshbp = impactmeshbp .. 'front_mesh'
-            elseif v[3] < -3.5 then
+            elseif v[3] < self.ImpactVals[3] then
                 impactmeshbp = impactmeshbp .. getSide(v) .. '1_mesh'
             elseif v[3] < 0 then
                 impactmeshbp = impactmeshbp .. getSide(v) .. '2_mesh'
-            elseif v[3] <= 6 then
-                impactmeshbp = impactmeshbp .. getSide(v,2.5) .. '3_mesh'
+            elseif v[3] <= self.ImpactVals[1] then
+                impactmeshbp = impactmeshbp .. getSide(v,self.ImpactVals[4]) .. '3_mesh'
             end
 
             --------------------------------------------------------------------
