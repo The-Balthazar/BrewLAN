@@ -389,6 +389,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Generation script now has a radius override.
   * Cityscapes: Location selector script now has lobby options.
 
+  ### 2020-12-08
+
+  * Removed some unneeded imports from walls.lua, and added copyright info.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

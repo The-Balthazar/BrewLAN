@@ -1,8 +1,6 @@
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
-local TerrainUtils = import(BrewLANPath .. '/lua/TerrainUtils.lua')
-local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 --------------------------------------------------------------------------------
--- Wall scripts
+-- Description: Wall scripts
+-- © 2015‒2020 Sean Wheeldon
 --------------------------------------------------------------------------------
 function CardinalWallUnit(SuperClass)
     return Class(SuperClass) {
@@ -56,7 +54,6 @@ function CardinalWallUnit(SuperClass)
                     self:CreateTarmac(true, true, true, false, false)
                 end
             end
-
         end,
 
         StopBeingBuiltEffects = function(self, builder, layer)
