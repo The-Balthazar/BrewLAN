@@ -12,7 +12,7 @@ AIOpts = {
             },
             {
                 text = "<LOC CrateDrop_LOB_Hats_true>Enabled",
-                help = "<LOC CrateDrop_LOB_Hats_trueD>Hats spawn from crates all of the time.",
+                help = "<LOC CrateDrop_LOB_Hats_trueD>Hats spawn from crates 100%% of the time.",
                 key = 'true',
             },
         },

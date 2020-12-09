@@ -392,6 +392,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2020-12-08
 
   * Removed some unneeded imports from walls.lua, and added copyright info.
+  * Cityscapes: CreateSquareBlockCity function can now support rectangular blocks.
+
+  ### 2020-12-09
+
+  * FAF lobby will now load LOC files for Crate Drop, TeaD, Crystal Hill, & Cityscapes.
 
 ## 2019-10-13|0.8.9
 

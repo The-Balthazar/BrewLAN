@@ -4,7 +4,7 @@ CityData = {
         BlueprintId = 'UEF_SquareBlockCity',
         FunctionName = 'CreateSquareBlockCity',
         BlockDummy = 'zzcityblock9',
-        BlockSpacing = 10,
+        BlockSpacing = {10,10},
         CityRadius = {6,12}, --generation will stop between these two numbers from centre
         Wall = 'seb5101',
         Turrets = {
@@ -99,7 +99,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
             end
             --table.sort(dirs, function(a,b) return math.random() > 0.5 end)
             for i, dir in dirs do
-                local blockSX, blockSZ = refPos[1] + dir[1] * FUnits.BlockSpacing, refPos[3] + dir[2] * FUnits.BlockSpacing
+                local blockSX, blockSZ = refPos[1] + dir[1] * FUnits.BlockSpacing[1], refPos[3] + dir[2] * FUnits.BlockSpacing[2]
                 local newGX, newGZ = refGrid[1] + dir[1], refGrid[2] + dir[2]
                 local postest
                 --Don't try if we're doubling up anyway

@@ -4,7 +4,7 @@ pcall(function() --pcall so this doesn't crash without the required game enabled
             BlueprintId = 'Aeon_SquareBlockCity',
             FunctionName = 'CreateSquareBlockCity',
             BlockDummy = 'zzcityblock9',
-            BlockSpacing = 10,
+            BlockSpacing = {10,10},
             CityRadius = {6,12},
             Wall = 'uab5101',
             Turrets = {

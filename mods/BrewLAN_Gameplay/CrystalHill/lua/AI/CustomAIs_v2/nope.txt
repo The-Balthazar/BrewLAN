@@ -1,0 +1,2 @@
+This file exists because Git doesn't like empty folders.
+The folder exists so the FAF lobby will load the loc files.
