@@ -407,6 +407,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed BrewLAN loading after R&D and breaking things in FAF.
   * Fixed wall tarmacs being applied at the wrong time.
   * Bubble Tea: Fixed Aeon shield on FAF.
+  * Bubble Tea: Moved the projected shield size calculations to the projectee.
+  * Bubble Tea: Projected shield position not takes into account Y collision offset.
 
 ## 2019-10-13|0.8.9
 
