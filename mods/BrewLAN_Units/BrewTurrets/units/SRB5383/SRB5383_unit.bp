@@ -26,7 +26,7 @@ UnitBlueprint {
         MaxHealth = 500,
         RegenRate = 5,
     },
-    Description = '<LOC seb5382_desc>Factory Stealth Toggle Node',
+    Description = '<LOC srb5383_desc>Factory Stealth Toggle Node',
     Display = {
         --Abilities = {
         --    '<LOC ability_deathaoe>Volatile',

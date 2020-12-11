@@ -409,6 +409,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Bubble Tea: Fixed Aeon shield on FAF.
   * Bubble Tea: Moved the projected shield size calculations to the projectee.
   * Bubble Tea: Projected shield position not takes into account Y collision offset.
+  * Cityscapes: Created icon for wide residential structure.
+  * Caffe Corretto: Created icon for factory nodes.
+  * Caffe Corretto: Fixed factory stealth node having the wrong description.
+  * Cityscapes: Set up lobby options for outside of FAF.
 
 ## 2019-10-13|0.8.9
 
