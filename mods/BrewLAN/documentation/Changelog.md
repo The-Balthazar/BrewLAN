@@ -398,6 +398,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * FAF lobby will now load LOC files for Crate Drop, TeaD, Crystal Hill, & Cityscapes.
 
+  ### 2020-12-11
+
+  * Cityscapes: Added new lobby option to define team of cities spawned around players, and to pick additional starting locations.
+  * Cityscapes: Fixed an error related to a data table potentially not existing.
+  * Fixed the Vaxis hologram having a broken model.
+  * Reverted "Removed some unneeded imports from walls.lua". It was needed.
+  * Fixed BrewLAN loading after R&D and breaking things in FAF.
+  * Fixed wall tarmacs being applied at the wrong time.
+  * Bubble Tea: Fixed Aeon shield on FAF.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

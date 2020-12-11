@@ -1,3 +1,6 @@
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local TerrainUtils = import(BrewLANPath .. '/lua/TerrainUtils.lua')
+local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 --------------------------------------------------------------------------------
 -- Description: Wall scripts
 -- © 2015‒2020 Sean Wheeldon
@@ -45,8 +48,8 @@ function CardinalWallUnit(SuperClass)
             SuperClass.OnCreate(self)
         end,
 
-        OnStartBuild = function(self, unitBeingBuilt, order)
-            SuperClass.OnStartBuild(self, unitBeingBuilt, order)
+        StartBeingBuiltEffects = function(self, builder, layer)
+            SuperClass.StartBeingBuiltEffects(self, builder, layer)
             if __blueprints[self.bpID].Display.Tarmacs[1] and self:GetCurrentLayer() == 'Land' and not self:HasTarmac() then
                 if self.TarmacBag then
                     self:CreateTarmac(true, true, true, self.TarmacBag.Orientation, self.TarmacBag.CurrentBP)

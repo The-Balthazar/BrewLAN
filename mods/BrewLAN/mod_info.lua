@@ -68,5 +68,5 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N000084", --FAF 84
     "25D57D85-7D84-27HT-A501-BR3WL4N0000841",--0.8.4.1 git beta
 }
-before = {  }
+before = { "25D57D85-9JA7-D842-BREW-RESEARCH00007" }
 after = {  }

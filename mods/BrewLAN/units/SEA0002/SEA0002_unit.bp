@@ -97,14 +97,14 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'AeonCZAR',
+                    ShaderName = 'Unit',
                     AlbedoName = '/units/xea0002/xea0002_albedo.dds',
                     NormalsName = '/units/xea0002/xea0002_normalsts.dds',
                     SpecularName = '/units/xea0002/xea0002_specteam.dds',
                 },
                 {
                     LODCutoff = 1500,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Unit',
                     MeshName = '/units/xea0002/xea0002_lod1.scm',
                     AlbedoName = '/units/xea0002/xea0002_lod1_albedo.dds',
                     NormalsName = '/units/xea0002/xea0002_lod1_normalsTS.dds',
@@ -112,8 +112,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,
         UniformScale = 0.045,
     },
     Economy = {

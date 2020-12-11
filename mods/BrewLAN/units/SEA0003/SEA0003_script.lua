@@ -67,7 +67,7 @@ SEA0003 = Class(TAirUnit) {
             self.Hologram = {}
             local pos = self:GetPosition()
             for i = 1, 3 do
-                self.Hologram[i] = CreateUnitHPR('SEA0004', self:GetArmy(), pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10), 0, 0, 0)
+                self.Hologram[i] = CreateUnitHPR('sea0004', self:GetArmy(), pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10), 0, 0, 0)
                 IssueGuard({self.Hologram[i]}, self)
             end
         end

@@ -108,8 +108,8 @@ UnitBlueprint {
     Categories = {
         'PRODUCTBREWLAN',
         'INVULNERABLE',
-        'SERAPHIM',
         'MOBILE',
+        'UEF',
         'AIR',
         'HIGHALTAIR',
         'VISIBLETORECON',
@@ -131,7 +131,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 5,
                     ShaderName = 'PhalanxEffect',
-                    MeshName = '/units/uea0303/uea0303_mesh.scm',
+                    MeshName = '/units/uea0303/uea0303_lod0.scm',
                     AlbedoName = '/units/uea0303/uea0303_albedo.dds',
                     NormalsName = '/units/uea0303/uea0303_normalsts.dds',
                     SpecularName = '/units/uea0303/uea0303_specteam.dds',
@@ -172,7 +172,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
-        FactionName = 'Seraphim',
+        FactionName = 'UEF',
         Icon = 'air',
         SelectionPriority = 6,
         TechLevel = 'RULEUTL_Basic',

@@ -146,7 +146,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
         end
     end
 
-    local CityData = {}
+    local CityData = { Grids2 = {} }
     --for i, cityI in Cities do
     for x, xtable in cityI do
         for y, sectionunit in xtable do
@@ -157,11 +157,9 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
             --Data stuff
 
             --Count the number of grid cells
-            if not CityData then CityData = {} end
             CityData.NoGrids = (CityData.NoGrids or 0) + 1
 
             --make a list of all the 2x2 grid areas, track the bottom corner grid, and count them
-            if not CityData.Grids2 then CityData.Grids2 = {} end
             --if            -- left up             up                  left
             if (cityI[x-1] and cityI[x-1][y-1] and cityI[x-1][y] ) and cityI[x][y-1] then
                 --pre-randomise the order
@@ -509,5 +507,4 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
             end
         end
     end
-    LOG("City size: " .. CityData.NoGrids)
 end
