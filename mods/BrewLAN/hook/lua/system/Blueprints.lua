@@ -788,6 +788,79 @@ function BrewLANMatchBalancing(all_bps)
                 },
             },
         },
+        -- Fabricators
+        sab1313 = {
+            TargetID = 'uab1303',
+            Affects = {'Defense', 'Economy'},
+            BaseMult = 1,
+            Mults = {
+                Defense = {
+                    Health = 1.5,
+                    MaxHealth = 1.5,
+                },
+                Economy = {
+                    BuildCostEnergy = 1.35,
+                    BuildCostMass = 1.35,
+                    BuildTime = 1.35,
+                    MaintenanceConsumptionPerSecondEnergy = 1.25,
+                    ProductionPerSecondMass = 1.25,
+                },
+            }
+        },
+        srb1313 = {
+            TargetID = 'urb1303',
+            Affects = {'Defense', 'Economy'},
+            BaseMult = 1,
+            Mults = {
+                Defense = {
+                    Health = 1.5,
+                    MaxHealth = 1.5,
+                },
+                Economy = {
+                    BuildCostEnergy = 1.35,
+                    BuildCostMass = 1.35,
+                    BuildTime = 1.35,
+                    MaintenanceConsumptionPerSecondEnergy = 1.25,
+                    ProductionPerSecondMass = 1.25,
+                },
+            }
+        },
+        seb1313 = {
+            TargetID = 'ueb1303',
+            Affects = {'Defense', 'Economy'},
+            BaseMult = 1,
+            Mults = {
+                Defense = {
+                    Health = 1.5,
+                    MaxHealth = 1.5,
+                },
+                Economy = {
+                    BuildCostEnergy = 1.35,
+                    BuildCostMass = 1.35,
+                    BuildTime = 1.35,
+                    MaintenanceConsumptionPerSecondEnergy = 1.25,
+                    ProductionPerSecondMass = 1.25,
+                },
+            }
+        },
+        ssb1313 = {
+            TargetID = 'xsb1303',
+            Affects = {'Defense', 'Economy'},
+            BaseMult = 1,
+            Mults = {
+                Defense = {
+                    Health = 2.5,
+                    MaxHealth = 2.5,
+                },
+                Economy = {
+                    BuildCostEnergy = 1.35,
+                    BuildCostMass = 1.35,
+                    BuildTime = 1.35,
+                    MaintenanceConsumptionPerSecondEnergy = 1.25,
+                    ProductionPerSecondMass = 1.25,
+                },
+            }
+        },
     }
 
     for unitid, data in UnitsList do
@@ -925,7 +998,7 @@ function BrewLANNavalShields(all_bps)
                 table.insert(all_bps[k].Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
             end
             --Waterlag visual compatability
-            table.insert(all_bps[k].Categories, 'GIVEMELEGS')
+            all_bps[k].Display.GiveMeLegs = true
         end
     end
 end

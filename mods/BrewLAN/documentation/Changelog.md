@@ -414,6 +414,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Caffe Corretto: Fixed factory stealth node having the wrong description.
   * Cityscapes: Set up lobby options for outside of FAF.
 
+  ### 2020-12-13
+
+  * Waterlag: Made the leg check more efficient and no longer use categories.
+  * Cityscapes: New skyscraper structure and new vehicle.
+
+  ### 2020-12-14
+
+  * Special fabricators now use the dynamic balance function.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

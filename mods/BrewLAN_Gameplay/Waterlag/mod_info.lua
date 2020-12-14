@@ -1,7 +1,7 @@
 name = "Waterlag"
-uid = "25D57D85-9JA7-D842-GKG4-ASJDKG49G8S60"
-version = 0.6
-copyright = "© 2009–2018 Sean Wheeldon"
+uid = "25D57D85-9JA7-D842-GKG4-ASJDKG49G8S70"
+version = 0.7
+copyright = "© 2009–2020 Sean Wheeldon"
 description = "Adds aquatic abilities to each building that isn't a factory, wall, silo, or experimental."
 author = "Balthazar"
 icon = "/mods/BrewLAN_Gameplay/Waterlag/mod_icon.dds"

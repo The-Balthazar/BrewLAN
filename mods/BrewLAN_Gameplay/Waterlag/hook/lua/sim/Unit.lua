@@ -4,9 +4,10 @@ do
     Unit = Class(UnitOld) {
         OnCreate = function(self)
             --Should this have legs?
+            local bp = self:GetBlueprint()
             if  not self:IsValidBone('Floatation')
                 and self:GetCurrentLayer() == 'Water'
-                and EntityCategoryContains(categories.STRUCTURE * categories.GIVEMELEGS, self )
+                and bp.Display.GiveMeLegs
             then
                 --Leg entity script
                 local LEGS = function(self, floatation, size)
@@ -20,25 +21,29 @@ do
                     self.Floatation:SetVizToEnemies('Intel')
                     self.Trash:Add(self.Floatation)
                 end
-                --Which legs?
-                if EntityCategoryContains(categories.UEF, self) then
-                    if self:GetBlueprint().Footprint.SizeX >= 3.5 and self:GetBlueprint().Footprint.SizeZ >= 3.5 then
-                        LEGS(self, 'UEF_SIZE16_Floatation', 0.083)
-                    else
-                        LEGS(self, 'UEF_SIZE4_Floatation', 0.083)
-                    end
-                elseif EntityCategoryContains(categories.CYBRAN, self) then
-                    if self:GetBlueprint().Footprint.SizeX >= 5 and self:GetBlueprint().Footprint.SizeZ >= 5 then
-                        LEGS(self, 'CYBRAN_SIZE16_Floatation', 0.1)
-                    elseif self:GetBlueprint().Footprint.SizeX >= 3 and self:GetBlueprint().Footprint.SizeZ >= 3 then
-                        LEGS(self, 'CYBRAN_SIZE12_Floatation', 0.1)
-                    else
-                        LEGS(self, 'CYBRAN_SIZE4_Floatation', 0.1)
-                    end
-                elseif EntityCategoryContains(categories.AEON, self) then
-                    --SOMETHING
-                elseif EntityCategoryContains(categories.SERAPHIM, self) then
-                    --SOMETHING
+                local switchcase = {
+                    UEF = function()
+                        if self:GetBlueprint().Footprint.SizeX >= 3.5 and self:GetBlueprint().Footprint.SizeZ >= 3.5 then
+                            LEGS(self, 'UEF_SIZE16_Floatation', 0.083)
+                        else
+                            LEGS(self, 'UEF_SIZE4_Floatation', 0.083)
+                        end
+                    end,
+                    Cybran = function()
+                        if self:GetBlueprint().Footprint.SizeX >= 5 and self:GetBlueprint().Footprint.SizeZ >= 5 then
+                            LEGS(self, 'CYBRAN_SIZE16_Floatation', 0.1)
+                        elseif self:GetBlueprint().Footprint.SizeX >= 3 and self:GetBlueprint().Footprint.SizeZ >= 3 then
+                            LEGS(self, 'CYBRAN_SIZE12_Floatation', 0.1)
+                        else
+                            LEGS(self, 'CYBRAN_SIZE4_Floatation', 0.1)
+                        end
+                    end,
+                    --Aeon = function() end,
+                    --Seraphim = function() end,
+                }
+
+                if switchcase[bp.General.FactionName] then
+                    switchcase[bp.General.FactionName]()
                 end
             end
             return UnitOld.OnCreate(self)
