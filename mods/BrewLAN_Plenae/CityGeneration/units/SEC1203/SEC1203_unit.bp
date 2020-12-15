@@ -15,11 +15,11 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 11200,
-        MaxHealth = 11200,
+        Health = 13440,
+        MaxHealth = 13440,
         RegenRate = 0,
     },
-    Description = '<LOC uec1101_desc>UEF Residential Building',
+    Description = '<LOC sec1203_desc>UEF Commercial Building',
     Display = {
         DamageEffects = {
             {
@@ -38,9 +38,9 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                { LODCutoff = 120, ShaderName = 'Unit' },
-                { LODCutoff = 300, ShaderName = 'Unit' },
                 { LODCutoff = 450, ShaderName = 'Unit' },
+                --{ LODCutoff = 300, ShaderName = 'Unit' },
+                --{ LODCutoff = 450, ShaderName = 'Unit' },
             },
         },
         Tarmacs = {
@@ -57,9 +57,9 @@ UnitBlueprint {
         UniformScale = 0.1,
     },
     Economy = {
-        BuildCostEnergy = 12810,
-        BuildCostMass = 1344,
-        BuildTime = 1029,
+        BuildCostEnergy = 17080,
+        BuildCostMass = 1792,
+        BuildTime = 1372,
     },
     Footprint = {
         SizeX = 3,
@@ -84,7 +84,7 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         FlattenSkirt = true,
         MeshExtentsX = 2.5,
-        MeshExtentsY = 8,
+        MeshExtentsY = 11,
         MeshExtentsZ = 2.5,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = 0,
@@ -96,7 +96,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.8,
     SelectionThickness = 0.45,
     SizeX = 2.5,
-    SizeY = 7.5,
+    SizeY = 10,
     SizeZ = 2.5,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 207,

@@ -422,6 +422,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2020-12-14
 
   * Special fabricators now use the dynamic balance function.
+  * Renamed Gantry Homogeniser so it no longer has "BrewLAN" in the name.
+  * Fixed a broken script link in the Darkness.
+
+  ### 2020-12-15
+
+  * Cityscapes: Two new skyscraper structures.
 
 ## 2019-10-13|0.8.9
 

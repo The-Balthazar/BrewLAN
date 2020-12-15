@@ -5,6 +5,7 @@
 local CRadarJammerUnit = import('/lua/cybranunits.lua').CRadarJammerUnit
 local BareBonesWeapon = import('/lua/sim/defaultweapons.lua').BareBonesWeapon
 local Utilities = import('/lua/utilities.lua')
+local BrewLANPath = import('/lua/game.lua').BrewLANPath()
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 local AIUtils = import('/lua/ai/aiutilities.lua')
 local tableinsert = table.insert

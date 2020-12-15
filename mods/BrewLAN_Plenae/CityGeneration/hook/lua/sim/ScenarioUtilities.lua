@@ -22,11 +22,16 @@ CityData = {
             'ueb1101',--Else
         },
         Structures3x3 = {
-            {'uec1101', Weight = 108 },
-            {'uec1201', Weight = 32 },
-            {'uec1301', Weight = 32 },
-            {'uec1501', Weight = 32 },
-            {'xec1401', Weight = 16 },
+            {'uec1101', Weight = 6 },
+            {'uec1201', Weight = 2 },
+            {'uec1301', Weight = 2 },
+            {'uec1501', Weight = 2 },
+            {'xec1401', Weight = 1 },
+        },
+        Structures3x3Tall = {
+            {'sec1201', Weight = 1 },
+            {'sec1202', Weight = 1 },
+            {'sec1203', Weight = 1 },
         },
         Structures7x7 = {
             {'uec1401', Weight = 8 },
@@ -63,6 +68,7 @@ CityData = {
             {'/env/uef/props/uef_car1_prop.bp', Weight = 14 },
             {'/env/uef/props/uef_bus_prop.bp', Weight = 4 },
             {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_truck_prop.bp', Weight = 3 },
+            {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_cybertruck_prop.bp', Weight = 1 },
         },
     },
 }
@@ -410,9 +416,11 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     --Assuming we're not at pop cap (rare, but can happen here), try to spawn a power gen if we don't have one
                     if not CityData.PowerPlant and not AIbrain.PopCapReached then
                         local RDPG = FUnits.Power[3]
+                        --Just in case something else gave alternatives to it.
                         if type(RDPG) ~= 'string' then
                             RDPG = ChooseWeightedBp(RDPG)
                         end
+                        -- Small city power generator selection
                         if CityData.NoGrids > 6 and __blueprints[RDPG] then
                             CityData.PowerPlant = SafeSpawn(RDPG, cbpos)
                         elseif CityData.NoGrids > 1 then
@@ -422,12 +430,17 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                         else
                             CityData.PowerPlant = SafeSpawn(FUnits.Power[4], cbpos)
                         end
+                        -- Fence around the generators.
                         if CityData.PowerPlant then
                             RingFence(cbpos, 1.5)
                         end
                     else
                         -- Spawn a regular ass structure
-                        SafeSpawn(FUnits.Structures3x3, cbpos)
+                        if (CityData.NoGrids / 10) - math.abs(x) - math.abs(y) > math.random(1,5) then
+                            SafeSpawn(FUnits.Structures3x3Tall, cbpos)
+                        else
+                            SafeSpawn(FUnits.Structures3x3, cbpos)
+                        end
                     end
                 elseif check and math.random(1,4) == 4 then
                     --If we decided to leave this blank, spawn a carpark

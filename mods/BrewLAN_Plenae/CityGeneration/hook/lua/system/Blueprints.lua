@@ -28,6 +28,10 @@ function CityscapesChanges(all_bps)
         'xec1401',
         'xec1501',
 
+        'sec1201',
+        'sec1202',
+        'sec1203',
+
         'uac1101',
         'uac1201',
         'uac1301',
