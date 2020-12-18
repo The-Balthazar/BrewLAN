@@ -29,8 +29,8 @@ CityData = {
             {'xec1401', Weight = 1 },
         },
         Structures3x3Tall = {
-            {'sec1201', Weight = 1 },
-            {'sec1202', Weight = 1 },
+            {'sec1201', Weight = 2 },
+            {'sec1202', Weight = 2 },
             {'sec1203', Weight = 1 },
         },
         Structures7x7 = {

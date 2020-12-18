@@ -429,6 +429,21 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Cityscapes: Two new skyscraper structures.
 
+  ### 2020-12-16
+
+  * Penetration: Tomcat burst cannons are no longer restricted to air units, but can now only target units in the air.
+  * Penetration: Tomcat missiles can now only target aircraft, but on any layer.
+
+  ### 2020-12-17
+
+  * Cityscapes: Added a distance model to the skyscraper that was missing it.
+
+  ### 2020-12-18
+
+  * Pathfinder script:
+    * Now has a toggle for land/water/amph path nodes.
+    * (Done previously but only just versioned:) Added an option for a cutoff for ignoring small contiguous areas of blocking.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

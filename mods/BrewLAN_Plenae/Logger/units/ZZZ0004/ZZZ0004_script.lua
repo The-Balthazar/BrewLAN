@@ -9,6 +9,12 @@ ZZZ0004 = Class(Unit) {
 
     MapTerrainDeltaTable = function(self)
         coroutine.yield(1)
+        local markerTypes = {
+            { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false },
+            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true  },
+            { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true  },
+        }
+        local markerType = markerTypes[2]
         ------------------------------------------------------------------------
         -- Debug, testing, and extra info options
         local debugmode = false
@@ -30,14 +36,21 @@ ZZZ0004 = Class(Unit) {
         local doDeIsland = false -- removes single unconnected grids of passable (4 point check)
         local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check)
         -- Other cleanup toggles -----------------------------------------------
-        local doMinDistCheck = 15 -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two.
+        local doMinDistCheck = math.sqrt(ScenarioInfo.size[1]) -- sqrt of map size is usually a good default -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two.
         local doRemoveIsolatedMarkers = true -- If a marker has no connections, YEET
+        ------------------------------------------------------------------------
+        local minContigiousZoneArea = 30
+        --local gridScaleDivisor = 4
+            --These two are mutually exclusive
+        local ignoreMinZones = true -- treat small zones as though they dont exist.
+        local incorporateMinZones = false -- unfinished (intended to have small zones count as their nearest zone large enough zone)
         ------------------------------------------------------------------------
         -- Data storage
         --local deltamap = {} --Populate with the local evalation differencees
         local passmap = {}  --Populate with false for impassible or distance to nearest false
+        local passmapMinCont = {}
         local voronoimap = {} --Populate with zones around unpassable areas as a voronoi map
-        local voronoiedgelist = {} --hashmap of voronoi zone IDs that touch the border; for adjacency cross reference
+        --local voronoiedgelist = {} --hashmap of voronoi zone IDs that touch the border; to prevent them from being ignored by the minContigiousZoneArea value
         --local markermap = {} --Map of markers
         local markerlist = {} --List of markers
         --local pointsOfInterest = {} --Populated with an array of 2 point co-ords of interesting markers
@@ -97,6 +110,7 @@ ZZZ0004 = Class(Unit) {
         for x = 0, ScenarioInfo.size[1]+1 do --Start one below and one above map size in order to;
             --deltamap[x] = {}
             passmap[x] = {}
+            passmapMinCont[x] = {}
             --markermap[x] = {}
             voronoimap[x] = {}
             for y = 0, ScenarioInfo.size[2]+1 do
@@ -121,8 +135,15 @@ ZZZ0004 = Class(Unit) {
                         return tt ~= 'Dirt09' and tt ~= 'Lava01'
                     end
 
+                    local waterCheck = function(markerType, x, y, c)
+                        if markerType.water and markerType.land then
+                            return true
+                        end
+                        local w = GetSurfaceHeight(x, y)
+                        return (markerType.water and w > c) or (markerType.land and w <= c)
+                    end
                     --deltamap[x][y] = delta
-                    if delta <= maxGroundVariation and terrainTypeCheck(x,y) then
+                    if delta <= maxGroundVariation and terrainTypeCheck(x,y) and waterCheck(markerType, x, y, c) then
                         --previously `passmap[x][y] = delta <= maxGroundVariation`
                         --Set up for the vector check for min dist from false
                         passmap[x][y] = markerCheckDistanceSq
@@ -195,9 +216,15 @@ ZZZ0004 = Class(Unit) {
         -- Voronoimap is which block of unpathable it's from
             -- Sweeps through all unpassable areas, walking through all contiguous areas and marking them as so,
             -- then mark off distances to high points, and which high point is closer
-        do
-             -- do block to limit MapDistance function existance
-            local MapDistanceVoronoi = function(passmap, voronoimap, xtarget, ytarget, maxdist, blockid)
+        do -- do block to limit locals
+
+            local CrawlerPath = {}
+            local ZoneSizes = {}
+            local MapCrawler
+            local MapDistanceVoronoi
+
+            -- done from the perspective of the impassible area grid, and checking outwards for pathable areas to mark
+            MapDistanceVoronoi = function(passmap, voronoimap, xtarget, ytarget, maxdist, blockid)--, smallOWMode)
                 --Limit area to loop over to square around the circle that's going to change
                 --Could limit more with sin/cos? Would that be more compute than the vdist?
                 local xstart = max(xtarget-maxdist,1)
@@ -215,56 +242,230 @@ ZZZ0004 = Class(Unit) {
                                 passmap[x][y] = dist
                                 voronoimap[x][y] = blockid
                             end
+                        --[[elseif smallOWMode and not passmap[x][y] and ZoneSizes[blockid] and ZoneSizes[blockid] < minContigiousZoneArea then
+                            local dist = VDist2Sq(x,y,xtarget,ytarget)
+                            if not passmapMinCont[x][y] or dist < passmapMinCont[x][y] then
+                                --this way of reassigning the smaller zones cause issues for areas near to two larger zones, and is non-contiguous
+                                passmapMinCont[x][y] = dist
+                                voronoimap[x][y] = blockid
+                            end]]
                         end
                     end
                 end
             end
-            local CrawlerPath = {}
-            local MapCrawler
-            MapCrawler = function(passmap, voronoimap, x, y, markerCheckDistance, blockid)
-                for _, adj in {{0,0},{0,-1},{0,1},{-1,-1},{-1,0},{-1,1},{1,-1},{1,0},{1,1}} do
-                    --Make a list of areas that touch the border, and shouldn't count towards adjacency
-                    if voronoimap[x+adj[1] ][y+adj[2] ] == 'border' and not voronoiedgelist[blockid] then
-                        voronoiedgelist[blockid] = true
 
-                        --Split "border" zone where another unpassable zone touches it
-                        --so we can drop this whole 'voronoiedgelist' thing
-                    end
-                    if not voronoimap[x+adj[1] ][y+adj[2] ] then -- not passmap[x+adj[1] ][y+adj[2] ] and
+            MapCrawler = function(passmap, voronoimap, x, y, markerCheckDistance, blockid, borderMode)
+                for _, adj in {{0,0},{0,-1},{-1,0},{0,1},{1,0},{-1,1},{1,-1},{-1,-1},{1,1}} do
+
+                    --Separate the border where it touches a zone, but dont crawl along it. 6 and greater are intercardinals.
+                    if not borderMode and voronoimap[x+adj[1] ][y+adj[2] ] == 'border' and _ < 6 then
 
                         voronoimap[x+adj[1] ][y+adj[2] ] = blockid
+                        ZoneSizes[blockid] = ZoneSizes[blockid] + 1 + (minContigiousZoneArea or 0) --Add this so we never ignore border zones, since that would be bad.
 
-                        if  passmap[x+adj[1]-1][y+adj[2]  ] or
-                            passmap[x+adj[1]  ][y+adj[2]-1] or
-                            passmap[x+adj[1]+1][y+adj[2]  ] or
-                            passmap[x+adj[1]  ][y+adj[2]+1]
-                        then
-                            MapDistanceVoronoi(passmap, voronoimap, x+adj[1], y+adj[2], markerCheckDistance, blockid)
+                        --voronoiedgelist[blockid] = true
+                    end
+                    if voronoimap[x+adj[1] ][y+adj[2] ] == false or borderMode and voronoimap[x+adj[1] ][y+adj[2] ] == 'border' then
+
+                        voronoimap[x+adj[1] ][y+adj[2] ] = blockid
+                        if not borderMode then
+                            ZoneSizes[blockid] = ZoneSizes[blockid] + 1
                         end
                         insert(CrawlerPath, {x+adj[1], y+adj[2]})
-                        --MapCrawler(passmap, voronoimap, x+adj[1], y+adj[2], markerCheckDistance, blockid)
+
                     end
                 end
             end
-
+--[[ voronoimap = (abridged) b = "border" f = false
+b,f,f,f,f,f,f,f,f, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,f,f,f,f,f, , , , ,b,
+b,f,f,f,f,f,f,f, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,f,f,f,f, , , ,b,
+b, , , , ,f,f, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,f,f,f,f, , , , , , , , , , , , , ,f,f,f,f, , ,b,
+b, , , , , , , , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , , , ,f,f,f,f,f, , , , , , , , , , , , , ,f,f,f,f,f,b,
+b, , , , , , , , , , , , , , , , , , , , , ,f,f,f, , , , , , , ,f, , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , ,f,f,f,f,b,
+b, , , , , , , , , , , , , , , , , , , , , ,f,f,f, , , , , , ,f,f, , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , ,f,f,b,
+b, , , , , , , , , , , , , , , , , , , , ,f,f,f,f, , , , , , ,f,f, , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , , ,f,b,
+b, , , , , , , , , , , , , , , , , , , , ,f,f,f, , , , , , , ,f,f, , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , , , ,f,f,f,f,f, , , , , , , ,f,f,f, , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , , , ,f,f,f,f, , , , , , , , ,f,f,f, , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , , ,f,f,f,f, , , , , , , , , ,f,f,f, , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f,f,f, , , , , , , , , , ,f,f,f, , , , , , , , , , , , , ,f,f,f,f, , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , ,f,f,f, , , , , , , , , , , , , ,f,f,f,f,f, , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , ,f,f, , , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , ,f,f,f, , , , , , , , , , , , , , , , ,f,f,f, , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , ,f,f,f,f, , , , , , , , , , , , , , , , ,f,f,f,f, , , , , , , , , , , ,b,
+b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,
+]]
+            --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
+            --------------------------------------------------------------------
+            -- Map out contigious areas of unpathable areas, splitting border as we go
             local blockid = 0
             for x, ydata in passmap do
                 for y, pass in ydata do
                     if not pass and not voronoimap[x][y] then
                         blockid = blockid + 1
+                        if not ZoneSizes[blockid] then ZoneSizes[blockid] = 0 end
                         MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid)
                         while CrawlerPath[1] do
                             MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid)
                             remove(CrawlerPath, 1)
                         end
-                    elseif not pass and voronoimap[x][y] == 'border' then
-                        MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, 'nearborder')
                     end
                 end
             end
+--[[ voronoimap = (abridged) b = "border" (leading 1's removed for visibility)
+3,3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2,2, , , , ,b,
+3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2, , , ,b,
+b, , , , ,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , , , ,2,2,2,2, , ,b,
+b, , , , , , , , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , , , , , , , ,0,0,0,0,0, , , , , , , , , , , , , ,2,2,2,2,2,2,
+b, , , , , , , , , , , , , , , , , , , , , ,5,5,5, , , , , , , ,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , ,2,2,2,2,2,
+b, , , , , , , , , , , , , , , , , , , , , ,5,5,5, , , , , , ,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , ,2,2,2,
+b, , , , , , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , ,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , , ,2,2,
+b, , , , , , , , , , , , , , , , , , , , ,5,5,5, , , , , , , ,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , , , ,5,5,5,5,5, , , , , , , ,7,7,7, , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , , , ,7,7,7, , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , , , , ,7,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , , , , , ,7,7,7, , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , ,0,0,0,0,0, , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , , ,7,7, , , , , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , , ,7,7, , , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , ,b,
+b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , ,b,
+b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,0,0,0,0,b,b,b,b,b,b,b,b,b,b,b,b,
+]]
+            --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
+            --------------------------------------------------------------------
+            -- Do the same for the border segments
+            local xmax, ymax = getn(passmap), getn(passmap[1])
+            for x = 0, xmax do
+                for _, y in {0, ymax} do
+                    if voronoimap[x][y] == 'border' then
+                        blockid = blockid + 1
+                        MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid, true)
+                        while CrawlerPath[1] do
+                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid, true)
+                            remove(CrawlerPath, 1)
+                        end
+                    end
+                end
+            end
+            for y = 0, xmax do
+                for _, x in {0, ymax} do
+                    if voronoimap[x][y] == 'border' then
+                        blockid = blockid + 1
+                        MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid, true)
+                        while CrawlerPath[1] do
+                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid, true)
+                            remove(CrawlerPath, 1)
+                        end
+                    end
+                end
+            end
+
+--[[ voronoimap = (abridged) (1's removed for visibility)
+3,3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2,2, , , , ,24,
+3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2, , , ,24,
+5, , , , ,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , , , ,2,2,2,2, , ,24,
+5, , , , , , , , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , , , , , , , ,0,0,0,0,0, , , , , , , , , , , , , ,2,2,2,2,2,2,
+5, , , , , , , , , , , , , , , , , , , , , ,5,5,5, , , , , , , ,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , ,2,2,2,2,2,
+5, , , , , , , , , , , , , , , , , , , , , ,5,5,5, , , , , , ,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , ,2,2,2,
+5, , , , , , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , ,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , , ,2,2,
+5, , , , , , , , , , , , , , , , , , , , ,5,5,5, , , , , , , ,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , , , ,5,5,5,5,5, , , , , , , ,7,7,7, , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , , , ,7,7,7, , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , , , , ,7,7,7, , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5,5,5, , , , , , , , , , ,7,7,7, , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , ,0,0,0,0,0, , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , , ,7,7, , , , , , , , , , , , , , , , ,0,0, , , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , , ,7,7, , , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , ,2,
+5, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , ,2,
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,
+]]  --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
+            --------------------------------------------------------------------
+
+            --Check actions are required with the incorporateMinZones or ignoreMinZones actions
+            local smallZonesNum = 0
+            if incorporateMinZones or ignoreMinZones then
+                for zone, no in ZoneSizes do
+                    if no <= minContigiousZoneArea then
+                        smallZonesNum = smallZonesNum + 1
+                        break
+                    end
+                end
+            end
+
+            --Just remove the zones rather than specifically ignoring them, simplify future actions
+            if ignoreMinZones and smallZonesNum > 0 then
+                for x, ydata in passmap do
+                    for y, pass in ydata do
+                        if not pass and voronoimap[x][y] and ZoneSizes[voronoimap[x][y] ] and ZoneSizes[voronoimap[x][y] ] <= minContigiousZoneArea then
+                            passmap[x][y] = markerCheckDistanceSq
+                            voronoimap[x][y] = ''
+                        end
+                    end
+                end
+            end
+
+            -- find the nearest zones to the small zones, and merge them
+            -- Dont bother if ignore is on. There are none.
+            if incorporateMinZones and not ignoreMinZones and smallZonesNum > 0 then
+                --[[for x, ydata in passmap do
+                    for y, pass in ydata do
+                        if passmapMinCont[x][y]
+                        and (passmap[x-1][y  ] or passmap[x  ][y-1] or passmap[x+1][y  ] or passmap[x  ][y+1])
+                        then
+                            MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, blockid)
+                        end
+                    end
+                end]]
+            end
+
+            -- Generate the voronoi areas
+            for x, ydata in passmap do
+                for y, pass in ydata do
+                    if not pass
+                    --and voronoimap[x][y] ~= ''
+                    --and (not ZoneSizes[voronoimap[x][y] ] or ZoneSizes[voronoimap[x][y] ] >= minContigiousZoneArea)
+                    and (passmap[x-1][y  ] or passmap[x  ][y-1] or passmap[x+1][y  ] or passmap[x  ][y+1])
+                    then
+                        MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, voronoimap[x][y])--, true)
+                    end
+                end
+            end
+--[[  voronoimap =
+INFO: 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,6,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,24,24,24,
+INFO: 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,24,24,
+INFO: 15,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,24,
+INFO: 15,15,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
+INFO: 15,15,15,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,
+INFO: 15,15,15,15,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,
+INFO: 15,15,15,15,15,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,
+INFO: 15,15,15,15,15,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,21,
+INFO: 15,15,15,15,15,15,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,12,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,18,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,5,5,5,5,5,5,5,17,7,7,7,7,7,7,7,7,7,7,7,7,18,18,18,18,10,10,10,10,10,10,10,10,10,10,10,10,10,10,21,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,5,5,5,5,17,17,17,17,7,7,7,7,7,7,7,7,7,7,18,18,18,18,18,18,10,10,10,10,10,10,10,10,10,10,10,10,21,21,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,5,5,17,17,17,17,17,7,7,7,7,7,7,7,7,7,18,18,18,18,18,18,18,18,18,18,10,10,10,10,10,10,10,10,10,21,21,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,5,5,5,5,17,17,17,17,17,17,17,7,7,7,7,7,7,7,18,18,18,18,18,18,18,18,18,18,18,18,18,10,10,10,10,10,10,21,21,21,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,5,17,17,17,17,17,17,17,17,17,17,7,7,7,7,7,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,10,10,10,10,10,21,21,21,21,21,21,21,21,21,21,21,
+INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,17,17,17,17,17,7,7,7,7,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,10,10,10,10,21,21,21,21,21,21,21,21,21,21,21,21,
+]]          --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
+            --------------------------------------------------------------------
+            --
+
         end
         --LOG(repr(voronoiedgelist))
-        --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
+
+
+
+
         ------------------------------------------------------------------------
         -- Find all 2x2 areas containing 3 zones, and try to put a merker there
         do
@@ -287,16 +488,24 @@ ZZZ0004 = Class(Unit) {
                     end]]
                     if tcount(zones) >= 3 then
                         local CreateMarker = function(x, y)
+
+                            --[[local markerTypes = {
+                                { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false },
+                                { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true  },
+                                { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true  },
+                            }
+                            local markerType = markerTypes[1] ]]
+
                             local mnum = tcount(markerlist)
-                            local markername = 'MARKER_'..mnum
+                            local markername = markerType.name..mnum
                             --markermap[x][y] = markername
                             markerlist[markername] = {
-                                color = 'ff00ffff',
+                                color = markerType.color,
                                 hint = true,
-                                graph = 'DefaultAmphibious',
+                                graph = markerType.graph,
                                 adjacentTo = '',
                                 zones = copy(zones),
-                                type = 'Amphibious Path Node',--'Land Path Node' - 'Amphibious Path Node',
+                                type = markerType.type,
                                 position = { x, GTH(x,y), y },
                                 orientation = { 0, 0, 0 },
                                 prop = '/env/common/props/markers/M_Blank_prop.bp',
@@ -380,7 +589,8 @@ ZZZ0004 = Class(Unit) {
                                             end
                                         end
 
-                                        local test = true
+                                        --voronoiedgelist was made redundant by splitting up the border.
+                                        --[[local test = true
                                         if zonetest.nearborder then
                                             for z, b in zonetest do
                                                 if z ~= 'nearborder' and voronoiedgelist[z] then
@@ -390,10 +600,10 @@ ZZZ0004 = Class(Unit) {
                                                 end
                                             end
                                         end
-                                        if test then
+                                        if test then]]
                                             markAdjacent(m2data, m1name)
                                             markAdjacent(m1data, m2name)
-                                        end
+                                        --end
                                     end
                                 end
                             end
