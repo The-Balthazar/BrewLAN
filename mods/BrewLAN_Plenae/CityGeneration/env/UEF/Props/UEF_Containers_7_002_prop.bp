@@ -1,0 +1,41 @@
+PropBlueprint {
+    Categories = {
+        'RECLAIMABLE',
+    },
+    Defense = {
+        Health = 846,
+        MaxHealth = 846,
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                { 
+                    AlbedoName = 'UEF_Containers_albedo.dds',
+                    NormalsName = 'UEF_Containers_normalsts.dds',
+                    SpecularName = 'UEF_Containers_specteam.dds',
+                    LODCutoff = 200,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = { --These values are set randomly up to this by the spawn script.
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 846,
+        ReclaimTime = 846,
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
+    Interface = {
+        HelpText = 'UEF Containers',
+    },
+    Physics = {
+        BlockPath = true,
+    },
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
+}

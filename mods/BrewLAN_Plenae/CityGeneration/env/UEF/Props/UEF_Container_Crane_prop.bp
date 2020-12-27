@@ -1,0 +1,35 @@
+PropBlueprint {
+    Categories = {
+        'RECLAIMABLE',
+    },
+    Defense = {
+        Health = 2400,
+        MaxHealth = 2400,
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                { LODCutoff = 200, ShaderName = 'Unit'},
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        ReclaimEnergyMax = 0, 
+        ReclaimMassMax = 1200,
+        ReclaimTime = 1200,
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
+    Interface = {
+        HelpText = 'UEF Containers',
+    },
+    Physics = {
+        BlockPath = true,
+    },
+    SizeX = 4.1,
+    SizeY = 4,
+    SizeZ = 3,
+}

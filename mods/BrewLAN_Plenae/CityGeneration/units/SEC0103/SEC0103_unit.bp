@@ -1,0 +1,13 @@
+--------------------------------------------------------------------------------
+-- Dummy unit for finding safe positions and storing city data
+--------------------------------------------------------------------------------
+UnitBlueprint {
+    Categories = { 'INVULNERABLE', 'UNSELECTABLE', 'UNTARGETABLE', 'VISIBLETORECON' },
+       Defense = { Health = 0, MaxHealth = 0 },
+       Display = { Mesh = { LODs = { { LODCutoff = 500, ShaderName = 'Unit'} } }, HideLifebars = true, UniformScale = 0.1 },
+     Footprint = { SizeX = 0, SizeZ = 0 },
+       General = { CapCost = 0, Category = 'Defense', FactionName = 'None' },
+         Intel = { VisionRadius = 0 },
+       Physics = { BuildOnLayerCaps = { LAYER_Water = true }, MotionType = 'RULEUMT_None' },
+         SizeX = 0,  SizeY = 0, SizeZ = 0,
+}

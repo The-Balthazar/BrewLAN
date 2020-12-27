@@ -70,7 +70,44 @@ CityData = {
             {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_truck_prop.bp', Weight = 3 },
             {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_cybertruck_prop.bp', Weight = 1 },
         },
-    },
+
+        BlockDummyWater = 'zzcityblock9w',
+        PierData = {
+            TexPath = '/mods/BrewLAN_Plenae/CityGeneration/env/UEF/Decals/UEF_Road_Black_Pier_',
+            TexSize = {20.66, 10.66},
+            TexLOD = 500,
+            Directional = {
+                [0] = {x=-5, z= 0, xa =-1, za= 0, x0=-14.5, z0= -1.5, w=19, h= 3},
+                [1] = {x= 0, z= 5, xa = 0, za= 1, x0= -1.5, z0= -4.5, w= 3, h=19},
+                [2] = {x= 5, z= 0, xa = 1, za= 0, x0= -4.5, z0= -1.5, w=19, h= 3},
+                [3] = {x= 0, z=-5, xa = 0, za=-1, x0= -1.5, z0=-14.5, w= 3, h=19},
+            },
+            Pier = 'sec0103',
+            PierHeight = 0.25,
+            Dock = '/env/uef/props/uef_dock_prop.bp',
+            Containers = {
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_001_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_002_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_003_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_004_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_005_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_006_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_007_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_008_prop.bp', Weight = 1 },
+                {'/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_containers_7_009_prop.bp', Weight = 1 },
+            },
+            ContainerCranes = '/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_container_crane_prop.bp',
+            Ships = {
+                {'xes0307', Weight = 1 },
+                {'ues0302', Weight = 1 },
+            },
+            Boats = {
+                {'xes0205', Weight = 1 },
+                {'xes0102', Weight = 1 },
+                {'ues0103', Weight = 1 },
+            },
+        }
+    }
 }
 
 function GetRandomCityFactionGenerator()
@@ -87,6 +124,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     -- Find potential city locations
     --------------------------------------------------------------------
     local cityI = {}
+
     --------------------------------------------------------------------
     -- Plan cities
     --------------------------------------------------------------------
@@ -111,14 +149,58 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                 --Don't try if we're doubling up anyway
                 if not (cityI[newGX] and cityI[newGX][newGZ]) then
                     postest = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, blockSX, blockSZ)
+                    --WaitTicks(2)
                 end
+
+                ----------------------------------------------------------------
+                -- Interupt block for if we should try and do something with a pier
+                ----------------------------------------------------------------
+                local PierBlock = function()
+                    -- Do a pier?
+                    if FUnits.BlockDummyWater and AIbrain:GetMapWaterRatio() > 0.3 then
+                        local blockSX2, blockSZ2 = refPos[1] + dir[1] * FUnits.BlockSpacing[1] * 2, refPos[3] + dir[2] * FUnits.BlockSpacing[2] * 2
+                        local newGX2, newGZ2 = refGrid[1] + dir[1] * 2, refGrid[2] + dir[2] * 2
+                        local postest2
+
+                        if postest and IsUnit(postest) then
+                            postest:Destroy()
+                            coroutine.yield(1)
+                        end
+                        --Don't try if we're doubling up anyway
+                        if not (cityI[newGX2] and cityI[newGX2][newGZ2]) and GetTerrainHeight(blockSX2, blockSZ2) < GetSurfaceHeight(blockSX2, blockSZ2) then
+                            postest2 = AIbrain:CreateUnitNearSpot(FUnits.BlockDummyWater, blockSX2, blockSZ2)
+                            --WaitTicks(2)
+                        end
+
+                        if not cityI[newGX2] then cityI[newGX2] = {} end
+                        if postest2 and IsUnit(postest2) then
+                            local pos2 = postest2:GetPosition()
+
+                            if pos2[1] == blockSX2 and pos2[3] == blockSZ2 then
+                                cityI[newGX2][newGZ2] = postest2
+                                if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'pier' end
+                            else
+                                --cityI[newGX2][newGZ2] = 'bad'   --It's okay to call it bad here? since we're obviously at or near the water? maybe?
+                                if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
+                                postest2:Destroy()
+                                coroutine.yield(1)
+                            end
+                        else
+                            --cityI[newGX2][newGZ2] = 'bad'  --don't declare newGX2 bad here, since we may be on land still
+                            if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
+                        end
+                    elseif postest and IsUnit(postest) then
+                        if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
+                        postest:Destroy()
+                        coroutine.yield(1)
+                    end
+                end
+                ----------------------------------------------------------------
+
+                if not cityI[newGX] then cityI[newGX] = {} end
 
                 if postest and IsUnit(postest) then
                     local pos = postest:GetPosition()
-
-                    if not cityI[newGX] then
-                        cityI[newGX] = {}
-                    end
 
                     if pos[1] == blockSX and pos[3] == blockSZ then
                         --LOG("SAFE!")
@@ -127,10 +209,10 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                             CrawlIntersections(pos, {newGX, newGZ}, total + 1)
                         end
                     else
-                        cityI[newGX][newGZ] = 'bad'
-                        postest:Destroy()
-                        coroutine.yield(1)
+                        PierBlock()
                     end
+                else
+                    PierBlock()
                 end
             end
         end
@@ -140,7 +222,18 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
         --table.insert(Cities, cityI)
     end
 
-    if AIbrain.PopCapReached then return end
+    if AIbrain.PopCapReached then
+        -- Clean up before we kill this thread.
+        for x, xtable in cityI do
+            for y, sectionunit in xtable do
+                if sectionunit.Destroy then
+                    sectionunit:Destroy()
+                end
+                cityI[x][y] = nil
+            end
+        end
+        return
+    end
     --------------------------------------------------------------------
     -- Cleanup city areas
     --------------------------------------------------------------------
@@ -156,28 +249,30 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     --for i, cityI in Cities do
     for x, xtable in cityI do
         for y, sectionunit in xtable do
-            local pos = sectionunit:GetPosition()
-            sectionunit:Destroy()
-            cityI[x][y] = pos
+            if sectionunit ~= 'pier' then
+                local pos = sectionunit:GetPosition()
+                sectionunit:Destroy()
+                cityI[x][y] = pos
 
-            --Data stuff
+                --Data stuff
 
-            --Count the number of grid cells
-            CityData.NoGrids = (CityData.NoGrids or 0) + 1
+                --Count the number of grid cells
+                CityData.NoGrids = (CityData.NoGrids or 0) + 1
 
-            --make a list of all the 2x2 grid areas, track the bottom corner grid, and count them
-            --if            -- left up             up                  left
-            if (cityI[x-1] and cityI[x-1][y-1] and cityI[x-1][y] ) and cityI[x][y-1] then
-                --pre-randomise the order
-                table.insert(CityData.Grids2, math.random(1,table.getn(CityData.Grids2)), {x,y})
-                CityData.NoGrids2 = (CityData.NoGrids2 or 0) + 1
-            end
+                --make a list of all the 2x2 grid areas, track the bottom corner grid, and count them
+                --if            -- left up             up                  left
+                if (cityI[x-1] and cityI[x-1][y-1] and cityI[x-1][y-1] ~= 'pier' and cityI[x-1][y] and cityI[x-1][y] ~= 'pier' ) and cityI[x][y-1] and cityI[x][y-1] ~= 'pier' then
+                    --pre-randomise the order
+                    table.insert(CityData.Grids2, math.random(1,table.getn(CityData.Grids2)), {x,y})
+                    CityData.NoGrids2 = (CityData.NoGrids2 or 0) + 1
+                end
 
-            --Clear props from the road
-            for i, v in { {1.5, 5}, {5, 1.5} } do
-                for i, v in GetReclaimablesInRect( Rect(pos[1]-v[1], pos[3]-v[2], pos[1]+v[1], pos[3]+v[2]) ) or {} do
-                    if v and IsProp(v) then --and not string.find(v:GetBlueprint().BlueprintId, 'uef') then--SetPropCollision
-                        v:Destroy()
+                --Clear props from the road
+                for i, v in { {1.5, 5}, {5, 1.5} } do
+                    for i, v in GetReclaimablesInRect( Rect(pos[1]-v[1], pos[3]-v[2], pos[1]+v[1], pos[3]+v[2]) ) or {} do
+                        if v and IsProp(v) then --and not string.find(v:GetBlueprint().BlueprintId, 'uef') then--SetPropCollision
+                            v:Destroy()
+                        end
                     end
                 end
             end
@@ -254,10 +349,15 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
         end
         return CreatePropHPR(
             bp,
-            pos[1]+v1, GetTerrainHeight(pos[1]+v1, pos[3]+v2), pos[3]+v2,
+            pos[1]+v1, GetSurfaceHeight(pos[1]+v1, pos[3]+v2), pos[3]+v2,
             dir or Random(0,360), 0, 0
         )
     end
+
+    --Bool to binary: if b, return b or 1 if b is nil
+    local BTB = function(a,b,c)return (a and (b or 1) or (c or 0)) end
+    --get grid cell, check x exists before indexing for y
+    local gXZ = function(g,x,z)return (g[x] and g[x][z]) end
 
     -- Places and returns a unit from a bp or a weighted list of bps
     -- expects [string or table] [vector2 pos] [0-3 number]
@@ -290,7 +390,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                 return false
             end
         end
-        SafeSpawn(unitID, {X, nil, Y}, dir or 0)
+        return SafeSpawn(unitID, {X, nil, Y}, dir or 0)
     end
 
     -- Spawns a ring of walls with gaps in the middle of the edges, 1 TMD, and up to of each 2 AA and PD
@@ -394,126 +494,192 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     --for i, cityI in Cities do
     for x, xtable in cityI do
         for y, pos in xtable do
-
-            -- spawn structures before roads so that we an abort if we fail to make a generator before we've made a mark.
-            for _, v in Corners(1) do
-                --local position of this structure? centre
-                local cbpos = {pos[1] + v[1]*3, pos[2], pos[3] + v[2]*3}
-                --Make sure we didn't already spawn a big thing here
-                local r1,r2,r3,r4 = pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5
-                local units = table.cat(GetUnitsInRect(r1,r2,r3,r4) or {}, GetReclaimablesInRect(Rect(r1,r2,r3,r4)) or {})
-                local check = true
-                if units then
-                    for i, unit in units do
-                        if unit.LargeStructure then
-                            check = false
-                            break
-                        end
-                    end
-                end
-
-                if check and math.random(1,10) ~= 10 then
-                    --Assuming we're not at pop cap (rare, but can happen here), try to spawn a power gen if we don't have one
-                    if not CityData.PowerPlant and not AIbrain.PopCapReached then
-                        local RDPG = FUnits.Power[3]
-                        --Just in case something else gave alternatives to it.
-                        if type(RDPG) ~= 'string' then
-                            RDPG = ChooseWeightedBp(RDPG)
-                        end
-                        -- Small city power generator selection
-                        if CityData.NoGrids > 6 and __blueprints[RDPG] then
-                            CityData.PowerPlant = SafeSpawn(RDPG, cbpos)
-                        elseif CityData.NoGrids > 1 then
-                            for _, j in Corners(0.75) do
-                                CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {cbpos[1]+j[1], nil, cbpos[3]+j[2]})
+            if type(pos) == 'table' then
+                if GetTerrainHeight(pos[1], pos[3]) >= GetSurfaceHeight(pos[1], pos[3]) then
+                    -- spawn structures before roads so that we an abort if we fail to make a generator before we've made a mark.
+                    for _, v in Corners(1) do
+                        --local position of this structure? centre
+                        local cbpos = {pos[1] + v[1]*3, pos[2], pos[3] + v[2]*3}
+                        --Make sure we didn't already spawn a big thing here
+                        local r1,r2,r3,r4 = pos[1] + v[1]*5, pos[3] + v[2]*5, pos[1] + v[1]*5, pos[3] + v[2]*5
+                        local units = table.cat(GetUnitsInRect(r1,r2,r3,r4) or {}, GetReclaimablesInRect(Rect(r1,r2,r3,r4)) or {})
+                        local check = true
+                        if units then
+                            for i, unit in units do
+                                if unit.LargeStructure then
+                                    check = false
+                                    break
+                                end
                             end
-                        else
-                            CityData.PowerPlant = SafeSpawn(FUnits.Power[4], cbpos)
                         end
-                        -- Fence around the generators.
-                        if CityData.PowerPlant then
-                            RingFence(cbpos, 1.5)
-                        end
-                    else
-                        -- Spawn a regular ass structure
-                        if (CityData.NoGrids / 10) - math.abs(x) - math.abs(y) > math.random(1,5) then
-                            SafeSpawn(FUnits.Structures3x3Tall, cbpos)
-                        else
-                            SafeSpawn(FUnits.Structures3x3, cbpos)
+
+                        if check and math.random(1,10) ~= 10 then
+                            --Assuming we're not at pop cap (rare, but can happen here), try to spawn a power gen if we don't have one
+                            if not CityData.PowerPlant and not AIbrain.PopCapReached then
+                                local RDPG = FUnits.Power[3]
+                                --Just in case something else gave alternatives to it.
+                                if type(RDPG) ~= 'string' then
+                                    RDPG = ChooseWeightedBp(RDPG)
+                                end
+                                -- Small city power generator selection
+                                if CityData.NoGrids > 6 and __blueprints[RDPG] then
+                                    CityData.PowerPlant = SafeSpawn(RDPG, cbpos)
+                                elseif CityData.NoGrids > 1 then
+                                    for _, j in Corners(0.75) do
+                                        CityData.PowerPlant = SafeSpawn(FUnits.Power[4], {cbpos[1]+j[1], nil, cbpos[3]+j[2]})
+                                    end
+                                else
+                                    CityData.PowerPlant = SafeSpawn(FUnits.Power[4], cbpos)
+                                end
+                                -- Fence around the generators.
+                                if CityData.PowerPlant then
+                                    RingFence(cbpos, 1.5)
+                                end
+                            else
+                                -- Spawn a regular ass structure
+                                if (CityData.NoGrids / 10) - math.abs(x) - math.abs(y) > math.random(1,5) then
+                                    SafeSpawn(FUnits.Structures3x3Tall, cbpos)
+                                else
+                                    SafeSpawn(FUnits.Structures3x3, cbpos)
+                                end
+                            end
+                        elseif check and math.random(1,4) == 4 then
+                            --If we decided to leave this blank, spawn a carpark
+                            local dir = math.random(1,2)
+                            SpawnCarparkCars(cbpos, dir)
+                            RingFence(cbpos, 1.5, nil, dir + 2 * math.random(0,1))
                         end
                     end
-                elseif check and math.random(1,4) == 4 then
-                    --If we decided to leave this blank, spawn a carpark
-                    local dir = math.random(1,2)
-                    SpawnCarparkCars(cbpos, dir)
-                    RingFence(cbpos, 1.5, nil, dir + 2 * math.random(0,1))
-                end
-            end
 
-            ----------------------------------------------------------------
-            -- Spawn roads
-            ----------------------------------------------------------------
-            local CreateRoad = function(pos, rot, nom, army)
-                local ds, lod = FUnits.RoadSize, FUnits.RoadLOD --decal size, lod cutoff
-                CreateDecal(pos, rot or 0, FUnits.RoadPath .. nom .. '_Albedo.dds', '', 'Albedo', ds, ds, lod, 0, army, 0)
-                CreateDecal(pos, rot or 0, FUnits.RoadPath .. nom .. '_Normals.dds', '', 'Alpha Normals', ds, ds, lod, 0, army, 0)
-            end
-
-            local binarySwitch = function(a,b,c,d) return (a and 8 or 0) + (b and 4 or 0) + (c and 2 or 0) + (d and 1 or 0) end
-            local bin = binarySwitch((cityI[x-1] and cityI[x-1][y]), (cityI[x+1] and cityI[x+1][y]), cityI[x][y-1], cityI[x][y+1])
-            CreateRoad(pos, FUnits.RoadTiles[bin][1], FUnits.RoadTiles[bin][2],  army)
-
-            ----------------------------------------------------------------
-            -- Spawn street lights
-            ----------------------------------------------------------------
-            if FUnits.Streetlight then
-                local lamp = function(pos, v)
-                    SafeProp(FUnits.Streetlight,{pos[1]+v[1], nil, pos[3]+v[2]}, 0)
-                end
-                for _, v in Corners(1.66) do
-                    lamp(pos, v)
-                end
-                if (cityI[x+1] and cityI[x+1][y]) then
-                    for i, v in {{5, 1.66}, {5, -1.66}} do lamp(pos, v) end
-                end
-                if cityI[x][y+1] then
-                    for i, v in {{-1.66, 5}, {1.66, -5}} do lamp(pos, v) end
-                end
-            end
-            ----------------------------------------------------------------
-            -- Spawn street cars
-            ----------------------------------------------------------------
-            if FUnits.Vehicles then
-                for _, v in Edges(3) do
-                    if math.random() > 0.6 then
-                        SafeProp(FUnits.Vehicles, rOOP(pos,v,{2,1}))
+                    ----------------------------------------------------------------
+                    -- Spawn roads
+                    ----------------------------------------------------------------
+                    local CreateRoad = function(pos, rot, nom, army)
+                        local ds, lod = FUnits.RoadSize, FUnits.RoadLOD --decal size, lod cutoff
+                        CreateDecal(pos, rot or 0, FUnits.RoadPath .. nom .. '_Albedo.dds', '', 'Albedo', ds, ds, lod, 0, army, 0)
+                        CreateDecal(pos, rot or 0, FUnits.RoadPath .. nom .. '_Normals.dds', '', 'Alpha Normals', ds, ds, lod, 0, army, 0)
                     end
-                end
-                if bin == 1 or bin == 2 then
-                    SpawnCarparkCars(pos, 1, 0.4, 1.6)
-                elseif bin == 4 or bin == 8 then
-                    SpawnCarparkCars(pos, 2, 0.4, 1.6)
-                end
-            end
-            ----------------------------------------------------------------
-            -- Wall perimetre
-            ----------------------------------------------------------------
-            for _, v in Edges(1) do
-                if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
-                    for i = -4, 4 do
-                        SafeSpawn(FUnits.Wall, {pos[1] + (v[1]*5) + (i*v[2]), nil, pos[3] + (v[2]*5) + (i*v[1])}, 0)
+
+                    local binarySwitch = function(a,b,c,d) return (a and 8 or 0) + (b and 4 or 0) + (c and 2 or 0) + (d and 1 or 0) end
+                    local bin = binarySwitch(gXZ(cityI,x-1,y), gXZ(cityI,x+1,y), gXZ(cityI,x,y-1), gXZ(cityI,x,y+1))
+                    CreateRoad(pos, FUnits.RoadTiles[bin][1], FUnits.RoadTiles[bin][2],  army)
+
+                    ----------------------------------------------------------------
+                    -- Spawn street lights
+                    ----------------------------------------------------------------
+                    if FUnits.Streetlight then
+                        local lamp = function(pos, v)
+                            SafeProp(FUnits.Streetlight,{pos[1]+v[1], nil, pos[3]+v[2]}, 0)
+                        end
+                        for _, v in Corners(1.66) do
+                            lamp(pos, v)
+                        end
+                        if gXZ(cityI,x+1,y) then
+                            for i, v in {{5, 1.66}, {5, -1.66}} do lamp(pos, v) end
+                        end
+                        if gXZ(cityI,x,y+1) then
+                            for i, v in {{-1.66, 5}, {1.66, -5}} do lamp(pos, v) end
+                        end
                     end
-                end
-            end
-            --Wall corner parts
-            for i, v in Corners(1) do
-                if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
-                    local X, Y = pos[1] + (v[1]*5), pos[3] + (v[2]*5)
-                    SpawnNoOverlap(X+v[1], Y+v[2], FUnits.Wall)
-                    SpawnNoOverlap(X, Y, ChooseCyclingBp(FUnits.Turrets), i)
-                    for k, j in Edges(1) do
-                        if not (cityI[x+j[1] ] and cityI[x+j[1] ][y+j[2] ]) then
-                            SpawnNoOverlap(X+j[1], Y+j[2], FUnits.Wall)
+                    ----------------------------------------------------------------
+                    -- Spawn street cars
+                    ----------------------------------------------------------------
+                    if FUnits.Vehicles then
+                        for _, v in Edges(3) do
+                            if math.random() > 0.6 then
+                                SafeProp(FUnits.Vehicles, rOOP(pos,v,{2,1}))
+                            end
+                        end
+                        if bin == 1 or bin == 2 then
+                            SpawnCarparkCars(pos, 1, 0.4, 1.6)
+                        elseif bin == 4 or bin == 8 then
+                            SpawnCarparkCars(pos, 2, 0.4, 1.6)
+                        end
+                    end
+                    ----------------------------------------------------------------
+                    -- Wall perimetre
+                    ----------------------------------------------------------------
+                    for _, v in Edges(1) do
+                        if not gXZ(cityI, x+v[1], y+v[2]) then
+                            for i = -4, 4 do
+                                SafeSpawn(FUnits.Wall, {pos[1] + (v[1]*5) + (i*v[2]), nil, pos[3] + (v[2]*5) + (i*v[1])}, 0)
+                            end
+                        end
+                    end
+                    --Wall corner parts
+                    for i, v in Corners(1) do
+                        if not (cityI[x+v[1] ] and cityI[x+v[1] ][y+v[2] ]) then
+                            local X, Y = pos[1] + (v[1]*5), pos[3] + (v[2]*5)
+                            SpawnNoOverlap(X+v[1], Y+v[2], FUnits.Wall)
+                            SpawnNoOverlap(X, Y, ChooseCyclingBp(FUnits.Turrets), i)
+                            for k, j in Edges(1) do
+                                if not (cityI[x+j[1] ] and cityI[x+j[1] ][y+j[2] ]) then
+                                    SpawnNoOverlap(X+j[1], Y+j[2], FUnits.Wall)
+                                end
+                            end
+                        end
+                    end
+                else
+                    local FlattenCeilMapRect = function(x,z,w,h,y)
+                        for i = 0, w do
+                            for j = 0, h do
+                                if GetTerrainHeight(x+i,z+j) < y then
+                                    FlattenMapRect(x+i,z+j,0,0,y)
+                                end
+                            end
+                        end
+                    end
+                    local SpawnContainerLine = function(pos, pierData, pierDir, p, h)
+                        for i=-5, 6 do
+                            local d = math.random(0,1)*2
+                            local x = pos[1]+(p.x*0.9)+(p.xa*i*1.33)
+                            local z = pos[3]+(p.z*0.9)+(p.za*i*1.33)
+                            if GetTerrainHeight(x,z) == pos[2] + h then
+                                local containers = SafeProp(pierData.Containers, {x, pos[2], z}, (pierDir+1+d)*90)
+                                local ran = math.random()
+                                containers:SetReclaimValues(ran, ran, containers.MassReclaim * ran, containers.EnergyReclaim * ran)
+                                containers:SetMaxReclaimValues(ran, ran, containers.MassReclaim * ran, containers.EnergyReclaim * ran)
+                            end
+                        end
+                    end
+
+                    local pierData = FUnits.PierData
+                    local pierDir = BTB(cityI[x][y-1] == 'pier' or cityI[x][y+1] == 'pier',1) + BTB(cityI[x][y-1] == 'pier' or gXZ(cityI,x+1,y) == 'pier', 2)
+                    local p = FUnits.PierData.Directional[pierDir]
+
+                    FlattenCeilMapRect(pos[1]+p.x0, pos[3]+p.z0, p.w, p.h, GetSurfaceHeight(pos[1], pos[3])+pierData.PierHeight)
+
+                    CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Albedo.dds', '', 'Albedo', pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
+                    CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Normals.dds', '', 'Alpha Normals', pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
+
+                    SafeSpawn(pierData.Pier, pos, pierDir+1)
+
+                    SafeProp(pierData.ContainerCranes, {
+                        pos[1]+((p.x0+(math.random() * p.w))*math.abs(p.xa)*0.8),
+                        pos[2],
+                        pos[3]+((p.z0+(math.random() * p.h))*math.abs(p.za)*0.8)
+                    }, (pierDir+1)*90)
+
+                    SpawnContainerLine(pos, pierData, pierDir, p, pierData.PierHeight)
+
+                    if pierDir == 1 or pierDir == 3 then
+                        if not gXZ(cityI,x+1,y) then
+                            SafeProp(pierData.Dock, {pos[1]+2, pos[2], pos[3]}, 90)
+                        elseif math.random() > 0.9 then
+                            SafeSpawn(pierData.Ships, {pos[1]+5, pos[2], pos[3]}, 0)
+                        end
+                        if not gXZ(cityI,x-1,y) then
+                            SafeProp(pierData.Dock, {pos[1]-2, pos[2], pos[3]}, -90)
+                        end
+                    end
+                    if pierDir == 0 or pierDir == 2 then
+                        if not gXZ(cityI,x,y-1) then
+                            SafeProp(pierData.Dock, {pos[1], pos[2], pos[3]-2}, 180)
+                        end
+                        if not gXZ(cityI,x,y+1) then
+                            SafeProp(pierData.Dock, {pos[1], pos[2], pos[3]+2}, 0)
+                        elseif math.random() > 0.9 then
+                            SafeSpawn(pierData.Ships, {pos[1], pos[2], pos[3]+5}, 1)
                         end
                     end
                 end

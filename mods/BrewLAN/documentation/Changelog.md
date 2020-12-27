@@ -442,7 +442,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Pathfinder script:
     * Now has a toggle for land/water/amph path nodes.
-    * (Done previously but only just versioned:) Added an option for a cutoff for ignoring small contiguous areas of blocking.
+    * (Done previously but only just versioned:) Added an option for a cut off for ignoring small contiguous areas of blocking.
+
+  ### 2020-12-19
+
+  * Fixed the shading groups of the Bessemer Reactor.
+
+  ### 2020-12-20
+
+  * Changed parts of the textures of the Retributor.
+  * Cityscapes: Fixed city generation threads that hadn't made it out of the planning phase before pop cap was reached leaving the planning structures behind.
+  * Cityscapes: Set up the planning script for city docks.
+
+  ### 2020-12-22
+
+  * Cityscapes: Set up basics for city dock generation.
+
+  ### 2020-12-27
+
+  * Cityscapes: Largely, but not completely, finished dock generation.
 
 ## 2019-10-13|0.8.9
 
