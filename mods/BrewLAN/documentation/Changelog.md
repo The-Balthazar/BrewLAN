@@ -462,6 +462,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Cityscapes: Largely, but not completely, finished dock generation.
 
+  ### 2020-12-28
+
+  * Cityscapes: Added small ships to dock generation.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

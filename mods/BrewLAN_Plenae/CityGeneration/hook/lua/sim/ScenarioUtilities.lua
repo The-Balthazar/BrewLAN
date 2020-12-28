@@ -103,8 +103,10 @@ CityData = {
             },
             Boats = {
                 {'xes0205', Weight = 1 },
-                {'xes0102', Weight = 1 },
-                {'ues0103', Weight = 1 },
+                {'xes0102', Weight = 2 },
+                {'ues0103', Weight = 2 },
+                {'ues0201', Weight = 2 },
+                {'ues0202', Weight = 2 },
             },
         }
     }
@@ -642,6 +644,32 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                             end
                         end
                     end
+                    local SpawnSmallDockShips = function(pos, off, pierData, d, ori)
+                        for i=-2,2 do
+                            if math.random() > 0.6 then
+                                local x,y,z = unpack(pos)
+                                local bpid = ChooseWeightedBp(pierData.Boats)
+                                local bp = __blueprints[bpid].SizeZ
+                                -- Aligning the back's of the ships and spreading along the dock bays
+                                x = x + bp/2*off[1] + i*2*off[2]
+                                z = z + bp/2*off[2] + i*2*off[1]
+                                
+                                -- Adjusting for the dodgy shape of two of the bays
+                                if ori == 1 and i == -2 then z=z+1 end
+                                if ori == 1 and i == -1 then z=z+0.4 x=x+1.05 end
+                                if ori == -1 and i == -2 then z=z-1 end
+                                if ori == -1 and i == -1 then z=z-0.4 x=x-1.05 end
+
+                                if ori == 0 and i == 2 then x=x-1 end
+                                if ori == 0 and i == 1 then x=x-0.4 z=z+1.05 end
+
+                                if ori == 2 and i == 2 then x=x+1 end
+                                if ori == 2 and i == 1 then x=x+0.4 z=z-1.05 end
+
+                                SafeSpawn(bpid, {x,y,z}, d+math.random(0,1)*2)
+                            end
+                        end
+                    end
 
                     local pierData = FUnits.PierData
                     local pierDir = BTB(cityI[x][y-1] == 'pier' or cityI[x][y+1] == 'pier',1) + BTB(cityI[x][y-1] == 'pier' or gXZ(cityI,x+1,y) == 'pier', 2)
@@ -654,6 +682,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
 
                     SafeSpawn(pierData.Pier, pos, pierDir+1)
 
+                    --This doesn't check the ground's flat, and either should, or should be a unit not a prop.
                     SafeProp(pierData.ContainerCranes, {
                         pos[1]+((p.x0+(math.random() * p.w))*math.abs(p.xa)*0.8),
                         pos[2],
@@ -665,20 +694,24 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     if pierDir == 1 or pierDir == 3 then
                         if not gXZ(cityI,x+1,y) then
                             SafeProp(pierData.Dock, {pos[1]+2, pos[2], pos[3]}, 90)
-                        elseif math.random() > 0.9 then
-                            SafeSpawn(pierData.Ships, {pos[1]+5, pos[2], pos[3]}, 0)
+                            SpawnSmallDockShips({pos[1]+3, pos[2], pos[3]-0.5}, {1, 0}, pierData, pierDir, 1)
+                        elseif math.random() > 0.8 then
+                            SafeSpawn(pierData.Ships, pos, {pos[1]+5, pos[2], pos[3]}, 0)
                         end
                         if not gXZ(cityI,x-1,y) then
                             SafeProp(pierData.Dock, {pos[1]-2, pos[2], pos[3]}, -90)
+                            SpawnSmallDockShips({pos[1]-3, pos[2], pos[3]+0.5}, {-1, 0}, pierData, pierDir, -1)
                         end
                     end
                     if pierDir == 0 or pierDir == 2 then
                         if not gXZ(cityI,x,y-1) then
                             SafeProp(pierData.Dock, {pos[1], pos[2], pos[3]-2}, 180)
+                            SpawnSmallDockShips({pos[1]-0.5, pos[2], pos[3]-3}, {0, -1}, pierData, pierDir, 2)
                         end
                         if not gXZ(cityI,x,y+1) then
                             SafeProp(pierData.Dock, {pos[1], pos[2], pos[3]+2}, 0)
-                        elseif math.random() > 0.9 then
+                            SpawnSmallDockShips({pos[1]+0.5, pos[2], pos[3]+3}, {0, 1}, pierData, pierDir, 0)
+                        elseif math.random() > 0.8 then
                             SafeSpawn(pierData.Ships, {pos[1], pos[2], pos[3]+5}, 1)
                         end
                     end
