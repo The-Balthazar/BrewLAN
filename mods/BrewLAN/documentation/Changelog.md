@@ -466,6 +466,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Cityscapes: Added small ships to dock generation.
 
+  ### 2020-12-29
+
+  * Cityscapes: Fixed the ship spawn function on north/south facing docks.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

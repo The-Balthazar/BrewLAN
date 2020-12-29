@@ -653,7 +653,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                                 -- Aligning the back's of the ships and spreading along the dock bays
                                 x = x + bp/2*off[1] + i*2*off[2]
                                 z = z + bp/2*off[2] + i*2*off[1]
-                                
+
                                 -- Adjusting for the dodgy shape of two of the bays
                                 if ori == 1 and i == -2 then z=z+1 end
                                 if ori == 1 and i == -1 then z=z+0.4 x=x+1.05 end
@@ -696,7 +696,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                             SafeProp(pierData.Dock, {pos[1]+2, pos[2], pos[3]}, 90)
                             SpawnSmallDockShips({pos[1]+3, pos[2], pos[3]-0.5}, {1, 0}, pierData, pierDir, 1)
                         elseif math.random() > 0.8 then
-                            SafeSpawn(pierData.Ships, pos, {pos[1]+5, pos[2], pos[3]}, 0)
+                            SafeSpawn(pierData.Ships, {pos[1]+5, pos[2], pos[3]}, 0)
                         end
                         if not gXZ(cityI,x-1,y) then
                             SafeProp(pierData.Dock, {pos[1]-2, pos[2], pos[3]}, -90)
