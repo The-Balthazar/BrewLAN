@@ -470,6 +470,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Cityscapes: Fixed the ship spawn function on north/south facing docks.
 
+  ### 2021-01-11
+
+  * Pathfinder script: Added a output visualisation to the generation script.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

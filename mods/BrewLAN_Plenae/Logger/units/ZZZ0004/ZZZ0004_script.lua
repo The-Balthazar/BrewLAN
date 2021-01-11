@@ -4,17 +4,22 @@ ZZZ0004 = Class(Unit) {
     OnCreate = function(self)
         Unit.OnCreate(self)
         --self:ForkThread(self.TranslateAllMarkers)
-        self:ForkThread(self.MapTerrainDeltaTable)
+        self:ForkThread(self.MapTerrainDeltaTable,1)
+        self:ForkThread(self.MapTerrainDeltaTable,2)
+        self:ForkThread(self.MapTerrainDeltaTable,3)
     end,
 
-    MapTerrainDeltaTable = function(self)
+    --markerType expected to be a number from 1 to 3
+    MapTerrainDeltaTable = function(self, markerType)
+        --LOG("Start")
+        --LOG(GetSystemTimeSecondsOnlyForProfileUse())
         coroutine.yield(1)
         local markerTypes = {
             { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false },
             { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true  },
             { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true  },
         }
-        local markerType = markerTypes[2]
+        markerType = markerTypes[markerType]
         ------------------------------------------------------------------------
         -- Debug, testing, and extra info options
         local debugmode = false
@@ -679,7 +684,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
         end
 
         --if true then self.ConvertXYTableToYXCommaDelim(markerlist) ; return end
-        if true then self.PrintMarkerListFormatting(markerlist) ; return end
+        if true then self.PrintMarkerListFormatting(markerlist); self.DrawMarkerPaths(markerlist) ; return end
 
 
         --[[
@@ -1086,6 +1091,22 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
             st = st..'},\n'
         end
         LOG(st)
+    end,
+
+    DrawMarkerPaths = function(markers)
+        ForkThread(function(markers)
+            while true do
+                for name, marker in markers do
+                    DrawCircle(marker.position, 5, marker.color)
+                    for i, n2 in marker.adjacentList do
+                        DrawLinePop(marker.position, markers[n2].position, marker.color)
+                    end
+                end
+                coroutine.yield(2)
+            end
+        end, markers)
+        --LOG("End")
+        --LOG(GetSystemTimeSecondsOnlyForProfileUse())
     end,
 
     ----------------------------------------------------------------------------

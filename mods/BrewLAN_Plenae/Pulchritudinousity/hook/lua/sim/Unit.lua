@@ -1,6 +1,6 @@
 do
     local PhotoUnitOld = Unit
-
+--[[
     Unit = Class(PhotoUnitOld) {
         OnCreate = function(self)
             return PhotoUnitOld.OnCreate(self)
@@ -8,5 +8,5 @@ do
                 self:CreateTarmac(true, true, true, false, false)
             end
         end,
-    }
+    }]]
 end

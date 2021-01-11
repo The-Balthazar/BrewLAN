@@ -81,3 +81,32 @@ function OffsetBoneToSurface(unit, bone)
     if not unit.TerrainSlope then unit.TerrainSlope = {} end
     unit.TerrainSlope[bone] = CreateSlider(unit, bone, 0, GetBoneSurfaceOffset(unit, bone) * UniformScaleMultiplier(unit), 0, 1000)
 end
+
+function GetSkirtTerrainHeights(self)
+    -- Description: Returns an index-0 grid of heights of the terrain in the skirt.
+    -- Author: Sean "Balthazar" Wheeldon
+    local skirtdata = {}
+    local x0,z0,x1,z1 = self:GetSkirtRect()
+    x0,z0,x1,z1 = math.floor(x0),math.floor(z0),math.ceil(x1),math.ceil(z1)
+    for i = 0, x1-x0 do
+        if not skirtdata[i] then skirtdata[i] = {} end
+        for j = 0, z1-z0 do
+            skirtdata[i][j] = GetTerrainHeight(x0+i, z0+j)
+        end
+    end
+    return skirtdata
+end
+
+function SetSkirtTerrainHeights(self, skirtdata)
+    -- Description: Sets the heights of terrain in the skirt based on inputs from an index-0 grid of values.
+    -- Author: Sean "Balthazar" Wheeldon
+    local x0,z0,x1,z1 = self:GetSkirtRect()
+    x0,z0,x1,z1 = math.floor(x0),math.floor(z0),math.ceil(x1),math.ceil(z1)
+    for i = 0, x1-x0 do
+        for j = 0, z1-z0 do
+            if skirtdata[i] and skirtdata[i][j] then
+                FlattenMapRect(x0+i,z0+j,0,0,skirtdata[i][j])
+            end
+        end
+    end
+end

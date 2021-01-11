@@ -1,6 +1,3 @@
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
-local TerrainUtils = import(BrewLANPath .. '/lua/TerrainUtils.lua')
-local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 --------------------------------------------------------------------------------
 -- Description: Wall scripts
 -- © 2015‒2020 Sean Wheeldon
@@ -186,7 +183,18 @@ function GateWallUnit(SuperClass)
                 if __blueprints[self.bpID].AI.TargetBones then
                     for i, bone in __blueprints[self.bpID].AI.TargetBones do
                         if not self.TerrainSlope[bone] then
-                            OffsetBoneToTerrain(self, bone)
+                            --hard coded version of OffsetBoneToTerrain(self, bone) from BrewLAN terrain utils file, for portablility.
+
+                            if not self.TerrainSlope then self.TerrainSlope = {} end
+                            --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
+
+                            local GetBoneTerrainOffset = function(unit, bone)
+                                local pos = unit:GetPosition(bone)
+                                return GetTerrainHeight(pos[1],pos[3]) - pos[2]
+                            end
+
+                            self.TerrainSlope[bone] = CreateSlider(self, bone, 0, GetBoneTerrainOffset(self, bone) * (1 / (__blueprints[self.bpID].Display.UniformScale or 1)), 0, 1000)
+                            ---
                         end
                     end
                 end

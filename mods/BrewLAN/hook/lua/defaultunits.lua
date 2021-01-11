@@ -21,6 +21,9 @@ ConstructionStructureUnit = Class(StructureUnit) {
             self.AnimationManipulator = CreateAnimator(self)
             self.AnimationManipulator:PlayAnim(self.BuildingOpenAnim, false):SetRate(0)
             self.Trash:Add(self.AnimationManipulator)
+            if self.BuildArmManipulator then
+                self.BuildArmManipulator:Disable()
+            end
         end
 
         self.BuildingUnit = false
@@ -34,6 +37,14 @@ ConstructionStructureUnit = Class(StructureUnit) {
             self.AnimationManipulator:SetRate(1)
         end
         StructureUnit.OnStartBuild(self,unitBeingBuilt, order)
+    end,
+
+    OnStopBeingBuilt = function(self, builder, layer)
+        StructureUnit.OnStopBeingBuilt(self,builder,layer)
+        -- If created with F2 on land, then play the transform anim.
+        if self:GetCurrentLayer() == 'Water' then
+            self.TerrainLayerTransitionThread = self:ForkThread(self.TransformThread, true)
+        end
     end,
 
     -- This will only be called if not in StructureUnit's upgrade state
@@ -57,19 +68,19 @@ ConstructionStructureUnit = Class(StructureUnit) {
         self:StopUnitAmbientSound( 'ConstructLoop' )
         StructureUnit.OnPaused(self)
         if self.BuildingUnit then
-            StructureUnit.StopBuildingEffects(self, self:GetUnitBeingBuilt())
+            self.StopBuildingEffects(self, self:GetUnitBeingBuilt())
         end
     end,
 
     OnUnpaused = function(self)
         if self.BuildingUnit then
             self:PlayUnitAmbientSound( 'ConstructLoop' )
-            StructureUnit.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+            self.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
         end
         StructureUnit.OnUnpaused(self)
     end,
 
-    OnProductionPaused = function(self)
+    --[[OnProductionPaused = function(self)
         if self:IsUnitState('Building') then
             self:SetMaintenanceConsumptionInactive()
         end
@@ -81,20 +92,20 @@ ConstructionStructureUnit = Class(StructureUnit) {
             self:SetMaintenanceConsumptionActive()
         end
         self:SetProductionActive(true)
-    end,
+    end,]]
 
-    StartBuildingEffects = function(self, unitBeingBuilt, order)
+    --[[StartBuildingEffects = function(self, unitBeingBuilt, order)
         StructureUnit.StartBuildingEffects(self, unitBeingBuilt, order)
     end,
 
     StopBuildingEffects = function(self, unitBeingBuilt)
         StructureUnit.StopBuildingEffects(self, unitBeingBuilt)
-    end,
+    end,]]
 
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
-            if (enable) then
+            if enable then
                 self.BuildArmManipulator:Enable()
             end
         end
@@ -127,7 +138,7 @@ ConstructionStructureUnit = Class(StructureUnit) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		EffectUtil.PlayReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+		EffectUtil.PlayReclaimEffects( self, target, self.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
     end,
 
     CreateReclaimEndEffects = function( self, target )
@@ -135,7 +146,7 @@ ConstructionStructureUnit = Class(StructureUnit) {
     end,
 
     CreateCaptureEffects = function( self, target )
-		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+		EffectUtil.PlayCaptureEffects( self, target, self.BuildEffectBones or {0,}, self.CaptureEffectsBag )
     end,
 }
 
