@@ -474,6 +474,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Pathfinder script: Added a output visualisation to the generation script.
 
+  ### 2021-01-12
+
+  * Pathfinder script: Water path nodes no longer take the seabed into account, and take MinWaterDepth into account.
+  * Pathfinder script: Amphibious nodes now take MaxWaterDepth into account.
+  * Pathfinder script: Added some basic toggles and controls to the control unit for easier testing.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

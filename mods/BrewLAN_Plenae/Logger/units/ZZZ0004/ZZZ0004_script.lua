@@ -4,27 +4,58 @@ ZZZ0004 = Class(Unit) {
     OnCreate = function(self)
         Unit.OnCreate(self)
         --self:ForkThread(self.TranslateAllMarkers)
-        self:ForkThread(self.MapTerrainDeltaTable,1)
-        self:ForkThread(self.MapTerrainDeltaTable,2)
-        self:ForkThread(self.MapTerrainDeltaTable,3)
+        self:SetScriptBit('RULEUTC_IntelToggle', true)
+        self:SetScriptBit('RULEUTC_ProductionToggle', true)
+        self:SetScriptBit('RULEUTC_GenericToggle', true)
+
+    end,
+
+    --Some quick control buttons
+    OnScriptBitSet = function(self, bit)
+        Unit.OnScriptBitSet(self, bit)
+        if bit == 1 then self:Destroy()
+        elseif bit == 3 then self.Land = true; LOG("Land on")
+        elseif bit == 4 then self.Amph = true; LOG("Amph on")
+        elseif bit == 6 then self.Water = true; LOG("Water on")
+        elseif bit == 8 then
+            self:SetScriptBit('RULEUTC_CloakToggle', false)
+            local waterratio = moho.aibrain_methods.GetMapWaterRatio(ArmyBrains[1])
+            if self.Land and waterratio < 0.95 then
+                self:ForkThread(self.MapTerrainDeltaTable,1) --Land
+            end
+            if self.Amph and waterratio < 0.95 and waterratio > 0.025 then
+                self:ForkThread(self.MapTerrainDeltaTable,2) --Amph
+            end
+            if self.Water and waterratio > 0.1 then
+                self:ForkThread(self.MapTerrainDeltaTable,3) --Water
+            end
+        end
+    end,
+
+    OnScriptBitClear = function(self, bit)
+        Unit.OnScriptBitClear(self, bit)
+            if bit == 3 then self.Land = false; LOG("Land off")
+        elseif bit == 4 then self.Amph = false; LOG("Amph off")
+        elseif bit == 6 then self.Water = false; LOG("Water off")
+        end
     end,
 
     --markerType expected to be a number from 1 to 3
     MapTerrainDeltaTable = function(self, markerType)
-        --LOG("Start")
-        --LOG(GetSystemTimeSecondsOnlyForProfileUse())
         coroutine.yield(1)
         local markerTypes = {
             { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false },
-            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true  },
-            { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true  },
+            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true, MaxWaterDepth = 25},
+            { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true, MinWaterDepth = 1.5},
         }
         markerType = markerTypes[markerType]
         ------------------------------------------------------------------------
         -- Debug, testing, and extra info options
         local debugmode = false
         local generateHeightmap = false
-        --local log
+        local markerExportOutput = false
+        local markerVisualOutput = true
+        local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse()
         ------------------------------------------------------------------------
         -- Input values and options
         local maxGroundVariation = 0.75
@@ -128,12 +159,13 @@ ZZZ0004 = Class(Unit) {
                 else
                     --Get heights around point
                     --Yes, these same points will be checked up to 4 times, but that's a lot to cache
-                    local a, b, c, d = GTH(x-1,y-1), GTH(x-1,y), GTH(x,y), GTH(x,y-1)
-
+                    local a, b, c, d -- If we don't care about land, dont bother.
+                    if markerType.land then a, b, c, d = GTH(x-1,y-1), GTH(x-1,y), GTH(x,y), GTH(x,y-1) end
                     --This takes diagonal difference into account, which is inaccurate
                     --local delta = max(a,b,c,d) - min(a,b,c,d)
                     --This specifically ignores diagonal difference, which appears to be the way it's done in game
-                    local delta = max(abs(a-b), abs(b-c), abs(c-d), abs(d-a))
+                    local delta -- If we don't care about land, dont bother.
+                    if markerType.land then delta = max(abs(a-b), abs(b-c), abs(c-d), abs(d-a)) end
 
                     local terrainTypeCheck = function(x,y)
                         local tt = GetTerrainType(x,y)
@@ -142,13 +174,13 @@ ZZZ0004 = Class(Unit) {
 
                     local waterCheck = function(markerType, x, y, c)
                         if markerType.water and markerType.land then
-                            return true
+                            return c + (markerType.MaxWaterDepth or 25) > GetSurfaceHeight(x, y)
                         end
                         local w = GetSurfaceHeight(x, y)
-                        return (markerType.water and w > c) or (markerType.land and w <= c)
+                        return (markerType.water and w > (GTH(x,y) + (markerType.MinWaterDepth or 1.5))) or (markerType.land and w <= c)
                     end
                     --deltamap[x][y] = delta
-                    if delta <= maxGroundVariation and terrainTypeCheck(x,y) and waterCheck(markerType, x, y, c) then
+                    if (markerType.land and delta <= maxGroundVariation or not markerType.land) and terrainTypeCheck(x,y) and waterCheck(markerType, x, y, c) then
                         --previously `passmap[x][y] = delta <= maxGroundVariation`
                         --Set up for the vector check for min dist from false
                         passmap[x][y] = markerCheckDistanceSq
@@ -684,7 +716,11 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
         end
 
         --if true then self.ConvertXYTableToYXCommaDelim(markerlist) ; return end
-        if true then self.PrintMarkerListFormatting(markerlist); self.DrawMarkerPaths(markerlist) ; return end
+        if timeProfileOutput then
+            LOG(markerType.type .. " generation time: " ..  GetSystemTimeSecondsOnlyForProfileUse() - timeProfileOutput .. " seconds with " .. tcount(markerlist) .. " markers")
+        end
+        if markerVisualOutput then self:DrawMarkerPaths(markerlist) end
+        if markerExportOutput then self.PrintMarkerListFormatting(markerlist); return end
 
 
         --[[
@@ -1093,9 +1129,9 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
         LOG(st)
     end,
 
-    DrawMarkerPaths = function(markers)
-        ForkThread(function(markers)
-            while true do
+    DrawMarkerPaths = function(self, markers)
+        self:ForkThread(function(self, markers)
+            while self and not self.Dead do
                 for name, marker in markers do
                     DrawCircle(marker.position, 5, marker.color)
                     for i, n2 in marker.adjacentList do

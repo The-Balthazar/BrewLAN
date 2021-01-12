@@ -1,7 +1,7 @@
 UnitBlueprint {
     BuildIconSortPriority = 160,
     Categories = {
-        --'SELECTABLE',
+        'SELECTABLE',
         --'STRUCTURE',
         --'VISIBLETORECON',
         --'RECLAIMABLE',
@@ -41,6 +41,29 @@ UnitBlueprint {
         Icon = 'amph',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
+        ToggleCaps = {
+            RULEUTC_WeaponToggle = true,
+            RULEUTC_IntelToggle = true, --3
+            RULEUTC_ProductionToggle = true, --4
+            RULEUTC_GenericToggle = true, --6
+            RULEUTC_CloakToggle = true, --8
+        },
+        OrderOverrides = {
+            RULEUTC_WeaponToggle =    { bitmapId = 'nuke', helpText = 'options_kill_confirm' },
+            RULEUTC_IntelToggle =     { bitmapId = 'reclaim', helpText = 'PostScore_land' },
+            RULEUTC_ProductionToggle ={ bitmapId = 'reclaim', helpText = 'PostScore_general' },
+            RULEUTC_GenericToggle =   { bitmapId = 'reclaim', helpText = 'PostScore_naval' },
+            RULEUTC_CloakToggle =     { bitmapId = 'pause', helpText = 'campaignbriefing_launch' },
+        },
+        --[[
+RULEUTC_JammingToggle = {       helpText = "toggle_jamming",    bitmapId = 'jamming',               preferredSlot = 8,  behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 2,},
+RULEUTC_IntelToggle = {         helpText = "toggle_intel",      bitmapId = 'intel',                 preferredSlot = 8,  behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 3,},
+RULEUTC_ProductionToggle = {    helpText = "toggle_production", bitmapId = 'production',            preferredSlot = 9,  behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 4,},
+RULEUTC_StealthToggle = {       helpText = "toggle_stealth",    bitmapId = 'stealth',               preferredSlot = 9,  behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 5,},
+RULEUTC_GenericToggle = {       helpText = "toggle_generic",    bitmapId = 'production',            preferredSlot = 10, behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 6,},
+RULEUTC_SpecialToggle = {       helpText = "toggle_special",    bitmapId = 'activate-weapon',       preferredSlot = 11, behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 7,},
+RULEUTC_CloakToggle = {         helpText = "toggle_cloak",      bitmapId = 'intel-counter',         preferredSlot = 11, behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 8,},
+        ]]
         UnitName = 'Mappy',
         UnitWeight = 1,
     },
