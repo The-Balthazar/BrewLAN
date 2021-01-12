@@ -52,15 +52,16 @@ ZZZ0004 = Class(Unit) {
         ------------------------------------------------------------------------
         -- Debug, testing, and extra info options
         local debugmode = false
-        local generateHeightmap = false
-        local markerExportOutput = false
-        local markerVisualOutput = true
+        --local generateHeightmap = false
+        local exportMarkersToLog = false
+        local drawMarkersToMap = true
         local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse()
+        local drawVoronoiToMap = false
         ------------------------------------------------------------------------
         -- Input values and options
         local maxGroundVariation = 0.75
         --local maxPlatoonDistance = 140
-        local markerCheckDistance = 100
+        local markerCheckDistance = math.min(100, ScenarioInfo.size[1]/16) -- bermuda locket land nodes look good with 8. Less than a 16th should come with a warning.
         local markerCheckDistanceSq = math.pow(markerCheckDistance, 2)
         --local markerMaxOverlapRatio = 0.7
         ------------------------------------------------------------------------
@@ -68,9 +69,9 @@ ZZZ0004 = Class(Unit) {
         -- Unpassable areas map cleanup toggles --------------------------------
         local doCleanup = true
         local cleanupPasses = 1
-        local doDespeckle = true -- removes single unconnected grids of unpassable (8 point check)
-        local doDeIsland = false -- removes single unconnected grids of passable (4 point check)
-        local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check)
+        local doDespeckle = true -- removes single unconnected grids of unpassable (8 point check) --Obseleted by ignoreMinZones, but a much quicker function.
+        local doDeIsland = false -- removes single unconnected grids of passable (4 point check) --Obselete
+        local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check) --Obselete
         -- Other cleanup toggles -----------------------------------------------
         local doMinDistCheck = math.sqrt(ScenarioInfo.size[1]) -- sqrt of map size is usually a good default -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two.
         local doRemoveIsolatedMarkers = true -- If a marker has no connections, YEET
@@ -127,7 +128,7 @@ ZZZ0004 = Class(Unit) {
 
             --------------------------------------------------------------------
             -- Generate a heightmap for testing?
-        if generateHeightmap then
+        --[[if generateHeightmap then
             local heightmap = {}
             --(has an off-by-one error in co-ords) not actually used later and optional, so whatever
             for x = 1, ScenarioInfo.size[1]+1 do
@@ -137,7 +138,7 @@ ZZZ0004 = Class(Unit) {
                 end
             end
             return heightmap
-        end
+        end]]
         ------------------------------------------------------------------------
         -- DO IT
 
@@ -496,11 +497,22 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
 ]]          --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
             --------------------------------------------------------------------
             --
-
+            do
+                local gs = getn(voronoimap) / 16
+                local ceil = math.ceil
+                local hex = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'}
+                for x, ydata in voronoimap do
+                    for y, data in ydata do
+                        if data == '' then
+                            voronoimap[x][y] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((y + (gs/2))/gs)]
+                        end
+                    end
+                end
+            end
         end
         --LOG(repr(voronoiedgelist))
 
-
+        if drawVoronoiToMap then self:DrawGridData(voronoimap) end
 
 
         ------------------------------------------------------------------------
@@ -719,8 +731,8 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
         if timeProfileOutput then
             LOG(markerType.type .. " generation time: " ..  GetSystemTimeSecondsOnlyForProfileUse() - timeProfileOutput .. " seconds with " .. tcount(markerlist) .. " markers")
         end
-        if markerVisualOutput then self:DrawMarkerPaths(markerlist) end
-        if markerExportOutput then self.PrintMarkerListFormatting(markerlist); return end
+        if drawMarkersToMap then self:DrawMarkerPaths(markerlist) end
+        if exportMarkersToLog then self.PrintMarkerListFormatting(markerlist); return end
 
 
         --[[
@@ -1143,6 +1155,35 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
         end, markers)
         --LOG("End")
         --LOG(GetSystemTimeSecondsOnlyForProfileUse())
+    end,
+
+    DrawGridData = function(self, grid)
+        self:ForkThread(function(self, grid)
+            local rh = function()
+                local hex = {0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'}
+                return hex[math.random(1,16)]
+            end
+            --local profile = GetSystemTimeSecondsOnlyForProfileUse()
+            --local profile2
+            local colours = {}
+            local GTH = GetTerrainHeight
+            while self and not self.Dead do
+                for x, xdata in grid do
+                    for y, data in xdata do
+                        local key = tostring(data)
+                        if not colours[key] then colours[key] = 'ff' .. rh() .. rh() .. rh() .. rh() .. rh() .. rh() LOG(key .. " : " .. colours[key]) end
+                        if grid[x-1][y] ~= grid[x+1][y] or grid[x][y-1] ~= grid[x][y+1] then
+                            DrawCircle({x,GTH(x,y),y}, 0.7071/2, colours[key])
+                        end
+                    end
+                end
+                --if not profile2 then
+                --    profile2 = GetSystemTimeSecondsOnlyForProfileUse()
+                --    LOG(profile2-profile)
+                --end
+                coroutine.yield(2)
+            end
+        end, grid)
     end,
 
     ----------------------------------------------------------------------------
