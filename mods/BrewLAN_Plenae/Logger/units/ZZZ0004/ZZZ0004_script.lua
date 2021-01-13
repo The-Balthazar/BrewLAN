@@ -61,7 +61,7 @@ ZZZ0004 = Class(Unit) {
         -- Input values and options
         local maxGroundVariation = 0.75
         --local maxPlatoonDistance = 140
-        local markerCheckDistance = math.min(100, ScenarioInfo.size[1]/16) -- bermuda locket land nodes look good with 8. Less than a 16th should come with a warning.
+        local markerCheckDistance = math.min(128, ScenarioInfo.size[1]/32) -- Less than a 32nd can cause ghost connections, and should come with a warning. Bermuda Locket land nodes look good with 8.
         local markerCheckDistanceSq = math.pow(markerCheckDistance, 2)
         --local markerMaxOverlapRatio = 0.7
         ------------------------------------------------------------------------
@@ -497,6 +497,10 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
 ]]          --if true then self.ConvertXYTableToYXCommaDelim(voronoimap); return end
             --------------------------------------------------------------------
             --
+
+            --After this point the voronoi map can have gaps in large flat areas markerCheckDistance away from blocking areas.
+            --This fills those gaps with an offset 16x16 grid, technically 17x17 with smaller outsides, but 16x16 sized.
+            --This can cause issues if markerCheckDistance is less than a 16th of the map.
             do
                 local gs = getn(voronoimap) / 16
                 local ceil = math.ceil
