@@ -481,6 +481,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Pathfinder script: Added some basic toggles and controls to the control unit for easier testing.
   * Pathfinder script: Changed some variable names, added a grid infill for flat areas, and added some more visualisation options.
 
+  ### 2021-01-13
+
+  * Pathfinder script: Created voronoi edge culling function options.
+  * Pathfinder script: Started grid contiguous check option.
+
+  ### 2021-01-14
+
+  * Pathfinder script: Finished grid contiguous check option.
+  * Pathfinder script: Cleaned up some variables and comments.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

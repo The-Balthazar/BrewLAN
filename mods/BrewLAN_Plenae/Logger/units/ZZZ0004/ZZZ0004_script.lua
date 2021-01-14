@@ -1,13 +1,14 @@
 local Unit = import('/lua/sim/unit.lua').Unit
 
 ZZZ0004 = Class(Unit) {
+    ----------------------------------------------------------------------------
+    -- Implementation specific UI Hacks
     OnCreate = function(self)
         Unit.OnCreate(self)
         --self:ForkThread(self.TranslateAllMarkers)
         self:SetScriptBit('RULEUTC_IntelToggle', true)
         self:SetScriptBit('RULEUTC_ProductionToggle', true)
         self:SetScriptBit('RULEUTC_GenericToggle', true)
-
     end,
 
     --Some quick control buttons
@@ -40,62 +41,81 @@ ZZZ0004 = Class(Unit) {
         end
     end,
 
+    ----------------------------------------------------------------------------
+    -- The beans. Give it
     --markerType expected to be a number from 1 to 3
     MapTerrainDeltaTable = function(self, markerType)
         coroutine.yield(1)
+        ------------------------------------------------------------------------
+        -- Marker data
         local markerTypes = {
-            { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false },
-            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true, MaxWaterDepth = 25},
+            { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false,                    MaxSlope=0.75},
+            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true, MaxWaterDepth = 25, MaxSlope=0.75},
             { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true, MinWaterDepth = 1.5},
         }
+        local maxGroundVariation = 0.75  -- This is only here because it pre-dates the markerTypes definitions, and it's uses are hard coded instead of based on markerType data.
         markerType = markerTypes[markerType]
+
         ------------------------------------------------------------------------
-        -- Debug, testing, and extra info options
-        local debugmode = false
-        --local generateHeightmap = false
-        local exportMarkersToLog = false
-        local drawMarkersToMap = true
-        local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse()
-        local drawVoronoiToMap = false
+        -- Output settings -----------------------------------------------------
+        local exportMarkersToLog = false --Produce copy-pasta-able log export
+        local drawMarkersToMap = true    --Give a representation of the marker data
+        local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse() --Check how long this took
+        local drawVoronoiToMap = false   --Debug view for seeing what the data is seeing.
+        --local debugmode = false  -- This is only used by commented out sections
+
         ------------------------------------------------------------------------
-        -- Input values and options
-        local maxGroundVariation = 0.75
-        --local maxPlatoonDistance = 140
-        local markerCheckDistance = math.min(128, ScenarioInfo.size[1]/32) -- Less than a 32nd can cause ghost connections, and should come with a warning. Bermuda Locket land nodes look good with 8.
-        local markerCheckDistanceSq = math.pow(markerCheckDistance, 2)
-        --local markerMaxOverlapRatio = 0.7
-        ------------------------------------------------------------------------
-        --local pointOfInterestTypes = {'Start Location', 'Mass', 'Hydrocarbon'}
         -- Unpassable areas map cleanup toggles --------------------------------
-        local doCleanup = true
-        local cleanupPasses = 1
+        local doQuickCleanup = true -- These are mostly obselete, but can potentially save time later
+        local cleanupPasses = 1 -- Numbers greater than 1 only really have effect if doDeAlcove is on
         local doDespeckle = true -- removes single unconnected grids of unpassable (8 point check) --Obseleted by ignoreMinZones, but a much quicker function.
-        local doDeIsland = false -- removes single unconnected grids of passable (4 point check) --Obselete
-        local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check) --Obselete
-        -- Other cleanup toggles -----------------------------------------------
-        local doMinDistCheck = math.sqrt(ScenarioInfo.size[1]) -- sqrt of map size is usually a good default -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two.
-        local doRemoveIsolatedMarkers = true -- If a marker has no connections, YEET
+        local doDeIsland = false -- removes single unconnected grids of passable (4 point check) --Obselete by voronoi function
+        local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check) --Obselete by voronoi function.
+
         ------------------------------------------------------------------------
-        local minContigiousZoneArea = 30
-        --local gridScaleDivisor = 4
-            --These two are mutually exclusive
+        -- Voronoi input options -----------------------------------------------
+        local voronoiGridsNumber = math.min(16, ScenarioInfo.size[1]/32) -- 16 is threat grid size, non-power 2 numbers looked bad on Theta. Non-16 numbers don't interact well with threat map. 16 can cause distance based marker checks to take longer on 5k maps. Geater than 16 isn't supported by the actual grid function because it takes names from a 16 length array
+        local voronoiCheckDistance = math.min(128, ScenarioInfo.size[1]/(voronoiGridsNumber*2)--[[, 10]]) -- Less than a half a grid-width (a 32nd with 16ths grids) can cause ghost connections without doContiguousGridCheck true, and should come with a warning. Bermuda Locket land nodes look good with 8.
+        local voronoiCheckDistanceSq = math.pow(voronoiCheckDistance, 2) --This is just for optimisation
+
+        ------------------------------------------------------------------------
+        -- Voronoi cleanup options ---------------------------------------------
+        local minContigiousZoneArea = 30 -- size cuttoff for giving a shit about a blocking area
         local ignoreMinZones = true -- treat small zones as though they dont exist.
-        local incorporateMinZones = false -- unfinished (intended to have small zones count as their nearest zone large enough zone)
+        local doEdgeCullLargestZones = false -- creates a gap between the two largest blocking zones that gets filled with grid. Can fix some issues on maps like Bermuda Locket without super agressive modofication to the voronoi. doContiguousGridCheck might be needed
+        local doEdgeCullAllZones = false -- Agressively creates gaps between the any voronoi zone. Can fix concave areas, narrow paths, and other problem areas. doContiguousGridCheck probably essential.
+        local doContiguousGridCheck = false -- Slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
+        --local incorporateMinZones = false -- unfinished (intended to have small zones count as their nearest zone large enough zone) Should be mutually exclusive with ignoreMinZones
+
         ------------------------------------------------------------------------
-        -- Data storage
-        --local deltamap = {} --Populate with the local evalation differencees
+        -- Marker options ------------------------------------------------------
+        --local pointOfInterestTypes = {'Start Location', 'Mass', 'Hydrocarbon'} --Voronoi based setup doesn't care.
+
+        ------------------------------------------------------------------------
+        -- Marker cleanup options ----------------------------------------------
+        local MarkerMinDist = math.sqrt(ScenarioInfo.size[1]) -- sqrt of map size is usually a good default -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two. Opperation is very order dpenendant.
+        local doRemoveIsolatedMarkers = true -- If a marker has no connections, YEET
+
+        ------------------------------------------------------------------------
+        -- Data storage --------------------------------------------------------
         local passmap = {}  --Populate with false for impassible or distance to nearest false
-        local passmapMinCont = {}
         local voronoimap = {} --Populate with zones around unpassable areas as a voronoi map
+        local markerlist = {} --List of markers
+
+        ------------------------------------------------------------------------
+        -- Obselete stuff ------------------------------------------------------
+        --local deltamap = {} --Populate with the local evalation differencees
+        --local passmapMinCont = {}
         --local voronoiedgelist = {} --hashmap of voronoi zone IDs that touch the border; to prevent them from being ignored by the minContigiousZoneArea value
         --local markermap = {} --Map of markers
-        local markerlist = {} --List of markers
         --local pointsOfInterest = {} --Populated with an array of 2 point co-ords of interesting markers
+
         ------------------------------------------------------------------------
         -- Global functions called potentially over a million times (remove some overhead)
         local GTH, VDist2Sq = GetTerrainHeight, VDist2Sq
         local max, min, abs, floor = math.max, math.min, math.abs, math.floor
         local insert, remove, getn, copy, find, merged = table.insert, table.remove, table.getn, table.copy, table.find, table.merged
+
         ------------------------------------------------------------------------
         -- tiny generic helper functions I use, or might use in more than once place
         local btb = function(v) return v and 1 or 0 end --bool to binary
@@ -123,31 +143,17 @@ ZZZ0004 = Class(Unit) {
                 end
             end
         end
-        ------------------------------------------------------------------------
-        -- Optional extra info gathering
-
-            --------------------------------------------------------------------
-            -- Generate a heightmap for testing?
-        --[[if generateHeightmap then
-            local heightmap = {}
-            --(has an off-by-one error in co-ords) not actually used later and optional, so whatever
-            for x = 1, ScenarioInfo.size[1]+1 do
-                heightmap[x] = {}
-                for y = 1, ScenarioInfo.size[2]+1 do
-                    heightmap[x][y] = GTH(x-1,y-1)
-                end
-            end
-            return heightmap
-        end]]
-        ------------------------------------------------------------------------
-        -- DO IT
 
         ------------------------------------------------------------------------
-        -- Identify unpathable areas, and set up for passmap distance calcs
+        -- DO IT ---------------------------------------------------------------
+        ------------------------------------------------------------------------
+
+        ------------------------------------------------------------------------
+        -- Evaluate and store map data. ----------------------------------------
         for x = 0, ScenarioInfo.size[1]+1 do --Start one below and one above map size in order to;
             --deltamap[x] = {}
             passmap[x] = {}
-            passmapMinCont[x] = {}
+            --passmapMinCont[x] = {}
             --markermap[x] = {}
             voronoimap[x] = {}
             for y = 0, ScenarioInfo.size[2]+1 do
@@ -184,7 +190,7 @@ ZZZ0004 = Class(Unit) {
                     if (markerType.land and delta <= maxGroundVariation or not markerType.land) and terrainTypeCheck(x,y) and waterCheck(markerType, x, y, c) then
                         --previously `passmap[x][y] = delta <= maxGroundVariation`
                         --Set up for the vector check for min dist from false
-                        passmap[x][y] = markerCheckDistanceSq
+                        passmap[x][y] = voronoiCheckDistanceSq
                         --markermap[x][y] = 0
                         voronoimap[x][y] = ''
                     else
@@ -197,8 +203,8 @@ ZZZ0004 = Class(Unit) {
         end
 
         ------------------------------------------------------------------------
-        -- CLEANUP -- remove a few troublesome artifacts that cause issues, and mean nothing. Probably
-        if doCleanup and cleanupPasses ~= 0 then
+        -- Heightmap data cleanup. Mostly obselete, mostly harmless. -----------
+        if doQuickCleanup and cleanupPasses ~= 0 then
             for i = 1, cleanupPasses do
                 for x, ydata in passmap do
                     for y, pass in ydata do
@@ -210,7 +216,7 @@ ZZZ0004 = Class(Unit) {
                             --and deltamap[x][y] <= maxGroundVariation * 1.5
                             then
                                 --remove isolated false sections unless they are hefty
-                                passmap[x][y] = markerCheckDistanceSq
+                                passmap[x][y] = voronoiCheckDistanceSq
                                 voronoimap[x][y] = ''
                                 --LOG("removing isolated unpathable grid")
                             end
@@ -243,10 +249,6 @@ ZZZ0004 = Class(Unit) {
                 end
             end
         end
-
-        ------------------------------------------------------------------------
-        --TODO: contiguous area check (sort of done, in the voronoi check, but concentric unpassable areas will cause artifacting)
-
 
         ------------------------------------------------------------------------
         -- Calculates content for passmap and voronoimap
@@ -292,7 +294,8 @@ ZZZ0004 = Class(Unit) {
                 end
             end
 
-            MapCrawler = function(passmap, voronoimap, x, y, markerCheckDistance, blockid, borderMode)
+            --Crawler function for gathering contiguous areas.
+            MapCrawler = function(passmap, voronoimap, x, y, voronoiCheckDistance, blockid, borderMode)
                 for _, adj in {{0,0},{0,-1},{-1,0},{0,1},{1,0},{-1,1},{1,-1},{-1,-1},{1,1}} do
 
                     --Separate the border where it touches a zone, but dont crawl along it. 6 and greater are intercardinals.
@@ -314,6 +317,8 @@ ZZZ0004 = Class(Unit) {
                     end
                 end
             end
+
+            --Input data looks like:
 --[[ voronoimap = (abridged) b = "border" f = false
 b,f,f,f,f,f,f,f,f, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,f,f,f,f,f, , , , ,b,
 b,f,f,f,f,f,f,f, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,f,f,f,f, , , ,b,
@@ -344,9 +349,9 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,
                     if not pass and not voronoimap[x][y] then
                         blockid = blockid + 1
                         if not ZoneSizes[blockid] then ZoneSizes[blockid] = 0 end
-                        MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid)
+                        MapCrawler(passmap, voronoimap, x, y, voronoiCheckDistance, blockid)
                         while CrawlerPath[1] do
-                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid)
+                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], voronoiCheckDistance, blockid)
                             remove(CrawlerPath, 1)
                         end
                     end
@@ -381,9 +386,9 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,
                 for _, y in {0, ymax} do
                     if voronoimap[x][y] == 'border' then
                         blockid = blockid + 1
-                        MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid, true)
+                        MapCrawler(passmap, voronoimap, x, y, voronoiCheckDistance, blockid, true)
                         while CrawlerPath[1] do
-                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid, true)
+                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], voronoiCheckDistance, blockid, true)
                             remove(CrawlerPath, 1)
                         end
                     end
@@ -393,9 +398,9 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,
                 for _, x in {0, ymax} do
                     if voronoimap[x][y] == 'border' then
                         blockid = blockid + 1
-                        MapCrawler(passmap, voronoimap, x, y, markerCheckDistance, blockid, true)
+                        MapCrawler(passmap, voronoimap, x, y, voronoiCheckDistance, blockid, true)
                         while CrawlerPath[1] do
-                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], markerCheckDistance, blockid, true)
+                            MapCrawler(passmap, voronoimap, CrawlerPath[1][1], CrawlerPath[1][2], voronoiCheckDistance, blockid, true)
                             remove(CrawlerPath, 1)
                         end
                     end
@@ -427,7 +432,7 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,
 
             --Check actions are required with the incorporateMinZones or ignoreMinZones actions
             local smallZonesNum = 0
-            if incorporateMinZones or ignoreMinZones then
+            if --[[incorporateMinZones or]] ignoreMinZones then
                 for zone, no in ZoneSizes do
                     if no <= minContigiousZoneArea then
                         smallZonesNum = smallZonesNum + 1
@@ -441,7 +446,7 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,
                 for x, ydata in passmap do
                     for y, pass in ydata do
                         if not pass and voronoimap[x][y] and ZoneSizes[voronoimap[x][y] ] and ZoneSizes[voronoimap[x][y] ] <= minContigiousZoneArea then
-                            passmap[x][y] = markerCheckDistanceSq
+                            passmap[x][y] = voronoiCheckDistanceSq
                             voronoimap[x][y] = ''
                         end
                     end
@@ -450,17 +455,17 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,
 
             -- find the nearest zones to the small zones, and merge them
             -- Dont bother if ignore is on. There are none.
-            if incorporateMinZones and not ignoreMinZones and smallZonesNum > 0 then
-                --[[for x, ydata in passmap do
+            --[[if incorporateMinZones and not ignoreMinZones and smallZonesNum > 0 then
+                --[ [for x, ydata in passmap do
                     for y, pass in ydata do
                         if passmapMinCont[x][y]
                         and (passmap[x-1][y  ] or passmap[x  ][y-1] or passmap[x+1][y  ] or passmap[x  ][y+1])
                         then
-                            MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, blockid)
+                            MapDistanceVoronoi(passmap, voronoimap, x, y, voronoiCheckDistance, blockid)
                         end
                     end
-                end]]
-            end
+                end] ]
+            end]]
 
             -- Generate the voronoi areas
             for x, ydata in passmap do
@@ -470,7 +475,7 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,5,5,b,b,b,b,b,b,b,b,b,b,b,7,7,7,7,b,b,b,b,b,b,
                     --and (not ZoneSizes[voronoimap[x][y] ] or ZoneSizes[voronoimap[x][y] ] >= minContigiousZoneArea)
                     and (passmap[x-1][y  ] or passmap[x  ][y-1] or passmap[x+1][y  ] or passmap[x  ][y+1])
                     then
-                        MapDistanceVoronoi(passmap, voronoimap, x, y, markerCheckDistance, voronoimap[x][y])--, true)
+                        MapDistanceVoronoi(passmap, voronoimap, x, y, voronoiCheckDistance, voronoimap[x][y])--, true)
                     end
                 end
             end
@@ -498,11 +503,108 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
             --------------------------------------------------------------------
             --
 
-            --After this point the voronoi map can have gaps in large flat areas markerCheckDistance away from blocking areas.
+            --This produces a gap between the two largest zones to be filled in with grid, so that maps with two large zones that touch at multiple places don't cause issues.
+            --If this was done to the connections on every pair of zones that connect at more than one place, and every long winding connection, this would probably fix most of the concentric/concave path issues.
+            if doEdgeCullLargestZones then
+                local largest, secondl
+                for k, v in ZoneSizes do
+                    if not largest or ZoneSizes[largest] < v then
+                        largest = k
+                    end
+                    if not secondl and k ~= largest or secondl and k ~= largest and ZoneSizes[secondl] < v then
+                        secondl = k
+                    end
+                end
+                if largest and secondl and largest ~= secondl then
+                    local voronoimapCopy = table.deepcopy(voronoimap)
+                    --LOG(largest..": "..ZoneSizes[largest].."; "..secondl..": "..ZoneSizes[secondl])
+                    for x, ydata in voronoimap do
+                        for y, data in ydata do
+                            local offset = 5
+                            if voronoimap[x-offset][y] == largest and voronoimap[x+offset][y] == secondl
+                            or voronoimap[x][y-offset] == largest and voronoimap[x][y+offset] == secondl
+                            or voronoimap[x-offset][y] == secondl and voronoimap[x+offset][y] == largest
+                            or voronoimap[x][y-offset] == secondl and voronoimap[x][y+offset] == largest
+
+                            or voronoimap[x-offset][y-offset] == largest and voronoimap[x+offset][y+offset] == secondl
+                            or voronoimap[x+offset][y+offset] == largest and voronoimap[x-offset][y-offset] == secondl
+                            or voronoimap[x-offset][y+offset] == secondl and voronoimap[x+offset][y-offset] == largest
+                            or voronoimap[x+offset][y-offset] == secondl and voronoimap[x-offset][y+offset] == largest then
+                                voronoimapCopy[x][y] = ''
+                            end
+                        end
+                    end
+                    voronoimap = voronoimapCopy
+                end
+            end
+
+            --Experimental feature that culls the area between any
+            if doEdgeCullAllZones then
+                local voronoimapCopy = table.deepcopy(voronoimap)
+                for x, ydata in voronoimap do
+                    for y, data in ydata do
+                        local offset = 5
+                        if voronoimap[x-offset][y] and voronoimap[x+offset][y] and voronoimap[x][y-offset] and voronoimap[x][y+offset]
+
+                        and (voronoimap[x-offset][y] ~= voronoimap[x+offset][y]
+                        or voronoimap[x][y-offset] ~= voronoimap[x][y+offset]
+
+                        or voronoimap[x-offset][y-offset] ~= voronoimap[x+offset][y+offset]
+                        or voronoimap[x+offset][y-offset] ~= voronoimap[x-offset][y+offset]) then
+                            voronoimapCopy[x][y] = ''
+                        end
+                    end
+                end
+                voronoimap = voronoimapCopy
+            end
+
+            --After this point the voronoi map can have gaps in large flat areas voronoiCheckDistance away from blocking areas.
             --This fills those gaps with an offset 16x16 grid, technically 17x17 with smaller outsides, but 16x16 sized.
-            --This can cause issues if markerCheckDistance is less than a 16th of the map.
+            --This can cause issues if voronoiCheckDistance is less than a 16th of the map.
             do
-                local gs = getn(voronoimap) / 16
+                --if doContiguousGridCheck then
+                local GridContig, GridZoneI
+                local GridCPath = {}
+
+                local gs = getn(voronoimap) / voronoiGridsNumber
+                local ceil = math.ceil
+                local hex = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'}
+
+                if doContiguousGridCheck then
+                    GridZoneI = 0
+                    GridContig = function(map, x, z, blocki)
+                        --voronoimap[x][z] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((z + (gs/2))/gs)]..i
+                        for _, v in {{0,1}, {1,0}, {0,-1}, {-1,0}} do
+
+                            local hexci = hex[ceil((x+v[1] + (gs/2))/gs)]..hex[ceil((z+v[2] + (gs/2))/gs)]..blocki
+
+                            if voronoimap[x+v[1] ][z+v[2] ] == '' and voronoimap[x][z] == hexci then
+                                insert(GridCPath,{x+v[1], z+v[2]})
+                                voronoimap[x+v[1] ][z+v[2] ] = hexci
+                            end
+                        end
+                    end
+                end
+                for x, zdata in voronoimap do
+                    for z, data in zdata do
+                        if data == '' then
+                            if doContiguousGridCheck then
+                                GridZoneI = GridZoneI +1
+                                --GridContig(voronoimap, x, z, GridZoneI)
+                                voronoimap[x][z] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((z + (gs/2))/gs)]..GridZoneI
+                                insert(GridCPath, {x,z})
+                                while GridCPath[1] do
+                                    GridContig(voronoimap, GridCPath[1][1], GridCPath[1][2], GridZoneI)
+                                    remove(GridCPath, 1)
+                                end
+                            else
+                                voronoimap[x][z] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((z + (gs/2))/gs)]
+                            end
+                        end
+                    end
+                end
+
+                --[[local gs = getn(voronoimap) / voronoiGridsNumber
                 local ceil = math.ceil
                 local hex = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'}
                 for x, ydata in voronoimap do
@@ -511,7 +613,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                             voronoimap[x][y] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((y + (gs/2))/gs)]
                         end
                     end
-                end
+                end]]
             end
         end
         --LOG(repr(voronoiedgelist))
@@ -570,13 +672,13 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
 
                         --Filter for nearby markers, like, really near, and move the nearby markers
                         local m1name, m1data
-                        if doMinDistCheck then
+                        if MarkerMinDist and MarkerMinDist > 0 then
                             local test = true
                             if tcount(markerlist) > 1 then
                                 for m2name, m2data in markerlist do
                                     -- Square distance check to make it quicker
-                                    if abs(x - m2data.position[1]) < doMinDistCheck
-                                    and abs(y - m2data.position[3]) < doMinDistCheck
+                                    if abs(x - m2data.position[1]) < MarkerMinDist
+                                    and abs(y - m2data.position[3]) < MarkerMinDist
                                     then
                                         --Move to the average of what the two points would have been
                                         markerlist[m2name].position[1] = floor((x + m2data.position[1]) / 2)
@@ -676,15 +778,15 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
             end
         end
 
-        if doMinDistCheck or doRemoveIsolatedMarkers then--the whole thing shit the bed when I tried to have this done before/during the marker production
+        if MarkerMinDist or doRemoveIsolatedMarkers then--the whole thing shit the bed when I tried to have this done before/during the marker production
             for m1name, m1data in markerlist do--[[
-                if false and doMinDistCheck then
+                if false and MarkerMinDist then
                     if m1data.adjacentList[1] then
                         for i, m2name in m1data.adjacentList do
                             local m2data = markerlist[m2name]
                             if markerlist[m2name] and markerlist[m1name]
-                            and abs(m1data.position[1] - m2data.position[1]) < doMinDistCheck
-                            and abs(m1data.position[3] - m2data.position[3]) < doMinDistCheck
+                            and abs(m1data.position[1] - m2data.position[1]) < MarkerMinDist
+                            and abs(m1data.position[3] - m2data.position[3]) < MarkerMinDist
                             then
                                 if not m1data.adjacentList[2] and not m2data.adjacentList[2] then
                                     --It'll be an isolated marker in this instance.
@@ -786,7 +888,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                             local Xco = 0 - btb(not passmap[x-1][ y ]) * 0.41 + btb(not passmap[x+1][ y ]) * 0.41
                             local Yco = 0 - btb(not passmap[ x ][y-1]) * 0.41 + btb(not passmap[ x ][y+1]) * 0.41
                             --Do distance calculations to passable squares
-                            MapDistanceCoeff(passmap, x, y, markerCheckDistance, coefficient, Xco, Yco)
+                            MapDistanceCoeff(passmap, x, y, voronoiCheckDistance, coefficient, Xco, Yco)
                         end
                     end
                 end
@@ -816,7 +918,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                     and btb(pass >= passmap[x-1][y-1]) + btb(pass >= passmap[x+1][y+1]) + btb(pass >= passmap[x+1][y-1]) + btb(pass >= passmap[x-1][y+1]) >= 3
                     then
                         --Check passmap, but affect highpointmap
-                        highpointsmap[x][y] = passmap[x][y] + markerCheckDistance
+                        highpointsmap[x][y] = passmap[x][y] + voronoiCheckDistance
                         insert(highpointlist, {x,y,highpointsmap[x][y]})
                     end
                 end
@@ -997,7 +1099,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
             --
             --[ [for i, PoIpos in pointsOfInterest do
                 if markermap[PoIpos[1] ][PoIpos[2] ] == 0 then
-                    local visarea = GetAreaInLoS(passmap, PoIpos[1], PoIpos[2], markerCheckDistance)
+                    local visarea = GetAreaInLoS(passmap, PoIpos[1], PoIpos[2], voronoiCheckDistance)
                     local highval, highdist, highpoint = 0
                     local type = type
                     for j, GridPos in visarea do
@@ -1011,7 +1113,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                         end
                     end
                     markermap[highpoint[1] ][highpoint[2] ] = "Marker"
-                    for j, GridPos in GetAreaInLoS(passmap, highpoint[1], highpoint[2], markerCheckDistance) do
+                    for j, GridPos in GetAreaInLoS(passmap, highpoint[1], highpoint[2], voronoiCheckDistance) do
                         if type(markermap[GridPos[1] ][GridPos[2] ]) == 'number' then
                             markermap[GridPos[1] ][GridPos[2] ] = markermap[GridPos[1] ][GridPos[2] ] + 1
                         end
@@ -1026,9 +1128,9 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                 local checkpos = function(pos, args)
                     return args[1][pos[1] ][pos[2] ] >= args[2]
                 end
-                --"Good" marker areas have markerCheckDistance added to their distance to unpassable in highpointsmap. Flat areas plateau at markerCheckDistance
+                --"Good" marker areas have voronoiCheckDistance added to their distance to unpassable in highpointsmap. Flat areas plateau at voronoiCheckDistance
                 --So this will output the plateaus and the good marker areas
-                local visarea = GetAreaInLoS(passmap, PoIpos[1], PoIpos[2], markerCheckDistance, {checkpos, {highpointsmap, markerCheckDistance}}, true, false)
+                local visarea = GetAreaInLoS(passmap, PoIpos[1], PoIpos[2], voronoiCheckDistance, {checkpos, {highpointsmap, voronoiCheckDistance}}, true, false)
                 --{x,y,passmap value, distance from input target}
                 -- Sort by passmap value. Highest first.
                 table.sort(visarea, function(a,b) return a[3] > b[3] end)
@@ -1049,7 +1151,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                 --Just take the first value at this point
                 local markername = CreateMarker(visarea[1][1], visarea[1][2])
 
-                visarea = GetAreaInLoS(passmap, markerlist[markername].position[1], markerlist[markername].position[3], markerCheckDistance, nil, true, true)
+                visarea = GetAreaInLoS(passmap, markerlist[markername].position[1], markerlist[markername].position[3], voronoiCheckDistance, nil, true, true)
                 -- Sort by highpointmap value. Highest first.
                 table.sort(visarea, function(a,b) return highpointsmap[a[1] ][a[2] ] > highpointsmap[b[1] ][b[2] ] end)
                 do
@@ -1059,9 +1161,9 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                         -- If it's not a marker or impassible
                         if type(markermap[visarea[i][1] ][visarea[i][2] ]) == 'number' then
                             -- Mark it with maxdist-dist, as a system of prioritising areas. Lower numbers are better for placing a marker there.
-                            markermap[visarea[i][1] ][visarea[i][2] ] = math.max(markermap[visarea[i][1] ][visarea[i][2] ], markerCheckDistance - visarea[i][4])
+                            markermap[visarea[i][1] ][visarea[i][2] ] = math.max(markermap[visarea[i][1] ][visarea[i][2] ], voronoiCheckDistance - visarea[i][4])
                             --If this area has previously been marked as not good enough for a merker
-                            if not cuttoff and highpointsmap[visarea[i][1] ][visarea[i][2] ] < markerCheckDistance then
+                            if not cuttoff and highpointsmap[visarea[i][1] ][visarea[i][2] ] < voronoiCheckDistance then
                                 cuttoff = i
                             end
                         end
