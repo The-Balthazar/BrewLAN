@@ -66,12 +66,17 @@ For more complete localisation credits see [the master translation document](htt
 - Marc "Explo" Tassetti – French localisation
 - Jaisse – French localisation
 - Oaks – Czech localisation
+- Gnio - French localisation
+- MarLo - German localisation
 
 ### Financial supporters
 - Saxxonknight
 - Guillaume Chapeau
-- Ben Pankow
 - Mogwai
+- Flaxbeard
+- Adam Brown
 - Neutral Effect
 - 🦕 Marcin Mikołajczak
 - Mirko Gebauer
+- 露露特 普
+- Ivar Viklund Grundelius

@@ -491,6 +491,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Pathfinder script: Finished grid contiguous check option.
   * Pathfinder script: Cleaned up some variables and comments.
 
+  ### 2021-01-15
+
+  * Pathfinder script: Set the voronoi edge cull value to be easier to configure.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

@@ -84,6 +84,7 @@ ZZZ0004 = Class(Unit) {
         local ignoreMinZones = true -- treat small zones as though they dont exist.
         local doEdgeCullLargestZones = false -- creates a gap between the two largest blocking zones that gets filled with grid. Can fix some issues on maps like Bermuda Locket without super agressive modofication to the voronoi. doContiguousGridCheck might be needed
         local doEdgeCullAllZones = false -- Agressively creates gaps between the any voronoi zone. Can fix concave areas, narrow paths, and other problem areas. doContiguousGridCheck probably essential.
+        local voronoiEdgeCullOffset = 5 -- The distance that the edge cull should affect. Radius, square.
         local doContiguousGridCheck = false -- Slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
         --local incorporateMinZones = false -- unfinished (intended to have small zones count as their nearest zone large enough zone) Should be mutually exclusive with ignoreMinZones
 
@@ -520,7 +521,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                     --LOG(largest..": "..ZoneSizes[largest].."; "..secondl..": "..ZoneSizes[secondl])
                     for x, ydata in voronoimap do
                         for y, data in ydata do
-                            local offset = 5
+                            local offset = voronoiEdgeCullOffset
                             if voronoimap[x-offset][y] == largest and voronoimap[x+offset][y] == secondl
                             or voronoimap[x][y-offset] == largest and voronoimap[x][y+offset] == secondl
                             or voronoimap[x-offset][y] == secondl and voronoimap[x+offset][y] == largest
@@ -543,7 +544,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                 local voronoimapCopy = table.deepcopy(voronoimap)
                 for x, ydata in voronoimap do
                     for y, data in ydata do
-                        local offset = 5
+                        local offset = voronoiEdgeCullOffset
                         if voronoimap[x-offset][y] and voronoimap[x+offset][y] and voronoimap[x][y-offset] and voronoimap[x][y+offset]
 
                         and (voronoimap[x-offset][y] ~= voronoimap[x+offset][y]
