@@ -66,3 +66,15 @@ UnitBlueprint {
         OmniRadius = 2,			--Added
     },
 }
+
+--[[
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="ues0401",		--Atlantis
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = false,
+        },
+    },
+}
+]]

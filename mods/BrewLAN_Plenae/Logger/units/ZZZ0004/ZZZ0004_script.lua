@@ -85,7 +85,7 @@ ZZZ0004 = Class(Unit) {
         local doEdgeCullLargestZones = false -- creates a gap between the two largest blocking zones that gets filled with grid. Can fix some issues on maps like Bermuda Locket without super agressive modofication to the voronoi. doContiguousGridCheck might be needed
         local doEdgeCullAllZones = false -- Agressively creates gaps between the any voronoi zone. Can fix concave areas, narrow paths, and other problem areas. doContiguousGridCheck probably essential.
         local voronoiEdgeCullOffset = 5 -- The distance that the edge cull should affect. Radius, square.
-        local doContiguousGridCheck = false -- Slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
+        local doContiguousGridCheck = true -- Slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
         --local incorporateMinZones = false -- unfinished (intended to have small zones count as their nearest zone large enough zone) Should be mutually exclusive with ignoreMinZones
 
         ------------------------------------------------------------------------

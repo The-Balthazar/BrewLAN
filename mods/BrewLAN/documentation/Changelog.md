@@ -495,6 +495,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Pathfinder script: Set the voronoi edge cull value to be easier to configure.
 
+  ### 2021-01-28
+
+  * Cityscapes: Crane now generates over a container prop, instead of randomly down the whole pier, fixing bad crane position spawns.
+  * Cityscapes: Added a gradient flatten function that adds a slopes along the road to a pier, fixing "drive off a cliff" roads.
+  * Cityscapes: Last set of containers that spawn now flatten under themselves just in case it was only flat in the middle.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

@@ -225,6 +225,7 @@ function BrewLANCategoryChanges(all_bps)
         url0401 = {NoBuild = true, }, -------------------------Scathis
         xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
         ual0401 = {'DARKNESSIMMUNE'},--------------------------Colossus flag for preventing Darkness nerf.
+        --ues0401 = {'TECH3', r = 'EXPERIMENTAL'} -- This fixes the Atlantis not coming out of the Gantry without diving, but obviously isn't acceptable.
     }
     local buildcats = {
         'BUILTBYTIER1ENGINEER',

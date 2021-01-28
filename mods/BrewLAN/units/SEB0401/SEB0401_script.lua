@@ -50,8 +50,8 @@ SEB0401 = Class(TLandFactoryUnit) {
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
-        self.UnitControl(self, unitBeingBuilt)
         TLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)
+        self.UnitControl(self, unitBeingBuilt)
         AIControl(self, unitBeingBuilt)
         BuildModeChange(self)
     end,

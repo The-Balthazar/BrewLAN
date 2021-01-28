@@ -277,7 +277,7 @@ SAB5401 = Class(AStructureUnit) {
 
             local CheckUnitInTable = function(unittable, AdjUnit)
                 for i, unit in unittable do
-                    if GetEntityId(unit) == GetEntityId(AdjUnit) then
+                    if unit:GetEntityId() == AdjUnit:GetEntityId() then
                         return true
                     end
                 end

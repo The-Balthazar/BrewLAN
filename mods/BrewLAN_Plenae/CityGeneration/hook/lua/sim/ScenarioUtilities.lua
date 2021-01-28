@@ -631,8 +631,25 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                             end
                         end
                     end
-                    local SpawnContainerLine = function(pos, pierData, pierDir, p, h)
+                    local FlattenGradientMapRect = function(x,z,w,h)
+                        --a1,a2
+                        --b1,b2
+                        local a1, a2, b1, b2 = GetTerrainHeight(x,z), GetTerrainHeight(x+w,z), GetTerrainHeight(x,z+h), GetTerrainHeight(x+w,z+h)
+                        for i = 0, w do
+                            for j = 0, h do
+                                FlattenMapRect(x+i,z+j,0,0,
+                                    (
+                                        ((a1*(w-i)+a2*(i))/w)*(h-j) +
+                                        ((b1*(w-i)+b2*(i))/w)*(j)
+                                    )/h
+                                    --+ 20
+                                )
+                            end
+                        end
+                    end
+                    local DoPierDecor = function(pos, pierData, pierDir, p, h)
                         for i=-5, 6 do
+                            --Spawn containers
                             local d = math.random(0,1)*2
                             local x = pos[1]+(p.x*0.9)+(p.xa*i*1.33)
                             local z = pos[3]+(p.z*0.9)+(p.za*i*1.33)
@@ -641,8 +658,57 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                                 local ran = math.random()
                                 containers:SetReclaimValues(ran, ran, containers.MassReclaim * ran, containers.EnergyReclaim * ran)
                                 containers:SetMaxReclaimValues(ran, ran, containers.MassReclaim * ran, containers.EnergyReclaim * ran)
+                            else
+                                --Flatten the last container location
+                                FlattenMapRect(
+                                    math.floor(pos[1]+(p.x*0.9)+(p.xa*i*1.33) -math.abs(1*p.xa+3*p.za)/2 ),
+                                    math.floor(pos[3]+(p.z*0.9)+(p.za*i*1.33) -math.abs(1*p.za+3*p.xa)/2 ),
+                                    math.abs(1*p.xa+3*p.za),
+                                    math.abs(1*p.za+3*p.xa),
+                                    pos[2]+h
+                                )
+
+                                --Spawn the container crane over a random container
+                                local cOverC = math.random(-5, i-1)
+
+                                SafeProp(pierData.ContainerCranes, {
+                                    pos[1]+(p.x*0.9)+(p.xa*cOverC*1.33),
+                                    h,
+                                    pos[3]+(p.z*0.9)+(p.za*cOverC*1.33)
+                                }, (pierDir+1)*90)
+
+
+                                --At this point I've kinda forgotten half the things that are in p, so this might be more complicated than it needs to be.
+                                -- offset at crate
+                                local offsetcx = (p.xa*(i-0.5)*1.33)
+                                local offsetcz = (p.za*(i-0.5)*1.33)
+                                -- offset at road
+                                local offsetrx = (p.xa*(8-0.5)*1.33)
+                                local offsetrz = (p.za*(8-0.5)*1.33)
+
+                                local w = math.ceil(math.abs(p.xa*(offsetcx - offsetrx)+(3*p.za)))
+                                local h = math.ceil(math.abs(p.za*(offsetcz - offsetrz)+(3*p.xa)))
+
+                                local posx = pos[1]+(p.x*0.9)+(offsetcx+offsetrx)/2
+                                local posz = pos[3]+(p.z*0.9)+(offsetcz+offsetrz)/2
+
+                                FlattenGradientMapRect(
+                                    math.floor(posx-(w/2)),
+                                    math.floor(posz-(h/2)),
+                                    w,
+                                    h
+                                )
+
+                                --[[FlattenGradientMapRect(
+                                    math.floor((pos[1]+(p.x*0.9)+(offsetcx+offsetrx)/2)-1.5),
+                                    math.floor((pos[3]+(p.z*0.9)+(offsetcz+offsetrz)/2)-1.5),
+                                    3,
+                                    3
+                                )]]
+                                break
                             end
                         end
+                        --LOG(repr(failed))
                     end
                     local SpawnSmallDockShips = function(pos, off, pierData, d, ori)
                         for i=-2,2 do
@@ -682,14 +748,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
 
                     SafeSpawn(pierData.Pier, pos, pierDir+1)
 
-                    --This doesn't check the ground's flat, and either should, or should be a unit not a prop.
-                    SafeProp(pierData.ContainerCranes, {
-                        pos[1]+((p.x0+(math.random() * p.w))*math.abs(p.xa)*0.8),
-                        pos[2],
-                        pos[3]+((p.z0+(math.random() * p.h))*math.abs(p.za)*0.8)
-                    }, (pierDir+1)*90)
-
-                    SpawnContainerLine(pos, pierData, pierDir, p, pierData.PierHeight)
+                    DoPierDecor(pos, pierData, pierDir, p, pierData.PierHeight)
 
                     if pierDir == 1 or pierDir == 3 then
                         if not gXZ(cityI,x+1,y) then
