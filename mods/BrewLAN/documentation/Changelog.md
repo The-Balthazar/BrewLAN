@@ -501,6 +501,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Added a gradient flatten function that adds a slopes along the road to a pier, fixing "drive off a cliff" roads.
   * Cityscapes: Last set of containers that spawn now flatten under themselves just in case it was only flat in the middle.
 
+  ### 2021-01-30
+
+  * Fixed the Seraphim Armoured Fabricator losing it's regen on FAF.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

@@ -36,7 +36,7 @@ function ModBlueprints(all_blueprints)
     BrewLANMegalithEggs(all_blueprints.Unit)
     BrewLANSatelliteUplinkForVanillaUnits(all_blueprints.Unit)
     BrewLANCheckRULEUCaseCorrectness(all_blueprints.Unit)
-    ExtractFrozenMeshBlueprint(all_blueprints.Unit)
+    --ExtractFrozenMeshBlueprint(all_blueprints.Unit)
     BrewLANChangesForDominoModSupport(all_blueprints.Unit)
 
     --Eventually refactor it this way to speed up loading
@@ -793,7 +793,6 @@ function BrewLANMatchBalancing(all_bps)
         sab1313 = {
             TargetID = 'uab1303',
             Affects = {'Defense', 'Economy'},
-            BaseMult = 1,
             Mults = {
                 Defense = {
                     Health = 1.5,
@@ -811,7 +810,6 @@ function BrewLANMatchBalancing(all_bps)
         srb1313 = {
             TargetID = 'urb1303',
             Affects = {'Defense', 'Economy'},
-            BaseMult = 1,
             Mults = {
                 Defense = {
                     Health = 1.5,
@@ -829,7 +827,6 @@ function BrewLANMatchBalancing(all_bps)
         seb1313 = {
             TargetID = 'ueb1303',
             Affects = {'Defense', 'Economy'},
-            BaseMult = 1,
             Mults = {
                 Defense = {
                     Health = 1.5,
@@ -847,7 +844,6 @@ function BrewLANMatchBalancing(all_bps)
         ssb1313 = {
             TargetID = 'xsb1303',
             Affects = {'Defense', 'Economy'},
-            BaseMult = 1,
             Mults = {
                 Defense = {
                     Health = 2.5,
@@ -889,14 +885,16 @@ function BrewLANMatchBalancing(all_bps)
                                 else
                                     --else run through in order, key, base, or 1
                                     --key only exists if its a table, else we go elsewhere
-                                    mult = data.Mults[tablename][key] or data.BaseMult or 1
+                                    mult = data.Mults[tablename][key] or data.BaseMult
                                 end
                                 if type(all_bps[tid][tablename][key]) == 'number' then
                                     rawnumber = all_bps[tid][tablename][key]
                                 else
                                     rawnumber = (all_bps[tid[1]][tablename][key] + all_bps[tid[2]][tablename][key]) * 0.5
                                 end
-                                all_bps[unitid][tablename][key] = MathRoundAppropriately(rawnumber * mult)
+                                if mult and rawnumber then
+                                    all_bps[unitid][tablename][key] = MathRoundAppropriately(rawnumber * mult)
+                                end
                             end
                         end
                     else
@@ -909,14 +907,16 @@ function BrewLANMatchBalancing(all_bps)
                                 else
                                     --else run through in order, key, base, or 1
                                     --key only exists if its a table, else we go elsewhere
-                                    mult = data.Mults[tablename][key] or data.BaseMult or 1
+                                    mult = data.Mults[tablename][key] or data.BaseMult
                                 end
                                 if type(all_bps[tid].Defense[tablename][key]) == 'number' then
                                     rawnumber = all_bps[tid].Defense[tablename][key]
                                 else
                                     rawnumber = (all_bps[tid[1]].Defense[tablename][key] + all_bps[tid[2]].Defense[tablename][key]) * 0.5
                                 end
-                                all_bps[unitid].Defense[tablename][key] = MathRoundAppropriately(rawnumber * mult)
+                                if mult and rawnumber then
+                                    all_bps[unitid].Defense[tablename][key] = MathRoundAppropriately(rawnumber * mult)
+                                end
                             end
                         end
                     end
