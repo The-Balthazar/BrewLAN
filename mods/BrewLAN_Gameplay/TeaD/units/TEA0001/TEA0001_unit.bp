@@ -22,7 +22,7 @@ UnitBlueprint {
         StartTurnDistance = 5,
         TransportHoverHeight = 1.75,
     },
-    Audio = {        
+    Audio = {
         CommanderArrival = Sound {
             Bank = 'UEL',
             Cue = 'UEL0001_Gate_In',
@@ -156,16 +156,16 @@ UnitBlueprint {
                 {
                     LODCutoff = 140,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0203/uea0203_albedo.dds', 
-                    NormalsName = '/units/uea0203/uea0203_normalsTS.dds', 
-                    SpecularName = '/units/uea0203/uea0203_specteam.dds', 
+                    AlbedoName = '/units/uea0203/uea0203_albedo.dds',
+                    NormalsName = '/units/uea0203/uea0203_normalsTS.dds',
+                    SpecularName = '/units/uea0203/uea0203_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Unit',
-                    AlbedoName = '/units/uea0203/uea0203_lod1_albedo.dds', 
-                    NormalsName = '/units/uea0203/uea0203_lod1_normalsTS.dds', 
-                    SpecularName = '/units/uea0203/uea0203_lod1_specteam.dds', 
+                    AlbedoName = '/units/uea0203/uea0203_lod1_albedo.dds',
+                    NormalsName = '/units/uea0203/uea0203_lod1_normalsTS.dds',
+                    SpecularName = '/units/uea0203/uea0203_lod1_specteam.dds',
                 },
             },
         },
@@ -180,8 +180,6 @@ UnitBlueprint {
                 Idle = true,
             },
         },
-        PlaceholderMeshName = 'UXA0009',
-        SpawnRandomRotation = false,
         UniformScale = 0.07,
     },
     Economy = {
@@ -222,20 +220,16 @@ UnitBlueprint {
         Category = 'Experimental',
         Classification = 'RULEUC_Commander',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
-        },            
+        },
         QuickSelectPriority = 1,
         SelectionPriority = 3,
         FactionName = 'UEF',
@@ -243,7 +237,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Experimental',
         UnitWeight = 1,
     },
-    Intel = {       
+    Intel = {
         FreeIntel = true,
         VisionRadius = 32,
     },
@@ -256,11 +250,6 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         Elevation = 10,
         FuelRechargeRate = 0,
@@ -285,6 +274,7 @@ UnitBlueprint {
         AirClass = true,
         ClassGenericUpTo = 1,
         TransportClass = 1,
+        Class1Capacity = 1,
     },
     Veteran = {
         Level1 = 3,
@@ -314,11 +304,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

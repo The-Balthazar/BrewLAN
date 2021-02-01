@@ -505,6 +505,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed the Seraphim Armoured Fabricator losing it's regen on FAF.
 
+  ### 2021-02-01
+
+  * Defined Class1Capacity for transports.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
