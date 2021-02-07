@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 local TSeaUnit = import('/lua/terranunits.lua').TSeaUnit
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local AssistThread = import(BrewLANPath .. '/lua/fieldengineers.lua').AssistThread
 --------------------------------------------------------------------------------
 SES0119 = Class(TSeaUnit) {

@@ -38,7 +38,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 16,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',
@@ -98,9 +97,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'XES0205',
-                        },
+                        Bones = {0},
                         Scale = 0.35,
                         Type = 'SeaIdle01',
                     },
@@ -117,7 +114,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 215,
                     ShaderName = 'Unit',
-                    --MeshName = '/units/xes0205/xes0205_lod1.scm',
                     AlbedoName = '/units/xes0205/xes0205_lod1_albedo.dds',
                     NormalsName = '/units/xes0205/xes0205_lod1_normalsTS.dds',
                     SpecularName = '/units/xes0205/xes0205_lod1_specteam.dds',
@@ -128,18 +124,13 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust01',
-                            'Exhaust02',
-                        },
+                        Bones = { 'Exhaust01', 'Exhaust02' },
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0009',
-        SpawnRandomRotation = false,
         UniformScale = 0.09,
     },
     Economy = {
@@ -184,17 +175,14 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'sea',
@@ -216,11 +204,6 @@ UnitBlueprint {
         BackUpDistance = 5,
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         CatchUpAcc = 10,

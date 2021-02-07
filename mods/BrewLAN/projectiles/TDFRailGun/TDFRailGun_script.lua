@@ -1,6 +1,6 @@
 local TDFShipGaussCannonProjectile = import('/lua/terranprojectiles.lua').TDFShipGaussCannonProjectile
 local EffectTemplate = import('/lua/EffectTemplates.lua')
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 TDFRailGun = Class(TDFShipGaussCannonProjectile) {
     FxTrails = {'/effects/emitters/seraphim_ohwalli_strategic_flight_fxtrails_03_emit.bp',},
     PolyTrail = BrewLANPath .. '/effects/emitters/brewlan_railgun_polytrail_01_emit.bp',

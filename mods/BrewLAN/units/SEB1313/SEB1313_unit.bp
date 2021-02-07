@@ -65,7 +65,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 50,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'UEF',
@@ -93,8 +92,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 646,
-        Health = 6000*1.5,
-        MaxHealth = 6000*1.5,
+        Health = 9000,
+        MaxHealth = 9000,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
@@ -152,8 +151,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0013',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_01_albedo',
@@ -161,12 +158,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar8x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -174,9 +166,9 @@ UnitBlueprint {
         UniformScale = 0.35,
     },
     Economy = {
-        BuildCostEnergy = 65000*1.35,
-        BuildCostMass = 3000*1.35,
-        BuildTime = 3750*1.35,
+        BuildCostEnergy = 87750,
+        BuildCostMass = 4050,
+        BuildTime = 5065,
         BuildRate = 15,
         MaxBuildDistance = 15,
         BuildableCategory = {
@@ -186,8 +178,8 @@ UnitBlueprint {
             'BUILTBYTIER3ENGINEER MASSSTORAGE UEF',
         },
         HalfPriceUpgradeFromID = 'ueb1303',
-        MaintenanceConsumptionPerSecondEnergy = 3500*1.25,
-        ProductionPerSecondMass = 12*1.25,
+        MaintenanceConsumptionPerSecondEnergy = 4375,
+        ProductionPerSecondMass = 15,
         BuildWhenAttackedByAir = 'ueb2104',
         BuildWhenAttackedBySub = 'ueb2109',
         BuildWhenAttackedByLand = 'ueb2101',
@@ -203,29 +195,18 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            #AimBone = 'Arm_Muzzle001',
-            BuildEffectBones = {
-                0,
-            },
-            #PitchBone = 'ArmB001',
-            #YawBone = 'ArmA001',
+            --AimBone = 'Arm_Muzzle001',
+            BuildEffectBones = {0},
+            --PitchBone = 'ArmB001',
+            --YawBone = 'ArmA001',
         },
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Pause = false,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'land',
@@ -249,12 +230,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -280,7 +256,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 240,
     Weapon = {
         {
-            Damage = 5000*.666666,
+            Damage = 3333.333,
             DamageFriendly = true,
             DamageRadius = 14,
             DamageType = 'Normal',
@@ -297,11 +273,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

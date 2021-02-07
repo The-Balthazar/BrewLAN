@@ -5,7 +5,7 @@ local EffectTemplate = import('/lua/EffectTemplates.lua')
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TDFRiotWeapon = import('/lua/terranweapons.lua').TDFRiotWeapon
 
-local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local BrewLANPath = import('/lua/game.lua').BrewLANPath
 local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
 if VersionIsFAF then
     TAirUnit = import('/lua/defaultunits.lua').AirTransport

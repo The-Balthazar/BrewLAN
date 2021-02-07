@@ -96,7 +96,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'CYBRAN',
         'MOBILE',

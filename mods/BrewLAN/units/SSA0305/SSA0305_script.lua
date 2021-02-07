@@ -4,7 +4,7 @@
 #**
 #**  Summary  :  Seraphim Gunship Script
 #**
-#**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
+#**  Copyright ï¿½ 2007 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
 local SAirUnit = import('/lua/seraphimunits.lua').SAirUnit
@@ -14,8 +14,7 @@ local SAALosaareAutoCannonWeapon = import('/lua/seraphimweapons.lua').SAALosaare
 SSA0305 = Class(SAirUnit) {
     Weapons = {
         AutoCannon1 = Class(SAALosaareAutoCannonWeapon) {},
-        TurretLeft = Class(SDFPhasicAutoGunWeapon) {},
-        TurretRight = Class(SDFPhasicAutoGunWeapon) {},
+        Turret = Class(SDFPhasicAutoGunWeapon) {},
     },
 }
 TypeClass = SSA0305

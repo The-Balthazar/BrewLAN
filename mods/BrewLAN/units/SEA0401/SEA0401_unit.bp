@@ -16,7 +16,6 @@ UnitBlueprint {
         CirclingRadiusChangeMaxRatio = .9,
         CirclingRadiusChangeMinRatio = .5,
         CirclingTurnMult = 2,
---        CombatTurnSpeed = 0.8,
         EngageDistance = 50,
         KLift = 1,
         KLiftDamping = 0.8,
@@ -28,12 +27,7 @@ UnitBlueprint {
         KTurnDamping = 1.5,
         LiftFactor = 7,
         MaxAirspeed = 9, -- originally 18, then 12, then 15
---        MinAirspeed = 5,
---        PredictAheadForBombDrop = 2,
---        StartTurnDistance = 5,
---        TightTurnMultiplier = 0,
         TransportHoverHeight = 3,
---        TurnSpeed = 0.8,
         Winged = false,
     },
     Audio = {
@@ -99,7 +93,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 100,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -217,14 +210,12 @@ UnitBlueprint {
                 Idle = true,
             },
         },
-        PlaceholderMeshName = 'UXA0002',
-        SpawnRandomRotation = false,
-        UniformScale = 0.155*.5,
+        UniformScale = 0.0775,
     },
     Economy = {
-        BuildCostEnergy = 650000*1.25,
-        BuildCostMass = 40000*1.25,
-        BuildTime = 30000*1.25,
+        BuildCostEnergy = 812500,
+        BuildCostMass = 50000,
+        BuildTime = 37500,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -236,18 +227,11 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Dock = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'air',
@@ -258,7 +242,6 @@ UnitBlueprint {
     Intel = {
         RadarRadius = 72,
         VisionRadius = 46,
-        --SonarRadius = 46,
     },
     Interface = {
         HelpText = '<LOC sea0401_desc>Experimental AA Gunship',
@@ -269,11 +252,6 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         Elevation = 23,
         GroundCollisionOffset = 10,
@@ -346,42 +324,12 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 1,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Head_Turret_Muzzle001',
-                    },
-                    RackBone = 'Head_Turret_Barrel001',
-                },
-                {
-                    MuzzleBones = {
-                        'Head_Turret_Muzzle002',
-                    },
-                    RackBone = 'Head_Turret_Barrel002',
-                },
-                {
-                    MuzzleBones = {
-                        'Head_Turret_Muzzle003',
-                    },
-                    RackBone = 'Head_Turret_Barrel003',
-                },
-                {
-                    MuzzleBones = {
-                        'Head_Turret_Muzzle004',
-                    },
-                    RackBone = 'Head_Turret_Barrel004',
-                },
-                {
-                    MuzzleBones = {
-                        'Head_Turret_Muzzle005',
-                    },
-                    RackBone = 'Head_Turret_Barrel005',
-                },
-                {
-                    MuzzleBones = {
-                        'Head_Turret_Muzzle006',
-                    },
-                    RackBone = 'Head_Turret_Barrel006',
-                },
+                { MuzzleBones = {'Head_Turret_Muzzle001'}, RackBone = 'Head_Turret_Barrel001' },
+                { MuzzleBones = {'Head_Turret_Muzzle002'}, RackBone = 'Head_Turret_Barrel002' },
+                { MuzzleBones = {'Head_Turret_Muzzle003'}, RackBone = 'Head_Turret_Barrel003' },
+                { MuzzleBones = {'Head_Turret_Muzzle004'}, RackBone = 'Head_Turret_Barrel004' },
+                { MuzzleBones = {'Head_Turret_Muzzle005'}, RackBone = 'Head_Turret_Barrel005' },
+                { MuzzleBones = {'Head_Turret_Muzzle006'}, RackBone = 'Head_Turret_Barrel006' },
             },
             RackFireTogether = false,
             RackRecoilDistance = -7,
@@ -397,7 +345,7 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR HIGHPRIAIR',
+                'HIGHPRIAIR',
                 'AIR EXPERIMENTAL',
                 'BOMBER',
                 'GROUNDATTACK',
@@ -459,30 +407,10 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 1,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Rear_Turret_Muzzle001',
-                    },
-                    RackBone = 'Rear_Turret_Barrel001',
-                },
-                {
-                    MuzzleBones = {
-                        'Rear_Turret_Muzzle002',
-                    },
-                    RackBone = 'Rear_Turret_Barrel002',
-                },
-                {
-                    MuzzleBones = {
-                        'Rear_Turret_Muzzle003',
-                    },
-                    RackBone = 'Rear_Turret_Barrel003',
-                },
-                {
-                    MuzzleBones = {
-                        'Rear_Turret_Muzzle004',
-                    },
-                    RackBone = 'Rear_Turret_Barrel004',
-                },
+                { MuzzleBones = {'Rear_Turret_Muzzle001'}, RackBone = 'Rear_Turret_Barrel001' },
+                { MuzzleBones = {'Rear_Turret_Muzzle002'}, RackBone = 'Rear_Turret_Barrel002' },
+                { MuzzleBones = {'Rear_Turret_Muzzle003'}, RackBone = 'Rear_Turret_Barrel003' },
+                { MuzzleBones = {'Rear_Turret_Muzzle004'}, RackBone = 'Rear_Turret_Barrel004' },
             },
             RackFireTogether = false,
             RackRecoilDistance = -7,
@@ -710,12 +638,7 @@ UnitBlueprint {
             PrefersPrimaryWeaponTarget = false,
             --NeedPrep = true,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Rack_Gun_Muzzle01',
-                    },
-                    RackBone = 'Rack_Gun_Barrel01',
-                },
+                { MuzzleBones = {'Rack_Gun_Muzzle01'}, RackBone = 'Rack_Gun_Barrel01' },
             },
             RackFireTogether = false,
             RackRecoilDistance = -1,
@@ -785,12 +708,7 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.15,
             ProjectilesPerOnFire = 1,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'GGun_Barrel_Muzzle',
-                    },
-                    RackBone = 'GGun_Barrel001',
-                },
+                { MuzzleBones = {'GGun_Barrel_Muzzle'}, RackBone = 'GGun_Barrel001' },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -845,11 +763,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

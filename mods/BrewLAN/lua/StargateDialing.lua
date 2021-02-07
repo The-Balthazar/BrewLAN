@@ -327,7 +327,7 @@ function StargateDialing(SuperClass)
                 end
                 self.EventHorizon = import('/lua/sim/Entity.lua').Entity({Owner = self,})
                 self.EventHorizon:AttachBoneTo( -1, self, 'Center' )
-                self.EventHorizon:SetMesh( import( '/lua/game.lua' ).BrewLANPath() .. '/units/ssb5401/SSB5401_EventHorizon_mesh')
+                self.EventHorizon:SetMesh( import( '/lua/game.lua' ).BrewLANPath .. '/units/ssb5401/SSB5401_EventHorizon_mesh')
                 self.EventHorizon:SetDrawScale(0.12)
                 self.EventHorizon:SetVizToAllies('Intel')
                 self.EventHorizon:SetVizToNeutrals('Intel')

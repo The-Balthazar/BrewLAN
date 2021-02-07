@@ -1,4 +1,4 @@
-local VersionIsSC = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
+local VersionIsSC = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
 do
     UEFT1Land['F'] = 'sel0119'
     UEFT3Land['F'] = 'sel0319'

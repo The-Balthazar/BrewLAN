@@ -1,6 +1,6 @@
 do
-    if not import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsSC() then --If not original Steam SupCom
-        local BrewLANIconsDir = import( '/lua/game.lua' ).BrewLANPath() .. '/textures/ui/common/icons/units/'
+    if not import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/legacy/VersionCheck.lua').VersionIsSC() then --If not original Steam SupCom
+        local BrewLANIconsDir = import( '/lua/game.lua' ).BrewLANPath .. '/textures/ui/common/icons/units/'
         --------------------------------------------------------------------------------
         -- UEF
         --------------------------------------------------------------------------------

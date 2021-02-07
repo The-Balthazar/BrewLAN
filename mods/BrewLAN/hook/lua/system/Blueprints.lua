@@ -6,14 +6,8 @@
 do
 
 local OldModBlueprints = ModBlueprints
-local BrewLANPath = function()
-    for i, mod in __active_mods do
-        --UID also hard referenced in /hook/lua/game.lua and mod_info.lua and in paragongame blueprints
-        if mod.uid == "25D57D85-7D84-27HT-A501-BR3WL4N000089" then
-            return mod.location
-        end
-    end
-end
+local GetBrewLANPath = function() for i, mod in __active_mods do if mod.name == "BrewLAN" then return mod.location end end end
+local BrewLANPath = GetBrewLANPath()
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
@@ -539,23 +533,29 @@ function UpgradeableToBrewLAN(all_bps)
     }
     for unitid, upgradeid in VanillasToUpgrade do
         if all_bps[unitid] and all_bps[upgradeid] then
+
+            if not all_bps[unitid].Categories then all_bps[unitid].Categories = {} end
             table.insert(all_bps[unitid].Categories, 'SHOWQUEUE')
 
+            if not all_bps[unitid].Display then all_bps[unitid].Display = {} end
             if not all_bps[unitid].Display.Abilities then all_bps[unitid].Display.Abilities = {} end
             table.removeByValue(all_bps[unitid].Display.Abilities, '<LOC ability_upgradable>Upgradeable')--Preventing double ability in certain units.
             table.insert(all_bps[unitid].Display.Abilities, '<LOC ability_upgradable>Upgradeable')
 
+            if not all_bps[unitid].Economy then all_bps[unitid].Economy = {} end
             if not all_bps[unitid].Economy.RebuildBonusIds then all_bps[unitid].Economy.RebuildBonusIds = {} end
             table.insert(all_bps[unitid].Economy.RebuildBonusIds, upgradeid)
 
             if not all_bps[unitid].Economy.BuildableCategory then all_bps[unitid].Economy.BuildableCategory = {} end
             table.insert(all_bps[unitid].Economy.BuildableCategory, upgradeid)
 
+            if not all_bps[unitid].General then all_bps[unitid].General = {} end
             all_bps[unitid].General.UpgradesTo = upgradeid
             all_bps[upgradeid].General.UpgradesFrom = unitid
 
             if not all_bps[unitid].Economy.BuildRate then all_bps[unitid].Economy.BuildRate = 15 end
 
+            if not all_bps[unitid].General.CommandCaps then all_bps[unitid].General.CommandCaps = {} end
             all_bps[unitid].General.CommandCaps.RULEUCC_Pause = true
         end
     end
@@ -930,36 +930,32 @@ function BrewLANFAFExclusiveChanges(all_bps)
     if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
         for id, bp in all_bps do
             if bp.Categories then
-                if
-                  table.find(bp.Categories, 'PRODUCTBREWLAN')
-                and
-                  (bp.Physics.MotionType == 'RULEUMT_Air' or bp.Physics.MotionType == 'RULEUMT_Hover')
-                and
-                  bp.Wreckage.WreckageLayers
+                if string.sub(bp.Source, 1, 13) == '/mods/brewlan'
+                and (bp.Physics.MotionType == 'RULEUMT_Air' or bp.Physics.MotionType == 'RULEUMT_Hover')
+                and bp.Wreckage.WreckageLayers
                 then
                     bp.Wreckage.WreckageLayers.Seabed = true
                     bp.Wreckage.WreckageLayers.Sub = true
                     bp.Wreckage.WreckageLayers.Water = true
                 end
-
-                if not table.find(bp.Categories, 'CQUEMOV') and table.find({
-                    --BrewLAN units
-                    'sal0401',
-                    'sea0002',
-                    'sea0401',
-                    'seb1311',
-                    'seb1312',
-                    'seb1313',
-                    'srl0401',
-                    'ssl0403',
-                    --R&D units
-                    'srl0403',
-                }, id) then
-                    table.insert(bp.Categories, 'CQUEMOV')
-                end
-
             end
             --T3 torps anti-naval damage * 0.76
+        end
+        for i, id in {
+            --BrewLAN units
+            'sal0401',
+            'sea0002',
+            'sea0401',
+            'seb1311',
+            'seb1312',
+            'seb1313',
+            'srl0401',
+            'ssl0403',
+            --R&D units
+            'srl0403',
+        }
+        do
+            table.insert(all_bps[id].Categories, 'CQUEMOV')
         end
     end
 end
@@ -1030,23 +1026,23 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANRelativisticLinksUpdate(all_bps)
-    if BrewLANPath() and string.lower(BrewLANPath() ) ~= "/mods/brewlan" then
+    if BrewLANPath and string.lower(BrewLANPath) ~= "/mods/brewlan" then
         all_bps.Unit.saa0105.Desync = {
             "BrewLAN reports you installed it",
             "wrong; it should be at:",
             "/mods/brewlan",
             "but it's at:",
-            string.lower(BrewLANPath()),
+            string.lower(BrewLANPath),
             "Everything should still work though.",
         }
         for id, bp in all_bps.Unit do
-            if bp.Categories and table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
-                PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
+            if string.sub(bp.Source, 1, 13) == '/mods/brewlan' then
+                PathTrawler(bp, "/mods/brewlan/", BrewLANPath .. "/" )
             end
         end
         for id, bp in all_bps.Beam do
-            if bp.Categories and table.find(bp.Categories, 'PRODUCTBREWLAN' ) then
-                PathTrawler(bp, "/mods/brewlan/", BrewLANPath() .. "/" )
+            if string.sub(bp.Source, 1, 13) == '/mods/brewlan' then
+                PathTrawler(bp, "/mods/brewlan/", BrewLANPath .. "/" )
             end
         end
         --INFO: TrailEmitter
@@ -1127,8 +1123,8 @@ function ExtractFrozenMeshBlueprint(all_bps)
                             --lod.ShaderName = 'BlackenedNormalMappedAlpha'
                         else
                             lod.ShaderName = 'Aeon'
-                            lod.SpecularName = BrewLANPath() .. '/env/common/frozen_specular.dds'
-                            lod.NormalsName = BrewLANPath() .. '/env/common/frozen_normals.dds'
+                            lod.SpecularName = BrewLANPath .. '/env/common/frozen_specular.dds'
+                            lod.NormalsName = BrewLANPath .. '/env/common/frozen_normals.dds'
                         end
                     end
                 end
@@ -1217,8 +1213,8 @@ function BrewLANGenerateFootprintDummy(all_bps, id, bp)
                 Defense = {Health = 0, MaxHealth = 0},
                 Description = 'Footprint Dummy Unit',
                 Display = {
-                    BuildMeshBlueprint = BrewLANPath() .. '/meshes/nil_mesh',
-                    MeshBlueprint = BrewLANPath() .. '/meshes/nil_mesh',
+                    BuildMeshBlueprint = BrewLANPath .. '/meshes/nil_mesh',
+                    MeshBlueprint = BrewLANPath .. '/meshes/nil_mesh',
                     UniformScale = 0,
                     HideLifebars = true,
                 },

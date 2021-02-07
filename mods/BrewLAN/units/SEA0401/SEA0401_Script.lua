@@ -15,7 +15,7 @@ local                Effects = import('/lua/effecttemplates.lua')
 local  CreateBuildCubeThread = EffectUtil.CreateBuildCubeThread
 --------------------------------------------------------------------------------
 SEA0401 = Class(TAirUnit) {
-    BeamExhaustCruise = import( '/lua/game.lua' ).BrewLANPath() .. '/effects/emitters/brewlan_missile_exhaust_fire_beam_01_emit.bp',
+    BeamExhaustCruise = import( '/lua/game.lua' ).BrewLANPath .. '/effects/emitters/brewlan_missile_exhaust_fire_beam_01_emit.bp',
     DestroyNoFallRandomChance = 1.1,
     DestructionPartsChassisToss = {'SEA0401',},
     EngineRotateBones = {'Engine_Body001', 'Engine_Body002','Engine_Body003', 'Engine_Body004',},

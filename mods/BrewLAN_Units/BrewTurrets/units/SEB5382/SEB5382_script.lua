@@ -1,5 +1,5 @@
 local FactoryAdjacentNode = import('/lua/defaultunits.lua').FactoryAdjacentNode
-local Buff = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').Buff
+local Buff = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 
 if not Buffs['FactoryNodeHealthBuff'] then
     BuffBlueprint {

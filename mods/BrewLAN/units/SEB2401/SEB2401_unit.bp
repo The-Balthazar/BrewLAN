@@ -32,7 +32,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 110,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -67,18 +66,10 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 300,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Unit',
-                },
+                { LODCutoff = 300, ShaderName = 'Unit' },
+                { LODCutoff = 500, ShaderName = 'Unit' },
             },
         },
-        PlaceholderMeshName = 'UXB0004',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_01_albedo',
@@ -86,25 +77,18 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
         },
-        UniformScale = 0.0275*3.5,
+        UniformScale = 0.09625,
     },
     Economy = {
         BuildCostEnergy = 175000,
         BuildCostMass = 15000,
         BuildTime = 6000,
-        RebuildBonusIds = {
-            'seb2401',
-        },
+        RebuildBonusIds = {'seb2401'},
         StorageEnergy = 10000,
     },
     Footprint = {
@@ -116,17 +100,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'land',
@@ -147,12 +122,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -225,12 +195,7 @@ UnitBlueprint {
             NeedPrep = true,
             ProjectileId = '/mods/brewlan/projectiles/TDFRailGun/TDFRailGun_proj.bp',
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Turret_Muzzle',
-                    },
-                    RackBone = 'Turret_Barrel',
-                },
+                { MuzzleBones = {'Turret_Muzzle'}, RackBone = 'Turret_Barrel' },
             },
             RackFireTogether = false,
             RackRecoilDistance = -10,
@@ -282,11 +247,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

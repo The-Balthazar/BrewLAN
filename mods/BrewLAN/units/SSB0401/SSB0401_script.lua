@@ -4,7 +4,7 @@
 --------------------------------------------------------------------------------
 local SSeaFactoryUnit = import('/lua/seraphimunits.lua').SSeaFactoryUnit
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
 local BuildModeChange = GantryUtils.BuildModeChange

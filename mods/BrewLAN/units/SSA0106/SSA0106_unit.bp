@@ -89,7 +89,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 50,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',
@@ -125,9 +124,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -135,9 +132,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -176,23 +171,19 @@ UnitBlueprint {
                 },
                 Effects = {
                     {
-                        Bones = {
-                            'Exhaust_Right',
-                        },
+                        Bones = { 'Exhaust_Right' },
                         Scale = 0.5,
                         Type = 'AirMoveExhaust03',
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXA0008',
-        SpawnRandomRotation = true,
         UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 4800*0.25,
-        BuildCostMass = 240*0.25,
-        BuildTime = 1600*0.25,
+        BuildCostEnergy = 1200,
+        BuildCostMass = 60,
+        BuildTime = 400,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -205,17 +196,12 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'air',
@@ -237,11 +223,7 @@ UnitBlueprint {
         AttackElevation = 4,
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
             LAYER_Sub = true,
-            LAYER_Water = false,
         },
         Elevation = 18,
         FuelRechargeRate = 5,
@@ -357,11 +339,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

@@ -8,7 +8,7 @@ local CreateAeonCommanderBuildingEffects = import('/lua/EffectUtilities.lua').Cr
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
 local BuildModeChange = GantryUtils.BuildModeChange

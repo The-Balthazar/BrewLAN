@@ -1,6 +1,6 @@
 local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArtilleryAntiMatterProjectile02
 local utilities = import('/lua/utilities.lua')
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
 TIFDropPodArtillery = Class(TArtilleryAntiMatterProjectile) {
 

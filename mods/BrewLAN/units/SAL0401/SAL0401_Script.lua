@@ -1,9 +1,6 @@
-#****************************************************************************
-#**
-#**  Summary  :  Aeon Experimental Siege Tank script
-#**
-#****************************************************************************
-
+--------------------------------------------------------------------------------
+--  Summary  :  Aeon Experimental Siege Tank script
+--------------------------------------------------------------------------------
 local ALandUnit = import('/lua/aeonunits.lua').ALandUnit
 local WeaponsFile = import('/lua/aeonweapons.lua')
 local ADFCannonOblivionWeapon = WeaponsFile.ADFCannonOblivionWeapon02

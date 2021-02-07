@@ -57,7 +57,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 70,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -145,8 +144,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0007',
-        SpawnRandomRotation = false,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar18x_01_albedo.dds',
@@ -192,19 +189,12 @@ UnitBlueprint {
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'UEF',
@@ -234,11 +224,7 @@ UnitBlueprint {
     LifeBarSize = 16,
     Physics = {
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -276,10 +262,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
             Water = true,
         },
     },

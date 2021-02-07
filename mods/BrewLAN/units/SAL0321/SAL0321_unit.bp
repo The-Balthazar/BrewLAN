@@ -63,7 +63,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'AEON',
@@ -145,19 +144,13 @@ UnitBlueprint {
         Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
         Icon = 'land',
@@ -178,12 +171,7 @@ UnitBlueprint {
         BackUpDistance = 4,
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 0.8,
@@ -206,7 +194,6 @@ UnitBlueprint {
     StrategicIconName = 'icon_land3_antimissile',
     StrategicIconSortPriority = 195,
     Transport = {
-        CanFireFromTransport = false,
         TransportClass = 3,
     },
     Veteran = {
@@ -252,9 +239,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     HideMuzzle = true,
-                    MuzzleBones = {
-                        'Missile',
-                    },
+                    MuzzleBones = {'Missile'},
                     RackBone = 'Silo',
                 },
             },
@@ -287,11 +272,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

@@ -37,7 +37,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 15,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'SERAPHIM',
@@ -150,19 +149,11 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0001',
-        SpawnRandomRotation = true,
         TransportAnimation = {
-            {
-                Animation = '/units/XSL0202/XSL0202_afold.sca',
-                Weight = 100,
-            },
+            { Animation = '/units/XSL0202/XSL0202_afold.sca', Weight = 100 },
         },
         TransportDropAnimation = {
-            {
-                Animation = '/units/XSL0202/XSL0202_aunfold.sca',
-                Weight = 100,
-            },
+            { Animation = '/units/XSL0202/XSL0202_aunfold.sca' Weight = 100 },
         },
         UniformScale = 0.07,
     },
@@ -181,16 +172,11 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'land',
@@ -219,12 +205,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 4,
@@ -290,14 +271,8 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.15,
             ProjectilesPerOnFire = 1,
             RackBones = {
-                {
-                    MuzzleBones = {'Right_Muzzle'},
-                    RackBone = 'Right_Arm',
-                },
-                {
-                    MuzzleBones = {'Left_Muzzle'},
-                    RackBone = 'Left_Arm',
-                },
+                { MuzzleBones = {'Right_Muzzle'}, RackBone = 'Right_Arm' },
+                { MuzzleBones = {'Left_Muzzle'}, RackBone = 'Left_Arm' },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -341,11 +316,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

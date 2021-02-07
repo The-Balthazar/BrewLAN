@@ -1,5 +1,4 @@
 BeamBlueprint {
-    Categories = {'PRODUCTBREWLAN'},
     Lifetime = 10,
     TextureName = '/mods/brewlan/textures/particles/beam_alchemist_phason_01.dds',
     Thickness = 0.55,

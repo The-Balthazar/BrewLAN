@@ -189,7 +189,7 @@ sbui5210="Sección de pared gruesa"
 seb5210_name="Destrucción general Impasse"
 srb5210_name="Mamparo"
 ssb5210_name="Haas-Haas"
-Unit_Description_BrewLAN_T2B001="Restringe el movimiento de las unidades enemigas y pueden sostener cantidades extremas de daños. Conecta a otras secciones de pared pesada adyacentes."
+Unit_Description_BrewLAN_T2B001="Restringe el movimiento de las unidades enemigas y puede sostener cantidades extremas de daños. Conecta a otras secciones de pared pesada adyacentes."
 
 ssl0222_desc="Generador de escudo móvil"
 ssl0222_name="Athanne"

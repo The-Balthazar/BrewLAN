@@ -69,7 +69,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 11,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYLANDTIER2FACTORY',
         'BUILTBYLANDTIER3FACTORY',
@@ -130,9 +129,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'AeonGroundFXT2Engineer',
                     },
                 },
@@ -140,15 +137,11 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'AeonGroundFXT2Engineer',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 1.2,
                         Type = 'SeaIdle02',
                     },
@@ -161,18 +154,18 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Aeon',
-                    MeshName = '/mods/BrewLAN/units/sal0319/sal0319_lod0.scm',
-                    AlbedoName = '/mods/BrewLAN/units/sal0319/sal0319_albedo.dds',
-                    NormalsName = '/mods/BrewLAN/units/sal0319/sal0319_normalsts.dds',
-                    SpecularName = '/mods/BrewLAN/units/sal0319/sal0319_specteam.dds',
+                    MeshName = '../sal0319/sal0319_lod0.scm',
+                    AlbedoName = '../sal0319/sal0319_albedo.dds',
+                    NormalsName = '../sal0319/sal0319_normalsts.dds',
+                    SpecularName = '../sal0319/sal0319_specteam.dds',
                 },
                 {
                     LODCutoff = 250,
                     ShaderName = 'Aeon',
-                    MeshName = '/mods/BrewLAN/units/sal0319/sal0319_lod1.scm',
-                    AlbedoName = '/mods/BrewLAN/units/sal0319/sal0319_albedo.dds',
-                    NormalsName = '/mods/BrewLAN/units/sal0319/sal0319_normalsts.dds',
-                    SpecularName = '/mods/BrewLAN/units/sal0319/sal0319_specteam.dds',
+                    MeshName = '../sal0319/sal0319_lod1.scm',
+                    AlbedoName = '../sal0319/sal0319_albedo.dds',
+                    NormalsName = '../sal0319/sal0319_normalsts.dds',
+                    SpecularName = '../sal0319/sal0319_specteam.dds',
                 },
             },
         },
@@ -180,15 +173,11 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'AeonGroundFXT2Engineer',
                     },
                 },
@@ -196,17 +185,12 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                            0,
-                        },
+                        Bones = {0,0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'AeonGroundFXT2Engineer',
                     },
                 },
@@ -238,20 +222,16 @@ UnitBlueprint {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Sacrifice = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'Aeon',
@@ -278,12 +258,7 @@ UnitBlueprint {
         BackUpDistance = 0,
         BankingSlope = 0.5,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         Elevation = 0.5,
@@ -325,11 +300,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

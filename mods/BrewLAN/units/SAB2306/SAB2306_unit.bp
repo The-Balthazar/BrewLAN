@@ -33,7 +33,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 110,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -54,7 +53,7 @@ UnitBlueprint {
     CollisionOffsetY = -0.3,
     Defense = {
         AirThreatLevel = 15, -- Half surface threat because it can hit low altitude air.
-        ArmorType = 'Experimental',
+        ArmorType = 'Structure',
         Health = 7250,
         MaxHealth = 7250,
         RegenRate = 0,
@@ -119,8 +118,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0003',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_aeon_01_albedo',
@@ -150,17 +147,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
         Icon = 'land',
@@ -182,12 +170,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -321,11 +304,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
             Seabed = true,
-            Sub = false,
-            Water = false,
         },
     },
 }

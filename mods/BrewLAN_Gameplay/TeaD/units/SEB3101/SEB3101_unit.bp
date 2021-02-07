@@ -18,7 +18,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 10,
     Categories = {
-        'PRODUCTSC1',
         'SELECTABLE',
         'BUILTBYTIER1TEAD',
         'BUILTBYTIER2TEAD',

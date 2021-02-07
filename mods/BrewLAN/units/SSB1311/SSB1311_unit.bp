@@ -34,7 +34,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 70,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'SERAPHIM',
@@ -49,16 +48,12 @@ UnitBlueprint {
         'SORTECONOMY',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = 0,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 595,
-        Health = 9720*2.5,
-        MaxHealth = 9720*2.5,
+        Health = 24300,
+        MaxHealth = 24300,
         RegenRate = 10,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ssb1311_desc>Armored Power Generator',
     Display = {
@@ -144,7 +139,6 @@ UnitBlueprint {
                 },
             },
         },
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_seraphim_01_albedo',
@@ -152,12 +146,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_seraphim_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -166,11 +155,11 @@ UnitBlueprint {
     },
     Economy = {
         AdjacentStructureEnergyMod = -5,
-        BuildCostEnergy = 57600*1.3,
-        BuildCostMass = 3240*1.3,
-        BuildTime = 5400*1.3,
+        BuildCostEnergy = 74880,
+        BuildCostMass = 4212,
+        BuildTime = 7020,
         HalfPriceUpgradeFromID = 'xsb1301',
-        ProductionPerSecondEnergy = 2500*1.25,
+        ProductionPerSecondEnergy = 3125,
         RebuildBonusIds = {
             'xsb1301',
             'ssb1311',
@@ -184,20 +173,6 @@ UnitBlueprint {
     General = {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
-        CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
-            RULEUCC_Transport = false,
-        },
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
@@ -217,12 +192,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -250,7 +220,7 @@ UnitBlueprint {
         {
             Damage = 8000,
             DamageFriendly = true,
-            DamageRadius = 10*.666666666,
+            DamageRadius = 6.666666666,
             DamageType = 'Normal',
             DisplayName = 'Death Weapon',
             DummyWeapon = true,
@@ -265,11 +235,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
             Seabed = true,
-            Sub = false,
-            Water = false,
         },
     },
 }

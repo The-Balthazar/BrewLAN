@@ -76,7 +76,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 70,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -110,18 +109,9 @@ UnitBlueprint {
     Description = '<LOC srb0401>Experimental Land Factory',
     Display = {
         BlinkingLights = {
-            {
-                BLBone = 'Arm1',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Arm2',
-                BLScale = 6,
-            },
-            {
-                BLBone = 'Arm3',
-                BLScale = 6,
-            },
+            { BLBone = 'Arm1', BLScale = 6 },
+            { BLBone = 'Arm2', BLScale = 6 },
+            { BLBone = 'Arm3', BLScale = 6 },
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -132,33 +122,20 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Insect',
-                },
-                {
-                    LODCutoff = 1000,
-                    ShaderName = 'Insect',
-                },
+                { LODCutoff = 500, ShaderName = 'Insect' },
+                { LODCutoff = 1000, ShaderName = 'Insect' },
             },
         },
-        PlaceholderMeshName = 'UXB0007',
-        SpawnRandomRotation = false,
         Tarmacs = {
             {
                 Albedo = '/mods/brewlan/env/common/decals/Tarmacs/Tar18x_cybran_01_albedo.dds',
                 DeathLifetime = 300,
                 FadeOut = 450,
-                Length = 12.8*2,
+                Length = 25.6,
                 Normal = '/mods/brewlan/env/common/decals/Tarmacs/Tar18x_cybran_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
-                Width = 12.8*2,
+                Width = 25.6,
             },
         },
         UniformScale = 0.07,
@@ -172,9 +149,7 @@ UnitBlueprint {
             'BUILTBYEXPERIMENTALFACTORY CYBRAN',
             'BUILTBYARTHROLAB',
         },
-        RebuildBonusIds = {
-            'srb0401',
-        },
+        RebuildBonusIds = {'srb0401'},
         StorageEnergy = 10000,
         StorageMass = 1000,
         InitialRallyZ = 20,
@@ -206,19 +181,12 @@ UnitBlueprint {
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'Cybran',
@@ -240,12 +208,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -393,10 +356,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
+            Seabed = true,
             Water = true,
         },
     },

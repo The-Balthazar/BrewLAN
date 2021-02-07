@@ -5,7 +5,7 @@ local OrbitalDeathLaserCollisionBeam = BeamsFile.OrbitalDeathLaserCollisionBeam
 AlchemistPhasonLaserCollisionBeam = Class(PhasonLaserCollisionBeam) {
     TerrainImpactType = 'LargeBeam01',
     TerrainImpactScale = 0.4,
-    FxBeam = {import( '/lua/game.lua' ).BrewLANPath() .. '/effects/emitters/brewlan_alchemist_phason_laser_beam_01_emit.bp'},
+    FxBeam = {import( '/lua/game.lua' ).BrewLANPath .. '/effects/emitters/brewlan_alchemist_phason_laser_beam_01_emit.bp'},
     SplatTexture = 'czar_mark01_albedo',
 }
 

@@ -45,7 +45,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 30,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'CYBRAN',
@@ -79,7 +78,6 @@ UnitBlueprint {
                     ShaderName = 'Insect',
                     AlbedoName = '/units/url0304/url0304_albedo.dds',
                     NormalsName = '/units/url0304/url0304_normalsTS.dds',
-                    --SpecularName = '/units/url0304/url0304_specteam.dds',
                 },
                 {
                     LODCutoff = 215,
@@ -109,18 +107,12 @@ UnitBlueprint {
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1.25,
                             TreadMarksSizeZ = 1.5,
-                            TreadOffset = {
-                                0,
-                                0,
-                                -0.3,
-                            },
+                            TreadOffset = {0, 0, -0.3},
                         },
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0003',
-        SpawnRandomRotation = true,
         UniformScale = 0.35,
     },
     Economy = {
@@ -137,16 +129,11 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Cybran',
         Icon = 'land',
@@ -166,12 +153,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 2.5,
@@ -306,11 +288,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

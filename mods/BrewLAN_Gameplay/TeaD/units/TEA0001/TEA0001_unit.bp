@@ -91,7 +91,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 40,
     Categories = {
-        'PRODUCTTEAD',
         'SELECTABLE',
         'UEF',
         'MOBILE',
@@ -195,8 +194,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 20,
         BuildableCategory = {
             'BUILTBYTIER1TEAD UEF STRUCTURE',
-            'BUILTBYTIER1ENGINEER UEF DIRECTFIRE',
-            'BUILTBYTIER1ENGINEER UEF ANTIAIR',
             'BUILTBYTIER1ENGINEER UEF ENERGYPRODUCTION',
             'BUILTBYTIER1ENGINEER UEF MASSSTORAGE',
             'BUILTBYTIER1ENGINEER UEF ENERGYSTORAGE',

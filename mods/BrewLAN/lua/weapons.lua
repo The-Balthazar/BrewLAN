@@ -2,7 +2,7 @@ local WeaponsFile = import('/lua/sim/DefaultWeapons.lua')
 local DefaultBeamWeapon = WeaponsFile.DefaultBeamWeapon
 local BareBonesWeapon = WeaponsFile.BareBonesWeapon
 local EffectTemplate = import('/lua/EffectTemplates.lua')
-local BrewLANBeams = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/collisionbeams.lua')
+local BrewLANBeams = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/collisionbeams.lua')
 
 ADFAlchemistPhasonLaser = Class(DefaultBeamWeapon) {
     BeamType = BrewLANBeams.AlchemistPhasonLaserCollisionBeam,

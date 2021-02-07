@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER2FACTORY',
         'BUILTBYTIER3FACTORY',
@@ -64,14 +63,8 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.15,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.15, 0},
                         Scale = 1.15,
                         Type = 'AeonGroundFX01',
                     },
@@ -83,7 +76,6 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 100,
-                    Scrolling = true,
                     ShaderName = 'Aeon',
                     AlbedoName = '/units/UAB4201/UAB4201_albedo.dds',
                     NormalsName = '/units/UAB4201/UAB4201_normalsTS.dds',
@@ -102,20 +94,12 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'GroundKickup01',
                     },
                     {
-                        Bones = {
-                            0,
-                        },
-                        Offset = {
-                            0,
-                            -0.15,
-                            0,
-                        },
+                        Bones = {0},
+                        Offset = {0, -0.15, 0},
                         Scale = 1.15,
                         Type = 'AeonGroundFX01',
                     },
@@ -124,17 +108,13 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
                 },
             },
         },
-        SpawnRandomRotation = true,
-        PlaceholderMeshName = 'UXB0022',
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
@@ -145,27 +125,16 @@ UnitBlueprint {
         BuildCostMass = 280,
         BuildTime = 1200,
     },
-    Footprint = {
-        MinWaterDepth = 1,
-        SizeX = 1,
-        SizeZ = 1,
-    },
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
         Icon = 'amph',
@@ -185,11 +154,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -255,9 +220,7 @@ UnitBlueprint {
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Barrel',
-                    },
+                    MuzzleBones = {'Barrel'},
                     RackBone = 'Dome',
                 },
             },
@@ -289,11 +252,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

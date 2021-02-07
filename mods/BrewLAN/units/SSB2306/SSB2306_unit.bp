@@ -32,7 +32,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 110,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -89,8 +88,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0003',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_seraphim_01_albedo',
@@ -120,17 +117,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'land',
@@ -151,12 +139,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -222,14 +205,8 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.15,
             ProjectilesPerOnFire = 1,
             RackBones = {
-                {
-                    MuzzleBones = {'Turret_Muzzle'},
-                    RackBone = 'Turret_Barrel',
-                },
-                {
-                    MuzzleBones = {'Turret_Muzzle2'},
-                    RackBone = 'Turret_Barrel2',
-                },
+                { MuzzleBones = {'Turret_Muzzle'}, RackBone = 'Turret_Barrel' },
+                { MuzzleBones = {'Turret_Muzzle2'}, RackBone = 'Turret_Barrel2' },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -273,11 +250,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

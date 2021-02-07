@@ -76,7 +76,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 16,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER2FACTORY',
         'BUILTBYTIER3FACTORY',
@@ -109,9 +108,7 @@ UnitBlueprint {
             AirLand = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'Landing01',
                     },
                 },
@@ -119,9 +116,7 @@ UnitBlueprint {
             LandAir = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Type = 'TakeOff01',
                     },
                 },
@@ -153,12 +148,10 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXA0010',
-        SpawnRandomRotation = false,
         UniformScale = 0.04,
     },
     Economy = {
-        BuildCostEnergy = 4550*0.5,
+        BuildCostEnergy = 2275,
         BuildCostMass = 120,
         BuildTime = 650,
     },
@@ -171,19 +164,12 @@ UnitBlueprint {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'air',
@@ -205,11 +191,6 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         Elevation = 22,
         FuelRechargeRate = 10,
@@ -256,11 +237,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

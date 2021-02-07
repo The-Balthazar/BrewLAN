@@ -72,7 +72,7 @@ tooltipbrewlan0032="Przełączanie między priorytetu docelowego anty-powietrze 
 tooltipbrewlan0033="Dostosowywanie [Tablica]"
 
 --------------------------------------------------------------------------------
--- Udoskonalenia wsparcie dowódcy
+-- Rozszerzenia wsparcie dowódcy
 --------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Dodaje możliwości budowania inżyniera do SACU."
@@ -263,7 +263,7 @@ srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężny laser zamiatania. Nie angażować samolotu lub jednostek podwodnych. Wymaga skumulowane ilości energii dla utrzymania długotrwałego pożaru; przegrzeje jeśli aktywny zbyt długo."
-Unit_Description_BrewLAN_T3B003="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o Gatling armaty osocza. Nie angażować samolotu lub jednostek podwodnych."
+Unit_Description_BrewLAN_T3B003="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o Gatling armaty plazmy. Nie angażować samolotu lub jednostek podwodnych."
 Unit_Description_BrewLAN_T3B004="Ciężki wieża obronna. Ataki jednostek lądowych, morskich jednostek opartych na samolot i niskich wysokościach z potężnego lasera. Nie angażują dużą wysokość samolotu lub jednostek podwodnych."
 
 sbui2311_desc="Anti-Armor punkt obrony"

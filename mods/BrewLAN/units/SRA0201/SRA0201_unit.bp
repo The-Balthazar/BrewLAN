@@ -76,7 +76,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 14,
     Categories = {
-        'PRODUCTSBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER2FACTORY',
         'BUILTBYTIER3FACTORY',
@@ -130,14 +129,8 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 130,
-                    ShaderName = 'Insect',
-                },
-                {
-                    LODCutoff = 260,
-                    ShaderName = 'Insect',
-                },
+                { LODCutoff = 130, ShaderName = 'Insect' },
+                { LODCutoff = 260, ShaderName = 'Insect' },
             },
         },
         MovementEffects = {
@@ -161,8 +154,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXA0010',
-        SpawnRandomRotation = true,
         UniformScale = 0.023,
     },
     Economy = {
@@ -180,19 +171,12 @@ UnitBlueprint {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Cybran',
         Icon = 'air',
@@ -225,11 +209,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
+            LAYER_Land = true,
         },
         Elevation = 22,
         FuelRechargeRate = 10,
@@ -272,11 +252,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

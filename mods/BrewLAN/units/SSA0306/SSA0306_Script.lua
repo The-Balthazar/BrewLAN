@@ -8,7 +8,7 @@ local SeraphimWeapons = import('/lua/seraphimweapons.lua')
 local SAALosaareAutoCannonWeaponAirUnit = SeraphimWeapons.SAALosaareAutoCannonWeaponAirUnit
 local SDFHeavyPhasicAutoGunWeapon = SeraphimWeapons.SDFHeavyPhasicAutoGunWeapon
 
-local BrewLANPath = import('/lua/game.lua').BrewLANPath()
+local BrewLANPath = import('/lua/game.lua').BrewLANPath
 local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
 if VersionIsFAF then
     SAirUnit = import('/lua/defaultunits.lua').AirTransport

@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 local CLandTransport = import('/lua/cybranunits.lua').CDirectionalWalkingLandUnit
 --------------------------------------------------------------------------------
-local VersionIsFAF = import(import('/lua/game.lua').BrewLANPath() .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+local VersionIsFAF = import(import('/lua/game.lua').BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
 if VersionIsFAF then CLandTransport = Class(CLandTransport, import('/lua/defaultunits.lua').BaseTransport) {} end
 --------------------------------------------------------------------------------
 local cWeapons = import('/lua/cybranweapons.lua')

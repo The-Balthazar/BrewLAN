@@ -24,7 +24,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
@@ -117,18 +116,10 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 415,
-                    ShaderName = 'Unit',
-                },
+                { LODCutoff = 200, ShaderName = 'Unit' },
+                { LODCutoff = 415, ShaderName = 'Unit' },
             },
         },
-        PlaceholderMeshName = 'UXB0012',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_albedo.dds',
@@ -136,12 +127,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 6.4,
                 Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 6.4,
             },
@@ -153,9 +139,7 @@ UnitBlueprint {
         BuildCostEnergy = 22500,
         BuildCostMass = 3000,
         BuildTime = 3750,
-        RebuildBonusIds = {
-            'seb1206',
-        },
+        RebuildBonusIds = {'seb1206'},
         StorageMass = 12500,
     },
     Footprint = {
@@ -165,20 +149,6 @@ UnitBlueprint {
     General = {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
-        CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
-            RULEUCC_Transport = false,
-        },
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
@@ -195,12 +165,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -231,11 +196,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

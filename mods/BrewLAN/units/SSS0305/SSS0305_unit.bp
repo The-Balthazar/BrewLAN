@@ -23,7 +23,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 190,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -101,7 +100,6 @@ UnitBlueprint {
                 },
             },
         },
-        SpawnRandomRotation = true,
         UniformScale = 0.06,
     },
     Economy = {
@@ -122,20 +120,10 @@ UnitBlueprint {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Pause = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
             RULEUCC_Teleport = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'sea',
@@ -170,11 +158,6 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         CatchUpAcc = 10,
@@ -200,18 +183,4 @@ UnitBlueprint {
     SizeZ = 1,
     StrategicIconName = 'icon_structure3_intel',
     StrategicIconSortPriority = 235,
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
-        },
-    },
 }

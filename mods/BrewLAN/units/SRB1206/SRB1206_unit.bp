@@ -24,7 +24,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
@@ -116,15 +115,13 @@ UnitBlueprint {
                 {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
-                    MeshName = '/units/urb1106/urb1106_lod1.scm',  #needs replacing
+                    MeshName = '/units/urb1106/urb1106_lod1.scm',  --needs replacing
                     AlbedoName = '/units/urb1106/urb1106_lod1_albedo.dds',
                     NormalsName = '/units/urb1106/urb1106_lod1_normalsTS.dds',
                     SpecularName = '/units/urb1106/urb1106_lod1_specteam.dds',
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0012',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_albedo.dds',
@@ -132,26 +129,19 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = '/mods/BrewLAN/env/Common/decals/Tarmacs/Tar7x_cybran_01_normals.dds',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
         },
-        UniformScale = 0.4, #previously 0.375#
+        UniformScale = 0.4,
     },
     Economy = {
         AdjacentMassProductionMod = 0.5,
         BuildCostEnergy = 22500,
         BuildCostMass = 3000,
         BuildTime = 3750,
-        RebuildBonusIds = {
-            'srb1206',
-        },
+        RebuildBonusIds = {'srb1206'},
         StorageMass = 12500,
     },
     Footprint = {
@@ -161,20 +151,6 @@ UnitBlueprint {
     General = {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
-        CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
-            RULEUCC_Transport = false,
-        },
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
@@ -190,12 +166,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -223,11 +194,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

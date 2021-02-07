@@ -1,6 +1,6 @@
 name = "BrewLAN: Bletchley Park"
-uid = "25D57D85-9JA7-D842-BREW-INTEL00000001"
-version = 1
+uid = "25D57D85-9JA7-D842-BREW-INTEL00000002"
+version = 2
 copyright = "© 2018–2020 Sean Wheeldon"
 description = "Adds additional intelligence options."
 author = "Balthazar"

@@ -4,7 +4,7 @@
 local CSeaUnit = import('/lua/cybranunits.lua').CSeaUnit
 local CAAAutocannon = import('/lua/cybranweapons.lua').CAAAutocannon
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local AssistThread = import(BrewLANPath .. '/lua/fieldengineers.lua').AssistThread
 local EffectUtil = import('/lua/EffectUtilities.lua')
 --------------------------------------------------------------------------------

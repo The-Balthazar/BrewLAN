@@ -15,7 +15,7 @@ seb5382_name="Benson"
 seb5382_desc="Fabrik Gesundheit Knoten"
 Unit_Description_BrewLAN_Turrets_0010="Adjacency Schwabbelscheibe Knoten. Einheiten durch benachbarte Fabrikstrukturen aufgebaut werden zusätzliche Gesundheit haben."
 
-srb5383_name="Der Verlorene"
+srb5383_name="Der Verlust"
 srb5383_desc="Fabrik Stealth Toggle Knoten"
 Unit_Description_BrewLAN_Turrets_0011="Adjacency Schwabbelscheibe Knoten. Einheiten durch benachbarte Fabrikstrukturen aufgebaut haben alle Stealth-Fähigkeiten gesetzt aktiv oder inaktiv statt ihrer Standardzustand."
 

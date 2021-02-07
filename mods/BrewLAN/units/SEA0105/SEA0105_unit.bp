@@ -86,7 +86,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 40,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',

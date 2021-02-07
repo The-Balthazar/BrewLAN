@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 16,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',
@@ -52,42 +51,27 @@ UnitBlueprint {
     CollisionOffsetY = -0.25,
     CollisionOffsetZ = 0.1,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 35,
         Health = 650,
         MaxHealth = 650,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC ss0119_desc>Field Engineering Boat',
     Display = {
         Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
-            --'<LOC ability_torpedodef>Torpedo Defense',
         },
         AnimationDeath = {
-            {
-                Animation = '/units/xrs0205/xrs0205_adeath01.sca',
-                Weight = 100,
-            },
-            {
-                Animation = '/units/xrs0205/xrs0205_adeath02.sca',
-                Weight = 100,
-            },
-            {
-                Animation = '/units/xrs0205/xrs0205_adeath03.sca',
-                Weight = 100,
-            },
+            { Animation = '/units/xrs0205/xrs0205_adeath01.sca', Weight = 100 },
+            { Animation = '/units/xrs0205/xrs0205_adeath02.sca', Weight = 100 },
+            { Animation = '/units/xrs0205/xrs0205_adeath03.sca', Weight = 100 },
         },
         IdleEffects = {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'XRS0205',
-                        },
+                        Bones = {0},
                         Scale = 0.35,
                         Type = 'SeaIdle01',
                     },
@@ -97,13 +81,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 100,
-                    ShaderName = 'Insect',
-                    --AlbedoName = '/units/xrs0205/xrs0205_albedo.dds',
-                    --NormalsName = '/units/xrs0205/xrs0205_normalsTS.dds',
-                    --SpecularName = '/units/xrs0205/xrs0205_specteam.dds',
-                },
+                { LODCutoff = 100, ShaderName = 'Insect' },
                 {
                     LODCutoff = 215,
                     ShaderName = 'Insect',
@@ -117,17 +95,13 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            'XRS0205',
-                        },
+                        Bones = {0},
                         Scale = 0.5,
                         Type = 'BackWake',
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = true,
         UniformScale = 0.08,
     },
     Economy = {
@@ -171,17 +145,14 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Cybran',
         Icon = 'sea',
@@ -203,11 +174,6 @@ UnitBlueprint {
         BackUpDistance = 5,
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         CatchUpAcc = 10,

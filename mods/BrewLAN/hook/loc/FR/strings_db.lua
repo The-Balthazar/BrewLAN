@@ -2,7 +2,7 @@
 --+------------+--+-------------------------------------------------------------
 --¦▒▒▒▒    ░░░░¦--¦   BrewLAN French strings table
 --¦▒▒▒▒    ░░░░¦--¦   Author: Balthassar
---¦▒▒▒▒    ░░░░¦--¦   Translator: asdrubaelvect29, jaisse, gilles33377
+--¦▒▒▒▒    ░░░░¦--¦   Translator: asdrubaelvect29, jaisse, gilles33377, Gnio
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ tooltipbrewlan0031="Changer la priorité des armes"
 tooltipbrewlan0032="Basculer la priorité sur les cibles anti-aérienne ou sur les missiles tactiques."
 
 --onglet amélioration de Panopticon
-tooltipbrewlan0033="Personnaliser [tableau]"
+tooltipbrewlan0033="Personnaliser [Tableau]"
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements
@@ -120,7 +120,7 @@ srb5104_name="Ravitailleur"
 Unit_Description_BrewLAN_T1U001="Plate-forme d'aéro-lancement légère. Répare et recharge en carburant."
 
 --Field engineers
-sl0119_desc="Ingénieur militaire"
+sl0119_desc="Sapeur"
 sal0119_desc="Ingénieur de défense"
 sel0119_name="Wally"
 sal0119_name="Vivifier"
@@ -144,7 +144,7 @@ saa0211_desc="Bombardier Tactique"
 Unit_Description_BrewLAN_T2A001="Bombardier tactique. Équipé d'une bombe Quark légère et d'un radar."
 
 --Field Engineers
-sl0209_desc="Ingénieur militaire"
+sl0209_desc="Sapeur"
 sal0209_desc="Ingénieur de défense"
 sal0209_name="Majordome"
 srl0209_name="Wilson"
@@ -199,7 +199,7 @@ ss0219_desc="Bateau d'ingénierie"
 ses0219_name="Classe Fixxie"
 srs0219_name="Classe Barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
-Unit_Description_BrewLAN_T2S002="Tech 2 construction navale, la réparation, la capture, reclaimation, et l'unité de mouilleur de mines."
+Unit_Description_BrewLAN_T2S002="Construction Navale de Tech 2, réparation, capture, recyclage et mouilleur de mines."
 
 sea0201_desc="Avion de reconnaissance"
 sea0201_name="UX Dragonlady"
@@ -220,11 +220,11 @@ Unit_Description_BrewLAN_T3A009="Avion leurre. Équipé d'un brouilleur de radar
 Unit_Description_BrewLAN_T3A010="Avion leurre furtif. Équipé d'un brouilleur de radar puissant qui génère de faux signaux. Imite les mouvements d'un chasseur de supériorité aérienne."
 Unit_Description_BrewLAN_T3A011="Avion leurre. Équipé d'un brouilleur de radar puissant qui génère de faux signaux. Imite les mouvements d'un chasseur de supériorité aérienne."
 
-ssb0x04_desc="Poste d'ingénierie"
+ssb0x04_desc="Poste d'ingéniérie"
 ssb0x04_name="Iya"
-Unit_Description_BrewLAN_T2D006="Répare, exploite, assiste ou capture automatiquement toute unité située dans sa zone d'action."
-Unit_Description_BrewLAN_T2D007="Répare, exploite, assiste ou capture automatiquement toute unité située dans sa zone d'action."
-Unit_Description_BrewLAN_T2D008="Répare, exploite, assiste ou capture automatiquement toute unité située dans sa zone d'action."
+Unit_Description_BrewLAN_T2D006="Répare automatiquement ou assiste toute unité dans son champ d'action. Peut être amélioré deux fois."
+Unit_Description_BrewLAN_T2D007="Répare automatiquement ou assiste toute unité dans son champ d'action. Peut être amélioré deux fois."
+Unit_Description_BrewLAN_T2D008="Répare automatiquement ou assiste toute unité dans son champ d'action. Peut être amélioré deux fois."
 
 --------------------------------------------------------------------------------
 -- Tech 3
@@ -258,7 +258,7 @@ ssl0311_desc="Robot d'assaut lourd"
 ssl0311_name="Ilshatha"
 Unit_Description_BrewLAN_T3L001="Robot d'assaut lourd. Équipé d'un bouclier personnel et armé de doubles bolters Aireau."
 
-sb2306_desc="Pointe de défense lourde"
+sb2306_desc="Point de Défense Lourd"
 srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
@@ -277,25 +277,25 @@ Unit_Description_BrewLAN_T3B007="Tourelle de défense très lourde. Attaque les 
 Unit_Description_BrewLAN_T3B008="Tourelle de défense très lourde. Attaque les unités de surface terrestres / navales avec un canon Oblivion puissant."
 
 seb3303_desc="Centre de contrôle de satellite"
-seb3303b_desc="Complexe de lancement satellite"
-Unit_Description_BrewLAN_T3B002="Produit et lancements de satellites"
+seb3303b_desc="Complexe de lancement de satellites"
+Unit_Description_BrewLAN_T3B002="Production et lancement de satellites"
 
-ability_satellite_uplink="satellite Uplink"
-ability_satellite_cap_0="Capacité satellite: 0"
-ability_satellite_cap_1="Capacité satellite: +1"
-ability_satellite_cap_2="Capacité satellite: 2"
-ability_satellite_cap_3="Capacité satellite: 3"
-ability_satellite_cap_4="Capacité satellite: 4"
-ability_satellite_cap_5="Capacité satellite: +5"
-ability_satellite_cap_inf="Capacité satellite Unrestricted"
+ability_satellite_uplink="Liaison satellite"
+ability_satellite_cap_0="Capacité de satellite: +0"
+ability_satellite_cap_1="Capacité de satellite: +1"
+ability_satellite_cap_2="Capacité de satellite: +2"
+ability_satellite_cap_3="Capacité de satellite: +3"
+ability_satellite_cap_4="Capacité de satellite: +4"
+ability_satellite_cap_5="Capacité de satellite: +5"
+ability_satellite_cap_inf="Capacité de satellite non restreinte"
 
 sea0002_desc="Centre de contrôle de satellite"
 sea0002_name="Étoile brulante"
-Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Fournit des images satellites en orbite visuelle. Nécessite une liaison satellite dédiée à recevoir les données."
+Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Rapporte des images satellites de l'orbite. Nécéssite un centre de contrôle pour réceptionner les données."
 
-sea0003_desc="satellite counterintelligence"
+sea0003_desc="Satellite de contre-espionnage"
 sea0003_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Causes un grand nombre de signaux radar faux avec les caractéristiques de vol de combattants de supériorité aérienne apparaître en dessous. N'a pas la capacité de collecte de renseignements."
+Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Produit un grand nombre de faux signaux représentant des escadrons de chasseurs de supériorité aérienne sous sa position. N'a aucune capacité de collecte de données."
 
 --alternatives Sniper
 sel0320_desc="Véhicule de liaison satellite"
@@ -313,13 +313,13 @@ Unit_Description_BrewLAN_T3L004="Système de défense anti missile stratégique 
 Unit_Description_BrewLAN_T3L008="Système de défense anti-missile stratégique mobile. Tire une salve de 3 missiles. La construction inclus la première salve."
 
 --Seraphim T3 sonar platform
-sss0305_desc="Plate-forme sonar"
+sss0305_desc="Plateforme sonar"
 sss0305_name="Aezhou"
 Unit_Description_BrewLAN_T3S001="Système sonar avec portée exceptionnelle. Équipé d'un système de téléportation."
 ability_personal_teleporter="Téléporteur personnel"
 
 --Field engineers
-sl0319_desc="Ingénieur militaire"
+sl0319_desc="Sapeur"
 sal0319_desc="Ingénieur de défense"
 sel0319_name="Custodien"
 sal0319_name="Bilmon"
@@ -386,9 +386,9 @@ Unit_Description_BrewLAN_T3B0025="Tourelle lance torpilles lourde. Peut être co
 sab2308_desc="Lance-torpilles"
 sab2308_name="Crue subite"
 Unit_Description_BrewLAN_T3B0027="Système de défense navale lourd à très longue portée. Conçu pour détruire les unités navales les plus puissantes."
-sss0306_desc="Lourde Torpedo Plate-forme"
+sss0306_desc="Plateforme Lance-Torpilles Lourd"
 sss0306_name="Uosthuum"
-Unit_Description_BrewLAN_T3S004="Planant système de torpille. Capable de détruire le plus grand des navires ennemis."
+Unit_Description_BrewLAN_T3S004="Système aéroglisseur de lancement de torpilles. Capable de détruire le plus gros des navires ennemis."
 
 ssb3301_desc="Installation de repérage"
 ssb3301_name="Aezselen"

@@ -244,7 +244,6 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
         ResearchId = id,
         BuildIconSortPriority = bp.BuildIconSortPriority or 5,
         Categories = {
-            'PRODUCTBREWLANRND',
             'BUILTBYRESEARCH',
             -- Engine stuff?
             'VISIBLETORECON',

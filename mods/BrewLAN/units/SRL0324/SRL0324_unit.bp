@@ -4,7 +4,7 @@ UnitBlueprint {
             'Sensor_B001',
             'Sensor_B002',
             'Sensor_B003',
-            'SRB0324',
+            0,
             'Tower_001',
         },
     },
@@ -61,7 +61,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 12,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'CYBRAN',
@@ -76,14 +75,11 @@ UnitBlueprint {
         'OVERLAYRADAR',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Normal',
         EconomyThreatLevel = 61,
         Health = 580,
         MaxHealth = 580,
         RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC srl0324_desc>Mobile Sensor Array',
     Display = {
@@ -112,9 +108,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'AttachPoint',
-                        },
+                        Bones = { 'AttachPoint' },
                         Type = 'Radar01',
                     },
                 },
@@ -157,23 +151,17 @@ UnitBlueprint {
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1.32,
                             TreadMarksSizeZ = 3,
-                            TreadOffset = {
-                                0,
-                                0,
-                                -1,
-                            },
+                            TreadOffset = {0, 0, -1},
                         },
                     },
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0003',
-        SpawnRandomRotation = true,
         UniformScale = 0.05,
     },
     Economy = {
-        BuildCostEnergy = 30000*0.9,
-        BuildCostMass = 2400*0.5,
+        BuildCostEnergy = 27000,
+        BuildCostMass = 1200,
         BuildTime = 5000,
         MaintenanceConsumptionPerSecondEnergy = 3500,
         TeleportEnergyMod = 0.15,
@@ -184,18 +172,11 @@ UnitBlueprint {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         CommandCaps = {
-            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         OrderOverrides = {
             RULEUTC_IntelToggle = {
@@ -218,7 +199,6 @@ UnitBlueprint {
         ShowIntelOnSelect = true,
         VisionRadius = 33,
         RadarStealth = true,
-        --SonarStealth = true,
         Cloak = true,
     },
     Interface = {
@@ -230,12 +210,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 3.5,
@@ -257,7 +232,7 @@ UnitBlueprint {
     SelectionThickness = 0.55,
     SizeX = 1.3,
     SizeY = 1.3,
-    CollisionOffsetY = 1.3*0.5,
+    CollisionOffsetY = 0.65,
     SizeZ = 1.3,
     StrategicIconName = 'icon_land3_intel',
     StrategicIconSortPriority = 115,
@@ -271,11 +246,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

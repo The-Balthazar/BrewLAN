@@ -79,7 +79,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 40,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -112,39 +111,13 @@ UnitBlueprint {
     },
     Description = '<LOC ssb0401_desc>Experimental Naval Factory',
     Display = {
-        --[[AnimationDeath = {
-            {
-                Animation = '/units/xsb0303/xsb0303_ADeath.sca',
-                AnimationRateMax = 1,
-                AnimationRateMin = 1,
-                Weight = 100,
-            },
-        },]]--
         BlinkingLights = {
-            {
-                BLBone = 'Light_001',
-                BLScale = 2,
-            },
-            {
-                BLBone = 'Light_002',
-                BLScale = 2,
-            },
-            {
-                BLBone = 'Light_003',
-                BLScale = 2,
-            },
-            {
-                BLBone = 'Light_004',
-                BLScale = 2,
-            },
-            {
-                BLBone = 'Light_005',
-                BLScale = 2,
-            },
-            {
-                BLBone = 'Light_006',
-                BLScale = 2,
-            },
+            { BLBone = 'Light_001', BLScale = 2 },
+            { BLBone = 'Light_002', BLScale = 2 },
+            { BLBone = 'Light_003', BLScale = 2 },
+            { BLBone = 'Light_004', BLScale = 2 },
+            { BLBone = 'Light_005', BLScale = 2 },
+            { BLBone = 'Light_006', BLScale = 2 },
         },
         BlinkingLightsFx = {
             Green = '/effects/emitters/light_green_03_emit.bp',
@@ -156,9 +129,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 3,
                         Type = 'SeaIdle01',
                     },
@@ -172,7 +143,6 @@ UnitBlueprint {
                     LODCutoff = 400,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    --MeshName = '/units/xsb0303/xsb0303_lod0.scm',
                     AlbedoName = '/units/xsb0302/xsb0302_albedo.dds',
                     NormalsName = '/units/xsb0302/xsb0302_normalsTS.dds',
                     SpecularName = '/units/xsb0302/xsb0302_specteam.dds',
@@ -181,7 +151,6 @@ UnitBlueprint {
                     LODCutoff = 1000,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
                     ShaderName = 'Seraphim',
-                    --MeshName = '/units/xsb0302/xsb0302_lod1.scm',
                     AlbedoName = '/units/xsb0302/xsb0302_albedo.dds',
                     NormalsName = '/units/xsb0302/xsb0302_normalsTS.dds',
                     SpecularName = '/units/xsb0302/xsb0302_specteam.dds',
@@ -194,7 +163,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 70200,
         BuildCostMass = 11920,
-        BuildRate = 60*8.5,
+        BuildRate = 510,
         BuildTime = 6000,
         BuildableCategory = {
             'BUILTBYEXPERIMENTALFACTORY SERAPHIM',
@@ -224,19 +193,12 @@ UnitBlueprint {
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'Seraphim',
@@ -259,12 +221,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
             LAYER_Seabed = true,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         MaxSteerForce = 0,
@@ -303,8 +260,6 @@ UnitBlueprint {
         SkirtSizeZ = 16,
         TurnRate = 0,
     },
-    --SelectionCenterOffsetX = -1.6,
-    --SelectionCenterOffsetZ = -0.14,
     SelectionSizeX = 8,
     SelectionSizeZ = 8,
     SelectionThickness = 0.11,
@@ -321,11 +276,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
-            Land = false,
-            Seabed = false,
-            Sub = false,
-            Water = true,
+            Seabed = true,
         },
     },
 }

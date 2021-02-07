@@ -1,4 +1,4 @@
-local TEnergyStorageUnit = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/defaultunits.lua').BrewLANEnergyStorageUnit
+local TEnergyStorageUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/defaultunits.lua').BrewLANEnergyStorageUnit
 
 SEB1205 = Class(TEnergyStorageUnit) {
 

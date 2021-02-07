@@ -1,7 +1,7 @@
 do
     local OldBuffAffectUnit = BuffAffectUnit
     function BuffAffectUnit(unit, buffName, instigator, afterRemove)
-        local VersionIsFAF = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').VersionIsFAF()
+        local VersionIsFAF = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/legacy/VersionCheck.lua').VersionIsFAF()
         if buffName == 'DarknessOmniNerf' and not VersionIsFAF then
             local buffDef = Buffs[buffName]
             local buffAffects = buffDef.Affects

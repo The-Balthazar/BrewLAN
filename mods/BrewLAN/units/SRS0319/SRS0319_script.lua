@@ -7,7 +7,7 @@ local CAAAutocannon = CybranWeapons.CAAAutocannon
 local CANNaniteTorpedoWeapon = import('/lua/cybranweapons.lua').CANNaniteTorpedoWeapon
 local CIFSmartCharge = import('/lua/cybranweapons.lua').CIFSmartCharge
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local AssistThread = import(BrewLANPath .. '/lua/fieldengineers.lua').AssistThread
 local EffectUtil = import('/lua/EffectUtilities.lua')
 --------------------------------------------------------------------------------

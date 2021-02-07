@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 local TStructureUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
-local Buff = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/legacy/VersionCheck.lua').Buff
+local Buff = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 
 if __blueprints.seb2404.Economy.BuilderDiscountMult
 and __blueprints.seb2404.Economy.BuilderDiscountMult ~= 1

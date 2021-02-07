@@ -9,7 +9,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 50,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'SERAPHIM',

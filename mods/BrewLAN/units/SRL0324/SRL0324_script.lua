@@ -6,7 +6,7 @@ local CUnitsDoc = import('/lua/cybranunits.lua')
 local CLandUnit = CUnitsDoc.CLandUnit
 local CRadarUnit = CUnitsDoc.CRadarUnit
 local CDFElectronBolterWeapon = import('/lua/cybranweapons.lua').CDFElectronBolterWeapon
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 
 SRL0324 = Class(CLandUnit) {
 

@@ -83,7 +83,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 41,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',
@@ -154,9 +153,9 @@ UnitBlueprint {
         UniformScale = 0.018,
     },
     Economy = {
-        BuildCostEnergy = 4800*0.25,
-        BuildCostMass = 240*0.25,
-        BuildTime = 1600*0.25,
+        BuildCostEnergy = 1200,
+        BuildCostMass = 60,
+        BuildTime = 400,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -169,17 +168,12 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Cybran',
         Icon = 'air',
@@ -202,11 +196,7 @@ UnitBlueprint {
         BankingSlope = 0.5,
         BuildOnLayerCaps = {
             LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
+            LAYER_Land = true,
         },
         Elevation = 18,
         FuelRechargeRate = 5,
@@ -306,11 +296,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

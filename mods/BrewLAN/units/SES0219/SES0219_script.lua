@@ -5,7 +5,7 @@ local TSeaUnit = import('/lua/terranunits.lua').TSeaUnit
 local TAALinkedRailgun = import('/lua/terranweapons.lua').TAALinkedRailgun
 local Entity = import('/lua/sim/Entity.lua').Entity
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local AssistThread = import(BrewLANPath .. '/lua/fieldengineers.lua').AssistThread
 --------------------------------------------------------------------------------
 SES0219 = Class(TSeaUnit) {

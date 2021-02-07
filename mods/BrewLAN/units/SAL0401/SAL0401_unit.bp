@@ -37,7 +37,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 10,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -47,6 +46,7 @@ UnitBlueprint {
         'AMPHIBIOUS',
         'HOVER',
         'EXPERIMENTAL',
+        'DIRECTFIRE', -- Needed for the formation.
         'INDIRECTFIRE',
         'ARTILLERY',
         'BOMBARDMENT',
@@ -138,7 +138,6 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 400,
-                    Scrolling = true,
                     SecondaryName = '/units/uaa0310/uaa0310_secondary.dds',
                     ShaderName = 'AeonCZAR',
                 },
@@ -207,14 +206,12 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXL0001',
-        SpawnRandomRotation = true,
         UniformScale = 0.085,
     },
     Economy = {
         BuildCostEnergy = 400000,
         BuildCostMass = 28500,
-        BuildTime = 12000*1.333333333333333333333333333,
+        BuildTime = 16000,
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
@@ -224,17 +221,11 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Aeon',
         Icon = 'amph',
@@ -255,10 +246,7 @@ UnitBlueprint {
         BackUpDistance = 20,
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -352,9 +340,7 @@ UnitBlueprint {
             ProjectileLifetime = 10,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Muzzle',
-                    },
+                    MuzzleBones = {'Muzzle'},
                     RackBone = 'Barrel',
                 },
             },
@@ -421,15 +407,11 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 2,
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Tracker01',
-                    },
+                    MuzzleBones = {'Tracker01'},
                     RackBone = 'Tracker01',
                 },
                 {
-                    MuzzleBones = {
-                        'Tracker02',
-                    },
+                    MuzzleBones = {'Tracker02'},
                     RackBone = 'Tracker02',
                 },
             },
@@ -480,11 +462,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

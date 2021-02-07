@@ -7,7 +7,7 @@ local TAALinkedRailgun = WeaponFile.TAALinkedRailgun
 local TANTorpedoAngler = WeaponFile.TANTorpedoAngler
 local TIFSmartCharge = WeaponFile.TIFSmartCharge
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local AssistThread = import(BrewLANPath .. '/lua/fieldengineers.lua').AssistThread
 --------------------------------------------------------------------------------
 SES0319 = Class(TSeaUnit) {

@@ -1,19 +1,28 @@
 do
     local UnitOld = Unit
-    local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+    local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
     local TerrainUtils = import(BrewLANPath .. '/lua/TerrainUtils.lua')
     local GetTerrainAngles = TerrainUtils.GetTerrainSlopeAnglesDegrees
     local OffsetBoneToTerrain = TerrainUtils.OffsetBoneToTerrain
 
     Unit = Class(UnitOld) {
+
+        OnPreCreate = function(self)
+            UnitOld.OnPreCreate(self)
+            if not self.bpID then
+                self.bpID = self:GetBlueprint().BlueprintId
+            end
+        end,
+
         OnStopBeingBuilt = function(self,builder,layer, ...)
             UnitOld.OnStopBeingBuilt(self,builder,layer, unpack(arg))
-            local bp = self:GetBlueprint()
+            local bp = __blueprints[self.bpID]
 
             --
             -- For buildings that don't flatten skirt to slope with the terrain
             --
-            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope and self:GetCurrentLayer() ~= 'Water' then
+            local layer = self:GetCurrentLayer()
+            if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope and (layer == 'Land' or layer == 'Seabed') then
                 local Angles = GetTerrainAngles(self:GetPosition(),{bp.Footprint.SizeX or bp.Physics.SkirtSizeX, bp.Footprint.SizeZ or bp.Physics.SkirtSizeZ})
                 local Axis1, Axis2 = 'z', 'x'
                 local Axis = bp.Physics.SlopeToTerrainAxis
@@ -67,7 +76,7 @@ do
             local pos = self:GetPosition()
             local FallenD = ImpactY - pos[2]
             self:SetStunned(FallenD * 3)
-            local bp = self:GetBlueprint()
+            local bp = __blueprints[self.bpID]
             self:OnDamage(self, (bp.Defense.MaxHealth or 300) * (bp.SizeX or 1) * (bp.SizeY or 1) * (bp.SizeZ or 1) * (FallenD / 15), pos, 'Normal')
         end,
 
@@ -92,7 +101,7 @@ do
             -- If this is being called by something dying, check we are allowed satellites
             if deathcheck and table.getn(uplinks) == 0 and table.getn(satellites) > 0 then
                 for i, v in satellites do
-                    LOG(v.StartUnguidedOrbitalDecay)
+                    --LOG(v.StartUnguidedOrbitalDecay)
                     if v.StartUnguidedOrbitalDecay then
                         v:StartUnguidedOrbitalDecay(v)
                     else
@@ -105,11 +114,11 @@ do
                 local usedcap, maxcap = 0, 0
                 -- Calculate max capacity
                 for i, v in uplinks do
-                    maxcap = maxcap + (v:GetBlueprint().General.SatelliteCapacity or 1)
+                    maxcap = maxcap + (__blueprints[v.bpID].General.SatelliteCapacity or 1)
                 end
                 -- calculate used capacity
                 for i, v in satellites do
-                    usedcap = usedcap + (v:GetBlueprint().General.CapCost or 1)
+                    usedcap = usedcap + (__blueprints[v.bpID].General.CapCost or 1)
                     -- Prevent preventable satellite explosions
                     if v.UnguidedOrbitalDecay then
                         v:StopUnguidedOrbitalDecay(v)
@@ -149,7 +158,7 @@ do
                 local ImpactEffects = {}
                 local ImpactEffectScale = 1
                 local army = other:GetArmy()
-                local bp = other:GetBlueprint()
+                local bp = __blueprints[other.bpID]
                 local bpAud = bp.Audio
                 local snd = bpAud['Impact'..'Unit']
                 if snd then
@@ -174,7 +183,7 @@ do
         -- UI/control fix so units that don't usually have a stop button can stop upgrading.
         --
         OnStartBuild = function(self, unitBeingBuilt, order, ...)
-            local myBp = self:GetBlueprint()
+            local myBp = __blueprints[self.bpID]
             if myBp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == myBp.General.UpgradesTo and order == 'Upgrade' then
                 if not myBp.General.CommandCaps.RULEUCC_Stop then
                     self:AddCommandCap('RULEUCC_Stop')

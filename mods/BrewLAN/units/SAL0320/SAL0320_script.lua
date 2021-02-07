@@ -1,5 +1,5 @@
 local ALandUnit = import('/lua/aeonunits.lua').ALandUnit
-local ADFAlchemistPhasonLaser = import(import( '/lua/game.lua' ).BrewLANPath() .. '/lua/weapons.lua').ADFAlchemistPhasonLaser
+local ADFAlchemistPhasonLaser = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/weapons.lua').ADFAlchemistPhasonLaser
 
 SAL0320 = Class(ALandUnit) {
     KickupBones = {},

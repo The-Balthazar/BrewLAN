@@ -509,6 +509,56 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Defined Class1Capacity for transports.
 
+  ### 2021-02-03
+
+  * Bletchley Park: Finished the texture of the UEF experimental mobile sensor.
+
+  ### 2021-02-04
+
+  * Bletchley Park: Renamed the Coleman sensor to the Welchman, after Gordon Welchman.
+  * Bletchley Park: Balanced and created text strings for the experimental mobile sensor.
+  * Removed hard references to the BrewLAN UID.
+  * Replaced references to the PRODUCTBREWLAN category with references to bp.Source.
+  * Changed the BrewLAN path function into a string, so it's only called once.
+  * Removed the PRODUCTBREWLAN category from all units.
+  * Cleaned up the blueprints of the Aeon aircrafts and buildings.
+  * Fixed the armour class of the Orbos.
+  * Simplified the target priorities of the Nihiloid.
+
+  ### 2021-02-05
+
+  * The upgrade assignment function no longer assumes tables exist, and checks first.
+  * Added a distance model to the Aeon T2 mass storage.
+  * Fixed formation move for the Absolution.
+  * Flame Lotus can now leave a wreckage on the seabed.
+  * Cleaned up the blueprints of the Aeon land units, UEF units, and Cybran aircraft.
+  * Fixed Vaxis jammer holograms not having a defined movement speed.
+  * Fixed a nil recoil value on the Patch Class engineer boat.
+  * Fixed the tread scrolling on the UEF T1&3 field engineers. Which I'm fairly sure I'd fixed before.
+  * Realigned the treadmarks on the UEF T1 field engineer.
+  * Unified the selection outlines of the UEF field engineers.
+
+  ### 2021-02-06
+
+  * Removed the TeaD build categories from units.
+  * Scripted TeaD to actively search for things that look like turrets to make buildable.
+  * Set the floating mines (T2 & T3) to be built on the sub layer, rather than the water layer.
+  * The slope to terrain script now only triggers on land and seabed, instead of not-water.
+  * Mine collision boxes are no longer out of align when built on the sub layer.
+  * Optimised some GetBlueprint function calls.
+  * Cleaned up the blueprints of Cybran structures.
+  * TeaD: Cleaned up the blueprints.
+  * TeaD: Removed the Cybran creep units.
+  * TeaD: Removed the PRODUCTTEAD category.
+
+  ### 2021-02-07
+
+  * Cleaned up the blueprints of Cybran land units and ships, and all Seraphim units.
+  * Fixed the Seraphim experimental factory not leaving a wreckage.
+  * Fixed the Seraphim field engineers not leaving wrecks on the seabed.
+  * Made hologram units silent.
+  * Updated translation documents.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

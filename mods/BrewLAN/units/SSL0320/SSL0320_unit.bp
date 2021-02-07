@@ -42,7 +42,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 35,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'SERAPHIM',
@@ -158,8 +157,7 @@ UnitBlueprint {
                 },
             },
         },
-        SpawnRandomRotation = true,
-        UniformScale = 0.038*1.2,
+        UniformScale = 0.0456,
     },
     Economy = {
         BuildCostEnergy = 8800,
@@ -175,30 +173,14 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'amph',
-        --[[ToggleCaps = {
-            RULEUTC_WeaponToggle = true,
-            --I couldn't get this working as a priority shift like I wanted
-            --and it was being a massive timesink, so it does nothing.
-        },
-        OrderOverrides = {
-            RULEUTC_WeaponToggle= {
-                bitmapId = 'toggle-weapon-air',
-                helpText = 'toggle_weapon_AA_TMD',
-            },
-        },]]
         TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssl0320_name>Atha-Ythia',
         UnitWeight = 1,
@@ -210,17 +192,13 @@ UnitBlueprint {
         HelpText = '<LOC xsl0205_help>Mobile Anti-Air Cannon',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.58*1.2,
-    LifeBarSize = 0.8*1.2,
+    LifeBarOffset = 0.696,
+    LifeBarSize = 0.96,
     Physics = {
         BankingSlope = 0.5,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
+            LAYER_Water = true,
         },
         DragCoefficient = 0.2,
         Elevation = 0.25,
@@ -229,9 +207,9 @@ UnitBlueprint {
         MaxSpeed = 3.6,
         MaxSpeedReverse = 0,
         MaxSteerForce = 1000,
-        MeshExtentsX = 1.1*1.2,
-        MeshExtentsY = 0.5*1.2,
-        MeshExtentsZ = 1.25*1.2,
+        MeshExtentsX = 1.32,
+        MeshExtentsY = 0.6,
+        MeshExtentsZ = 1.5,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Hover',
         RotateBodyWhileMoving = true,
@@ -242,12 +220,12 @@ UnitBlueprint {
         WobbleFactor = 0,
         WobbleSpeed = 0,
     },
-    SelectionSizeX = 0.5*1.2,
-    SelectionSizeZ = 0.8*1.2,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.96,
     SelectionThickness = 0.5,
-    SizeX = 0.9*1.2,
-    SizeY = 0.7*1.2,
-    SizeZ = 0.9*1.2,
+    SizeX = 1.08,
+    SizeY = 0.84,
+    SizeZ = 1.08,
     StrategicIconName = 'icon_land3_antiair',
     StrategicIconSortPriority = 125,
     Transport = {
@@ -289,10 +267,7 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 2,
             ProjectilesPerOnFire = 1,
             RackBones = {
-                {
-                    MuzzleBones = {'TMD_Muzzle'},
-                    RackBone = 'TMD_Barrel',
-                },
+                { MuzzleBones = {'TMD_Muzzle'}, RackBone = 'TMD_Barrel' },
             },
             RackFireTogether = false,
             RackRecoilDistance = -1,
@@ -351,10 +326,7 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 2,
             RackBones = {
-                {
-                    MuzzleBones = {'AA_Muzzle'},
-                    RackBone = 'AA_Barrel',
-                },
+                { MuzzleBones = {'AA_Muzzle'}, RackBone = 'AA_Barrel' },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -399,11 +371,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

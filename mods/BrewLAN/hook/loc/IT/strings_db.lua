@@ -348,7 +348,7 @@ srb1312_desc="Camouflaged Mass Extractor"
 ssb1312_desc="Armored Mass Extractor"
 seb1312_name="Mass Pump 3E"
 Unit_Description_BrewLAN_T3B0021="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Esso genera una cupola scudo abbastanza grande da coprire se stessa e 4 piccoli depositi."
-Unit_Description_BrewLAN_T3B0022="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Possiede la capacità di riparare vicina edifici. crea automaticamente le difese in caso di danneggiamento."
+Unit_Description_BrewLAN_T3B0022="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Possiede la capacità di riparazione vicina edifici. crea automaticamente le difese in caso di danneggiamento."
 Unit_Description_BrewLAN_T3B0023="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Visibile solo Omni."
 Unit_Description_BrewLAN_T3B0024="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Esso possiede l'armatura superiore ed ha di sé capacità rigenerative."
 

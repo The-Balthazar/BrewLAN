@@ -7,7 +7,7 @@ crystal_0004=" remporte avec le cristal."
 
 crystal_0005="10 minutes restantes."
 crystal_0006="2:30 minutes restent."
-crystal_0007="Heures supplémentaires"
+crystal_0007="Au fil du temps"
 crystal_0008="30 secondes restent."
 
 --Translated by: [insert credit here]

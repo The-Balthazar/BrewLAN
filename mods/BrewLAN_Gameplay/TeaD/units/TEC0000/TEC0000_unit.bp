@@ -40,8 +40,6 @@ UnitBlueprint {
     Categories = {
         'INVULNERABLE',
         'UNTARGETABLE',
-        'PRODUCTTEAD',
-        --'SELECTABLE',
         'UEF',
         'STRUCTURE',
         'FACTORY',
@@ -123,8 +121,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0007',
-        SpawnRandomRotation = false,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_01_albedo',
@@ -132,12 +128,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -150,7 +141,7 @@ UnitBlueprint {
         BuildRate = 120,
         BuildTime = 3000,
         BuildableCategory = {
-            'BUILTBYTEAD CREEP UEF',
+            'BUILTBYTEAD CREEP',
         },
         BuildOrder = {
             {Wait = 10},
@@ -275,9 +266,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 1000,
         StorageEnergy = 200000,
         StorageMass = 100000,
-        RebuildBonusIds = {
-            'tec0000',
-        },
     },
     Footprint = {
         SizeX = 7,
@@ -287,19 +275,11 @@ UnitBlueprint {
         Category = 'Strategic',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'UEF',
@@ -321,12 +301,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -334,140 +309,22 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         OccupyRects = {
-
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -2.5,
-            0,
-            1,
-            3,
-            2.5,
-            0,
-            1,
-            3,
+            -2.5, 0, 1, 3,
+            2.5, 0, 1, 3,
         },
         RaisedPlatforms = {
-
-            # The main ramp
-            # TopLeft Offset From Center
-            -1.5,
-
-            # x
-            -1.5,
-
-            # z
-            0.3,
-
-            # height
-            # TopRight Offset From Center
-            1.5,
-
-            # x
-            -1.5,
-
-            # z
-            0.3,
-
-            # height
-            # BottomLeft Offset From Center
-            -1.5,
-
-            # x
-            1.5,
-
-            # z
-            0.3,
-
-            # height
-            # BottomRight Offset From Center
-            1.5,
-
-            # x
-            1.5,
-
-            # z
-            0.3,
-
-            # height
-            # North side
-            # TopLeft Offset From Center
-            -1.5,
-
-            # x
-            -3.4,
-
-            # z
-            0,
-
-            # height
-            # TopRight Offset From Center
-            1.5,
-
-            # x
-            -3.4,
-
-            # z
-            0,
-
-            # height
-            # BottomLeft Offset From Center
-            -1.5,
-
-            # x
-            -1.5,
-
-            # z
-            0.3,
-
-            # height
-            # BottomRight Offset From Center
-            1.5,
-
-            # x
-            -1.5,
-
-            # z
-            0.3,
-
-            # height
-            # South side
-            # TopLeft Offset From Center
-            -1.5,
-
-            # x
-            1.5,
-
-            # z
-            0.3,
-
-            # height
-            # TopRight Offset From Center
-            1.5,
-
-            # x
-            1.5,
-
-            # z
-            0.3,
-
-            # height
-            # BottomLeft Offset From Center
-            -1.5,
-
-            # x
-            3.4,
-
-            # z
-            0,
-
-            # height
-            # BottomRight Offset From Center
-            1.5,
-
-            # x
-            3.4,
-
-            # z
-            0,
+            -1.5, -1.5, 0.3,
+            1.5, -1.5, 0.3,
+            -1.5, 1.5, 0.3,
+            1.5, 1.5, 0.3,
+            -1.5, -3.4, 0,
+            1.5, -3.4, 0,
+            -1.5, -1.5, 0.3,
+            1.5, -1.5, 0.3,
+            -1.5, 1.5, 0.3,
+            1.5, 1.5, 0.3,
+            -1.5, 3.4, 0,
+            1.5, 3.4, 0,
         },
         RollOffPoints = {
             {
@@ -501,19 +358,5 @@ UnitBlueprint {
         Class2AttachSize = 1,
         Class3AttachSize = 1,
         ClassGenericUpTo = 3,
-    },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
-        },
     },
 }

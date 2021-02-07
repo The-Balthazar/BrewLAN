@@ -7,16 +7,8 @@ UnitBlueprint {
         },
     },
     Audio = {
-        Killed = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0401_Death',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'SeraphimSelect',
-            Cue = 'Seraphim_Select_Bot',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+             Killed = Sound { Bank = 'XSL',            Cue = 'XSL0401_Death',       LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Bot', LodCutoff = 'UnitMove_LodCutoff' },
     },
     Buffs = {
         Regen = {
@@ -29,7 +21,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 115,
     Categories = {
-        'PRODUCTBREWLAN',
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'SERAPHIM',
@@ -52,7 +43,6 @@ UnitBlueprint {
         Health = 15750,
         MaxHealth = 15750,
         RegenRate = 0,
-        SubThreatLevel = 0,
         SurfaceThreatLevel = 4,
     },
     Description = '<LOC sbui2311_desc>Anti-Armor Point Defense',
@@ -71,7 +61,6 @@ UnitBlueprint {
                 },
             },
         },
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_seraphim_01_albedo',
@@ -79,12 +68,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 6.4,
                 Normal = 'Tarmacs/Tar6x_seraphim_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 6.4,
             },
@@ -92,9 +76,9 @@ UnitBlueprint {
         UniformScale = 0.05,
     },
     Economy = {
-        BuildCostEnergy = 54000*.55,
-        BuildCostMass = 9000*.3333334,
-        BuildTime = 18000*.15,
+        BuildCostEnergy = 29700,
+        BuildCostMass = 3000,
+        BuildTime = 2700,
         RebuildBonusIds = {
             'ssb2311',
         },
@@ -108,17 +92,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'land',
@@ -139,12 +114,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -160,10 +130,10 @@ UnitBlueprint {
         SkirtSizeZ = 3,
         TurnRate = 0,
     },
-    SelectionCenterOffsetZ = -.55,
+    SelectionCenterOffsetZ = -0.55,
     SelectionSizeX = 1.2,
     SelectionSizeZ = 1.2,
-    SelectionThickness = .6,
+    SelectionThickness = 0.6,
     SizeX = 1.3,
     SizeY = 2.8,
     SizeZ = 1.3,
@@ -216,12 +186,7 @@ UnitBlueprint {
             MuzzleVelocity = 40,
             ProjectileId = '/projectiles/SDFSinnuntheWeapon01/SDFSinnuntheWeapon01_proj.bp',
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'RightHand_Muzzle',
-                    },
-                    RackBone = 'RightHand_Muzzle',
-                },
+                { MuzzleBones = { 'RightHand_Muzzle' }, RackBone = 'RightHand_Muzzle' },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -264,11 +229,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
             Seabed = true,
-            Sub = false,
-            Water = false,
         },
     },
 }

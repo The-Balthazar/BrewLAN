@@ -6,7 +6,7 @@ local StructureUnit = DefaultUnits.StructureUnit
 local FactoryUnit = DefaultUnits.FactoryUnit
 local EnergyStorageUnit = DefaultUnits.EnergyStorageUnit
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local DefaultWeapons = import('/lua/sim/DefaultWeapons.lua')
 local EnergyStorageVariableDeathWeapon = import(BrewLANPath .. '/lua/weapons.lua').EnergyStorageVariableDeathWeapon
 local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
@@ -100,9 +100,17 @@ MineStructureUnit = Class(StructureUnit) {
 
     OnStopBeingBuilt = function(self,builder,layer)
         StructureUnit.OnStopBeingBuilt(self,builder,layer)
-        local bp = self:GetBlueprint()
-        if self:GetCurrentLayer() == 'Water' then
-            self.Trash:Add(CreateSlider(self, 0, 0, -1 * 1 / bp.Display.UniformScale, 0, 5))
+        if self:GetCurrentLayer() == 'Sub' then
+            local bp = __blueprints[self.bpID]
+            self.Trash:Add(CreateSlider(self, 0, 0, -1, 0, 5, true))
+            self:SetCollisionShape('Box',
+                bp.CollisionOffsetX or 0,
+                (bp.CollisionOffsetY or 0) - 1 + bp.SizeY * 0.5,
+                bp.CollisionOffsetZ or 0,
+                bp.SizeX * 0.5,
+                bp.SizeY * 0.5,
+                bp.SizeZ * 0.5
+            )
         end
         if self.blocker then
             --This tricks the engine into thinking the area is clear:
@@ -110,10 +118,10 @@ MineStructureUnit = Class(StructureUnit) {
             self.blocker:Destroy()
         end
         --Force update of the cloak effect if there is a cloak mesh. For FAF graphics
-        if self:GetBlueprint().Display.CloakMeshBlueprint then
+        if __blueprints[self.bpID].Display.CloakMeshBlueprint then
             self:ForkThread(
                 function()
-                    WaitTicks(1)
+                    coroutine.yield(1)
                     self:UpdateCloakEffect(true, 'Cloak')
                 end
             )

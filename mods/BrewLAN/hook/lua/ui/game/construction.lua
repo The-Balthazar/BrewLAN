@@ -4,7 +4,7 @@
 --|   Author: Balthassar
 --|
 --+-----------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath()
+local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local VersionIsSC = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').VersionIsSC()
 do
     if not VersionIsSC then --If not original Steam SupCom

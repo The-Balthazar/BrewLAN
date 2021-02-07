@@ -1,6 +1,6 @@
 UnitBlueprint {
-	Merge = true,
-	BlueprintId="ueb2104",	
+    Merge = true,
+    BlueprintId = "ueb2104",	
     Weapon = {
         {
             LeadTarget = true,

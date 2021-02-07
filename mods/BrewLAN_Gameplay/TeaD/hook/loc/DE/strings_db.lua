@@ -10,8 +10,8 @@ Unit_Description_TeaD_002="Lichtradarturm. Kann die Standorte der unsichtbaren E
 
 Unit_Description_TeaD_003="Konstruiert mobile Einheiten."
 
-tec0001_desc="Wagen"
-tec0002_desc="Lastwagen"
+tec0001_desc="Auto"
+tec0002_desc="LKW"
 tec0003_desc="Bus"
 tec0004_desc="Pfadfinder"
 tec0005_desc="Schild"
