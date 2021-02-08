@@ -1,0 +1,74 @@
+--------------------------------------------------------------------------------
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xsb1102",	--Seraphim hydrocarbon
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            Axis1 = 'x',
+            Axis2 = 'z',
+            InvertAxis = {true,false}
+        },
+    },
+}
+--------------------------------------------------------------------------------
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="urb1102",	--Cybran hydrocarbon
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            InvertAxis = {true,true}
+        },
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uab1102",	--Aeon hydrocarbon
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            InvertAxis = {true,true}
+        },
+    },
+}
+--------------------------------------------------------------------------------
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uab1103",	--Aeon mass extractor
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            Axis1 = 'x',
+            Axis2 = 'z',
+            InvertAxis = {false,true}
+        },
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uab1202",	--Aeon mass extractor
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            Axis1 = 'x',
+            Axis2 = 'z',
+            InvertAxis = {false,true}
+        },
+    },
+}
+
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="uab1302",	--Aeon mass extractor
+    Physics = {
+        SlopeToTerrain = true,
+        SlopeToTerrainAxis = {
+            Axis1 = 'x',
+            Axis2 = 'z',
+            InvertAxis = {false,true}
+        },
+    },
+}

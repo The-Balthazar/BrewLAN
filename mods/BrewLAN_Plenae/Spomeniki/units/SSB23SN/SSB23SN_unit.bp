@@ -1,8 +1,6 @@
 UnitBlueprint {
     AI = {
-        TargetBones = {
-            'Head',
-        },
+        TargetBones = {'Head'},
     },
     Audio = {
         Killed = Sound {
@@ -27,10 +25,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 116,
     Categories = {
-        'PRODUCTSPOMENIKI',
         'SELECTABLE',
-        --'BUILTBYTIER3FIELD',
-        --Requires Iyadesu to reclaim a specific Spomenik
         'SERAPHIM',
         'STRUCTURE',
         'DEFENSE',
@@ -86,9 +81,7 @@ UnitBlueprint {
         BuildCostEnergy = 52583,
         BuildCostMass = 7610,
         BuildTime = 4613,
-        RebuildBonusIds = {
-            'ssb23sn',
-        },
+        RebuildBonusIds = {'ssb23sn'},
     },
     Footprint = {
         SizeX = 3,
@@ -99,17 +92,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Seraphim',
         Icon = 'land',
@@ -130,12 +114,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -255,11 +234,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
             Seabed = true,
-            Sub = false,
-            Water = false,
         },
     },
 }

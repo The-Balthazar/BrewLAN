@@ -125,6 +125,12 @@ UnitBlueprint {
             LAYER_Land = true,
             LAYER_Seabed = true,
         },
+        --Definition for Wonky Resources
+        SlopeToTerrainAxis = {
+            Axis1 = 'x',
+            Axis2 = 'z',
+            InvertAxis = {false,true}
+        },
         BuildRestriction = 'RULEUBR_OnMassDeposit',
         DragCoefficient = 0.2,
         FlattenSkirt = true,

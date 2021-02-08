@@ -24,7 +24,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 35,
     Categories = {
-        'PRODUCTBREWLANMAGNUM',
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -42,17 +41,15 @@ UnitBlueprint {
         'OVERLAYMISC',
         'OVERLAYRADAR',
         'RESEARCHLOCKED',
-        --'OVERLAYSONAR',
-        --'OVERLAYOMNI',
     },
     CollisionOffsetY = 1.5,
     CollisionOffsetYTall = 5,
     CollisionOffsetYSwim = 1,
     Defense = {
         ArmorType = 'Experimental',
-            Health = 195920, --1959-2020
-            MaxHealth = 195920,
-            RegenRate = 20,
+        Health = 195920, --1959-2020
+        MaxHealth = 195920,
+        RegenRate = 20,
         AirThreatLevel = 225,
         EconomyThreatLevel = 50,
         SubThreatLevel = 7,
@@ -66,7 +63,6 @@ UnitBlueprint {
             '<LOC ability_deploys>Deploys',
             '<LOC ability_massive>Massive',
             '<LOC ability_omni>Omni Sensor',
-            --'<LOC ability_personal_teleporter>Personal Teleporter',
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
             '<LOC ability_torpedo>Torpedoes',
@@ -322,21 +318,14 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
-                --bitmapId = 'Deploy',
                 helpText = 'arthrobot_stance',
             },
         },
@@ -367,11 +356,7 @@ UnitBlueprint {
         AltMotionType = 'RULEUMT_Water',
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -1239,11 +1224,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
             Seabed = true,
-            Sub = false,
-            Water = false,
         },
     },
 }

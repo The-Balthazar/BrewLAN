@@ -559,6 +559,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Made hologram units silent.
   * Updated translation documents.
 
+  ### 2021-02-08
+
+  * Paragon Game: Cleaned up the blueprints and removed the PRODUCTPARAGONGAME category.
+  * Spomeniki: Cleaned up the blueprints and removed the PRODUCTSPOMENIKI category.
+  * Fixed the Seraphim assault bot bp broken in that phase of the cleanup.
+  * Crate Drop: Cleaned up the blueprints and removed the PRODUCTCRATEDROP category.
+  * Magnum Dong: Cleaned up the blueprints and removed the two mismatched PRODUCT categories.
+  * New mod: Wonky Resources. Allows extractors and hydrocarbons to be built on wonky terrain.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

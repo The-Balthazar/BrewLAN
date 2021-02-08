@@ -53,7 +53,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 55,
     Categories = {
-        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -98,8 +97,6 @@ UnitBlueprint {
             '<LOC ability_torpedo>Torpedoes',
             '<LOC ability_deathaoe>Volatile',
         },
-        --AnimationDeath = {},
-        --AnimationOpen = '/mods/BrewLAN/units/srl0401/srl0401_Aopen.sca',
         ForcedBuildSpin = 0,
         LayerChangeEffects = {
             SeabedLand = {
@@ -142,21 +139,9 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Insect',
-                    Scrolling = true,
-                },
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Insect',
-                    Scrolling = true,
-                },
-                {
-                    LODCutoff = 2000,
-                    ShaderName = 'Insect',
-                    Scrolling = true,
-                },
+                { LODCutoff = 200,  ShaderName = 'Insect', Scrolling = true },
+                { LODCutoff = 500,  ShaderName = 'Insect', Scrolling = true },
+                { LODCutoff = 2000, ShaderName = 'Insect', Scrolling = true },
             },
         },
         MovementEffects = {
@@ -169,66 +154,42 @@ UnitBlueprint {
                             TreadMarksInterval = 0.4,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 2.65,
-                            TreadOffset = {
-                                2.7,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = { 2.7, -1.1, -6 },
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.4,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 2.65,
-                            TreadOffset = {
-                                1.62,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = { 1.62, -1.1, -6 },
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.4,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 2.65,
-                            TreadOffset = {
-                                0.54,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = { 0.54, -1.1, -6 },
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.4,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 2.65,
-                            TreadOffset = {
-                                -2.7,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = { -2.7, -1.1, -6 },
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.4,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 2.65,
-                            TreadOffset = {
-                                -1.62,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = { -1.62, -1.1, -6 },
                         },
                         {
                             TreadMarks = 'tank_treads03_albedo',
                             TreadMarksInterval = 0.4,
                             TreadMarksSizeX = 1,
                             TreadMarksSizeZ = 2.65,
-                            TreadOffset = {
-                                -0.54,
-                                -1.1,
-                                -6,
-                            },
+                            TreadOffset = { -0.54, -1.1, -6 },
                         },
                     },
                 },
@@ -270,8 +231,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0000',
-        SpawnRandomRotation = false,
         UniformScale = 0.09,
     },
     Economy = {          --Battleship    --Artillery
@@ -292,18 +251,11 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            --RULEUCC_Ferry = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'Cybran',
         Icon = 'amph',
@@ -333,12 +285,8 @@ UnitBlueprint {
         BackUpDistance = 15,
         BankingSlope = 3,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
             LAYER_Seabed = true,
-            LAYER_Sub = true,
-            LAYER_Water = true,
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 1.0,
@@ -1177,11 +1125,8 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
             Seabed = true,
-            Sub = true,
-            Water = true,
         },
     },
 }

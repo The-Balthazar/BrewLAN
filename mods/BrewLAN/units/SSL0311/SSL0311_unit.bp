@@ -153,7 +153,7 @@ UnitBlueprint {
             { Animation = '/units/XSL0202/XSL0202_afold.sca', Weight = 100 },
         },
         TransportDropAnimation = {
-            { Animation = '/units/XSL0202/XSL0202_aunfold.sca' Weight = 100 },
+            { Animation = '/units/XSL0202/XSL0202_aunfold.sca', Weight = 100 },
         },
         UniformScale = 0.07,
     },
