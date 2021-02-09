@@ -10,6 +10,8 @@ local OldModBlueprints = ModBlueprints
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
 
+    CheckUnitHasCorrectIcon(all_blueprints.Unit)
+
     --ListAllUnitsNamesDescriptionsForRNN(all_blueprints.Unit)
     --CheckLOCTags(all_blueprints.Unit)
     --CheckAllUnitBackgroundImages(all_blueprints.Unit)
@@ -23,10 +25,127 @@ function ModBlueprints(all_blueprints)
     --IvanCheckUnitWeight(all_blueprints.Unit)
 end
 
+function ShouldWeLogThis(id, bp)
+    --return units and table.find(units, id)
+    return string.sub(bp.Source, 1, 13) == '/mods/brewlan'
+    --return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3') or table.find(bp.Categories, 'EXPERIMENTAL') )
+end
+
+function CheckUnitHasCorrectIcon(all_bps)
+    WARN("DO THE ICON CHECK")
+    for id, bp in all_bps do
+        if ShouldWeLogThis(id, bp) and bp.Categories then
+
+            local level = (table.find(bp.Categories, 'EXPERIMENTAL') and 4 or 0)
+            + (table.find(bp.Categories, 'TECH4') and 4 or 0)
+            + (table.find(bp.Categories, 'TECH3') and 3 or 0)
+            + (table.find(bp.Categories, 'TECH2') and 2 or 0)
+            + (table.find(bp.Categories, 'TECH1') and 1 or 0)
+
+            local icon = 'icon_'
+            --[[local part2 = {
+                'experimental',
+
+                'bomber',
+                'fighter',
+                'gunship',
+
+                'factory',
+                'structure',
+
+                'ship',
+                'sub',
+
+                'commander',
+                'bot',
+                'land',
+
+                'objective',
+                'strategic',
+            }]]
+
+            if level < 4 and bp.Physics then
+
+                if table.find(bp.Categories, 'SUBCOMMANDER') or table.find(bp.Categories, 'COMMAND') then
+                    icon = icon..'commander'
+                else
+                    if bp.Physics.MotionType == 'RULEUMT_Air' then
+                        if bp.Air and bp.Air.Winged then
+                            if table.find(bp.Categories, 'BOMBER') or table.find(bp.Categories, 'TORPEDOBOMBER') then
+                                icon = icon..'bomber' else
+                                icon = icon..'fighter' end else
+                            icon = icon..'gunship'
+                        end
+
+                    elseif bp.Physics.MotionType == 'RULEUMT_None' then
+                        if table.find(bp.Categories, 'FACTORY') then
+                            icon = icon..'factory' else
+                            icon = icon..'structure'
+                        end
+
+                    elseif bp.Physics.MotionType == 'RULEUMT_SurfacingSub' then
+                        icon = icon..'sub'
+
+                    elseif bp.Physics.MotionType == 'RULEUMT_Water'
+                    or bp.Physics.MotionType == 'RULEUMT_AmphibiousFloating'
+                    and bp.Physics.AltMotionType == 'RULEUMT_Water' then
+                        icon = icon..'ship'
+
+                    elseif bp.Physics.MotionType == 'RULEUMT_Biped'
+                    or bp.Physics.MotionType == 'RULEUMT_Land'
+                    or bp.Physics.MotionType == 'RULEUMT_Amphibious'
+                    or bp.Physics.MotionType == 'RULEUMT_Hover'
+                    or bp.Physics.MotionType == 'RULEUMT_AmphibiousFloating'
+                    then
+                        if bp.Display and bp.Display.AnimationWalk then
+                            icon = icon..'bot' else
+                            icon = icon..'land'
+                        end
+                    end
+
+                    if level ~= 0 then
+                        icon = icon..level
+                    end
+
+                end
+                icon = icon..'_'
+
+
+                if level ~= 0 and (not (bp.StrategicIconName and string.sub(bp.StrategicIconName, 1, string.len(icon) ) == icon) or not bp.StrategicIconName) then
+                    LOG((bp.General and LOC(bp.General.UnitName or 'Unnamed')).." unit with id: "..id
+                    .." should have an icon starting "..icon.." but has "..(bp.StrategicIconName or 'nil'))
+                end
+            end
+
+
+            --[[local level = (table.find(bp.Categories, 'EXPERIMENTAL') and 4 or 0)
+            + (table.find(bp.Categories, 'TECH4') and 4 or 0)
+            + (table.find(bp.Categories, 'TECH3') and 3 or 0)
+            + (table.find(bp.Categories, 'TECH2') and 2 or 0)
+            + (table.find(bp.Categories, 'TECH1') and 1 or 0)
+            --LOG(level)
+            local message = (bp.General and LOC(bp.General.UnitName or 'Unnamed')).." unit with id: "..id
+            if level > 4 then
+                LOG(message.." has more than one tech level category.")
+            elseif level == 4 then
+                if (bp.StrategicIconName and not string.sub(bp.StrategicIconName, 1, 17) == 'icon_experimental') then
+                    LOG(message.." should have 'icon_experimental_generic' but has "..(bp.StrategicIconName or 'nil'))
+                --elseif bp.StrategicIconName == 'icon_experimental_generic' then
+                --    LOG("We gud")
+                end
+            elseif level ~= 0 then
+                if (bp.StrategicIconName and not string.find(bp.StrategicIconName, tostring(level))) or not bp.StrategicIconName then
+                    LOG(message.." should have an icon with "..tostring(level).." but has "..(bp.StrategicIconName or 'nil'))
+                end
+            end]]
+        end
+    end
+    WARN("DOne")
+end
 
 function IvanCheckUnitWeight(all_bps)
     for id, bp in all_bps do
-        if bp.General.UnitName and table.find(bp.Categories, 'UEF') and table.find(bp.Categories, 'LAND') and table.find(bp.Categories, 'SELECTABLE') and table.find(bp.Categories, 'MOBILE') then
+        if ShouldWeLogThis(id, bp) and bp.General.UnitName and table.find(bp.Categories, 'UEF') and table.find(bp.Categories, 'LAND') and table.find(bp.Categories, 'SELECTABLE') and table.find(bp.Categories, 'MOBILE') then
             LOG((bp.General.UnitName or "nil") ..","..((bp.Defense.MaxHealth or 1) .. ",".. (bp.SizeX or 1) * (bp.SizeY or 1) * (bp.SizeZ or 1)))
         end
     end
@@ -36,7 +155,7 @@ end
 function CheckWeaponDamage(all_bps)
     local unitsdata = {}
     for id, bp in all_bps do
-        if bp.Weapon then
+        if ShouldWeLogThis(id, bp) and bp.Weapon then
             for wi, weap in bp.Weapon do
                 if weap.Damage < 10 then
                     table.insert(unitsdata, {id, weap.Damage, weap.Label, (weap.TargetType or 'nil')})
@@ -70,7 +189,7 @@ end
 function EvenFlow(all_bps)
     local brm = 2
     for id, bp in all_bps do
-        if bp.Categories and bp.Economy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
+        if ShouldWeLogThis(id, bp) and bp.Categories and bp.Economy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
             local DataTable = {
                 STRUCTURE = {1, 0.1},
                 EXPERIMENTAL = {1, 0.1},
@@ -107,7 +226,7 @@ function CheckEvenFlowOutliers(all_bps)
     local Delta = {}
     local brm = 1
     for id, bp in all_bps do
-        if bp.Categories and bp.Economy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime and ShouldWeLogThis(id, bp) then
+        if ShouldWeLogThis(id, bp) and bp.Categories and bp.Economy and bp.Economy.BuildCostEnergy and bp.Economy.BuildCostMass and bp.Economy.BuildTime then
             local DataTable = {
                 STRUCTURE = {1, 0.1},
                 EXPERIMENTAL = {1, 0.1},
@@ -137,7 +256,7 @@ end
 function ListAllUnitsNamesDescriptionsForRNN(all_bps)
     WARN("RNN LIST THING HERE   ------   SDFGKLHJBSDFLJKHSBDF")
     for id, bp in all_bps do
-        if bp.Weapon and bp.Categories and table.find(bp.Categories, 'SERAPHIM') then
+        if ShouldWeLogThis(id, bp) and bp.Weapon and bp.Categories and table.find(bp.Categories, 'SERAPHIM') then
             local artillery = false
             for i, weapon in bp.Weapon do
                 if weapon.ArtilleryShieldBlocks then
@@ -153,7 +272,7 @@ function ListAllUnitsNamesDescriptionsForRNN(all_bps)
     WARN("RNN LIST THING HERE   ------   SDFGKLHJBSDFLJKHSBDF")
     for tech, ptech in {['TECH1'] = 'Tech 1 ',['TECH2'] = 'Tech 2 ',['TECH3'] = 'Tech 3 ',['EXPERIMENTAL'] = ''} do
         for id, bp in all_bps do
-            if bp.Categories and table.find(bp.Categories, tech) and table.find(bp.Categories, 'SERAPHIM') then
+            if ShouldWeLogThis(id, bp) and bp.Categories and table.find(bp.Categories, tech) and table.find(bp.Categories, 'SERAPHIM') then
                 if bp.General.UnitName and bp.Description then
                     LOG(LOC(bp.General.UnitName) .. ': ' .. ptech .. LOC(bp.Description))
                 end
@@ -162,22 +281,17 @@ function ListAllUnitsNamesDescriptionsForRNN(all_bps)
     end
 end
 
-
-function ShouldWeLogThis(id, bp)
-    --return units and table.find(units, id)
-    return string.sub(bp.Source, 1, 13) == '/mods/brewlan'
-    --return table.find(bp.Categories, 'SELECTABLE') and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3') or table.find(bp.Categories, 'EXPERIMENTAL') )
-end
-
 function CheckAllUnitBackgroundImages(all_bps)
     for id, bp in all_bps do
-        CheckUnitHasCorrectIconBackground(id, bp)
+        if ShouldWeLogThis(id, bp) then
+            CheckUnitHasCorrectIconBackground(id, bp)
+        end
     end
 end
 
 function CheckCollisionSphereLargeEnoughForMaxSpeed(all_bps)
     for id, bp in all_bps do
-    	if bp.SizeSphere and bp.Air.MaxAirspeed and ShouldWeLogThis(id, bp) then
+    	if ShouldWeLogThis(id, bp) and bp.SizeSphere and bp.Air.MaxAirspeed then
             local correctMin = bp.Air.MaxAirspeed * 0.095
             if bp.SizeSphere < correctMin then
         		LOG(id ..  " has a size sphere of " .. bp.SizeSphere .. ", but needs at least " .. correctMin)

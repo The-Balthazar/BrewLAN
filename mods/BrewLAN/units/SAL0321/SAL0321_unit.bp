@@ -191,7 +191,7 @@ UnitBlueprint {
     SizeX = 1.5,
     SizeY = 0.75,
     SizeZ = 1.5,
-    StrategicIconName = 'icon_land3_antimissile',
+    StrategicIconName = 'icon_bot3_antimissile',
     StrategicIconSortPriority = 195,
     Transport = {
         TransportClass = 3,

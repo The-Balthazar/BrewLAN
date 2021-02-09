@@ -247,7 +247,7 @@ UnitBlueprint {
     SizeZ = 0.6,
     ScriptClass = 'SNLMER1',
     ScriptModule = '/mods/brewlan_plenae/spomeniki/units/snlmer1/snlmer1_script.lua',
-    StrategicIconName = 'icon_land1_engineer',
+    StrategicIconName = 'icon_land2_engineer',
     StrategicIconSortPriority = 105,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

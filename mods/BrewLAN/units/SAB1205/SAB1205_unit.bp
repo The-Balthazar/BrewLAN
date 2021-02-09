@@ -27,7 +27,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 80,
     Categories = {
-
         'SELECTABLE',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',

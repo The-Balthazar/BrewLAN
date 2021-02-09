@@ -568,6 +568,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Magnum Dong: Cleaned up the blueprints and removed the two mismatched PRODUCT categories.
   * New mod: Wonky Resources. Allows extractors and hydrocarbons to be built on wonky terrain.
 
+  ### 2021-02-09
+
+  * Debug Tools: Created a script to identify some issues with unit strategic icons.
+  * Fixed Sera T3 assault bot having a generic land unit icon instead of a bot icon.
+  * R&D: Research Centres now have new research factory icons instead of generic structure icons.
+  * Novax centre now has a new intel factory icon instead of intel structure icon.
+  * Scarab now has a new antimissile bot icon instead of antimissile land icon.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
