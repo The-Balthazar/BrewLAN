@@ -72,17 +72,6 @@ UnitBlueprint {
     },
     Description = '<LOC sea0003_desc>Counterintelligence Satellite',
     Display = {
-    	AINames = {
-            'Skynet',
-            'Silent Earth',
-            'Rith',
-            'The Observer',
-            'Zircon',
-            'Peeper',
-            'Belgacom',
-            'Telesat',
-            'Telstar',
-    	},
         Abilities = {
             '<LOC ability_jamming>Jamming',
             '<LOC ability_notcap>Not Capturable',

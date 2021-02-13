@@ -42,7 +42,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 160,
     Categories = {
-        'PRODUCTBREWLANSHIELDS',
         'SELECTABLE',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER3COMMANDER',
@@ -127,10 +126,6 @@ UnitBlueprint {
                     LODCutoff = 200,
                     ShaderName = 'Seraphim',
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    --MeshName = '/units/xsb4301/xsb4301_lod0.scm',
-                    --AlbedoName = '/units/xsb4301/xsb4301_albedo.dds',
-                    --SpecularName = '/units/xsb4301/xsb4301_specteam.dds',
-                    --NormalsName = '/units/xsb4301/xsb4301_normalsts.dds',
                 },
                 {
                     LODCutoff = 600,
@@ -142,8 +137,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0018',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_seraphim_01_albedo',
@@ -151,12 +144,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_seraphim_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -168,9 +156,7 @@ UnitBlueprint {
         BuildCostMass = 18000,
         BuildTime = 11475,
         MaintenanceConsumptionPerSecondEnergy = 2500,
-        RebuildBonusIds = {
-            'ssb4401',
-        },
+        RebuildBonusIds = {'ssb4401'},
     },
     Footprint = {
         SizeX = 5,
@@ -179,21 +165,6 @@ UnitBlueprint {
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_CounterMeasure',
-        CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
-            RULEUCC_Transport = false,
-        },
         FactionName = 'Seraphim',
         Icon = 'land',
         OrderOverrides = {
@@ -222,12 +193,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -256,11 +222,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

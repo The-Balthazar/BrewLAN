@@ -595,6 +595,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Caffee Corretto: Changed the icon of the accuracy boost node from `icon_structure3_generic` to `icon_node3_artillery`.
   * Caffee Corretto: Changed the icon of the factory stealth toggle node from `icon_structure3_generic` to `icon_node3_counterintel`.
   * Changed the icons of the satellites from `icon_fighter_` to `icon_satellite3_`.
+  * Removed the observation satellite AI names from the counterintel satellite.
+  * Tea Party: Removed the `PRODUCTBREWTEAPARTY` category.
+  * Bubble Tea: Removed the useless pause command, the `PRODUCTBREWLANSHIELDS` category, and cleaned up the blueprints.
 
 ## 2019-10-13|0.8.9
 
