@@ -49,19 +49,18 @@ function CheckUnitHasCorrectIcon(all_bps)
                 'bomber',
                 'fighter',
                 'gunship',
-
                 'factory',
                 'structure',
-
                 'ship',
                 'sub',
-
-                'commander',
                 'bot',
                 'land',
 
                 'objective',
                 'strategic',
+
+                'commander',
+                'wall',
             }]]
 
             if level < 4 and bp.Physics then

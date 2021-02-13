@@ -27,7 +27,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 115,
     Categories = {
-        'PRODUCTBREWLANTURRETS',
         'SELECTABLE',
         'BUILTBYTIER1FIELD',
         'BUILTBYTIER2FIELD',
@@ -46,7 +45,6 @@ UnitBlueprint {
         'SORTDEFENSE',
         'RESEARCHLOCKED',
     },
-    CollisionOffsetY = 0,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
@@ -78,8 +76,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXS0005',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_01_albedo',
@@ -87,12 +83,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 6.4,
                 Normal = 'Tarmacs/Tar6x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 6.4,
             },
@@ -103,9 +94,7 @@ UnitBlueprint {
         BuildCostEnergy = 1520,
         BuildCostMass = 190,
         BuildTime = 190,
-        RebuildBonusIds = {
-            'seb2111',
-        },
+        RebuildBonusIds = { 'seb2111' },
     },
     Footprint = {
         SizeX = 1,
@@ -116,17 +105,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'land',
@@ -147,12 +127,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -179,10 +154,10 @@ UnitBlueprint {
     StrategicIconSortPriority = 205,
     Veteran = {
         Level1 = 12,
-        Level2 = 12*2,
-        Level3 = 12*3,
-        Level4 = 12*4,
-        Level5 = 12*5,
+        Level2 = 24,
+        Level3 = 36,
+        Level4 = 48,
+        Level5 = 60,
     },
     Weapon = {
         {
@@ -277,11 +252,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

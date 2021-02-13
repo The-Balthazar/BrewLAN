@@ -178,6 +178,6 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_fighter_counterintel',
+    StrategicIconName = 'icon_satellite3_counterintel',
     StrategicIconSortPriority = 55,
 }

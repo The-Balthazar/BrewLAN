@@ -549,7 +549,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cleaned up the blueprints of Cybran structures.
   * TeaD: Cleaned up the blueprints.
   * TeaD: Removed the Cybran creep units.
-  * TeaD: Removed the PRODUCTTEAD category.
+  * TeaD: Removed the `PRODUCTTEAD` category.
 
   ### 2021-02-07
 
@@ -561,10 +561,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2021-02-08
 
-  * Paragon Game: Cleaned up the blueprints and removed the PRODUCTPARAGONGAME category.
-  * Spomeniki: Cleaned up the blueprints and removed the PRODUCTSPOMENIKI category.
+  * Paragon Game: Cleaned up the blueprints and removed the `PRODUCTPARAGONGAME` category.
+  * Spomeniki: Cleaned up the blueprints and removed the `PRODUCTSPOMENIKI` category.
   * Fixed the Seraphim assault bot bp broken in that phase of the cleanup.
-  * Crate Drop: Cleaned up the blueprints and removed the PRODUCTCRATEDROP category.
+  * Crate Drop: Cleaned up the blueprints and removed the `PRODUCTCRATEDROP` category.
   * Magnum Dong: Cleaned up the blueprints and removed the two mismatched PRODUCT categories.
   * New mod: Wonky Resources. Allows extractors and hydrocarbons to be built on wonky terrain.
 
@@ -575,6 +575,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Research Centres now have new research factory icons instead of generic structure icons.
   * Novax centre now has a new intel factory icon instead of intel structure icon.
   * Scarab now has a new antimissile bot icon instead of antimissile land icon.
+
+  ### 2021-02-10
+
+  * Created graphics for all new strategic icons.
+
+  ### 2021-02-11
+
+  * Finished a script to assemble all the strategic icons.
+  * Created new strategic icon sets, large and small. (around 8k image files).
+  * Changed the Penetrator Bombers to use `icon_bomber3_missile` instead of `icon_bomber3_directfire` and cleaned up their blueprints.
+
+  ### 2021-02-13
+
+  * Caffee Corretto: Cleaned up the blueprints and removed the `PRODUCTBREWLANTURRETS` category.
+  * Caffee Corretto: Changed the icon of the damage boost node from `icon_structure3_generic` to `icon_node3_directfire`.
+  * Caffee Corretto: Fixed the Maelstrom not leaving a wreck on water.
+  * Caffee Corretto: Changed the icon of the factory health node from `icon_structure3_generic` to `icon_node3_cross`.
+  * Caffee Corretto: Changed the icon of the accuracy boost node from `icon_structure3_generic` to `icon_node3_artillery`.
+  * Caffee Corretto: Changed the icon of the factory stealth toggle node from `icon_structure3_generic` to `icon_node3_counterintel`.
+  * Changed the icons of the satellites from `icon_fighter_` to `icon_satellite3_`.
 
 ## 2019-10-13|0.8.9
 
