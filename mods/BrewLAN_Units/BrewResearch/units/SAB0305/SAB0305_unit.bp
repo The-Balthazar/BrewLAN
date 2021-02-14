@@ -41,7 +41,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 11,
     Categories = {
-        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'BUILTBYTIER2AMPHFACTORY',
         'AEON',
@@ -112,9 +111,7 @@ UnitBlueprint {
             Water = {
                 Effects = {
                     {
-                        Bones = {
-                            0,
-                        },
+                        Bones = {0},
                         Scale = 5,
                         Type = 'SeaIdle02',
                     },
@@ -124,22 +121,11 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 200,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 350,
-                    ShaderName = 'Aeon',
-                },
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Aeon',
-                },
+                { LODCutoff = 200, ShaderName = 'Aeon' },
+                { LODCutoff = 350, ShaderName = 'Aeon' },
+                { LODCutoff = 500, ShaderName = 'Aeon' },
             },
         },
-        PlaceholderMeshName = 'UXB0006',
-        SpawnRandomRotation = false,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
@@ -147,9 +133,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 12.8,
                 Normal = 'Tarmacs/Tar12x_aeon_01_normals',
-                Orientations = {
-                    0,
-                },
+                Orientations = {0},
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -181,19 +165,12 @@ UnitBlueprint {
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'Aeon',
@@ -215,11 +192,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -264,18 +237,8 @@ UnitBlueprint {
             2, 2, 0,
         },
         RollOffPoints = {
-            {
-                UnitSpin = 0,
-                X = 0,
-                Y = 0,
-                Z = 3,
-            },
-            {
-                UnitSpin = 180,
-                X = 0,
-                Y = 0,
-                Z = -3,
-            },
+            { UnitSpin = 0,   X = 0, Y = 0, Z = 3 },
+            { UnitSpin = 180, X = 0, Y = 0, Z = -3 },
         },
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
@@ -299,10 +262,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
             Water = true,
         },
     },

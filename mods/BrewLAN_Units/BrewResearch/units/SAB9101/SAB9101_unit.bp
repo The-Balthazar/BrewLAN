@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 220,
     Categories = {
-        'PRODUCTBREWLANRND',
         'SELECTABLE',
         'BUILTBYENGINEER',
         'BUILTBYCOMMANDER',
@@ -46,14 +45,10 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
     },
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Structure',
         EconomyThreatLevel = 160,
         Health = 3000,
         MaxHealth = 3000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC seb9301_desc>Research Centre',
     Display = {
@@ -102,7 +97,7 @@ UnitBlueprint {
                 Width = 12.8,
             },
         },
-        UniformScale = 0.04*3.2,
+        UniformScale = 0.128,
     },
     Economy = {
         BuildCostEnergy = 2500,
@@ -113,9 +108,7 @@ UnitBlueprint {
             'sab9201',
             'BUILTBYTIER1RESEARCH AEON',
         },
-        RebuildBonusIds = {
-            'sab9101',
-        },
+        RebuildBonusIds = { 'sab9101' },
     },
     Footprint = {
         SizeX = 5,
@@ -159,12 +152,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -174,15 +162,6 @@ UnitBlueprint {
         MeshExtentsZ = 6,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
-        RaisedPlatforms = {},
-        RollOffPoints = {
-            {
-                UnitSpin = 0,
-                X = 0,
-                Y = 0,
-                Z = 3,
-            },
-        },
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
@@ -204,11 +183,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

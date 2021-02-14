@@ -598,6 +598,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed the observation satellite AI names from the counterintel satellite.
   * Tea Party: Removed the `PRODUCTBREWTEAPARTY` category.
   * Bubble Tea: Removed the useless pause command, the `PRODUCTBREWLANSHIELDS` category, and cleaned up the blueprints.
+  * R&D: Cleaned up the Aeon blueprints.
+
+  ### 2021-02-14
+
+  * Fixed an Iyadesu exploit where you could reclaim the drone and keep the recipes forever.
 
 ## 2019-10-13|0.8.9
 
