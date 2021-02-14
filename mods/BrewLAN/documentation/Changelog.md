@@ -603,6 +603,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-02-14
 
   * Fixed an Iyadesu exploit where you could reclaim the drone and keep the recipes forever.
+  * Fixed an exploit with the lattice shield where you could reclaim the tower and keep the drones.
 
 ## 2019-10-13|0.8.9
 

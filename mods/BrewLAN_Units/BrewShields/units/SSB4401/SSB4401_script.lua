@@ -71,9 +71,9 @@ SSB4401 = Class(SShieldStructureUnit) {
         SShieldStructureUnit.OnKilled(self, instigator, type, overkillRatio)
     end,
 
-    OnDestroyed = function(self)
+    OnDestroy = function(self)
         self:CleanUp(true)
-        SShieldStructureUnit.OnDestroyed(self)
+        SShieldStructureUnit.OnDestroy(self)
     end,
 
     CleanUp = function(self, deathcleanup)
