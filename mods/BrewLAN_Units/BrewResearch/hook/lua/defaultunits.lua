@@ -124,10 +124,17 @@ ResearchFactoryUnit = Class(FactoryUnit) {
     -- Prevents LOUD factory manager errors.
     SetupComplete = true,
 
+    OnPreCreate = function(self)
+        FactoryUnit.OnPreCreate(self)
+        if not self.bpID then
+            self.bpID = self:GetBlueprint().BlueprintId
+        end
+    end,
+
     OnStartBeingBuilt = function(self, creator, layer)
         local AIBrain = self:GetAIBrain()
         --LOG(table.getn(AIBrain:GetListOfUnits(categories.RESEARCHCENTRE, false)))
-        if AIBrain.BrainType ~= 'Human' and table.getn(AIBrain:GetListOfUnits(categories.RESEARCHCENTRE, false) ) > 0 then
+        if AIBrain.BrainType ~= 'Human' and table.getn(AIBrain:GetListOfUnits(categories[self.bpID], false) ) > 0 then
             self:Destroy()
         end
         FactoryUnit.OnStartBeingBuilt(self, creator, layer)
@@ -192,9 +199,9 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         while not self.Dead and not AIBrain.BrewResearchIsComplete and AIBrain.BrewRND and AIBrain.BrewRND.IsResearchRemaining(AIBrain) do
             if self:IsIdleState() and AIBrain.BrewRND.IsAbleToResearch(AIBrain) then
                 self:Research()
-                WaitTicks(10)
+                coroutine.yield(10)
             else
-                WaitTicks(100)
+                coroutine.yield(100)
             end
         end
         WARN("An AI has finished researching.")
