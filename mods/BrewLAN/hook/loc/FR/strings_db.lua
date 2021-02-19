@@ -528,7 +528,7 @@ seb3404_desc="Ensemble de capteurs expérimentaux"
 seb3404_name="Panoptique"
 Unit_Description_BrewLAN_T4B008="Sondes expérimentales. Donne la ligne de visée pour les unités ennemies dans son rayon opérationnel visible aux capteurs disponibles, tels que le radar. Frais d'entretien supplémentaires par unité étant espionné. Les unités mobiles et les unités coûteuses coûtent plus cher à espionner."
 
-Panopticon_array_slot="tableau"
+Panopticon_array_slot="Déployer"
 Unit_Description_BrewLAN_T4B008_sre="Augmente le rayon du radar."
 Unit_Description_BrewLAN_T4B008_sresre="Augmente la portée du radar et du rayon omni."
 Unit_Description_BrewLAN_T4B008_xbndl="Révèle échos radar."

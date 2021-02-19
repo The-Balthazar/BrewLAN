@@ -1,5 +1,5 @@
 --ISO_639-1_code=FR
---Translator: 
+--Translator: Markty_07, Google
 
 --Centres de recherche
 seb9301_desc="Centre de recherche"
@@ -11,18 +11,18 @@ seb9301_name="Campus Hawking"
 srb9101_name="Facilité Einstein"
 srb9201_name="Facilité schrodinger"
 srb9301_name="Facilité Heisenberg"
---Temps infini
-sab9101_name="Perspicacité"
-sab9201_name="Orientation"
+--Aeon
+sab9101_name="Aperçu"
+sab9201_name="Conseils"
 sab9301_name="Éclaircissement"
 --Seraphim
 ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab"
 ssb9301_name="Iyathluub"
 
-Unit_Description_RND_005="centre de recherche fondamentale. Donne accès à de nouvelles unités et niveaux de technologie plus élevés."
-Unit_Description_RND_006="centre de recherche intermédiaire. A augmenté la vitesse et la durabilité de la recherche."
-Unit_Description_RND_007="centre de recherche avancée. A augmenté la vitesse et la durabilité de la recherche."
+Unit_Description_RND_005="Centre de recherche fondamentale. Donne accès à de nouvelles unités et des niveaux de technologie plus élevés."
+Unit_Description_RND_006="Centre de recherche intermédiaire. A une vitesse de recherche augmentée et une meilleure durabilité."
+Unit_Description_RND_007="Centre de recherche avancé. A une vitesse de recherche augmentée et une meilleure durabilité."
 
 --centres de sciences
 seb9302_desc="Centre scientifique"
@@ -39,24 +39,24 @@ sab9302_name="À déterminer"
 ssb9202_name="À déterminer"
 ssb9302_name="À déterminer"
 
-sb9302_desc="Fournit des bonus de contiguïté aux centres de recherche, le temps de recherche décroissante."
+sb9302_desc="Fournit des bonus de contiguïté aux centres de recherche, et réduit le temps de recherche."
 sb9303_desc="Fournit des bonus de contiguïté aux centres de recherche, en réduisant les coûts de recherche."
 
 --informations sur l'élément de recherche
-ability_rnd_unlock="Débloquer la recherche"
-ability_rnd_command="Construit par unité de commande"
-ability_rnd_engineer="Construit par l'ingénieur"
-ability_rnd_field="Construit par l'ingénieur sur le terrain"
-ability_rnd_factory="Construit par usine"
-ability_rnd_gantry="Construit par usine expérimentale"
+ability_rnd_unlock="Débloquage de la recherche"
+ability_rnd_command="Construit par l'UBC et les UBCs"
+ability_rnd_engineer="Construit par les ingénieurs"
+ability_rnd_field="Construit par les ingénieurs milittaires"
+ability_rnd_factory="Construit par les usine"
+ability_rnd_gantry="Construit par les usine expérimentale"
 ability_rnd_wall="Construit sur le mur"
-ability_rnd_upgrade="Construit comme mise à niveau"
+ability_rnd_upgrade="Construit comme une amélioration"
 
 --Catégories de recherche
-srnd9100_desc="Tech Niveau de recherche"
-srnd9200_desc="Tech Niveau de recherche"
-srnd9300_desc="Tech Niveau de recherche"
-srnd9400_desc="Niveau expérimental Tech Research"
+srnd9100_desc="Niveau technologique de recherche"
+srnd9200_desc="Niveau technologique de recherche"
+srnd9300_desc="Niveau technologique de recherche"
+srnd9400_desc="Niveau expérimental de recherche"
 
 Unit_Description_RND_001="Déverrouille technologie supplémentaires 1 unités et la recherche de l'unité."
 Unit_Description_RND_002="Déverrouille Tech 2 unités et la recherche de l'unité."
@@ -65,14 +65,14 @@ Unit_Description_RND_004="Déverrouille unités expérimentales et de recherche 
 
 
 --Recherche déverrouillage usines
-sb0105_desc="aéroglisseur usine"
+sb0105_desc="Usine d'aeroglisseurs"
 Unit_Description_RND_013="Produit unités amphibies."
 --Plus précisément la surface juste Amphib et vol stationnaire. Comprend ekranoplans.
-sb0106_desc="usine sous-marin"
+sb0106_desc="Usine de sous-marins"
 Unit_Description_RND_014="Produit des unités submersibles."
 --Et peut-être amphibie Submarines des fonds marins
-sb0106_desc="hydravion usine"
-Unit_Description_RND_015="produit hydravions"
+sb0106_desc="Usine d'hydravions"
+Unit_Description_RND_015="Produit des hydravions"
 --usine Hydravion pourrait ne pas se faire.
 
 ----------------------------------------
@@ -103,8 +103,8 @@ Unit_Description_RND_017="Génère une quantité d'énergie ondulée. Plus effic
 --Les générateurs de puissance (250 sorties)
 --Gén Séraphims de puissance non rotatifs sont tous appelés Uya-iya
 --Cybrans et Aeon Tech 2 ont aucun nom de
-seb1201_name="EG-100 Fusion Reactor"
-Unit_Description_RND_018="Faible au générateur de puissance de niveau intermédiaire. Construire à côté d'autres structures pour bonus de contiguïté."
+seb1201_name="EG-100 Réacteur à Fusion"
+Unit_Description_RND_018="Générateur d'énergie de bas a moyen niveau. Construit près d'autres structures pour un bonus de contiguïté."
 
 
 ----------------------------------------
@@ -114,8 +114,8 @@ Unit_Description_RND_018="Faible au générateur de puissance de niveau intermé
 
 --transports ekranoplan
 ss0326_desc="Transport lourd GEV"
-ses0326_name="КМ66 Seamonster"
-srs0326_name="DeltaWing"
+ses0326_name="КМ66 Monstre des Mers"
+srs0326_name="Aile Delta"
 sas0326_name="Lun Mallard"
 sss0326_name="Vishwiseyen"
 

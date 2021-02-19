@@ -609,6 +609,21 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * R&D: Fixed an AI not being able to upgrade research centres.
 
+  ### 2021-02-18
+
+  * Caffee Corretto: Fixed the name of the Factory Stealth Node not having the correct LOC tag.
+  * Cityscapes: Fixed container reclaim randomisation breaking on FAF because they removed a value.
+  * Fixed a crash on FAF with BrewLAN enabled and Magnum Dong not enabled.
+  * The `CQUEMOV` category on FAF is now given to any unit from a BrewLAN mod with the `NEEDMOBILEBUILD` category, because I can't be bothered to maintain it as an ID list.
+
+  ### 2021-02-19
+
+  * Returned the `ENGINEER` category to the UEF engineering resource buildings and final upgrade for the Seraphim engineering station.
+    * This was removed because of an engine crash where AI's would try to order 'engineer' structures like regular engineers and cause an exception.
+    * This had the side effect of causing them to be unable to actually build.
+    * This is a potentially temporary experimental change, which will likely determine the fate of the engineering structures if the crash is still an issue.
+  * Updated translations.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

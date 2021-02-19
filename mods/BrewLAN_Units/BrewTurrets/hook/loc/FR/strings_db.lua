@@ -2,22 +2,22 @@
 
 
 
---Translated by: Google
-srb5380_name="Abattu"
-srb5380_desc="Précision Boost nœud"
-Unit_Description_BrewLAN_Turrets_0001="dépenses à côté d'armement statique visant plus, ce qui entraîne une précision plus élevée. empiler plusieurs noeuds."
+--Translated by: Markty_07, Google
+srb5380_name="Markty"
+srb5380_desc="Booster de Précision"
+Unit_Description_BrewLAN_Turrets_0001="Augmente la précision des tourelles a proximité. L'effet peut être augmenté avec d'autres boosters."
 
 seb5381_name="Ardent"
-seb5381_desc="Dommages Boost Node"
+seb5381_desc="Booster de Dégats de Tourelles"
 Unit_Description_BrewLAN_Turrets_0002="Augmente les dégâts de l'armement statique adjacent."
 
 seb5382_name="Benson"
-seb5382_desc="Usine Santé Noeud"
-Unit_Description_BrewLAN_Turrets_0010="Adjacence noeud de chamois. Les logements construits par des structures adjacentes d'usine auront la santé supplémentaires."
+seb5382_desc="Booster de Santé des Unités"
+Unit_Description_BrewLAN_Turrets_0010="Assistant d'usine. Augmente la santé des unités qui en sortent."
 
 srb5383_name="La perte"
-srb5383_desc="Usine Furtif bascule Noeud"
-Unit_Description_BrewLAN_Turrets_0011="Adjacence noeud de chamois. Les logements construits par des structures adjacentes d'usine auront des capacités furtives mis actifs ou inactifs au lieu de leur état par défaut."
+srb5383_desc="Activateur Automatique de Capacité"
+Unit_Description_BrewLAN_Turrets_0011="Activateur automatique de capacité. Permet d'automatiser l'activation de la capacité de dissimulation et de furtivité d'une unité quand elle sort de l'usine."
 
 tooltipbrewturrets0002="Basculement de construction de l'usine"
 tooltipbrewturrets0003="unités de construction par les usines Ensembles adjacents d'avoir activé la furtivité."
@@ -33,19 +33,19 @@ sbui2311_desc="Anti-Armor Défense point"
 Unit_Description_BrewLAN_Turrets_0004="tour de défense. Armé d'un grade destroyer canon à plasma."
 
 seb2111_name="Shorty"
-Unit_Description_BrewLAN_Turrets_0005="Lumière tour de défense. Armé d'un canon à plasma frégate de qualité."
+Unit_Description_BrewLAN_Turrets_0005="Tourelle de défense légère. Armé d'un canon à plasma frégate de qualité."
 
 srb2402_name="pierre polie"
 seb2401_desc="Défense expérimentale point"
 Unit_Description_BrewLAN_Turrets_0006="tourelle défensive. Armé d'un canon à protons massif."
 
-srb2391_name="Tesla Coil"
+srb2391_name="Bobine Tesla"
 srb2391_desc="Pointe de défense lourde"
-Unit_Description_BrewLAN_Turrets_0007="gamme puissante, courte, tourelle défensive. Il stocke progressivement l'énergie et les rejets tout à chaque tir. Le plus efficace contre les grands objectifs quand donné le temps de charger. Très inefficace au feu durable."
+Unit_Description_BrewLAN_Turrets_0007="Tourelle puissante mais avec une courte portée. Elle stocke de l'énergie et décharge tout dans chaque tirs. Plus efficace contre les grandes cibles quand on donne à la tesla le temps de se charger."
 
 --Il est utilisé par la bobine de Tesla
 tooltipbrewturrets0000="Basculer puissance d'arme"
-tooltipbrewturrets0001="Active ou désactive l'alimentation principale de l'arme."
+tooltipbrewturrets0001="Activer/Désactiver l'alimentation de la tesla"
 
 seb2402_name="Maelstrom"
 seb2402_desc="Experimental Anti-Air Défense"

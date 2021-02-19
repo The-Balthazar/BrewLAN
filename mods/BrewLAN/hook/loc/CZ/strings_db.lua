@@ -548,7 +548,7 @@ brewlan_panopticon_small_004r="Deaktivovat radar misky"
 brewlan_panopticon_med_001r="Deaktivace Chapeau misku"
 brewlan_panopticon_med_002r="Deaktivace Pankow misku"
 brewlan_panopticon_med_003r="Deaktivace Mogwai misku"
-brewlan_panopticon_med_004r="Deaktivace Neutrální dish"
+brewlan_panopticon_med_004r="Deaktivace Neutrální misku"
 brewlan_panopticon_xbl_001r="Deaktivovat Saxon misku"
 
 sab0401="Experimentální Letecká Továrna"

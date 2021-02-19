@@ -79,7 +79,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC seb5383_name>The Lost',
+        UnitName = '<LOC srb5383_name>The Lost',
         UnitWeight = 1,
     },
     Interface = {

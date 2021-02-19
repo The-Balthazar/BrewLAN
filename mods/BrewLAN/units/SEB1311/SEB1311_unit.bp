@@ -30,6 +30,7 @@ UnitBlueprint {
         'ECONOMIC',
         'TECH3',
         'CONSTRUCTION',
+        'ENGINEER',
         'REPAIR',
         'RECLAIM',
         'STATIONASSISTPOD',

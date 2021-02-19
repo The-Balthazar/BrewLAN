@@ -656,8 +656,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                             if GetTerrainHeight(x,z) == pos[2] + h then
                                 local containers = SafeProp(pierData.Containers, {x, pos[2], z}, (pierDir+1+d)*90)
                                 local ran = math.random()
-                                containers:SetReclaimValues(ran, ran, containers.MassReclaim * ran, containers.EnergyReclaim * ran)
-                                containers:SetMaxReclaimValues(ran, ran, containers.MassReclaim * ran, containers.EnergyReclaim * ran)
+                                if (containers.MassReclaim or containers.MaxMassReclaim) and containers.SetReclaimValues then
+                                    containers:SetReclaimValues(ran, ran, (containers.MassReclaim or containers.MaxMassReclaim) * ran, (containers.EnergyReclaim or containers.MaxEnergyReclaim) * ran)
+                                end
+                                if containers.MaxMassReclaim and containers.SetMaxReclaimValues then
+                                    containers:SetMaxReclaimValues(ran, ran, containers.MaxMassReclaim * ran, containers.MaxEnergyReclaim * ran)
+                                end
                             else
                                 --Flatten the last container location
                                 FlattenMapRect(

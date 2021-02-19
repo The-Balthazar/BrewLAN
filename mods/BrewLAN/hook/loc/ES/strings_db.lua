@@ -177,7 +177,7 @@ Unit_Description_BrewLAN_T2D001="Un todo terreno, alto daño, el radar detonó, 
 sbui2222="mina nuclear"
 seb2222_name="AM-36 Trinidad"
 srb2222_name="Silenciador"
-sab2222_name="Montaña"
+sab2222_name="montaña"
 ssb2222_name="Inaino"
 Unit_Description_BrewLAN_T2D004="Una mina todoterreno armado con una ojiva nuclear-pleno rendimiento. detonación manual requerido. Visible solo para Omni."
 
@@ -189,7 +189,7 @@ sbui5210="Sección de pared gruesa"
 seb5210_name="Destrucción general Impasse"
 srb5210_name="Mamparo"
 ssb5210_name="Haas-Haas"
-Unit_Description_BrewLAN_T2B001="Restringe el movimiento de las unidades enemigas y puede sostener cantidades extremas de daños. Conecta a otras secciones de pared pesada adyacentes."
+Unit_Description_BrewLAN_T2B001="Restringe el movimiento de las unidades enemigas y pueden sostener cantidades extremas de daños. Conecta a otras secciones de pared pesada adyacentes."
 
 ssl0222_desc="Generador de escudo móvil"
 ssl0222_name="Athanne"
@@ -252,7 +252,7 @@ Unit_Description_BrewLAN_T3A008="De alto nivel torpedero. Diseñado para involuc
 
 sal0311_desc="Tanque de Asalto Blindado"
 sal0311_name="moldavita"
-Unit_Description_BrewLAN_T3L002="Fuertemente blindado tanque de asalto. Baja tasa de fuego, diseñado como una unidad de apoyo pesado."
+Unit_Description_BrewLAN_T3L002="Fuertemente blindados asalto tanque. Baja tasa de fuego, diseñado como una unidad de apoyo pesado."
 
 ssl0311_desc="Robot de asalto pesado"
 ssl0311_name="Ilshatha"
@@ -323,7 +323,7 @@ sl0319_desc="Ingeniero de campo"
 sal0319_desc="Ingeniero de defensa"
 sel0319_name="Custodio"
 sal0319_name="Bilmon"
-srl0319_name="Casa"
+srl0319_name="casa"
 ssl0319_name="Iyazyne"
 Unit_Description_BrewLAN_T3L005="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento de menor importancia y el equipo de contra-inteligencia. Puede construir defensas especializadas."
 Unit_Description_BrewLAN_T3L006="Tech 3, la construcción, la reparación, la captura, la regeneración, y la unidad de capa de mina de anfibio. Está equipado con armamento menor, tiene el sigilo de sonar, y puede construir defensas especializadas."
@@ -344,7 +344,7 @@ Unit_Description_BrewLAN_T3B0016="Large estructura de generación de energía. P
 
 sab1312_desc="Extractor de masa blindado"
 seb1312_desc="Extractor de masas Ingeniería"
-srb1312_desc="Extractor de masas camuflado"
+srb1312_desc="Masa Extractor camuflado"
 ssb1312_desc="Extractor de masa blindado"
 seb1312_name="Bomba 3E masa"
 Unit_Description_BrewLAN_T3B0021="De gama alta extractora de masas. Debe ser construido sobre los depósitos masivos. Provoca una gran cúpula suficiente escudo para cubrirse y 4 pequeños almacenes."
@@ -363,7 +363,7 @@ Unit_Description_BrewLAN_T3B0017="Large estructura fabricación en masa. Posee u
 
 srb4313_desc="De campo del generador de Stealth camuflado"
 srb4313_name="Hierba mora"
-Unit_Description_BrewLAN_T3B0011="Genera un campo de sigilo y tiene camuflaje personal. unidades Cueros y estructuras dentro de su radio de acción de radar y sonar, pero no de sensores visuales, el generador en sí sólo es visible para Omni."
+Unit_Description_BrewLAN_T3B0011="Genera un campo sigilo y el camuflaje tiene personal. unidades Cueros y estructuras dentro de su radio de acción de radar y sonar, pero no de sensores visuales, el generador en sí sólo es visible para Omni."
 
 ssb5301_desc="Sección muro de escudos"
 ssb5301_name="Athahaas"

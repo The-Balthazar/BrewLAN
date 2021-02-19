@@ -12,7 +12,7 @@ srb9101_name="爱因斯坦设施"
 srb9201_name="薛定谔设施"
 srb9301_name="海森堡设施"
 --永世
-sab9101_name="眼光"
+sab9101_name="洞察力"
 sab9201_name="指导"
 sab9301_name="启示"
 --塞拉芬
@@ -91,7 +91,7 @@ Unit_Description_RND_011="产生能量的波动量。"
 --潮汐发电机
 sb1102_desc="潮汐发电机"
 seb1102_name="波德潮"
-sab1102_name="流"
+sab1102_name="流动"
 ssb1102_name="烏亞魯歐西"
 srb1102_name="红湖"
 Unit_Description_RND_017="产生能量的起伏量。更有效地与大面积的水域。"

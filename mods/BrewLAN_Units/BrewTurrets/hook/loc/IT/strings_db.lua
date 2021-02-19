@@ -37,7 +37,7 @@ Unit_Description_BrewLAN_Turrets_0005="Luce torre difensiva. Armato con un canno
 
 srb2402_name="neolith"
 seb2401_desc="Sperimentale Point Difesa"
-Unit_Description_BrewLAN_Turrets_0006="torretta difensiva. Armato con un enorme cannone protonico."
+Unit_Description_BrewLAN_Turrets_0006="torretta difensiva. Armato di un enorme cannone protone."
 
 srb2391_name="Bobina di Tesla"
 srb2391_desc="Punto di difesa pesante"

@@ -72,7 +72,7 @@ tooltipbrewlan0032="Przełączanie między priorytetu docelowego anty-powietrze 
 tooltipbrewlan0033="Dostosowywanie [Tablica]"
 
 --------------------------------------------------------------------------------
--- Rozszerzenia wsparcie dowódcy
+-- Udoskonalenia wsparcie dowódcy
 --------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Dodaje możliwości budowania inżyniera do SACU."
@@ -263,7 +263,7 @@ srb2306_name="Hades"
 ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o potężny laser zamiatania. Nie angażować samolotu lub jednostek podwodnych. Wymaga skumulowane ilości energii dla utrzymania długotrwałego pożaru; przegrzeje jeśli aktywny zbyt długo."
-Unit_Description_BrewLAN_T3B003="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o Gatling armaty plazmy. Nie angażować samolotu lub jednostek podwodnych."
+Unit_Description_BrewLAN_T3B003="Ciężki wieża obronna. Ataki lądowych i morskich jednostek opartych o Gatling armaty osocza. Nie angażować samolotu lub jednostek podwodnych."
 Unit_Description_BrewLAN_T3B004="Ciężki wieża obronna. Ataki jednostek lądowych, morskich jednostek opartych na samolot i niskich wysokościach z potężnego lasera. Nie angażują dużą wysokość samolotu lub jednostek podwodnych."
 
 sbui2311_desc="Anti-Armor punkt obrony"
@@ -382,7 +382,7 @@ Unit_Description_BrewLAN_T3B0020="Ręcznie sterowane bramy; może umożliwić pr
 
 seb2308_desc="Wyrzutnia torped"
 seb2308_name="Harpun"
-Unit_Description_BrewLAN_T3B0025="Ciężki torpeda uruchomienie wieży. Może być zbudowany na lądzie i na dnie morza."
+Unit_Description_BrewLAN_T3B0025="Ciężki torpeda uruchomienie wieży. Mogą być budowane na lądzie i na dnie morza."
 sab2308_desc="Wyrzutnia torped"
 sab2308_name="Gwałtowny potop"
 Unit_Description_BrewLAN_T3B0027="Bardzo ciężki dalekiego zasięgu zwalczania okrętów systemu obronnego. Zaprojektowany, aby angażować najpotężniejszych jednostek morskich."

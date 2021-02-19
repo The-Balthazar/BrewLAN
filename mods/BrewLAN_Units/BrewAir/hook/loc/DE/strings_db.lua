@@ -22,7 +22,7 @@ Unit_Description_BrewPen_003="Zwischen Bomber."
 ----------------------------------------
 -- Tech 3
 ----------------------------------------
---T3.5 Erweitert Bomber
+--T3.5 Erweiterte Bomber
 --sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
 sea0314_name="Ulan"

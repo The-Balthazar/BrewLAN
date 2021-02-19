@@ -53,6 +53,7 @@ UnitBlueprint {
         'SERAPHIM',
         'STRUCTURE',
         'CONSTRUCTION',
+        'ENGINEER',
         'TECH2',
         'DRAGBUILD',
         'VISIBLETORECON',

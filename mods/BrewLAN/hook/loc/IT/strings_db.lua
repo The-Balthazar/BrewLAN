@@ -133,7 +133,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 anfibia costruzione, riparazione, la cat
 ss0119_desc="Progettazione campo barche"
 ses0119_name="Mendy Class"
 srs0119_name="Franklin Class"
-Unit_Description_BrewLAN_T1S001="Tech 1 la costruzione, la riparazione, la cattura, la bonifica, e l'unità di mia strato."
+Unit_Description_BrewLAN_T1S001="Tech 1 costruzione, riparazione, la cattura, la bonifica, e l'unità di mia strato."
 
 --------------------------------------------------------------------------------
 -- Tech 2
@@ -264,7 +264,7 @@ ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Pesante torre difensiva. Gli attacchi terrestri e unità navali-based con un potente laser spazzare. Non impegnarsi aereo o unità sommerse. Richiede importi cumulativi di energia per mantenere il fuoco prolungato; si surriscalda se attivo per troppo tempo."
 Unit_Description_BrewLAN_T3B003="Pesante torre difensiva. Gli attacchi terrestri e unità navali-based con un cannone al plasma gatling. Non impegnarsi aereo o unità sommerse."
-Unit_Description_BrewLAN_T3B004="Pesante torre difensiva. Gli attacchi terrestri unità, unità navali a base, e gli aerei a bassa quota con un laser potente. Non impegnarsi aerei altitudine elevata, o unità sommerse."
+Unit_Description_BrewLAN_T3B004="Pesante torre difensiva. Gli attacchi terrestri unità, unità navali a base, e gli aerei a bassa quota con un laser potente. Non impegnarsi aerei altitudine elevata, o unità di sommerse."
 
 sbui2311_desc="Anti-Armatura Point Difesa"
 seb2311_name="Custode"
@@ -348,7 +348,7 @@ srb1312_desc="Camouflaged Mass Extractor"
 ssb1312_desc="Armored Mass Extractor"
 seb1312_name="Mass Pump 3E"
 Unit_Description_BrewLAN_T3B0021="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Esso genera una cupola scudo abbastanza grande da coprire se stessa e 4 piccoli depositi."
-Unit_Description_BrewLAN_T3B0022="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Possiede la capacità di riparazione vicina edifici. crea automaticamente le difese in caso di danneggiamento."
+Unit_Description_BrewLAN_T3B0022="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Possiede la capacità di riparare vicina edifici. crea automaticamente le difese in caso di danneggiamento."
 Unit_Description_BrewLAN_T3B0023="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Visibile solo Omni."
 Unit_Description_BrewLAN_T3B0024="High-end di massa estrattore. Deve essere costruito sui depositi di massa. Esso possiede l'armatura superiore ed ha di sé capacità rigenerative."
 

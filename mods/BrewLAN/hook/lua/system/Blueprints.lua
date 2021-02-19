@@ -930,33 +930,18 @@ end
 function BrewLANFAFExclusiveChanges(all_bps)
     if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
         for id, bp in all_bps do
-            if bp.Categories then
-                if string.sub(bp.Source, 1, 13) == '/mods/brewlan'
-                and (bp.Physics.MotionType == 'RULEUMT_Air' or bp.Physics.MotionType == 'RULEUMT_Hover')
-                and bp.Wreckage.WreckageLayers
-                then
+            if bp.Categories and string.sub(bp.Source, 1, 13) == '/mods/brewlan' then
+                if (bp.Physics.MotionType == 'RULEUMT_Air' or bp.Physics.MotionType == 'RULEUMT_Hover')
+                and bp.Wreckage.WreckageLayers then
                     bp.Wreckage.WreckageLayers.Seabed = true
                     bp.Wreckage.WreckageLayers.Sub = true
                     bp.Wreckage.WreckageLayers.Water = true
                 end
+                if table.find(bp.Categories, 'NEEDMOBILEBUILD') then
+                    table.insert(bp.Categories, 'CQUEMOV')
+                end
             end
             --T3 torps anti-naval damage * 0.76
-        end
-        for i, id in {
-            --BrewLAN units
-            'sal0401',
-            'sea0002',
-            'sea0401',
-            'seb1311',
-            'seb1312',
-            'seb1313',
-            'srl0401',
-            'ssl0403',
-            --R&D units
-            'srl0403',
-        }
-        do
-            table.insert(all_bps[id].Categories, 'CQUEMOV')
         end
     end
 end
