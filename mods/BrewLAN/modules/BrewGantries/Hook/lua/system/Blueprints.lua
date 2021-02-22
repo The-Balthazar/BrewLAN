@@ -43,7 +43,12 @@ function BrewLANGantryHomogeniser(all_bps)
             -- Make sure we can be built both on land and in or on water
             --------------------------------------------------------------------
             --if not bp.General.Icon or bp.General.Icon == 'land' then bp.General.Icon = 'amph' end
-            if bp.Physics.BuildOnLayerCaps then bp.Physics.BuildOnLayerCaps.LAYER_Land = true end
+
+            if not bp.Physics.BuildOnLayerCaps then
+                bp.Physics.BuildOnLayerCaps = {LAYER_Land = true} --Default value if table == nil.
+            else
+                bp.Physics.BuildOnLayerCaps.LAYER_Land = true
+            end
             if bp.Wreckage.WreckageLayers then bp.Wreckage.WreckageLayers.Land = true end
             if not (bp.Physics.BuildOnLayerCaps.LAYER_Seabed or bp.Physics.BuildOnLayerCaps.LAYER_Water) then
                 bp.Physics.BuildOnLayerCaps.LAYER_Seabed = true

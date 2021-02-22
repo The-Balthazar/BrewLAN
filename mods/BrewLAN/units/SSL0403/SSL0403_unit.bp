@@ -441,10 +441,6 @@ UnitBlueprint {
     Physics = {
         BackUpDistance = 15,
         BankingSlope = 3,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-        },
         DragCoefficient = 0.2,
         Elevation = 1,
         LayerChangeOffsetHeight = -0.75,

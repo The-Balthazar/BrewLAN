@@ -105,9 +105,6 @@ UnitBlueprint {
     LifeBarSize = 0.3,
     Physics = {
         BankingSlope = 0.5,
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-        },
         Elevation = 20,
         MaxSpeed = 20,
         MotionType = 'RULEUMT_Air',

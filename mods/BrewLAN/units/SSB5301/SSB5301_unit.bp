@@ -164,9 +164,6 @@ UnitBlueprint {
     LifeBarSize = 0.8*1.2,
     Physics = {
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         DragCoefficient = 0.2,
         MaxGroundVariation = 50,
         MaxSteerForce = 0,

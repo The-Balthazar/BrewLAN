@@ -273,10 +273,6 @@ UnitBlueprint {
         AltMotionType = 'RULEUMT_Water',
         BackUpDistance = 5,
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Water = true,
-        },
         CatchUpAcc = 10,
         DragCoefficient = 0.2,
         LandSpeedMultiplier = 0.5,

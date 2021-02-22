@@ -178,7 +178,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'UEF',
-        Icon = 'land',
+        Icon = 'amph',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {

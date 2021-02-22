@@ -118,7 +118,7 @@ UnitBlueprint {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         FactionName = 'Seraphim',
-        Icon = 'land',
+        Icon = 'amph',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {

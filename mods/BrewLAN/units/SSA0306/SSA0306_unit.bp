@@ -105,7 +105,6 @@ UnitBlueprint {
         },
     },
     Categories = {
-        
         'SELECTABLE',
         'TRANSPORTBUILTBYTIER3FACTORY',
         'SERAPHIM',
@@ -262,7 +261,6 @@ UnitBlueprint {
     LifeBarOffset = 4.5,
     LifeBarSize = 3,
     Physics = {
-        BuildOnLayerCaps = { LAYER_Air = true },
         Elevation = 10,
         FuelRechargeRate = 70,
         FuelUseTime = 800,

@@ -2,6 +2,20 @@ local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArt
 local utilities = import('/lua/utilities.lua')
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
 local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
+
+local motionTypes = {
+    RULEUMT_Biped = { Land = true },
+    RULEUMT_Land  = { Land = true },
+
+    RULEUMT_AmphibiousFloating = { Land = true, Water = true },
+    RULEUMT_Amphibious         = { Land = true,               Seabed = true },
+    RULEUMT_Hover              = { Land = true, Water = true },
+    RULEUMT_Air                = { Land = true, Water = true, Seabed = true },
+
+    RULEUMT_Water        = { Water = true },
+    RULEUMT_SurfacingSub = { Water = true },
+}
+
 TIFDropPodArtillery = Class(TArtilleryAntiMatterProjectile) {
 
     FxLandHitScale = 0.2,
@@ -15,7 +29,7 @@ TIFDropPodArtillery = Class(TArtilleryAntiMatterProjectile) {
     OnImpact = function(self, TargetType, TargetEntity)
         TArtilleryAntiMatterProjectile.OnImpact(self, TargetType, TargetEntity)
         self:DropUnit(TargetType)
-        LOG(TargetType)
+        --LOG(TargetType)
     end,
 
     DropUnit = function(self, TargetType)
@@ -33,21 +47,15 @@ TIFDropPodArtillery = Class(TArtilleryAntiMatterProjectile) {
 
             local DropBP = self.Data:GetBlueprint()
             local DropLayer = self.Data:GetCurrentLayer()
-            LOG(DropLayer)
+            --LOG("DropLayer"..DropLayer)
+
             if TargetType == "Shield" then
                 --Resets personal shields as an added downside
                 if self.Data:ShieldIsOn() then
                     self.Data:DisableShield()
                 end
                 self.Data.FallenFromPod(self.Data, pos[2])
-            elseif not
-            (
-                -- If we are on land                           and they say land                                             or the bitwise string is odd
-                DropLayer == "Land" and (DropBP.Physics.BuildOnLayerCaps == "Land" or math.mod(tonumber(DropBP.Physics.BuildOnLayerCaps), 2) == 1)
-                or --or if we are not on land              and the unit doesn't say land                                then it will survive anywhere else since the other options are all "in or on the water"
-                DropLayer ~= "Land" and DropBP.Physics.BuildOnLayerCaps ~= "Land"
-            )
-            then
+            elseif not (motionTypes[DropBP.Physics.MotionType] and motionTypes[DropBP.Physics.MotionType][DropLayer]) then
                 self.Data:Kill()
             end
             if not self.Data.Dead then

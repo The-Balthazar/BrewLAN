@@ -194,10 +194,6 @@ UnitBlueprint {
     Physics = {
         AttackElevation = 4,
         BankingSlope = 0.5,
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-            LAYER_Land = true,
-        },
         Elevation = 18,
         FuelRechargeRate = 5,
         FuelUseTime = 500,

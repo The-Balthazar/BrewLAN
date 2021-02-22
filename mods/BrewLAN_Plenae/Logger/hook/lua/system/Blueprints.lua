@@ -556,7 +556,7 @@ end
 function CheckUnitHasCorrectIconBackground(id, bp)
     local icon = string.lower(bp.General.Icon or 'land')
     local MT = bp.Physics.MotionType
-    local BLC = bp.Physics.BuildOnLayerCaps -- LAYER_Air LAYER_Land
+    local BLC = bp.Physics.BuildOnLayerCaps or {LAYER_Land = true} --BuildOnLayerCaps only matters for structures, TODO update to make sure it's not falling prey to this.
     local cats = bp.Categories
     local errorString = "unit: " .. id .. " (" .. LOC(bp.Description) .. ") has the wrong icon background (bp.General.Icon) reports: '" .. icon .. "' should be "
 

@@ -607,7 +607,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2021-02-15
 
-  * R&D: Fixed an AI not being able to upgrade research centres.
+  * R&D: Fixed AI not being able to upgrade research centres.
 
   ### 2021-02-18
 
@@ -623,6 +623,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * This had the side effect of causing them to be unable to actually build.
     * This is a potentially temporary experimental change, which will likely determine the fate of the engineering structures if the crash is still an issue.
   * Updated translations.
+
+  ### 2021-02-21
+
+  * Changed the description of BrewLAN AI to make it more clear that it's for AI using BrewLAN units.
+  * Fixed the Slink not decloaking on fire if it's controlled by an AI.
+
+  ### 2021-02-22
+
+  * Removed BuildOnLayerCaps from each mobile unit and each structure not built on just land from BrewLAN.
+  * Fixed the Cybran special extractor not being buildable underwater.
+  * Changed the icon background on all special extractors to be `amph` instead of `land`.
+  * Sanitised use of BuildOnLayerCaps in blueprints.lua.
+  * Gantry Homogeniser: Sanitised use of BuildOnLayerCaps in blueprints.lua.
+  * Waterlag:
+    * Sanitised use of BuildOnLayerCaps.
+    * Added some additional sanity checks.
+    * For structures with collision boxes not touching the surface before hand, gave them the `HOVER` category so torpedo units that can't hit them won't try.
+    * For units with collision boxes that touch the surface or go through it, it now lowers the collision box by 0.5 and makes it taller by 0.5 instead of just lowering it by 0.25.
+  * Ivan script no longer checks BuildOnLayerCaps.
+  * Removed the unused Ivan dummy unit.
 
 ## 2019-10-13|0.8.9
 

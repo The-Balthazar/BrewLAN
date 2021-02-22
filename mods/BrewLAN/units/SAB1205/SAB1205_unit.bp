@@ -119,9 +119,6 @@ UnitBlueprint {
     LifeBarOffset = 1.2,
     LifeBarSize = 1.85,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
         MeshExtentsX = 1.65,

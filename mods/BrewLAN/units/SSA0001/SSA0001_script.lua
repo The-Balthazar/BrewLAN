@@ -42,7 +42,6 @@ SSA0001 = Class(SConstructionUnit) {
     end,
 
     OnDestroy = function(self)
-        LOG("LOG")
         if self.Parent and not self.Parent:IsDead() then
             self.Parent:NotifyOfPodDeath(self.PodName)
             self.Parent = nil

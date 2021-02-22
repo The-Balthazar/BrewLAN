@@ -240,9 +240,6 @@ UnitBlueprint {
     LifeBarSize = 0.3,
     Physics = {
         BankingSlope = 0.5,
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-        },
         Elevation = 5,
         GroundCollisionOffset = 0.2,
         MaxAcceleration = 10,

@@ -156,9 +156,6 @@ UnitBlueprint {
     Physics = {
         BackUpDistance = 4,
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         DragCoefficient = 0.2,
         MaxAcceleration = 2.1,
         MaxBrake = 2.25,

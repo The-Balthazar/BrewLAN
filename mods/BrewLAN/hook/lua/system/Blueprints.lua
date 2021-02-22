@@ -176,7 +176,8 @@ function BrewLANNavalEngineerCatFixes(all_bps)
         {'BUILTBYTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION', 'BUILTBYTIER1FACTORY SERAPHIM MOBILE LAND CONSTRUCTION'},
     }
     for id, bp in all_bps do
-        if bp.General.Classification == 'RULEUC_Factory' and bp.Physics.BuildOnLayerCaps.LAYER_Water == false then
+        -- If table doesn't exist, it's 'Land'. If a key doesnt exist, but the table does, that key is false.
+        if bp.General.Classification == 'RULEUC_Factory' and (bp.Physics.BuildOnLayerCaps and not bp.Physics.BuildOnLayerCaps.LAYER_Water or not bp.Physics.BuildOnLayerCaps) then
             if bp.Economy.BuildableCategory then
                 for i, cat in bp.Economy.BuildableCategory do
                     for index, cattable in cats_table do
@@ -974,8 +975,15 @@ function BrewLANNavalShields(all_bps)
     for k, v in Units do
         if all_bps[k] then
             all_bps[k].General.Icon = 'amph'
+            if not all_bps[k].Physics.BuildOnLayerCaps then
+                all_bps[k].Physics.BuildOnLayerCaps = {
+                    LAYER_Land = true
+                }
+            end
             all_bps[k].Physics.BuildOnLayerCaps.LAYER_Water = true
-            all_bps[k].Wreckage.WreckageLayers.Water = true
+            if all_bps[k].Wreckage and all_bps[k].Wreckage.WreckageLayers then
+                all_bps[k].Wreckage.WreckageLayers.Water = true
+            end
             if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end
             if not table.find(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic') then
                 table.insert(all_bps[k].Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
@@ -1070,6 +1078,9 @@ function BrewLANMegalithEggs(all_bps)
                 bp.Economy.BuildTime = all_bps[bp.Economy.BuildUnit].Economy.BuildTime
                 bp.General.Icon = all_bps[bp.Economy.BuildUnit].General.Icon
                 if string.lower(all_bps[bp.Economy.BuildUnit].Physics.MotionType) == "ruleumt_amphibious" then
+                    if not bp.Physics.BuildOnLayerCaps then
+                        bp.Physics.BuildOnLayerCaps = { LAYER_Land = true }
+                    end
                     bp.Physics.BuildOnLayerCaps.LAYER_Seabed = true
                 end
             end

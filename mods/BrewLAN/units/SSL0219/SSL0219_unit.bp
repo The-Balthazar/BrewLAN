@@ -183,10 +183,6 @@ UnitBlueprint {
     LifeBarSize = 0.75,
     Physics = {
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-        },
         DragCoefficient = 0.2,
         MaxAcceleration = 3.6,
         MaxBrake = 3.6,

@@ -180,9 +180,6 @@ UnitBlueprint {
             'West_Buttress',
         },
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         DragCoefficient = 0.2,
         FlattenSkirt = false,
         MaxSteerForce = 0,

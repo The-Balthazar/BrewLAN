@@ -250,9 +250,6 @@ UnitBlueprint {
     LifeBarOffset = 5.25,
     LifeBarSize = 7.5,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-        },
         Elevation = 23,
         GroundCollisionOffset = 10,
         MaxSpeed = 0.5,

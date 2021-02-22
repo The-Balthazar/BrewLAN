@@ -222,10 +222,6 @@ UnitBlueprint {
     LifeBarSize = 1.6,
     Physics = {
         BankingSlope = 0,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Water = true,
-        },
         CatchUpAcc = 10,
         DragCoefficient = 0.2,
         Elevation = 0.25,

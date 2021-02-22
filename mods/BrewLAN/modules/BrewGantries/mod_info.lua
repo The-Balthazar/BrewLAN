@@ -1,6 +1,6 @@
 name = "Gantry Homogeniser"
-uid = "25D57D85-7D84-27HT-A501-BR3WGANTH0000"
-version = 0.0
+uid = "25D57D85-7D84-27HT-A501-BR3WGANTH0001"
+version = 0.1
 copyright = "© 2018 Sean Wheeldon"
 description = "Do you hate factional diversity? Now all gantries can build all the things. No more factional diversity!"
 author = "Balthazar"
