@@ -644,6 +644,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Ivan script no longer checks BuildOnLayerCaps.
   * Removed the unused Ivan dummy unit.
 
+  ### 2021-02-23
+
+  * Paragon Game: Slightly reworked the UEF paragon to include a tesseract and replace the normals.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

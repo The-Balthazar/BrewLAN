@@ -17,6 +17,22 @@ SEB1401 = Class(AStructureUnit) {
         AStructureUnit.OnStopBeingBuilt(self, builder, layer)
         ChangeState( self, self.ResourceOn )
         self:ForkThread(self.ResourceMonitor)
+
+        self.Tesseract = CreateAnimator(self)
+        self.Tesseract:PlayAnim(string.gsub(self:GetBlueprint().Source,'unit.bp','')..'ATesseract.sca', true):SetRate(1+math.random()*0.5)
+
+        local army = self:GetArmy()
+        for i = 1, 4 do
+            for j, k in {{'A','B'},{'B','C'},{'C','D'},{'D','A'}} do
+                if not self.BeamEffectsBag then self.BeamEffectsBag = {} end
+                table.insert(self.BeamEffectsBag, AttachBeamEntityToEntity(self, 'Tesseract_'..k[1]..'_00'..i, self, 'Tesseract_'..k[1]..'_00'..(math.mod(i, 4) + 1), army, '/effects/emitters/build_beam_01_emit.bp'))
+                table.insert(self.BeamEffectsBag, AttachBeamEntityToEntity(self, 'Tesseract_'..k[1]..'_00'..i, self, 'Tesseract_'..k[2]..'_00'..i, army, '/effects/emitters/build_beam_01_emit.bp'))
+            end
+        end
+
+        self.Trash:Add(CreateRotator(self, 'Tesseract', 'x', nil, 0, 15, 40 + Random(0, 20)))
+        self.Trash:Add(CreateRotator(self, 'Tesseract', 'y', nil, 0, 15, 40 + Random(0, 20)))
+        self.Trash:Add(CreateRotator(self, 'Tesseract', 'z', nil, 0, 15, 40 + Random(0, 20)))
     end,
 
     ResourceOn = State {

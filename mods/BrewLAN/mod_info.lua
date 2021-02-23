@@ -1,5 +1,5 @@
 name = "BrewLAN"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000089" -- this is UID hard coded into hook/lua/game.lua and hook/lua/system/blueprints.lua
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N000089" -- this is UID hard coded in the brew_AI mod_info.lua
 version = 0.89
 copyright = "© 2009–2018 Sean Wheeldon"
 description = "Adds a large number of units and changes a number of existing units."
