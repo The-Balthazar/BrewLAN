@@ -66,17 +66,26 @@ For more complete localisation credits see [the master translation document](htt
 - Marc "Explo" Tassetti – French localisation
 - Jaisse – French localisation
 - Oaks – Czech localisation
-- Gnio - French localisation
-- MarLo - German localisation
+- Gnio – French localisation
+- MarLo – German localisation
+- Markty_07 – French localisation
 
 ### Financial supporters
+- 🦞 Stash
+- Darkdessy
+- Dragun101
 - Saxxonknight
-- Guillaume Chapeau
+- Syrinx
+- Deathtrooper
+- RD
 - Mogwai
 - Flaxbeard
+- Guillaume Chapeau
+- 🦕 Marcin Mikołajczak
 - Adam Brown
 - Neutral Effect
-- 🦕 Marcin Mikołajczak
 - Mirko Gebauer
+- 🦕 Nick Moe
 - 露露特 普
 - Ivar Viklund Grundelius
+- Greenfly
