@@ -648,6 +648,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Paragon Game: Slightly reworked the UEF paragon to include a tesseract and replace the normals.
 
+  ### 2021-02-24
+
+  * Cityscapes: Made the civ wall buildable by field engineers.
+  * Cityscapes: Shrunk the collision model of the civ wall to better match the model.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
