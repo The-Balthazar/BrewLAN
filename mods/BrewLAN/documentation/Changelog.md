@@ -653,6 +653,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Made the civ wall buildable by field engineers.
   * Cityscapes: Shrunk the collision model of the civ wall to better match the model.
 
+  ### 2021-03-02
+
+  * Cityscapes: Removed some extrenuous data from the block dummy.
+
+  ### 2021-03-27
+
+  * Water Guard: Fixed a potential nil table check, and made the damage calculation only care about collision box size, and added a collision box offset check.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

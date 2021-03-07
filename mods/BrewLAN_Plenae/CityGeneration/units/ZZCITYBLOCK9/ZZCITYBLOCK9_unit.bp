@@ -2,11 +2,13 @@
 -- Dummy unit for finding safe positions and storing city data
 --------------------------------------------------------------------------------
 UnitBlueprint {
-    Categories = { 'INVULNERABLE', 'UNSELECTABLE', 'UNTARGETABLE' },
+    Categories = { 'INVULNERABLE', 'UNSELECTABLE', 'UNTARGETABLE', 'UNSPAWNABLE' },
        Defense = { Health = 0, MaxHealth = 0 },
        Display = { Mesh = { LODs = { { LODCutoff = 1, ShaderName = 'Unit'} } }, HideLifebars = true },
      Footprint = { SizeX = 9, SizeZ = 9 },
        General = { CapCost = 0, Category = 'Defense', FactionName = 'None' },
          Intel = { VisionRadius = 0 },
-       Physics = { BuildOnLayerCaps = { LAYER_Land = true }, MotionType = 'RULEUMT_None' },
+       Physics = { MotionType = 'RULEUMT_None' },
+   ScriptClass = 'Unit',
+  ScriptModule = '/lua/sim/unit.lua',
 }
