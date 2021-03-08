@@ -655,11 +655,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2021-03-02
 
-  * Cityscapes: Removed some extrenuous data from the block dummy.
+  * Cityscapes: Removed some extraneous data from the block dummy.
 
-  ### 2021-03-27
+  ### 2021-03-07
 
   * Water Guard: Fixed a potential nil table check, and made the damage calculation only care about collision box size, and added a collision box offset check.
+
+  ### 2021-03-08
+
+  * Expert Camo: Included a fix for the vanilla terrain type issue by just overwriting the function.
+  * Water Guard: Some optimisations.
 
 ## 2019-10-13|0.8.9
 
