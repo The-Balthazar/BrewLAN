@@ -84,7 +84,7 @@ UnitBlueprint {
             Level5 = 5,
         },
     },
-    BuildIconSortPriority = 40,
+    BuildIconSortPriority = 48,
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',

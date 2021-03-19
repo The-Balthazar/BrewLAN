@@ -666,6 +666,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Expert Camo: Included a fix for the vanilla terrain type issue by just overwriting the function.
   * Water Guard: Some optimisations.
 
+  ### 2021-03-19
+
+  * Penetrators: Added a Cybran T2 Combat Fighter.
+  * Penetrators: Fixed the Condor only being buildable from T3 factories.
+  * Changed the build menu sorting of the T1 torpedo bombers and T1 gunships.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
