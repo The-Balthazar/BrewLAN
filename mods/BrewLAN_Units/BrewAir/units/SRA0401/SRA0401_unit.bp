@@ -63,7 +63,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 100,
     Categories = {
-        'PRODUCTBREWAIR',
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -85,14 +84,11 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        AirThreatLevel = 0,
         ArmorType = 'Light',
         EconomyThreatLevel = 1705,
         Health = 50000,
         MaxHealth = 50000,
         RegenRate = 15,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = '<LOC sra0401_desc>Experimental Aircraft Carrier',
     Display = {
@@ -184,9 +180,7 @@ UnitBlueprint {
         BuildCostMass = 15000,
         BuildTime = 12000,
         BuildRate = 240,
-        BuildableCategory = {
-            'sra0402',
-        },
+        BuildableCategory = { 'sra0402' },
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -197,16 +191,10 @@ UnitBlueprint {
         Category = 'Experimental',
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
-            --RULEUCC_Attack = true,
-            --RULEUCC_CallTransport = false,
-            --RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            --RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
-            --RULEUCC_Reclaim = false,
-            --RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
             RULEUCC_Transport = true,
@@ -234,9 +222,6 @@ UnitBlueprint {
     LifeBarOffset = 6.25,
     LifeBarSize = 4.5,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-        },
         Elevation = 20,
         GroundCollisionOffset = 0.5,
         MaxSpeed = 0.5,
@@ -287,11 +272,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

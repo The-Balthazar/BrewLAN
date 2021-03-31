@@ -108,6 +108,7 @@ UnitBlueprint {
     SizeY = 0.8,
     SizeZ = 0.8,
     StrategicIconName = 'icon_node3_counterintel',
+    StrategicIcon = 'counterintel',
     StrategicIconSortPriority = 250,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

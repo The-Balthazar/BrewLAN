@@ -63,6 +63,8 @@ UnitBlueprint {
         'UEF',
         'STRUCTURE',
         'LAND',
+        'NAVAL',
+        'AIR',
         'EXPERIMENTAL',
         'CONSTRUCTION',
         'GANTRY',

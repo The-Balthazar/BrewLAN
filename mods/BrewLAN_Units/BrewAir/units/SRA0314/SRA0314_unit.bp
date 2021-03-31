@@ -235,9 +235,6 @@ UnitBlueprint {
     LifeBarOffset = 1.25,
     LifeBarSize = 2.5,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-        },
         Elevation = 15,
         FuelRechargeRate = 5,
         FuelUseTime = 2500,
@@ -252,7 +249,8 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 1,
     SizeZ = 3,
-    StrategicIconName = 'icon_bomber3_missile',
+    StrategicIconName = 'icon_bomber3_directfire',
+    StrategicIcon = 'missile',
     StrategicIconSortPriority = 55,
     Transport = {
         AirClass = true,

@@ -15,7 +15,24 @@ TConstructionStructureUnit = Class(ConstructionStructureUnit) {
 TEngineeringResourceStructureUnit = Class(TConstructionStructureUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         TConstructionStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        if __blueprints[self.BpId].Economy.NaturalProducer
+        and __blueprints[self.BpId].Economy.MaintenanceConsumptionPerSecondEnergy
+        and __blueprints[self.BpId].Economy.MaintenanceConsumptionPerSecondEnergy > 0 then
+            self:ForkThread(self.WatchProductionThread)
+        end
         ChangeState(self, self.ActiveState)
+    end,
+
+    WatchProductionThread = function(self)
+        --This fixes the issue NaturalProducer causes; which is that it stops paying attention to the maintenance
+        local massProduction = __blueprints[self.BpId].Economy.ProductionPerSecondMass or 0
+        --local energyProduction = __blueprints[self.BpId].Economy.ProductionPerSecondEnergy or 0
+        while not self.Dead do
+            coroutine.yield(11)
+            local r = self:GetResourceConsumed()
+            self:SetProductionPerSecondMass(massProduction * (self.MassProdAdjMod or 1) * r)
+            --self:SetProductionPerSecondEnergy(energyProduction * (self.EnergyProdAdjMod or 1) * r)
+        end
     end,
 
     OnDamage = function(self, instigator, amount, vector, damageType)

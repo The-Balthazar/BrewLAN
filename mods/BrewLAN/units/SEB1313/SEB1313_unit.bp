@@ -173,12 +173,13 @@ UnitBlueprint {
         BuildRate = 15,
         MaxBuildDistance = 15,
         BuildableCategory = {
-            'BUILTBYTIER1ENGINEER DEFENSE DIRECTFIRE UEF',
-            'BUILTBYTIER1ENGINEER DEFENSE ANTIAIR UEF',
-            'BUILTBYTIER1ENGINEER DEFENSE ANTINAVY UEF',
+            'BUILTBYTIER1ENGINEER TECH1 DEFENSE DIRECTFIRE UEF',
+            'BUILTBYTIER1ENGINEER TECH1 DEFENSE ANTIAIR UEF',
+            'BUILTBYTIER1ENGINEER TECH1 DEFENSE ANTINAVY UEF',
             'BUILTBYTIER3ENGINEER MASSSTORAGE UEF',
         },
         HalfPriceUpgradeFromID = 'ueb1303',
+        NaturalProducer = true, --This fixes the issue of it stopping producing if it consumes more than it produces
         MaintenanceConsumptionPerSecondEnergy = 4375,
         ProductionPerSecondMass = 15,
         BuildWhenAttackedByAir = 'ueb2104',

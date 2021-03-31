@@ -147,6 +147,7 @@ UnitBlueprint {
     SizeY = 1,
     SizeZ = 0.7,
     StrategicIconName = 'icon_node3_artillery',
+    StrategicIcon = 'sniper',
     StrategicIconSortPriority = 250,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

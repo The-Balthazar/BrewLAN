@@ -93,7 +93,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 19,
     Categories = {
-        'PRODUCTBREWAIR',
         'SELECTABLE',
         'BUILTBYTIER2FACTORY',
         'BUILTBYTIER3FACTORY',
@@ -179,8 +178,6 @@ UnitBlueprint {
                 Idle = false,
             },
         },
-        PlaceholderMeshName = 'UXA0002',
-        SpawnRandomRotation = false,
         UniformScale = 0.054,
     },
     Economy = {
@@ -200,17 +197,12 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Capture = false,
             RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
         },
         FactionName = 'UEF',
         Icon = 'air',
@@ -229,14 +221,6 @@ UnitBlueprint {
     LifeBarOffset = 0.65,
     LifeBarSize = 1.5,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
-        },
         Elevation = 18,
         FuelRechargeRate = 10,
         FuelUseTime = 500,
@@ -425,11 +409,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

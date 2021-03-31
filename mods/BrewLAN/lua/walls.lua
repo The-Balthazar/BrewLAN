@@ -8,7 +8,7 @@ function CardinalWallUnit(SuperClass)
             if not self.CachePosition then
                 self.CachePosition = table.copy(moho.entity_methods.GetPosition(self))
             end
-            self.bpID = self:GetBlueprint().BlueprintId
+            self.BpId = self:GetBlueprint().BlueprintId
             self.Info = {
                 ents = {
                     ['North'] = {
@@ -30,16 +30,16 @@ function CardinalWallUnit(SuperClass)
                 },
                 bones = {}
             }
-            for i, v in __blueprints[self.bpID].Display.AdjacencyConnectionInfo.Bones do
+            for i, v in __blueprints[self.BpId].Display.AdjacencyConnectionInfo.Bones do
                 self.Info.bones[i] = {}
                 for j, k in v do
                     self.Info.bones[i][j] = k
                 end
             end
-            if __blueprints[self.bpID].Display.AdjacencyConnection then
+            if __blueprints[self.BpId].Display.AdjacencyConnection then
                 self.BeamEffectsBag = {}
             end
-            if __blueprints[self.bpID].General.FactionName ~= 'UEF' then
+            if __blueprints[self.BpId].General.FactionName ~= 'UEF' then
                 self:BoneUpdate(self.Info.bones)
             end
             SuperClass.OnCreate(self)
@@ -47,7 +47,7 @@ function CardinalWallUnit(SuperClass)
 
         StartBeingBuiltEffects = function(self, builder, layer)
             SuperClass.StartBeingBuiltEffects(self, builder, layer)
-            if __blueprints[self.bpID].Display.Tarmacs[1] and self:GetCurrentLayer() == 'Land' and not self:HasTarmac() then
+            if __blueprints[self.BpId].Display.Tarmacs[1] and self:GetCurrentLayer() == 'Land' and not self:HasTarmac() then
                 if self.TarmacBag then
                     self:CreateTarmac(true, true, true, self.TarmacBag.Orientation, self.TarmacBag.CurrentBP)
                 else
@@ -156,7 +156,7 @@ function GateWallUnit(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
             SuperClass.OnCreate(self)
-            self.Slider = CreateSlider(self, __blueprints[self.bpID].Display.GateEffects.GateSliderBone or 0, 0, 0, 0, 10, true)
+            self.Slider = CreateSlider(self, __blueprints[self.BpId].Display.GateEffects.GateSliderBone or 0, 0, 0, 0, 10, true)
             self.Trash:Add(self.Slider)
         end,
 
@@ -167,21 +167,21 @@ function GateWallUnit(SuperClass)
         end,
 
         ToggleGate = function(self, order)
-            local depth = __blueprints[self.bpID].SizeY * 0.95
+            local depth = __blueprints[self.BpId].SizeY * 0.95
             if order == 'open' then
-                self:SetIntelRadius('vision', __blueprints[self.bpID].Intel.OpenVisionRadius or 0)
+                self:SetIntelRadius('vision', __blueprints[self.BpId].Intel.OpenVisionRadius or 0)
                 self.Slider:SetGoal(0, -depth, 0)
                 if self.blocker then
                     self.blocker:Destroy()
                     self.blocker = nil
                 else
                     --First time run
-                    self.blocker = CreateUnitHPR(__blueprints[self.bpID].FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
+                    self.blocker = CreateUnitHPR(__blueprints[self.BpId].FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
                     self.blocker:Destroy()
                     self.blocker = nil
                 end
-                if __blueprints[self.bpID].AI.TargetBones then
-                    for i, bone in __blueprints[self.bpID].AI.TargetBones do
+                if __blueprints[self.BpId].AI.TargetBones then
+                    for i, bone in __blueprints[self.BpId].AI.TargetBones do
                         if not self.TerrainSlope[bone] then
                             --hard coded version of OffsetBoneToTerrain(self, bone) from BrewLAN terrain utils file, for portablility.
 
@@ -193,22 +193,22 @@ function GateWallUnit(SuperClass)
                                 return GetTerrainHeight(pos[1],pos[3]) - pos[2]
                             end
 
-                            self.TerrainSlope[bone] = CreateSlider(self, bone, 0, GetBoneTerrainOffset(self, bone) * (1 / (__blueprints[self.bpID].Display.UniformScale or 1)), 0, 1000)
+                            self.TerrainSlope[bone] = CreateSlider(self, bone, 0, GetBoneTerrainOffset(self, bone) * (1 / (__blueprints[self.BpId].Display.UniformScale or 1)), 0, 1000)
                             ---
                         end
                     end
                 end
-                self:SetCollisionShape( 'Box', __blueprints[self.bpID].CollisionOffsetX or 0, __blueprints[self.bpID].CollisionOffsetY or 0, __blueprints[self.bpID].CollisionOffsetZ or 0, __blueprints[self.bpID].SizeX * 0.5, __blueprints[self.bpID].SizeY * 0.1, __blueprints[self.bpID].SizeZ * 0.5)
+                self:SetCollisionShape( 'Box', __blueprints[self.BpId].CollisionOffsetX or 0, __blueprints[self.BpId].CollisionOffsetY or 0, __blueprints[self.BpId].CollisionOffsetZ or 0, __blueprints[self.BpId].SizeX * 0.5, __blueprints[self.BpId].SizeY * 0.1, __blueprints[self.BpId].SizeZ * 0.5)
             end
             if order == 'close' then
-                self:SetIntelRadius('vision', __blueprints[self.bpID].Intel.VisionRadius or 5)
+                self:SetIntelRadius('vision', __blueprints[self.BpId].Intel.VisionRadius or 5)
                 self.Slider:SetGoal(0, 0, 0)
                 if not self.blocker then
-                    self.blocker = CreateUnitHPR(__blueprints[self.bpID].FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
+                    self.blocker = CreateUnitHPR(__blueprints[self.BpId].FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
                     self.Trash:Add(self.blocker)
                 end
-                if __blueprints[self.bpID].AI.TargetBones then
-                    for i, bone in __blueprints[self.bpID].AI.TargetBones do
+                if __blueprints[self.BpId].AI.TargetBones then
+                    for i, bone in __blueprints[self.BpId].AI.TargetBones do
                         if self.TerrainSlope[bone] then
                             self.TerrainSlope[bone]:Destroy()
                             self.TerrainSlope[bone] = nil

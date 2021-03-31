@@ -1,4 +1,4 @@
-name = "BrewLAN: AI"
+name = "BrewLAN AI"
 uid = "25D57D85-7D84-27HT-A501-BR3WAI0000000"
 version = 0
 copyright = "© 2018 Sean Wheeldon"

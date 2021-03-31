@@ -101,7 +101,7 @@ MineStructureUnit = Class(StructureUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         StructureUnit.OnStopBeingBuilt(self,builder,layer)
         if self:GetCurrentLayer() == 'Sub' then
-            local bp = __blueprints[self.bpID]
+            local bp = __blueprints[self.BpId]
             self.Trash:Add(CreateSlider(self, 0, 0, -1, 0, 5, true))
             self:SetCollisionShape('Box',
                 bp.CollisionOffsetX or 0,
@@ -118,7 +118,7 @@ MineStructureUnit = Class(StructureUnit) {
             self.blocker:Destroy()
         end
         --Force update of the cloak effect if there is a cloak mesh. For FAF graphics
-        if __blueprints[self.bpID].Display.CloakMeshBlueprint then
+        if __blueprints[self.BpId].Display.CloakMeshBlueprint then
             self:ForkThread(
                 function()
                     coroutine.yield(1)

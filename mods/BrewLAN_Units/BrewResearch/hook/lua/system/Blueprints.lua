@@ -262,6 +262,7 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
             Abilities = {
                 '<LOC ability_rnd_unlock>Research Unlock',
             },
+            --IconName = id,
             UniformScale = (bp.Display.UniformScale or 0.2) / sizescale, --calculate properly based on footprint size
         },
         Footprint = {

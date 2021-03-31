@@ -19,7 +19,7 @@ ResearchItem = Class(DummyUnit) {
             if self:CheckBuildRestrictionsAllow(bp.ResearchId) then
                 RemoveBuildRestriction(self:GetArmy(), categories[bp.ResearchId] )
             else
-                LOG("WARNING: Research item for " .. bp.ResearchId .. " was just completed, however lobby restrictions forbid it. Item shouldn't have been researchable.")
+                WARN("Research item for " .. bp.ResearchId .. " was just completed, however lobby restrictions forbid it. Item shouldn't have been researchable.")
             end
         else -- else we are a category, not a unitID
             RemoveBuildRestriction(self:GetArmy(), (categories[bp.ResearchId] * categories[string.upper(bp.General.FactionName or 'SELECTABLE')]) - categories.RESEARCHLOCKED - categories[bp.BlueprintId] - (self:BuildRestrictionCategories()) )
@@ -126,15 +126,15 @@ ResearchFactoryUnit = Class(FactoryUnit) {
 
     OnPreCreate = function(self)
         FactoryUnit.OnPreCreate(self)
-        if not self.bpID then
-            self.bpID = self:GetBlueprint().BlueprintId
+        if not self.BpId then
+            self.BpId = self:GetBlueprint().BlueprintId
         end
     end,
 
     OnStartBeingBuilt = function(self, creator, layer)
         local AIBrain = self:GetAIBrain()
         --LOG(table.getn(AIBrain:GetListOfUnits(categories.RESEARCHCENTRE, false)))
-        if AIBrain.BrainType ~= 'Human' and table.getn(AIBrain:GetListOfUnits(categories[self.bpID], false) ) > 0 then
+        if AIBrain.BrainType ~= 'Human' and table.getn(AIBrain:GetListOfUnits(categories[self.BpId], false) ) > 0 then
             self:Destroy()
         end
         FactoryUnit.OnStartBeingBuilt(self, creator, layer)
@@ -267,7 +267,7 @@ WindEnergyCreationUnit = Class(EnergyCreationUnit) {
         -- Calculate energy values
         ------------------------------------------------------------------------
         if not WindEnergyMin and not WindEnergyRange then
-            LOG("Defining wind turbine energy output value range.")
+            SPEW("Defining wind turbine energy output value range.")
             local bp = self:GetBlueprint().Economy
             local mean = bp.ProductionPerSecondEnergy or 17.5
             local min = bp.ProductionPerSecondEnergyMin or 5
@@ -352,7 +352,7 @@ TidalEnergyCreationUnit = Class(EnergyCreationUnit) {
         -- Calculate energy values
         ------------------------------------------------------------------------
         if not TidalEnergyMin and not TidalEnergyRange then
-            LOG("Defining tidal generator energy output value range.")
+            SPEW("Defining tidal generator energy output value range.")
             --------------------------------------------------------------------
             -- Check check values to make sure another mod didn't change them
             --------------------------------------------------------------------
@@ -377,7 +377,7 @@ TidalEnergyCreationUnit = Class(EnergyCreationUnit) {
             --------------------------------------------------------------------
             TidalEnergyMin = min + (range * math.min(wR1,wR2))
             TidalEnergyRange = min + (range * math.max(wR1,wR2)) - TidalEnergyMin
-            LOG("Map tidal strength defined as: " .. TidalEnergyMin .. "–" .. TidalEnergyMin + TidalEnergyRange)
+            SPEW("Map tidal strength defined as: " .. TidalEnergyMin .. "–" .. TidalEnergyMin + TidalEnergyRange)
         end
         ------------------------------------------------------------------------
         -- Run the thread

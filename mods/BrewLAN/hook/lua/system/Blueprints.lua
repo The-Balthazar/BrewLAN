@@ -151,7 +151,7 @@ function CheckBuildCatConsistsOfRealCats(real_categories, buildcat)
         )
         return invalidcats == 0
     else
-        LOG("WARNING: Function 'CheckBuildCatConsistsOfRealCats' requires two args; an array of strings, and a string. Recieved " .. type(real_categories) .. " and " .. type(buildcat) .. ".")
+        WARN("Function 'CheckBuildCatConsistsOfRealCats' requires two args; an array of strings, and a string. Recieved " .. type(real_categories) .. " and " .. type(buildcat) .. ".")
         return false
     end
 end
@@ -875,7 +875,7 @@ function BrewLANMatchBalancing(all_bps)
             local tid = data.TargetID
             local Affects = data.Affects or {'Economy'}
             if all_bps[unitid] and (all_bps[tid[1]] and all_bps[tid[2]] or all_bps[tid]) then
-                LOG("Syncronising balance for " .. unitid)
+                SPEW("Syncronising balance for " .. unitid)
                 for i, tablename in Affects do
                     if tablename ~= 'Shield' then
                         for key, val in  all_bps[unitid][tablename] do
@@ -1073,15 +1073,45 @@ function BrewLANMegalithEggs(all_bps)
             if bp.Categories and table.find(bp.Categories, 'MEGALITHEGG') then
                 copyTableNoReplace(baseEgg, bp)
                 table.insert(all_bps['xrl0403'].Economy.BuildableCategory, bp.BlueprintId)
+
+                bp.BuildIconSortPriority = all_bps[bp.Economy.BuildUnit].BuildIconSortPriority
+                bp.StrategicIconName = all_bps[bp.Economy.BuildUnit].StrategicIconName
+
                 bp.Economy.BuildCostEnergy = all_bps[bp.Economy.BuildUnit].Economy.BuildCostEnergy
                 bp.Economy.BuildCostMass = all_bps[bp.Economy.BuildUnit].Economy.BuildCostMass
                 bp.Economy.BuildTime = all_bps[bp.Economy.BuildUnit].Economy.BuildTime
+
                 bp.General.Icon = all_bps[bp.Economy.BuildUnit].General.Icon
-                if string.lower(all_bps[bp.Economy.BuildUnit].Physics.MotionType) == "ruleumt_amphibious" then
-                    if not bp.Physics.BuildOnLayerCaps then
-                        bp.Physics.BuildOnLayerCaps = { LAYER_Land = true }
-                    end
-                    bp.Physics.BuildOnLayerCaps.LAYER_Seabed = true
+
+                if bp.Size then
+                    bp.Footprint.SizeX = bp.Size
+                    bp.Footprint.SizeZ = bp.Size
+                    bp.SizeX = bp.Size
+                    bp.SizeY = bp.Size
+                    bp.SizeZ = bp.Size
+                    bp.Display.UniformScale = bp.Display.UniformScale * bp.Size
+                    bp.LifeBarOffset = bp.LifeBarOffset * bp.Size
+                    bp.LifeBarSize = bp.Size
+                    bp.SelectionSizeX = 0.65 * bp.Size
+                    bp.SelectionSizeZ = 0.65 * bp.Size
+                end
+
+                if all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Hover'
+                or all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_AmphibiousFloating' then
+                    BuildOnLayerCaps = {
+                        LAYER_Land = true,
+                        LAYER_Water = true,
+                    }
+                elseif all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Amphibious' then
+                    BuildOnLayerCaps = {
+                        LAYER_Land = true,
+                        LAYER_Seabed = true,
+                    }
+                elseif all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_SurfacingSub'
+                or all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Water' then
+                    BuildOnLayerCaps = {
+                        LAYER_Water = true,
+                    }
                 end
             end
         end
@@ -1258,7 +1288,7 @@ function BrewLANGenerateFootprintDummy(all_bps, id, bp)
                 all_bps[dummyID].Economy.BuildableCategory = {dummyID}
             end]]
 
-            LOG("Creating footprint dummy unit: " .. dummyID)
+            SPEW("Creating footprint dummy unit: " .. dummyID)
         end
         bp.FootprintDummyId = dummyID
     end

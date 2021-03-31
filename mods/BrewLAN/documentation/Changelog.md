@@ -672,6 +672,47 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Penetrators: Fixed the Condor only being buildable from T3 factories.
   * Changed the build menu sorting of the T1 torpedo bombers and T1 gunships.
 
+  ### 2021-03-20
+
+  * Penetrators: Cleaned up the blueprints.
+  * Bletchley Park: Set the footprint of the UEF T4 mobile sensor to 6x6 so it gets the `IgnoreStructures` flag.
+  * Fixed the Independance Engine having the 'LAND' category instead of 'AIR'.
+  * Gave the Gantry the AIR and NAVAL categories to account for it being able to do those.
+  * Did some work on the updated auto-icon-selection scripts that supercede EIO.
+
+  ### 2021-03-21
+
+  * TeaParty: No longer removes the `SHIELD` category from units with large `ShieldProjectionRadius` values but a small `ShieldSize` value. So basically just the Pillar of Prominence.
+
+  ### 2021-03-25
+
+  * Penetrators: Changed the build sorting of the Raptor to always be before the Janus.
+  * Did some more work on the strategic icon overhaul.
+
+  ### 2021-03-27
+
+  * Cleaned up the BrewLAN Megalith egg stuff.
+  * Crystal Hill: Cleaned up the blueprints.
+
+  ### 2021-03-28
+
+  * Penetrators: Changed the ID of the Cybran T2 Fighter to be more consistent with the rest of the mod.
+  * Fixed categories of Vaxis being copies of Burning Star.
+
+  ### 2021-03-30
+
+  * R&D: Fixed research items of mods loaded after R&D not having build descriptions.
+
+  ### 2021-03-31
+
+  * Fixed UEF engineering resource structures not producing if their active consumption is higher than their production.
+  * Restricted the UEF engineering resource structures to only building tech 1 defences, even on R&D.
+  * 'Fixed' the BpId key name being inconsistent.
+  * Changed a few persistent LOG functions to use SPEW instead.
+  * Removed `Experimental Icons Overhaul`.
+  * New mod: `Strategic Icons Overhaul`; replaces EIO, and effects all tech levels. Comes with 3 graphical variants.
+  * Changed the icons of the BrewLAN UI mods.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

@@ -93,7 +93,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 42,
     Categories = {
-        'PRODUCTBREWAIR',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'AEON',
@@ -235,9 +234,6 @@ UnitBlueprint {
     LifeBarOffset = 1.45,
     LifeBarSize = 2.2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-        },
         Elevation = 15,
         FuelRechargeRate = 15,
         FuelUseTime = 2500,
@@ -255,7 +251,8 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 0.8,
     SizeZ = 3.5,
-    StrategicIconName = 'icon_bomber3_missile',
+    StrategicIconName = 'icon_bomber3_directfire',
+    StrategicIcon = 'missile',
     StrategicIconSortPriority = 55,
     Transport = {
         AirClass = true,

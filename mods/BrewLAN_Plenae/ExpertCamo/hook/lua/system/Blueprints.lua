@@ -248,7 +248,7 @@ function ExtractCustomSkinMeshBlueprint(bp, tt, textures, directory)
     if not bp.Display[directory] then bp.Display[directory] = {} end
     bp.Display[directory][tt] = buildmeshbp.BlueprintId
     MeshBlueprint(buildmeshbp)
-    LOG("created mesh blueprint '" .. buildmeshbp.BlueprintId .. "'. Linked at " .. bp.BlueprintId .. ".Display." .. directory .. "." .. tt )
+    SPEW("created mesh blueprint '" .. buildmeshbp.BlueprintId .. "'. Linked at " .. bp.BlueprintId .. ".Display." .. directory .. "." .. tt )
 end
 --------------------------------------------------------------------------------
 -- like table.find, but checks substrings.

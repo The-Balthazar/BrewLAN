@@ -10,7 +10,7 @@ local OldModBlueprints = ModBlueprints
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
 
-    CheckUnitHasCorrectIcon(all_blueprints.Unit)
+    --CheckUnitHasCorrectIcon(all_blueprints.Unit)
 
     --ListAllUnitsNamesDescriptionsForRNN(all_blueprints.Unit)
     --CheckLOCTags(all_blueprints.Unit)

@@ -51,7 +51,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 32,
     Categories = {
-        'PRODUCTBREWAIR',
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
         'SERAPHIM',
@@ -137,7 +136,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 120000,
         BuildCostMass = 1200,
-        BuildTime = 3000*2.25,
+        BuildTime = 6750,
         ResearchMultEnergy = 0.2,
         MaintenanceConsumptionPerSecondEnergy = 75,
     },
@@ -184,10 +183,6 @@ UnitBlueprint {
     LifeBarOffset = 0.95,
     LifeBarSize = 1.25,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = true,
-            LAYER_Land = true,
-        },
         Elevation = 25,
         FuelRechargeRate = 5,
         FuelUseTime = 2500,

@@ -55,8 +55,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'XSC9002',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_seraphim_01_albedo',
@@ -111,19 +109,16 @@ UnitBlueprint {
     LifeBarOffset = 0.6,
     LifeBarSize = 1,
     Physics = {
-        BankingSlope = 0,
         DragCoefficient = 0.2,
         FlattenSkirt = true,
         MeshExtentsX = 1,
         MeshExtentsY = 1,
         MeshExtentsZ = 1,
-        MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-        TurnRate = 0,
     },
     SelectionSizeX = 0.7,
     SelectionSizeZ = 0.7,

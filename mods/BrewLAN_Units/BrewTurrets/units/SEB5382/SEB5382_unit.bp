@@ -101,6 +101,7 @@ UnitBlueprint {
     SizeY = 0.8,
     SizeZ = 0.6,
     StrategicIconName = 'icon_node3_cross',
+    StrategicIcon = 'cross',
     StrategicIconSortPriority = 250,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

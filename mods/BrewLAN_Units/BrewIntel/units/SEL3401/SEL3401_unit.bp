@@ -138,6 +138,10 @@ UnitBlueprint {
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
     },
+    Footprint = {
+        SizeX = 6,
+        SizeZ = 6,
+    },
     General = {
         Category = 'Experimental',
         Classification = 'RULEUC_Sensor',

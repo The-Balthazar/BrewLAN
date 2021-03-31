@@ -9,14 +9,14 @@ do
 
         OnPreCreate = function(self)
             UnitOld.OnPreCreate(self)
-            if not self.bpID then
-                self.bpID = self:GetBlueprint().BlueprintId
+            if not self.BpId then
+                self.BpId = self:GetBlueprint().BlueprintId
             end
         end,
 
         OnStopBeingBuilt = function(self,builder,layer, ...)
             UnitOld.OnStopBeingBuilt(self,builder,layer, unpack(arg))
-            local bp = __blueprints[self.bpID]
+            local bp = __blueprints[self.BpId]
 
             --
             -- For buildings that don't flatten skirt to slope with the terrain
@@ -76,7 +76,7 @@ do
             local pos = self:GetPosition()
             local FallenD = ImpactY - pos[2]
             self:SetStunned(FallenD * 3)
-            local bp = __blueprints[self.bpID]
+            local bp = __blueprints[self.BpId]
             self:OnDamage(self, (bp.Defense.MaxHealth or 300) * (bp.SizeX or 1) * (bp.SizeY or 1) * (bp.SizeZ or 1) * (FallenD / 15), pos, 'Normal')
         end,
 
@@ -114,11 +114,11 @@ do
                 local usedcap, maxcap = 0, 0
                 -- Calculate max capacity
                 for i, v in uplinks do
-                    maxcap = maxcap + (__blueprints[v.bpID].General.SatelliteCapacity or 1)
+                    maxcap = maxcap + (__blueprints[v.BpId].General.SatelliteCapacity or 1)
                 end
                 -- calculate used capacity
                 for i, v in satellites do
-                    usedcap = usedcap + (__blueprints[v.bpID].General.CapCost or 1)
+                    usedcap = usedcap + (__blueprints[v.BpId].General.CapCost or 1)
                     -- Prevent preventable satellite explosions
                     if v.UnguidedOrbitalDecay then
                         v:StopUnguidedOrbitalDecay(v)
@@ -158,7 +158,7 @@ do
                 local ImpactEffects = {}
                 local ImpactEffectScale = 1
                 local army = other:GetArmy()
-                local bp = __blueprints[other.bpID]
+                local bp = __blueprints[other.BpId]
                 local bpAud = bp.Audio
                 local snd = bpAud['Impact'..'Unit']
                 if snd then
@@ -183,7 +183,7 @@ do
         -- UI/control fix so units that don't usually have a stop button can stop upgrading.
         --
         OnStartBuild = function(self, unitBeingBuilt, order, ...)
-            local myBp = __blueprints[self.bpID]
+            local myBp = __blueprints[self.BpId]
             if myBp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == myBp.General.UpgradesTo and order == 'Upgrade' then
                 if not myBp.General.CommandCaps.RULEUCC_Stop then
                     self:AddCommandCap('RULEUCC_Stop')
