@@ -712,6 +712,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Removed `Experimental Icons Overhaul`.
   * New mod: `Strategic Icons Overhaul`; replaces EIO, and effects all tech levels. Comes with 3 graphical variants.
   * Changed the icons of the BrewLAN UI mods.
+  * Crystal Hill: Fixed the objective marker script searching the whole map for objective markers and using the first it finds.
+    * Now it searches just the centre of the map, and checks which is closest to the centre.
 
 ## 2019-10-13|0.8.9
 

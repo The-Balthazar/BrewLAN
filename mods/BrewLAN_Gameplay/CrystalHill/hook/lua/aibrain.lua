@@ -11,12 +11,27 @@ AIBrain = Class(AIBrain) {
         local posZ = ScenarioInfo.size[2]/2
         --Look for some pre-defined positions
         local predefinedpos = false
-        local objectivemarkers = import('/lua/ai/AIUtilities.lua').AIGetMarkersAroundLocation( self, 'Objective', {posX, posY, posZ}, ScenarioInfo.size[1] * 0.7071 )
-        if objectivemarkers[1] then
+        local objectivemarkers = import('/lua/ai/AIUtilities.lua').AIGetMarkersAroundLocation( self, 'Objective', {posX, posY, posZ}, ScenarioInfo.size[1] * 0.125 )
+        if objectivemarkers[1] and not objectivemarkers[2] then
             posX = objectivemarkers[1].Position[1]
             posZ = objectivemarkers[1].Position[3]
             predefinedpos = true
             LOG("Using map-defined crystal location.")
+
+        elseif objectivemarkers[2] then
+            local dist = VDist2Sq(posX, posZ, objectivemarkers[1].Position[1], objectivemarkers[1].Position[3])
+            local best = objectivemarkers[1]
+            for i = 2, table.getn(objectivemarkers) do
+                local c = VDist2Sq(posX, posZ, objectivemarkers[i].Position[1], objectivemarkers[i].Position[3])
+                if c < best then
+                    best = objectivemarkers[i]
+                    dist = c
+                end
+            end
+
+            posX = best.Position[1]
+            posZ = best.Position[3]
+            predefinedpos = true
         end
         --Set up to spawn the thing
         self:ForkThread(function()
