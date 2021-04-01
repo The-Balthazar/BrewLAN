@@ -1,0 +1,14 @@
+name = "Stonks"
+uid = "stonksc5-f109-4145-b83f-a0b589087460"
+version = 1
+copyright = "© 2021 Sean Wheeldon"
+description = "I'm having a stronk."
+author = "Balthazar"
+icon = "/mods/brewlan_plenae/stonks/folder.png"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+conflicts = {  }
+before = {  }
+after = {  }

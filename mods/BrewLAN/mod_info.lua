@@ -1,7 +1,7 @@
 name = "BrewLAN"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N000089" -- this is UID hard coded in the brew_AI mod_info.lua
-version = 0.89
-copyright = "© 2009–2018 Sean Wheeldon"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N0000891" -- this is UID hard coded in the brew_AI mod_info.lua
+version = 0.891
+copyright = "© 2009–2021 Sean Wheeldon"
 description = "Adds a large number of units and changes a number of existing units."
 author = "Balthazar"
 icon = "/mods/BrewLAN/documentation/brewlan.png"

@@ -16,7 +16,7 @@ AIBrain = Class(AIBrain) {
             posX = objectivemarkers[1].Position[1]
             posZ = objectivemarkers[1].Position[3]
             predefinedpos = true
-            LOG("Using map-defined crystal location.")
+            SPEW("Using objective marker in the middle area of map for Crystal position.")
 
         elseif objectivemarkers[2] then
             local dist = VDist2Sq(posX, posZ, objectivemarkers[1].Position[1], objectivemarkers[1].Position[3])
@@ -28,6 +28,7 @@ AIBrain = Class(AIBrain) {
                     dist = c
                 end
             end
+            SPEW("Using objective marker closest to the middle of the map for Crystal position.")
 
             posX = best.Position[1]
             posZ = best.Position[3]
@@ -36,7 +37,7 @@ AIBrain = Class(AIBrain) {
         --Set up to spawn the thing
         self:ForkThread(function()
             --Wait a second so starting units are there.
-            WaitTicks(1)
+            coroutine.yield(1)
             --If we don't have a pre-defined position, then steal the pos of a civilian structure near where we want, if available
             if not predefinedpos then
                 local civs = self:GetUnitsAroundPoint(categories.STRUCTURE, Vector(posX, 0, posZ), 5)
@@ -46,7 +47,7 @@ AIBrain = Class(AIBrain) {
                         if v:GetAIBrain().Nickname == "civilian" then
                             if i == 1 then
                                 posX, posY, posZ = unpack(v:GetPosition())
-                                LOG("Using central positioned civilian building as crystal location.")
+                                DPEW("Using central positioned civilian building as crystal location.")
                             end
                             v:Destroy()
                         end

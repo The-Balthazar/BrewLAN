@@ -666,6 +666,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Expert Camo: Included a fix for the vanilla terrain type issue by just overwriting the function.
   * Water Guard: Some optimisations.
 
+  ### 2021-03-12
+
+  * Stonks.
+
   ### 2021-03-19
 
   * Penetrators: Added a Cybran T2 Combat Fighter.
@@ -714,6 +718,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed the icons of the BrewLAN UI mods.
   * Crystal Hill: Fixed the objective marker script searching the whole map for objective markers and using the first it finds.
     * Now it searches just the centre of the map, and checks which is closest to the centre.
+
+  ### 2021-04-01
+
+  * Released the Stonks.
+  * Updated the version number in the mod_info that should have been updated years ago to not match the release.
 
 ## 2019-10-13|0.8.9
 
