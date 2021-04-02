@@ -54,24 +54,12 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 50,
-                    ShaderName = 'Aeon',
-                    MeshName = '/units/uab1301/uab1301_lod0.scm',
-                    AlbedoName = '/units/uab1301/uab1301_albedo.dds',
-                    NormalsName = '/units/uab1301/uab1301_normalsTS.dds',
-                    SpecularName = '/units/uab1301/uab1301_specteam.dds',
-                },
-                {
                     LODCutoff = 130,
                     ShaderName = 'Aeon',
-                    MeshName = '/units/uab1301/uab1301_lod1.scm',
-                    AlbedoName = '/units/uab1301/uab1301_lod1_albedo.dds',
-                    NormalsName = '/units/uab1301/uab1301_lod1_normalsTS.dds',
-                    SpecularName = '/units/uab1301/uab1301_lod1_specteam.dds',
                 },
             },
         },
-        UniformScale = 0.005,
+        UniformScale = 0.04,
     },
     Economy = {
         BuildCostEnergy = 405000,

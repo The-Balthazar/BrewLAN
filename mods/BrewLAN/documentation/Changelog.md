@@ -724,6 +724,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Released the Stonks.
   * Updated the version number in the mod_info that should have been updated years ago to not match the release.
 
+  ### 2021-04-02
+
+  * Replaced the models of the Aeon T2 & T3 mines.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

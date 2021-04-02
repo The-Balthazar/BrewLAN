@@ -46,7 +46,7 @@ AIBrain = Class(AIBrain) {
                         --LOG(v:GetAIBrain().Nickname)
                         if v:GetAIBrain().Nickname == "civilian" then
                             if i == 1 then
-                                posX, posY, posZ = unpack(v:GetPosition())
+                                posX, posY, posZ = v:GetPositionXYZ()
                                 DPEW("Using central positioned civilian building as crystal location.")
                             end
                             v:Destroy()
