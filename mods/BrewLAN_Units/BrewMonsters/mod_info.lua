@@ -1,8 +1,8 @@
 name = "BrewLAN: Magnum Dong"
-uid = "25D57D85-9JA7-D842-BREW-MAGNUMD000001"
-version = 1
-copyright = "© 2018–2020 Sean Wheeldon"
-description = "Adds great girthy experimental fighty things."
+uid = "25D57D85-9JA7-D842-BREW-MAGNUMD000002"
+version = 2
+copyright = "© 2018–2021 Sean Wheeldon"
+description = "Adds a Cybran experimental mobile artillery."
 author = "Balthazar"
 icon = "/mods/BrewLAN_Units/BrewMonsters/mod_icon.png"
 selectable = true

@@ -727,6 +727,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-04-02
 
   * Replaced the models of the Aeon T2 & T3 mines.
+  * Moved Suedath-Zmara from Magnum Dong to BrewLAN.
+  * Fixed the Suedath-Zmara not having defined translation strings for build description and button toggle tooltips.
+  * Magnum Dong: Changed the icon and description to reflect that Zmara isn't in it anymore.
 
 ## 2019-10-13|0.8.9
 

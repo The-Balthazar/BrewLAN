@@ -206,6 +206,7 @@ Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amph
 Description['sal0401'] = "<LOC Unit_Description_BrewLAN_T4L002>Experimental hovering siege assault tank. Equipped with a powerful oblivion cannon and tactical missile defenses."
 Description['srl0401'] = "<LOC Unit_Description_BrewLAN_T4L003>Experimental amphibious transport. Travels faster underwater. Equipped with moderate-power general-purpose weapons."
 Description['ssl0404'] = "<LOC Unit_Description_BrewLAN_T4L004>Experimental mobile sniper bot. Only visible to omni while static and not firing."
+Description['ssl0405'] = "<LOC Unit_Description_BrewLAN_T4L005>Massive experimental bot. Equipped with anterior cephalic Thau cannons, superior dorsal Sinn Unthe cannons, ventral Uall Cavitation torpedo weapons, and carapace mounted Olaris anti-air cannons. Features the ability to extend vertically for increased weapon range, and to swim to engage surface naval craft, with the power to terminate almost any target."
 
 --Experimental other
 Description['sea0401'] = "<LOC Unit_Description_BrewLAN_T4A001>Experimental gunship with extensive anti-air capabilities. Most effective against other gunships."

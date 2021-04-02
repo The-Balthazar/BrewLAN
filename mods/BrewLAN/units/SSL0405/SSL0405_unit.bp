@@ -69,10 +69,10 @@ UnitBlueprint {
             '<LOC ability_torpedodef>Torpedo Defense',
             '<LOC ability_deathaoe>Volatile',
         },
-        AnimationActivate = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAwakenLand.sca',
+        AnimationActivate = '/mods/BrewLAN/units/SSL0405/SSL0405_AAwakenLand.sca',
         AnimationDeath = {
             {
-                Animation = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_ADeath_Land_001.sca',
+                Animation = '/mods/BrewLAN/units/SSL0405/SSL0405_ADeath_Land_001.sca',
                 AnimationRateMax = 1,
                 AnimationRateMin = 1,
                 Weight = 1,
@@ -80,13 +80,13 @@ UnitBlueprint {
         },
         LandAnimationDeath = {
             {
-                Animation = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_ADeath_Land_001.sca',
+                Animation = '/mods/BrewLAN/units/SSL0405/SSL0405_ADeath_Land_001.sca',
                 AnimationRateMax = 1.1,
                 AnimationRateMin = 0.9,
                 Weight = 5,
             },
             {
-                Animation = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_ADeath_Land_002.sca',
+                Animation = '/mods/BrewLAN/units/SSL0405/SSL0405_ADeath_Land_002.sca',
                 AnimationRateMax = 2.9,
                 AnimationRateMin = 2.5,
                 Weight = 2,
@@ -94,27 +94,27 @@ UnitBlueprint {
         },
         WaterAnimationDeath = {
             {
-                Animation = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_ADeath_Water_001.sca',
+                Animation = '/mods/BrewLAN/units/SSL0405/SSL0405_ADeath_Water_001.sca',
                 AnimationRateMax = 1.1,
                 AnimationRateMin = 0.95,
                 Weight = 1,
             }
         },
         AnimationsIdle = {
-            Bob = {Animation = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AIdleBob.sca', Rate = 1},
-            Wag = {Animation = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AIdleWag.sca', Rate = 1},
-            WalkEnd = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AIdleWalkEnd.sca',
-            Stretch = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AIdleStretch.sca',
+            Bob = {Animation = '/mods/BrewLAN/units/SSL0405/SSL0405_AIdleBob.sca', Rate = 1},
+            Wag = {Animation = '/mods/BrewLAN/units/SSL0405/SSL0405_AIdleWag.sca', Rate = 1},
+            WalkEnd = '/mods/BrewLAN/units/SSL0405/SSL0405_AIdleWalkEnd.sca',
+            Stretch = '/mods/BrewLAN/units/SSL0405/SSL0405_AIdleStretch.sca',
         },
         AnimationsMove = {
-            Walk = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AWalk.sca',
-            WalkSlow = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AWalkSlow.sca',
-            WalkTall = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AWalkTall.sca',
-            Swim = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_ASwimBreastStroke.sca',
+            Walk = '/mods/BrewLAN/units/SSL0405/SSL0405_AWalk.sca',
+            WalkSlow = '/mods/BrewLAN/units/SSL0405/SSL0405_AWalkSlow.sca',
+            WalkTall = '/mods/BrewLAN/units/SSL0405/SSL0405_AWalkTall.sca',
+            Swim = '/mods/BrewLAN/units/SSL0405/SSL0405_ASwimBreastStroke.sca',
         },
-        AnimationTallStance = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AStandTall.sca',
-        AnimationTransformLandWater = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_ALandWaterTransition.sca',
-        AnimationTransformWaterLand = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AWaterLandTransition.sca',
+        AnimationTallStance = '/mods/BrewLAN/units/SSL0405/SSL0405_AStandTall.sca',
+        AnimationTransformLandWater = '/mods/BrewLAN/units/SSL0405/SSL0405_ALandWaterTransition.sca',
+        AnimationTransformWaterLand = '/mods/BrewLAN/units/SSL0405/SSL0405_AWaterLandTransition.sca',
         AnimationWalkRate = 3.5,
         AnimationWalkRateTall = 2.75,
         AnimationSwimRate = 1,
@@ -490,8 +490,8 @@ UnitBlueprint {
         { -- mouth weapon
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AnimationAttack = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAttackPincers.sca',
-            AnimationEat = '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAttackMandibles.sca',--[[
+            AnimationAttack = '/mods/BrewLAN/units/SSL0405/SSL0405_AAttackPincers.sca',
+            AnimationEat = '/mods/BrewLAN/units/SSL0405/SSL0405_AAttackMandibles.sca',--[[
             Audio = {
                 Fire = Sound {
                     Bank = 'UALWeapon',
@@ -574,9 +574,9 @@ UnitBlueprint {
             Blades = {
                 {
                     Animations = {
-                        '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAttackClaw_R_001.sca',
-                        '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAttackClaw_R_002.sca',
-                        '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAttackClaw_R_003.sca',
+                        '/mods/BrewLAN/units/SSL0405/SSL0405_AAttackClaw_R_001.sca',
+                        '/mods/BrewLAN/units/SSL0405/SSL0405_AAttackClaw_R_002.sca',
+                        '/mods/BrewLAN/units/SSL0405/SSL0405_AAttackClaw_R_003.sca',
                     },
                     MuzzleBones = {
                         'Leg_Blade_Beam_R',
@@ -609,7 +609,7 @@ UnitBlueprint {
                 },
                 {
                     Animations = {
-                        '/mods/BrewLAN_Units/BrewMonsters/units/SSL0405/SSL0405_AAttackClaw_L_001.sca',
+                        '/mods/BrewLAN/units/SSL0405/SSL0405_AAttackClaw_L_001.sca',
                     },
                     MuzzleBones = {
                         'Leg_Blade_Beam_L',

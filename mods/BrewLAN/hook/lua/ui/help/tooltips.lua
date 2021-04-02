@@ -122,3 +122,10 @@ Tooltips['toggle_weapon_AA_TMD'] = {
     description = "<LOC tooltipbrewlan0032>Toggle between anti-air target priority and tactical missile target priority.",
     keyID = "toggle_weapon_AA_TMD",
 }
+
+--Arthrobot
+Tooltips['arthrobot_stance'] = {
+    title = "<LOC tooltipbrewlan0035>Overextend Toggle",
+    description = "<LOC tooltipbrewlan0036>Increases direct fire weapon ranges but sacrifices movement speed and costs energy while active.",
+    keyID = "arthrobot_stance",
+}
