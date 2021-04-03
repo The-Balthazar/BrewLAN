@@ -12,6 +12,9 @@ SDFGapingMaw = Class(DefaultBeamWeapon) {
     FxMuzzleFlash = {},
 
     PlayFxBeamStart = function(self, muzzle)
+        if self.unit.Dead then
+            return
+        end
         local target = self:GetCurrentTarget()
         local bp = self:GetBlueprint()
         if not target or not EntityCategoryContains(categories.ALLUNITS - categories.STRUCTURE, target) then
@@ -418,6 +421,9 @@ SMeleeBladeBeamWeapon = Class(Weapon) {
     end,
 
     PlayFxBeamStart = function(self, muzzle)
+        if self.unit.Dead then
+            return
+        end
         local army = self.unit:GetArmy()
         local bp = self:GetBlueprint()
         local beam

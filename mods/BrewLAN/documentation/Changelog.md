@@ -731,6 +731,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the Suedath-Zmara not having defined translation strings for build description and button toggle tooltips.
   * Magnum Dong: Changed the icon and description to reflect that Zmara isn't in it anymore.
 
+  ### 2021-04-03
+
+  * Fixed some potential warnings related to Zmara dying while using one of its melee weapons.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
