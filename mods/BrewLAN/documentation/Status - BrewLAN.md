@@ -45,10 +45,9 @@
 ### Aeon:
 * T2 Mass Storage
 * T2 Energy Storage
-* T2 Bomber
+* T2 Tactical Bomber
 * T2 Defense Engineer
 * T2 Proximity Mine
-  * Lacks a unique model.
 * T2 Heavy Wall.
 * T2 Mobile tactical missile defense
 * T2 Decoy Plane.
@@ -86,7 +85,7 @@
 
 #### Land
 * T3 Armored Assault Tank
-* T3 Field engineer
+* T3 Defense Engineer
 * T3 Mobile Strategic Missile Defense.
 * T3 Mobile Shield Gen.
 * T3 Mobile AA.
@@ -95,7 +94,6 @@
 #### Structure
 * T3 Heavy Point Defense.
 * T3 Nuke Mine
-  * Lacks a unique model.
 * T3 Anti-Armor Point Defense.
 * T3 Shielded Mass Fabricator.
   * Lacks a unique model.
@@ -156,7 +154,7 @@
 * T3 Field Engineering Ship.
   * Replace model
 
-#### Finished:
+#### Structure:
 * T3 Anti-Armor Point Defense.
 * T3 Armored Wall Section.
 * T3 Armored Gate Section.
@@ -167,12 +165,12 @@
   * T3 Counterintelligence Satellite.
 * T3 Nuke Mine.
   * Replace model
-
-#### Bugged:
-* The following stop producing if their active consumption is greater than active production: (Vanilla code issue)
-  * T3 Engineering Power Generator.
-  * T3 Engineering Mass Fabricator (lacks a unique model, aims from nothing).
-  * T3 Engineering Mass Extractor (lacks a unique model, aims from nothing).
+* T3 Engineering Power Generator.
+  * Replace model?
+* T3 Engineering Mass Fabricator.
+  * Replace model
+* T3 Engineering Mass Extractor.
+  * Replace model
 
 #### Pending:
 * T3 Engineering Station (3)
@@ -222,14 +220,14 @@
 |**Strategic 1**   |*Mavor*        |*Salvation*    |Scathis MK2    |Suthanus       |
 |**Strategic 2**   |Ivan        (F)|`*`            |`*`            |*Yolona Oss*   |
 |                  |               |               |               |               |
-|**Intel**         |Panopticon     | —             |Darkness       | —             |
-|**Transport**     | —             |`Teleporter`   | —             |Quantum Gateway|
+|**(Counter)Intel**|Panopticon     | —             |Darkness       | —             |
+|**Transport**     |Ivan        (F)|`Teleporter`   |Abyss Crawler  |Quantum Gateway|
 |                  |               |               |               |               |
-|**Assault**       |`*`            |*G. Colossus*  |*Mokeylord*    |*Ythotha*      |
-|**Support**       |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|Iyadesu     (F)|
-|**Support 2**     |               |               |               |Sisha-Ah       |
+|**Assault**       |`*`            |*G. Colossus*  |*Monkeylord*   |*Ythotha*      |
+|**Engi/Support**  |*Fatboy*    (F)|               |*Megalith*  (F)|Iyadesu     (F)|
+|**Siege/Sniper**  |*Fatboy*    (F)|Absolution     |*Megalith*  (F)|Sisha-Ah       |
 |**Flying**        |Centurion      |*CZAR*     (AF)|*Soulripper*   |*Ahwassa*      |
-|**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|Abyss Crawler  |`Zmara?`       |
+|**Naval**         |*Atlantis* (AF)|*Tempest*   (F)|`*`            |Suedath-Zmara  |
 
 |Key|Value
 |:-:|---|

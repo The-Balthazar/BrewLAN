@@ -735,6 +735,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed some potential warnings related to Zmara dying while using one of its melee weapons.
   * Fixed the seam on and minor shading issues on the Cybran T1 air staging.
+  * Added some extra lights to the Cybran T1 air staging.
+  * R&D: Set the category dump unit to be unspawnable.
+  * Replaced the model of the Rupture.
 
 ## 2019-10-13|0.8.9
 

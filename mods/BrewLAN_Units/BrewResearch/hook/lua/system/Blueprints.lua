@@ -424,7 +424,7 @@ end
 
 function DumpOldBuiltByCategories(all_bps, cat)
     --This dumping of old categories is so that they remain valid categories, but categories that do nothing when other mods affect and reference them.
-    if not all_bps.zzz6969 then all_bps.zzz6969 = {BlueprintId = 'zzz6969',Categories = {'NOTHINGIMPORTANT'}} end
+    if not all_bps.zzz6969 then all_bps.zzz6969 = {BlueprintId = 'zzz6969',Categories = {'NOTHINGIMPORTANT', 'UNSPAWNABLE'}} end
     if all_bps.zzz6969 and not table.find(all_bps.zzz6969.Categories, cat) then
         table.insert(all_bps.zzz6969.Categories, cat)
     end
