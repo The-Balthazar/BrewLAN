@@ -9,21 +9,9 @@ UnitBlueprint {
         StagingPlatformScanRadius = 300,
     },
     Audio = {
-        DeathExplosion = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        DeathExplosion = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+             Destroyed = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff' },
+           UISelection = Sound { Bank = 'Interface',  Cue = 'Cybran_Select_Structure',    LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 210,
     Categories = {
@@ -60,12 +48,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 120,
-                    ShaderName = 'Insect',
-                    AlbedoName = '/units/urb5202/urb5202_albedo.dds',
-                    SpecularName = '/units/urb5202/urb5202_specteam.dds',
-                },
+                { LODCutoff = 130, ShaderName = 'Insect' },
                 {
                     LODCutoff = 300,
                     ShaderName = 'Insect',

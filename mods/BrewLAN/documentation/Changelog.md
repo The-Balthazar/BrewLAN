@@ -734,6 +734,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-04-03
 
   * Fixed some potential warnings related to Zmara dying while using one of its melee weapons.
+  * Fixed the seam on and minor shading issues on the Cybran T1 air staging.
 
 ## 2019-10-13|0.8.9
 
