@@ -105,7 +105,6 @@
 
 #### Pending:
 * T3 Mobile Torpedo.
-* T3 Mobile Air Staging Platform.
 
 ### Cybran:
 #### Air
@@ -145,7 +144,6 @@
 * T3 Mobile Shield Gen.
   * Replace model?
 * T3 Mobile AA & Radar.
-* T3 Mobile Air Staging Platform.
 * T3 Mobile Tactical Missile Defense.
 * T3 Mobile Satellite Uplink (Sniper bot alternative)
   * Replace model
@@ -207,7 +205,6 @@
 
 #### Pending:
 * T3 Anti Shield.
-* T3 Mobile Air Staging Platform.
 
 ## Experimentals:
 |                  |UEF            |Aeon           |Cybran         |Seraphim       |
@@ -620,3 +617,12 @@ Abyssal Persecutor: Experimental Battleship
 
 Aeon/Seraphim Field Engineering Boat & Ships
 * These are likely staying exclusive to UEF and Cybran.
+
+Mobile air staging
+* The original plan for them was:
+  * UEF T3 land mobile air staging
+  * UEF T1 naval mobile air staging
+  * Cybran T2 walking naval air staging
+  * Aeon T3 hover air staging
+  * Seraphim T3 hover air staging.
+* Due to various issues, they are now cancelled, and the UEF one removed from build lists.

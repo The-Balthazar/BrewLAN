@@ -43,7 +43,7 @@ UnitBlueprint {
     BuildIconSortPriority = 210,
     Categories = {
         'SELECTABLE',
-        'BUILTBYTIER3FACTORY',
+        --'BUILTBYTIER3FACTORY',
         'UEF',
         'MOBILE',
         'LAND',

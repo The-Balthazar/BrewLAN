@@ -739,6 +739,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Set the category dump unit to be unspawnable.
   * Replaced the model of the Rupture.
 
+  ### 2021-04-04
+
+  * Removed the UEF mobile air staging.
+  * Cityscapes: Script will no longer try to process non-existent water stuff. (Fixes Aeon and Cybran cities.)
+
+  ### 2021-04-05
+
+  * Fixed the skirt of the Absolution.
+
+  ### 2021-04-06
+
+  * Replaced the model and texture of the anti artillery.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

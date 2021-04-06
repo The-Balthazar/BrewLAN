@@ -78,8 +78,9 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {LODCutoff = 200, ShaderName = 'Unit'},
-                {LODCutoff = 400, ShaderName = 'Unit'},
+                {LODCutoff = 130, ShaderName = 'Unit'},
+                {LODCutoff = 260, ShaderName = 'Unit'},
+                {LODCutoff = 520, ShaderName = 'Unit'},
             },
         },
         Tarmacs = {
@@ -133,7 +134,7 @@ UnitBlueprint {
         HelpText = '<LOC deb4303_help>Heavy Shield Generator',
     },
     LifeBarHeight = 0.075,
-    LifeBarOffset = 1.25,
+    LifeBarOffset = 1.6,
     LifeBarSize = 3,
     Physics = {
         BankingSlope = 0,
@@ -151,9 +152,9 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         TurnRate = 0,
     },
-    SelectionSizeX = 1.5,
-    SelectionSizeZ = 2,
-    SelectionThickness = 0.45,
+    SelectionSizeX = 1.7,
+    SelectionSizeZ = 2.2,
+    SelectionThickness = 0.35,
     SizeX = 2.5,
     SizeY = 3.5,
     SizeZ = 3.5,

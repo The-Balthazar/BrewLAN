@@ -216,6 +216,10 @@ UnitBlueprint {
         TeleportMassMod = 1,
         TeleportTimeMod = 0.01,
     },
+    Footprint = {
+        SizeX = 6,
+        SizeZ = 6,
+    },
     General = {
         Category = 'Experimental',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -261,7 +265,7 @@ UnitBlueprint {
         RotateOnSpot = false,
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -2.5,
-        SkirtSizeX = 8,
+        SkirtSizeX = 9,
         SkirtSizeZ = 10,
         TurnFacingRate = 120,
         TurnRadius = 0,

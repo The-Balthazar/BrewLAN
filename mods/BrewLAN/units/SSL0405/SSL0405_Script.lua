@@ -257,9 +257,9 @@ SSL0405 = Class(SLandUnit) {
                 KillThread(self.TransformThread)
                 self.TransformThread = nil
             end
-            if new == 'Water' then
+            if new == 'Water' and old == 'Land' then
                 self.TransformThread = self:ForkThread(self.LayerTransform, false)
-            elseif new == 'Land' then
+            elseif new == 'Land' and old == 'Water' then
                 self.TransformThread = self:ForkThread(self.LayerTransform, true)
             end
             if self:GetFractionComplete() ~= 1 or not self:IsMoving() then
