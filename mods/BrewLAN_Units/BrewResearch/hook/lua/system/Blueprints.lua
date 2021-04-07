@@ -140,8 +140,12 @@ end]]
 --------------------------------------------------------------------------------
 function RNDDefineNewFactoryBuildCategories(all_bps)
     for id, bp in all_bps do
-        if TableFindSubstrings(bp.Categories, 'BUILTBY', 'FACTORY') and (string.upper(bp.Physics.MotionType or 'nope') == 'RULEUMT_HOVER' or string.lower(bp.Physics.MotionType or 'nope') == 'ruleumt_amphibiousfloating') then
-            table.insert(bp.Categories, 'BUILTBYAMPHFACTORY')
+        if TableFindSubstrings(bp.Categories, 'BUILTBY', 'FACTORY') and bp.Physics then
+            if bp.Physics.MotionType == 'RULEUMT_Hover' or bp.Physics.MotionType == 'RULEUMT_AmphibiousFloating' then
+                table.insert(bp.Categories, 'BUILTBYSURFACEFACTORY')
+            elseif bp.Physics.MotionType == 'RULEUMT_Amphibious' then
+                table.insert(bp.Categories, 'BUILTBYSEABEDFACTORY')
+            end
         end
     end
 end

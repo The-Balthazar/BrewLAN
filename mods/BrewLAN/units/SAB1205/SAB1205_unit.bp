@@ -20,10 +20,10 @@ UnitBlueprint {
         'Connection_012',
     },
     Audio = {
-        ActiveLoop = Sound {Bank = 'UAB', Cue = 'UAB1105_Active', LodCutoff = 'UnitMove_LodCutoff'},
-        Destroyed = Sound {Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
-        DoneBeingBuilt = Sound { Bank = 'UAB', Cue = 'UAB1105_Activate', LodCutoff = 'UnitMove_LodCutoff'},
-        UISelection = Sound {Bank = 'Interface', Cue = 'Aeon_Select_Resource', LodCutoff = 'UnitMove_LodCutoff'},
+            ActiveLoop = Sound { Bank = 'UAB',        Cue = 'UAB1105_Active',       LodCutoff = 'UnitMove_LodCutoff' },
+             Destroyed = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land',     LodCutoff = 'UnitMove_LodCutoff' },
+        DoneBeingBuilt = Sound { Bank = 'UAB',        Cue = 'UAB1105_Activate',     LodCutoff = 'UnitMove_LodCutoff' },
+           UISelection = Sound { Bank = 'Interface',  Cue = 'Aeon_Select_Resource', LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 80,
     Categories = {
@@ -48,7 +48,6 @@ UnitBlueprint {
         EconomyThreatLevel = 143,
         Health = 4320,
         MaxHealth = 4320,
-        RegenRate = 0,
     },
     Description = '<LOC uab1105_desc>Energy Storage',
     Display = {
@@ -76,7 +75,6 @@ UnitBlueprint {
                 {LODCutoff = 256, ShaderName = 'Aeon'},
             },
         },
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 DeathLifetime = 300,
@@ -92,7 +90,6 @@ UnitBlueprint {
         UniformScale = 0.04,
     },
     Economy = {
-        AdjacentEnergyProductionMod = 2,
         BuildCostEnergy = 38400,
         BuildCostMass = 1920,
         BuildTime = 3200,
@@ -119,7 +116,6 @@ UnitBlueprint {
     LifeBarOffset = 1.2,
     LifeBarSize = 1.85,
     Physics = {
-        DragCoefficient = 0.2,
         FlattenSkirt = true,
         MeshExtentsX = 1.65,
         MeshExtentsY = 0.9,
@@ -148,12 +144,6 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'Death Weapon',
             FireOnDeath = true,
-            FireTargetLayerCapsTable = {
-                Air = 'Land|Water|Seabed|Sub',
-                Land = 'Land|Water|Seabed|Sub',
-                Water = 'Land|Water|Seabed|Sub',
-                Sub = 'Land|Water|Seabed|Sub',
-            },
             Turreted = false,
             Label = 'DeathWeapon',
             WeaponCategory = 'Death',

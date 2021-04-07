@@ -42,7 +42,7 @@ UnitBlueprint {
     BuildIconSortPriority = 11,
     Categories = {
         'SELECTABLE',
-        'BUILTBYTIER2AMPHFACTORY',
+        'BUILTBYTIER2SURFACEFACTORY',
         'AEON',
         'STRUCTURE',
         'LAND',
@@ -146,7 +146,7 @@ UnitBlueprint {
         BuildRate = 60,
         BuildTime = 8400,
         BuildableCategory = {
-            'BUILTBYTIER3AMPHFACTORY AEON',
+            'BUILTBYTIER3SURFACEFACTORY AEON',
         },
         StorageEnergy = 0,        StorageMass = 320,
     },

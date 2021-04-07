@@ -10,7 +10,7 @@ local OldModBlueprints = ModBlueprints
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
 
-    BrewLANTechIconOverhaul(all_blueprints)
+    BrewLANTechIconOverhaul(all_blueprints, false) -- Bool adds change logging.
     --UpdateForBrewLANTechIcons(all_blueprints)
 end
 
@@ -504,8 +504,13 @@ end
 --------------------------------------------------------------------------------
 -- Full strength sanity check.
 --------------------------------------------------------------------------------
-function BrewLANTechIconOverhaul(all_bps)
-
+function BrewLANTechIconOverhaul(all_bps, doLogChanges)
+    ----------------------------------------------------------------------------
+    local changes
+    if doLogChanges then
+        changes = {}
+    end
+    ----------------------------------------------------------------------------
     local group = {
            air = 'air',
         bomber = 'air',
@@ -561,6 +566,11 @@ function BrewLANTechIconOverhaul(all_bps)
             local bgN = getDesiredBackground(bp, all_bps)
             local icon = getDesiredIcon(bp, all_bps)
 
+            --------------------------------------------------------------------
+            if doLogChanges then
+                changes[id] = {bp.StrategicIconName, 'icon_'..bgN..'_'..icon}
+            end
+            --------------------------------------------------------------------
             bp.StrategicIconName = 'icon_'..bgN..'_'..icon
 
             if (icon == 'directfire' or icon == 'artillery' or icon == 'antiair') and not isUnarmed(bp) and string.sub(bgN, 1, -2) ~= 'node' then
@@ -622,7 +632,11 @@ function BrewLANTechIconOverhaul(all_bps)
         local bp = all_bps.Unit[id]
         --WARN(group[bp.StrategicBG]..bp.StrategicLevel..", "..(bp.General.UnitName or 'nil') .. ", " .. bp.StrategicTestRange / sniperavgs[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ])
         if bp.StrategicTestRange > sniperavgs[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ] * 1.3 then
-
+            --------------------------------------------------------------------
+            if doLogChanges then
+                changes[id][2] = 'icon_'..bp.StrategicBG..bp.StrategicLevel..'_sniper'
+            end
+            --------------------------------------------------------------------
             -- Do the thing
             bp.StrategicIconName = 'icon_'..bp.StrategicBG..bp.StrategicLevel..'_sniper'
             --WARN(bp.StrategicIconName .. " : " ..(bp.General.UnitName or 'nil') .. " is cool enough to get the sniper icon ")
@@ -649,7 +663,11 @@ function BrewLANTechIconOverhaul(all_bps)
     for i, id in revisit do
         local bp = all_bps.Unit[id]
         if bp.StrategicIcon--[[skip things that are now sniper]] and bp.Economy.BuildCostEnergy >= avgs[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ] then
-
+            --------------------------------------------------------------------
+            if doLogChanges then
+                changes[id][2] = bp.StrategicIconName .. '2'
+            end
+            --------------------------------------------------------------------
             -- Do the thing
             bp.StrategicIconName = bp.StrategicIconName .. '2'
             --WARN(bp.StrategicIconName .. " : " ..(bp.General.UnitName or 'nil') .. " is cool enough to get the better icon ")
@@ -660,6 +678,17 @@ function BrewLANTechIconOverhaul(all_bps)
             bp.StrategicLevel = nil
             bp.StrategicIcon = nil
         end
+    end
+
+    if doLogChanges then
+        LOG('BrewLAN strategic icon changes. Units processed: '..table.getsize(changes))
+        LOG('ID, Original strategic icon, Calculated name')
+        for id, icons in changes do
+            if icons[1] ~= icons[2] then
+                LOG(id..', '..icons[1]..', '..icons[2])
+            end
+        end
+        --LOG(repr(changes))
     end
 end
 

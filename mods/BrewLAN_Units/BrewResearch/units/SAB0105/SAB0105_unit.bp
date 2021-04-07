@@ -43,6 +43,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
         'AEON',
         'STRUCTURE',
         'LAND',
@@ -51,7 +53,6 @@ UnitBlueprint {
         'FACTORY',
         'RALLYPOINT',
         'DRAGBUILD',
-        'CONSTRUCTIONSORTDOWN',
         'SIZE16',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -165,7 +166,7 @@ UnitBlueprint {
         BuildRate = 20,
         BuildTime = 300,
         BuildableCategory = {
-            'BUILTBYTIER1AMPHFACTORY AEON',
+            'BUILTBYTIER1SURFACEFACTORY AEON',
         },
         StorageEnergy = 0,        StorageMass = 80,
     },

@@ -752,6 +752,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Replaced the model and texture of the anti artillery.
 
+  ### 2021-04-07
+
+  * Fixed the life bars of the UEF tech 2 storages.
+  * SIO: Added the option for logging the icon changes.
+  * R&D: Renamed the hovercraft factory line category from `..AMPHFACTORY` to `..SURFACEFACTORY`.
+  * Removed a bunch more useless blueprint values, mostly from storages.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
