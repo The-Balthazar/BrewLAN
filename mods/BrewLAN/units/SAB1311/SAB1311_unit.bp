@@ -49,10 +49,8 @@ UnitBlueprint {
         'SHIELD',
         'OVERLAYDEFENSE',
         'RESEARCHLOCKED',
-    },
-    CollisionOffsetY = 0,
-    Defense = {
-        AirThreatLevel = 0,
+    },
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 595,
         Health = 14580,
@@ -70,10 +68,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 5.5,
             ShieldVerticalOffset = -1,
-        },
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        },
     },
     Description = '<LOC sab1311_desc>Shielded Power Generator',
     Display = {
@@ -229,21 +224,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2,
     LifeBarSize = 4.5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+    Physics = {
+        FlattenSkirt = true,
         MeshExtentsX = 5.75,
         MeshExtentsY = 4.25,
-        MeshExtentsZ = 5.75,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 5.75,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 2.9,
     SelectionSizeZ = 2.9,

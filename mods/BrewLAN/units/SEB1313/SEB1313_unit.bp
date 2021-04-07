@@ -89,15 +89,11 @@ UnitBlueprint {
         'SORTECONOMY',
         'RESEARCHLOCKED',
     },
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 646,
         Health = 9000,
-        MaxHealth = 9000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 9000,
     },
     Description = '<LOC seb1313_desc>Engineering Mass Fabricator',
     Display = {
@@ -229,21 +225,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.95,
     LifeBarSize = 2.5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+    Physics = {
+        FlattenSkirt = true,
         MeshExtentsX = 3.2,
         MeshExtentsY = 2,
-        MeshExtentsZ = 3.2,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 3.2,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 1.55,
     SelectionSizeZ = 1.55,

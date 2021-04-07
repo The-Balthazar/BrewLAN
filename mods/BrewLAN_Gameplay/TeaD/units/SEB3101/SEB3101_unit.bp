@@ -36,15 +36,11 @@ UnitBlueprint {
         'SORTINTEL',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 1,
         Health = 10,
-        MaxHealth = 10,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 10,
     },
     Description = '<LOC seb3101_desc>Light Radar System',
     Display = {
@@ -167,8 +163,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.4,
     LifeBarSize = 1,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,
@@ -176,20 +171,14 @@ UnitBlueprint {
             LAYER_Seabed = false,
             LAYER_Sub = false,
             LAYER_Water = false,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 1.1*.6,
         MeshExtentsY = 2.75*.6,
-        MeshExtentsZ = 1.1*.6,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
+        MeshExtentsZ = 1.1*.6,
+        MotionType = 'RULEUMT_None',
         SkirtSizeX = 1,
-        SkirtSizeZ = 1,
-        TurnRate = 0,
+        SkirtSizeZ = 1,
     },
     SelectionSizeX = 0.7,
     SelectionSizeZ = 0.7,

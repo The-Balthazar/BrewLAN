@@ -62,14 +62,12 @@ UnitBlueprint {
     },
     CollisionOffsetY = 1,
     CollisionOffsetZ = -0.5,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Experimental',
         EconomyThreatLevel = 2268,
         Health = 21000,
         MaxHealth = 21000,
-        RegenRate = 20,
-        SubThreatLevel = 0,
+        RegenRate = 20,
         SurfaceThreatLevel = 12,
     },
     Description = '<LOC ssl0404_desc>Experimental Sniper Bot',
@@ -253,9 +251,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 3,
     LifeBarSize = 6.25,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 1.6,
         MaxBrake = 2.4,
         MaxSpeed = 2.4,
@@ -263,8 +259,7 @@ UnitBlueprint {
         MaxSteerForce = 10,
         MeshExtentsX = 4,
         MeshExtentsY = 3,
-        MeshExtentsZ = 5,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 5,
         MotionType = 'RULEUMT_Amphibious',
         SinkLower = true,
         SkirtOffsetX = -2.5,

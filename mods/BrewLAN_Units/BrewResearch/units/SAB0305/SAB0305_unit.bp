@@ -59,15 +59,11 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
     },
     CollisionOffsetY = -0.5,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 49,
         Health = 20000,
-        MaxHealth = 20000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 20000,
     },
     Description = '<LOC sb0105_desc>Hovercraft Factory',
     Display = {
@@ -189,19 +185,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2,
     LifeBarSize = 4,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 4.5,
         MeshExtentsY = 1.5,
-        MeshExtentsZ = 4.5,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 4.5,
         MotionType = 'RULEUMT_None',
         RaisedPlatforms = {
             --x, y, height
@@ -243,8 +235,7 @@ UnitBlueprint {
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.55,
     SelectionSizeZ = 3.55,

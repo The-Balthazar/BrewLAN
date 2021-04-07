@@ -57,14 +57,11 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYINDIRECTFIRE',
     },
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 42,
         Health = 1650,
-        MaxHealth = 1650,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 1650,
         SurfaceThreatLevel = 6,
     },
     Description = '<LOC srl0311_desc>Mobile Rocket Platform',
@@ -150,19 +147,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
     LifeBarSize = 1.5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 2.5,
         MaxBrake = 2.5,
         MaxSpeed = 2.5,
         MaxSpeedReverse = 0,
-        MaxSteerForce = 10,
-        MinSpeedPercent = 0,
+        MaxSteerForce = 10,
         MotionType = 'RULEUMT_Land',
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 0.1,
         TurnRate = 75,
     },
     SelectionCenterOffsetX = 0,

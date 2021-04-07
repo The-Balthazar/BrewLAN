@@ -49,14 +49,10 @@ UnitBlueprint {
         'BIGBOSS',
         'WALKER',
     },
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Normal',
         Health = 9300,
-        MaxHealth = 9300,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 9300,
         SurfaceThreatLevel = 9,
     },
     Description = '<LOC tec0104_desc>Big Boss Bot',
@@ -145,12 +141,10 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
-        },
-        DragCoefficient = 0.2,
+        },
         MaxAcceleration = 4,
         MaxBrake = 3,
         MaxSpeed = 3,
@@ -158,8 +152,7 @@ UnitBlueprint {
         MaxSteerForce = 10,
         MeshExtentsX = 1.1,
         MeshExtentsY = 1.5,
-        MeshExtentsZ = 2.4,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 2.4,
         MotionType = 'RULEUMT_Amphibious',
         StandUpright = true,
         TurnRadius = 5,

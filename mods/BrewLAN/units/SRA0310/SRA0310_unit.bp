@@ -89,17 +89,12 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYCOUNTERINTEL',
         'SPECIALHIGHPRI',
-    },
-    CollisionOffsetY = 0,
-    Defense = {
-        AirThreatLevel = 0,
+    },
+    Defense = {
         ArmorType = 'Light',
         EconomyThreatLevel = 250,
         Health = 700,
-        MaxHealth = 700,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 700,
     },
     Description = '<LOC sair0201>Decoy Plane',
     Display = {

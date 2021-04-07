@@ -124,8 +124,7 @@ UnitBlueprint {
         AirThreatLevel = 14,
         ArmorType = 'Light',
         Health = 4300,
-        MaxHealth = 4300,
-        RegenRate = 0,
+        MaxHealth = 4300,
         Shield = {
             ImpactEffects = 'SeraphimShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',

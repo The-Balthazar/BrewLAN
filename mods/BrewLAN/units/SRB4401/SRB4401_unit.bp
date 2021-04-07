@@ -44,13 +44,11 @@ UnitBlueprint {
         'SORTDEFENSE',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 3149,
         Health = 6950,
-        MaxHealth = 6950,
-        RegenRate = 0,
+        MaxHealth = 6950,
         Shield = {
             ImpactEffects = 'CybranShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01b_mesh',
@@ -64,9 +62,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 80,
             ShieldVerticalOffset = -20,
-        },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        },
     },
     Description = '<LOC srb4401>Experimental Shield Generator',
     Display = {
@@ -157,18 +153,13 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.7,
     LifeBarSize = 5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+    Physics = {
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.1,
     SelectionSizeZ = 3.1,

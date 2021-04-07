@@ -115,12 +115,9 @@ UnitBlueprint {
     CollisionOffsetY = -0.4,
     Defense = {
         AirThreatLevel = 24,
-        ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+        ArmorType = 'Light',
         Health = 5000,
-        MaxHealth = 5000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 5000,
         SurfaceThreatLevel = 60,
     },
     Description = '<LOC sair0306>Heavy Air Transport',

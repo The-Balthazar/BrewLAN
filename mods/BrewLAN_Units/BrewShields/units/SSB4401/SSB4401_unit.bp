@@ -61,13 +61,11 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 1869,
         Health = 8400,
-        MaxHealth = 8400,
-        RegenRate = 0,
+        MaxHealth = 8400,
         Shield = {
             ImpactEffects = 'SeraphimShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -81,9 +79,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 46,
             ShieldVerticalOffset = -7,
-        },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        },
     },
     Description = '<LOC srb4401>Experimental Shield Generator',
     Display = {
@@ -190,21 +186,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.5,
     LifeBarSize = 6,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+        },
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.1,
     SelectionSizeZ = 3.1,

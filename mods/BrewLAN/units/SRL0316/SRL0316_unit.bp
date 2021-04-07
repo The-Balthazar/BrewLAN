@@ -45,8 +45,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         EconomyThreatLevel = 2,
         Health = 700,
-        MaxHealth = 700,
-        RegenRate = 0,
+        MaxHealth = 700,
     },
     Description = '<LOC url0306_desc>Mobile Stealth Field System',
     Display = {
@@ -151,19 +150,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,
     LifeBarSize = 0.9,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 4,
         MaxBrake = 4,
         MaxSpeed = 4,
         MaxSpeedReverse = 0,
-        MaxSteerForce = 10,
-        MinSpeedPercent = 0,
+        MaxSteerForce = 10,
         MotionType = 'RULEUMT_Amphibious',
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 0.1,
         TurnRate = 120,
     },
     SelectionCenterOffsetX = 0,

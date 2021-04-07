@@ -94,14 +94,11 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     CollisionOffsetZ = -0.05,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 83,
         Health = 2250,
-        MaxHealth = 2250,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 2250,
         SurfaceThreatLevel = 6,
     },
     Description = '<LOC sl0319_desc>Field Engineer',
@@ -257,9 +254,7 @@ UnitBlueprint {
     LifeBarOffset = 0.4375,
     LifeBarSize = 0.75,
     Physics = {
-        BackUpDistance = 4,
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+        BackUpDistance = 4,
         MaxAcceleration = 3,
         MaxBrake = 3,
         MaxSpeed = 3,
@@ -267,10 +262,8 @@ UnitBlueprint {
         MaxSteerForce = 15,
         MeshExtentsX = 0.9375,
         MeshExtentsY = 1.5,
-        MeshExtentsZ = 0.9375,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_AmphibiousFloating',
-        TurnRadius = 0,
+        MeshExtentsZ = 0.9375,
+        MotionType = 'RULEUMT_AmphibiousFloating',
         TurnRate = 120,
     },
     SelectionCenterOffsetX = 0,

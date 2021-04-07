@@ -37,15 +37,11 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 53,
         Health = 500,
-        MaxHealth = 500,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 500,
     },
     Description = '<LOC sb3301_desc>Omni Sensor Array',
     Display = {
@@ -165,8 +161,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2,
     LifeBarSize = 3.5,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,
@@ -174,20 +169,16 @@ UnitBlueprint {
             LAYER_Seabed = false,
             LAYER_Sub = false,
             LAYER_Water = false,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 1.35*2.4,
         MeshExtentsY = 3.2*2.3,
-        MeshExtentsZ = 1.35*2.4,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 1.35*2.4,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,

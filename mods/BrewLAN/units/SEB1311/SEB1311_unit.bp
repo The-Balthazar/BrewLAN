@@ -50,8 +50,7 @@ UnitBlueprint {
         ArmorType = 'Structure',
         EconomyThreatLevel = 528,
         Health = 14580,
-        MaxHealth = 14580,
-        RegenRate = 0,
+        MaxHealth = 14580,
     },
     Description = '<LOC seb1311_desc>Engineering Power Generator',
     Display = {
@@ -177,8 +176,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.2,
     LifeBarSize = 5,
-    Physics = {
-        DragCoefficient = 0.2,
+    Physics = {
         FlattenSkirt = true,
         MeshExtentsX = 5.2,
         MeshExtentsY = 4.2,

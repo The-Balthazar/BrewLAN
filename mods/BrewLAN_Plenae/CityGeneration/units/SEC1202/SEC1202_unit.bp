@@ -16,8 +16,7 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
         Health = 8400,
-        MaxHealth = 8400,
-        RegenRate = 0,
+        MaxHealth = 8400,
     },
     Description = '<LOC uec1101_desc>UEF Residential Building',
     Display = {
@@ -79,15 +78,12 @@ UnitBlueprint {
     LifeBarOffset = 1,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = { LAYER_Land = true },
-        DragCoefficient = 0.2,
+        BuildOnLayerCaps = { LAYER_Land = true },
         FlattenSkirt = true,
         MeshExtentsX = 2,
         MeshExtentsY = 6,
         MeshExtentsZ = 2,
-        MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
+        MotionType = 'RULEUMT_None',
         SkirtSizeX = 3,
         SkirtSizeZ = 3,
     },

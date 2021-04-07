@@ -46,8 +46,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         EconomyThreatLevel = 2,
         Health = 3500,
-        MaxHealth = 3500,
-        RegenRate = 0,
+        MaxHealth = 3500,
     },
     Description = '<LOC sss0305_desc>Sonar Platform',
     Display = {
@@ -155,10 +154,8 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1.25,
-    Physics = {
-        BankingSlope = 0,
-        CatchUpAcc = 10,
-        DragCoefficient = 0.2,
+    Physics = {
+        CatchUpAcc = 10,
         MaxAcceleration = 4.5,
         MaxBrake = 4.5,
         MaxSpeed = 4.5,
@@ -166,8 +163,7 @@ UnitBlueprint {
         MaxSteerForce = 5,
         MeshExtentsX = 1.8,
         MeshExtentsY = 1.2,
-        MeshExtentsZ = 1.8,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 1.8,
         MotionType = 'RULEUMT_Water',
         TurnRadius = 5,
         TurnRate = 100,

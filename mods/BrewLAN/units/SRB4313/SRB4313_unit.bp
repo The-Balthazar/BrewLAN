@@ -39,13 +39,11 @@ UnitBlueprint {
         'SORTINTEL',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 17,
         Health = 450,
-        MaxHealth = 450,
-        RegenRate = 0,
+        MaxHealth = 450,
     },
     Description = '<LOC srb4313_desc>Cloakable Stealth Field Generator',
     Display = {
@@ -120,18 +118,13 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.15,
     LifeBarSize = 2.5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+    Physics = {
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
+        SkirtSizeZ = 6,
     },
     SelectionCenterOffsetZ = 0.075,
     SelectionSizeX = 1.8,

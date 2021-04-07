@@ -63,8 +63,7 @@ UnitBlueprint {
         ArmorType = 'Structure',
         EconomyThreatLevel = 11,
         Health = 8200,
-        MaxHealth = 8200,
-        RegenRate = 0,
+        MaxHealth = 8200,
     },
     Description = '<LOC sb0105_desc>Hovercraft Factory',
     Display = {
@@ -209,19 +208,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2,
     LifeBarSize = 4,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 4.5,
         MeshExtentsY = 1.5,
-        MeshExtentsZ = 4.5,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 4.5,
         MotionType = 'RULEUMT_None',
         RaisedPlatforms = {
             --x, y, height
@@ -263,8 +258,7 @@ UnitBlueprint {
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.55,
     SelectionSizeZ = 3.55,

@@ -98,7 +98,6 @@ UnitBlueprint {
         EconomyThreatLevel = 250,
         Health = 540,
         MaxHealth = 540,
-        RegenRate = 0,
     },
     Description = '<LOC sair0201>Decoy Plane',
     Display = {

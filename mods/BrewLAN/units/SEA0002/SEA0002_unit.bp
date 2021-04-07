@@ -157,8 +157,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.2,
     LifeBarSize = 2,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         Elevation = 165,
         MaxAcceleration = 0.1,
         ------------------------------------------------------------------------

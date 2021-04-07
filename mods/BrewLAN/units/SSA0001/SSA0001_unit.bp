@@ -126,8 +126,7 @@ UnitBlueprint {
         ArmorType = 'Light',
         EconomyThreatLevel = 135,
         Health = 4000,
-        MaxHealth = 4000,
-        RegenRate = 0,
+        MaxHealth = 4000,
     },
     Description = '<LOC ssa00001_desc>Storage',
     Display = {

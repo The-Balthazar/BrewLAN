@@ -58,15 +58,11 @@ UnitBlueprint {
         'RECLAIMABLE',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 35,
         Health = 650,
-        MaxHealth = 650,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 650,
     },
     Description = '<LOC ss0119_desc>Field Engineering Boat',
     Display = {
@@ -201,10 +197,8 @@ UnitBlueprint {
     LifeBarOffset = 1.1,
     LifeBarSize = 0.7,
     Physics = {
-        BackUpDistance = 5,
-        BankingSlope = 0,
-        CatchUpAcc = 10,
-        DragCoefficient = 0.2,
+        BackUpDistance = 5,
+        CatchUpAcc = 10,
         MaxAcceleration = 7,
         MaxBrake = 7,
         MaxSpeed = 7,
@@ -212,8 +206,7 @@ UnitBlueprint {
         MaxSteerForce = 5,
         MeshExtentsX = 2.25,
         MeshExtentsY = 2,
-        MeshExtentsZ = 12,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 12,
         MotionType = 'RULEUMT_Water',
         TurnRadius = 10,
         TurnRate = 60,

@@ -78,8 +78,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         EconomyThreatLevel = 61,
         Health = 580,
-        MaxHealth = 580,
-        RegenRate = 0,
+        MaxHealth = 580,
     },
     Description = '<LOC srl0324_desc>Mobile Sensor Array',
     Display = {
@@ -207,19 +206,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
     LifeBarSize = 1.75,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 3.5,
         MaxBrake = 3.5,
         MaxSpeed = 3.5,
         MaxSpeedReverse = 0,
-        MaxSteerForce = 10,
-        MinSpeedPercent = 0,
+        MaxSteerForce = 10,
         MotionType = 'RULEUMT_Land',
         RotateOnSpot = false,
-        RotateOnSpotThreshold = 1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 1,
         TurnRate = 75,
     },
     SelectionCenterOffsetX = 0,

@@ -104,15 +104,11 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYSONAR',
     },
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Light',
         Health = 170,
-        MaxHealth = 170,
-        RegenRate = 0,
-        SubThreatLevel = 5,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 170,
+        SubThreatLevel = 5,
     },
     Description = '<LOC sair0106>Light Torpedo Bomber',
     Display = {

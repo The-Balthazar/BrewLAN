@@ -62,14 +62,11 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYDIRECTFIRE',
     },
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 59,
         Health = 550,
-        MaxHealth = 550,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 550,
         SurfaceThreatLevel = 10,
     },
     Description = '<LOC sel0320_desc>Mobile Satellite Uplink',
@@ -154,9 +151,7 @@ UnitBlueprint {
     LifeBarOffset = 1,
     LifeBarSize = 1.2,
     Physics = {
-        BackUpDistance = 4,
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+        BackUpDistance = 4,
         MaxAcceleration = 2.1,
         MaxBrake = 2.25,
         MaxSpeed = 2.25,
@@ -164,10 +159,8 @@ UnitBlueprint {
         MaxSteerForce = 2.5,
         MeshExtentsX = 0.75,
         MeshExtentsY = 0.75,
-        MeshExtentsZ = 1.35,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_Land',
-        TurnRadius = 0,
+        MeshExtentsZ = 1.35,
+        MotionType = 'RULEUMT_Land',
         TurnRate = 60,
     },
     SelectionCenterOffsetX = 0.01,

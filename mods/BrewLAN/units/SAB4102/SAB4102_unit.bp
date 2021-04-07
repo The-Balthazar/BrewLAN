@@ -47,8 +47,7 @@ UnitBlueprint {
         'SORTDEFENSE',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2,
         Health = 75,
@@ -66,9 +65,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 12.5,
             ShieldVerticalOffset = -2.5,
-        },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        },
     },
     Description = '<LOC sbui4102>Light Shield Generator',
     Display = {
@@ -179,21 +176,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.9,
     LifeBarSize = 2.25,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+    Physics = {
+        FlattenSkirt = true,
         MeshExtentsX = 3,
         MeshExtentsY = 2,
-        MeshExtentsZ = 3,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 3,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,

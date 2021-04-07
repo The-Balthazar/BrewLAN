@@ -82,13 +82,9 @@ UnitBlueprint {
     },
     Defense = {
         AirThreatLevel = 0.1,
-        ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+        ArmorType = 'Light',
         Health = 35,
-        MaxHealth = 35,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 35,
     },
     Description = '<LOC tec0009_desc>Air Scout',
     Display = {

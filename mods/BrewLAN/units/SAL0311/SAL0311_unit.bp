@@ -71,14 +71,10 @@ UnitBlueprint {
         'TANK',
         'OVERLAYDIRECTFIRE',
     },
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Normal',
         Health = 9000,
-        MaxHealth = 9000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 9000,
         SurfaceThreatLevel = 33,
     },
     Description = '<LOC sal0311_desc>Armored Assault Tank',
@@ -209,9 +205,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.95,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 2,
         MaxBrake = 2,
         MaxSpeed = 2,
@@ -219,12 +213,10 @@ UnitBlueprint {
         MaxSteerForce = 5,
         MeshExtentsX = 1,
         MeshExtentsY = 0.5,
-        MeshExtentsZ = 1,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 1,
         MotionType = 'RULEUMT_Amphibious',
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 0.1,
         TurnRate = 60,
     },
     SelectionSizeX = 0.7,

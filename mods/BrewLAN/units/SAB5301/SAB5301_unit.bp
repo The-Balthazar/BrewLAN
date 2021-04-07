@@ -30,13 +30,10 @@ UnitBlueprint {
         'SORTDEFENSE',
         'SHIELDWALL',
     },
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Structure',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Structure',
         Health = 4000,
-        MaxHealth = 4000,
-        RegenRate = 0,
+        MaxHealth = 4000,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -50,9 +47,7 @@ UnitBlueprint {
             ShieldRegenStartTime = 1,
             ShieldSize = 2.5,
             ShieldVerticalOffset = 1.25-.6,
-        },
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        },
         ThreatLevel = 0,
     },
     Description = '<LOC ssb5301_desc>Shield Wall Section',
@@ -172,21 +167,14 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 0.8*1.2,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        MaxGroundVariation = 50,
-        MaxSteerForce = 0,
+    Physics = {
+        MaxGroundVariation = 50,
         MeshExtentsX = 1.5*1.2,
         MeshExtentsY = 1*1.6,
-        MeshExtentsZ = 1.5*1.2,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
+        MeshExtentsZ = 1.5*1.2,
+        MotionType = 'RULEUMT_None',
         SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-        TurnRate = 0,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 0.6*1.2,
     SelectionSizeZ = 0.6*1.2,

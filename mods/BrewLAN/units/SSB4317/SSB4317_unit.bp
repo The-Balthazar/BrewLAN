@@ -108,8 +108,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.6,
     LifeBarSize = 1,
-    Physics = {
-        DragCoefficient = 0.2,
+    Physics = {
         FlattenSkirt = true,
         MeshExtentsX = 1,
         MeshExtentsY = 1,

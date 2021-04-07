@@ -136,22 +136,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.9,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         Elevation = 0.25,
         MaxAcceleration = 3.6,
         MaxBrake = 3.6,
         MaxSpeed = 3.6,
         MaxSpeedReverse = 0,
-        MaxSteerForce = 1000,
-        MinSpeedPercent = 0,
+        MaxSteerForce = 1000,
         MotionType = 'RULEUMT_Hover',
-        TurnFacingRate = 180,
-        TurnRadius = 0,
-        TurnRate = 120,
-        WobbleFactor = 0,
-        WobbleSpeed = 0,
+        TurnFacingRate = 180,
+        TurnRate = 120,
     },
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.7,

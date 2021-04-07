@@ -99,15 +99,11 @@ UnitBlueprint {
         'GATE',
     },
     CollisionOffsetY = -1,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 4071,
         Health = 152000,
-        MaxHealth = 152000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 152000,
     },
     Description = '<LOC ssb0401_desc>Experimental Naval Factory',
     Display = {
@@ -218,18 +214,14 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 6.7,
     LifeBarSize = 7.5,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Seabed = true,
-        },
-        DragCoefficient = 0.2,
-        MaxSteerForce = 0,
+        },
         MaxGroundVariation = 6,
         MeshExtentsX = 14,
         MeshExtentsY = 14,
-        MeshExtentsZ = 3,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 3,
         MotionType = 'RULEUMT_None',
         --The raised platform is on the surface of the water, not the seabed.
         --[[RaisedPlatforms = {
@@ -257,8 +249,7 @@ UnitBlueprint {
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 16,
-        SkirtSizeZ = 16,
-        TurnRate = 0,
+        SkirtSizeZ = 16,
     },
     SelectionSizeX = 8,
     SelectionSizeZ = 8,

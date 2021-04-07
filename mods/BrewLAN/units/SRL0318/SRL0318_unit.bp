@@ -45,14 +45,10 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.025,
     CollisionOffsetZ = 0.05,
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Normal',
         Health = 450,
-        MaxHealth = 450,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 450,
         SurfaceThreatLevel = 4,
     },
     Description = '<LOC xal0305_desc>Sniper Bot',
@@ -128,8 +124,7 @@ UnitBlueprint {
     LifeBarOffset = 0.25,
     LifeBarSize = 0.5,
     Physics = {
-        BankingSlope = 0.5,
-        DragCoefficient = 0.2,
+        BankingSlope = 0.5,
         Elevation = 0.25,
         MaxAcceleration = 5,
         MaxBrake = 5,
@@ -138,8 +133,7 @@ UnitBlueprint {
         MaxSteerForce = 1000,
         MeshExtentsX = 0.55,
         MeshExtentsY = 0.25,
-        MeshExtentsZ = 0.65,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 0.65,
         MotionType = 'RULEUMT_Land',
         TurnRadius = 3,
         TurnRate = 120,

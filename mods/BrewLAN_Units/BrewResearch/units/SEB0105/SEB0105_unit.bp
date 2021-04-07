@@ -165,19 +165,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.5,
     LifeBarSize = 4.5,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 5,
         MeshExtentsY = 4.5,
-        MeshExtentsZ = 5.45,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 5.45,
         MotionType = 'RULEUMT_None',
         RaisedPlatforms = {
 
@@ -310,8 +306,7 @@ UnitBlueprint {
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.2,
     SelectionSizeZ = 3.3,

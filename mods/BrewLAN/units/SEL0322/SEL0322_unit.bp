@@ -65,8 +65,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         EconomyThreatLevel = 5,
         Health = 300,
-        MaxHealth = 300,
-        RegenRate = 0,
+        MaxHealth = 300,
         Shield = {
             ImpactEffects = 'UEFShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -194,9 +193,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,
     LifeBarSize = 0.7,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 4,
         MaxBrake = 4,
         MaxSpeed = 4,
@@ -204,12 +201,10 @@ UnitBlueprint {
         MaxSteerForce = 10,
         MeshExtentsX = 0.9,
         MeshExtentsY = 0.72,
-        MeshExtentsZ = 1.02,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 1.02,
         MotionType = 'RULEUMT_AmphibiousFloating',
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 0.1,
         TurnRate = 120,
     },
     SelectionCenterOffsetX = 0,

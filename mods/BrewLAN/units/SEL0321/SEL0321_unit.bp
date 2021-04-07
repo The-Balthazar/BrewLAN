@@ -61,15 +61,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
     },
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 130,
         Health = 3990,
-        MaxHealth = 3990,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 3990,
     },
     Description = '<LOC sel0321_desc>Mobile Strategic Missile Defense',
     Display = {
@@ -151,9 +147,7 @@ UnitBlueprint {
     LifeBarOffset = 1.3,
     LifeBarSize = 1.56,
     Physics = {
-        BackUpDistance = 4,
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+        BackUpDistance = 4,
         MaxAcceleration = 0.8,
         MaxBrake = 0.8,
         MaxSpeed = 0.8,
@@ -161,10 +155,8 @@ UnitBlueprint {
         MaxSteerForce = 5,
         MeshExtentsX = 0.975,
         MeshExtentsY = 0.975,
-        MeshExtentsZ = 1.755,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_Land',
-        TurnRadius = 0,
+        MeshExtentsZ = 1.755,
+        MotionType = 'RULEUMT_Land',
         TurnRate = 60,
     },
     SelectionCenterOffsetX = 0.01,

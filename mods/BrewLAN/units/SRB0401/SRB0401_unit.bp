@@ -94,17 +94,12 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
         'GATE',
-    },
-    CollisionOffsetY = 0,
-    Defense = {
-        AirThreatLevel = 0,
+    },
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2011,
         Health = 76000,
-        MaxHealth = 76000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 76000,
     },
     Description = '<LOC srb0401>Experimental Land Factory',
     Display = {
@@ -205,12 +200,8 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 9,
     LifeBarSize = 18,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+    Physics = {
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         RaisedPlatforms = {
             -- Main Platform middle
@@ -330,8 +321,7 @@ UnitBlueprint {
         SkirtOffsetX = -.5,
         SkirtOffsetZ = -.5,
         SkirtSizeX = 18,
-        SkirtSizeZ = 18,
-        TurnRate = 0,
+        SkirtSizeZ = 18,
     },
     --SelectionMeshScaleX = 0.5,
     SelectionMeshScaleZ = 0.8,

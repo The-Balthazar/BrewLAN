@@ -55,15 +55,11 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 498,
         Health = 14580,
-        MaxHealth = 14580,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 14580,
     },
     Description = '<LOC srb1311_desc>Cloakable Power Generator',
     Display = {
@@ -130,18 +126,13 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.25,
     LifeBarSize = 5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+    Physics = {
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.1,
     SelectionSizeZ = 3.1,

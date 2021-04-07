@@ -53,14 +53,11 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.1,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 11,
         Health = 1500,
-        MaxHealth = 1500,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 1500,
         SurfaceThreatLevel = 5,
     },
     Description = '<LOC sbui2103>Light Artillery Installation',
@@ -118,21 +115,14 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
     LifeBarSize = 0.9,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+    Physics = {
+        FlattenSkirt = true,
         MeshExtentsX = 1,
         MeshExtentsY = 1.1,
-        MeshExtentsZ = 1,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
+        MeshExtentsZ = 1,
+        MotionType = 'RULEUMT_None',
         SkirtSizeX = 1,
-        SkirtSizeZ = 1,
-        TurnRate = 0,
+        SkirtSizeZ = 1,
     },
     SelectionCenterOffsetZ = -.05,
     SelectionSizeX = 0.55,

@@ -758,6 +758,25 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * SIO: Added the option for logging the icon changes.
   * R&D: Renamed the hovercraft factory line category from `..AMPHFACTORY` to `..SURFACEFACTORY`.
   * Removed a bunch more useless blueprint values, mostly from storages.
+  * Removed the following values from blueprints where the value meant nothing or was the default:
+    * BankingSlope
+    * DragCoefficient
+    * WobbleSpeed
+    * WobbleFactor
+    * TurnRate
+    * TurnRadius
+    * SkirtOffsetX
+    * SkirtOffsetZ
+    * MaxSteerForce
+    * MinSpeedPercent
+    * SurfaceThreatLevel
+    * RegenRate
+    * SubThreatLevel
+    * AirThreatLevel
+    * EconomyThreatLevel
+    * CollisionOffsetY
+    * CollisionOffsetX
+    * CollisionOffsetZ
 
 ## 2019-10-13|0.8.9
 

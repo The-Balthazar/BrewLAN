@@ -35,18 +35,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTSTRATEGIC',
         'RESEARCHLOCKED',
-    },
-    CollisionOffsetY = 0,
+    },
     CollisionOffsetZ = 0.1,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2,
         Health = 5000,
-        MaxHealth = 5000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 5000,
     },
     Description = '<LOC srb5380_desc>Accuracy Boost Node',
     Display = {
@@ -124,21 +119,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+        },
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-        TurnRate = 0,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 0.65,
     SelectionSizeZ = 0.65,

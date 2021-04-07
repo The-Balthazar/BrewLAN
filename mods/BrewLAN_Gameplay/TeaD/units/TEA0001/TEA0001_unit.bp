@@ -107,14 +107,10 @@ UnitBlueprint {
         'COMMAND',
     },
     CollisionOffsetZ = 0.1,
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Commander',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Commander',
         Health = 550,
-        MaxHealth = 550,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 550,
         SurfaceThreatLevel = 2,
     },
     Description = '<LOC uel0105_desc>Engineer',

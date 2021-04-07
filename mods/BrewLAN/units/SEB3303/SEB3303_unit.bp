@@ -29,15 +29,11 @@ UnitBlueprint {
         'SHOWQUEUE',
         'GATE',
     },
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 210,
         Health = 500,
-        MaxHealth = 500,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 500,
     },
     Description = '<LOC seb3303b_desc>Satellite Launch Complex',
     Display = {
@@ -152,21 +148,16 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.9,
     LifeBarSize = 5.5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+    Physics = {
+        FlattenSkirt = true,
         MeshExtentsX = 4.9,
         MeshExtentsY = 4.7,
-        MeshExtentsZ = 5.2,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 5.2,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.4,
     SelectionSizeZ = 3.4,

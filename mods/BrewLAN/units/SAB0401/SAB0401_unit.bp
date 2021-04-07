@@ -82,7 +82,6 @@ UnitBlueprint {
         EconomyThreatLevel = 2091,
         Health = 80000,
         MaxHealth = 80000,
-        RegenRate = 0,
     },
     Description = '<LOC sab0401>Experimental Air Factory',
     Display = {
@@ -228,12 +227,10 @@ UnitBlueprint {
     LifeBarOffset = 13,
     LifeBarSize = 32,
     Physics = {
-        BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        DragCoefficient = 0.2,
         FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         OccupyRects = {

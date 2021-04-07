@@ -83,8 +83,7 @@ UnitBlueprint {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2731,
         Health = 112000,
-        MaxHealth = 112000,
-        RegenRate = 0,
+        MaxHealth = 112000,
     },
     Description = '<LOC seb0401>Experimental Factory',
     Display = {
@@ -228,8 +227,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
-        },
-        DragCoefficient = 0.2,
+        },
         FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         OccupyRects = {

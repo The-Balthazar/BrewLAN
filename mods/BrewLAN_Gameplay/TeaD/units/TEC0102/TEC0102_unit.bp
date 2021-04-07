@@ -38,14 +38,10 @@ UnitBlueprint {
         'DAMAGETEST',
         'BOSS',
     },
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Normal',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Normal',
         Health = 7500,
-        MaxHealth = 7500,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 7500,
         SurfaceThreatLevel = 3,
     },
     Description = '<LOC tec0102_desc>Tank Boss',
@@ -126,12 +122,10 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.95,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
-        },
-        DragCoefficient = 0.2,
+        },
         MaxAcceleration = 2.7,
         MaxBrake = 2.7,
         MaxSpeed = 2.7,
@@ -139,12 +133,10 @@ UnitBlueprint {
         MaxSteerForce = 3,
         MeshExtentsX = 0.75,
         MeshExtentsY = 0.45,
-        MeshExtentsZ = 1.25,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 1.25,
         MotionType = 'RULEUMT_Amphibious',
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 0.1,
         TurnRate = 90,
     },
     SelectionSizeX = 0.45,

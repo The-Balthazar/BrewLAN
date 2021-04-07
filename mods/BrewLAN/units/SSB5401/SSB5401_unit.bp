@@ -81,15 +81,11 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -1.5,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2005,
         Health = 100000,
-        MaxHealth = 100000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 100000,
         Shield = {
             ImpactEffects = 'SeraphimShieldHit01',
             Mesh = '/mods/BrewLAN/units/SSB5401/SSB5401_PersonalShield_mesh',
@@ -249,15 +245,11 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.65,
     LifeBarSize = 5.5,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+    Physics = {
+        FlattenSkirt = true,
         MeshExtentsX = 7.5,
         MeshExtentsY = 2.5,
-        MeshExtentsZ = 7.5,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 7.5,
         MotionType = 'RULEUMT_None',
         OccupyRects = {
             --offsetX offsetZ  sizeX sizeZ, offset from center of unit
@@ -279,8 +271,7 @@ UnitBlueprint {
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 12,
-        SkirtSizeZ = 12,
-        TurnRate = 0,
+        SkirtSizeZ = 12,
     },
     SelectionSizeX = 9,
     SelectionSizeZ = 3.5,

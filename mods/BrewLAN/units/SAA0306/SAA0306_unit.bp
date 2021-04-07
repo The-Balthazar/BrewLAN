@@ -137,8 +137,7 @@ UnitBlueprint {
             ShieldSpillOverDamageMod = 0.5,
             ShieldVerticalOffset = -2,
             TransportShield = true,
-        },
-        RegenRate = 0,
+        },
     },
     Description = '<LOC sair0306>Heavy Air Transport',
     Display = {

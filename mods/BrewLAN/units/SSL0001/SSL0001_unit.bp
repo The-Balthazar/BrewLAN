@@ -12,8 +12,7 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
         Health = 69,
-        MaxHealth = 69,
-        RegenRate = 0,
+        MaxHealth = 69,
     },
     Description = '<LOC ssa00002_desc>Hologram',
     Display = {
@@ -68,9 +67,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.6,
     LifeBarSize = 1,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 4.5,
         MaxBrake = 4.5,
         MaxSpeed = 4.5,
@@ -78,10 +75,8 @@ UnitBlueprint {
         MaxSteerForce = 1000,
         MeshExtentsX = 0.01,
         MeshExtentsY = 0.01,
-        MeshExtentsZ = 0.01,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_Land',
-        TurnRadius = 0,
+        MeshExtentsZ = 0.01,
+        MotionType = 'RULEUMT_Land',
         TurnRate = 80,
     },
     SelectionSizeX = 0.3,

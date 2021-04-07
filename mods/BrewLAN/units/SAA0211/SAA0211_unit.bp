@@ -113,7 +113,6 @@ UnitBlueprint {
         EconomyThreatLevel = 1,
         Health = 1225,
         MaxHealth = 1225,
-        RegenRate = 0,
         SurfaceThreatLevel = 13,
     },
     Description = '<LOC saa0211_desc>Tactical Bomber',

@@ -44,15 +44,11 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
     },
     CollisionOffsetZ = -1,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 320,
         Health = 6000,
-        MaxHealth = 6000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 6000,
     },
     Description = '<LOC seb9301_desc>Research Centre',
     Display = {
@@ -163,8 +159,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 3,
     LifeBarSize = 3.25,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,
@@ -172,14 +167,11 @@ UnitBlueprint {
             LAYER_Seabed = false,
             LAYER_Sub = false,
             LAYER_Water = false,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 6,
         MeshExtentsY = 6,
-        MeshExtentsZ = 6,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 6,
         MotionType = 'RULEUMT_None',
         RaisedPlatforms = {},
         RollOffPoints = {
@@ -193,8 +185,7 @@ UnitBlueprint {
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 3.0,
     SelectionSizeZ = 3.8,

@@ -50,17 +50,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTECONOMY',
-    },
-    CollisionOffsetY = 0,
-    Defense = {
-        AirThreatLevel = 0,
+    },
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 42,
         Health = 1380,
-        MaxHealth = 1380,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 1380,
     },
     Description = '<LOC xsb1201_desc>Power Generator',
     Display = {
@@ -207,8 +202,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.9,
     LifeBarSize = 3,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,
@@ -216,20 +210,16 @@ UnitBlueprint {
             LAYER_Seabed = false,
             LAYER_Sub = false,
             LAYER_Water = false,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 3.5,
         MeshExtentsY = 2.35,
-        MeshExtentsZ = 3.5,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 3.5,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -.5,
         SkirtOffsetZ = -.5,
         SkirtSizeX = 4,
-        SkirtSizeZ = 4,
-        TurnRate = 0,
+        SkirtSizeZ = 4,
     },
     SelectionSizeX = 1.65,
     SelectionSizeZ = 1.2,

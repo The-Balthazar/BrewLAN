@@ -17,14 +17,10 @@ UnitBlueprint {
         'RECLAIMABLE',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Structure',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Structure',
         Health = 1000000,
-        MaxHealth = 1000000,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 1000000,
     },
     Description = 'Speaker',
     Display = {
@@ -95,8 +91,7 @@ UnitBlueprint {
     },
     LifeBarOffset = 1,
     LifeBarRender = false,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,
@@ -104,20 +99,16 @@ UnitBlueprint {
             LAYER_Seabed = false,
             LAYER_Sub = false,
             LAYER_Water = true,
-        },
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
+        },
+        FlattenSkirt = true,
         MeshExtentsX = 1*3,
         MeshExtentsY = 0.5*3,
-        MeshExtentsZ = 2*3,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 2*3,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -2.5,
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-        TurnRate = 0,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 0.75*3,
     SelectionSizeZ = 1.25*3,

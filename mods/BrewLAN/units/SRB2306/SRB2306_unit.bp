@@ -47,8 +47,7 @@ UnitBlueprint {
         ArmorType = 'Structure',
         EconomyThreatLevel = 93,
         Health = 7000,
-        MaxHealth = 7000,
-        RegenRate = 0,
+        MaxHealth = 7000,
         SurfaceThreatLevel = 23,
     },
     Description = '<LOC sb2306_desc>Heavy Point Defense',
@@ -120,18 +119,13 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1.1,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+    Physics = {
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-        TurnRate = 0,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 0.75,
     SelectionSizeZ = 0.75,

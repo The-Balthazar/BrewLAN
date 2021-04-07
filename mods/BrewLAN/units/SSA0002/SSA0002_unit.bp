@@ -31,15 +31,11 @@ UnitBlueprint {
         'UNTARGETABLE',
     },
     CollisionOffsetZ = -0.07,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Light',
         EconomyThreatLevel = 135,
         Health = 42,
-        MaxHealth = 42,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 42,
     },
     Description = '<LOC ssa00002_desc>Hologram',
     Display = {

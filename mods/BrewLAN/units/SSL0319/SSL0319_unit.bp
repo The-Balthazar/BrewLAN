@@ -54,17 +54,13 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'OVERLAYDIRECTFIRE',
-    },
-    CollisionOffsetX = 0,
+    },
     CollisionOffsetZ = 0.1,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 76,
         Health = 1845,
-        MaxHealth = 1845,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 1845,
         SurfaceThreatLevel = 6,
     },
     Description = '<LOC sl0319_desc>Field Engineer',
@@ -186,9 +182,7 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 0.75,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxAcceleration = 3.6,
         MaxBrake = 3.6,
         MaxSpeed = 3,
@@ -196,12 +190,10 @@ UnitBlueprint {
         MaxSteerForce = 10,
         MeshExtentsX = 1,
         MeshExtentsY = 0.5,
-        MeshExtentsZ = 1,
-        MinSpeedPercent = 0,
+        MeshExtentsZ = 1,
         MotionType = 'RULEUMT_Amphibious',
         RotateOnSpot = true,
-        RotateOnSpotThreshold = 0.1,
-        TurnRadius = 0,
+        RotateOnSpotThreshold = 0.1,
         TurnRate = 90,
     },
     SelectionSizeX = 0.5,

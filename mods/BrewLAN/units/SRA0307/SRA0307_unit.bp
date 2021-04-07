@@ -108,8 +108,7 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Light',
         Health = 3500,
-        MaxHealth = 3500,
-        RegenRate = 0,
+        MaxHealth = 3500,
         SubThreatLevel = 38,
     },
     Description = '<LOC sair0307>Heavy Torpedo Bomber',

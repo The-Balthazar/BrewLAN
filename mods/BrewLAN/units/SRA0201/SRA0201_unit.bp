@@ -92,14 +92,12 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'OVERLAYSONAR',
         'OVERLAYRADAR',
-    },
-    CollisionOffsetY = 0,
+    },
     Defense = {
         AirThreatLevel = 0.1,
         ArmorType = 'Light',
         Health = 360,
-        MaxHealth = 360,
-        RegenRate = 0,
+        MaxHealth = 360,
     },
     Description = '<LOC sra0201_desc>Recon Plane',
     Display = {

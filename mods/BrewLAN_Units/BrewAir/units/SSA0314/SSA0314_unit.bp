@@ -110,8 +110,7 @@ UnitBlueprint {
     Defense = {
         MissileDetector = {
             AttachBone = 'Missile_Defence',
-        },
-        AirThreatLevel = 0,
+        },
         ArmorType = 'Light',
         EconomyThreatLevel = 3,
         Health = 7550,

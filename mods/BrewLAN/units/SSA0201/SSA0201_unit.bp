@@ -95,8 +95,7 @@ UnitBlueprint {
         AirThreatLevel = 0.3,
         ArmorType = 'Light',
         Health = 550,
-        MaxHealth = 550,
-        RegenRate = 0,
+        MaxHealth = 550,
     },
     Description = '<LOC sea0201_desc>Recon Plane',
     Display = {

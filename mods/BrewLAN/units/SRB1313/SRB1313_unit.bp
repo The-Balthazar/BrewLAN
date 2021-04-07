@@ -40,15 +40,11 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
-    Defense = {
-        AirThreatLevel = 0,
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 625,
         Health = 9000,
-        MaxHealth = 9000,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 9000,
     },
     Description = '<LOC srb1313_desc>Cloakable Mass Fabricator',
     Display = {
@@ -140,18 +136,13 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.95,
     LifeBarSize = 2.75,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+    Physics = {
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 1.55,
     SelectionSizeZ = 1.55,

@@ -37,17 +37,12 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTECONOMY',
         'RESEARCHLOCKED',
-    },
-    CollisionOffsetY = 0,
-    Defense = {
-        AirThreatLevel = 0,
+    },
+    Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2500,
         Health = 12600,
-        MaxHealth = 12600,
-        RegenRate = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        MaxHealth = 12600,
     },
     Description = '<LOC srb1312_desc>Cloakable Mass Extractor',
     Display = {
@@ -113,23 +108,18 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 1.25,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Seabed = true,
         },
-        BuildRestriction = 'RULEUBR_OnMassDeposit',
-        DragCoefficient = 0.2,
-        FlattenSkirt = true,
-        MaxSteerForce = 0,
-        MinSpeedPercent = 0,
+        BuildRestriction = 'RULEUBR_OnMassDeposit',
+        FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-        TurnRate = 0,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 0.65,
     SelectionSizeZ = 0.65,

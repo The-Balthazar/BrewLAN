@@ -111,10 +111,8 @@ UnitBlueprint {
         'SHOWATTACKRETICLE',
         'OVERLAYRADAR',
         'RESEARCHLOCKED',
-    },
-    CollisionOffsetY = 0,
-    Defense = {
-        AirThreatLevel = 0,
+    },
+    Defense = {
         MissileDetector = {
             AttachBone = 'MissileDetector',
         },

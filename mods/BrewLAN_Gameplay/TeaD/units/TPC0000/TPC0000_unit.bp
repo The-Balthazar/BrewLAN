@@ -27,12 +27,8 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
         Health = 30,
-        MaxHealth = 30,
-        RegenRate = 0,
-        EconomyThreatLevel = 20000,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
-        AirThreatLevel = 0,
+        MaxHealth = 30,
+        EconomyThreatLevel = 20000,
     },
     Description = '<LOC tpc0000_desc>Life Teacup',
     Display = {
@@ -81,12 +77,10 @@ UnitBlueprint {
         VisionRadius = 20,
     },
     LifeBarRender = false,
-    Physics = {
-        BankingSlope = 0,
+    Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
-        },
-        DragCoefficient = 0.2,
+        },
         MaxAcceleration = 4.5,
         MaxBrake = 4.5,
         MaxSpeed = 4.5,
@@ -94,10 +88,8 @@ UnitBlueprint {
         MaxSteerForce = 1000,
         MeshExtentsX = 1,
         MeshExtentsY = 1,
-        MeshExtentsZ = 1,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',
-        TurnRadius = 0,
+        MeshExtentsZ = 1,
+        MotionType = 'RULEUMT_None',
         TurnRate = 80,
         SkirtOffsetX = -1,
         SkirtOffsetZ = -1,

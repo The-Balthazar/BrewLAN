@@ -100,14 +100,10 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
     },
     CollisionOffsetY = -0.075,
-    Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Light',
-        EconomyThreatLevel = 0,
+    Defense = {
+        ArmorType = 'Light',
         Health = 540,
-        MaxHealth = 540,
-        RegenRate = 0,
-        SubThreatLevel = 0,
+        MaxHealth = 540,
         SurfaceThreatLevel = 2,
     },
     Description = '<LOC sair0105>Light Gunship',

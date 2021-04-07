@@ -43,8 +43,7 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Structure',
         Health = 20000,
-        MaxHealth = 20000,
-        RegenRate = 0,
+        MaxHealth = 20000,
     },
     Description = '<LOC sbui5210>Heavy Wall Segment',
     Display = {
@@ -142,22 +141,15 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 0,
     LifeBarSize = 0.075,
-    Physics = {
-        BankingSlope = 0,
-        DragCoefficient = 0.2,
+    Physics = {
         MaxGroundVariation = 2,
-        FlattenSkirt = false,
-        MaxSteerForce = 0,
+        FlattenSkirt = false,
         MeshExtentsX = 3.2,
         MeshExtentsY = 2.2,
-        MeshExtentsZ = 3.2,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
+        MeshExtentsZ = 3.2,
+        MotionType = 'RULEUMT_None',
         SkirtSizeX = 0,
-        SkirtSizeZ = 0,
-        TurnRate = 0,
+        SkirtSizeZ = 0,
     },
     SelectionSizeX = .8,
     SelectionSizeZ = .8,
