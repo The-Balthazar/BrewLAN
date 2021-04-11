@@ -180,7 +180,7 @@ function CheckLOCTags(all_bps)
             local nameref = LOCref(bp.General.UnitName)
             local desc = LOC(bp.Description)
             local descref = LOCref(bp.Description)
-            LOG(id, name, nameref, loctable[nameref], desc, descref, loctable[descref])
+            _ALERT(id, name, nameref, loctable[nameref], desc, descref, loctable[descref])
         end
     end
 end

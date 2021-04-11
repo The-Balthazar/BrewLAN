@@ -586,7 +586,7 @@ function CreateDialog(x, y)
         for filterGroup, groupControls in filterGroups do
             local key = groupControls.check.key
             if filterTable[key] ~= nil then
-                LOG('setting key: ', key, ' to: ', filterTable[key].value)
+                _ALERT('setting key: ', key, ' to: ', filterTable[key].value)
                 if groupControls.check:IsChecked() ~= filterTable[key].value then
                     groupControls.check:SetCheck(filterTable[key].value)
                 end

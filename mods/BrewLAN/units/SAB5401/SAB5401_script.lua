@@ -210,7 +210,7 @@ SAB5401 = Class(AStructureUnit) {
             for x = 0, unitbp.Physics.SkirtSizeX do
                 for z = 0, unitbp.Physics.SkirtSizeZ do
                     if self.OccupancyCheck[posGS[1] + x][posGS[2] + z] then
-                        LOG("Position "..posGS[1] + x..", "..posGS[2] + z.. " blocked")
+                        _ALERT("Position "..posGS[1] + x..", "..posGS[2] + z.. " blocked")
                         return false
                     end
                     local H = GetTerrainHeight(posGS[1] + x, posGS[2] + z)

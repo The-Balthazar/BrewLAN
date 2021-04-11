@@ -1076,7 +1076,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                             --if we made it here and have a path, and it's all valid
                             if path then
                                 for i, pos in path do
-                                    --LOG(includefunc, pos, includefunc[1](pos, includefunc[2]) )
+                                    --_ALERT(includefunc, pos, includefunc[1](pos, includefunc[2]) )
                                     if ( not includefunc or includefunc[1] and includefunc[1](pos, includefunc[2]) ) then
 
                                         if returndist and not pos[3] then

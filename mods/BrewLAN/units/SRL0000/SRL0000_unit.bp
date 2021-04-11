@@ -20,20 +20,14 @@ UnitBlueprint {
     },
     --BuildIconSortPriority = 10,
     Categories = {
-        '', --Empty key because it wont overwrite 'MEGALITHEGG'
-
+        'UNSPAWNABLE', --Script wont overwrite 'MEGALITHEGG', so this one isn't passed along.
         'SELECTABLE',
         'CYBRAN',
         'STRUCTURE',
-        --'LAND',
         'TECH3',
-        --'CONSTRUCTION',
-        --'FACTORY',
-        --'RALLYPOINT',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        --'SHOWQUEUE',
     },
     Defense = {
         ArmorType = 'Normal',

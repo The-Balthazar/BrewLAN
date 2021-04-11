@@ -2,11 +2,7 @@ UnitBlueprint {
     BuildIconSortPriority = 160,
     Categories = {
         'SELECTABLE',
-        --'STRUCTURE',
-        --'VISIBLETORECON',
-        --'RECLAIMABLE',
     },
-    CollisionOffsetY = 0.40,
     Defense = {
         ArmorType = 'Structure',
         Health = 69,
@@ -24,15 +20,7 @@ UnitBlueprint {
             },
         },
         UniformScale = 0.05,
-    },
-    Economy = {
-        BuildCostEnergy = 2,
-        BuildCostMass = 2,
-        BuildTime = 2,
-    },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
+        HideLifebars = true,
     },
     General = {
         Category = 'Defense',
@@ -73,21 +61,9 @@ RULEUTC_CloakToggle = {         helpText = "toggle_cloak",      bitmapId = 'inte
     Interface = {
         HelpText = 'Damage Test Facility',
     },
-    LifeBarOffset = 1,
     LifeBarRender = false,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = true,
-        },
         FlattenSkirt = false,
-        MeshExtentsX = 1,
-        MeshExtentsY = 1,
-        MeshExtentsZ = 1,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
         SkirtOffsetZ = -0.5,
@@ -97,9 +73,6 @@ RULEUTC_CloakToggle = {         helpText = "toggle_cloak",      bitmapId = 'inte
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SelectionThickness = 0.7,
-    SizeX = 1,
-    SizeY = 0.05,
-    SizeZ = 1,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 200,
 }

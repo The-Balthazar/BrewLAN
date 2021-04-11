@@ -778,6 +778,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * CollisionOffsetX
     * CollisionOffsetZ
 
+  ### 2021-04-09
+
+  * Cleaned up some dummy units.
+
+  ### 2021-04-11
+
+  * Replaced a few select instances of `LOG` with `_ALERT`. For reasons.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
