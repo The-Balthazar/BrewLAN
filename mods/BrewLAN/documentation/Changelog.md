@@ -785,6 +785,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-04-11
 
   * Replaced a few select instances of `LOG` with `_ALERT`. For reasons.
+  * Finished Excalibur; tweaked the model, and replaced the UV and texture.
 
 ## 2019-10-13|0.8.9
 
