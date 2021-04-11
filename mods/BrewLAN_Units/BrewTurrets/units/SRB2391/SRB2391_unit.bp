@@ -42,8 +42,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'SIZE4',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYDIRECTFIRE',
+        'RECLAIMABLE',
         'SORTDEFENSE',
         'RESEARCHLOCKED',
     },
@@ -67,8 +66,6 @@ UnitBlueprint {
                 {LODCutoff = 260, ShaderName = 'Insect'},
             },
         },
-        PlaceholderMeshName = 'UXB0003',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_cybran_01_albedo',

@@ -63,9 +63,7 @@ UnitBlueprint {
             Land = {
                 Effects = {
                     {
-                        Bones = {
-                            'Light',
-                        },
+                        Bones = { 'Light' },
                         Type = 'Radar01',
                     },
                 },
@@ -83,8 +81,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0015',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_01_albedo',
@@ -92,12 +88,7 @@ UnitBlueprint {
                 FadeOut = 150,
                 Length = 6.4,
                 Normal = 'Tarmacs/Tar6x_01_normals',
-                Orientations = {
-                    0,
-                    90,
-                    180,
-                    270,
-                },
+                Orientations = {0, 90, 180, 270},
                 RemoveWhenDead = false,
                 Width = 6.4,
             },
@@ -120,21 +111,6 @@ UnitBlueprint {
     General = {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Pause = true,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
-            RULEUCC_Transport = false,
-        },
         FactionName = 'UEF',
         Icon = 'land',
         OrderOverrides = {
@@ -164,18 +140,10 @@ UnitBlueprint {
     LifeBarOffset = 0.4,
     LifeBarSize = 1,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
-        },
         FlattenSkirt = true,
-        MeshExtentsX = 1.1*.6,
-        MeshExtentsY = 2.75*.6,
-        MeshExtentsZ = 1.1*.6,
+        MeshExtentsX = 0.66,
+        MeshExtentsY = 1.65,
+        MeshExtentsZ = 0.66,
         MotionType = 'RULEUMT_None',
         SkirtSizeX = 1,
         SkirtSizeZ = 1,
@@ -195,11 +163,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = false,
             Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }

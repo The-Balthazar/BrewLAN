@@ -52,8 +52,7 @@ UnitBlueprint {
         'ANTIAIR',
         'HOVER',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
+        'RECLAIMABLE',
     },
     Defense = {
         AirThreatLevel = 43,

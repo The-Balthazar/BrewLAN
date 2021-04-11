@@ -28,8 +28,7 @@ UnitBlueprint {
         'TECH3',
         'ANTIAIR',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
+        'RECLAIMABLE',
     },
     Defense = {
         AirThreatLevel = 6,

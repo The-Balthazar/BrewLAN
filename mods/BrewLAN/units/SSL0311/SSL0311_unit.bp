@@ -46,8 +46,7 @@ UnitBlueprint {
         'DIRECTFIRE',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'BOT',
-        'OVERLAYDIRECTFIRE',
+        'BOT',
     },
     CollisionOffsetZ = -0.2,
     Defense = {

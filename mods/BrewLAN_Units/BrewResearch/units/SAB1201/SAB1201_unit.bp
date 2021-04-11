@@ -120,8 +120,7 @@ UnitBlueprint {
                 { LODCutoff = 160, ShaderName = 'Aeon' },
                 { LODCutoff = 300, ShaderName = 'Aeon' },
             },
-        },
-        SpawnRandomRotation = true,
+        },
         Tarmacs = {
             {
                 DeathLifetime = 300,

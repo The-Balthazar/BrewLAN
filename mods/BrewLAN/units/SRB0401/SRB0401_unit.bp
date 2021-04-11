@@ -334,7 +334,6 @@ UnitBlueprint {
     SizeZ = 15,
     --SizeSphere = 13,
     StrategicIconName = 'icon_experimental_generic',
-    StrategicIconNameEIOOverride = 'icon_experimental_factory_land',
     StrategicIconSortPriority = 210,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

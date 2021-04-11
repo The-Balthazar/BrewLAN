@@ -45,7 +45,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWATTACKRETICLE',
-        'OVERLAYDIRECTFIRE',
+
         'SORTDEFENSE',
     },
     Defense = {
@@ -195,6 +195,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 0.15,
+            RenderFireClock = true,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

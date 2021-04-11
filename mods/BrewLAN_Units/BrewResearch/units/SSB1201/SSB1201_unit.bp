@@ -33,8 +33,7 @@ UnitBlueprint {
         },
     },
     BuildIconSortPriority = 69,
-    Categories = {
-        'PRODUCTBREWLANRND',
+    Categories = {
         'SELECTABLE',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
@@ -134,8 +133,7 @@ UnitBlueprint {
                     ShaderName = 'Seraphim',
                 },
             },
-        },
-        SpawnRandomRotation = true,
+        },
         Tarmacs = {
             {
                 DeathLifetime = 200,

@@ -81,8 +81,7 @@ UnitBlueprint {
                 {LODCutoff = 120, ShaderName = 'Aeon'},
                 {LODCutoff = 300, ShaderName = 'Aeon'},
             },
-        },
-        SpawnRandomRotation = true,
+        },
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar6x_aeon_01_albedo',

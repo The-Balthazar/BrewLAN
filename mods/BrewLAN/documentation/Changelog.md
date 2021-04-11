@@ -786,6 +786,21 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Replaced a few select instances of `LOG` with `_ALERT`. For reasons.
   * Finished Excalibur; tweaked the model, and replaced the UV and texture.
+  * Excalibur now renders a fire clock.
+  * Anti-armour point defences are now consistently labelled as their original directfire, rather than artillery.
+  * Removed the following functionless categories:
+    * `OVERLAYDIRECTFIRE`
+    * `OVERLAYINDIRECTFIRE`
+    * `OVERLAYANTIAIR`
+    * `OVERLAYANTINAVY`
+    * `OVERLAYCOUNTERMEASURE`
+    * `PRODUCTBREWLANRND`
+    * `PRODUCTBREWLANSHIELDS`
+  * Removed the last remnants of the blueprint values:
+    * SpawnRandomRotation
+    * StrategicIconNameEIOOverride (formerly used by the defunct EIO)
+    * PlaceholderMeshName
+  * More blueprint cleaning.
 
 ## 2019-10-13|0.8.9
 

@@ -140,7 +140,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 130,
                     ShaderName = 'Aeon',
-                    --MeshName = '/units/UAB1301/UAB1301_lod0.scm',
                     AlbedoName = '/units/UAB1301/UAB1301_albedo.dds',
                     SpecularName = '/units/UAB1301/UAB1301_specteam.dds',
                     NormalsName = '/units/UaB1301/UAB1301_normalsTS.dds',
@@ -148,7 +147,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 260,
                     ShaderName = 'Aeon',
-                    --MeshName = '/units/UAB1301/UAB1301_lod1.scm',
                     AlbedoName = '/units/UAB1301/UAB1301_albedo.dds',
                     SpecularName = '/units/UAB1301/UAB1301_specteam.dds',
                     NormalsName = '/units/UaB1301/UAB1301_normalsTS.dds',
@@ -156,14 +154,12 @@ UnitBlueprint {
                 {
                     LODCutoff = 390,
                     ShaderName = 'Aeon',
-                    --MeshName = '/units/UAB1301/UAB1301_lod1.scm',
                     AlbedoName = '/units/UAB1301/UAB1301_lod1_albedo.dds',
                     SpecularName = '/units/UAB1301/UAB1301_lod1_specteam.dds',
                     NormalsName = '/units/UAB1301/UAB1301_lod1_normalsTS.dds',
                 },
             },
-        },
-        SpawnRandomRotation = true,
+        },
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',

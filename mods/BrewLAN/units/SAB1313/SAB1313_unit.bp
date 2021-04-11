@@ -138,8 +138,7 @@ UnitBlueprint {
                     NormalsName = '/units/UaB1303/UAB1303_lod1_normalsTS.dds',
                 },
             },
-        },
-        SpawnRandomRotation = true,
+        },
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_aeon_01_albedo',

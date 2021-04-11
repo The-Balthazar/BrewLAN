@@ -45,7 +45,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWATTACKRETICLE',
-        'OVERLAYINDIRECTFIRE',
         'SORTDEFENSE',
     },
     CollisionOffsetY = -0.375,
@@ -120,9 +119,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 50,
     },
-    Interface = {
-        HelpText = '<LOC sbui2311_desc>Anti-Armor Point Defence',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.4,
     LifeBarSize = 1.85,
@@ -144,7 +140,7 @@ UnitBlueprint {
     SizeX = 1.7,
     SizeY = 1.4,
     SizeZ = 1.6,
-    StrategicIconName = 'icon_structure3_artillery',
+    StrategicIconName = 'icon_structure3_directfire',
     StrategicIconSortPriority = 205,
     Veteran = {
         Level1 = 32,
@@ -207,7 +203,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 3,
             RackSlavedToTurret = true,
-            RangeCategory = 'UWRC_IndirectFire',
+            RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 0.25*.65,
             TargetCheckInterval = 2,
             TargetPriorities = {

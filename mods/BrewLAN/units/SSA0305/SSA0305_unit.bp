@@ -94,9 +94,7 @@ UnitBlueprint {
         'TECH3',
         'GROUNDATTACK',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
-        'OVERLAYDIRECTFIRE',
+        'RECLAIMABLE',
     },
     CollisionOffsetY = -0.075,
     Defense = {

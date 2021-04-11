@@ -27,8 +27,7 @@ UnitBlueprint {
         },
     },
     BuildIconSortPriority = 220,
-    Categories = {
-        'PRODUCTBREWLANRND',
+    Categories = {
         'SELECTABLE',
         'SERAPHIM',
         'STRUCTURE',

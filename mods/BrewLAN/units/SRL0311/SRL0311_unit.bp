@@ -54,8 +54,7 @@ UnitBlueprint {
         'INDIRECTFIRE',
         'SILO',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYINDIRECTFIRE',
+        'RECLAIMABLE',
     },
     Defense = {
         ArmorType = 'Normal',

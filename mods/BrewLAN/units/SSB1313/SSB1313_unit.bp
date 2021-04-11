@@ -68,8 +68,7 @@ UnitBlueprint {
                     SpecularName = '/units/XSB1303/XSB1303_lod1_specteam.dds',
                 },
             },
-        },
-        SpawnRandomRotation = true,
+        },
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_seraphim_01_albedo',

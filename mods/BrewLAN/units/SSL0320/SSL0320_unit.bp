@@ -53,8 +53,7 @@ UnitBlueprint {
         'ANTIMISSILE',
         'HOVER',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
+        'RECLAIMABLE',
         'OVERLAYDEFENSE',
     },
     Defense = {

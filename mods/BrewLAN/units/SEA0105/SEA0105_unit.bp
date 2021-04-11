@@ -97,8 +97,7 @@ UnitBlueprint {
         'GROUNDATTACK',
         'TRANSPORTATION',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYDIRECTFIRE',
+        'RECLAIMABLE',
     },
     Defense = {
         ArmorType = 'Light',

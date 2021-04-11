@@ -223,19 +223,6 @@ UnitBlueprint {
         MeshExtentsY = 14,
         MeshExtentsZ = 3,
         MotionType = 'RULEUMT_None',
-        --The raised platform is on the surface of the water, not the seabed.
-        --[[RaisedPlatforms = {
-            -- Platform 1
-            -- x    z    height
-            -- TopLeft Offset From Center
-            -13, -13, 1.5,
-            -- TopRight Offset From Center
-            13, -13, 1.5,
-            -- BottomLeft Offset From Center
-            -13, 13, 1.5,
-            -- BottomRight Offset From Center
-            13, 13, 1.5,
-        },]]--
         RollOffPoints = {
             {UnitSpin = 0,   X = 0,     Y = 0, Z = 8},
             {UnitSpin = 45,  X = 5.66,  Y = 0, Z = 5.66},
@@ -258,7 +245,6 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 14,
     StrategicIconName = 'icon_experimental_generic',
-    StrategicIconNameEIOOverride = 'icon_experimental_factory_navy',
     StrategicIconSortPriority = 210,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

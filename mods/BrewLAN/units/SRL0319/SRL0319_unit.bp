@@ -41,8 +41,7 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'OVERLAYRADAR',
-        'OVERLAYCOUNTERINTEL',
-        'OVERLAYDIRECTFIRE',
+        'OVERLAYCOUNTERINTEL',
     },
     CollisionOffsetY = -0.25,
     Defense = {

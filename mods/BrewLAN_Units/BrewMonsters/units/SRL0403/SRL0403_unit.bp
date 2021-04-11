@@ -67,14 +67,9 @@ UnitBlueprint {
         'ANTIMISSILE',
         'EXPERIMENTAL',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
-        'OVERLAYDIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
+        'RECLAIMABLE',
         'OVERLAYDEFENSE',
-        'OVERLAYCOUNTERINTEL',
-        'OVERLAYANTINAVY',
-        'OVERLAYINDIRECTFIRE',
+        'OVERLAYCOUNTERINTEL',
         'RESEARCHLOCKED',
     },
     Defense = {

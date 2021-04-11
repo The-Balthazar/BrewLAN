@@ -33,7 +33,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'SHOWATTACKRETICLE',
         'RECLAIMABLE',
-        'OVERLAYDIRECTFIRE',
         'SORTDEFENSE',
     },
     Defense = {
@@ -103,9 +102,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 50,
-    },
-    Interface = {
-        HelpText = '<LOC sbui2311_desc>Anti-Armor Point Defense',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
@@ -210,7 +206,7 @@ UnitBlueprint {
             TurretYawSpeed = 50,
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
-            WeaponCategory = 'Direct Fire Experimental',
+            WeaponCategory = 'Direct Fire',
         },
     },
     Wreckage = {

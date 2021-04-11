@@ -54,9 +54,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
-        'SHOWATTACKRETICLE',
-        'OVERLAYDIRECTFIRE',
-        'OVERLAYCOUNTERMEASURE',
+        'SHOWATTACKRETICLE',
     },
     CollisionOffsetZ = 0.1,
     Defense = {

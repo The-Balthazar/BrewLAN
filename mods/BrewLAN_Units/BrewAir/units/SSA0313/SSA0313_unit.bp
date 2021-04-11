@@ -61,8 +61,7 @@ UnitBlueprint {
         'TECH3',
         'ANTIAIR',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
+        'RECLAIMABLE',
         'RESEARCHLOCKED',
     },
     Defense = {

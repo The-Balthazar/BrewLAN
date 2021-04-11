@@ -107,9 +107,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'DRAGBUILD',
-        'SHOWATTACKRETICLE',
-        'OVERLAYANTIAIR',
-        'OVERLAYDIRECTFIRE',
+        'SHOWATTACKRETICLE',
         'OVERLAYRADAR',
         'CANNOTUSEAIRSTAGING',
     },

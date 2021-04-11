@@ -28,8 +28,7 @@ UnitBlueprint {
         },
     },
     BuildIconSortPriority = 71,
-    Categories = {
-        'PRODUCTBREWLANRND',
+    Categories = {
         'SELECTABLE',
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER2ENGINEER',

@@ -68,8 +68,7 @@ UnitBlueprint {
         'DIRECTFIRE',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TANK',
-        'OVERLAYDIRECTFIRE',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -103,8 +103,7 @@ UnitBlueprint {
         'ANTIAIR',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHOWATTACKRETICLE',
-        'OVERLAYANTIAIR',
+        'SHOWATTACKRETICLE',
         'OVERLAYRADAR',
     },
     Defense = {

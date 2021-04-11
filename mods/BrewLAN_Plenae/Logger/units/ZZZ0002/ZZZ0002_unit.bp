@@ -1,7 +1,6 @@
 UnitBlueprint {
     BuildIconSortPriority = 160,
     Categories = {
-        
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER1COMMANDER',
         'BUILTBYTIER1FIELD',
@@ -33,8 +32,6 @@ UnitBlueprint {
                 {LODCutoff = 400, ShaderName = 'Aeon'},
             },
         },
-        PlaceholderMeshName = 'UXB0018',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar8x_aeon_01_albedo',
@@ -52,7 +49,6 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 2,
         BuildCostMass = 2,
-        --BuildRate = 2,
         BuildTime = 2,
     },
     Footprint = {
@@ -62,20 +58,6 @@ UnitBlueprint {
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_CounterMeasure',
-        CommandCaps = {
-            RULEUCC_Attack = false,
-            RULEUCC_CallTransport = false,
-            RULEUCC_Capture = false,
-            RULEUCC_Guard = false,
-            RULEUCC_Move = false,
-            RULEUCC_Nuke = false,
-            RULEUCC_Patrol = false,
-            RULEUCC_Reclaim = false,
-            RULEUCC_Repair = false,
-            RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
-            RULEUCC_Transport = false,
-        },
         FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 5,
@@ -93,43 +75,25 @@ UnitBlueprint {
     LifeBarRender = false,
     Physics = {
         BuildOnLayerCaps = {
-            LAYER_Air = false,
             LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        MeshExtentsX = 1*3,
-        MeshExtentsY = 0.5*3,
-        MeshExtentsZ = 2*3,
+        MeshExtentsX = 3,
+        MeshExtentsY = 1.5,
+        MeshExtentsZ = 6,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -2.5,
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
     },
-    SelectionSizeX = 0.75*3,
-    SelectionSizeZ = 1.25*3,
+    SelectionSizeX = 2.25,
+    SelectionSizeZ = 3.75,
     SelectionThickness = 0.45,
-    SizeX = 1*3,
-    SizeY = 0.5*3,
-    SizeZ = 2*3,
+    SizeX = 3,
+    SizeY = 1.5,
+    SizeZ = 6,
     StrategicIconName = 'icon_structure_generic',
     StrategicIconSortPriority = 200,
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
-        },
-    },
 }

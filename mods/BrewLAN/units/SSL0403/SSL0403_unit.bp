@@ -99,8 +99,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'PATROLHELPER',
         'SHOWQUEUE',
-        'OVERLAYDEFENSE',
-        'OVERLAYDIRECTFIRE',
+        'OVERLAYDEFENSE',
         'REBUILDER',
         'MOBILEBUILDERONLY'
     },

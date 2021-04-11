@@ -42,8 +42,7 @@ UnitBlueprint {
         'SIZE16',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHOWATTACKRETICLE',
-        'OVERLAYINDIRECTFIRE',
+        'SHOWATTACKRETICLE',
         'SORTSTRATEGIC',
         'CARRIER', -- Required for propper storage, causes a crash without
         'RALLYPOINT', -- Allows launched units to be given orders like from a factory

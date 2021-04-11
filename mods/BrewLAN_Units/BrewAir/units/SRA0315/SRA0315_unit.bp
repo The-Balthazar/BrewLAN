@@ -55,10 +55,8 @@ UnitBlueprint {
         'TECH3',
         'GROUNDATTACK',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYANTIAIR',
-        'OVERLAYCOUNTERINTEL',
-        'OVERLAYDIRECTFIRE',
+        'RECLAIMABLE',
+        'OVERLAYCOUNTERINTEL',
         'RESEARCHLOCKED'
     },
     Defense = {

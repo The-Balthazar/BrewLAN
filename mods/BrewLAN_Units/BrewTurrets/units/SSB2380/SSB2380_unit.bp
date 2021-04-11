@@ -47,8 +47,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'SIZE4',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-        'OVERLAYDIRECTFIRE',
+        'RECLAIMABLE',
         'SORTDEFENSE',
     },
     Defense = {

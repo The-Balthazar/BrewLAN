@@ -59,8 +59,7 @@ UnitBlueprint {
         'INDIRECTFIRE',
         'VISIBLETORECON',
         'SATELLITEUPLINK',
-        'RECLAIMABLE',
-        'OVERLAYDIRECTFIRE',
+        'RECLAIMABLE',
     },
     Defense = {
         ArmorType = 'Normal',

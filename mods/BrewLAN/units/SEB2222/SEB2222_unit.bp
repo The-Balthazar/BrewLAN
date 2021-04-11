@@ -24,8 +24,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
-        'OVERLAYRADAR',
-        'OVERLAYDIRECTFIRE',
+        'OVERLAYRADAR',
         'OVERLAYMISC',
         'UEF',
         'STRUCTURE',

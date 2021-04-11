@@ -67,8 +67,7 @@ UnitBlueprint {
         'SIZE16',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHOWATTACKRETICLE',
-        'OVERLAYINDIRECTFIRE',
+        'SHOWATTACKRETICLE',
         'SORTSTRATEGIC',
     },
     Defense = {

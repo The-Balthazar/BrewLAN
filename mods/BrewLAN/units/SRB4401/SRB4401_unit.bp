@@ -95,8 +95,6 @@ UnitBlueprint {
                 },
             },
         },
-        PlaceholderMeshName = 'UXB0018',
-        SpawnRandomRotation = true,
         Tarmacs = {
             {
                 Albedo = 'Tarmacs/Tar12x_cybran_01_albedo',
@@ -125,9 +123,6 @@ UnitBlueprint {
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_CounterMeasure',
-        CommandCaps = {
-            RULEUCC_Pause = true,
-        },
         FactionName = 'Cybran',
         Icon = 'land',
         OrderOverrides = {

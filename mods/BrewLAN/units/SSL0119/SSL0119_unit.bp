@@ -54,8 +54,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
-        'SHOWQUEUE',
-        'OVERLAYDIRECTFIRE',
+        'SHOWQUEUE',
     },
     CollisionOffsetZ = 0.1,
     Defense = {
