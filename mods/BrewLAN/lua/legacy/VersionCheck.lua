@@ -1,5 +1,8 @@
+local ver = string.sub(GetVersion(),1,3)
+local ver2 = tonumber(string.sub(GetVersion(),5))
+
 function VersionIsSC()
-    return string.sub(GetVersion(),1,3) == '1.1' or string.sub(GetVersion(),1,3) == '1.0'
+    return ver == '1.1' or ver == '1.0'
 end
 
 function VersionIsSteam()
@@ -7,11 +10,11 @@ function VersionIsSteam()
 end
 
 function VersionIsFAF()
-    return string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603
+    return ver == '1.5' and ver2 > 3603
 end
 
 function VersionIsRetail()
-    return string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) <= 3603
+    return ver == '1.5' and ver2 <= 3603
 end
 
 function GetVersionName()

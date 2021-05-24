@@ -801,6 +801,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * StrategicIconNameEIOOverride (formerly used by the defunct EIO)
     * PlaceholderMeshName
   * More blueprint cleaning.
+  * Stargates can no longer connect to other stargates on a different layer.
+
+  ### 2021-04-13
+
+  * T2 storages now pass all of the data that they should to the core functions when they die.
+
+  ### 2021-05-20
+
+  * Reduced the number of string sub operations needed for the version check script.
+
+  ### 2021-05-24
+
+  * Added texture detail to the inside of the slide action on the Excalibur.
 
 ## 2019-10-13|0.8.9
 

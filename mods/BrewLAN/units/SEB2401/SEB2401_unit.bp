@@ -45,7 +45,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWATTACKRETICLE',
-
         'SORTDEFENSE',
     },
     Defense = {

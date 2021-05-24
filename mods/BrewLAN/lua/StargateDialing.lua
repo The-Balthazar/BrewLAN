@@ -135,6 +135,7 @@ function StargateDialing(SuperClass)
             and not targetgate.DialingData.IncomingWormhole --Check the target isn't already being dialed into
             and not targetgate.DialingData.OutgoingWormhole --Check the target isn't currently dialing out
             and not self.DialingData.IncomingWormhole       --Check we don't have incoming
+            and targetgate:GetCurrentLayer() == self:GetCurrentLayer() --Only allow connections between gates on the same layer; for external mods that allow this
             then
                 if self.DialingData.OutgoingWormhole then
                     self:CloseWormhole(true)

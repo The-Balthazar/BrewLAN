@@ -300,6 +300,6 @@ BrewLANEnergyStorageUnit = Class(EnergyStorageUnit) {
             weapon.FxDeath = EffectTemplates.ExplosionEffectsLrg02
         end
 
-        EnergyStorageUnit.OnKilled(self)
+        EnergyStorageUnit.OnKilled(self, instigator, type, overkillRatio)
     end,
 }
