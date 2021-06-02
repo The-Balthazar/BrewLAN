@@ -1,13 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UAB1303/UAB1303_script.lua
-#**  Author(s):  Jessica St. Croix, David Tomandl, John Comes
-#**
-#**  Summary  :  Aeon T3 Mass Fabricator
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local SMassFabricationUnit = import('/lua/seraphimunits.lua').SMassFabricationUnit
 
 XSB1303 = Class(SMassFabricationUnit) {
@@ -28,7 +18,7 @@ XSB1303 = Class(SMassFabricationUnit) {
         self.RingManip2:SetSpinDown(true)
         self.RingManip3:SetSpinDown(true)
     end,
-    
+
     OnProductionUnpaused = function(self)
         SMassFabricationUnit.OnProductionUnpaused(self)
         self.RingManip1:SetSpinDown(false)

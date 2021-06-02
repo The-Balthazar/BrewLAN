@@ -6,30 +6,32 @@ local VersionIsFAF = string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.s
 --------------------------------------------------------------------------------
 ResearchItem = Class(DummyUnit) {
     OnCreate = function(self)
-        local bp = self:GetBlueprint()
+        local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
         DummyUnit.OnCreate(self)
         --Restrict me, the RND item, to one being built at a time.
         AddBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
-        local bp = self:GetBlueprint()
+        local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
+        local army = self:GetArmy()
+        local factionCat = categories[string.upper(bp.General.FactionName or 'SELECTABLE')]
         --Enable what we were supposed to allow.
         if bp.ResearchId == string.lower(bp.ResearchId) then --This wont work for any units without letters in the ID.
             if self:CheckBuildRestrictionsAllow(bp.ResearchId) then
-                RemoveBuildRestriction(self:GetArmy(), categories[bp.ResearchId] )
+                RemoveBuildRestriction(army, categories[bp.ResearchId] )
             else
                 WARN("Research item for " .. bp.ResearchId .. " was just completed, however lobby restrictions forbid it. Item shouldn't have been researchable.")
             end
         else -- else we are a category, not a unitID
-            RemoveBuildRestriction(self:GetArmy(), (categories[bp.ResearchId] * categories[string.upper(bp.General.FactionName or 'SELECTABLE')]) - categories.RESEARCHLOCKED - categories[bp.BlueprintId] - (self:BuildRestrictionCategories()) )
+            RemoveBuildRestriction(army, (categories[bp.ResearchId] * factionCat) - categories.RESEARCHLOCKED - categories[bp.BlueprintId] - (self:BuildRestrictionCategories()) )
             --Unlock the next tech research as well.
             if bp.ResearchId == 'RESEARCHLOCKEDTECH1' then
-                RemoveBuildRestriction(self:GetArmy(), categories.TECH2 * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
+                RemoveBuildRestriction(army, categories.TECH2 * factionCat * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
             elseif bp.ResearchId == 'TECH2' then
-                RemoveBuildRestriction(self:GetArmy(), categories.TECH3 * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
+                RemoveBuildRestriction(army, categories.TECH3 * factionCat * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
             elseif bp.ResearchId == 'TECH3' then
-                RemoveBuildRestriction(self:GetArmy(), categories.EXPERIMENTAL * categories[string.upper(bp.General.FactionName or 'SELECTABLE')] * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
+                RemoveBuildRestriction(army, categories.EXPERIMENTAL * factionCat * categories.CONSTRUCTIONSORTDOWN - (self:BuildRestrictionCategories()) )
             end
         end
 
@@ -94,7 +96,7 @@ ResearchItem = Class(DummyUnit) {
     end,
 
     OnKilled = function(self, instigator, type, overKillRatio)
-        local bp = self:GetBlueprint()
+        local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
         --Allow restarting of me, the RND item, if I was never finished.
         if self:GetFractionComplete() < 1 then
             RemoveBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
@@ -103,7 +105,7 @@ ResearchItem = Class(DummyUnit) {
     end,
 
     OnDestroy = function(self)
-        local bp = self:GetBlueprint()
+        local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
         --Allow restarting of me, the RND item, if I was never finished. In case of reclaim.
         if self:GetFractionComplete() < 1 then
             RemoveBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
@@ -212,7 +214,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
         -- else calls GetResearchItem to decide what to research
     Research = function(self)
         local AIBrain = self:GetAIBrain()
-        local bp = self:GetBlueprint()
+        local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
         --Upgrade if we can first
         if bp.General.UpgradesTo and __blueprints[bp.General.UpgradesTo] and self:CanBuild(bp.General.UpgradesTo) then
             IssueUpgrade({self}, bp.General.UpgradesTo)

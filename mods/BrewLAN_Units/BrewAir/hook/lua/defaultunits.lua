@@ -9,7 +9,7 @@ local MissileDetectorRadius = {}
 --------------------------------------------------------------------------------
 BaseDirectionalAntiMissileFlare = Class() {
     CreateMissileDetector = function(self)
-        local bp = self:GetBlueprint()
+        local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
         local MDbp = bp.Defense.MissileDetector
 
         if not MissileDetectorRadius[bp.BlueprintId] and MDbp then

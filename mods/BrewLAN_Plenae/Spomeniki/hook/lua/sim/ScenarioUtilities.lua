@@ -6,6 +6,7 @@ pcall(function()
             for j, s7data in citybp.Structures7x7 do
                 if s7data[1] == 'xec1501' then
                     local spom = '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/spomenik_'
+                    local monu = '/mods/brewlan_plenae/spomeniki/env/spomeniki/props/monument_'
                     CityData[i].Structures7x7[j][i] = {
                         {'xec1501', Weight = 1},
                         {spom..'naroda_prop.bp', Weight = 1 },
@@ -16,6 +17,7 @@ pcall(function()
                             {spom..'fist_b_prop.bp', Weight = 1 },
                             {spom..'fist_c_prop.bp', Weight = 1 },
                         }, Weight = 1 },
+                        {monu..'torii_001_prop.bp', Weight = 1},
                     }
                     break
                 end
@@ -54,7 +56,10 @@ do
             {
                 mpath..'mer1_prop.bp',
                 mpath..'mer2_prop.bp',
-            }
+            },
+            {
+                mpath..'torii_001_prop.bp',
+            },
         }
         local mapsize = ScenarioInfo.size
         local usedpositions = {}

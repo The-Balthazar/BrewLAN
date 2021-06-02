@@ -1,13 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/BRB2103/BRB2103_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  Cybran Very Light Artillery Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local CStructureUnit = import('/lua/cybranunits.lua').CStructureUnit
 local CIFArtilleryWeapon = import('/lua/cybranweapons.lua').CIFArtilleryWeapon
 

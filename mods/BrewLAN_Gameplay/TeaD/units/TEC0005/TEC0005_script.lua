@@ -59,7 +59,7 @@ TEC0005 = Class(TShieldLandUnit) {
         self.RotatorManipulator:SetTargetSpeed( 60 )
         if not self.AnimationManipulator then
             local myBlueprint = self:GetBlueprint()
-            #LOG( 'it is ', repr(myBlueprint.Display.AnimationOpen) )
+            --LOG( 'it is ', repr(myBlueprint.Display.AnimationOpen) )
             self.AnimationManipulator = CreateAnimator(self)
             self.AnimationManipulator:PlayAnim( myBlueprint.Display.AnimationOpen )
             self.Trash:Add( self.AnimationManipulator )
@@ -94,12 +94,12 @@ TEC0005 = Class(TShieldLandUnit) {
         if self.RotatorManipulator then
             self.RotatorManipulator:SetAccel( 5 )
             self.RotatorManipulator:SetTargetSpeed( 0 )
-            # Unless it goes smoothly back to its original position,
-            # it will snap there when the manipulator is destroyed.
-            # So for now, we'll just keep it on.
-            #WaitFor( self.RotatorManipulator )
-            #self.RotatorManipulator:Destroy()
-            #self.RotatorManipulator = nil
+            -- Unless it goes smoothly back to its original position,
+            -- it will snap there when the manipulator is destroyed.
+            -- So for now, we'll just keep it on.
+            --WaitFor( self.RotatorManipulator )
+            --self.RotatorManipulator:Destroy()
+            --self.RotatorManipulator = nil
         end
         if self.AnimationManipulator then
             self.AnimationManipulator:SetRate(-1)

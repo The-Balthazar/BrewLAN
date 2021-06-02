@@ -18,7 +18,7 @@ SRB2306 = Class(CStructureUnit) {
                 end
                 self.TimeSinceLastFire = GetGameTimeSeconds() - (self.unit.StopFireTime or GetGameTimeSeconds())
                 local aiBrain = self.unit:GetAIBrain()
-                local energyIncome = aiBrain:GetEconomyIncome( 'ENERGY' ) * 10 # per tick to per seconds
+                local energyIncome = aiBrain:GetEconomyIncome( 'ENERGY' ) * 10 -- per tick to per seconds
                 local energyStored = aiBrain:GetEconomyStored( 'ENERGY' )
                 local nrgReq = self.EnergyCost * (self.AdjEnergyMod or 1)
                 local nrgDrain = self.EnergyCost

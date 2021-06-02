@@ -11,6 +11,6 @@ AlchemistPhasonLaserCollisionBeam = Class(PhasonLaserCollisionBeam) {
 
 --[[DeathLaserCollisionBeam = Class(OrbitalDeathLaserCollisionBeam) {
     FxBeamStartPoint = {
-		'/effects/emitters/uef_orbital_death_laser_muzzle_02_emit.bp',	# molecular, small details
+		'/effects/emitters/uef_orbital_death_laser_muzzle_02_emit.bp',	-- molecular, small details
     },
 }]]--

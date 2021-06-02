@@ -1,13 +1,3 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/UAB1202/UAB1202_script.lua
-#**  Author(s):  John Comes, David Tomandl, Jessica St. Croix
-#**
-#**  Summary  :  Aeon Tier 2 Mass Extractor Script
-#**
-#**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
-
 local SMassCollectionUnit = import('/lua/seraphimunits.lua').SMassCollectionUnit
 
 SSB1312 = Class(SMassCollectionUnit) {
@@ -28,7 +18,7 @@ SSB1312 = Class(SMassCollectionUnit) {
         Main = function(self)
             WaitFor(self.ExtractionAnimManip)
             while not self:IsDead() do
-                
+
                 self.ExtractionAnimManip:PlayAnim(self:GetBlueprint().Display.AnimationActivate):SetRate(1)
                 WaitFor(self.ExtractionAnimManip)
             end
@@ -59,6 +49,3 @@ SSB1312 = Class(SMassCollectionUnit) {
 }
 
 TypeClass = SSB1312
-    
-    
-    

@@ -101,7 +101,7 @@ do
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Clone")
-                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                local clone = CreateUnitHPR(Unit.BpId or Unit:GetBlueprint().BlueprintId, Unit:GetArmy(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 for kbuff, vbuff in Unit.Buffs.BuffTable do
                     for k, v in vbuff do
                         Buff.ApplyBuff(clone, v.BuffName)
@@ -598,7 +598,7 @@ do
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Evil Twin")
-                local clone = CreateUnitHPR(Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
+                local clone = CreateUnitHPR(Unit.BpId or Unit:GetBlueprint().BlueprintId, randomEnemyBrain(Unit):GetArmyIndex(), pos[1], pos[2], pos[3], 0, math.random(0,360), 0)
                 for kbuff, vbuff in Unit.Buffs.BuffTable do
                     for k, v in vbuff do
                         Buff.ApplyBuff(clone, v.BuffName)

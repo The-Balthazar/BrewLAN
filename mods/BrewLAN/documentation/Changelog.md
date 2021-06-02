@@ -814,6 +814,22 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-05-24
 
   * Added texture detail to the inside of the slide action on the Excalibur.
+  * Minor optimisations for the Suthanus script.
+  * Cleaned up the blueprint of the Aeon Decoy.
+
+  ### 2021-05-29
+
+  * Cleaned up a bunch of comments and references.
+  * Removed all instances of # as a comment start from .lua files.
+
+  ### 2021-05-30
+
+  * Unified comment headers on some unit scripts.
+  * Removed the removed the legacy check document dependency for the the Aeon Heavy Transport.
+
+  ### 2021-05-31
+
+  * Spomeniki: Added a torii gate.
 
 ## 2019-10-13|0.8.9
 

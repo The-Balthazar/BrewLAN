@@ -1,23 +1,17 @@
-#****************************************************************************
-#**
-#**  Summary  :  UEF Gunship Script
-#**
-#****************************************************************************
-
 local EffectTemplate = import('/lua/EffectTemplates.lua') 
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 
 TEA0001 = Class(TAirUnit) {
     EngineRotateBones = {'Jet_Front', 'Jet_Back',},
-    
+
     OnCreate = function(self)
         TAirUnit.OnCreate(self)
         self:SetCapturable(false)
         --self:SetupBuildBones()
         --self:AddBuildRestriction( categories.UEF * (categories.BUILTBYTIER2COMMANDER + categories.BUILTBYTIER3COMMANDER) )
     end,
-    
+
     OnStopBeingBuilt = function(self,builder,layer)
         TAirUnit.OnStopBeingBuilt(self,builder,layer)
         self.EngineManipulators = {}
@@ -38,22 +32,22 @@ TEA0001 = Class(TAirUnit) {
         --self:BuildManipulatorSetEnabled(false)
         self:ForkThread(self.GiveInitialResources)
     end,
-      
+
     CreateBuildEffects = function( self, unitBeingBuilt, order )
         if (order == 'Repair' and not unitBeingBuilt:IsBeingBuilt()) then
             EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-        else    
+        else
             EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-            --EffectUtil.CreateUEFCommanderBuildSliceBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )        
-        end           
+            --EffectUtil.CreateUEFCommanderBuildSliceBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+        end
     end,
-          
+
     GiveInitialResources = function(self)
         WaitTicks(5)
         self:GetAIBrain():GiveResource('Energy', self:GetBlueprint().Economy.StartingEnergy )
         self:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.StartingMass )
     end,
-           
+
     PlayCommanderWarpInEffect = function(self)
         self:HideBone(0, true)
         --self:SetUnSelectable(true)
@@ -61,7 +55,7 @@ TEA0001 = Class(TAirUnit) {
         --self:SetBlockCommandQueue(true)
         self:ForkThread(self.WarpInEffectThread)
     end,
-    
+
     WarpInEffectThread = function(self)
         self:PlayUnitSound('CommanderArrival')
         self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
@@ -88,4 +82,4 @@ TEA0001 = Class(TAirUnit) {
     end,
 }
 
-TypeClass = TEA0001 
+TypeClass = TEA0001

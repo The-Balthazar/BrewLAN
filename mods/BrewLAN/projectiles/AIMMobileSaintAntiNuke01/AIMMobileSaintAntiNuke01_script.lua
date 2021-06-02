@@ -1,6 +1,6 @@
-#
-# Terran Anti Air Missile
-#
+--
+-- Terran Anti Air Missile
+--
 local ASaintAntiNuke = import('/lua/aeonprojectiles.lua').ASaintAntiNuke
 AIMMobileSaintAntiNuke01 = Class(ASaintAntiNuke) {
 }

@@ -40,7 +40,8 @@ FactoryAdjacentNode = Class(StructureUnit) {
                 --Some effects don't need to stack, or shouldn't
                 if self.NoStackAdjacencyEffect then
                     for nodeID, fun in adjacentUnit.NodeOnStopBuildFunctions do
-                        if GetEntityById(nodeID):GetBlueprint().BlueprintId == self:GetBlueprint().BlueprintId then
+                        local node = GetEntityById(nodeID)
+                        if (node.BpId and __blueprints[node.BpId] or node:GetBlueprint().BlueprintId) == (self.BpId and __blueprints[self.BpId] or self:GetBlueprint().BlueprintId) then
                             --Return for the adjacency connection check
                             return false
                         end

@@ -61,7 +61,7 @@ SEL0322 = Class(TShieldLandUnit) {
         self.RotatorManipulator:SetTargetSpeed( 60 )
         if not self.AnimationManipulator then
             local myBlueprint = self:GetBlueprint()
-            #LOG( 'it is ', repr(myBlueprint.Display.AnimationOpen) )
+            --LOG( 'it is ', repr(myBlueprint.Display.AnimationOpen) )
             self.AnimationManipulator = CreateAnimator(self)
             self.AnimationManipulator:PlayAnim( myBlueprint.Display.AnimationOpen )
             self.Trash:Add( self.AnimationManipulator )

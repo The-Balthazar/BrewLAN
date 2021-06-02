@@ -12,7 +12,7 @@ CenturionBehaviorBrewLAN = function(self)
     local aiBrain = self:GetBrain()
     local platoonUnits = self:GetPlatoonUnits()
     local cmd
-    if not aiBrain:PlatoonExists(self) then #not experimental then
+    if not aiBrain:PlatoonExists(self) then --not experimental then
         return
     end
     if not self:GatherUnitsSorian() then

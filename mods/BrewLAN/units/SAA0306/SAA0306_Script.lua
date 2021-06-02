@@ -1,14 +1,15 @@
 --------------------------------------------------------------------------------
---  Author:  Sean Wheeldon
---  Summary  :  Aeon T3 Transport Script
+--  Summary  :  Aeon Heavy Transport
+--  Author   :  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
 local AAATemporalFizzWeapon = import('/lua/aeonweapons.lua').AAATemporalFizzWeapon
 local explosion = import('/lua/defaultexplosions.lua')
 
-local BrewLANPath = import('/lua/game.lua').BrewLANPath
-local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
-if VersionIsFAF then
+--local BrewLANPath = import('/lua/game.lua').BrewLANPath
+--local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
+--Removed external dependancy for FAF specific script check.
+if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then--VersionIsFAF then
     AAirUnit = import('/lua/defaultunits.lua').AirTransport
 end
 

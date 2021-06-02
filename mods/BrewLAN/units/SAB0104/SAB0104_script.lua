@@ -1,22 +1,18 @@
+--------------------------------------------------------------------------------
+--  Summary  :  Aeon Engineering Station Script
+--  Author   :  Sean 'Balthazar' Wheeldon
+--------------------------------------------------------------------------------
 local AConstructionStructureUnit = import('/lua/aeonunits.lua').AConstructionStructureUnit
 
 SAB0104 = Class(AConstructionStructureUnit) {
-    --OnCreate = function(self)
-        --AConstructionStructureUnit.OnCreate(self)
-        --self.BuildingOpenAnimManip = CreateAnimator(self)
-        --self.BuildingOpenAnimManip:SetPrecedence(1)
-        --self.BuildingOpenAnimManip:PlayAnim(__blueprints.sab0104.Display.AnimationBuild, false):SetRate(0)
-    --end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
         AConstructionStructureUnit.OnStartBuild(self, unitBeingBuilt, order)
-        --self.BuildingOpenAnimManip:SetRate(1)
         self.PanelsOpen = true
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         AConstructionStructureUnit.OnStopBuild(self, unitBeingBuilt)
-        --self.BuildingOpenAnimManip:SetRate(-1)
         self.PanelsOpen = nil
     end,
 
