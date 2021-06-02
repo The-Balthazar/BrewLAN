@@ -831,6 +831,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spomeniki: Added a torii gate.
 
+  ### 2021-06-02
+
+  * Penetration: Added Helios; the Aeon T3 Penetration Fighter.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
