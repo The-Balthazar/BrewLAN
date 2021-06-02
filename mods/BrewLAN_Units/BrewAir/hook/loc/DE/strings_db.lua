@@ -1,4 +1,5 @@
 --ISO_639-1_code=DE
+--Translator: Google
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="twilight-Patron"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Top-End-Bereich lange Stealth-Kämpfer. Ausgestattet mit zwei Burst-Schrauben Railguns, Luft-Luft-Raketen und Anti-Raketen-Fackeln."
-Unit_Description_BrewPen_006="Platzhalter"
+Unit_Description_BrewPen_006="Top-End-Bereich lange Stealth-Kämpfer. Ausgestattet mit zwei konzentriert phasonischen Laserwaffen, Ameise Anti-Raketen-faltes."
 Unit_Description_BrewPen_007="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen und Raketen Fackeln. Fähig zu Spionageflugzeuge jagen."
 Unit_Description_BrewPen_008="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit einem Losaare Autokanone, eine phasonischen Waffe und Anti-Raketen-Fackeln."
 

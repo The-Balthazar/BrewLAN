@@ -1,5 +1,5 @@
 --ISO_639-1_code=FR
---Translated by: Google
+--Translated by: GPG, Markty_07
 seb1401_name="Apothéose"
 srb1401_name="Démiurge"
 ssb1401_name="Uyahyaliyaiya"

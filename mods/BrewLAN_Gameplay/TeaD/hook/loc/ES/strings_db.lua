@@ -10,11 +10,11 @@ Unit_Description_TeaD_002="torre de radar luz. Puede revelar la ubicación de la
 
 Unit_Description_TeaD_003="Construye unidades móviles."
 
-tec0001_desc="Coche"
+tec0001_desc="Carro"
 tec0002_desc="Camión"
 tec0003_desc="Autobús"
 tec0004_desc="Pionero"
-tec0005_desc="Escudo"
+tec0005_desc="Proteger"
 tec0006_desc="Bicicleta"
 tec0007_desc="escudo de Marina"
 tec0008_desc="Cloaked coche"

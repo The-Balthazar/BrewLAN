@@ -1,8 +1,5 @@
 --ISO_639-1_code=PL
 --Translated by: Google
-ssl0405_name="Suedath-Zmara"
-ssl0405_desc="Robot eksperymentalny Ciężki stawonogów"
-
 
 srl0402_desc="Eksperymentalna Siege Tank"
 srl0402_name="Mały człowiek"

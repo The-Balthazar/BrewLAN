@@ -1,19 +1,19 @@
 --ISO_639-1_code=FR
---Translator: Markty_07, Google
+--Translator: Markty_07
 
 --Centres de recherche
-seb9301_desc="Centre de recherche"
+seb9301_desc="Centre de Recherche"
 --UEF
 seb9101_name="Campus Tyson"
 seb9201_name="Campus Sagan"
 seb9301_name="Campus Hawking"
 --Cybran
-srb9101_name="Facilité Einstein"
-srb9201_name="Facilité schrodinger"
-srb9301_name="Facilité Heisenberg"
+srb9101_name="Établissement Einstein"
+srb9201_name="Établissement Schrodinger"
+srb9301_name="Établissement Heisenberg"
 --Aeon
 sab9101_name="Aperçu"
-sab9201_name="Conseils"
+sab9201_name="Guidance"
 sab9301_name="Éclaircissement"
 --Seraphim
 ssb9101_name="Iyathlabistle"
@@ -58,51 +58,51 @@ srnd9200_desc="Niveau technologique de recherche"
 srnd9300_desc="Niveau technologique de recherche"
 srnd9400_desc="Niveau expérimental de recherche"
 
-Unit_Description_RND_001="Déverrouille technologie supplémentaires 1 unités et la recherche de l'unité."
-Unit_Description_RND_002="Déverrouille Tech 2 unités et la recherche de l'unité."
-Unit_Description_RND_003="Déverrouille technologie 3 unités et la recherche de l'unité."
-Unit_Description_RND_004="Déverrouille unités expérimentales et de recherche de l'unité."
+Unit_Description_RND_001="Débloque des unités tech 1 supplémentaires et des nouvelles recherches."
+Unit_Description_RND_002="Débloque des unités tech 2 supplémentaires et des nouvelles recherches."
+Unit_Description_RND_003="Débloque des unités tech 3 supplémentaires et des nouvelles recherches."
+Unit_Description_RND_004="Déblque les unités experimentales et des nouvelles recherches."
 
 
---Recherche déverrouillage usines
+--Recherches pour le dévérouillage d'usines
 sb0105_desc="Usine d'aeroglisseurs"
 Unit_Description_RND_013="Produit unités amphibies."
---Plus précisément la surface juste Amphib et vol stationnaire. Comprend ekranoplans.
+--Plus précisément les aéroglisseurs. Comprends les ekranoplans.
 sb0106_desc="Usine de sous-marins"
 Unit_Description_RND_014="Produit des unités submersibles."
---Et peut-être amphibie Submarines des fonds marins
+--Les sous-marins et peut être les anphibies
 sb0106_desc="Usine d'hydravions"
 Unit_Description_RND_015="Produit des hydravions"
---usine Hydravion pourrait ne pas se faire.
+--L'usine d'hydravions ne sera peut être jamais faite
 
 ----------------------------------------
 -- Tech 1
 ----------------------------------------
 
 --Éoliennes
-sb1101_desc="Générateur de vent"
+sb1101_desc="Éolienne"
 seb1101_name="Turbine"
 sab1101_name="Lampe"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
 --Wind Turbine assistée
-Unit_Description_RND_011="Fluctuant génère une quantité d'énergie."
+Unit_Description_RND_011="Génère une quantité fluctuante d'énergie."
 
 --hydroliennes
-sb1102_desc="marémotrice"
-seb1102_name="Pod Tide"
-sab1102_name="Couler"
+sb1102_desc="Hydrolienne"
+seb1102_name="Marée Basse"
+sab1102_name="Courant"
 ssb1102_name="Uyaluos"
-srb1102_name="Lagoon rouge"
-Unit_Description_RND_017="Génère une quantité d'énergie ondulée. Plus efficace avec de grandes étendues d'eau."
+srb1102_name="Lagon Rouge"
+Unit_Description_RND_017="Génère un quantitée ondulante d'énergie. Plus efficace avec des grandes étendues d'eau."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
 
---Les générateurs de puissance (250 sorties)
---Gén Séraphims de puissance non rotatifs sont tous appelés Uya-iya
---Cybrans et Aeon Tech 2 ont aucun nom de
+--Générateurs d'énergie (250 de production)
+--Les Générateurs d'énergie non rotatifs Séraphimes sont tous appelés Uya-iya
+--Les générateurs Tech 2 des Cybrans et des Aeons n'ont pas de noms.
 seb1201_name="EG-100 Réacteur à Fusion"
 Unit_Description_RND_018="Générateur d'énergie de bas a moyen niveau. Construit près d'autres structures pour un bonus de contiguïté."
 

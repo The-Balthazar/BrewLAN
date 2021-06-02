@@ -6,9 +6,9 @@ crystal_0003=" et leur allié gagner avec le cristal."
 crystal_0004=" remporte avec le cristal."
 
 crystal_0005="10 minutes restantes."
-crystal_0006="2:30 minutes restent."
-crystal_0007="Au fil du temps"
-crystal_0008="30 secondes restent."
+crystal_0006="2:30 minutes restantes"
+crystal_0007="Temps supplémentaire."
+crystal_0008="30 secondes restantes"
 
 --Translated by: [insert credit here]
 CrystalHill_LOB_Victory="Victoire: Contrôle du cristal (1ère capture)"

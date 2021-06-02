@@ -1,8 +1,5 @@
 --ISO_639-1_code=CS
 --Translated by: Oaks
-ssl0405_name="Suedath-Zmara"
-ssl0405_desc="Experimentální Heavy Arthropod Robot"
-
 
 srl0402_desc="Experimentální Siege Tank"
 srl0402_name="Mužíček"

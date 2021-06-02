@@ -1,4 +1,5 @@
 --ISO_639-1_code=ES
+--Translator: Google
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="crepúsculo Patrón"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Tapa-fin de largo alcance avión furtivo. Equipado con dobles railguns ráfaga helicoidales, misiles aire-aire, y bengalas antimisiles."
-Unit_Description_BrewPen_006="marcador de posición"
+Unit_Description_BrewPen_006="Tapa-fin de largo alcance avión furtivo. Equipado con doble centrado armas láser, phason faltes antimisiles de hormigas."
 Unit_Description_BrewPen_007="Top-extremo largo alcance avión furtivo. Equipado con cañones de partículas pesadas, y bengalas antimisiles. Capaz de cazar aviones espía."
 Unit_Description_BrewPen_008="Top-extremo largo alcance avión furtivo. Equipado con un cañón automático Losaare, un arma phason y bengalas antimisiles."
 

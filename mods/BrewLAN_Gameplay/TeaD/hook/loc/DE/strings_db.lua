@@ -10,7 +10,7 @@ Unit_Description_TeaD_002="Lichtradarturm. Kann die Standorte der unsichtbaren E
 
 Unit_Description_TeaD_003="Konstruiert mobile Einheiten."
 
-tec0001_desc="Auto"
+tec0001_desc="Wagen"
 tec0002_desc="LKW"
 tec0003_desc="Bus"
 tec0004_desc="Pfadfinder"
@@ -43,7 +43,7 @@ tead_boss_final="Endgegner"
 --Tead Lobby EN-US-Strings
 TeaD_Endless_LOB="Tead: Endlos-Modus"
 TeaD_Endless_LOB_D="Während aktiviert Wellen in einer Schleife mit Buffs."
-TeaD_Endless_LOB_false="Behindert"
+TeaD_Endless_LOB_false="Deaktiviert"
 TeaD_Endless_LOB_falseD="Spiel endet nach Endchef Welle als normal."
 TeaD_Endless_LOB_true="aktiviert"
 TeaD_Endless_LOB_trueD="Spiel-Schleifen, bis die Spieler sterben."

@@ -71,6 +71,10 @@ tooltipbrewlan0032="Umschalten zwischen Luftzielpriorität und Raketenzielpriori
 --Panopticon Erweiterung Tab
 tooltipbrewlan0033="Verbesserungen [Array]"
 
+--Zmara hoch Modus Toggle
+tooltipbrewlan0035="zu weit auseinander ziehen Toggle"
+tooltipbrewlan0036="Erhöht direkte Feuerwaffe Bereiche aber Opfer Bewegungsgeschwindigkeit und kostet Energie, während aktiv."
+
 --------------------------------------------------------------------------------
 -- Support commander enchancements
 --------------------------------------------------------------------------------
@@ -570,3 +574,7 @@ Unit_Description_BrewLAN_T4B012="Experimentelles Verteidigungs Gebäude. Verbrau
 ssl0404_desc="Experimenteller Sniper Bot"
 ssl0404_name="Sisha-Ah"
 Unit_Description_BrewLAN_T4L004="Experimenteller Scharfschützen-Bot. Im Stillstand nur für Omni sichtbar, wenn er nicht feuert."
+
+ssl0405_desc="Experimentelle Schwer Gliederfüßer Roboter"
+ssl0405_name="Suedath-Zmara"
+Unit_Description_BrewLAN_T4L005="Massive experimentelles bietet. Ausgestattet mit anterioren cephalic Thau Kanonen, superior Rücken Sinn Unthe Kanonen, ventralen Uall Cavitation Torpedo Waffen und Panzer montiert Olaris anti-Luftkanonen. Bietet die Möglichkeit, für eine erhöhte Waffe Bereich erstrecken sich vertikal und zu schwimmen Oberfläche Marineschiffe engagieren, mit der Macht fast jedes Ziel zu beenden."

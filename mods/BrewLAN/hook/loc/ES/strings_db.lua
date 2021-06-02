@@ -71,6 +71,10 @@ tooltipbrewlan0032="Cambiar entre la prioridad de destino anti-aire y prioridad 
 --pestaña mejora panóptico
 tooltipbrewlan0033="Personalizar [Array]"
 
+--Zmara alternar el modo de altura
+tooltipbrewlan0035="overextend Toggle"
+tooltipbrewlan0036="Aumenta directos rangos de armas de fuego, pero la velocidad de movimiento sacrificios y costos de energía mientras está activo."
+
 --------------------------------------------------------------------------------
 -- mejoras comandante apoyo
 --------------------------------------------------------------------------------
@@ -252,7 +256,7 @@ Unit_Description_BrewLAN_T3A008="De alto nivel torpedero. Diseñado para involuc
 
 sal0311_desc="Tanque de Asalto Blindado"
 sal0311_name="moldavita"
-Unit_Description_BrewLAN_T3L002="Fuertemente blindados asalto tanque. Baja tasa de fuego, diseñado como una unidad de apoyo pesado."
+Unit_Description_BrewLAN_T3L002="Fuertemente blindado tanque de asalto. Baja tasa de fuego, diseñado como una unidad de apoyo pesado."
 
 ssl0311_desc="Robot de asalto pesado"
 ssl0311_name="Ilshatha"
@@ -344,7 +348,7 @@ Unit_Description_BrewLAN_T3B0016="Large estructura de generación de energía. P
 
 sab1312_desc="Extractor de masa blindado"
 seb1312_desc="Extractor de masas Ingeniería"
-srb1312_desc="Masa Extractor camuflado"
+srb1312_desc="Extractor de masas camuflado"
 ssb1312_desc="Extractor de masa blindado"
 seb1312_name="Bomba 3E masa"
 Unit_Description_BrewLAN_T3B0021="De gama alta extractora de masas. Debe ser construido sobre los depósitos masivos. Provoca una gran cúpula suficiente escudo para cubrirse y 4 pequeños almacenes."
@@ -363,7 +367,7 @@ Unit_Description_BrewLAN_T3B0017="Large estructura fabricación en masa. Posee u
 
 srb4313_desc="De campo del generador de Stealth camuflado"
 srb4313_name="Hierba mora"
-Unit_Description_BrewLAN_T3B0011="Genera un campo sigilo y el camuflaje tiene personal. unidades Cueros y estructuras dentro de su radio de acción de radar y sonar, pero no de sensores visuales, el generador en sí sólo es visible para Omni."
+Unit_Description_BrewLAN_T3B0011="Genera un campo de sigilo y tiene camuflaje personal. unidades Cueros y estructuras dentro de su radio de acción de radar y sonar, pero no de sensores visuales, el generador en sí sólo es visible para Omni."
 
 ssb5301_desc="Sección muro de escudos"
 ssb5301_name="Athahaas"
@@ -570,3 +574,7 @@ Unit_Description_BrewLAN_T4B012="edificio defensivo experimental. Consume grande
 ssl0404_desc="Experimental Sniper Bot"
 ssl0404_name="Sisha-Ah"
 Unit_Description_BrewLAN_T4L004="Experimental bot francotirador móvil. Sólo es visible a Omni mientras estático y no disparar."
+
+ssl0405_desc="Experimental pesada artrópodos Robot"
+ssl0405_name="Suedath-Zmara"
+Unit_Description_BrewLAN_T4L005="bot experimental masiva. Equipado con anteriores cañones Thau cefálicas, dorsales superiores cañones Sinn Unthe, ventral Uall cavitación torpedo armas, y caparazón montado Olaris cañones antiaéreos. Características la capacidad de extender vertical para mayor alcance del arma, y ​​para nadar a participar superficie artefacto naval, con el poder de interrumpir casi cualquier objetivo."

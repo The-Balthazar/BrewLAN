@@ -36,7 +36,7 @@ seb2111_name="Shorty"
 Unit_Description_BrewLAN_Turrets_0005="Light defensive tower. Armed with a frigate-grade plasma cannon."
 
 srb2402_name="Neolith"
-seb2401_desc="Experimental Point Defence"
+seb2401_desc="Experimental Point Defense"
 Unit_Description_BrewLAN_Turrets_0006="Defensive turret. Armed with a massive proton cannon."
 
 srb2391_name="Tesla Coil"

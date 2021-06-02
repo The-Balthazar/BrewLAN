@@ -1,4 +1,5 @@
 --ISO_639-1_code=ZH
+--Translator: Google
 ----------------------------------------
 -- 技术2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="赫利俄斯"
 sra0313_name="暮光之城守护神"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="最高端的远程隐形战机。配备双螺旋爆轨道炮，空 - 空导弹和反导弹弹。"
-Unit_Description_BrewPen_006="占位符"
+Unit_Description_BrewPen_006="最高端的远程隐形战机。配备双聚焦相位子激光武器，蚂蚁反导faltes。"
 Unit_Description_BrewPen_007="最高端的远程隐形战斗机。配备了重粒子炮，反导弹弹。能够狩猎侦察机。"
 Unit_Description_BrewPen_008="最高端的远程隐形战斗机。配备了Losaare自走炮，一个相位子武器和反导弹弹。"
 

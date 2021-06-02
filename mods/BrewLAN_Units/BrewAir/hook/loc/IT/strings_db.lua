@@ -1,4 +1,5 @@
 --ISO_639-1_code=IT
+--Translator: Google
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="Crepuscolo Patron"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Top-end lungo raggio caccia stealth. Dotate di due railguns scoppio elicoidali, aria-aria missili e razzi anti-missile."
-Unit_Description_BrewPen_006="segnaposto"
+Unit_Description_BrewPen_006="Top-end lungo raggio caccia stealth. Dotate di due armi laser focalizzato phason, faltes antimissile formica."
 Unit_Description_BrewPen_007="Top-end lungo raggio caccia stealth. Dotato di cannoni particelle pesanti, e razzi anti-missile. Capace di caccia aerei spia."
 Unit_Description_BrewPen_008="Top-end lungo raggio caccia stealth. Dotato di un cannone automatico Losaare, un'arma phason e razzi anti-missile."
 

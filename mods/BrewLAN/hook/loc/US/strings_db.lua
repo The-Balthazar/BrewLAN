@@ -71,6 +71,10 @@ tooltipbrewlan0032="Toggle between anti-air target priority and tactical missile
 --Panopticon enhancement tab
 tooltipbrewlan0033="Customise [Array]"
 
+--Zmara tall mode toggle
+tooltipbrewlan0035="Overextend Toggle"
+tooltipbrewlan0036="Increases direct fire weapon ranges but sacrifices movement speed and costs energy while active."
+
 --------------------------------------------------------------------------------
 -- Support commander enhancements
 --------------------------------------------------------------------------------
@@ -570,3 +574,7 @@ Unit_Description_BrewLAN_T4B012="Experimental defensive building. Consumes large
 ssl0404_desc="Experimental Sniper Bot"
 ssl0404_name="Sisha-Ah"
 Unit_Description_BrewLAN_T4L004="Experimental mobile sniper bot. Only visible to omni while static and not firing."
+
+ssl0405_desc="Experimental Heavy Arthrobot"
+ssl0405_name="Suedath-Zmara"
+Unit_Description_BrewLAN_T4L005="Massive experimental bot. Equipped with anterior cephalic Thau cannons, superior dorsal Sinn Unthe cannons, ventral Uall Cavitation torpedo weapons, and carapace mounted Olaris anti-air cannons. Features the ability to extend vertically for increased weapon range, and to swim to engage surface naval craft, with the power to terminate almost any target."

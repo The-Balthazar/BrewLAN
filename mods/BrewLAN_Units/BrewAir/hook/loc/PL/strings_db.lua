@@ -1,4 +1,5 @@
 --ISO_639-1_code=PL
+--Translator: Google
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="Zmierzch Patron"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Top-end długo wahać myśliwiec Stealth. Wyposażona w dwa pękniętych railguns śrubowych, powietrze-powietrze, pociski i rakiety antyrakietowych."
-Unit_Description_BrewPen_006="zastępczy"
+Unit_Description_BrewPen_006="Top-end długo wahać myśliwiec Stealth. Wyposażone w podwójne koncentruje phason broni laserowej Ant faltes antyrakietowych."
 Unit_Description_BrewPen_007="Top-end dalekosiężnej myśliwiec Stealth. Wyposażony w ciężkich armat cząstek i flar antyrakietowych. Zdolne do polowania samoloty szpiegowskie."
 Unit_Description_BrewPen_008="Top-end dalekosiężnej myśliwiec Stealth. Wyposażony w armata automatyczna Losaare, broń phason i flar antyrakietowych."
 

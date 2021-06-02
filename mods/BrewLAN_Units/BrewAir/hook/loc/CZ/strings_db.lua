@@ -1,4 +1,5 @@
 --ISO_639-1_code=CS
+--Translator: Oaks
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Top-end dlouhým doletem stealth bojovník. Vybaven dvojitými roztržení spirálovými railguns, air-to-air rakety a anti-raketových světlic."
-Unit_Description_BrewPen_006="zástupný"
+Unit_Description_BrewPen_006="Top-end dlouhým doletem stealth bojovník. Vybavena dvojčetem zaměřena phason laserové zbraně, mravence protiraketových faltes."
 Unit_Description_BrewPen_007="Top-end dalekonosný stealth bojovník. Vybaveno s těžkými děly částic, a anti-raketových světlice. Schopný lovu špionážní letadla."
 Unit_Description_BrewPen_008="Top-end dalekonosný stealth bojovník. Vybaven Losaare autocannon, s phason zbraně a protiraketové světlice."
 

@@ -1,8 +1,5 @@
 --ISO_639-1_code=IT
 --Translated by: Google
-ssl0405_name="Suedath-Zmara"
-ssl0405_desc="Sperimentale Heavy artropodi Robot"
-
 
 srl0402_desc="Sperimentale Siege serbatoio"
 srl0402_name="Piccolo uomo"

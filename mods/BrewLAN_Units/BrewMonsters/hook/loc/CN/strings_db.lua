@@ -1,8 +1,5 @@
 --ISO_639-1_code=ZH
 --Translated by: Google
-ssl0405_name="Suedath-Zmara"
-ssl0405_desc="实验重型节肢动物机器人"
-
 
 srl0402_desc="实验攻城坦克"
 srl0402_name="小男孩"

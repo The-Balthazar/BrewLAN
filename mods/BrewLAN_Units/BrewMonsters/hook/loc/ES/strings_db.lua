@@ -1,8 +1,5 @@
 --ISO_639-1_code=ES
 --Translated by: Google
-ssl0405_name="Suedath-Zmara"
-ssl0405_desc="Experimental pesada artrópodos Robot"
-
 
 srl0402_desc="Experimental Tanque de asedio"
 srl0402_name="Hombrecito"

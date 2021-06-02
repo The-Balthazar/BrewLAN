@@ -1,4 +1,5 @@
 --ISO_639-1_code=EN
+--Penetrator strings
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Top-end long range stealth fighter. Equipped with twin burst helical railguns, air-to-air missiles, and anti-missile flares."
-Unit_Description_BrewPen_006="Placeholder"
+Unit_Description_BrewPen_006="Top-end long range stealth fighter. Equipped with twin focused phason laser weapons, ant anti-missile faltes."
 Unit_Description_BrewPen_007="Top-end long-range stealth fighter. Equipped with heavy particle cannons, and anti-missile flares. Capable of hunting spy planes."
 Unit_Description_BrewPen_008="Top-end long-range stealth fighter. Equipped with a Losaare autocannon, a phason weapon, and anti-missile flares."
 

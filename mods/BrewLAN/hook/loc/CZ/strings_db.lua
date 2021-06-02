@@ -71,6 +71,10 @@ tooltipbrewlan0032="Přepíná prioritu palby na vzdušné cíle a taktické rak
 --Karta Vylepšení Panoptikum
 tooltipbrewlan0033="Upravit [Array]"
 
+--Zmara vysoký Režim přepínání
+tooltipbrewlan0035="overextend Toggle"
+tooltipbrewlan0036="Zvyšuje přímé rozsahy střelbu, ale rychlost pohybu oběti a náklady na energii, zatímco aktivní."
+
 --------------------------------------------------------------------------------
 -- Vylepšení Podpůrného Velitele
 --------------------------------------------------------------------------------
@@ -570,3 +574,7 @@ Unit_Description_BrewLAN_T4B012="Experimentální obranná budova. Vyžaduje vys
 ssl0404_desc="Experimentální Sniper Bot"
 ssl0404_name="Sisha-Ah"
 Unit_Description_BrewLAN_T4L004="Experimentální mobilní sniper bot. Viditelné pouze pro omni zatímco statické a nespouští."
+
+ssl0405_desc="Experimentální Heavy Arthropod Robot"
+ssl0405_name="Suedath-Zmara"
+Unit_Description_BrewLAN_T4L005="Masivní experimentální bot. Vybaveno předních cefalických Thau děla, lepší než hřbetní Sinn Unthe děla, ventrální Uall Kavitace torpéd zbraní, a krunýř namontován Olaris proti Vzduchová děla. Nabízí možnost rozšířit vertikálně pro zvýšení dosahu zbraně, a plavat, aby se zapojily povrchové námořní plavidlo s oprávněním k ukončení téměř jakýkoli cíl."

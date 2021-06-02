@@ -71,6 +71,10 @@ tooltipbrewlan0032="Przełączanie między priorytetu docelowego anty-powietrze 
 --Zakładka wzmocnienie Panopticon
 tooltipbrewlan0033="Dostosowywanie [Tablica]"
 
+--Zmara wysoki tryb przełączania
+tooltipbrewlan0035="overextend Przegubowe"
+tooltipbrewlan0036="Zwiększa bezpośrednie zakresy broni ogień, ale szybkość poruszania ofiar i kosztów energii, podczas gdy aktywna."
+
 --------------------------------------------------------------------------------
 -- Udoskonalenia wsparcie dowódcy
 --------------------------------------------------------------------------------
@@ -382,7 +386,7 @@ Unit_Description_BrewLAN_T3B0020="Ręcznie sterowane bramy; może umożliwić pr
 
 seb2308_desc="Wyrzutnia torped"
 seb2308_name="Harpun"
-Unit_Description_BrewLAN_T3B0025="Ciężki torpeda uruchomienie wieży. Mogą być budowane na lądzie i na dnie morza."
+Unit_Description_BrewLAN_T3B0025="Ciężki torpeda uruchomienie wieży. Może być zbudowany na lądzie i na dnie morza."
 sab2308_desc="Wyrzutnia torped"
 sab2308_name="Gwałtowny potop"
 Unit_Description_BrewLAN_T3B0027="Bardzo ciężki dalekiego zasięgu zwalczania okrętów systemu obronnego. Zaprojektowany, aby angażować najpotężniejszych jednostek morskich."
@@ -570,3 +574,7 @@ Unit_Description_BrewLAN_T4B012="Eksperymentalny budynek obronny. Zużywa duże 
 ssl0404_desc="Eksperymentalna snajper Bot"
 ssl0404_name="Sisha-Ah"
 Unit_Description_BrewLAN_T4L004="Eksperymentalna mobile snajper bot. Widoczne tylko dla Omni natomiast statyczne i nie wypalanie."
+
+ssl0405_desc="Robot eksperymentalny Ciężki stawonogów"
+ssl0405_name="Suedath-Zmara"
+Unit_Description_BrewLAN_T4L005="Masywny Bot eksperymentalnej. Wyposażony w przednich głowowej armat Thau, superior grzbietowych Sinn Unthe armat, brzuszne Uall kawitacyjny torpedowych broni i pancerza montowane Olaris armaty anty-powietrze. Oferuje możliwość przedłużenia pionowo na zwiększony zasięg broni i pływać angażować Naval Surface rzemiosła, z mocą, aby zakończyć niemal dowolny cel."

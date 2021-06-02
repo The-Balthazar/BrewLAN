@@ -91,7 +91,7 @@ Unit_Description_RND_011="产生能量的波动量。"
 --潮汐发电机
 sb1102_desc="潮汐发电机"
 seb1102_name="波德潮"
-sab1102_name="流动"
+sab1102_name="流"
 ssb1102_name="烏亞魯歐西"
 srb1102_name="红湖"
 Unit_Description_RND_017="产生能量的起伏量。更有效地与大面积的水域。"

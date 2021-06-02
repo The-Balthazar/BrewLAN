@@ -1,4 +1,5 @@
 --ISO_639-1_code=FR
+--Translator: Google, Markty_07
 ----------------------------------------
 -- Tech 2
 ----------------------------------------
@@ -6,11 +7,11 @@ sa0212_desc="Chasseur de combat"
 sea0212_name="Raptor"
 sra0212_name="Dioscures"
 ssa0212_name="Iayath"
-Unit_Description_BrewPen_001="Chasseur intermédiaire. Excellentes capacités antiaériennes. Efficace contre les vaisseaux d'attaque et les bombardiers."
+Unit_Description_BrewPen_001="Chasseur intermédiaire. Excellentes capacités antiaériennes. Efficace contre les cannonières et les bombardiers."
 
 sa0213_desc="Chasseur-bombardier"
 saa0213_name="Lucidité"
-Unit_Description_BrewPen_002="chasseur / bombardier Combinaison conçu pour engager à la fois la terre et les unités aériennes."
+Unit_Description_BrewPen_002="Chasseur Bombardier conçu pour engager à la fois les cibles au sol et dans les airs."
 
 --Bombers tactiques dédiés
 saa0211_desc="Bombardier Tactique"
@@ -41,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="Patron de twilight"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="haut de gamme à long portée des chasseurs furtifs. Equipé de railguns hélicoïdales salves doubles, missiles air-air, et les fusées anti-missiles."
-Unit_Description_BrewPen_006="placeholder"
+Unit_Description_BrewPen_006="haut de gamme à long portée des chasseurs furtifs. Équipé de deux armes laser focalisé phason, fourmi faltes anti-missiles."
 Unit_Description_BrewPen_007="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes et des fusées anti-missiles. Capable d'avions d'espionnage de chasse."
 Unit_Description_BrewPen_008="Haut de gamme à longue portée chasseur furtif. Equipé d'un canon automatique Losaare, une arme de phason et des fusées anti-missiles."
 

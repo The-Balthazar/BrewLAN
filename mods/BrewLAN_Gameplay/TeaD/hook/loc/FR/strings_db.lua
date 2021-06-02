@@ -1,17 +1,17 @@
 --ISO_639-1_code=FR
---Translated by: Google
-seb2101_name="DMX Riot Gun"
-seb2101_desc="Point Light Défense"
-Unit_Description_TeaD_001="Lumière tourelle de défense efficace. Equipé d'une arme anti-émeute."
+--Translated by: Markty_07, Google
+seb2101_name="DMX Arme Anti Émeute"
+seb2101_desc="Pointe de Défense légère"
+Unit_Description_TeaD_001="Tourelle défensive légère et efficace. Équipée d'une arme anti-émeute."
 
 seb3101_name="SA0 - 100"
-seb3101_desc="Light System Radar"
-Unit_Description_TeaD_002="Vérine radar. Peut révéler les emplacements des unités invisibles."
+seb3101_desc="Système de Radar Léger"
+Unit_Description_TeaD_002="Système de radar léger. Peut révèler la position des unités invisible."
 
-Unit_Description_TeaD_003="Unités mobiles construit."
+Unit_Description_TeaD_003="Construit des unités mobiles."
 
 tec0001_desc="Voiture"
-tec0002_desc="un camion"
+tec0002_desc="Camion"
 tec0003_desc="Autobus"
 tec0004_desc="Éclaireur"
 tec0005_desc="Bouclier"
@@ -43,7 +43,7 @@ tead_boss_final="final boss"
 --Tead Lobby chaînes EN-US
 TeaD_Endless_LOB="Tead: Mode sans fin"
 TeaD_Endless_LOB_D="Alors que les ondes activées en boucle avec les amateurs."
-TeaD_Endless_LOB_false="désactivé"
+TeaD_Endless_LOB_false="Désactivée"
 TeaD_Endless_LOB_falseD="jeu se termine après boss final vague comme d'habitude."
 TeaD_Endless_LOB_true="Activée"
 TeaD_Endless_LOB_trueD="boucles jeu jusqu'à ce que les joueurs meurent."

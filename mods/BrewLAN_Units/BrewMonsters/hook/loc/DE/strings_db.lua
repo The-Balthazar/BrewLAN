@@ -1,8 +1,5 @@
 --ISO_639-1_code=DE
 --Translated by: Google
-ssl0405_name="Suedath-Zmara"
-ssl0405_desc="Experimentelle Schwer Gliederfüßer Roboter"
-
 
 srl0402_desc="Experimentelle Belagerungspanzer"
 srl0402_name="Kleiner Mann"

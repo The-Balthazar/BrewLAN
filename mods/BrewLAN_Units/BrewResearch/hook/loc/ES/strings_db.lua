@@ -91,7 +91,7 @@ Unit_Description_RND_011="Genera una cantidad fluctuante de energía."
 --generadores de marea
 sb1102_desc="Generador de marea"
 seb1102_name="Pod marea"
-sab1102_name="Fluir"
+sab1102_name="Flujo"
 ssb1102_name="Uyaluos"
 srb1102_name="Laguna Colorada"
 Unit_Description_RND_017="Genera una cantidad ondulante de energía. Más eficaz con grandes masas de agua."

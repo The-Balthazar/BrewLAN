@@ -71,6 +71,10 @@ tooltipbrewlan0032="Commutazione tra la priorità della destinazione anti-aria e
 --scheda valorizzazione Panopticon
 tooltipbrewlan0033="Personalizzazione [Array]"
 
+--Zmara modalità Toggle alto
+tooltipbrewlan0035="sovraccaricare Toggle"
+tooltipbrewlan0036="Aumenta gamme arma fuoco diretti, ma la velocità di movimento dei sacrifici e dei costi energetici, mentre attiva."
+
 --------------------------------------------------------------------------------
 -- Miglioramenti Supporto comandante
 --------------------------------------------------------------------------------
@@ -133,7 +137,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 anfibia costruzione, riparazione, la cat
 ss0119_desc="Progettazione campo barche"
 ses0119_name="Mendy Class"
 srs0119_name="Franklin Class"
-Unit_Description_BrewLAN_T1S001="Tech 1 costruzione, riparazione, la cattura, la bonifica, e l'unità di mia strato."
+Unit_Description_BrewLAN_T1S001="Tech 1 la costruzione, la riparazione, la cattura, la bonifica, e l'unità di mia strato."
 
 --------------------------------------------------------------------------------
 -- Tech 2
@@ -264,7 +268,7 @@ ssb2306_name="Othuushala"
 sab2306_name="Orbos"
 Unit_Description_BrewLAN_T3B001="Pesante torre difensiva. Gli attacchi terrestri e unità navali-based con un potente laser spazzare. Non impegnarsi aereo o unità sommerse. Richiede importi cumulativi di energia per mantenere il fuoco prolungato; si surriscalda se attivo per troppo tempo."
 Unit_Description_BrewLAN_T3B003="Pesante torre difensiva. Gli attacchi terrestri e unità navali-based con un cannone al plasma gatling. Non impegnarsi aereo o unità sommerse."
-Unit_Description_BrewLAN_T3B004="Pesante torre difensiva. Gli attacchi terrestri unità, unità navali a base, e gli aerei a bassa quota con un laser potente. Non impegnarsi aerei altitudine elevata, o unità di sommerse."
+Unit_Description_BrewLAN_T3B004="Pesante torre difensiva. Gli attacchi terrestri unità, unità navali a base, e gli aerei a bassa quota con un laser potente. Non impegnarsi aerei altitudine elevata, o unità sommerse."
 
 sbui2311_desc="Anti-Armatura Point Difesa"
 seb2311_name="Custode"
@@ -570,3 +574,7 @@ Unit_Description_BrewLAN_T4B012="Sperimentale edificio difensivo. Consuma grandi
 ssl0404_desc="Sperimentale Sniper Bot"
 ssl0404_name="Sisha-Ah"
 Unit_Description_BrewLAN_T4L004="Sperimentale cecchino bot mobile. Visibile solo Omni, mentre statica e non sparare."
+
+ssl0405_desc="Sperimentale Heavy artropodi Robot"
+ssl0405_name="Suedath-Zmara"
+Unit_Description_BrewLAN_T4L005="Bot sperimentale Massive. Dotato di cannoni anteriori cefalica Thau, superiore dorsali cannoni Sinn Unthe, ventrale Uall cavitazione siluri armi, e carapace montato Olaris cannoni anti-aerei. Offre la possibilità di estendere in verticale per una maggiore gamma di armi, e di nuotare a impegnarsi superficie mestiere navale, con il potere di interrompere quasi ogni destinazione."

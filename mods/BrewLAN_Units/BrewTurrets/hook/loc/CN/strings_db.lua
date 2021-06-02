@@ -5,7 +5,7 @@
 --Translated by: Google
 srb5380_name="绝杀"
 srb5380_desc="精度升压节点"
-Unit_Description_BrewLAN_Turrets_0001="相邻的静态武器花费更长的目标，从而获得更高的精度。多个节点叠加。"
+Unit_Description_BrewLAN_Turrets_0001="相邻的静态武器花费更长的瞄准，从而获得更高的精度。多个节点叠加。"
 
 seb5381_name="超热"
 seb5381_desc="伤害升压节点"
