@@ -1,3 +1,5 @@
+-- NOTE: This document is obselete, and is only currently maintained in case anyone else references it directly.
+
 --------------------------------------------------------------------------------
 -- UI buildmode change function
 --------------------------------------------------------------------------------

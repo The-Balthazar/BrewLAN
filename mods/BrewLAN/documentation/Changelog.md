@@ -839,6 +839,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-03
 
   * Penetration: Made Helios more shiny.
+  * Refactored Gantry scripts to use a class rather than a heavily linked util script.
+  * Gantry Homogeniser: Updated for refactored gantry scripts.
+  * Gantry Hax: Updated for refactored gantry scripts.
 
 ## 2019-10-13|0.8.9
 

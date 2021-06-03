@@ -1,7 +1,7 @@
 name = "Gantry Homogeniser"
-uid = "25D57D85-7D84-27HT-A501-BR3WGANTH0001"
-version = 0.1
-copyright = "© 2018 Sean Wheeldon"
+uid = "25D57D85-7D84-27HT-A501-BR3WGANTH0002"
+version = 0.2
+copyright = "© 2018–2021 Sean Wheeldon"
 description = "Do you hate factional diversity? Now all gantries can build all the things. No more factional diversity!"
 author = "Balthazar"
 icon = "/mods/BrewLAN/modules/BrewGantries/GantryNoHomo.png"

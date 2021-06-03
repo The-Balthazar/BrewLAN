@@ -2,79 +2,25 @@
 --  Summary:  Arthrolab script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-local CLandFactoryUnit = import('/lua/cybranunits.lua').CLandFactoryUnit
+local BrewLANExperimentalFactoryUnit = import('/lua/defaultunits.lua').BrewLANExperimentalFactoryUnit
 --------------------------------------------------------------------------------
-local EffectTemplate = import('/lua/EffectTemplates.lua')
+local CreateCybranFactoryBuildEffects = import('/lua/EffectUtilities.lua').CreateCybranFactoryBuildEffects
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
-local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
-local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
-local BuildModeChange = GantryUtils.BuildModeChange
-local AIStartOrders = GantryUtils.AIStartOrders
-local AIControl = GantryUtils.AIControl
-local AIStartCheats = GantryUtils.AIStartCheats
-local AICheats = GantryUtils.AICheats
---------------------------------------------------------------------------------
-SRB0401 = Class(CLandFactoryUnit) {
+SRB0401 = Class(BrewLANExperimentalFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers
 --------------------------------------------------------------------------------
     OnCreate = function(self)
-        CLandFactoryUnit.OnCreate(self)
+        BrewLANExperimentalFactoryUnit.OnCreate(self)
         self.AnimationInitialisation(self)
-        BuildModeChange(self)
     end,
 
-    OnStopBeingBuilt = function(self, builder, layer)
-        AIStartCheats(self, Buff)
-        CLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
-        AIStartOrders(self)
-    end,
-
-    OnLayerChange = function(self, new, old)
-        CLandFactoryUnit.OnLayerChange(self, new, old)
-        BuildModeChange(self)
-    end,
-
-    OnStartBuild = function(self, unitBeingBuilt, order)
-        AICheats(self, Buff)
-        CLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
-        BuildModeChange(self)
-    end,
-
-    OnStopBuild = function(self, unitBeingBuilt)
-        CLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        AIControl(self, unitBeingBuilt)
-        BuildModeChange(self)
-    end,
---------------------------------------------------------------------------------
--- Button controls
---------------------------------------------------------------------------------
-    OnScriptBitSet = function(self, bit)
-        CLandFactoryUnit.OnScriptBitSet(self, bit)
-    end,
-
-    OnScriptBitClear = function(self, bit)
-        CLandFactoryUnit.OnScriptBitClear(self, bit)
-    end,
-
-    OnPaused = function(self)
-        CLandFactoryUnit.OnPaused(self)
-        self:StopBuildFx(self:GetFocusUnit())
-    end,
-
-    OnUnpaused = function(self)
-        CLandFactoryUnit.OnUnpaused(self)
-        if self:IsUnitState('Building') then
-            self:StartBuildFx(self:GetFocusUnit())
-        end
-    end,
 --------------------------------------------------------------------------------
 -- Animations
 --------------------------------------------------------------------------------
     AnimationInitialisation = function(self)
-        --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed,
+        --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed, worldspace
         --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
         self.Sliders = {
             CreateSlider(self, 'Arm1', 0, 0, 0, 3.5, true),
@@ -201,11 +147,15 @@ SRB0401 = Class(CLandFactoryUnit) {
         if not self.CraneArmAnimationThread then
             self.CraneArmAnimationThread = self:ForkThread(self.CraneArmAnimation)
         end
-        CLandFactoryUnit.CreateBuildEffects(self, unitBeingBuilt, order)
+
+        if not unitBeingBuilt then return end
+        coroutine.yield(1)
+        CreateCybranFactoryBuildEffects( self, unitBeingBuilt, __blueprints.srb0401.General.BuildBones, self.BuildEffectsBag )
+        BrewLANExperimentalFactoryUnit.CreateBuildEffects(self, unitBeingBuilt, order)
     end,
 
     StopBuildingEffects = function(self, unitBeingBuilt)
-        CLandFactoryUnit.StopBuildingEffects(self, unitBeingBuilt)
+        BrewLANExperimentalFactoryUnit.StopBuildingEffects(self, unitBeingBuilt)
         self.Sliders[5]:SetGoal(0)
         self.AnimateArms = false
     end,
@@ -223,17 +173,13 @@ SRB0401 = Class(CLandFactoryUnit) {
                     end
                 end
             end
-            WaitTicks(2)
+            coroutine.yield(2)
             --Rotation return watch thread, so we don't have two different loops running
             unitBeingBuilt = self:GetFocusUnit()
             if unitBeingBuilt and self.RotateBase and unitBeingBuilt:GetFractionComplete() > 0.8 then
                 self.Sliders[5]:SetGoal(0)
             end
         end
-    end,
-
-    OnPrepareArmToBuild = function(self)
-        LOG("OnPrepareArmToBuild")
     end,
 
     StartBuildFx = function(self, unitBeingBuilt)

@@ -2,27 +2,18 @@
 --  Summary  :  Aeon Independence Engine script
 --  Author   :  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-local AAirFactoryUnit = import('/lua/aeonunits.lua').AAirFactoryUnit
+local BrewLANExperimentalFactoryUnit = import('/lua/defaultunits.lua').BrewLANExperimentalFactoryUnit
 --------------------------------------------------------------------------------
-local CreateAeonCommanderBuildingEffects = import('/lua/EffectUtilities.lua').CreateAeonCommanderBuildingEffects
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
-local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
-local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
-local BuildModeChange = GantryUtils.BuildModeChange
-local AIStartOrders = GantryUtils.AIStartOrders
-local AIControl = GantryUtils.AIControl
-local AIStartCheats = GantryUtils.AIStartCheats
-local AICheats = GantryUtils.AICheats
---------------------------------------------------------------------------------
-SAB0401 = Class(AAirFactoryUnit) {
+SAB0401 = Class(BrewLANExperimentalFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers
 --------------------------------------------------------------------------------
     OnCreate = function(self)
-        AAirFactoryUnit.OnCreate(self)
+        self.BLFactoryAirMode = true
+        BrewLANExperimentalFactoryUnit.OnCreate(self)
         local bp = __blueprints.sab0401
         self:SetCollisionShape(
             'Sphere',
@@ -31,47 +22,13 @@ SAB0401 = Class(AAirFactoryUnit) {
             bp.CollisionSphereOffsetZ or 0,
             bp.SizeSphere
         )
-        self.airmode = true
-        BuildModeChange(self)
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        AIStartCheats(self, Buff)
-        AAirFactoryUnit.OnStopBeingBuilt(self, builder, layer)
+        BrewLANExperimentalFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self:ForkThread(self.PlatformRaisingThread)
-        AIStartOrders(self)
     end,
 
-    OnLayerChange = function(self, new, old)
-        AAirFactoryUnit.OnLayerChange(self, new, old)
-        BuildModeChange(self)
-    end,
-
-    OnStartBuild = function(self, unitBeingBuilt, order)
-        AICheats(self, Buff)
-        AAirFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
-        BuildModeChange(self)
-    end,
-
-    OnStopBuild = function(self, unitBeingBuilt)
-        AAirFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        AIControl(self, unitBeingBuilt)
-        BuildModeChange(self)
-    end,
---------------------------------------------------------------------------------
--- Button controls
---------------------------------------------------------------------------------
-    OnPaused = function(self)
-        AAirFactoryUnit.OnPaused(self)
-        self:StopBuildFx(self:GetFocusUnit())
-    end,
-
-    OnUnpaused = function(self)
-        AAirFactoryUnit.OnUnpaused(self)
-        if self:IsUnitState('Building') then
-            self:StartBuildFx(self:GetFocusUnit())
-        end
-    end,
 --------------------------------------------------------------------------------
 -- Animations
 --------------------------------------------------------------------------------
@@ -82,9 +39,6 @@ SAB0401 = Class(AAirFactoryUnit) {
         local thread = self:ForkThread( self.CreateAeonFactoryBuildingEffects, unitBeingBuilt, __blueprints.sab0401.General.BuildBones.BuildEffectBones, 'Attachpoint', self.BuildEffectsBag )
         unitBeingBuilt.Trash:Add( thread )
     end,
-
-    --StopBuildFx = function(self)
-    --end,
 
     PlatformRaisingThread = function(self)
         --CreateSlider(unit, bone, [goal_x, goal_y, goal_z, [speed, [worldspace]
@@ -187,7 +141,7 @@ SAB0401 = Class(AAirFactoryUnit) {
 
             ChangeState(self, self.RollingOffState)
         else
-            AAirFactoryUnit.FinishBuildThread(self, unitBeingBuilt, order)
+            BrewLANExperimentalFactoryUnit.FinishBuildThread(self, unitBeingBuilt, order)
         end
     end,
 

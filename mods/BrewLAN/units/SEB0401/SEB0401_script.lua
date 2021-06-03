@@ -2,27 +2,17 @@
 --  Summary:  The Gantry script
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
+local BrewLANExperimentalFactoryUnit = import('/lua/defaultunits.lua').BrewLANExperimentalFactoryUnit
 --------------------------------------------------------------------------------
+local TLFCreateBuildEffects = import('/lua/terranunits.lua').TLandFactoryUnit.CreateBuildEffects
 local explosion = import('/lua/defaultexplosions.lua')
-local Utilities = import('/lua/utilities.lua')
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
-local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
-local GantryUtils = import(BrewLANPath .. '/lua/GantryUtils.lua')
-local BuildModeChange = GantryUtils.BuildModeChange
-local AIStartOrders = GantryUtils.AIStartOrders
-local AIControl = GantryUtils.AIControl
-local AIStartCheats = GantryUtils.AIStartCheats
-local AICheats = GantryUtils.AICheats
---------------------------------------------------------------------------------
-SEB0401 = Class(TLandFactoryUnit) {
+SEB0401 = Class(BrewLANExperimentalFactoryUnit) {
 --------------------------------------------------------------------------------
 -- Function triggers
 --------------------------------------------------------------------------------
     OnCreate = function(self)
-        TLandFactoryUnit.OnCreate(self)
-        BuildModeChange(self)
+        BrewLANExperimentalFactoryUnit.OnCreate(self)
         self.AimBones = {}
         for i = 1, 8 do
             --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
@@ -32,59 +22,13 @@ SEB0401 = Class(TLandFactoryUnit) {
         end
     end,
 
-    OnStopBeingBuilt = function(self, builder, layer)
-        AIStartCheats(self, Buff)
-        TLandFactoryUnit.OnStopBeingBuilt(self, builder, layer)
-        AIStartOrders(self)
-    end,
-
-    OnLayerChange = function(self, new, old)
-        TLandFactoryUnit.OnLayerChange(self, new, old)
-        BuildModeChange(self)
-    end,
-
-    OnStartBuild = function(self, unitBeingBuilt, order)
-        AICheats(self, Buff)
-        TLandFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
-        BuildModeChange(self)
-    end,
-
     OnStopBuild = function(self, unitBeingBuilt)
-        TLandFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        self.UnitControl(self, unitBeingBuilt)
-        AIControl(self, unitBeingBuilt)
-        BuildModeChange(self)
-    end,
---------------------------------------------------------------------------------
--- Button controls
---------------------------------------------------------------------------------
-    OnScriptBitSet = function(self, bit)
-        TLandFactoryUnit.OnScriptBitSet(self, bit)
-        if bit == 1 then
-            self.airmode = true
-            BuildModeChange(self)
-        end
+        BrewLANExperimentalFactoryUnit.OnStopBuild(self, unitBeingBuilt)
+        self:UnitControl(unitBeingBuilt)
     end,
 
-    OnScriptBitClear = function(self, bit)
-        TLandFactoryUnit.OnScriptBitClear(self, bit)
-        if bit == 1 then
-            self.airmode = false
-            BuildModeChange(self)
-        end
-    end,
+    CreateBuildEffects = TLFCreateBuildEffects,
 
-    OnPaused = function(self)
-        TLandFactoryUnit.OnPaused(self)
-        self:StopBuildFx(self:GetFocusUnit())
-    end,
-
-    OnUnpaused = function(self)
-        TLandFactoryUnit.OnUnpaused(self)
-        if self:IsUnitState('Building') then
-            self:StartBuildFx(self:GetFocusUnit())
-        end
-    end,
 --------------------------------------------------------------------------------
 -- Unit control
 --------------------------------------------------------------------------------
@@ -94,6 +38,7 @@ SEB0401 = Class(TLandFactoryUnit) {
             IssueDive({uBB})
         end
     end,
+
 --------------------------------------------------------------------------------
 -- AI Unit control
 --------------------------------------------------------------------------------
@@ -158,7 +103,7 @@ SEB0401 = Class(TLandFactoryUnit) {
             self:ForkThread(self.Flailing, c, math.random(30,45), 'x', r)
             self:ForkThread(self.Flailing, d, math.random(35,45), 'x', r)
         end
-        TLandFactoryUnit.DeathThread(self, overkillRatio, instigator)
+        BrewLANExperimentalFactoryUnit.DeathThread(self, overkillRatio, instigator)
     end,
 
     Flailing = function(self, bone, a, d, r)
