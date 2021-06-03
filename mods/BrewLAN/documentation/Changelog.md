@@ -836,6 +836,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Penetration: Added Helios; the Aeon T3 Penetration Fighter.
   * Updated language strings. A large portion of French language updates from Markty_07.
 
+  ### 2021-06-03
+
+  * Penetration: Made Helios more shiny.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.
