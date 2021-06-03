@@ -842,6 +842,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Refactored Gantry scripts to use a class rather than a heavily linked util script.
   * Gantry Homogeniser: Updated for refactored gantry scripts.
   * Gantry Hax: Updated for refactored gantry scripts.
+  * Gantry stolen tech clause can now handle arbitrary factions.
 
 ## 2019-10-13|0.8.9
 

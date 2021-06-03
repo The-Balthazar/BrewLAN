@@ -19,6 +19,15 @@ do
 end
 
 --------------------------------------------------------------------------------
+-- This provides support for non-standard factions
+--------------------------------------------------------------------------------
+local FactionCategories = {}
+
+for i, data in import('/lua/factions.lua').Factions do
+    FactionCategories[data.Category] = false
+end
+
+--------------------------------------------------------------------------------
 -- Experimental Factory class.
 -- Ported from the util file /BrewLAN/lua/GantryUtils.lua
 --------------------------------------------------------------------------------
@@ -50,7 +59,8 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
                 pos, 30, 'Ally'
             )
         end
-        local stolentech = {CYBRAN = false, AEON = false, SERAPHIM = false, UEF = false}
+        local stolentech = table.copy(FactionCategories)
+
         for race, val in stolentech do
             if EntityCategoryContains(ParseEntityCategory(race), self) then
                 stolentech[race] = true
