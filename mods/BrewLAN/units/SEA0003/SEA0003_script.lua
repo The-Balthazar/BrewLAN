@@ -1,7 +1,5 @@
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
-local OffsetBoneToTerrain = import(BrewLANPath .. '/lua/TerrainUtils.lua').OffsetBoneToTerrain
 
 SEA0003 = Class(TAirUnit) {
     DestroyNoFallRandomChance = 0,
@@ -66,8 +64,9 @@ SEA0003 = Class(TAirUnit) {
         if not self.Hologram then
             self.Hologram = {}
             local pos = self:GetPosition()
+            local army = self:GetArmy()
             for i = 1, 3 do
-                self.Hologram[i] = CreateUnitHPR('sea0004', self:GetArmy(), pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10), 0, 0, 0)
+                self.Hologram[i] = CreateUnitHPR('sea0004', army, pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10), 0, 0, 0)
                 IssueGuard({self.Hologram[i]}, self)
             end
         end

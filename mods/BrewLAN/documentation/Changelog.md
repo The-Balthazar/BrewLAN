@@ -844,6 +844,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Gantry Hax: Updated for refactored gantry scripts.
   * Gantry stolen tech clause can now handle arbitrary factions.
 
+  ### 2021-06-04
+
+  * Simplified a few lua doc links to not need to reference the BrewLAN path.
+
 ## 2019-10-13|0.8.9
 
 * Incremented numbers for static public release.

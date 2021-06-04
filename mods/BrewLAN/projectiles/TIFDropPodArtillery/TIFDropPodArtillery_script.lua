@@ -1,7 +1,7 @@
 local TArtilleryAntiMatterProjectile = import('/lua/terranprojectiles.lua').TArtilleryAntiMatterProjectile02
 local utilities = import('/lua/utilities.lua')
 local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
-local GetTerrainAngles = import(BrewLANPath .. '/lua/TerrainUtils.lua').GetTerrainSlopeAnglesDegrees
+local GetTerrainAngles = import('../../lua/terrainutils.lua').GetTerrainSlopeAnglesDegrees
 
 local motionTypes = {
     RULEUMT_Biped = { Land = true },
