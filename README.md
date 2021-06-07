@@ -66,7 +66,7 @@ If your installation looks like `/mods/brewlan/mods/brewlan` or `/mods/mods/` th
 Created by Sean "Balthazar" Wheeldon
 
 ### Contributors
-- Daniel "mr.deagle" _\<redacted\>_ – Chinese localisation, code critique, additional code, puffreading
+- Daniel "mr.deagle" _\<redacted\>_ – Code critique, additional code, puffreading
 - Sprouto – Code critique, additional code
 - Bilmon – Initial tech 1 artillery balance (Sept 2009)
 
