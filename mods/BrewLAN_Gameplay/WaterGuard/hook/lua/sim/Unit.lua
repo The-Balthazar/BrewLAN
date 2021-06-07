@@ -1,4 +1,4 @@
-end
+do
     local UnitOld = Unit
 
     Unit = Class(UnitOld) {

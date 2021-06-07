@@ -852,3 +852,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-06
 
   * Split off pre-2020 changelog to its own document. It was starting to take a while to save.
+
+  ### 2021-06-07
+
+  * Fixed WaterGuard.
