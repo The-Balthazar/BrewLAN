@@ -60,19 +60,17 @@ Functionally separates the hardware and software of tech levels and blueprints.
 
 ### BrewLAN: Penetration
 Adds alternative tech 2 air units, and extended tech 3 air units:
-* Tech 2 Tactical Bomber (UEF/Cybran/Seraphim)
+* Tech 2 Tactical Bomber (Each faction except Aeon which is directly in BrewLAN)
 * Tech 2 Combat Fighter (UEF)
 * Tech 3 Penetrator Bombers (Each faction)
-* Tech 3 Penetration Fighters (UEF/Cybran)
+* Tech 3 Penetration Fighters (Each faction)
 * Tech 3 Interdiction Gunships (Cybran)
 Planned:
-* Penetration Fighter (Aeon)
 * Fighter/Bomber (Aeon)
 * Combat Fighters (Cybran/Seraphim)
 
 ### BrewLAN: Magnum Dong
 Adds new experimental units:
-* Experimental Heavy Arthrobot (Seraphim)
 * Experimental Mobile Artillery (Cybran)
 
 ## Gameplay

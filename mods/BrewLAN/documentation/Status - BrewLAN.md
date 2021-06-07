@@ -318,9 +318,13 @@ Suthanus: Experimental Rapid-Fire Artillery
 
 Souiya: Experimental Naval Factory
 * Lacks unique model.
-* Without other mods it has no experimentals it can build.
 * May push it by giving it the ability to make amphibious units, and to protect subs it makes by making them underwater.
 * Doesn't appear on idle factory tab.
+
+Suedath-Zmara: Experimental Heavy Arthrobot
+* Large floating-amphibious assault bot.
+* Can serve the role of a battleship.
+* Has melee weapons, and can eat stuff.
 
 ### Aeon
 Absolution: Experimental Siege Tank
