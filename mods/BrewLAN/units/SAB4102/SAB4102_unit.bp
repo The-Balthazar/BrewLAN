@@ -164,7 +164,6 @@ UnitBlueprint {
         },
         UnitName = '<LOC sab4102_name>Aspis',
         UnitWeight = 1,
-        #UpgradesTo = 'sab4301',
         UpgradesTo = 'uab4202',
     },
     Intel = {

@@ -30,7 +30,6 @@ UnitBlueprint {
         'SIZE12',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHOWQUEUE',
         'OVERLAYOMNI',
         'SORTINTEL',
         'RESEARCHLOCKED',
@@ -49,7 +48,7 @@ UnitBlueprint {
         },
         AnimationDeath = {
             {
-                Animation = '/mods/brewlan_units/brewresearch/units/srb3301/srb3301_adeath.sca',
+                Animation = '/mods/brewlan_units/brewintel/units/srb3301/srb3301_adeath.sca',
                 Weight = 100,
                 AnimationRateMax = 1,
                 AnimationRateMin = 0.5,

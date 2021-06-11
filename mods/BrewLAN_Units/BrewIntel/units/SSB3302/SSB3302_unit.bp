@@ -1,0 +1,162 @@
+UnitBlueprint {
+    Audio = {
+        DoneBeingBuilt = Sound { Bank = 'XSB',            Cue = 'XSB3104_Activate',           LodCutoff = 'UnitMove_LodCutoff' },
+           UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Radar',      LodCutoff = 'UnitMove_LodCutoff' },
+             Destroyed = Sound { Bank = 'XSL_Destroy',    Cue = 'XSB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff' },
+                Killed = Sound { Bank = 'XSL_Destroy',    Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+    BuildIconSortPriority = 220,
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'INTELLIGENCE',
+        'TECH3',
+        'OMNI',
+        'DRAGBUILD',
+        'SIZE12',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYOMNI',
+        'SORTINTEL',
+        'RESEARCHLOCKED',
+    },
+    CollisionOffsetY = -0.25,
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 53,
+        Health = 500,
+        MaxHealth = 500,
+    },
+    Description = '<LOC xsb3104_desc>Omni Sensor Suite',
+    Display = {
+        Abilities = {
+            '<LOC ability_omni>Omni Sensor',
+        },
+        AnimationDeath = {
+            {
+                Animation = '/mods/brewlan_units/brewintel/units/ssb3302/ssb3302_adeath.sca',
+                AnimationRateMax = 2,
+                AnimationRateMin = 1.5,
+                Weight = 100,
+            },
+        },
+        IdleEffects = {
+            Land = {
+                Effects = {
+                    {
+                        Bones = { 'Radar_Orb_003' },
+                        Type = 'Radar01',
+                    },
+                },
+            },
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 128,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    LODCutoff = 256,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    LODCutoff = 512,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                },
+            },
+        },
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar8x_seraphim_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 12.8,
+                Normal = 'Tarmacs/Tar8x_seraphim_01_normals',
+                Orientations = {0, 90, 180, 270},
+                RemoveWhenDead = false,
+                Width = 12.8,
+            },
+        },
+        UniformScale = 0.09,
+    },
+    Economy = {
+        BuildCostEnergy = 36000,
+        BuildCostMass = 2880,
+        BuildTime = 2400,
+        MaintenanceConsumptionPerSecondEnergy = 3000,
+        RebuildBonusIds = {'ssb3302'},
+    },
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    General = {
+        Category = 'Intelligence',
+        Classification = 'RULEUC_Sensor',
+        FactionName = 'Seraphim',
+        Icon = 'land',
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'omni',
+                helpText = 'toggle_omni',
+            },
+        },
+        SelectionPriority = 5,
+        TechLevel = 'RULEUTL_Advanced',
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
+        UnitName = '<LOC xsb3104_name>Aezesel',
+        UnitWeight = 1,
+        UpgradesFrom = 'xsb3201',
+    },
+    Intel = {
+        OmniRadius = 300,
+        ReactivateTime = 5,
+        ShowIntelOnSelect = true,
+        VisionRadius = 25,
+    },
+    Interface = {
+        HelpText = '<LOC xsb3104_help>Omni Sensor Suite',
+    },
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.25,
+    LifeBarSize = 3,
+    Physics = {
+        FlattenSkirt = true,
+        MeshExtentsX = 3,
+        MeshExtentsY = 6,
+        MeshExtentsZ = 3,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+    },
+    SelectionSizeX = 1.55,
+    SelectionSizeZ = 2.05,
+    SelectionThickness = 0.46,
+    SizeX = 3,
+    SizeY = 6,
+    SizeZ = 3,
+    StrategicIconName = 'icon_structure3_intel',
+    StrategicIconSortPriority = 230,
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

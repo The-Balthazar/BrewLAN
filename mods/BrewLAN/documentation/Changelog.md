@@ -856,3 +856,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-07
 
   * Fixed WaterGuard.
+
+  ### 2021-06-11
+
+  * Bletchley Park: Fixed the death animation link for the Cybran omni still referencing BrewResearch.
+  * Bletchley Park: Added the Seraphim dedicated omni.

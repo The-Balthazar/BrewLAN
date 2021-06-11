@@ -10,7 +10,7 @@ do
             'sab3301',
             'seb3301',
             'srb3301',
-            --'ssb3302',
+            'ssb3302',
         },
     }
     for group, data in pairs(restrictedUnits) do
