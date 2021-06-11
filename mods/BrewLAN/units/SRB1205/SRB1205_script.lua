@@ -1,7 +1,7 @@
 local CEnergyStorageUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/defaultunits.lua').BrewLANEnergyStorageUnit
 
 SRB1205 = Class(CEnergyStorageUnit) {
-    DestructionPartsChassisToss = {'URB1105'},
+    DestructionPartsChassisToss = {'SRB1205'},
 
     OnStopBeingBuilt = function(self,builder,layer)
         CEnergyStorageUnit.OnStopBeingBuilt(self,builder,layer)

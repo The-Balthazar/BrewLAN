@@ -861,3 +861,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Bletchley Park: Fixed the death animation link for the Cybran omni still referencing BrewResearch.
   * Bletchley Park: Added the Seraphim dedicated omni.
+  * Fixed a really rare script error in the Cybran T2 Energy Storage death.
