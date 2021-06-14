@@ -866,3 +866,6 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-14
 
   * New mod: *Reinforcements*. Currently mostly a tech demo that only gives an Aeon light assault drop.
+  * Defined water vision on units that should have 0 vision. Default is 10.
+  * Removed some command caps from some dummy units.
+  * Fixed the water vision of the Zmara.
