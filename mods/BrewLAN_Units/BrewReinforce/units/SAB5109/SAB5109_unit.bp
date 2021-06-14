@@ -1,0 +1,82 @@
+UnitBlueprint {
+    Categories = {
+        'AEON',
+        'BUILTBYTIER1FIELD',
+        'BUILTBYTIER2FIELD',
+        'BUILTBYTIER3FIELD',
+        'STRUCTURE',
+        'TECH1',
+        'SIZE4',
+        --'TELEPORTBEACON',
+        'VISIBLETORECON',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 10,
+        MaxHealth = 10,
+    },
+    Description = '<LOC sab5109_desc>Reinforcement Beacon',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Aeon',
+                    MeshName = '/units/uab5103/uab5103_lod0.scm',
+                    AlbedoName = '/units/uab5103/uab5103_albedo.dds',
+                    NormalsName = '/units/uab5103/uab5103_normalsts.dds',
+                    SpecularName = '/units/uab5103/uab5103_specteam.dds',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    MeshName = '/units/uab5103/uab5103_lod1.scm',
+                    AlbedoName = '/units/uab5103/uab5103_lod1_albedo.dds',
+                    NormalsName = '/units/uab5103/uab5103_lod1_normalsts.dds',
+                    SpecularName = '/units/uab5103/uab5103_lod1_specteam.dds',
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 140*10,
+        BuildCostMass = 35*10,
+        BuildTime = 140*10,
+        Reinforcements = {
+            Unit = 'ual0106',--'sal0311',
+            Transport = 'uaa0107',
+            Quantity = 10,
+        }
+    },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_MiscSupport',
+        FactionName = 'Aeon',
+        Icon = 'land',
+        SelectionPriority = 5,
+        TechLevel = 'RULEUTL_Basic',
+        UnitWeight = 1,
+    },
+    Intel = {
+        VisionRadius = 0,
+    },
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1,
+    LifeBarSize = 1,
+    Physics = {
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+    },
+    SelectionSizeX = 0.3,
+    SelectionSizeZ = 0.3,
+    SelectionThickness = 1.2,
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
+    StrategicIconSortPriority = 175,
+}

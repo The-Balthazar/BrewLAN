@@ -862,3 +862,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Bletchley Park: Fixed the death animation link for the Cybran omni still referencing BrewResearch.
   * Bletchley Park: Added the Seraphim dedicated omni.
   * Fixed a really rare script error in the Cybran T2 Energy Storage death.
+
+  ### 2021-06-14
+
+  * New mod: *Reinforcements*. Currently mostly a tech demo that only gives an Aeon light assault drop.

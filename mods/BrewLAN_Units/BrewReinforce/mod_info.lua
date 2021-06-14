@@ -1,0 +1,14 @@
+name = "BrewLAN: Reinforcements"
+uid = "25D57D85-9JA7-D842-BREW-REINFOR000000"
+version = 0.0
+copyright = "© 2021–2021 Sean Wheeldon"
+description = "Adds some from-off-map reinforcement methods. Content incomplete."
+author = "Balthazar"
+--icon = "/mods/BrewLAN_Units/BrewTurrets/mod_icon.png"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+conflicts = { }
+before = { }
+after = { }
