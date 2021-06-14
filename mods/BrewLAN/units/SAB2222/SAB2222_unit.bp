@@ -95,6 +95,7 @@ UnitBlueprint {
         RadarStealth = true,
         SonarStealth = true,
         VisionRadius = 0,
+        WaterVisionRadius = 0,
         RadarRadius = 29,
         SonarRadius = 29,
     },

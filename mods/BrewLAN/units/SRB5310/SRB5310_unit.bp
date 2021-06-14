@@ -197,6 +197,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     Interface = {
         HelpText = '<LOC srb5310_desc>Armored Wall Segment',

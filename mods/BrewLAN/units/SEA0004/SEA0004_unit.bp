@@ -76,8 +76,6 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
-            RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
@@ -96,6 +94,7 @@ UnitBlueprint {
         },
         JammerBlips = 5,
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     Interface = {
         HelpText = '<LOC xsc9011_help>Jammer Crystal',

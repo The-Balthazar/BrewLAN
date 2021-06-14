@@ -160,6 +160,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     Interface = {
         HelpText = '<LOC ssb5301_desc>Shield Wall Section',

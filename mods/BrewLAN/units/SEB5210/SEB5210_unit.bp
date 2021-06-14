@@ -119,6 +119,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     Interface = {
         HelpText = '<LOC sbui5210>Heavy Wall Segment',

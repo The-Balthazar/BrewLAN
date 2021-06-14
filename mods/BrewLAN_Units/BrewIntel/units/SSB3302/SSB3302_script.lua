@@ -51,14 +51,12 @@ SSB3302 = Class(SRadarUnit) {
         if self.Rotors then
             for i, v in self.Rotors do
                 v:Destroy()
-                LOG("YEET")
             end
         end
         --Destroy the pitch control rotor from the effect util anims
         if self.Rotators and self.Rotators[1] and self.Rotators[1][2] and self.Rotators[1][2].Destroy then
             self.Rotators[1][2]:Destroy()
             self.Rotators[1][1]:SetGoal(self.Rotators[1][1]:GetCurrentAngle())
-            LOG("LIKE SO YEET")
         end
         SRadarUnit.DeathThread(self)
     end,

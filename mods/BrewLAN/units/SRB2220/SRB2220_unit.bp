@@ -105,6 +105,7 @@ UnitBlueprint {
         RadarStealth = true,
         SonarStealth = true,
         VisionRadius = 0,
+        WaterVisionRadius = 0,
         OmniRadius = 1,
     },
     Interface = {

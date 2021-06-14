@@ -17,7 +17,7 @@ UnitBlueprint {
         HideLifebars = true,
         UniformScale = 0.1,
     },
-    Intel = { VisionRadius = 0 },
+    Intel = { VisionRadius = 0, WaterVisionRadius = 0 },
     General = { CapCost = 0 },
     Physics = {
         MotionType = 'RULEUMT_Air',

@@ -45,7 +45,7 @@ UnitBlueprint {
         BuildCostMass = 35*10,
         BuildTime = 140*10,
         Reinforcements = {
-            Unit = 'ual0106',--'sal0311',
+            Unit = 'ual0106',
             Transport = 'uaa0107',
             Quantity = 10,
         }
@@ -61,6 +61,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1,

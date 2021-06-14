@@ -24,6 +24,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     Physics = {
         FlattenSkirt = false,

@@ -60,6 +60,7 @@ UnitBlueprint {
         },
         JammerBlips = 20,
         VisionRadius = 0,
+        WaterVisionRadius = 0,
     },
     Interface = {
         HelpText = '<LOC xsc9010_help>Jammer Crystal',
