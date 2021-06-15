@@ -322,7 +322,21 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
         FactoryUnit.OnStopBuild(self, unitBeingBuilt)
         self:AIControl(unitBeingBuilt)
         self:RefreshBuildList()
+        self:UnitControl(unitBeingBuilt)
     end,
+
+    ----------------------------------------------------------------------------
+    -- Unit control
+    ----------------------------------------------------------------------------
+    UnitControl = function(self, uBB)
+        if uBB:GetFractionComplete() == 1
+        and (__blueprints[uBB.BpId] or uBB:GetBlueprint()).Physics.MotionType =='RULEUMT_SurfacingSub'
+        and EntityCategoryContains(categories.EXPERIMENTAL, uBB)
+        then
+            IssueDive({uBB})
+        end
+    end,
+
     ----------------------------------------------------------------------------
     -- Button hooks
     ----------------------------------------------------------------------------

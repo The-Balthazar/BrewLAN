@@ -22,22 +22,7 @@ SEB0401 = Class(BrewLANExperimentalFactoryUnit) {
         end
     end,
 
-    OnStopBuild = function(self, unitBeingBuilt)
-        BrewLANExperimentalFactoryUnit.OnStopBuild(self, unitBeingBuilt)
-        self:UnitControl(unitBeingBuilt)
-    end,
-
     CreateBuildEffects = TLFCreateBuildEffects,
-
---------------------------------------------------------------------------------
--- Unit control
---------------------------------------------------------------------------------
-    UnitControl = function(self, uBB)
-        local IDcheck = function(uBB, id) return uBB and uBB:GetUnitId() == id end
-        if IDcheck(uBB,'ues0401') then
-            IssueDive({uBB})
-        end
-    end,
 
 --------------------------------------------------------------------------------
 -- AI Unit control
@@ -46,7 +31,7 @@ SEB0401 = Class(BrewLANExperimentalFactoryUnit) {
     --Which is called on stop build
     AIUnitControl = function(self, uBB, aiBrain)
         if uBB:GetUnitId() == self.AcceptedRequests[1][1] then
-            if not self.AcceptedRequests[1][2]:IsDead() then
+            if not self.AcceptedRequests[1][2].Dead then
                 IssueGuard({uBB}, self.AcceptedRequests[1][2])
             --Something for passing along the requested units here, and/or, for sharing them out.
             --else

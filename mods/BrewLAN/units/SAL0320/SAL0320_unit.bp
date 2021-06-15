@@ -66,7 +66,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_hover>Hover',
-            '<LOC ability_deathaoe>Volitile',
+            '<LOC ability_deathaoe>Volatile',
         },
         IdleEffects = {
             Land = {

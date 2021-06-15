@@ -65,7 +65,12 @@ end
 local function biasedDPS(weapon)
     --Base values
     local bias = 1.2
-    local ProjectileCount = math.max(1, table.getn(weapon.RackBones[1].MuzzleBones or {'boop'} ) ) * (weapon.MuzzleSalvoSize or 1)
+    local ProjectileCount
+    if weapon.MuzzleSalvoDelay == 0 then
+        ProjectileCount = math.max(1, table.getn(weapon.RackBones[1].MuzzleBones or {'boop'} ) )
+    else
+        ProjectileCount = (weapon.MuzzleSalvoSize or 1)
+    end
     if weapon.RackFireTogether then
         ProjectileCount = ProjectileCount * math.max(1, table.getn(weapon.RackBones or {'boop'} ) )
     end
