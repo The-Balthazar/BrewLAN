@@ -32,7 +32,6 @@ UnitBlueprint {
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2FACTORY',
         'BUILTBYTIER3FACTORY',
-        'BUILTBYEXPERIMENTALSUB',
         'CONSTRUCTION',
         'ENGINEER',
         'REPAIR',

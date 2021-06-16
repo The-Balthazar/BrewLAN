@@ -91,15 +91,17 @@ Description['ssb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power g
 --Description['something'] = "<LOC Unit_Description_RND_031>"
 
 do
-    ForkThread(function(Description)
-        for id, bp in __blueprints do
-            --Don't check id, it can sometimes be an arbitrary index.
-            if not Description[bp.BlueprintId] and bp.Categories and bp.ScriptClass == 'ResearchItem' and bp.ResearchId and __blueprints[bp.ResearchId] then--and Description[string.gsub(id, "rnd","")] then
-                local oID = bp.ResearchId
-                Description[bp.BlueprintId] = Description[oID]
+    if _G.ForkThread then --This is so I can dofile without having to define ForkThread
+        ForkThread(function(Description)
+            for id, bp in __blueprints do
+                --Don't check id, it can sometimes be an arbitrary index.
+                if not Description[bp.BlueprintId] and bp.Categories and bp.ScriptClass == 'ResearchItem' and bp.ResearchId and __blueprints[bp.ResearchId] then--and Description[string.gsub(id, "rnd","")] then
+                    local oID = bp.ResearchId
+                    Description[bp.BlueprintId] = Description[oID]
+                end
             end
-        end
-    end, Description)
+        end, Description)
+    end
     --[[
     --This method was overcomplicated and also has the issue that if the mods 'unitdescription' file is properly set it, it'll cause a 'nil Description global' error.
     for id, bp in __blueprints do

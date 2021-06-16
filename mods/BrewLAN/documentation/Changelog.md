@@ -878,3 +878,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * Players building Atlantis from-, and players and AI building Tempest from the Seraphim Naval Factory.
         * AI is restricted from building the Atlantis because they don't use it.
   * Fixed the DPA calc in the Strategic Icon selector and debug tools mod not treating MuzzleSalvoDelay and RackFireTogether correctly.
+
+  ### 2021-06-16
+
+  * Removed the `BUILTBYEXPERIMENTALSUB` category. Nothing uses it.
+  * Fixed typos in the Helios build description. (Awaiting propagation to loc strings)

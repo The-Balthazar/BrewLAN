@@ -42,7 +42,7 @@ saa0313_name="Helios"
 sra0313_name="Twilight Patron"
 ssa0313_name="Ialosaare"
 Unit_Description_BrewPen_005="Top-end long range stealth fighter. Equipped with twin burst helical railguns, air-to-air missiles, and anti-missile flares."
-Unit_Description_BrewPen_006="Top-end long range stealth fighter. Equipped with twin focused phason laser weapons, ant anti-missile faltes."
+Unit_Description_BrewPen_006="Top-end long range stealth fighter. Equipped with twin focused phason laser weapons, and anti-missile flares."
 Unit_Description_BrewPen_007="Top-end long-range stealth fighter. Equipped with heavy particle cannons, and anti-missile flares. Capable of hunting spy planes."
 Unit_Description_BrewPen_008="Top-end long-range stealth fighter. Equipped with a Losaare autocannon, a phason weapon, and anti-missile flares."
 
@@ -57,5 +57,3 @@ Unit_Description_BrewPen_010="Massive airborne aircraft carrier. Can create, tra
 --dra0202_desc="Fighter/Bomber"
 sra0402_name="Talon"
 Unit_Description_BrewPen_011="Combination fighter/bomber aircraft designed to engage both air and surface units."
-
-

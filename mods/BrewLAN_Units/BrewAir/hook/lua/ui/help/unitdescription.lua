@@ -17,7 +17,7 @@ Description['saa0314'] = "<LOC Unit_Description_BrewPen_004>Top-end long-range s
 
 --Tech 3 penetration fighters
 Description['sea0313'] = "<LOC Unit_Description_BrewPen_005>Top-end long range stealth fighter. Equipped with twin burst helical railguns, air-to-air missiles, and anti-missile flares."
-Description['saa0313'] = "<LOC Unit_Description_BrewPen_006>Top-end long range stealth fighter. Equipped with twin focused phason laser weapons, ant anti-missile faltes."
+Description['saa0313'] = "<LOC Unit_Description_BrewPen_006>Top-end long range stealth fighter. Equipped with twin focused phason laser weapons, and anti-missile flares."
 Description['sra0313'] = "<LOC Unit_Description_BrewPen_007>Top-end long-range stealth fighter. Equipped with heavy particle cannons, and anti-missile flares. Capable of hunting spy planes."
 Description['ssa0313'] = "<LOC Unit_Description_BrewPen_008>Top-end long-range stealth fighter. Equipped with a Losaare autocannon, a phason weapon, and anti-missile flares."
 
