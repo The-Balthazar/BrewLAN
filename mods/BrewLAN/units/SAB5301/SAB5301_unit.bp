@@ -142,7 +142,7 @@ UnitBlueprint {
         CapCost = 0.1,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
-        FactionName = 'Seraphim',
+        FactionName = 'Aeon',
         Icon = 'land',
         OrderOverrides = {
             RULEUTC_ShieldToggle = {

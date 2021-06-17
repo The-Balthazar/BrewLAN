@@ -887,3 +887,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-17
 
   * Fixed the internal faction name of the Cybran Paragon, and the T2 and T3 research centres.
+  * Fixed the Aeon shield wall having a Seaphim faction name.
