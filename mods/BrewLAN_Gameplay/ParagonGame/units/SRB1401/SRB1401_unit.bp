@@ -89,7 +89,7 @@ UnitBlueprint {
     General = {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
-        FactionName = 'CYBRAN',
+        FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',

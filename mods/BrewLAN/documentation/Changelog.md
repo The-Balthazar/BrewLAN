@@ -883,3 +883,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Removed the `BUILTBYEXPERIMENTALSUB` category. Nothing uses it.
   * Fixed typos in the Helios build description. (Awaiting propagation to loc strings)
+
+  ### 2021-06-17
+
+  * Fixed the internal faction name of the Cybran Paragon, and the T2 and T3 research centres.

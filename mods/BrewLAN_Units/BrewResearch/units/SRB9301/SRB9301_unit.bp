@@ -135,7 +135,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         ConstructionBar = true,
-        FactionName = 'CYBRAN',
+        FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
