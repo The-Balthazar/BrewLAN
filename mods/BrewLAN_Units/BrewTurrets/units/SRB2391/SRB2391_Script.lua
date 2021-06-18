@@ -30,7 +30,8 @@ SRB2391 = Class(CStructureUnit) {
                 return proj
             end,
         },
-        Dischage = Class(Weapon) {
+
+        DeathWeapon = Class(Weapon) {
             Effects = {
                 '/effects/emitters/seraphim_othuy_hit_01_emit.bp',
                 '/effects/emitters/seraphim_othuy_hit_02_emit.bp',
@@ -43,7 +44,10 @@ SRB2391 = Class(CStructureUnit) {
                 self:SetWeaponEnabled(false)
             end,
 
-            OnFire = function(self)
+            Fire = function(self)
+                if not self.unit.WeaponsActive then
+                    return
+                end
                 local bp = self:GetBlueprint()
                 local army = self.unit:GetArmy()
                 self:PlaySound(bp.Audio.Fire)
@@ -130,15 +134,6 @@ SRB2391 = Class(CStructureUnit) {
             self.WeaponsActive = true
             self.LastFiredTime = GetGameTick()
         end
-    end,
-
-    OnKilled = function(self, instigator, type, overkillRatio)
-		if self.WeaponsActive then
-            local discharge = self:GetWeaponByLabel('Dischage')
-            discharge:SetWeaponEnabled(true)
-            discharge:OnFire()
-        end
-        CStructureUnit.OnKilled(self, instigator, type, overkillRatio)
     end,
 }
 

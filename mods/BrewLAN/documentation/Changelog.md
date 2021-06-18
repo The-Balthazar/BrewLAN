@@ -887,4 +887,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-17
 
   * Fixed the internal faction name of the Cybran Paragon, and the T2 and T3 research centres.
-  * Fixed the Aeon shield wall having a Seaphim faction name.
+  * Fixed the Aeon shield wall having a Seraphim faction name.
+  * Fixed the Absolution taking experimental footfall damage.
+
+  ### 2021-06-18
+
+  * Caffe Corretto: Tesla Coil death weapon now uses death weapon scripts.
