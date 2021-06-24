@@ -893,3 +893,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-18
 
   * Caffe Corretto: Tesla Coil death weapon now uses death weapon scripts.
+  * Caffe Corretto: Removed some meaningless bp values from the Tesla Coil.
+
+  ### 2021-06-19
+
+  * Debug tools: Fixed the real-world DPS test functions referencing a typo.
+
+  ### 2021-06-20
+
+  * Updated Panopticon strings.

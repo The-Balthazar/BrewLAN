@@ -64,16 +64,16 @@ floatingtextIVAN02="Wiederholung deaktiviert"
 tooltipbrewlan0029="Wirtschaftliche Überwachung Ein- /Ausschalten"
 tooltipbrewlan0030="Wenn aktiviert wird der Spionageradius dynamisch an ein wirtschaftlich aufrechterhaltbares Level angepasst."
 
---Seraphim Mobil AA / TMD
+--Seraphim Mobile AA / TMD
 tooltipbrewlan0031="Waffenpriorität umschalten"
 tooltipbrewlan0032="Umschalten zwischen Luftzielpriorität und Raketenzielpriorität."
 
---Panopticon Erweiterung Tab
+--Panopticon Enhancement Tab.
 tooltipbrewlan0033="Verbesserungen [Array]"
 
---Zmara hoch Modus Toggle
-tooltipbrewlan0035="zu weit auseinander ziehen Toggle"
-tooltipbrewlan0036="Erhöht direkte Feuerwaffe Bereiche aber Opfer Bewegungsgeschwindigkeit und kostet Energie, während aktiv."
+--Zmara Tall Mode umschalten
+tooltipbrewlan0035="Übertreffen, um wechseln"
+tooltipbrewlan0036="Erhöht direkte Feuerwaffenbereiche, aber die Bewegungsgeschwindigkeit der Bewegungsgeschwindigkeit und die Kostensenergie während des Aktivs opfern."
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements
@@ -136,7 +136,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 amphibische Bau- , Reparatur- , Übernah
 
 ss0119_desc="Feldtechnikerboot"
 ses0119_name="Mendy Klasse"
-srs0119_name="Franklin Klasse"
+srs0119_name="Franklin Klasse."
 Unit_Description_BrewLAN_T1S001="Tech 1 konstruktions-, reparatur-, übernahme-, zurückgewinnungs- und Minenleger Einheit."
 
 --------------------------------------------------------------------------------
@@ -201,17 +201,17 @@ Unit_Description_BrewLAN_T2L004="Mobiler Schildgenerator."
 
 ss0219_desc="Feldtechnikerschiff"
 ses0219_name="Fixxie-Klasse"
-srs0219_name="Barwick Klasse"
+srs0219_name="Barwicksklasse"
 Unit_Description_BrewLAN_T2S001="Tech 2 marine konstruktions-, reparatur-, übernahme- und zurückgewinnungs Einheit. Ausgerüstet mit einer Luftabwehrwaffe."
 Unit_Description_BrewLAN_T2S002="Tech 2 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit."
 
-sea0201_desc="Aufklärungsflugzeug"
+sea0201_desc="Recon-Flugzeug"
 sea0201_name="UX Dragonlady"
 ssa0201_name="Selia"
 Unit_Description_BrewLAN_T2A002="Taktisches Aufklärungsflugzeug"
 
 sra0201_desc="Tarnflugzeug"
-sra0201_name="Blade Raven"
+sra0201_name="Blade Raven."
 Unit_Description_BrewLAN_T2A003="Taktisches Abschirm- und Aufklärungsflugzeuge. Ausgestattet mit einem Tarnfeldgenerator."
 
 sair0201="Köder Flugzeug"
@@ -284,7 +284,7 @@ seb3303_desc="Beobachtungssatelitensystem"
 seb3303b_desc="Satelliten Abschussrampe"
 Unit_Description_BrewLAN_T3B002="Produziert und startet Satelliten"
 
-ability_satellite_uplink="Satelliten-Uplink"
+ability_satellite_uplink="Satelliten-Uplink."
 ability_satellite_cap_0="Satelliten-Kapazität: +0"
 ability_satellite_cap_1="Satelliten-Kapazität: +1"
 ability_satellite_cap_2="Satelliten-Kapazität: +2"
@@ -421,7 +421,7 @@ srl0320_name="Slink"
 Unit_Description_BrewLAN_T3L009="Mobile und getarnte Anti-Luft-Raketenwerfer. Muss sich aber enttarnen um zu feuern."
 
 ssl0320_desc="Mobile Luftabwehr"
-ssl0320_name="Atha-Ythia"
+ssl0320_name="Atha-Ythia."
 Unit_Description_BrewLAN_T3L020="Schwebende mobile Luft- und taktische Raketenabwehr."
 
 seb4303_desc="Artillerieabwehrnetz"
@@ -438,7 +438,7 @@ Unit_Description_BrewLAN_T3L011="Mobiler Mehrfach-Raketenwerfer. Lange Nachladez
 
 ss0319_desc="Kampftechniker Schiff"
 ses0319_name="Patch-Klasse"
-srs0319_name="Stillson Klasse"
+srs0319_name="Stillson-Klasse."
 Unit_Description_BrewLAN_T3S002="Tech 3 Marine Konstruktions-, Reparatur-, Übernahme- und Zurückgewinnungseinheit. Ausgestatted mit einem Torpedowerfer, Torpedoabwehr und einer Luftabwehrkanone."
 Unit_Description_BrewLAN_T3S003="Tech 3 amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit."
 
@@ -447,21 +447,21 @@ sal0323_name="Bruch"
 sel0323_name="Trickshot"
 Unit_Description_BrewLAN_T3L014="Mobile taktische Raketenabwehr. Der Schutz ist auf das Einheiteneinsatzgebiet begrentzt."
 
-srl0324_desc="Mobile Sensor Array"
-srl0324_name="Adramelech"
+srl0324_desc="Mobiles Sensor-Array"
+srl0324_name="Adramelech."
 sal0324_name="Metatron"
-ssl0324_name="Yenesel"
+ssl0324_name="Yenesiel"
 Unit_Description_BrewLAN_T3L016="High-End mobiles Aufklärungs System. Im Stillstand ist es nur für omni sichtbar und bietet umfangreiche Radar und omni-Abdeckung."
 Unit_Description_BrewLAN_T3L019="Schwebendes Radar. Verbraucht große Mengen an Energie bei Betrieb."
 
-sl0325_desc="Mobile Torpedo Launcher"
-sel0325_name="PT-57 Croc"
+sl0325_desc="Mobiler Torpedo-Launcher."
+sel0325_name="Pt-57 croc"
 sal0325_name="Limbus"
-Unit_Description_BrewLAN_T3L017="Mobile Anti-Marinefahrzeug."
+Unit_Description_BrewLAN_T3L017="Mobiles Anti-Naval-Fahrzeug."
 Unit_Description_BrewLAN_T3L018="Mobiles, Schwebendes Marineabwehrfahrzeug."
 
-ssb4317_desc="Radar-Störsender"
-ssb4317_name="Yathesel"
+ssb4317_desc="Radar-Jammer"
+ssb4317_name="Jathesel."
 Unit_Description_BrewLAN_T3B0029="Radar Stör-Anlage. Erzeugt eine große Anzahl von falschen Radarsignalen innerhalb seines Betriebsbereiches, welche den Feind verwirren und Zielsysteme stören."
 ssa00002_desc="Hologramm"
 
@@ -497,7 +497,7 @@ srs0401_name="Abyssal Prosecutor"
 Unit_Description_BrewLAN_T4S001="Experimentelles amphibisches Schlachtschiff."
 
 srs0402_desc="Experimenteller Transporter"
-srs0402_name="Abyss Crawler"
+srs0402_name="ABYSS-RAWLER"
 Unit_Description_BrewLAN_T4L003="Experimenteller amphibischer Transport. bewegt sich schneller unter Wasser. Ausgestattet mit leichten Allzweckwaffen."
 
 seb0401="Experimentelle Fabrik"
@@ -535,8 +535,8 @@ Unit_Description_BrewLAN_T4B008="Experimentelles Radarsystem. Wenn aktiviert, De
 Panopticon_array_slot="Array"
 Unit_Description_BrewLAN_T4B008_sre="Erhöht den Radarradius."
 Unit_Description_BrewLAN_T4B008_sresre="Erhöht den Radar- und omniradius."
-Unit_Description_BrewLAN_T4B008_xbndl="Enthüllt Radar Blips."
-brewlan_panopticon_small_001="Aktivieren Radarschüssel"
+Unit_Description_BrewLAN_T4B008_xbndl="Enthüllt Radarklagen."
+brewlan_panopticon_small_001="Radarschale aktivieren"
 brewlan_panopticon_small_002="Aktiviere die Marcin Radarschüssel"
 brewlan_panopticon_small_003="Aktiviere die Gebauer Radarschüssel"
 brewlan_panopticon_small_004="Aktivieren die Radarschüssel"
@@ -568,13 +568,13 @@ ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Konstruiert Marineeinheiten."
 
 seb2401_desc="Experimentelle Punktverteidigung"
-seb2401_name="Excalibur"
+seb2401_name="Excalibur."
 Unit_Description_BrewLAN_T4B012="Experimentelles Verteidigungs Gebäude. Verbraucht große Mengen an Energie mit jedem Schuss."
 
 ssl0404_desc="Experimenteller Sniper Bot"
-ssl0404_name="Sisha-Ah"
+ssl0404_name="Sisha-Ah."
 Unit_Description_BrewLAN_T4L004="Experimenteller Scharfschützen-Bot. Im Stillstand nur für Omni sichtbar, wenn er nicht feuert."
 
-ssl0405_desc="Experimentelle Schwer Gliederfüßer Roboter"
-ssl0405_name="Suedath-Zmara"
-Unit_Description_BrewLAN_T4L005="Massive experimentelles bietet. Ausgestattet mit anterioren cephalic Thau Kanonen, superior Rücken Sinn Unthe Kanonen, ventralen Uall Cavitation Torpedo Waffen und Panzer montiert Olaris anti-Luftkanonen. Bietet die Möglichkeit, für eine erhöhte Waffe Bereich erstrecken sich vertikal und zu schwimmen Oberfläche Marineschiffe engagieren, mit der Macht fast jedes Ziel zu beenden."
+ssl0405_desc="Experimenteller schwerer Arthropodenroboter"
+ssl0405_name="Suedath-Zmara."
+Unit_Description_BrewLAN_T4L005="Massive experimentelle Bot. Ausgestattet mit anterioren Cephalic Thau-Kanonen, überlegener Dorsal Sinn Under-Kanonen, ventrale Uall-Kavitation Torpedo-Waffen und Carapace montierte Olaris-Anti-Air-Kanonen. Merkmessen die Fähigkeit, sich vertikal für den erhöhten Waffenbereich zu verlängern und um das Surface Naval Craft zu aktivieren, mit der Stromversorgung, um fast jedes Ziel zu kündigen."

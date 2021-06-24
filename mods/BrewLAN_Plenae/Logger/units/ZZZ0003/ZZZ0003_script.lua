@@ -66,7 +66,7 @@ ZZZ0001 = Class(AShieldStructureUnit) {
                 enttable.Message = math.floor(enttable.totalDamageSustain / duration + 0.5) .. ", " .. math.floor(enttable.totalDamageBurst / duration + 0.5)
                 LOG(intro .. enttable.Message )
                 if math.floor(enttable.totalDamageSustain / duration + 0.5) == math.floor(enttable.totalDamageBurst / duration + 0.5) then
-                    if instagator.SetCustomName then
+                    if instigator and instigator.SetCustomName then
                         instigator:SetCustomName('DPS: ' .. math.floor(enttable.totalDamageSustain / duration + 0.5) )
                     end
                 end

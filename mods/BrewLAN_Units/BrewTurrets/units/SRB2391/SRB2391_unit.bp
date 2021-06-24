@@ -127,9 +127,6 @@ UnitBlueprint {
     LifeBarOffset = 0.45,
     LifeBarSize = 1.1,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
@@ -247,7 +244,6 @@ UnitBlueprint {
             WeaponCategory = 'Direct Fire',
         },
         {
-            AboveWaterTargetsOnly = false,
             Audio = {
                 Fire = Sound {
                     Bank = 'XSL_Weapon',
@@ -256,35 +252,20 @@ UnitBlueprint {
                 },
             },
             BallisticArc = 'RULEUBA_None',
-            CollideFriendly = true,
             Damage = 1,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'Dischage Death Weapon',
-            FireTargetLayerCapsTable = {
-                Air = 'Air|Land|Seabed|Water',
-                Land = 'Air|Land|Seabed|Water',
-                Water = 'Air|Land|Water',
-            },
             FiringTolerance = 2,
             IgnoreIfDisabled = true,
             Label = 'DeathWeapon',
             FireOnDeath = true,
-            MaxRadius = 3,
-            MuzzleVelocity = 0,
             ProjectileId = '/projectiles/CIFEMP01/CIFEMP01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.15,
             RackBones = {
                 {MuzzleBones = {0}, RackBone = 0},
             },
-            RangeCategory = 'UWRC_DirectFire',
-            RateOfFire = 0.5,
-            SalvoSize = 1,
-            SlavedToBody = true,
-            TargetCheckInterval = 1,
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            WeaponCategory = 'Direct Fire',
         },
     },
     Wreckage = {

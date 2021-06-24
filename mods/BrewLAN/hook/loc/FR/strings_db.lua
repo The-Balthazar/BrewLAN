@@ -6,7 +6,7 @@
 --+------------+--+-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- infobulles
+-- Info
 --------------------------------------------------------------------------------
 
 --Tooltips for the UEF Experimental Factory production toggle between land/sea and air units.
@@ -64,16 +64,16 @@ floatingtextIVAN02="Ordre répétitif désactivé"
 tooltipbrewlan0029="Active la veille économique"
 tooltipbrewlan0030="Bien que active, cette unité réduira dynamiquement son rayon d'espionnage opérationnel à un niveau économiquement viable."
 
---Séraphin mobile AA / TMD
+--Seraphim Mobile AA / TMD
 tooltipbrewlan0031="Changer la priorité des armes"
 tooltipbrewlan0032="Basculer la priorité sur les cibles anti-aérienne ou sur les missiles tactiques."
 
---onglet amélioration de Panopticon
+--Onglet Amélioration panoptique
 tooltipbrewlan0033="Personnaliser [Tableau]"
 
---bascule en mode haut Zmara
-tooltipbrewlan0035="éparpille à bascule"
-tooltipbrewlan0036="Augmente les gammes d'armes de tir direct mais la vitesse de déplacement des sacrifices et de l'énergie tout en actif."
+--Bascule en mode Tall Zmara
+tooltipbrewlan0035="Surexploiter"
+tooltipbrewlan0036="Augmente les gammes d'armes de feu directes mais sacrifie la vitesse du mouvement et coûte de l'énergie pendant une activité active."
 
 --------------------------------------------------------------------------------
 -- Support commander enchancements
@@ -301,7 +301,7 @@ sea0003_desc="Satellite de contre-espionnage"
 sea0003_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Produit un grand nombre de faux signaux représentant des escadrons de chasseurs de supériorité aérienne sous sa position. N'a aucune capacité de collecte de données."
 
---alternatives Sniper
+--Sniper Alternatives
 sel0320_desc="Véhicule de liaison satellite"
 sel0320_name="Archimède"
 srl0318_name="Aracme"
@@ -406,7 +406,7 @@ sel0322_desc="Générateur de bouclier mobile"
 sel0322_name="Ella"
 Unit_Description_BrewLAN_T3L022="Générateur de bouclier mobile amphibie."
 
---anti-air mobile
+--Anti-air mobile
 sal0320_desc="Défense anti-aérienne mobile"
 sal0320_name="Armillaire"
 Unit_Description_BrewLAN_T3L012="Système de défense anti-aérien mobile pivotant. Consomme de l'énergie à chaque prise de vue."
@@ -539,24 +539,24 @@ Unit_Description_BrewLAN_T4B008_xbndl="Révele les unités détectées par le ra
 brewlan_panopticon_small_001="Activer la parabole radar"
 brewlan_panopticon_small_002="Activer la parabole Marcin"
 brewlan_panopticon_small_003="Activer la parabole Gebauer"
-brewlan_panopticon_small_004="Activer antenne radar"
-brewlan_panopticon_med_001="Activez le plat Chapeau"
+brewlan_panopticon_small_004="Activer le plat radar"
+brewlan_panopticon_med_001="Activer le plat Chapeau"
 brewlan_panopticon_med_002="Activer le plat Pankow"
-brewlan_panopticon_med_003="Activer le plat Mogwai"
+brewlan_panopticon_med_003="Activer le plat mogwai"
 brewlan_panopticon_med_004="Activer le plat neutre"
 brewlan_panopticon_xbl_001="Activer le plat saxon"
-brewlan_panopticon_small_001r="Le plat Guillaume Désactiver"
-brewlan_panopticon_small_002r="Le plat Marcin Désactiver"
+brewlan_panopticon_small_001r="Désactiver la boîte de guillaume"
+brewlan_panopticon_small_002r="Désactiver le plat Marcin"
 brewlan_panopticon_small_003r="Désactiver le plat Gebauer"
-brewlan_panopticon_small_004r="Deactivate antenne radar"
+brewlan_panopticon_small_004r="Désactiver le plat radar"
 brewlan_panopticon_med_001r="Désactiver le plat Chapeau"
 brewlan_panopticon_med_002r="Désactiver le plat Pankow"
-brewlan_panopticon_med_003r="Désactiver le plat Mogwai"
+brewlan_panopticon_med_003r="Désactiver le plat mogwai"
 brewlan_panopticon_med_004r="Désactiver le plat neutre"
-brewlan_panopticon_xbl_001r="Le plat saxon Désactiver"
+brewlan_panopticon_xbl_001r="Désactiver le plat saxon"
 
 sab0401="Usine Aérienne Expérimentale"
-sab0401_name="indépendance du moteur"
+sab0401_name="Moteur de l'indépendance"
 Unit_Description_BrewLAN_T4B009="Construit des unités aériennes."
 
 srb0401="Usine Terrestre Expérimentale"
