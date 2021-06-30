@@ -902,3 +902,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-06-20
 
   * Updated Panopticon strings.
+
+  ### 2021-06-24
+
+  * New Hexatron model.
+
+  ### 2021-06-29
+
+  * Added a check to deal with FAF's hamfisted anti-strategic missile changes. It will work for any un-updated weapons or projectiles, it's not specific. Exactly how they should have done it.
+
+  ### 2021-06-30
+
+  * Slight optimisation on blueprints.lua; moved motiontype sanitisation to start of script and fleshed it out so everything else can rely on it.
+  * Reworked the majority of blueprints.lua functions to all use minimal loops of the unit database. I don't have numbers on the effect of this.

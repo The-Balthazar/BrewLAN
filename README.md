@@ -80,6 +80,7 @@ For more complete localisation credits see [the master translation document](htt
 - Gnio – French localisation
 - MarLo – German localisation
 - Markty_07 – French localisation
+- Binary – German localisation
 
 ### Financial supporters
 - 🦞 Stash

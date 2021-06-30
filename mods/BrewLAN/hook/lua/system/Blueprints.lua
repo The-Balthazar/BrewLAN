@@ -3,47 +3,140 @@
 --------------------------------------------------------------------------------
 -- Modded By: Balthazar
 --------------------------------------------------------------------------------
-do
+do  -- In a do block so no one else can mess with the locals
 
 local OldModBlueprints = ModBlueprints
-local GetBrewLANPath = function() for i, mod in __active_mods do if mod.name == "BrewLAN" then return mod.location end end end
-local BrewLANPath = GetBrewLANPath()
+local BrewLANPath
+
+do  -- In do block because we don't need the Get function after this
+    local GetBrewLANPath = function()
+        for i, mod in __active_mods do
+            if mod.name == "BrewLAN" then
+                return string.lower(mod.location)
+            end
+        end
+    end
+    BrewLANPath = GetBrewLANPath()
+end
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
-    BrewLANCategoryChanges(all_blueprints.Unit)
-    BrewLANGlobalCategoryAdditions(all_blueprints.Unit)
-    BrewLANBuildCatChanges(all_blueprints.Unit)
-    BrewLANGantryBuildList(all_blueprints.Unit)
-    BrewLANGantryTechShareCheck(all_blueprints.Unit)
-    BrewLANHeavyWallBuildList(all_blueprints.Unit)
-    --BrewLANNameCalling(all_blueprints.Unit)
-    UpgradeableToBrewLAN(all_blueprints.Unit)
-    TorpedoBomberWaterLandCat(all_blueprints.Unit)
-    RoundGalacticCollosusHealth(all_blueprints.Unit)
-    BrewLANMatchBalancing(all_blueprints.Unit)
-    BrewLANFAFExclusiveChanges(all_blueprints.Unit)
-    BrewLANNavalShields(all_blueprints.Unit)
-    BrewLANBomberDamageType(all_blueprints.Unit)
-    BrewLANNavalEngineerCatFixes(all_blueprints.Unit)
-    BrewLANRelativisticLinksUpdate(all_blueprints)
-    BrewLANMegalithEggs(all_blueprints.Unit)
-    BrewLANSatelliteUplinkForVanillaUnits(all_blueprints.Unit)
-    BrewLANCheckRULEUCaseCorrectness(all_blueprints.Unit)
-    --ExtractFrozenMeshBlueprint(all_blueprints.Unit)
-    BrewLANChangesForDominoModSupport(all_blueprints.Unit)
 
-    --Eventually refactor it this way to speed up loading
-    for id, bp in all_blueprints.Unit do
-        BrewLANGenerateFootprintDummy(all_blueprints.Unit, id, bp)
+    do
+        local real_categories = {}
+        local Gantries = {}
+
+        for id, bp in all_blueprints.Unit do
+            BrewLANSanityChecks(id, bp)
+            --Category processing
+            BrewLANCategoryChanges(id, bp)
+            BrewLANGlobalCategoryAdditions(id, bp)
+            --Data for future
+            BrewLANGetRealCategories(id, bp, real_categories)
+            BrewLANGetListOfGantries(id, bp, Gantries)
+        end
+
+        -- One off scripts with no internal loop
+        BrewLANRoundGalacticCollosusHealth(all_blueprints.Unit.ual0401)
+
+        BrewLANBuildCatChanges(all_blueprints.Unit, real_categories)
+        UpgradeableToBrewLAN(all_blueprints.Unit)
+        BrewLANMatchBalancing(all_blueprints.Unit)
+
+        BrewLANFAFExclusiveChanges(all_blueprints)
+
+        --BrewLANChangesForDominoModSupport(all_blueprints.Unit)
+
+        --Eventually refactor it this way to speed up loading
+        for id, bp in all_blueprints.Unit do
+
+            --Build Category processing
+            BrewLANNavalEngineerCatFixes(id, bp)
+
+            BrewLANGantryBuildList(id, bp, Gantries)
+            BrewLANGantryTechShareCheck(id, bp)
+            BrewLANHeavyWallBuildList(id, bp)
+
+            -- Specific unit changes
+            BrewLANTorpedoBomberWaterLanding(id, bp)
+            BrewLANNavalShields(id, bp)
+            BrewLANSatelliteUplinkForVanillaUnits(id, bp)
+
+            -- Specific characteristic changes
+            BrewLANBomberDamageType(id, bp)
+            BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)
+
+            --BrewLANExtractFrozenMeshBlueprint(id, bp)
+
+            BrewLANGenerateFootprintDummy(id, bp, all_blueprints.Unit)
+        end
+
+        BrewLANRelativisticLinksUpdate(all_blueprints)
     end
+end
+
+--------------------------------------------------------------------------------
+-- Sanity checks
+--------------------------------------------------------------------------------
+
+function BrewLANSanityChecks(id, bp)
+    --Motion Type
+    local motionTypes = {
+        RULEUMT_Air                = true,
+        RULEUMT_Amphibious         = true,
+        RULEUMT_AmphibiousFloating = true,
+        RULEUMT_Biped              = true,
+        RULEUMT_Land               = true,
+        RULEUMT_Hover              = true,
+        RULEUMT_Water              = true,
+        RULEUMT_SurfacingSub       = true,
+        RULEUMT_None               = true,
+    }
+    local motionTypesLower = {
+        ruleumt_air                = 'RULEUMT_Air',
+        ruleumt_amphibious         = 'RULEUMT_Amphibious',
+        ruleumt_amphibiousfloating = 'RULEUMT_AmphibiousFloating',
+        ruleumt_biped              = 'RULEUMT_Biped',
+        ruleumt_land               = 'RULEUMT_Land',
+        ruleumt_hover              = 'RULEUMT_Hover',
+        ruleumt_water              = 'RULEUMT_Water',
+        ruleumt_surfacingsub       = 'RULEUMT_SurfacingSub',
+        ruleumt_none               = 'RULEUMT_None',
+    }
+    --I'm pretty sure this is already required, but just in case
+    -- for my own sanity
+    if bp.Physics and bp.Physics.MotionType and not motionTypes[bp.Physics.MotionType] then
+        _ALERT("Fixing malformed motion type "..bp.Physics.MotionType.." in unit "..id)
+
+        bp.Physics.MotionType = motionTypesLower[string.lower(bp.Physics.MotionType)]
+
+        if not bp.Physics.MotionType then
+            _ALERT("Un-identifiable motion type on unit "..id.." giving 'None'")
+            bp.Physics.MotionType = 'RULEUMT_None'
+        end
+    end
+
 end
 
 --------------------------------------------------------------------------------
 -- Additional buildable categories
 --------------------------------------------------------------------------------
 
-function BrewLANBuildCatChanges(all_bps)
+function BrewLANGetRealCategories(id, bp, real_categories)
+
+    --local real_categories = {}
+    --for id, bp in all_bps do
+        if bp.Categories then
+            for i, cat in bp.Categories do
+                real_categories[cat] = true
+            end
+        end
+    --end
+end
+
+--------------------------------------------------------------------------------
+
+function BrewLANBuildCatChanges(all_bps, real_categories)
     --[[local bb = function(data)
         return 'BUILTBY' .. (data[1] or '') .. 'TIER' .. (data[t] or '')
     end
@@ -52,17 +145,6 @@ function BrewLANBuildCatChanges(all_bps)
     local T3LF = 'BUILTBYLANDTIER3FACTORY '
     ]]--
 
-    ----------------------------------------------------------------------------
-    -- Get a list of all real categories
-    ----------------------------------------------------------------------------
-    local real_categories = {}
-    for id, bp in all_bps do
-        if bp.Categories then
-            for i, cat in bp.Categories do
-                real_categories[cat] = true
-            end
-        end
-    end
     ----------------------------------------------------------------------------
     -- What build cats do we want to add
     ----------------------------------------------------------------------------
@@ -160,7 +242,7 @@ end
 -- Fixes for land-built factories being able to build non-land engineers non-specifically.
 --------------------------------------------------------------------------------
 
-function BrewLANNavalEngineerCatFixes(all_bps)
+function BrewLANNavalEngineerCatFixes(id, bp)
     local cats_table = {
         {'BUILTBYTIER3FACTORY UEF MOBILE CONSTRUCTION',      'BUILTBYTIER3FACTORY UEF MOBILE LAND CONSTRUCTION'},
         {'BUILTBYTIER3FACTORY CYBRAN MOBILE CONSTRUCTION',   'BUILTBYTIER3FACTORY CYBRAN MOBILE LAND CONSTRUCTION'},
@@ -175,15 +257,13 @@ function BrewLANNavalEngineerCatFixes(all_bps)
         {'BUILTBYTIER1FACTORY AEON MOBILE CONSTRUCTION',     'BUILTBYTIER1FACTORY AEON MOBILE LAND CONSTRUCTION'},
         {'BUILTBYTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION', 'BUILTBYTIER1FACTORY SERAPHIM MOBILE LAND CONSTRUCTION'},
     }
-    for id, bp in all_bps do
-        -- If table doesn't exist, it's 'Land'. If a key doesnt exist, but the table does, that key is false.
-        if bp.General.Classification == 'RULEUC_Factory' and (bp.Physics.BuildOnLayerCaps and not bp.Physics.BuildOnLayerCaps.LAYER_Water or not bp.Physics.BuildOnLayerCaps) then
-            if bp.Economy.BuildableCategory then
-                for i, cat in bp.Economy.BuildableCategory do
-                    for index, cattable in cats_table do
-                        if cat == cattable[1] then
-                            bp.Economy.BuildableCategory[i] = cattable[2]
-                        end
+    -- If table doesn't exist, it's 'Land'. If a key doesnt exist, but the table does, that key is false.
+    if bp.General.Classification == 'RULEUC_Factory' and (bp.Physics.BuildOnLayerCaps and not bp.Physics.BuildOnLayerCaps.LAYER_Water or not bp.Physics.BuildOnLayerCaps) then
+        if bp.Economy.BuildableCategory then
+            for i, cat in bp.Economy.BuildableCategory do
+                for index, cattable in cats_table do
+                    if cat == cattable[1] then
+                        bp.Economy.BuildableCategory[i] = cattable[2]
                     end
                 end
             end
@@ -195,36 +275,41 @@ end
 -- Unit category changes
 --------------------------------------------------------------------------------
 
-function BrewLANCategoryChanges(all_bps)
+function BrewLANCategoryChanges(id, bp)
     local Units = {
-        --Cybran Shields
-        urb4202 = {'TECH1','BUILTBYTIER1ENGINEER','BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = 'TECH2', },
-        urb4204 = {'TECH1', r = 'TECH2', },
-        urb4205 = {'BUILTBYTIER2ENGINEER','BUILTBYTIER2COMMANDER','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER',},
-        urb4206 = {'TECH3','BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', r = 'TECH2', },
-        urb4207 = {'TECH3','BUILTBYTIER3FIELD', r = 'TECH2', },
-        --Tech 3 units
-        xab3301 = {'SIZE16', r = 'SIZE4', },--Aeon Quantum Optics
-        xeb2306 = {'SIZE4', r = 'SIZE12', },---------------Ravager
-        xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER', },--Kennel
-        xrb0104 = {r = 'ENGINEER'},
-        xrb0204 = {r = 'ENGINEER'},
-        xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','TECH3', r = {'TECH2', 'ENGINEER'} },--Hive
-        --Crab eggs.
-        xrl0004 = {'TECH3', r = 'TECH2'},
+        --[[ED1]]       urb4202 = { 'BUILTBYTIER1ENGINEER', 'BUILTBYTIER2ENGINEER', 'BUILTBYTIER3ENGINEER', 'BUILTBYTIER2COMMANDER', 'BUILTBYTIER3COMMANDER', 'TECH1', r = 'TECH2'},
+        --[[ED2]]       urb4204 = { 'TECH1', r = 'TECH2' },
+        --[[ED3]]       urb4205 = { 'BUILTBYTIER2ENGINEER', 'BUILTBYTIER3ENGINEER', 'BUILTBYTIER2COMMANDER', 'BUILTBYTIER3COMMANDER' },
+        --[[ED4]]       urb4206 = { 'BUILTBYTIER3ENGINEER', 'BUILTBYTIER3COMMANDER', 'TECH3', r = 'TECH2' },
+        --[[ED5]]       urb4207 = { 'BUILTBYTIER3FIELD', 'TECH3', r = 'TECH2' },
+        --[[Flak Egg]]  xrl0004 = {'TECH3', r = 'TECH2'},
+        --[[Hive 1]]    xrb0104 = {r = 'ENGINEER'},
+        --[[Hive 2]]    xrb0204 = {r = 'ENGINEER'},
+        --[[Hive 3]]    xrb0304 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER','TECH3', r = {'TECH2', 'ENGINEER'} },
+        --[[Kennel]]    xeb0204 = {'BUILTBYTIER3ENGINEER','BUILTBYTIER3COMMANDER'},
+        --[[Ravager]]   xeb2306 = {'SIZE4', r = 'SIZE12'},
+        --[[Eye of R]]  xab3301 = {'SIZE16', r = 'SIZE4'},
 
-        --Experimental units
-        xab1401 = {'SORTECONOMY',},----------------------------Paragon
-        ueb2401 = {'SORTSTRATEGIC',}, -------------------------Mavor
-        xab2307 = {'EXPERIMENTAL', r = 'TECH3', },-------------Salvation
-        url0401 = {NoBuild = true, }, -------------------------Scathis
-        xeb2402 = {NoBuild = true, },--------------------------Noxav Defence Satelite Uplink
-        ual0401 = {'DARKNESSIMMUNE'},--------------------------Colossus flag for preventing Darkness nerf.
-        --ues0401 = {'TECH3', r = 'EXPERIMENTAL'} -- This fixes the Atlantis not coming out of the Gantry without diving, but obviously isn't acceptable.
+        --Experimentals
+        --[[Colossus]]  ual0401 = {'DARKNESSIMMUNE'},
+        --[[Paragon]]   xab1401 = {'SORTECONOMY'},
+        --[[Salvation]] xab2307 = {'EXPERIMENTAL', r = 'TECH3'},
+        --[[Mavor]]     ueb2401 = {'SORTSTRATEGIC'},
+        ----[[Atlantis]]  ues0401 = {'TECH3', r = 'EXPERIMENTAL'} -- This fixes the Atlantis not coming out of the Gantry without diving, but obviously isn't acceptable.
+        --[[Novax]]     xeb2402 = {NoBuild = true},
+        --[[Scathis]]   url0401 = {NoBuild = true},
+        --[[Megalith]]  xrl0403 = {'GANTRYSHARETECH'},
+        --[[Iyadesy]]   ssl0403 = {'GANTRYSHARETECH'},
     }
+
+    local data = Units[id]
+
+    if not data then return end
+
+    --This could be made more generic
     local buildcats = {
         'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER1COMMANDER',
+        'BUILTBYCOMMANDER',
         'BUILTBYTIER1FIELD',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER2COMMANDER',
@@ -235,28 +320,27 @@ function BrewLANCategoryChanges(all_bps)
         'BUILTBYGANTRY',
         'BUILTBYHEAVYWALL',
     }
-    for k, v in Units do
-        --Make sure the unit exists, and has its table
-        if all_bps[k] and all_bps[k].Categories then
-            if not v.NoBuild then
-                for i in v do
-                    if i == 'r' then
-                        if type(v.r) == 'string' then
-                            table.removeByValue(all_bps[k].Categories, v.r)
-                        elseif type(v.r) == 'table' then
-                            for i in v.r do
-                                table.removeByValue(all_bps[k].Categories, v.r[i])
-                            end
+
+    --Make sure the unit exists, and has its table
+    if bp and bp.Categories then
+        if not data.NoBuild then
+            for i in data do
+                if i == 'r' then
+                    if type(data.r) == 'string' then
+                        table.removeByValue(bp.Categories, data.r)
+                    elseif type(data.r) == 'table' then
+                        for i in data.r do
+                            table.removeByValue(bp.Categories, data.r[i])
                         end
                     end
-                    if i ~= 'r' then
-                        table.insert(all_bps[k].Categories, v[i])
-                    end
                 end
-            else
-                for i in buildcats do
-                    table.removeByValue(all_bps[k].Categories, buildcats[i])
+                if i ~= 'r' then
+                    table.insert(bp.Categories, data[i])
                 end
+            end
+        else
+            for i in buildcats do
+                table.removeByValue(bp.Categories, buildcats[i])
             end
         end
     end
@@ -266,39 +350,24 @@ end
 -- Global category additions
 --------------------------------------------------------------------------------
 
-function BrewLANGlobalCategoryAdditions(all_bps)
+function BrewLANGlobalCategoryAdditions(id, bp)
     local Cats = {
         'DRAGBUILD',
     }
-    for id, bp in all_bps do
-        if bp.Categories then
-            for i, cat in Cats do
-                if not table.find(bp.Categories, cat) then
-                    table.insert(bp.Categories, cat)
-                end
+    if bp.Categories then
+        for i, cat in Cats do
+            if not table.find(bp.Categories, cat) then
+                table.insert(bp.Categories, cat)
             end
         end
     end
 end
-
-function BrewLANCheckRULEUCaseCorrectness(all_bps)
-    for id, bp in all_bps do
-        --Sanitise the motion type field since it's case sensitive for the engine, but it is if things check it.
-        --This is mostly for the sake of the Panopticon, so it doesn't have to run a string function on thousands of units.
-        if bp.Physics.MotionType and type(bp.Physics.MotionType) == "string" then
-            if string.lower(bp.Physics.MotionType) == 'ruleumt_none' and not bp.Physics.MotionType == 'RULEUMT_None' then
-                bp.Physics.MotionType = 'RULEUMT_None'
-            end
-        end
-    end
-end
-
 
 --------------------------------------------------------------------------------
 -- Satellite uplink
 --------------------------------------------------------------------------------
 
-function BrewLANSatelliteUplinkForVanillaUnits(all_bps)
+function BrewLANSatelliteUplinkForVanillaUnits(id, bp)
     local units = {
         --Vanilla T3 sensors
         ueb3104 = 1,
@@ -311,73 +380,81 @@ function BrewLANSatelliteUplinkForVanillaUnits(all_bps)
         srb3301 = 3,
         ssb3302 = 3,
     }
-    for id, cap in units do
-        if all_bps[id] and all_bps[id].Categories then
-            table.insert(all_bps[id].Categories, 'SATELLITEUPLINK')
-            if not all_bps[id].Display.Abilities then all_bps[id].Display.Abilities = {} end
-            table.insert(all_bps[id].Display.Abilities, '<LOC ability_satellite_uplink>Satellite Uplink')
-            table.insert(all_bps[id].Display.Abilities, '<LOC ability_satellite_cap_'.. cap ..'>Satellite Capacity: +' .. cap)
-            all_bps[id].General.SatelliteCapacity = cap
+
+    if not units[id] then return end
+
+    if bp and bp.Categories and bp.Display then
+        if not bp.Display.Abilities then
+            bp.Display.Abilities = {}
         end
+        table.insert(bp.Categories, 'SATELLITEUPLINK')
+        table.insert(bp.Display.Abilities, '<LOC ability_satellite_uplink>Satellite Uplink')
+        table.insert(bp.Display.Abilities, '<LOC ability_satellite_cap_'.. units[id] ..'>Satellite Capacity: +' .. units[id])
+        bp.General.SatelliteCapacity = units[id]
     end
+
 end
+
+
+function BrewLANGetListOfGantries(id, bp, Gantries)
+    --Gantry experimental build list
+    --local Gantries = {}
+    --for id, bp in all_bps do
+        if bp.AI.Experimentals then
+            Gantries[id] = {
+                bp = bp,
+                Reqs = bp.AI.Experimentals.Requirements,
+                Cat = bp.AI.Experimentals.BuildableCategory
+            }
+        end
+    --end
+end
+
 
 --------------------------------------------------------------------------------
 -- Allowing other experimentals that look like they fit to be gantry buildable
 --------------------------------------------------------------------------------
 
-function BrewLANGantryBuildList(all_bps)
-    local Gantries = {}
-    for id, bp in all_bps do
-        if bp.AI.Experimentals then
-            Gantries[id] = {
-                Reqs = bp.AI.Experimentals.Requirements,
-                Cat = bp.AI.Experimentals.BuildableCategory
-            }
-        end
-    end
-    --Gantry experimental build list
-    for id, bp in all_bps do
+function BrewLANGantryBuildList(id, bp, Gantries)
+    for gantryId, info in Gantries do
         --Check it has a category table first
-        for gantryId, info in Gantries do
-            if bp.Categories then
-                --Check the Gantry can't already build it, and that its a mobile experimental
-                if table.find(bp.Categories, info.Cat) and table.find(bp.Categories, 'EXPERIMENTAL') then
-                    --Populate the Gantry AI table
-                    if table.find(bp.Categories, 'AIR') then
-                        table.insert(all_bps[gantryId].AI.Experimentals.Air, {id})
-                    else
-                        table.insert(all_bps[gantryId].AI.Experimentals.Other, {id})
-                    end
-                elseif --table.find(bp.Categories, 'MOBILE')
-                --and table.find(bp.Categories, 'EXPERIMENTAL') or
-                table.find(bp.Categories, 'NEEDMOBILEBUILD')
-                --WHAT THE FUCK BLACKOPS
-                and table.find(bp.Categories, 'MOBILE')
+        if bp.Categories then
+            --Check the Gantry can't already build it, and that its a mobile experimental
+            if table.find(bp.Categories, info.Cat) and table.find(bp.Categories, 'EXPERIMENTAL') then
+                --Populate the Gantry AI table
+                if table.find(bp.Categories, 'AIR') then
+                    table.insert(info.bp.AI.Experimentals.Air, {id})
+                else
+                    table.insert(info.bp.AI.Experimentals.Other, {id})
+                end
+            elseif --table.find(bp.Categories, 'MOBILE')
+            --and table.find(bp.Categories, 'EXPERIMENTAL') or
+            table.find(bp.Categories, 'NEEDMOBILEBUILD')
+            --WHAT THE FUCK BLACKOPS
+            and table.find(bp.Categories, 'MOBILE')
+            then
+                --Check it should actually be buildable
+                if table.find(bp.Categories, 'BUILTBYCOMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER2COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
+                or table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+                --For BlOps, they have this as a thing.
+                or table.find(bp.Categories, 'BUILTBYTIER4COMMANDER')
+                or table.find(bp.Categories, 'BUILTBYTIER4ENGINEER')
                 then
-                    --Check it should actually be buildable
-                    if table.find(bp.Categories, 'BUILTBYTIER1COMMANDER')
-                    or table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
-                    or table.find(bp.Categories, 'BUILTBYTIER2COMMANDER')
-                    or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
-                    or table.find(bp.Categories, 'BUILTBYTIER3COMMANDER')
-                    or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
-                    --For BlOps, they have this as a thing.
-                    or table.find(bp.Categories, 'BUILTBYTIER4COMMANDER')
-                    or table.find(bp.Categories, 'BUILTBYTIER4ENGINEER')
+                    --Check it wouldn't be bigger than the Gantry hole
+                    if bp.Physics.SkirtSizeX < info.Reqs.SkirtSizeX
+                    or not bp.Physics.SkirtSizeX
+                    --or bp.Footprint.SizeX < 9
                     then
-                        --Check it wouldn't be bigger than the Gantry hole
-                        if bp.Physics.SkirtSizeX < info.Reqs.SkirtSizeX
-                        or not bp.Physics.SkirtSizeX
-                        --or bp.Footprint.SizeX < 9
-                        then
-                            table.insert(bp.Categories, info.Cat)
-                            --Populate the Gantry AI table with the newly selected experimentals, so AI use them.
-                            if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'EXPERIMENTAL') then
-                                table.insert(all_bps[gantryId].AI.Experimentals.Air, {id})
-                            elseif table.find(bp.Categories, 'EXPERIMENTAL') then
-                                table.insert(all_bps[gantryId].AI.Experimentals.Other, {id})
-                            end
+                        table.insert(bp.Categories, info.Cat)
+                        --Populate the Gantry AI table with the newly selected experimentals, so AI use them.
+                        if table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'EXPERIMENTAL') then
+                            table.insert(info.bp.AI.Experimentals.Air, {id})
+                        elseif table.find(bp.Categories, 'EXPERIMENTAL') then
+                            table.insert(info.bp.AI.Experimentals.Other, {id})
                         end
                     end
                 end
@@ -386,10 +463,8 @@ function BrewLANGantryBuildList(all_bps)
     end
 
     --This section is entirely because, as usual for a FAF function being over zealous, FAF support factories get fucking everywhere.
-    for id, bp in all_bps do
-        if bp.Categories and BrewLANCheckGantryShouldBuild(bp.Categories) and string.upper(bp.Physics.MotionType or 'RULEUMT_NONE') ~= 'RULEUMT_NONE' then
-            table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
-        end
+    if bp.Categories and BrewLANCheckGantryShouldBuild(bp.Categories) and bp.Physics.MotionType ~= 'RULEUMT_None' then
+        table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
     end
 end
 
@@ -399,15 +474,14 @@ function BrewLANCheckGantryShouldBuild(catArray)
             return true
         end
     end
-    return false
 end
 
 --------------------------------------------------------------------------------
 -- Allowing other experimentals that look like they fit to be gantry buildable
 --------------------------------------------------------------------------------
 
-function BrewLANGantryTechShareCheck(all_bps)
-    for id, bp in all_bps do
+function BrewLANGantryTechShareCheck(id, bp)
+    --for id, bp in all_bps do
         if bp.Categories then
             if not table.find(bp.Categories,'GANTRYSHARETECH')
             and (table.find(bp.Categories,'FACTORY') or table.find(bp.Categories,'ENGINEER'))
@@ -424,80 +498,69 @@ function BrewLANGantryTechShareCheck(all_bps)
                 end
             end
         end
-    end
-    local Explicit = {
-        'xrl0403',
-        'ssl0403',
-    }
-    for i, cat in Explicit do
-        if all_bps[cat] and all_bps[cat].Economy.BuildableCategory then
-            table.insert(all_bps[cat].Categories, 'GANTRYSHARETECH')
-        end
-    end
+    --end
 end
 
 --------------------------------------------------------------------------------
 -- Propperly choosing what should be buildable by the heavy walls.
 --------------------------------------------------------------------------------
 
-function BrewLANHeavyWallBuildList(all_bps)
-    for id, bp in all_bps do
-        if bp.Categories then
-            --Check its not hard coded to be buildable.
-            if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
-            --and check it's not something we don't want on a wall.
-            and not table.find(bp.Categories, 'WALL')
-            and not table.find(bp.Categories, 'HEAVYWALL')
-            and not table.find(bp.Categories, 'MEDIUMWALL')
-            and not table.find(bp.Categories, 'MINE')
-            --Also make sure it's not going to want to move.
-            and table.find(bp.Categories, 'STRUCTURE')
+function BrewLANHeavyWallBuildList(id, bp)
+    if bp.Categories then
+        --Check its not hard coded to be buildable.
+        if not table.find(bp.Categories, 'BUILTBYHEAVYWALL')
+        --and check it's not something we don't want on a wall.
+        and not table.find(bp.Categories, 'WALL')
+        and not table.find(bp.Categories, 'HEAVYWALL')
+        and not table.find(bp.Categories, 'MEDIUMWALL')
+        and not table.find(bp.Categories, 'MINE')
+        --Also make sure it's not going to want to move.
+        and table.find(bp.Categories, 'STRUCTURE')
+        then
+            --then check it meets the standard requirements
+            if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
+            or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
+            or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
+            or table.find(bp.Categories, 'BUILTBYTIER1FIELD')
+            or table.find(bp.Categories, 'BUILTBYTIER2FIELD')
+            or table.find(bp.Categories, 'BUILTBYTIER3FIELD')
             then
-                --then check it meets the standard requirements
-                if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
-                or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
-                or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
-                or table.find(bp.Categories, 'BUILTBYTIER1FIELD')
-                or table.find(bp.Categories, 'BUILTBYTIER2FIELD')
-                or table.find(bp.Categories, 'BUILTBYTIER3FIELD')
-                then
-                    if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
-                        --Check it wouldn't overlap badly with the wall
-                        local fits = { X = false, Z = false,}
-                        local correct = { X = false, Z = false,}
+                if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
+                    --Check it wouldn't overlap badly with the wall
+                    local fits = { X = false, Z = false,}
+                    local correct = { X = false, Z = false,}
 
-                        if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then
-                            correct.X = true
-                            fits.X = true
-                        elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
-                            fits.X = true
+                    if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then
+                        correct.X = true
+                        fits.X = true
+                    elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
+                        fits.X = true
+                    end
+
+                    if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then
+                        correct.Z = true
+                        fits.Z = true
+                    elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
+                        fits.Z = true
+                    end
+
+                    if fits.X and fits.Z then
+                        table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
+                        --This is to prevent it from having the same footprint as the wall
+                        --and from it removing all the path blocking of the wall if it dies or gets removed.
+                        --It will still remove the blocking from the center of the wall, but that's acceptable.
+
+                        --This will also make it so those turrets will no longer block pathing whilst adjacent
+                        --But that is probably fine.
+                        if correct.X then
+                            bp.Footprint.SizeX = 1
+                            bp.Physics.SkirtOffsetX = -1
+                            bp.Physics.SkirtSizeX = 3
                         end
-
-                        if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then
-                            correct.Z = true
-                            fits.Z = true
-                        elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
-                            fits.Z = true
-                        end
-
-                        if fits.X and fits.Z then
-                            table.insert(bp.Categories, 'BUILTBYHEAVYWALL')
-                            --This is to prevent it from having the same footprint as the wall
-                            --and from it removing all the path blocking of the wall if it dies or gets removed.
-                            --It will still remove the blocking from the center of the wall, but that's acceptable.
-
-                            --This will also make it so those turrets will no longer block pathing whilst adjacent
-                            --But that is probably fine.
-                            if correct.X then
-                                bp.Footprint.SizeX = 1
-                                bp.Physics.SkirtOffsetX = -1
-                                bp.Physics.SkirtSizeX = 3
-                            end
-                            if correct.Z then
-                                bp.Footprint.SizeZ = 1
-                                bp.Physics.SkirtOffsetZ = -1
-                                bp.Physics.SkirtSizeZ = 3
-                            end
+                        if correct.Z then
+                            bp.Footprint.SizeZ = 1
+                            bp.Physics.SkirtOffsetZ = -1
+                            bp.Physics.SkirtSizeZ = 3
                         end
                     end
                 end
@@ -590,47 +653,50 @@ end
 -- Torpedo bombers able to land on/in water
 --------------------------------------------------------------------------------
 
-function TorpedoBomberWaterLandCat(all_bps)
+function BrewLANTorpedoBomberWaterLanding(id, bp)
 
     local TorpedoBombers = {
-        all_bps['sra0307'], --T3 Cybran
-        all_bps['sea0307'], --T3 UEF
-        all_bps['ssa0307'], --T3 Seraphim
-        all_bps['xaa0306'], --T3 Aeon
+        sra0307 = true, --T3 Cybran
+        sea0307 = true, --T3 UEF
+        ssa0307 = true, --T3 Seraphim
+        xaa0306 = true, --T3 Aeon
 
-        all_bps['ura0204'], --T2 Cybran
-        all_bps['uea0204'], --T2 UEF
-        all_bps['xsa0204'], --T2 Seraphim
-        all_bps['uaa0204'], --T2 Aeon
+        ura0204 = true, --T2 Cybran
+        uea0204 = true, --T2 UEF
+        xsa0204 = true, --T2 Seraphim
+        uaa0204 = true, --T2 Aeon
 
-        all_bps['sra0106'], --T1 Cybran
-        all_bps['sea0106'], --T1 UEF
-        all_bps['ssa0106'], --T1 Seraphim
-        all_bps['saa0106'], --T1 Aeon
+        sra0106 = true, --T1 Cybran
+        sea0106 = true, --T1 UEF
+        ssa0106 = true, --T1 Seraphim
+        saa0106 = true, --T1 Aeon
     }
-    for arrayIndex, bp in TorpedoBombers do
-        --Check they exist, and have all their things.
-        if bp and bp.Categories and bp.Weapon then
-            table.insert(bp.Categories, 'TRANSPORTATION') --transportation category allows aircraft to land on water.
-            --table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
-            for i, v in bp.Weapon do
-                if v.WeaponCategory == "Anti Navy" and v.FireTargetLayerCapsTable then
-                    v.FireTargetLayerCapsTable.Seabed = 'Seabed|Sub|Water'
-                    v.FireTargetLayerCapsTable.Sub = 'Seabed|Sub|Water'
-                    v.FireTargetLayerCapsTable.Water = 'Seabed|Sub|Water'
-                end
+
+    if not TorpedoBombers[id] then return end
+
+    --Check they exist, and have all their things.
+    if bp and bp.Categories and bp.Weapon then
+        table.insert(bp.Categories, 'TRANSPORTATION') --transportation category allows aircraft to land on water.
+        if not table.find(bp.Categories, 'TORPEDOBOMBER') then
+            table.insert(bp.Categories, 'TORPEDOBOMBER')
+        end
+        --table.insert(bp.Categories, 'HOVER') --hover category stops torpedos from being fired upon them while landed.
+        for i, v in bp.Weapon do
+            if v.FireTargetLayerCapsTable and v.FireTargetLayerCapsTable.Land then
+                v.FireTargetLayerCapsTable.Water = v.FireTargetLayerCapsTable.Land
             end
         end
     end
+
 end
 
 --------------------------------------------------------------------------------
 -- My OCD GC health change change
 --------------------------------------------------------------------------------
 
-function RoundGalacticCollosusHealth(all_bps)
-    for i, v in {'Health','MaxHealth'} do
-        if all_bps['ual0401'].Defense[v] == 99999 then all_bps['ual0401'].Defense[v] = 100000 end
+function BrewLANRoundGalacticCollosusHealth(colossus)
+    for i, v in {'Health', 'MaxHealth'} do
+        if colossus.Defense[v] == 99999 then colossus.Defense[v] = 100000 end
     end
 end
 
@@ -639,7 +705,7 @@ end
 --------------------------------------------------------------------------------
 
 function MathRoundTo(val, round)
-    if type(round) == 'number' and type(val) == 'number' and round >= 1 then
+    if type(round) == 'number' and type(val) == 'number' then
         return math.floor((val / round) + 0.5) * round
     else
         return val
@@ -658,17 +724,17 @@ end
 
 function BrewLANMatchBalancing(all_bps)
     local UnitsList = {
-------- T1 gunships
+        ------- T1 gunships
         saa0105 = {TargetID = 'xra0105', Affects = {'Veteran'}},
         sea0105 = {TargetID = 'xra0105', Affects = {'Veteran'}},
         sra0105 = {TargetID = 'xra0105', Affects = {'Veteran'}},
-------- T3 torpedo bombers to match Solace
+        ------- T3 torpedo bombers to match Solace
         sra0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
         sea0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
         ssa0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
-------- Sera T3 gunship to match Broadsword
+        ------- Sera T3 gunship to match Broadsword
         ssa0305 = 'uea0305',
-------- Air transports to be based
+        ------- Air transports to be based
         ssa0306 = {
             TargetID ='xea0306',
             Affects = {
@@ -761,7 +827,7 @@ function BrewLANMatchBalancing(all_bps)
                 },
             },
         },
-------- Average between two other units
+        ------- Average between two other units
         --T2 recon/decoy/stealths
         sea0201 = {TargetID = {'uea0101', 'uea0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
         ssa0201 = {TargetID = {'xsa0101', 'xsa0302'}, Affects = {'Economy', 'Intel', 'Transport'}},
@@ -770,7 +836,7 @@ function BrewLANMatchBalancing(all_bps)
         saa0201 = {TargetID = 'uaa0303', Affects = {'Air'}}, --It's imporant that it moves like an ASF
         sra0310 = {TargetID = 'ura0303', Affects = {'Air'}}, --It's imporant that it moves like an ASF
         sea0310 = {TargetID = 'uea0303', Affects = {'Air'}}, --It's imporant that it moves like an ASF
-------- ED5 built by field engineer balancing
+        ------- ED5 built by field engineer balancing
         urb4206 = {
             TargetID = 'urb4206',
             BaseMult = 1,
@@ -930,7 +996,7 @@ end
 
 function BrewLANFAFExclusiveChanges(all_bps)
     if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then
-        for id, bp in all_bps do
+        for id, bp in all_bps.Unit do
             if bp.Categories and string.sub(bp.Source, 1, 13) == '/mods/brewlan' then
                 if (bp.Physics.MotionType == 'RULEUMT_Air' or bp.Physics.MotionType == 'RULEUMT_Hover')
                 and bp.Wreckage.WreckageLayers then
@@ -942,7 +1008,19 @@ function BrewLANFAFExclusiveChanges(all_bps)
                     table.insert(bp.Categories, 'CQUEMOV')
                 end
             end
-            --T3 torps anti-naval damage * 0.76
+            if bp.Weapon then
+                for i, wep in bp.Weapon do
+                    if wep.TargetType == 'RULEWTT_Projectile' and wep.TargetRestrictOnlyAllow and string.find(wep.TargetRestrictOnlyAllow, 'STRATEGIC') and wep.Damage and wep.Damage < 100 then
+                        wep.Damage = wep.Damage * 1000
+                    end
+                end
+            end
+        end
+        for id, bp in all_bps.Projectile do
+            if bp.Categories and table.find(bp.Categories, 'STRATEGIC') and bp.Defense and bp.Defense.Health and bp.Defense.Health < 100 then
+                bp.Defense.Health = bp.Defense.Health * 1000
+                bp.Defense.MaxHealth = (bp.Defense.Health or bp.Defense.MaxHealth) * 1000
+            end
         end
     end
 end
@@ -951,68 +1029,68 @@ end
 -- Shield changes
 --------------------------------------------------------------------------------
 
-function BrewLANNavalShields(all_bps)
+function BrewLANNavalShields(id, bp)
     local Units = {
         --Cybran Shields
-        urb4202 = {},
-        urb4204 = {},
-        urb4205 = {},
-        urb4206 = {},
-        urb4207 = {},
+        urb4202 = true,
+        urb4204 = true,
+        urb4205 = true,
+        urb4206 = true,
+        urb4207 = true,
         --UEF Shields
-        seb4102 = {},
-        ueb4202 = {},
-        ueb4301 = {},
+        seb4102 = true,
+        ueb4202 = true,
+        ueb4301 = true,
         --Aeon Shields
-        sab4102 = {},
-        uab4202 = {},
-        uab4301 = {},
+        sab4102 = true,
+        uab4202 = true,
+        uab4301 = true,
         --Seraphim Shields
-        ssb4102 = {},
-        xsb4202 = {},
-        xsb4301 = {},
+        ssb4102 = true,
+        xsb4202 = true,
+        xsb4301 = true,
     }
-    for k, v in Units do
-        if all_bps[k] then
-            all_bps[k].General.Icon = 'amph'
-            if not all_bps[k].Physics.BuildOnLayerCaps then
-                all_bps[k].Physics.BuildOnLayerCaps = {
-                    LAYER_Land = true
-                }
-            end
-            all_bps[k].Physics.BuildOnLayerCaps.LAYER_Water = true
-            if all_bps[k].Wreckage and all_bps[k].Wreckage.WreckageLayers then
-                all_bps[k].Wreckage.WreckageLayers.Water = true
-            end
-            if not all_bps[k].Display.Abilities then all_bps[k].Display.Abilities = {} end
-            if not table.find(all_bps[k].Display.Abilities, '<LOC ability_aquatic>Aquatic') then
-                table.insert(all_bps[k].Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
-            end
-            --Waterlag visual compatability
-            all_bps[k].Display.GiveMeLegs = true
-        end
+
+    if not Units[id] then return end
+
+    bp.General.Icon = 'amph'
+    --This might not be populated, and this is the default if it isn't
+    if not bp.Physics.BuildOnLayerCaps then
+        bp.Physics.BuildOnLayerCaps = {
+            LAYER_Land = true
+        }
     end
+    bp.Physics.BuildOnLayerCaps.LAYER_Water = true
+    if bp.Wreckage and bp.Wreckage.WreckageLayers then
+        bp.Wreckage.WreckageLayers.Water = true
+    end
+    if not bp.Display.Abilities then bp.Display.Abilities = {} end
+    if not table.find(bp.Display.Abilities, '<LOC ability_aquatic>Aquatic') then
+        table.insert(bp.Display.Abilities, 1, '<LOC ability_aquatic>Aquatic')
+    end
+    --Waterlag visual compatability
+    bp.Display.GiveMeLegs = true
+
 end
 
 --------------------------------------------------------------------------------
 -- Work around for bombers destroying themselves on the Iron Curtain
 --------------------------------------------------------------------------------
 
-function BrewLANBomberDamageType(all_bps)
-    for id, bp in all_bps do
-        --Check the table exists before doing a lookup.
-        if bp.Categories and table.find(bp.Categories, 'BOMBER') then
-            if bp.Weapon then
-                for i, weap in bp.Weapon do
-                    if weap.NeedToComputeBombDrop then
-                        if weap.DamageType == 'Normal' then
-                            weap.DamageType = 'NormalBomb'
-                        end
+function BrewLANBomberDamageType(id, bp)
+
+    --Check the table exists before doing a lookup.
+    --if bp.Categories and table.find(bp.Categories, 'BOMBER') then
+        if bp.Weapon then
+            for i, weap in bp.Weapon do
+                if weap.NeedToComputeBombDrop then
+                    if weap.DamageType == 'Normal' then
+                        weap.DamageType = 'NormalBomb'
                     end
                 end
             end
         end
-    end
+    --end
 end
 
 --------------------------------------------------------------------------------
@@ -1020,13 +1098,13 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANRelativisticLinksUpdate(all_bps)
-    if BrewLANPath and string.lower(BrewLANPath) ~= "/mods/brewlan" then
+    if BrewLANPath and BrewLANPath ~= "/mods/brewlan" then
         all_bps.Unit.saa0105.Desync = {
             "BrewLAN reports you installed it",
             "wrong; it should be at:",
             "/mods/brewlan",
             "but it's at:",
-            string.lower(BrewLANPath),
+            BrewLANPath,
             "Everything should still work though.",
         }
         for id, bp in all_bps.Unit do
@@ -1065,55 +1143,50 @@ end
 -- Eggs. Eggs everywhere
 --------------------------------------------------------------------------------
 
-function BrewLANMegalithEggs(all_bps)
+function BrewLANMegalithEggs(id, bp, all_bps, Megalith, Egg000)
     --First check the Megalith exists and can build
-    if all_bps['xrl0403'] and all_bps['xrl0403'].Economy.BuildableCategory then
-        local baseEgg = all_bps['srl0000']
-        for id, bp in all_bps do
-            if bp.Categories and table.find(bp.Categories, 'MEGALITHEGG') then
-                copyTableNoReplace(baseEgg, bp)
-                table.insert(all_bps['xrl0403'].Economy.BuildableCategory, bp.BlueprintId)
+    if Megalith and Megalith.Economy and Megalith.Economy.BuildableCategory and bp.Categories and table.find(bp.Categories, 'MEGALITHEGG') then
+        copyTableNoReplace(Egg000, bp)
+        table.insert(Megalith.Economy.BuildableCategory, bp.BlueprintId)
 
-                bp.BuildIconSortPriority = all_bps[bp.Economy.BuildUnit].BuildIconSortPriority
-                bp.StrategicIconName = all_bps[bp.Economy.BuildUnit].StrategicIconName
+        bp.BuildIconSortPriority = all_bps[bp.Economy.BuildUnit].BuildIconSortPriority
+        bp.StrategicIconName = all_bps[bp.Economy.BuildUnit].StrategicIconName
 
-                bp.Economy.BuildCostEnergy = all_bps[bp.Economy.BuildUnit].Economy.BuildCostEnergy
-                bp.Economy.BuildCostMass = all_bps[bp.Economy.BuildUnit].Economy.BuildCostMass
-                bp.Economy.BuildTime = all_bps[bp.Economy.BuildUnit].Economy.BuildTime
+        bp.Economy.BuildCostEnergy = all_bps[bp.Economy.BuildUnit].Economy.BuildCostEnergy
+        bp.Economy.BuildCostMass = all_bps[bp.Economy.BuildUnit].Economy.BuildCostMass
+        bp.Economy.BuildTime = all_bps[bp.Economy.BuildUnit].Economy.BuildTime
 
-                bp.General.Icon = all_bps[bp.Economy.BuildUnit].General.Icon
+        bp.General.Icon = all_bps[bp.Economy.BuildUnit].General.Icon
 
-                if bp.Size then
-                    bp.Footprint.SizeX = bp.Size
-                    bp.Footprint.SizeZ = bp.Size
-                    bp.SizeX = bp.Size
-                    bp.SizeY = bp.Size
-                    bp.SizeZ = bp.Size
-                    bp.Display.UniformScale = bp.Display.UniformScale * bp.Size
-                    bp.LifeBarOffset = bp.LifeBarOffset * bp.Size
-                    bp.LifeBarSize = bp.Size
-                    bp.SelectionSizeX = 0.65 * bp.Size
-                    bp.SelectionSizeZ = 0.65 * bp.Size
-                end
+        if bp.Size then
+            bp.Footprint.SizeX = bp.Size
+            bp.Footprint.SizeZ = bp.Size
+            bp.SizeX = bp.Size
+            bp.SizeY = bp.Size
+            bp.SizeZ = bp.Size
+            bp.Display.UniformScale = bp.Display.UniformScale * bp.Size
+            bp.LifeBarOffset = bp.LifeBarOffset * bp.Size
+            bp.LifeBarSize = bp.Size
+            bp.SelectionSizeX = 0.65 * bp.Size
+            bp.SelectionSizeZ = 0.65 * bp.Size
+        end
 
-                if all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Hover'
-                or all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_AmphibiousFloating' then
-                    BuildOnLayerCaps = {
-                        LAYER_Land = true,
-                        LAYER_Water = true,
-                    }
-                elseif all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Amphibious' then
-                    BuildOnLayerCaps = {
-                        LAYER_Land = true,
-                        LAYER_Seabed = true,
-                    }
-                elseif all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_SurfacingSub'
-                or all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Water' then
-                    BuildOnLayerCaps = {
-                        LAYER_Water = true,
-                    }
-                end
-            end
+        if all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Hover'
+        or all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_AmphibiousFloating' then
+            BuildOnLayerCaps = {
+                LAYER_Land = true,
+                LAYER_Water = true,
+            }
+        elseif all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Amphibious' then
+            BuildOnLayerCaps = {
+                LAYER_Land = true,
+                LAYER_Seabed = true,
+            }
+        elseif all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_SurfacingSub'
+        or all_bps[bp.Economy.BuildUnit].Physics.MotionType == 'RULEUMT_Water' then
+            BuildOnLayerCaps = {
+                LAYER_Water = true,
+            }
         end
     end
 end
@@ -1137,28 +1210,26 @@ end
 -- Do you want to build a snowman?
 --------------------------------------------------------------------------------
 
-function ExtractFrozenMeshBlueprint(all_bps)
-    for id, bp in all_bps do
-        local meshid = bp.Display.MeshBlueprint
-        if meshid then
-            local meshbp = original_blueprints.Mesh[meshid]
-            if meshbp then
-                local frozenbp = table.deepcopy(meshbp)
-                if frozenbp.LODs then
-                    for i,lod in frozenbp.LODs do
-                        if lod.ShaderName == 'TMeshAlpha' or lod.ShaderName == 'NormalMappedAlpha' or lod.ShaderName == 'UndulatingNormalMappedAlpha' then
-                            --lod.ShaderName = 'BlackenedNormalMappedAlpha'
-                        else
-                            lod.ShaderName = 'Aeon'
-                            lod.SpecularName = BrewLANPath .. '/env/common/frozen_specular.dds'
-                            lod.NormalsName = BrewLANPath .. '/env/common/frozen_normals.dds'
-                        end
+function BrewLANExtractFrozenMeshBlueprint(id, bp)
+    local meshid = bp.Display.MeshBlueprint
+    if meshid then
+        local meshbp = original_blueprints.Mesh[meshid]
+        if meshbp then
+            local frozenbp = table.deepcopy(meshbp)
+            if frozenbp.LODs then
+                for i,lod in frozenbp.LODs do
+                    if lod.ShaderName == 'TMeshAlpha' or lod.ShaderName == 'NormalMappedAlpha' or lod.ShaderName == 'UndulatingNormalMappedAlpha' then
+                        --lod.ShaderName = 'BlackenedNormalMappedAlpha'
+                    else
+                        lod.ShaderName = 'Aeon'
+                        lod.SpecularName = BrewLANPath .. '/env/common/frozen_specular.dds'
+                        lod.NormalsName = BrewLANPath .. '/env/common/frozen_normals.dds'
                     end
                 end
-                frozenbp.BlueprintId = meshid .. '_frozen'
-                bp.Display.MeshBlueprintFrozen = frozenbp.BlueprintId
-                MeshBlueprint(frozenbp)
             end
+            frozenbp.BlueprintId = meshid .. '_frozen'
+            bp.Display.MeshBlueprintFrozen = frozenbp.BlueprintId
+            MeshBlueprint(frozenbp)
         end
     end
 end
@@ -1199,11 +1270,10 @@ end
 -- Generate footprint dummies for dealing with path blocking.
 --------------------------------------------------------------------------------
 
-
-function BrewLANGenerateFootprintDummy(all_bps, id, bp)
+function BrewLANGenerateFootprintDummy(id, bp, all_bps)
     --These are used by the Aeon teleporter.
     --But also by the mines and any unit that wants to clear it's path blocking.
-    if type(bp.Physics.MotionType) == 'string' and string.lower(bp.Physics.MotionType) == 'ruleumt_none' then
+    if type(bp.Physics.MotionType) == 'string' and bp.Physics.MotionType == 'RULEUMT_None' then
         local X = math.ceil(bp.Footprint.SizeX or bp.SizeX or 1)
         local Z = math.ceil(bp.Footprint.SizeZ or bp.SizeZ or 1)
         local SOX = bp.Physics.SkirtOffsetX or 0
