@@ -57,7 +57,7 @@ do
             --Seraphim optics
             "ssb3301",
             --Observation satellite
-            "sea0002",
+            "sea3301",
             --Seraphim sonar
             "sss0305",
         },

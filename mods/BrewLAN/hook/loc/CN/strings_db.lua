@@ -293,12 +293,12 @@ ability_satellite_cap_4="卫星容量：+4"
 ability_satellite_cap_5="卫星容量：+5"
 ability_satellite_cap_inf="卫星容量不受限制"
 
-sea0002_desc="观察卫星"
-sea0002_name="燃烧的明星"
+sea3301_desc="观察卫星"
+sea3301_name="燃烧的明星"
 Unit_Description_BrewLAN_T3A012="基于卫星的观测系统。提供从轨道的视觉卫星图像。需要专用卫星上行链路接收数据的数据。"
 
-sea0003_desc="抗议卫星"
-sea0003_name="vaxis."
+sea4301_desc="抗议卫星"
+sea4301_name="vaxis."
 Unit_Description_BrewLAN_T3A013="基于卫星的抗议系统。导致大量假雷达信号，空中优势战斗机的飞行特性出现在它下面。没有智力聚会的能力。"
 
 --狙击手替代品

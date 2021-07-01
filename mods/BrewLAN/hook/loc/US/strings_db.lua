@@ -293,12 +293,12 @@ ability_satellite_cap_4="Satellite Capacity: +4"
 ability_satellite_cap_5="Satellite Capacity: +5"
 ability_satellite_cap_inf="Satellite Capacity Unrestricted"
 
-sea0002_desc="Observation Satellite"
-sea0002_name="Burning Star"
+sea3301_desc="Observation Satellite"
+sea3301_name="Burning Star"
 Unit_Description_BrewLAN_T3A012="Satellite-based observation system. Provides visual satellite imagery from orbit. Requires a dedicated satellite uplink to receive data from it."
 
-sea0003_desc="Counterintelligence Satellite"
-sea0003_name="Vaxis"
+sea4301_desc="Counterintelligence Satellite"
+sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters to appear underneath it. Has no capacity for intelligence gathering."
 
 --Sniper alternatives

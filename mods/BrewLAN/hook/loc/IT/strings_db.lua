@@ -293,12 +293,12 @@ ability_satellite_cap_4="Capacità satellitare: +4"
 ability_satellite_cap_5="Capacità satellitare: +5"
 ability_satellite_cap_inf="Capacità satellitare illimitata"
 
-sea0002_desc="Satellite di osservazione"
-sea0002_name="Stella bruciante"
+sea3301_desc="Satellite di osservazione"
+sea3301_name="Stella bruciante"
 Unit_Description_BrewLAN_T3A012="Sistema di osservazione satellitare. Fornisce immagini satellitari visive da orbita. Richiede un uplink satellitare dedicato per ricevere dati da esso."
 
-sea0003_desc="Satellite con controsuazione"
-sea0003_name="Vaxis."
+sea4301_desc="Satellite con controsuazione"
+sea4301_name="Vaxis."
 Unit_Description_BrewLAN_T3A013="Sistema di controsenzi del satellite. Provoca un gran numero di segnali radar falsi con caratteristiche di volo dei combattenti di superiorità aerea per apparire sotto di esso. Non ha alcuna capacità per la raccolta dell'intelligenza."
 
 --Alternative di cecchino.

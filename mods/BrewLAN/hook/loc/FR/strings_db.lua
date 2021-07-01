@@ -293,12 +293,12 @@ ability_satellite_cap_4="Capacité de satellite: +4"
 ability_satellite_cap_5="Capacité de satellite: +5"
 ability_satellite_cap_inf="Capacité de satellite non restreinte"
 
-sea0002_desc="Centre de contrôle de satellite"
-sea0002_name="Étoile brulante"
+sea3301_desc="Centre de contrôle de satellite"
+sea3301_name="Étoile brulante"
 Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Rapporte des images satellites de l'orbite. Nécéssite un centre de contrôle pour réceptionner les données."
 
-sea0003_desc="Satellite de contre-espionnage"
-sea0003_name="Vaxis"
+sea4301_desc="Satellite de contre-espionnage"
+sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Produit un grand nombre de faux signaux représentant des escadrons de chasseurs de supériorité aérienne sous sa position. N'a aucune capacité de collecte de données."
 
 --Sniper Alternatives

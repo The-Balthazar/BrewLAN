@@ -293,12 +293,12 @@ ability_satellite_cap_4="Pojemność satelitarna: +4"
 ability_satellite_cap_5="Pojemność satelitarna: +5"
 ability_satellite_cap_inf="Pojemność satelitarna nieograniczona"
 
-sea0002_desc="Satelita obserwacyjna."
-sea0002_name="Płonąca gwiazda"
+sea3301_desc="Satelita obserwacyjna."
+sea3301_name="Płonąca gwiazda"
 Unit_Description_BrewLAN_T3A012="System obserwacji oparty na satelicie. Zapewnia wizualne zdjęcia satelitarne z orbity. Wymaga dedykowanego satelitarnego łącza do odbierania danych z niego."
 
-sea0003_desc="Satellita przeciwdziała."
-sea0003_name="Vaxis."
+sea4301_desc="Satellita przeciwdziała."
+sea4301_name="Vaxis."
 Unit_Description_BrewLAN_T3A013="System Coatellite Counterigence System. Powoduje dużą liczbę fałszywych sygnałów radarowych z cechami lotów lotniczymi, które pojawiają się pod nim. Nie ma zdolności do zgromadzenia inteligencji."
 
 --Alternatywy snajperskie

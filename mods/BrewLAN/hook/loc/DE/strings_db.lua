@@ -293,12 +293,12 @@ ability_satellite_cap_4="Satelliten-Kapazität: +4"
 ability_satellite_cap_5="Satelliten-Kapazität: +5"
 ability_satellite_cap_inf="Satellitenkapazität Unbegrenzt"
 
-sea0002_desc="Beobachtungs Satellit"
-sea0002_name="Brennender Stern"
+sea3301_desc="Beobachtungs Satellit"
+sea3301_name="Brennender Stern"
 Unit_Description_BrewLAN_T3A012="Satellitengestütztes Beobachtungssystem. Sendet Satellitenbilder aus dem Orbit. Benötigt einen eigenen Satelliten-Uplink der die Daten empfängt."
 
-sea0003_desc="Abschirm Satellit"
-sea0003_name="Vaxis"
+sea4301_desc="Abschirm Satellit"
+sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Ein satellitengestütztes Spionageabwehr System. Verursacht eine große Anzahl von falschen Radarsignalen mit Flugmuster der LuftüberlegenheitsJäger. Bietet keine Aufklärung."
 
 --Sniper bot alternatives

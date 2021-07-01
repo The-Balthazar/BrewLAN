@@ -920,3 +920,5 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * The unguided satellite function now actually deals enough damage to bypass regen.
   * Refactored satellite code so shared code is in a parent class, and so its unpack stages are initiated by the satellite not the station.
+  * Changed the ID of the UEF observation satellite from `sea0002` to `sea3301`. The 000 number IDs have been bugging me, and they're going.
+  * Changed the ID of the UEF counterintel satellite from `sea0003` to `sea4301`.

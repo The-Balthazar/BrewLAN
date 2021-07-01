@@ -293,12 +293,12 @@ ability_satellite_cap_4="Capacidad satelital: +4"
 ability_satellite_cap_5="Capacidad satelital: +5"
 ability_satellite_cap_inf="Capacidad satelital sin restricciones"
 
-sea0002_desc="Satélite de observación"
-sea0002_name="Estrella ardiente"
+sea3301_desc="Satélite de observación"
+sea3301_name="Estrella ardiente"
 Unit_Description_BrewLAN_T3A012="Sistema de observación basado en satélite. Proporciona imágenes visuales satélites de órbita. Requiere un enlace ascendente satelital dedicado para recibir datos de él."
 
-sea0003_desc="Satélite contrainteligencia"
-sea0003_name="Vaxis"
+sea4301_desc="Satélite contrainteligencia"
+sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Sistema de contrainteligencia a base de satélite. Causa un gran número de señales de radar falsas con características de vuelo de los combatientes de superioridad aérea para aparecer debajo de ella. No tiene capacidad para la reunión de inteligencia."
 
 --Alternativas de francotirador

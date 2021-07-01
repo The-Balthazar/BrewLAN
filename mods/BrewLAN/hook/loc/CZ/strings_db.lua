@@ -293,12 +293,12 @@ ability_satellite_cap_4="Satelitní kapacita: +4"
 ability_satellite_cap_5="Satelitní kapacita: +5"
 ability_satellite_cap_inf="Satelitní kapacita neomezená"
 
-sea0002_desc="Pozorvací Družice"
-sea0002_name="Hořící Hvězda"
+sea3301_desc="Pozorvací Družice"
+sea3301_name="Hořící Hvězda"
 Unit_Description_BrewLAN_T3A012="Družicový pozorovací systém. Poskytuje vizuální satelitních snímkky z oběžné dráhy. Vyžaduje satelitní uplink pro příjem dat z něj."
 
-sea0003_desc="Kontrainteligence satelit"
-sea0003_name="Vaxis"
+sea4301_desc="Kontrainteligence satelit"
+sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Satelitní kontrainální systém. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi leteckých nadřazených bojů, aby se objevily pod ním. Nemá schopnost shromažďování inteligence."
 
 --alternativy Sniperů

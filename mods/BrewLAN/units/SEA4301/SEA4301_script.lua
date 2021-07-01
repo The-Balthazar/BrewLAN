@@ -1,7 +1,7 @@
 local TAirUnit = import('/lua/defaultunits.lua').BrewLANGeoSatelliteUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 
-SEA0003 = Class(TAirUnit) {
+SEA4301 = Class(TAirUnit) {
     DestroyNoFallRandomChance = 0,
 
     OnCreate = function(self)
@@ -42,4 +42,4 @@ SEA0003 = Class(TAirUnit) {
     end,
 }
 
-TypeClass = SEA0003
+TypeClass = SEA4301
