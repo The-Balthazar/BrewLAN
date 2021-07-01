@@ -61,7 +61,7 @@ do
             if EntityCategoryContains(categories.SATELLITEUPLINK + categories.SATELLITEWITHNOPARENTALSUPERVISION, self) then
                 self:ForkThread(
                     function()
-                        WaitTicks(1) -- UEF buildings get ignored without this delay. Why does the UEF build animation cause so many timing issues.
+                        coroutine.yield(1) -- UEF buildings get ignored without this delay. Why does the UEF build animation cause so many timing issues.
                         self:OnSatelliteCapacityChange()
                     end
                 )

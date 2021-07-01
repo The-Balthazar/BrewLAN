@@ -17,7 +17,6 @@ SEB3303 = Class(TStructureUnit) {
         local bp = self:GetBlueprint()
         local army = self:GetArmy()
         if unitBeingBuilt and not unitBeingBuilt:IsDead() then
-            unitBeingBuilt:PreLaunchSetup(self)
             if not self.LightsOn then
                 for i, v in {{0.06, -0.10, 1.90},{-0.06, -0.10, 1.90},{0.08, -0.5, 1.60},{-0.04, -0.5, 1.60}} do
                     self.Trash:Add(CreateAttachedEmitter(self, 'Tower_B04', army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(v[1], v[2], v[3]))
@@ -38,7 +37,6 @@ SEB3303 = Class(TStructureUnit) {
             self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_02_emit.bp'):OffsetEmitter(0.00, 2.00, 1.00))
 
             unitBeingBuilt:DetachFrom()
-            unitBeingBuilt:Setup()
         end
         self.AnimManip:SetRate(-1)
         self.AnimManip:SetPrecedence(0)

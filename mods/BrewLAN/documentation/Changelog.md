@@ -915,3 +915,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Slight optimisation on blueprints.lua; moved motiontype sanitisation to start of script and fleshed it out so everything else can rely on it.
   * Reworked the majority of blueprints.lua functions to all use minimal loops of the unit database. I don't have numbers on the effect of this.
+
+  ### 2021-07-01
+
+  * The unguided satellite function now actually deals enough damage to bypass regen.
+  * Refactored satellite code so shared code is in a parent class, and so its unpack stages are initiated by the satellite not the station.

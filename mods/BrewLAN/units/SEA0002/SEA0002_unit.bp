@@ -61,7 +61,6 @@ UnitBlueprint {
         'TARGETCHASER',
         'CANNOTUSEAIRSTAGING',
     },
-    CollisionOffsetY = -0.65,
     Defense = {
         ArmorType = 'Normal',
         Health = 100,
@@ -70,6 +69,9 @@ UnitBlueprint {
     },
     Description = '<LOC sea0002_desc>Observation Satellite',
     Display = {
+        AnimationOpenStage1 = '/units/XEA0002/xea0002_aopen01.sca',
+        AnimationOpenStage2 = '/units/XEA0002/xea0002_aopen02.sca',
+        AnimationOpenHideBones = { 'Shell01', 'Shell02', 'Shell03', 'Shell04' },
     	AINames = {
             'Skynet',
             'Silent Earth',
@@ -150,9 +152,6 @@ UnitBlueprint {
         OrbitRadar = false,
         OrbitSonar = false,
         OrbitOmni = false,
-    },
-    Interface = {
-        HelpText = '<LOC sea0002_desc>Observation Satellite',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.2,
