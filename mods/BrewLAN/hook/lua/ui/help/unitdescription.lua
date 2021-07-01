@@ -110,7 +110,8 @@ Description['saa0201'] = "<LOC Unit_Description_BrewLAN_T3A009>Lightly armored d
 Description['sra0310'] = "<LOC Unit_Description_BrewLAN_T3A010>Lightly armored stealth decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Description['ssa0310'] = "<LOC Unit_Description_BrewLAN_T3A011>Lightly armored decoy plane. Equipped with powerful radar jamming equipment designed to create multiple false radar signals. Mimics air superiority fighter movements."
 Description['sea3301'] = "<LOC Unit_Description_BrewLAN_T3A012>Satellite-based observation system. Provides visual satellite imagery from orbit. Requires a dedicated satellite uplink to receive data from it."
-Description['sea4301'] = "<LOC Unit_Description_BrewLAN_T3A013>Satellite-based counterintelligence system. Causes large numbers of fake radar signals to appear underneith it. Has no capacity for inteligence gathering."
+Description['sea4301'] = "<LOC Unit_Description_BrewLAN_T3A013>Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters in a guard formation to appear underneath it. Has no capacity for intelligence gathering."
+Description['sea4302'] = "<LOC Unit_Description_BrewLAN_T3A014>False radar signals with flight characteristics of air superiority fighters. Appears as 6 blips to radar and 1 blip to omni sensors."
 
 --Tech 3 land units
 Description['ssl0311'] = "<LOC Unit_Description_BrewLAN_T3L001>Shielded Siege assault bot. Armed with dual Aire-au Bolters."

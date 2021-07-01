@@ -34,19 +34,17 @@ UnitBlueprint {
         'UNSELECTABLE',
         'UNTARGETABLE',
     },
-    CollisionOffsetZ = -0.07,
     Defense = {
-        ArmorType = 'Light',
         Health = 42,
         MaxHealth = 42,
     },
-    Description = '<LOC ssa00002_desc>Hologram',
+    Description = '<LOC sea4302_desc>False Radar Signal',
     Display = {
         Mesh = {
-            IconFadeInZoom = 99999999,
+            IconFadeInZoom = 2147483646,
             LODs = {
                 {
-                    LODCutoff = 5,
+                    LODCutoff = 32,
                     ShaderName = 'PhalanxEffect',
                     MeshName = '/units/uea0303/uea0303_lod0.scm',
                     AlbedoName = '/units/uea0303/uea0303_albedo.dds',
@@ -55,20 +53,8 @@ UnitBlueprint {
                 },
             },
         },
-        MovementEffects = {
-            Air = {
-                Contrails = {
-                    Bones = {0},
-                },
-            },
-        },
         HideLifebars = true,
-        UniformScale = 0.03,
-    },
-    Economy = {
-        BuildCostEnergy = 1337,
-        BuildCostMass = 420,
-        BuildTime = 696,
+        UniformScale = 0.1,
     },
     General = {
         CapCost = 0,
@@ -85,6 +71,7 @@ UnitBlueprint {
         Icon = 'air',
         SelectionPriority = 6,
         TechLevel = 'RULEUTL_Basic',
+        UnitName = '<LOC sea4302_name>ASFaux',
         UnitWeight = 1,
     },
     Intel = {
@@ -96,25 +83,18 @@ UnitBlueprint {
         VisionRadius = 0,
         WaterVisionRadius = 0,
     },
-    Interface = {
-        HelpText = '<LOC xsc9011_help>Jammer Crystal',
-    },
-    LifeBarHeight = 0.075,
-    LifeBarOffset = 0.25,
-    LifeBarSize = 0.3,
     Physics = {
         BankingSlope = 0.5,
         Elevation = 20,
         MaxSpeed = 20,
         MotionType = 'RULEUMT_Air',
     },
-    SelectionSizeX = 0.3,
-    SelectionSizeZ = 0.3,
-    SelectionThickness = 1.2,
-    SizeSphere = 1,
-    SizeX = 0.5,
-    SizeY = 0.2,
-    SizeZ = 0.5,
+    ScriptClass = 'TAirUnit',
+    ScriptModule = '/lua/terranunits.lua',
+    --These default to 1, and setting them to 0 wigs out the engine
+    SizeX = 0.1,
+    SizeY = 0.1,
+    SizeZ = 0.1,
     StrategicIconName = 'icon_fighter_generic',
     StrategicIconSize = 1,
     StrategicIconSortPriority = 105,

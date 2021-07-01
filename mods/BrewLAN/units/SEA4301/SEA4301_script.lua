@@ -25,9 +25,11 @@ SEA4301 = Class(TAirUnit) {
             local pos = self:GetPosition()
             local army = self:GetArmy()
             for i = 1, 3 do
-                self.Hologram[i] = CreateUnitHPR('sea0004', army, pos[1] + Random(-10, 10), pos[2], pos[3] + Random(-10, 10), 0, 0, 0)
-                IssueGuard({self.Hologram[i]}, self)
+                local x,z = pos[1] + Random(-10, 10), pos[3] + Random(-10, 10)
+                local y = GetTerrainHeight(x,z)
+                self.Hologram[i] = CreateUnitHPR('sea4302', army, x, y, z, 0, 0, 0)
             end
+            IssueGuard(self.Hologram, self)
         end
     end,
 
