@@ -30,7 +30,7 @@ UnitBlueprint {
         Health = 500,
         MaxHealth = 500,
     },
-    Description = '<LOC xsb3104_desc>Omni Sensor Suite',
+    Description = '<LOC sb3301_desc>Omni Sensor Array',
     Display = {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
@@ -114,18 +114,14 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        UnitName = '<LOC xsb3104_name>Aezesel',
+        UnitName = '<LOC ssb3303_name>Selaez',
         UnitWeight = 1,
-        UpgradesFrom = 'xsb3201',
     },
     Intel = {
         OmniRadius = 300,
         ReactivateTime = 5,
         ShowIntelOnSelect = true,
         VisionRadius = 25,
-    },
-    Interface = {
-        HelpText = '<LOC xsb3104_help>Omni Sensor Suite',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.25,

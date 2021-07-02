@@ -152,6 +152,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 175,
     Transport = {
         TransportClass = 3,
+        Class1Capacity = 4,
         Class2AttachSize = 2,
         Class3AttachSize = 4,
         DockingSlots = 4,

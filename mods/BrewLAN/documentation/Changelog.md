@@ -923,3 +923,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed the ID of the UEF observation satellite from `sea0002` to `sea3301`. The 000 number IDs have been bugging me, and they're going.
   * Changed the ID of the UEF counterintel satellite from `sea0003` to `sea4301`.
   * Changed the ID of the UEF ASF jammer dummy unit from `sea0004` to `sea4302`.
+  * Defined class 1 capacity in the disabled UEF mobile air staging unit.
+  * Bletchley Park: Fixed the Seraphim sensor having the name and description of the vanilla optics.
+  * Fixed the observation satellite having native water vision.
+  * Finished the texture and new walk animation for the new Hexatron model.
+
+  ### 2021-07-02
+
+  * Created a Hexatron death animation.
+  * Rebalanced the Hexatron for the new model, and renamed it to Triseptitron.
