@@ -1,33 +1,51 @@
 
-local timeDiv = 300
-local timeExp = 2
-local timeCo = .2
-local massDiv = 500000
-local massExp = 1.5
-local massCo = .5
-local massIncrement = 100
-local energyIncrement = 1000
+do
 
-function CalculateEnemyMass(self)
-    local totalmass = 0
-    for i, brain in ArmyBrains do
-        if not IsAlly(self:GetAIBrain():GetArmyIndex(), brain:GetArmyIndex()) then
-            totalmass = totalmass + brain:GetArmyStat("Economy_TotalProduced_Mass", 0.0).Value - brain:GetArmyStat("Economy_AccumExcess_Mass", 0.0).Value
+    local timeDiv = 300
+    local timeExp = 2
+    local timeCo = .2
+    local massDiv = 500000
+    local massExp = 1.5
+    local massCo = .5
+    local massIncrement = 100
+    local energyIncrement = 1000
+
+    function CalculateEnemyMass(self)
+        local totalmass = 0
+        for i, brain in ArmyBrains do
+            if not IsAlly(self:GetAIBrain():GetArmyIndex(), brain:GetArmyIndex()) then
+                totalmass = totalmass + brain:GetArmyStat("Economy_TotalProduced_Mass", 0.0).Value - brain:GetArmyStat("Economy_AccumExcess_Mass", 0.0).Value
+            end
+        end
+        --LOG("Total enemy mass = " .. totalmass)
+        return totalmass
+    end
+
+    local OldBrewLANExperimentalFactoryUnit = FactoryUnit--BrewLANExperimentalFactoryUnit
+
+    do
+        local ok, retclass = pcall(function()
+            if BrewLANExperimentalFactoryUnit then
+                return BrewLANExperimentalFactoryUnit
+            end
+        end)
+
+        if ok then
+            OldBrewLANExperimentalFactoryUnit = retclass
+        else
+            WARN("Gantry Hax module loaded before BrewLAN.")
         end
     end
-    --LOG("Total enemy mass = " .. totalmass)
-    return totalmass
-end
 
-do
-    local OldBrewLANExperimentalFactoryUnit = BrewLANExperimentalFactoryUnit
     BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
 
         AIStartCheats = function(self)
             ------------------------------------------------------------------------
             -- Default hax, from BrewLAN actual
             ------------------------------------------------------------------------
-            OldBrewLANExperimentalFactoryUnit.AIStartCheats(self)
+            if OldBrewLANExperimentalFactoryUnit.AIStartCheats then
+                OldBrewLANExperimentalFactoryUnit.AIStartCheats(self)
+            end
             ------------------------------------------------------------------------
             -- AIX cheats
             ------------------------------------------------------------------------
@@ -55,7 +73,9 @@ do
             ------------------------------------------------------------------------
             -- Default hax, from BrewLAN actual
             ------------------------------------------------------------------------
-            OldBrewLANExperimentalFactoryUnit.AICheats(self)
+            if OldBrewLANExperimentalFactoryUnit.AICheats then
+                OldBrewLANExperimentalFactoryUnit.AICheats(self)
+            end
             ------------------------------------------------------------------------
             -- AIX cheats
             ------------------------------------------------------------------------

@@ -932,3 +932,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Created a Hexatron death animation.
   * Rebalanced the Hexatron for the new model, and renamed it to Triseptitron.
+
+  ### 2021-07-03
+
+  * Fixed the normals and smoothing groups of the Iron Curtain.
+  * Versioned the wiki script now that it's mostly complete.
+
+  ### 2021-07-04
+
+  * Gantry hax modules now work regardless of the mod load order. The module will now no longer cause errors when loaded without BrewLAN.

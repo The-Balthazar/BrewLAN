@@ -31,7 +31,28 @@ end
 -- Experimental Factory class.
 -- Ported from the util file /BrewLAN/lua/GantryUtils.lua
 --------------------------------------------------------------------------------
-BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
+local OldBrewLANExperimentalFactoryUnit = FactoryUnit
+
+--------------------------------------------------------------------------------
+-- This is so that it will load changes from the Hax modules even if they are loaded before BrewLAN.
+--------------------------------------------------------------------------------
+do
+    local ok, retclass = pcall(function()
+        --if BrewLANExperimentalFactoryUnit then
+            return BrewLANExperimentalFactoryUnit
+        --end
+    end)
+
+    if ok then
+        OldBrewLANExperimentalFactoryUnit = retclass
+        WARN("BrewLAN detects a Gantry Hax module was loaded first. Picking up module changes.")
+    else
+        SPEW('Everything is as expected.')
+    end
+end
+
+
+BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
 
     ----------------------------------------------------------------------------
     -- RefreshBuildList
@@ -113,6 +134,10 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
             end
         end
         self:RequestRefreshUI()
+
+        if OldBrewLANExperimentalFactoryUnit.RefreshBuildList then
+            OldBrewLANExperimentalFactoryUnit.RefreshBuildList(self)
+        end
     end,
 
     ----------------------------------------------------------------------------
@@ -134,6 +159,10 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
                 end
             end, self)
         end
+
+        if OldBrewLANExperimentalFactoryUnit.AIStartOrders then
+            OldBrewLANExperimentalFactoryUnit.AIStartOrders(self)
+        end
     end,
 
     AIControl = function(self, unitBeingBuilt)
@@ -144,9 +173,15 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
             end
             aiBrain:BuildUnit(self, self:ChooseExpimental(), 1)
         end
+        if OldBrewLANExperimentalFactoryUnit.AIControl then
+            OldBrewLANExperimentalFactoryUnit.AIControl(self, unitBeingBuilt)
+        end
     end,
 
     ChooseExpimental = function(self)
+        if OldBrewLANExperimentalFactoryUnit.ChooseExpimental then
+            OldBrewLANExperimentalFactoryUnit.ChooseExpimental(self)
+        end
         if not self.RequestedUnits then self.RequestedUnits = {} end
         if not self.AcceptedRequests then self.AcceptedRequests = {} end
         if not self.BuiltUnitsCount then self.BuiltUnitsCount = 1 else self.BuiltUnitsCount = self.BuiltUnitsCount + 1 end
@@ -287,39 +322,45 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
                 Buff.ApplyBuff(self, 'GantryAIBaseBonus')
             end
         end
+        if OldBrewLANExperimentalFactoryUnit.AIStartCheats then
+            OldBrewLANExperimentalFactoryUnit.AIStartCheats(self)
+        end
     end,
 
     AICheats = function(self)
         --This is used by the Gantry Hax modules.
+        if OldBrewLANExperimentalFactoryUnit.AICheats then
+            OldBrewLANExperimentalFactoryUnit.AICheats(self)
+        end
     end,
 
     ----------------------------------------------------------------------------
     -- Function hooks
     ----------------------------------------------------------------------------
     OnCreate = function(self)
-        FactoryUnit.OnCreate(self)
+        OldBrewLANExperimentalFactoryUnit.OnCreate(self)
         self:RefreshBuildList()
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
         self:AIStartCheats()
-        FactoryUnit.OnStopBeingBuilt(self, builder, layer)
+        OldBrewLANExperimentalFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self:AIStartOrders()
     end,
 
     OnLayerChange = function(self, new, old)
-        FactoryUnit.OnLayerChange(self, new, old)
+        OldBrewLANExperimentalFactoryUnit.OnLayerChange(self, new, old)
         self:RefreshBuildList()
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
         self:AICheats()
-        FactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
+        OldBrewLANExperimentalFactoryUnit.OnStartBuild(self, unitBeingBuilt, order)
         self:RefreshBuildList()
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
-        FactoryUnit.OnStopBuild(self, unitBeingBuilt)
+        OldBrewLANExperimentalFactoryUnit.OnStopBuild(self, unitBeingBuilt)
         self:AIControl(unitBeingBuilt)
         self:RefreshBuildList()
         self:UnitControl(unitBeingBuilt)
@@ -341,7 +382,7 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
     -- Button hooks
     ----------------------------------------------------------------------------
     OnScriptBitSet = function(self, bit)
-        FactoryUnit.OnScriptBitSet(self, bit)
+        OldBrewLANExperimentalFactoryUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
             self.BLFactoryAirMode = true
             self:RefreshBuildList()
@@ -349,7 +390,7 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
     end,
 
     OnScriptBitClear = function(self, bit)
-        FactoryUnit.OnScriptBitClear(self, bit)
+        OldBrewLANExperimentalFactoryUnit.OnScriptBitClear(self, bit)
         if bit == 1 then
             self.BLFactoryAirMode = nil
             self:RefreshBuildList()
@@ -357,12 +398,12 @@ BrewLANExperimentalFactoryUnit = Class(FactoryUnit) {
     end,
 
     OnPaused = function(self)
-        FactoryUnit.OnPaused(self)
+        OldBrewLANExperimentalFactoryUnit.OnPaused(self)
         self:StopBuildFx(self:GetFocusUnit())
     end,
 
     OnUnpaused = function(self)
-        TLandFactoryUnit.OnUnpaused(self)
+        OldBrewLANExperimentalFactoryUnit.OnUnpaused(self)
         if self:IsUnitState('Building') then
             self:StartBuildFx(self:GetFocusUnit())
         end

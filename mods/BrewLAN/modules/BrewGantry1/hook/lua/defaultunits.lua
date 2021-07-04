@@ -1,11 +1,28 @@
 do
-    local OldBrewLANExperimentalFactoryUnit = BrewLANExperimentalFactoryUnit
+    local OldBrewLANExperimentalFactoryUnit = FactoryUnit
+
+    do
+        local ok, retclass = pcall(function()
+            --if BrewLANExperimentalFactoryUnit then
+                return BrewLANExperimentalFactoryUnit
+            --end
+        end)
+
+        if ok then
+            OldBrewLANExperimentalFactoryUnit = retclass
+        else
+            WARN("Gantry Hax module loaded before BrewLAN.")
+        end
+    end
+
     BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
         AICheats = function(self)
             ------------------------------------------------------------------------
             -- Default hax, from BrewLAN actual
             ------------------------------------------------------------------------
-            OldBrewLANExperimentalFactoryUnit.AICheats(self)
+            if OldBrewLANExperimentalFactoryUnit.AICheats then
+                OldBrewLANExperimentalFactoryUnit.AICheats(self)
+            end
             ------------------------------------------------------------------------
             -- AIX cheats
             ------------------------------------------------------------------------
