@@ -940,4 +940,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2021-07-04
 
-  * Gantry hax modules now work regardless of the mod load order. The module will now no longer cause errors when loaded without BrewLAN.
+  * Gantry hax modules now work regardless of the mod load order, and will now no longer cause errors when loaded without BrewLAN.
+
+  ### 2021-07-05
+
+  * New UEF submarine. Texture unfinished.
