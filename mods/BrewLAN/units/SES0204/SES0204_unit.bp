@@ -132,7 +132,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'sea',
         TechLevel = 'RULEUTL_Basic',
-        UnitName = '<LOC ses0204_name>Cactus',
+        UnitName = '<LOC ses0204_name>Cochrane',
         UnitWeight = 1,
     },
     Intel = {

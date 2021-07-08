@@ -945,3 +945,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-07-05
 
   * New UEF submarine. Texture unfinished.
+
+  ### 2021-07-08
+
+  * Finished the UEF T2 attack submarine.

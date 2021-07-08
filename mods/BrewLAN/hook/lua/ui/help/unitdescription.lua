@@ -96,6 +96,7 @@ Description['sas0219'] = "<LOC Unit_Description_BrewLAN_T2S001>Tech 2 naval cons
 Description['ses0219'] = "<LOC Unit_Description_BrewLAN_T2S002>Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
 Description['srs0219'] = "<LOC Unit_Description_BrewLAN_T2S002>Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
 Description['sss0219'] = "<LOC Unit_Description_BrewLAN_T2S002>Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
+Description['ses0204'] = "<LOC Unit_Description_BrewLAN_T2S003>Submerged anti-naval unit. Armed with a torpedo tube, anti-torpedo charges, and a flak artillery."
 
 --Tech 3 aircraft
 Description['ssa0305'] = "<LOC Unit_Description_BrewLAN_T3A001>Heavy gunship. Armed with Phasic autoguns and powerfull but short range AA weaponry."
