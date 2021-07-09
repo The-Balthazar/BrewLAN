@@ -52,9 +52,13 @@ function MakeWiki(moddir, modsidebarindex)
 
     local bdir = moddir.."/units"--"C:/BrewLAN"
     local modname
+    local modinfo = {}
     do
         local pass, msg = dofile(moddir..'/mod_info.lua')
         modname = name
+        modinfo.description = description
+        modinfo.author = author
+        modinfo.version = version
     end
 
     ----------------------------------------------------------------------------
@@ -96,18 +100,18 @@ function MakeWiki(moddir, modsidebarindex)
     local iconText = function(icon, text, text2)
         --icon = string.lower(icon)
         local icons = {
-            health = IconRepo..'health.png',
-            regen = IconRepo..'health.png',
-            shield = IconRepo..'shield.png',
+            Health = IconRepo..'health.png',
+            Regen = IconRepo..'health.png',
+            Shield = IconRepo..'shield.png',
 
-            energy = IconRepo..'energy.png',
-            mass = IconRepo..'mass.png',
-            time = IconRepo..'time.png',
+            Energy = IconRepo..'energy.png',
+            Mass = IconRepo..'mass.png',
+            Time = IconRepo..'time.png',
 
-            build = IconRepo..'build.png',
+            Build = IconRepo..'build.png',
 
-            fuel = IconRepo..'fuel.png',
-            attached = IconRepo..'attached.png',
+            Fuel = IconRepo..'fuel.png',
+            Attached = IconRepo..'attached.png',
         }
         if icons[icon] and text then
             return '<img src="'..icons[icon]..'" title="'..icon..'" /> '..text..(text2 or '')
@@ -428,7 +432,7 @@ function MakeWiki(moddir, modsidebarindex)
                 --table.insert(builders, )
                 local secs = bp.Economy.BuildTime / buildercats[cat][2]
                 bilst = bilst .. [[
-* ]]..iconText('time', string.format('%02d:%02d', math.floor(secs/60), math.floor(secs % 60) ) )..' ‒ '..iconText('energy', math.floor(bp.Economy.BuildCostEnergy / secs + 0.5), '/s')..' ‒ '..iconText('mass', math.floor(bp.Economy.BuildCostMass / secs + 0.5), '/s')..' — Built by '..buildercats[cat][1]..[[
+* ]]..iconText('Time', string.format('%02d:%02d', math.floor(secs/60), math.floor(secs % 60) ) )..' ‒ '..iconText('Energy', math.floor(bp.Economy.BuildCostEnergy / secs + 0.5), '/s')..' ‒ '..iconText('Mass', math.floor(bp.Economy.BuildCostMass / secs + 0.5), '/s')..' — Built by '..buildercats[cat][1]..[[
 
 ]]
             elseif string.find(cat, 'BUILTBY') then
@@ -494,7 +498,7 @@ function MakeWiki(moddir, modsidebarindex)
 
         local infoboxdata = {
             {'', "Note: Several units have stats defined at the<br />start of the game based on the stats of others."},
-            {'Source:', modname},
+            {'Source:', '<a href="'..string.gsub(modname, ':', '')..'">'..modname..'</a>'},
             {'Unit ID:', '<code>'..string.lower(bpid)..'</code>',},
             {'Faction:', (bp.General and bp.General.FactionName)},
             {''},
@@ -502,18 +506,18 @@ function MakeWiki(moddir, modsidebarindex)
                 (
                     not arrayfind(bp.Categories, 'INVULNERABLE')
                     and iconText(
-                        'health',
+                        'Health',
                         bp.Defense.MaxHealth,
                         (bp.Defense.RegenRate and ' (+'..bp.Defense.RegenRate ..'/s)')
                     )
                     or 'Invulnerable'
                 )
             },
-            --{'Regen:', (not arrayfind(bp.Categories, 'INVULNERABLE') and iconText('health', bp.Defense.RegenRate, '/s'))},
+            --{'Regen:', (not arrayfind(bp.Categories, 'INVULNERABLE') and iconText('Health', bp.Defense.RegenRate, '/s'))},
             {'Armour:', (not arrayfind(bp.Categories, 'INVULNERABLE') and bp.Defense.ArmorType and '<code>'..bp.Defense.ArmorType..'</code>')},
             {'Shield health:',
                 iconText(
-                    'shield',
+                    'Shield',
                     bp.Defense.Shield and bp.Defense.Shield.ShieldMaxHealth,
                     (bp.Defense.Shield and bp.Defense.Shield.ShieldRegenRate and ' (+'..bp.Defense.Shield.ShieldRegenRate..'/s)')
                 )
@@ -534,16 +538,16 @@ function MakeWiki(moddir, modsidebarindex)
                 (bp.Defense and bp.Defense.Shield and bp.Defense.Shield.PersonalShield and 'Personal shield<br />' or '')
             },
             {''},
-            {'Energy cost:', iconText('energy', bp.Economy and bp.Economy.BuildCostEnergy)},
-            {'Mass cost:', iconText('mass', bp.Economy and bp.Economy.BuildCostMass)},
-            {'Build time:', iconText('time-but-not', bp.Economy and bp.Economy.BuildTime, ' (<a href="#construction">Details</a>)')}, --I don't like the time icon for this, it looks too much and it's also not in real units
-            {'Maintenance cost:', iconText('energy', bp.Economy and bp.Economy.MaintenanceConsumptionPerSecondEnergy,'/s')},
+            {'Energy cost:', iconText('Energy', bp.Economy and bp.Economy.BuildCostEnergy)},
+            {'Mass cost:', iconText('Mass', bp.Economy and bp.Economy.BuildCostMass)},
+            {'Build time:', iconText('Time-but-not', bp.Economy and bp.Economy.BuildTime, ' (<a href="#construction">Details</a>)')}, --I don't like the time icon for this, it looks too much and it's also not in real units
+            {'Maintenance cost:', iconText('Energy', bp.Economy and bp.Economy.MaintenanceConsumptionPerSecondEnergy,'/s')},
             --{''},
-            {'Build rate:', iconText('build', bp.Economy and bp.Economy.BuildRate)},
-            {'Energy production:', iconText('energy', bp.Economy and bp.Economy.ProductionPerSecondEnergy, '/s')},
-            {'Mass production:', iconText('mass', bp.Economy and bp.Economy.ProductionPerSecondMass, '/s')},
-            {'Energy storage:', iconText('energy', bp.Economy and bp.Economy.StorageEnergy)},
-            {'Mass storage:', iconText('mass', bp.Economy and bp.Economy.StorageMass)},
+            {'Build rate:', iconText('Build', bp.Economy and bp.Economy.BuildRate)},
+            {'Energy production:', iconText('Energy', bp.Economy and bp.Economy.ProductionPerSecondEnergy, '/s')},
+            {'Mass production:', iconText('Mass', bp.Economy and bp.Economy.ProductionPerSecondMass, '/s')},
+            {'Energy storage:', iconText('Energy', bp.Economy and bp.Economy.StorageEnergy)},
+            {'Mass storage:', iconText('Mass', bp.Economy and bp.Economy.StorageMass)},
             {''},
             {'Vision radius:', (bp.Intel and bp.Intel.VisionRadius or 10)},
             {'Water vision radius:', (bp.Intel and bp.Intel.WaterVisionRadius or 10)},
@@ -571,7 +575,7 @@ function MakeWiki(moddir, modsidebarindex)
             {'Motion type:', bp.Physics.MotionType and ('<code>'..bp.Physics.MotionType..'</code>')},
             {'Buildable layers:', (bp.Physics.MotionType == 'RULEUMT_None') and BuildableLayer(bp.Physics)},
             {'Movement speed:', (bp.Air and bp.Air.MaxAirspeed or bp.Physics.MaxSpeed)},
-            {'Fuel:', (bp.Physics.FuelUseTime and iconText('fuel', string.format('%02d:%02d', math.floor(bp.Physics.FuelUseTime/60), math.floor(bp.Physics.FuelUseTime % 60)), '') )},
+            {'Fuel:', (bp.Physics.FuelUseTime and iconText('Fuel', string.format('%02d:%02d', math.floor(bp.Physics.FuelUseTime/60), math.floor(bp.Physics.FuelUseTime % 60)), '') )},
             {'Elevation:', (bp.Air and bp.Physics.Elevation)},
             {'Transport class:', (
                 (
@@ -580,11 +584,11 @@ function MakeWiki(moddir, modsidebarindex)
                             bp.General.CommandCaps.RULEUCC_CallTransport or bp.General.CommandCaps.RULEUCC_Dock
                         )
                     )
-                ) and iconText('attached',
+                ) and iconText('Attached',
                     bp.Transport and bp.Transport.TransportClass or 1
                 )
             ), 'The space this occupies on transports or on air staging. No units can accommodate greater than class 3.'},
-            {'Class 1 capacity:', iconText('attached', bp.Transport and bp.Transport.Class1Capacity), 'The number of class 1 units this can carry. For class 2 and 3 estimates, half or quarter this number; actual numbers will vary on how the attach points are arranged.'},
+            {'Class 1 capacity:', iconText('Attached', bp.Transport and bp.Transport.Class1Capacity), 'The number of class 1 units this can carry. For class 2 and 3 estimates, half or quarter this number; actual numbers will vary on how the attach points are arranged.'},
             {''},
             {'Weapons:', bp.Weapon and #bp.Weapon..' (<a href="#weapons">Details</a>)'},
         }
@@ -821,15 +825,15 @@ The estimated build times for this unit on the Steam/retail version of the game 
     </tr>
     <tr>
         <td align=right><strong>Energy cost:</strong></td>
-        <td>]]..iconText('energy', enh.BuildCostEnergy or 'error:energy')..[[</td>
+        <td>]]..iconText('Energy', enh.BuildCostEnergy or 'error:energy')..[[</td>
     </tr>
     <tr>
         <td align=right><strong>Mass cost:</strong></td>
-        <td>]]..iconText('mass', enh.BuildCostMass or 'error:mass')..[[</td>
+        <td>]]..iconText('Mass', enh.BuildCostMass or 'error:mass')..[[</td>
     </tr>
     <tr>
         <td align=right><strong>Build time:</strong></td>
-        <td>]]..iconText('time', enh.BuildTime and bp.Economy and bp.Economy.BuildRate and math.ceil(enh.BuildTime / bp.Economy.BuildRate) or 'error:time')..[[ seconds</td>
+        <td>]]..iconText('Time', enh.BuildTime and bp.Economy and bp.Economy.BuildRate and math.ceil(enh.BuildTime / bp.Economy.BuildRate) or 'error:time')..[[ seconds</td>
     </tr>
     <tr>
         <td align=right><strong>Prerequisite:</strong></td>
@@ -910,7 +914,7 @@ The estimated build times for this unit on the Steam/retail version of the game 
                 end
                 table.insert(weapontable, {'Firing cost:',
                     iconText(
-                        'energy',
+                        'Energy',
                         wep.EnergyRequired and wep.EnergyRequired ~= 0 and
                         (
                             wep.EnergyRequired ..
@@ -982,7 +986,7 @@ The estimated build times for this unit on the Steam/retail version of the game 
                 if bp.Veteran[lev] then
                     bodytext = bodytext .. [[
 
-]]..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
+]]..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
                     for buffname, buffD in pairs(bp.Buffs) do
                         if buffD[lev] then
                             if buffname == 'Regen' then
@@ -1007,7 +1011,7 @@ The estimated build times for this unit on the Steam/retail version of the game 
         -- Sidebar stuff
         ------------------------------------------------------------------------
         if not sidebarData[modsidebarindex] then
-            sidebarData[modsidebarindex] = {modname, {}}
+            sidebarData[modsidebarindex] = {modname, {}, modinfo}
         end
 
         local goodfactions = {
@@ -1045,14 +1049,30 @@ end
 do
     local suc, msg = pcall(function()
         print("starting sidebar stuff")
-        for modindex, moddata in ipairs(sidebarData) do
-            local modname = moddata[1]
-            for faction, unitarray in pairs(moddata[2]) do
-                table.sort(unitarray, function(a,b)
-                    return a[3] < b[3]
-                end)
+
+        local sortData = function(sort)
+            for modindex, moddata in ipairs(sidebarData) do
+                local modname = moddata[1]
+                for faction, unitarray in pairs(moddata[2]) do
+                    table.sort(unitarray, function(a,b)
+                        --return a[3] < b[3]
+                        local g
+
+                        if sort == 'TechDescending-DescriptionAscending' then
+                            g = { ['Experi'] = 1, ['Tech 3'] = 2, ['Tech 2'] = 3, ['Tech 1'] = 4 }
+                            return (g[string.sub(a[3], 1, 6)] or 5)..a[3] < (g[string.sub(b[3], 1, 6)] or 5)..b[3]
+
+                        elseif sort == 'TechAscending-IDAscending' then
+                            g = { ['Tech 1'] = 1, ['Tech 2'] = 2, ['Tech 3'] = 3, ['Experi'] = 4 }
+                            return (g[string.sub(a[3], 1, 6)] or 5)..a[1] < (g[string.sub(b[3], 1, 6)] or 5)..b[1]
+
+                        end
+                    end)
+                end
             end
         end
+
+        sortData('TechDescending-DescriptionAscending')
 
         local sidebarstring = ''
 
@@ -1061,7 +1081,7 @@ do
 
             sidebarstring = sidebarstring .. [[
 <details markdown="1">
-<summary>]]..modname..[[</summary>
+<summary>[Show] <a href="]]..string.gsub(modname, ':', '')..[[">]]..modname..[[</a></summary>
 <p>
 <table>
 <tr>
@@ -1101,6 +1121,54 @@ do
         local md = io.open(WikiRepoDir..'/_Sidebar.md', "w")
         md:write(sidebarstring)
         md:close()
+
+        sortData('TechAscending-IDAscending')
+
+        for modindex, moddata in ipairs(sidebarData) do
+            local modname = moddata[1]
+            local modinfo = moddata[3]
+            local mulString = '***'..modname..'*** is a mod by '..(modinfo.author or 'an unknown author')..'. Its mod menu description is:'..[[
+
+<blockquote>]]..(modinfo.description or 'No description.')..[[</blockquote>
+Version ]]..modinfo.version..[[ contains the following units:
+]]
+
+            for faction, unitarray in pairs(moddata[2]) do
+                local curtechi = 0
+                local thash = {
+                    ['Tech 1'] = {1, 'Tech 1'},
+                    ['Tech 2'] = {2, 'Tech 2'},
+                    ['Tech 3'] = {3, 'Tech 3'},
+                    ['Experi'] = {4, 'Experimental'},
+                    ['Other']  = {5, 'Other'},
+                }
+
+                mulString = mulString .. [[
+
+## ]]..faction..[[
+
+]]
+                for unitI, unitData in ipairs(unitarray) do
+                    local tech = thash[string.sub(unitData[3], 1, 6)] or thash['Other']
+                    if tech[1] > curtechi then
+                        curtechi = tech[1]
+                        mulString = mulString ..[[
+
+### ]]..tech[2]..[[
+
+]]
+                    end
+
+                    mulString = mulString .. [[<a title="]]..unitData[2]..[[" href="../wiki/]]..unitData[1]..[["><img src="]]..unitIconRepo..unitData[1]..[[_icon.png" /></a>
+]]
+                end
+            end
+
+            md = io.open(WikiRepoDir..'/'..string.gsub(modname, ':', '')..'.md', "w")
+            md:write(mulString)
+            md:close()
+
+        end
 
         print("Sidebar done")
     end)
