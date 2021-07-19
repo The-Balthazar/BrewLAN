@@ -45,7 +45,7 @@ function RemoteViewing(SuperClass)
             local aiBrain = self:GetAIBrain()
             local targettable = aiBrain:GetUnitsAroundPoint(categories.SELECTABLE, location, 10)
             local targetunit = targettable[1]
-            if table.getn(targettable) > 1 then
+            if targettable[2] then
                 local dist = 100
                 for i, target in targettable do
                     if IsUnit(target) then
@@ -159,10 +159,10 @@ function RemoteViewing(SuperClass)
         end,
 
         DisableResourceMonitor = function(self)
-            WaitSeconds(0.5)
+            coroutine.yield(6)
             local fraction = self:GetResourceConsumed()
             while fraction == 1 do
-                WaitSeconds(0.5)
+                coroutine.yield(6)
                 fraction = self:GetResourceConsumed()
             end
             if self.RemoteViewingData.IntelButton then
@@ -174,7 +174,7 @@ function RemoteViewing(SuperClass)
 
         EnableResourceMonitor = function(self)
             local recharge = self:GetBlueprint().Intel.ReactivateTime or 10
-            WaitSeconds(recharge)
+            coroutine.yield(recharge*10+1)
             self.RemoteViewingData.DisableCounter = self.RemoteViewingData.DisableCounter - 1
             self:CreateVisibleEntity()
         end,

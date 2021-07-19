@@ -45,6 +45,7 @@ local unitIconRepo = IconRepo.."units/"
 --------------------------------------------------------------------------------
 
 local sidebarData = {}
+local categoryData = {}
 
 --------------------------------------------------------------------------------
 -- The beans
@@ -154,6 +155,7 @@ function MakeWiki(moddir, modsidebarindex)
         RULEUMT_Water              = {'naval',               {                      Water = 8}},
         RULEUMT_SurfacingSub       = {'submarine',  {Sub = 4,                       Water = 8}},
         RULEUMT_None               = {'structure',  {Sub = 4, Land = 1, Seabed = 2, Water = 8}},
+        --RULEUMT_Special            = {'',{}}, -- Defined in the engine, but reports malformed if you try to use it
     }
 
     local IsDeathWeapon = function(wep)
@@ -345,7 +347,7 @@ function MakeWiki(moddir, modsidebarindex)
         ['Reclaims'] = 'Can harvest entities for resources; this damages them if they have health',
         ['Repairs'] = 'Can fix damage on other units at the cost of resources',
         ['Sacrifice'] = 'Can destroy itself to contribute to a build',
-        ['Satellite Uplink'] = 'Prevents satellite from receiving damage from flying unguided',  -- BrewLAN
+        ['Satellite Uplink'] = 'Prevents satellites from receiving damage from flying unguided',  -- BrewLAN
         ['Satellite Capacity: +0'] = 'Doesn\'t contribute towards satellite population capacity',-- BrewLAN
         ['Satellite Capacity: +1'] = 'Contributes 1 towards the maximum deployable satellites',  -- BrewLAN
         ['Satellite Capacity: +2'] = 'Contributes 2 towards the maximum deployable satellites',  -- BrewLAN
@@ -590,6 +592,7 @@ function MakeWiki(moddir, modsidebarindex)
             ), 'The space this occupies on transports or on air staging. No units can accommodate greater than class 3.'},
             {'Class 1 capacity:', iconText('Attached', bp.Transport and bp.Transport.Class1Capacity), 'The number of class 1 units this can carry. For class 2 and 3 estimates, half or quarter this number; actual numbers will vary on how the attach points are arranged.'},
             {''},
+            {'Misc radius:', arrayfind(bp.Categories, 'OVERLAYMISC') and bp.AI and bp.AI.StagingPlatformScanRadius, 'Defined by the air staging radius value. Often used to indicate things without a dedicated range rings.' },
             {'Weapons:', bp.Weapon and #bp.Weapon..' (<a href="#weapons">Details</a>)'},
         }
 
@@ -1003,10 +1006,6 @@ The estimated build times for this unit on the Steam/retail version of the game 
 ]]
         end
 
-
-
-        md:write(headerstring..infoboxstring..bodytext)
-        md:close()
         ------------------------------------------------------------------------
         -- Sidebar stuff
         ------------------------------------------------------------------------
@@ -1029,6 +1028,68 @@ The estimated build times for this unit on the Steam/retail version of the game 
 
         table.insert(sidebarData[modsidebarindex][2][faction], {bpid, LOC(bp.General.UnitName) or bpid, unitTdesc or bpid})
 
+        local categoriesForFooter = {
+            'UEF',
+            'AEON',
+            'CYBRAN',
+            'SERAPHIM',
+
+            'TECH1',
+            'TECH2',
+            'TECH3',
+            'EXPERIMENTAL',
+
+            'MOBILE',
+
+            'AIR',
+            'LAND',
+            'NAVAL',
+
+            'HOVER',
+
+            'ECONOMIC',
+
+            'BOMBER',
+            'TORPEDOBOMBER',
+            'MINE',
+            'COMMAND',
+            'SUBCOMMANDER',
+            'ENGINEER',
+            'FIELDENGINEER',
+            'FACTORY',
+            'ARTILLERY',
+
+            'STRUCTURE',
+        }
+
+        bodytext = bodytext..[[
+
+<table align=center><td>
+Categories : ]]
+
+        local cattext = ''
+
+        for i, cat in ipairs(categoriesForFooter) do
+            if arrayfind(bp.Categories, cat) then
+
+                if not categoryData[cat] then
+                    categoryData[cat] = {}
+                end
+
+                table.insert(categoryData[cat], {bpid, LOC(bp.General.UnitName) or bpid, unitTdesc or bpid})
+
+                if cattext ~= '' then
+                    cattext = cattext..' · '
+                end
+
+                cattext = cattext..'<a href="_categories.'..cat..'">'..cat..'</a>'
+            end
+        end
+        cattext = cattext..[[
+
+]]
+        md:write(headerstring..infoboxstring..bodytext..cattext)
+        md:close()
     end
 
     print("Complete")
@@ -1050,9 +1111,9 @@ do
     local suc, msg = pcall(function()
         print("starting sidebar stuff")
 
-        local sortData = function(sort)
-            for modindex, moddata in ipairs(sidebarData) do
-                local modname = moddata[1]
+        local sortData = function(sorttable, sort)
+            for modindex, moddata in ipairs(sorttable) do
+                --local modname = moddata[1]
                 for faction, unitarray in pairs(moddata[2]) do
                     table.sort(unitarray, function(a,b)
                         --return a[3] < b[3]
@@ -1072,7 +1133,7 @@ do
             end
         end
 
-        sortData('TechDescending-DescriptionAscending')
+        sortData(sidebarData, 'TechDescending-DescriptionAscending')
 
         local sidebarstring = ''
 
@@ -1122,7 +1183,9 @@ do
         md:write(sidebarstring)
         md:close()
 
-        sortData('TechAscending-IDAscending')
+        print("Sidebar done")
+
+        sortData(sidebarData, 'TechAscending-IDAscending')
 
         for modindex, moddata in ipairs(sidebarData) do
             local modname = moddata[1]
@@ -1170,7 +1233,41 @@ Version ]]..modinfo.version..[[ contains the following units:
 
         end
 
-        print("Sidebar done")
+        print("Mod-pages done")
+
+        for cat, data in pairs(categoryData) do
+            table.sort(data, function(a,b)
+                g = { ['Tech 1'] = 1, ['Tech 2'] = 2, ['Tech 3'] = 3, ['Experi'] = 4 }
+                return (g[string.sub(a[3], 1, 6)] or 5)..a[1] < (g[string.sub(b[3], 1, 6)] or 5)..b[1]
+            end)
+
+            local catstring = 'Units with the <code>'..cat..[[</code> category.
+<table>
+]]
+            for i, unitData in ipairs(data) do
+                catstring = catstring .. [[
+<tr><td><a href="]]..unitData[1]..[["><img src="]]..unitIconRepo..unitData[1]..[[_icon.png" width="21px" /></a><td><code>]]..unitData[1]..[[</code></td><td><a href="]]..unitData[1]..[[">]]
+                if unitData[1] ~= unitData[2] then
+                    catstring = catstring..unitData[2]
+                    if unitData[1] ~= unitData[3] then
+                        catstring = catstring..[[: ]]
+                    end
+                end
+                if unitData[1] ~= unitData[3] then
+                    catstring = catstring..unitData[3]
+                end
+                catstring = catstring..[[</a>
+]]
+            end
+
+            md = io.open(WikiRepoDir..'/_categories.'..cat..'.md', "w")
+            md:write(catstring)
+            md:close()
+
+
+        end
+
+        print("Categories done")
     end)
     if not suc then print(msg) end
 end

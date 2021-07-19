@@ -134,7 +134,7 @@ SAB5401 = Class(AStructureUnit) {
 
         --If someone wanted to check team, that would go here. I don't though.
         --Prevent moving exractors and hydrocarbons. That's a can of exploitable worms right there.
-        return unitbp.Physics.BuildRestriction == "RULEUBR_None" -- alternatives are RULEUBR_OnHydrocarbonDeposit and RULEUBR_OnMassDeposit
+        return unitbp.Physics.BuildRestriction == "RULEUBR_None" -- alternatives are RULEUBR_OnHydrocarbonDeposit and RULEUBR_OnMassDeposit and also RULEUBR_Bridge, but who's heard of that
     end,
 
     WarpTargetCheck = function(self, unit, unitbp, target, oldpos, location)

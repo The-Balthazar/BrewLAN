@@ -164,7 +164,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.7,
     SelectionThickness = 0.25,
     SizeX = 0.5,
-    SizeY = 0.45,
+    SizeY = 0.65,
     SizeZ = 3,
     StrategicIconName = 'icon_sub2_antinavy',
     StrategicIconSortPriority = 165,
@@ -307,7 +307,7 @@ UnitBlueprint {
             Damage = 2,
             DamageType = 'Normal',
             DepthCharge = {
-                Radius = 5,
+                Radius = 4,
             },
             DisplayName = 'Smart Charge AntiTorpedo',
             FireTargetLayerCapsTable = {
@@ -325,13 +325,8 @@ UnitBlueprint {
             ProjectileId = '/projectiles/TIMAntiTorpedo01/TIMAntiTorpedo01_proj.bp',
             ProjectileLifetime = 2.5,
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'Niode_L',
-                        'Niode_R',
-                    },
-                    RackBone = 0,
-                },
+                { MuzzleBones = {'Niode_L'}, RackBone = 0 },
+                { MuzzleBones = {'Niode_R'}, RackBone = 0 },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,

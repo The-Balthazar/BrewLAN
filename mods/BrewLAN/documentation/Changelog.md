@@ -949,3 +949,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-07-08
 
   * Finished the UEF T2 attack submarine.
+
+  ### 2021-07-12
+
+  * Mild optimisation to the Seraphim optics and gantry button hook.
+  * Slightly reduced the effectiveness of Cochrane anti-torpedo.
+
+  ### 2021-07-19
+
+  * Added a Cybran missile tank.

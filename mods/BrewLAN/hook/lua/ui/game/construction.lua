@@ -66,7 +66,7 @@ do
                     else
                         OldOnClickHandler(button, modifiers, unpack(arg))
                     end
-                elseif item.type == 'queuestack' then
+                else--[[if item.type == 'queuestack' then
                     OldOnClickHandler(button, modifiers, unpack(arg))
                 elseif item.type == 'unitstack' then
                     OldOnClickHandler(button, modifiers, unpack(arg))
@@ -74,7 +74,7 @@ do
                     OldOnClickHandler(button, modifiers, unpack(arg))
                 elseif item.type == 'templates' then
                     OldOnClickHandler(button, modifiers, unpack(arg))
-                elseif item.type == 'enhancement' then
+                elseif item.type == 'enhancement' then]]
                     OldOnClickHandler(button, modifiers, unpack(arg))
                 end
             else
