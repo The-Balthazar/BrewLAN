@@ -958,3 +958,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-07-19
 
   * Added a Cybran missile tank.
+
+  ### 2021-07-20
+
+  * Fixed treads of missile tank, and added target leading to missile.
