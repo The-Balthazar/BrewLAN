@@ -5,6 +5,7 @@ local CDFProtonCannonWeapon = CybranWeaponsFile.CDFProtonCannonWeapon
 local CAANanoDartWeapon = CybranWeaponsFile.CAANanoDartWeapon
 local CIFSmartCharge = CybranWeaponsFile.CIFSmartCharge
 CybranWeaponsFile = nil
+local meshfile = string.gsub(__blueprints.srl0312.Source, 'units/srl0312/srl0312_unit.bp', '') .. 'projectiles/ciftoxmissiletactical01/ciftoxmissiletactical01_mesh'
 
 SRL0312 = Class(CLandUnit) {
     Weapons = {
@@ -12,7 +13,8 @@ SRL0312 = Class(CLandUnit) {
         AntiAir = Class(CAANanoDartWeapon) {
             CreateProjectileForWeapon = function(self, bone)
                 local projectile = CAANanoDartWeapon.CreateProjectileForWeapon(self, bone)
-                projectile:SetMesh('/projectiles/cifmissiletactical01/cifmissiletactical01_mesh')
+                projectile:SetMesh(meshfile)
+                projectile:SetScale(__blueprints.srl0312.Display.UniformScale)
                 return projectile
             end,
         },
@@ -33,7 +35,6 @@ SRL0312 = Class(CLandUnit) {
             Rack:SetWeaponEnabled(true)
             --self:SetWeaponEnabledByLabel('MissileRack', true)
             self:SetWeaponEnabledByLabel('AntiAir', false)
-            --self:GetWeaponManipulatorByLabel('GroundGun'):SetHeadingPitch( self:GetWeaponManipulatorByLabel('AAGun'):GetHeadingPitch() )
         end
     end,
 
@@ -45,7 +46,6 @@ SRL0312 = Class(CLandUnit) {
             Rack:SetWeaponEnabled(false)
             --self:SetWeaponEnabledByLabel('MissileRack', false)
             self:SetWeaponEnabledByLabel('AntiAir', true)
-            --self:GetWeaponManipulatorByLabel('AAGun'):SetHeadingPitch( self:GetWeaponManipulatorByLabel('GroundGun'):GetHeadingPitch() )
         end
     end,
 }

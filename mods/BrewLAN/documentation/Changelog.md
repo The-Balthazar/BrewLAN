@@ -961,4 +961,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2021-07-20
 
-  * Fixed treads of missile tank, and added target leading to missile.
+  * Fixed treads of missile tank, ~~and added target leading to missile.~~
+
+  ### 2021-07-21
+
+  * Fixed the anti-missile flares on the Helios being close to useless.
+  * Toxotai missiles now track moving targets.

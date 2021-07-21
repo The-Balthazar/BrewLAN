@@ -182,7 +182,7 @@ UnitBlueprint {
     SelectionCenterOffsetX = 0,
     SelectionCenterOffsetZ = -0.15,
     SelectionThickness = 0.36,
-    SizeSphere = 3.1415,
+    SizeSphere = 3.135,
     SizeX = 1,
     SizeY = 0.3,
     SizeZ = 1,

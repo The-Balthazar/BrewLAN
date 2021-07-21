@@ -194,7 +194,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,
-            ProjectileId = '/projectiles/CIFMissileTactical01/CIFMissileTactical01_proj.bp',
+            ProjectileId = '/mods/BrewLAN/projectiles/CIFToxMissileTactical01/CIFToxMissileTactical01_proj.bp',
             ProjectileLifetime = 20,
             ProjectilesPerOnFire = 1,
             RackBones = {

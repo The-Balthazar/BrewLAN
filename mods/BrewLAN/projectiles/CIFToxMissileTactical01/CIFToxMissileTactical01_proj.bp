@@ -1,0 +1,57 @@
+ProjectileBlueprint {
+    Audio = {
+        ImpactTerrain = Sound { Bank = 'Impacts', Cue = 'Impact_Land_Gen_CYBRAN',     LodCutoff = 'Weapon_LodCutoff' },
+          ImpactWater = Sound { Bank = 'Impacts', Cue = 'Impact_Water_Splash_CYBRAN', LodCutoff = 'Weapon_LodCutoff' },
+               Impact = Sound { Bank = 'Impacts', Cue = 'CYB_Expl_Med_Impact',        LodCutoff = 'Weapon_LodCutoff' },
+    },
+    Categories = {
+        'CYBRAN',
+        'PROJECTILE',
+        'INDIRECTFIRE',
+        'TACTICAL',
+        'MISSILE',
+        'NOSPLASHDAMAGE',
+    },
+    Defense = {
+        Health = 1,
+        MaxHealth = 1,
+    },
+    Display = {
+        CameraFollowTimeout = 2,
+        CameraFollowsProjectile = true,
+        ImpactEffects = {
+            Type = 'Medium02',
+        },
+        Mesh = {
+            LODs = {
+                {
+                    LODCutoff = 150,
+                    ShaderName = 'TMeshNoLighting',
+                    AlbedoName = '../../units/srl0312/srl0312_albedo.dds',
+                    NormalsName = '../../units/srl0312/srl0312_normalsts.dds',
+                    SpecularName = '../../units/srl0312/srl0312_specteam.dds',
+                },
+            },
+        },
+        StrategicIconSize = 2,
+        UniformScale = 0.05,
+    },
+    General = {
+        Category = 'Missile',
+        Faction = 'Cybran',
+    },
+    Physics = {
+        Acceleration = 3,
+        DestroyOnWater = true,
+        InitialSpeed = 3,
+        MaxSpeed = 12,
+        RotationalVelocity = 0,
+        RotationalVelocityRange = 0,
+        LeadTarget = true,
+        TrackTarget = true,
+        --TrackTargetGround = true,
+        TurnRate = 0,
+        UseGravity = false,
+        VelocityAlign = true,
+    },
+}
