@@ -1056,6 +1056,7 @@ The estimated build times for this unit on the Steam/retail version of the game 
             'SUBCOMMANDER',
             'ENGINEER',
             'FIELDENGINEER',
+            'SILO',
             'FACTORY',
             'ARTILLERY',
 

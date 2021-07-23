@@ -127,7 +127,7 @@ Unit_Description_BrewLAN_T1U001="Lekki obiekt inscenizacji powietrza. Naprawy i 
 sl0119_desc="Inżynier polowy"
 sal0119_desc="Inżynier obrony"
 sel0119_name="Wally."
-sal0119_name="Vivifier."
+sal0119_name="Vivifier"
 srl0119_name="Outy."
 ssl0119_name="Iymaz"
 Unit_Description_BrewLAN_T1L001="Tech 1 amfibii budowa, naprawa, przechwytywanie, rekultywacja i jednostka warstwy kopalnianej. Jest wyposażony w niewielką broń i sprzęt przeciwnowo-wywiadowczy. Może zbudować specjalistyczne obrony."
@@ -136,7 +136,7 @@ Unit_Description_BrewLAN_T1L003="Tech 1 amfibii budowa, naprawa, przechwytywanie
 
 ss0119_desc="Łódź inżynieria polowa"
 ses0119_name="Klasa Mendy"
-srs0119_name="Klasa Franklin."
+srs0119_name="Klasa Franklin"
 Unit_Description_BrewLAN_T1S001="Tech 1 konstrukcja, naprawa, przechwytywanie, rekultywacja i jednostka warstwy kopalnianej."
 
 ----------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ Unit_Description_BrewLAN_T2D004="Mój terenowy uzbrojony w pełną głowę jądr
 Unit_Description_BrewLAN_T2D002="Generuje osłonę ochronną wokół jednostek i struktur w ramach jej promienia. Tarcza może zostać zaktualizowana dwukrotnie."
 Unit_Description_BrewLAN_T2D003="Generuje ciężką tarczę wokół jednostek i struktur w ramach jej promienia."
 
-sbui5210="Sekcja ciężka ściana."
+sbui5210="Sekcja ciężka ściana"
 seb5210_name="General Destruction Impass."
 srb5210_name="Przegroda"
 ssb5210_name="Haas-haas."
@@ -204,6 +204,10 @@ ses0219_name="Fixxie Class."
 srs0219_name="Klasa Barwick."
 Unit_Description_BrewLAN_T2S001="TECH 2 Budowa morska, naprawa, przechwytywanie i rekultywacja. Wyposażony w jedną broń AA."
 Unit_Description_BrewLAN_T2S002="Tech 2 konstrukcja morska, naprawa, przechwytywanie, ponowne obliczanie i jednostka warstwy kopalnianej."
+
+ses0204_desc="Atakować podwodną"
+ses0204_name="Cochrane."
+Unit_Description_BrewLAN_T2S003="Zanurzona jednostka przeciwawalna. Uzbrojony w rurkę torpedową, opłaty anty-torpedowe i artyleria flakowa."
 
 sea0201_desc="Samolot Recon."
 sea0201_name="UX Dragonlady."
@@ -299,14 +303,19 @@ Unit_Description_BrewLAN_T3A012="System obserwacji oparty na satelicie. Zapewnia
 
 sea4301_desc="Satellita przeciwdziała."
 sea4301_name="Vaxis."
-Unit_Description_BrewLAN_T3A013="System Coatellite Counterigence System. Powoduje dużą liczbę fałszywych sygnałów radarowych z cechami lotów lotniczymi, które pojawiają się pod nim. Nie ma zdolności do zgromadzenia inteligencji."
+Unit_Description_BrewLAN_T3A013="System Coatellite Counterigence System. Powoduje dużą liczbę sygnałów radarowych fałszywych radarowych z charakterystykami lotów lotniczymi przedwczesnymi w formacji strażnika, aby pojawić się pod nią. Nie ma zdolności do zgromadzenia inteligencji."
+--Są one widoczne tylko w menu Cheat i Wiki
+sea4302_desc="Fałszywy sygnał radarowy."
+sea4302_name="Asfaux."
+--Jest to widoczne tylko na wiki
+Unit_Description_BrewLAN_T3A014="Fałszywe sygnały radarowe z charakterystyką lotów lotniczymi przedwczesnością. Pojawia się jako sześć blichów do radaru i jednego blip do czujników OMNI."
 
 --Alternatywy snajperskie
 sel0320_desc="Mobilna łączenie satelitarne"
 sel0320_name="Archimedes."
 srl0318_name="ARACME."
 Unit_Description_BrewLAN_T3L003="Mobilny pojazd z góry łącza satelitarnego. Oznacza cele na ogień laser orbitalny."
-Unit_Description_BrewLAN_T3L013="Mobile SpiderBot. Uzbrojony w broń belki w dużej mierze."
+Unit_Description_BrewLAN_T3L013="Mobile Spiderbot. Uzbrojony w broń belki w dużej mierze."
 
 sel0321_desc="Mobilna obrona rakiet strategicznych"
 sel0321_name="Aster"
@@ -433,8 +442,13 @@ srl0316_name="Operacyjny"
 Unit_Description_BrewLAN_T3L010="Mobile Camouflowany generator stealth. Ukrywa pobliskie jednostki z radaru i sonaru. Widoczne tylko do Omni."
 
 srl0311_desc="Mobilna platforma rakietowa"
-srl03ll_name="Heksatron"
+--srl03ll_name="Heksatron"
+srl0311_name="Tryszeptitron."
 Unit_Description_BrewLAN_T3L011="Mobile Multiple Rocket Launcher. Długi czas ładowania. Zaprojektowany do przytłoczenia wrogich tarcz i taktycznych obronu rakietowe z dużymi salwosami."
+
+srl0312_desc="Zbiornik rakietowy"
+srl0312_name="Toksotai."
+Unit_Description_BrewLAN_T3L024="Zbiornik stealth. Uzbrojony z bliźniaczymi armatami protonowymi, podwójnym wyrzutnią rakietową i obroną torped."
 
 ss0319_desc="Statek inżynierii polowej"
 ses0319_name="Patch Class."

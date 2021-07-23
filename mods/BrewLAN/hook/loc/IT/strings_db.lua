@@ -68,12 +68,12 @@ tooltipbrewlan0030="Mentre è attivo, questa unità ridurrà dinamicamente il su
 tooltipbrewlan0031="Toggle Weapon Priority."
 tooltipbrewlan0032="Toggle tra priorità della priorità del bersaglio anti-aria e priorità del bersaglio missilistico tattico."
 
---Scheda Enhancement Panopticon.
+--Scheda Enhancement Panopticon
 tooltipbrewlan0033="Personalizza [Array]"
 
 --Zmara Tall Mode Toggle
 tooltipbrewlan0035="OverExtend Toggle."
-tooltipbrewlan0036="Aumenta le gamme di armi dirette del fuoco ma sacrifica la velocità del movimento e costano energia mentre è attiva."
+tooltipbrewlan0036="Aumenta le gamme di armi dirette del fuoco ma sacrifica la velocità del movimento e costano energia mentre è attivo."
 
 --------------------------------------------------------------------------------
 -- Supporta i miglioramenti del comandante
@@ -205,6 +205,10 @@ srs0219_name="Classe Barwick."
 Unit_Description_BrewLAN_T2S001="Tech 2 Costruzione navale, riparazione, cattura e unità di recupero. Dotato di un'arma a AA singola."
 Unit_Description_BrewLAN_T2S002="Tech 2 Costruzione navale, riparazione, acquisizione, recupero e unità del layer."
 
+ses0204_desc="Attacco sottomarino"
+ses0204_name="Cochrane"
+Unit_Description_BrewLAN_T2S003="Unità anti-navale sommersa. Armato con un tubo di siluro, accuse anti-siluri e un'artiglieria flak."
+
 sea0201_desc="Recon Plane."
 sea0201_name="UX DRAGONLADY."
 ssa0201_name="Selia."
@@ -299,7 +303,12 @@ Unit_Description_BrewLAN_T3A012="Sistema di osservazione satellitare. Fornisce i
 
 sea4301_desc="Satellite con controsuazione"
 sea4301_name="Vaxis."
-Unit_Description_BrewLAN_T3A013="Sistema di controsenzi del satellite. Provoca un gran numero di segnali radar falsi con caratteristiche di volo dei combattenti di superiorità aerea per apparire sotto di esso. Non ha alcuna capacità per la raccolta dell'intelligenza."
+Unit_Description_BrewLAN_T3A013="Sistema di controsenzi del satellite. Cause un gran numero di segnali radar falsi con caratteristiche di volo dei combattenti di superiorità aerea in una formazione di guardia per apparire sotto. Non ha alcuna capacità per la raccolta dell'intelligenza."
+--Questi sono visti solo sul menu cheat e sul wiki
+sea4302_desc="Segnale falso radar"
+sea4302_name="Asfaux."
+--Questo è visto solo sul wiki
+Unit_Description_BrewLAN_T3A014="Falsi segnali radar con caratteristiche di volo dei combattenti di superiorità aerea. Appare come sei Blips al radar e un Blip to Omni Sensori."
 
 --Alternative di cecchino.
 sel0320_desc="Mobile satellite uplink."
@@ -403,7 +412,7 @@ sal0322_name="Fiamma Lotus."
 Unit_Description_BrewLAN_T3L021="Generatore di scudo mobile."
 
 sel0322_desc="Generatore di scudo mobile"
-sel0322_name="Ella."
+sel0322_name="Ella"
 Unit_Description_BrewLAN_T3L022="Generatore di scudo mobile."
 
 --Mobile Anti-Air
@@ -433,8 +442,13 @@ srl0316_name="Operatore"
 Unit_Description_BrewLAN_T3L010="Generatore stealth mobile camuffato. Nasconde le unità vicine dal radar e dal sonar. Visibile solo a Omni."
 
 srl0311_desc="Piattaforma di razzo mobile"
-srl03ll_name="Hexatron."
+--srl03ll_name="Hexatron."
+srl0311_name="Trisetitrone."
 Unit_Description_BrewLAN_T3L011="Mobile Multiple Rocket Launcher. Tempo di ricarica lungo. Progettato per sopraffare scudi nemici e difese missilistiche tattiche con grandi salvos."
+
+srl0312_desc="Serbatoio missilistico"
+srl0312_name="Toxotai"
+Unit_Description_BrewLAN_T3L024="Serbatoio stealth. Armato con Twin Proton Cannons, un launcher missilistico a doppio scopo e le difese del siluro."
 
 ss0319_desc="Nave ingegneria della nave"
 ses0319_name="Classe di patch"

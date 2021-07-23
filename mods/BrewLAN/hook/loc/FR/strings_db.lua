@@ -205,6 +205,10 @@ srs0219_name="Classe Barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 unité navale de construction, de réparation, de capture et de récupération. Équipé d'une seule arme AA."
 Unit_Description_BrewLAN_T2S002="Construction Navale de Tech 2, réparation, capture, recyclage et mouilleur de mines."
 
+ses0204_desc="Sous-marin d'attaque"
+ses0204_name="Cochrane"
+Unit_Description_BrewLAN_T2S003="Unité anti-marine submergée. Armé d'une tube torpille, des charges anti-torpilles et d'une artillerie flak."
+
 sea0201_desc="Avion de reconnaissance"
 sea0201_name="UX Dragonlady"
 ssa0201_name="Selia"
@@ -300,6 +304,11 @@ Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Rapporte 
 sea4301_desc="Satellite de contre-espionnage"
 sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Produit un grand nombre de faux signaux représentant des escadrons de chasseurs de supériorité aérienne sous sa position. N'a aucune capacité de collecte de données."
+--Ceux-ci ne sont vus que sur le menu de triche et le wiki
+sea4302_desc="Faux signal radar"
+sea4302_name="Asfaux"
+--Ceci n'est vu que sur le wiki
+Unit_Description_BrewLAN_T3A014="Faux signaux radar avec caractéristiques de vol des combattants de la supériorité aérienne. Apparaît sous forme de six blips sur radar et une blip aux capteurs Omni."
 
 --Sniper Alternatives
 sel0320_desc="Véhicule de liaison satellite"
@@ -384,7 +393,7 @@ srb5311_name="Portail de Procyon"
 seb5311_name="Herse"
 Unit_Description_BrewLAN_T3B0020="Porte contrôlée manuellement. Peut absorber énormément de dégâts."
 
-seb2308_desc="Lance-torpilles"
+seb2308_desc="Lance Torpilles Lourd"
 seb2308_name="Harpon"
 Unit_Description_BrewLAN_T3B0025="Tourelle lance torpilles lourde. Peut être construite sur la terre et sur l'eau."
 sab2308_desc="Lance-torpilles"
@@ -433,8 +442,13 @@ srl0316_name="Opératoire"
 Unit_Description_BrewLAN_T3L010="Générateur de furtivité mobile. Cache les unités à proximité du radar et du sonar. Visible seulement à omni."
 
 srl0311_desc="Lance-roquettes multiple"
-srl03ll_name="Hexatron"
+--srl03ll_name="Hexatron"
+srl0311_name="Triseptitron"
 Unit_Description_BrewLAN_T3L011="Lanceur de fusée mobile multiple. Temps de rechargement long. Conçu pour submerger les boucliers ennemis et les défenses tactiques de missiles avec de grandes salves."
+
+srl0312_desc="Réservoir de missiles"
+srl0312_name="Toxotai"
+Unit_Description_BrewLAN_T3L024="Chars furtif. Armé de canons à deux protons, un lanceur de missiles à double usage et des défenses de torpilles."
 
 ss0319_desc="Bateau d'ingénierie"
 ses0319_name="Classe Patch"

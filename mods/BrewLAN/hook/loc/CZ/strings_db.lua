@@ -205,6 +205,10 @@ srs0219_name="Třída Barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 námořní konstrukční, opravovací, zajímací, reklamační a mino-pokládací jednotka. Vybavena protileteckou zbraní."
 Unit_Description_BrewLAN_T2S002="Tech 2 námořní konstrukční, opravovací, zajímací, reklamační a mino-pokládací jednotka"
 
+ses0204_desc="Útoku ponorky"
+ses0204_name="Kochrán"
+Unit_Description_BrewLAN_T2S003="Ponořené anti-námořní jednotka. Ozbrojené torpédové trubice, anti-torpédové poplatky a artillery flak."
+
 sea0201_desc="Průzkumný letoun"
 sea0201_name="UX Dračí dáma"
 ssa0201_name="Selia"
@@ -299,7 +303,12 @@ Unit_Description_BrewLAN_T3A012="Družicový pozorovací systém. Poskytuje vizu
 
 sea4301_desc="Kontrainteligence satelit"
 sea4301_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Satelitní kontrainální systém. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi leteckých nadřazených bojů, aby se objevily pod ním. Nemá schopnost shromažďování inteligence."
+Unit_Description_BrewLAN_T3A013="Satelitní kontrainální systém. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi bojovníků letecké nadřazenosti v tvorbě stráže, aby se objevily pod ním. Nemá schopnost shromažďování inteligence."
+--Ty jsou viděny pouze na cheat menu a wiki
+sea4302_desc="Falešný radarový signál"
+sea4302_name="Asfaux."
+--To je vidět pouze na wiki
+Unit_Description_BrewLAN_T3A014="Falešné radarové signály s letovými vlastnostmi bojovníků letecké nadřazenosti. Zdá se, že šest blipů do radaru a jeden blip do senzorů OMNI."
 
 --alternativy Sniperů
 sel0320_desc="Mobilní Satelitní Uplink"
@@ -433,8 +442,13 @@ srl0316_name="Agent"
 Unit_Description_BrewLAN_T3L010="Maskovaný mobilní systém utajení. Ukrývá okolní jednotky před radarem a sonarem. Viditelný pouze pro Omni."
 
 srl0311_desc="Mobilní Raketová Platforma"
-srl03ll_name="Hexatron"
+--srl03ll_name="Hexatron"
+srl0311_name="Triseptitron."
 Unit_Description_BrewLAN_T3L011="Mobilní raketomet. Dlouhý čas nabíjení. Navržen na ochromení nepřátelských štítů a taktických protiraketových obran mohutnými salvami."
+
+srl0312_desc="Raketová nádrž"
+srl0312_name="Toxotai."
+Unit_Description_BrewLAN_T3L024="Stealth Tank. Ozbrojený s dvojitým protonovým kanónem, duálním účelem raketového odpalovače a torpédové obrany."
 
 ss0319_desc="Loď Polní Techniky"
 ses0319_name="Třída Patch"

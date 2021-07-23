@@ -125,7 +125,7 @@ Unit_Description_BrewLAN_T1U001="轻型空气分期设施。维修和摘要各�
 
 --现场工程师
 sl0119_desc="戰地工程師"
-sal0119_desc="国防工程师"
+sal0119_desc="防御工程师"
 sel0119_name="沃利"
 sal0119_name="vivier"
 srl0119_name="out"
@@ -149,7 +149,7 @@ Unit_Description_BrewLAN_T2A001="中级战术轰炸机。配备轻夸克炸弹�
 
 --现场工程师
 sl0209_desc="戰地工程師"
-sal0209_desc="国防工程师"
+sal0209_desc="防御工程师"
 sal0209_name="巴特勒"
 srl0209_name="威尔逊"
 ssl0219_name="Iyazyn."
@@ -204,6 +204,10 @@ ses0219_name="FixXie类"
 srs0219_name="Barwick类"
 Unit_Description_BrewLAN_T2S001="技术2海军建设，维修，捕获和填海单位。配备单个AA武器。"
 Unit_Description_BrewLAN_T2S002="Tech 2海军建筑，修理，捕获，回收和矿山单位。"
+
+ses0204_desc="攻击潜艇"
+ses0204_name="Cochrane."
+Unit_Description_BrewLAN_T2S003="淹没的抗战部门。用鱼雷管，防鱼雷收费和突发炮兵。"
 
 sea0201_desc="重建飞机"
 sea0201_name="UX蛟龍夫人"
@@ -299,7 +303,12 @@ Unit_Description_BrewLAN_T3A012="基于卫星的观测系统。提供从轨道�
 
 sea4301_desc="抗议卫星"
 sea4301_name="vaxis."
-Unit_Description_BrewLAN_T3A013="基于卫星的抗议系统。导致大量假雷达信号，空中优势战斗机的飞行特性出现在它下面。没有智力聚会的能力。"
+Unit_Description_BrewLAN_T3A013="基于卫星的抗议系统。导致大量假的雷达信号与空中优势战斗机的飞行特性，以防护地层出现在它下面。没有智力聚会的能力。"
+--这些只是在作弊菜单和维基上看到
+sea4302_desc="假雷达信号"
+sea4302_name="Asfaux."
+--这只是在维基上看到的
+Unit_Description_BrewLAN_T3A014="虚假雷达信号与空气优势战斗机的飞行特性。出现为雷达的六个薄层，一个闪烁传感器。"
 
 --狙击手替代品
 sel0320_desc="移动卫星上行链路"
@@ -324,7 +333,7 @@ ability_personal_teleporter="個人傳送器"
 
 --现场工程师
 sl0319_desc="戰地工程師"
-sal0319_desc="国防工程师"
+sal0319_desc="防御工程师"
 sel0319_name="保管人"
 sal0319_name="百蒙"
 srl0319_name="屋"
@@ -391,7 +400,7 @@ sab2308_desc="魚雷發射器"
 sab2308_name="暴洪"
 Unit_Description_BrewLAN_T3B0027="非常重的远程防海防系统。旨在接合最强大的海军单位。"
 sss0306_desc="沉重的鱼雷平台"
-sss0306_name="uosthuum."
+sss0306_name="uosthuum"
 Unit_Description_BrewLAN_T3S004="徘徊鱼雷系统。能够摧毁最大的敌舰。"
 
 ssb3301_desc="光学跟踪设施"
@@ -433,8 +442,13 @@ srl0316_name="手术"
 Unit_Description_BrewLAN_T3L010="移动伪装隐形发电机。从雷达和声纳隐藏附近的单位。只能看到Omni。"
 
 srl0311_desc="移动火箭平台"
-srl03ll_name="六曲"
+--srl03ll_name="六曲"
+srl0311_name="Triseptitron."
 Unit_Description_BrewLAN_T3L011="移动多个火箭发射器。长重装时间。旨在压倒敌人的盾牌和大型萨尔沃斯的战术导弹防御。"
+
+srl0312_desc="导弹坦克"
+srl0312_name="托克泰"
+Unit_Description_BrewLAN_T3L024="隐形坦克。武装双重原子大炮，双目明导弹发射器和鱼雷防御。"
 
 ss0319_desc="现场工程船"
 ses0319_name="补丁类"

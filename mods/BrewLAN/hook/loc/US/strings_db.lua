@@ -205,6 +205,10 @@ srs0219_name="Barwick Class"
 Unit_Description_BrewLAN_T2S001="Tech 2 naval construction, repair, capture and reclamation unit. Equipped with a single AA weapon."
 Unit_Description_BrewLAN_T2S002="Tech 2 naval construction, repair, capture, reclaimation, and mine layer unit."
 
+ses0204_desc="Attack Submarine"
+ses0204_name="Cochrane"
+Unit_Description_BrewLAN_T2S003="Submerged anti-naval unit. Armed with a torpedo tube, anti-torpedo charges, and a flak artillery."
+
 sea0201_desc="Recon Plane"
 sea0201_name="UX Dragonlady"
 ssa0201_name="Selia"
@@ -299,7 +303,12 @@ Unit_Description_BrewLAN_T3A012="Satellite-based observation system. Provides vi
 
 sea4301_desc="Counterintelligence Satellite"
 sea4301_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters to appear underneath it. Has no capacity for intelligence gathering."
+Unit_Description_BrewLAN_T3A013="Satellite-based counterintelligence system. Causes large numbers of fake radar signals with flight characteristics of air superiority fighters in a guard formation to appear underneath it. Has no capacity for intelligence gathering."
+--These are only seen on the cheat menu and wiki
+sea4302_desc="False Radar Signal"
+sea4302_name="ASFaux"
+--This is only seen on the wiki
+Unit_Description_BrewLAN_T3A014="False radar signals with flight characteristics of air superiority fighters. Appears as six blips to radar and one blip to omni sensors."
 
 --Sniper alternatives
 sel0320_desc="Mobile Satellite Uplink"
@@ -433,8 +442,13 @@ srl0316_name="Operative"
 Unit_Description_BrewLAN_T3L010="Mobile cloaking stealth generator. Hides nearby units from radar and sonar. Visible only to omni."
 
 srl0311_desc="Mobile Rocket Platform"
-srl03ll_name="Hexatron"
+--srl03ll_name="Hexatron"
+srl0311_name="Triseptitron"
 Unit_Description_BrewLAN_T3L011="Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
+
+srl0312_desc="Missile Tank"
+srl0312_name="Toxotai"
+Unit_Description_BrewLAN_T3L024="Stealth tank. Armed with twin proton cannons, a dual purpose missile launcher, and torpedo defenses."
 
 ss0319_desc="Field Engineering Ship"
 ses0319_name="Patch Class"

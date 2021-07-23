@@ -205,6 +205,10 @@ srs0219_name="Clase de barwick"
 Unit_Description_BrewLAN_T2S001="Tech 2 construcción naval, reparación, captura y reclamación. Equipado con un solo arma AA."
 Unit_Description_BrewLAN_T2S002="Tech 2 construcción naval, reparación, captura, reclamación y unidad de la unidad de la mina."
 
+ses0204_desc="Submarino de ataque"
+ses0204_name="Cochrane"
+Unit_Description_BrewLAN_T2S003="Unidad anti-naval sumergida. Armado con un tubo torpedo, cargos anti-torpedos y una artillería de Flak."
+
 sea0201_desc="Avión de reconocimiento"
 sea0201_name="UX Dragonlady"
 ssa0201_name="Selia"
@@ -276,7 +280,7 @@ ssb2311_name="Sinn un"
 srb2311_name="Castigador"
 sab2311_name="Nihiloide"
 Unit_Description_BrewLAN_T3B005="Torre defensiva muy pesada. Ataca unidades a base de tierra y mar con un poderoso cañón de Gauss de grado Battleship."
-Unit_Description_BrewLAN_T3B006="Torre defensiva muy pesada. Ataca unidades a base de tierra y mar con un poderoso arma de energía."
+Unit_Description_BrewLAN_T3B006="Torre defensiva muy pesada. Ataques terrestres y unidades basadas en el mar con un arma poderosa energía."
 Unit_Description_BrewLAN_T3B007="Torre defensiva muy pesada. Ataca unidades a base de aranceles y mares con un poderoso cañón de Proton de grado Battleship."
 Unit_Description_BrewLAN_T3B008="Torre defensiva muy pesada. Ataca unidades basadas en la tierra y las mares con un poderoso cañón del olvido."
 
@@ -299,7 +303,12 @@ Unit_Description_BrewLAN_T3A012="Sistema de observación basado en satélite. Pr
 
 sea4301_desc="Satélite contrainteligencia"
 sea4301_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Sistema de contrainteligencia a base de satélite. Causa un gran número de señales de radar falsas con características de vuelo de los combatientes de superioridad aérea para aparecer debajo de ella. No tiene capacidad para la reunión de inteligencia."
+Unit_Description_BrewLAN_T3A013="Sistema de contrainteligencia a base de satélite. Causa un gran número de señales de radar falsas con características de vuelo de los combatientes de superioridad aérea en una formación de guardia para aparecer debajo de ella. No tiene capacidad para la reunión de inteligencia."
+--Estos solo se ven en el menú de trucos y wiki.
+sea4302_desc="Señal de radar falso"
+sea4302_name="Asfaux"
+--Esto solo se ve en la wiki.
+Unit_Description_BrewLAN_T3A014="Falsas señales de radar con características de vuelo de luchadores de superioridades aéreas. Aparece como seis se da cuenta al radar y uno de los sensores omni."
 
 --Alternativas de francotirador
 sel0320_desc="Satélite móvil enlace ascendente"
@@ -433,8 +442,13 @@ srl0316_name="Operatorio"
 Unit_Description_BrewLAN_T3L010="Generador de sigilo camuflado móvil. Oculta unidades cercanas desde Radar y Sonar. Visible solo a Omni."
 
 srl0311_desc="Plataforma móvil cohete"
-srl03ll_name="Hexatron"
+--srl03ll_name="Hexatron"
+srl0311_name="Triseeptitro"
 Unit_Description_BrewLAN_T3L011="Móvil Múltiple lanzador de cohetes. Tiempo de recarga larga. Diseñado para abrumar los escudos enemigos y las defensas de misiles tácticas con grandes salvos."
+
+srl0312_desc="Tanque de misiles"
+srl0312_name="Toxotai"
+Unit_Description_BrewLAN_T3L024="Tanque de sigilo. Armado con cañones de protones gemelos, un lanzador de misiles de doble propósito y defensas de torpedos."
 
 ss0319_desc="Nave de Ingeniería de Campo"
 ses0319_name="Clase de parche"
