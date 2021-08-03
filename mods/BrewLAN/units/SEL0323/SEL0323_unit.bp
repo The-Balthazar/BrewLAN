@@ -51,7 +51,7 @@ UnitBlueprint {
         Health = 2750,
         MaxHealth = 2750,
     },
-    Description = '<LOC sel0323_desc>Mobile Tactical Missile Defense',
+    Description = '<LOC sl0323_desc>Mobile Tactical Missile Defense',
     Display = {
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
