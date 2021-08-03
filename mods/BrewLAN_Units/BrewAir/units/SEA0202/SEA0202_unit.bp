@@ -110,7 +110,7 @@ UnitBlueprint {
         Health = 800,
         MaxHealth = 800,
     },
-    Description = '<LOC sa0202_desc>Combat Fighter',
+    Description = '<LOC sa0212_desc>Combat Fighter',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -188,14 +188,11 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'air',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC sea0202_name>Raptor',
+        UnitName = '<LOC sea0212_name>Raptor',
         UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,
-    },
-    Interface = {
-        HelpText = '<LOC xaa0202_help>Combat Fighter',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
