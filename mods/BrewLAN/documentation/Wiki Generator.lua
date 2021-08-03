@@ -3,46 +3,7 @@
 -- By Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
--- Inputs:
-
--- Note the following files within referenced mods must be valid Lua
--- /mod_info.lua
--- /hook/lua/ui/help/unitdescription.lua
--- /hook/loc/US/strings_db.lua
-
--- The output directory for the files, expected to be a clone of a Github wiki repo, but not asserted such
-WikiRepoDir = "C:/BrewLAN.wiki"
-
--- The input list of mod directories to create pages for
--- It will recusively search for bp files with the following criteria:
---  - The blueprints must be somewhere within '/units'
---    - This is to reduce the amount of time it spends directory searching, which is the slowest part
---  - The blueprint filenames must end in '_unit.bp'
---  - The blueprint filenames must not begin with 'z' or 'Z'
---  - The blueprint files MUST be valid lua. That means not using # for comment.
-ListOfModDirectories = {
-    'C:/BrewLAN/mods/BrewLAN',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewAir',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewIntel',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewMonsters',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewResearch',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewShields',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewTeaParty',
-    'C:/BrewLAN/mods/BrewLAN_Units/BrewTurrets',
-}
-
--- The location of the hard-coded wiki icons
--- This is used at the start of src values in img tags so it can be a web domain
--- However, it does assume the images it expects are right in there with the names it expects
-IconRepo = "/The-Balthazar/The-Balthazar.github.io/raw/master/BrewLAN-wiki/icons/"
-
--- The location of the unit icons for inclusion in the wiki
--- The files are expected to be [unit blueprintID]_icon.png
--- This doesn't have to be a sub-directory of the icon repo
-unitIconRepo = IconRepo.."units/"
-
---------------------------------------------------------------------------------
+dofile(string.sub(debug.getinfo(1).source, 2, -14)..'Inputs.lua')
 
 local sidebarData = {}
 local categoryData = {}
@@ -67,6 +28,7 @@ function MakeWiki(moddir, modsidebarindex)
     ----------------------------------------------------------------------------
     local bpdirlist = {} -- list of strings
     Description = {} -- To load the build description lists
+    --Tooltips = {}
     local dirsearch
     dirsearch = function(dir, p)
         for line in io.popen('dir "'..dir..'" /b '..(p or '')):lines() do
@@ -88,13 +50,19 @@ function MakeWiki(moddir, modsidebarindex)
     do
         local pass, msg = pcall(dofile, moddir..'/hook/lua/ui/help/unitdescription.lua')
         if pass then print("Build descriptions loaded")
-        else print(msg) end
+        else print("No build descriptions found") end
     end
     do
         print("Loading loc strings")
         local pass, msg = pcall(dofile, moddir..'/hook/loc/US/strings_db.lua')
         if pass then print("LOC strings loaded")
-        else print(msg) end
+        else print("No localisation strings found") end
+    end
+    do
+        print("Loading tooltips")
+        local pass, msg = pcall(dofile, moddir..'/hook/lua/ui/help/tooltips.lua')
+        if pass then print("Tooltips loaded")
+        else print("No tooltips found") end
     end
     print("Creating wiki pages")
     for i, fdir in ipairs(bpdirlist) do
@@ -268,43 +236,26 @@ function MakeWiki(moddir, modsidebarindex)
 
 ]]
 
-        local headerstring = (bp.General.UnitName and '"'..LOC(bp.General.UnitName)..'": ' or '')..unitTdesc..[[
-
-----
-]]
+        local headerstring = (bp.General.UnitName and '"'..LOC(bp.General.UnitName)..'": ' or '')..unitTdesc.."\n----\n"
 
 
         local bodytext = (bp.General.UnitName and '"'..LOC(bp.General.UnitName)..'" is a'
         or 'This unamed unit is a')..(bp.General and bp.General.FactionName == 'Aeon' and 'n ' or ' ') -- a UEF, an Aeon ect.
-        ..(bp.General and bp.General.FactionName..' ')..(bp.Physics.MotionType and motionTypes[bp.Physics.MotionType][1] or 'structure')..' unit included in *'..modname..[[*.
-]]..(unitTdesc and 'It is classified as a '..string.lower(unitTdesc) or 'It is an unclassified'..(unitTlevel and ' '..string.lower(unitTlevel) ) )..' unit'..(not unitTlevel and ' with no defined tech level' or '')..'.'
+        ..(bp.General and bp.General.FactionName..' ')..(bp.Physics.MotionType and motionTypes[bp.Physics.MotionType][1] or 'structure')..' unit included in *'..modname.."*.\n"
+        ..(unitTdesc and 'It is classified as a '..string.lower(unitTdesc) or 'It is an unclassified'..(unitTlevel and ' '..string.lower(unitTlevel) ) )..' unit'..(not unitTlevel and ' with no defined tech level' or '')..'.'
 
         if Description[string.lower(bpid)] then
-            bodytext = bodytext..[[
-
-The build description for this unit is:
-
-<blockquote>]]..LOC(Description[string.lower(bpid)])..[[</blockquote>
-]]
+            bodytext = bodytext.."\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[string.lower(bpid)]).."</blockquote>\n"
         else
-            bodytext = bodytext..[[ It has no defined build description.
-]]
+            bodytext = bodytext.."It has no defined build description.\n"
         end
 
         if bp.Display and bp.Display.Abilities and #bp.Display.Abilities > 0 then
-            bodytext = bodytext..[[
-
-### Abilities
-Hover over abilities to see effect descriptions.]]
+            bodytext = bodytext.."\n### Abilities\nHover over abilities to see effect descriptions.\n"
             for i, ability in ipairs(bp.Display.Abilities) do
-                bodytext = bodytext..[[
-
-* ]]..abilityTitle(LOC(ability))..[[
-]]
+                bodytext = bodytext.."\n* "..abilityTitle(LOC(ability))
             end
-            bodytext = bodytext..[[
-
-]]
+            bodytext = bodytext.."\n"
         end
 
         local sizecat = arraySubfind(bp.Categories, 'SIZE')
@@ -321,10 +272,7 @@ Hover over abilities to see effect descriptions.]]
         local actualsize = math.max(2, sizeX) + math.max(2, sizeZ)
 
         if sizecat or bp.Adjacency then
-            bodytext = bodytext..[[
-
-### Adjacency
-]]..(sizecat and "This unit counts as `"..
+            bodytext = bodytext.."\n### Adjacency\n"..(sizecat and "This unit counts as `"..
             sizecat.."` for adjacency effects from other structures. This theoretically means that it can be surrounded by exactly "..
             string.sub(sizecat,5).." structures the size of a standard tech 1 power generator"..(
             actualsize and (
@@ -339,65 +287,42 @@ Hover over abilities to see effect descriptions.]]
             if bp.Adjacency then
                 bodytext = bodytext..[[The adjacency bonus `]]..bp.Adjacency..[[` is given by this unit.]]
             end
-            bodytext = bodytext..[[
-
-]]
+            bodytext = bodytext.."\n"
         end
 
-        if arraySubfind(bp.Categories, 'BUILTBY') then
-            bodytext = bodytext..[[
 
-### Construction
-The estimated build times for this unit on the Steam/retail version of the game are as follows; Note: This only includes hard-coded builders; some build categories are generated on game launch.
-]]..BuilderList(bp)..[[
-]]
+
+        if arraySubfind(bp.Categories, 'BUILTBY') then
+            bodytext = bodytext.."\n### Construction\nThe estimated build times for this unit on the Steam/retail version of the game are as follows; Note: This only includes hard-coded builders; some build categories are generated on game launch.\n"..BuilderList(bp).."\n"
             -- ### Builders
         end
 
 
 
-        if bp.General and (bp.General.CommandCaps or bp.General.ToggleCaps) and false then
-
-            local ccs = CheckCaps(bp.General.CommandCaps)
-            local tcs = CheckCaps(bp.General.ToggleCaps)
-
-            if ccs or tcs then
-                bodytext = bodytext..[[
-
-### Order capabilities
-]]
-            end
-            if ccs then
-                bodytext = bodytext..[[
-
-The following command capabilities are available:
-<table>]]
-                for i, v in ipairs(SortCaps(bp.General.CommandCaps, defaultOrdersTable)) do
-                    bodytext = bodytext..[[
-<td>]]..orderButtonImage(v, bp.General.OrderOverrides)..[[</td>
-]]
+        if bp.General and ( CheckCaps(bp.General.CommandCaps) or CheckCaps(bp.General.ToggleCaps) ) then
+            local ordersarray = {}
+            for i, hash in ipairs({bp.General.CommandCaps or {}, bp.General.ToggleCaps or {}}) do
+                for order, val in pairs(hash) do
+                    if val then
+                        table.insert(ordersarray, order)
+                    end
                 end
-                bodytext = bodytext..[[
-</table>
-]]
             end
-            if tcs then
-                bodytext = bodytext..[[
+            table.sort(ordersarray, function(a, b) return (defaultOrdersTable[a].preferredSlot or 99) < (defaultOrdersTable[b].preferredSlot or 99) end)
 
-The following toggle capabilities are available:
-<table>]]
-                for i, v in ipairs(SortCaps(bp.General.ToggleCaps, defaultOrdersTable)) do
-                    bodytext = bodytext..[[
-<td>]]..orderButtonImage(v, bp.General.OrderOverrides)..[[</td>
-]]
+            bodytext = bodytext.."\n### Order capabilities\nThe following orders can be issued to the unit:\n<table>\n"
+            local slot = 99
+            for i, v in ipairs(ordersarray) do
+                local orderstring, order = orderButtonImage(v, bp.General.OrderOverrides)
+                if order then
+                    if (slot <= 6 and order.preferredSlot >= 7) then
+                        bodytext = bodytext.."<tr>\n"
+                    end
+                    slot = order.preferredSlot
                 end
-                bodytext = bodytext..[[
-</table>
-]]
+                bodytext = bodytext .. "<td>"..orderstring.."</td>\n"
             end
-            if ccs or tcs then
-                bodytext = bodytext..[[
-]]          end
+            bodytext = bodytext .."</table>\n"
         end
 
 
@@ -428,11 +353,7 @@ The following toggle capabilities are available:
                     end
                 end
             end
-            bodytext = bodytext..[[
-
-### Engineering
-
-]]
+            bodytext = bodytext.."\n### Engineering\n"
             if #eng > 0 then
                 bodytext = bodytext..'The engineering capabilties of this unit consist of the ability to '
                 for i = 1, #eng do
@@ -444,38 +365,27 @@ The following toggle capabilities are available:
                         bodytext = bodytext..'and '
                     end
                     if i == #eng then
-                        bodytext = bodytext..[[.
-]]
+                        bodytext = bodytext..".\n"
                     end
                 end
             end
 
             if bp.Economy.BuildableCategory then
                 if #bp.Economy.BuildableCategory == 1 then
-                    bodytext = bodytext..'It has the build category <code>'..bp.Economy.BuildableCategory[1]..[[</code>.
-]]
+                    bodytext = bodytext..'It has the build category <code>'..bp.Economy.BuildableCategory[1].."</code>.\n"
                 elseif #bp.Economy.BuildableCategory > 1 then
-                    bodytext = bodytext..[[It has the build categories:
-]]
+                    bodytext = bodytext.."It has the build categories:\n"
                     for i, cat in ipairs(bp.Economy.BuildableCategory) do
-                        bodytext = bodytext..[[
-* <code>]]..cat..[[</code>
-]]
+                        bodytext = bodytext.."* <code>"..cat.."</code>\n"
                     end
                 end
             end
-
-
         end
 
 
 
         if bp.Enhancements then
-            bodytext = bodytext..[[
-
-### Enhancements
-
-]]
+            bodytext = bodytext.."\n### Enhancements\n"
             local EnhacementsSorted = {}
             for key, enh in pairs(bp.Enhancements) do
                 local SearchForRquisits
@@ -533,11 +443,8 @@ The following toggle capabilities are available:
 
         if bp.Weapon then
             local compiledWeaponsTable = {}
-            bodytext = bodytext..[[
+            bodytext = bodytext.."\n### Weapons\n"
 
-### Weapons
-
-]]
             for i, wep in ipairs(bp.Weapon) do
                 weapontable = {}
                 table.insert(weapontable, {'Target type:', WepTarget(wep, bp)})
@@ -661,25 +568,17 @@ The following toggle capabilities are available:
 
 
         if bp.Veteran and bp.Veteran.Level1 then
-            bodytext = bodytext..[[
-
-### Veteran levels
-
-]]
+            bodytext = bodytext.."\n### Veteran levels\n"
             if not bp.Weapon or (bp.Weapon and #bp.Weapon == 1 and IsDeathWeapon(bp.Weapon[1])) then
-                bodytext = bodytext .. [[This unit has defined veteran levels, despite not having any weapons. Other effects can still give experience towards those levels though, which are as follows; note they replace each other by default:
-]]
+                bodytext = bodytext .. "This unit has defined veteran levels, despite not having any weapons. Other effects can still give experience towards those levels though, which are as follows; note they replace each other by default:\n"
             else
-                bodytext = bodytext .. [[Note: Each veteran level buff replaces the previous by default; values are shown here as written.
-]]
+                bodytext = bodytext .. "Note: Each veteran level buff replaces the previous by default; values are shown here as written.\n"
             end
 
             for i = 1, 5 do
                 local lev = 'Level'..i
                 if bp.Veteran[lev] then
-                    bodytext = bodytext .. [[
-
-]]..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
+                    bodytext = bodytext .. "\n"..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
                     for buffname, buffD in pairs(bp.Buffs) do
                         if buffD[lev] then
                             if buffname == 'Regen' then
@@ -691,9 +590,7 @@ The following toggle capabilities are available:
                     end
                 end
             end
-            bodytext = bodytext..[[
-
-]]
+            bodytext = bodytext.."\n"
         end
 
         ------------------------------------------------------------------------
@@ -753,10 +650,7 @@ The following toggle capabilities are available:
             'STRUCTURE',
         }
 
-        bodytext = bodytext..[[
-
-<table align=center><td>
-Categories : ]]
+        bodytext = bodytext.."\n<table align=center>\n<td>Categories : "
 
         local cattext = ''
 
@@ -776,10 +670,8 @@ Categories : ]]
                 cattext = cattext..'<a href="_categories.'..cat..'">'..cat..'</a>'
             end
         end
-        cattext = cattext..[[
 
-]]
-        md:write(headerstring..infoboxstring..bodytext..cattext)
+        md:write(headerstring..infoboxstring..bodytext..cattext.."\n")
         md:close()
     end
 
@@ -965,6 +857,7 @@ end
 
 
 --[[TODO:
+TOC
 Built by (dynamic)
 Upgrade info
 Adjacency.

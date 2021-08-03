@@ -40,6 +40,21 @@ arrayequal = function(t1, t2)
     return arraysubset(t1, t2) and arraysubset(t2, t1)
 end
 
+tableOverwrites = function(t1, t2)
+    local new = {}
+    if t1 then
+        for k, v in pairs(t1) do
+            new[k] = v
+        end
+    end
+    if t2 then
+        for k, v in pairs(t2) do
+            new[k] = v
+        end
+    end
+    return new
+end
+
 --------------------------------------------------------------------------------
 iconText = function(icon, text, text2)
     --icon = string.lower(icon)
@@ -404,7 +419,7 @@ defaultOrdersTable = {--commandCaps = {
     RULEUCC_Repair              = { helpText = "repair",        bitmapId = 'repair',                preferredSlot = 12, },
     RULEUCC_Capture             = { helpText = "capture",       bitmapId = 'convert',               preferredSlot = 11, },
     RULEUCC_Transport           = { helpText = "transport",     bitmapId = 'unload',                preferredSlot = 8,  },
-    RULEUCC_CallTransport       = { bitmapId = 'load',                  preferredSlot = 9,  },
+    RULEUCC_CallTransport       = { helpText = "call_transport",bitmapId = 'load',                  preferredSlot = 9,  },
     RULEUCC_Nuke                = { helpText = "fire_nuke",     bitmapId = 'launch-nuke',           preferredSlot = 9,  },
     RULEUCC_Tactical            = { helpText = "fire_tactical", bitmapId = 'launch-tactical',       preferredSlot = 9,  },
     RULEUCC_Teleport            = { helpText = "teleport",      bitmapId = 'teleport',              preferredSlot = 9,  },
@@ -412,11 +427,11 @@ defaultOrdersTable = {--commandCaps = {
     RULEUCC_SiloBuildTactical   = { helpText = "build_tactical",bitmapId = 'silo-build-tactical',   preferredSlot = 7,  },
     RULEUCC_SiloBuildNuke       = { helpText = "build_nuke",    bitmapId = 'silo-build-nuke',       preferredSlot = 7,  },
     RULEUCC_Sacrifice           = { helpText = "sacrifice",     bitmapId = 'sacrifice',             preferredSlot = 9,  },
-    RULEUCC_Pause               = { bitmapId = 'pause',                 preferredSlot = 17,  },
+    RULEUCC_Pause               = { helpText = "pause",         bitmapId = 'pause',                 preferredSlot = 17,  },
     RULEUCC_Overcharge          = { helpText = "overcharge",    bitmapId = 'overcharge',            preferredSlot = 7,  },
     RULEUCC_Dive                = { helpText = "dive",          bitmapId = 'dive',                  preferredSlot = 10, },
     RULEUCC_Reclaim             = { helpText = "reclaim",       bitmapId = 'reclaim',               preferredSlot = 10, },
-    RULEUCC_SpecialAction       = { bitmapId = 'error:noimage',         preferredSlot = 21,  },
+    RULEUCC_SpecialAction       = { helpText = "special_action",bitmapId = 'error:noimage',         preferredSlot = 21,  },
     RULEUCC_Dock                = { helpText = "dock",          bitmapId = 'dock',                  preferredSlot = 12, },
 
     RULEUCC_Script              = { helpText = "special_action",bitmapId = 'overcharge',            preferredSlot = 7,  },
@@ -454,9 +469,259 @@ SortCaps = function(hash, order)
     return array
 end
 
-orderButtonImage = function(order, bp)
-    if bp and bp[order] or defaultOrdersTable[order] then
-        return '<img src="'..IconRepo..'orders/'..(bp and bp[order] and bp[order].bitmapId or defaultOrdersTable[order].bitmapId)..'.png" />'
+
+Tooltips = {
+    move = {
+        title = "<LOC tooltipui0000>Move",
+        description = "",
+        --keyID = "move",
+    },
+    attack = {
+        title = "<LOC tooltipui0002>Attack",
+        description = "",
+        --keyID = "attack",
+    },
+    patrol = {
+        title = "<LOC tooltipui0004>Patrol",
+        description = "",
+        --keyID = "patrol",
+    },
+    stop = {
+        title = "<LOC tooltipui0006>Stop",
+        description = "",
+        --keyID = "stop",
+    },
+    assist = {
+        title = "<LOC tooltipui0008>Assist",
+        description = "",
+        --keyID = "guard",
+    },
+    mode = {
+        title = "Fire State",
+        description = "",
+    },
+    --[[mode_hold = {
+        title = "<LOC tooltipui0299>Hold Fire",
+        description = "<LOC tooltipui0300>Units will not engage enemies",
+        keyID = "mode",
+    },
+    mode_aggressive = {
+        title = "<LOC tooltipui0301>Ground Fire",
+        description = "<LOC tooltipui0302>Units will attack targeted positions rather attack-move",
+        keyID = "mode",
+    },
+    mode_return_fire = {
+        title = "<LOC tooltipui0303>Return Fire",
+        description = "<LOC tooltipui0304>Units will move and engage normally",
+        keyID = "mode",
+    },
+    mode_mixed = {
+        title = "<LOC tooltipui0305>Mixed Modes",
+        description = "<LOC tooltipui0306>You have selected units that have multiple fire states",
+        keyID = "mode",
+    },
+    mode_hold_fire = {
+        title = "<LOC tooltipui0299>Hold Fire",
+        description = "<LOC tooltipui0300>Units will not engage enemies",
+        keyID = "mode",
+    },
+    mode_hold_ground = {
+        title = "<LOC tooltipui0421>Ground Fire",
+        description = "<LOC tooltipui0422>Units will attack targeted positions rather than attack-move",
+        keyID = "mode",
+    },
+    mode_aggressive = {
+        title = "<LOC tooltipui0504>Aggressive",
+        description = "<LOC tooltipui0505>Units will actively return fire and pursue enemies",
+        keyID = "mode",
+    },]]
+    build_tactical = {
+        title = "<LOC tooltipui0012>Build Missile",
+        description = "<LOC tooltipui0013>Right-click to toggle Auto-Build",
+    },
+    build_tactical_auto = {
+        title = "<LOC tooltipui0335>Build Missile (Auto)",
+        description = "<LOC tooltipui0336>Auto-Build Enabled",
+    },
+    build_nuke = {
+        title = "<LOC tooltipui0014>Build Strategic Missile",
+        description = "<LOC tooltipui0015>Right-click to toggle Auto-Build",
+    },
+    build_nuke_auto = {
+        title = "<LOC tooltipui0337>Build Strategic Missile (Auto)",
+        description = "<LOC tooltipui0338>Auto-Build Enabled",
+    },
+    overcharge = {
+        title = "<LOC tooltipui0016>Overcharge",
+        description = "",
+        --keyID = "overcharge",
+    },
+    transport = {
+        title = "<LOC tooltipui0018>Transport",
+        description = "",
+        --keyID = "transport",
+    },
+    call_transport = {
+        title = "Call Transport",
+        description = "Load into or onto another unit",
+        --keyID = "transport",
+    },
+    fire_nuke = {
+        title = "<LOC tooltipui0020>Launch Strategic Missile",
+        description = "",
+        --keyID = "nuke",
+    },
+    fire_billy = {
+        title = "<LOC tooltipui0664>Launch Advanced Tactical Missile",
+        description = "",
+        --keyID = "nuke",
+    },
+    build_billy = {
+        title = "<LOC tooltipui0665>Build Advanced Tactical Missile",
+        description = "<LOC tooltipui0013>",
+    },
+    fire_tactical = {
+        title = "<LOC tooltipui0022>Launch Missile",
+        description = "",
+        --keyID = "launch_tactical",
+    },
+    teleport = {
+        title = "<LOC tooltipui0024>Teleport",
+        description = "",
+        --keyID = "teleport",
+    },
+    ferry = {
+        title = "<LOC tooltipui0026>Ferry",
+        description = "",
+        --keyID = "ferry",
+    },
+    sacrifice = {
+        title = "<LOC tooltipui0028>Sacrifice",
+        description = "",
+    },
+    dive = {
+        title = "<LOC tooltipui0030>Surface/Dive Toggle",
+        description = "<LOC tooltipui0423>Right-click to toggle auto-surface",
+        --keyID = "dive",
+    },
+    dive_auto = {
+        title = "<LOC tooltipui0030>Surface/Dive Toggle",
+        description = "<LOC tooltipui0424>Auto-surface enabled",
+        --keyID = "dive",
+    },
+    dock = {
+        title = "<LOC tooltipui0425>Dock",
+        description = "<LOC tooltipui0477>Recall aircraft to nearest air staging facility for refueling and repairs",
+        --keyID = "dock",
+    },
+    deploy = {
+        title = "<LOC tooltipui0478>Deploy",
+        description = "",
+    },
+    reclaim = {
+        title = "<LOC tooltipui0032>Reclaim",
+        description = "",
+        --keyID = "reclaim",
+    },
+    capture = {
+        title = "<LOC tooltipui0034>Capture",
+        description = "",
+        --keyID = "capture",
+    },
+    repair = {
+        title = "<LOC tooltipui0036>Repair",
+        description = "",
+        --keyID = "repair",
+    },
+    pause = {
+        title = "<LOC tooltipui0038>Pause Construction",
+        description = "<LOC tooltipui0506>Pause/unpause current construction order",
+        --keyID = "pause_unit",
+    },
+    toggle_omni = {
+        title = "<LOC tooltipui0479>Omni Toggle",
+        description = "<LOC tooltipui0480>Turn the selected units omni on/off",
+    },
+    toggle_shield = {
+        title = "<LOC tooltipui0040>Shield Toggle",
+        description = "<LOC tooltipui0481>Turn the selected units shields on/off",
+    },
+    toggle_shield_dome = {
+        title = "<LOC tooltipui0482>Shield Dome Toggle",
+        description = "<LOC tooltipui0483>Turn the selected units shield dome on/off",
+    },
+    toggle_shield_personal = {
+        title = "<LOC tooltipui0484>Personal Shield Toggle",
+        description = "<LOC tooltipui0485>Turn the selected units personal shields on/off",
+    },
+    toggle_sniper = {
+        title = "<LOC tooltipui0647>Sniper Toggle",
+        description = "<LOC tooltipui0648>Toggle sniper mode. Range, accuracy and damage are enhanced, but rate of fire is decreased when enabled",
+    },
+    toggle_weapon = {
+        title = "<LOC tooltipui0361>Weapon Toggle",
+        description = "<LOC tooltipui0362>Toggle between air and ground weaponry",
+    },
+    toggle_jamming = {
+        title = "<LOC tooltipui0044>Radar Jamming Toggle",
+        description = "<LOC tooltipui0486>Turn the selected units radar jamming on/off",
+    },
+    toggle_intel = {
+        title = "<LOC tooltipui0046>Intelligence Toggle",
+        description = "<LOC tooltipui0487>Turn the selected units radar, sonar or Omni on/off",
+    },
+    toggle_radar = {
+        title = "<LOC tooltipui0488>Radar Toggle",
+        description = "<LOC tooltipui0489>Turn the selection units radar on/off",
+    },
+    toggle_sonar = {
+        title = "<LOC tooltipui0490>Sonar Toggle",
+        description = "<LOC tooltipui0491>Turn the selection units sonar on/off",
+    },
+    toggle_production = {
+        title = "<LOC tooltipui0048>Production Toggle",
+        description = "<LOC tooltipui0492>Turn the selected units production capabilities on/off",
+    },
+    toggle_area_assist = {
+        title = "<LOC tooltipui0503>Area-Assist Toggle",
+        description = "<LOC tooltipui0564>Turn the engineering area assist capabilities on/off",
+    },
+    toggle_scrying = {
+        title = "<LOC tooltipui0494>Scrying Toggle",
+        description = "<LOC tooltipui0495>Turn the selected units scrying capabilities on/off",
+    },
+    scry_target = {
+        title = "<LOC tooltipui0496>Scry",
+        description = "<LOC tooltipui0497>View an area of the map",
+    },
+    vision_toggle = {
+        title = "<LOC tooltipui0498>Vision Toggle",
+        description = "",
+    },
+    toggle_stealth_field = {
+        title = "<LOC tooltipui0499>Stealth Field Toggle",
+        description = "<LOC tooltipui0500>Turn the selected units stealth field on/off",
+    },
+    toggle_stealth_personal = {
+        title = "<LOC tooltipui0501>Personal Stealth Toggle",
+        description = "<LOC tooltipui0502>Turn the selected units personal stealth field on/off",
+    },
+    toggle_cloak = {
+        title = "<LOC tooltipui0339>Personal Cloak",
+        description = "<LOC tooltipui0342>Turn the selected units cloaking on/off",
+    },
+}
+
+orderButtonImage = function(orderName, bp)
+    local GetOrder = function()
+        return tableOverwrites(defaultOrdersTable[orderName], bp and bp[orderName])
     end
-    return order
+    local Order = GetOrder()
+    local returnstring
+
+    if Order then
+        local Tip = Tooltips[Order.helpText] or {title = 'error:'..Order.helpText..' no title'}
+        returnstring = '<img float="left" src="'..IconRepo..'orders/'..string.lower(Order.bitmapId)..'.png" title="'..LOC(Tip.title or '').."\n"..LOC(Tip.description or '')..'" />'
+    end
+    return returnstring or orderName, Order
 end
