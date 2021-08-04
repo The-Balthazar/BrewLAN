@@ -720,20 +720,12 @@ do
         for modindex, moddata in ipairs(sidebarData) do
             local modname = moddata[1]
 
-            sidebarstring = sidebarstring .. [[
-<details markdown="1">
-<summary>[Show] <a href="]]..string.gsub(modname, ':', '')..[[">]]..modname..[[</a></summary>
-<p>
-<table>
-<tr>
-<td>
-
-]]
+            sidebarstring = sidebarstring .. "<details markdown=\"1\">\n<summary>[Show] <a href=\""..string.gsub(modname, ':', '')..[[">]]..modname.."</a></summary>\n<p>\n<table>\n<tr>\n<td>\n\n"
             for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
                 local faction = FactionsByIndex[i]
                 local unitarray = moddata[2][i]
                 if unitarray then
-                    sidebarstring = sidebarstring .. "<details>\n<summary>"..faction.."</summary>\n<p>\n"
+                    sidebarstring = sidebarstring .. "<details>\n<summary>"..faction.."</summary>\n<p>\n\n"
                     for unitI, unitData in ipairs(unitarray) do
 
                         sidebarstring = sidebarstring .. "* <a title=\""..unitData[2]..[[" href="../wiki/]]..unitData[1]..[[">]]..unitData[3].."</a>\n"
@@ -742,14 +734,7 @@ do
                     sidebarstring = sidebarstring .. "</p>\n</details>\n"
                 end
             end
-            sidebarstring = sidebarstring .. [[
-
-</td>
-</tr>
-</table>
-</p>
-</details>
-]]
+            sidebarstring = sidebarstring .. "\n</td>\n</tr>\n</table>\n</p>\n</details>\n"
         end
 
         local md = io.open(WikiRepoDir..'/_Sidebar.md', "w")
