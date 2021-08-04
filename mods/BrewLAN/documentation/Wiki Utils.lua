@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
--- Table functions
+-- Generic table functions
 --------------------------------------------------------------------------------
+
 arrayfind = function(array, str)
     if not array then return end
     for i, v in ipairs(array) do
@@ -56,6 +57,58 @@ tableOverwrites = function(t1, t2)
 end
 
 --------------------------------------------------------------------------------
+-- Section constructions
+--------------------------------------------------------------------------------
+
+InfoboxHeader = function(style, head)
+    local styles = {
+        ['main-right'] = [[
+<table align=right>
+    <thead>
+        <tr>
+            <th colspan='2' align=left>
+                %s
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+]],
+        ['detail-left'] = "<details>\n<summary>%s</summary>\n<p>\n    <table>\n",
+    }
+    return string.format(styles[style], head)
+end
+
+InfoboxRow = function(th, td, tip)
+    if th == '' then
+        return "        <tr><td colspan='2' align=center>"..(td or '').."</td></tr>\n"
+    elseif td then
+        return "        <tr>\n            <td align=right><strong>"
+        ..(th or '').."</strong></td>\n            <td>"
+        ..td..(tip and ' <span title="'..tip..'">(<u>?</u>)</span>' or '').."</td>\n        </tr>\n"
+    end
+end
+
+InfoboxEnd = function(style)
+    local styles = {
+        ['main-right'] = "    </thead>\n</table>\n\n",
+        ['detail-left'] = "    </table>\n</p>\n</details>\n",
+    }
+    return styles[style]
+end
+
+MDHead = function(header, hnum)
+    local h = '### '
+    if hnum then
+        h = ''
+        for i = 1, hnum do
+            h = h..'#'
+        end
+        h = h..' '
+    end
+    return "\n"..h..header.."\n"
+end
+
+--------------------------------------------------------------------------------
 iconText = function(icon, text, text2)
     --icon = string.lower(icon)
     local icons = {
@@ -101,6 +154,7 @@ Layers = {
    Water = 8,
      Air = 16,
 }
+
 
 -- Motion types mapped to plain text string descriptions, and layers they relevantly be firing from.
 motionTypes = {
@@ -340,7 +394,16 @@ BuildableLayer = function(phys)
         return 'Land'
     else
         local str = ''
-        for key, val in pairs(phys.BuildOnLayerCaps) do
+        local IndexedLayers = {
+            'LAYER_Land',
+            'LAYER_Seabed',
+            'LAYER_Sub',
+            'LAYER_Water',
+            'LAYER_Air',
+        }
+        for i, key in ipairs(IndexedLayers) do
+        --for key, val in pairs(phys.BuildOnLayerCaps) do
+            local val = phys.BuildOnLayerCaps[key]
             if val then
                 str = str..string.sub(key, 7)..'<br />'
             end
@@ -392,15 +455,9 @@ BuilderList = function(bp)
         if buildercats[cat] then
             --table.insert(builders, )
             local secs = bp.Economy.BuildTime / buildercats[cat][2]
-            bilst = bilst .. [[
-* ]]..iconText('Time', string.format('%02d:%02d', math.floor(secs/60), math.floor(secs % 60) ) )..' ‒ '..iconText('Energy', math.floor(bp.Economy.BuildCostEnergy / secs + 0.5), '/s')..' ‒ '..iconText('Mass', math.floor(bp.Economy.BuildCostMass / secs + 0.5), '/s')..' — Built by '..buildercats[cat][1]..[[
-
-]]
+            bilst = bilst .. "\n* "..iconText('Time', string.format('%02d:%02d', math.floor(secs/60), math.floor(secs % 60) ) )..' ‒ '..iconText('Energy', math.floor(bp.Economy.BuildCostEnergy / secs + 0.5), '/s')..' ‒ '..iconText('Mass', math.floor(bp.Economy.BuildCostMass / secs + 0.5), '/s')..' — Built by '..buildercats[cat][1]
         elseif string.find(cat, 'BUILTBY') then
-            bilst = bilst..[[
-* <error:category />Unknown build category <code>]]..cat..[[</code>
-
-]]
+            bilst = bilst.."\n* <error:category />Unknown build category <code>]]..cat..[[</code>"
         end
     end
 
@@ -420,33 +477,33 @@ defaultOrdersTable = {--commandCaps = {
     RULEUCC_Capture             = { helpText = "capture",       bitmapId = 'convert',               preferredSlot = 11, },
     RULEUCC_Transport           = { helpText = "transport",     bitmapId = 'unload',                preferredSlot = 8,  },
     RULEUCC_CallTransport       = { helpText = "call_transport",bitmapId = 'load',                  preferredSlot = 9,  },
-    RULEUCC_Nuke                = { helpText = "fire_nuke",     bitmapId = 'launch-nuke',           preferredSlot = 9,  },
-    RULEUCC_Tactical            = { helpText = "fire_tactical", bitmapId = 'launch-tactical',       preferredSlot = 9,  },
-    RULEUCC_Teleport            = { helpText = "teleport",      bitmapId = 'teleport',              preferredSlot = 9,  },
-    RULEUCC_Ferry               = { helpText = "ferry",         bitmapId = 'ferry',                 preferredSlot = 9,  },
+    RULEUCC_Nuke                = { helpText = "fire_nuke",     bitmapId = 'launch-nuke',           preferredSlot = 9.1,  },
+    RULEUCC_Tactical            = { helpText = "fire_tactical", bitmapId = 'launch-tactical',       preferredSlot = 9.2,  },
+    RULEUCC_Teleport            = { helpText = "teleport",      bitmapId = 'teleport',              preferredSlot = 9.3,  },
+    RULEUCC_Ferry               = { helpText = "ferry",         bitmapId = 'ferry',                 preferredSlot = 9.4,  },
     RULEUCC_SiloBuildTactical   = { helpText = "build_tactical",bitmapId = 'silo-build-tactical',   preferredSlot = 7,  },
-    RULEUCC_SiloBuildNuke       = { helpText = "build_nuke",    bitmapId = 'silo-build-nuke',       preferredSlot = 7,  },
-    RULEUCC_Sacrifice           = { helpText = "sacrifice",     bitmapId = 'sacrifice',             preferredSlot = 9,  },
+    RULEUCC_SiloBuildNuke       = { helpText = "build_nuke",    bitmapId = 'silo-build-nuke',       preferredSlot = 7.1,  },
+    RULEUCC_Sacrifice           = { helpText = "sacrifice",     bitmapId = 'sacrifice',             preferredSlot = 9.5,  },
     RULEUCC_Pause               = { helpText = "pause",         bitmapId = 'pause',                 preferredSlot = 17,  },
-    RULEUCC_Overcharge          = { helpText = "overcharge",    bitmapId = 'overcharge',            preferredSlot = 7,  },
+    RULEUCC_Overcharge          = { helpText = "overcharge",    bitmapId = 'overcharge',            preferredSlot = 7.2,  },
     RULEUCC_Dive                = { helpText = "dive",          bitmapId = 'dive',                  preferredSlot = 10, },
-    RULEUCC_Reclaim             = { helpText = "reclaim",       bitmapId = 'reclaim',               preferredSlot = 10, },
+    RULEUCC_Reclaim             = { helpText = "reclaim",       bitmapId = 'reclaim',               preferredSlot = 10.1, },
     RULEUCC_SpecialAction       = { helpText = "special_action",bitmapId = 'error:noimage',         preferredSlot = 21,  },
-    RULEUCC_Dock                = { helpText = "dock",          bitmapId = 'dock',                  preferredSlot = 12, },
+    RULEUCC_Dock                = { helpText = "dock",          bitmapId = 'dock',                  preferredSlot = 12.1, },
 
     RULEUCC_Script              = { helpText = "special_action",bitmapId = 'overcharge',            preferredSlot = 7,  },
 --}
 
 --local toggleModes = {
-    RULEUTC_ShieldToggle        = { helpText = "toggle_shield",     bitmapId = 'shield',                preferredSlot = 7,  },
-    RULEUTC_WeaponToggle        = { helpText = "toggle_weapon",     bitmapId = 'toggle-weapon',         preferredSlot = 7,  },
-    RULEUTC_JammingToggle       = { helpText = "toggle_jamming",    bitmapId = 'jamming',               preferredSlot = 8,  },
-    RULEUTC_IntelToggle         = { helpText = "toggle_intel",      bitmapId = 'intel',                 preferredSlot = 8,  },
-    RULEUTC_ProductionToggle    = { helpText = "toggle_production", bitmapId = 'production',            preferredSlot = 9,  },
-    RULEUTC_StealthToggle       = { helpText = "toggle_stealth",    bitmapId = 'stealth',               preferredSlot = 9,  },
-    RULEUTC_GenericToggle       = { helpText = "toggle_generic",    bitmapId = 'production',            preferredSlot = 10, },
-    RULEUTC_SpecialToggle       = { helpText = "toggle_special",    bitmapId = 'activate-weapon',       preferredSlot = 11, },
-    RULEUTC_CloakToggle         = { helpText = "toggle_cloak",      bitmapId = 'intel-counter',         preferredSlot = 11, },
+    RULEUTC_ShieldToggle        = { helpText = "toggle_shield",     bitmapId = 'shield',                preferredSlot = 7.3,  },
+    RULEUTC_WeaponToggle        = { helpText = "toggle_weapon",     bitmapId = 'toggle-weapon',         preferredSlot = 7.4,  },
+    RULEUTC_JammingToggle       = { helpText = "toggle_jamming",    bitmapId = 'jamming',               preferredSlot = 8.1,  },
+    RULEUTC_IntelToggle         = { helpText = "toggle_intel",      bitmapId = 'intel',                 preferredSlot = 8.2,  },
+    RULEUTC_ProductionToggle    = { helpText = "toggle_production", bitmapId = 'production',            preferredSlot = 9.6,  },
+    RULEUTC_StealthToggle       = { helpText = "toggle_stealth",    bitmapId = 'stealth',               preferredSlot = 9.7,  },
+    RULEUTC_GenericToggle       = { helpText = "toggle_generic",    bitmapId = 'production',            preferredSlot = 10.2, },
+    RULEUTC_SpecialToggle       = { helpText = "toggle_special",    bitmapId = 'activate-weapon',       preferredSlot = 11.1, },
+    RULEUTC_CloakToggle         = { helpText = "toggle_cloak",      bitmapId = 'intel-counter',         preferredSlot = 11.2, },
 }
 
 CheckCaps = function(hash)
@@ -474,27 +531,22 @@ Tooltips = {
     move = {
         title = "<LOC tooltipui0000>Move",
         description = "",
-        --keyID = "move",
     },
     attack = {
         title = "<LOC tooltipui0002>Attack",
         description = "",
-        --keyID = "attack",
     },
     patrol = {
         title = "<LOC tooltipui0004>Patrol",
         description = "",
-        --keyID = "patrol",
     },
     stop = {
         title = "<LOC tooltipui0006>Stop",
         description = "",
-        --keyID = "stop",
     },
     assist = {
         title = "<LOC tooltipui0008>Assist",
         description = "",
-        --keyID = "guard",
     },
     mode = {
         title = "Fire State",
@@ -503,37 +555,30 @@ Tooltips = {
     --[[mode_hold = {
         title = "<LOC tooltipui0299>Hold Fire",
         description = "<LOC tooltipui0300>Units will not engage enemies",
-        keyID = "mode",
     },
     mode_aggressive = {
         title = "<LOC tooltipui0301>Ground Fire",
         description = "<LOC tooltipui0302>Units will attack targeted positions rather attack-move",
-        keyID = "mode",
     },
     mode_return_fire = {
         title = "<LOC tooltipui0303>Return Fire",
         description = "<LOC tooltipui0304>Units will move and engage normally",
-        keyID = "mode",
     },
     mode_mixed = {
         title = "<LOC tooltipui0305>Mixed Modes",
         description = "<LOC tooltipui0306>You have selected units that have multiple fire states",
-        keyID = "mode",
     },
     mode_hold_fire = {
         title = "<LOC tooltipui0299>Hold Fire",
         description = "<LOC tooltipui0300>Units will not engage enemies",
-        keyID = "mode",
     },
     mode_hold_ground = {
         title = "<LOC tooltipui0421>Ground Fire",
         description = "<LOC tooltipui0422>Units will attack targeted positions rather than attack-move",
-        keyID = "mode",
     },
     mode_aggressive = {
         title = "<LOC tooltipui0504>Aggressive",
         description = "<LOC tooltipui0505>Units will actively return fire and pursue enemies",
-        keyID = "mode",
     },]]
     build_tactical = {
         title = "<LOC tooltipui0012>Build Missile",
@@ -554,27 +599,22 @@ Tooltips = {
     overcharge = {
         title = "<LOC tooltipui0016>Overcharge",
         description = "",
-        --keyID = "overcharge",
     },
     transport = {
         title = "<LOC tooltipui0018>Transport",
         description = "",
-        --keyID = "transport",
     },
     call_transport = {
         title = "Call Transport",
         description = "Load into or onto another unit",
-        --keyID = "transport",
     },
     fire_nuke = {
         title = "<LOC tooltipui0020>Launch Strategic Missile",
         description = "",
-        --keyID = "nuke",
     },
     fire_billy = {
         title = "<LOC tooltipui0664>Launch Advanced Tactical Missile",
         description = "",
-        --keyID = "nuke",
     },
     build_billy = {
         title = "<LOC tooltipui0665>Build Advanced Tactical Missile",
@@ -583,17 +623,14 @@ Tooltips = {
     fire_tactical = {
         title = "<LOC tooltipui0022>Launch Missile",
         description = "",
-        --keyID = "launch_tactical",
     },
     teleport = {
         title = "<LOC tooltipui0024>Teleport",
         description = "",
-        --keyID = "teleport",
     },
     ferry = {
         title = "<LOC tooltipui0026>Ferry",
         description = "",
-        --keyID = "ferry",
     },
     sacrifice = {
         title = "<LOC tooltipui0028>Sacrifice",
@@ -602,17 +639,14 @@ Tooltips = {
     dive = {
         title = "<LOC tooltipui0030>Surface/Dive Toggle",
         description = "<LOC tooltipui0423>Right-click to toggle auto-surface",
-        --keyID = "dive",
     },
     dive_auto = {
         title = "<LOC tooltipui0030>Surface/Dive Toggle",
         description = "<LOC tooltipui0424>Auto-surface enabled",
-        --keyID = "dive",
     },
     dock = {
         title = "<LOC tooltipui0425>Dock",
         description = "<LOC tooltipui0477>Recall aircraft to nearest air staging facility for refueling and repairs",
-        --keyID = "dock",
     },
     deploy = {
         title = "<LOC tooltipui0478>Deploy",
@@ -621,22 +655,18 @@ Tooltips = {
     reclaim = {
         title = "<LOC tooltipui0032>Reclaim",
         description = "",
-        --keyID = "reclaim",
     },
     capture = {
         title = "<LOC tooltipui0034>Capture",
         description = "",
-        --keyID = "capture",
     },
     repair = {
         title = "<LOC tooltipui0036>Repair",
         description = "",
-        --keyID = "repair",
     },
     pause = {
         title = "<LOC tooltipui0038>Pause Construction",
         description = "<LOC tooltipui0506>Pause/unpause current construction order",
-        --keyID = "pause_unit",
     },
     toggle_omni = {
         title = "<LOC tooltipui0479>Omni Toggle",
@@ -721,7 +751,22 @@ orderButtonImage = function(orderName, bp)
 
     if Order then
         local Tip = Tooltips[Order.helpText] or {title = 'error:'..Order.helpText..' no title'}
-        returnstring = '<img float="left" src="'..IconRepo..'orders/'..string.lower(Order.bitmapId)..'.png" title="'..LOC(Tip.title or '').."\n"..LOC(Tip.description or '')..'" />'
+        returnstring = '<img float="left" src="'..IconRepo..'orders/'..string.lower(Order.bitmapId)..'.png" title="'..LOC(Tip.title or '')..(Tip.description and Tip.description ~= '' and "\n"..LOC(Tip.description) or '')..'" />'
     end
     return returnstring or orderName, Order
 end
+
+FactionIndexes = {
+    UEF = 1,
+    Aeon = 2,
+    Cybran = 3,
+    Seraphim = 4,
+}
+
+FactionsByIndex = {
+    'UEF',
+    'Aeon',
+    'Cybran',
+    'Seraphim',
+    'Other',
+}
