@@ -967,3 +967,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Fixed the anti-missile flares on the Helios being close to useless.
   * Toxotai missiles now track moving targets.
+
+  ### 2021-08-05
+
+  * Fixed UEF tidal generator having rebuild bonus on only the Aeon generator.
+  * Added the Aeon tidal generator.
+  * Changed active loop noise of tidal generators to wetter sounding ones.

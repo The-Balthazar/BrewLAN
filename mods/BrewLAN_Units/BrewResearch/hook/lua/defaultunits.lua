@@ -348,8 +348,14 @@ TidalEnergyCreationUnit = Class(EnergyCreationUnit) {
         self:SetProductionPerSecondEnergy(0)
         self.Spinners = {
             --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
-            CreateRotator(self, 'Rotors', 'z', nil, 0, 100, 0),
+            CreateRotator(self, self.RotorName or 'Rotors', 'z', nil, 0, 100, 0),
         }
+
+        local pos = self.CachePosition or self:GetPosition()
+        local co = 0.03
+        if self.YawBone then
+            self.Spinners[2] = CreateRotator(self, self.YawBone, 'y', 90 * (math.cos(pos[1]*co)+math.sin(pos[3]*co)), 30, 1)
+        end
         ------------------------------------------------------------------------
         -- Calculate energy values
         ------------------------------------------------------------------------

@@ -149,9 +149,16 @@ UnitBlueprint {
     General = {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
+        CommandCaps = { -- This is just for the wiki
+            RULEUCC_Script = true,
+        },
         FactionName = 'Seraphim',
         Icon = 'land',
         OrderOverrides = {
+            RULEUCC_Script = {
+                bitmapId = 'skry-target',
+                helpText = 'scry_spy_target',
+            },
             RULEUTC_IntelToggle = {
                 bitmapId = 'skry-toggle',
                 helpText = 'toggle_scrying',

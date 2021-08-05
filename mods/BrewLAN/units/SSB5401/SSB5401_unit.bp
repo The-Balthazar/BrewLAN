@@ -216,9 +216,16 @@ UnitBlueprint {
         Category = 'Strategic',
         Classification = 'RULEUC_Factory',
         ConstructionBar = true,
+        CommandCaps = { -- This is just for the wiki
+            RULEUCC_Script = true,
+        },
         FactionName = 'Seraphim',
         Icon = 'land',
         OrderOverrides = {
+            RULEUCC_Script = {  -- This is just for the wiki
+                bitmapId = 'teleport',
+                helpText = 'stargate_dial',
+            },
             RULEUTC_GenericToggle = {
                 bitmapId = 'stop',
                 helpText = 'stargate_stop',

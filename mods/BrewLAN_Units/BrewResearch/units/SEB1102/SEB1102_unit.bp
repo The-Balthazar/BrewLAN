@@ -2,8 +2,8 @@ UnitBlueprint {
     Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
     Audio = {
         ActiveLoop = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB1101_Active',
+            Bank = 'UES',
+            Cue = 'UES0203_Move_Loop',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Destroyed = Sound {
@@ -89,7 +89,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 25,--Mean value.
         ProductionPerSecondEnergyMin = 10,
         ProductionPerSecondEnergyMax = 40,
-        RebuildBonusIds = {'sab1102'},
+        RebuildBonusIds = {'seb1102'},
     },
     Footprint = {
         MinWaterDepth = 2,

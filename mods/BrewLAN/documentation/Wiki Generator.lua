@@ -516,6 +516,10 @@ function MakeWiki(moddir, modsidebarindex)
                         local weapontable = wepdata[3]
                         bodytext = bodytext..InfoboxHeader('detail-left', wepdata[1]..(wepdata[2] == 1 and '' or ' (×'..tostring(wepdata[2])..')') )
 
+                        if wepdata[2] ~= 1 then
+                            bodytext = bodytext..InfoboxRow('', 'Note: Stats are per instance of the weapon.')
+                        end
+
                         for i, data in ipairs(weapontable) do
                             if data[2] then
                                 bodytext = bodytext..InfoboxRow(data[1], data[2], data[3])
