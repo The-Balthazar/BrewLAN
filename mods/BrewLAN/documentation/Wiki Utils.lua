@@ -563,6 +563,7 @@ SortCaps = function(hash, order)
     return array
 end
 
+Description = {}
 
 Tooltips = {
     move = {
@@ -589,34 +590,6 @@ Tooltips = {
         title = "Fire State",
         description = "",
     },
-    --[[mode_hold = {
-        title = "<LOC tooltipui0299>Hold Fire",
-        description = "<LOC tooltipui0300>Units will not engage enemies",
-    },
-    mode_aggressive = {
-        title = "<LOC tooltipui0301>Ground Fire",
-        description = "<LOC tooltipui0302>Units will attack targeted positions rather attack-move",
-    },
-    mode_return_fire = {
-        title = "<LOC tooltipui0303>Return Fire",
-        description = "<LOC tooltipui0304>Units will move and engage normally",
-    },
-    mode_mixed = {
-        title = "<LOC tooltipui0305>Mixed Modes",
-        description = "<LOC tooltipui0306>You have selected units that have multiple fire states",
-    },
-    mode_hold_fire = {
-        title = "<LOC tooltipui0299>Hold Fire",
-        description = "<LOC tooltipui0300>Units will not engage enemies",
-    },
-    mode_hold_ground = {
-        title = "<LOC tooltipui0421>Ground Fire",
-        description = "<LOC tooltipui0422>Units will attack targeted positions rather than attack-move",
-    },
-    mode_aggressive = {
-        title = "<LOC tooltipui0504>Aggressive",
-        description = "<LOC tooltipui0505>Units will actively return fire and pursue enemies",
-    },]]
     build_tactical = {
         title = "<LOC tooltipui0012>Build Missile",
         description = "<LOC tooltipui0013>Right-click to toggle Auto-Build",
@@ -807,3 +780,12 @@ FactionsByIndex = {
     'Seraphim',
     'Other',
 }
+
+BinaryCounter = function(...)
+    local n = 0
+    local arg = {...}
+    for i, v in pairs(arg) do
+        n = n + (v and 1 or 0)
+    end
+    return n
+end
