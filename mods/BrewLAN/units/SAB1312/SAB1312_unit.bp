@@ -19,7 +19,7 @@ UnitBlueprint {
         'SIZE4',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SHIELD',
+        'PERSONALSHIELD',
         'SORTECONOMY',
         'RESEARCHLOCKED',
     },

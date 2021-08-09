@@ -46,7 +46,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTECONOMY',
-        'SHIELD',
+        'PERSONALSHIELD',
         'OVERLAYDEFENSE',
         'RESEARCHLOCKED',
     },

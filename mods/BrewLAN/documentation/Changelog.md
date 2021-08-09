@@ -973,3 +973,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed UEF tidal generator having rebuild bonus on only the Aeon generator.
   * Added the Aeon tidal generator.
   * Changed active loop noise of tidal generators to wetter sounding ones.
+
+  ### 2021-08-06
+
+  * New mod that makes mines untargetable.
+
+  ### 2021-08-09
+
+  * Replaced the `SHIELD` category with `PERSONALSHIELD` on the Aeon shielded resource structures.
