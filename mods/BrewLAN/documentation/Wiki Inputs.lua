@@ -31,8 +31,8 @@ ListOfModDirectories = {
 -- The location of the hard-coded wiki icons
 -- This is used at the start of src values in img tags so it can be a web domain
 -- However, it does assume the images it expects are right in there with the names it expects
-IconRepo = "/The-Balthazar/The-Balthazar.github.io/raw/master/BrewLAN-wiki/icons/"
-
+IconRepo = "/The-Balthazar/BrewLAN/wiki/icons/"
+ImageRepo = "/The-Balthazar/BrewLAN/wiki/images/"
 -- The location of the unit icons for inclusion in the wiki
 -- The files are expected to be [unit blueprintID]_icon.png
 -- This doesn't have to be a sub-directory of the icon repo

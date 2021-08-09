@@ -28,7 +28,6 @@ function MakeWiki(moddir, modsidebarindex)
     ----------------------------------------------------------------------------
     local bpdirlist = {} -- list of strings
     Description = {} -- To load the build description lists
-    --Tooltips = {}
     local dirsearch
     dirsearch = function(dir, p)
         for line in io.popen('dir "'..dir..'" /b '..(p or '')):lines() do
@@ -101,7 +100,7 @@ function MakeWiki(moddir, modsidebarindex)
 
         local infoboxdata = {
             {'', "Note: Several units have stats defined at the<br />start of the game based on the stats of others."},
-            {'Source:', '<a href="'..string.gsub(modname, ':', '')..'">'..modname..'</a>'},
+            {'Source:', '<a href="'..stringSanitiseFile(modname)..'">'..modname..'</a>'},
             {'Unit ID:', '<code>'..string.lower(bpid)..'</code>',},
             {'Faction:', (bp.General and bp.General.FactionName)},
             {''},
@@ -125,17 +124,16 @@ function MakeWiki(moddir, modsidebarindex)
                     (bp.Defense.Shield and bp.Defense.Shield.ShieldRegenRate and ' (+'..bp.Defense.Shield.ShieldRegenRate..'/s)')
                 )
             },
-            --{'Shield regen:', iconText('shield', bp.Defense.Shield and bp.Defense.Shield.ShieldRegenRate, '/s')},
             {'Shield radius:', (bp.Defense.Shield and bp.Defense.Shield.ShieldSize)},
             {'Flags:',
                 (
                     arrayfind(bp.Categories, 'UNTARGETABLE') or
-                    arrayfind(bp.Categories, 'UNSELECTABLE') or
+                    (arrayfind(bp.Categories, 'UNSELECTABLE') or not arrayfind(bp.Categories, 'SELECTABLE') ) or
                     (bp.Display and bp.Display.HideLifebars or bp.LifeBarRender == false) or
                     (bp.Defense and bp.Defense.Shield and (bp.Defense.Shield.AntiArtilleryShield or bp.Defense.Shield.PersonalShield))
                 ) and
                 (arrayfind(bp.Categories, 'UNTARGETABLE') and 'Untargetable<br />' or '')..
-                (arrayfind(bp.Categories, 'UNSELECTABLE') and 'Unselectable<br />' or '')..
+                ( (arrayfind(bp.Categories, 'UNSELECTABLE') or not arrayfind(bp.Categories, 'SELECTABLE') ) and 'Unselectable<br />' or '')..
                 ((bp.Display and bp.Display.HideLifebars or bp.LifeBarRender == false) and 'Lifebars hidden<br />' or '' )..
                 (bp.Defense and bp.Defense.Shield and bp.Defense.Shield.AntiArtilleryShield and 'Artillery shield<br />' or '')..
                 (bp.Defense and bp.Defense.Shield and bp.Defense.Shield.PersonalShield and 'Personal shield<br />' or '')
@@ -143,7 +141,7 @@ function MakeWiki(moddir, modsidebarindex)
             {''},
             {'Energy cost:', iconText('Energy', bp.Economy and bp.Economy.BuildCostEnergy)},
             {'Mass cost:', iconText('Mass', bp.Economy and bp.Economy.BuildCostMass)},
-            {'Build time:', iconText('Time-but-not', bp.Economy and bp.Economy.BuildTime, ' (<a href="#construction">Details</a>)')}, --I don't like the time icon for this, it looks too much and it's also not in real units
+            {'Build time:', iconText('Time-but-not', bp.Economy and bp.Economy.BuildTime, arraySubfind(bp.Categories, 'BUILTBY') and ' (<a href="#construction">Details</a>)' or '' )}, --I don't like the time icon for this, it looks too much and it's also not in real units
             {'Maintenance cost:', iconText('Energy', bp.Economy and bp.Economy.MaintenanceConsumptionPerSecondEnergy,'/s')},
             --{''},
             {'Build rate:', iconText('Build', bp.Economy and bp.Economy.BuildRate)},
@@ -232,9 +230,17 @@ function MakeWiki(moddir, modsidebarindex)
         ..(unitTdesc and 'It is classified as a '..string.lower(unitTdesc) or 'It is an unclassified'..(unitTlevel and ' '..string.lower(unitTlevel) ) )..' unit'..(not unitTlevel and ' with no defined tech level' or '')..'.'
 
         if Description[string.lower(bpid)] then
-            bodytext = bodytext.."\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[string.lower(bpid)]).."</blockquote>\n"
+            if arraySubfind(bp.Categories, 'BUILTBY') then
+                bodytext = bodytext.."\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[string.lower(bpid)]).."</blockquote>\n"
+            else
+                bodytext = bodytext.."\nThis unit has no defined build categories, however the build description for it is:\n\n<blockquote>"..LOC(Description[string.lower(bpid)]).."</blockquote>\n"
+            end
         else
-            bodytext = bodytext.."It has no defined build description.\n"
+            if arraySubfind(bp.Categories, 'BUILTBY') then
+                bodytext = bodytext.." It has no defined build description.\n"
+            else
+                bodytext = bodytext.." It has no defined build description, and no build categories.\n"
+            end
         end
 
         ------------------------------------------------------------------------
@@ -633,6 +639,7 @@ function MakeWiki(moddir, modsidebarindex)
 
             'ECONOMIC',
 
+            'SHIELD',
             'BOMBER',
             'TORPEDOBOMBER',
             'MINE',
@@ -658,7 +665,7 @@ function MakeWiki(moddir, modsidebarindex)
                     categoryData[cat] = {}
                 end
 
-                table.insert(categoryData[cat], {bpid, LOC(bp.General.UnitName) or bpid, unitTdesc or bpid})
+                table.insert(categoryData[cat], {bpid, LOC(bp.General.UnitName) or bpid, unitTdesc or bpid, modname})
 
                 if cattext ~= '' then
                     cattext = cattext..' · '
@@ -724,7 +731,7 @@ do
         for modindex, moddata in ipairs(sidebarData) do
             local modname = moddata[1]
 
-            sidebarstring = sidebarstring .. "<details markdown=\"1\">\n<summary>[Show] <a href=\""..string.gsub(modname, ':', '')..[[">]]..modname.."</a></summary>\n<p>\n<table>\n<tr>\n<td>\n\n"
+            sidebarstring = sidebarstring .. "<details markdown=\"1\">\n<summary>[Show] <a href=\""..stringSanitiseFile(modname)..[[">]]..modname.."</a></summary>\n<p>\n<table>\n<tr>\n<td>\n\n"
             for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
                 local faction = FactionsByIndex[i]
                 local unitarray = moddata[2][i]
@@ -732,7 +739,7 @@ do
                     sidebarstring = sidebarstring .. "<details>\n<summary>"..faction.."</summary>\n<p>\n\n"
                     for unitI, unitData in ipairs(unitarray) do
 
-                        sidebarstring = sidebarstring .. "* <a title=\""..unitData[2]..[[" href="../wiki/]]..unitData[1]..[[">]]..unitData[3].."</a>\n"
+                        sidebarstring = sidebarstring .. "* <a title=\""..unitData[2]..[[" href="]]..unitData[1]..[[">]]..unitData[3].."</a>\n"
 
                     end
                     sidebarstring = sidebarstring .. "</p>\n</details>\n"
@@ -752,6 +759,14 @@ do
         for modindex, moddata in ipairs(sidebarData) do
             local modname = moddata[1]
             local modinfo = moddata[3]
+            local InfoboxString = InfoboxHeader(
+                'mod-right',
+                modname,
+                '<img src="'..ImageRepo..'mods/'..stringSanitiseFile(modname, true, true)..'.png" width="256px" />')
+            .. InfoboxRow( 'Author:', modinfo.author )
+            .. InfoboxRow( 'Version:', modinfo.version )
+            .. InfoboxEnd('main-right')
+
             local mulString = '***'..modname..'*** is a mod by '..(modinfo.author or 'an unknown author')
             ..". Its mod menu description is:\n"
             .."<blockquote>"..(modinfo.description or 'No description.').."</blockquote>\nVersion "
@@ -779,13 +794,13 @@ do
                             mulString = mulString ..MDHead(tech[2])
                         end
 
-                        mulString = mulString .. [[<a title="]]..unitData[2]..[[" href="../wiki/]]..unitData[1]..[["><img src="]]..unitIconRepo..unitData[1].."_icon.png\" /></a>\n"
+                        mulString = mulString .. [[<a title="]]..unitData[2]..[[" href="]]..unitData[1]..[["><img src="]]..unitIconRepo..unitData[1].."_icon.png\" /></a>\n"
                     end
                 end
             end
 
-            md = io.open(WikiRepoDir..'/'..string.gsub(modname, ':', '')..'.md', "w")
-            md:write(mulString)
+            md = io.open(WikiRepoDir..'/'..stringSanitiseFile(modname)..'.md', "w")
+            md:write(InfoboxString..mulString)
             md:close()
 
         end
@@ -800,7 +815,12 @@ do
 
             local catstring = 'Units with the <code>'..cat.."</code> category.\n<table>\n"
             for i, unitData in ipairs(data) do
-                catstring = catstring .. "<tr><td><a href=\""..unitData[1]..[["><img src="]]..unitIconRepo..unitData[1]..[[_icon.png" width="21px" /></a><td><code>]]..unitData[1]..[[</code></td><td><a href="]]..unitData[1]..[[">]]
+                catstring = catstring
+                ..'<tr><td><a href="'..unitData[1]..'"><img src="'..unitIconRepo..unitData[1]..'_icon.png" width="21px" /></a>'
+                ..'<td><code>'..unitData[1]..'</code>'
+                ..'<td><a href="'.. stringSanitiseFile(unitData[4]) ..'"><img src="'..IconRepo..'mods/'..stringSanitiseFile(unitData[4], true, true)..'.png" width="21px" /></a>'
+                ..'<td><a href="'..unitData[1]..'">'
+
                 if unitData[1] ~= unitData[2] then
                     catstring = catstring..unitData[2]
                     if unitData[1] ~= unitData[3] then

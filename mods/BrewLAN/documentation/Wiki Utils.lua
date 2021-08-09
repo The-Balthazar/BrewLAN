@@ -57,10 +57,30 @@ tableOverwrites = function(t1, t2)
 end
 
 --------------------------------------------------------------------------------
+-- Generic string functions
+--------------------------------------------------------------------------------
+
+stringSanitiseForWindowsFilename = function(s)
+    --I can't be bothered to look up how to regex this
+    for i, v in ipairs{ '\\', '/', ':', '*', '?', '"', '<', '>', '|' } do -- Other not safe things I don't care about: '#', '$', '!', '&', "'", '{', '}', '@', '%%',
+        s = string.gsub(s, v, '')
+    end
+    return s
+end
+
+stringSanitiseFile = function(s, lower, nospace)
+    if type(s) ~= 'string' then return end
+    if lower then s = string.lower(s) end
+    if nospace then s = string.gsub(s, ' ', '-') end
+    return stringSanitiseForWindowsFilename(s)
+end
+
+--------------------------------------------------------------------------------
 -- Section constructions
 --------------------------------------------------------------------------------
 
-InfoboxHeader = function(style, head)
+InfoboxHeader = function(style, ...)
+    --local arg = {...}
     local styles = {
         ['main-right'] = [[
 <table align=right>
@@ -73,9 +93,25 @@ InfoboxHeader = function(style, head)
     </thead>
     <tbody>
 ]],
+        ['mod-right'] = [[
+<table align=right>
+    <thead>
+        <tr>
+            <th colspan='2'>
+                %s
+            </th>
+        </tr>
+        <tr>
+            <th colspan='2'>
+                %s
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+]],
         ['detail-left'] = "<details>\n<summary>%s</summary>\n<p>\n    <table>\n",
     }
-    return string.format(styles[style], head)
+    return string.format(styles[style], table.unpack{...})
 end
 
 InfoboxRow = function(th, td, tip)
@@ -86,11 +122,12 @@ InfoboxRow = function(th, td, tip)
         ..(th or '').."</strong></td>\n            <td>"
         ..td..(tip and ' <span title="'..tip..'">(<u>?</u>)</span>' or '').."</td>\n        </tr>\n"
     end
+    return ''
 end
 
 InfoboxEnd = function(style)
     local styles = {
-        ['main-right'] = "    </thead>\n</table>\n\n",
+        ['main-right'] = "    </tbody>\n</table>\n\n",
         ['detail-left'] = "    </table>\n</p>\n</details>\n",
     }
     return styles[style]
