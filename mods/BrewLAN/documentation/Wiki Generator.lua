@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- Supreme Commander mod automatic unit wiki generation script for Github wikis
--- By Sean 'Balthazar' Wheeldon
+-- Copyright 2021 Sean 'Balthazar' Wheeldon                           Lua 5.4.2
 --------------------------------------------------------------------------------
 dofile(string.sub(debug.getinfo(1).source, 2, -14)..'Inputs.lua')
 dofile(string.sub(debug.getinfo(1).source, 2, -14)..'Utils.lua')
@@ -12,90 +12,28 @@ local categoryData = {}
 
 function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
 
-    local modinfo = {}
-    do
-        local pass, msg = pcall(dofile, ModDirectory..'/mod_info.lua')
-        assert(pass, 'mod_info.lua not found')
-        modinfo.name = name
-        modinfo.description = description
-        modinfo.author = author
-        modinfo.version = version
-        modinfo.icon = icon and true -- A bool because I'm not committing to the dir structure of the mod(s) for the wiki files.
-    end
+    local ModInfo = GetModInfo(ModDirectory)
 
-    print('Locating blueprints in '..modinfo.name)
+    print('🔎 Searching for blueprints in '..ModInfo.name)
 
-    local BlueprintPathsArray = {}
-    do
-        local dirsearch
-        dirsearch = function(dir, p)
-            for line in io.popen('dir "'..dir..'" /b '..(p or '')):lines() do
-                if string.sub(line, 1, 1) ~= '.' then -- filter out .git and other .folders
-                    if string.sub(line,-8,-1) == '_unit.bp'
-                    and string.upper(string.sub(line,1,1)) ~= 'Z' then
-                        table.insert(BlueprintPathsArray, {dir,line})
-                    else
-                        dirsearch(dir..'/'..line)
-                    end
-                end
-            end
-        end
+    local BlueprintPathsArray = GetModBlueprintPaths(ModDirectory)
 
-        dirsearch(ModDirectory.."/units", '/ad')
-        assert(#BlueprintPathsArray > 0, 'No unit blueprints found')
-        print("Found "..#BlueprintPathsArray.." blueprint files")
-    end
+    GetModHooks(ModDirectory)
 
-    ----------------------------------------------------------------------------
+    for i, fileDir in ipairs(BlueprintPathsArray) do
 
-    for name, filedir in pairs({
-        ['Build descriptions'] = '/hook/lua/ui/help/unitdescription.lua',
-           ['US localisation'] = '/hook/loc/US/strings_db.lua',
-                  ['Tooltips'] = '/hook/lua/ui/help/tooltips.lua',
-    }) do
-        local pass, mgs = pcall(dofile, ModDirectory..filedir)
-        print( (pass and 'Loaded: ' or 'Not found: ') .. name)
-    end
+        local bp = GetBlueprint(fileDir[1],fileDir[2])
+        local BpId = bp.BlueprintId
+        local bpid = string.lower(BpId)
 
-    print("Creating wiki pages")
+        --print(BpId)
 
-    for i, fdir in ipairs(BlueprintPathsArray) do
-        local bp
-        ----------------------------------------------------------------------------
-        UnitBlueprint = function(a) bp = a end
-        Sound = function(a) return a end
-        ----------------------------------------------------------------------------
-        local pass, msg = pcall(dofile, fdir[1]..'/'..fdir[2])
-        if not pass then
-            print(msg)--else print(bp)
-        end
-        ----------------------------------------------------------------------------
-        --local bp = all_bps[fdir[2]]
-        local bpid = string.sub(fdir[2],1,-9)
-        print(bpid)
-        ----------------------------------------------------------------------------
-
-        local unitTdesc = LOC(bp.Description)
-        local unitTlevel
-
-        if arrayfind(bp.Categories, 'EXPERIMENTAL') then
-            unitTlevel = 'Experimental'
-        else
-            for i = 1, 3 do
-                if arrayfind(bp.Categories, 'TECH'..i) then
-                    unitTlevel = 'Tech '..i
-                    unitTdesc = unitTlevel..' '..LOC(bp.Description)
-                    break
-                end
-            end
-        end
-
-        ------------------------------------------------------------------------
+        local unitTlevel, unitTdesc = GetUnitTechAndDescStrings(bp)
 
         local infoboxdata = {
             {'', "Note: Several units have stats defined at the<br />start of the game based on the stats of others."},
-            {'Source:', '<a href="'..stringSanitiseFile(modinfo.name)..'">'..modinfo.name..'</a>'},
-            {'Unit ID:', '<code>'..string.lower(bpid)..'</code>',},
+            {'Source:', '<a href="'..stringSanitiseFile(ModInfo.name)..'">'..ModInfo.name..'</a>'},
+            {'Unit ID:', '<code>'..bpid..'</code>',},
             {'Faction:', (bp.General and bp.General.FactionName)},
             {''},
             {'Health:',
@@ -195,18 +133,14 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
             string.format(
                 '<img align="left" title="%s unit icon" src="%s_icon.png" />%s<br />%s',
                 (LOC(bp.General.UnitName) or 'The'),
-                unitIconRepo..bpid,
+                unitIconRepo..BpId,
                 (LOC(bp.General.UnitName) or '<i>Unnamed</i>'),
                 (unitTdesc or [[<i>No description</i>]])
             )
         )
 
         for i, field in ipairs(infoboxdata) do
-            local irowstring = InfoboxRow(field[1], field[2], field[3])
-
-            if irowstring then
-                infoboxstring = infoboxstring .. irowstring
-            end
+            infoboxstring = infoboxstring .. InfoboxRow(field[1], field[2], field[3])
         end
 
         infoboxstring = infoboxstring .. InfoboxEnd('main-right')
@@ -215,26 +149,19 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
 
         local headerstring = (bp.General.UnitName and '"'..LOC(bp.General.UnitName)..'": ' or '')..unitTdesc.."\n----\n"
 
-        ------------------------------------------------------------------------
-
         local bodytext = (bp.General.UnitName and '"'..LOC(bp.General.UnitName)..'" is a'
         or 'This unamed unit is a')..(bp.General and bp.General.FactionName == 'Aeon' and 'n ' or ' ') -- a UEF, an Aeon ect.
-        ..(bp.General and bp.General.FactionName..' ')..(bp.Physics.MotionType and motionTypes[bp.Physics.MotionType][1] or 'structure')..' unit included in *'..modinfo.name.."*.\n"
+        ..(bp.General and bp.General.FactionName..' ')..(bp.Physics.MotionType and motionTypes[bp.Physics.MotionType][1] or 'structure')..' unit included in *'..ModInfo.name.."*.\n"
         ..(unitTdesc and 'It is classified as a '..string.lower(unitTdesc) or 'It is an unclassified'..(unitTlevel and ' '..string.lower(unitTlevel) ) )..' unit'..(not unitTlevel and ' with no defined tech level' or '')..'.'
 
-        if Description[string.lower(bpid)] then
-            if arraySubfind(bp.Categories, 'BUILTBY') then
-                bodytext = bodytext.."\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[string.lower(bpid)]).."</blockquote>\n"
-            else
-                bodytext = bodytext.."\nThis unit has no defined build categories, however the build description for it is:\n\n<blockquote>"..LOC(Description[string.lower(bpid)]).."</blockquote>\n"
-            end
-        else
-            if arraySubfind(bp.Categories, 'BUILTBY') then
-                bodytext = bodytext.." It has no defined build description.\n"
-            else
-                bodytext = bodytext.." It has no defined build description, and no build categories.\n"
-            end
-        end
+        local BuildIntroTexts = {
+            [0] = " It has no defined build description, and no build categories.\n",
+            [1] = " It has no defined build description.\n",
+            [2] = "\nThis unit has no defined build categories, however the build description for it is:\n\n<blockquote>"..LOC(Description[bpid] or '').."</blockquote>\n",
+            [3] = "\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[bpid] or '').."</blockquote>\n",
+        }
+
+        bodytext = bodytext..BuildIntroTexts[Binary2bit( Description[bpid], arraySubfind(bp.Categories, 'BUILTBY') )]
 
         ------------------------------------------------------------------------
         -- Body content
@@ -401,7 +328,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                         local enh = enh[2]
                         if key ~= 'Slots' and string.sub(key, -6, -1) ~= 'Remove' then
                             bodytext = bodytext..InfoboxHeader('detail-left', (enh.Name and LOC(enh.Name) or 'error:name') )
-                            ..InfoboxRow('Description:', (LOC(Description[string.lower(bpid..'-'..enh.Icon)]) or 'error:description') )
+                            ..InfoboxRow('Description:', (LOC(Description[bpid..'-'..string.lower(enh.Icon)]) or 'error:description') )
                             ..InfoboxRow('Energy cost:', iconText('Energy', enh.BuildCostEnergy or 'error:energy') )
                             ..InfoboxRow('Mass cost:', iconText('Mass', enh.BuildCostMass or 'error:mass') )
                             ..InfoboxRow('Build time:', iconText('Time', enh.BuildTime and bp.Economy and bp.Economy.BuildRate and math.ceil(enh.BuildTime / bp.Economy.BuildRate) or 'error:time').." seconds" )
@@ -503,7 +430,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                         end
 
                         local CWTn = #compiledWeaponsTable
-                        if compiledWeaponsTable[1] and arrayequal(compiledWeaponsTable[CWTn][3], weapontable) then
+                        if compiledWeaponsTable[1] and arrayEqual(compiledWeaponsTable[CWTn][3], weapontable) then
                             compiledWeaponsTable[CWTn][2] = compiledWeaponsTable[CWTn][2] + 1
                         else
                             table.insert(compiledWeaponsTable, {(wep.DisplayName or wep.Label or '<i>Dummy Weapon</i>'), 1, weapontable})
@@ -598,7 +525,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
         ------------------------------------------------------------------------
 
         local UnitInfo = {
-            bpid = bpid,
+            bpid = BpId,
             name = LOC(bp.General.UnitName),
             desc = unitTdesc,
         }
@@ -655,7 +582,10 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                     categoryData[cat] = {}
                 end
 
-                table.insert(categoryData[cat], {UnitInfo = UnitInfo, modinfo = modinfo})
+                table.insert(categoryData[cat], {
+                    UnitInfo = UnitInfo,
+                    ModInfo = ModInfo
+                })
 
                 if cattext ~= '' then
                     cattext = cattext..' · '
@@ -667,7 +597,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
 
         ------------------------------------------------------------------------
 
-        local md = io.open(WikiRepoDir..'/'..bpid..'.md', "w")
+        local md = io.open(WikiRepoDir..'/'..BpId..'.md', "w")
         md:write(headerstring..infoboxstring..bodytext..cattext.."\n")
         md:close()
 
@@ -676,7 +606,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
         ------------------------------------------------------------------------
 
         if not sidebarData[modsidebarindex] then
-            sidebarData[modsidebarindex] = {modinfo = modinfo, [2] = {} }
+            sidebarData[modsidebarindex] = {ModInfo = ModInfo, [2] = {} }
         end
 
         local faction = FactionIndexes[bp.General and bp.General.FactionName] or 5
@@ -685,12 +615,10 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
             sidebarData[modsidebarindex][2][faction] = {}
         end
 
-        table.insert(sidebarData[modsidebarindex][2][faction], {bpid, LOC(bp.General.UnitName) or bpid, unitTdesc or bpid})
-
-
+        table.insert(sidebarData[modsidebarindex][2][faction], UnitInfo)
     end
 
-    print("Complete")
+    print( #BlueprintPathsArray..' unit wiki page'..(#BlueprintPathsArray > 1 and 's' or '')..' created' )
 
 end
 
@@ -722,11 +650,11 @@ do
 
                             if sort == 'TechDescending-DescriptionAscending' then
                                 g = { ['Experi'] = 1, ['Tech 3'] = 2, ['Tech 2'] = 3, ['Tech 1'] = 4 }
-                                return (g[string.sub(a[3], 1, 6)] or 5)..a[3] < (g[string.sub(b[3], 1, 6)] or 5)..b[3]
+                                return (g[string.sub(a.desc, 1, 6)] or 5)..a.desc < (g[string.sub(b.desc, 1, 6)] or 5)..b.desc
 
                             elseif sort == 'TechAscending-IDAscending' then
                                 g = { ['Tech 1'] = 1, ['Tech 2'] = 2, ['Tech 3'] = 3, ['Experi'] = 4 }
-                                return (g[string.sub(a[3], 1, 6)] or 5)..a[1] < (g[string.sub(b[3], 1, 6)] or 5)..b[1]
+                                return (g[string.sub(a.desc, 1, 6)] or 5)..a.bpid < (g[string.sub(b.desc, 1, 6)] or 5)..b.bpid
 
                             end
                         end)
@@ -742,7 +670,7 @@ do
         for modindex, moddata in ipairs(sidebarData) do
             local modname = moddata[1]
 
-            sidebarstring = sidebarstring .. "<details markdown=\"1\">\n<summary>[Show] <a href=\""..stringSanitiseFile(moddata.modinfo.name)..[[">]]..moddata.modinfo.name.."</a></summary>\n<p>\n<table>\n<tr>\n<td>\n\n"
+            sidebarstring = sidebarstring .. "<details markdown=\"1\">\n<summary>[Show] <a href=\""..stringSanitiseFile(moddata.ModInfo.name)..[[">]]..moddata.ModInfo.name.."</a></summary>\n<p>\n<table>\n<tr>\n<td>\n\n"
             for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
                 local faction = FactionsByIndex[i]
                 local unitarray = moddata[2][i]
@@ -750,7 +678,7 @@ do
                     sidebarstring = sidebarstring .. "<details>\n<summary>"..faction.."</summary>\n<p>\n\n"
                     for unitI, unitData in ipairs(unitarray) do
 
-                        sidebarstring = sidebarstring .. "* <a title=\""..unitData[2]..[[" href="]]..unitData[1]..[[">]]..unitData[3].."</a>\n"
+                        sidebarstring = sidebarstring .. "* <a title=\""..(unitData.name or unitData.bpid)..[[" href="]]..unitData.bpid..[[">]]..(unitData.desc or unitData.bpid).."</a>\n"
 
                     end
                     sidebarstring = sidebarstring .. "</p>\n</details>\n"
@@ -771,16 +699,16 @@ do
 
             local InfoboxString = InfoboxHeader(
                 'mod-right',
-                moddata.modinfo.name,
-                '<img src="'..ImageRepo..'mods/'..stringSanitiseFile(moddata.modinfo.name, true, true)..'.png" width="256px" />')
-            .. InfoboxRow( 'Author:', moddata.modinfo.author )
-            .. InfoboxRow( 'Version:', moddata.modinfo.version )
+                moddata.ModInfo.name,
+                '<img src="'..ImageRepo..'mods/'..stringSanitiseFile(moddata.ModInfo.name, true, true)..'.png" width="256px" />')
+            .. InfoboxRow( 'Author:', moddata.ModInfo.author )
+            .. InfoboxRow( 'Version:', moddata.ModInfo.version )
             .. InfoboxEnd('main-right')
 
-            local mulString = '***'..moddata.modinfo.name..'*** is a mod by '..(moddata.modinfo.author or 'an unknown author')
+            local mulString = '***'..moddata.ModInfo.name..'*** is a mod by '..(moddata.ModInfo.author or 'an unknown author')
             ..". Its mod menu description is:\n"
-            .."<blockquote>"..(moddata.modinfo.description or 'No description.').."</blockquote>\nVersion "
-            ..moddata.modinfo.version.." contains the following units:\n"
+            .."<blockquote>"..(moddata.ModInfo.description or 'No description.').."</blockquote>\nVersion "
+            ..moddata.ModInfo.version.." contains the following units:\n"
 
             for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
                 local faction = FactionsByIndex[i]
@@ -798,18 +726,18 @@ do
                     mulString = mulString .. MDHead(faction,2)
 
                     for unitI, unitData in ipairs(unitarray) do
-                        local tech = thash[string.sub(unitData[3], 1, 6)] or thash['Other']
+                        local tech = unitData.desc and thash[string.sub(unitData.desc, 1, 6)] or thash['Other']
                         if tech[1] > curtechi then
                             curtechi = tech[1]
                             mulString = mulString ..MDHead(tech[2])
                         end
 
-                        mulString = mulString .. [[<a title="]]..unitData[2]..[[" href="]]..unitData[1]..[["><img src="]]..unitIconRepo..unitData[1].."_icon.png\" /></a>\n"
+                        mulString = mulString .. [[<a title="]]..(unitData.name or unitData.bpid)..[[" href="]]..unitData.bpid..[["><img src="]]..unitIconRepo..unitData.bpid.."_icon.png\" /></a>\n"
                     end
                 end
             end
 
-            md = io.open(WikiRepoDir..'/'..stringSanitiseFile(moddata.modinfo.name)..'.md', "w")
+            md = io.open(WikiRepoDir..'/'..stringSanitiseFile(moddata.ModInfo.name)..'.md', "w")
             md:write(InfoboxString..mulString)
             md:close()
 
@@ -828,7 +756,7 @@ do
                 catstring = catstring
                 ..'<tr><td><a href="'..data.UnitInfo.bpid ..'"><img src="'..unitIconRepo..data.UnitInfo.bpid..'_icon.png" width="21px" /></a>'
                 ..'<td><code>'..data.UnitInfo.bpid..'</code>'
-                ..'<td><a href="'.. stringSanitiseFile(data.modinfo.name) ..'"><img src="'..IconRepo..'mods/'..stringSanitiseFile(data.modinfo.name, true, true)..'.png" width="21px" /></a>'
+                ..'<td><a href="'.. stringSanitiseFile(data.ModInfo.name) ..'"><img src="'..IconRepo..'mods/'..stringSanitiseFile(data.ModInfo.name, true, true)..'.png" width="21px" /></a>'
                 ..'<td><a href="'..data.UnitInfo.bpid..'">'
 
                 local switch = {

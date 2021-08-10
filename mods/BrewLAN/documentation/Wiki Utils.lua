@@ -20,7 +20,7 @@ arraySubfind = function(array, str)
     end
 end
 
-arraysubset = function(t1, t2)
+arraySubset = function(t1, t2)
     for k, v in ipairs(t1) do
         if type(v) == 'table' then
             for t, p in ipairs(v) do
@@ -37,8 +37,8 @@ arraysubset = function(t1, t2)
     return true
 end
 
-arrayequal = function(t1, t2)
-    return arraysubset(t1, t2) and arraysubset(t2, t1)
+arrayEqual = function(t1, t2)
+    return arraySubset(t1, t2) and arraySubset(t2, t1)
 end
 
 tableOverwrites = function(t1, t2)
@@ -73,6 +73,19 @@ stringSanitiseFile = function(s, lower, nospace)
     if lower then s = string.lower(s) end
     if nospace then s = string.gsub(s, ' ', '-') end
     return stringSanitiseForWindowsFilename(s)
+end
+
+LOC = function(s)
+    if type(s) == 'string' and string.sub(s, 1, 4)=='<LOC' then
+        local i = string.find(s,">")
+        local locK = string.sub(s, 6, i-1)
+        if _G[locK] then
+            return _G[locK]
+        else
+            return string.sub(s, i+1)
+        end
+    end
+    return s
 end
 
 --------------------------------------------------------------------------------
@@ -170,18 +183,6 @@ iconText = function(icon, text, text2)
 end
 
 --------------------------------------------------------------------------------
-LOC = function(s)
-    if type(s) == 'string' and string.sub(s, 1, 4)=='<LOC' then
-        local i = string.find(s,">")
-        local locK = string.sub(s, 6, i-1)
-        if _G[locK] then
-            return _G[locK]
-        else
-            return string.sub(s, i+1)
-        end
-    end
-    return s
-end
 
 --------------------------------------------------------------------------------
 Layers = {
@@ -529,9 +530,9 @@ defaultOrdersTable = {--commandCaps = {
     RULEUCC_Dock                = { helpText = "dock",          bitmapId = 'dock',                  preferredSlot = 12.1, },
 
     RULEUCC_Script              = { helpText = "special_action",bitmapId = 'overcharge',            preferredSlot = 7,  },
---}
+    --}
 
---local toggleModes = {
+    --local toggleModes = {
     RULEUTC_ShieldToggle        = { helpText = "toggle_shield",     bitmapId = 'shield',                preferredSlot = 7.3,  },
     RULEUTC_WeaponToggle        = { helpText = "toggle_weapon",     bitmapId = 'toggle-weapon',         preferredSlot = 7.4,  },
     RULEUTC_JammingToggle       = { helpText = "toggle_jamming",    bitmapId = 'jamming',               preferredSlot = 8.1,  },
@@ -771,6 +772,7 @@ FactionIndexes = {
     Aeon = 2,
     Cybran = 3,
     Seraphim = 4,
+    Other = 5,
 }
 
 FactionsByIndex = {
@@ -788,4 +790,89 @@ BinaryCounter = function(...)
         n = n + (v and 1 or 0)
     end
     return n
+end
+
+--[[Binary = function(...)
+    return --TODO:
+end]]
+
+Binary2bit = function(a,b)
+    return (a and 2 or 0) + (b and 1 or 0)
+end
+--binarySwitch = function(a,b,c,d) return (a and 8 or 0) + (b and 4 or 0) + (c and 2 or 0) + (d and 1 or 0) end
+
+GetModInfo = function(dir)
+    assert(pcall(dofile, dir..'/mod_info.lua'))
+    return {
+        name = name,
+        description = description,
+        author = author,
+        version = version,
+        icon = icon and true -- A bool because I'm not committing to the dir structure of the mod(s) for the wiki files.
+    }
+end
+
+GetModBlueprintPaths = function(dir)
+    local BlueprintPathsArray = {}
+
+    local dirsearch
+    dirsearch = function(folder, p)
+        for line in io.popen('dir "'..folder..'" /b '..(p or '')):lines() do
+            if string.sub(line, 1, 1) ~= '.' then -- filter out .git and other .folders
+                if string.sub(line,-8,-1) == '_unit.bp'
+                and string.upper(string.sub(line,1,1)) ~= 'Z' then
+
+                    table.insert(BlueprintPathsArray, {folder, line})
+
+                else
+                    dirsearch(folder..'/'..line)
+                end
+            end
+        end
+    end
+
+    dirsearch(dir.."/units", '/ad')
+    --assert(#BlueprintPathsArray > 0, 'No unit blueprints found')
+    --print("Found "..#BlueprintPathsArray.." blueprint files")
+
+    return BlueprintPathsArray
+end
+
+GetModHooks = function(ModDirectory)
+    local log = 'Loading: '
+    for name, fileDir in pairs({
+        ['Build descriptions'] = '/hook/lua/ui/help/unitdescription.lua',
+           ['US localisation'] = '/hook/loc/US/strings_db.lua',
+                  ['Tooltips'] = '/hook/lua/ui/help/tooltips.lua',
+    }) do
+        log = log..(pcall(dofile, ModDirectory..fileDir) and '🆗 ' or '❌ ')..name..' '
+    end
+    print(log)
+end
+
+GetBlueprint = function(dir, file)
+    local bp
+
+    UnitBlueprint = function(a) bp = a end
+    Sound = function(a) return a end
+
+    assert(pcall(dofile, dir..'/'..file))
+
+    bp.BlueprintId = string.sub(file,1,-9)
+
+    return bp
+end
+
+GetUnitTechAndDescStrings = function(bp)
+    -- Tech 1-3 units don't have the tech level in their desc exclicitly,
+    -- Experimental do. This unified it so we don't have to check again.
+    for i = 1, 3 do
+        if arrayfind(bp.Categories, 'TECH'..i) then
+            return 'Tech '..i, 'Tech '..i..' '..LOC(bp.Description)
+        end
+    end
+    if arrayfind(bp.Categories, 'EXPERIMENTAL') then
+        return 'Experimental', LOC(bp.Description)
+    end
+    return nil, LOC(bp.Description)
 end
