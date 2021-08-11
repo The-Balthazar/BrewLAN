@@ -17,7 +17,7 @@ WikiRepoDir = "C:/BrewLAN.wiki"
 --  - The blueprint filenames must end in '_unit.bp'
 --  - The blueprint filenames must not begin with 'z' or 'Z'
 --  - The blueprint files MUST be valid lua. That means not using # for comment.
-ListOfModDirectories = {
+ModDirectories = {
     'C:/BrewLAN/mods/BrewLAN',
     'C:/BrewLAN/mods/BrewLAN_Units/BrewAir',
     'C:/BrewLAN/mods/BrewLAN_Units/BrewIntel',
@@ -33,9 +33,28 @@ ListOfModDirectories = {
 -- However, it does assume the images it expects are right in there with the names it expects
 IconRepo = "/The-Balthazar/BrewLAN/wiki/icons/"
 ImageRepo = "/The-Balthazar/BrewLAN/wiki/images/"
+
 -- The location of the unit icons for inclusion in the wiki
 -- The files are expected to be [unit blueprintID]_icon.png
 -- This doesn't have to be a sub-directory of the icon repo
 unitIconRepo = IconRepo.."units/"
 
---------------------------------------------------------------------------------
+-- Unit categories that will get turned into wiki categories
+-- In the order that they will appear in the unit footers
+FooterCategories = {
+    'UEF', 'AEON', 'CYBRAN', 'SERAPHIM',
+    'TECH1', 'TECH2', 'TECH3', 'EXPERIMENTAL',
+    'MOBILE',
+    'ANTIAIR', 'ANTINAVY', 'DIRECTFIRE',
+    'AIR', 'LAND', 'NAVAL',
+    'HOVER',
+    'ECONOMIC',
+    'SHIELD',
+    'BOMBER', 'TORPEDOBOMBER',
+    'MINE',
+    'COMMAND', 'SUBCOMMANDER', 'ENGINEER', 'FIELDENGINEER',
+    'SILO',
+    'FACTORY',
+    'ARTILLERY',
+    'STRUCTURE',
+}

@@ -4,6 +4,7 @@
 --------------------------------------------------------------------------------
 dofile(string.sub(debug.getinfo(1).source, 2, -14)..'Inputs.lua')
 dofile(string.sub(debug.getinfo(1).source, 2, -14)..'Utils.lua')
+pcall(dofile, string.sub(debug.getinfo(1).source, 2, -14)..'Mod Data.lua')
 
 local sidebarData = {}
 local categoryData = {}
@@ -122,7 +123,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
             ), 'The space this occupies on transports or on air staging. No units can accommodate greater than class 3.'},
             {'Class 1 capacity:', iconText('Attached', bp.Transport and bp.Transport.Class1Capacity), 'The number of class 1 units this can carry. For class 2 and 3 estimates, half or quarter this number; actual numbers will vary on how the attach points are arranged.'},
             {''},
-            {'Misc radius:', arrayfind(bp.Categories, 'OVERLAYMISC') and bp.AI and bp.AI.StagingPlatformScanRadius, 'Defined by the air staging radius value. Often used to indicate things without a dedicated range rings.' },
+            {'Misc radius:', arrayfind(bp.Categories, 'OVERLAYMISC') and bp.AI and bp.AI.StagingPlatformScanRadius, 'Defined by the air staging radius value. Often used to indicate things without a dedicated range ring.' },
             {'Weapons:', bp.Weapon and #bp.Weapon..' (<a href="#weapons">Details</a>)'},
         }
 
@@ -155,9 +156,9 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
         ..(unitTdesc and 'It is classified as a '..string.lower(unitTdesc) or 'It is an unclassified'..(unitTlevel and ' '..string.lower(unitTlevel) ) )..' unit'..(not unitTlevel and ' with no defined tech level' or '')..'.'
 
         local BuildIntroTexts = {
-            [0] = " It has no defined build description, and no build categories.\n",
-            [1] = " It has no defined build description.\n",
-            [2] = "\nThis unit has no defined build categories, however the build description for it is:\n\n<blockquote>"..LOC(Description[bpid] or '').."</blockquote>\n",
+            [0] = " It has no defined build description, and no categories to define common builders.\n",
+            [1] = " It has no defined build description.<error:buildable unit with no build description>\n",
+            [2] = "\nThis unit has no categories to define common builders, however the build description for it is:\n\n<blockquote>"..LOC(Description[bpid] or '').."</blockquote>\n",
             [3] = "\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[bpid] or '').."</blockquote>\n",
         }
 
@@ -171,17 +172,18 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
             {
                 'Abilities',
                 check = bp.Display and bp.Display.Abilities and #bp.Display.Abilities > 0,
-                Data = function()
-                    bodytext = bodytext.."Hover over abilities to see effect descriptions.\n"
+                Data = function(bp)
+                    local text = "Hover over abilities to see effect descriptions.\n"
                     for i, ability in ipairs(bp.Display.Abilities) do
-                        bodytext = bodytext.."\n* "..abilityTitle(LOC(ability))
+                        text = text.."\n* "..abilityTitle(LOC(ability))
                     end
+                    return text
                 end
             },
             {
                 'Adjacency',
                 check = arraySubfind(bp.Categories, 'SIZE') or bp.Adjacency,
-                Data = function()
+                Data = function(bp)
                     local sizecat = arraySubfind(bp.Categories, 'SIZE')
                     local sizecatno = sizecat and tonumber(string.sub(sizecat,5))
 
@@ -195,7 +197,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
 
                     local actualsize = math.max(2, sizeX) + math.max(2, sizeZ)
 
-                    bodytext = bodytext..(sizecat and "This unit counts as `"..
+                    local text = (sizecat and "This unit counts as `"..
                     sizecat.."` for adjacency effects from other structures. This theoretically means that it can be surrounded by exactly "..
                     string.sub(sizecat,5).." structures the size of a standard tech 1 power generator"..(
                     actualsize and (
@@ -208,21 +210,22 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                     ) or '')..'. ' or '')
 
                     if bp.Adjacency then
-                        bodytext = bodytext..[[The adjacency bonus `]]..bp.Adjacency..[[` is given by this unit.]]
+                        text = text..[[The adjacency bonus `]]..bp.Adjacency..[[` is given by this unit.]]
                     end
+                    return text
                 end
             },
             {
                 'Construction',
                 check = arraySubfind(bp.Categories, 'BUILTBY'),
-                Data = function()
-                    bodytext = bodytext.."The estimated build times for this unit on the Steam/retail version of the game are as follows; Note: This only includes hard-coded builders; some build categories are generated on game launch."..BuilderList(bp)
+                Data = function(bp)
+                    return "The estimated build times for this unit on the Steam/retail version of the game are as follows; Note: This only includes hard-coded builders; some build categories are generated on game launch."..BuilderList(bp)
                 end
             },
             {
                 'Order capabilities',
                 check = bp.General and ( CheckCaps(bp.General.CommandCaps) or CheckCaps(bp.General.ToggleCaps) ),
-                Data = function()
+                Data = function(bp)
                     local ordersarray = {}
                     for i, hash in ipairs({bp.General.CommandCaps or {}, bp.General.ToggleCaps or {}}) do
                         for order, val in pairs(hash) do
@@ -233,19 +236,19 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                     end
                     table.sort(ordersarray, function(a, b) return (defaultOrdersTable[a].preferredSlot or 99) < (defaultOrdersTable[b].preferredSlot or 99) end)
 
-                    bodytext = bodytext.."The following orders can be issued to the unit:\n<table>\n"
+                    local text = "The following orders can be issued to the unit:\n<table>\n"
                     local slot = 99
                     for i, v in ipairs(ordersarray) do
                         local orderstring, order = orderButtonImage(v, bp.General.OrderOverrides)
                         if order then
                             if (slot <= 6 and order.preferredSlot >= 7) then
-                                bodytext = bodytext.."<tr>\n"
+                                text = text.."<tr>\n"
                             end
                             slot = order.preferredSlot
                         end
-                        bodytext = bodytext .. "<td>"..orderstring.."</td>\n"
+                        text = text .. "<td>"..orderstring.."</td>\n"
                     end
-                    bodytext = bodytext .."</table>"
+                    return text.."</table>"
                 end
             },
             {
@@ -260,7 +263,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                         bp.General.CommandCaps.RULEUCC_Sacrifice
                     )
                 ),
-                Data = function()
+                Data = function(bp)
                     local eng = {}
                     if bp.General and bp.General.CommandCaps then
                         local eng2 = {
@@ -275,38 +278,40 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                             end
                         end
                     end
+                    local text = ''
                     if #eng > 0 then
-                        bodytext = bodytext..'The engineering capabilties of this unit consist of the ability to '
+                        text = text..'The engineering capabilties of this unit consist of the ability to '
                         for i = 1, #eng do
-                            bodytext = bodytext..eng[i][1]
+                            text = text..eng[i][1]
                             if i < #eng then
-                                bodytext = bodytext..', '
+                                text = text..', '
                             end
                             if i + 1 == #eng then
-                                bodytext = bodytext..'and '
+                                text = text..'and '
                             end
                             if i == #eng then
-                                bodytext = bodytext..".\n"
+                                text = text..".\n"
                             end
                         end
                     end
 
                     if bp.Economy.BuildableCategory then
                         if #bp.Economy.BuildableCategory == 1 then
-                            bodytext = bodytext..'It has the build category <code>'..bp.Economy.BuildableCategory[1].."</code>.\n"
+                            text = text..'It has the build category <code>'..bp.Economy.BuildableCategory[1].."</code>.\n"
                         elseif #bp.Economy.BuildableCategory > 1 then
-                            bodytext = bodytext.."It has the build categories:\n"
+                            text = text.."It has the build categories:\n"
                             for i, cat in ipairs(bp.Economy.BuildableCategory) do
-                                bodytext = bodytext.."* <code>"..cat.."</code>\n"
+                                text = text.."* <code>"..cat.."</code>\n"
                             end
                         end
                     end
+                    return text
                 end
             },
             {
                 'Enhancements',
                 check = bp.Enhancements,
-                Data = function()
+                Data = function(bp)
                     local EnhacementsSorted = {}
                     for key, enh in pairs(bp.Enhancements) do
                         local SearchForRquisits
@@ -323,11 +328,12 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                             SearchForRquisits(bp.Enhancements, key)
                         end
                     end
+                    local text = ''
                     for i, enh in ipairs(EnhacementsSorted) do
                         local key = enh[1]
                         local enh = enh[2]
                         if key ~= 'Slots' and string.sub(key, -6, -1) ~= 'Remove' then
-                            bodytext = bodytext..InfoboxHeader('detail-left', (enh.Name and LOC(enh.Name) or 'error:name') )
+                            text = text..InfoboxHeader('detail-left', (enh.Name and LOC(enh.Name) or 'error:name') )
                             ..InfoboxRow('Description:', (LOC(Description[bpid..'-'..string.lower(enh.Icon)]) or 'error:description') )
                             ..InfoboxRow('Energy cost:', iconText('Energy', enh.BuildCostEnergy or 'error:energy') )
                             ..InfoboxRow('Mass cost:', iconText('Mass', enh.BuildCostMass or 'error:mass') )
@@ -336,12 +342,13 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                             ..InfoboxEnd('detail-left')
                         end
                     end
+                    return text
                 end
             },
             {
                 'Weapons',
                 check = bp.Weapon,
-                Data = function()
+                Data = function(bp)
                     local compiledWeaponsTable = {}
 
                     for i, wep in ipairs(bp.Weapon) do
@@ -435,90 +442,76 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                         else
                             table.insert(compiledWeaponsTable, {(wep.DisplayName or wep.Label or '<i>Dummy Weapon</i>'), 1, weapontable})
                         end
-
                     end
 
+                    local text = ''
                     for i, wepdata in ipairs(compiledWeaponsTable) do
                         local weapontable = wepdata[3]
-                        bodytext = bodytext..InfoboxHeader('detail-left', wepdata[1]..(wepdata[2] == 1 and '' or ' (×'..tostring(wepdata[2])..')') )
+                        text = text..InfoboxHeader('detail-left', wepdata[1]..(wepdata[2] == 1 and '' or ' (×'..tostring(wepdata[2])..')') )
 
                         if wepdata[2] ~= 1 then
-                            bodytext = bodytext..InfoboxRow('', 'Note: Stats are per instance of the weapon.')
+                            text = text..InfoboxRow('', 'Note: Stats are per instance of the weapon.')
                         end
 
                         for i, data in ipairs(weapontable) do
                             if data[2] then
-                                bodytext = bodytext..InfoboxRow(data[1], data[2], data[3])
+                                text = text..InfoboxRow(data[1], data[2], data[3])
                             end
                         end
-                        bodytext = bodytext..InfoboxEnd('detail-left')
+                        text = text..InfoboxEnd('detail-left')
                     end
+                    return text
                 end
             },
             {
                 'Veteran levels',
                 check = bp.Veteran and bp.Veteran.Level1,
-                Data = function()
+                Data = function(bp)
+                    local text
                     if not bp.Weapon or (bp.Weapon and #bp.Weapon == 1 and IsDeathWeapon(bp.Weapon[1])) then
-                        bodytext = bodytext .. "This unit has defined veteran levels, despite not having any weapons. Other effects can still give experience towards those levels though, which are as follows; note they replace each other by default:\n"
+                        text = "This unit has defined veteran levels, despite not having any weapons. Other effects can still give experience towards those levels though, which are as follows; note they replace each other by default:\n"
                     else
-                        bodytext = bodytext .. "Note: Each veteran level buff replaces the previous by default; values are shown here as written.\n"
+                        text = "Note: Each veteran level buff replaces the previous by default; values are shown here as written.\n"
                     end
 
                     for i = 1, 5 do
                         local lev = 'Level'..i
                         if bp.Veteran[lev] then
-                            bodytext = bodytext .. "\n"..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
+                            text = text .. "\n"..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
                             for buffname, buffD in pairs(bp.Buffs) do
                                 if buffD[lev] then
                                     if buffname == 'Regen' then
-                                        bodytext = bodytext..' (+'..buffD[lev]..'/s)'
+                                        text = text..' (+'..buffD[lev]..'/s)'
                                     else
-                                        bodytext = bodytext..' '..buffname..': '..buffD[lev]
+                                        text = text..' '..buffname..': '..buffD[lev]
                                     end
                                 end
                             end
                         end
                     end
+                    return text
+                end
+            },
+            {
+                'Videos',
+                check = pcall(function() assert(UnitData and UnitData[BpId] and UnitData[BpId].Videos and #UnitData[BpId].Videos > 0) end),
+                Data = function(bp)
+                    local text = ''
+                    for i, video in ipairs(UnitData[bp.BlueprintId].Videos) do
+                        if video.YouTube then
+                            text = text..InfoboxHeader('detail-left', video[1])..'        <td><a href="https://youtu.be/'..video.YouTube..'"><img title="'..video[1]..'" src="https://i.ytimg.com/vi/'..video.YouTube.."/mqdefault.jpg\" /></a>\n"..InfoboxEnd('detail-left')
+                        end
+                    end
+                    return text
                 end
             },
         }
 
-        ------------------------------------------------------------------------
-        -- Table of contents
-        ------------------------------------------------------------------------
+        bodytext = bodytext .. TableOfContents(BodyTextSections)
 
-        do
-            local sections = 0
-
-            for i, v in ipairs(BodyTextSections) do
-                if v.check then
-                    sections = sections + 1
-                end
-            end
-
-            if sections >= 3 then
-                bodytext = bodytext .. "\n<details>\n<summary>Contents</summary>\n\n"
-                local index = 0
-                for i, v in ipairs(BodyTextSections) do
-                    if v.check then
-                        index = index + 1
-                        bodytext = bodytext .. index..". – <a href=#" .. string.lower(string.gsub(v[1], ' ', '-')).." >"..v[1].."</a>\n"
-                    end
-                end
-                bodytext = bodytext .. "</details>\n"
-            end
-        end
-
-        ------------------------------------------------------------------------
-        -- Assemble body content sections
-        ------------------------------------------------------------------------
-
-        for i, sectionData in ipairs(BodyTextSections) do
-            if sectionData.check then
-                bodytext = bodytext..MDHead(sectionData[1])
-                sectionData.Data()
-                bodytext = bodytext.."\n"
+        for i, section in ipairs(BodyTextSections) do
+            if section.check then
+                bodytext = bodytext..MDHead(section[1])..section.Data(bp).."\n"
             end
         end
 
@@ -532,50 +525,11 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
 
         ------------------------------------------------------------------------
 
-        local categoriesForFooter = {
-            'UEF',
-            'AEON',
-            'CYBRAN',
-            'SERAPHIM',
-
-            'TECH1',
-            'TECH2',
-            'TECH3',
-            'EXPERIMENTAL',
-
-            'MOBILE',
-
-            'ANTIAIR',
-            'ANTINAVY',
-
-            'AIR',
-            'LAND',
-            'NAVAL',
-
-            'HOVER',
-
-            'ECONOMIC',
-
-            'SHIELD',
-            'BOMBER',
-            'TORPEDOBOMBER',
-            'MINE',
-            'COMMAND',
-            'SUBCOMMANDER',
-            'ENGINEER',
-            'FIELDENGINEER',
-            'SILO',
-            'FACTORY',
-            'ARTILLERY',
-
-            'STRUCTURE',
-        }
-
         bodytext = bodytext.."\n<table align=center>\n<td>Categories : "
 
         local cattext = ''
 
-        for i, cat in ipairs(categoriesForFooter) do
+        for i, cat in ipairs(FooterCategories) do
             if arrayfind(bp.Categories, cat) then
 
                 if not categoryData[cat] then
@@ -606,16 +560,16 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
         ------------------------------------------------------------------------
 
         if not sidebarData[modsidebarindex] then
-            sidebarData[modsidebarindex] = {ModInfo = ModInfo, [2] = {} }
+            sidebarData[modsidebarindex] = {ModInfo = ModInfo, Factions = {} }
         end
 
-        local faction = FactionIndexes[bp.General and bp.General.FactionName] or 5
+        local factioni = FactionIndexes[bp.General and bp.General.FactionName] or #FactionsByIndex
 
-        if not sidebarData[modsidebarindex][2][faction] then
-            sidebarData[modsidebarindex][2][faction] = {}
+        if not sidebarData[modsidebarindex].Factions[factioni] then
+            sidebarData[modsidebarindex].Factions[factioni] = {}
         end
 
-        table.insert(sidebarData[modsidebarindex][2][faction], UnitInfo)
+        table.insert(sidebarData[modsidebarindex].Factions[factioni], UnitInfo)
     end
 
     print( #BlueprintPathsArray..' unit wiki page'..(#BlueprintPathsArray > 1 and 's' or '')..' created' )
@@ -625,7 +579,7 @@ end
 --------------------------------------------------------------------------------
 -- ACTUALLY DO THE THING
 
-for i, dir in ipairs(ListOfModDirectories) do
+for i, dir in ipairs(ModDirectories) do
     local suc, msg = pcall(LoadModFilesMakeUnitPagesGatherData, dir, i)
     if not suc then print(msg); break end
 end
@@ -639,10 +593,10 @@ do
 
         local sortData = function(sorttable, sort)
             for modindex, moddata in ipairs(sorttable) do
-                --local modname = moddata[1]
-                for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
-                    local faction = FactionsByIndex[i]
-                    local unitarray = moddata[2][i]
+                --for i = 1, #FactionsByIndex do--faction, unitarray in pairs(moddata[2]) do
+                for i, faction in ipairs(FactionsByIndex) do
+                    --local faction = FactionsByIndex[i]
+                    local unitarray = moddata.Factions[i]
                     if unitarray then
                         table.sort(unitarray, function(a,b)
                             --return a[3] < b[3]
@@ -671,9 +625,9 @@ do
             local modname = moddata[1]
 
             sidebarstring = sidebarstring .. "<details markdown=\"1\">\n<summary>[Show] <a href=\""..stringSanitiseFile(moddata.ModInfo.name)..[[">]]..moddata.ModInfo.name.."</a></summary>\n<p>\n<table>\n<tr>\n<td>\n\n"
-            for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
-                local faction = FactionsByIndex[i]
-                local unitarray = moddata[2][i]
+            for i, faction in ipairs(FactionsByIndex) do--faction, unitarray in pairs(moddata[2]) do
+                --local faction = FactionsByIndex[i]
+                local unitarray = moddata.Factions[i]
                 if unitarray then
                     sidebarstring = sidebarstring .. "<details>\n<summary>"..faction.."</summary>\n<p>\n\n"
                     for unitI, unitData in ipairs(unitarray) do
@@ -700,7 +654,7 @@ do
             local InfoboxString = InfoboxHeader(
                 'mod-right',
                 moddata.ModInfo.name,
-                '<img src="'..ImageRepo..'mods/'..stringSanitiseFile(moddata.ModInfo.name, true, true)..'.png" width="256px" />')
+                '<img src="'..ImageRepo..'mods/'..(moddata.ModInfo.icon and stringSanitiseFile(moddata.ModInfo.name, true, true) or 'mod')..'.png" width="256px" />')
             .. InfoboxRow( 'Author:', moddata.ModInfo.author )
             .. InfoboxRow( 'Version:', moddata.ModInfo.version )
             .. InfoboxEnd('main-right')
@@ -710,9 +664,9 @@ do
             .."<blockquote>"..(moddata.ModInfo.description or 'No description.').."</blockquote>\nVersion "
             ..moddata.ModInfo.version.." contains the following units:\n"
 
-            for i = 1, 5 do--faction, unitarray in pairs(moddata[2]) do
+            for i = 1, #FactionsByIndex do--faction, unitarray in pairs(moddata[2]) do
                 local faction = FactionsByIndex[i]
-                local unitarray = moddata[2][i]
+                local unitarray = moddata.Factions[i]
                 if unitarray then
                     local curtechi = 0
                     local thash = {
@@ -756,7 +710,7 @@ do
                 catstring = catstring
                 ..'<tr><td><a href="'..data.UnitInfo.bpid ..'"><img src="'..unitIconRepo..data.UnitInfo.bpid..'_icon.png" width="21px" /></a>'
                 ..'<td><code>'..data.UnitInfo.bpid..'</code>'
-                ..'<td><a href="'.. stringSanitiseFile(data.ModInfo.name) ..'"><img src="'..IconRepo..'mods/'..stringSanitiseFile(data.ModInfo.name, true, true)..'.png" width="21px" /></a>'
+                ..'<td><a href="'.. stringSanitiseFile(data.ModInfo.name) ..'"><img src="'..IconRepo..'mods/'..(data.ModInfo.icon and stringSanitiseFile(data.ModInfo.name, true, true) or 'mod')..'.png" width="21px" /></a>'
                 ..'<td><a href="'..data.UnitInfo.bpid..'">'
 
                 local switch = {
@@ -787,6 +741,4 @@ Hide 0 radius?
 pathing footprint?
 strategic icons
 Loyalist death weapon. Too specific scripted?
-
-top level mod pages
 ]]

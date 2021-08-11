@@ -146,6 +146,29 @@ InfoboxEnd = function(style)
     return styles[style]
 end
 
+TableOfContents = function(BodyTextSections)
+    local sections = 0
+
+    for i, section in ipairs(BodyTextSections) do
+        if section.check then
+            sections = sections + 1
+        end
+    end
+
+    if sections >= 3 then
+        local text = "\n<details>\n<summary>Contents</summary>\n\n"
+        local index = 0
+        for i, section in ipairs(BodyTextSections) do
+            if section.check then
+                index = index + 1
+                text = text .. index..". – <a href=#" .. string.lower(string.gsub(section[1], ' ', '-')).." >"..section[1].."</a>\n"
+            end
+        end
+        return text.."</details>\n"
+    end
+    return ''
+end
+
 MDHead = function(header, hnum)
     local h = '### '
     if hnum then
