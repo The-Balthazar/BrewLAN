@@ -56,7 +56,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                     (bp.Defense.Shield and bp.Defense.Shield.ShieldRegenRate and ' (+'..bp.Defense.Shield.ShieldRegenRate..'/s)')
                 )
             },
-            {'Shield radius:', (bp.Defense.Shield and bp.Defense.Shield.ShieldSize)},
+            {'Shield radius:', (bp.Defense.Shield and bp.Defense.Shield.ShieldSize and bp.Defense.Shield.ShieldSize / 2)},
             {'Flags:',
                 (
                     arrayfind(bp.Categories, 'UNTARGETABLE') or
