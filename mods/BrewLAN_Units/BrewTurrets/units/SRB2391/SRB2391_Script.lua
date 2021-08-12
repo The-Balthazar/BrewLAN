@@ -23,7 +23,7 @@ SRB2391 = Class(CStructureUnit) {
                 if not self.DamageModifiers then
                     self.DamageModifiers = {}
                 end
-                self.DamageModifiers.TeslaCharge = (Gametick - self.unit.LastFiredTime) * self.DamageTickMultiplier * (self.unit.EnergyMaintAdjMod or 1)
+                self.DamageModifiers.TeslaCharge = (Gametick - self.unit.LastFiredTime) * self.DamageTickMultiplier * math.max(1, self.unit.EnergyMaintAdjMod or 1)
                 local proj = CDFParticleCannonWeapon.CreateProjectileAtMuzzle(self, unpack(arg))
                 self.unit.LastFiredTime = Gametick
                 EffectUtil.CleanupEffectBag(self.unit,'TeslaEffectsBag')

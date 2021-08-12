@@ -56,7 +56,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                     (bp.Defense.Shield and bp.Defense.Shield.ShieldRegenRate and ' (+'..bp.Defense.Shield.ShieldRegenRate..'/s)')
                 )
             },
-            {'Shield radius:', (bp.Defense.Shield and bp.Defense.Shield.ShieldSize and bp.Defense.Shield.ShieldSize / 2)},
+            {'Shield radius:', (bp.Defense.Shield and bp.Defense.Shield.ShieldSize and numberFormatNoTrailingZeros(bp.Defense.Shield.ShieldSize / 2))}, --Shield size is a scale multiplier, and so is effectively diameter
             {'Flags:',
                 (
                     arrayfind(bp.Categories, 'UNTARGETABLE') or
@@ -162,7 +162,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
             [3] = "\nThe build description for this unit is:\n\n<blockquote>"..LOC(Description[bpid] or '').."</blockquote>\n",
         }
 
-        bodytext = bodytext..BuildIntroTexts[Binary2bit( Description[bpid], arraySubfind(bp.Categories, 'BUILTBY') )]
+        bodytext = bodytext..BuildIntroTexts[Binary2bit( Description[bpid], arraySubfind(bp.Categories, 'BUILTBY') )]..GetModUnitData(BpId, 'LeadSuffix')
 
         ------------------------------------------------------------------------
         -- Body content
@@ -477,7 +477,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
                     for i = 1, 5 do
                         local lev = 'Level'..i
                         if bp.Veteran[lev] then
-                            text = text .. "\n"..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..(bp.Defense.MaxHealth / 10 * i) )
+                            text = text .. "\n"..i..'. '..bp.Veteran[lev]..' kills gives: '..iconText('Health', bp.Defense and bp.Defense.MaxHealth and '+'..numberFormatNoTrailingZeros(bp.Defense.MaxHealth / 10 * i) )
                             for buffname, buffD in pairs(bp.Buffs) do
                                 if buffD[lev] then
                                     if buffname == 'Regen' then
@@ -511,7 +511,7 @@ function LoadModFilesMakeUnitPagesGatherData(ModDirectory, modsidebarindex)
 
         for i, section in ipairs(BodyTextSections) do
             if section.check then
-                bodytext = bodytext..MDHead(section[1])..section.Data(bp).."\n"
+                bodytext = bodytext..MDHead(section[1])..GetModUnitData(BpId, section[1]..'Prefix')..section.Data(bp).."\n"..GetModUnitData(BpId, section[1]..'Suffix')
             end
         end
 

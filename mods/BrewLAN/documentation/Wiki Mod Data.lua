@@ -185,6 +185,10 @@ UnitData = {
             {YouTube = 'O3mxD-47bdQ', 'Time-lapse'},
         },
     },
+    SRB2391 = {
+        AdjacencySuffix = "Adjacency effects that modify the maintenance cost will proportionally change the Tesla weapon damage as long as the net effect is an increase, not a decrease. Meaning that basic power adjacency will lower the maintenance cost, but not alter the damage.",
+        WeaponsPrefix = "The Tesla weapon has a lifetime sustained DPS of 40 regardless of how often it fires. For every second it isn't firing it stores 40 damage, and it releases all that damage with every shot. There is no upper limit to the damage per shot, and the effective minimum damage per shot is 28 based on the firing cycle of once every 0.7 seconds.\n\nThe death weapon deals 10 damage for every second since the Tesla weapon last fired.",
+    },
     SRB3301 = {
         Videos = {
             {YouTube = 'pJ6C0kDOGhM', 'Time-lapse'},
@@ -205,6 +209,15 @@ UnitData = {
         Videos = {
             {YouTube = '6poIJ9mqWzc', 'Time-lapse'},
         },
+    },
+    SSB4401 = {
+        LeadSuffix = "When the shield activates it creates a lattice of shield drone units that orbit the main structure. The lattice consists of an inner ring of 6 \"<a href=\"SSB4401_Large\">Iaathanah</a>\", and an outer ring of 12 \"<a href=\"SSB4401_Small\">Iaathanahee</a>\". The approximate total coverage area is represented by the misc overlay ring.",
+    },
+    SSB4401_Large = {
+        LeadSuffix = "It is created as part of the shield activation of \"<a href=\"SSB4401\">Iaathan</a>\" alongside \"<a href=\"SSB4401_Small\">Iaathanahee</a>\".",
+    },
+    SSB4401_Small = {
+        LeadSuffix = "It is created as part of the shield activation of <a href=\"SSB4401\">\"Iaathan\"</a> alongside <a href=\"SSB4401_Large\">\"Iaathanah\"</a>.",
     },
     SSL0403 = {
         Videos = {

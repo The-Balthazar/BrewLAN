@@ -88,6 +88,13 @@ LOC = function(s)
     return s
 end
 
+numberFormatNoTrailingZeros = function(n)
+    str = tostring(n)
+    if string.sub(str, -2) == '.0' then
+        return tonumber(string.sub(str, 1, -3))
+    end
+    return n
+end
 --------------------------------------------------------------------------------
 -- Section constructions
 --------------------------------------------------------------------------------
@@ -898,4 +905,11 @@ GetUnitTechAndDescStrings = function(bp)
         return 'Experimental', LOC(bp.Description)
     end
     return nil, LOC(bp.Description)
+end
+
+GetModUnitData = function(id, sect)
+    if pcall(function()assert(UnitData[id])end) and UnitData[id][sect] then
+        return "\n"..UnitData[id][sect].."\n"
+    end
+    return ''
 end
