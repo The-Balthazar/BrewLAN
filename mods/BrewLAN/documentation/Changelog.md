@@ -985,3 +985,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-08-12
 
   * Caffee Corretto: Tesla Coil now doesn't get damage reductions from effects that reduce its maintenance cost. It, however, still gets damage increases from effects that increase the maintenance cost.
+
+  ### 2021-08-13
+
+  * Caffee Corretto: Damage boost node now adds maintenance cost. This is only really useful for the Tesla coil.

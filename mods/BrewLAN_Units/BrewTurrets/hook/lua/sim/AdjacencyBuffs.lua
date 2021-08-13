@@ -220,6 +220,7 @@ BuffBlueprint {
 -- Energy cost increases
 ------------------------------------------------------------------
 local EnergyDamageMult = 40     -- 10% max, multiplied by
+local EnergyMaintMult = 40
 BuffBlueprint {
     Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize4',
     DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
@@ -233,6 +234,10 @@ BuffBlueprint {
     Affects = {
         EnergyWeapon = {
             Add = 0.025 * EnergyDamageMult,
+            Mult = 1.0,
+        },
+        EnergyMaintenance = {
+            Add = 0.025 * EnergyMaintMult,
             Mult = 1.0,
         },
     },
@@ -253,6 +258,10 @@ BuffBlueprint {
             Add = 0.0125 * EnergyDamageMult,
             Mult = 1.0,
         },
+        EnergyMaintenance = {
+            Add = 0.0125 * EnergyMaintMult,
+            Mult = 1.0,
+        },
     },
 }
 
@@ -269,6 +278,10 @@ BuffBlueprint {
     Affects = {
         EnergyWeapon = {
             Add = 0.008333 * EnergyDamageMult,
+            Mult = 1.0,
+        },
+        EnergyMaintenance = {
+            Add = 0.008333 * EnergyMaintMult,
             Mult = 1.0,
         },
     },
@@ -289,6 +302,10 @@ BuffBlueprint {
             Add = 0.00625 * EnergyDamageMult,
             Mult = 1.0,
         },
+        EnergyMaintenance = {
+            Add = 0.00625 * EnergyMaintMult,
+            Mult = 1.0,
+        },
     },
 }
 
@@ -307,12 +324,16 @@ BuffBlueprint {
             Add = 0.005 * EnergyDamageMult,
             Mult = 1.0,
         },
+        EnergyMaintenance = {
+            Add = 0.005 * EnergyMaintMult,
+            Mult = 1.0,
+        },
     },
 }
 ------------------------------------------------------------------
 -- Damage boosts -- WARNING TO OTHERS, THESE DON'T WORK
 ------------------------------------------------------------------
-local DamageMult = 0     -- 10% max, multiplied by
+local DamageMult = 40     -- 10% max, multiplied by
 BuffBlueprint {
     Name = 'T3WeaponBoosterDamageBonusSize4',
     DisplayName = 'T3WeaponBoosterDamageBonus',

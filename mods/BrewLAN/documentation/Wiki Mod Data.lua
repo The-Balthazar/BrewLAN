@@ -217,7 +217,7 @@ UnitData = {
         LeadSuffix = "It is created as part of the shield activation of \"<a href=\"SSB4401\">Iaathan</a>\" alongside \"<a href=\"SSB4401_Small\">Iaathanahee</a>\".",
     },
     SSB4401_Small = {
-        LeadSuffix = "It is created as part of the shield activation of <a href=\"SSB4401\">\"Iaathan\"</a> alongside <a href=\"SSB4401_Large\">\"Iaathanah\"</a>.",
+        LeadSuffix = "It is created as part of the shield activation of \"<a href=\"SSB4401\">Iaathan</a>\" alongside \"<a href=\"SSB4401_Large\">Iaathanah</a>\".",
     },
     SSL0403 = {
         Videos = {
