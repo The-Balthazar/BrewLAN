@@ -181,9 +181,6 @@ UnitBlueprint {
         RadarRadius = 50,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC sra0315_desc>Heavy Gunship',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.8,
     LifeBarSize = 1.5,
