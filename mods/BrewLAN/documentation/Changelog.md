@@ -989,3 +989,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-08-13
 
   * Caffee Corretto: Damage boost node now adds maintenance cost. This is only really useful for the Tesla coil.
+
+  ### 2021-08-19
+
+  * Fixed one of the weapons on the Solaris having the pitch and yaw ranges inverted.
+
+  ### 2021-08-22
+
+  * Triseptitron dumb fire rockets are now only marginally affected by most redirection effects.

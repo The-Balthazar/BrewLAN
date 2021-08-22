@@ -14,6 +14,25 @@ CDFRocketIridium03 = Class(CIridiumRocketProjectile) {
             CreateDecal( self:GetPosition(), import('/lua/utilities.lua').GetRandomFloat(0.0,6.28), 'scorch_011_albedo', '', 'Albedo', 2, 2, 350, 200, army )
         end
     end,
+
+    SetNewTarget = function(self, target)
+        if target ~= self:GetLauncher() then
+            CIridiumRocketProjectile.SetNewTarget(self, target)
+        else
+            local x,y,z = self:GetPositionXYZ()
+            local newy = GetTerrainHeight(x,z)
+            local arc = (y-newy)/2
+            x = x+Random(-arc,arc)
+            z = z+Random(-arc,arc)
+            CIridiumRocketProjectile.SetNewTargetGround(self, {x, newy, z})
+
+            self.SetNewTarget = function(self, target)
+                if target ~= self:GetLauncher() then
+                    CIridiumRocketProjectile.SetNewTarget(self, target)
+                end
+            end
+        end
+    end,
 }
 
 TypeClass = CDFRocketIridium03

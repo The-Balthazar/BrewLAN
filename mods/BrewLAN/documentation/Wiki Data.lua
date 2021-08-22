@@ -57,6 +57,11 @@ UnitData = {
     },
 
 
+    SEA0105 = {
+        Videos = {
+            {YouTube = 'p8abzlcyFdg', 'Time-lapse'},
+        },
+    },
     SEA0201 = {
         Videos = {
             {YouTube = 'aDtB6VqyzrU', 'Time-lapse'},
