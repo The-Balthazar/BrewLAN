@@ -208,7 +208,9 @@ local function getWeaponType(bp, weapon, projectiles)
                 return 'artillery', math.max(1, weapon.MaxRadius / 100)
             end
 
-            local ShieldDamMult = string.sub(weapon.DamageType, 1, 10) == 'ShieldMult' and tonumber(string.sub(weapon.DamageType, 11, -1)) or (weapon.DamageToShields or weapon.ShieldDamage) and (weapon.DamageToShields or weapon.ShieldDamage) / weapon.Damage
+            local ShieldDamMult = (weapon.DamageToShields or weapon.ShieldDamage) and (weapon.DamageToShields or weapon.ShieldDamage) / weapon.Damage
+            or weapon.DamageType and type(weapon.DamageType) == 'string' and string.sub(weapon.DamageType, 1, 10) == 'ShieldMult' and tonumber(string.sub(weapon.DamageType, 11, -1))
+
             if (ShieldDamMult >= 2) then
                 return 'antishield', ShieldDamMult
 

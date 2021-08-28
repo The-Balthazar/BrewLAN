@@ -997,3 +997,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-08-22
 
   * Triseptitron dumb fire rockets are now only marginally affected by most redirection effects.
+
+  ### 2021-08-28
+
+  * Fixed SIO crashing if a weapon didn't have a damage type.
