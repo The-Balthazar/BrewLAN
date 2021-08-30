@@ -1,24 +1,8 @@
 UnitBlueprint {
-    Air = {
-        BankFactor = 0,
-        BankForward = false,
-        CanFly = true,
-        HoverOverAttack = true,
-        KLift = 2,
-        KLiftDamping = 3.5,
-        KMove = 1,
-        KMoveDamping = 2,
-        KTurn = 1,
-        KTurnDamping = 10,
-        LiftFactor = 7,
-        MaxAirspeed = 0,
-        MinAirspeed = 0,
-        StartTurnDistance = 50,
-    },
     BuildIconSortPriority = 160,
     Categories = {
+        'BUILTBYCOMMANDER',
         'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER1COMMANDER',
         'BUILTBYTIER1FIELD',
         'UEF',
         'AEON',
@@ -40,16 +24,11 @@ UnitBlueprint {
     },
     Description = 'Damage Test Facility',
     Display = {
-        Abilities = {
-            'DPS meter',
-        },
+        Abilities = { 'DPS log' },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Aeon',
-                },
+                { LODCutoff = 400, ShaderName = 'Aeon' },
             },
         },
         UniformScale = 0.3,
@@ -64,22 +43,13 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
-        FactionName = 'Aeon',
         Icon = 'air',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '3310',
-        UnitWeight = 1,
-    },
-    Intel = {
-        VisionRadius = 5000000,
     },
     LifeBarRender = false,
     Physics = {
         Elevation = 25,
-        MaxAcceleration = 1,
         MaxSpeed = 1,
         MotionType = 'RULEUMT_Air',
         SkirtOffsetX = -2.5,
@@ -87,6 +57,8 @@ UnitBlueprint {
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
     },
+    ScriptClass = 'DPSTestUnit',
+    ScriptModule = '/lua/defaultunits.lua',
     SelectionSizeX = 2.25,
     SelectionSizeZ = 3.75,
     SelectionThickness = 0.45,

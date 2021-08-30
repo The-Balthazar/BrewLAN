@@ -1001,3 +1001,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-08-28
 
   * Fixed SIO crashing if a weapon didn't have a damage type.
+
+  ### 2021-08-30
+
+  * Debug Tools: Refactored the DPS check units, and moved the script so both reference instead of copy.

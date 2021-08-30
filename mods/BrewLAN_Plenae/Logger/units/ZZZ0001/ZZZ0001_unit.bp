@@ -1,8 +1,8 @@
 UnitBlueprint {
     BuildIconSortPriority = 160,
     Categories = {
+        'BUILTBYCOMMANDER',
         'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER1COMMANDER',
         'BUILTBYTIER1FIELD',
         'UEF',
         'AEON',
@@ -22,16 +22,11 @@ UnitBlueprint {
     },
     Description = 'Damage Test Facility',
     Display = {
-        Abilities = {
-            'DPS meter',
-        },
+        Abilities = { 'DPS log' },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Aeon',
-                },
+                { LODCutoff = 400, ShaderName = 'Aeon' },
             },
         },
         UniformScale = 0.3,
@@ -46,23 +41,16 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
-        FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '3310',
-        UnitWeight = 1,
-    },
-    Intel = {
-        VisionRadius = 5000000,
-    },
-    Interface = {
-        HelpText = 'Damage Test Facility',
     },
     LifeBarRender = false,
     Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
         FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -2.5,
@@ -70,6 +58,8 @@ UnitBlueprint {
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
     },
+    ScriptClass = 'DPSTestUnit',
+    ScriptModule = '/lua/defaultunits.lua',
     SelectionSizeX = 2.25,
     SelectionSizeZ = 3.75,
     SelectionThickness = 0.45,

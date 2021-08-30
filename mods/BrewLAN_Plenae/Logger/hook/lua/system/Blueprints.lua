@@ -23,7 +23,36 @@ function ModBlueprints(all_blueprints)
     --CheckWeaponDamage(all_blueprints.Unit)
 
     --IvanCheckUnitWeight(all_blueprints.Unit)
+    --GetCategoryStats(all_blueprints.Unit)
+    DamageTypeWeaponIndex(all_blueprints.Unit)
 end
+
+function DamageTypeWeaponIndex(all_bps)
+    WARN("DOING THE WEAPON INDEX THING")
+    for id, bp in all_bps do
+        if bp.Weapon then
+            for i, wep in bp.Weapon do
+                SPEW(id, i)
+                all_bps[id].Weapon[i].DamageType = 'Index'..i
+            end
+        end
+    end
+    WARN("DONE THE WEAPON INDEX THING")
+end
+
+function GetCategoryStats(all_bbps)
+    local allCategories = {}
+    for id, bp in all_bbps do
+        if bp.Categories then
+            --table.insert(bp.Categories, 'GRIDBASEDMOTION')
+            for i, cat in bp.Categories do
+                allCategories[cat] = (allCategories[cat] or 0) + 1
+            end
+        end
+    end
+    _ALERT(repr(allCategories))
+end
+
 
 function ShouldWeLogThis(id, bp)
     --return units and table.find(units, id)
