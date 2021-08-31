@@ -1,0 +1,123 @@
+UnitBlueprint {
+    Categories = {
+        'SELECTABLE',
+        'STRUCTURE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2000,
+        MaxHealth = 2000,
+    },
+    Description = '<LOC urb2301_desc>Point Defense',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    ShaderName = 'Insect',
+                    MeshName = '/units/URB2301/URB2301_lod0.scm',
+                    AlbedoName = '/units/URB2301/URB2301_albedo.dds',
+                    NormalsName = '/units/URB2301/URB2301_normalsts.dds',
+                    SpecularName = '/units/URB2301/URB2301_specteam.dds',
+                },
+            },
+        },
+        UniformScale = 0.06,
+    },
+    Economy = {
+        BuildCostEnergy = 3400,
+        BuildCostMass = 480,
+        BuildTime = 400,
+    },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+        SelectionPriority = 5,
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = '<LOC urb2301_name>Cerberus',
+        UnitWeight = 1,
+    },
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.45,
+    LifeBarSize = 1.1,
+    Physics = {
+        MotionType = 'RULEUMT_None',
+    },
+    StrategicIconName = 'icon_structure2_directfire',
+    Weapon = {
+        {
+            Label = 'MainGun',
+            DamageType = 'Normal',
+            DisplayName = 'Particle Cannon',
+            WeaponCategory = 'Direct Fire',
+            BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_DirectFire',
+
+            --ContinuousBeam = false,
+            --AutoInitiateAttackCommand = true,
+            NotExclusive = true,
+            --CollideFriendly = false,
+            --DamageFriendly = false,
+
+            RateOfFire = 1,
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,
+            Damage = 75,
+            MaxRadius = 50,
+
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 10,
+
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+
+            AboveWaterTargetsOnly = true,
+            FireTargetLayerCapsTable = { Land = 'Land|Water|Seabed'},
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0.3,
+            TargetPriorities = { 'SPECIALHIGHPRI', 'STRUCTURE DEFENSE', 'MOBILE', 'SPECIALLOWPRI', 'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE, HIGHALTAIR',
+            TrackingRadius = 1.15,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Turret_Muzzle01',
+                        --'Turret_Muzzle02',
+                        --'Turret_Muzzle03',
+                    },
+                    RackBone = 'Turret_B02',
+                },
+            },
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_B02',
+            TurretBoneYaw = 'Turret_B01',
+            TurretPitch = 10,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 60,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+            Turreted = true,
+            WeaponCategory = 'Direct Fire',
+
+            FiringRandomness = 0,
+            FiringTolerance = 10,
+        },
+    },
+}

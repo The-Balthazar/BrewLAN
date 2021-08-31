@@ -1005,3 +1005,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-08-30
 
   * Debug Tools: Refactored the DPS check units, and moved the script so both reference instead of copy.
+
+  ### 2021-08-31
+
+  * Debug Tools: DPS test units now use a shared referenced mesh, instead of a copy.

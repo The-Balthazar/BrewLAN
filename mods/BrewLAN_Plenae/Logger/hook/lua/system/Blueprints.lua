@@ -28,16 +28,13 @@ function ModBlueprints(all_blueprints)
 end
 
 function DamageTypeWeaponIndex(all_bps)
-    WARN("DOING THE WEAPON INDEX THING")
     for id, bp in all_bps do
         if bp.Weapon then
             for i, wep in bp.Weapon do
-                SPEW(id, i)
-                all_bps[id].Weapon[i].DamageType = 'Index'..i
+                wep.DamageType = 'Index'..i
             end
         end
     end
-    WARN("DONE THE WEAPON INDEX THING")
 end
 
 function GetCategoryStats(all_bbps)

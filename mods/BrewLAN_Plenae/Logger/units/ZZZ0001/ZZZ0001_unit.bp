@@ -23,13 +23,7 @@ UnitBlueprint {
     Description = 'Damage Test Facility',
     Display = {
         Abilities = { 'DPS log' },
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                { LODCutoff = 400, ShaderName = 'Aeon' },
-            },
-        },
-        UniformScale = 0.3,
+        MeshBlueprint = '/mods/brewlan_plenae/logger/meshes/3310_mesh',
     },
     Economy = {
         BuildCostEnergy = 2,

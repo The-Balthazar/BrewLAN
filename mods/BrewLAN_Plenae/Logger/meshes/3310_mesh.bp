@@ -1,0 +1,10 @@
+MeshBlueprint {
+    LODs = {
+        {
+            ShaderName = 'Aeon',
+            LODCutoff = 400,
+        },
+    },
+    IconFadeInZoom = 100,
+    UniformScale = 0.3,
+}
