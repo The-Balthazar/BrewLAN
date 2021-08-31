@@ -82,7 +82,7 @@ CityData = {
                 [2] = {x= 5, z= 0, xa = 1, za= 0, x0= -4.5, z0= -1.5, w=19, h= 3},
                 [3] = {x= 0, z=-5, xa = 0, za=-1, x0= -1.5, z0=-14.5, w= 3, h=19},
             },
-            Pier = 'sec0103',
+            Pier = '/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_wharf_prop.bp',
             PierHeight = 0.25,
             Dock = '/env/uef/props/uef_dock_prop.bp',
             Containers = {
@@ -760,7 +760,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Albedo.dds', '', 'Albedo', pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
                     CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Normals.dds', '', 'Alpha Normals', pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
 
-                    SafeSpawn(pierData.Pier, pos, pierDir+1)
+                    SafeSpawn(pierData.Pier, pos, (pierDir+1)*90)
 
                     DoPierDecor(pos, pierData, pierDir, p, pierData.PierHeight)
 

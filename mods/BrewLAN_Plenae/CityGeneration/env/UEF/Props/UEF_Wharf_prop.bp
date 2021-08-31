@@ -1,0 +1,20 @@
+PropBlueprint {
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 4,
+            LODs = {
+                { LODCutoff = 200, ShaderName = 'Unit'},
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Interface = {
+        HelpText = 'UEF Wharf',
+    },
+    Physics = {
+        BlockPath = false,
+    },
+    SizeX = 0,
+    SizeY = 0,
+    SizeZ = 0,
+}
