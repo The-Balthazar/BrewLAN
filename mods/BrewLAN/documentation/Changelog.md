@@ -1009,3 +1009,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-08-31
 
   * Debug Tools: DPS test units now use a shared referenced mesh, instead of a copy.
+  * Cityscapes: Wharf structure unit replaced with a prop.
+
+  ### 2021-09-10
+
+  * Bubble Tea: Pillar of Prominence rework: Can now protect other shields and unfinished structures.

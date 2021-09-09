@@ -72,20 +72,6 @@ UnitBlueprint {
             ShieldProjectionRadius = 35,
             ShieldTargetBeam = '/effects/emitters/collossus_tractor_beam_01_emit.bp',
         },
-        TargetShield = {
-            ImpactEffects = 'AeonShieldHit01',
-            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
-            Mesh = '/mods/brewlan_units/brewshields/effects/entities/sab4401projectedshield01/sab4401projectedshield01_mesh',
-            MeshZ = '/mods/brewlan_units/brewshields/effects/entities/sab4401projectedshield01/sab4401projectedshieldZ_mesh',
-            RegenAssistMult = 60,
-            ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 180000,
-            ShieldRechargeTime = 110,
-            ShieldRegenRate = 300,
-            ShieldRegenStartTime = 1,
-            ShieldSize = 10,
-            ShieldVerticalOffset = 0,
-        },
     },
     Description = '<LOC srb4401>Experimental Shield Generator',
     Display = {
@@ -203,16 +189,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 35,
     },
-    Interface = {
-        HelpText = '<LOC srb4401>Experimental Shield Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.7,
     LifeBarSize = 5,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,

@@ -1,89 +1,141 @@
 --------------------------------------------------------------------------------
 -- Projected shield script
--- Author: Sean 'Balthazar' Wheeldon based on code by John Comes & Gordon Duclos
+-- Author: Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
---local Entity = import('/lua/sim/Entity.lua').Entity
---local EffectTemplate = import('/lua/EffectTemplates.lua')
---local Util = import('utilities.lua')
---local Shield = import('/lua/shield.lua').Shield
+do
+    local OldShield = Shield
 
-ProjectedShield = Class(Shield){
-    OnDamage =  function(self,instigator,amount,vector,type)
-        --Count how many projectors are going to be recieving the damage.
-        local pCount = self:CheckProjectors()
-        --If there are none, then something has happened and we need to kill the shield.
-        if pCount == 0 then
-            self.Owner:DestroyShield()
-        else
-            ForkThread(self.CreateImpactEffect, self, vector)
-            --Calculate the damage now, once, and before we fuck with the numbers.
-            self:DistributeDamage(instigator,amount,vector,type)
-        end
-    end,
+    Shield = Class(OldShield) {
 
-    CheckProjectors = function(self)
-        local pCount = 0
-        for i, projector in self.Owner.Projectors do
-            if IsUnit(projector) and projector.MyShield and projector.MyShield:GetHealth() > 0 then
-                pCount = pCount + 1
-            --else
-            --    self.Projectors[i] = nil
+        ProjectorRecursionFilter = function(self, pCount, projectors, noreturn)
+
+            if noreturn then
+                local checked = {}
+                local checkcount = 0
+
+                for entid, v in projectors do
+                    checked[entid] = v
+                    checkcount = checkcount + 1
+                end
+
+                for entid, v in noreturn do
+                    if checked[entid] then
+                        checked[entid] = nil
+                        checkcount = checkcount - 1
+                    end
+                end
+
+                for entid, v in projectors do
+                    noreturn[entid] = v
+                end
+
+                projectors = checked
+                pCount = checkcount
+            else
+                noreturn = {}
+
+                for entid, v in projectors do
+                    noreturn[entid] = v
+                end
+
+                projectors[self.Owner.EntityId] = nil
+                pCount = pCount - 1
             end
-        end
-        return pCount
-    end,
 
-    DistributeDamage = function(self,instigator,amount,vector,type)
-        local pCount = self:CheckProjectors()
-        if pCount == 0 then
-            self.Owner:OnDamage(instigator,amount,vector,type)
-        end
-        local damageToDeal = amount / pCount
-        local overKillDamage, ProjectorHealth = 0,0
-        for i, projector in self.Owner.Projectors do
-            ProjectorHealth = projector.MyShield:GetHealth()
-            projector.MyShield:OnDamage(instigator,damageToDeal,vector,type)
-            --If it looked like too much damage, remove it from the projector list, and count the overkill
-            if ProjectorHealth <= damageToDeal then
-                overKillDamage = overKillDamage + math.max(damageToDeal - ProjectorHealth, 0)
-                projector.ShieldProjectionEnabled = false
-                projector:ClearShieldProjections()
+            return pCount, projectors, noreturn
+
+        end,
+
+        SetDamageSplitFunction = function(self)
+
+            self.OnDamage = function(self, instigator, amount, vector, type, noreturn)
+
+                local pCount, projectors = self:CheckProjectors()
+                pCount, projectors, noreturn = self:ProjectorRecursionFilter(pCount, projectors, noreturn)
+
+                if pCount == 0 then
+                    OldShield.OnDamage(self, instigator, amount, vector, type)
+
+                else
+                    local divAmount = amount / ( pCount + 1 )
+
+                    OldShield.OnDamage(self, instigator, divAmount, vector, type)
+
+                    for entid, v in projectors do
+                        ForkThread(self.CreateDistroBeam, self, v)
+                        v.MyShield:OnDamage(instigator, divAmount, Vector(0, -3.95, 0), type, noreturn)
+                    end
+                end
             end
-        end
-        if overKillDamage > 0 then
-            self:DistributeDamage(instigator,overKillDamage,vector,type)
-        end
-    end,
 
-    CreateImpactEffect = function(self, vector)
-        local army = self:GetArmy()
-        local OffsetLength = Util.GetVectorLength(vector)
-        local ImpactMesh = Entity { Owner = self.Owner }
-        local beams = {}
-        for i, Pillar in self.Owner.Projectors do
-            beams[i] = AttachBeamEntityToEntity(self, 0, Pillar, 'Gem', self:GetArmy(), Pillar:GetBlueprint().Defense.Shield.ShieldTargetBeam)
-        end
-        Warp( ImpactMesh, self:GetPosition())
-        if self.ImpactMeshBp ~= '' then
-            ImpactMesh:SetMesh(self.ImpactMeshBp)
-            ImpactMesh:SetDrawScale(self.Size)
-            ImpactMesh:SetOrientation(OrientFromDir(Vector(-vector.x,-vector.y,-vector.z)),true)
-        end
-        for k, v in self.ImpactEffects do
-            CreateEmitterAtBone( ImpactMesh, -1, army, v ):OffsetEmitter(0,0,OffsetLength)
-        end
-        WaitTicks(5)
-        for i, v in beams do
-            v:Destroy()
-        end
-        WaitTicks(45)
-        ImpactMesh:Destroy()
-    end,
+        end,
 
-    OnCollisionCheck = function(self,other)
-        if self:CheckProjectors() == 0 then
-            return false
-        end
-        return Shield.OnCollisionCheck(self,other)
-    end,
-}
+        ClearProjection = function(self)
+            self.OnDamage = OldShield.OnDamage
+        end,
+
+        CheckProjectors = function(self)
+            local pCount = 0
+            local projectors = {}
+            if self.Owner.Projectors then
+                for entid, projector in self.Owner.Projectors do
+                    if IsUnit(projector) and projector.MyShield and projector.MyShield:GetHealth() > 0 then
+                        pCount = pCount + 1
+                        projectors[entid] = projector
+                    end
+                end
+            end
+            return pCount, projectors
+        end,
+
+        CreateDistroBeam = function(self, Pillar)
+            local beam = AttachBeamEntityToEntity(self, -2, Pillar, 'Gem', self:GetArmy(), ( __blueprints[Pillar.BpId] or Pillar:GetBlueprint() ).Defense.Shield.ShieldTargetBeam)
+            coroutine.yield(5)
+            beam:Destroy()
+        end,
+
+    }
+
+    ProjectedShield = Class(Shield) {
+
+        OnDamage = function(self, instigator, amount, vector, type, noreturn)
+
+            local pCount, projectors = self:CheckProjectors()
+            pCount, projectors, noreturn = self:ProjectorRecursionFilter(pCount, projectors, noreturn)
+
+            if pCount == 0 then
+                self.Owner:DestroyShield()
+
+            else
+                local divAmount = amount
+
+                for entid, v in projectors do
+                    ForkThread(self.CreateDistroBeam, self, v)
+                    v.MyShield:OnDamage(instigator, divAmount, vector, type, noreturn)
+
+                end
+            end
+        end,
+
+        OnState = State {
+            Main = function(self) self:CreateShieldMesh() end,
+            IsOn = function(self) return true end,
+        },
+
+        OffState = State {
+            Main = function(self) self:RemoveShield() end,
+        },
+
+        ActivateProjection = function(self)
+            self:TurnOn()
+        end,
+
+        ClearProjection = function(self)
+            self:TurnOff()
+        end,
+
+        SetDamageSplitFunction = nil,
+
+    }
+
+end

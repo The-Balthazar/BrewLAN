@@ -76,7 +76,6 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
         'GATE',
     },
-    CollisionOffsetY = 5,
     Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2091,
