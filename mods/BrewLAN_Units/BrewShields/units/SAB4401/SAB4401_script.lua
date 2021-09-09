@@ -43,14 +43,12 @@ SAB4401 = Class(AShieldStructureUnit) {
 
     OnShieldEnabled = function(self)
         AShieldStructureUnit.OnShieldEnabled(self)
-        if self:GetFractionComplete() == 1 then
-            self.ShieldProjectionEnabled = true
-            for i, v in self.Manipulators do
-                v[4]:SetTargetSpeed(v[3])
-            end
-            for k, v in self.ShieldEffects do
-                table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(1.17) )
-            end
+        self.ShieldProjectionEnabled = true
+        for i, v in self.Manipulators do
+            v[4]:SetTargetSpeed(v[3])
+        end
+        for k, v in self.ShieldEffects do
+            table.insert( self.ShieldEffectsBag, CreateAttachedEmitter( self, 0, self:GetArmy(), v ):ScaleEmitter(1.17) )
         end
     end,
 
