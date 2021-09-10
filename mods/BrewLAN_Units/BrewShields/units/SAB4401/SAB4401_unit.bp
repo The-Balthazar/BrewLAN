@@ -1,34 +1,11 @@
 UnitBlueprint {
-    AI = {
-        GuardScanRadius = 35,
-        StagingPlatformScanRadius = 35,
-    },
+    AI = { StagingPlatformScanRadius = 35 },
     Audio = {
-        Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Killed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ShieldOff = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB4202_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ShieldOn = Sound {
-            Bank = 'UAB',
-            Cue = 'UAB4202_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Aeon_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge',      LodCutoff = 'UnitMove_LodCutoff' },
+        Killed      = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge',      LodCutoff = 'UnitMove_LodCutoff' },
+        ShieldOff   = Sound { Bank = 'UAB',        Cue = 'UAB4202_Activate',      LodCutoff = 'UnitMove_LodCutoff' },
+        ShieldOn    = Sound { Bank = 'UAB',        Cue = 'UAB4202_Activate',      LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface',  Cue = 'Aeon_Select_Structure', LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 16,
     Categories = {
@@ -80,64 +57,22 @@ UnitBlueprint {
             'Shield Tower',
             'Bubble Tea',
         },
-        Abilities = {
-            '<LOC ability_shielddome>Shield Dome',
-        },
+        Abilities = { '<LOC ability_shielddome>Shield Dome' },
         AnimationDeath = {
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath01.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath02.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath03.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath04.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath05.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath06.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath07.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
-            {
-                Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath08.sca',
-                AnimationRateMax = 3.25,
-                AnimationRateMin = 2.75,
-                Weight = 10,
-            },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath01.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath02.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath03.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath04.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath05.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath06.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath07.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
+            { Animation = '/mods/brewlan_units/brewshields/units/sab4401/sab4401_Adeath08.sca', AnimationRateMax = 3.25, AnimationRateMin = 2.75, Weight = 10 },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {LODCutoff = 200, ShaderName = 'Aeon'},
-                {LODCutoff = 400, ShaderName = 'Aeon'},
+                { LODCutoff = 200, ShaderName = 'Aeon' },
+                { LODCutoff = 400, ShaderName = 'Aeon' },
             },
         },
         Tarmacs = {
@@ -147,7 +82,7 @@ UnitBlueprint {
                 DeathLifetime = 300,
                 FadeOut = 150,
                 Length = 12.8,
-                Orientations = {0, 90, 180, 270},
+                Orientations = { 0, 90, 180, 270 },
                 RemoveWhenDead = false,
                 Width = 12.8,
             },
@@ -159,9 +94,7 @@ UnitBlueprint {
         BuildCostMass = 12000,
         BuildTime = 9000,
         MaintenanceConsumptionPerSecondEnergy = 1500,
-        RebuildBonusIds = {
-            'sab4401',
-        },
+        RebuildBonusIds = { 'sab4401' },
     },
     Footprint = {
         SizeX = 5,
@@ -173,10 +106,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'land',
         OrderOverrides = {
-            RULEUTC_ShieldToggle = {
-                bitmapId = 'shield-dome',
-                helpText = 'toggle_shield_dome',
-            },
+            RULEUTC_ShieldToggle = { bitmapId = 'shield-dome', helpText = 'toggle_shield_dome' },
         },
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Advanced',
@@ -186,9 +116,7 @@ UnitBlueprint {
         UnitName = '<LOC sab4401_name>Pillar of Prominence',
         UnitWeight = 1,
     },
-    Intel = {
-        VisionRadius = 35,
-    },
+    Intel = { VisionRadius = 35 },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.7,
     LifeBarSize = 5,
