@@ -1,29 +1,10 @@
 UnitBlueprint {
-    AI = {
-        GuardScanRadius = 2000,
-        StagingPlatformScanRadius = 2000,
-    },
+    AI = { StagingPlatformScanRadius = 2000 },
     Audio = {
-        ActiveLoop = Sound {
-            Bank = 'URB',
-            Cue = 'URB4203_Active',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DoneBeingBuilt = Sound {
-            Bank = 'URB',
-            Cue = 'URB4203_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Radar',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        ActiveLoop     = Sound { Bank = 'URB',        Cue = 'URB4203_Active',      LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed      = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge',    LodCutoff = 'UnitMove_LodCutoff' },
+        DoneBeingBuilt = Sound { Bank = 'URB',        Cue = 'URB4203_Activate',    LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection    = Sound { Bank = 'Interface',  Cue = 'Cybran_Select_Radar', LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 200,
     Categories = {
@@ -63,18 +44,8 @@ UnitBlueprint {
             },
         },
         DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 1,
-                OffsetY = 2.5,
-                OffsetZ = 0.25,
-            },
-            {
-                Bone = 0,
-                OffsetX = -1,
-                OffsetY = 2.5,
-                OffsetZ = 0.25,
-            },
+            { Bone = 0, OffsetX = 1,  OffsetY = 2.5, OffsetZ = 0.25 },
+            { Bone = 0, OffsetX = -1, OffsetY = 2.5, OffsetZ = 0.25 },
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -115,7 +86,7 @@ UnitBlueprint {
         BuildCostMass = 82000,
         BuildTime = 27000,
         MaintenanceConsumptionPerSecondEnergy = 10000,
-        RebuildBonusIds = {'srb4402'},
+        RebuildBonusIds = { 'srb4402' },
         ResearchMult = 0.5,
     },
     Footprint = {
@@ -146,17 +117,11 @@ UnitBlueprint {
         RadarStealthField = true,
         RadarStealthFieldRadius = 50,
     },
-    Interface = {
-        HelpText = '<LOC srb4402_desc>Experimental Omni Disrupting Facility',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3,
     LifeBarSize = 5,
     Physics = {
         FlattenSkirt = true,
-        MeshExtentsX = 3.2,
-        MeshExtentsY = 2.2,
-        MeshExtentsZ = 3.2,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -2.5,
         SkirtOffsetZ = -2.5,

@@ -1,22 +1,13 @@
 UnitBlueprint {
-    AI = {
-        -- this AI block is only added to make the construction preview work for the unit's vision range.
-        GuardScanRadius = 20,
-        StagingPlatformScanRadius = 20,
-    },
+    AI = { StagingPlatformScanRadius = 20 },
     Categories = {
         'INVULNERABLE',
         'STRUCTURE',
         'VISIBLETORECON',
         'OVERLAYMISC',
-        'UNSELECTABLE',
         'UNTARGETABLE',
     },
-    Defense = {
-        Health = 0,
-        MaxHealth = 0,
-        EconomyThreatLevel = 20000,
-    },
+    Defense = { EconomyThreatLevel = 20000 },
     Description = '<LOC ZPC0001_desc>Important Crystal',
     Display = {
         Mesh = {
@@ -53,9 +44,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 20,
-    },
-    Interface = {
-        HelpText = '<LOC xsc9002_help>Jammer Crystal',
+        WaterVisionRadius = 20,
     },
     Physics = {
         BuildOnLayerCaps = {
@@ -64,8 +53,8 @@ UnitBlueprint {
         },
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 7,
+        SkirtSizeZ = 7,
         MotionType = 'RULEUMT_None',
     },
     ScenarioInfo = {

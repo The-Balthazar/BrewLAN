@@ -1,8 +1,5 @@
 UnitBlueprint {
-    AI = {
-        GuardScanRadius = 40,
-        StagingPlatformScanRadius = 40,
-    },
+    AI = { StagingPlatformScanRadius = 40 },
     Audio = {
         Destroyed = Sound {
             Bank = 'UELDestroy',
@@ -112,9 +109,6 @@ UnitBlueprint {
         WaterVisionRadius = 0,
         RadarRadius = 29,
         SonarRadius = 29,
-    },
-    Interface = {
-        HelpText = '<LOC sbui2222>Nuclear Mine',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.2,

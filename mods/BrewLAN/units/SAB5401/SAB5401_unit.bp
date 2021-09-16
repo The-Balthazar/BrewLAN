@@ -1,6 +1,5 @@
 UnitBlueprint {
     AI = {
-        GuardScanRadius = 20,
         InitialAutoMode = true,
         ShowAssistRangeOnSelect = true,
         StagingPlatformScanRadius = 20,
@@ -24,8 +23,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 240,
     Categories = {
-        --'BUILTBYTIER3ENGINEER',
-        --'BUILTBYTIER3COMMANDER',
         'AEON',
         'EXPERIMENTAL',
         'STRUCTURE',

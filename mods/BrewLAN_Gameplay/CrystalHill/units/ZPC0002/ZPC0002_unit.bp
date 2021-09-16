@@ -3,14 +3,9 @@ UnitBlueprint {
         'INVULNERABLE',
         'STRUCTURE',
         'VISIBLETORECON',
-        'UNSELECTABLE',
         'UNTARGETABLE',
     },
-    Defense = {
-        Health = 0,
-        MaxHealth = 0,
-        EconomyThreatLevel = 20000,
-    },
+    Defense = { EconomyThreatLevel = 20000 },
     Description = '<LOC ZPC0002_desc>Neutral Crystal',
     Display = {
         Mesh = {
@@ -44,9 +39,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 20,
-    },
-    Interface = {
-        HelpText = '<LOC xsc9002_help>Jammer Crystal',
+        WaterVisionRadius = 20,
     },
     Physics = {
         BuildOnLayerCaps = {
@@ -55,8 +48,8 @@ UnitBlueprint {
         },
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 7,
+        SkirtSizeZ = 7,
         MotionType = 'RULEUMT_None',
     },
     SizeX = 2,

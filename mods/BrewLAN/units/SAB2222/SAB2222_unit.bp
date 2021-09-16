@@ -1,19 +1,8 @@
 UnitBlueprint {
-    AI = {
-        GuardScanRadius = 40,
-        StagingPlatformScanRadius = 40,
-    },
+    AI = { StagingPlatformScanRadius = 40 },
     Audio = {
-        Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Aeon_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge',      LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface',  Cue = 'Aeon_Select_Structure', LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 150,
     Categories = {
@@ -52,10 +41,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 130,
-                    ShaderName = 'Aeon',
-                },
+                { LODCutoff = 130, ShaderName = 'Aeon' },
             },
         },
         UniformScale = 0.04,
@@ -99,9 +85,6 @@ UnitBlueprint {
         RadarRadius = 29,
         SonarRadius = 29,
     },
-    Interface = {
-        HelpText = '<LOC sbui2222>Nuclear Mine',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.2,
     LifeBarSize = 0.8,
@@ -122,9 +105,9 @@ UnitBlueprint {
     SelectionSizeX = 0.4,
     SelectionSizeZ = 0.4,
     SelectionThickness = 1,
-    SizeX = .5,
+    SizeX = 0.5,
     SizeY = 0.2,
-    SizeZ = .5,
+    SizeZ = 0.5,
     StrategicIconName = 'icon_structure3_bomb',
     StrategicIconSortPriority = 210,
     Weapon = {

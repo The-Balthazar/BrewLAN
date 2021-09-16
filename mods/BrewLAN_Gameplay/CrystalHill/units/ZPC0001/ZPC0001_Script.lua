@@ -45,6 +45,8 @@ ZPC0001 = Class(SStructureUnit) {
                 Radius = self:GetBlueprint().Intel.VisionRadius or 20,
                 LifeTime = -1,
                 Army = brain:GetArmyIndex(),
+                Omni = false,
+                Radar = false,
             }))
         end
     end,

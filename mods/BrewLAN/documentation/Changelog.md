@@ -1014,3 +1014,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-09-10
 
   * Bubble Tea: Pillar of Prominence rework: Can now protect other shields and unfinished structures.
+
+  ### 2021-09-16
+
+  * Crystal Hill: Removed radar and omni from the crystal vis entities.
+  * Crystal Hill: Crystal blueprint cleanup, skirt alignment fix.
+  * Removed GuardScanRadius from units that don't need it and only want the purple ring.

@@ -1,8 +1,5 @@
 UnitBlueprint {
-    AI = {
-        GuardScanRadius = 46,
-        StagingPlatformScanRadius = 46,
-    },
+    AI = { StagingPlatformScanRadius = 46 },
     Audio = {
         DeathExplosion = Sound {
             Bank = 'XSL_Destroy',
