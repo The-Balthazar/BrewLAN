@@ -217,7 +217,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_land3_antiair',
     StrategicIconSortPriority = 125,
     Transport = {
-        TransportClass = 2,
+        TransportClass = 3,
     },
     Veteran = {
         Level1 = 4,

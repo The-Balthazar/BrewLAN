@@ -223,7 +223,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot3_directfire',
     StrategicIconSortPriority = 115,
     Transport = {
-        TransportClass = 2,
+        TransportClass = 3,
     },
     Veteran = {
         Level1 = 9,

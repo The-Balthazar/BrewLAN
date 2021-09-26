@@ -188,7 +188,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'Seraphim',
-        Icon = 'land',
+        Icon = 'amph',
         OrderOverrides = {
             RULEUTC_IntelToggle = {
                 bitmapId = 'omni',

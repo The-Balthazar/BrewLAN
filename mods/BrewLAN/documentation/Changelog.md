@@ -1020,3 +1020,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Crystal Hill: Removed radar and omni from the crystal vis entities.
   * Crystal Hill: Crystal blueprint cleanup, skirt alignment fix.
   * Removed GuardScanRadius from units that don't need it and only want the purple ring.
+
+  ### 2021-09-22
+
+  * Fixed ssl0324 having the 'land' icon instead of 'amph'.
+  * Fixed ssa0105 having transport class 2 instead of 1.
+  * Fixed ssl0311 having transport class 2 instead of 3.
+  * Fixed ssl0320 having transport class 2 instead of 3.
+  * Fixed ssa0211 having transport class 3 instead of 2.
