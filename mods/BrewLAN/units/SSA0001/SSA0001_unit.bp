@@ -24,93 +24,28 @@ UnitBlueprint {
         StartTurnDistance = 5,
     },
     Audio = {
-        AirUnitWaterImpact = Sound {
-            Bank = 'Explosions',
-            Cue = 'Expl_Water_Lrg_01',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        AmbientMove = Sound {
-            Bank = 'XSA',
-            Cue = 'XSA0101_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'XSA_Destroy',
-            Cue = 'XSA_Destroy_Air_Killed',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Killed = Sound {
-            Bank = 'XSA_Destroy',
-            Cue = 'XSA_Destroy_Air_Killed',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Landing = Sound {
-            Bank = 'XSA',
-            Cue = 'XSA0101_Move_Land',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Refueling = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB5202_Repair_Refuel',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'XSA',
-            Cue = 'XSA0101_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'XSA',
-            Cue = 'XSA0101_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Thruster = Sound {
-            Bank = 'XSA',
-            Cue = 'XSA0101_Move_Thruster',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'SeraphimSelect',
-            Cue = 'Seraphim_Select_Air',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        CaptureLoop = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0309_Capture_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Construct = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0309_Construct_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ConstructLoop = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0309_Construct_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ReclaimLoop = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0309_Reclaim_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartCapture = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0309_Capture_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartReclaim = Sound {
-            Bank = 'XSL',
-            Cue = 'XSL0309_Reclaim_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        AmbientMove        = Sound { Bank = 'XSA', Cue = 'XSA0101_Move_Loop',       LodCutoff = 'UnitMove_LodCutoff' },
+        Landing            = Sound { Bank = 'XSA', Cue = 'XSA0101_Move_Land',       LodCutoff = 'UnitMove_LodCutoff' },
+        Refueling          = Sound { Bank = 'XSB', Cue = 'XSB5202_Repair_Refuel',   LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove          = Sound { Bank = 'XSA', Cue = 'XSA0101_Move_Start',      LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove           = Sound { Bank = 'XSA', Cue = 'XSA0101_Move_Stop',       LodCutoff = 'UnitMove_LodCutoff' },
+        Thruster           = Sound { Bank = 'XSA', Cue = 'XSA0101_Move_Thruster',   LodCutoff = 'UnitMove_LodCutoff' },
+        CaptureLoop        = Sound { Bank = 'XSL', Cue = 'XSL0309_Capture_Loop',    LodCutoff = 'UnitMove_LodCutoff' },
+        Construct          = Sound { Bank = 'XSL', Cue = 'XSL0309_Construct_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        ConstructLoop      = Sound { Bank = 'XSL', Cue = 'XSL0309_Construct_Loop',  LodCutoff = 'UnitMove_LodCutoff' },
+        ReclaimLoop        = Sound { Bank = 'XSL', Cue = 'XSL0309_Reclaim_Loop',    LodCutoff = 'UnitMove_LodCutoff' },
+        StartCapture       = Sound { Bank = 'XSL', Cue = 'XSL0309_Capture_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        StartReclaim       = Sound { Bank = 'XSL', Cue = 'XSL0309_Reclaim_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed          = Sound { Bank = 'XSA_Destroy', Cue = 'XSA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
+        Killed             = Sound { Bank = 'XSA_Destroy', Cue = 'XSA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff' },
+        AirUnitWaterImpact = Sound { Bank = 'Explosions',     Cue = 'Expl_Water_Lrg_01',   LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection        = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Air', LodCutoff = 'UnitMove_LodCutoff' },
     },
     Categories = {
         'SELECTABLE',
         'SERAPHIM',
         'MOBILE',
         'AIR',
-        'EXPERIMENTAL',
         'POD',
         'REPAIR',
         'RECLAIM',
@@ -121,35 +56,20 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILEBUILDERONLY'
     },
-    CollisionOffsetZ = -0.07,
     Defense = {
         ArmorType = 'Light',
         EconomyThreatLevel = 135,
         Health = 4000,
         MaxHealth = 4000,
     },
-    Description = '<LOC ssa00001_desc>Storage',
+    Description = '<LOC ssa0001_desc>Reconstruction Drone',
     Display = {
         Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         LayerChangeEffects = {
-            AirLand = {
-                Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Landing01',
-                    },
-                },
-            },
-            LandAir = {
-                Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'TakeOff01',
-                    },
-                },
-            },
+            AirLand = { Effects = { { Bones = {0}, Type = 'Landing01' } } },
+            LandAir = { Effects = { { Bones = {0}, Type = 'TakeOff01' } } },
         },
         Mesh = {
             IconFadeInZoom = 175,
@@ -157,7 +77,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 150,
                     LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    Scrolling = true,
                     ShaderName = 'Seraphim',
                     AlbedoName = '/units/xsa0101/xsa0101_albedo.dds',
                     NormalsName = '/units/xsa0101/xsa0101_normalsts.dds',
@@ -170,20 +89,10 @@ UnitBlueprint {
                 Contrails = {
                     Bones = {0},
                 },
-                Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'TakeOff01',
-                    },
-                },
+                Effects = { { Bones = {0}, Type = 'TakeOff01' } },
             },
             Land = {
-                Effects = {
-                    {
-                        Bones = {0},
-                        Type = 'Landing01',
-                    },
-                },
+                Effects = { { Bones = {0}, Type = 'Landing01' } },
             },
         },
         UniformScale = 0.03,
@@ -203,9 +112,7 @@ UnitBlueprint {
     General = {
         BuildBones = {
             AimBone = 'BuildBone',
-            BuildEffectBones = {
-                'BuildBone',
-            },
+            BuildEffectBones = { 'BuildBone' },
             PitchBone = 'BuildBone',
             YawBone = 'BuildBone',
         },
@@ -231,9 +138,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    Interface = {
-        HelpText = '<LOC xea3204_help>Engineering Drone',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.25,
     LifeBarSize = 0.3,
@@ -256,7 +160,7 @@ UnitBlueprint {
     SizeX = 0.5,
     SizeY = 0.2,
     SizeZ = 0.5,
-    StrategicIconName = 'icon_land1_engineer',
+    StrategicIconName = 'icon_bot_engineer',
     StrategicIconSize = 1,
     StrategicIconSortPriority = 105,
     Transport = {
@@ -275,16 +179,6 @@ UnitBlueprint {
             FiringTolerance = 2,
             Label = 'DeathImpact',
             WeaponCategory = 'Death',
-        },
-    },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        WreckageLayers = {
-            Land = true,
         },
     },
 }

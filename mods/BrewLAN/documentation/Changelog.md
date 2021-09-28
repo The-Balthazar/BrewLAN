@@ -1028,3 +1028,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed ssl0311 having transport class 2 instead of 3.
   * Fixed ssl0320 having transport class 2 instead of 3.
   * Fixed ssa0211 having transport class 3 instead of 2.
+
+  ### 2021-09-26
+
+  * Removed the tech level and wreck from the Iyadesu drone. Also bp cleanup.
+  * Replaced the icon of the Iyadesu and it's drone.

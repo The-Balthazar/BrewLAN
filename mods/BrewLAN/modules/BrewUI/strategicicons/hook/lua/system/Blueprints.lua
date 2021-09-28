@@ -129,10 +129,10 @@ local function getWeaponType(bp, weapon, projectiles)
         end
 
         -- fallback error
-        return 'antiprojectile', WARN((bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." identifies that it can target projectiles, but we can't identify which.")
+        return 'antiprojectile', WARN((bp.General and bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." identifies that it can target projectiles, but we can't identify which.")
 
     elseif weapon.TargetType == 'RULEWTT_Prop' then
-        return 'antiprop', WARN((bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." identifies that it can only target props")
+        return 'antiprop', WARN((bp.General and bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." identifies that it can only target props")
 
     else --weapon.TargetType == 'RULEWTT_Unit' then --Default value, generally not defined.
 
@@ -223,7 +223,7 @@ local function getWeaponType(bp, weapon, projectiles)
         end
     end
 
-    return 'unknown', WARN((bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." weapon can't be identified.")
+    return 'unknown', WARN((bp.General and bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." weapon can't be identified.")
 end
 
 --------------------------------------------------------------------------------
