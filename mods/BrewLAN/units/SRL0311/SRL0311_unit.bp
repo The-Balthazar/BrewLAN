@@ -112,9 +112,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 26,
     },
-    Interface = {
-        HelpText = '<LOC srl0311_desc>Mobile Rocket Platform',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
     LifeBarSize = 1.5,

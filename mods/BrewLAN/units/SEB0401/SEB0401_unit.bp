@@ -217,9 +217,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC seb0401>Experimental Factory',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 7.5,
     LifeBarSize = 16,

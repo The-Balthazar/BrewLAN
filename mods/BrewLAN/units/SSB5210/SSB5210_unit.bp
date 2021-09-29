@@ -116,9 +116,6 @@ UnitBlueprint {
         VisionRadius = 0,
         WaterVisionRadius = 0,
     },
-    Interface = {
-        HelpText = '<LOC sbui5210>Heavy Wall Segment',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0,
     LifeBarSize = 0.075,

@@ -205,9 +205,6 @@ UnitBlueprint {
         VisionRadius = 32,
         WaterVisionRadius = 16,
     },
-    Interface = {
-        HelpText = '<LOC urs0103_help>Frigate',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.43,
     LifeBarSize = 1.25,

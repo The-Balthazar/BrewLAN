@@ -198,9 +198,6 @@ UnitBlueprint {
         SonarRadius = 30,
         VisionRadius = 53,
     },
-    Interface = {
-        HelpText = '<LOC ura0302_help>Spy Plane',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.4,
     LifeBarSize = 1.4,

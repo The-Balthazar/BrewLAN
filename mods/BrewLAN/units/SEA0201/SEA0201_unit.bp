@@ -182,9 +182,6 @@ UnitBlueprint {
         RadarRadius = 64,
         VisionRadius = 53,
     },
-    Interface = {
-        HelpText = '<LOC sea0201_desc>Recon Craft',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.8,
     LifeBarSize = 1.25,

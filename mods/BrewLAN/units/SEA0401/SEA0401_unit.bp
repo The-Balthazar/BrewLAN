@@ -240,9 +240,6 @@ UnitBlueprint {
         RadarRadius = 72,
         VisionRadius = 46,
     },
-    Interface = {
-        HelpText = '<LOC sea0401_desc>Experimental AA Gunship',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 5.25,
     LifeBarSize = 7.5,

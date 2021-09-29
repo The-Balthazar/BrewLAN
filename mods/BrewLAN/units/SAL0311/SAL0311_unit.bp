@@ -198,9 +198,6 @@ UnitBlueprint {
         VisionRadius = 22,
         WaterVisionRadius = 25,
     },
-    Interface = {
-        HelpText = '<LOC sal0311_desc>Armored Assault Tank',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.95,

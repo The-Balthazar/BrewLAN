@@ -111,9 +111,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC sab1312_help>Shielded Mass Extractor',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
     LifeBarSize = 1.1,

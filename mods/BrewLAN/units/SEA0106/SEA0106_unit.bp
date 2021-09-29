@@ -224,9 +224,6 @@ UnitBlueprint {
         SonarRadius = 75,
         VisionRadius = 28,
     },
-    Interface = {
-        HelpText = '<LOC sair0106>Light Torpedo Bomber',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3*.85,
     LifeBarSize = 1.25*.85,

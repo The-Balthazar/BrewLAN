@@ -87,7 +87,7 @@ UnitBlueprint {
     SizeX = 1,
     SizeY = 1,
     SizeZ = 1,
-    StrategicIconName = 'icon_structure_generic',
+    StrategicIconName = 'icon_structure3_generic',
     StrategicIconSortPriority = 220,
     ScriptClass = 'CConstructionEggUnit',
     ScriptModule = '/lua/cybranunits.lua',

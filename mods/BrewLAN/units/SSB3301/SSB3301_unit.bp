@@ -177,9 +177,6 @@ UnitBlueprint {
         RemoteViewingRadius = 25,
         VisionRadius = 15,
     },
-    Interface = {
-        HelpText = '<LOC ssb3301_desc>Optics Tracking Facility',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.9,
     LifeBarSize = 1.25,

@@ -101,9 +101,6 @@ UnitBlueprint {
         RadarRadius = 29,
         SonarRadius = 29,
     },
-    Interface = {
-        HelpText = '<LOC sbui2222>Nuke Mine',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.10,
     LifeBarSize = 0.6,

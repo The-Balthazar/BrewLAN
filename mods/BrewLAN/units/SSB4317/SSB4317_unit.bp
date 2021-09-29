@@ -102,9 +102,6 @@ UnitBlueprint {
         },
         JammerBlips = 20,
     },
-    Interface = {
-        HelpText = '<LOC xsc9002_help>Jammer Crystal',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.6,
     LifeBarSize = 1,

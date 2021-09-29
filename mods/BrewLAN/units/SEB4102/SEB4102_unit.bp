@@ -38,7 +38,6 @@ UnitBlueprint {
         'SIZE12',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'OVERLAYDEFENSE',
         'SORTDEFENSE',
     },
     CollisionOffsetY = -0.25,
@@ -130,9 +129,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
-    },
-    Interface = {
-        HelpText = '<LOC sbui4102>Light Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.9,

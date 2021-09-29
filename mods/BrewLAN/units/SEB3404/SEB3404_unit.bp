@@ -400,9 +400,6 @@ UnitBlueprint {
         SpyBlipRadius = 2,
         ReactivateTime = 0,
     },
-    Interface = {
-        HelpText = '<LOC seb3404_desc>Experimental Sensor Array',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 7,
     LifeBarSize = 15,

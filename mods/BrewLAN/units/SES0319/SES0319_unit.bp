@@ -96,7 +96,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
-        'OVERLAYDEFENSE',
     },
     CollisionOffsetY = -0.375,
     Defense = {
@@ -251,9 +250,6 @@ UnitBlueprint {
         SonarRadius = 37,
         VisionRadius = 32,
         WaterVisionRadius = 45,
-    },
-    Interface = {
-        HelpText = '<LOC ss0319_desc>Field Engineering Ship',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.5,

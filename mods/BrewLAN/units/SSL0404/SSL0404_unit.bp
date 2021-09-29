@@ -244,9 +244,6 @@ UnitBlueprint {
         VisionRadius = 40,
         WaterVisionradius = 40,
     },
-    Interface = {
-        HelpText = '<LOC ssl0404_desc>Experimental Sniper Bot',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3,
     LifeBarSize = 6.25,

@@ -256,9 +256,6 @@ UnitBlueprint {
         VisionRadius = 20,
         RadarRadius = 30,
     },
-    Interface = {
-        HelpText = '<LOC sal0119_desc>Defence Engineer',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,
     LifeBarSize = 0.5,

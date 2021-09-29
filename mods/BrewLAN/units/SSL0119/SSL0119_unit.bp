@@ -174,9 +174,6 @@ UnitBlueprint {
         WaterVisionRadius = 20,
         SonarStealth = true,
     },
-    Interface = {
-        HelpText = '<LOC sl0119_desc>Field Engineer',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 0.75,

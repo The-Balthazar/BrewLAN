@@ -170,9 +170,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC seb1311_desc>Engineering Power Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.2,
     LifeBarSize = 5,

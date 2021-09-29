@@ -22,7 +22,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-        'OVERLAYDEFENSE',
         'OVERLAYMISC',
         'SORTDEFENSE',
         'RESEARCHLOCKED',

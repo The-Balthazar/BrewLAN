@@ -152,9 +152,6 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Basic',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC urb1106_help>Mass Storage',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
     LifeBarSize = 1,

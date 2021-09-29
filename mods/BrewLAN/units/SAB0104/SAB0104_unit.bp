@@ -155,9 +155,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 15,
     },
-    Interface = {
-        HelpText = '<LOC xrb0104_help>Engineering Station',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 1.25,

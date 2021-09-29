@@ -144,9 +144,6 @@ UnitBlueprint {
         SonarStealthFieldRadius = 27,
         VisionRadius = 27,
     },
-    Interface = {
-        HelpText = '<LOC url0306_help>Mobile Stealth Field System',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,
     LifeBarSize = 0.9,

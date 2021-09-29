@@ -183,9 +183,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC ssb1311_help>Armored Power Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2,
     LifeBarSize = 4.5,

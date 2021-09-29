@@ -120,9 +120,6 @@ UnitBlueprint {
         Cloak = true,
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC  srb1311_desc>Cloakable Power Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.25,
     LifeBarSize = 5,

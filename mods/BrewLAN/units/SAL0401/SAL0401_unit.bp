@@ -236,9 +236,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC sal0401>Experimental Assault Tank',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 4.35,
     LifeBarSize = 5.75,

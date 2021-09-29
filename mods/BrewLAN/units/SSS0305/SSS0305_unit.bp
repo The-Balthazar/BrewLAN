@@ -38,7 +38,6 @@ UnitBlueprint {
         'MOBILESONAR',
         'DRAGBUILD',
         'OVERLAYSONAR',
-        'OVERLAYDEFENSE',
         'SORTINTEL',
     },
     CollisionOffsetY = -0.25,
@@ -147,9 +146,6 @@ UnitBlueprint {
         SonarRadius = 450,
         VisionRadius = 32,
         WaterVisionRadius = 24,
-    },
-    Interface = {
-        HelpText = '<LOC sss0305_desc>Sonar Platform',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,

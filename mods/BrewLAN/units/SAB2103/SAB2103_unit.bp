@@ -108,9 +108,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 24,
     },
-    Interface = {
-        HelpText = '<LOC sbui2103>Light Artillery Installation',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
     LifeBarSize = 0.9,

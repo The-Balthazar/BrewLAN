@@ -167,9 +167,6 @@ UnitBlueprint {
         OpenVisionRadius = 0,
         VisionRadius = 5,
     },
-    Interface = {
-        HelpText = '<LOC srb5311_desc>Armored Gate Segment',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0,
     LifeBarSize = 0.075,

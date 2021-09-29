@@ -102,9 +102,6 @@ UnitBlueprint {
         SonarStealth = true,
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC srb1312_desc>Mass Extractor',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 1.25,

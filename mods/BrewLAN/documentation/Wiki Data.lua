@@ -128,6 +128,11 @@ UnitData = {
             {YouTube = 'PWxvzfSKiFc', 'Time-lapse'},
         },
     },
+    SEL3401 = {
+        Videos = {
+            {YouTube = 'I63oGNkngaE', 'Time-lapse'},
+        },
+    },
 
 
     SRA0106 = {
@@ -143,6 +148,11 @@ UnitData = {
     SRA0211 = {
         Videos = {
             {YouTube = 'C7Uc1FTBy2g', 'Time-lapse'},
+        },
+    },
+    SRA0212 = {
+        Videos = {
+            {YouTube = '1wDhOwlvm5w', 'Time-lapse'},
         },
     },
     SRA0313 = {
@@ -228,6 +238,7 @@ UnitData = {
         Videos = {
             {YouTube = 'IInITjdtaPM', 'Time-lapse'},
         },
+        LeadSuffix = "Upon completing reclamation, it gains a <a href=\"SSA0001\">reconstruction drone</a> that stores the associated blueprint. Both it and the drone can build said blueprint and the blueprint is lost if the drone dies. Redundant drones can be used to protect blueprints.",
     },
     SSL0404 = {
         Videos = {

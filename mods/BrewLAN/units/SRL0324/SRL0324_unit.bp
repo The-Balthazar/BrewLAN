@@ -200,9 +200,6 @@ UnitBlueprint {
         RadarStealth = true,
         Cloak = true,
     },
-    Interface = {
-        HelpText = '<LOC srl0324_desc>Mobile Sensor Array',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
     LifeBarSize = 1.75,

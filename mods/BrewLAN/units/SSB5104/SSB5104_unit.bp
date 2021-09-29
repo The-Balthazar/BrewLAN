@@ -131,9 +131,6 @@ UnitBlueprint {
         UnitName = '<LOC ssb5104_name>Iathu-uhthe',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC sbuisera5104>Air Staging Beacon',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = .45,
     LifeBarSize = 1,

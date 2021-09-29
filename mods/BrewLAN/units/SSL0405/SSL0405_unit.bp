@@ -346,18 +346,11 @@ UnitBlueprint {
         VisionRadius = 50,
         WaterVisionRadius = 50,
     },
-    Interface = {
-        HelpText = '<LOC xsl0401_help>Experimental Assault Bot',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 5,
     LifeBarSize = 7,
     Physics = {
         AltMotionType = 'RULEUMT_Water',
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Water = true,
-        },
         LayerChangeOffsetHeight = -3,
         LayerTransitionDuration = 3.1,
         MaxAcceleration = 2.5,

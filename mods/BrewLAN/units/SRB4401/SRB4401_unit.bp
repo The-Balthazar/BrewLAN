@@ -40,7 +40,6 @@ UnitBlueprint {
         'SIZE16',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'OVERLAYDEFENSE',
         'SORTDEFENSE',
     },
     CollisionOffsetY = -0.25,
@@ -141,9 +140,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 37,
-    },
-    Interface = {
-        HelpText = '<LOC srb4401>Experimental Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.7,

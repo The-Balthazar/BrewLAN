@@ -263,9 +263,6 @@ UnitBlueprint {
         VisionRadius = 32,
         WaterVisionRadius = 45,
     },
-    Interface = {
-        HelpText = '<LOC ss0319_desc>Field Engineering Ship',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.34,
     LifeBarSize = 1.5,

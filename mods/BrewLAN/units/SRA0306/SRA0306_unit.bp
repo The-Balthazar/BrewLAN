@@ -230,9 +230,6 @@ UnitBlueprint {
         SonarStealthFieldRadius = 5,
         VisionRadius = 34,
     },
-    Interface = {
-        HelpText = '<LOC sair0306>Heavy Air Transport',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.25,
     LifeBarSize = 3.5,

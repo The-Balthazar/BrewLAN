@@ -159,9 +159,6 @@ UnitBlueprint {
         OmniRadius = 30,
         VisionRadius = 30,
     },
-    Interface = {
-        HelpText = '<LOC sb2306_desc>Heavy Point Defence',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
     LifeBarSize = 0.9,

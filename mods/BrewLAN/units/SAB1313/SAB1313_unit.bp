@@ -38,7 +38,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTECONOMY',
         'PERSONALSHIELD',
-        'OVERLAYDEFENSE',
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = -0.25,
@@ -194,9 +193,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 20,
-    },
-    Interface = {
-        HelpText = '<LOC sab1313_help>Shielded Mass Fabricator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.95,

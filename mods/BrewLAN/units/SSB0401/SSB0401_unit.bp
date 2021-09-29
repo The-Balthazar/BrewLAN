@@ -208,9 +208,6 @@ UnitBlueprint {
         VisionRadius = 20,
         WaterVisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC ssb0401_desc>Experimental Naval Factory',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 6.7,
     LifeBarSize = 7.5,

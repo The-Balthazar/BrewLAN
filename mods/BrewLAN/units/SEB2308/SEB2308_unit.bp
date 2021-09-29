@@ -134,9 +134,6 @@ UnitBlueprint {
         VisionRadius = 45,
         WaterVisionRadius = 45,
     },
-    Interface = {
-        HelpText = '<LOC seb2308_desc>Heavy Torpedo Launcher',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.6,
     LifeBarSize = 1.25,

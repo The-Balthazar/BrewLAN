@@ -162,9 +162,6 @@ UnitBlueprint {
         VisionRadius = 0,
         WaterVisionRadius = 0,
     },
-    Interface = {
-        HelpText = '<LOC ssb5301_desc>Shield Wall Section',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 0.8*1.2,

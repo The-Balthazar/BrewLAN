@@ -209,9 +209,6 @@ UnitBlueprint {
         ShowIntelOnSelect = true,
         VisionRadius = 33,
     },
-    Interface = {
-        HelpText = '<LOC xsb3104_help>Omni Sensor Suite',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 1.25,

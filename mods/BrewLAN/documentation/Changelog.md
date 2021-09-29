@@ -1033,3 +1033,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Removed the tech level and wreck from the Iyadesu drone. Also bp cleanup.
   * Replaced the icon of the Iyadesu and it's drone.
+
+  ### 2021-09-29
+
+  * Blueprint cleanup; removing redundant `bp.Interface` tables and `OVERLAYDEFENSE` categories.

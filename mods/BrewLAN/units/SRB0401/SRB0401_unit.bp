@@ -194,9 +194,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 37,
     },
-    Interface = {
-        HelpText = '<LOC srb0401>Experimental Land Factory',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 9,
     LifeBarSize = 18,

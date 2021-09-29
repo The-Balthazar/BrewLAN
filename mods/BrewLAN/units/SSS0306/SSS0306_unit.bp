@@ -212,9 +212,6 @@ UnitBlueprint {
         VisionRadius = 45,
         WaterVisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC sss0306_desc>Heavy Torpedo Platform',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.1,
     LifeBarSize = 1.6,

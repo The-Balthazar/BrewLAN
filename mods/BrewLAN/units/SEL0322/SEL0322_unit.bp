@@ -57,7 +57,6 @@ UnitBlueprint {
         'DEFENSE',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'OVERLAYDEFENSE',
         'DUMMYGSRWEAPON',
     },
     CollisionOffsetZ = 0.05,
@@ -186,9 +185,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 34,
-    },
-    Interface = {
-        HelpText = '<LOC sel0322_desc>Mobile Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,

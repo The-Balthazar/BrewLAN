@@ -200,9 +200,6 @@ UnitBlueprint {
         --RadarRadius = 64,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC sair0201>Decoy Plane',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.8,
     LifeBarSize = 1.25,

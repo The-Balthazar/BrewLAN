@@ -117,9 +117,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 24,
     },
-    Interface = {
-        HelpText = '<LOC xal0305_desc>Sniper Bot',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.25,
     LifeBarSize = 0.5,

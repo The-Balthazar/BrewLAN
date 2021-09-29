@@ -36,7 +36,6 @@ UnitBlueprint {
         'SIZE12',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'OVERLAYDEFENSE',
         'SORTDEFENSE',
     },
     Defense = {
@@ -128,9 +127,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 20,
-    },
-    Interface = {
-        HelpText = '<LOC deb4303_help>Heavy Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.6,

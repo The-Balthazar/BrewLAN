@@ -143,9 +143,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 26,
     },
-    Interface = {
-        HelpText = '<LOC sel0320_desc>Mobile Satellite Uplink',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1,
     LifeBarSize = 1.2,

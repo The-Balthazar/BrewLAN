@@ -253,9 +253,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC xea0306_help>Heavy Air Transport',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 4.5,
     LifeBarSize = 3,

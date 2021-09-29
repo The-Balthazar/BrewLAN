@@ -99,7 +99,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'PATROLHELPER',
         'SHOWQUEUE',
-        'OVERLAYDEFENSE',
         'REBUILDER',
         'MOBILEBUILDERONLY'
     },
@@ -430,9 +429,6 @@ UnitBlueprint {
         RadarRadius = 45,
         VisionRadius = 30,
         WaterVisionRadius = 30,
-    },
-    Interface = {
-        HelpText = '<LOC ssl0403_desc>Experimental Field Engineer',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.5,

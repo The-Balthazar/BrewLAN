@@ -153,9 +153,6 @@ UnitBlueprint {
         RadarRadius = 350,
         VisionRadius = 35,
     },
-    Interface = {
-        HelpText = '<LOC sel0324_desc>Mobile Anti-Air SAM Launcher',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1,
     LifeBarSize = 1.2,

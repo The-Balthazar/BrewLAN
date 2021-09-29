@@ -201,9 +201,6 @@ UnitBlueprint {
         RadarRadius = 30,
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC sl0119_desc>Field Engineer',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.225,
     LifeBarSize = 0.5625,

@@ -62,9 +62,6 @@ UnitBlueprint {
         VisionRadius = 0,
         WaterVisionRadius = 0,
     },
-    Interface = {
-        HelpText = '<LOC xsc9010_help>Jammer Crystal',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.6,
     LifeBarSize = 1,

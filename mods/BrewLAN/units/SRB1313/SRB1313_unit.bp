@@ -130,9 +130,6 @@ UnitBlueprint {
         Cloak = true,
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC srb1313_desc>Cloakable Mass Fabricator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.95,
     LifeBarSize = 2.75,

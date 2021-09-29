@@ -112,9 +112,6 @@ UnitBlueprint {
         SonarStealthFieldRadius = 50,
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC srb4313_desc>Cloakable Stealth Field Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.15,
     LifeBarSize = 2.5,
