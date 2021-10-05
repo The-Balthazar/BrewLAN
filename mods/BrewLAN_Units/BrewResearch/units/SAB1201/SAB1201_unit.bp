@@ -159,9 +159,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC uab1201_help>Power Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.8,
     LifeBarSize = 2,

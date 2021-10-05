@@ -52,7 +52,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-        'OVERLAYDEFENSE',
         'OVERLAYMISC',
         'SORTDEFENSE',
         'RESEARCHLOCKED',
@@ -176,9 +175,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 23,
-    },
-    Interface = {
-        HelpText = '<LOC srb4401>Experimental Shield Generator',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.5,

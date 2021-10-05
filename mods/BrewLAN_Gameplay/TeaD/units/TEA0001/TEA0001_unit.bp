@@ -234,9 +234,6 @@ UnitBlueprint {
         FreeIntel = true,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC xra0105_desc>Light Gunship',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,

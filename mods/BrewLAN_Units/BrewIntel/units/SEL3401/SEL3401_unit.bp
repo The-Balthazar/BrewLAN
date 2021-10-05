@@ -175,18 +175,11 @@ UnitBlueprint {
         BlipSonarRadius = 435,
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC sel4301_desc>Experimental Mobile Sensor',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.7,
     LifeBarSize = 3,
     Physics = {
         BackUpDistance = 4,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Water = true,
-        },
         LayerChangeOffsetHeight = -1,
         LayerTransitionDuration = 1,
         MaxAcceleration = 0.7,

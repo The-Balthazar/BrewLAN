@@ -194,9 +194,6 @@ UnitBlueprint {
         RadarRadius = 65,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC dra0202_help>Fighter/Bomber',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.3,
     LifeBarSize = 0.3,

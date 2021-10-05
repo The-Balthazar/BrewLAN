@@ -1,8 +1,6 @@
 UnitBlueprint {
     AI = {
-        BeaconName = 'URB5102',
         TargetBones = {
-            'URB2302',
             'Front_Turret001',
             'Front_Turret',
             'Front_Turret002',
@@ -68,7 +66,6 @@ UnitBlueprint {
         'EXPERIMENTAL',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'OVERLAYDEFENSE',
         'OVERLAYCOUNTERINTEL',
         'RESEARCHLOCKED',
     },
@@ -269,19 +266,12 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 45,
     },
-    Interface = {
-        HelpText = '<LOC srl0403_desc>Experimental Mobile Artillery',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 6,
     LifeBarSize = 5,
     Physics = {
         BackUpDistance = 15,
         BankingSlope = 3,
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-        },
         MaxAcceleration = 1.0,
         MaxBrake = 0.75,
         MaxSpeed = 1,
@@ -310,10 +300,6 @@ UnitBlueprint {
     SizeZ = 13,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 65,
-    Transport = {
-        TransportClass = 10,
-    },
-    UseOOBTestZoom = 200,
     Veteran = {
         Level1 = 15,
         Level2 = 30,

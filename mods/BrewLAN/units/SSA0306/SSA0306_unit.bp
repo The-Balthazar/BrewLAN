@@ -281,7 +281,6 @@ UnitBlueprint {
         TransportClass = 10,
         Class1Capacity = 32,
     },
-    UseOOBTestZoom = 200,
     Veteran = {
         Level1 = 3,
         Level2 = 6,

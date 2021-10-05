@@ -1037,3 +1037,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-09-29
 
   * Blueprint cleanup; removing redundant `bp.Interface` tables and `OVERLAYDEFENSE` categories.
+
+  ### 2021-10-05
+
+  * Blueprint cleanup:
+    * Removed the remaining redundant `bp.Interface` tables.
+    * Removed instances of `bp.UseOOBTestZoom` values.
+  * Removed other redundant blueprint values from:
+    * `sel3401`
+    * `srl0403`
+    * `seb4401`
+    * `ssb4401`
+    * `ssb4401_small`
+    * `ssb4401_large`
+    * `sas0401`

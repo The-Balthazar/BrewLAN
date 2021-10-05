@@ -225,9 +225,6 @@ UnitBlueprint {
         RadarStealth = true,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC saa0211_desc>Tactical Bomber',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.85,
     LifeBarSize = 2,

@@ -133,9 +133,6 @@ UnitBlueprint {
         ShowIntelOnSelect = true,
         VisionRadius = 60,
     },
-    Interface = {
-        HelpText = '<LOC seb3101_desc>Light Radar System',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.4,
     LifeBarSize = 1,

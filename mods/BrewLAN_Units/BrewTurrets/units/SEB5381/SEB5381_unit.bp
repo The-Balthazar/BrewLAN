@@ -112,9 +112,6 @@ UnitBlueprint {
         UnitName = '<LOC seb5381_name>Superhot',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC seb5381_desc>Damage Boost Node',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1,

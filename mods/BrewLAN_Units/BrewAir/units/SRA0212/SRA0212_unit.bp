@@ -181,9 +181,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 28,
     },
-    Interface = {
-        HelpText = '<LOC xaa0202_help>Combat Fighter',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,

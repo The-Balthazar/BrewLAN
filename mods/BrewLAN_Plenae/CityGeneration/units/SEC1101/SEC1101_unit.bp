@@ -72,9 +72,6 @@ UnitBlueprint {
         UnitWeight = 1,
         CapCost = 0,
     },
-    Interface = {
-        HelpText = '<LOC uec1101_help>UEF Residential Building',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3,
     LifeBarSize = 7,

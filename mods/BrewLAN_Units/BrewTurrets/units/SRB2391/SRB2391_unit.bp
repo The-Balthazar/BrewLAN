@@ -120,9 +120,6 @@ UnitBlueprint {
         RadarStealth = true,
         SonarStealth = true,
     },
-    Interface = {
-        HelpText = '<LOC urb2301_help>Point Defense',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1.1,

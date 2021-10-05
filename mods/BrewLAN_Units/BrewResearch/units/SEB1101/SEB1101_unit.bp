@@ -99,9 +99,6 @@ UnitBlueprint {
         UnitName = '<LOC seb1101_name>Turbine',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC sb1101_desc>Wind Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 0.9,

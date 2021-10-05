@@ -62,7 +62,6 @@ UnitBlueprint {
         'AIR',
         'SHIELD',
         'VISIBLETORECON',
-        'OVERLAYDEFENSE',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -140,9 +139,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 13,
-    },
-    Interface = {
-        HelpText = '<LOC ssb4401_drone_desc>Experimental Shield Drone',
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1,

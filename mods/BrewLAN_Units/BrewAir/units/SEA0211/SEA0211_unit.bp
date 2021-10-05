@@ -213,9 +213,6 @@ UnitBlueprint {
         RadarRadius = 65,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC uea0304_help>Strategic Bomber',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.65,
     LifeBarSize = 1.5,

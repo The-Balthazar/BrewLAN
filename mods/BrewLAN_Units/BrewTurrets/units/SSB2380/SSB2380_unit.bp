@@ -124,9 +124,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 24,
     },
-    Interface = {
-        HelpText = '<LOC ssb2380_desc>Prototype Disarmer Point Defense',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.4,
     LifeBarSize = 0.9,

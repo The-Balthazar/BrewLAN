@@ -126,9 +126,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 28,
     },
-    Interface = {
-        HelpText = '<LOC seb2402_desc>Experimental Anti-Air Defense',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 2.9,
     LifeBarSize = 6.5,

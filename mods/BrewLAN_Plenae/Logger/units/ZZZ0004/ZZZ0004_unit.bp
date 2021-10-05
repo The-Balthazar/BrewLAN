@@ -58,9 +58,6 @@ RULEUTC_CloakToggle = {         helpText = "toggle_cloak",      bitmapId = 'inte
     Intel = {
         VisionRadius = 5000000,
     },
-    Interface = {
-        HelpText = 'Damage Test Facility',
-    },
     LifeBarRender = false,
     Physics = {
         FlattenSkirt = false,

@@ -163,9 +163,6 @@ UnitBlueprint {
         Cloak = true,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC sa0313_desc>Penetration Fighter',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.7,
     LifeBarSize = 1.5,

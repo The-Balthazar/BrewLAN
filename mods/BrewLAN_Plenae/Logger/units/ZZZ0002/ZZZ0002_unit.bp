@@ -68,9 +68,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 5000000,
     },
-    Interface = {
-        HelpText = 'Damage Test Facility',
-    },
     LifeBarOffset = 1,
     LifeBarRender = false,
     Physics = {

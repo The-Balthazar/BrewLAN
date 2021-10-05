@@ -151,9 +151,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 20,
     },
-    Interface = {
-        HelpText = '<LOC uel0209_help>Field Engineer',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
     LifeBarSize = 0.6,

@@ -165,9 +165,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 42,
     },
-    Interface = {
-        HelpText = '<LOC uea0101_help>Air Scout',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.25,
     LifeBarSize = 0.5,

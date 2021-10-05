@@ -103,9 +103,6 @@ UnitBlueprint {
         UnitName = '<LOC sab1101_name>Lamp',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC sb1101_desc>Wind Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.9,

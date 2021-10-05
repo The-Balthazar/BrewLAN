@@ -227,9 +227,6 @@ UnitBlueprint {
         RadarStealth = true,
         VisionRadius = 32,
     },
-    Interface = {
-        HelpText = '<LOC sa0314_desc>Penetrator Bomber',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.25,
     LifeBarSize = 1.5,

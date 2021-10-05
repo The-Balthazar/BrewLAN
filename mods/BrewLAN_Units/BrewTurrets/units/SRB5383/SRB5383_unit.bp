@@ -82,9 +82,6 @@ UnitBlueprint {
         UnitName = '<LOC srb5383_name>The Lost',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC seb5383_desc>Factory Stealth Toggle Node',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1,

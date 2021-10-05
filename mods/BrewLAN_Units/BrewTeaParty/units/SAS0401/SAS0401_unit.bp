@@ -170,15 +170,11 @@ UnitBlueprint {
         VisionRadius = 50,
         WaterVisionRadius = 50,
     },
-    Interface = {
-        HelpText = '<LOC sas0401_help>Experimental Battlecruiser',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 10,
     LifeBarSize = 4,
     Physics = {
         BackUpDistance = 10,
-        BuildOnLayerCaps = {LAYER_Water = true},
         CatchUpAcc = 10,
         MaxAcceleration = 0.5,
         MaxBrake = 0.5,

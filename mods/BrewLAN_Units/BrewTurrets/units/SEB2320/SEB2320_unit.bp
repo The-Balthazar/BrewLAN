@@ -110,9 +110,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 40,
     },
-    Interface = {
-        HelpText = '<LOC seb2320_desc>Plasma Cannon',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
     LifeBarSize = 1,

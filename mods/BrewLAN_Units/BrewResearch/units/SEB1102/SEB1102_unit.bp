@@ -120,9 +120,6 @@ UnitBlueprint {
         UnitName = '<LOC seb1102_name>Tide Pod',
         UnitWeight = 1,
     },
-    Interface = {
-        HelpText = '<LOC usb1101_help>Power Generator',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.9,
