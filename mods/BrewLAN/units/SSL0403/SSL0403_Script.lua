@@ -138,7 +138,7 @@ SSL0403 = Class(SConstructionUnit) {
                     pod.StorageID = WorkID
                     pod.Active = true
                     pod.Entity:SetCustomName(LOC(__blueprints[WorkID].Description))
-                    pod.Entity:SetParent(self, i)
+                    pod.Entity:SetParent(self, i, WorkID)
                     pod.Entity:SetCreator(self)
                     break
                 end

@@ -258,13 +258,11 @@ function BrewLANNavalEngineerCatFixes(id, bp)
         {'BUILTBYTIER1FACTORY SERAPHIM MOBILE CONSTRUCTION', 'BUILTBYTIER1FACTORY SERAPHIM MOBILE LAND CONSTRUCTION'},
     }
     -- If table doesn't exist, it's 'Land'. If a key doesnt exist, but the table does, that key is false.
-    if bp.General.Classification == 'RULEUC_Factory' and (bp.Physics.BuildOnLayerCaps and not bp.Physics.BuildOnLayerCaps.LAYER_Water or not bp.Physics.BuildOnLayerCaps) then
-        if bp.Economy.BuildableCategory then
-            for i, cat in bp.Economy.BuildableCategory do
-                for index, cattable in cats_table do
-                    if cat == cattable[1] then
-                        bp.Economy.BuildableCategory[i] = cattable[2]
-                    end
+    if bp.Physics and bp.Economy and (bp.Physics.BuildOnLayerCaps and not bp.Physics.BuildOnLayerCaps.LAYER_Water or not bp.Physics.BuildOnLayerCaps) and bp.Economy.BuildableCategory then
+        for i, cat in bp.Economy.BuildableCategory do
+            for index, cattable in cats_table do
+                if cat == cattable[1] then
+                    bp.Economy.BuildableCategory[i] = cattable[2]
                 end
             end
         end

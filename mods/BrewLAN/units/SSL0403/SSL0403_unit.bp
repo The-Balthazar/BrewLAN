@@ -469,7 +469,7 @@ UnitBlueprint {
     Transport = {
         CanFireFromTransport = false,
         ClassSAttachSize = 0,
-        TransportClass = 5,
+        TransportClass = 4,
     },
     Veteran = {
         Level1 = 15,

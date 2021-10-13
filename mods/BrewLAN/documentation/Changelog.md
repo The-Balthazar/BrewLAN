@@ -1051,3 +1051,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * `ssb4401_small`
     * `ssb4401_large`
     * `sas0401`
+  * Minor optimisation to the drone script for the Iyadesu.
+
+  ### 2021-10-06
+
+  * `BrewLANNavalEngineerCatFixes` no longer references a redundant value.

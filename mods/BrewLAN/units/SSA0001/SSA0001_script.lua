@@ -7,34 +7,31 @@ SSA0001 = Class(SConstructionUnit) {
         self:AddBuildRestriction(categories.SELECTABLE)
     end,
 
-    OnStopBeingBuilt = function(self, ...)
-        SConstructionUnit.OnStopBeingBuilt(self, unpack(arg) )
-    end,
-
-    SetParent = function(self, parent, podName)
+    SetParent = function(self, parent, podName, WorkID)
         self.Parent = parent
         self.PodName = podName
-        self:ForkThread(self.StayCloseThread)
+        self:ForkThread(self.StayCloseThread, WorkID)
     end,
 
-    StayCloseThread = function(self)
-        local myPos, pPos
-        WaitTicks(3)
-        self:RemoveBuildRestriction(categories[self.Parent.Pods[self.PodName].StorageID])
-        self:RequestRefreshUI()
+    StayCloseThread = function(self, WorkID)
+        local myPosX, myPosY, myPosZ, pPosX, pPosY, pPosZ
+        coroutine.yield(3)
+        if categories[WorkID] then
+            self:RemoveBuildRestriction(categories[WorkID])
+            self:RequestRefreshUI()
+        end
         while self do
-            WaitSeconds(3)
-            myPos = self:GetPosition()
-            pPos = self.Parent:GetPosition()
-            if not self.Parent:IsDead() and VDist2Sq(myPos[1], myPos[3], pPos[1], pPos[3]) > 900 then
-                IssueClearCommands({self})
-                IssueMove({self},pPos)
+            coroutine.yield(31)
+            myPosX, myPosY, myPosZ = self:GetPositionXYZ()
+            pPosX, pPosY, pPosZ = self.Parent:GetPositionXYZ()
+            if not self.Parent:IsDead() and VDist2Sq(myPosX, myPosZ, pPosX, pPosZ) > 900 then
+                IssueClearCommands{self}
             end
         end
     end,
 
     OnKilled = function(self, instigator, type, overkillRatio)
-        if self.Parent and not self.Parent:IsDead() then
+        if self.Parent and not self.Parent.Dead and self.Parent.NotifyOfPodDeath then
             self.Parent:NotifyOfPodDeath(self.PodName)
             self.Parent = nil
         end
@@ -42,7 +39,7 @@ SSA0001 = Class(SConstructionUnit) {
     end,
 
     OnDestroy = function(self)
-        if self.Parent and not self.Parent:IsDead() then
+        if self.Parent and not self.Parent.Dead and self.Parent.NotifyOfPodDeath then
             self.Parent:NotifyOfPodDeath(self.PodName)
             self.Parent = nil
         end
