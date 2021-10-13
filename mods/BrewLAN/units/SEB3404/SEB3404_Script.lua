@@ -17,7 +17,7 @@ SEB3404 = Class(TStructureUnit) {
         local bpD = self:GetBlueprint().Display
         self:ForkThread(AnimationThread,bpD.DishAnimations)
         self:SetMaintenanceConsumptionActive()
-        
+
         for i, v in {Panopticon = 'Domes', Large_Dish = 'Dish_Scaffolds'} do
             local entity = import('/lua/sim/Entity.lua').Entity({Owner = self})
             entity:AttachBoneTo( -1, self, i )
@@ -55,7 +55,7 @@ SEB3404 = Class(TStructureUnit) {
             return Ftable
         end
         -- Find visible things to attach vis entities to
-        local LocalUnits = FindAllUnits(aiBrain, categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.HEAVYWALL - categories.MEDIUMWALL - categories.MINE, self:GetIntelRadius('radar'), true)
+        local LocalUnits = FindAllUnits(aiBrain, categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.SHIELDWALL - categories.MINE, self:GetIntelRadius('radar'), true)
         ------------------------------------------------------------------------
         -- IF self.ActiveConsumptionRestriction Sort the table by distance
         ------------------------------------------------------------------------

@@ -33,12 +33,10 @@ UnitBlueprint {
         'STRUCTURE',
         'WALL',
         'DRAGBUILD',
-        'BENIGN',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'MEDIUMWALL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -47,42 +45,16 @@ UnitBlueprint {
     },
     Description = '<LOC sbui5210>Heavy Wall Segment',
     Display = {
-        AdjacencyConnection = 'MEDIUMWALL',
+        AdjacencyConnection = 'WALL',
         AdjacencyBeamConnections = true,
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                N1 = {
-                    visibility = 'show',
-                    bonetype = 'Beam',
-                    conflict = nil,
-                    beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
-                },
-                N2 = {
-                    visibility = 'show',
-                    bonetype = 'Beam',
-                    conflict = nil,
-                    beamtype = '/effects/emitters/microwave_laser_beam_02_emit.bp',
-                },
+                North = { BoneType = 'North' },
+                South = { BoneType = 'South' },
+                East  = { BoneType = 'East' },
+                West  = { BoneType = 'West' },
+                N1 = { Visibility = true, BoneType = 'Beam', BeamType = '/effects/emitters/microwave_laser_beam_02_emit.bp' },
+                N2 = { Visibility = true, BoneType = 'Beam', BeamType = '/effects/emitters/microwave_laser_beam_02_emit.bp' },
             },
         },
         Mesh = {
@@ -91,7 +63,7 @@ UnitBlueprint {
                 {LODCutoff = 250, ShaderName = 'Insect'},
             },
         },
-        UniformScale = 0.033333333333333333,
+        UniformScale = 0.1/3,
     },
     Economy = {
         BuildCostEnergy = 50,
@@ -105,13 +77,9 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.1,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srb5210_name>Bulkhead',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,

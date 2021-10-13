@@ -8,35 +8,21 @@ UnitBlueprint {
         },
     },
     Audio = {
-        DeathExplosion = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        DeathExplosion = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed      = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection    = Sound { Bank = 'Interface',  Cue = 'Cybran_Select_Structure',    LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 150,
     Categories = {
-        'BUILTBYHEAVYWALL',
+        'BUILTBYTIER3WALL',
         'SELECTABLE',
         'CYBRAN',
         'STRUCTURE',
-        'DRAGBUILD',
-        'SIZE4',
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'HEAVYWALL',
+        'WALL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -45,77 +31,24 @@ UnitBlueprint {
     },
     Description = '<LOC srb5310_desc>Armored Wall Segment',
     Display = {
-        AdjacencyConnection = 'HEAVYWALL',
+        AdjacencyConnection = 'srb5312',
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                Tower = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },
-                North_Buttress =  {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = 'Tower',
-                },
-                South_Buttress = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = 'Tower',
-                },
-                East_Buttress = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = 'Tower',
-                },
-                West_Buttress = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = 'Tower',
-                },
-                TowerButtressN = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'North',
-                },
-                TowerButtressS = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'South',
-                },
-                TowerButtressE = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'East',
-                },
-                TowerButtressW = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'West',
-                },
+                North          = { BoneType = 'North' },
+                South          = { BoneType = 'South' },
+                East           = { BoneType = 'East'  },
+                West           = { BoneType = 'West'  },
+                Tower          = { BoneType = 'Tower', Visibility = true  },
+                North_Buttress = { BoneType = 'North', Conflict = 'Tower' },
+                South_Buttress = { BoneType = 'South', Conflict = 'Tower' },
+                East_Buttress  = { BoneType = 'East',  Conflict = 'Tower' },
+                West_Buttress  = { BoneType = 'West',  Conflict = 'Tower' },
+                TowerButtressN = { BoneType = 'Tower', Visibility = true, Conflict = 'North' },
+                TowerButtressS = { BoneType = 'Tower', Visibility = true, Conflict = 'South' },
+                TowerButtressE = { BoneType = 'Tower', Visibility = true, Conflict = 'East'  },
+                TowerButtressW = { BoneType = 'Tower', Visibility = true, Conflict = 'West'  },
             },
         },
-        BuildAttachBone = 'WallNode',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -149,14 +82,9 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.075,
-        Category = 'Defense',
-        Classification = 'RULEUC_Factory',
-        ConstructionBar = true,
         FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC srb5310_name>Procyon Defiance',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,
@@ -177,9 +105,6 @@ UnitBlueprint {
             'West_Buttress',
         },
         FlattenSkirt = false,
-        MeshExtentsX = 3.2,
-        MeshExtentsY = 2.2,
-        MeshExtentsZ = 3.2,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1,
         SkirtOffsetZ = -1,

@@ -32,6 +32,7 @@ UnitBlueprint {
         'STRUCTURE',
         'CONSTRUCTION',
         'FACTORY',
+        'FACTORYBUILDERONLY',
         'SHOWQUEUE',
         'DRAGBUILD',
         'SIZE4',
@@ -39,9 +40,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'HEAVYWALL',
-        'HEAVYWALLGATE',
         'GATE',
+        'WALL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -50,54 +50,18 @@ UnitBlueprint {
     },
     Description = '<LOC srb5310_desc>Armored Wall Segment',
     Display = {
-        AdjacencyConnection = 'HEAVYWALL',
+        AdjacencyConnection = 'WALL',
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                Tower = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },
-                North_TB = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South_TB = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East_TB = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West_TB = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
+                North = { BoneType = 'North' },
+                South = { BoneType = 'South' },
+                East  = { BoneType = 'East'  },
+                West  = { BoneType = 'West'  },
+                Tower = { Visibility = true, BoneType = 'Tower' },
+                North_TB = { BoneType = 'North' },
+                South_TB = { BoneType = 'South' },
+                East_TB  = { BoneType = 'East'  },
+                West_TB  = { BoneType = 'West'  },
             },
         },
         BuildAttachBone = 'Build_Node',
@@ -132,9 +96,9 @@ UnitBlueprint {
         BuildRate = 1,
         BuildTime = 50,
         BuildableCategory = {
-            'BUILTBYHEAVYWALL UEF',
+            'BUILTBYTIER3WALL UEF',
         },
-        RebuildBonusIds = {'seb5310',},
+        RebuildBonusIds = { 'seb5310' },
     },
     Footprint = {
         SizeX = 3,
@@ -145,8 +109,6 @@ UnitBlueprint {
             BuildEffectBones = {0},
         },
         CapCost = 0.15,
-        Category = 'Defense',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Stop = true,
         },
@@ -162,9 +124,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC seb5310_name>Citadel',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,

@@ -38,12 +38,10 @@ UnitBlueprint {
         'STRUCTURE',
         'WALL',
         'DRAGBUILD',
-        'BENIGN',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'MEDIUMWALL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -52,29 +50,13 @@ UnitBlueprint {
     },
     Description = '<LOC sbui5210>Heavy Wall Segment',
     Display = {
-        AdjacencyConnection = 'MEDIUMWALL',
+        AdjacencyConnection = 'WALL',
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
+                North = { BoneType = 'North' },
+                South = { BoneType = 'South' },
+                East  = { BoneType = 'East' },
+                West  = { BoneType = 'West' },
             },
         },
         Mesh = {
@@ -96,7 +78,7 @@ UnitBlueprint {
         BuildCostEnergy = 50,
         BuildCostMass = 10,
         BuildTime = 10,
-        RebuildBonusIds = {'ssb5210'},
+        RebuildBonusIds = { 'ssb5210' },
     },
     Footprint = {
         SizeX = 2,
@@ -104,13 +86,9 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.1,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'Seraphim',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssb5210_name>Haas-haas',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,
@@ -128,9 +106,6 @@ UnitBlueprint {
         },
         MaxGroundVariation = 2,
         FlattenSkirt = false,
-        MeshExtentsX = 2.2,
-        MeshExtentsY = 2.2,
-        MeshExtentsZ = 2.2,
         MotionType = 'RULEUMT_None',
         SkirtSizeX = 0,
         SkirtSizeZ = 0,

@@ -21,7 +21,7 @@ SRB4402 = Class(CRadarJammerUnit) {
                 local Range = self.MaxRadius or 2000
                 local LocalUnits = {}
                 for index, brain in ArmyBrains do
-                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS - categories.COMMAND - categories.SUBCOMMANDER - categories.DARKNESSIMMUNE - categories.MINE - categories.WALL - categories.MEDIUMWALL - categories.HEAVYWALL - categories.BENIGN, Mypos, Range) do
+                    for i, unit in AIUtils.GetOwnUnitsAroundPoint(brain, categories.ALLUNITS - categories.COMMAND - categories.SUBCOMMANDER - categories.DARKNESSIMMUNE - categories.MINE - categories.WALL - categories.SHIELDWALL - categories.BENIGN, Mypos, Range) do
                         tableinsert(LocalUnits, unit)
                     end
                 end

@@ -89,6 +89,7 @@ UnitBlueprint {
         'CONSTRUCTION',
         'GANTRY',
         'FACTORY',
+        'FACTORYBUILDERONLY',
         'RALLYPOINT',
         'DRAGBUILD',
         'SIZE32',

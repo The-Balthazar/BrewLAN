@@ -22,8 +22,7 @@ function Waterlag(all_bps)
         if bp.Categories and table.find(bp.Categories, 'STRUCTURE') then
             if not table.find(bp.Categories, 'FACTORY')
             and not table.find(bp.Categories, 'WALL')
-            and not table.find(bp.Categories, 'HEAVYWALL')
-            and not table.find(bp.Categories, 'MEDIUMWALL')
+            and not table.find(bp.Categories, 'SHIELDWALL')
             and not table.find(bp.Categories, 'SILO')
             and not table.find(bp.Categories, 'EXPERIMENTAL')
             then

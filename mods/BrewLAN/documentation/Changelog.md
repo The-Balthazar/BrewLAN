@@ -1056,3 +1056,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-10-06
 
   * `BrewLANNavalEngineerCatFixes` no longer references a redundant value.
+
+  ### 2021-10-13
+
+  * Purged the `MEDIUMWALL`, `MEDIUMWALLGATE`, `HEAVYWALL`, and `HEAVYWALLGATE` categories.
+  * `SHIELDWALL` is now treated the same way as `WALL` in more situations.
+  * Most cardinal walls will now connect to any other `WALL` category unit.
+  * Renamed `BUILTBYHEAVYWALL` category to `BUILTBYTIER3WALL`.
+  * Cleaned up cardinal wall blueprint data.
+  * CamelCased some cardinal wall blueprint data keys and booled values to allow a simpler script.
+  * Simplified and optimised the cardinal wall script.
+  * The force factory build effect is now tied to the new `FACTORYBUILDERONLY` category instead of `GANTRY` and several wall categories.

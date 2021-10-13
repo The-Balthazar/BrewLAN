@@ -33,12 +33,10 @@ UnitBlueprint {
         'STRUCTURE',
         'WALL',
         'DRAGBUILD',
-        'BENIGN',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'MEDIUMWALL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -47,34 +45,14 @@ UnitBlueprint {
     },
     Description = '<LOC sbui5210>Heavy Wall Segment',
     Display = {
-        AdjacencyConnection = 'MEDIUMWALL',
+        AdjacencyConnection = 'WALL',
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                Tower = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },
+                North = { BoneType = 'North' },
+                South = { BoneType = 'South' },
+                East  = { BoneType = 'East' },
+                West  = { BoneType = 'West' },
+                Tower = { Visibility = true, BoneType = 'Tower' },
             },
         },
         Mesh = {
@@ -101,7 +79,7 @@ UnitBlueprint {
         BuildCostEnergy = 50,
         BuildCostMass = 10,
         BuildTime = 10,
-        RebuildBonusIds = {'seb5210'},
+        RebuildBonusIds = { 'seb5210' },
     },
     Footprint = {
         SizeX = 2,
@@ -109,13 +87,9 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.1,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'UEF',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC seb5210_name>GDI',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,

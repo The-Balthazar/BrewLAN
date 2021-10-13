@@ -8,21 +8,9 @@ UnitBlueprint {
         },
     },
     Audio = {
-        DeathExplosion = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'URLDestroy',
-            Cue = 'URB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        DeathExplosion = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed      = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection    = Sound { Bank = 'Interface',  Cue = 'Cybran_Select_Structure',    LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 151,
     Categories = {
@@ -33,12 +21,9 @@ UnitBlueprint {
         'DRAGBUILD',
         'SIZE4',
         'TECH3',
-        'BENIGN',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'HEAVYWALLGATE',
-        'HEAVYGATEOPEN',
         'WALL',
     },
     Defense = {
@@ -48,54 +33,18 @@ UnitBlueprint {
     },
     Description = '<LOC srb5311_desc>Armored Gate Segment',
     Display = {
-        AdjacencyConnection = 'HEAVYWALLGATE',
+        AdjacencyConnection = 'WALL',
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'hide',
-                    bonetype = 'North',
-                    conflict = nil,
-                },
-                South = {
-                    visibility = 'hide',
-                    bonetype = 'South',
-                    conflict = nil,
-                },
-                East = {
-                    visibility = 'hide',
-                    bonetype = 'East',
-                    conflict = nil,
-                },
-                West = {
-                    visibility = 'hide',
-                    bonetype = 'West',
-                    conflict = nil,
-                },
-                Tower = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = nil,
-                },
-                North_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'North',
-                },
-                South_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'South',
-                },
-                East_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'East',
-                },
-                West_TB = {
-                    visibility = 'show',
-                    bonetype = 'Tower',
-                    conflict = 'West',
-                },
+                North    = { BoneType = 'North' },
+                South    = { BoneType = 'South' },
+                East     = { BoneType = 'East'  },
+                West     = { BoneType = 'West'  },
+                Tower    = { Visibility = true,  BoneType = 'Tower' },
+                North_TB = { Visibility = true,  BoneType = 'Tower', Conflict = 'North' },
+                South_TB = { Visibility = true,  BoneType = 'Tower', Conflict = 'South' },
+                East_TB  = { Visibility = true,  BoneType = 'Tower', Conflict = 'East'  },
+                West_TB  = { Visibility = true,  BoneType = 'Tower', Conflict = 'West'  },
             },
         },
         GateEffects = {
@@ -146,11 +95,8 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.15,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'Cybran',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         OrderOverrides = {
             RULEUTC_WeaponToggle = {
                 bitmapId = 'dive',
@@ -161,7 +107,6 @@ UnitBlueprint {
             RULEUTC_WeaponToggle = true,
         },
         UnitName = '<LOC srb5311_name>Procyon Offering',
-        UnitWeight = 1,
     },
     Intel = {
         OpenVisionRadius = 0,
@@ -179,9 +124,6 @@ UnitBlueprint {
         },
         MaxGroundVariation = 2,
         FlattenSkirt = false,
-        MeshExtentsX = 3.2,
-        MeshExtentsY = 2.2,
-        MeshExtentsZ = 3.2,
         MotionType = 'RULEUMT_None',
         SkirtSizeX = 3,
         SkirtSizeZ = 3,

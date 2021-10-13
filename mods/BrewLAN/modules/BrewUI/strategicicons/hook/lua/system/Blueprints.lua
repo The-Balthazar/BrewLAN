@@ -29,8 +29,6 @@ end
 local function unitHasWallCat(bp)
     local t = {
         WALL = true,
-        MEDIUMWALL = true,
-        HEAVYWALL = true,
         SHIELDWALL = true,
     }
     if bp.Categories then

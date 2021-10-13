@@ -65,10 +65,6 @@ do
         -- FAF unit restrictions
         ------------------------------------------------------------------------
         WALL = {
-            "MEDIUMWALL",
-            "MEDIUMWALLGATE",
-            "HEAVYWALL",
-            "HEAVYWALLGATE",
             "SHIELDWALL",
         },
         ENGISTATION = {

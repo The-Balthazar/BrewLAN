@@ -5,16 +5,8 @@ UnitBlueprint {
         },
     },
     Audio = {
-        Destroyed = Sound {
-            Bank = 'UALDestroy',
-            Cue = 'UAB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Aeon_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge',      LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface',  Cue = 'Aeon_Select_Structure', LodCutoff = 'UnitMove_LodCutoff' },
     },
     BuildIconSortPriority = 150,
     Categories = {
@@ -52,47 +44,21 @@ UnitBlueprint {
     },
     Description = '<LOC ssb5301_desc>Shield Wall Section',
     Display = {
-        AdjacencyConnection = 'SHIELDWALL',
+        AdjacencyConnection = 'sab5301',
         AdjacencyConnectionInfo = {
             Bones = {
-                North = {
-                    visibility = 'show',
-                    --bonetype = 'North',
-                    conflict = 'North',
-                },
-                South = {
-                    visibility = 'show',
-                    --bonetype = 'South',
-                    conflict = 'South',
-                },
-                East = {
-                    visibility = 'show',
-                    --bonetype = 'East',
-                    conflict = 'East',
-                },
-                West = {
-                    visibility = 'show',
-                    --bonetype = 'West',
-                    conflict = 'West',
-                },
+                North = { Visibility = true, Conflict = 'North' },
+                South = { Visibility = true, Conflict = 'South' },
+                East  = { Visibility = true, Conflict = 'East' },
+                West  = { Visibility = true, Conflict = 'West' },
             },
         },
         Abilities = {
             '<LOC ability_personalshield>Personal Shield',
         },
         DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 0.25,
-                OffsetY = 0.4,
-                OffsetZ = 0.25,
-            },
-            {
-                Bone = 0,
-                OffsetX = -0.25,
-                OffsetY = 0.4,
-                OffsetZ = -0.25,
-            },
+            { Bone = 0, OffsetX =  0.25, OffsetY = 0.4, OffsetZ =  0.25 },
+            { Bone = 0, OffsetX = -0.25, OffsetY = 0.4, OffsetZ = -0.25 },
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -140,8 +106,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.1,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'Aeon',
         Icon = 'land',
         OrderOverrides = {
@@ -151,12 +115,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC sab5301_name>Aegis',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,
@@ -164,22 +126,22 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.55,
-    LifeBarSize = 0.8*1.2,
+    LifeBarSize = 0.96,
     Physics = {
         MaxGroundVariation = 50,
-        MeshExtentsX = 1.5*1.2,
-        MeshExtentsY = 1*1.6,
-        MeshExtentsZ = 1.5*1.2,
+        MeshExtentsX = 1.8,
+        MeshExtentsY = 1.6,
+        MeshExtentsZ = 1.8,
         MotionType = 'RULEUMT_None',
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
     },
-    SelectionSizeX = 0.6*1.2,
-    SelectionSizeZ = 0.6*1.2,
+    SelectionSizeX = 0.72,
+    SelectionSizeZ = 0.72,
     SelectionThickness = 0.66,
-    SizeX = 1*1.2,
-    SizeY = 0.4*4,
-    SizeZ = 1*1.2,
+    SizeX = 1.2,
+    SizeY = 1.6,
+    SizeZ = 1.2,
     StrategicIconName = 'icon_structure_wall',
     StrategicIconSortPriority = 210,
     Wreckage = {

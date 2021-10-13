@@ -5,71 +5,61 @@
 function CardinalWallUnit(SuperClass)
     return Class(SuperClass) {
         OnCreate = function(self)
-            if not self.CachePosition then
-                self.CachePosition = table.copy(moho.entity_methods.GetPosition(self))
-            end
-            self.BpId = self:GetBlueprint().BlueprintId
+            self.CachePosition = self.CachePosition or table.copy(moho.entity_methods.GetPosition(self))
+            self.BpId = self.BpId or self:GetBlueprint().BlueprintId
+
             self.Info = {
                 ents = {
-                    ['North'] = {
-                        ent = {},
-                        val = {false, 99 },
-                    },
-                    ['South'] = {
-                        ent = {},
-                        val = {false, 101},
-                    },
-                    ['East'] = {
-                        ent = {},
-                        val = {false, 97},
-                    },
-                    ['West'] = {
-                        ent = {},
-                        val = {false, 103},
-                    },
+                    ['North'] = { ent = {}, val = {false, 99 } },
+                    ['South'] = { ent = {}, val = {false, 101} },
+                    ['East'] = { ent = {}, val = {false, 97} },
+                    ['West'] = { ent = {}, val = {false, 103} },
                 },
-                bones = {}
+                bones = table.deepcopy(__blueprints[self.BpId].Display.AdjacencyConnectionInfo.Bones)
             }
-            for i, v in __blueprints[self.BpId].Display.AdjacencyConnectionInfo.Bones do
-                self.Info.bones[i] = {}
-                for j, k in v do
-                    self.Info.bones[i][j] = k
-                end
-            end
+
             if __blueprints[self.BpId].Display.AdjacencyConnection then
                 self.BeamEffectsBag = {}
             end
-            if __blueprints[self.BpId].General.FactionName ~= 'UEF' then
+            --if __blueprints[self.BpId].General.FactionName ~= 'UEF' then
                 self:BoneUpdate(self.Info.bones)
-            end
+            --end
             SuperClass.OnCreate(self)
         end,
 
         StartBeingBuiltEffects = function(self, builder, layer)
             SuperClass.StartBeingBuiltEffects(self, builder, layer)
             if __blueprints[self.BpId].Display.Tarmacs[1] and self:GetCurrentLayer() == 'Land' and not self:HasTarmac() then
-                if self.TarmacBag then
-                    self:CreateTarmac(true, true, true, self.TarmacBag.Orientation, self.TarmacBag.CurrentBP)
-                else
-                    self:CreateTarmac(true, true, true, false, false)
-                end
+                self:CreateTarmac(true, true, true, self.TarmacBag and self.TarmacBag.Orientation, self.TarmacBag and self.TarmacBag.CurrentBP)
             end
         end,
 
         StopBeingBuiltEffects = function(self, builder, layer)
             SuperClass.StopBeingBuiltEffects(self, builder, layer)
-            if self:GetBlueprint().General.FactionName == 'UEF' then
+            --if __blueprints[self.BpId].General.FactionName == 'UEF' then
                 self:BoneUpdate(self.Info.bones)
-            end
+            --end
         end,
 
         OnAdjacentTo = function(self, adjacentUnit, triggerUnit)
-            local dirs = { 'South', 'East', 'East', 'North', 'North', 'West', 'West', 'South'}
-            local MyX, MyY, MyZ = unpack(self.CachePosition)
-            local AX, AY, AZ = unpack(adjacentUnit:GetPosition())
-            local cat = self:GetBlueprint().Display.AdjacencyConnection
-            if EntityCategoryContains(categories[cat], adjacentUnit) then
-                local dir = dirs[math.ceil(((math.atan2(MyX - AX, MyZ - AZ) * 180 / math.pi) + 180)/45)]
+
+            local cat = categories[__blueprints[self.BpId].Display.AdjacencyConnection]
+
+            if __blueprints[self.BpId].Display.AdjacencyExclusion then
+                cat = cat - categories[__blueprints[self.BpId].Display.AdjacencyExclusion]
+            end
+
+            if EntityCategoryContains(cat, adjacentUnit) then
+                local AX, AY, AZ = adjacentUnit:GetPositionXYZ()
+                local dirs = { 'South', 'East', 'North', 'West', 'South' }
+                local dir = dirs[math.floor(
+                    (
+                        math.atan2(
+                            self.CachePosition[1] - AX,
+                            self.CachePosition[3] - AZ
+                        ) * 0.63661977236758134307553505349006 -- 180 / pi / 90 -- 2 / pi
+                    ) + 3.5
+                )]
                 self.Info.ents[dir].ent = adjacentUnit
                 self.Info.ents[dir].val[1] = true
             end
@@ -81,35 +71,30 @@ function CardinalWallUnit(SuperClass)
             local TowerCalc = 0
             --Show all the correct bones
             for i, v in self.Info.ents do
-                if v.val[1] == true then
+                if v.val[1] then
                     TowerCalc = TowerCalc + v.val[2]
-                    self:SetAllBones('bonetype', i, 'show')
-                else
-                    self:SetAllBones('bonetype', i, 'hide')
                 end
+                self:SetAllBones('BoneType', i, v.val[1])
             end
-            if TowerCalc == 200 then
-                self:SetAllBones('bonetype', 'Tower', 'hide')
-            else
-                self:SetAllBones('bonetype', 'Tower', 'show')
-            end
+            self:SetAllBones('BoneType', 'Tower', TowerCalc ~= 200 )
+
             --Hide all conflicting bones.
             for i, v in self.Info.ents do
-                if v.val[1] == true then
-                    self:SetAllBones('conflict', i, 'hide')
+                if v.val[1] then
+                    self:SetAllBones('Conflict', i, false)
                 end
             end
             if TowerCalc ~= 200 then
-                self:SetAllBones('conflict', 'Tower', 'hide')
+                self:SetAllBones('Conflict', 'Tower', false)
             end
             if self:GetBlueprint().Display.AdjacencyBeamConnections then
                 for k1, v1 in self.Info.ents do
                     if v1.val[1] then
                         for k, v in self.Info.bones do
-                            if v.bonetype == 'Beam' then
+                            if v.BoneType == 'Beam' then
                                 if self:IsValidBone(k) and not v1.ent:IsDead() and v1.ent:IsValidBone(k) and not v1.beams[k] then
                                     if not v1.beams then v1.beams = {} end
-                                    v1.beams[k] = AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.beamtype)
+                                    v1.beams[k] = AttachBeamEntityToEntity(self, k, v1.ent, k, self:GetArmy(), v.BeamType)
                                     v1.ent.Trash:Add(v1.beams[k])
                                 end
                             end
@@ -122,29 +107,27 @@ function CardinalWallUnit(SuperClass)
 
         BoneUpdate = function(self, bones)
             for k, v in bones do
-                if v.visibility == 'show' then
-                    if self:IsValidBone(k) then
+                if self:IsValidBone(k) then
+                    if v.Visibility then
                         self:ShowBone(k, true)
-                    end
-                else
-                    if self:IsValidBone(k) then
+                    else
                         self:HideBone(k, true)
                     end
                 end
             end
         end,
 
-        SetAllBones = function(self, check, bonetype, action)
+        SetAllBones = function(self, check, BoneType, action)
             for k, v in self.Info.bones do
                 if type(v[check]) == "table" then
                     for i, vn in v[check] do
-                        if vn == bonetype then
-                            v.visibility = action
+                        if vn == BoneType then
+                            v.Visibility = action
                         end
                     end
                 else
-                    if v[check] == bonetype then
-                        v.visibility = action
+                    if v[check] == BoneType then
+                        v.Visibility = action
                     end
                 end
             end

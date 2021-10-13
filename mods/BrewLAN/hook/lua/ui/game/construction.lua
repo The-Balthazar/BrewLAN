@@ -13,14 +13,10 @@ do
             local item = button.Data
             local changeclick = false
             for i,v in sortedOptions.selection do
-                if EntityCategoryContains(categories.GANTRY + categories.HEAVYWALL + categories.MEDIUMWALL, v) then
+                if EntityCategoryContains(categories.FACTORYBUILDERONLY, v) then
                     changeclick = true
                 elseif EntityCategoryContains(categories.MOBILEBUILDERONLY, v) then
-                    local blueprint = __blueprints[item.id]
-                    local count = 1
-                    local performUpgrade = false
-                    local buildCmd = "build"
-                    import('/lua/ui/game/commandmode.lua').StartCommandMode(buildCmd, {name=item.id})
+                    import('/lua/ui/game/commandmode.lua').StartCommandMode("build", {name=item.id})
                 end
             end
             if changeclick then
@@ -82,7 +78,7 @@ do
             end
         end
 
-    elseif VersionIsSC then
+    else
         ------------------------------------------------------------------------------------------------------------------------------------------------
         -- LEGACY CRAP HO!                                                                                                                            --
         ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -243,7 +239,7 @@ do
                         --------------------------------------------------------------------------------------------------------------------------------
                         local OverrideBuild = false
                         for i, v in selectedUnits do
-                            if EntityCategoryContains(categories.GANTRY + categories.HEAVYWALL + categories.MEDIUMWALL, v) then
+                            if EntityCategoryContains(categories.FACTORYBUILDERONLY, v) then
                                 OverrideBuild = true
                                 break
                             elseif EntityCategoryContains(categories.MOBILEBUILDERONLY, v) then
