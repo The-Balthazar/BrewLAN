@@ -1067,3 +1067,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * CamelCased some cardinal wall blueprint data keys and booled values to allow a simpler script.
   * Simplified and optimised the cardinal wall script.
   * The force factory build effect is now tied to the new `FACTORYBUILDERONLY` category instead of `GANTRY` and several wall categories.
+
+  ### 2021-10-14
+
+  * Fixed or added attach points on:
+    * Aeon defence engineers
+    * Triseptitron
+    * Hedgehog
+    * Seraphim T3 torpedo launcher

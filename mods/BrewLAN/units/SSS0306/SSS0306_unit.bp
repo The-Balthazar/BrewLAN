@@ -175,6 +175,12 @@ UnitBlueprint {
                 },
             },
         },
+        TransportAnimation = {
+            {
+                Animation = '/mods/brewlan/units/sss0306/sss0306_afold.sca',
+                Weight = 100,
+            },
+        },
         UniformScale = 0.05,
     },
     Economy = {
@@ -309,8 +315,8 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TrackingRadius = 1.15,
             TurretBoneMuzzle = 'Muzzle01',
-            TurretBonePitch = 'XSB2205',
-            TurretBoneYaw = 'XSB2205',
+            TurretBonePitch = 0,
+            TurretBoneYaw = 0,
             TurretDualManipulators = false,
             TurretPitch = -20,
             TurretPitchRange = 0,
