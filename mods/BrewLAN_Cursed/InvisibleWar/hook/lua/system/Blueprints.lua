@@ -7,9 +7,9 @@ do
 
 local OldModBlueprints = ModBlueprints
 
-function ModBlueprints(all_blueprints)         
+function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
-    
+
     StealthTrain(all_blueprints.Unit)
 end
 

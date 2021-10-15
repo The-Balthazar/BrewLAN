@@ -1075,3 +1075,15 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Triseptitron
     * Hedgehog
     * Seraphim T3 torpedo launcher
+  * Slight refactor and optimisation of the Gantry share tech check.
+
+  ### 2021-10-1
+
+  * New mod collection: *BrewLAN: Cursed mods*.
+  * Two new mods: *Igpay Atinlay* and *A Aaa*, which both change game text.
+  * Moved the following to cursed mods:
+    * *Invisible War*
+    * *Knife Fight*
+    * *Scathing Beetles*
+    * *Stonks*
+    * *Sudden Death*

@@ -24,7 +24,7 @@ end
 local FactionCategories = {}
 
 for i, data in import('/lua/factions.lua').Factions do
-    FactionCategories[data.Category] = false
+    FactionCategories[i] = data.Category
 end
 
 --------------------------------------------------------------------------------
@@ -63,42 +63,28 @@ BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
         ------------------------------------------------------------------------
         -- The "Stolen tech" clause
         ------------------------------------------------------------------------
-        local aiBrain = self:GetAIBrain()
-        local pos = self.CachePosition or self:GetPosition()
-        local ParseEntityCategory = ParseEntityCategory
         local EntityCategoryContains = EntityCategoryContains
-        local engineers
-        if pos and categories.GANTRYSHARETECH then
-            engineers = aiBrain:GetUnitsAroundPoint(
-                (categories.GANTRYSHARETECH),
-                pos, 30, 'Ally'
-            )
-        elseif pos then
-            engineers = aiBrain:GetUnitsAroundPoint(
-                (categories.ENGINEER + categories.FACTORY) *
-                (categories.TECH3 + categories.EXPERIMENTAL),
-                pos, 30, 'Ally'
-            )
-        end
-        local stolentech = table.copy(FactionCategories)
-
-        for race, val in stolentech do
-            if EntityCategoryContains(ParseEntityCategory(race), self) then
-                stolentech[race] = true
-            end
-        end
-        if type(engineers) == 'table' then
-            for k, v in engineers do
-                for race, val in stolentech do
-                    if EntityCategoryContains(ParseEntityCategory(race), v) then
-                        stolentech[race] = true
-                        --a break here would be less checks, but would cause issues with units with multiple faction categories.
+        local function EntitiesCategoryContains(cat, ents)
+            if ents[1] then
+                for k, v in ents do
+                    if EntityCategoryContains(cat, v) then
+                        return true
                     end
                 end
             end
         end
-        for race, val in stolentech do
-            if not val then
+
+        local aiBrain = self:GetAIBrain()
+        local sharetech = aiBrain:GetUnitsAroundPoint(
+            categories.GANTRYSHARETECH
+            or
+            (categories.ENGINEER + categories.FACTORY) *
+            (categories.TECH3 + categories.EXPERIMENTAL),
+            self.CachePosition or self:GetPosition(), 30, 'Ally'
+        )
+
+        for i, race in FactionCategories do
+            if not EntitiesCategoryContains(categories[race], sharetech) then
                 self:AddBuildRestriction(categories[race])
             end
         end
@@ -106,33 +92,36 @@ BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
         -- Human UI air/other switch
         ------------------------------------------------------------------------
         local Layer = self:GetCurrentLayer()
+
+        local land = categories.LAND - categories.ENGINEER - categories.NAVAL
+        local naval = categories.NAVAL + categories.MOBILESONAR - categories.LAND
+        local surface = categories.LAND - categories.ENGINEER + categories.NAVAL + categories.MOBILESONAR
+
         if aiBrain.BrainType == 'Human' then
-            if self.BLFactoryAirMode then
-                self:AddBuildRestriction(categories.NAVAL)
-                self:AddBuildRestriction(categories.MOBILESONAR)
-                self:AddBuildRestriction(categories.LAND - categories.ENGINEER)
-            else
-                if Layer == 'Land' then
-                    self:AddBuildRestriction(categories.NAVAL - categories.LAND)
-                    self:AddBuildRestriction(categories.MOBILESONAR)
-                elseif Layer == 'Water' or Layer == 'Seabed' then
-                    self:AddBuildRestriction(categories.LAND - categories.ENGINEER - categories.NAVAL)
-                end
-                self:AddBuildRestriction(categories.AIR)
+            if Layer == 'Air' or self.BLFactoryAirMode then
+                self:AddBuildRestriction(surface)
+
+            elseif Layer == 'Land' then
+                self:AddBuildRestriction(naval + categories.AIR)
+
+            elseif Layer == 'Water' or Layer == 'Sub' or Layer == 'Seabed' then
+                self:AddBuildRestriction(land + categories.AIR)
+
             end
         ------------------------------------------------------------------------
         -- AI functional restrictions (allows easier AI control)
         ------------------------------------------------------------------------
-        else
-            if Layer == 'Land' then
-                self:AddBuildRestriction(categories.NAVAL - categories.LAND)
-                self:AddBuildRestriction(categories.MOBILESONAR)
-            elseif Layer == 'Water' or Layer == 'Seabed' then
-                self:AddBuildRestriction(categories.LAND - categories.ENGINEER - categories.NAVAL)
-                --AI's can't handle the Atlantis
-                self:AddBuildRestriction(categories.ues0401)
-            end
+        elseif Layer == 'Air' then
+            self:AddBuildRestriction(surface)
+
+        elseif Layer == 'Land' then
+            self:AddBuildRestriction(naval)
+
+        elseif Layer == 'Water' or Layer == 'Sub' or Layer == 'Seabed' then
+            self:AddBuildRestriction(land + categories.ues0401) --AI's can't handle the Atlantis
+
         end
+
         self:RequestRefreshUI()
 
         if OldBrewLANExperimentalFactoryUnit.RefreshBuildList then
@@ -147,15 +136,14 @@ BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
     AIStartOrders = function(self)
         local aiBrain = self:GetAIBrain()
         if aiBrain.BrainType ~= 'Human' then
-            local uID = self:GetUnitId()
+            local BpId = self.BpId or self:GetUnitId()
             self.Time = GetGameTimeSeconds()
-            self:RefreshBuildList()
             aiBrain:BuildUnit(self, self:ChooseExpimental(), 1)
             pcall(function(self)
                 local AINames = import('/mods/BrewLAN/lua/AI/AINames.lua').AINames
-                if AINames[uID] then
-                    local num = Random(1, table.getn(AINames[uID]))
-                    self:SetCustomName(AINames[uID][num])
+                if AINames[BpId] then
+                    local num = Random(1, table.getn(AINames[BpId]))
+                    self:SetCustomName(AINames[BpId][num])
                 end
             end, self)
         end
@@ -180,7 +168,10 @@ BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
 
     ChooseExpimental = function(self)
         if OldBrewLANExperimentalFactoryUnit.ChooseExpimental then
-            OldBrewLANExperimentalFactoryUnit.ChooseExpimental(self)
+            local oldchoice = OldBrewLANExperimentalFactoryUnit.ChooseExpimental(self)
+            if oldchoice then
+                return oldchoice
+            end
         end
         if not self.RequestedUnits then self.RequestedUnits = {} end
         if not self.AcceptedRequests then self.AcceptedRequests = {} end
@@ -207,8 +198,9 @@ BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
             return BuildBackups.EarlyNoRush
         end
 
-        local bpAirExp = self:GetBlueprint().AI.Experimentals.Air
-        local bpOtherExp = self:GetBlueprint().AI.Experimentals.Other
+        local bp = __blueprints[self.BpId] or self:GetBlueprint()
+        local bpAirExp = bp.AI.Experimentals.Air
+        local bpOtherExp = bp.AI.Experimentals.Other
         if not self.ExpIndex then self.ExpIndex = {math.random(1, table.getn(bpAirExp)),math.random(1, table.getn(bpOtherExp)),} end
 
         if not self.togglebuild then
@@ -346,6 +338,7 @@ BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
         self:AIStartCheats()
         OldBrewLANExperimentalFactoryUnit.OnStopBeingBuilt(self, builder, layer)
         self:AIStartOrders()
+        self:RefreshBuildList()
     end,
 
     OnLayerChange = function(self, new, old)
