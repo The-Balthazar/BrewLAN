@@ -1,14 +1,26 @@
 do
-    local oldLOC = LOC
-    function LOC(s)
-        local old = oldLOC(s)
-        if type(old) == 'string' then
-            --This is to dance around breaking things like %s for string.format
-            old = string.gsub(old, '%u', 'A')
-            old = string.gsub(old, 'A%l', 'Aa')
-            old = string.gsub(old, '%l%l', string.rep('a', math.random(1,3)) )
-            old = string.gsub(old, '%l[b-z]', string.rep('a', math.random(1,3)) )
+    if not pcall(function() return UncursedLOC end) then
+        UncursedLOC = LOC
+        CursedFunctions = {}
+
+        function LOC(s)
+            local old = UncursedLOC(s)
+            local fucked = old
+            for i, v in CursedFunctions do
+                fucked = v(old, fucked)
+            end
+            return fucked
         end
-        return old
+    end
+
+    CursedFunctions.AaaaaLOC = function(old, fucked)
+        if type(fucked) == 'string' then
+            --This is to dance around breaking things like %s for string.format
+            fucked = string.gsub(fucked, '%u', 'A')
+            fucked = string.gsub(fucked, 'A%l', 'Aa')
+            fucked = string.gsub(fucked, '%l%l', string.rep('a', math.random(1,3)) )
+            fucked = string.gsub(fucked, '%l[b-z]', string.rep('a', math.random(1,3)) )
+        end
+        return fucked
     end
 end

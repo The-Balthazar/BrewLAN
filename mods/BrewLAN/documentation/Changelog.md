@@ -1077,7 +1077,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Seraphim T3 torpedo launcher
   * Slight refactor and optimisation of the Gantry share tech check.
 
-  ### 2021-10-1
+  ### 2021-10-15
 
   * New mod collection: *BrewLAN: Cursed mods*.
   * Two new mods: *Igpay Atinlay* and *A Aaa*, which both change game text.
@@ -1087,3 +1087,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * *Scathing Beetles*
     * *Stonks*
     * *Sudden Death*
+  * New mod *Z̖a͓̻̯̠͚͠l̘̜̥̟̼g͚̜̗̙̠o̢̳̜͕͙*.
+  * New mod *Spongemock*.
+
+  ### 2021-10-16
+
+  * Refactored LOC mods so that regardless of order, they always have access to the original text.
+  * Pig Latin script no-double-translate check now works with any capitalisation.

@@ -1,8 +1,20 @@
 do
-    local oldLOC = LOC
-    function LOC(s)
-        local old = oldLOC(s)
-        if type(old) == 'string' then
+    if not pcall(function() return UncursedLOC end) then
+        UncursedLOC = LOC
+        CursedFunctions = {}
+
+        function LOC(s)
+            local old = UncursedLOC(s)
+            local fucked = old
+            for i, v in CursedFunctions do
+                fucked = v(old, fucked)
+            end
+            return fucked
+        end
+    end
+
+    CursedFunctions.ZalgoLOC = function(old, fucked)
+        if type(fucked) == 'string' then
 
             local function zalgo()
                 return loadstring(string.format([[return "\x%x\x%x"]], math.random(204,205), math.random(128, 175)))() --204--128-191 and 205--128-175 we have an incomplete set here, but it's easier this way.
@@ -18,8 +30,8 @@ do
                 return s
             end
 
-            old = string.gsub(old, '%l%l', fuck)
+            fucked = string.gsub(fucked, '%l%l', fuck)
         end
-        return old
+        return fucked
     end
 end

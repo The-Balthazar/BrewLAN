@@ -1,4 +1,17 @@
 do
+    if not pcall(function() return UncursedLOC end) then
+        UncursedLOC = LOC
+        CursedFunctions = {}
+
+        function LOC(s)
+            local old = UncursedLOC(s)
+            local fucked = old
+            for i, v in CursedFunctions do
+                fucked = v(old, fucked)
+            end
+            return fucked
+        end
+    end
 
     local function TitleCase(word)
         return string.upper(string.sub(word, 1, 1))..string.lower(string.sub(word, 2))
@@ -30,7 +43,7 @@ do
 
     local function piggy(word)
         local sub = string.sub
-        if sub(word, 1, 1) == '%' or sub(word, -2) == 'ay' then
+        if sub(word, 1, 1) == '%' or string.find(word, '[aA][yY]$') then
             return word -- skip format characters
         else
             local j, k = string.find(word, '[aeiouAEIOU]*[b-dB-Df-hD-Hj-nJ-Np-tP-Tv-zV-Z]+')
@@ -42,13 +55,11 @@ do
         end
     end
 
-    local oldLOC = LOC
-    function LOC(s)
-        local old = oldLOC(s)
-        if type(old) == 'string' then
-            old = string.gsub(old, '[%%]?[%a\']+', piggy)
+    CursedFunctions.PiggyLOC = function(old, fucked)
+        if type(fucked) == 'string' then
+            fucked = string.gsub(fucked, '[%%]?[%a\']+', piggy)
         end
-        return old
+        return fucked
     end
 
 end
