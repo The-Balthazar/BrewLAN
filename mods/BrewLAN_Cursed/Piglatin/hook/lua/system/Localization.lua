@@ -46,7 +46,7 @@ do
         if sub(word, 1, 1) == '%' or string.find(word, '[aA][yY]$') then
             return word -- skip format characters
         else
-            local j, k = string.find(word, '[aeiouAEIOU]*[b-dB-Df-hD-Hj-nJ-Np-tP-Tv-zV-Z]+')
+            local j, k = string.find(word, '[aeiouAEIOU]*[b-dB-Df-hF-Hj-nJ-Np-tP-Tv-zV-Z]+')
             if not (j and k) or string.len(word) == k then
                 return Fonzify(word)
             else

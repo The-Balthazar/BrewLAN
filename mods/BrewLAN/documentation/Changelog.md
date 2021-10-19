@@ -1094,3 +1094,16 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Refactored LOC mods so that regardless of order, they always have access to the original text.
   * Pig Latin script no-double-translate check now works with any capitalisation.
+
+  ### 2021-10-17
+
+  * Fixed a minor typo in one of the Pig Latin REGEXs.
+  * UwU.
+  * Created A New Mod. It Is Completely Fine.
+
+  ### 2021-10-17
+
+  * Remnants of the cancelled big Solaris rework:
+    * Cleaned up the script a bit
+    * Cleaned up the blueprint
+    * Set the AA weapons to attack based on layer not category

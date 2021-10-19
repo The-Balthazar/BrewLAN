@@ -6,17 +6,12 @@ local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
 local AAATemporalFizzWeapon = import('/lua/aeonweapons.lua').AAATemporalFizzWeapon
 local explosion = import('/lua/defaultexplosions.lua')
 
---local BrewLANPath = import('/lua/game.lua').BrewLANPath
---local VersionIsFAF = import(BrewLANPath .. "/lua/legacy/versioncheck.lua").VersionIsFAF()
---Removed external dependancy for FAF specific script check.
 if string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603 then--VersionIsFAF then
     AAirUnit = import('/lua/defaultunits.lua').AirTransport
 end
 
 SAA0306 = Class(AAirUnit) {
     DestroyNoFallRandomChance = 1.1,
-
-    ShieldEffect = '/effects/emitters/aeon_shield_generator_t3_03_emit.bp',
 
     AirDestructionEffectBones = {
         'Outer1', 'Outer002', 'Outer003', 'Outer004', 'Outer005', 'Outer006',
@@ -42,40 +37,47 @@ SAA0306 = Class(AAirUnit) {
 
     OnShieldEnabled = function(self)
         AAirUnit.OnShieldEnabled(self)
-        if not self.StressMeter then
-            self.StressMeter = 45
-        else
-            self.StressMeter = math.min(45*5, self.StressMeter + 45)
-        end
+        self:StartRotateManipulators()
+        if not self.ShieldEffect then
+            self.ShieldEffect = CreateAttachedEmitter( self, 0, self:GetArmy(), '/effects/emitters/aeon_shield_generator_t3_03_emit.bp' ):OffsetEmitter(0, -3, 0)
+    	end
+    end,
+
+    StartRotateManipulators = function(self)
+        -- The math max makes rotator 4 go double speed.
+        local function manipMult(i) return (1 - 2 * Random(0,1)) * math.max(1, i-2) end
+
+        self.StressMeter = self.StressMeter and math.min(225, self.StressMeter + 45) or 45
+        --self.PermOpenAnimManipulator:SetRate(1)
+
         if not self.Manips then
             self.Manips = {}
             for i, v in {{'Sphere', 'x'}, {'Sphere', 'z'}, {'Disk1', 'x'}, {'Disk2', 'y'}} do
-                dir = 1 - 2 * math.random(0,1)
-                self.Manips[i] = CreateRotator(self, v[1], v[2], nil, 0, self.StressMeter, self.StressMeter * dir * math.max(1, i - 2))
-                self.Trash:Add(self.Manips[i])                                -- The math max makes the last rotator go double speed.
+                self.Manips[i] = CreateRotator(self, v[1], v[2], nil, 0, self.StressMeter, self.StressMeter * manipMult(i) )
+                self.Trash:Add(self.Manips[i])
             end
         else
             for i, v in self.Manips do
-                dir = 1 - 2 * math.random(0,1)
-                v:SetSpinDown(false)
-                v:SetTargetSpeed(self.StressMeter * dir * math.max(1, i - 2))
+                v:SetSpinDown(false):SetTargetSpeed(self.StressMeter * manipMult(i)):ClearGoal()
             end
         end
-        if not self.ShieldEffectsBag[1] then
-            self.ShieldEffectsBag = {CreateAttachedEmitter( self, 0, self:GetArmy(), self.ShieldEffect ):ScaleEmitter(1):OffsetEmitter(0,-3,0)}
-    	end
+    end,
+
+    StopRotateManipulators = function(self)
+        if self.Manips then
+            for i, v in self.Manips do
+                v:SetSpinDown(true):SetTargetSpeed(0)
+            end
+        end
     end,
 
     OnShieldDisabled = function(self)
         AAirUnit.OnShieldDisabled(self)
-        for i, v in self.Manips do
-            v:SetSpinDown(true)
-            v:SetTargetSpeed(0)
-        end
-        if self.ShieldEffectsBag[1] then
-            self.ShieldEffectsBag[1]:Destroy()
+        self:StopRotateManipulators()
+        if self.ShieldEffect then
+            self.ShieldEffect:Destroy()
     	end
-        self.ShieldEffectsBag = nil
+        self.ShieldEffect = nil
     end,
 
     OnAttachedKilled = function(self, attached)
