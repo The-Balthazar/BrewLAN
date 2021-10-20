@@ -121,7 +121,6 @@ end
 
 function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     CityRadius = CityRadius or FUnits.CityRadius
-    coroutine.yield(1)
     --------------------------------------------------------------------
     -- Find potential city locations
     --------------------------------------------------------------------
@@ -133,85 +132,52 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     --place the city centre
     local centreUnit = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, CityCentrePos[1], CityCentrePos[3])
     if centreUnit and IsUnit(centreUnit) then
+        CityCentrePos = centreUnit:GetPosition()
+        centreUnit:Destroy()
         cityI[0] = {}
-        cityI[0][0] = centreUnit
-        CityCentrePos = cityI[0][0]:GetPosition()
-        --function to crawl for a good area for the city
+        cityI[0][0] = CityCentrePos
+
         local CrawlIntersections
         CrawlIntersections = function(refPos, refGrid, total)
             local dirs = {}
             for i, v in {{-1, 0}, {0, -1}, {1, 0}, {0, 1}} do
                 table.insert(dirs, math.random(1,table.getn(dirs)), v)
             end
-            --table.sort(dirs, function(a,b) return math.random() > 0.5 end)
             for i, dir in dirs do
-                local blockSX, blockSZ = refPos[1] + dir[1] * FUnits.BlockSpacing[1], refPos[3] + dir[2] * FUnits.BlockSpacing[2]
                 local newGX, newGZ = refGrid[1] + dir[1], refGrid[2] + dir[2]
-                local postest
-                --Don't try if we're doubling up anyway
-                if not (cityI[newGX] and cityI[newGX][newGZ]) then
-                    postest = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, blockSX, blockSZ)
-                    --WaitTicks(2)
-                end
+                local pos = {refPos[1] + dir[1] * FUnits.BlockSpacing[1], 0, refPos[3] + dir[2] * FUnits.BlockSpacing[2]}
 
                 ----------------------------------------------------------------
                 -- Interupt block for if we should try and do something with a pier
                 ----------------------------------------------------------------
                 local PierBlock = function()
+                    local pos2 = {refPos[1] + dir[1] * FUnits.BlockSpacing[1] * 2, 0, refPos[3] + dir[2] * FUnits.BlockSpacing[2] * 2}
+                    pos2[2] = GetSurfaceHeight(pos2[1], pos2[3])
+                    local newGX2, newGZ2 = refGrid[1] + dir[1] * 2, refGrid[2] + dir[2] * 2
                     -- Do a pier?
-                    if FUnits.BlockDummyWater and AIbrain:GetMapWaterRatio() > 0.3 then
-                        local blockSX2, blockSZ2 = refPos[1] + dir[1] * FUnits.BlockSpacing[1] * 2, refPos[3] + dir[2] * FUnits.BlockSpacing[2] * 2
-                        local newGX2, newGZ2 = refGrid[1] + dir[1] * 2, refGrid[2] + dir[2] * 2
-                        local postest2
 
-                        if postest and IsUnit(postest) then
-                            postest:Destroy()
-                            coroutine.yield(1)
-                        end
-                        --Don't try if we're doubling up anyway
-                        if not (cityI[newGX2] and cityI[newGX2][newGZ2]) and GetTerrainHeight(blockSX2, blockSZ2) < GetSurfaceHeight(blockSX2, blockSZ2) then
-                            postest2 = AIbrain:CreateUnitNearSpot(FUnits.BlockDummyWater, blockSX2, blockSZ2)
-                            --WaitTicks(2)
-                        end
+                    if FUnits.BlockDummyWater and AIbrain:GetMapWaterRatio() > 0.3
+                    and not (cityI[newGX2] and cityI[newGX2][newGZ2])
+                    and GetTerrainHeight(pos2[1], pos2[3]) < pos2[2]
+                    and AIbrain:CanBuildStructureAt(FUnits.BlockDummyWater, pos2) then
 
                         if not cityI[newGX2] then cityI[newGX2] = {} end
-                        if postest2 and IsUnit(postest2) then
-                            local pos2 = postest2:GetPosition()
 
-                            if pos2[1] == blockSX2 and pos2[3] == blockSZ2 then
-                                cityI[newGX2][newGZ2] = postest2
-                                if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'pier' end
-                            else
-                                --cityI[newGX2][newGZ2] = 'bad'   --It's okay to call it bad here? since we're obviously at or near the water? maybe?
-                                if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
-                                postest2:Destroy()
-                                coroutine.yield(1)
-                            end
-                        else
-                            --cityI[newGX2][newGZ2] = 'bad'  --don't declare newGX2 bad here, since we may be on land still
-                            if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
-                        end
-                    elseif postest and IsUnit(postest) then
+                        cityI[newGX2][newGZ2] = pos2
+
+                        if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'pier' end
+                    else
                         if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
-                        postest:Destroy()
-                        coroutine.yield(1)
                     end
                 end
                 ----------------------------------------------------------------
 
                 if not cityI[newGX] then cityI[newGX] = {} end
 
-                if postest and IsUnit(postest) then
-                    local pos = postest:GetPosition()
-
-                    if pos[1] == blockSX and pos[3] == blockSZ then
-                        --LOG("SAFE!")
-                        cityI[newGX][newGZ] = postest
-                        if total < math.random(CityRadius[1], CityRadius[2]) then
-                            CrawlIntersections(pos, {newGX, newGZ}, total + 1)
-                        end
-                    else
-                        PierBlock()
+                if not (cityI[newGX][newGZ]) and AIbrain:CanBuildStructureAt(FUnits.BlockDummy, pos) then
+                    cityI[newGX][newGZ] = table.copy(pos)
+                    if total < math.random(CityRadius[1], CityRadius[2]) then
+                        CrawlIntersections(pos, {newGX, newGZ}, total + 1)
                     end
                 else
                     PierBlock()
@@ -220,17 +186,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
         end
 
         CrawlIntersections(CityCentrePos, {0,0}, 0)
-
-        --table.insert(Cities, cityI)
     end
 
     if AIbrain.PopCapReached then
         -- Clean up before we kill this thread.
         for x, xtable in cityI do
             for y, sectionunit in xtable do
-                if sectionunit.Destroy then
-                    sectionunit:Destroy()
-                end
                 cityI[x][y] = nil
             end
         end
@@ -248,17 +209,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     end
 
     local CityData = { Grids2 = {} }
-    --for i, cityI in Cities do
+
     for x, xtable in cityI do
         for y, sectionunit in xtable do
             if sectionunit ~= 'pier' then
-                local pos = sectionunit:GetPosition()
-                sectionunit:Destroy()
-                cityI[x][y] = pos
+                local pos = sectionunit
 
-                --Data stuff
-
-                --Count the number of grid cells
                 CityData.NoGrids = (CityData.NoGrids or 0) + 1
 
                 --make a list of all the 2x2 grid areas, track the bottom corner grid, and count them
@@ -280,9 +236,8 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
             end
         end
     end
-    --end
     --Wait to prevent deleting the panning units from removing the path blocking of future structures spawned this tick.
-    coroutine.yield(1)
+    coroutine.yield(1) -- This is basically just for the city centre.
 
     if AIbrain.PopCapReached then return end
     --------------------------------------------------------------------

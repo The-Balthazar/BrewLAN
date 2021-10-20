@@ -1107,3 +1107,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Cleaned up the script a bit
     * Cleaned up the blueprint
     * Set the AA weapons to attack based on layer not category
+
+  ### 2021-10-20
+
+  * Cityscapes: City generation is now almost instant instead of taking about a second or two.
