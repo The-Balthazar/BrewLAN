@@ -98,6 +98,7 @@ CityData = {
             },
             ContainerCranes = '/mods/BrewLAN_Plenae/CityGeneration/env/uef/props/uef_container_crane_prop.bp',
             Ships = {
+                { nil,      Weight = 8 },
                 {'xes0307', Weight = 1 },
                 {'ues0302', Weight = 1 },
             },
@@ -119,91 +120,102 @@ function GetRandomCityFactionGenerator()
     end
 end
 
+local LastCityGenTick
+
 function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
-    CityRadius = CityRadius or FUnits.CityRadius
-    --------------------------------------------------------------------
-    -- Find potential city locations
-    --------------------------------------------------------------------
-    local cityI = {}
-
-    --------------------------------------------------------------------
-    -- Plan cities
-    --------------------------------------------------------------------
-    --place the city centre
-    local centreUnit = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, CityCentrePos[1], CityCentrePos[3])
-    if centreUnit and IsUnit(centreUnit) then
-        CityCentrePos = centreUnit:GetPosition()
-        centreUnit:Destroy()
-        cityI[0] = {}
-        cityI[0][0] = CityCentrePos
-
-        local CrawlIntersections
-        CrawlIntersections = function(refPos, refGrid, total)
-            local dirs = {}
-            for i, v in {{-1, 0}, {0, -1}, {1, 0}, {0, 1}} do
-                table.insert(dirs, math.random(1,table.getn(dirs)), v)
-            end
-            for i, dir in dirs do
-                local newGX, newGZ = refGrid[1] + dir[1], refGrid[2] + dir[2]
-                local pos = {refPos[1] + dir[1] * FUnits.BlockSpacing[1], 0, refPos[3] + dir[2] * FUnits.BlockSpacing[2]}
-
-                ----------------------------------------------------------------
-                -- Interupt block for if we should try and do something with a pier
-                ----------------------------------------------------------------
-                local PierBlock = function()
-                    local pos2 = {refPos[1] + dir[1] * FUnits.BlockSpacing[1] * 2, 0, refPos[3] + dir[2] * FUnits.BlockSpacing[2] * 2}
-                    pos2[2] = GetSurfaceHeight(pos2[1], pos2[3])
-                    local newGX2, newGZ2 = refGrid[1] + dir[1] * 2, refGrid[2] + dir[2] * 2
-                    -- Do a pier?
-
-                    if FUnits.BlockDummyWater and AIbrain:GetMapWaterRatio() > 0.3
-                    and not (cityI[newGX2] and cityI[newGX2][newGZ2])
-                    and GetTerrainHeight(pos2[1], pos2[3]) < pos2[2]
-                    and AIbrain:CanBuildStructureAt(FUnits.BlockDummyWater, pos2) then
-
-                        if not cityI[newGX2] then cityI[newGX2] = {} end
-
-                        cityI[newGX2][newGZ2] = pos2
-
-                        if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'pier' end
-                    else
-                        if not cityI[newGX][newGZ] then cityI[newGX][newGZ] = 'bad' end
-                    end
-                end
-                ----------------------------------------------------------------
-
-                if not cityI[newGX] then cityI[newGX] = {} end
-
-                if not (cityI[newGX][newGZ]) and AIbrain:CanBuildStructureAt(FUnits.BlockDummy, pos) then
-                    cityI[newGX][newGZ] = table.copy(pos)
-                    if total < math.random(CityRadius[1], CityRadius[2]) then
-                        CrawlIntersections(pos, {newGX, newGZ}, total + 1)
-                    end
-                else
-                    PierBlock()
-                end
-            end
+    while LastCityGenTick == GetGameTick() do
+        coroutine.yield(1)
+        if AIbrain.PopCapReached then
+            return
         end
+    end
+    LastCityGenTick = GetGameTick()
 
-        CrawlIntersections(CityCentrePos, {0,0}, 0)
+    local cityI = {} --For storing city blocks and their positions
+
+    local function CityGrid(x,z)
+        return cityI[x] and cityI[x][z]
     end
 
-    if AIbrain.PopCapReached then
-        -- Clean up before we kill this thread.
-        for x, xtable in cityI do
-            for y, sectionunit in xtable do
-                cityI[x][y] = nil
+    local function SetCityGrid(x,z,val)
+        if not cityI[x] then cityI[x] = {} end
+        cityI[x][z] = val
+    end
+
+    local function SetEmptyCityGrid(x,z,val)
+        if not CityGrid(x,z) then
+            SetCityGrid(x,z,val)
+        end
+    end
+
+    local function insertRandom(t, val)
+        return table.insert(t, math.random(1,table.getn(t)), val)
+    end
+
+    local function randomOrder(t)
+        local tr = {}
+        for i, v in t do insertRandom(tr, v) end
+        return tr
+    end
+
+    local function dirAxis(dir)
+        return (math.abs(dir[1]) == 1) and 'X' or (math.abs(dir[2]) == 1) and 'Y'
+    end
+
+    local CrawlIntersections
+    CrawlIntersections = function(refPos, refGrid, total)
+        for i, dir in randomOrder{{-1, 0}, {0, -1}, {1, 0}, {0, 1}} do
+            local newGX, newGZ = refGrid[1] + dir[1], refGrid[2] + dir[2]
+            local pos = {refPos[1] + dir[1] * FUnits.BlockSpacing[1], 0, refPos[3] + dir[2] * FUnits.BlockSpacing[2]}
+
+            if not CityGrid(newGX, newGZ) and AIbrain:CanBuildStructureAt(FUnits.BlockDummy, pos) then
+                SetCityGrid(newGX, newGZ, pos)
+                if total < math.random((CityRadius or FUnits.CityRadius)[1], (CityRadius or FUnits.CityRadius)[2]) then
+                    CrawlIntersections(pos, {newGX, newGZ}, total + 1)
+                end
+            else -- Pier block
+                local pos2 = {refPos[1] + dir[1] * FUnits.BlockSpacing[1] * 2, 0, refPos[3] + dir[2] * FUnits.BlockSpacing[2] * 2}
+                pos2[2] = GetSurfaceHeight(pos2[1], pos2[3])
+                local newGX2, newGZ2 = refGrid[1] + dir[1] * 2, refGrid[2] + dir[2] * 2
+
+                if FUnits.BlockDummyWater and AIbrain:GetMapWaterRatio() > 0.3
+                and not CityGrid(newGX2, newGZ2)
+                and GetTerrainHeight(pos2[1], pos2[3]) < pos2[2]
+                and AIbrain:CanBuildStructureAt(FUnits.BlockDummyWater, pos2) then
+
+                    SetCityGrid(newGX2, newGZ2, pos2)
+                    SetCityGrid(newGX, newGZ, 'pier'..dirAxis(dir))
+                else
+                    SetEmptyCityGrid(newGX, newGZ, 'bad')
+                end
             end
         end
+    end
+
+    if AIbrain:CanBuildStructureAt(FUnits.BlockDummy, CityCentrePos) then
+        SetCityGrid(0,0,CityCentrePos)
+    else
+        local centreUnit = AIbrain:CreateUnitNearSpot(FUnits.BlockDummy, CityCentrePos[1], CityCentrePos[3])
+        if centreUnit and IsUnit(centreUnit) then
+            SetCityGrid(0,0,centreUnit:GetPosition())
+            centreUnit:Destroy()
+        end
+    end
+
+    if CityGrid(0,0) then
+        CrawlIntersections(CityGrid(0,0), {0,0}, 0)
+    else
         return
     end
+
+
     --------------------------------------------------------------------
     -- Cleanup city areas
     --------------------------------------------------------------------
     for x, xtable in cityI do
-        for y, sectionunit in xtable do
-            if sectionunit == 'bad' then
-                cityI[x][y] = nil
+        for z, blok in xtable do
+            if blok == 'bad' then
+                cityI[x][z] = nil
             end
         end
     end
@@ -211,24 +223,23 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     local CityData = { Grids2 = {} }
 
     for x, xtable in cityI do
-        for y, sectionunit in xtable do
-            if sectionunit ~= 'pier' then
-                local pos = sectionunit
+        for y, pos in xtable do
+            if type(pos) == 'table' then
 
                 CityData.NoGrids = (CityData.NoGrids or 0) + 1
 
-                --make a list of all the 2x2 grid areas, track the bottom corner grid, and count them
-                --if            -- left up             up                  left
-                if (cityI[x-1] and cityI[x-1][y-1] and cityI[x-1][y-1] ~= 'pier' and cityI[x-1][y] and cityI[x-1][y] ~= 'pier' ) and cityI[x][y-1] and cityI[x][y-1] ~= 'pier' then
-                    --pre-randomise the order
-                    table.insert(CityData.Grids2, math.random(1,table.getn(CityData.Grids2)), {x,y})
+                --make a list of all the 2x2 grid areas
+                if type(CityGrid(x-1,y-1)) == 'table'
+                and type(CityGrid(x-1,y)) == 'table'
+                and type(CityGrid(x,y-1)) == 'table' then
+                    insertRandom(CityData.Grids2, {x,y})
                     CityData.NoGrids2 = (CityData.NoGrids2 or 0) + 1
                 end
 
                 --Clear props from the road
                 for i, v in { {1.5, 5}, {5, 1.5} } do
                     for i, v in GetReclaimablesInRect( Rect(pos[1]-v[1], pos[3]-v[2], pos[1]+v[1], pos[3]+v[2]) ) or {} do
-                        if v and IsProp(v) then --and not string.find(v:GetBlueprint().BlueprintId, 'uef') then--SetPropCollision
+                        if v and IsProp(v) then
                             v:Destroy()
                         end
                     end
@@ -236,8 +247,6 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
             end
         end
     end
-    --Wait to prevent deleting the panning units from removing the path blocking of future structures spawned this tick.
-    coroutine.yield(1) -- This is basically just for the city centre.
 
     if AIbrain.PopCapReached then return end
     --------------------------------------------------------------------
@@ -284,13 +293,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
         return selection[selection.Cycle][1]
     end
 
-    -- returns a random position within given distances of a fixed offset of a position
-    -- returns {x,y,z} where x and z are semi-random, and y just pos[2]
-    -- expects a 3 point vector of start pos, a 2 point vector of the fixed offset, and a 2 point vector of the variation random bounds
-    local rOOP = function(pos, off, ran)
-        local x = pos[1] + off[1] + (math.random()*2-1)*ran[1]
-        local z = pos[3] + off[2] + (math.random()*2-1)*ran[2]
-        return {x, pos[2], z}
+    local randomOffsetOfOffsetPosition = function(position, fixedOffset, maxRandomOffset)
+        return {
+            position[1] + fixedOffset[1] + (math.random()*2-1)*maxRandomOffset[1],
+            position[2],
+            position[3] + fixedOffset[2] + (math.random()*2-1)*maxRandomOffset[2]
+        }
     end
 
     local SafeProp = function(bp, pos, dir, ...)
@@ -311,19 +319,14 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
         )
     end
 
-    --Bool to binary: if b, return b or 1 if b is nil
-    local BTB = function(a,b,c)return (a and (b or 1) or (c or 0)) end
-    --get grid cell, check x exists before indexing for y
-    local gXZ = function(g,x,z)return (g[x] and g[x][z]) end
-
     -- Places and returns a unit from a bp or a weighted list of bps
     -- expects [string or table] [vector2 pos] [0-3 number]
     local SafeSpawn = function(unitbp, pos, dir)
-        if not unitbp then
-            return
-        end
         while type(unitbp) == 'table' do
             unitbp = ChooseWeightedBp(unitbp)
+        end
+        if not unitbp then
+            return
         end
         if string.sub(unitbp, 1, 1) == '/' then
             return SafeProp(unitbp, pos, dir or Random(0,3) * 90)
@@ -414,8 +417,6 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
     --------------------------------------------------------------------
     -- Spawn large structures
     --------------------------------------------------------------------
-    --for i, cityI in Cities do
-    --local army = AIbrain:GetArmyIndex()
     local num = CityData.NoGrids2 or 0
     num = math.max(math.ceil(math.random(num/FUnits.LargeStructureBlocks[1], num/FUnits.LargeStructureBlocks[2])), math.min(1,num) )
     for gi, grid in CityData.Grids2 do
@@ -445,13 +446,10 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
             CityData.Grids2[gi] = nil
         end
     end
-    --WARN(repr(CityData.Grid2Map))
-    --end
 
     --------------------------------------------------------------------
     -- Spawn roads, small structures, and props
     --------------------------------------------------------------------
-    --for i, cityI in Cities do
     for x, xtable in cityI do
         for y, pos in xtable do
             if type(pos) == 'table' then
@@ -524,7 +522,12 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     end
 
                     local binarySwitch = function(a,b,c,d) return (a and 8 or 0) + (b and 4 or 0) + (c and 2 or 0) + (d and 1 or 0) end
-                    local bin = binarySwitch(gXZ(cityI,x-1,y), gXZ(cityI,x+1,y), gXZ(cityI,x,y-1), gXZ(cityI,x,y+1))
+                    local bin = binarySwitch(
+                        CityGrid(x-1,y) and CityGrid(x-1,y) ~= 'pierY',
+                        CityGrid(x+1,y) and CityGrid(x+1,y) ~= 'pierY',
+                        CityGrid(x,y-1) and CityGrid(x,y-1) ~= 'pierX',
+                        CityGrid(x,y+1) and CityGrid(x,y+1) ~= 'pierX'
+                    )
                     CreateRoad(pos, FUnits.RoadTiles[bin][1], FUnits.RoadTiles[bin][2],  army)
 
                     ----------------------------------------------------------------
@@ -537,10 +540,10 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                         for _, v in Corners(1.66) do
                             lamp(pos, v)
                         end
-                        if gXZ(cityI,x+1,y) then
+                        if CityGrid(x+1,y) then
                             for i, v in {{5, 1.66}, {5, -1.66}} do lamp(pos, v) end
                         end
-                        if gXZ(cityI,x,y+1) then
+                        if CityGrid(x,y+1) then
                             for i, v in {{-1.66, 5}, {1.66, -5}} do lamp(pos, v) end
                         end
                     end
@@ -550,7 +553,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     if FUnits.Vehicles then
                         for _, v in Edges(3) do
                             if math.random() > 0.6 then
-                                SafeProp(FUnits.Vehicles, rOOP(pos,v,{2,1}))
+                                SafeProp(FUnits.Vehicles, randomOffsetOfOffsetPosition(pos,v,{2,1}))
                             end
                         end
                         if bin == 1 or bin == 2 then
@@ -563,7 +566,7 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     -- Wall perimetre
                     ----------------------------------------------------------------
                     for _, v in Edges(1) do
-                        if not gXZ(cityI, x+v[1], y+v[2]) then
+                        if not CityGrid(x+v[1], y+v[2]) then
                             for i = -4, 4 do
                                 SafeSpawn(FUnits.Wall, {pos[1] + (v[1]*5) + (i*v[2]), nil, pos[3] + (v[2]*5) + (i*v[1])}, 0)
                             end
@@ -667,17 +670,9 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                                     w,
                                     h
                                 )
-
-                                --[[FlattenGradientMapRect(
-                                    math.floor((pos[1]+(p.x*0.9)+(offsetcx+offsetrx)/2)-1.5),
-                                    math.floor((pos[3]+(p.z*0.9)+(offsetcz+offsetrz)/2)-1.5),
-                                    3,
-                                    3
-                                )]]
                                 break
                             end
                         end
-                        --LOG(repr(failed))
                     end
                     local SpawnSmallDockShips = function(pos, off, pierData, d, ori)
                         for i=-2,2 do
@@ -707,12 +702,16 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     end
 
                     local pierData = FUnits.PierData
-                    local pierDir = BTB(cityI[x][y-1] == 'pier' or cityI[x][y+1] == 'pier',1) + BTB(cityI[x][y-1] == 'pier' or gXZ(cityI,x+1,y) == 'pier', 2)
+                    local pierDir = (CityGrid(x-1,y) == 'pierX') and 0
+                                 or (CityGrid(x,y+1) == 'pierY') and 1
+                                 or (CityGrid(x+1,y) == 'pierX') and 2
+                                 or (CityGrid(x,y-1) == 'pierY') and 3
+
                     local p = FUnits.PierData.Directional[pierDir]
 
                     FlattenCeilMapRect(pos[1]+p.x0, pos[3]+p.z0, p.w, p.h, GetSurfaceHeight(pos[1], pos[3])+pierData.PierHeight)
 
-                    CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Albedo.dds', '', 'Albedo', pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
+                    CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Albedo.dds', '', 'Albedo',         pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
                     CreateDecal({ pos[1]+p.x, pos[2], pos[3]+p.z }, pierDir*1.57, pierData.TexPath .. (p.Tex or '') .. 'Normals.dds', '', 'Alpha Normals', pierData.TexSize[1], pierData.TexSize[2], pierData.TexLOD, 0, army, 0)
 
                     SafeSpawn(pierData.Pier, pos, (pierDir+1)*90)
@@ -720,26 +719,26 @@ function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
                     DoPierDecor(pos, pierData, pierDir, p, pierData.PierHeight)
 
                     if pierDir == 1 or pierDir == 3 then
-                        if not gXZ(cityI,x+1,y) then
+                        if not CityGrid(x+1,y) then
                             SafeProp(pierData.Dock, {pos[1]+2, pos[2], pos[3]}, 90)
                             SpawnSmallDockShips({pos[1]+3, pos[2], pos[3]-0.5}, {1, 0}, pierData, pierDir, 1)
-                        elseif math.random() > 0.8 then
+                        else
                             SafeSpawn(pierData.Ships, {pos[1]+5, pos[2], pos[3]}, 0)
                         end
-                        if not gXZ(cityI,x-1,y) then
+                        if not CityGrid(x-1,y) then
                             SafeProp(pierData.Dock, {pos[1]-2, pos[2], pos[3]}, -90)
                             SpawnSmallDockShips({pos[1]-3, pos[2], pos[3]+0.5}, {-1, 0}, pierData, pierDir, -1)
                         end
                     end
                     if pierDir == 0 or pierDir == 2 then
-                        if not gXZ(cityI,x,y-1) then
+                        if not CityGrid(x,y-1) then
                             SafeProp(pierData.Dock, {pos[1], pos[2], pos[3]-2}, 180)
                             SpawnSmallDockShips({pos[1]-0.5, pos[2], pos[3]-3}, {0, -1}, pierData, pierDir, 2)
                         end
-                        if not gXZ(cityI,x,y+1) then
+                        if not CityGrid(x,y+1) then
                             SafeProp(pierData.Dock, {pos[1], pos[2], pos[3]+2}, 0)
                             SpawnSmallDockShips({pos[1]+0.5, pos[2], pos[3]+3}, {0, 1}, pierData, pierDir, 0)
-                        elseif math.random() > 0.8 then
+                        else
                             SafeSpawn(pierData.Ships, {pos[1], pos[2], pos[3]+5}, 1)
                         end
                     end

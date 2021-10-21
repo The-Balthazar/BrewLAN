@@ -1111,3 +1111,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-10-20
 
   * Cityscapes: City generation is now almost instant instead of taking about a second or two.
+  * Cityscapes: Cities can now generate over existing mobile units instead of around them.
+
+  ### 2021-10-21
+
+  * Cityscapes: City generation no longer needs to wait a tick between planning and generating.
+  * Cityscapes: Fixed issue with cities being able to overlap introduced yesterday. They now wait a tick between each.
+  * Cityscapes: Cities that generate over things like ACUs will now line up so that the ACU is in the middle of an intersection if able.
+  * Cityscapes: Fixed pier potentially facing the wrong direction.
+  * Cityscapes: Fixed roads potentially connecting to piers from the wrong direction on diagonal coastlines.
+
