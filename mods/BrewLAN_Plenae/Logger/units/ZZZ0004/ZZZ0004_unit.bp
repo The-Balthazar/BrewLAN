@@ -23,12 +23,7 @@ UnitBlueprint {
         HideLifebars = true,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
-        FactionName = 'Aeon',
-        Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
             RULEUTC_IntelToggle = true, --3
@@ -53,7 +48,6 @@ RULEUTC_SpecialToggle = {       helpText = "toggle_special",    bitmapId = 'acti
 RULEUTC_CloakToggle = {         helpText = "toggle_cloak",      bitmapId = 'intel-counter',         preferredSlot = 11, behavior = ScriptButtonOrderBehavior,   initialStateFunc = ScriptButtonInitFunction, extraInfo = 8,},
         ]]
         UnitName = 'Mappy',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 5000000,

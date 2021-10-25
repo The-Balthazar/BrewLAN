@@ -1121,3 +1121,18 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: Fixed pier potentially facing the wrong direction.
   * Cityscapes: Fixed roads potentially connecting to piers from the wrong direction on diagonal coastlines.
 
+  ### 2021-10-25
+
+  * Marker Generation Script:
+    * Removed most of the old commented out code
+    * Changed default values
+    * Crawler script now does last in first out
+    * Crawler data input made more readable
+    * Edge cull no longer attacks edges it shouldn't
+    * Edge cull now tapers in radius near borders
+    * Edge cull is now on by default
+    * Borders are now separated at the corners
+    * Corrected some instances of using `y` instead of `z`
+    * Voronoi colour key log now off by default when actually rendered
+    * Other minor cleaning
+  * Marker generation script host unit kill button repurposed into a respawn button.
