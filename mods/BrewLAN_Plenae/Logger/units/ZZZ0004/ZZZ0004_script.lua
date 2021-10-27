@@ -5,7 +5,6 @@ ZZZ0004 = Class(Unit) {
     -- Implementation specific UI Hacks
     OnCreate = function(self)
         Unit.OnCreate(self)
-        --self:ForkThread(self.TranslateAllMarkers)
         self:SetScriptBit('RULEUTC_IntelToggle', true)
         self:SetScriptBit('RULEUTC_ProductionToggle', true)
         self:SetScriptBit('RULEUTC_GenericToggle', true)
@@ -55,34 +54,37 @@ ZZZ0004 = Class(Unit) {
 
         local MapSizeX = ScenarioInfo.size[1]
         local MapSizeZ = ScenarioInfo.size[2]
+        local PlayRect = ScenarioInfo.MapData.PlayableRect or {0,0,MapSizeX,MapSizeZ}
+        local Border = {x1=PlayRect[1],   z1=PlayRect[2],   x2=PlayRect[3]+1, z2=PlayRect[4]+1} -- We care about full grids not verts, and there's 1 more vert pos than grid
+            PlayRect = {x1=PlayRect[1]+1, z1=PlayRect[2]+1, x2=PlayRect[3],   z2=PlayRect[4]  }
 
         ------------------------------------------------------------------------
         -- Marker data
         local markerTypes = {
-            { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false,                    MaxSlope=0.75},
-            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true, MaxWaterDepth = 25, MaxSlope=0.75},
-            { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true, MinWaterDepth = 1.5},
+            { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,                  MaxWaterDepth = 0.05, MaxSlope=0.75},
+            { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  seabed = true,  MaxWaterDepth = 25,   MaxSlope=0.75},
+            { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM',               water = true,   MinWaterDepth = 1.5},
         }
         markerType = markerTypes[markerType]
 
         ------------------------------------------------------------------------
         -- Global functions called potentially over a million times (remove some overhead)
-        local GTH, VDist2Sq = GetTerrainHeight, VDist2Sq
+        local GTH, GetSurfaceHeight, VDist2Sq = GetTerrainHeight, GetSurfaceHeight, VDist2Sq
         local max, min, abs, floor = math.max, math.min, math.abs, math.floor
         local insert, remove, getn, copy, find, merged = table.insert, table.remove, table.getn, table.copy, table.find, table.merged
 
         ------------------------------------------------------------------------
         -- Output settings -----------------------------------------------------
-        local exportMarkersToLog = false --Produce copy-pasta-able log export
-        local drawMarkersToMap = true    --Give a representation of the marker data
-        local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse() --Check how long this took
-        local drawVoronoiToMap = false   --Debug view for seeing what the data is seeing.
+        local exportMarkersToLog = false
+        local drawMarkersToMap = true
+        local drawVoronoiToMap = false
+        local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse()
+        local timeProfileDetailed = true
 
         ------------------------------------------------------------------------
         -- Unpassable areas map cleanup toggles --------------------------------
         -- - These are functionally obsolete, but are fast and can speed up things
-        local doQuickCleanup = true
-        local cleanupPasses = 1 -- Numbers greater than 1 only really have effect if doDeAlcove is on
+        local doQuickCleanupPasses = 1 -- 0 disables. Despeckle and DeIsland only done on first pass
         local doDespeckle = true -- removes single unconnected grids of unpassable (8 point check) --Obseleted by ignoreMinZones, but more efficient.
         local doDeIsland = true -- removes single unconnected grids of passable (4 point check) --Obselete by voronoi function, but saves a bunch of distance checks.
         local doDeAlcove = false -- removes single grids of passable with 3 unpassable grids cardinally adjacent (4 point check) --Obselete by voronoi function.
@@ -101,13 +103,13 @@ ZZZ0004 = Class(Unit) {
         local doEdgeCullLargestZones = false -- Mostly obsolete with the improved doEdgeCullAllZones filter: creates a gap between the two largest blocking zones that gets filled with grid. Can fix issues on maps like Bermuda Locket. doContiguousGridCheck might be needed
         local doEdgeCullAllZones = true -- Creates gaps between any touching voronoi zone. Can potentially fix concave areas, narrow paths, and other problem areas. doContiguousGridCheck probably essential.
         local voronoiEdgeCullRadius = 3 -- The distance that the edge cull should affect. Radius, square.
-        local EdgeCullAllBorderDistance = math.max(voronoiEdgeCullRadius*2, voronoiCheckDistance) -- Soft border protection distance for all-zones edge cull
+        local EdgeCullAllBorderDistance = max(voronoiEdgeCullRadius*2, voronoiCheckDistance) -- Soft border protection distance for all-zones edge cull
         local EdgeCullAllBorderTaperRate = 0.2 --How fast the radius reduces when the centre is past the border edge
 
         ------------------------------------------------------------------------
         -- Marker cleanup options ----------------------------------------------
         local MarkerMinDist = math.sqrt(MapSizeX) * 0.5 -- sqrt of map size is usually a good default -- radius, square -- prevents creation of markers with other markers in this radius moves the other marker to halfway between the two. Opperation is very order dpenendant.
-        local doRemoveIsolatedMarkers = true -- If a marker has no connections, YEET
+        local doRemoveIsolatedMarkers = false -- If a marker has no connections, YEET
 
         ------------------------------------------------------------------------
         -- Data storage --------------------------------------------------------
@@ -117,31 +119,35 @@ ZZZ0004 = Class(Unit) {
 
         ------------------------------------------------------------------------
         -- tiny generic helper functions I use, or might use in more than once place
-        local round = function(n) return floor(n + 0.5) end
-        local btb = function(v) return v and 1 or 0 end --bool to binary
-        local truecount = function(...) local n=0 for i=1,arg.n do if arg[i] then n=n+1 end end return n end -- count the number of positive args
-        local aCorner = function(x,z) return truecount( x == 0, z == 0, x == MapSizeX+1, z == MapSizeZ+1 ) == 2 end
-        local tcount = function(t) local c=0; for i, j in t do c=c+1 end return c end --more reliable getn
-        local tintersect = function(t1,t2) --intersection of tables
-            local t3 = {}
-            for i, v in t1 do
-                t3[i] = t1[i] and t2[i] or nil
-            end
-            return t3
-        end
-        local removeByValue = function(t,val) --A variant of table.ect that returns true when it hits something
-            for k, v in t do
-                if v == val then
-                    remove(t,k)
-                    return true
-                end
-            end
-        end
-        local mergeArray = function(t1, t2)
-            t3 = copy(t1)
-            for i, v in t2 do
-                if not find(t2, v) then
-                    insert(t2, v)
+        local function detailedTimeStart() timeProfileDetailed = timeProfileDetailed and GetSystemTimeSecondsOnlyForProfileUse() end
+        local function detailedTimeEnd(section) if timeProfileDetailed then _ALERT( markerType.type, '', GetSystemTimeSecondsOnlyForProfileUse() - timeProfileDetailed, section ) end end
+        local function round(n) return floor(n + 0.5) end
+        local function btb(v) return v and 1 or 0 end --bool to binary
+        local function truecount(...) local n=0 for i=1,arg.n do if arg[i] then n=n+1 end end return n end -- count the number of positive args
+        local function tcount(t) local c=0; for i, j in t do c=c+1 end return c end --more reliable getn
+        local function tintersect(t1,t2) local t3 = {} for i, v in t1 do t3[i] = t1[i] and t2[i] or nil end return t3 end --intersection of tables
+
+        local function CardinalCount(grid,x,z) return btb(grid[x-1] and grid[x-1][z])+btb(grid[x+1] and grid[x+1][z])+btb(grid[x][z-1])+btb(grid[x][z+1]) end
+        local function OrdinalCount(grid,x,z) return btb(grid[x-1] and grid[x-1][z-1])+btb(grid[x-1] and grid[x-1][z+1])+btb(grid[x+1] and grid[x+1][z-1])+btb(grid[x+1] and grid[x+1][z+1]) end
+
+        local function outsidePlay(x,z) return PlayRect.x1>x or PlayRect.z1>z or PlayRect.x2<x or PlayRect.z2<z end
+        local function outsideCorner(x,z) return 2 == truecount(PlayRect.x1>x, PlayRect.z1>z, PlayRect.x2<x, PlayRect.z2<z) end
+
+        local function canPathSlope(x,z) local a,b,c,d = GTH(x-1,z-1),GTH(x-1,z),GTH(x,z),GTH(x,z-1) return max(abs(a-b), abs(b-c), abs(c-d), abs(d-a)) <= markerType.MaxSlope end
+        local function canPathTerrain(x,z) local t = GetTerrainType(x,z) return t ~= 'Dirt09' and t ~= 'Lava01' end
+        local function canAmphPathWater(surface,terrain) return terrain + (markerType.MaxWaterDepth or 0) > surface end
+        local function canNavalPathWater(surface,terrain) return surface - (markerType.MinWaterDepth or 0) > terrain end
+
+        local function canPath(x,z)
+            local s,t = GetSurfaceHeight(x,z), GTH(x,z)
+
+            if canPathTerrain(x,z) then
+                if markerType.land and s==t then
+                    return canPathSlope(x,z)
+                elseif markerType.seabed then
+                    return canAmphPathWater(s,t) and canPathSlope(x,z)
+                elseif markerType.water then
+                    return canNavalPathWater(s,t)
                 end
             end
         end
@@ -152,99 +158,62 @@ ZZZ0004 = Class(Unit) {
 
         ------------------------------------------------------------------------
         -- Evaluate and store map data. ----------------------------------------
-        for x = 0, MapSizeX+1 do --Start one below and one above map size in order to;
+        detailedTimeStart()
+        for x = Border.x1, Border.x2 do
             passMap[x] = {}
             voronoiMap[x] = {}
-            for y = 0, MapSizeZ+1 do
+            for z = Border.z1, Border.z2 do
                 --Create a ring of unpassable around the outside
-                if x == 0 or y == 0 or x == MapSizeX+1 or y == MapSizeZ+1 then
-                    passMap[x][y] = false
-                    if aCorner(x,y) then
-                        voronoiMap[x][y] = nil
-                    else
-                        voronoiMap[x][y] = "border"
-                    end
+                if outsidePlay(x,z) then
+                    passMap[x][z] = false
+                    voronoiMap[x][z] = not outsideCorner(x,z) and "border" or nil
                 else
-                    --Get heights around point
-                    --Yes, these same points will be checked up to 4 times, but that's a lot to cache
-                    local a, b, c, d -- If we don't care about land, dont bother.
-                    if markerType.land then a, b, c, d = GTH(x-1,y-1), GTH(x-1,y), GTH(x,y), GTH(x,y-1) end
-                    --This specifically ignores diagonal difference, which appears to be the way it's done in game
-                    local delta -- If we don't care about land, dont bother.
-                    if markerType.land then delta = max(abs(a-b), abs(b-c), abs(c-d), abs(d-a)) end
-
-                    local terrainTypeCheck = function(x,y)
-                        local tt = GetTerrainType(x,y)
-                        return tt ~= 'Dirt09' and tt ~= 'Lava01'
-                    end
-
-                    local waterCheck = function(markerType, x, y, c)
-                        if markerType.water and markerType.land then
-                            return c + (markerType.MaxWaterDepth or 25) > GetSurfaceHeight(x, y)
-                        end
-                        local w = GetSurfaceHeight(x, y)
-                        return (markerType.water and w > (GTH(x,y) + (markerType.MinWaterDepth or 1.5))) or (markerType.land and w <= c)
-                    end
-                    if (markerType.land and delta <= markerType.MaxSlope or not markerType.land) and terrainTypeCheck(x,y) and waterCheck(markerType, x, y, c) then
-                        --Set up for the vector check for min dist from false
-                        passMap[x][y] = voronoiCheckDistanceSq
-                        voronoiMap[x][y] = ''
+                    if canPath(x,z) then
+                        passMap[x][z] = voronoiCheckDistanceSq --Set up for the vector check for min dist from false
+                        voronoiMap[x][z] = ''
                     else
-                        passMap[x][y] = false
-                        voronoiMap[x][y] = false
+                        passMap[x][z] = false
+                        voronoiMap[x][z] = false
                     end
                 end
             end
         end
+        detailedTimeEnd("Get map data time")
 
         ------------------------------------------------------------------------
         -- Heightmap data cleanup. Mostly obselete, mostly harmless. -----------
-        if doQuickCleanup and cleanupPasses ~= 0 then
-            for i = 1, cleanupPasses do
-                for x, ydata in passMap do
-                    for y, pass in ydata do
+        detailedTimeStart()
+        if doQuickCleanupPasses ~= 0 then
+            for i = 1, doQuickCleanupPasses do
+                for x = PlayRect.x1, PlayRect.x2 do
+                    for z = PlayRect.z1, PlayRect.z2 do
                         -- Despeckle; remove isolated single grid impassible areas with no orthoganally adjacent other impassible areas
-                        if doDespeckle then
-                            if not pass
-                            and passMap[x][y-1] and passMap[x-1][y-1] and passMap[x-1][y] and passMap[x-1][y+1]
-                            and passMap[x][y+1] and passMap[x+1][y-1] and passMap[x+1][y] and passMap[x+1][y+1]
-                            then
+                        if i==1 and doDespeckle then
+                            if not passMap[x][z] and CardinalCount(passMap,x,z) + OrdinalCount(passMap,x,z) == 8 then
                                 --remove isolated false sections unless they are hefty
-                                passMap[x][y] = voronoiCheckDistanceSq
-                                voronoiMap[x][y] = ''
+                                passMap[x][z] = voronoiCheckDistanceSq
+                                voronoiMap[x][z] = ''
                             end
                         end
                         -- Like despeckle but the other way round, and we don't need to care about intercardinals
-                        if doDeIsland then
-                            if pass
-                            and not passMap[x][y-1]
-                            and not passMap[x][y+1]
-                            and not passMap[x-1][y]
-                            and not passMap[x+1][y]
-                            then
-                                passMap[x][y] = false
-                                voronoiMap[x][y] = false
+                        if i==1 and doDeIsland then
+                            if passMap[x][z] and CardinalCount(passMap,x,z) == 0 then
+                                passMap[x][z] = false
+                                voronoiMap[x][z] = false
                             end
                         end
                         -- remove alcoves
                         if doDeAlcove then
-                            if pass
-                            and truecount{
-                                not passMap[x][y-1],
-                                not passMap[x][y+1],
-                                not passMap[x-1][y],
-                                not passMap[x+1][y]
-                            }
-                            == 3 then
-                                passMap[x][y] = false
-                                voronoiMap[x][y] = false
+                            if passMap[x][z] and CardinalCount(passMap,x,z) == 1 then
+                                passMap[x][z] = false
+                                voronoiMap[x][z] = false
                             end
                         end
                     end
                 end
             end
         end
-
+        detailedTimeEnd("Quick cleanup time")
         ------------------------------------------------------------------------
         -- Calculates content for passMap and voronoiMap
         -- Passmap is distance to the nearest unpathable
@@ -259,23 +228,23 @@ ZZZ0004 = Class(Unit) {
             local MapCrawler
 
             -- done from the perspective of the impassible area grid, and checking outwards for pathable areas to mark
-            local function MapDistanceVoronoi (passMap, voronoiMap, xtarget, ytarget, maxdist, blockid)--, smallOWMode)
+            local function MapDistanceVoronoi (xtarget, ztarget, maxdist, blockid)
                 --Limit area to loop over to square around the circle that's going to change
                 --Could limit more with sin/cos? Would that be more compute than the vdist?
-                local xstart = max(xtarget-maxdist,1)
-                local xend = min(xtarget+maxdist, getn(passMap))
-                local ystart = max(ytarget-maxdist,1)
-                local yend = min(ytarget+maxdist, getn(passMap[1]))
+                local xstart = max(xtarget-maxdist, PlayRect.x1)
+                local zstart = max(ztarget-maxdist, PlayRect.z1)
+                local xend = min(xtarget+maxdist, PlayRect.x2)
+                local zend = min(ztarget+maxdist, PlayRect.z2)
                 --Within the caclulated bounds
                 for x = xstart, xend do
-                    for y = ystart, yend do
-                        if passMap[x][y] then
+                    for z = zstart, zend do
+                        if passMap[x][z] then
                             --Calculate the distance to origin
                             --maxdist is pre-polulated already, so no need to reference here
-                            local dist = VDist2Sq(x,y,xtarget,ytarget)
-                            if dist < passMap[x][y] then
-                                passMap[x][y] = dist
-                                voronoiMap[x][y] = blockid
+                            local dist = VDist2Sq(x,z,xtarget,ztarget)
+                            if dist < passMap[x][z] then
+                                passMap[x][z] = dist
+                                voronoiMap[x][z] = blockid
                             end
                         end
                     end
@@ -339,10 +308,11 @@ b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , ,f,f,f,f, , , , , , ,
             --if true then self.ConvertXYTableToYXCommaDelim(voronoiMap); return end
             --------------------------------------------------------------------
             -- Map out contigious areas of unpathable areas, splitting border as we go
+            detailedTimeStart()
             local blockid = 0
             for x, zdata in passMap do
                 for z, pass in zdata do
-                    if not aCorner(x,z) and not pass and not voronoiMap[x][z] then
+                    if not outsideCorner(x,z) and not pass and not voronoiMap[x][z] then
                         blockid = blockid + 1
                         if not ZoneSizes[blockid] then ZoneSizes[blockid] = 0 end
                         MapCrawler{
@@ -361,6 +331,7 @@ b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , ,f,f,f,f, , , , , , ,
                     end
                 end
             end
+            detailedTimeEnd("Crawl blocking zones time")
 --[[ voronoiMap = (abridged) b = "border" (leading 1's removed for visibility)
 3,3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2,2, , , , ,b,
 3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2, , , ,b,
@@ -385,9 +356,9 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
             --if true then self.ConvertXYTableToYXCommaDelim(voronoiMap); return end
             --------------------------------------------------------------------
             -- Do the same for the border segments
-            local xmax, zmax = getn(passMap), getn(passMap[1])
-            for x = 0, xmax do
-                for _, z in {0, zmax} do
+            detailedTimeStart()
+            for x = Border.x1, Border.x2 do
+                for _, z in {Border.z1, Border.z2} do
                     if voronoiMap[x][z] == 'border' then
                         blockid = blockid + 1
                         MapCrawler{
@@ -408,8 +379,8 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
                     end
                 end
             end
-            for z = 0, xmax do
-                for _, x in {0, zmax} do
+            for z = Border.z1, Border.z2 do
+                for _, x in {Border.x1, Border.x2} do
                     if voronoiMap[x][z] == 'border' then
                         blockid = blockid + 1
                         MapCrawler{
@@ -430,6 +401,7 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
                     end
                 end
             end
+            detailedTimeEnd("Crawl borders time")
 
 --[[ voronoiMap = (abridged) (1's removed for visibility)
 3,3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2,2, , , , ,24,
@@ -450,12 +422,13 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
 5, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , , ,7,7, , , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , ,2,
 5, , , , , , , , , , , , , , , , ,5,5,5, , , , , , , , , , , ,7,7,7, , , , , , , , , , , , , , , , ,0,0,0, , , , , , , , , , , , ,2,
 5, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , , , , , , , , , , , ,0,0,0,0, , , , , , , , , , , ,2,
- ,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,9,9,9,9,9,9,9,9,9,9,9, ,
+ ,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,9,9,9,9,9,9,9,9,9,9,9, ,
 ]]  --if true then self.ConvertXYTableToYXCommaDelim(voronoiMap); return end
             --------------------------------------------------------------------
 
             --Check actions are required with the ignoreMinZones actions
             local smallZonesNum = 0
+            detailedTimeStart()
             if ignoreMinZones then
                 for zone, no in ZoneSizes do
                     if no <= minContigiousZoneArea then
@@ -476,19 +449,18 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
                     end
                 end
             end
+            detailedTimeEnd("Cull small zones time")
 
             -- Generate the voronoi areas
+            detailedTimeStart()
             for x, ydata in passMap do
                 for y, pass in ydata do
-                    if not pass
-                    --and voronoiMap[x][y] ~= ''
-                    --and (not ZoneSizes[voronoiMap[x][y] ] or ZoneSizes[voronoiMap[x][y] ] >= minContigiousZoneArea)
-                    and (passMap[x-1][y  ] or passMap[x  ][y-1] or passMap[x+1][y  ] or passMap[x  ][y+1])
-                    then
-                        MapDistanceVoronoi(passMap, voronoiMap, x, y, voronoiCheckDistance, voronoiMap[x][y])--, true)
+                    if not pass and (passMap[x-1][y] or passMap[x][y-1] or passMap[x+1][y] or passMap[x][y+1]) then
+                        MapDistanceVoronoi(x, y, voronoiCheckDistance, voronoiMap[x][y])
                     end
                 end
             end
+            detailedTimeEnd("Generate voronoi map time")
 --[[  voronoiMap =
 INFO: 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,6,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,24,24,24,
 INFO: 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,24,24,
@@ -516,6 +488,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
             --This produces a gap between the two largest zones to be filled in with grid, so that maps with two large zones that touch at multiple places don't cause issues.
             --If this was done to the connections on every pair of zones that connect at more than one place, and every long winding connection, this would probably fix most of the concentric/concave path issues.
             if doEdgeCullLargestZones then
+                detailedTimeStart()
                 local largest, secondl
                 for k, v in ZoneSizes do
                     if not largest or ZoneSizes[largest] < v then
@@ -547,10 +520,12 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                     end
                     voronoiMap = voronoiMapCopy
                 end
+                detailedTimeEnd("Separate largest voronoi zones time")
             end
 
             --Culls the area between touching zones, tapers towards map edges, to allow grid in the middle
             if doEdgeCullAllZones then
+                detailedTimeStart()
 
                 local edgemax = EdgeCullAllBorderDistance or 0
 
@@ -592,20 +567,20 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                     end
                 end
                 voronoiMap = voronoiMapCopy
+                detailedTimeEnd("Separate touching voronoi zones time")
             end
 
             --After this point the voronoi map can have gaps in large flat areas voronoiCheckDistance away from blocking areas.
             --This fills those gaps with an offset 16x16 grid, technically 17x17 with smaller outsides, but 16x16 sized.
             --This can cause issues if voronoiCheckDistance is less than a 16th of the map.
             do
-                --if doContiguousGridCheck then
+                detailedTimeStart()
                 local GridContig, GridZoneI
                 local GridCPath = {}
 
-                local gs = getn(voronoiMap) / voronoiGridsNumber
+                local gs = MapSizeX / voronoiGridsNumber
                 local ceil = math.ceil
                 local hex = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'}
-
                 if doContiguousGridCheck then
                     GridZoneI = 0
                     GridContig = function(map, x, z, blocki)
@@ -637,6 +612,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                         end
                     end
                 end
+                detailedTimeEnd("Grid infill time")
             end
         end
 
@@ -646,9 +622,9 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
         ------------------------------------------------------------------------
         -- Find all 2x2 areas containing 3 zones, and try to put a merker there
         do
-            --Start at 2 so we don't ever find 'border' with this, only nearborder
-            for x = 2, getn(voronoiMap) - 1 do
-                for y = 2, getn(voronoiMap[1]) - 1 do
+            detailedTimeStart()
+            for x = PlayRect.x1+1, PlayRect.x2 do
+                for y = PlayRect.z1+1, PlayRect.z2 do
                     local zones = {
                         [voronoiMap[x][y] ] = true,
                         [voronoiMap[x][y-1] ] = true,
@@ -657,13 +633,6 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                     }
                     if tcount(zones) >= 3 then
                         local CreateMarker = function(x, y)
-
-                            --[[local markerTypes = {
-                                { type = 'Land Path Node',       color = 'ff00ff00', graph = 'DefaultLand',       name = 'LandPM',  land = true,  water = false },
-                                { type = 'Amphibious Path Node', color = 'ff00ffff', graph = 'DefaultAmphibious', name = 'AmphPM',  land = true,  water = true  },
-                                { type = 'Water Path Node',      color = 'ff0000ff', graph = 'DefaultWater',      name = 'WaterPM', land = false, water = true  },
-                            }
-                            local markerType = markerTypes[1] ]]
 
                             local mnum = tcount(markerlist)
                             local markername = markerType.name..mnum
@@ -739,8 +708,10 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                     end
                 end
             end
+            detailedTimeEnd("Pick marker locations time")
         end
 
+        detailedTimeStart()
         for name, marker in markerlist do
             for i, adjname in marker.adjacentList do
                 if marker.adjacentTo == '' then
@@ -758,6 +729,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                 end
             end
         end
+        detailedTimeEnd("Marker cleanup time")
 
         --if true then self.ConvertXYTableToYXCommaDelim(markerlist) ; return end
         if timeProfileOutput then
@@ -827,7 +799,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                         local key = tostring(data)
                         if not colours[key] then colours[key] = 'ff' .. rh() .. rh() .. rh() .. rh() .. rh() .. rh() if logVoronoiColourKey then LOG(key .. " : " .. colours[key]) end end
                         if grid[x-1][y] ~= grid[x+1][y] or grid[x][y-1] ~= grid[x][y+1] then
-                            DrawCircle({x,GTH(x,y),y}, 0.7071/2, colours[key])
+                            DrawCircle({x-.5,GTH(x-.5,y-.5),y-.5}, 0.35355, colours[key])
                         end
                     end
                 end

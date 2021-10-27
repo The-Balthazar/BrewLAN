@@ -1136,3 +1136,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Voronoi colour key log now off by default when actually rendered
     * Other minor cleaning
   * Marker generation script host unit kill button repurposed into a respawn button.
+
+  ### 2021-10-27
+
+  * Marker Generation Script:
+    * Fixed an off-by-one error introduced by previous changes
+    * Cleaned up marker path finding code
+    * Cleaned up some checks
+    * Added detailed time profile data
+    * Script no longer processes areas outside of bounds on restricted maps
+    * Voronoi visualisation no longer out of alignment
+    * Corrected some instances of using `y` instead of `z`
