@@ -91,9 +91,14 @@ ZZZ0004 = Class(Unit) {
 
         ------------------------------------------------------------------------
         -- Voronoi input options -----------------------------------------------
-        local voronoiGridsNumber = min(16, MapSizeX/32) -- 16 is threat grid size, non-power 2 numbers looked bad on Theta. Non-16 numbers don't interact well with threat map. 16 can cause distance based marker checks to take longer on 5k maps. Geater than 16 isn't supported by the actual grid function because it takes names from a 16 length array
+        local voronoiGridsNumberByMapWidth = {
+            [1024] = 16,
+            [2048] = 32,
+            [4096] = 32,
+        }
+        local voronoiGridsNumber = voronoiGridsNumberByMapWidth[MapSizeX] or min(32, MapSizeX/32)
         local doContiguousGridCheck = true -- Very slightly slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
-        local voronoiCheckDistance = min(128, MapSizeX/(voronoiGridsNumber*2) + 1--[[, 10]]) -- Less than a half a grid-width (a 32nd with 16ths grids) can cause ghost connections without doContiguousGridCheck true, and should come with a warning. Bermuda Locket land nodes look good with 8.
+        local voronoiCheckDistance = min(16, MapSizeX/(voronoiGridsNumber*2) + 1--[[, 10]]) -- Less than a half a grid-width (a 32nd with 16ths grids) can cause ghost connections without doContiguousGridCheck true, and should come with a warning. Bermuda Locket land nodes look good with 8.
         local voronoiCheckDistanceSq = math.pow(voronoiCheckDistance, 2) --This is just for optimisation
 
         ------------------------------------------------------------------------
@@ -224,8 +229,17 @@ ZZZ0004 = Class(Unit) {
 
             local CrawlerPath = {}
             local pathLength = 0
+            local MaxPathLength = 0
+
             local ZoneSizes = {}
-            local MapCrawler
+
+
+            local function QueueGrid(path, length, x, z)
+                insert(path, {x,z})
+                length = length + 1
+                MaxPathLength = max(length, MaxPathLength)
+                return length
+            end
 
             -- done from the perspective of the impassible area grid, and checking outwards for pathable areas to mark
             local function MapDistanceVoronoi (xtarget, ztarget, maxdist, blockid)
@@ -252,9 +266,7 @@ ZZZ0004 = Class(Unit) {
             end
 
             --Crawler function for gathering contiguous areas.
-            function MapCrawler (data)
-                local x = data.x
-                local z = data.z
+            local function MapCrawler (data)
                 local blockid = data.blockid
 
                 if data.pathindex then
@@ -262,23 +274,26 @@ ZZZ0004 = Class(Unit) {
                     pathLength = pathLength-1
                 end
 
-                for i, adj in {{0,0},{0,-1},{-1,0},{0,1},{1,0},{-1,1},{1,-1},{-1,-1},{1,1}} do
+                for i, adj in {{0,-1},{-1,0},{0,1},{1,0},{-1,1},{1,-1},{-1,-1},{1,1}} do
+                    local x = data.x+adj[1]
+                    local z = data.z+adj[2]
 
-                    --Separate the border where it touches a zone, but dont crawl along it. 6 and greater are intercardinals.
-                    if (not data.borderMode and voronoiMap[x+adj[1] ][z+adj[2] ] == 'border' and i < 6) then
+                    --Separate the border where it touches a zone, but dont crawl along it. 5 and greater are intercardinals.
+                    if (not data.borderMode and voronoiMap[x][z] == 'border' and i < 5) then
 
-                        voronoiMap[x+adj[1] ][z+adj[2] ] = blockid
-                        ZoneSizes[blockid] = ZoneSizes[blockid] + 1 + (minContigiousZoneArea or 0) --Add this so we never ignore border zones, since that would be bad.
+                        voronoiMap[x][z] = blockid
+                        ZoneSizes[blockid] = minContigiousZoneArea+1 --Add this so we never ignore border zones, since that would be bad.
 
                     end
-                    if (voronoiMap[x+adj[1] ][z+adj[2] ] == false or data.borderMode and voronoiMap[x+adj[1] ][z+adj[2] ] == 'border' and i < 6) then
+                    if (voronoiMap[x][z] == false or data.borderMode and voronoiMap[x][z] == 'border' and i < 5) then
 
-                        voronoiMap[x+adj[1] ][z+adj[2] ] = blockid
+                        voronoiMap[x][z] = blockid
                         if not data.borderMode then
                             ZoneSizes[blockid] = ZoneSizes[blockid] + 1
                         end
-                        insert(CrawlerPath, {x+adj[1], z+adj[2]})
-                        pathLength = pathLength + 1
+
+                        pathLength = QueueGrid(CrawlerPath, pathLength, x, z)
+
                     end
                 end
             end
@@ -331,7 +346,8 @@ b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , ,f,f,f,f, , , , , , ,
                     end
                 end
             end
-            detailedTimeEnd("Crawl blocking zones time")
+            detailedTimeEnd("Crawl blocking zones time. Max grid queue length : "..MaxPathLength )
+
 --[[ voronoiMap = (abridged) b = "border" (leading 1's removed for visibility)
 3,3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2,2, , , , ,b,
 3,3,3,3,3,3,3,3, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,2,2,2,2, , , ,b,
@@ -580,17 +596,21 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
 
                 local gs = MapSizeX / voronoiGridsNumber
                 local ceil = math.ceil
-                local hex = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'}
+                local char = string.char
+                local function charCycle(n) return char(64+ceil((n + (gs/2))/gs)) end
+                local function GetGridName(x,z) return charCycle(x)..charCycle(z) end
+
                 if doContiguousGridCheck then
                     GridZoneI = 0
                     GridContig = function(map, x, z, blocki)
                         for _, v in {{0,1}, {1,0}, {0,-1}, {-1,0}} do
 
-                            local hexci = hex[ceil((x+v[1] + (gs/2))/gs)]..hex[ceil((z+v[2] + (gs/2))/gs)]..blocki
+                            local x2, z2 = x+v[1], z+v[2]
+                            local gridName = GetGridName(x2, z2)..blocki
 
-                            if voronoiMap[x+v[1] ][z+v[2] ] == '' and voronoiMap[x][z] == hexci then
-                                insert(GridCPath,{x+v[1], z+v[2]})
-                                voronoiMap[x+v[1] ][z+v[2] ] = hexci
+                            if voronoiMap[x2][z2] == '' and voronoiMap[x][z] == gridName then
+                                insert(GridCPath,{x2, z2})
+                                voronoiMap[x2][z2] = gridName
                             end
                         end
                     end
@@ -600,14 +620,14 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                         if data == '' then
                             if doContiguousGridCheck then
                                 GridZoneI = GridZoneI +1
-                                voronoiMap[x][z] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((z + (gs/2))/gs)]..GridZoneI
+                                voronoiMap[x][z] = GetGridName(x,z)..GridZoneI
                                 insert(GridCPath, {x,z})
                                 while GridCPath[1] do
                                     GridContig(voronoiMap, GridCPath[1][1], GridCPath[1][2], GridZoneI)
                                     remove(GridCPath, 1)
                                 end
                             else
-                                voronoiMap[x][z] = hex[ceil((x + (gs/2))/gs)]..hex[ceil((z + (gs/2))/gs)]
+                                voronoiMap[x][z] = GetGridName(x,z)
                             end
                         end
                     end
@@ -661,6 +681,7 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                                     -- Square distance check to make it quicker
                                     if abs(x - m2data.position[1]) < MarkerMinDist
                                     and abs(y - m2data.position[3]) < MarkerMinDist
+                                    and tcount(tintersect(zones, m2data.zones)) > 1
                                     then
                                         --Move to the average of what the two points would have been
                                         markerlist[m2name].position[1] = floor((x + m2data.position[1]) / 2)

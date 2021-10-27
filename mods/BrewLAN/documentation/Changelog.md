@@ -1147,3 +1147,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Script no longer processes areas outside of bounds on restricted maps
     * Voronoi visualisation no longer out of alignment
     * Corrected some instances of using `y` instead of `z`
+    * Cleaned up grid name generation, and removed the hard cap at 17
+    * Now uses 32 grids on 40k maps
+    * Lowered the max voronoi check distance
+    * Fixed merging nearby zones that aren't connected.
+    * Some other small cleaning.
