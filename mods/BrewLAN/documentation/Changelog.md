@@ -1152,3 +1152,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Lowered the max voronoi check distance
     * Fixed merging nearby zones that aren't connected.
     * Some other small cleaning.
+
+  ### 2021-10-28
+
+  * Marker Generation Script:
+    * Refactored some loops to reduce copy pasted for-details.
+    * Border loops now have less copy pasted code
+
+  ### 2021-10-29
+
+  * Marker Generation Script:
+    * Contiguous grid check now only triggers on grids that need it.

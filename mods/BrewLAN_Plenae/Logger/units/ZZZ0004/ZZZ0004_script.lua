@@ -8,6 +8,7 @@ ZZZ0004 = Class(Unit) {
         self:SetScriptBit('RULEUTC_IntelToggle', true)
         self:SetScriptBit('RULEUTC_ProductionToggle', true)
         self:SetScriptBit('RULEUTC_GenericToggle', true)
+        _ALERT(self:GetPositionXYZ())
     end,
 
     --Some quick control buttons
@@ -55,8 +56,14 @@ ZZZ0004 = Class(Unit) {
         local MapSizeX = ScenarioInfo.size[1]
         local MapSizeZ = ScenarioInfo.size[2]
         local PlayRect = ScenarioInfo.MapData.PlayableRect or {0,0,MapSizeX,MapSizeZ}
-        local Border = {x1=PlayRect[1],   z1=PlayRect[2],   x2=PlayRect[3]+1, z2=PlayRect[4]+1} -- We care about full grids not verts, and there's 1 more vert pos than grid
+
+        -- NOTE: The playable rect represents heightmap verts. We want full grids,
+        -- which is one less for the playable area, one more including our border.
+        -- Hence the +1 x2 and z2 for the border, and the +1 to x1 z1 after
+        -- The marker search searches a 2x2 area, so is further reduced to avoid border.
+        local Border = {x1=PlayRect[1],   z1=PlayRect[2],   x2=PlayRect[3]+1, z2=PlayRect[4]+1}
             PlayRect = {x1=PlayRect[1]+1, z1=PlayRect[2]+1, x2=PlayRect[3],   z2=PlayRect[4]  }
+        local MarkerSearchRect = {x1=PlayRect.x1+1, z1=PlayRect.z1+1, x2=PlayRect.x2, z2=PlayRect.z2}
 
         ------------------------------------------------------------------------
         -- Marker data
@@ -70,14 +77,16 @@ ZZZ0004 = Class(Unit) {
         ------------------------------------------------------------------------
         -- Global functions called potentially over a million times (remove some overhead)
         local GTH, GetSurfaceHeight, VDist2Sq = GetTerrainHeight, GetSurfaceHeight, VDist2Sq
-        local max, min, abs, floor = math.max, math.min, math.abs, math.floor
+        local max, min, abs, floor, ceil = math.max, math.min, math.abs, math.floor, math.ceil
         local insert, remove, getn, copy, find, merged = table.insert, table.remove, table.getn, table.copy, table.find, table.merged
+        local char = string.char
 
         ------------------------------------------------------------------------
         -- Output settings -----------------------------------------------------
         local exportMarkersToLog = false
         local drawMarkersToMap = true
-        local drawVoronoiToMap = false
+        local drawVoronoiToMap = true
+
         local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse()
         local timeProfileDetailed = true
 
@@ -97,8 +106,9 @@ ZZZ0004 = Class(Unit) {
             [4096] = 32,
         }
         local voronoiGridsNumber = voronoiGridsNumberByMapWidth[MapSizeX] or min(32, MapSizeX/32)
-        local doContiguousGridCheck = true -- Very slightly slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
-        local voronoiCheckDistance = min(16, MapSizeX/(voronoiGridsNumber*2) + 1--[[, 10]]) -- Less than a half a grid-width (a 32nd with 16ths grids) can cause ghost connections without doContiguousGridCheck true, and should come with a warning. Bermuda Locket land nodes look good with 8.
+        local GridSize = MapSizeX / voronoiGridsNumber
+        local doContiguousGridCheck = true -- slower grid generation that checks grid cells aren't cut up by terrain features, preventing grid-based ghost connections.
+        local voronoiCheckDistance = min(33, MapSizeX/(voronoiGridsNumber*2) + 1--[[, 10]]) -- Less than a half a grid-width (a 32nd with 16ths grids) can cause ghost connections without doContiguousGridCheck true, and should come with a warning. Bermuda Locket land nodes look good with 8.
         local voronoiCheckDistanceSq = math.pow(voronoiCheckDistance, 2) --This is just for optimisation
 
         ------------------------------------------------------------------------
@@ -106,7 +116,7 @@ ZZZ0004 = Class(Unit) {
         local minContigiousZoneArea = 30 -- size cuttoff for giving a shit about a blocking area
         local ignoreMinZones = true -- treat small zones as though they dont exist.
         local doEdgeCullLargestZones = false -- Mostly obsolete with the improved doEdgeCullAllZones filter: creates a gap between the two largest blocking zones that gets filled with grid. Can fix issues on maps like Bermuda Locket. doContiguousGridCheck might be needed
-        local doEdgeCullAllZones = true -- Creates gaps between any touching voronoi zone. Can potentially fix concave areas, narrow paths, and other problem areas. doContiguousGridCheck probably essential.
+        local doEdgeCullAllZones = false -- Creates gaps between any touching voronoi zone. Can potentially fix concave areas, narrow paths, and other problem areas. doContiguousGridCheck probably essential.
         local voronoiEdgeCullRadius = 3 -- The distance that the edge cull should affect. Radius, square.
         local EdgeCullAllBorderDistance = max(voronoiEdgeCullRadius*2, voronoiCheckDistance) -- Soft border protection distance for all-zones edge cull
         local EdgeCullAllBorderTaperRate = 0.2 --How fast the radius reduces when the centre is past the border edge
@@ -120,7 +130,8 @@ ZZZ0004 = Class(Unit) {
         -- Data storage --------------------------------------------------------
         local passMap = {}  --Populate with false for impassible or distance to nearest false
         local voronoiMap = {} --Populate with zones around unpassable areas as a voronoi map
-        local markerlist = {} --List of markers
+        local markerlist = {}
+        local gridsWithVoroinoi = {} -- grids to doContiguousGridCheck to
 
         ------------------------------------------------------------------------
         -- tiny generic helper functions I use, or might use in more than once place
@@ -131,6 +142,10 @@ ZZZ0004 = Class(Unit) {
         local function truecount(...) local n=0 for i=1,arg.n do if arg[i] then n=n+1 end end return n end -- count the number of positive args
         local function tcount(t) local c=0; for i, j in t do c=c+1 end return c end --more reliable getn
         local function tintersect(t1,t2) local t3 = {} for i, v in t1 do t3[i] = t1[i] and t2[i] or nil end return t3 end --intersection of tables
+
+        local function charCycle(n) return char(64+ceil((n + (GridSize/2))/GridSize)) end
+        local function GetGridName(x,z) return charCycle(x)..charCycle(z) end
+        local function SetVoronoiGridID(x,z,id) if doContiguousGridCheck and voronoiMap[x][z] == '' then gridsWithVoroinoi[GetGridName(x,z)] = true end voronoiMap[x][z] = id end
 
         local function CardinalCount(grid,x,z) return btb(grid[x-1] and grid[x-1][z])+btb(grid[x+1] and grid[x+1][z])+btb(grid[x][z-1])+btb(grid[x][z+1]) end
         local function OrdinalCount(grid,x,z) return btb(grid[x-1] and grid[x-1][z-1])+btb(grid[x-1] and grid[x-1][z+1])+btb(grid[x+1] and grid[x+1][z-1])+btb(grid[x+1] and grid[x+1][z+1]) end
@@ -157,6 +172,17 @@ ZZZ0004 = Class(Unit) {
             end
         end
 
+        local function forRectDo(rect, row, cell)
+            for x = rect.x1, rect.x2 do if row then row(x) end
+                for z = rect.z1, rect.z2 do cell(x,z) end
+            end
+        end
+
+        local function forRectEdgeDo(rect, cell)
+            for x = rect.x1, rect.x2 do cell(x, rect.z1) cell(x, rect.z2) end
+            for z = rect.z1, rect.z2 do cell(rect.x1, z) cell(rect.x2, z) end
+        end
+
         ------------------------------------------------------------------------
         -- DO IT ---------------------------------------------------------------
         ------------------------------------------------------------------------
@@ -164,25 +190,24 @@ ZZZ0004 = Class(Unit) {
         ------------------------------------------------------------------------
         -- Evaluate and store map data. ----------------------------------------
         detailedTimeStart()
-        for x = Border.x1, Border.x2 do
-            passMap[x] = {}
-            voronoiMap[x] = {}
-            for z = Border.z1, Border.z2 do
-                --Create a ring of unpassable around the outside
+        forRectDo( Border,
+            function(x)
+                passMap[x] = {}
+                voronoiMap[x] = {}
+            end,
+            function(x,z)
                 if outsidePlay(x,z) then
                     passMap[x][z] = false
                     voronoiMap[x][z] = not outsideCorner(x,z) and "border" or nil
+                elseif canPath(x,z) then
+                    passMap[x][z] = voronoiCheckDistanceSq --Set up for the vector check for min dist from false
+                    voronoiMap[x][z] = ''
                 else
-                    if canPath(x,z) then
-                        passMap[x][z] = voronoiCheckDistanceSq --Set up for the vector check for min dist from false
-                        voronoiMap[x][z] = ''
-                    else
-                        passMap[x][z] = false
-                        voronoiMap[x][z] = false
-                    end
+                    passMap[x][z] = false
+                    voronoiMap[x][z] = false
                 end
             end
-        end
+        )
         detailedTimeEnd("Get map data time")
 
         ------------------------------------------------------------------------
@@ -190,19 +215,17 @@ ZZZ0004 = Class(Unit) {
         detailedTimeStart()
         if doQuickCleanupPasses ~= 0 then
             for i = 1, doQuickCleanupPasses do
-                for x = PlayRect.x1, PlayRect.x2 do
-                    for z = PlayRect.z1, PlayRect.z2 do
-                        -- Despeckle; remove isolated single grid impassible areas with no orthoganally adjacent other impassible areas
-                        if i==1 and doDespeckle then
-                            if not passMap[x][z] and CardinalCount(passMap,x,z) + OrdinalCount(passMap,x,z) == 8 then
+                forRectDo( PlayRect, nil,
+                    function(x,z)
+                        if i==1 then
+                            -- Despeckle; remove isolated single grid impassible areas with no orthoganally adjacent other impassible areas
+                            if doDespeckle and (not passMap[x][z] and CardinalCount(passMap,x,z) + OrdinalCount(passMap,x,z) == 8) then
                                 --remove isolated false sections unless they are hefty
                                 passMap[x][z] = voronoiCheckDistanceSq
                                 voronoiMap[x][z] = ''
                             end
-                        end
-                        -- Like despeckle but the other way round, and we don't need to care about intercardinals
-                        if i==1 and doDeIsland then
-                            if passMap[x][z] and CardinalCount(passMap,x,z) == 0 then
+                            -- Like despeckle but the other way round, and we don't need to care about intercardinals
+                            if doDeIsland and (passMap[x][z] and CardinalCount(passMap,x,z) == 0) then
                                 passMap[x][z] = false
                                 voronoiMap[x][z] = false
                             end
@@ -215,10 +238,11 @@ ZZZ0004 = Class(Unit) {
                             end
                         end
                     end
-                end
+                )
             end
         end
         detailedTimeEnd("Quick cleanup time")
+
         ------------------------------------------------------------------------
         -- Calculates content for passMap and voronoiMap
         -- Passmap is distance to the nearest unpathable
@@ -233,7 +257,6 @@ ZZZ0004 = Class(Unit) {
 
             local ZoneSizes = {}
 
-
             local function QueueGrid(path, length, x, z)
                 insert(path, {x,z})
                 length = length + 1
@@ -245,24 +268,27 @@ ZZZ0004 = Class(Unit) {
             local function MapDistanceVoronoi (xtarget, ztarget, maxdist, blockid)
                 --Limit area to loop over to square around the circle that's going to change
                 --Could limit more with sin/cos? Would that be more compute than the vdist?
-                local xstart = max(xtarget-maxdist, PlayRect.x1)
-                local zstart = max(ztarget-maxdist, PlayRect.z1)
-                local xend = min(xtarget+maxdist, PlayRect.x2)
-                local zend = min(ztarget+maxdist, PlayRect.z2)
-                --Within the caclulated bounds
-                for x = xstart, xend do
-                    for z = zstart, zend do
+
+                forRectDo(
+                    { --Within the caclulated bounds
+                        x1 = max(xtarget-maxdist, PlayRect.x1),
+                        z1 = max(ztarget-maxdist, PlayRect.z1),
+                        x2 = min(xtarget+maxdist, PlayRect.x2),
+                        z2 = min(ztarget+maxdist, PlayRect.z2),
+                    }, nil,
+                    function(x,z)
                         if passMap[x][z] then
                             --Calculate the distance to origin
                             --maxdist is pre-polulated already, so no need to reference here
                             local dist = VDist2Sq(x,z,xtarget,ztarget)
                             if dist < passMap[x][z] then
                                 passMap[x][z] = dist
-                                voronoiMap[x][z] = blockid
+                                SetVoronoiGridID(x,z,blockid)
+                                --voronoiMap[x][z] = blockid
                             end
                         end
                     end
-                end
+                )
             end
 
             --Crawler function for gathering contiguous areas.
@@ -274,20 +300,22 @@ ZZZ0004 = Class(Unit) {
                     pathLength = pathLength-1
                 end
 
-                for i, adj in {{0,-1},{-1,0},{0,1},{1,0},{-1,1},{1,-1},{-1,-1},{1,1}} do
+                for i, adj in {{0,0},{0,-1},{-1,0},{0,1},{1,0},{-1,1},{1,-1},{-1,-1},{1,1}} do
                     local x = data.x+adj[1]
                     local z = data.z+adj[2]
 
                     --Separate the border where it touches a zone, but dont crawl along it. 5 and greater are intercardinals.
-                    if (not data.borderMode and voronoiMap[x][z] == 'border' and i < 5) then
+                    if (not data.borderMode and voronoiMap[x][z] == 'border' and i < 6) then
 
-                        voronoiMap[x][z] = blockid
+                        SetVoronoiGridID(x,z,blockid)
+                        --voronoiMap[x][z] = blockid
                         ZoneSizes[blockid] = minContigiousZoneArea+1 --Add this so we never ignore border zones, since that would be bad.
 
                     end
-                    if (voronoiMap[x][z] == false or data.borderMode and voronoiMap[x][z] == 'border' and i < 5) then
+                    if (voronoiMap[x][z] == false or data.borderMode and voronoiMap[x][z] == 'border' and i < 6) then
 
-                        voronoiMap[x][z] = blockid
+                        SetVoronoiGridID(x,z,blockid)
+                        --voronoiMap[x][z] = blockid
                         if not data.borderMode then
                             ZoneSizes[blockid] = ZoneSizes[blockid] + 1
                         end
@@ -325,16 +353,13 @@ b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , ,f,f,f,f, , , , , , ,
             -- Map out contigious areas of unpathable areas, splitting border as we go
             detailedTimeStart()
             local blockid = 0
-            for x, zdata in passMap do
-                for z, pass in zdata do
-                    if not outsideCorner(x,z) and not pass and not voronoiMap[x][z] then
+            forRectDo(PlayRect, nil,
+                function(x,z)
+                    if not outsideCorner(x,z) and not passMap[x][z] and not voronoiMap[x][z] then
                         blockid = blockid + 1
-                        if not ZoneSizes[blockid] then ZoneSizes[blockid] = 0 end
-                        MapCrawler{
-                            x = x,
-                            z = z,
-                            blockid = blockid
-                        }
+                        ZoneSizes[blockid] = 0
+                        pathLength = QueueGrid(CrawlerPath, pathLength, x, z)
+
                         while CrawlerPath[1] do
                             MapCrawler{
                                 x = CrawlerPath[pathLength][1],
@@ -345,7 +370,7 @@ b, , , , , , , , , , , , , , , , ,f,f, , , , , , , , , , , ,f,f,f,f, , , , , , ,
                         end
                     end
                 end
-            end
+            )
             detailedTimeEnd("Crawl blocking zones time. Max grid queue length : "..MaxPathLength )
 
 --[[ voronoiMap = (abridged) b = "border" (leading 1's removed for visibility)
@@ -373,16 +398,12 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
             --------------------------------------------------------------------
             -- Do the same for the border segments
             detailedTimeStart()
-            for x = Border.x1, Border.x2 do
-                for _, z in {Border.z1, Border.z2} do
+            forRectEdgeDo(Border,
+                function(x,z)
                     if voronoiMap[x][z] == 'border' then
                         blockid = blockid + 1
-                        MapCrawler{
-                            x = x,
-                            z = z,
-                            blockid = blockid,
-                            borderMode = true
-                        }
+                        pathLength = QueueGrid(CrawlerPath, pathLength, x, z)
+
                         while CrawlerPath[1] do
                             MapCrawler{
                                 x = CrawlerPath[pathLength][1],
@@ -394,29 +415,7 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
                         end
                     end
                 end
-            end
-            for z = Border.z1, Border.z2 do
-                for _, x in {Border.x1, Border.x2} do
-                    if voronoiMap[x][z] == 'border' then
-                        blockid = blockid + 1
-                        MapCrawler{
-                            x = x,
-                            z = z,
-                            blockid = blockid,
-                            borderMode = true
-                        }
-                        while CrawlerPath[1] do
-                            MapCrawler{
-                                x = CrawlerPath[pathLength][1],
-                                z = CrawlerPath[pathLength][2],
-                                blockid = blockid,
-                                borderMode = true,
-                                pathindex = pathLength
-                            }
-                        end
-                    end
-                end
-            end
+            )
             detailedTimeEnd("Crawl borders time")
 
 --[[ voronoiMap = (abridged) (1's removed for visibility)
@@ -443,39 +442,38 @@ b, , , , , , , , , , , , , , , , ,5,5, , , , , , , , , , , ,7,7,7,7, , , , , , ,
             --------------------------------------------------------------------
 
             --Check actions are required with the ignoreMinZones actions
-            local smallZonesNum = 0
-            detailedTimeStart()
             if ignoreMinZones then
+                detailedTimeStart()
+                local smallZonesNum = 0
                 for zone, no in ZoneSizes do
                     if no <= minContigiousZoneArea then
                         smallZonesNum = smallZonesNum + 1
                         break
                     end
                 end
-            end
 
-            --Just remove the zones rather than specifically ignoring them, simplify future actions
-            if ignoreMinZones and smallZonesNum > 0 then
-                for x, ydata in passMap do
-                    for y, pass in ydata do
-                        if not pass and voronoiMap[x][y] and ZoneSizes[voronoiMap[x][y] ] and ZoneSizes[voronoiMap[x][y] ] <= minContigiousZoneArea then
-                            passMap[x][y] = voronoiCheckDistanceSq
-                            voronoiMap[x][y] = ''
+                if smallZonesNum ~= 0 then
+                    forRectDo(PlayRect, nil,
+                        function(x,z)
+                            if not passMap[x][z] and voronoiMap[x][z] and ZoneSizes[voronoiMap[x][z] ] and ZoneSizes[voronoiMap[x][z] ] <= minContigiousZoneArea then
+                                passMap[x][z] = voronoiCheckDistanceSq
+                                voronoiMap[x][z] = ''
+                            end
                         end
-                    end
+                    )
                 end
+                detailedTimeEnd("Cull small zones time")
             end
-            detailedTimeEnd("Cull small zones time")
 
             -- Generate the voronoi areas
             detailedTimeStart()
-            for x, ydata in passMap do
-                for y, pass in ydata do
-                    if not pass and (passMap[x-1][y] or passMap[x][y-1] or passMap[x+1][y] or passMap[x][y+1]) then
-                        MapDistanceVoronoi(x, y, voronoiCheckDistance, voronoiMap[x][y])
+            forRectDo( Border, nil,
+                function(x,z)
+                    if not passMap[x][z] and CardinalCount(passMap,x,z) ~= 0 then
+                        MapDistanceVoronoi(x, z, voronoiCheckDistance, voronoiMap[x][z])
                     end
                 end
-            end
+            )
             detailedTimeEnd("Generate voronoi map time")
 --[[  voronoiMap =
 INFO: 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,5,5,5,5,5,5,5,5,7,7,7,7,7,7,7,6,10,10,10,10,10,10,10,10,10,10,10,10,12,12,12,12,12,12,12,12,12,12,12,12,12,12,24,24,24,
@@ -591,25 +589,24 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
             --This can cause issues if voronoiCheckDistance is less than a 16th of the map.
             do
                 detailedTimeStart()
-                local GridContig, GridZoneI
+                local GridContig, GridZoneI, GridCrawlLength
                 local GridCPath = {}
-
-                local gs = MapSizeX / voronoiGridsNumber
-                local ceil = math.ceil
-                local char = string.char
-                local function charCycle(n) return char(64+ceil((n + (gs/2))/gs)) end
-                local function GetGridName(x,z) return charCycle(x)..charCycle(z) end
 
                 if doContiguousGridCheck then
                     GridZoneI = 0
+                    GridCrawlLength = 0
                     GridContig = function(map, x, z, blocki)
+                        remove(GridCPath, GridCrawlLength)
+                        GridCrawlLength = GridCrawlLength - 1
                         for _, v in {{0,1}, {1,0}, {0,-1}, {-1,0}} do
+
 
                             local x2, z2 = x+v[1], z+v[2]
                             local gridName = GetGridName(x2, z2)..blocki
 
                             if voronoiMap[x2][z2] == '' and voronoiMap[x][z] == gridName then
                                 insert(GridCPath,{x2, z2})
+                                GridCrawlLength = GridCrawlLength + 1
                                 voronoiMap[x2][z2] = gridName
                             end
                         end
@@ -618,16 +615,17 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
                 for x, zdata in voronoiMap do
                     for z, data in zdata do
                         if data == '' then
-                            if doContiguousGridCheck then
+                            local gridname = GetGridName(x,z)
+                            if gridsWithVoroinoi[gridname] and doContiguousGridCheck then
                                 GridZoneI = GridZoneI +1
-                                voronoiMap[x][z] = GetGridName(x,z)..GridZoneI
+                                voronoiMap[x][z] = gridname..GridZoneI
                                 insert(GridCPath, {x,z})
+                                GridCrawlLength = GridCrawlLength + 1
                                 while GridCPath[1] do
-                                    GridContig(voronoiMap, GridCPath[1][1], GridCPath[1][2], GridZoneI)
-                                    remove(GridCPath, 1)
+                                    GridContig(voronoiMap, GridCPath[GridCrawlLength][1], GridCPath[GridCrawlLength][2], GridZoneI)
                                 end
                             else
-                                voronoiMap[x][z] = GetGridName(x,z)
+                                voronoiMap[x][z] = gridname
                             end
                         end
                     end
@@ -641,96 +639,95 @@ INFO: 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,5,5,17,17,17,17,17,17,1
 
         ------------------------------------------------------------------------
         -- Find all 2x2 areas containing 3 zones, and try to put a merker there
-        do
-            detailedTimeStart()
-            for x = PlayRect.x1+1, PlayRect.x2 do
-                for y = PlayRect.z1+1, PlayRect.z2 do
-                    local zones = {
-                        [voronoiMap[x][y] ] = true,
-                        [voronoiMap[x][y-1] ] = true,
-                        [voronoiMap[x-1][y-1] ] = true,
-                        [voronoiMap[x-1][y] ] = true,
-                    }
-                    if tcount(zones) >= 3 then
-                        local CreateMarker = function(x, y)
+        detailedTimeStart()
+        forRectDo( MarkerSearchRect, nil,
+            function(x,y)
+                local zones = {
+                    [voronoiMap[x][y] ] = true,
+                    [voronoiMap[x][y-1] ] = true,
+                    [voronoiMap[x-1][y-1] ] = true,
+                    [voronoiMap[x-1][y] ] = true,
+                }
+                if tcount(zones) >= 3 then
+                    local CreateMarker = function(x, y)
 
-                            local mnum = tcount(markerlist)
-                            local markername = markerType.name..mnum
-                            markerlist[markername] = {
-                                color = markerType.color,
-                                hint = true,
-                                graph = markerType.graph,
-                                adjacentTo = '',
-                                zones = copy(zones),
-                                type = markerType.type,
-                                position = { x, GTH(x,y), y },
-                                orientation = { 0, 0, 0 },
-                                prop = '/env/common/props/markers/M_Blank_prop.bp',
-                                adjacentList = {},
-                            }
+                        local mnum = tcount(markerlist)
+                        local markername = markerType.name..mnum
+                        markerlist[markername] = {
+                            color = markerType.color,
+                            hint = true,
+                            graph = markerType.graph,
+                            adjacentTo = '',
+                            zones = copy(zones),
+                            type = markerType.type,
+                            position = { x-1, GTH(x-1,y-1), y-1 },
+                            orientation = { 0, 0, 0 },
+                            prop = '/env/common/props/markers/M_Blank_prop.bp',
+                            adjacentList = {},
+                        }
 
-                            return markername, markerlist[markername]
-                        end
+                        return markername, markerlist[markername]
+                    end
 
-                        --Filter for nearby markers, like, really near, and move the nearby markers
-                        local m1name, m1data
-                        if MarkerMinDist and MarkerMinDist > 0 then
-                            local test = true
-                            if tcount(markerlist) > 1 then
-                                for m2name, m2data in markerlist do
-                                    -- Square distance check to make it quicker
-                                    if abs(x - m2data.position[1]) < MarkerMinDist
-                                    and abs(y - m2data.position[3]) < MarkerMinDist
-                                    and tcount(tintersect(zones, m2data.zones)) > 1
-                                    then
-                                        --Move to the average of what the two points would have been
-                                        markerlist[m2name].position[1] = floor((x + m2data.position[1]) / 2)
-                                        markerlist[m2name].position[3] = floor((y + m2data.position[3]) / 2)
-                                        markerlist[m2name].position[2] = GTH(markerlist[m2name].position[1], markerlist[m2name].position[3])
-                                        --merge the adjacency zones list
-                                        markerlist[m2name].zones = merged(m2data.zones, zones)
-                                        --set this marker as the active so it's passed through the connections checks again.
-                                        m1name = m2name
-                                        m1data = m2data
-                                        test = false
-                                        break
-                                    end
+                    --Filter for nearby markers, like, really near, and move the nearby markers
+                    local m1name, m1data
+                    if MarkerMinDist and MarkerMinDist > 0 then
+                        local test = true
+                        if tcount(markerlist) > 1 then
+                            for m2name, m2data in markerlist do
+                                -- Square distance check to make it quicker
+                                if abs(x - m2data.position[1]) < MarkerMinDist
+                                and abs(y - m2data.position[3]) < MarkerMinDist
+                                and tcount(tintersect(zones, m2data.zones)) > 1
+                                then
+                                    --Move to the average of what the two points would have been
+                                    markerlist[m2name].position[1] = floor((x + m2data.position[1]) / 2)
+                                    markerlist[m2name].position[3] = floor((y + m2data.position[3]) / 2)
+                                    markerlist[m2name].position[2] = GTH(markerlist[m2name].position[1], markerlist[m2name].position[3])
+                                    --merge the adjacency zones list
+                                    markerlist[m2name].zones = merged(m2data.zones, zones)
+                                    --set this marker as the active so it's passed through the connections checks again.
+                                    m1name = m2name
+                                    m1data = m2data
+                                    test = false
+                                    break
                                 end
                             end
-                            if test then
-                                m1name, m1data = CreateMarker(x,y)
-
-                            end
-                        else
-                            m1name, m1data = CreateMarker(x,y)
                         end
-                        if tcount(markerlist) > 1 then
-                            --for m1name, m1data in markerlist do
-                            for m2name, m2data in markerlist do
-                                if m1name ~= m2name then
-                                    local zonetest = tintersect(zones, m2data.zones)
-                                    --If zonetest is exactly 2 less than the two combined,
-                                    --then they were 3 zone nodes that share two zones,
-                                    --meaning theoretically one edge of the voronoi away
-                                    --Checking less than one less just in case they somehow share more than 1
-                                    if tcount(zonetest) > 1 then
-                                        local markAdjacent = function(marker, adjname)
-                                            if not find(marker.adjacentList, adjname) then
-                                                insert(marker.adjacentList, adjname)
-                                            end
-                                        end
+                        if test then
+                            m1name, m1data = CreateMarker(x,y)
 
-                                        markAdjacent(m2data, m1name)
-                                        markAdjacent(m1data, m2name)
+                        end
+                    else
+                        m1name, m1data = CreateMarker(x,y)
+                    end
+                    if tcount(markerlist) > 1 then
+                        --for m1name, m1data in markerlist do
+                        for m2name, m2data in markerlist do
+                            if m1name ~= m2name then
+                                local zonetest = tintersect(zones, m2data.zones)
+                                --If zonetest is exactly 2 less than the two combined,
+                                --then they were 3 zone nodes that share two zones,
+                                --meaning theoretically one edge of the voronoi away
+                                --Checking less than one less just in case they somehow share more than 1
+                                if tcount(zonetest) > 1 then
+                                    local markAdjacent = function(marker, adjname)
+                                        if not find(marker.adjacentList, adjname) then
+                                            insert(marker.adjacentList, adjname)
+                                        end
                                     end
+
+                                    markAdjacent(m2data, m1name)
+                                    markAdjacent(m1data, m2name)
                                 end
                             end
                         end
                     end
                 end
             end
-            detailedTimeEnd("Pick marker locations time")
-        end
+        )
+        detailedTimeEnd("Pick marker locations time")
+
 
         detailedTimeStart()
         for name, marker in markerlist do
