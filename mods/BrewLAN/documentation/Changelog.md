@@ -1150,16 +1150,37 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Cleaned up grid name generation, and removed the hard cap at 17
     * Now uses 32 grids on 40k maps
     * Lowered the max voronoi check distance
-    * Fixed merging nearby zones that aren't connected.
+    * Fixed merging nearby zones that aren't connected
     * Some other small cleaning.
 
   ### 2021-10-28
 
   * Marker Generation Script:
     * Refactored some loops to reduce copy pasted for-details.
-    * Border loops now have less copy pasted code
+    * Border loops now have less copy pasted code.
 
   ### 2021-10-29
 
   * Marker Generation Script:
     * Contiguous grid check now only triggers on grids that need it.
+
+
+  ### 2021-10-30
+
+  * Marker Generation Script:
+    * Created a helper function to simplify the contiguous crawl sections
+    * Replaced the blockID crawler functions with the crawler helper function
+    * Cleaned up a bunch of comments.
+
+
+  ### 2021-11-03
+
+  * Marker Generation Script:
+    * Now places amph markers at seabed/terrain height, and naval markers at water surface height.
+
+  ### 2021-11-04
+
+  * Fixed Zmara death animation on FAF.
+  * Fixed Ivan units not being targetable on FAF.
+  * Fixed script error on FAF when Ivan uses deploy.
+  * Ivan drop pods now have collision.

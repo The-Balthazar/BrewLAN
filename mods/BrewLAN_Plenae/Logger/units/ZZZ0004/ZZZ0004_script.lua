@@ -85,7 +85,7 @@ ZZZ0004 = Class(Unit) {
         -- Output settings -----------------------------------------------------
         local exportMarkersToLog = false
         local drawMarkersToMap = true
-        local drawVoronoiToMap = true
+        local drawVoronoiToMap = false
 
         local timeProfileOutput = true and GetSystemTimeSecondsOnlyForProfileUse()
         local timeProfileDetailed = true
@@ -616,7 +616,7 @@ ZZZ0004 = Class(Unit) {
                             adjacentTo = '',
                             zones = copy(zones),
                             type = markerType.type,
-                            position = { x-1, GTH(x-1,y-1), y-1 },
+                            position = { x-1, markerType.water and GetSurfaceHeight(x-1,y-1) or GTH(x-1,y-1), y-1 },
                             orientation = { 0, 0, 0 },
                             prop = '/env/common/props/markers/M_Blank_prop.bp',
                             adjacentList = {},
@@ -639,7 +639,7 @@ ZZZ0004 = Class(Unit) {
                                     --Move to the average of what the two points would have been
                                     markerlist[m2name].position[1] = floor((x + m2data.position[1]) / 2)
                                     markerlist[m2name].position[3] = floor((y + m2data.position[3]) / 2)
-                                    markerlist[m2name].position[2] = GTH(markerlist[m2name].position[1], markerlist[m2name].position[3])
+                                    markerlist[m2name].position[2] = markerType.water and GetSurfaceHeight(markerlist[m2name].position[1], markerlist[m2name].position[3]) or GTH(markerlist[m2name].position[1], markerlist[m2name].position[3])
                                     --merge the adjacency zones list
                                     markerlist[m2name].zones = merged(m2data.zones, zones)
                                     --set this marker as the active so it's passed through the connections checks again.

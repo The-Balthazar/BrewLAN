@@ -169,7 +169,9 @@ SEB2404 = Class(TStructureUnit) {
     end,
 
     OnTransportDetach = function(self, attachBone, unit)
-        TStructureUnit.OnTransportDetach(self, attachBone, unit)
+        if TStructureUnit.OnTransportDetach then
+            TStructureUnit.OnTransportDetach(self, attachBone, unit)
+        end
         local x, y, z = unit:GetPositionXYZ()
         self:ForkThread(function()
             coroutine.yield(1)

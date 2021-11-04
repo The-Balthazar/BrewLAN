@@ -164,7 +164,9 @@ SSL0405 = Class(SLandUnit) {
         if not self.BagsDestroyed then
             local TrashEffectBag = function( self, EffectBag )
                 for k, v in self[EffectBag] do
-                    v:Destroy()
+                    if v and v.Destroy then
+                        v:Destroy()
+                    end
                 end
             end
             for i, v in {'OnBeingBuiltEffectsBag', 'TallSteamEffectBag'} do
