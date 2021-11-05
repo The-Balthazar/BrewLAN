@@ -157,7 +157,7 @@ NukeMineStructureUnit = Class(MineStructureUnit) {
 
                 local DamageArea = DamageArea
                 DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius, bp.NukeInnerRingDamage, 'Nuke', true, true)
-                DamageArea(self.unit, self.unit.CachePosition, bp.NukeOuterRingDamage, bp.NukeOuterRingRadius, 'Nuke', true, true)
+                DamageArea(self.unit, self.unit.CachePosition, bp.NukeOuterRingRadius, bp.NukeOuterRingDamage, 'Nuke', true, true)
 
                 --Cosmetic damage to props
                 DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius * 0.5, 1, 'Force', true)

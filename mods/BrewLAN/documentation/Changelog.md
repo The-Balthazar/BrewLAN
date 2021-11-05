@@ -1185,3 +1185,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed script error on FAF when Ivan uses deploy.
   * Ivan drop pods now have collision.
   * Fixed Ivan units not being able to fire on FAF.
+  * Fixed nuke mines dealing 40 damage in 500 radius instead of 500 damage in 40 radius.
