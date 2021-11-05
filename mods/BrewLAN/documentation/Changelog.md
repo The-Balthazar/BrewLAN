@@ -1184,3 +1184,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed Ivan units not being targetable on FAF.
   * Fixed script error on FAF when Ivan uses deploy.
   * Ivan drop pods now have collision.
+  * Fixed Ivan units not being able to fire on FAF.
