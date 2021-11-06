@@ -107,8 +107,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
             RULEUCC_Transport = true,
         },
@@ -121,9 +119,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sab5104_name>Pedestal',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = .3,

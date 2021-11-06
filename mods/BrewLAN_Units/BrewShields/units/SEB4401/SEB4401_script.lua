@@ -6,7 +6,6 @@
 local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 --------------------------------------------------------------------------------
 local utilities = import('/lua/Utilities.lua')
-local GetRandomFloat = utilities.GetRandomFloat
 --------------------------------------------------------------------------------
 local explosion = import('/lua/defaultexplosions.lua')
 local CreateDeathExplosion = explosion.CreateDefaultHitExplosionAtBone
@@ -69,11 +68,11 @@ SEB4401 = Class(TShieldStructureUnit) {
             position = self:GetPosition(vBone)
             offset = utilities.GetDifferenceVector( position, basePosition )
             velocity = utilities.GetDirectionVector( position, basePosition )
-            velocity.x = velocity.x + GetRandomFloat(-0.3, 0.3)
-            velocity.z = velocity.z + GetRandomFloat(-0.3, 0.3)
-            velocity.y = velocity.y + GetRandomFloat( 0.0, 0.3)
+            velocity.x = velocity.x - 0.3 + 0.6 * Random()
+            velocity.z = velocity.z - 0.3 + 0.6 * Random()
+            velocity.y = velocity.y + 0.3 * Random()
             proj = self:CreateProjectile('/effects/entities/DestructionFirePlume01/DestructionFirePlume01_proj.bp', offset.x, offset.y + yBoneOffset, offset.z, velocity.x, velocity.y, velocity.z)
-            proj:SetBallisticAcceleration(GetRandomFloat(-1, -2)):SetVelocity(GetRandomFloat(3, 4)):SetCollision(false)
+            proj:SetBallisticAcceleration(-2+1*Random()):SetVelocity(3+1*Random()):SetCollision(false)
             local emitter = CreateEmitterOnEntity(proj, army, '/effects/emitters/destruction_explosion_fire_plume_02_emit.bp')
         end
     end,
@@ -88,7 +87,7 @@ SEB4401 = Class(TShieldStructureUnit) {
             local radius = 2
             if pos then
                 --If we already have pos, then we just hit ground.
-                CreateSplat(pos,GetRandomFloat(0,2*math.pi),ScorchSplatTextures[math.random(1,table.getn(ScorchSplatTextures))], radius, radius, GetRandomFloat(200,350), GetRandomFloat(300,600), self:GetArmy() )
+                CreateSplat(pos,Random()*6.28,ScorchSplatTextures[math.random(1,table.getn(ScorchSplatTextures))], radius, radius, 200+150*Random(), 300+300*Random(), self:GetArmy() )
             end
             if not pos then
                 pos = self:GetPosition(bone)
@@ -161,7 +160,7 @@ SEB4401 = Class(TShieldStructureUnit) {
         --Final explosion to wreckage
         self:PlayUnitSound('Destroyed')
         explosion.CreateFlash( self, 'Tower_002', 4.5, army )
-        CreateSplat(pos,GetRandomFloat(0,2*math.pi),ScorchSplatTextures[math.random(1,table.getn(ScorchSplatTextures))], 15, 15, GetRandomFloat(200,350), GetRandomFloat(300,600), self:GetArmy() )
+        CreateSplat(pos,Random()*6.28,ScorchSplatTextures[math.random(1,table.getn(ScorchSplatTextures))], 15, 15, 200+150*Random(), 300+300*Random(), self:GetArmy() )
         self:CreateWreckage(0.1)
         self:Destroy()
     end,

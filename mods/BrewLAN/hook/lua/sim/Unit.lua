@@ -160,7 +160,7 @@ do
                 local army = other:GetArmy()
                 local bp = __blueprints[other.BpId]
                 local bpAud = bp.Audio
-                local snd = bpAud['Impact'..'Unit']
+                local snd = bpAud['ImpactUnit']
                 if snd then
                     other:PlaySound(snd)
                 elseif bpAud.Impact then

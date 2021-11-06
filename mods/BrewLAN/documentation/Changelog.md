@@ -1172,7 +1172,6 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Replaced the blockID crawler functions with the crawler helper function
     * Cleaned up a bunch of comments.
 
-
   ### 2021-11-03
 
   * Marker Generation Script:
@@ -1186,3 +1185,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Ivan drop pods now have collision.
   * Fixed Ivan units not being able to fire on FAF.
   * Fixed nuke mines dealing 40 damage in 500 radius instead of 500 damage in 40 radius.
+
+  ### 2021-11-05
+
+  * Bubble Tea: Removed `GetRandomFloat` dependencies from UEF shield.
+
+  ### 2021-11-06
+
+  * Fixed nuke mine death weapons triggering on suicide weapon dealing damage.
+  * Moved mine prop damage effects to a function shared by all mines.
+  * Some random cleanup.

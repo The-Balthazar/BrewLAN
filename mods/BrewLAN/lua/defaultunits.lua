@@ -16,6 +16,7 @@ local CreateScorchMarkSplat = import('/lua/defaultexplosions.lua').CreateScorchM
 local GetRandomFloat = import('/lua/utilities.lua').GetRandomFloat
 local TableCat = import('/lua/utilities.lua').TableCat
 local EBPSRA = '/effects/emitters/seraphim_rifter_artillery_hit_'
+local DamageArea = DamageArea
 --------------------------------------------------------------------------------
 -- Mine script
 --------------------------------------------------------------------------------
@@ -69,11 +70,7 @@ MineStructureUnit = Class(StructureUnit) {
                     end
                 end
 
-                -- Damage props.
-                local DamageArea = DamageArea
-                DamageArea(self.unit, self.unit.CachePosition, radius * 0.5, 1, 'Force', true)
-                DamageArea(self.unit, self.unit.CachePosition, radius * 0.5, 1, 'Force', true)
-                DamageRing(self.unit, self.unit.CachePosition, 0.1, radius, 10, 'Fire', false, false)
+                self.unit:CosmeticDamage(radius)
 
                 --Do the thing!
                 DamageArea(self.unit, self.unit.CachePosition, radius, bp.Damage, bp.DamageType or 'Normal', bp.DamageFriendly or false)
@@ -85,6 +82,13 @@ MineStructureUnit = Class(StructureUnit) {
         },
     },
 
+    CosmeticDamage = function(self, radius)
+        local halfr = radius * 0.5
+        DamageArea(self, self.CachePosition, halfr, 1, 'Force', true)
+        DamageArea(self, self.CachePosition, halfr, 1, 'Force', true)
+        DamageRing(self, self.CachePosition, 0.1, radius, 10, 'Fire', false, false)
+    end,
+
     OnCreate = function(self,builder,layer)
         StructureUnit.OnCreate(self)
         --enable cloaking and stealth
@@ -92,7 +96,7 @@ MineStructureUnit = Class(StructureUnit) {
         self:EnableIntel('RadarStealth')
         self:EnableIntel('SonarStealth')
         if not self.CachePosition then
-            self.CachePosition = table.copy(moho.entity_methods.GetPosition(self))
+            self.CachePosition = {moho.entity_methods.GetPositionXYZ(self)}
         end
         self.blocker = CreateUnitHPR(self:GetBlueprint().FootprintDummyId,self:GetArmy(),self.CachePosition[1],self.CachePosition[2],self.CachePosition[3],0,0,0)
         self.Trash:Add(self.blocker)
@@ -117,7 +121,7 @@ MineStructureUnit = Class(StructureUnit) {
             --Removing a building with an overlapping footprint from the same layer.
             self.blocker:Destroy()
         end
-        --Force update of the cloak effect if there is a cloak mesh. For FAF graphics
+        --Force update of the cloak effect if there is a cloak mesh.
         if __blueprints[self.BpId].Display.CloakMeshBlueprint then
             self:ForkThread(
                 function()
@@ -146,25 +150,22 @@ MineStructureUnit = Class(StructureUnit) {
 
 NukeMineStructureUnit = Class(MineStructureUnit) {
     Weapons = {
-        Suicide = Class(DefaultWeapons.BareBonesWeapon) { --MineStructureUnit.Weapons.Suicide would inherit too much we don't want.
+        Suicide = Class(DefaultWeapons.BareBonesWeapon) {
             OnFire = function(self)
                 local bp = self:GetBlueprint()
 
-                --Explosion effects
                 local proj = self.unit:CreateProjectile(bp.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
                 proj:ForkThread(proj.EffectThread)
-                if __blueprints[bp.ProjectileId].Audio.NukeExplosion then self:PlaySound(__blueprints[bp.ProjectileId].Audio.NukeExplosion) end
 
-                local DamageArea = DamageArea
+                if __blueprints[bp.ProjectileId].Audio.NukeExplosion then
+                    self:PlaySound(__blueprints[bp.ProjectileId].Audio.NukeExplosion)
+                end
+
+                self.unit.DeathWeaponEnabled = false
                 DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius, bp.NukeInnerRingDamage, 'Nuke', true, true)
                 DamageArea(self.unit, self.unit.CachePosition, bp.NukeOuterRingRadius, bp.NukeOuterRingDamage, 'Nuke', true, true)
 
-                --Cosmetic damage to props
-                DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius * 0.5, 1, 'Force', true)
-                DamageArea(self.unit, self.unit.CachePosition, bp.NukeInnerRingRadius * 0.5, 1, 'Force', true)
-                DamageRing(self.unit, self.unit.CachePosition, 0.1, bp.NukeInnerRingRadius, 10, 'Fire', false, false)
-
-                self.unit.DeathWeaponEnabled = false
+                self.unit:CosmeticDamage(bp.NukeInnerRingRadius)
             end,
         },
 

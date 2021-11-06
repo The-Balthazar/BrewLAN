@@ -9,11 +9,11 @@ UnitBlueprint {
     },
     Audio = {
         DeathExplosion = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
-             Destroyed = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff'},
-           UISelection = Sound {Bank = 'Interface',  Cue = 'UEF_Select_Gun',             LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed      = Sound {Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection    = Sound {Bank = 'Interface',  Cue = 'UEF_Select_Gun',             LodCutoff = 'UnitMove_LodCutoff'},
         DoneBeingBuilt = Sound {Bank = 'UEB',        Cue = 'UEB2302_Activate',           LodCutoff = 'UnitMove_LodCutoff'},
-             Construct = Sound {Bank = 'UEB',        Cue = 'UEB0301_Construct_Start',    LodCutoff = 'UnitMove_LodCutoff'},
-         ConstructLoop = Sound {Bank = 'UEB',        Cue = 'UEB0301_Construct_Loop',     LodCutoff = 'UnitMove_LodCutoff'},
+        Construct      = Sound {Bank = 'UEB',        Cue = 'UEB0301_Construct_Start',    LodCutoff = 'UnitMove_LodCutoff'},
+        ConstructLoop  = Sound {Bank = 'UEB',        Cue = 'UEB0301_Construct_Loop',     LodCutoff = 'UnitMove_LodCutoff'},
     },
     Buffs = {
         Regen = {
@@ -120,10 +120,7 @@ UnitBlueprint {
             RULEUCC_Transport = true, --Required for storage, disabled on create to remove the button, but still lets us store
         },
         OrderOverrides = {
-            RULEUCC_Transport = {
-                bitmapId = 'deploy',
-                helpText = 'deploy',
-            },
+            RULEUCC_Transport = {bitmapId = 'deploy', helpText = 'deploy'},
         },
         FactionName = 'UEF',
         Icon = 'land',
@@ -175,9 +172,9 @@ UnitBlueprint {
             AlwaysRecheckTarget = false,
             AttackGroundTries = 10, -- Sets the volley size when given repeat ordes and an attack ground order.
             Audio = {
-                BarrelLoop = Sound {Bank = 'UEB',       Cue = 'UEB2302_Turret_Loop',  LodCutoff = 'WeaponBig_LodCutoff'},
-               BarrelStart = Sound {Bank = 'UEB',       Cue = 'UEB2302_Turret_Start', LodCutoff = 'WeaponBig_LodCutoff'},
-                      Fire = Sound {Bank = 'UELWeapon', Cue = 'UEB2302_Artillery_AM', LodCutoff = 'Weapon_LodCutoff'},
+                BarrelLoop  = Sound {Bank = 'UEB',       Cue = 'UEB2302_Turret_Loop',  LodCutoff = 'WeaponBig_LodCutoff'},
+                BarrelStart = Sound {Bank = 'UEB',       Cue = 'UEB2302_Turret_Start', LodCutoff = 'WeaponBig_LodCutoff'},
+                Fire        = Sound {Bank = 'UELWeapon', Cue = 'UEB2302_Artillery_AM', LodCutoff = 'Weapon_LodCutoff'},
             },
             BallisticArc = 'RULEUBA_HighArc',
             CameraShakeDuration = 0.5,
@@ -193,7 +190,7 @@ UnitBlueprint {
             EnergyDrainPerSecond = 20000,
             EnergyRequired = 10000,
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
+                Land  = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
             },
             FiringRandomness = 0.22,

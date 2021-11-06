@@ -4,14 +4,14 @@ UnitBlueprint {
         StagingPlatformScanRadius = 10, --Melee range
     },
     Audio = {
-        FootFallGeneric = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_Step',    LodCutoff = 'UnitMove_LodCutoff'},
-  FootFallGenericSeabed = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_UW_Step', LodCutoff = 'UnitMove_LodCutoff'},
-                 Killed = Sound {Bank = 'XSL',            Cue = 'XSL0401_Death',        LodCutoff = 'UnitMove_LodCutoff'},
-              StartMove = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_Start',   LodCutoff = 'UnitMove_LodCutoff'},
-               StopMove = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_Stop',    LodCutoff = 'UnitMove_LodCutoff'},
-            UISelection = Sound {Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Bot',  LodCutoff = 'UnitMove_LodCutoff'},
-         TransitionLand = Sound {Bank = 'XSS',            Cue = 'XSS_Sub_Surface',      LodCutoff = 'UnitMove_LodCutoff'},
-        TransitionWater = Sound {Bank = 'XSS',            Cue = 'XSS_Sub_Submerge',     LodCutoff = 'UnitMove_LodCutoff'},
+        FootFallGeneric       = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_Step',    LodCutoff = 'UnitMove_LodCutoff'},
+        FootFallGenericSeabed = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_UW_Step', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed                = Sound {Bank = 'XSL',            Cue = 'XSL0401_Death',        LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove             = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_Start',   LodCutoff = 'UnitMove_LodCutoff'},
+        StopMove              = Sound {Bank = 'XSL',            Cue = 'XSL0401_Move_Stop',    LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection           = Sound {Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Bot',  LodCutoff = 'UnitMove_LodCutoff'},
+        TransitionLand        = Sound {Bank = 'XSS',            Cue = 'XSS_Sub_Surface',      LodCutoff = 'UnitMove_LodCutoff'},
+        TransitionWater       = Sound {Bank = 'XSS',            Cue = 'XSS_Sub_Submerge',     LodCutoff = 'UnitMove_LodCutoff'},
     },
     Buffs = {
         Regen = {
@@ -314,8 +314,6 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -334,9 +332,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssl0405_name>Suedath-Zmara',
-        UnitWeight = 1,
     },
     Intel = {
 		FreeIntel = true,
