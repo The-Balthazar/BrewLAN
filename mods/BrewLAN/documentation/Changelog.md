@@ -1209,3 +1209,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Footprint dummies
     * And directional walkers
   * Mild refactor of Iyadesu pod setup script.
+
+  ### 2021-11-08
+
+  * Cityscapes: City wall script no longer causes an error if BrewLAN isn't enabled.
+  * Fixed Gantry script with AI after rework.
+  * Updated the Gantry hax modules to work after rework.

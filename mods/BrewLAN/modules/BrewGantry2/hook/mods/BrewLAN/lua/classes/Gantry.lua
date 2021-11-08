@@ -1,6 +1,4 @@
-
 do
-
     local timeDiv = 300
     local timeExp = 2
     local timeCo = .2
@@ -21,23 +19,9 @@ do
         return totalmass
     end
 
-    local OldBrewLANExperimentalFactoryUnit = FactoryUnit--BrewLANExperimentalFactoryUnit
+    local OldBrewLANExperimentalFactoryUnit = ExperimentalFactoryUnit
 
-    do
-        local ok, retclass = pcall(function()
-            if BrewLANExperimentalFactoryUnit then
-                return BrewLANExperimentalFactoryUnit
-            end
-        end)
-
-        if ok then
-            OldBrewLANExperimentalFactoryUnit = retclass
-        else
-            WARN("Gantry Hax module loaded before BrewLAN.")
-        end
-    end
-
-    BrewLANExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
+    ExperimentalFactoryUnit = Class(OldBrewLANExperimentalFactoryUnit) {
 
         AIStartCheats = function(self)
             ------------------------------------------------------------------------

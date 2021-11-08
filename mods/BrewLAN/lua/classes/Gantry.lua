@@ -4,6 +4,7 @@
 --------------------------------------------------------------------------------
 local FactoryUnit = import('/lua/defaultunits.lua').FactoryUnit
 local EntityCategoryContains = EntityCategoryContains
+local Buff
 
 do -- Original SupCom error prevention
     local ver = string.sub(GetVersion(),1,3)
@@ -12,6 +13,8 @@ do -- Original SupCom error prevention
             ApplyBuff = function() end,
             RemoveBuff = function() end,
         }
+    else
+        Buff = import('/lua/sim/Buff.lua')
     end
 end
 
