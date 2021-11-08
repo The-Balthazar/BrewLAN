@@ -1195,3 +1195,17 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed nuke mine death weapons triggering on suicide weapon dealing damage.
   * Moved mine prop damage effects to a function shared by all mines.
   * Some random cleanup.
+
+  ### 2021-11-07
+
+  * `BUILTBYTIER3WALL` is now defined by more unit physics values instead of categories.
+  * Refactored and reorganised the BrewLAN unit classes for:
+    * Gantries
+    * Engineering stations
+    * Energy storages
+    * Walls and wall gates
+    * Mines
+    * Satellites
+    * Footprint dummies
+    * And directional walkers
+  * Mild refactor of Iyadesu pod setup script.

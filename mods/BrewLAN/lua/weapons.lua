@@ -38,8 +38,7 @@ EnergyStorageVariableDeathWeapon = Class(BareBonesWeapon) {
         BareBonesWeapon.OnCreate(self)
         self:SetWeaponEnabled(false)
     end,
-
-
+    
     OnFire = function(self)
     end,
 

@@ -22,21 +22,14 @@ SSL0403 = Class(SConstructionUnit) {
         self:AddBuildRestriction(categories.SELECTABLE)
         self.Pods = { }
         local pod = {
-            PodAttachpoint = 'AttachSpecial0',
-            PodName = 'Pod',
-            PodUnitID = 'SSA0001',
+            PodUnitID = 'ssa0001',
             Entity = {},
             Active = false,
         }
         for i = 1, 8 do
-            self.Pods[i] = {}
-            for k, v in pod do
-                if k == "PodAttachpoint" or k == "PodName" then
-                    self.Pods[i][k] = v .. tostring(i)
-                else
-                    self.Pods[i][k] = v
-                end
-            end
+            self.Pods[i] = table.copy(pod)
+            self.Pods[i].PodAttachpoint = 'AttachSpecial0'..i
+            self.Pods[i].PodName = 'Pod'..i
         end
     end,
 

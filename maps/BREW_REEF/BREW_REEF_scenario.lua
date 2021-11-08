@@ -1,4 +1,4 @@
-version = 6
+version = 3
 ScenarioInfo = {
     name = "Mentlegen's Reef",
     description = "<LOC SCMP_005_Description>Once a haven for smugglers, the islands were named after the 'gentlemen' that did business there. Now the islands host a different kind of gentleman, Commanders from the three factions who vie with each other for control of the planet.",

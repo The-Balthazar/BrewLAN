@@ -1,7 +1,7 @@
-local StackingBuilderUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/defaultunits.lua').StackingBuilderUnit
-local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/walls.lua').CardinalWallUnit
-StackingBuilderUnit = CardinalWallUnit(StackingBuilderUnit)
+local BrewLANSelfDefendingCardinalWallUnit = import('/lua/defaultunits.lua').BrewLANSelfDefendingCardinalWallUnit
 
-SRB5310 = Class(StackingBuilderUnit) {}
+SRB5310 = Class(BrewLANSelfDefendingCardinalWallUnit) {
+    BuildAttachBone = 'WallNode',
+}
 
 TypeClass = SRB5310

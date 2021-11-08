@@ -507,59 +507,65 @@ function BrewLANHeavyWallBuildList(id, bp)
     if bp.Categories then
         --Check its not hard coded to be buildable.
         if not table.find(bp.Categories, 'BUILTBYTIER3WALL')
-        --and check it's not something we don't want on a wall.
+        and bp.Physics.MotionType == 'RULEUMT_None'
+        and (
+            not bp.Physics.BuildRestriction -- default usually isn't written in
+            or bp.Physics.BuildRestriction == 'RULEUBR_None'
+        )
+        and (
+            not bp.Physics.BuildOnLayerCaps -- if undefined it's just Land.
+            or bp.Physics.BuildOnLayerCaps.LAYER_Land
+        )
         and not table.find(bp.Categories, 'WALL')
         and not table.find(bp.Categories, 'SHIELDWALL')
         and not table.find(bp.Categories, 'MINE')
-        --Also make sure it's not going to want to move.
-        and table.find(bp.Categories, 'STRUCTURE')
-        then
-            --then check it meets the standard requirements
-            if table.find(bp.Categories, 'BUILTBYTIER1ENGINEER')
-            or table.find(bp.Categories, 'BUILTBYTIER2ENGINEER')
-            or table.find(bp.Categories, 'BUILTBYTIER3ENGINEER')
-            or table.find(bp.Categories, 'BUILTBYTIER1FIELD')
-            or table.find(bp.Categories, 'BUILTBYTIER2FIELD')
-            or table.find(bp.Categories, 'BUILTBYTIER3FIELD')
-            then
-                if table.find(bp.Categories, 'DEFENSE') or table.find(bp.Categories, 'INDIRECTFIRE') then
-                    --Check it wouldn't overlap badly with the wall
-                    local fits = { X = false, Z = false,}
-                    local correct = { X = false, Z = false,}
+        and (
+            table.find(bp.Categories, 'BUILTBYTIER1ENGINEER') or
+            table.find(bp.Categories, 'BUILTBYTIER2ENGINEER') or
+            table.find(bp.Categories, 'BUILTBYTIER3ENGINEER') or
+            table.find(bp.Categories, 'BUILTBYTIER1FIELD') or
+            table.find(bp.Categories, 'BUILTBYTIER2FIELD') or
+            table.find(bp.Categories, 'BUILTBYTIER3FIELD')
+        )
+        and (
+            table.find(bp.Categories, 'DEFENSE') or
+            table.find(bp.Categories, 'DIRECTFIRE') or
+            table.find(bp.Categories, 'INDIRECTFIRE')
+        ) then
+            --Check it wouldn't overlap badly with the wall
+            local fits, correct = {}, {}
 
-                    if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then
-                        correct.X = true
-                        fits.X = true
-                    elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
-                        fits.X = true
-                    end
+            if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then
+                correct.X = true
+                fits.X = true
+            elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
+                fits.X = true
+            end
 
-                    if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then
-                        correct.Z = true
-                        fits.Z = true
-                    elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
-                        fits.Z = true
-                    end
+            if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then
+                correct.Z = true
+                fits.Z = true
+            elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
+                fits.Z = true
+            end
 
-                    if fits.X and fits.Z then
-                        table.insert(bp.Categories, 'BUILTBYTIER3WALL')
-                        --This is to prevent it from having the same footprint as the wall
-                        --and from it removing all the path blocking of the wall if it dies or gets removed.
-                        --It will still remove the blocking from the center of the wall, but that's acceptable.
+            if fits.X and fits.Z then
+                table.insert(bp.Categories, 'BUILTBYTIER3WALL')
+                --This is to prevent it from having the same footprint as the wall
+                --and from it removing all the path blocking of the wall if it dies or gets removed.
+                --It will still remove the blocking from the center of the wall, but that's acceptable.
 
-                        --This will also make it so those turrets will no longer block pathing whilst adjacent
-                        --But that is probably fine.
-                        if correct.X then
-                            bp.Footprint.SizeX = 1
-                            bp.Physics.SkirtOffsetX = -1
-                            bp.Physics.SkirtSizeX = 3
-                        end
-                        if correct.Z then
-                            bp.Footprint.SizeZ = 1
-                            bp.Physics.SkirtOffsetZ = -1
-                            bp.Physics.SkirtSizeZ = 3
-                        end
-                    end
+                --This will also make it so those turrets will no longer block pathing whilst adjacent
+                --But that is probably fine.
+                if correct.X then
+                    bp.Footprint.SizeX = 1
+                    bp.Physics.SkirtOffsetX = -1
+                    bp.Physics.SkirtSizeX = 3
+                end
+                if correct.Z then
+                    bp.Footprint.SizeZ = 1
+                    bp.Physics.SkirtOffsetZ = -1
+                    bp.Physics.SkirtSizeZ = 3
                 end
             end
         end
@@ -1341,7 +1347,7 @@ function BrewLANGenerateFootprintDummy(id, bp, all_bps)
                     MotionType = 'RULEUMT_None',
                     OccupyRects = OR,
                 },
-                ScriptClass = 'FootprintDummyUnit',
+                ScriptClass = 'BrewLANFootprintDummyUnit',
                 ScriptModule = '/lua/defaultunits.lua',
                 SizeX = X,
                 SizeY = 1,

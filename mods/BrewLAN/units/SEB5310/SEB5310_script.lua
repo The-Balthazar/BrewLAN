@@ -1,13 +1,13 @@
 --------------------------------------------------------------------------------
 --  UEF Wall: With cordinal scripting
 --------------------------------------------------------------------------------
-local StackingBuilderUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/defaultunits.lua').StackingBuilderUnit
-local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/walls.lua').CardinalWallUnit
-StackingBuilderUnit = CardinalWallUnit(StackingBuilderUnit)
+local BrewLANSelfDefendingCardinalWallUnit = import('/lua/defaultunits.lua').BrewLANSelfDefendingCardinalWallUnit
 
-SEB5310 = Class(StackingBuilderUnit) {
+SEB5310 = Class(BrewLANSelfDefendingCardinalWallUnit) {
+    BuildAttachBone = 'Build_Node',
+
     OnStartBuild = function(self, unitBeingBuilt, order )
-        StackingBuilderUnit.OnStartBuild(self, unitBeingBuilt, order )
+        BrewLANSelfDefendingCardinalWallUnit.OnStartBuild(self, unitBeingBuilt, order )
 
         self:ForkThread(
             function()

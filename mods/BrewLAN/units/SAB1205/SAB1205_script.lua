@@ -1,4 +1,4 @@
-local AEnergyStorageUnit = import(string.gsub(__blueprints.sab1205.Source, 'units/sab1205/sab1205_unit.bp', '') .. '/lua/defaultunits.lua').BrewLANEnergyStorageUnit --BrewLANPath() alternative
+local AEnergyStorageUnit = import('/lua/defaultunits.lua').BrewLANEnergyStorageUnit
 
 SAB1205 = Class(AEnergyStorageUnit) {
 

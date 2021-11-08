@@ -1,7 +1,5 @@
-local AWallStructureUnit = import('/lua/aeonunits.lua').AWallStructureUnit
-local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/walls.lua').CardinalWallUnit
-AWallStructureUnit = CardinalWallUnit( AWallStructureUnit ) 
+local BrewLANCardinalWallUnit = import('/lua/defaultunits.lua').BrewLANCardinalWallUnit
 
-SAB5210 = Class(AWallStructureUnit) {}
+SAB5210 = Class(BrewLANCardinalWallUnit) {}
 
 TypeClass = SAB5210

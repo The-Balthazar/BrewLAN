@@ -1,4 +1,4 @@
-local CEnergyStorageUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/defaultunits.lua').BrewLANEnergyStorageUnit
+local CEnergyStorageUnit = import('/lua/defaultunits.lua').BrewLANEnergyStorageUnit
 
 SRB1205 = Class(CEnergyStorageUnit) {
     DestructionPartsChassisToss = {'SRB1205'},

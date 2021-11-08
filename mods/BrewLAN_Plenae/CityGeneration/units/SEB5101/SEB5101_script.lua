@@ -1,11 +1,8 @@
 --------------------------------------------------------------------------------
 -- UEF Wall: With cordinal scripting
 --------------------------------------------------------------------------------
-local TWallStructureUnit = import('/lua/terranunits.lua').TWallStructureUnit
-local CardinalWallUnit = import(import( '/lua/game.lua' ).BrewLANPath .. '/lua/walls.lua').CardinalWallUnit
---------------------------------------------------------------------------------
-TWallStructureUnit = CardinalWallUnit( TWallStructureUnit )
+local BrewLANCardinalWallUnit = import('/lua/defaultunits.lua').BrewLANCardinalWallUnit
 
-SEB5210 = Class(TWallStructureUnit) {}
+SEB5210 = Class(BrewLANCardinalWallUnit) {}
 
 TypeClass = SEB5210
