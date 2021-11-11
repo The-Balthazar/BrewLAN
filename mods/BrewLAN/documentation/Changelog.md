@@ -1215,3 +1215,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Cityscapes: City wall script no longer causes an error if BrewLAN isn't enabled.
   * Fixed Gantry script with AI after rework.
   * Updated the Gantry hax modules to work after rework.
+
+  ### 2021-11-11
+
+  * Cityscapes: Fixed cities potentially being slightly out of alignment, most visible on the docks.

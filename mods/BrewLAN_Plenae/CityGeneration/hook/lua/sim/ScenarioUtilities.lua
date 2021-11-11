@@ -123,6 +123,10 @@ end
 local LastCityGenTick
 
 function CreateSquareBlockCity(AIbrain, FUnits, CityCentrePos, CityRadius)
+    CityCentrePos[1] = math.floor(CityCentrePos[1])+0.5
+    CityCentrePos[3] = math.floor(CityCentrePos[3])+0.5
+    CityCentrePos[2] = GetTerrainHeight(CityCentrePos[1], CityCentrePos[3])
+
     while LastCityGenTick == GetGameTick() do
         coroutine.yield(1)
         if AIbrain.PopCapReached then
