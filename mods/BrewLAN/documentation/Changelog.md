@@ -1219,3 +1219,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-11-11
 
   * Cityscapes: Fixed cities potentially being slightly out of alignment, most visible on the docks.
+
+  ### 2021-11-12
+
+  * Spawn menu: Added an option to show "unspawnable" units.
+
+  ### 2021-11-13
+
+  * Spawn menu: Set 'spawnable' as enabled by default.
+  * Spawn menu: Faction filters now dynamic.

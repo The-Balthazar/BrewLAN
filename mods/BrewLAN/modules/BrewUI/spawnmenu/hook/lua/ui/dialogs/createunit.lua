@@ -111,6 +111,44 @@ local ModListTabs = function()
     return listicle
 end
 
+local FactionListTabs = function()
+    local flisticle = {}
+    local allFactionCats = {}
+
+    local function IsFaction(id, factioncat)
+        local bp = __blueprints[id]
+        return table.find(bp.Categories, factioncat) --or (bp.General and bp.General.FactionName and string.lower(bp.General.FactionName) == string.lower(factioncat))
+    end
+
+    for i, faction in import('/lua/factions.lua').Factions do
+        local key = 'faction'..faction.Category
+        specialFilterControls[key] = faction.Category
+        table.insert(allFactionCats, faction.Category)
+        table.insert(flisticle, {
+            title = faction.DisplayName,
+            key = key,
+            sortFunc = function(unitID, cat)
+                return IsFaction(unitID, cat)
+            end
+        })
+    end
+
+    table.insert(flisticle, {
+        title = 'Other',
+        key = 'otherfaction',
+        sortFunc = function(unitID)
+            for i, cat in allFactionCats do
+                if IsFaction(unitID, cat) then
+                    return false
+                end
+            end
+            return true
+        end,
+    })
+
+    return flisticle
+end
+
 local nameFilters = {
     {
         title = 'Search',
@@ -126,71 +164,8 @@ local nameFilters = {
     {
         title = 'Faction',
         key = 'faction',
-        choices = {
-            {
-                title = 'Aeon',
-                key = 'aeon',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'AEON') --string.sub(unitID, 2, 2) == 'a'
-                end,
-            },
-            {
-                title = 'UEF',
-                key = 'uef',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'UEF') -- string.sub(unitID, 2, 2) == 'e'
-                end,
-            },
-            {
-                title = 'Cybran',
-                key = 'cybran',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'CYBRAN') -- string.sub(unitID, 2, 2) == 'r'
-                end,
-            },
-            {
-                title = 'Seraphim',
-                key = 'seraphim',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SERAPHIM') -- string.sub(unitID, 2, 2) == 's'
-                end,
-            },
-            {
-                title = 'Other',
-                key = 'otherfac',
-                sortFunc = function(unitID)
-                    return tablesubstringfind(__blueprints[unitID].Categories, 'BUILT') and not (table.find(__blueprints[unitID].Categories, 'UEF') or table.find(__blueprints[unitID].Categories, 'AEON') or table.find(__blueprints[unitID].Categories, 'CYBRAN') or table.find(__blueprints[unitID].Categories, 'SERAPHIM') )
-                end,
-            },
-        },
-    },--[[
-    {
-        title = 'Product',
-        key = 'product',
-        choices = {
-            {
-                title = 'SC1',
-                key = 'sc1',
-                sortFunc = function(unitID)
-                    return string.sub(unitID, 1, 1) == 'u'
-                end,
-            },
-            {
-                title = 'Download',
-                key = 'dl',
-                sortFunc = function(unitID)
-                    return string.sub(unitID, 1, 1) == 'd'
-                end,
-            },
-            {
-                title = 'XPack 1',
-                key = 'scx1',
-                sortFunc = function(unitID)
-                    return string.sub(unitID, 1, 1) == 'x'
-                end,
-            },
-        },
-    },]]
+        choices = FactionListTabs(),
+    },
     {
         title = 'Source',
         key = 'mod',
@@ -344,34 +319,34 @@ local nameFilters = {
         },
     },
 }
---[[
-do
-    local killmodslist
-    for i, filter in nameFilters do
-        if filter.key == 'mod' then
-            if filter.choices and table.getn(filter.choices) == 0 then
-                killmodslist = i
-            end
-            break
-        end
-    end
-    if killmodslist then
-        table.remove(nameFilters, killmodslist)
-        killmodslist = nil
-    end
-end]]
 
-local function getItems()
-    local idlist
-    if categories.UNSPAWNABLE then
-        idlist = EntityCategoryGetUnitList(categories.ALLUNITS - categories.UNSPAWNABLE)
-    else
-        idlist = EntityCategoryGetUnitList(categories.ALLUNITS)
-    end
-    table.sort(idlist)
-
-    return idlist
+if categories.UNSPAWNABLE then
+    table.insert(nameFilters, 2,
+        {
+            title = 'Visibility',
+            key = 'spawnable',
+            choices = {
+                {
+                    title = 'Visible',
+                    key = 'spawnable',
+                    sortFunc = function(unitID)
+                        return not table.find(__blueprints[unitID].Categories, 'UNSPAWNABLE')
+                    end,
+                },
+                {
+                    title = 'Hidden',
+                    key = 'unspawnable',
+                    sortFunc = function(unitID)
+                        return table.find(__blueprints[unitID].Categories, 'UNSPAWNABLE')
+                    end,
+                },
+            }
+        }
+    )
 end
+
+
+local function getItems() return EntityCategoryGetUnitList(categories.ALLUNITS) end
 
 local function CreateNameFilter(data)
     local group = Group(dialog)
@@ -392,7 +367,7 @@ local function CreateNameFilter(data)
 
     group.check.key = data.key
     if filterSet[data.key] == nil then
-        filterSet[data.key] = {value = false, choices = {}}
+        filterSet[data.key] = {value = data.key == 'spawnable', choices = {}}
     end
     if activeFilters[data.key] == nil then
         activeFilters[data.key] = {}
@@ -455,7 +430,7 @@ local function CreateNameFilter(data)
                 RefreshList()
             end
             if filterSet[data.key].choices[v.key] == nil then
-                filterSet[data.key].choices[v.key] = false
+                filterSet[data.key].choices[v.key] = data.key == 'spawnable' and v.key == 'spawnable'
             end
             group.items[index]:SetCheck(filterSet[data.key].choices[v.key])
             if activeFilters[data.key] == nil then activeFilters[data.key] = {} end
@@ -774,6 +749,10 @@ function CreateDialog(x, y)
         if filtIndex == 1 then
             LayoutHelpers.Below(filterGroups[index], filterSetCombo)
             LayoutHelpers.AtLeftIn(filterGroups[index], dialog)
+        elseif categories.UNSPAWNABLE and filtIndex == 2 then
+            LayoutHelpers.RightOf(filterGroups[index], filterGroups[1], -272)
+        elseif categories.UNSPAWNABLE and filtIndex == 3 then
+            LayoutHelpers.Below(filterGroups[index], filterGroups[1])
         else
             LayoutHelpers.Below(filterGroups[index], filterGroups[index-1])
         end
