@@ -1228,3 +1228,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spawn menu: Set 'spawnable' as enabled by default.
   * Spawn menu: Faction filters now dynamic.
+
+  ### 2021-11-17
+
+  * Spawn menu: Removed some unnessessary sanity checks for optimisation.
+  * Spawn menu: Made the column count easily variable.
+  * Spawn menu: Added a basic spread function on spawning.
+  * Spawn menu: Shrunk the visibility options, and tightened the alignments.
+  * Spawn menu: Removed the `Civilian` button from type and added a comparable `No Tech` to tech.

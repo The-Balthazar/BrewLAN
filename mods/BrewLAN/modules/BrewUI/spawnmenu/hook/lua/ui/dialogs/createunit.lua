@@ -10,20 +10,14 @@ local Combo = import('/lua/ui/controls/combo.lua').Combo
 local UIUtil = import('/lua/ui/uiutil.lua')
 local Edit = import('/lua/maui/edit.lua').Edit
 
-local dialog = false
-local nameDialog = false
-local activeFilters = {}
-local activeFilterTypes = {}
-local specialFilterControls = {}
-local filterSet = {}
-local currentArmy = GetFocusArmy()
-local UnitList = {}
-local CreationList = {}
-
-local defaultEditField = false
-
+local dialog, nameDialog, defaultEditField
+local activeFilters, activeFilterTypes, specialFilterControls, filterSet = {}, {}, {}, {}
+local UnitList, CreationList = {}, {}
 local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
+local currentArmy = GetFocusArmy()
+
+local ChoiceColumns = 6
 
 local tablesubstringfind = function(array, val)
     for i, v in array do
@@ -62,7 +56,7 @@ local ModListTabs = function()
                     if string.len(name) <= l then return name end --If it's short, just gief
 
                     name = string.gsub(name, "%([^()]*%)", "") --Remove any brackets
-                    name = string.gsub(name, "[ \s]+$", "") --Remove trailing spaces, because I can't be arsed to work out how to do both in one regex
+                    name = string.gsub(name, "[ %s]+$", "") --Remove trailing spaces, because I can't be arsed to work out how to do both in one regex
                     if string.len(name) <= l then return name end
 
                     local commonlong = { --Shrink some common long words to be recognisble
@@ -179,46 +173,38 @@ local nameFilters = {
                 title = 'Land',
                 key = 'land',
                 sortFunc = function(unitID)
-                    local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
-                    return (MT == 'ruleumt_amphibious' or MT == 'ruleumt_land') and __blueprints[unitID].ScriptClass ~= 'ResearchItem'
+                    local MT = __blueprints[unitID].Physics.MotionType
+                    return (MT == 'RULEUMT_Amphibious' or MT == 'RULEUMT_Land') and __blueprints[unitID].ScriptClass ~= 'ResearchItem'
                 end,
             },
             {
                 title = 'Surface',
                 key = 'surface',
                 sortFunc = function(unitID)
-                    local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
-                    return MT == 'ruleumt_amphibiousfloating' or MT == 'ruleumt_hover'
+                    local MT = __blueprints[unitID].Physics.MotionType
+                    return MT == 'RULEUMT_AmphibiousFloating' or MT == 'RULEUMT_Hover'
                 end,
             },
             {
                 title = 'Naval',
                 key = 'naval',
                 sortFunc = function(unitID)
-                    local MT = string.lower(__blueprints[unitID].Physics.MotionType or 'no')
-                    return MT == 'ruleumt_water' or MT == 'ruleumt_surfacingsub' -- string.sub(unitID, 3, 3) == 's'
+                    local MT = __blueprints[unitID].Physics.MotionType
+                    return MT == 'RULEUMT_Water' or MT == 'RULEUMT_SurfacingSub'
                 end,
             },
             {
                 title = 'Air',
                 key = 'air',
                 sortFunc = function(unitID)
-                    return string.lower(__blueprints[unitID].Physics.MotionType or 'no') == 'ruleumt_air' -- string.sub(unitID, 3, 3) == 'a'
+                    return __blueprints[unitID].Physics.MotionType == 'RULEUMT_Air'
                 end,
             },
             {
                 title = 'Base',
                 key = 'base',
                 sortFunc = function(unitID)
-                    return string.lower(__blueprints[unitID].Physics.MotionType or 'no') == 'ruleumt_none' -- string.sub(unitID, 3, 3) == 'b'
-                end,
-            },
-            {
-                title = 'Civilian',
-                key = 'civ',
-                sortFunc = function(unitID)
-                    local cat = __blueprints[unitID].Categories
-                    return not tablesubstringfind(cat, 'BUILT') and not (table.find(cat, 'TECH1') or table.find(cat, 'TECH2') or table.find(cat, 'TECH3') or table.find(cat, 'EXPERIMENTAL'))
+                    return __blueprints[unitID].Physics.MotionType == 'RULEUMT_None'
                 end,
             },
             {
@@ -234,6 +220,14 @@ local nameFilters = {
         title = 'Tech Level',
         key = 'tech',
         choices = {
+            {
+                title = 'No Tech',
+                key = 'civ',
+                sortFunc = function(unitID)
+                    local cat = __blueprints[unitID].Categories
+                    return not (table.find(cat, 'TECH1') or table.find(cat, 'TECH2') or table.find(cat, 'TECH3') or table.find(cat, 'EXPERIMENTAL'))
+                end,
+            },
             {
                 title = 'T1',
                 key = 't1',
@@ -327,14 +321,14 @@ if categories.UNSPAWNABLE then
             key = 'spawnable',
             choices = {
                 {
-                    title = 'Visible',
+                    title = '',
                     key = 'spawnable',
                     sortFunc = function(unitID)
                         return not table.find(__blueprints[unitID].Categories, 'UNSPAWNABLE')
                     end,
                 },
                 {
-                    title = 'Hidden',
+                    title = '',
                     key = 'unspawnable',
                     sortFunc = function(unitID)
                         return table.find(__blueprints[unitID].Categories, 'UNSPAWNABLE')
@@ -345,21 +339,20 @@ if categories.UNSPAWNABLE then
     )
 end
 
-
 local function getItems() return EntityCategoryGetUnitList(categories.ALLUNITS) end
 
 local function CreateNameFilter(data)
     local group = Group(dialog)
     group.Width:Set(dialog.Width)
-    if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
-        group.Height:Set(30 + math.floor((table.getn(data.choices)-1)/6) * 25)
+    if data.choices and data.choices[1] and table.getn(data.choices) > ChoiceColumns then
+        group.Height:Set(30 + math.floor((table.getn(data.choices)-1)/ChoiceColumns) * 25)
     else
         group.Height:Set(30)
     end
 
     group.check = UIUtil.CreateCheckboxStd(group, '/dialogs/check-box_btn/radio')
     LayoutHelpers.AtLeftIn(group.check, group)
-    if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
+    if data.choices and data.choices[1] and table.getn(data.choices) > ChoiceColumns then
         LayoutHelpers.AtTopIn(group.check, group, 2)
     else
         LayoutHelpers.AtVerticalCenterIn(group.check, group)
@@ -375,7 +368,7 @@ local function CreateNameFilter(data)
 
     group.label = UIUtil.CreateText(group, data.title, 14, UIUtil.bodyFont)
     LayoutHelpers.RightOf(group.label, group.check)
-    if data.choices and data.choices[1] and table.getn(data.choices) > 6 then
+    if data.choices and data.choices[1] and table.getn(data.choices) > ChoiceColumns then
         LayoutHelpers.AtTopIn(group.label, group, 7)
     else
         LayoutHelpers.AtVerticalCenterIn(group.label, group)
@@ -385,15 +378,15 @@ local function CreateNameFilter(data)
         group.items = {}
         for i, v in data.choices do
             local index = i
-            group.items[index] = UIUtil.CreateCheckboxStd(group, '/dialogs/toggle_btn/toggle')
+            group.items[index] = UIUtil.CreateCheckboxStd(group, data.key == 'spawnable' and '/dialogs/check-box_btn/radio' or '/dialogs/toggle_btn/toggle' )
             if index == 1 then
                 LayoutHelpers.AtLeftTopIn(group.items[index], group, 95)
-            elseif index < 7 then
+            elseif index < ChoiceColumns+1 then
                 LayoutHelpers.RightOf(group.items[index], group.items[index-1])
             else
-                LayoutHelpers.Below(group.items[index], group.items[index-6])
+                LayoutHelpers.Below(group.items[index], group.items[index-ChoiceColumns])
             end
-            if index < 7 then
+            if index < ChoiceColumns+1 then
                 LayoutHelpers.AtTopIn(group.items[index], group)
             end
 
@@ -442,7 +435,7 @@ local function CreateNameFilter(data)
         group.edit:SetHighlightForegroundColor(UIUtil.highlightColor)
         group.edit:SetHighlightBackgroundColor("880085EF")
         group.edit.Height:Set(15)
-        group.edit.Width:Set(200)
+        group.edit.Width:Set((ChoiceColumns-2)*82+15)
         group.edit:SetText(filterSet[data.key].editText or '')
         group.edit:SetFont(UIUtil.bodyFont, 12)
         group.edit:SetMaxChars(20)
@@ -501,7 +494,7 @@ end
 function CreateDialog(x, y)
     if dialog then
         dialog:Destroy()
-        dialog = false
+        dialog = nil
         return
     end
 
@@ -510,7 +503,7 @@ function CreateDialog(x, y)
     dialog = Bitmap(GetFrame(0))
     dialog:SetSolidColor('CC000000')
     dialog.Height:Set(800)
-    dialog.Width:Set(600)
+    dialog.Width:Set(90 + 83 * ChoiceColumns)
     dialog.Left:Set(function() return math.max(math.min(x, GetFrame(0).Right() - dialog.Width()), 0) end)
     dialog.Top:Set(function() return math.max(math.min(y, GetFrame(0).Bottom() - dialog.Height()), 0) end)
     dialog.Depth:Set(GetFrame(0):GetTopmostDepth() + 1)
@@ -520,7 +513,7 @@ function CreateDialog(x, y)
     LayoutHelpers.AtRightIn(cancelBtn, dialog)
     cancelBtn.OnClick = function(button)
         dialog:Destroy()
-        dialog = false
+        dialog = nil
     end
 
     local countLabel = UIUtil.CreateText(dialog, 'Count:', 12, UIUtil.bodyFont)
@@ -539,6 +532,23 @@ function CreateDialog(x, y)
     count:SetText('1')
     LayoutHelpers.RightOf(count, countLabel, 5)
 
+    local function spreadSpawn(id, count)
+        if tonumber(count) == 1 then return ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. x .. ' ' .. y) end
+
+        local unitbp = __blueprints[id]
+        local offsetX = (unitbp.Physics.SkirtSizeX or unitbp.SizeX or 1) * 75
+        local offsetZ = (unitbp.Physics.SkirtSizeZ or unitbp.SizeZ or 1) * 75
+        local square = math.ceil(math.sqrt(count))
+        local startOffsetX = square * 0.5 * offsetX
+        local startOffsetZ = square * 0.5 * offsetZ
+
+        for i = 1, count do
+            local X = x - startOffsetX + math.mod(i,square) * offsetX
+            local Z = y - startOffsetZ + math.mod(math.floor(i/square), square) * offsetZ
+            ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. X .. ' ' .. Z)
+        end
+    end
+
     local createBtn = UIUtil.CreateButtonStd(dialog, '/widgets/small', "Create", 12)
     LayoutHelpers.AtBottomIn(createBtn, dialog)
     LayoutHelpers.AtHorizontalCenterIn(createBtn, dialog)
@@ -548,13 +558,10 @@ function CreateDialog(x, y)
             if type(tonumber(count:GetText())) == 'number' then
                 numUnits = count:GetText()
             end
-            for i = 1, numUnits do
-                local cmd = 'CreateUnit ' .. unitID .. ' ' .. (currentArmy-1) .. ' ' .. x .. ' ' .. y
-                ConExecuteSave(cmd)
-            end
+            spreadSpawn(unitID, numUnits)
         end
         dialog:Destroy()
-        dialog = false
+        dialog = nil
     end
 
     local function SetFilters(filterTable)
@@ -647,14 +654,14 @@ function CreateDialog(x, y)
     LayoutHelpers.AtLeftTopIn(armiesGroup, dialog)
 
     armiesGroup.armySlots = {}
-    local lowestControl = false
+    local lowestControl
     for index, val in GetArmiesTable().armiesTable do
         local i = index
         armiesGroup.armySlots[i] = CreateArmySelectionSlot(armiesGroup, i, val)
         if i == 1 then
             LayoutHelpers.AtLeftTopIn(armiesGroup.armySlots[i],armiesGroup)
             lowestControl = armiesGroup.armySlots[i]
-        elseif i == 5 then
+        elseif i == math.ceil(GetArmiesTable().numArmies / 2) + 1 then
             LayoutHelpers.RightOf(armiesGroup.armySlots[i],armiesGroup.armySlots[1])
             LayoutHelpers.AtTopIn(armiesGroup.armySlots[i],armiesGroup)
         else
@@ -750,7 +757,7 @@ function CreateDialog(x, y)
             LayoutHelpers.Below(filterGroups[index], filterSetCombo)
             LayoutHelpers.AtLeftIn(filterGroups[index], dialog)
         elseif categories.UNSPAWNABLE and filtIndex == 2 then
-            LayoutHelpers.RightOf(filterGroups[index], filterGroups[1], -272)
+            LayoutHelpers.RightOf(filterGroups[index], filterGroups[1], -150)
         elseif categories.UNSPAWNABLE and filtIndex == 3 then
             LayoutHelpers.Below(filterGroups[index], filterGroups[1])
         else
@@ -857,10 +864,7 @@ function CreateDialog(x, y)
                     if type(tonumber(count:GetText())) == 'number' then
                         numUnits = count:GetText()
                     end
-                    for i = 1, numUnits do
-                        local cmd = 'CreateUnit ' .. self.unitID .. ' ' .. (currentArmy-1) .. ' ' .. x .. ' ' .. y
-                        ConExecuteSave(cmd)
-                    end
+                    spreadSpawn(self.unitID, numUnits)
                     cancelBtn:OnClick()
                 elseif event.Type == 'MouseMotion' then
                     MoveMouseover(event.MouseX,event.MouseY)
@@ -1011,7 +1015,7 @@ function NameSet(callback)
     cancelButton.Left:Set(function() return nameDialog.Left() + (((nameDialog.Width() / 4) * 1) - (cancelButton.Width() / 2)) end)
     cancelButton.OnClick = function(self, modifiers)
         nameDialog:Destroy()
-        nameDialog = false
+        nameDialog = nil
     end
 
     --TODO this should be in layout
@@ -1030,7 +1034,7 @@ function NameSet(callback)
         local newName = nameEdit:GetText()
         callback(newName)
         nameDialog:Destroy()
-        nameDialog = false
+        nameDialog = nil
     end
 
     nameEdit.OnEnterPressed = function(self, text)
