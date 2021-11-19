@@ -1231,8 +1231,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2021-11-17
 
-  * Spawn menu: Removed some unnessessary sanity checks for optimisation.
+  * Spawn menu: Removed some unnecessary sanity checks for optimisation.
   * Spawn menu: Made the column count easily variable.
   * Spawn menu: Added a basic spread function on spawning.
   * Spawn menu: Shrunk the visibility options, and tightened the alignments.
   * Spawn menu: Removed the `Civilian` button from type and added a comparable `No Tech` to tech.
+
+  ### 2021-11-19
+
+  * Spawn menu: Team selection now has up to 4 columns, and is set up for n columns.
+  * Spawn menu: Reworked the mod name reduction function.

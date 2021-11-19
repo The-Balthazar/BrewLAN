@@ -15,78 +15,100 @@ local activeFilters, activeFilterTypes, specialFilterControls, filterSet = {}, {
 local UnitList, CreationList = {}, {}
 local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
+
 local currentArmy = GetFocusArmy()
+local NumArmies = GetArmiesTable().numArmies
 
 local ChoiceColumns = 6
-
-local tablesubstringfind = function(array, val)
-    for i, v in array do
-        if string.find(v, val) then
-            return true
-        end
-    end
-    return false
-end
+local TeamColumns = math.min(4, NumArmies)
 
 local ModListTabs = function()
+    local NameMaxLengthChars = 12
+    local NameMaxLengthPixels = 64
+
+    local ssub, gsub = string.sub, string.gsub
+
+    local function ShouldGiveTab(mod)
+        local dirlen = string.len(mod.location)
+        for id, bp in __blueprints do
+            if mod.location..'/' == ssub(bp.Source, 1, dirlen+1) then
+                return true
+            end
+        end
+    end
+
+    local function NameIsShortEnough(name) return string.len(name) <= NameMaxLengthChars end
+    local function ForWordsIn(text, operation) return gsub(text, '[%a\']+', operation) end
+    local function Initialise(text) return gsub(text, '[%a\'%&]+%s*', function(s) return string.upper(ssub(s,1,1)) end ) end
+    local function Abreviate(word)
+        local words = {
+            Additional = 'Add',
+            Advanced = 'Adv',
+            Balance = 'Bal',
+            BlackOps = 'BO',
+            BrewLAN = 'BL',
+            Command = 'Com',
+            Commander = 'Cdr',
+            Commanders = 'Cdrs',
+            Experiment = 'Exp',
+            Experimental = 'Exp',
+            Experimentals = 'Exps',
+            Infrastructure = 'Infr',
+            Supreme = 'Sup',
+            Veterancy = 'Vet',
+        }
+        return words[gsub(word,'\'','')] or word
+    end
+
     local listicle = {
         {
             title = 'Core Game',
             key = 'vanilla',
             sortFunc = function(unitID, modloc)
-                return string.sub(__blueprints[unitID].Source, 1, 7) == "/units/"
+                return ssub(__blueprints[unitID].Source, 1, 7) == "/units/"
             end,
         }
     }
 
     for i, mod in __active_mods do
         if mod.name then
-            local givetab = false
-            local dirlen = string.len(mod.location)
-            for id, bp in __blueprints do
-                if mod.location == string.sub(bp.Source, 1, dirlen) and string.sub(bp.Source, dirlen + 1, dirlen + 1) == "/" then
-                    givetab = true
-                    break
-                end
-            end
-            if givetab then
-                local key = string.gsub(string.lower(mod.name),"%s+", "_")
-                local titleFit = function(name)
-                    local l = 12
-                    if string.len(name) <= l then return name end --If it's short, just gief
+            if ShouldGiveTab(mod) then
+                local key = gsub(string.lower(mod.name),"%s+", "_")
+                local function titleFit(name)
+                    local l = NameMaxLengthChars
 
-                    name = string.gsub(name, "%([^()]*%)", "") --Remove any brackets
-                    name = string.gsub(name, "[ %s]+$", "") --Remove trailing spaces, because I can't be arsed to work out how to do both in one regex
-                    if string.len(name) <= l then return name end
+                    --Removes version numbers and any brackets around them. Restrictive to reduce false positives
+                    name = gsub(name, '[%[%<%{%(%s]+[vV]+%s*%d+[_%.%d]*[%]%>%}%)%s]*', '') --Requires v or V at start
+                    name = gsub(name, '[%[%<%{%(%s]+%d+[_%.]+[_%.%d]+[%]%>%}%)%s]*', '') --Requres one or more decimal point or _ between numbers
 
-                    local commonlong = { --Shrink some common long words to be recognisble
-                        Additional = 'Add',
-                        Advanced = 'Adv',
-                        Balance = 'Bal',
-                        BlackOps = 'BO',
-                        ['BrewLAN:'] = 'BL:',
-                        Command = 'Com',
-                        Commander = 'Cdr',
-                        Commanders = 'Cdrs',
-                        Experiment = 'Exp',
-                        Experimental = 'Exp',
-                        Infrastructure = 'Infr',
-                        Supreme = 'Sup',
-                        Veterancy = 'Vet',
-                    }
-                    for long, short in commonlong do name = string.gsub(name, long, short) end
-                    if string.len(name) <= l then return name end
+                    if NameIsShortEnough(name) then return name end
 
-                    if string.find(string.sub(name, l+1, -1), " ") then -- If there are words that would be entirely cut off, initialise after the first
-                        local fsp = string.find(name, " ")
-                        local name = string.sub(name, 1, fsp) .. string.gsub(string.sub(name, fsp+1, -1), "[a-z]+", "")
-                        if string.len(name) <= l then
+                    -- Remove anything between brackets, and any space before them
+                    name = gsub(name, '%s*%b()', '')
+                    name = gsub(name, '%s*%b[]', '')
+                    name = gsub(name, '%s*%b<>', '')
+                    name = gsub(name, '%s*%b{}', '')
+
+                    if NameIsShortEnough(name) then return name end
+
+                    name = ForWordsIn(name, Abreviate)
+
+                    if NameIsShortEnough(name) then return name end
+
+                    if not string.find(ssub(name, l), ' ') then --If we wouldn't lose any entire words, cutoff.
+                        return ssub(name, 1, l)
+
+                    else -- If there are words that would be entirely cut off, initialise after the first
+                        local FirstSpaceIndex = string.find(name, ' ')
+                        local name = ssub(name, 1, FirstSpaceIndex) .. Initialise(ssub(name, FirstSpaceIndex+1))
+
+                        if NameIsShortEnough(name) then
                             return name
-                        else --If it still isn't short enough, just initialise everything.
-                            return string.gsub(name, "[a-z]+", "")
+
+                        else --If it still isn't short enough, just initialise the rest as well, and trim the result just in case
+                            name = Initialise(ssub(name, 1, FirstSpaceIndex)) .. ssub(name, FirstSpaceIndex+1)
+                            return ssub(name, 1, math.min(l, string.len(name)))
                         end
-                    else--If there are no spaces after the cutoff, cutoff.
-                        return string.sub(name, 1, l)
                     end
                 end
 
@@ -94,10 +116,7 @@ local ModListTabs = function()
                 table.insert(listicle, {
                     title = titleFit(mod.name),
                     key = key,
-                    sortFunc = function(unitID, modloc)
-                        local modloclen = string.len(modloc)
-                        return modloc == string.sub(__blueprints[unitID].Source, 1, modloclen) and string.sub(__blueprints[unitID].Source, modloclen + 1, modloclen + 1) == "/"
-                    end,
+                    sortFunc = function(unitID, modloc) return modloc..'/' == ssub(__blueprints[unitID].Source, 1, string.len(modloc)+1) end,
                 })
             end
         end
@@ -109,9 +128,8 @@ local FactionListTabs = function()
     local flisticle = {}
     local allFactionCats = {}
 
-    local function IsFaction(id, factioncat)
-        local bp = __blueprints[id]
-        return table.find(bp.Categories, factioncat) --or (bp.General and bp.General.FactionName and string.lower(bp.General.FactionName) == string.lower(factioncat))
+    local function HasCat(id, factioncat)
+        return table.find(__blueprints[id].Categories, factioncat)
     end
 
     for i, faction in import('/lua/factions.lua').Factions do
@@ -122,7 +140,7 @@ local FactionListTabs = function()
             title = faction.DisplayName,
             key = key,
             sortFunc = function(unitID, cat)
-                return IsFaction(unitID, cat)
+                return HasCat(unitID, cat)
             end
         })
     end
@@ -132,7 +150,7 @@ local FactionListTabs = function()
         key = 'otherfaction',
         sortFunc = function(unitID)
             for i, cat in allFactionCats do
-                if IsFaction(unitID, cat) then
+                if HasCat(unitID, cat) then
                     return false
                 end
             end
@@ -378,7 +396,7 @@ local function CreateNameFilter(data)
         group.items = {}
         for i, v in data.choices do
             local index = i
-            group.items[index] = UIUtil.CreateCheckboxStd(group, data.key == 'spawnable' and '/dialogs/check-box_btn/radio' or '/dialogs/toggle_btn/toggle' )
+            group.items[index] = UIUtil.CreateCheckboxStd(group, data.key == 'spawnable' and '/dialogs/check-box_btn/radio' or '/dialogs/toggle_btn/toggle')
             if index == 1 then
                 LayoutHelpers.AtLeftTopIn(group.items[index], group, 95)
             elseif index < ChoiceColumns+1 then
@@ -406,7 +424,7 @@ local function CreateNameFilter(data)
                     end
                     activeFilters[self.key][self.filterKey] = self.sortFunc
                 elseif activeFilters[self.key][self.filterKey] then
-                    local otherChecked = false
+                    local otherChecked
                     for _, control in group.items do
                         if control ~= self then
                             if control:IsChecked() then
@@ -589,7 +607,7 @@ function CreateDialog(x, y)
     local function CreateArmySelectionSlot(parent, index, armyData)
         local group = Bitmap(parent)
         group.Height:Set(30)
-        group.Width:Set(function() return parent.Width() / 2 end)
+        group.Width:Set(function() return parent.Width() / TeamColumns end)
 
         local iconBG = Bitmap(group)
         iconBG.Height:Set(30)
@@ -607,6 +625,7 @@ function CreateDialog(x, y)
         LayoutHelpers.FillParent(icon, iconBG)
         icon:DisableHitTest()
 
+        -- Army name
         local name = UIUtil.CreateText(group, armyData.nickname, 12, UIUtil.bodyFont)
         LayoutHelpers.RightOf(name, icon, 2)
         LayoutHelpers.AtTopIn(name, group)
@@ -653,17 +672,27 @@ function CreateDialog(x, y)
     armiesGroup.Width:Set(dialog.Width)
     LayoutHelpers.AtLeftTopIn(armiesGroup, dialog)
 
+    local function IsColumnHead(teamI)
+        if TeamColumns <= 1 then return false end
+        for i = 1, TeamColumns-1 do
+            if teamI == math.floor(NumArmies / TeamColumns * i) + 1 then
+                return true
+            end
+        end
+    end
+
     armiesGroup.armySlots = {}
     local lowestControl
-    for index, val in GetArmiesTable().armiesTable do
-        local i = index
+    local WorkingColumnHead = 1
+    for i, val in GetArmiesTable().armiesTable do
         armiesGroup.armySlots[i] = CreateArmySelectionSlot(armiesGroup, i, val)
         if i == 1 then
             LayoutHelpers.AtLeftTopIn(armiesGroup.armySlots[i],armiesGroup)
             lowestControl = armiesGroup.armySlots[i]
-        elseif i == math.ceil(GetArmiesTable().numArmies / 2) + 1 then
-            LayoutHelpers.RightOf(armiesGroup.armySlots[i],armiesGroup.armySlots[1])
+        elseif IsColumnHead(i) then
+            LayoutHelpers.RightOf(armiesGroup.armySlots[i],armiesGroup.armySlots[WorkingColumnHead])
             LayoutHelpers.AtTopIn(armiesGroup.armySlots[i],armiesGroup)
+            WorkingColumnHead = i
         else
             LayoutHelpers.Below(armiesGroup.armySlots[i],armiesGroup.armySlots[i-1])
         end
