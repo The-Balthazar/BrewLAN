@@ -1241,3 +1241,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spawn menu: Team selection now has up to 4 columns, and is set up for n columns.
   * Spawn menu: Reworked the mod name reduction function.
+
+  ### 2021-11-23
+
+  * Spawn menu: Created a prop-spawn menu.
+  * Spawn menu: Added a button toggle on the prop and unit spawn menus to switch between them.

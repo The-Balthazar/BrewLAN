@@ -16,149 +16,31 @@ local UnitList, CreationList = {}, {}
 local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
 
-local currentArmy = GetFocusArmy()
-local NumArmies = GetArmiesTable().numArmies
-
 local ChoiceColumns = 6
-local TeamColumns = math.min(4, NumArmies)
 
-local ModListTabs = function()
-    local NameMaxLengthChars = 12
-    local NameMaxLengthPixels = 64
-
+local FolterListTabs = function()
     local ssub, gsub = string.sub, string.gsub
+    local listicle, folders = {}, {}
 
-    local function ShouldGiveTab(mod)
-        local dirlen = string.len(mod.location)
-        for id, bp in __blueprints do
-            if mod.location..'/' == ssub(bp.Source, 1, dirlen+1) then
-                return true
+    for id, bp in __blueprints do
+        if 'prop.bp' == ssub(id, -7) then
+            local folder = ssub(id,string.find(id,'%/[^%/]+%/[^%/]+%/'))
+            if not folders[folder] then
+                folders[folder] = true
             end
         end
     end
 
-    local function NameIsShortEnough(name) return string.len(name) <= NameMaxLengthChars end
-    local function ForWordsIn(text, operation) return gsub(text, '[%a\']+', operation) end
-    local function Initialise(text) return gsub(text, '[%a\'%&]+%s*', function(s) return string.upper(ssub(s,1,1)) end ) end
-    local function Abreviate(word)
-        local words = {
-            Additional = 'Add',
-            Advanced = 'Adv',
-            Balance = 'Bal',
-            BlackOps = 'BO',
-            BrewLAN = 'BL',
-            Command = 'Com',
-            Commander = 'Cdr',
-            Commanders = 'Cdrs',
-            Experiment = 'Exp',
-            Experimental = 'Exp',
-            Experimentals = 'Exps',
-            Infrastructure = 'Infr',
-            Supreme = 'Sup',
-            Veterancy = 'Vet',
-        }
-        return words[gsub(word,'\'','')] or word
-    end
-
-    local listicle = {
-        {
-            title = 'Core Game',
-            key = 'vanilla',
-            sortFunc = function(unitID, modloc)
-                return ssub(__blueprints[unitID].Source, 1, 7) == "/units/"
-            end,
-        }
-    }
-
-    for i, mod in __active_mods do
-        if mod.name then
-            if ShouldGiveTab(mod) then
-                local key = gsub(string.lower(mod.name),"%s+", "_")
-                local function titleFit(name)
-                    local l = NameMaxLengthChars
-
-                    --Removes version numbers and any brackets around them. Restrictive to reduce false positives
-                    name = gsub(name, '[%[%<%{%(%s]+[vV]+%s*%d+[_%.%d]*[%]%>%}%)%s]*', '') --Requires v or V at start
-                    name = gsub(name, '[%[%<%{%(%s]+%d+[_%.]+[_%.%d]+[%]%>%}%)%s]*', '') --Requres one or more decimal point or _ between numbers
-
-                    if NameIsShortEnough(name) then return name end
-
-                    -- Remove anything between brackets, and any space before them
-                    name = gsub(name, '%s*%b()', '')
-                    name = gsub(name, '%s*%b[]', '')
-                    name = gsub(name, '%s*%b<>', '')
-                    name = gsub(name, '%s*%b{}', '')
-
-                    if NameIsShortEnough(name) then return name end
-
-                    name = ForWordsIn(name, Abreviate)
-
-                    if NameIsShortEnough(name) then return name end
-
-                    if not string.find(ssub(name, l), ' ') then --If we wouldn't lose any entire words, cutoff.
-                        return ssub(name, 1, l)
-
-                    else -- If there are words that would be entirely cut off, initialise after the first
-                        local FirstSpaceIndex = string.find(name, ' ')
-                        local name = ssub(name, 1, FirstSpaceIndex) .. Initialise(ssub(name, FirstSpaceIndex+1))
-
-                        if NameIsShortEnough(name) then
-                            return name
-
-                        else --If it still isn't short enough, just initialise the rest as well, and trim the result just in case
-                            name = Initialise(ssub(name, 1, FirstSpaceIndex)) .. ssub(name, FirstSpaceIndex+1)
-                            return ssub(name, 1, math.min(l, string.len(name)))
-                        end
-                    end
-                end
-
-                specialFilterControls[key] = mod.location
-                table.insert(listicle, {
-                    title = titleFit(mod.name),
-                    key = key,
-                    sortFunc = function(unitID, modloc) return modloc..'/' == ssub(__blueprints[unitID].Source, 1, string.len(modloc)+1) end,
-                })
-            end
-        end
-    end
-    return listicle
-end
-
-local FactionListTabs = function()
-    local flisticle = {}
-    local allFactionCats = {}
-
-    local function HasCat(id, factioncat)
-        return table.find(__blueprints[id].Categories, factioncat)
-    end
-
-    for i, faction in import('/lua/factions.lua').Factions do
-        local key = 'faction'..faction.Category
-        specialFilterControls[key] = faction.Category
-        table.insert(allFactionCats, faction.Category)
-        table.insert(flisticle, {
-            title = faction.DisplayName,
-            key = key,
-            sortFunc = function(unitID, cat)
-                return HasCat(unitID, cat)
-            end
+    for folder in folders do
+        specialFilterControls[folder] = folder
+        table.insert(listicle, {
+            title = ssub(gsub(folder, '%b//', ''),1,-2),
+            key = folder,
+            sortFunc = function(ID, folder) return folder == ssub(ID, 1, string.len(folder)) end
         })
     end
 
-    table.insert(flisticle, {
-        title = 'Other',
-        key = 'otherfaction',
-        sortFunc = function(unitID)
-            for i, cat in allFactionCats do
-                if HasCat(unitID, cat) then
-                    return false
-                end
-            end
-            return true
-        end,
-    })
-
-    return flisticle
+    return listicle
 end
 
 local nameFilters = {
@@ -174,190 +56,21 @@ local nameFilters = {
         end,
     },
     {
-        title = 'Faction',
-        key = 'faction',
-        choices = FactionListTabs(),
-    },
-    {
-        title = 'Source',
-        key = 'mod',
-        choices = ModListTabs(),
-    },
-    {
-        title = 'Type',
-        key = 'type',
-        choices = {
-            {
-                title = 'Land',
-                key = 'land',
-                sortFunc = function(unitID)
-                    local MT = __blueprints[unitID].Physics.MotionType
-                    return (MT == 'RULEUMT_Amphibious' or MT == 'RULEUMT_Land') and __blueprints[unitID].ScriptClass ~= 'ResearchItem'
-                end,
-            },
-            {
-                title = 'Surface',
-                key = 'surface',
-                sortFunc = function(unitID)
-                    local MT = __blueprints[unitID].Physics.MotionType
-                    return MT == 'RULEUMT_AmphibiousFloating' or MT == 'RULEUMT_Hover'
-                end,
-            },
-            {
-                title = 'Naval',
-                key = 'naval',
-                sortFunc = function(unitID)
-                    local MT = __blueprints[unitID].Physics.MotionType
-                    return MT == 'RULEUMT_Water' or MT == 'RULEUMT_SurfacingSub'
-                end,
-            },
-            {
-                title = 'Air',
-                key = 'air',
-                sortFunc = function(unitID)
-                    return __blueprints[unitID].Physics.MotionType == 'RULEUMT_Air'
-                end,
-            },
-            {
-                title = 'Base',
-                key = 'base',
-                sortFunc = function(unitID)
-                    return __blueprints[unitID].Physics.MotionType == 'RULEUMT_None'
-                end,
-            },
-            {
-                title = 'Research',
-                key = 'rnd',
-                sortFunc = function(unitID)
-                    return __blueprints[unitID].ScriptClass == 'ResearchItem'
-                end,
-            },
-        },
-    },
-    {
-        title = 'Tech Level',
-        key = 'tech',
-        choices = {
-            {
-                title = 'No Tech',
-                key = 'civ',
-                sortFunc = function(unitID)
-                    local cat = __blueprints[unitID].Categories
-                    return not (table.find(cat, 'TECH1') or table.find(cat, 'TECH2') or table.find(cat, 'TECH3') or table.find(cat, 'EXPERIMENTAL'))
-                end,
-            },
-            {
-                title = 'T1',
-                key = 't1',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'TECH1')
-                end,
-            },
-            {
-                title = 'T2',
-                key = 't2',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'TECH2')
-                end,
-            },
-            {
-                title = 'T3',
-                key = 't3',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'TECH3')
-                end,
-            },
-            {
-                title = 'Exp.',
-                key = 't4',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'EXPERIMENTAL')
-                end,
-            },
-        },
-    },
-    {
-        title = 'Menu Sort',
-        key = 'sort',
-        choices = {
-            {
-                title = 'Construction',
-                key = 'const',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SORTCONSTRUCTION')
-                end,
-            },
-            {
-                title = 'Economy',
-                key = 'eco',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SORTECONOMY')
-                end,
-            },
-            {
-                title = 'Defense',
-                key = 'fence',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SORTDEFENSE')
-                end,
-            },
-            {
-                title = 'Strategic',
-                key = 'strat',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SORTSTRATEGIC')
-                end,
-            },
-            {
-                title = 'Intel',
-                key = 'inside',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SORTINTEL')
-                end,
-            },
-            {
-                title = 'Other',
-                key = 'othersort',
-                sortFunc = function(unitID)
-                    return table.find(__blueprints[unitID].Categories, 'SORTOTHER') or not (
-                        table.find(__blueprints[unitID].Categories, 'SORTCONSTRUCTION') or
-                        table.find(__blueprints[unitID].Categories, 'SORTECONOMY') or
-                        table.find(__blueprints[unitID].Categories, 'SORTDEFENSE') or
-                        table.find(__blueprints[unitID].Categories, 'SORTSTRATEGIC') or
-                        table.find(__blueprints[unitID].Categories, 'SORTINTEL')
-                    )
-                end,
-            },
-        },
+        title = 'Folder',
+        key = 'sourcefolder',
+        choices = FolterListTabs(),
     },
 }
 
-if categories.UNSPAWNABLE then
-    table.insert(nameFilters, 2,
-        {
-            title = 'Visibility',
-            key = 'spawnable',
-            choices = {
-                {
-                    title = '',
-                    key = 'spawnable',
-                    sortFunc = function(unitID)
-                        return not table.find(__blueprints[unitID].Categories, 'UNSPAWNABLE')
-                    end,
-                },
-                {
-                    title = '',
-                    key = 'unspawnable',
-                    sortFunc = function(unitID)
-                        return table.find(__blueprints[unitID].Categories, 'UNSPAWNABLE')
-                    end,
-                },
-            }
-        }
-    )
+local function getItems()
+    local props = {}
+    for id, bp in __blueprints do
+        if string.find(id, 'prop.bp') then
+            table.insert(props, id)
+        end
+    end
+    return props
 end
-
-local function getItems() return EntityCategoryGetUnitList(categories.ALLUNITS) end
 
 local function CreateNameFilter(data)
     local group = Group(dialog)
@@ -551,7 +264,7 @@ function CreateDialog(x, y)
     LayoutHelpers.RightOf(count, countLabel, 5)
 
     local function spreadSpawn(id, count)
-        if tonumber(count) == 1 then return ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. x .. ' ' .. y) end
+        if tonumber(count) == 1 then return ConExecuteSave('CreateProp ' .. id .. ' ' .. ' ' .. x .. ' ' .. y) end
 
         local unitbp = __blueprints[id]
         local offsetX = (unitbp.Physics.SkirtSizeX or unitbp.SizeX or 1) * 75
@@ -563,7 +276,7 @@ function CreateDialog(x, y)
         for i = 1, count do
             local X = x - startOffsetX + math.mod(i,square) * offsetX
             local Z = y - startOffsetZ + math.mod(math.floor(i/square), square) * offsetZ
-            ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. X .. ' ' .. Z)
+            ConExecuteSave('CreateProp ' .. id .. ' ' .. ' ' .. X .. ' ' .. Z)
         end
     end
 
@@ -604,108 +317,9 @@ function CreateDialog(x, y)
         RefreshList()
     end
 
-    local function CreateArmySelectionSlot(parent, index, armyData)
-        local group = Bitmap(parent)
-        group.Height:Set(30)
-        group.Width:Set(function() return parent.Width() / TeamColumns end)
-
-        local iconBG = Bitmap(group)
-        iconBG.Height:Set(30)
-        iconBG.Width:Set(30)
-        iconBG:SetSolidColor(armyData.color)
-        LayoutHelpers.AtLeftTopIn(iconBG, group)
-        iconBG:DisableHitTest()
-
-        local icon = Bitmap(iconBG)
-        if armyData.civilian then
-            icon:SetSolidColor('aaaaaaaa')
-        else
-            icon:SetTexture(UIUtil.UIFile(UIUtil.GetFactionIcon(armyData.faction)))
-        end
-        LayoutHelpers.FillParent(icon, iconBG)
-        icon:DisableHitTest()
-
-        -- Army name
-        local name = UIUtil.CreateText(group, armyData.nickname, 12, UIUtil.bodyFont)
-        LayoutHelpers.RightOf(name, icon, 2)
-        LayoutHelpers.AtTopIn(name, group)
-        name:SetColor('ffffffff')
-        name:DisableHitTest()
-
-        local army = UIUtil.CreateText(group, armyData.name, 12, UIUtil.bodyFont)
-        LayoutHelpers.Below(army, name)
-        army:DisableHitTest()
-
-        group.HandleEvent = function(self, event)
-            if event.Type == 'MouseEnter' then
-                if currentArmy == index then
-                    self:SetSolidColor('cc00cc00')
-                else
-                    self:SetSolidColor('77007700')
-                end
-            elseif event.Type == 'MouseExit' then
-                if currentArmy == index then
-                    self:SetSolidColor('aa00aa00')
-                else
-                    self:SetSolidColor('00000000')
-                end
-            elseif event.Type == 'ButtonPress' then
-                currentArmy = index
-                for i, v in parent.armySlots do
-                    if i == index then
-                        v:SetSolidColor('aa00aa00')
-                    else
-                        v:SetSolidColor('00000000')
-                    end
-                end
-            elseif event.Type == 'ButtonDClick' then
-                ConExecute('SetFocusArmy '..tostring(currentArmy-1))
-            end
-        end
-        if index == currentArmy then
-            group:SetSolidColor('aa00aa00')
-        end
-        return group
-    end
-
-    local armiesGroup = Group(dialog)
-    armiesGroup.Width:Set(dialog.Width)
-    LayoutHelpers.AtLeftTopIn(armiesGroup, dialog)
-
-    local function IsColumnHead(teamI)
-        if TeamColumns <= 1 then return false end
-        for i = 1, TeamColumns-1 do
-            if teamI == math.floor(NumArmies / TeamColumns * i) + 1 then
-                return true
-            end
-        end
-    end
-
-    armiesGroup.armySlots = {}
-    local lowestControl
-    local WorkingColumnHead = 1
-    for i, val in GetArmiesTable().armiesTable do
-        armiesGroup.armySlots[i] = CreateArmySelectionSlot(armiesGroup, i, val)
-        if i == 1 then
-            LayoutHelpers.AtLeftTopIn(armiesGroup.armySlots[i],armiesGroup)
-            lowestControl = armiesGroup.armySlots[i]
-        elseif IsColumnHead(i) then
-            LayoutHelpers.RightOf(armiesGroup.armySlots[i],armiesGroup.armySlots[WorkingColumnHead])
-            LayoutHelpers.AtTopIn(armiesGroup.armySlots[i],armiesGroup)
-            WorkingColumnHead = i
-        else
-            LayoutHelpers.Below(armiesGroup.armySlots[i],armiesGroup.armySlots[i-1])
-        end
-        if armiesGroup.armySlots[i].Bottom() > lowestControl.Bottom() then
-            lowestControl = armiesGroup.armySlots[i]
-        end
-    end
-
-    armiesGroup.Height:Set(function() return lowestControl.Bottom() - armiesGroup.armySlots[1].Top() end)
-
     local filterSetCombo = Combo(dialog, 14, 10, nil, nil, "UI_Tab_Click_01", "UI_Tab_Rollover_01")
     filterSetCombo.Width:Set(250)
-    LayoutHelpers.Below(filterSetCombo, armiesGroup, 5)
+    LayoutHelpers.AtLeftTopIn(filterSetCombo, dialog)
     filterSetCombo.OnClick = function(self, index, text, skipUpdate)
         SetFilters(self.keyMap[index])
     end
@@ -714,7 +328,7 @@ function CreateDialog(x, y)
         filterSetCombo:ClearItems()
         filterSetCombo.itemArray = {}
         filterSetCombo.keyMap = {}
-        local CurrentFilterSets = GetPreference('CreateUnitFilters')
+        local CurrentFilterSets = GetPreference('CreatePropFilters')
         if CurrentFilterSets and table.getsize(CurrentFilterSets) > 0 then
             local index = 1
             local default = 1
@@ -742,13 +356,13 @@ function CreateDialog(x, y)
     saveFilterSet.OnClick = function(self, modifiers)
         NameSet(function(name)
             local newFilterListing = {}
-            if GetPreference('CreateUnitFilters') then
-                newFilterListing = table.deepcopy(GetPreference('CreateUnitFilters'))
+            if GetPreference('CreatePropFilters') then
+                newFilterListing = table.deepcopy(GetPreference('CreatePropFilters'))
                 newFilterListing[name] = filterSet
             else
                 newFilterListing[name] = filterSet
             end
-            SetPreference('CreateUnitFilters',newFilterListing)
+            SetPreference('CreatePropFilters',newFilterListing)
             RefreshFilterList(name)
         end)
     end
@@ -767,11 +381,11 @@ function CreateDialog(x, y)
         if index >= 1 then
             local delName = filterSetCombo.itemArray[index]
             LOG(delName)
-            local oldFilterSets = GetPreference('CreateUnitFilters')
+            local oldFilterSets = GetPreference('CreatePropFilters')
             if oldFilterSets[delName] then
                 oldFilterSets[delName] = nil
             end
-            SetPreference('CreateUnitFilters',oldFilterSets)
+            SetPreference('CreatePropFilters',oldFilterSets)
             RefreshFilterList()
        end
     end
@@ -781,12 +395,12 @@ function CreateDialog(x, y)
         '/dialogs/toggle_btn/toggle-d_btn_down.dds',
         '/dialogs/toggle_btn/toggle-d_btn_over.dds',
         '/dialogs/toggle_btn/toggle-d_btn_dis.dds',
-        'Prop mode', 10
+        'Unit mode', 10
     )
-    LayoutHelpers.Below(propSwapBtn, armiesGroup, 5)
+    LayoutHelpers.Below(propSwapBtn, dialog, 5)
     LayoutHelpers.RightOf(propSwapBtn, delFilterSet, 9)
     propSwapBtn.OnClick = function(button)
-        ConExecuteSave('ui_lua import("/mods/BrewLAN/modules/BrewUI/spawnmenu/lua/ui/dialogs/createprop.lua").CreateDialog('..x..','..y..')')
+        ConExecuteSave('ui_lua import("/lua/ui/dialogs/createunit.lua").CreateDialog('..x..','..y..')')
         dialog:Destroy()
         dialog = nil
     end
@@ -800,10 +414,6 @@ function CreateDialog(x, y)
         if filtIndex == 1 then
             LayoutHelpers.Below(filterGroups[index], filterSetCombo)
             LayoutHelpers.AtLeftIn(filterGroups[index], dialog)
-        elseif categories.UNSPAWNABLE and filtIndex == 2 then
-            LayoutHelpers.RightOf(filterGroups[index], filterGroups[1], -150)
-        elseif categories.UNSPAWNABLE and filtIndex == 3 then
-            LayoutHelpers.Below(filterGroups[index], filterGroups[1])
         else
             LayoutHelpers.Below(filterGroups[index], filterGroups[index-1])
         end
@@ -834,8 +444,8 @@ function CreateDialog(x, y)
         mouseover.img.Height:Set(40)
         mouseover.img.Width:Set(40)
         LayoutHelpers.AtLeftTopIn(mouseover.img, mouseover, 2,2)
-        if DiskGetFileInfo(UIUtil.UIFile('/icons/units/'..unitData..'_icon.dds', true)) then
-            mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/'..unitData..'_icon.dds', true))
+        if DiskGetFileInfo(UIUtil.UIFile(__blueprints[unitData].Display.Mesh.LODs[1].AlbedoName, true)) then
+            mouseover.img:SetTexture(UIUtil.UIFile(__blueprints[unitData].Display.Mesh.LODs[1].AlbedoName, true))
         else
             mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/default_icon.dds'))
         end
