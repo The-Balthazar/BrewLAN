@@ -450,7 +450,7 @@ function CreateDialog(x, y)
             mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/default_icon.dds'))
         end
 
-        mouseover.name = UIUtil.CreateText(mouseover, __blueprints[unitData].Description, 14, UIUtil.bodyFont)
+        mouseover.name = UIUtil.CreateText(mouseover, __blueprints[unitData].Interface and __blueprints[unitData].Interface.HelpText or __blueprints[unitData].Description, 14, UIUtil.bodyFont)
         LayoutHelpers.RightOf(mouseover.name, mouseover.img, 2)
 
         mouseover.desc = UIUtil.CreateText(mouseover, __blueprints[unitData].General.UnitName or unitData, 14, UIUtil.bodyFont)

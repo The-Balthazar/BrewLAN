@@ -1,0 +1,99 @@
+UnitBlueprint {
+    Audio = {
+        DeathExplosion = Sound {
+            Bank = 'UELDestroy',
+            Cue = 'UEB_Destroy_Lrg_PreDestroy',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Destroyed = Sound {
+            Bank = 'UELDestroy',
+            Cue = 'UEB_Destroy_Huge',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        UISelection = Sound {
+            Bank = 'Interface',
+            Cue = 'UEF_Select_Structure',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+    },
+    Categories = {
+        'UEF',
+        'STRUCTURE',
+        'CIVILIAN',
+        'SELECTABLE',
+        'LAND',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 19000,
+        MaxHealth = 19000,
+    },
+    Description = '<LOC sec1102_desc>UEF Control Center',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 200,
+                    ShaderName = 'Unit',
+                    MeshName = '/units/uec1902/uec1902_lod0.scm',
+                    AlbedoName = '/units/uec1902/uec1902_albedo.dds',
+                    NormalsName = '/units/uec1902/uec1902_normalsts.dds',
+                    SpecularName = '/units/uec1902/uec1902_specteam.dds',
+                },
+                {
+                    LODCutoff = 500,
+                    ShaderName = 'Unit',
+                    MeshName = '/units/uec1902/uec1902_lod1.scm',
+                    AlbedoName = '/units/uec1902/uec1902_lod1_albedo.dds',
+                    SpecularName = '/units/uec1902/uec1902_lod1_specteam.dds',
+                },
+            },
+        },
+        UniformScale = 0.2,
+    },
+    Economy = {
+        BuildCostEnergy = 7930,
+        BuildCostMass = 825,
+        BuildTime = 640,
+    },
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    General = {
+        FactionName = 'UEF',
+        SelectionPriority = 5,
+        CapCost = 0,
+    },
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 2,
+    LifeBarSize = 6,
+    Physics = {
+        FlattenSkirt = true,
+        MeshExtentsX = 3.2,
+        MeshExtentsY = 2.2,
+        MeshExtentsZ = 3.2,
+        MotionType = 'RULEUMT_None',
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+    },
+    SelectionSizeX = 3.2,
+    SelectionSizeZ = 3.2,
+    SelectionThickness = 0.3,
+    SizeX = 5,
+    SizeY = 2,
+    SizeZ = 5,
+    StrategicIconName = 'icon_structure_generic',
+    StrategicIconSortPriority = 207,
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = { Land = true },
+    },
+}

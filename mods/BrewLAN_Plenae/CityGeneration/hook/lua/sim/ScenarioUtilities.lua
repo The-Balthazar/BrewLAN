@@ -37,6 +37,7 @@ CityData = {
             {'uec1401', Weight = 8 },
             {'xec1301', Weight = 4 },
             {'sec1101', Weight = 3 },
+            {'sec1102', Weight = 3 },
             {'xec1501', Weight = 1 },
         },
         LargeStructureBlocks = {5, 4}, -- a 5th to a 4th of all full blocks

@@ -1236,6 +1236,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Added a basic spread function on spawning.
   * Spawn menu: Shrunk the visibility options, and tightened the alignments.
   * Spawn menu: Removed the `Civilian` button from type and added a comparable `No Tech` to tech.
+  * Cityscapes: Added a re-scaled variant of the Black Sun Control Centre structure to the city generation.
 
   ### 2021-11-19
 
@@ -1246,3 +1247,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spawn menu: Created a prop-spawn menu.
   * Spawn menu: Added a button toggle on the prop and unit spawn menus to switch between them.
+
+  ### 2021-11-25
+
+  * Spawn menu: Props menu now lists the interface help text value if it exists.
+  * Cityscapes: Fixed the help text of the container crane saying `Containers` instead.
+  * Spawn menu: Created a sim call-back unit spawn function, similar to FAF, to better use the spread spawn function.
+  * Spawn menu: Spread spawn function now aligns structures to the grid correctly and handles off-square numbers better.
+  * Spawn menu: No longer considered a UI mod so it can include the sim call-back function.

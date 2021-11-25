@@ -551,6 +551,18 @@ function CreateDialog(x, y)
     LayoutHelpers.RightOf(count, countLabel, 5)
 
     local function spreadSpawn(id, count)
+        if true then
+            return SimCallback( {
+                Func = 'BoxFormationSpawn',
+                Args = {
+                    bpId = id,
+                    count = count,
+                    army = currentArmy,
+                    pos = GetMouseWorldPos(),
+                    --veterancy = vetLvl
+                }
+            }, true)
+        end
         if tonumber(count) == 1 then return ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. x .. ' ' .. y) end
 
         local unitbp = __blueprints[id]

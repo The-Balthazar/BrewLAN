@@ -16,7 +16,7 @@ PropBlueprint {
         UniformScale = 0.1,
     },
     Economy = {
-        ReclaimEnergyMax = 0, 
+        ReclaimEnergyMax = 0,
         ReclaimMassMax = 1200,
         ReclaimTime = 1200,
     },
@@ -24,7 +24,7 @@ PropBlueprint {
         OccupancyCaps = 3,
     },
     Interface = {
-        HelpText = 'UEF Containers',
+        HelpText = 'UEF Container Crane',
     },
     Physics = {
         BlockPath = true,
