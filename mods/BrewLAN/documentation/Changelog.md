@@ -1255,3 +1255,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Created a sim call-back unit spawn function, similar to FAF, to better use the spread spawn function.
   * Spawn menu: Spread spawn function now aligns structures to the grid correctly and handles off-square numbers better.
   * Spawn menu: No longer considered a UI mod so it can include the sim call-back function.
+
+  ### 2021-11-28
+
+  * Removed the empty tag files from a few units that have existed for all time.
+    * Removed because I'm never going to expand it to all, and because it causes error warnings in my wiki script that I can't be arsed to fix.
