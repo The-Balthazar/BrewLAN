@@ -15,9 +15,11 @@ Callbacks.BoxFormationSpawn = function(data)
     local function RoundToSkirt(axe, val)
         return unitbp.Physics.MotionType ~= 'RULEUMT_None'
         and val
-        or math.floor(val+0.5) + (math.mod(FootprintSize(axe) or 1,2) == 1 and 0.5 or 0)
+        or math.floor(val) + (math.mod(FootprintSize(axe),2) == 1 and 0.5 or 0)
     end
 
+    local posX = math.floor(data.pos[1])
+    local posZ = math.floor(data.pos[3])
     local offsetX = unitbp.SizeX or 1
     local offsetZ = unitbp.SizeZ or 1
 
@@ -33,8 +35,8 @@ Callbacks.BoxFormationSpawn = function(data)
     local startOffsetZ = (squareZ-1) * 0.5 * offsetZ
 
     for i = 1, count do
-        local x = RoundToSkirt('x', data.pos[1] - startOffsetX + math.mod(i,squareX) * offsetX)
-        local z = RoundToSkirt('z', data.pos[3] - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ)
+        local x = RoundToSkirt('x', posX - startOffsetX + math.mod(i,squareX) * offsetX)
+        local z = RoundToSkirt('z', posZ - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ)
         CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, 0, 0)
     end
 end

@@ -1260,3 +1260,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Removed the empty tag files from a few units that have existed for all time.
     * Removed because I'm never going to expand it to all, and because it causes error warnings in my wiki script that I can't be arsed to fix.
+
+  ## 2021-12-02
+
+  * ExpertCamo: Created an alt version basically just for Gnio that can handle unit ID's with underscores.
+  * Spawn menu: Added command feedback to cheat spawn menu.
+  * Spawn menu: Changed the behaviour of the shift spawn so it matches the default command feedback.

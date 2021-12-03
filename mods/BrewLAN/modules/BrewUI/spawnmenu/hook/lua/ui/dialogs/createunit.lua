@@ -551,31 +551,34 @@ function CreateDialog(x, y)
     LayoutHelpers.RightOf(count, countLabel, 5)
 
     local function spreadSpawn(id, count)
-        if true then
-            return SimCallback( {
-                Func = 'BoxFormationSpawn',
-                Args = {
-                    bpId = id,
-                    count = count,
-                    army = currentArmy,
-                    pos = GetMouseWorldPos(),
-                    --veterancy = vetLvl
-                }
-            }, true)
-        end
-        if tonumber(count) == 1 then return ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. x .. ' ' .. y) end
+        import('/lua/ui/game/commandmode.lua').StartCommandMode("build", { name = id })
+        local function callbackargs() return {
+            Func = 'BoxFormationSpawn',
+            Args = {
+                bpId = id,
+                count = count,
+                army = currentArmy,
+                pos = GetMouseWorldPos(),
+                --veterancy = vetLvl
+            }
+        } end
 
-        local unitbp = __blueprints[id]
-        local offsetX = (unitbp.Physics.SkirtSizeX or unitbp.SizeX or 1) * 75
-        local offsetZ = (unitbp.Physics.SkirtSizeZ or unitbp.SizeZ or 1) * 75
-        local square = math.ceil(math.sqrt(count))
-        local startOffsetX = square * 0.5 * offsetX
-        local startOffsetZ = square * 0.5 * offsetZ
-
-        for i = 1, count do
-            local X = x - startOffsetX + math.mod(i,square) * offsetX
-            local Z = y - startOffsetZ + math.mod(math.floor(i/square), square) * offsetZ
-            ConExecuteSave('CreateUnit ' .. id .. ' ' .. (currentArmy-1) .. ' ' .. X .. ' ' .. Z)
+        WaitSeconds(0.15)
+        local shift
+        while not dialog do
+            if IsKeyDown(1) then
+                SimCallback(callbackargs(), true)
+                if IsKeyDown('SHIFT') then
+                    shift = true
+                    WaitSeconds(0.02)
+                else
+                    break
+                end
+            end
+            WaitSeconds(0.07)
+            if shift and not IsKeyDown('SHIFT') then
+               break
+            end
         end
     end
 
@@ -588,10 +591,9 @@ function CreateDialog(x, y)
             if type(tonumber(count:GetText())) == 'number' then
                 numUnits = count:GetText()
             end
-            spreadSpawn(unitID, numUnits)
+            ForkThread(spreadSpawn, unitID, numUnits)
         end
-        dialog:Destroy()
-        dialog = nil
+        cancelBtn.OnClick()
     end
 
     local function SetFilters(filterTable)
@@ -799,8 +801,7 @@ function CreateDialog(x, y)
     LayoutHelpers.RightOf(propSwapBtn, delFilterSet, 9)
     propSwapBtn.OnClick = function(button)
         ConExecuteSave('ui_lua import("/mods/BrewLAN/modules/BrewUI/spawnmenu/lua/ui/dialogs/createprop.lua").CreateDialog('..x..','..y..')')
-        dialog:Destroy()
-        dialog = nil
+        cancelBtn.OnClick()
     end
 
     RefreshFilterList()
@@ -920,7 +921,7 @@ function CreateDialog(x, y)
                     if type(tonumber(count:GetText())) == 'number' then
                         numUnits = count:GetText()
                     end
-                    spreadSpawn(self.unitID, numUnits)
+                    ForkThread(spreadSpawn, self.unitID, numUnits)
                     cancelBtn:OnClick()
                 elseif event.Type == 'MouseMotion' then
                     MoveMouseover(event.MouseX,event.MouseY)

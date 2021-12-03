@@ -56,7 +56,7 @@ function ExtractCustomUnitSkinMeshes(all_bps)
     ----------------------------------------------------------------------------
     local TmUnits, SUnits = {}, {}
     ----------------------------------------------------------------------------
-    AssembleWorkableUnitTable(TmUnits, TmTextures, '/TerrainMeshes/')
+    TerrainAssembleWorkableUnitTable(TmUnits, TmTextures, '/TerrainMeshes/')
     AssembleWorkableUnitTable(SUnits, STextures, '/CustomMeshes/')
     --LOG(repr(TmUnits))
     --LOG(repr(SUnits))
@@ -185,6 +185,33 @@ function AssembleWorkableUnitTable(units, Textures, directory)
                 if not table.find(units[bp], tt) then
                     table.insert(units[bp], tt)
                 end
+            end
+        end
+    end
+end
+--------------------------------------------------------------------------------
+-- Alternative version of AssembleWorkableUnitTable, with less error checking
+-- that assumed everything ending 2 characters before the terrain type is ID.
+--------------------------------------------------------------------------------
+function TerrainAssembleWorkableUnitTable(units, Textures, directory)
+    local terrainTypes = {
+        'Default',
+        'Desert',
+        'Evergreen',
+        'Geothermal',
+        'Lava',
+        'RedRock',
+        'Tropical',
+        'Tundra',
+    }
+    for i, tex in Textures do
+        for i, ttype in terrainTypes do
+            local filename = string.gsub(tex, '.+/', '')
+            local tstart = string.find(filename, string.lower(ttype))
+            if tstart then
+                local uID = string.sub(filename, 1, tstart-2)
+                if not units[uID] then units[uID] = {} end
+                table.insert(units[uID], ttype)
             end
         end
     end
