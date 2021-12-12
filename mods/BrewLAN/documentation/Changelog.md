@@ -1267,7 +1267,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Added command feedback to cheat spawn menu.
   * Spawn menu: Changed the behaviour of the shift spawn so it matches the default command feedback.
 
-  ## 2021-12-02
+  ## 2021-12-12
 
   * Spawn menu: Merged some changes from the FAF spawn menu to reduce cross-maintaining.
     * Esc presses removes the dialogue.
@@ -1276,3 +1276,6 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * Now has a vet level input.
     * Some other minor refactoring and rearranging.
   * Spawn menu: Added options menu settings (requires restart).
+  * Spawn menu: Spawned buildings now have tarmacs.
+  * Spawn menu: Added an orientation option.
+  * Spawn menu: Create button now aligns right instead of centre for space.
