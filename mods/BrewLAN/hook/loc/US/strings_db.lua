@@ -581,7 +581,7 @@ ssb0401_desc="Experimental Naval Factory"
 ssb0401_name="Souiya"
 Unit_Description_BrewLAN_T4B011="Constructs naval units."
 
-seb2401_desc="Experimental Point Defence"
+seb2401_desc="Experimental Point Defense"
 seb2401_name="Excalibur"
 Unit_Description_BrewLAN_T4B012="Experimental defensive building. Consumes large amounts of power with each shot."
 

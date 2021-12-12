@@ -28,15 +28,14 @@ Callbacks.BoxFormationSpawn = function(data)
         offsetZ = math.ceil(unitbp.Physics.SkirtSizeZ or FootprintSize('y'))
     end
 
-    local count = tonumber(data.count) or 1
-    local squareX = math.ceil(math.sqrt(count))
-    local squareZ = math.ceil(count/squareX)
+    local squareX = math.ceil(math.sqrt(data.count))
+    local squareZ = math.ceil(data.count/squareX)
     local startOffsetX = (squareX-1) * 0.5 * offsetX
     local startOffsetZ = (squareZ-1) * 0.5 * offsetZ
 
-    for i = 1, count do
+    for i = 1, data.count do
         local x = RoundToSkirt('x', posX - startOffsetX + math.mod(i,squareX) * offsetX)
         local z = RoundToSkirt('z', posZ - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ)
-        CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, 0, 0)
+        CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, 0, 0):SetVeterancy(data.veterancy)
     end
 end

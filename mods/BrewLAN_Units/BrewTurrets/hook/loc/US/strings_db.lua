@@ -52,5 +52,5 @@ seb2402_desc="Experimental Anti-Air Defense"
 Unit_Description_BrewLAN_Turrets_0008="Defensive anti-air weapon. Provides devastating short-range damage. Consumes power with each shot."
 
 srb2403_name="Tartarus"
-srb2403_desc="Experimental Point Defence"
+srb2403_desc="Experimental Point Defense"
 --"Defensive turret. Armed with a high intensity microwave laser."

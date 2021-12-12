@@ -16,7 +16,7 @@ local UnitList, CreationList = {}, {}
 local unselectedCheckboxFile = UIUtil.UIFile('/widgets/rad_un.dds')
 local selectedCheckboxFile = UIUtil.UIFile('/widgets/rad_sel.dds')
 
-local ChoiceColumns = 6
+local ChoiceColumns = options.spawn_menu_filter_columns or 6
 
 local FolterListTabs = function()
     local ssub, gsub = string.sub, string.gsub
@@ -235,8 +235,8 @@ function CreateDialog(x, y)
     dialog:SetSolidColor('CC000000')
     dialog.Height:Set(800)
     dialog.Width:Set(90 + 83 * ChoiceColumns)
-    dialog.Left:Set(function() return math.max(math.min(x, GetFrame(0).Right() - dialog.Width()), 0) end)
-    dialog.Top:Set(function() return math.max(math.min(y, GetFrame(0).Bottom() - dialog.Height()), 0) end)
+    dialog.Left:Set(function() return math.max(math.min(x - dialog.Width() / 2, GetFrame(0).Right() - dialog.Width()), 0) end)
+    dialog.Top:Set(function() return math.max(math.min(y - 160, GetFrame(0).Bottom() - dialog.Height()), 0) end)
     dialog.Depth:Set(GetFrame(0):GetTopmostDepth() + 1)
 
     local cancelBtn = UIUtil.CreateButtonStd(dialog, '/widgets/small', "Cancel", 12)
