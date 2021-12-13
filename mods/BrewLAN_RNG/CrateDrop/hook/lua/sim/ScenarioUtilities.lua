@@ -2,10 +2,12 @@
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
 do
+    local IsChristmas = false
+    local HatsOnlyMode = ScenarioInfo.Options.CrateHatsOnly
     local OldCreateInitialArmyGroup = CreateInitialArmyGroup
     local FindCreateDropPath = function()
         for i, mod in __active_mods do
-            if mod.uid == "BREWLANS-a0a7-426d-88f2-CRATESZ00011" then
+            if mod.uid == "BREWLANS-a0a7-426d-88f2-CRATESZ00012" then
                 return mod.location
             end
         end
@@ -25,23 +27,34 @@ do
         return OldCreateInitialArmyGroup(strArmy, createCommander)
     end
 
-    function crateThread(crateNum)
-        local crate = import('/lua/sim/Entity.lua').Entity()
-        local crateTypes = {
+    local function RandomiseCrateMesh(crate)
+        local crateTypes = IsChristmas and {
+            'CRATE_Present_01',
+            'CRATE_Present_02',
+            'CRATE_Present_03',
+            'CRATE_Present_04',
+            'CRATE_Present_05',
+        } or {
             'CRATE_Dodecahedron',
             'CRATE_Icosahedron',
             'CRATE_Truncated_Tetrahedron',
         }
         local crateType = crateTypes[math.random(1, table.getn(crateTypes) )]
-        local flash
-        Warp(crate,getSafePos(crate:GetPosition()))
         crate:SetMesh(CreateDropPath .. '/effects/entities/' .. crateType .. '/' .. crateType ..'_mesh')
+        return crate
+    end
+
+    function crateThread(crateNum)
+        local crate = import('/lua/sim/Entity.lua').Entity()
+        local flash
+        Warp(crate,getSafePos{-1,-1,-1})
+        RandomiseCrateMesh(crate)
         crate:SetDrawScale(.08)
         crate:SetVizToAllies('Intel')
         crate:SetVizToNeutrals('Intel')
         crate:SetVizToEnemies('Intel')
         while true do
-            WaitTicks(2)
+            coroutine.yield(2)
             local search = {}
             for index, brain in ArmyBrains do
                 for i, unit in import('/lua/ai/aiutilities.lua').GetOwnUnitsAroundPoint(brain, categories.SELECTABLE, crate:GetPosition(), 1) do
@@ -52,15 +65,17 @@ do
             end
             if search[1] and IsUnit(search[1]) then
                 local UnitArmy = search[1]:GetArmy()
-                PhatLewt(search[1], crate:GetPosition() )
+                local cratepos = crate:GetPosition()
+                PhatLewt(search[1], cratepos )
                 flash = CreateEmitterAtEntity(crate, UnitArmy, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(10)
-                Warp(crate,{crate:GetPosition()[1],crate:GetPosition()[2]-20,crate:GetPosition()[3]})
-                WaitTicks(5)
+                Warp(crate,{cratepos[1],cratepos[2]-20,cratepos[3]})
+                coroutine.yield(5)
+                RandomiseCrateMesh(crate)
                 flash:Destroy()
-                WaitSeconds(math.random(1,10*crateNum))
-                Warp(crate,getSafePos(crate:GetPosition()))
+                coroutine.yield(10*math.random(1,10*crateNum))
+                Warp(crate,getSafePos(cratepos))
                 flash = CreateEmitterAtEntity(crate, UnitArmy, '/effects/emitters/flash_01_emit.bp'):ScaleEmitter(4)
-                WaitTicks(5)
+                coroutine.yield(5)
                 flash:Destroy()
             end
         end
@@ -459,25 +474,12 @@ do
             --------------------------------------------------------------------
             function(Unit, pos)
                 LOG("Kills")
-                local UnitVet = Unit:GetBlueprint().Veteran
-                if UnitVet and Unit.AddKills then
-                    local kchoice = 0
-                    for k, v in UnitVet do
-                        kchoice = kchoice + 1
-                    end
-                    kchoice = math.random(1,kchoice)
-                    local kcurrent = 0
-                    for k, v in UnitVet do
-                        kcurrent = kcurrent + 1
-                        --LOG(kcurrent .. kchoice)
-                        if kcurrent == kchoice then
-                            Unit:AddKills(v)
-                            break
-                        end
-                    end
+                if Unit.SetVeterancy and Unit.GetVeteranLevel then
+                    local vet = Unit:GetVeteranLevel() or 0
+                    Unit:SetVeterancy(Random(vet+1, vet > 5 and vet+3 or 5) )
                     notificationPingis(pos, Unit:GetArmy(), 'Veterancy', '<LOC SCORE_0017>Kills' )
                 else
-                    WARN("Unit has no defined veterancy levels to recieve useful kills, or Unit:AddKills isn't a function. Rerolling.")
+                    WARN("Unit lacks SetVeterancy or GetVeteranLevel functions to give it kills. Rerolling.")
                     PhatLewt(Unit, pos)
                 end
             end,
@@ -489,20 +491,38 @@ do
             --------------------------------------------------------------------
             function(Unit, pos, noRerollFail)
                 LOG("Hat")
-                local hatTypes = {
-                    'HAT_Crown',
-                    'HAT_Tophat',
-                    'HAT_Tophat_whiteband',
-                    'HAT_Bowler_red',
-                    'HAT_Boater',
-                    'HAT_Cone_azn',
-                    'HAT_Fedora',
-                    'HAT_Fedora_Inquisitor',
-                    'HAT_Derby',
-                    'HAT_Pith_FR',
-                    'HAT_Pith_VI',
-                    'HAT_Brodie',
-                }
+
+                local function GetRandomHat()
+                    local hat = import('/lua/sim/Entity.lua').Entity()
+                    local hatTypes = {
+                        'HAT_Crown',
+                        'HAT_Tophat',
+                        'HAT_Tophat_whiteband',
+                        'HAT_Bowler_red',
+                        'HAT_Boater',
+                        'HAT_Cone_azn',
+                        'HAT_Fedora',
+                        'HAT_Fedora_Inquisitor',
+                        'HAT_Derby',
+                        'HAT_Pith_FR',
+                        'HAT_Pith_VI',
+                        'HAT_Brodie',
+                        'HAT_Santa',
+                    }
+                    local hatType
+                    if table.find(hatTypes, noRerollFail) and noRerollFail ~= 'Hat' then
+                        hatType = hatTypes[table.find(hatTypes, noRerollFail)]
+                    else
+                        -- If it's Christmas, 69.44% chance of it being a santa hat unless they already have one, then it's 8.33%
+                        -- If it's not Christmas, it's outside of the range.
+                        hatType = IsChristmas and Random(1,3) ~= 3 and not Unit.SantaHat and 'HAT_Santa'
+                        or hatTypes[math.random(2, table.getn(hatTypes) - (IsChristmas and 0 or -1) )]
+                        Unit.SantaHat = Unit.SantaHat or hatType == 'HAT_Santa' or nil
+                    end
+                    Warp(hat,Unit:GetPosition() )
+                    hat:SetMesh(CreateDropPath .. '/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
+                    return hat
+                end
 
                 local bones = {
                     'HatPoint',
@@ -522,26 +542,20 @@ do
                     end
                 end
                 if attachHatTo or Unit.Hats then
-                    if not Unit.Hats then
-                        Unit.Hats = {}
-                    end
-                    table.insert(Unit.Hats, import('/lua/sim/Entity.lua').Entity() )
-                    local hat = Unit.Hats[table.getn(Unit.Hats)]
-                    local hatType
-                    if table.find(hatTypes, noRerollFail) and noRerollFail ~= 'Hat' then
-                        hatType = hatTypes[table.find(hatTypes, noRerollFail)]
-                    else
-                        hatType = hatTypes[math.random(2, table.getn(hatTypes) )]
-                    end
-                    Warp(hat,Unit:GetPosition() )
-                    hat:SetMesh(CreateDropPath .. '/effects/entities/' .. hatType .. '/' .. hatType ..'_mesh')
-                    if EntityCategoryContains(categories.EXPERIMENTAL , Unit) then
-                        hat:SetDrawScale(.07 * RandomFloat(0.925, 1.075) )
-                    elseif EntityCategoryContains(categories.STRUCTURE , Unit) then
-                        hat:SetDrawScale(.055 * RandomFloat(0.925, 1.075) )
-                    else
-                        hat:SetDrawScale(.03 * RandomFloat(0.925, 1.075) )
-                    end
+                    if not Unit.Hats then Unit.Hats = {} end
+
+                    local hat = GetRandomHat()
+                    table.insert(Unit.Hats, hat)
+
+                    hat:SetDrawScale(
+                        RandomFloat(0.925, 1.075) *
+                        (
+                            EntityCategoryContains(categories.EXPERIMENTAL , Unit) and 0.07 or
+                            EntityCategoryContains(categories.STRUCTURE , Unit) and 0.055 or
+                            0.03
+                        )
+                    )
+
                     hat:SetVizToAllies('Intel')
                     hat:SetVizToNeutrals('Intel')
                     hat:SetVizToEnemies('Intel')
@@ -554,7 +568,7 @@ do
                     Unit.Trash:Add(hat)
                     notificationPingis(pos, Unit:GetArmy(), 'Hat' )
                 else
-                    if ScenarioInfo.Options.CrateHatsOnly == 'true' or noRerollFail then
+                    if HatsOnlyMode == 'true' or noRerollFail then
                         WARN("Unit with no noticable head attempted to pick up hats only crate.")
                     else
                         WARN("Unit has no noticable head or attachpoint to wear a hat.")
@@ -629,7 +643,7 @@ do
             function(Unit, pos)
                 LOG("Teleport")
                 Warp(Unit,getSafePos(Unit:GetPosition()))
-                    notificationPingis(pos, Unit:GetArmy(), 'Bad', '<LOC tooltipui0024>Teleport' )
+                notificationPingis(pos, Unit:GetArmy(), 'Bad', '<LOC tooltipui0024>Teleport' )
             end,
             --------------------------------------------------------------------
         },
@@ -641,7 +655,7 @@ do
     -- Main lewt picker
     ----------------------------------------------------------------------------
     function PhatLewt(triggerUnit, pos, note)
-        if string.lower(string.sub(note or "NOPE",1,3)) == 'hat' or ScenarioInfo.Options.CrateHatsOnly == 'true' then
+        if string.lower(string.sub(note or "NOPE",1,3)) == 'hat' or HatsOnlyMode == 'true' then
             lewt[3][1](triggerUnit, pos, note or true)
         else
             local a = math.random(1, table.getn(lewt) )

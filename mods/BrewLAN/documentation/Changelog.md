@@ -1279,3 +1279,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Spawned buildings now have tarmacs.
   * Spawn menu: Added an orientation option.
   * Spawn menu: Create button now aligns right instead of centre for space.
+
+  ## 2021-12-13
+
+  * CrateDrop: Random vet buff now works slightly differently and also works in FAF.
+  * CrateDrop: Cleaned up a few of the effect functions.

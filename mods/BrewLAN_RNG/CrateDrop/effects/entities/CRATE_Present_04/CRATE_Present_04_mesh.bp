@@ -1,0 +1,12 @@
+MeshBlueprint {
+    LODs = {
+        {
+            ShaderName = 'Unit',
+            LODCutoff = 1000,
+            AlbedoName = '../CRATE_Present_01/CRATE_Present_01_Albedo.dds',
+            NormalsName = '../CRATE_Present_01/CRATE_Present_01_NormalsTS.dds',
+            SpecularName = '../CRATE_Present_01/CRATE_Present_01_SpecTeam.dds',
+        },
+    },
+    SortOrder = 1000,
+}
