@@ -1282,5 +1282,12 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ## 2021-12-13
 
+  * CrateDrop: Crate mesh now randomises before each time it appears.
   * CrateDrop: Random vet buff now works slightly differently and also works in FAF.
   * CrateDrop: Cleaned up a few of the effect functions.
+
+  ## 2021-12-17
+
+  * Spawn menu: Spawn is now on click-release rather than click. This also prevents accidental double spawning.
+  * Spawn menu: Right click while choosing a spawn location now cancels, matching the command mode visuals.
+  * Spawn menu: Spawn callback now won't error if they don't have SetVeterancy defined.
