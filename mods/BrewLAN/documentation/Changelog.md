@@ -1291,3 +1291,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Spawn is now on click-release rather than click. This also prevents accidental double spawning.
   * Spawn menu: Right click while choosing a spawn location now cancels, matching the command mode visuals.
   * Spawn menu: Spawn callback now won't error if they don't have SetVeterancy defined.
+
+  ## 2021-12-24
+
+  * Penetration: Fixed Helios having 6.9 hours of fuel instead of 41 minutes.
