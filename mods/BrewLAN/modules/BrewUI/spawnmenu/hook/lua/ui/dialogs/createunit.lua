@@ -11,6 +11,8 @@ local UIUtil = import('/lua/ui/uiutil.lua')
 local Edit = import('/lua/maui/edit.lua').Edit
 local options = import('/lua/user/prefs.lua').GetFromCurrentProfile('options')
 
+local DialogMode = 'units' --or 'props'
+
 local ssub, gsub, upper, lower, find, slen, format = string.sub, string.gsub, string.upper, string.lower, string.find, string.len, string.format
 local mmin, mmax, floor = math.min, math.max, math.floor
 
@@ -334,8 +336,8 @@ local function TechListTabs()
     return list
 end
 
-local nameFilters = {
-    {
+local function SearchInputFilter()
+    return {
         title = 'Search',
         key = 'custominput',
         sortFunc = function(unitID, text)
@@ -345,7 +347,37 @@ local nameFilters = {
             text = lower(text)
             return find(unitID, text) or find(desc, text) or find(name, text)
         end,
-    },
+    }
+end
+
+local function FolderListTabs()
+    local listicle, folders = {}, {}
+
+    for id, bp in __blueprints do
+        if 'prop.bp' == ssub(id, -7) then
+            local folder = ssub(id,string.find(id,'%/[^%/]+%/[^%/]+%/'))
+            if not folders[folder] then
+                folders[folder] = true
+            end
+        end
+    end
+
+    for folder in folders do
+        specialFilterControls[folder] = folder
+        table.insert(listicle, {
+            title = ssub(gsub(folder, '%b//', ''),1,-2),
+            key = folder,
+            sortFunc = function(ID, folder) return folder == ssub(ID, 1, string.len(folder)) end
+        })
+    end
+
+    return listicle
+end
+
+local nameFilters = {}
+
+nameFilters.units = {
+    SearchInputFilter(),
     {
         title = 'Faction',
         key = 'faction',
@@ -369,7 +401,7 @@ local nameFilters = {
 }
 
 if options.spawn_menu_filter_menu_sort ~= 0 then
-    table.insert(nameFilters, {
+    table.insert(nameFilters.units, {
         title = 'Menu Sort',
         key = 'sort',
         choices = {
@@ -426,7 +458,7 @@ if options.spawn_menu_filter_menu_sort ~= 0 then
 end
 
 if categories.UNSPAWNABLE then
-    table.insert(nameFilters, 2,
+    table.insert(nameFilters.units, 2,
         {
             title = 'Visibility',
             key = 'spawnable',
@@ -450,7 +482,28 @@ if categories.UNSPAWNABLE then
     )
 end
 
-local function getItems() return EntityCategoryGetUnitList(categories.ALLUNITS) end
+nameFilters.props = {
+    SearchInputFilter(),
+    {
+        title = 'Folder',
+        key = 'sourcefolder',
+        choices = FolderListTabs(),
+    },
+}
+
+local function getItems(mode)
+    if mode == 'units' then
+        return EntityCategoryGetUnitList(categories.ALLUNITS)
+    elseif mode == 'props' then
+        local props = {}
+        for id, bp in __blueprints do
+            if string.find(id, 'prop.bp') then
+                table.insert(props, id)
+            end
+        end
+        return props
+    end
+end
 
 local function CreateNameFilter(data)
     local group = Group(dialog)
@@ -640,8 +693,9 @@ function CreateDialog(x, y)
         end
     end)
 
-    local function numImputSettings(element, label, startval)
-        element.StartVal = startval
+    local function numImputSettings(element, label, data)
+        element.StartVal = data.default
+        element.CheckFun = data.check
         element:SetForegroundColor(UIUtil.fontColor)
         element:SetBackgroundColor('ff333333')
         element:SetHighlightForegroundColor(UIUtil.highlightColor)
@@ -650,61 +704,102 @@ function CreateDialog(x, y)
         element.Height:Set(15)
         element:SetFont(UIUtil.bodyFont, 12)
         element:SetMaxChars(4)
-        element:SetText(startval)
+        element:SetText(data.default)
         LayoutHelpers.RightOf(element, label, 5)
-        element.OnCharPressed = function(self, charcode)
-            return (charcode < 48) or (charcode > 57) -- between 0 and 9
+
+        local function validate(self, val)
+            local start = self.StartVal
+            val = tonumber(val or self:GetText()) --tonumber filters out anything like '1-1'
+            return val and (self.CheckFun and self.CheckFun(val, start) or val) or self.StartVal
         end
-        element.OnNonTextKeyPressed = function(self, keycode, modifiers) end
-        element.OnKeyboardFocusChange = function(self)
-            local text = self:GetText()
-            self:SetText(text == '' and self.StartVal or text)
+
+        local function setTextValid(self, text)
+            local valid = validate(self, text)
+            self:SetText(valid)
+            return valid
+        end
+
+        element.OnCharPressed = function(self, c) --"active low"
+            return not ((c >= 48) and (c <= 57) or c == 45) -- 0-9, -
+        end
+
+        element.OnNonTextKeyPressed = function(self, keycode, modifiers)
+            local num = tonumber(self:GetText())--tonumber filters out anything like '1-1'
+            if num and keycode == 38 then
+                self:SetText(num+1)
+            elseif num and keycode == 40 then
+                self:SetText(num-1)
+            end
+        end
+
+        element.OnEnterPressed = setTextValid
+        element.OnKeyboardFocusChange = setTextValid
+    end
+
+    local NumberInputFields = {
+        units = {
+            {label='Count', default=1,   check=math.max},
+            {label='Vet',   default=0,   check=math.max},
+            {label='Yaw',   default=360, check=math.mod},
+        },
+        props = {
+            {label='Count', default=1,   check=math.max},
+            {label='Yaw',   default=360, check=math.mod},
+        },
+    }
+
+    do
+        for i, inputdata in NumberInputFields[DialogMode] do
+            local textlabel = UIUtil.CreateText(dialog, inputdata.label..':', 12, UIUtil.bodyFont)
+            local inputfield = Edit(dialog)
+            if i == 1 then
+                LayoutHelpers.AtBottomIn(textlabel, dialog, 10)
+                LayoutHelpers.AtLeftIn(textlabel, dialog, 5)
+            else
+                LayoutHelpers.RightOf(textlabel, dialog['input'..NumberInputFields[DialogMode][i-1].label], 5)
+            end
+            numImputSettings(inputfield, textlabel, inputdata)
+            dialog['input'..inputdata.label] = inputfield
         end
     end
 
-    local countLabel = UIUtil.CreateText(dialog, 'Count:', 12, UIUtil.bodyFont)
-    LayoutHelpers.AtBottomIn(countLabel, dialog, 10)
-    LayoutHelpers.AtLeftIn(countLabel, dialog, 5)
-    local count = Edit(dialog)
-    numImputSettings(count, countLabel, '1')
-
-    local veterancyLabel = UIUtil.CreateText(count, 'Vet:', 12, UIUtil.bodyFont)
-    LayoutHelpers.RightOf(veterancyLabel, count, 5)
-    local veterancyLevel = Edit(dialog)
-    numImputSettings(veterancyLevel, veterancyLabel, '0')
-
-    local orientLabel = UIUtil.CreateText(count, 'Yaw:', 12, UIUtil.bodyFont)
-    LayoutHelpers.RightOf(orientLabel, veterancyLevel, 5)
-    local orientation = Edit(dialog)
-    numImputSettings(orientation, orientLabel, '0')
-
     if SpawnThread then KillThread(SpawnThread) end
 
-    local function spreadSpawn(id, count, vet)
-        count = tonumber(count:GetText()) or 1
-        vet = tonumber(vet:GetText()) or 0
-        ori = (tonumber(orientation:GetText()) or 0) / 57.295779513
+    local function SpawnCommandMode(id, dialogData)
+        count = tonumber(dialogData.inputCount and dialogData.inputCount:GetText()) or 1
+        vet = tonumber(dialogData.inputVet and dialogData.inputVet:GetText()) or 0
+        yaw = (tonumber(dialogData.inputYaw and dialogData.inputYaw:GetText()) or 0)
 
         import('/lua/ui/game/commandmode.lua').StartCommandMode("build", { name = id })
-        local function callbackargs() return {
-            Func = 'BoxFormationSpawn',
-            Args = {
-                bpId = id,
-                count = count,
-                army = currentArmy,
-                pos = GetMouseWorldPos(),
-                veterancy = vet,
-                yaw = ori,
+        local function callbackargs()
+            local CallbackFunctions = {
+                units = 'BoxFormationSpawn',
+                props = 'BoxFormationProp',
             }
-        } end
+            return  {
+                Func = CallbackFunctions[DialogMode],
+                Args = {
+                    bpId = id,
+                    count = count,
+                    army = currentArmy,
+                    pos = GetMouseWorldPos(),
+                    veterancy = vet,
+                    yaw = yaw,
+                }
+            }
+        end
 
         local function IsCancelKeyDown() return IsKeyDown('ESCAPE') or IsKeyDown(2) end
 
-        WaitSeconds(0.15)
+        while IsKeyDown(1) do -- wait for release from triggering this
+            WaitSeconds(0.01)
+        end
+
         local shift
         while not dialog do
             if IsCancelKeyDown() then break end
             if IsKeyDown(1) then
+                -- Could add drag functionality here
                 while IsKeyDown(1) do -- do on release
                     if IsCancelKeyDown() then return end
                     WaitSeconds(0.01)
@@ -719,7 +814,7 @@ function CreateDialog(x, y)
             if shift and not IsKeyDown('SHIFT') then
                break
             end
-            WaitSeconds(0.1)
+            WaitSeconds(0.01)
         end
     end
 
@@ -728,7 +823,7 @@ function CreateDialog(x, y)
     LayoutHelpers.LeftOf(createBtn, cancelBtn, 5)
     createBtn.OnClick = function(button)
         for unitID, _ in CreationList do
-            SpawnThread = ForkThread(spreadSpawn, unitID, count, veterancyLevel)
+            SpawnThread = ForkThread(SpawnCommandMode, unitID, dialog)
         end
         cancelBtn.OnClick()
     end
@@ -925,26 +1020,27 @@ function CreateDialog(x, y)
        end
     end
 
-    local propSwapBtn = CreateToggleButton 'Prop mode'
+    local propSwapBtn = CreateToggleButton(DialogMode == 'units' and 'Prop mode' or 'Unit mode')
     LayoutHelpers.Below(propSwapBtn, armiesGroup, 5)
     LayoutHelpers.RightOf(propSwapBtn, delFilterSet, 9)
     propSwapBtn.OnClick = function(button)
-        ConExecuteSave('ui_lua import("/mods/BrewLAN/modules/BrewUI/spawnmenu/lua/ui/dialogs/createprop.lua").CreateDialog('..x..','..y..')')
         cancelBtn.OnClick()
+        DialogMode = DialogMode == 'units' and 'props' or 'units'
+        CreateDialog(x,y)
     end
 
     RefreshFilterList()
 
     filterGroups = {}
-    for filtIndex, filter in nameFilters do
+    for filtIndex, filter in nameFilters[DialogMode] do
         local index = filtIndex
         filterGroups[index] = CreateNameFilter(filter)
         if filtIndex == 1 then
             LayoutHelpers.Below(filterGroups[index], filterSetCombo)
             LayoutHelpers.AtLeftIn(filterGroups[index], dialog)
-        elseif categories.UNSPAWNABLE and filtIndex == 2 then
+        elseif categories.UNSPAWNABLE and filter.key == 'spawnable' then
             LayoutHelpers.RightOf(filterGroups[index], filterGroups[1], -150)
-        elseif categories.UNSPAWNABLE and filtIndex == 3 then
+        elseif categories.UNSPAWNABLE and nameFilters[DialogMode][filtIndex-1].key == 'spawnable' then
             LayoutHelpers.Below(filterGroups[index], filterGroups[1])
         else
             LayoutHelpers.Below(filterGroups[index], filterGroups[index-1])
@@ -978,11 +1074,18 @@ function CreateDialog(x, y)
         LayoutHelpers.AtLeftTopIn(mouseover.img, mouseover, 2,2)
         if DiskGetFileInfo(UIUtil.UIFile('/icons/units/'..unitData..'_icon.dds', true)) then
             mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/'..unitData..'_icon.dds', true))
+        elseif DiskGetFileInfo(UIUtil.UIFile(__blueprints[unitData].Display.Mesh.LODs[1].AlbedoName, true)) then
+            mouseover.img:SetTexture(UIUtil.UIFile(__blueprints[unitData].Display.Mesh.LODs[1].AlbedoName, true))
         else
             mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/default_icon.dds'))
         end
 
-        mouseover.name = UIUtil.CreateText(mouseover, __blueprints[unitData].Description, 14, UIUtil.bodyFont)
+        mouseover.name = UIUtil.CreateText(mouseover,
+            DialogMode == 'units' and __blueprints[unitData].Description or
+            __blueprints[unitData].Interface and
+            __blueprints[unitData].Interface.HelpText,
+            14, UIUtil.bodyFont
+        )
         LayoutHelpers.RightOf(mouseover.name, mouseover.img, 2)
 
         mouseover.desc = UIUtil.CreateText(mouseover, __blueprints[unitData].General.UnitName or unitData, 14, UIUtil.bodyFont)
@@ -1046,7 +1149,7 @@ function CreateDialog(x, y)
                         self:SetSolidColor(LineColors.Sel_Up)
                     end
                 elseif event.Type == 'ButtonDClick' and event.Modifiers.Left then
-                    SpawnThread = ForkThread(spreadSpawn, self.unitID, count, veterancyLevel)
+                    SpawnThread = ForkThread(SpawnCommandMode, self.unitID, dialog)--, count, veterancyLevel)
                     cancelBtn:OnClick()
                 elseif event.Type == 'MouseMotion' then
                     MoveMouseover(event.MouseX,event.MouseY)
@@ -1146,7 +1249,7 @@ end
 function RefreshList()
     if not dialog.unitList then return end
     UnitList = {}
-    local totalList = getItems()
+    local totalList = getItems(DialogMode)
     for i, v in totalList do
         local allValid = true
         for filterType, filters in activeFilters do
@@ -1170,7 +1273,6 @@ function RefreshList()
             end
         end
         if allValid then
-
             table.insert(UnitList, {id = v, name = LOC(__blueprints[v].General.UnitName) or '', desc = LOC(__blueprints[v].Description) or ''})
         end
     end

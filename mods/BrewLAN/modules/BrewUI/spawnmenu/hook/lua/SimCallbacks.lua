@@ -1,7 +1,6 @@
 
 Callbacks.BoxFormationSpawn = function(data)
     if not CheatsEnabled() then return end
-
     local unitbp = __blueprints[data.bpId]
 
     local function FootprintSize(axe)
@@ -33,13 +32,34 @@ Callbacks.BoxFormationSpawn = function(data)
     local startOffsetX = (squareX-1) * 0.5 * offsetX
     local startOffsetZ = (squareZ-1) * 0.5 * offsetZ
 
+    local yaw = (data.yaw or 0) / 57.295779513
+
     for i = 1, data.count do
         local x = RoundToSkirt('x', posX - startOffsetX + math.mod(i,squareX) * offsetX)
         local z = RoundToSkirt('z', posZ - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ)
-        local unit = CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, data.yaw or 0, 0)
+        local unit = CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, yaw, 0)--blueprint, army, x, y, z, pitch, yaw, roll
         if unit.SetVeterancy then unit:SetVeterancy(data.veterancy) end
         if unit.CreateTarmac and __blueprints[data.bpId].Display and __blueprints[data.bpId].Display.Tarmacs then
             unit:CreateTarmac(true,true,true,false,false)
         end
+    end
+end
+
+Callbacks.BoxFormationProp = function(data)
+    if not CheatsEnabled() then return end
+
+    local offsetX = data.bpId.SizeX or 1
+    local offsetZ = data.bpId.SizeZ or 1
+
+    local squareX = math.ceil(math.sqrt(data.count))
+    local squareZ = math.ceil(data.count/squareX)
+
+    local startOffsetX = (squareX-1) * 0.5 * offsetX
+    local startOffsetZ = (squareZ-1) * 0.5 * offsetZ
+
+    for i = 1, data.count do
+        local x = data.pos[1] - startOffsetX + math.mod(i,squareX) * offsetX
+        local z = data.pos[3] - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ
+        CreatePropHPR(data.bpId, x, GetTerrainHeight(x,z), z, data.yaw or 0, 0, 0)--blueprint, x, y, z, heading, pitch, roll
     end
 end

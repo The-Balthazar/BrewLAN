@@ -1292,6 +1292,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Right click while choosing a spawn location now cancels, matching the command mode visuals.
   * Spawn menu: Spawn callback now won't error if they don't have SetVeterancy defined.
 
+  ## 2021-12-22
+
+  * Spawn menu: Merged the scripts for unit and prop mode.
+    * This means it will now remember which was selected last.
+    * Unit icons now fall back to albedos if absent, from the prop menu.
+    * Prop menu now uses the more advanced spawning scripts of the unit menu.
+      * Command mode view doesn't work for it though.
+    * Prop menu has the mostly superfluous army selection menu.
+  * Spawn menu: Added cursor key up and down functionality to number input fields.
+  * Spawn menu: Return no longer clears the number input fields.
+
   ## 2021-12-24
 
   * Penetration: Fixed Helios having 6.9 hours of fuel instead of 41 minutes.
+  * Spawn menu: Allowed `-` key input in the num input fields.
+  * Spawn menu: Count and vet input fields now validate to default at minimum.
+  * Spawn menu: Yaw input field now validates to mod360 of the input.
