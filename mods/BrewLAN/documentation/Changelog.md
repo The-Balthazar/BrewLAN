@@ -1315,3 +1315,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Penetration: Changed the ID of `sea0202` to `sea0212`.
   * Changed some parts of Blueprints.lua so that it can be ran by the wiki generator.
   * Added a function to Blueprints.lua for the wiki generator to specifically run.
+  * SIO: No longer changes the icon of ferry point dummy units.

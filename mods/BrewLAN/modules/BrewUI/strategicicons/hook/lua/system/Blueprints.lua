@@ -567,6 +567,7 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
     local data = {}
 
     for id, bp in all_bps.Unit do
+        if bp.StrategicIconName == 'icon_strategic_ferrypoint' then continue end
         if bp.StrategicIconName and bp.Categories and bp.Physics and bp.Physics.MotionType and bp.Economy then
             local bgN = getDesiredBackground(bp, all_bps)
             local icon = getDesiredIcon(bp, all_bps)
