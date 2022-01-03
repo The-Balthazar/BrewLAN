@@ -1,6 +1,6 @@
 Seraphim Translations
 
-Upper case first letter implys use at the start of words/names
+Upper case first letter implies use at the start of words/names
 
 Iya/iya - Creator (Generorator/Fabricator/Engineer/Factory)
 Uya/uyal - Power

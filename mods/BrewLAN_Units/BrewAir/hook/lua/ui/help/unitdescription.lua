@@ -1,5 +1,5 @@
 --Tech 2 combat fighters
-Description['sea0202'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
+Description['sea0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 Description['sra0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 Description['ssa0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 --Tech 2 fighter/bomber

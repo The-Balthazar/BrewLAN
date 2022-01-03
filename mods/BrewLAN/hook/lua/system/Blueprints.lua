@@ -8,7 +8,7 @@ do  -- In a do block so no one else can mess with the locals
 local OldModBlueprints = ModBlueprints
 local BrewLANPath
 
-do  -- In do block because we don't need the Get function after this
+if _VERSION == "Lua 5.0.1" then  -- In do block because we don't need the Get function after this
     local GetBrewLANPath = function()
         for i, mod in __active_mods do
             if mod.name == "BrewLAN" then
@@ -47,7 +47,6 @@ function ModBlueprints(all_blueprints)
 
         --BrewLANChangesForDominoModSupport(all_blueprints.Unit)
 
-        --Eventually refactor it this way to speed up loading
         for id, bp in all_blueprints.Unit do
 
             --Build Category processing
@@ -67,11 +66,29 @@ function ModBlueprints(all_blueprints)
             BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)
 
             --BrewLANExtractFrozenMeshBlueprint(id, bp)
-
             BrewLANGenerateFootprintDummy(id, bp, all_blueprints.Unit)
         end
 
         BrewLANRelativisticLinksUpdate(all_blueprints)
+    end
+end
+
+function WikiBlueprints(all_blueprints)
+    local Gantries = {}
+    for id, bp in pairs(all_blueprints.Unit) do
+        BrewLANGetListOfGantries(id, bp, Gantries)
+    end
+    all_blueprints.Unit.sab0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY AEON AIR', 'BUILTBYIENGINE AIR'}
+    all_blueprints.Unit.srb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY CYBRAN LAND', 'BUILTBYARTHROLAB LAND'}
+    all_blueprints.Unit.ssb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY SERAPHIM NAVAL', 'BUILTBYSOUIYA NAVAL'}
+
+    --UpgradeableToBrewLAN(all_blueprints.Unit or all_blueprints) -- Wont do anything for the wiki since it checks both exist first.
+    for id, bp in pairs(all_blueprints.Unit) do
+        --BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)  -- Wont do anything for the wiki since it checks Megalith exist first.
+        BrewLANSatelliteUplinkForVanillaUnits(id, bp)
+        BrewLANGantryBuildList(id, bp, Gantries)
+        BrewLANHeavyWallBuildList(id, bp)
+        BrewLANNavalShields(id, bp)
     end
 end
 
@@ -115,7 +132,6 @@ function BrewLANSanityChecks(id, bp)
             bp.Physics.MotionType = 'RULEUMT_None'
         end
     end
-
 end
 
 --------------------------------------------------------------------------------
@@ -390,7 +406,6 @@ function BrewLANSatelliteUplinkForVanillaUnits(id, bp)
         table.insert(bp.Display.Abilities, '<LOC ability_satellite_cap_'.. units[id] ..'>Satellite Capacity: +' .. units[id])
         bp.General.SatelliteCapacity = units[id]
     end
-
 end
 
 
@@ -398,7 +413,7 @@ function BrewLANGetListOfGantries(id, bp, Gantries)
     --Gantry experimental build list
     --local Gantries = {}
     --for id, bp in all_bps do
-        if bp.AI.Experimentals then
+        if bp.AI and bp.AI.Experimentals then
             Gantries[id] = {
                 bp = bp,
                 Reqs = bp.AI.Experimentals.Requirements,
@@ -414,7 +429,7 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANGantryBuildList(id, bp, Gantries)
-    for gantryId, info in Gantries do
+    for gantryId, info in pairs(Gantries) do
         --Check it has a category table first
         if bp.Categories then
             --Check the Gantry can't already build it, and that its a mobile experimental
@@ -443,8 +458,9 @@ function BrewLANGantryBuildList(id, bp, Gantries)
                 or table.find(bp.Categories, 'BUILTBYTIER4ENGINEER')
                 then
                     --Check it wouldn't be bigger than the Gantry hole
-                    if bp.Physics.SkirtSizeX < info.Reqs.SkirtSizeX
-                    or not bp.Physics.SkirtSizeX
+                    --print(bp.Physics.SkirtSizeX, info.Reqs.SkirtSizeX)
+                    if not bp.Physics.SkirtSizeX
+                    or bp.Physics.SkirtSizeX < info.Reqs.SkirtSizeX
                     --or bp.Footprint.SizeX < 9
                     then
                         table.insert(bp.Categories, info.Cat)
@@ -467,7 +483,7 @@ function BrewLANGantryBuildList(id, bp, Gantries)
 end
 
 function BrewLANCheckGantryShouldBuild(catArray)
-    for i, cat in catArray do
+    for i, cat in ipairs(catArray) do
         if string.find(cat, 'BUILTBY') and string.find(cat, 'FACTORY') then
             return true
         end
@@ -532,21 +548,16 @@ function BrewLANHeavyWallBuildList(id, bp)
             table.find(bp.Categories, 'DIRECTFIRE') or
             table.find(bp.Categories, 'INDIRECTFIRE')
         ) then
+
             --Check it wouldn't overlap badly with the wall
             local fits, correct = {}, {}
-
-            if bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 3 or bp.Footprint.SizeX == 3 and bp.Physics.SkirtSizeX == 0 then
-                correct.X = true
-                fits.X = true
-            elseif bp.Physics.SkirtSizeX < 3 and bp.Footprint.SizeX < 3 then
-                fits.X = true
-            end
-
-            if bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 3 or bp.Footprint.SizeZ == 3 and bp.Physics.SkirtSizeZ == 0 then
-                correct.Z = true
-                fits.Z = true
-            elseif bp.Physics.SkirtSizeZ < 3 and bp.Footprint.SizeZ < 3 then
-                fits.Z = true
+            for _, A in ipairs{'X','Z'} do
+                if bp.Footprint and (bp.Footprint['Size'..A] == 3 and bp.Physics['SkirtSize'..A] == 3 or bp.Footprint['Size'..A] == 3 and bp.Physics['SkirtSize'..A] == 0) then
+                    correct[A] = true
+                    fits[A] = true
+                elseif bp.Physics['SkirtSize'..A] < 3 and (not bp.Footprint or bp.Footprint['Size'..A] < 3) then
+                    fits[A] = true
+                end
             end
 
             if fits.X and fits.Z then
@@ -657,7 +668,6 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANTorpedoBomberWaterLanding(id, bp)
-
     local TorpedoBombers = {
         sra0307 = true, --T3 Cybran
         sea0307 = true, --T3 UEF
@@ -690,7 +700,6 @@ function BrewLANTorpedoBomberWaterLanding(id, bp)
             end
         end
     end
-
 end
 
 --------------------------------------------------------------------------------
@@ -1073,7 +1082,6 @@ function BrewLANNavalShields(id, bp)
     end
     --Waterlag visual compatability
     bp.Display.GiveMeLegs = true
-
 end
 
 --------------------------------------------------------------------------------

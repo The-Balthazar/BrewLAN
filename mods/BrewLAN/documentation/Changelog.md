@@ -1309,3 +1309,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn menu: Allowed `-` key input in the num input fields.
   * Spawn menu: Count and vet input fields now validate to default at minimum.
   * Spawn menu: Yaw input field now validates to mod360 of the input.
+
+  ## 2022-01-03
+
+  * Penetration: Changed the ID of `sea0202` to `sea0212`.
+  * Changed some parts of Blueprints.lua so that it can be ran by the wiki generator.
+  * Added a function to Blueprints.lua for the wiki generator to specifically run.
