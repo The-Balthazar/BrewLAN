@@ -1316,3 +1316,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed some parts of Blueprints.lua so that it can be ran by the wiki generator.
   * Added a function to Blueprints.lua for the wiki generator to specifically run.
   * SIO: No longer changes the icon of ferry point dummy units.
+
+  ## 2022-01-04
+
+  * New mod: *Mesh Swap* randomly swaps unit meshes.
