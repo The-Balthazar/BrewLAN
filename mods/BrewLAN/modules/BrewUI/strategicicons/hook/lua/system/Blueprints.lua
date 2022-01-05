@@ -247,7 +247,9 @@ local function getDesiredBackground(bp, all_bps)
 
     local icon
 
-    if table.find(bp.Categories, 'COMMAND') then
+    if table.find(bp.Categories, 'FERRYBEACON') then
+        return 'strategic'
+    elseif table.find(bp.Categories, 'COMMAND') then
         return 'commander' -- Commander type has no level variants
     elseif table.find(bp.Categories, 'SUBCOMMANDER') then
         return 'subcommander' -- Commander type has no level variants
@@ -317,15 +319,16 @@ local function getDesiredIcon(bp, all_bps)
     --Predefined
     if bp.StrategicIcon then return bp.StrategicIcon end
 
-    local icon = ''
-    if unitHasWallCat(bp) then
+    if table.find(bp.Categories, 'FERRYBEACON') then
+        return 'ferrypoint'
+    elseif unitHasWallCat(bp) then
         if table.find(bp.Categories, 'SHIELDWALL') then
-            icon = 'shieldwall'
+            return 'shieldwall'
         else
-            icon = 'wall' -- Wall is is only a possible subtype
+            return 'wall' -- Wall is is only a possible subtype
         end
     elseif table.find(bp.Categories, 'COMMAND') or table.find(bp.Categories, 'SUBCOMMANDER') then
-        icon = 'generic'
+        return 'generic'
     elseif table.find(bp.Categories, 'ECONOMIC') and (
         table.find(bp.Categories, 'MASSPRODUCTION')
         or table.find(bp.Categories, 'MASSFABRICATION')
@@ -335,48 +338,30 @@ local function getDesiredIcon(bp, all_bps)
     )
     then
         if table.find(bp.Categories, 'MASSPRODUCTION') or table.find(bp.Categories, 'MASSFABRICATION') then
-            icon = 'mass'
+            return 'mass'
             --Check Economy.ProductionPerSecondEnergy?
         elseif table.find(bp.Categories, 'ENERGYPRODUCTION') or table.find(bp.Categories, 'ENERGYSTORAGE') and (not table.find(bp.Categories, 'MASSSTORAGE') or bp.Weapon[1]) then -- If it has both, only give it E if it explodes.
-            icon = 'energy'
+            return 'energy'
         elseif table.find(bp.Categories, 'MASSSTORAGE') then
-            icon = 'mass'
+            return 'mass'
         end
     elseif table.find(bp.Categories, 'FIELDENGINEER') or table.find(bp.Categories, 'ENGINEER') or table.find(bp.Categories, 'ENGINEERSTATION')--[[or table.find(bp.Categories, 'CONSTRUCTION')-- removed because it counts too much]]  then
-        icon = 'engineer'
+        return 'engineer'
     elseif table.find(bp.Categories, 'TRANSPORTATION') and bp.Transport and bp.Transport.TransportClass > 3 then
-        icon = 'transport'
+        return 'transport'
     elseif table.find(bp.Categories, 'CARRIER') and bp.Transport and not (bp.Economy.BuildableCategory and arrayfindSubstring(bp.Economy.BuildableCategory, 'LAND')) then
-        icon = 'air'
+        return 'air'
     elseif table.find(bp.Categories, 'ANTIARTILLERY') or bp.Defense and bp.Defense.Shield and bp.Defense.Shield.AntiArtilleryShield and not (bp.Defense.Shield.PersonalShield == true) then
-        icon = 'antiartillery'
+        return 'antiartillery'
     --elseif table.find(bp.Categories, 'ANTISHIELD') then
-    --    icon = 'antishield'
+    --    return 'antishield'
     elseif --[[table.find(bp.Categories, 'COUNTERINTELLIGENCE') and]] bp.Intel and (bp.Intel.CloakFieldRadius or bp.Intel.RadarStealthFieldRadius or bp.Intel.SonarStealthFieldRadius) then --Prioritise counterintel over weapon if it has a field generator
-        icon = 'counterintel'
+        return 'counterintel'
     elseif table.find(bp.Categories, 'RESEARCHCENTRE') then
-        icon = 'research'
+        return 'research'
     elseif bp.Defense and bp.Defense.Shield and not (bp.Defense.Shield.PersonalShield == true) and bp.Defense.Shield.ImpactMesh and string.lower(bp.Defense.Shield.ImpactMesh) == '/effects/entities/shieldsection01/shieldsection01_mesh' and math.max(bp.Defense.Shield.ShieldSize, bp.Defense.Shield.ShieldProjectionRadius or 0) > math.max(bp.SizeX or 1, bp.SizeZ or 1) * 5 then
-        icon = 'shield'
+        return 'shield'
     elseif not isUnarmed(bp) then
-
-        --[[if not (
-            table.find(bp.Categories, 'DIRECTFIRE')
-            or table.find(bp.Categories, 'GROUNDATTACK')
-            or table.find(bp.Categories, 'ANTIAIR')
-            or table.find(bp.Categories, 'ANTINAVY')
-            or table.find(bp.Categories, 'ANTISUB')
-            or table.find(bp.Categories, 'BOMBER')
-            or table.find(bp.Categories, 'ARTILLERY')
-            or table.find(bp.Categories, 'INDIRECTFIRE')
-            or table.find(bp.Categories, 'MISSILE')
-            or table.find(bp.Categories, 'NUKE')
-            or table.find(bp.Categories, 'SILO')
-            or table.find(bp.Categories, 'MINE')
-        ) then
-            WARN( (bp.General.UnitName or bp.Description or 'nil') .. " has a weapon but no weapon category" )
-        end]]
-
         --FIGHT FOR YOUR ICON! LITERALLY!
         local layer = { -- Pre-populated list, so that we don't get the error types.
             antiair = 0,
@@ -404,14 +389,6 @@ local function getDesiredIcon(bp, all_bps)
                 end
             end
         end
-        --WARN(bp.General.UnitName or 'nil')
-        for i, v in layer do --This is so it logs less meaningless data.
-            if v == 0 then layer[i] = nil end
-        end
-        --WARN(repr(layer))
-        --if bp.Description == '<LOC sa0314_desc>Penetrator Bomber' then
-        --    WARN(repr(layer))
-        --end
 
         local best = {0, 'directfire'}
         for l, data in layer do
@@ -420,19 +397,19 @@ local function getDesiredIcon(bp, all_bps)
                 best[2] = l
             end
         end
-        icon = best[2]
+        return best[2]
     elseif table.find(bp.Categories, 'ANTIMISSILE') then
-        icon = 'antimissile'
+        return 'antimissile'
     elseif table.find(bp.Categories, 'COUNTERINTELLIGENCE') then
-        icon = 'counterintel'
+        return 'counterintel'
     elseif table.find(bp.Categories, 'AIRSTAGINGPLATFORM') then
-        icon = 'air'
+        return 'air'
     elseif table.find(bp.Categories, 'SHIELD') then
-        icon = 'shield'
+        return 'shield'
     elseif table.find(bp.Categories, 'TRANSPORTATION') or table.find(bp.Categories, 'STARGATE') then
-        icon = 'transport'
+        return 'transport'
     elseif table.find(bp.Categories, 'INTELLIGENCE') then
-        icon = 'intel'
+        return 'intel'
     elseif table.find(bp.Categories, 'FACTORY') then
         local buildlayers = {
             'LAND',
@@ -472,20 +449,19 @@ local function getDesiredIcon(bp, all_bps)
             sbits = table.concat(bits)
         end
         if sbits == '100' then
-            icon = 'land'
+            return 'land'
         elseif sbits == '010' then
-            icon = 'air'
+            return 'air'
         elseif sbits == '001' then
-            icon = 'naval'
+            return 'naval'
         else
-            icon = 'generic' -- Hopefully if we get here we're just the UEF Gantry
+            return 'generic' -- Hopefully if we get here we're just the UEF Gantry
         end
     elseif bp.Adjacency or bp.BuffFields or table.find(bp.Categories, 'NODE') then
-        icon = 'cross'
+        return 'cross'
     else
-        icon = 'generic'
+        return 'generic'
     end
-    return icon
 end
 
 --------------------------------------------------------------------------------

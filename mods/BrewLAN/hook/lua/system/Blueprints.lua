@@ -744,6 +744,123 @@ function BrewLANMatchBalancing(all_bps)
         sra0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
         sea0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
         ssa0307 = {TargetID = 'xaa0306', Affects = {'Transport', 'Economy'}},
+        ------- Field engineers
+        sel0119 = {
+            TargetID = 'xel0209',
+            BaseMult = 0.265,
+            Affects = {'Economy', 'Intel'},
+            Mults = {
+                Intel = 1,
+                Economy = {
+                    MaintenanceConsumptionPerSecondEnergy = 0.33333,
+                    BuildRate = 0.5,
+                    StorageEnergy = 0.5,
+                    StorageMass = 0.33333,
+                },
+            }
+        },
+        --sel0209 = {TargetID = 'xel0209', Affects = {'Economy'}}
+        sel0319 = {
+            TargetID = 'xel0209',
+            Affects = {'Economy', 'Intel'},
+            Mults = {
+                Intel = 1,
+                Economy = {
+                    BuildCostEnergy = 3.625,
+                    BuildCostMass = 3,
+                    BuildRate = 1.5,
+                    BuildTime = 2.4,
+                    StorageEnergy = 2.5,
+                    StorageMass = 1.66667,
+                },
+            }
+        },
+
+        sal0119 = {
+            TargetID = 'xel0209',
+            BaseMult = 0.265,
+            Affects = {'Economy'},
+            Mults = {
+                Economy = {
+                    MaintenanceConsumptionPerSecondEnergy = 0.33333,
+                    BuildRate = 0.5,
+                    StorageEnergy = 0.5,
+                    StorageMass = 0.333,
+                },
+            }
+        },
+        sal0209 = {TargetID = 'xel0209', Affects = {'Economy'}},
+        sal0319 = {
+            TargetID = 'xel0209',
+            Affects = {'Economy'},
+            Mults = {
+                Economy = {
+                    BuildCostEnergy = 3.625,
+                    BuildCostMass = 3,
+                    BuildRate = 1.5,
+                    BuildTime = 2.4,
+                    StorageEnergy = 2.5,
+                    StorageMass = 1.66667,
+                },
+            }
+        },
+
+        srl0119 = {
+            TargetID = 'xel0209',
+            BaseMult = 0.265,
+            Affects = {'Economy'},
+            Mults = {
+                Economy = {
+                    MaintenanceConsumptionPerSecondEnergy = 0.33333,
+                    BuildRate = 0.5,
+                    StorageEnergy = 0.5,
+                    StorageMass = 0.333,
+                },
+            }
+        },
+        srl0209 = {TargetID = 'xel0209', Affects = {'Economy'}}
+        srl0319 = {
+            TargetID = 'xel0209',
+            Affects = {'Economy'},
+            Mults = {
+                Economy = {
+                    BuildCostEnergy = 3.625,
+                    BuildCostMass = 3,
+                    BuildRate = 1.5,
+                    BuildTime = 2.4,
+                    StorageEnergy = 2.5,
+                    StorageMass = 1.66667,
+                },
+            }
+        },
+
+        ssl0119 = {
+            TargetID = 'xel0209',
+            BaseMult = 0.265,
+            Affects = {'Economy'},
+            Mults = {
+                Economy = {
+                    BuildRate = 0.5,
+                    StorageEnergy = 0.5,
+                    StorageMass = 0.333,
+                },
+            }
+        },
+        ssl0209 = {TargetID = 'xel0209', Affects = {'Economy'}},
+        ssl0319 = {
+            TargetID = 'xel0209',
+            Affects = {'Economy'},
+            Mults = {
+                Economy = {
+                    BuildCostEnergy = 3.625,
+                    BuildCostMass = 3,
+                    BuildRate = 1.5,
+                    BuildTime = 2.4,
+                    StorageEnergy = 2.5,
+                    StorageMass = 1.66667,
+                },
+            }
+        },
         ------- Sera T3 gunship to match Broadsword
         ssa0305 = 'uea0305',
         ------- Air transports to be based

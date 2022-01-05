@@ -1323,4 +1323,6 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ## 2022-01-05
 
-  * Mesh Swap: Now updates build meshes and wreck meshes
+  * Mesh Swap: Now updates build meshes and wreck meshes.
+  * SIO: Prepared for ferry icon.
+  * Added field engineers to dynamic balancing for build rate and UEF jammer blips.
