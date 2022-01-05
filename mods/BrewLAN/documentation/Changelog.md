@@ -1320,3 +1320,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-01-04
 
   * New mod: *Mesh Swap* randomly swaps unit meshes.
+
+  ## 2022-01-05
+
+  * Mesh Swap: Now updates build meshes and wreck meshes

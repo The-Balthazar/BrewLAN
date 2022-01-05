@@ -3,13 +3,11 @@ do
     --abs = size / uniformscale
     local OldModBlueprints = ModBlueprints
     function ModBlueprints(all_blueprints)
-        OldModBlueprints(all_blueprints)
         local meshes = {}
         for id, bp in pairs(all_blueprints.Unit) do
             if bp.Display and bp.Display.Mesh and bp.Display.Mesh.LODs then
                 local lods = table.deepcopy(bp.Display.Mesh.LODs)
                 local path = string.gsub(bp.Source, '(%/.*%/).*', '%1')
-                _ALERT(path)
                 for i, lod in ipairs(lods) do
                     local ii = math.floor(i-0.5)
                     lod.MeshName = (string.sub(lod.MeshName or 'o',1,1)=='/') and lod.MeshName or path..(lod.MeshName or (id..'_lod'..ii..'.scm'))
@@ -46,7 +44,10 @@ do
                     table.insert(newLODS, lod)
                 end
                 bp.Display.Mesh.LODs = newLODS
+                ExtractWreckageBlueprint(bp)
+                ExtractBuildMeshBlueprint(bp)
             end
         end
+        OldModBlueprints(all_blueprints)
     end
 end
