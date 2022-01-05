@@ -757,7 +757,7 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 0.5,
                     StorageMass = 0.33333,
                 },
-            }
+            },
         },
         --sel0209 = {TargetID = 'xel0209', Affects = {'Economy'}}
         sel0319 = {
@@ -773,7 +773,7 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 2.5,
                     StorageMass = 1.66667,
                 },
-            }
+            },
         },
 
         sal0119 = {
@@ -787,9 +787,9 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 0.5,
                     StorageMass = 0.333,
                 },
-            }
+            },
         },
-        sal0209 = {TargetID = 'xel0209', Affects = {'Economy'}},
+        sal0209 = {TargetID = 'xel0209', BaseMult = 1, Affects = {'Economy'}},
         sal0319 = {
             TargetID = 'xel0209',
             Affects = {'Economy'},
@@ -802,7 +802,7 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 2.5,
                     StorageMass = 1.66667,
                 },
-            }
+            },
         },
 
         srl0119 = {
@@ -816,9 +816,9 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 0.5,
                     StorageMass = 0.333,
                 },
-            }
+            },
         },
-        srl0209 = {TargetID = 'xel0209', Affects = {'Economy'}}
+        srl0209 = {TargetID = 'xel0209', BaseMult = 1, Affects = {'Economy'}},
         srl0319 = {
             TargetID = 'xel0209',
             Affects = {'Economy'},
@@ -831,7 +831,7 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 2.5,
                     StorageMass = 1.66667,
                 },
-            }
+            },
         },
 
         ssl0119 = {
@@ -844,9 +844,9 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 0.5,
                     StorageMass = 0.333,
                 },
-            }
+            },
         },
-        ssl0209 = {TargetID = 'xel0209', Affects = {'Economy'}},
+        ssl0219 = {TargetID = 'xel0209', BaseMult = 1, Affects = {'Economy'}},
         ssl0319 = {
             TargetID = 'xel0209',
             Affects = {'Economy'},
@@ -859,7 +859,7 @@ function BrewLANMatchBalancing(all_bps)
                     StorageEnergy = 2.5,
                     StorageMass = 1.66667,
                 },
-            }
+            },
         },
         ------- Sera T3 gunship to match Broadsword
         ssa0305 = 'uea0305',
