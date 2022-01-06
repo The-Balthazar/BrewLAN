@@ -1326,3 +1326,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Mesh Swap: Now updates build meshes and wreck meshes.
   * SIO: Prepared for ferry icon.
   * Added field engineers to dynamic balancing for build rate and UEF jammer blips.
+  * Pulchritudinousity: Removed an unused file and changed the description to be more accurate.
+
+  ## 2022-01-05
+
+  * Pulchritudinousity: Now affects all meshes.

@@ -269,7 +269,7 @@ Ivan: Experimental Drop-Pod Artillery
 Gantry: Experimental Factory
 * Almost completely 100% Fully functional.
 * Still to do:
-  * Hook \lua\ui\game\avatars.lua and/or \lua\factions.lua to get the idle icon working.
+  * Hook `/lua/ui/game/avatars.lua` and/or `/lua/factions.lua` to get the idle icon working.
   * Maybe add some kind of pedestal effect for building aircraft upon, especially on water.
     * Would need to wait for the current unit to be completed, especially if its a ship.
     * Would also need some visual justification for it while not there, or to maybe comprised of energy effects.
@@ -402,7 +402,6 @@ Support Commanders
 T2 Shield Generator
 * Allowed to upgrade from my T1 shield gen.
 * Allowed upgrade to the T3 shield gen.
-* Allowed rebuild bonus on T2 and T3 wreckages.
 
 T3 Shield generator
 * Allowed T2 to upgrade into it.
