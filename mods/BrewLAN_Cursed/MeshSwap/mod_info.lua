@@ -4,4 +4,4 @@ version = 1
 copyright = "© 2022 Sean Wheeldon"
 description = "Randomises unit meshes."
 author = "Balthazar"
-icon = "/mods/BrewLAN_RNG/folder.png"
+icon = "/mods/BrewLAN_Cursed/MeshSwap/icon.png"
