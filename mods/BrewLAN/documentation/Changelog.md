@@ -1328,8 +1328,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added field engineers to dynamic balancing for build rate and UEF jammer blips.
   * Pulchritudinousity: Removed an unused file and changed the description to be more accurate.
 
-  ## 2022-01-05
+  ## 2022-01-06
 
   * Pulchritudinousity: Now affects all meshes.
   * Moved Mesh Swap to cursed mods, and gave it an icon.
   * Bletchley Park: Gave it the icon it's had on the wiki for a while now.
+  * Reinforcements: (Finally) Added the option to have transports leave towards the opposite border, which I've sat on for months.

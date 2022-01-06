@@ -8,7 +8,7 @@ ReinforcementBeacon = Class(StructureUnit) {
     -- NOTE: Call this function to start call the reinforcements
     -- Inputs: self, the unit type requested
     ----------------------------------------------------------------------------
-    CallReinforcement = function(self, unitID, transportID, quantity)
+    CallReinforcement = function(self, unitID, transportID, quantity, exitOpposite)
         --Sanitise inputs
         unitID = unitID or 'uel0106'
         transportID = transportID or 'uea0107'
@@ -16,21 +16,25 @@ ReinforcementBeacon = Class(StructureUnit) {
 
         --Get positions
         local pos = self.CachePosition or self:GetPosition()
-        local borderpos
+        local BorderPos
+        local OppBorPos
 
         local x, z = pos[1] / ScenarioInfo.size[1] - 0.5, pos[3] / ScenarioInfo.size[2] - 0.5
 
         if math.abs(x) <= math.abs(z) then
-            borderpos = {pos[1], nil, math.ceil(z) * ScenarioInfo.size[2]}
+            BorderPos = {pos[1], nil, math.ceil(z) * ScenarioInfo.size[2]}
+            OppBorPos = {pos[1], nil, BorderPos[3]==0 and ScenarioInfo.size[2] or 0 }
             x = 1
             z = 0
         else
-            borderpos = {math.ceil(x) * ScenarioInfo.size[1], nil, pos[3]}
+            BorderPos = {math.ceil(x) * ScenarioInfo.size[1], nil, pos[3]}
+            OppBorPos = {BorderPos[1]==0 and ScenarioInfo.size[1] or 0, nil, pos[3]}
             x = 0
             z = 1
         end
 
-        borderpos[2] = GetTerrainHeight(borderpos[1], borderpos[3])
+        BorderPos[2] = GetTerrainHeight(BorderPos[1], BorderPos[3])
+        OppBorPos[2] = GetTerrainHeight(OppBorPos[1], OppBorPos[3])
 
         --Get blueprints
         local unitBP = __blueprints[unitID]
@@ -58,7 +62,7 @@ ReinforcementBeacon = Class(StructureUnit) {
             transports[tpn] = CreateUnitHPR(
                 transportID,
                 army,
-                borderpos[1] + (math.random(-quantity,quantity) * x), borderpos[2], borderpos[3] + (math.random(-quantity,quantity) * z),
+                BorderPos[1] + (math.random(-quantity,quantity) * x), BorderPos[2], BorderPos[3] + (math.random(-quantity,quantity) * z),
                 0, 0, 0
             )
             table.insert(self.transports, transports[tpn])
@@ -89,7 +93,11 @@ ReinforcementBeacon = Class(StructureUnit) {
 
         IssueTransportUnload(transports, pos)
         for i, trans in transports do
-            IssueMove({trans}, {borderpos[1] + (math.random(-quantity,quantity) * x), borderpos[2], borderpos[3] + (math.random(-quantity,quantity) * z)})
+            if exitOpposite then
+                IssueMove({trans}, {OppBorPos[1] + (math.random(-quantity,quantity) * x), OppBorPos[2], OppBorPos[3] + (math.random(-quantity,quantity) * z)})
+            else
+                IssueMove({trans}, {BorderPos[1] + (math.random(-quantity,quantity) * x), BorderPos[2], BorderPos[3] + (math.random(-quantity,quantity) * z)})
+            end
             trans.DeliveryThread = self.DeliveryThread
             trans:ForkThread(trans.DeliveryThread, self)
         end
@@ -158,6 +166,7 @@ ReinforcementBeacon = Class(StructureUnit) {
             Unit = 'ual0106',
             Transport = 'uaa0107',
             Quantity = 30,
+            ExitOpposite = true,
         }
     },
 ]]
@@ -170,6 +179,6 @@ SingleUseReinforcementBeacon = Class(ReinforcementBeacon) {
         ReinforcementBeacon.OnStopBeingBuilt(self, builder, layer)
 
         local bpR = (__blueprints[self.BpId] or self:GetBlueprint() ).Economy.Reinforcements
-        self:CallReinforcement(bpR.Unit, bpR.Transport, bpR.Quantity)
+        self:CallReinforcement(bpR.Unit, bpR.Transport, bpR.Quantity, bpR.ExitOpposite)
     end,
 }
