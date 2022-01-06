@@ -1,10 +1,10 @@
 name = "BrewLAN: Bletchley Park"
 uid = "25D57D85-9JA7-D842-BREW-INTEL00000003"
 version = 3
-copyright = "© 2018–2020 Sean Wheeldon"
+copyright = "© 2018–2022 Sean Wheeldon"
 description = "Adds additional intelligence options."
 author = "Balthazar"
---icon = "/mods/BrewLAN_Units/BrewShields/mod_icon.png"
+icon = "/mods/BrewLAN_Units/BrewIntel/icon.png"
 selectable = true
 enabled = true
 exclusive = false

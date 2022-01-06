@@ -1331,3 +1331,5 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-01-05
 
   * Pulchritudinousity: Now affects all meshes.
+  * Moved Mesh Swap to cursed mods, and gave it an icon.
+  * Bletchley Park: Gave it the icon it's had on the wiki for a while now.
