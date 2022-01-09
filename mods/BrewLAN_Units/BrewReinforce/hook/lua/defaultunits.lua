@@ -16,21 +16,18 @@ ReinforcementBeacon = Class(StructureUnit) {
 
         --Get positions
         local pos = self.CachePosition or self:GetPosition()
-        local BorderPos
-        local OppBorPos
+        local BorderPos, OppBorPos
 
         local x, z = pos[1] / ScenarioInfo.size[1] - 0.5, pos[3] / ScenarioInfo.size[2] - 0.5
 
         if math.abs(x) <= math.abs(z) then
             BorderPos = {pos[1], nil, math.ceil(z) * ScenarioInfo.size[2]}
-            OppBorPos = {pos[1], nil, BorderPos[3]==0 and ScenarioInfo.size[2] or 0 }
-            x = 1
-            z = 0
+            OppBorPos = {pos[1], nil, BorderPos[3]==0 and ScenarioInfo.size[2] or 0}
+            x, z = 1, 0
         else
             BorderPos = {math.ceil(x) * ScenarioInfo.size[1], nil, pos[3]}
             OppBorPos = {BorderPos[1]==0 and ScenarioInfo.size[1] or 0, nil, pos[3]}
-            x = 0
-            z = 1
+            x, z = 0, 1
         end
 
         BorderPos[2] = GetTerrainHeight(BorderPos[1], BorderPos[3])

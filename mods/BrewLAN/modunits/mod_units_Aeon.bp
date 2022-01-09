@@ -1,8 +1,8 @@
-#Aeon Buildings	----------------------------------#
+--Aeon Buildings	------------------------------------
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xab3301",		##T3 Quantum Optics
+	BlueprintId="xab3301",		----T3 Quantum Optics
     Footprint = {
         SizeX = 3,
         SizeZ = 3,
@@ -17,7 +17,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xab2307",		##Salvation
+	BlueprintId="xab2307",		----Salvation
     Buffs = {
         Regen = {
             Level1 = 10,
@@ -47,15 +47,15 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xab1401",		##Paragon
+	BlueprintId="xab1401",		----Paragon
     Adjacency = 'ParagonAdjacencyBuffs',
 }
 
-#Aeon Units	----------------------------------#
+--Aeon Units	------------------------------------
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ual0101",		##spirit
+	BlueprintId="ual0101",		----spirit
     Intel = {
         OmniRadius = 2,
     },
@@ -63,7 +63,7 @@ UnitBlueprint {
 
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="ual0303",		##Harbinger
+	BlueprintId="ual0303",		----Harbinger
     Defense = {
         Health = 2125,
         MaxHealth = 2125,
@@ -90,4 +90,4 @@ UnitBlueprint {
     },
 }
 
-#Aeon Aircrafts	----------------------------------#
+--Aeon Aircrafts	------------------------------------

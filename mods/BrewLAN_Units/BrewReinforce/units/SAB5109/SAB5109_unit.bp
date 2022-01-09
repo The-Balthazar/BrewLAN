@@ -7,7 +7,6 @@ UnitBlueprint {
         'STRUCTURE',
         'TECH1',
         'SIZE4',
-        --'TELEPORTBEACON',
         'VISIBLETORECON',
     },
     Defense = {
@@ -41,23 +40,20 @@ UnitBlueprint {
         UniformScale = 0.1,
     },
     Economy = {
-        BuildCostEnergy = 140*10,
-        BuildCostMass = 35*10,
-        BuildTime = 140*10,
+        BuildCostEnergy = 1400,
+        BuildCostMass = 350,
+        BuildTime = 1400,
         Reinforcements = {
             Unit = 'ual0106',
             Transport = 'uaa0107',
             Quantity = 10,
+            ExitOpposite = false,
         }
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'Aeon',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,

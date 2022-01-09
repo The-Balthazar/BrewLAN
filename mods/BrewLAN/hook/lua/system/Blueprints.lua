@@ -8,7 +8,7 @@ do  -- In a do block so no one else can mess with the locals
 local OldModBlueprints = ModBlueprints
 local BrewLANPath
 
-if _VERSION == "Lua 5.0.1" then  -- In do block because we don't need the Get function after this
+if _VERSION == "Lua 5.0.1" then
     local GetBrewLANPath = function()
         for i, mod in __active_mods do
             if mod.name == "BrewLAN" then
@@ -82,7 +82,7 @@ function WikiBlueprints(all_blueprints)
     all_blueprints.Unit.srb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY CYBRAN LAND', 'BUILTBYARTHROLAB LAND'}
     all_blueprints.Unit.ssb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY SERAPHIM NAVAL', 'BUILTBYSOUIYA NAVAL'}
 
-    --UpgradeableToBrewLAN(all_blueprints.Unit or all_blueprints) -- Wont do anything for the wiki since it checks both exist first.
+    UpgradeableToBrewLAN(all_blueprints.Unit)
     for id, bp in pairs(all_blueprints.Unit) do
         --BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)  -- Wont do anything for the wiki since it checks Megalith exist first.
         BrewLANSatelliteUplinkForVanillaUnits(id, bp)
@@ -610,7 +610,7 @@ function UpgradeableToBrewLAN(all_bps)
         xsb1303 = 'ssb1313',--To Armored Fabricator
         --srb5310 = 'srb5311',--Cybran wall into cybran gate. Caused issues.
     }
-    for unitid, upgradeid in VanillasToUpgrade do
+    for unitid, upgradeid in pairs(VanillasToUpgrade) do
         if all_bps[unitid] and all_bps[upgradeid] then
 
             if not all_bps[unitid].Categories then all_bps[unitid].Categories = {} end
@@ -622,10 +622,11 @@ function UpgradeableToBrewLAN(all_bps)
             table.insert(all_bps[unitid].Display.Abilities, '<LOC ability_upgradable>Upgradeable')
 
             if not all_bps[unitid].Economy then all_bps[unitid].Economy = {} end
-            if not all_bps[unitid].Economy.RebuildBonusIds then all_bps[unitid].Economy.RebuildBonusIds = {} end
-            table.insert(all_bps[unitid].Economy.RebuildBonusIds, upgradeid)
+            --if not all_bps[unitid].Economy.RebuildBonusIds then all_bps[unitid].Economy.RebuildBonusIds = {} end
+            --table.insert(all_bps[unitid].Economy.RebuildBonusIds, upgradeid)
 
             if not all_bps[unitid].Economy.BuildableCategory then all_bps[unitid].Economy.BuildableCategory = {} end
+            table.removeByValue(all_bps[unitid].Economy.BuildableCategory, upgradeid) -- Preventing doubles
             table.insert(all_bps[unitid].Economy.BuildableCategory, upgradeid)
 
             if not all_bps[unitid].General then all_bps[unitid].General = {} end
@@ -638,25 +639,28 @@ function UpgradeableToBrewLAN(all_bps)
             all_bps[unitid].General.CommandCaps.RULEUCC_Pause = true
         end
     end
-    local UpgradesFromBase = {
-        -- Base        Max
-        urb1103 = 'srb1312',--To Cloakable Extractor
-        ueb1103 = 'seb1312',--To engineering Extractor
-        uab1103 = 'sab1312',--To shielded Extractor
-        xsb1103 = 'ssb1312',--To Armored Extractor
-    }
-    --This could potentially loop forever if someone broke the upgrade chain elsewhere
-    for unitid, upgradeid in UpgradesFromBase do
-        if all_bps[upgradeid] then
-            local nextID = upgradeid
-            while true do
-                if nextID == unitid then break end
-                all_bps[nextID].General.UpgradesFromBase = unitid
-                --LOG(all_bps[nextID].Description, unitid )
-                if all_bps[nextID].General.UpgradesFrom then
-                    nextID = all_bps[nextID].General.UpgradesFrom
-                else
-                    break
+
+    if _VERSION == "Lua 5.0.1" then
+        local UpgradesFromBase = {
+            -- Base        Max
+            urb1103 = 'srb1312',--To Cloakable Extractor
+            ueb1103 = 'seb1312',--To engineering Extractor
+            uab1103 = 'sab1312',--To shielded Extractor
+            xsb1103 = 'ssb1312',--To Armored Extractor
+        }
+        --This could potentially loop forever if someone broke the upgrade chain elsewhere
+        for unitid, upgradeid in pairs(UpgradesFromBase) do
+            if all_bps[upgradeid] then
+                local nextID = upgradeid
+                while true do
+                    if nextID == unitid then break end
+                    all_bps[nextID].General.UpgradesFromBase = unitid
+                    --LOG(all_bps[nextID].Description, unitid )
+                    if all_bps[nextID].General.UpgradesFrom then
+                        nextID = all_bps[nextID].General.UpgradesFrom
+                    else
+                        break
+                    end
                 end
             end
         end

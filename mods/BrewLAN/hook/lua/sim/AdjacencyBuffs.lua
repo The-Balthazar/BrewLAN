@@ -303,8 +303,8 @@ do
     ---------------------------------------------------------
     -- AVENGERS ASSEMBLE
     ---------------------------------------------------------
-    for buff, data in buffs do
-        for size, val in data.SizeData do
+    for buff, data in pairs(buffs) do
+        for size, val in pairs(data.SizeData) do
             local name = buff .. "Size" .. size
             local cat = 'STRUCTURE SIZE' .. tostring(size)
             BuffBlueprint({
@@ -324,7 +324,7 @@ do
                     },
                 },
             })
-            for i, v in data.IncludeIn do
+            for i, v in pairs(data.IncludeIn) do
                 table.insert(v,name)
             end
         end
