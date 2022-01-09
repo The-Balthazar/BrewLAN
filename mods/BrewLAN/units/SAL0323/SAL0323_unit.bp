@@ -110,8 +110,6 @@ UnitBlueprint {
         BuildTime = 1200,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -122,9 +120,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sal0323_name>Rupture',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

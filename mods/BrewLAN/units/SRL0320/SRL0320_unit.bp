@@ -88,8 +88,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Anti Air',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -101,12 +99,10 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_CloakToggle = true,
         },
         UnitName = '<LOC srl0320_name>Slink',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealth = true,

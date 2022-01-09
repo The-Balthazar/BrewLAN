@@ -122,8 +122,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Indirect Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -135,10 +133,8 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Advanced',
         SatelliteCapacity = 0,
         UnitName = '<LOC sel0320_name>Archimedes',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 26,

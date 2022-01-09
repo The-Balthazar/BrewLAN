@@ -142,8 +142,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Stop = true,
@@ -156,11 +154,9 @@ UnitBlueprint {
                 helpText = 'toggle_shield_personal',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 22,

@@ -187,8 +187,6 @@ UnitBlueprint {
                 'Muzzle006',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -201,9 +199,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'sea',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssb0401_name>Souiya',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

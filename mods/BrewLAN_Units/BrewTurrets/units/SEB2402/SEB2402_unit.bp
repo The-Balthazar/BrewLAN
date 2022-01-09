@@ -109,8 +109,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -119,9 +117,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC seb2402_name>Maelstrom',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 28,

@@ -173,8 +173,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -193,12 +191,10 @@ UnitBlueprint {
                 helpText = 'toggle_stealth_personal',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC sra0307_name>Zenith',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealth = true,

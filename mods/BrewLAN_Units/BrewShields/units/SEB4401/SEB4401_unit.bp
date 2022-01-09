@@ -139,8 +139,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'UEF',
         Icon = 'land',
         OrderOverrides = {
@@ -150,12 +148,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC seb4401_name>BFS - Stalwart',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 39,

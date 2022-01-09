@@ -117,8 +117,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 1,
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -136,12 +134,10 @@ UnitBlueprint {
                 helpText = 'vision_toggle',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC sea3301_name>Burning Star',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealth = true,

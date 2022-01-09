@@ -177,8 +177,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -190,9 +188,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sal0311_name>Moldavite',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 22,

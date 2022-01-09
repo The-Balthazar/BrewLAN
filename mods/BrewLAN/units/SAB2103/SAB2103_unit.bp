@@ -91,8 +91,6 @@ UnitBlueprint {
         },
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -101,9 +99,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC sab2103_name>Charis',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

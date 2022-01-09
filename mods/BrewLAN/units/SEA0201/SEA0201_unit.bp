@@ -161,8 +161,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Dock = true,
@@ -173,9 +171,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sea0201_name>UX Dragonlady',
-        UnitWeight = 1,
     },
     Intel = {
         SonarRadius = 30,

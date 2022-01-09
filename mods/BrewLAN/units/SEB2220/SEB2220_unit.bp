@@ -63,8 +63,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.025,
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_RetaliateToggle = true,
         },
@@ -78,12 +76,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
         UnitName = '<LOC seb2220_name>AP-12 Trapper',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

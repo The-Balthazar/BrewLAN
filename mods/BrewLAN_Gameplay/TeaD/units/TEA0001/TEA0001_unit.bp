@@ -210,8 +210,6 @@ UnitBlueprint {
             PitchBone = 'Muzzle',
             YawBone = 'Muzzle',
         },
-        Category = 'Experimental',
-        Classification = 'RULEUC_Commander',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = true,
@@ -227,8 +225,6 @@ UnitBlueprint {
         SelectionPriority = 3,
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Experimental',
-        UnitWeight = 1,
     },
     Intel = {
         FreeIntel = true,

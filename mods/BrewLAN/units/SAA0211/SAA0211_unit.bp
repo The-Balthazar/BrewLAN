@@ -157,8 +157,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -171,9 +169,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC saa0211_name>Impaler',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 65,

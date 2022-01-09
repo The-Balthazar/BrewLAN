@@ -111,17 +111,13 @@ UnitBlueprint {
         ResearchMult = 1.25,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Seraphim',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC xsb1302_name>Hyalatoh',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

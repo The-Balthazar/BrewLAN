@@ -205,8 +205,6 @@ UnitBlueprint {
             PitchBone = 'Arm02',
             YawBone = 0,
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -230,12 +228,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
         },
         UnitName = '<LOC sel0319_name>Custodian',
-        UnitWeight = 1,
     },
     Intel = {
         JamRadius = {

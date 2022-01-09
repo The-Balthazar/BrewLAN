@@ -97,8 +97,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
@@ -116,9 +114,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'sea',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC seb1102_name>Tide Pod',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,

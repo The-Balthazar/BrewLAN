@@ -216,8 +216,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -236,12 +234,10 @@ UnitBlueprint {
                 helpText = 'toggle_stealth_personal',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC ssa0314_name>Sinnaino',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 65,

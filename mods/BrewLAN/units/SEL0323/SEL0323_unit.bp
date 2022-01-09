@@ -89,8 +89,6 @@ UnitBlueprint {
         BuildTime = 2600,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -101,9 +99,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sel0323_name>Trickshot',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

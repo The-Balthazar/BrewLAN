@@ -104,17 +104,13 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_CloakToggle = true,
         },
         UnitName = '<LOC srb1311_name>Faraday Reactor',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

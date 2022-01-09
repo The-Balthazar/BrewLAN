@@ -67,8 +67,6 @@ UnitBlueprint {
         BuildTime = 1200,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_RetaliateToggle = true,
         },
@@ -82,12 +80,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
         UnitName = '<LOC srb2222_name>Silencer',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

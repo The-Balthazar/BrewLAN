@@ -199,8 +199,6 @@ UnitBlueprint {
                 'BuilderM_008',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -213,9 +211,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'air',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sab0401_name>Independence Engine',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 37,

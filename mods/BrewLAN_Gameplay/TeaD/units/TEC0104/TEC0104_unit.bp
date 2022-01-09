@@ -124,16 +124,12 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Stop = true,
         },
         FactionName = 'UEF',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Secret',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 22,

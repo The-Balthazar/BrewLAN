@@ -175,8 +175,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Gunship',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -189,9 +187,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssa0305_name>Vulthuum',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

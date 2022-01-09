@@ -128,8 +128,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Dock = true,
@@ -150,9 +148,7 @@ UnitBlueprint {
                 helpText = 'aeonairdecoy',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC saa0201_name>Beguiler',
-        UnitWeight = 1,
     },
     Intel = {
         JamRadius = {

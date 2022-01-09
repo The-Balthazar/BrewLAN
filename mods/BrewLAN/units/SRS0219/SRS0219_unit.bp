@@ -179,8 +179,6 @@ UnitBlueprint {
             PitchBone = 'Buildpoint_Left',
             YawBone = 'Buildpoint_Right',
         },
-        Category = 'Ship',
-        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Capture = true,
@@ -195,9 +193,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'sea',
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srs0219_name>Barwick Class',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 80,

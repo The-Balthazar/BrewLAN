@@ -168,8 +168,6 @@ UnitBlueprint {
             --PitchBone = 'ArmB001',
             --YawBone = 'ArmA001',
         },
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         CommandCaps = {
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
@@ -178,12 +176,10 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC seb1312_name>Mass Pump 3E',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

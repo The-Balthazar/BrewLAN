@@ -238,8 +238,6 @@ UnitBlueprint {
         SizeZ = 13,
     },
     General = {
-        Category = 'Transport',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -250,7 +248,6 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
@@ -261,7 +258,6 @@ UnitBlueprint {
             },
         },
         UnitName = '<LOC srl0403_name>Retributor',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 45,

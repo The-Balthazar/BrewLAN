@@ -64,12 +64,8 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'UEF',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1,

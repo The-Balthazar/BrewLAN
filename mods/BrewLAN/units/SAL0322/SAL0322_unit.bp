@@ -165,8 +165,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -182,12 +180,10 @@ UnitBlueprint {
                 helpText = 'toggle_shield_dome',
             },
         },
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC sal0322_name>Flame Lotus',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

@@ -172,8 +172,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Dock = true,
@@ -187,9 +185,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
         },
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sea0310_name>Nark',
-        UnitWeight = 1,
     },
     Intel = {
         JamRadius = {

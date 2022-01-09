@@ -86,8 +86,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Intelligence',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'Cybran',
         Icon = 'land',
         OrderOverrides = {
@@ -97,13 +95,11 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
             --RULEUTC_CloakToggle = true,
         },
         UnitName = '<LOC srb4313_name>Nightshade',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

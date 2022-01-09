@@ -172,8 +172,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Fighter',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -186,9 +184,7 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sra0402_name>Talon',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 65,

@@ -40,8 +40,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0,
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -50,8 +48,6 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 6,
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     Intel = {
         JamRadius = {

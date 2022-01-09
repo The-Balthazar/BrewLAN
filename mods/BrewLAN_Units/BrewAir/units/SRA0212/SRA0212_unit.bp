@@ -160,8 +160,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Fighter',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -174,9 +172,7 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sra0212_name>Dioscuri',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 28,

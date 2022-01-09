@@ -92,8 +92,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -108,12 +106,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC srb2391_name>Tesla Coil',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 25,

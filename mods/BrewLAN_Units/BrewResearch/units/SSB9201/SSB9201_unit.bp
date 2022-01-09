@@ -153,8 +153,6 @@ UnitBlueprint {
                 'Light02',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
@@ -163,9 +161,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssb9201_name>Iyathlab',
-        UnitWeight = 1,
         UpgradesFrom = 'ssb9101',
         UpgradesFromBase = 'ssb9101',
         UpgradesTo = 'ssb9301',

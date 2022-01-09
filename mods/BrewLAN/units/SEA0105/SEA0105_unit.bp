@@ -164,8 +164,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Gunship',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -180,9 +178,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sea0105_name>Pigeon',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

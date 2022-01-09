@@ -107,8 +107,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'UEF',
         Icon = 'land',
         OrderOverrides = {
@@ -118,12 +116,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC seb4303_name>Recoil',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

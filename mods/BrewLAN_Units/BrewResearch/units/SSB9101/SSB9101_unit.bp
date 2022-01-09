@@ -141,8 +141,6 @@ UnitBlueprint {
                 'Light03'
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
@@ -151,9 +149,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssb9101_name>Iyathlabistle',
-        UnitWeight = 1,
         UpgradesTo = 'ssb9201',
     },
     Intel = {

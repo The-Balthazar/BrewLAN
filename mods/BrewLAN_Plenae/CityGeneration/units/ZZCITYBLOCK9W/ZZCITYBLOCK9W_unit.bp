@@ -6,7 +6,7 @@ UnitBlueprint {
        Defense = { Health = 0, MaxHealth = 0 },
        Display = { Mesh = { LODs = { { LODCutoff = 1, ShaderName = 'Unit'} } }, HideLifebars = true },
      Footprint = { SizeX = 1, SizeZ = 1 },
-       General = { CapCost = 0, Category = 'Defense', FactionName = 'None' },
+       General = { CapCost = 0, FactionName = 'None' },
          Intel = { VisionRadius = 0, WaterVisionRadius = 0 },
        Physics = { BuildOnLayerCaps = { LAYER_Water = true }, MotionType = 'RULEUMT_None',
                    SkirtSizeX = 9, SkirtSizeZ = 9, SkirtOffsetX = -4, SkirtOffsetZ = -4 },

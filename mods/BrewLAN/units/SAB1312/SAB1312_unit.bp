@@ -97,16 +97,12 @@ UnitBlueprint {
         ResearchMult = 1.25,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

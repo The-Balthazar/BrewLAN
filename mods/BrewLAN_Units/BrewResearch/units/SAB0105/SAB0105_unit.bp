@@ -183,8 +183,6 @@ UnitBlueprint {
                 'Turret_003',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -197,8 +195,6 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
-        UnitWeight = 1,
         UpgradesTo = 'sab0205',
     },
     Intel = {

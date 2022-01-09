@@ -146,8 +146,6 @@ UnitBlueprint {
             PitchBone = 'Arm_Pitch',
             YawBone = 'Arm_Yaw',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -165,9 +163,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'amph',
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssl0319_name>Iyazyne',
-        UnitWeight = 3,
     },
     Intel = {
         RadarRadius = 30,

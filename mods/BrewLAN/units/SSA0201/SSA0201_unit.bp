@@ -165,8 +165,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Dock = true,
@@ -177,9 +175,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssa0201_name>Selia',
-        UnitWeight = 1,
     },
     Intel = {
         SonarRadius = 30,

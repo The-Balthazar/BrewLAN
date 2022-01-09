@@ -138,8 +138,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -148,9 +146,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC srb2401_name>Scathis Mark II',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 28,

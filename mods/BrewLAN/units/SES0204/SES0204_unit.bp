@@ -118,8 +118,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Submarine',
-        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Dive = true,
@@ -131,9 +129,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'sea',
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ses0204_name>Cochrane',
-        UnitWeight = 1,
     },
     Intel = {
         SonarRadius = 50,

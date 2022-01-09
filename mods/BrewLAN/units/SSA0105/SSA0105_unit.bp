@@ -164,8 +164,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Gunship',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -178,9 +176,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssa0105_name>Vulesel',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

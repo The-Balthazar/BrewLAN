@@ -78,8 +78,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.025,
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_RetaliateToggle = true,
         },
@@ -93,12 +91,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_WeaponToggle = true,
         },
         UnitName = '<LOC srb2220_name>Mutter',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

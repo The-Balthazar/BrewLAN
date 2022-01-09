@@ -79,8 +79,6 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
             RULEUCC_Stop = true,
             RULEUCC_Teleport = true,
@@ -88,9 +86,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sab5401_name>Ascension',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

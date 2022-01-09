@@ -124,14 +124,10 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC seb1201_name>EG–100 Fusion Reactor',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

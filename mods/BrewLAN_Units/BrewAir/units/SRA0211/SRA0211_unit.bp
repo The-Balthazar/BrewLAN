@@ -193,8 +193,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -213,12 +211,10 @@ UnitBlueprint {
                 helpText = 'toggle_stealth_personal',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC sra0211_name>Condor',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 65,

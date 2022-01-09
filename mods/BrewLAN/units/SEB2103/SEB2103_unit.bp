@@ -71,8 +71,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -81,9 +79,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC seb2103_name>Poker',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

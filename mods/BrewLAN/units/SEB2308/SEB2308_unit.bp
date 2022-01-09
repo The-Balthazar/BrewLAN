@@ -113,8 +113,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -123,9 +121,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC seb2308_name>Harpoon',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealth = true,

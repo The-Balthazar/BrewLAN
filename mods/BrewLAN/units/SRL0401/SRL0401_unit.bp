@@ -35,7 +35,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 60,
     Categories = {
-
         'SELECTABLE',
         'BUILTBYTIER3COMMANDER',
         'BUILTBYTIER3ENGINEER',
@@ -337,11 +336,8 @@ UnitBlueprint {
         SizeZ = 13,
     },
     General = {
-        Category = 'Transport',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
             --RULEUCC_Ferry = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -359,12 +355,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC srs0402_name>Abyss Crawler',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealthFieldRadius = 12,

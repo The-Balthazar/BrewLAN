@@ -140,8 +140,6 @@ UnitBlueprint {
                 'Build_004',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
@@ -150,9 +148,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC seb9301_name>Hawking Campus',
-        UnitWeight = 1,
         UpgradesFrom = 'seb9201',
         UpgradesFromBase = 'seb9101',
     },

@@ -171,14 +171,10 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssb1311_name>Uya-iya',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

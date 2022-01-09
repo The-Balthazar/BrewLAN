@@ -142,16 +142,12 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Stop = true,
         },
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 42,

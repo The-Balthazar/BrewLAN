@@ -192,8 +192,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Aeon',
         Icon = 'land',
         OrderOverrides = {
@@ -203,12 +201,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC sab1311_name>Von Mayer Reactor',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

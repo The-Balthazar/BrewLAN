@@ -134,8 +134,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.1,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         FactionName = 'Seraphim',
         Icon = 'land',
         OrderOverrides = {
@@ -145,12 +143,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC ssb5301_name>Athahaas',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 0,

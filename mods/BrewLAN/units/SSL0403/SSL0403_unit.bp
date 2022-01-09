@@ -396,8 +396,6 @@ UnitBlueprint {
                 'Mandible_006',
             },
         },
-        Category = 'Experimental',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Capture = true,
@@ -421,9 +419,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Experimental',
         UnitName = '<LOC ssl0403_name>Iyadesu',
-        UnitWeight = 4,
     },
     Intel = {
         RadarRadius = 45,

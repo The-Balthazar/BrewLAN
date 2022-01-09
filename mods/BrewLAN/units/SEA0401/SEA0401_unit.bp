@@ -220,8 +220,6 @@ UnitBlueprint {
         SizeZ = 15,
     },
     General = {
-        Category = 'Gunship',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -232,9 +230,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sea0401_name>AC-500 Centurion',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 72,

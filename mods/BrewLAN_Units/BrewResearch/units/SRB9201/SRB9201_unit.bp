@@ -132,8 +132,6 @@ UnitBlueprint {
                 'Build_004',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
@@ -142,9 +140,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC srb9201_name>Schrodinger Facility',
-        UnitWeight = 1,
         UpgradesFrom = 'srb9101',
         UpgradesFromBase = 'srb9101',
         UpgradesTo = 'srb9301',

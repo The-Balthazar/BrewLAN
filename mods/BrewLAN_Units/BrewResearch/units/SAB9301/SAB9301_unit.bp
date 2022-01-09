@@ -130,8 +130,6 @@ UnitBlueprint {
                 'Buildnode_006',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
@@ -140,9 +138,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sab9301_name>Enlightenment',
-        UnitWeight = 1,
         UpgradesFrom = 'sab9201',
         UpgradesFromBase = 'sab9101',
     },

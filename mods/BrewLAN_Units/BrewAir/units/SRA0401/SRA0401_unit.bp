@@ -188,8 +188,6 @@ UnitBlueprint {
         SizeZ = 4,
     },
     General = {
-        Category = 'Experimental',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -208,9 +206,7 @@ UnitBlueprint {
                 helpText = 'deploy',
             },
         },
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sra0401_name>Simurgh',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 46,

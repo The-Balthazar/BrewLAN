@@ -125,8 +125,6 @@ UnitBlueprint {
         StorageEnergy = 500,
     },
     General = {
-        Category = 'Anti Air',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -138,9 +136,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sal0320_name>Armillary',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

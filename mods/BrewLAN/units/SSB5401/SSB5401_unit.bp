@@ -213,8 +213,6 @@ UnitBlueprint {
         SizeZ = 9,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Factory',
         ConstructionBar = true,
         CommandCaps = { -- This is just for the wiki
             RULEUCC_Script = true,
@@ -235,13 +233,11 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
             RULEUTC_GenericToggle = true,
         },
         UnitName = "<LOC ssb5401_name>Chappa'ko",
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

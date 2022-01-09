@@ -237,8 +237,6 @@ UnitBlueprint {
             PitchBone = 'Buildpoint_Center',
             YawBone = 'Buildpoint_Center',
         },
-        Category = 'Ship',
-        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Capture = true,
@@ -253,9 +251,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'amph',
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC srs0319_name>Stillson Class',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 35,

@@ -107,8 +107,6 @@ UnitBlueprint {
                 'BuildBone3',
             },
         },
-        Category = 'Strategic',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -125,9 +123,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC seb2404_name>Ivan',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 28,

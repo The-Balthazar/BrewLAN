@@ -132,8 +132,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Indirect Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -145,9 +143,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssl0321_name>Ythhu',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 18,

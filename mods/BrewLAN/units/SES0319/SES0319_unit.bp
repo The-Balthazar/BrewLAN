@@ -225,8 +225,6 @@ UnitBlueprint {
             PitchBone = 'Turret_Barrel',
             YawBone = 'Turret001',
         },
-        Category = 'Ship',
-        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Capture = true,
@@ -241,9 +239,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'sea',
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ses0319_name>Patch Class',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 35,

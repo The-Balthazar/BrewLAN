@@ -97,8 +97,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -110,9 +108,7 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srl0318_name>Aracme',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

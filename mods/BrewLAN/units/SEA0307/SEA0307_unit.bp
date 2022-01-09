@@ -193,8 +193,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -207,9 +205,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sea0307_name>Albatross',
-        UnitWeight = 1,
     },
     Intel = {
         SonarRadius = 90,

@@ -142,8 +142,6 @@ UnitBlueprint {
         BuildBones2 = { AimBone = 'Arm_Muzzle002', PitchBone = 'ArmB002', YawBone = 'ArmA002' },
         BuildBones3 = { AimBone = 'Arm_Muzzle003', PitchBone = 'ArmB003', YawBone = 'ArmA003' },
         BuildBones4 = { AimBone = 'Arm_Muzzle004', PitchBone = 'ArmB004', YawBone = 'ArmA004' },
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         CommandCaps = {
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
@@ -160,12 +158,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC seb1311_name>Bessemer Reactor',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

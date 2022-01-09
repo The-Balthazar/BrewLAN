@@ -268,8 +268,6 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
@@ -281,9 +279,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ueb0304_name>QGW R-32',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

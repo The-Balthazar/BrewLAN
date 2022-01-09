@@ -198,8 +198,6 @@ UnitBlueprint {
             --PitchBone = 'ArmB001',
             --YawBone = 'ArmA001',
         },
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Reclaim = true,
@@ -209,11 +207,9 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        UnitWeight = 1,
         UpgradesFrom = 'ueb1104',
     },
     Intel = {

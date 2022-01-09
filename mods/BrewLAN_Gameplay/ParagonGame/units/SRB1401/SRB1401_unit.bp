@@ -87,18 +87,13 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = false,
         },
         UnitName = '<LOC srb1401_name>Demiurge',
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 3.1,

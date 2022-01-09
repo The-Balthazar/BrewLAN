@@ -117,8 +117,6 @@ UnitBlueprint {
             YawBone = 'BuildBone',
         },
         CapCost = 0,
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
@@ -132,8 +130,6 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'air',
         SelectionPriority = 6,
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 12,

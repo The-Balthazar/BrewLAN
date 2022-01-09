@@ -140,8 +140,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Indirect Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -153,9 +151,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sal0321_name>Scarab',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 18,

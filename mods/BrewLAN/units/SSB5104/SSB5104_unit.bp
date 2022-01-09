@@ -113,8 +113,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
             RULEUCC_Transport = true,
         },
@@ -127,9 +125,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssb5104_name>Iathu-uhthe',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = .45,

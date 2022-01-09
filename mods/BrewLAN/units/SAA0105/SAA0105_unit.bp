@@ -151,8 +151,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Gunship',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -165,9 +163,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC saa0105_name>Respirer',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

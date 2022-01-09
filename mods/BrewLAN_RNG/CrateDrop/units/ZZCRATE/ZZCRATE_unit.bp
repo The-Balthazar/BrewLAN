@@ -34,7 +34,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0,
-        Category = 'Defense',
     },
     Intel = {
         VisionRadius = 0,

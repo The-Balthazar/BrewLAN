@@ -126,8 +126,6 @@ UnitBlueprint {
             PitchBone = 'Engi_Point',
             YawBone = 'Engi_Point',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
@@ -145,12 +143,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC sab0104_name>Pearl',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 15,

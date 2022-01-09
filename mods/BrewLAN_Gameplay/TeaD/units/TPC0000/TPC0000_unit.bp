@@ -66,12 +66,8 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_MilitaryVehicle',
         FactionName = 'Seraphim',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

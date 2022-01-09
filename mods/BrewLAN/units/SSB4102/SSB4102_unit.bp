@@ -132,8 +132,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'Seraphim',
         Icon = 'land',
         OrderOverrides = {
@@ -143,12 +141,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC ssb4102_name>Atha-istle',
-        UnitWeight = 1,
         UpgradesTo = 'xsb4202',
     },
     Intel = {

@@ -141,8 +141,6 @@ UnitBlueprint {
                 'Build_004',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
@@ -151,9 +149,7 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC seb9101_name>Tyson Campus',
-        UnitWeight = 1,
         UpgradesTo = 'seb9201',
     },
     Intel = {

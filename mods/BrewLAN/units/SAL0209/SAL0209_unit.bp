@@ -215,8 +215,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = true,
@@ -233,12 +231,10 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC sal0209_name>Butler',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

@@ -148,8 +148,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Stop = true,
@@ -162,12 +160,10 @@ UnitBlueprint {
                 helpText = 'toggle_shield_dome',
             },
         },
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC sel0322_name>Ella',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20 *1.7,

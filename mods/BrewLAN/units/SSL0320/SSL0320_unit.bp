@@ -164,8 +164,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Anti Air',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -177,9 +175,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssl0320_name>Atha-Ythia',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

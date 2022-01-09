@@ -92,8 +92,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Indirect Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -105,9 +103,7 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC srl03ll_name>Triseptitron',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 26,

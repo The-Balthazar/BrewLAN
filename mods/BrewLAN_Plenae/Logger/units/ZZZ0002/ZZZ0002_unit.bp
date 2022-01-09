@@ -56,14 +56,10 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'Aeon',
         Icon = 'amph',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'LOUD',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 5000000,

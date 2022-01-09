@@ -107,8 +107,6 @@ UnitBlueprint {
         RebuildBonusIds = {'xsb2101'},
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -117,9 +115,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssb2380_name>Uttaus',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

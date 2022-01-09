@@ -115,8 +115,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
@@ -133,12 +131,10 @@ UnitBlueprint {
         },
         TarmacDecal = 'Tarmacs/tarmac_seraphim_2x_albedo',
         TarmacGlowDecal = 'Tarmacs/tarmac_seraphim_2x_glow',
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC sss0305_name>Aezhou',
-        UnitWeight = 1,
         UpgradesFrom = 'xsb3202',
     },
     Intel = {

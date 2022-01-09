@@ -195,8 +195,6 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-        Category = 'Transport',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -217,12 +215,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC sra0306_name>Night Skimmer',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealthFieldRadius = 5,

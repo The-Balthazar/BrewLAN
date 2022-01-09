@@ -143,8 +143,6 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-        Category = 'Experimental',
-        Classification = 'RULEUC_Sensor',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -161,12 +159,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 4,
-        TechLevel = 'RULEUTL_Experimental',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC sel3401_name>Teatut',
-        UnitWeight = 1,
     },
     Intel = {
         BlipRadarRadius = 625,

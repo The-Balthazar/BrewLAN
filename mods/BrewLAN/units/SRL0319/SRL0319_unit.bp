@@ -166,8 +166,6 @@ UnitBlueprint {
             PitchBone = 'Buildpoint_Left',
             YawBone = 'Buildpoint_Left',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -191,12 +189,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC srl0319_name>House',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealth = true,

@@ -120,8 +120,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'Cybran',
         Icon = 'land',
         OrderOverrides = {
@@ -131,12 +129,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC srb4401_name>Iron Curtain',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 37,

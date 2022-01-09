@@ -107,8 +107,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 1,
-        Category = 'Intelligence',
-        Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -120,12 +118,10 @@ UnitBlueprint {
         FactionName = 'UEF',
         SelectionPriority = 4,
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
         },
         UnitName = '<LOC sea4301_name>Vaxis',
-        UnitWeight = 1,
     },
     Intel = {
         RadarStealth = true,

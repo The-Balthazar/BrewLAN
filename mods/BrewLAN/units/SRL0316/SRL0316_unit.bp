@@ -110,8 +110,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -127,12 +125,10 @@ UnitBlueprint {
                 helpText = 'toggle_stealth_field',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC srl0316_name>Operative',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

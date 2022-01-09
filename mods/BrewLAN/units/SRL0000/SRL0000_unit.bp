@@ -66,11 +66,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         FactionName = 'Cybran',
-        TechLevel = 'RULEUTL_Secret',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 5,

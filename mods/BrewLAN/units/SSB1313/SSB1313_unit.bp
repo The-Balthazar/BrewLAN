@@ -95,17 +95,13 @@ UnitBlueprint {
     },
     Footprint = { SizeX = 3, SizeZ = 3 },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC xsb1303_name>Hyaliya',
-        UnitWeight = 1,
         UpgradesFrom = 'xsb1303',
     },
     Intel = {

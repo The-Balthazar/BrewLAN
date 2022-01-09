@@ -181,8 +181,6 @@ UnitBlueprint {
             PitchBone = 'Turret_Barrel',
             YawBone = 'Turret',
         },
-        Category = 'Ship',
-        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Capture = true,
@@ -197,12 +195,10 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'sea',
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
         },
         UnitName = '<LOC ses0219_name>Fixxie Class',
-        UnitWeight = 1,
     },
     Intel = {
         JamRadius = {

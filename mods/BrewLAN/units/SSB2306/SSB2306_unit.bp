@@ -111,8 +111,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -121,9 +119,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC ssb2306_name>Othuushala',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

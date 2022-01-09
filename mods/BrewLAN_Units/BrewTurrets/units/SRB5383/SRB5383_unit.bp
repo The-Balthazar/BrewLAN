@@ -65,8 +65,6 @@ UnitBlueprint {
     },
     General = {
         CapCost = 0.25,
-        Category = 'Defense',
-        Classification = 'RULEUC_MiscSupport',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
             RULEUTC_CloakToggle = true,
@@ -78,9 +76,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srb5383_name>The Lost',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,

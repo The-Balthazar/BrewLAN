@@ -112,8 +112,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
@@ -131,9 +129,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'sea',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssb1102_name>Uyaluos',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,

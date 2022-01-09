@@ -221,8 +221,6 @@ UnitBlueprint {
         BuildTime = 17850,
     },
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -233,9 +231,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'amph',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssl0404_name>Sisha-Ah',
-        UnitWeight = 1,
     },
     Intel = {
         Cloak = true,

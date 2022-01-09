@@ -147,8 +147,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         CommandCaps = { -- This is just for the wiki
             RULEUCC_Script = true,
         },
@@ -165,12 +163,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC ssb3301_name>Aezselen',
-        UnitWeight = 1,
     },
     Intel = {
         ReactivateTime = 10,

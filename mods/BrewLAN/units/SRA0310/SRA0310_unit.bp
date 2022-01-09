@@ -172,8 +172,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Dock = true,
@@ -184,12 +182,10 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
         },
         UnitName = '<LOC sra0310_name>Vanguard',
-        UnitWeight = 1,
     },
     Intel = {
         JamRadius = {

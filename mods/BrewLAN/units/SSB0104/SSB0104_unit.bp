@@ -142,8 +142,6 @@ UnitBlueprint {
             YawBone = 'Arm_Yaw',
         },
 
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Capture = true,
             RULEUCC_Guard = true,
@@ -161,12 +159,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
         UnitName = '<LOC ssb0x04_name>Iya',
-        UnitWeight = 1,
         UpgradesTo = 'ssb0204',
         UpgradesFromBase = 'ssb0104',
     },

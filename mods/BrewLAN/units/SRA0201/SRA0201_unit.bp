@@ -166,8 +166,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Utility',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Dock = true,
@@ -184,12 +182,10 @@ UnitBlueprint {
                 helpText = 'toggle_stealth_field',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
         UnitName = '<LOC sra0201_name>Blade Raven',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 64,

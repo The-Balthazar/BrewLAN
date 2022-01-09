@@ -187,8 +187,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -201,9 +199,7 @@ UnitBlueprint {
         },
         FactionName = 'Seraphim',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssa0106_name>Sou-ioz',
-        UnitWeight = 1,
     },
     Intel = {
         SonarRadius = 75,

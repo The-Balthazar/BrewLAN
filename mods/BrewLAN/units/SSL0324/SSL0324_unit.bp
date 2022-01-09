@@ -178,8 +178,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -195,12 +193,10 @@ UnitBlueprint {
                 helpText = 'toggle_omni',
             },
         },
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC ssl0324_name>Yenesel',
-        UnitWeight = 1,
     },
     Intel = {
         OmniRadius = 100,

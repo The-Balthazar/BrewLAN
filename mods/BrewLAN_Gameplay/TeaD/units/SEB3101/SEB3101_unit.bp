@@ -109,8 +109,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         FactionName = 'UEF',
         Icon = 'land',
         OrderOverrides = {
@@ -120,12 +118,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC seb3101_name>SA0 - 100',
-        UnitWeight = 1,
     },
     Intel = {
         RadarRadius = 20,

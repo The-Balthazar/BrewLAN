@@ -139,8 +139,6 @@ UnitBlueprint {
             PitchBone = 'Buildpoint_Middle',
             YawBone = 'Buildpoint_Middle',
         },
-        Category = 'Ship',
-        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Capture = true,
@@ -155,9 +153,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'sea',
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srs0119_name>Franklin Class',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

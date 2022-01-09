@@ -86,8 +86,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -96,9 +94,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC ssb2311_name>Sinn Unthe',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 50,

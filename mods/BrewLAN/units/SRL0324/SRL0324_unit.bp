@@ -168,8 +168,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -188,9 +186,7 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC srl0324_name>Adramelech',
-        UnitWeight = 1,
     },
     Intel = {
         OmniRadius = 100,

@@ -120,8 +120,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Indirect Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -133,9 +131,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sel0321_name>Aster',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 18,

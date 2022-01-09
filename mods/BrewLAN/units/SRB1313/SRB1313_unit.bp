@@ -113,17 +113,13 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
             RULEUTC_CloakToggle = true,
         },
-        UnitWeight = 1,
         UpgradesFrom = 'urb1104',
     },
     Intel = {

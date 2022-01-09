@@ -161,8 +161,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -175,9 +173,7 @@ UnitBlueprint {
         },
         FactionName = 'Aeon',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC saa0106_name>Saksinokka',
-        UnitWeight = 1,
     },
     Intel = {
         SonarRadius = 75,

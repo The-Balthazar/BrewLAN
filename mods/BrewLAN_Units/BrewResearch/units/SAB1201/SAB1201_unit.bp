@@ -148,13 +148,9 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
         FactionName = 'Aeon',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Advanced',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

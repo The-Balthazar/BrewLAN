@@ -108,8 +108,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_CounterMeasure',
         FactionName = 'UEF',
         Icon = 'land',
         OrderOverrides = {
@@ -119,12 +117,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC seb4102_name>LSD - Pulse',
-        UnitWeight = 1,
         UpgradesTo = 'ueb4202',
     },
     Intel = {

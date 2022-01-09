@@ -141,8 +141,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -151,9 +149,7 @@ UnitBlueprint {
         FactionName = 'Aeon',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sab2306_name>Orbos',
-        UnitWeight = 1,
     },
     Intel = {
         OmniRadius = 30,

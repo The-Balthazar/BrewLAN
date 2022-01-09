@@ -122,8 +122,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Defense',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -141,12 +139,10 @@ UnitBlueprint {
                 helpText = 'toggle_omni',
             },
         },
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC sel0324_name>NG3 Longbow',
-        UnitWeight = 1,
     },
     Intel = {
         OmniRadius = 70,

@@ -221,8 +221,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-        Category = 'Transport',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -243,12 +241,10 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 2,
-        TechLevel = 'RULEUTL_Advanced',
         ToggleCaps = {
             RULEUTC_ShieldToggle = true,
         },
         UnitName = '<LOC ssa0306_name>Vishuum',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

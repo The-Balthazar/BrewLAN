@@ -80,8 +80,6 @@ UnitBlueprint {
         RebuildBonusIds = {'srb2103'},
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -90,9 +88,7 @@ UnitBlueprint {
         FactionName = 'Cybran',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC srb2103_name>Little Bertha',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

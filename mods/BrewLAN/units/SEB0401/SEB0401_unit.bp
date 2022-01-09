@@ -188,8 +188,6 @@ UnitBlueprint {
                 'Muzzle008',
             },
         },
-        Category = 'Factory',
-        Classification = 'RULEUC_Factory',
         CommandCaps = {
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -211,9 +209,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC seb0401_name>Gantry',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

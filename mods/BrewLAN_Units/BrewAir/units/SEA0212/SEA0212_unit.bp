@@ -173,8 +173,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Fighter',
-        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -187,9 +185,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'air',
-        TechLevel = 'RULEUTL_Advanced',
         UnitName = '<LOC sea0212_name>Raptor',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 32,

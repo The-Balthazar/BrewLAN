@@ -137,8 +137,6 @@ UnitBlueprint {
         TeleportTimeMod = 0.01,
     },
     General = {
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_Move = true,
             RULEUCC_Stop = true,
@@ -146,8 +144,6 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Advanced',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 20,

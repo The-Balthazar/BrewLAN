@@ -102,8 +102,6 @@ UnitBlueprint {
         RebuildBonusIds = {'ssb2103'},
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
@@ -112,9 +110,7 @@ UnitBlueprint {
         FactionName = 'Seraphim',
         Icon = 'land',
         SelectionPriority = 5,
-        TechLevel = 'RULEUTL_Basic',
         UnitName = '<LOC ssb2103_name>Thaam-atha',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 24,

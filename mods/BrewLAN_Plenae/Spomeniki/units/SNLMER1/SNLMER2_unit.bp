@@ -182,8 +182,6 @@ UnitBlueprint {
             PitchBone = 'Arm_003',
             YawBone = 'Arm_Yaw',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = true,
@@ -199,12 +197,10 @@ UnitBlueprint {
         FactionName = 'UEF',
         Icon = 'land',
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
         UnitName = '<LOC snlmer2_name>MER-A Spirit',
-        UnitWeight = 1,
     },
     Intel = {
         VisionRadius = 16,

@@ -100,8 +100,6 @@ UnitBlueprint {
         BuildTime = 2100,--350,
     },
     General = {
-        Category = 'Strategic',
-        Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -119,9 +117,7 @@ UnitBlueprint {
             },
         },
         SelectionPriority = 4,
-        TechLevel = 'RULEUTL_Secret',
         UnitName = '<LOC sel0326_name>Bird Nest',
-        UnitWeight = 1,
     },
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.4,
