@@ -46,7 +46,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure3_shield',
     Economy = {
         HalfPriceUpgradeFromID = 'urb4206',
-        UpgradeFromCostDiscount = 0.6666666666666666,
+        UpgradeFromCostDiscount = 2/3,
     },
 }
 
@@ -64,10 +64,10 @@ UnitBlueprint {
         },
     },
 }
-  
+
 UnitBlueprint {
 	Merge = true,
-	BlueprintId="xrb0304",		--Hive 3 
+	BlueprintId="xrb0304",		--Hive 3
     Economy = {
         BuildCostEnergy = 1600*4,
         BuildCostMass = 240*4,

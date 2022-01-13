@@ -79,12 +79,15 @@ function WikiBlueprints(all_blueprints)
     for id, bp in pairs(all_blueprints.Unit) do
         BrewLANGetListOfGantries(id, bp, Gantries)
     end
+
     all_blueprints.Unit.sab0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY AEON AIR', 'BUILTBYIENGINE AIR'}
     all_blueprints.Unit.srb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY CYBRAN LAND', 'BUILTBYARTHROLAB LAND'}
     all_blueprints.Unit.ssb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY SERAPHIM NAVAL', 'BUILTBYSOUIYA NAVAL'}
 
     BrewLANBuildCatChanges(all_blueprints.Unit, real_categories)
     UpgradeableToBrewLAN(all_blueprints.Unit)
+    BrewLANMatchBalancing(all_blueprints.Unit)
+
     for id, bp in pairs(all_blueprints.Unit) do
         --BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)  -- Wont do anything for the wiki since it checks Megalith exist first.
         BrewLANSatelliteUplinkForVanillaUnits(id, bp)
@@ -764,10 +767,10 @@ function BrewLANMatchBalancing(all_bps)
             Mults = {
                 Intel = 1,
                 Economy = {
-                    MaintenanceConsumptionPerSecondEnergy = 0.33333,
+                    MaintenanceConsumptionPerSecondEnergy = 1/3,
                     BuildRate = 0.5,
                     StorageEnergy = 0.5,
-                    StorageMass = 0.33333,
+                    StorageMass = 1/3,
                 },
             },
         },
@@ -783,7 +786,7 @@ function BrewLANMatchBalancing(all_bps)
                     BuildRate = 1.5,
                     BuildTime = 2.4,
                     StorageEnergy = 2.5,
-                    StorageMass = 1.66667,
+                    StorageMass = 5/3,
                 },
             },
         },
@@ -791,20 +794,18 @@ function BrewLANMatchBalancing(all_bps)
         sal0119 = {
             TargetID = 'xel0209',
             BaseMult = 0.265,
-            Affects = {'Economy'},
             Mults = {
                 Economy = {
-                    MaintenanceConsumptionPerSecondEnergy = 0.33333,
+                    MaintenanceConsumptionPerSecondEnergy = 1/3,
                     BuildRate = 0.5,
                     StorageEnergy = 0.5,
-                    StorageMass = 0.333,
+                    StorageMass = 1/3,
                 },
             },
         },
-        sal0209 = {TargetID = 'xel0209', BaseMult = 1, Affects = {'Economy'}},
+        sal0209 = 'xel0209',
         sal0319 = {
             TargetID = 'xel0209',
-            Affects = {'Economy'},
             Mults = {
                 Economy = {
                     BuildCostEnergy = 3.625,
@@ -812,7 +813,7 @@ function BrewLANMatchBalancing(all_bps)
                     BuildRate = 1.5,
                     BuildTime = 2.4,
                     StorageEnergy = 2.5,
-                    StorageMass = 1.66667,
+                    StorageMass = 5/3,
                 },
             },
         },
@@ -820,20 +821,18 @@ function BrewLANMatchBalancing(all_bps)
         srl0119 = {
             TargetID = 'xel0209',
             BaseMult = 0.265,
-            Affects = {'Economy'},
             Mults = {
                 Economy = {
-                    MaintenanceConsumptionPerSecondEnergy = 0.33333,
+                    MaintenanceConsumptionPerSecondEnergy = 1/3,
                     BuildRate = 0.5,
                     StorageEnergy = 0.5,
-                    StorageMass = 0.333,
+                    StorageMass = 1/3,
                 },
             },
         },
-        srl0209 = {TargetID = 'xel0209', BaseMult = 1, Affects = {'Economy'}},
+        srl0209 = 'xel0209',
         srl0319 = {
             TargetID = 'xel0209',
-            Affects = {'Economy'},
             Mults = {
                 Economy = {
                     BuildCostEnergy = 3.625,
@@ -841,7 +840,7 @@ function BrewLANMatchBalancing(all_bps)
                     BuildRate = 1.5,
                     BuildTime = 2.4,
                     StorageEnergy = 2.5,
-                    StorageMass = 1.66667,
+                    StorageMass = 5/3,
                 },
             },
         },
@@ -849,19 +848,17 @@ function BrewLANMatchBalancing(all_bps)
         ssl0119 = {
             TargetID = 'xel0209',
             BaseMult = 0.265,
-            Affects = {'Economy'},
             Mults = {
                 Economy = {
                     BuildRate = 0.5,
                     StorageEnergy = 0.5,
-                    StorageMass = 0.333,
+                    StorageMass = 1/3,
                 },
             },
         },
-        ssl0219 = {TargetID = 'xel0209', BaseMult = 1, Affects = {'Economy'}},
+        ssl0219 = 'xel0209',
         ssl0319 = {
             TargetID = 'xel0209',
-            Affects = {'Economy'},
             Mults = {
                 Economy = {
                     BuildCostEnergy = 3.625,
@@ -869,7 +866,7 @@ function BrewLANMatchBalancing(all_bps)
                     BuildRate = 1.5,
                     BuildTime = 2.4,
                     StorageEnergy = 2.5,
-                    StorageMass = 1.66667,
+                    StorageMass = 5/3,
                 },
             },
         },
@@ -1069,10 +1066,20 @@ function BrewLANMatchBalancing(all_bps)
         },
     }
 
-    for unitid, data in UnitsList do
+    for unitid, data in pairs(UnitsList) do
+        if _VERSION ~= "Lua 5.0.1" and all_bps[unitid] then
+            all_bps[unitid].WikiInfoboxNote = '<LOC wiki_infobox_stats_note>Note: This unit has its stats redefined<br />at the start of the game.'
+            all_bps[unitid].WikiBalance = {
+                ReferenceIDs = {
+                    data.TargetID and data.TargetID[1] or data.TargetID or data,
+                    data.TargetID and data.TargetID[2] or nil
+                },
+                Affects = data.Affects or {'Economy'},
+            }
+        end
         if type(data) == 'string' then
             if all_bps[unitid] and all_bps[data] then
-                for key, val in  all_bps[unitid].Economy do
+                for key, val in pairs(all_bps[unitid].Economy) do
                     if type(val) == 'number' then
                         all_bps[unitid].Economy[key] = all_bps[data].Economy[key]
                     end
@@ -1083,49 +1090,44 @@ function BrewLANMatchBalancing(all_bps)
             local Affects = data.Affects or {'Economy'}
             if all_bps[unitid] and (all_bps[tid[1]] and all_bps[tid[2]] or all_bps[tid]) then
                 SPEW("Syncronising balance for " .. unitid)
-                for i, tablename in Affects do
-                    if tablename ~= 'Shield' then
-                        for key, val in  all_bps[unitid][tablename] do
-                            if type(val) == 'number' and (type(all_bps[tid[1]][tablename][key]) == 'number' and type(all_bps[tid[2]][tablename][key]) == 'number' or type(all_bps[tid][tablename][key]) == 'number') then
-                                local mult, rawnumber
-                                if type(data.Mults[tablename]) == 'number' then
-                                    --If the mults table is actually a number, use that
-                                    mult = data.Mults[tablename]
-                                else
-                                    --else run through in order, key, base, or 1
-                                    --key only exists if its a table, else we go elsewhere
-                                    mult = data.Mults[tablename][key] or data.BaseMult
-                                end
-                                if type(all_bps[tid][tablename][key]) == 'number' then
-                                    rawnumber = all_bps[tid][tablename][key]
-                                else
-                                    rawnumber = (all_bps[tid[1]][tablename][key] + all_bps[tid[2]][tablename][key]) * 0.5
-                                end
-                                if mult and rawnumber then
-                                    all_bps[unitid][tablename][key] = MathRoundAppropriately(rawnumber * mult)
-                                end
-                            end
-                        end
-                    else
-                        for key, val in  all_bps[unitid].Defense[tablename] do
-                            if type(val) == 'number' and (type(all_bps[tid[1]].Defense[tablename][key]) == 'number' and type(all_bps[tid[2]].Defense[tablename][key]) == 'number' or type(all_bps[tid].Defense[tablename][key]) == 'number') then
-                                local mult, rawnumber
-                                if type(data.Mults[tablename]) == 'number' then
-                                    --If the mults table is actually a number, use that
-                                    mult = data.Mults[tablename]
-                                else
-                                    --else run through in order, key, base, or 1
-                                    --key only exists if its a table, else we go elsewhere
-                                    mult = data.Mults[tablename][key] or data.BaseMult
-                                end
-                                if type(all_bps[tid].Defense[tablename][key]) == 'number' then
-                                    rawnumber = all_bps[tid].Defense[tablename][key]
-                                else
-                                    rawnumber = (all_bps[tid[1]].Defense[tablename][key] + all_bps[tid[2]].Defense[tablename][key]) * 0.5
-                                end
-                                if mult and rawnumber then
-                                    all_bps[unitid].Defense[tablename][key] = MathRoundAppropriately(rawnumber * mult)
-                                end
+                for i, tablename in ipairs(Affects) do
+
+                    local function GetRef(id, key)
+                        return all_bps[id] and
+                        (
+                            tablename == 'Shield'
+                              and all_bps[id].Defense[tablename]
+                              and all_bps[id].Defense[tablename][key]
+                            or all_bps[id][tablename]
+                              and all_bps[id][tablename][key]
+                        )
+                    end
+
+                    local function GetValidRef(id, key)
+                        local ref = GetRef(id, key)
+                        return type(ref) == 'number' and ref
+                    end
+
+                    local function GetMult(key)
+                        return type(data.Mults[tablename]) == 'number'
+                        and data.Mults[tablename]
+                        or data.Mults[tablename][key]
+                        or data.BaseMult
+                    end
+
+                    for key, val in pairs(tablename == 'Shield' and all_bps[unitid].Defense.Shield or all_bps[unitid][tablename]) do
+
+                        local ref = GetValidRef(tid, key)
+                        local refA = GetValidRef(tid[1], key)
+                        local refB = GetValidRef(tid[2], key)
+
+                        if type(val) == 'number' and (ref or refA and refB) then
+
+                            local mult = GetMult(key)
+                            local rawnumber = ref or (refA + refB) * 0.5
+
+                            if mult and rawnumber then
+                                (tablename == 'Shield' and all_bps[unitid].Defense.Shield or all_bps[unitid][tablename])[key] = MathRoundAppropriately(rawnumber * mult)
                             end
                         end
                     end

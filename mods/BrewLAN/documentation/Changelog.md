@@ -1339,3 +1339,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Added `BrewLANBuildCatChanges` to the list of functions the wiki script runs.
     * Split up that function into two so that it only runs the part the player would see.
+  * Added `BrewLANMatchBalancing` to the list of functions the wiki script runs.
+    * Refactored that function so that it has less copy pasted code.
+    * Added a section for wiki-specific data.
+  * Added the *Bletchley Park* function `RebalanceExistingIntel` to the list of functions the wiki script runs.
+    * Updated to work in current Lua.
+    * Added a section for wiki-specific data.
