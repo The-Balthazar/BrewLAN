@@ -1334,3 +1334,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Moved Mesh Swap to cursed mods, and gave it an icon.
   * Bletchley Park: Gave it the icon it's had on the wiki for a while now.
   * Reinforcements: (Finally) Added the option to have transports leave towards the opposite border, which I've sat on for months.
+
+  ## 2022-01-13
+
+  * Added `BrewLANBuildCatChanges` to the list of functions the wiki script runs.
+    * Split up that function into two so that it only runs the part the player would see.

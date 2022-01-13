@@ -40,6 +40,7 @@ function ModBlueprints(all_blueprints)
         BrewLANRoundGalacticCollosusHealth(all_blueprints.Unit.ual0401)
 
         BrewLANBuildCatChanges(all_blueprints.Unit, real_categories)
+        BrewLANBuildCatChangesAI(all_blueprints.Unit, real_categories)
         UpgradeableToBrewLAN(all_blueprints.Unit)
         BrewLANMatchBalancing(all_blueprints.Unit)
 
@@ -82,6 +83,7 @@ function WikiBlueprints(all_blueprints)
     all_blueprints.Unit.srb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY CYBRAN LAND', 'BUILTBYARTHROLAB LAND'}
     all_blueprints.Unit.ssb0401.Economy.BuildableCategory = {'BUILTBYEXPERIMENTALFACTORY SERAPHIM NAVAL', 'BUILTBYSOUIYA NAVAL'}
 
+    BrewLANBuildCatChanges(all_blueprints.Unit, real_categories)
     UpgradeableToBrewLAN(all_blueprints.Unit)
     for id, bp in pairs(all_blueprints.Unit) do
         --BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)  -- Wont do anything for the wiki since it checks Megalith exist first.
@@ -153,17 +155,6 @@ end
 --------------------------------------------------------------------------------
 
 function BrewLANBuildCatChanges(all_bps, real_categories)
-    --[[local bb = function(data)
-        return 'BUILTBY' .. (data[1] or '') .. 'TIER' .. (data[t] or '')
-    end
-    local T1LF = 'BUILTBYLANDTIER1FACTORY '
-    local T2LF = 'BUILTBYLANDTIER2FACTORY '
-    local T3LF = 'BUILTBYLANDTIER3FACTORY '
-    ]]--
-
-    ----------------------------------------------------------------------------
-    -- What build cats do we want to add
-    ----------------------------------------------------------------------------
     local units_buildcats = {
         urb0101 = {'BUILTBYLANDTIER1FACTORY CYBRAN MOBILE CONSTRUCTION',},
         urb0201 = {'BUILTBYLANDTIER2FACTORY CYBRAN MOBILE CONSTRUCTION',},
@@ -206,6 +197,29 @@ function BrewLANBuildCatChanges(all_bps, real_categories)
         srl0319 = {'BUILTBYTIER3ENGINEER CYBRAN COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER CYBRAN AIRSTAGINGPLATFORM',},
         ssl0319 = {'BUILTBYTIER3ENGINEER SERAPHIM COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER SERAPHIM AIRSTAGINGPLATFORM',},
         sal0319 = {'BUILTBYTIER3ENGINEER AEON COUNTERINTELLIGENCE','BUILTBYTIER3ENGINEER AEON AIRSTAGINGPLATFORM',},
+        --Support Commanders
+        ual0301 = {'BUILTBYTIER3FIELD AEON',},
+        uel0301 = {'BUILTBYTIER3FIELD UEF',},
+        url0301 = {'BUILTBYTIER3FIELD CYBRAN',},
+        xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
+    }
+    for unitid, buildcat in pairs(units_buildcats) do
+        if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
+            for i in ipairs(buildcat) do
+                --Check we can
+                if _VERSION ~= "Lua 5.0.1" then
+                    table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
+                    table.sort(all_bps[unitid].Economy.BuildableCategory)
+                elseif CheckBuildCatConsistsOfRealCats(real_categories, buildcat[i]) then
+                    table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
+                end
+            end
+        end
+    end
+end
+
+function BrewLANBuildCatChangesAI(all_bps, real_categories)
+    local units_buildcats = {
         --These categories are restricted if controlled by a human in the hooked unit scripts
         ual0105 = {'BUILTBYTIER1FIELD AEON',},
         ual0208 = {'BUILTBYTIER2FIELD AEON',},
@@ -219,16 +233,10 @@ function BrewLANBuildCatChanges(all_bps, real_categories)
         xsl0105 = {'BUILTBYTIER1FIELD SERAPHIM',},
         xsl0208 = {'BUILTBYTIER2FIELD SERAPHIM',},
         xsl0309 = {'BUILTBYTIER3FIELD SERAPHIM',},
-        --Support Commanders
-        ual0301 = {'BUILTBYTIER3FIELD AEON',},
-        uel0301 = {'BUILTBYTIER3FIELD UEF',},
-        url0301 = {'BUILTBYTIER3FIELD CYBRAN',},
-        xsl0301 = {'BUILTBYTIER3FIELD SERAPHIM',},
     }
     for unitid, buildcat in units_buildcats do
-        if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then   --Xtreme Wars crash fix here. They removed the Fatboys ability to build.
+        if all_bps[unitid] and all_bps[unitid].Economy.BuildableCategory then
             for i in buildcat do
-                --Check we can
                 if CheckBuildCatConsistsOfRealCats(real_categories, buildcat[i]) then
                     table.insert(all_bps[unitid].Economy.BuildableCategory, buildcat[i])
                 end
