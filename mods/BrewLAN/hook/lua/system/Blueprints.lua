@@ -1109,10 +1109,10 @@ function BrewLANMatchBalancing(all_bps)
                     end
 
                     local function GetMult(key)
-                        return type(data.Mults[tablename]) == 'number'
-                        and data.Mults[tablename]
-                        or data.Mults[tablename][key]
+                        return data.Mults and type(data.Mults[tablename]) == 'number' and data.Mults[tablename]
+                        or (data.Mults and data.Mults[tablename] and data.Mults[tablename][key])
                         or data.BaseMult
+                        or 1
                     end
 
                     for key, val in pairs(tablename == 'Shield' and all_bps[unitid].Defense.Shield or all_bps[unitid][tablename]) do
