@@ -24,7 +24,7 @@ XSB1303 = Class(SMassFabricationUnit) {
         self.RingManip1:SetSpinDown(false)
         self.RingManip2:SetSpinDown(false)
         self.RingManip3:SetSpinDown(false)
-    end,false
+    end,
 }
 
 TypeClass = XSB1303

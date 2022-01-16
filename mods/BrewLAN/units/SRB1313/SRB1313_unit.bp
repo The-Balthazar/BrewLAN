@@ -99,8 +99,6 @@ UnitBlueprint {
         BuildTime = 5062.5,
         HalfPriceUpgradeFromID = 'urb1303',
         MaintenanceConsumptionPerSecondEnergy = 5250,
-        MaintenanceConsumptionPerSecondEnergyFab = 4375,
-        MaintenanceConsumptionPerSecondEnergyCloak = 875,
         ProductionPerSecondMass = 15,
         RebuildBonusIds = {
             'urb1303',

@@ -566,7 +566,7 @@ function BrewLANHeavyWallBuildList(id, bp)
                 if bp.Footprint and (bp.Footprint['Size'..A] == 3 and bp.Physics['SkirtSize'..A] == 3 or bp.Footprint['Size'..A] == 3 and bp.Physics['SkirtSize'..A] == 0) then
                     correct[A] = true
                     fits[A] = true
-                elseif bp.Physics['SkirtSize'..A] < 3 and (not bp.Footprint or bp.Footprint['Size'..A] < 3) then
+                elseif bp.Physics['SkirtSize'..A] < 3 and (not bp.Footprint or (bp.Footprint['Size'..A] and bp.Footprint['Size'..A] < 3)) then
                     fits[A] = true
                 end
             end
@@ -879,19 +879,23 @@ function BrewLANMatchBalancing(all_bps)
                 'Economy',
                 'Veteran',
             },
+            Mults = {
+                Economy = 7/6,
+            },
         },
         sra0306 = {
             TargetID = 'xea0306',
-            BaseMult = 0.95,
             Affects = {
                 'Economy',
                 'Veteran',
             },
             Mults = {
                 Economy = {
+                    BuildCostEnergy = 4/6,
+                    BuildCostMass = 4/6,
+                    BuildTime = 4/6,
                     MaintenanceConsumptionPerSecondEnergy = 0.4,
                 },
-                Veteran = 1,
             },
         },
         saa0306 = {
@@ -1008,7 +1012,7 @@ function BrewLANMatchBalancing(all_bps)
                     BuildCostEnergy = 1.35,
                     BuildCostMass = 1.35,
                     BuildTime = 1.35,
-                    MaintenanceConsumptionPerSecondEnergy = 1.25,
+                    MaintenanceConsumptionPerSecondEnergy = 19/14,
                     ProductionPerSecondMass = 1.25,
                 },
             }
@@ -1025,7 +1029,7 @@ function BrewLANMatchBalancing(all_bps)
                     BuildCostEnergy = 1.35,
                     BuildCostMass = 1.35,
                     BuildTime = 1.35,
-                    MaintenanceConsumptionPerSecondEnergy = 1.25,
+                    MaintenanceConsumptionPerSecondEnergy = 1.5,
                     ProductionPerSecondMass = 1.25,
                 },
             }
@@ -1080,8 +1084,8 @@ function BrewLANMatchBalancing(all_bps)
         if type(data) == 'string' then
             if all_bps[unitid] and all_bps[data] then
                 for key, val in pairs(all_bps[unitid].Economy) do
-                    if type(val) == 'number' then
-                        all_bps[unitid].Economy[key] = all_bps[data].Economy[key]
+                    if type(val) == 'number' and val ~= 0 then
+                        all_bps[unitid].Economy[key] = val
                     end
                 end
             end
@@ -1121,7 +1125,7 @@ function BrewLANMatchBalancing(all_bps)
                         local refA = GetValidRef(tid[1], key)
                         local refB = GetValidRef(tid[2], key)
 
-                        if type(val) == 'number' and (ref or refA and refB) then
+                        if type(val) == 'number' and ((ref and ref~=0) or (refA and refA~=0) and (refB and refB~=0)) then
 
                             local mult = GetMult(key)
                             local rawnumber = ref or (refA + refB) * 0.5

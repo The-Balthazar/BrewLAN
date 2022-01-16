@@ -1345,3 +1345,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Added the *Bletchley Park* function `RebalanceExistingIntel` to the list of functions the wiki script runs.
     * Updated to work in current Lua.
     * Added a section for wiki-specific data.
+
+  ## 2022-01-15
+
+  * Dynamic balance changes:
+    * Dynamic balance no longer takes 0's from the source.
+      * This fixes the Seraphim T3 gen losing its regeneration.
+    * Seraphim T3 transport cost increased to 7/6ths of the Continental, from equal to.
+    * Cybran T3 transport cost decreased to 2/3rds of the Continental, from 95% of.
+    * Aeon T3 shielded fabricator now has an accurate maintenance number from active balance.
+  * Rewrote the script for the Aeon T3 shielded fabricator.
+    * It now actually cares about what the active balance set maintenance it to.
+
+  ## 2022-01-16
+
+  * R&D: Fixed a typo in the description.
+  * Cybran T3 cloakable fabricator now has an accurate maintenance number from active balance.
+  * Rewrote the script for the Cybran T3 cloakable fabricator so it now actually cares maintenance from active balance.
