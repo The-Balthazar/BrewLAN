@@ -11,7 +11,6 @@ function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
     RNDPrepareScript(all_blueprints.Unit)
     RestrictExistingBlueprints(all_blueprints.Unit)
-    --RebalanceExistingBlueprints(all_blueprints.Unit)
     RNDDefineNewFactoryBuildCategories(all_blueprints.Unit)
     GenerateResearchItemBPs(all_blueprints.Unit)
 end
@@ -29,6 +28,12 @@ function WikiBlueprints(all_blueprints)
                     table.insert(bp.Categories, 'BUILTBYTIER'..i..'SEABEDFACTORY')
                 end
             end
+        end
+        local catIndex = table.find(bp.Categories, 'BUILTBYENGINEER')
+        if catIndex then
+            bp.Categories[catIndex] = 'BUILTBYTIER1ENGINEER'
+            table.insert(bp.Categories, 'BUILTBYTIER2ENGINEER')
+            table.insert(bp.Categories, 'BUILTBYTIER3ENGINEER')
         end
     end
 end

@@ -1362,3 +1362,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * R&D: Fixed a typo in the description.
   * Cybran T3 cloakable fabricator now has an accurate maintenance number from active balance.
   * Rewrote the script for the Cybran T3 cloakable fabricator so it now actually cares maintenance from active balance.
+
+  ## 2022-01-21
+
+  * Caffee Corretto: Fixed the factory adjacency nodes breaking upgrades.

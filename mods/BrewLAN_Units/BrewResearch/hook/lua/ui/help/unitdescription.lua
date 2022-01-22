@@ -90,45 +90,14 @@ Description['ssb1201'] = "<LOC Unit_Description_RND_018>Low to mid-level power g
 
 --Description['something'] = "<LOC Unit_Description_RND_031>"
 
-do
-    if _G.ForkThread then --This is so I can dofile without having to define ForkThread
-        ForkThread(function(Description)
-            for id, bp in __blueprints do
-                --Don't check id, it can sometimes be an arbitrary index.
-                if not Description[bp.BlueprintId] and bp.Categories and bp.ScriptClass == 'ResearchItem' and bp.ResearchId and __blueprints[bp.ResearchId] then--and Description[string.gsub(id, "rnd","")] then
-                    local oID = bp.ResearchId
-                    Description[bp.BlueprintId] = Description[oID]
-                end
-            end
-        end, Description)
-    end
-    --[[
-    --This method was overcomplicated and also has the issue that if the mods 'unitdescription' file is properly set it, it'll cause a 'nil Description global' error.
-    for id, bp in __blueprints do
-        if bp.Categories and bp.ScriptClass == 'ResearchItem' and bp.ResearchId and __blueprints[bp.ResearchId] and not Description[id] then--and Description[string.gsub(id, "rnd","")] then
-            local oID = bp.ResearchId
-            if Description[oID] then
-                Description[id] = Description[oID]
-
-            else -- Mod may have been loaded after, lets go get it ourselves.
-                SPEW("Couldn't find a build description for '"..id.."' or it's assumed base unit '"..oID.."'; it might be loaded afterwards, attempting direct import")
-                if string.sub(bp.Source, 1, 6) == '/mods/' then
-                    for i, mod in __active_mods do
-                        if string.sub(bp.Source, 1, string.len(mod.location)) == mod.location then
-                            local ok, modDescriptions = pcall(import, mod.location..'/hook/lua/ui/help/unitdescription.lua')
-                            if ok and modDescriptions[oID] then
-                                SPEW("Located description in descriptions file for mod "..mod.name)
-                                Description[id] = modDescriptions[oID]
-                            elseif ok then
-                                SPEW("Located descriptions file for mod "..mod.name.." but it doesn't contain a description for '"..oID.."'")
-                            else
-                                SPEW("Couldn't locate descriptions file for mod "..mod.name)
-                            end
-                            break
-                        end
-                    end
-                end
+if _VERSION == "Lua 5.0.1" then
+    ForkThread(function(Description)
+        for id, bp in __blueprints do
+            --Don't check id, it can sometimes be an arbitrary index.
+            if not Description[bp.BlueprintId] and bp.Categories and bp.ScriptClass == 'ResearchItem' and bp.ResearchId and __blueprints[bp.ResearchId] then
+                local oID = bp.ResearchId
+                Description[bp.BlueprintId] = Description[oID]
             end
         end
-    end]]
+    end, Description)
 end
