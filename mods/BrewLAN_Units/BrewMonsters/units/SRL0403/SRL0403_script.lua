@@ -9,7 +9,7 @@ local CAAAutocannon = cWeapons.CAAAutocannon
 local CDFProtonCannonWeapon = cWeapons.CDFProtonCannonWeapon
 local CIFArtilleryWeapon = cWeapons.CIFArtilleryWeapon
 
-SRL0402 = Class(CLandUnit) {
+SRL0403 = Class(CLandUnit) {
     Weapons = {
         Turret = Class(CDFElectronBolterWeapon) {},
         Torpedo = Class(CANTorpedoLauncherWeapon) {},
@@ -75,4 +75,4 @@ SRL0402 = Class(CLandUnit) {
     end,
 }
 
-TypeClass = SRL0402
+TypeClass = SRL0403

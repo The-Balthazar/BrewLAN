@@ -31,19 +31,21 @@ T4Artillery =                {Aeon = {'xab2307', 100},Cybran = {'srb2401', 100},
 --------------------------------------------------------------------------------
 T4LandExperimental1 = {
     Aeon = {'sal0401', 50},
-    --UEF = {'seb0401', 100},
-    --Cybran = {'srb0401', 100},
-    Seraphim = {'srb0403', 50},
+    Seraphim = {'ssl0405', 40},
 },
 T4LandExperimental2 = {
     Aeon = {'sal0401', 50},
-    --UEF = {'seb0401', 100},
-    --Cybran = {'srb0401', 100},
-    Seraphim = {'srl0403', 50},
+    Seraphim = {'ssl0404', 30},
+},
+T4LandExperimental3 = {
+    Seraphim = {'ssl0405', 60},
+},
+T4LandExperimental4 = {
+    Seraphim = {'ssl0405', 90},
 },
 T4SeaExperimental1 =  {
     Aeon = {'sal0401', 25},
-    --Seraphim = {'ssl0401', 100},
+    Seraphim = {'ssl0405', 90},
 },
 --------------------------------------------------------------------------------
 -- Centurion
