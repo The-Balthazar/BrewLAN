@@ -1366,3 +1366,5 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-01-21
 
   * Caffee Corretto: Fixed the factory adjacency nodes breaking upgrades.
+  * Fixed the BuildOnLayerCaps assignments for the Megalith Eggs.
+  * Cleaned up blueprints.lua functions, mostly in regard to Gantry functions.
