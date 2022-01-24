@@ -2,9 +2,10 @@
 UnitBlueprint {	BlueprintId="srl0001",	Economy = {BuildUnit = 'urs0201'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0001_desc>Crab Egg (Destroyer)',	Size = 3 }
 UnitBlueprint {	BlueprintId="srl0002",	Economy = {BuildUnit = 'srl0319'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0002_desc>Crab Egg (Field Engineer)' }
 UnitBlueprint {	BlueprintId="srl0003",	Economy = {BuildUnit = 'srl0316'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0003_desc>Crab Egg (Stealth)' }
-UnitBlueprint {	BlueprintId="srl0004",	Economy = {BuildUnit = 'srl0320'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0004_desc>Crab Egg (Missile)',	Size = 2 }
+UnitBlueprint {	BlueprintId="srl0004",	Economy = {BuildUnit = 'srl0320'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0004_desc>Crab Egg (Anti-Air)',	Size = 2 }
 UnitBlueprint {	BlueprintId="srl0005",	Economy = {BuildUnit = 'srl0321'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0005_desc>Crab Egg (Hedgehog)',  Size = 2 }
 UnitBlueprint {	BlueprintId="srl0006",	Economy = {BuildUnit = 'srl0311'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0006_desc>Crab Egg (MRL)' }
+UnitBlueprint {	BlueprintId="srl0007",	Economy = {BuildUnit = 'srl0312'},	Categories = {'MEGALITHEGG'},	Description = '<LOC srl0007_desc>Crab Egg (Missile)',   Size = 2 }
 
 UnitBlueprint {
 	BlueprintId="srl0000",

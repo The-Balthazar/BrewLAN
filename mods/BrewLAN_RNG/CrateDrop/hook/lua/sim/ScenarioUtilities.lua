@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 do
     local IsChristmas = false
-    local HatsOnlyMode = ScenarioInfo.Options.CrateHatsOnly
+    local HatsOnlyMode
     local OldCreateInitialArmyGroup = CreateInitialArmyGroup
     local FindCreateDropPath = function()
         for i, mod in __active_mods do
@@ -16,6 +16,7 @@ do
 
     function CreateInitialArmyGroup(strArmy, createCommander)
         if not ScenarioInfo.DodecahedronCrate then
+            HatsOnlyMode = ScenarioInfo.Options.CrateHatsOnly
             ScenarioInfo.DodecahedronCrate = { }
             ScenarioInfo.DodecahedronCrate.Threads = {}
             local crateNum = math.max(math.log(math.min(ScenarioInfo.size[1],ScenarioInfo.size[2]))/math.log(2) - 6, 1)

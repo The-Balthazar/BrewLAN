@@ -12,7 +12,7 @@ Description['seb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary 
 Description['sab2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 Description['srb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
 Description['ssb2103'] = "<LOC Unit_Description_BrewLAN_T1D001>Light stationary artillery. Designed to engage low to mid-level units."
- 
+
 --Tech 1 protection units
 Description['sab4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upgradable twice."
 Description['seb4102'] = "<LOC Unit_Description_BrewLAN_T1P001>Generates a protective shield around units and structures within its radius. Upgradable twice."
@@ -227,6 +227,7 @@ Description['srl0003'] = "<LOC Unit_Description_BrewLAN_T3L010>Mobile cloaking s
 Description['srl0004'] = "<LOC Unit_Description_BrewLAN_T3L009>Mobile cloaking missile launcher. Can fire at land- air- and sea-based units, but must decloak to fire."
 Description['srl0005'] = "<LOC Unit_Description_BrewLAN_T3L004>Mobile strategic missile defense. Build costs include first missile, however the vehicle lacks a fabrication suite to produce additional missiles unassisted."
 Description['srl0006'] = "<LOC Unit_Description_BrewLAN_T3L011>Mobile multiple rocket launcher. Long reload time. Designed to overwhelm enemy shields and tactical missile defenses with large salvos."
+Description['srl0007'] = "<LOC Unit_Description_BrewLAN_T3L024>Stealth tank. Armed with twin proton cannons, a dual purpose missile launcher, and torpedo defenses."
 
 --Support commander upgrades
 Description['uel0301-eesup'] ="<LOC Unit_Description_BrewLAN_E001>Adds field engineer build capabilities to the SACU."

@@ -1367,6 +1367,14 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Caffee Corretto: Fixed the factory adjacency nodes breaking upgrades.
   * Fixed the BuildOnLayerCaps assignments for the Megalith Eggs.
+
+  ## 2022-01-23
+
   * Cleaned up blueprints.lua functions, mostly in regard to Gantry functions.
   * Fixed the footprint dummy unit function from potentially causing the iterator to skip important things.
     * Notably this was causing the Brick to not be buildable by the Arthrolab.
+
+  ## 2022-01-24
+
+  * Crate Drop: Fixed it referencing the hats value too early.
+  * Added Toxotai to the Megalith build lists.
