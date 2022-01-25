@@ -497,28 +497,25 @@ function BrewLANHeavyWallBuildList(id, bp)
         and (
             HasCat(bp, 'DEFENSE') or
             HasCat(bp, 'DIRECTFIRE') or
-            HasCat(bp, 'INDIRECTFIRE')
+            HasCat(bp, 'INDIRECTFIRE') or
+            HasCat(bp, 'ANTIAIR')
         ) then
 
             --Check it wouldn't overlap badly with the wall
             local fits, correct = {}, {}
             for _, A in ipairs{'X','Z'} do
-                if bp.Footprint and (bp.Footprint['Size'..A] == 3 and bp.Physics['SkirtSize'..A] == 3 or bp.Footprint['Size'..A] == 3 and bp.Physics['SkirtSize'..A] == 0) then
-                    correct[A] = true
-                    fits[A] = true
-                elseif bp.Physics['SkirtSize'..A] < 3 and (not bp.Footprint or (bp.Footprint['Size'..A] and bp.Footprint['Size'..A] < 3)) then
-                    fits[A] = true
-                end
+                local size = bp.Footprint and bp.Footprint['Size'..A] or (bp['Size'..A] and math.ceil(bp['Size'..A]) or 1)
+                local skirt = bp.Physics['SkirtSize'..A] or size
+
+                fits[A] = size ~= 2 and size <= 3 and skirt <= 3
+                correct[A] = fits[A] and size == 3
             end
 
             if fits.X and fits.Z then
                 table.insert(bp.Categories, 'BUILTBYTIER3WALL')
-                --This is to prevent it from having the same footprint as the wall
-                --and from it removing all the path blocking of the wall if it dies or gets removed.
-                --It will still remove the blocking from the center of the wall, but that's acceptable.
-
-                --This will also make it so those turrets will no longer block pathing whilst adjacent
-                --But that is probably fine.
+                if correct.X or correct.Z and not bp.Footprint then
+                    bp.Footprint = {}
+                end
                 if correct.X then
                     bp.Footprint.SizeX = 1
                     bp.Physics.SkirtOffsetX = -1

@@ -1391,3 +1391,5 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed `SEB2320` having `Normal` armour instead of `Structure`.
   * Fixed `SSL0324` and `SSS0306` having `Structure` armour instead of `Normal`.
   * Changed `SAS0401` to have `Experimental` armour instead of `Normal`.
+  * Fixed the T3 wall build lists after recent 'real Lua' fallback checks.
+  * Fixed the UEF T3 wall having the build bone tied to the right wall instead of the tower.
