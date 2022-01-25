@@ -57,12 +57,10 @@ UnitBlueprint {
     CollisionOffsetY = -1,
     Defense = {
         AirThreatLevel = 75,
-        ArmorType = 'Normal',
-        --EconomyThreatLevel = 0,
+        ArmorType = 'Experimental',
         Health = 17150,
         MaxHealth = 17150,
         RegenRate = 5,
-        --SubThreatLevel = 0,
         SurfaceThreatLevel = 472,
         Shield = {
             ImpactEffects = 'AeonShieldHit01',

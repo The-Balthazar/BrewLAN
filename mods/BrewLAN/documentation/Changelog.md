@@ -1388,3 +1388,6 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
     * `SEA4302`
     * `SSB4401_small`
     * `SSB4401_large`
+  * Fixed `SEB2320` having `Normal` armour instead of `Structure`.
+  * Fixed `SSL0324` and `SSS0306` having `Structure` armour instead of `Normal`.
+  * Changed `SAS0401` to have `Experimental` armour instead of `Normal`.

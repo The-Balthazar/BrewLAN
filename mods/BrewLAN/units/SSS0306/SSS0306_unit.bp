@@ -51,7 +51,7 @@ UnitBlueprint {
         'SORTDEFENSE',
     },
     Defense = {
-        ArmorType = 'Structure',
+        ArmorType = 'Normal',
         Health = 11500,
         MaxHealth = 11500,
         SubThreatLevel = 13,
