@@ -513,6 +513,10 @@ function BrewLANHeavyWallBuildList(id, bp)
 
             if fits.X and fits.Z then
                 table.insert(bp.Categories, 'BUILTBYTIER3WALL')
+
+                if bp.Physics.FlattenSkirt then
+                    bp.Physics.ConditionalFlattenSkirt = true
+                end
                 if correct.X or correct.Z and not bp.Footprint then
                     bp.Footprint = {}
                 end

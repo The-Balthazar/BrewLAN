@@ -1393,3 +1393,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Changed `SAS0401` to have `Experimental` armour instead of `Normal`.
   * Fixed the T3 wall build lists after recent 'real Lua' fallback checks.
   * Fixed the UEF T3 wall having the build bone tied to the right wall instead of the tower.
+  * Wall-built structures no longer flatten skirt when wall-built.

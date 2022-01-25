@@ -243,7 +243,7 @@ SelfDefendingCardinalWallUnit = Class(CardinalWallUnit) {
         return self:CanBuild(target_bp.BlueprintId)
     end,
 
-    OnStartBuild = function(self, unitBeingBuilt, order )
+    OnStartBuild = function(self, unitBeingBuilt, order)
         CardinalWallUnit.OnStartBuild(self, unitBeingBuilt, order )
         if order ~= 'Upgrade' then
             if self:IsValidBone(self.BuildAttachBone) then
