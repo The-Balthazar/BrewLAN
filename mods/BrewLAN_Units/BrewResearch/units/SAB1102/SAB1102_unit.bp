@@ -70,7 +70,7 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {LODCutoff = 130, ShaderName = 'Unit'},
+                {LODCutoff = 130, ShaderName = 'Aeon'},
             },
         },
         UniformScale = 0.064,

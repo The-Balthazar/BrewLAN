@@ -35,6 +35,7 @@ UnitBlueprint {
         'UNTARGETABLE',
     },
     Defense = {
+        ArmorType = 'Light',
         Health = 42,
         MaxHealth = 42,
     },

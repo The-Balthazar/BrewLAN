@@ -62,7 +62,7 @@ UnitBlueprint {
         'CANNOTUSEAIRSTAGING',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Light',
         Health = 100,
         MaxHealth = 100,
         RegenRate = 10,

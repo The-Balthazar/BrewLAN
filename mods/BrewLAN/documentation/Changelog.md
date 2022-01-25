@@ -1378,3 +1378,13 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Crate Drop: Fixed it referencing the hats value too early.
   * Added Toxotai to the Megalith build lists.
+
+  ## 2022-01-25
+
+  * R&D: Fixed Aeon tidal generator having UEF shader.
+  * Fixed the following units aircraft not having the `Light` armour type:
+    * `SEA3301`
+    * `SEA4301`
+    * `SEA4302`
+    * `SSB4401_small`
+    * `SSB4401_large`
