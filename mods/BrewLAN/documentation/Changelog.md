@@ -1398,3 +1398,5 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-01-26
 
   * Minor rework to Aeon shielded generator script.
+  * Slight cleanup of the terrain slope script.
+

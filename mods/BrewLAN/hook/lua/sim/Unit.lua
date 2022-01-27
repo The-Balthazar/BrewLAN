@@ -7,6 +7,14 @@ do
 
     Unit = Class(UnitOld) {
 
+        -- Triggers when this unit is started being built when a builder tries
+        -- to build something with a `bp.General.SeedUnit` value instead.
+        -- Args are self, and the ID of the seeder unit
+        OnSeedUnitBuilt = function(self, seederID)
+            UnitOld.OnSeedUnitBuilt(self, seederID)
+            _ALERT("OnSeedUnitBuilt", seederID)
+        end,
+
         OnPreCreate = function(self)
             UnitOld.OnPreCreate(self)
             if not self.BpId then
@@ -14,8 +22,8 @@ do
             end
         end,
 
-        OnStopBeingBuilt = function(self,builder,layer, ...)
-            UnitOld.OnStopBeingBuilt(self,builder,layer, unpack(arg))
+        OnStopBeingBuilt = function(self, builder, layer, ...)
+            UnitOld.OnStopBeingBuilt(self, builder, layer, unpack(arg))
             local bp = __blueprints[self.BpId]
 
             --
@@ -23,13 +31,10 @@ do
             --
             local layer = self:GetCurrentLayer()
             if not bp.Physics.FlattenSkirt and bp.Physics.SlopeToTerrain and not self.TerrainSlope and (layer == 'Land' or layer == 'Seabed') then
+
                 local Angles = GetTerrainAngles(self:GetPosition(),{bp.Footprint.SizeX or bp.Physics.SkirtSizeX, bp.Footprint.SizeZ or bp.Physics.SkirtSizeZ})
-                local Axis1, Axis2 = 'z', 'x'
                 local Axis = bp.Physics.SlopeToTerrainAxis
-                if Axis then
-                    Axis1 = Axis.Axis1 or Axis1
-                    Axis2 = Axis.Axis2 or Axis2
-                end
+
                 if Axis.InvertAxis then
                     for i, v in Angles do
                         if Axis.InvertAxis[i] then
@@ -38,9 +43,8 @@ do
                     end
                 end
                 self.TerrainSlope = {
-                --CreateRotator(unit, bone, axis, [goal], [speed], [accel], [goalspeed])
-                    CreateRotator(self, 0, Axis1, -Angles[1], 99999),
-                    CreateRotator(self, 0, Axis2, Angles[2], 99999)
+                    CreateRotator(self, 0, Axis and Axis.Axis1 or 'z', -Angles[1], 99999),
+                    CreateRotator(self, 0, Axis and Axis.Axis2 or 'x', Angles[2], 99999)
                 }
             end
             if not bp.Physics.FlattenSkirt and bp.Physics.AltitudeToTerrain then
@@ -48,16 +52,13 @@ do
                     self.TerrainSlope = {}
                 end
                 for i, v in bp.Physics.AltitudeToTerrain do
-                    if type(v) == 'string' then
-                        OffsetBoneToTerrain(self,v)
-                    elseif type(v) == 'table' then
-                        OffsetBoneToTerrain(self,v[1])
-                    end
+                    OffsetBoneToTerrain(self, type(v) == 'table' and v[1] or v)
                 end
             end
 
-
+            --
             -- Checks for satellite allowances
+            --
             if EntityCategoryContains(categories.SATELLITEUPLINK + categories.SATELLITEWITHNOPARENTALSUPERVISION, self) then
                 self:ForkThread(
                     function()
@@ -67,7 +68,6 @@ do
                 )
             end
         end,
-
 
         --
         -- Shield impacts for drop pods
@@ -79,7 +79,6 @@ do
             local bp = __blueprints[self.BpId]
             self:OnDamage(self, (bp.Defense.MaxHealth or 300) * (bp.SizeX or 1) * (bp.SizeY or 1) * (bp.SizeZ or 1) * (FallenD / 15), pos, 'Normal')
         end,
-
 
         --
         -- Checks for satellite allowances
@@ -142,7 +141,6 @@ do
             end
         end,
 
-
         --
         -- For Excalibur
         --
@@ -178,7 +176,6 @@ do
             return hit
         end,
 
-
         --
         -- UI/control fix so units that don't usually have a stop button can stop upgrading.
         --
@@ -209,7 +206,6 @@ do
             return UnitOld.OnFailedToBuild(self, unpack(arg))
         end,
 
-
         --
         -- Fix for bombers killing themselves against the Iron Curtain
         --
@@ -220,7 +216,6 @@ do
                 UnitOld.OnDamage(self, instigator, amount, vector, 'Normal', unpack(arg))
             end
         end,
-
 
         --
         -- Checks for satellite allowances
