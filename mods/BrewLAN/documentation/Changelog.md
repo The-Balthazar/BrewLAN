@@ -1402,7 +1402,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ## 2022-01-27
 
+  * Disabled the tarmac and adjacent scripts of units built on walls.
   * Spawn Menu: Added a tarmac toggle button.
   * Spawn Menu: Reverted it so it remembers selected army each open.
   * Spawn Menu: Fixed an error with the mouse over if a unit has no icon and no mesh.
   * Spawn Menu: Cleaned up the image selection for mouse over, and made it log less.
+  * Spawn Menu: Added a 'mesh only' spawn option, and a delete spawned meshes button.

@@ -13,11 +13,13 @@ local options = import('/lua/user/prefs.lua').GetFromCurrentProfile('options')
 
 local DialogMode = 'units' --or 'props'
 local currentArmy = GetFocusArmy()
+local tarmacsEnabled = true
+local meshOnly = false
 
 local ssub, gsub, upper, lower, find, slen, format = string.sub, string.gsub, string.upper, string.lower, string.find, string.len, string.format
 local mmin, mmax, floor = math.min, math.max, math.floor
 
-local dialog, nameDialog, defaultEditField, tarmacsEnabled
+local dialog, nameDialog, defaultEditField
 local EscThread, SpawnThread
 local activeFilters, activeFilterTypes, specialFilterControls, filterSet = {}, {}, {}, {}
 local UnitList, CreationList = {}, {}
@@ -761,29 +763,46 @@ function CreateDialog(x, y)
     end
 
     if DialogMode == 'units' then
-        local function CreateToggleButton(text)
+        local function CreateToggleButton(text, flag, onClick)
             local btn = UIUtil.CreateButton(dialog,
-                tarmacsEnabled and '/dialogs/toggle_btn/toggle-d_btn_over.dds' or '/dialogs/toggle_btn/toggle-d_btn_up.dds',
+                flag and '/dialogs/toggle_btn/toggle-d_btn_over.dds' or '/dialogs/toggle_btn/toggle-d_btn_up.dds',
                 '/dialogs/toggle_btn/toggle-d_btn_down.dds',
                 '/dialogs/toggle_btn/toggle-d_btn_over.dds',
                 '/dialogs/toggle_btn/toggle-d_btn_dis.dds',
-                text, 10)
+                text, 10
+            )
             btn.label:SetFont(UIUtil.bodyFont, 10)
+
+            btn.OnClick = function(button)
+                UIUtil.SetNewButtonTextures(btn,
+                    onClick() and '/dialogs/toggle_btn/toggle-d_btn_over.dds' or '/dialogs/toggle_btn/toggle-d_btn_up.dds',
+                    '/dialogs/toggle_btn/toggle-d_btn_down.dds',
+                    '/dialogs/toggle_btn/toggle-d_btn_over.dds',
+                    '/dialogs/toggle_btn/toggle-d_btn_dis.dds'
+                )
+            end
+
             return btn
         end
 
-        local tarmacBtn = CreateToggleButton('Tarmacs')
+        local tarmacBtn = CreateToggleButton('Tarmacs', tarmacsEnabled, function()
+            tarmacsEnabled = not tarmacsEnabled
+            return tarmacsEnabled
+        end)
         LayoutHelpers.Above(tarmacBtn, dialog.inputCount, 0)
         LayoutHelpers.AtLeftIn(tarmacBtn, dialog, 0)
-        tarmacBtn.OnClick = function(button)
-            tarmacsEnabled = not tarmacsEnabled
-            UIUtil.SetNewButtonTextures(tarmacBtn,
-                tarmacsEnabled and '/dialogs/toggle_btn/toggle-d_btn_over.dds' or '/dialogs/toggle_btn/toggle-d_btn_up.dds',
-                '/dialogs/toggle_btn/toggle-d_btn_down.dds',
-                '/dialogs/toggle_btn/toggle-d_btn_over.dds',
-                '/dialogs/toggle_btn/toggle-d_btn_dis.dds'
-            )
+
+        local meshOnlyBtn = CreateToggleButton('Mesh only', meshOnly, function()
+            meshOnly = not meshOnly
+            return meshOnly
+        end)
+        LayoutHelpers.RightOf(meshOnlyBtn, tarmacBtn, 2)
+
+        local meshYeetBtn = UIUtil.CreateButtonStd(dialog, '/dialogs/check-box_btn/radio-s', '', 12)
+        meshYeetBtn.OnClick = function(button)
+            SimCallback{Func = 'ClearSpawneMeshes'}
         end
+        LayoutHelpers.RightOf(meshYeetBtn, meshOnlyBtn, -10)
     end
 
     if SpawnThread then KillThread(SpawnThread) end
@@ -809,6 +828,7 @@ function CreateDialog(x, y)
                     veterancy = vet,
                     yaw = yaw,
                     CreateTarmac = tarmacsEnabled,
+                    MeshOnly = meshOnly,
                 }
             }
         end
@@ -999,7 +1019,7 @@ function CreateDialog(x, y)
         end
     end
 
-    local function CreateToggleButton(text)
+    local function CreatePressButton(text)
         local btn = UIUtil.CreateButton(dialog,
             '/dialogs/toggle_btn/toggle-d_btn_up.dds',
             '/dialogs/toggle_btn/toggle-d_btn_down.dds',
@@ -1010,7 +1030,7 @@ function CreateDialog(x, y)
         return btn
     end
 
-    local saveFilterSet = CreateToggleButton 'Save Filter'
+    local saveFilterSet = CreatePressButton 'Save Filter'
     LayoutHelpers.RightOf(saveFilterSet, filterSetCombo)
     LayoutHelpers.AtVerticalCenterIn(saveFilterSet, filterSetCombo)
     saveFilterSet.OnClick = function(self, modifiers)
@@ -1027,7 +1047,7 @@ function CreateDialog(x, y)
         end)
     end
 
-    local delFilterSet = CreateToggleButton 'Delete Filter'
+    local delFilterSet = CreatePressButton 'Delete Filter'
     LayoutHelpers.RightOf(delFilterSet, saveFilterSet)
     LayoutHelpers.AtVerticalCenterIn(delFilterSet, filterSetCombo)
     delFilterSet.OnClick = function(self, modifiers)
@@ -1044,7 +1064,7 @@ function CreateDialog(x, y)
        end
     end
 
-    local propSwapBtn = CreateToggleButton(DialogMode == 'units' and 'Prop mode' or 'Unit mode')
+    local propSwapBtn = CreatePressButton(DialogMode == 'units' and 'Prop mode' or 'Unit mode')
     LayoutHelpers.Below(propSwapBtn, armiesGroup, 5)
     LayoutHelpers.RightOf(propSwapBtn, delFilterSet, 9)
     propSwapBtn.OnClick = function(button)

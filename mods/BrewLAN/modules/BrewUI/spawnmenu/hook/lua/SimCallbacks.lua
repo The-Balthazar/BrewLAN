@@ -1,3 +1,32 @@
+local SpawnedMeshes = {}
+
+local function SpawnUnitMesh(id, x, y, z, pitch, yaw, roll)
+    local bp = __blueprints[id]
+    local bpD = bp.Display
+    if __blueprints[bpD.MeshBlueprint] then
+        SPEW("Spawning mesh of "..id)
+        local entity = import('/lua/sim/Entity.lua').Entity()
+        if bp.CollisionOffsetY and bp.CollisionOffsetY < 0 then
+            y = y-bp.CollisionOffsetY
+        end
+        entity:SetPosition(Vector(x,y,z), true)
+        entity:SetMesh(bpD.MeshBlueprint)
+        entity:SetDrawScale(bpD.UniformScale)
+        entity:SetVizToAllies('Intel')
+        entity:SetVizToNeutrals('Intel')
+        entity:SetVizToEnemies('Intel')
+        table.insert(SpawnedMeshes, entity)
+    else
+        SPEW("Can\' spawn mesh of "..id.." no mesh found")
+    end
+end
+
+Callbacks.ClearSpawneMeshes = function()
+    for i, v in SpawnedMeshes do
+        v:Destroy()
+    end
+    SpawnedMeshes = {}
+end
 
 Callbacks.BoxFormationSpawn = function(data)
     if not CheatsEnabled() then return end
@@ -37,7 +66,9 @@ Callbacks.BoxFormationSpawn = function(data)
     for i = 1, data.count do
         local x = RoundToSkirt('x', posX - startOffsetX + math.mod(i,squareX) * offsetX)
         local z = RoundToSkirt('z', posZ - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ)
-        local unit = CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, yaw, 0)--blueprint, army, x, y, z, pitch, yaw, roll
+        local unit = not data.MeshOnly and CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, yaw, 0)--blueprint, army, x, y, z, pitch, yaw, roll
+        or SpawnUnitMesh(data.bpId, x, GetTerrainHeight(x,z), z, 0, yaw, 0)
+
         if unit.SetVeterancy then unit:SetVeterancy(data.veterancy) end
         if data.CreateTarmac and unit.CreateTarmac and __blueprints[data.bpId].Display and __blueprints[data.bpId].Display.Tarmacs then
             unit:CreateTarmac(true,true,true,false,false)

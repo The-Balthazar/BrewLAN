@@ -244,6 +244,13 @@ SelfDefendingCardinalWallUnit = Class(CardinalWallUnit) {
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
+        local function nilfun() end
+        unitBeingBuilt.CreateTarmac = nilfun
+        unitBeingBuilt.OnAdjacentTo = nilfun
+        unitBeingBuilt.OnNotAdjacentTo = nilfun
+        unitBeingBuilt.CreateAdjacentEffect = nilfun
+        unitBeingBuilt.DestroyAdjacentEffects = nilfun
+
         CardinalWallUnit.OnStartBuild(self, unitBeingBuilt, order )
         if order ~= 'Upgrade' then
             if self:IsValidBone(self.BuildAttachBone) then
