@@ -39,7 +39,7 @@ Callbacks.BoxFormationSpawn = function(data)
         local z = RoundToSkirt('z', posZ - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ)
         local unit = CreateUnitHPR(data.bpId, data.army, x, GetTerrainHeight(x,z), z, 0, yaw, 0)--blueprint, army, x, y, z, pitch, yaw, roll
         if unit.SetVeterancy then unit:SetVeterancy(data.veterancy) end
-        if unit.CreateTarmac and __blueprints[data.bpId].Display and __blueprints[data.bpId].Display.Tarmacs then
+        if data.CreateTarmac and unit.CreateTarmac and __blueprints[data.bpId].Display and __blueprints[data.bpId].Display.Tarmacs then
             unit:CreateTarmac(true,true,true,false,false)
         end
     end

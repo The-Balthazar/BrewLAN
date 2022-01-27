@@ -1400,3 +1400,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Minor rework to Aeon shielded generator script.
   * Slight cleanup of the terrain slope script.
 
+  ## 2022-01-27
+
+  * Spawn Menu: Added a tarmac toggle button.
+  * Spawn Menu: Reverted it so it remembers selected army each open.
+  * Spawn Menu: Fixed an error with the mouse over if a unit has no icon and no mesh.
+  * Spawn Menu: Cleaned up the image selection for mouse over, and made it log less.

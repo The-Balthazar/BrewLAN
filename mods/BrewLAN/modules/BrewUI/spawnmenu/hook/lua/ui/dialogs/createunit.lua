@@ -12,11 +12,12 @@ local Edit = import('/lua/maui/edit.lua').Edit
 local options = import('/lua/user/prefs.lua').GetFromCurrentProfile('options')
 
 local DialogMode = 'units' --or 'props'
+local currentArmy = GetFocusArmy()
 
 local ssub, gsub, upper, lower, find, slen, format = string.sub, string.gsub, string.upper, string.lower, string.find, string.len, string.format
 local mmin, mmax, floor = math.min, math.max, math.floor
 
-local dialog, nameDialog, defaultEditField
+local dialog, nameDialog, defaultEditField, tarmacsEnabled
 local EscThread, SpawnThread
 local activeFilters, activeFilterTypes, specialFilterControls, filterSet = {}, {}, {}, {}
 local UnitList, CreationList = {}, {}
@@ -662,8 +663,6 @@ function CreateDialog(x, y)
         return
     end
 
-    local currentArmy = GetFocusArmy()
-
     CreationList = {}
 
     dialog = Bitmap(GetFrame(0))
@@ -748,18 +747,42 @@ function CreateDialog(x, y)
         },
     }
 
-    do
-        for i, inputdata in NumberInputFields[DialogMode] do
-            local textlabel = UIUtil.CreateText(dialog, inputdata.label..':', 12, UIUtil.bodyFont)
-            local inputfield = Edit(dialog)
-            if i == 1 then
-                LayoutHelpers.AtBottomIn(textlabel, dialog, 10)
-                LayoutHelpers.AtLeftIn(textlabel, dialog, 5)
-            else
-                LayoutHelpers.RightOf(textlabel, dialog['input'..NumberInputFields[DialogMode][i-1].label], 5)
-            end
-            numImputSettings(inputfield, textlabel, inputdata)
-            dialog['input'..inputdata.label] = inputfield
+    for i, inputdata in NumberInputFields[DialogMode] do
+        local textlabel = UIUtil.CreateText(dialog, inputdata.label..':', 12, UIUtil.bodyFont)
+        local inputfield = Edit(dialog)
+        if i == 1 then
+            LayoutHelpers.AtBottomIn(textlabel, dialog, 10)
+            LayoutHelpers.AtLeftIn(textlabel, dialog, 5)
+        else
+            LayoutHelpers.RightOf(textlabel, dialog['input'..NumberInputFields[DialogMode][i-1].label], 5)
+        end
+        numImputSettings(inputfield, textlabel, inputdata)
+        dialog['input'..inputdata.label] = inputfield
+    end
+
+    if DialogMode == 'units' then
+        local function CreateToggleButton(text)
+            local btn = UIUtil.CreateButton(dialog,
+                tarmacsEnabled and '/dialogs/toggle_btn/toggle-d_btn_over.dds' or '/dialogs/toggle_btn/toggle-d_btn_up.dds',
+                '/dialogs/toggle_btn/toggle-d_btn_down.dds',
+                '/dialogs/toggle_btn/toggle-d_btn_over.dds',
+                '/dialogs/toggle_btn/toggle-d_btn_dis.dds',
+                text, 10)
+            btn.label:SetFont(UIUtil.bodyFont, 10)
+            return btn
+        end
+
+        local tarmacBtn = CreateToggleButton('Tarmacs')
+        LayoutHelpers.Above(tarmacBtn, dialog.inputCount, 0)
+        LayoutHelpers.AtLeftIn(tarmacBtn, dialog, 0)
+        tarmacBtn.OnClick = function(button)
+            tarmacsEnabled = not tarmacsEnabled
+            UIUtil.SetNewButtonTextures(tarmacBtn,
+                tarmacsEnabled and '/dialogs/toggle_btn/toggle-d_btn_over.dds' or '/dialogs/toggle_btn/toggle-d_btn_up.dds',
+                '/dialogs/toggle_btn/toggle-d_btn_down.dds',
+                '/dialogs/toggle_btn/toggle-d_btn_over.dds',
+                '/dialogs/toggle_btn/toggle-d_btn_dis.dds'
+            )
         end
     end
 
@@ -785,6 +808,7 @@ function CreateDialog(x, y)
                     pos = GetMouseWorldPos(),
                     veterancy = vet,
                     yaw = yaw,
+                    CreateTarmac = tarmacsEnabled,
                 }
             }
         end
@@ -1072,13 +1096,15 @@ function CreateDialog(x, y)
         mouseover.img.Width:Set(40)
         mouseover.img.Height:Set(40)
         LayoutHelpers.AtLeftTopIn(mouseover.img, mouseover, 2,2)
-        if DiskGetFileInfo(UIUtil.UIFile('/icons/units/'..unitData..'_icon.dds', true)) then
-            mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/'..unitData..'_icon.dds', true))
-        elseif DiskGetFileInfo(UIUtil.UIFile(__blueprints[unitData].Display.Mesh.LODs[1].AlbedoName, true)) then
-            mouseover.img:SetTexture(UIUtil.UIFile(__blueprints[unitData].Display.Mesh.LODs[1].AlbedoName, true))
-        else
-            mouseover.img:SetTexture(UIUtil.UIFile('/icons/units/default_icon.dds'))
-        end
+
+        local icon = (__blueprints[unitData].Source):gsub('/units/.*', '')..'/textures/ui/common/icons/units/'..unitData..'_icon.dds'
+        local albedo = __blueprints[unitData].Display.Mesh.LODs[1].AlbedoName
+
+        mouseover.img:SetTexture(
+            icon and DiskGetFileInfo(icon) and icon or
+            albedo and DiskGetFileInfo(albedo) and albedo or
+            UIUtil.UIFile('/game/unit_view_icons/unidentified.dds')
+        )
 
         mouseover.name = UIUtil.CreateText(mouseover,
             DialogMode == 'units' and __blueprints[unitData].Description or
