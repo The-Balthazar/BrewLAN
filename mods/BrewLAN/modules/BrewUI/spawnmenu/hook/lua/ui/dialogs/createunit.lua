@@ -15,6 +15,7 @@ local DialogMode = 'units' --or 'props'
 local currentArmy = GetFocusArmy()
 local tarmacsEnabled = true
 local meshOnly = false
+local UnitIconCameraMode = false
 
 local ssub, gsub, upper, lower, find, slen, format = string.sub, string.gsub, string.upper, string.lower, string.find, string.len, string.format
 local mmin, mmax, floor = math.min, math.max, math.floor
@@ -803,6 +804,13 @@ function CreateDialog(x, y)
             SimCallback{Func = 'ClearSpawneMeshes'}
         end
         LayoutHelpers.RightOf(meshYeetBtn, meshOnlyBtn, -10)
+
+        local cameraBtn = CreateToggleButton('Icon Camera', UnitIconCameraMode, function()
+            UnitIconCameraMode = not UnitIconCameraMode
+            return UnitIconCameraMode
+        end)
+        LayoutHelpers.RightOf(cameraBtn, meshYeetBtn, 6)
+
     end
 
     if SpawnThread then KillThread(SpawnThread) end
@@ -829,6 +837,7 @@ function CreateDialog(x, y)
                     yaw = yaw,
                     CreateTarmac = tarmacsEnabled,
                     MeshOnly = meshOnly,
+                    UnitIconCameraMode = UnitIconCameraMode,
                 }
             }
         end

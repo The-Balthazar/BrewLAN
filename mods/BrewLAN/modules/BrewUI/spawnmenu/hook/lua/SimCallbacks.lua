@@ -21,6 +21,24 @@ local function SpawnUnitMesh(id, x, y, z, pitch, yaw, roll)
     end
 end
 
+local function SetWorldCameraToUnitIconAngle(location)
+    local sx = 1/6
+    table.insert( Sync.CameraRequests, {
+        Name = 'WorldCamera',
+        Type = 'CAMERA_UNIT_SPIN',
+        Marker = {
+            orientation = VECTOR3(math.pi*(1+sx), math.pi*sx, 0),
+            position = location,
+            zoom = FLOAT(30),
+        },
+        HeadingRate = 0,
+        Callback = {
+            Func = 'OnCameraFinish',
+            Args = 'WorldCamera',
+        }
+    })
+end
+
 Callbacks.ClearSpawneMeshes = function()
     for i, v in SpawnedMeshes do
         v:Destroy()
@@ -72,6 +90,9 @@ Callbacks.BoxFormationSpawn = function(data)
         if unit.SetVeterancy then unit:SetVeterancy(data.veterancy) end
         if data.CreateTarmac and unit.CreateTarmac and __blueprints[data.bpId].Display and __blueprints[data.bpId].Display.Tarmacs then
             unit:CreateTarmac(true,true,true,false,false)
+        end
+        if data.count == 1 and data.UnitIconCameraMode then
+            SetWorldCameraToUnitIconAngle{x, GetTerrainHeight(x,z), z}
         end
     end
 end

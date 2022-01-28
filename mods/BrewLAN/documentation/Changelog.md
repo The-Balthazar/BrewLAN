@@ -1408,3 +1408,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Spawn Menu: Fixed an error with the mouse over if a unit has no icon and no mesh.
   * Spawn Menu: Cleaned up the image selection for mouse over, and made it log less.
   * Spawn Menu: Added a 'mesh only' spawn option, and a delete spawned meshes button.
+
+  ## 2022-01-28
+
+  * Spawn Menu: Added a button to snap the camera to the angle used in unit icons.
