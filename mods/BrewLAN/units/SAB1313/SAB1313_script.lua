@@ -47,11 +47,7 @@ SAB1313 = Class(AMassFabricationUnit) {
     MainToggle = function(self)
         self:SetEnergyMaintenanceConsumptionOverride((self.Production and MaintenanceMass or 0)+(self.Shield and MaintenanceShield or 0))
         self:SetProductionPerSecondMass(self.Production and (bpEco.ProductionPerSecondMass or 0) * (self.MassProdAdjMod or 1) or 0)
-        if self.Production or self.Shield then
-            self:SetMaintenanceConsumptionActive()
-        else
-            self:SetMaintenanceConsumptionInactive()
-        end
+        self['SetMaintenanceConsumption'..((self.Production or self.Shield) and 'Active' or 'Inactive')](self)
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)

@@ -23,24 +23,13 @@ SEB5381 = Class(TStructureUnit) {
                     local wepbp = wep:GetBlueprint()
                     local boost = 0.5 / v
                     if wepbp.BeamCollisionDelay then
-                        --DamageModifiers on a beam weapon is an array, which has all its values multiplied together with Damgage to make DamageAmount
+                        --DamageModifiers on a beam weapon is a table, which has all its values multiplied together with Damgage to make DamageAmount
                         if not wep.DamageModifiers then wep.DamageModifiers = {} end
-                        if not wep.DamageModifiers.BoostNode then wep.DamageModifiers.BoostNode = 1 end
-                        if remove then
-                            wep.DamageModifiers.BoostNode = wep.DamageModifiers.BoostNode - boost
-                        else
-                            wep.DamageModifiers.BoostNode = wep.DamageModifiers.BoostNode + boost
-                        end
-                    else
+                        wep.DamageModifiers.BoostNode = (wep.DamageModifiers.BoostNode or 1) + (remove and (-boost) or boost)
+                    elseif wepbp.Damage then
                         --DamageMod on projectile weapons is added as-is to Damage to get DamageAmount
-                        if not wep.DamageMod then wep.DamageMod = 0 end
-                        if wepbp.Damage then
-                            if remove then
-                                wep.DamageMod = wep.DamageMod - (wepbp.Damage * boost )
-                            else
-                                wep.DamageMod = wep.DamageMod + (wepbp.Damage * boost )
-                            end
-                        end
+                        boost = (wepbp.Damage * boost )
+                        wep.DamageMod = (wep.DamageMod or 0) + (remove and (-boost) or boost)
                     end
                 end
                 break
