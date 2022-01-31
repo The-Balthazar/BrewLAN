@@ -1412,3 +1412,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-01-28
 
   * Spawn Menu: Added a button to snap the camera to the angle used in unit icons.
+
+  ## 2022-01-31
+
+  * Spawn Menu: Fixed alignment of spawned even footprint structures.
+  * Spawn Menu: Icon angle option now vaguely appropriately zooms.
