@@ -32,6 +32,12 @@ local function HasEngineerBuildCat(bp) return HasRXCat(bp, 'BUILTBY.*ENGINEER') 
 local function HasFieldBuildCat(bp)    return HasRXCat(bp, 'BUILTBY.*FIELD') end
 local function HasFactoryBuildCat(bp)  return HasRXCat(bp, 'BUILTBY.*FACTORY') end
 local function HasACUBuildCat(bp)      return HasRXCat(bp, 'BUILTBY.*COMMANDER') end
+local function GetTechLevel(bp) return
+    HasCat(bp, 'TECH1') and 1 or
+    HasCat(bp, 'TECH2') and 2 or
+    HasCat(bp, 'TECH3') and 3 or
+    HasCat(bp, 'EXPERIMENTAL') and 4
+end
 
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
@@ -63,17 +69,18 @@ function ModBlueprints(all_blueprints)
 
     for id, bp in all_blueprints.Unit do
 
-        --Build Category processing
         BrewLANNavalEngineerCatFixes(id, bp)
-
-        BrewLANGantryBuildList(id, bp, Gantries)
-        BrewLANGantryTechShareCheck(id, bp)
-        BrewLANHeavyWallBuildList(id, bp)
 
         -- Specific unit changes
         BrewLANTorpedoBomberWaterLanding(id, bp)
         BrewLANNavalShields(id, bp)
         BrewLANSatelliteUplinkForVanillaUnits(id, bp)
+
+        --Build Category processing
+        BrewLANGantryBuildList(id, bp, Gantries)
+        BrewLANGantryTechShareCheck(id, bp)
+        BrewLANHeavyWallBuildList(id, bp)
+        BrewLANNavalEngineersBuildList(id, bp)
 
         -- Specific characteristic changes
         BrewLANBomberDamageType(id, bp)
@@ -101,11 +108,12 @@ function WikiBlueprints(all_blueprints)
     BrewLANMatchBalancing(all_blueprints.Unit)
 
     for id, bp in pairs(all_blueprints.Unit) do
+        BrewLANNavalShields(id, bp)
         --BrewLANMegalithEggs(id, bp, all_blueprints.Unit, all_blueprints.Unit.xrl0403, all_blueprints.Unit.srl0000)  -- Wont do anything for the wiki since it checks Megalith exist first.
         BrewLANSatelliteUplinkForVanillaUnits(id, bp)
         BrewLANGantryBuildList(id, bp, Gantries)
         BrewLANHeavyWallBuildList(id, bp)
-        BrewLANNavalShields(id, bp)
+        BrewLANNavalEngineersBuildList(id, bp)
     end
 end
 
@@ -466,6 +474,29 @@ function BrewLANGantryTechShareCheck(id, bp)
                 table.insert(bp.Categories, 'GANTRYSHARETECH')
                 break
             end
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
+-- Propperly choosing what should be buildable by naval engineers
+--------------------------------------------------------------------------------
+
+function BrewLANNavalEngineersBuildList(id, bp)
+    local caps = bp.Physics and bp.Physics.BuildOnLayerCaps
+    local mt = bp.Physics and bp.Physics.MotionType
+    local tech = GetTechLevel(bp)
+
+    if bp.Categories and tech and HasBuildCat(bp)
+    and (
+        (mt == 'RULEUMT_None' and (caps.LAYER_Seabed or caps.LAYER_Sub or caps.LAYER_Water))
+        or
+        (HasCat(bp,'NEEDMOBILEBUILD') and (mt ~= 'RULEUMT_None' and mt ~= 'RULEUMT_Biped' and mt ~= 'RULEUMT_Land'))
+    )
+    then
+        tech = math.min(tech, 3)
+        for i=tech, 3 do
+            table.insert(bp.Categories, 'BUILTBYTIER'..i..'NAVALENGINEER')
         end
     end
 end

@@ -1417,3 +1417,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Spawn Menu: Fixed alignment of spawned even footprint structures.
   * Spawn Menu: Icon angle option now vaguely appropriately zooms.
+
+  ## 2022-02-01
+
+  * Engineering ships now have script generated build lists.
