@@ -154,7 +154,6 @@ UnitBlueprint {
                 },
             },
         },
-        SpawnRandomRotation = false,
         UniformScale = 0.15,
     },
     Economy = {

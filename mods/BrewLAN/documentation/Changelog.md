@@ -1421,3 +1421,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-02-01
 
   * Engineering ships now have script generated build lists.
+
+  ## 2022-02-08
+
+  * R&D: Mild optimisations to research center code.

@@ -47,7 +47,7 @@ ResearchItem = Class(DummyUnit) {
 
     CheckBuildRestrictionsAllow = function(self, WorkID)
         local Restrictions = ScenarioInfo.Options.RestrictedCategories
-        if not Restrictions or table.getn(Restrictions) == 0 then
+        if not Restrictions or not next(Restrictions) then
             return true
         elseif VersionIsFAF then
             return not Game.IsRestricted(WorkID)
@@ -135,8 +135,7 @@ ResearchFactoryUnit = Class(FactoryUnit) {
 
     OnStartBeingBuilt = function(self, creator, layer)
         local AIBrain = self:GetAIBrain()
-        --LOG(table.getn(AIBrain:GetListOfUnits(categories.RESEARCHCENTRE, false)))
-        if AIBrain.BrainType ~= 'Human' and table.getn(AIBrain:GetListOfUnits(categories[self.BpId], false) ) > 0 then
+        if AIBrain.BrainType ~= 'Human' and AIBrain:GetListOfUnits(categories[self.BpId], false)[1] then
             self:Destroy()
         end
         FactoryUnit.OnStartBeingBuilt(self, creator, layer)
@@ -155,15 +154,10 @@ ResearchFactoryUnit = Class(FactoryUnit) {
     OnStopBuild = function(self, unitbuilding, order)
         --Give buff based on what we researched
         if unitbuilding.GetFractionComplete and unitbuilding:GetFractionComplete() == 1 then
-            if EntityCategoryContains(categories.EXPERIMENTAL, unitbuilding) then
-                Buff.ApplyBuff(self, 'ResearchItemBuff5')
-            elseif EntityCategoryContains(categories.TECH3, unitbuilding) then
-                Buff.ApplyBuff(self, 'ResearchItemBuff3')
-            elseif EntityCategoryContains(categories.TECH2, unitbuilding) then
-                Buff.ApplyBuff(self, 'ResearchItemBuff2')
-            elseif EntityCategoryContains(categories.TECH1, unitbuilding) then
-                Buff.ApplyBuff(self, 'ResearchItemBuff1')
-            end
+            local n = EntityCategoryContains(categories.EXPERIMENTAL, unitbuilding) and 5 or
+                      EntityCategoryContains(categories.TECH3, unitbuilding) and 3 or
+                      EntityCategoryContains(categories.TECH2, unitbuilding) and 2 or 1
+            Buff.ApplyBuff(self, 'ResearchItemBuff'..n)
         end
         FactoryUnit.OnStopBuild(self, unitbuilding, order)
     end,
@@ -176,7 +170,6 @@ ResearchFactoryUnit = Class(FactoryUnit) {
                     for buff, data in self.Buffs.BuffTable.RESEARCH do
                         if Buffs[buff] then --Ensure that the data structure is the same as we are expecting.
                             for i = 1, (data.Count or 1) do
-                                --LOG('Passing on buff: ' .. buff)
                                 Buff.ApplyBuff(unitbuilding, buff)
                             end
                         end
