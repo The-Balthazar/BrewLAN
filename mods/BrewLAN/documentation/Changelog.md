@@ -1424,4 +1424,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ## 2022-02-08
 
-  * R&D: Mild optimisations to research center code.
+  * R&D: Mild optimisations to research centre code.

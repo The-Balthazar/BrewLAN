@@ -11,7 +11,9 @@ do
         -- to build something with a `bp.General.SeedUnit` value instead.
         -- Args are self, and the ID of the seeder unit
         OnSeedUnitBuilt = function(self, seederID)
-            UnitOld.OnSeedUnitBuilt(self, seederID)
+            if UnitOld.OnSeedUnitBuilt then
+                UnitOld.OnSeedUnitBuilt(self, seederID)
+            end
             _ALERT("OnSeedUnitBuilt", seederID)
         end,
 

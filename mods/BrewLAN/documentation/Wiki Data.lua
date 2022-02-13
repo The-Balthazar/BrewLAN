@@ -1,10 +1,9 @@
---[[ModData = {
-    ['BrewLAN'] = {
-        LargeImage = true,
-    },
-}]]
-
 UnitData = {
+    SAA0313 = {
+        Videos = {
+            {YouTube = 'CAVRJWb_acI', 'Time-lapse'},
+        },
+    },
     SAA0314 = {
         Videos = {
             {YouTube = 'MindrMWlrpM', 'Time-lapse'},
@@ -25,11 +24,11 @@ UnitData = {
             {YouTube = 'BxmnEIWuX1s', 'Time-lapse'},
         },
     },
-    --[[SAB1101 = {
+    SAB1102 = {
         Videos = {
-            {'', 'Time-lapse'},
+            {YouTube = 'GzGiDBaemjI', 'Time-lapse'},
         },
-    },]]
+    },
     SAB1205 = {
         Videos = {
             {YouTube = 'AHBsSCGcj98', 'Time-lapse'},
@@ -102,11 +101,6 @@ UnitData = {
             {YouTube = 'fPAXxbB7nTg', 'Time-lapse'},
         },
     },
-    --[[SEB1101 = {
-        Videos = {
-            {'', 'Time-lapse'},
-        },
-    },]]
     SEB2401 = {
         Videos = {
             {YouTube = '_I_D6KGNB8g', 'Time-lapse part 1'},
@@ -121,6 +115,11 @@ UnitData = {
     SEB3404 = {
         Videos = {
             {YouTube = 'L7nRpxNihJA', 'Time-lapse'},
+        },
+    },
+    SEB4303 = {
+        Videos = {
+            {YouTube = 'NnJHxvF0nqM', 'Time-lapse'},
         },
     },
     SEB4401 = {
@@ -147,6 +146,11 @@ UnitData = {
     SEL3401 = {
         Videos = {
             {YouTube = 'I63oGNkngaE', 'Time-lapse'},
+        },
+    },
+    SES0204 = {
+        Videos = {
+            {YouTube = 'HyOt6dBCoCQ', 'Time-lapse'},
         },
     },
 
@@ -196,6 +200,16 @@ UnitData = {
             {YouTube = 'N3NnvM1SPHw', 'Time-lapse'},
         },
     },
+    SRL0311 = {
+        Videos = {
+            {YouTube = 'tzP_zOwRQGA', 'Time-lapse'},
+        },
+    },
+    SRL0312 = {
+        Videos = {
+            {YouTube = 'clowfXPczHc', 'Time-lapse'},
+        },
+    },
     SRL0320 = {
         Videos = {
             {YouTube = 'LVfU06B7kv4', 'Time-lapse'},
@@ -226,6 +240,10 @@ UnitData = {
         },
     },
 
+
+    SSA0001 = {
+        LeadSuffix = "When <a href=\"SSL0403\">Iyadesu</a> reclaims a wreck, it creates one of these drones to store the blueprint of said wreck.",
+    },
     SSA0313 = {
         Videos = {
             {YouTube = 'gJsAMQJDpNY', 'Time-lapse'},
@@ -239,6 +257,11 @@ UnitData = {
     SSB1101 = {
         Videos = {
             {YouTube = '6poIJ9mqWzc', 'Time-lapse'},
+        },
+    },
+    SSB3302 = {
+        Videos = {
+            {YouTube = 'k-yl_xDXJno', 'Time-lapse'},
         },
     },
     SSB4401 = {
