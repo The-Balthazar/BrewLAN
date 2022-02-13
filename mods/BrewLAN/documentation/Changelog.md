@@ -1425,3 +1425,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-02-08
 
   * R&D: Mild optimisations to research centre code.
+
+  ## 2022-02-13
+
+  * New mod: *Swiss Cheese*: Damage causes craters.
