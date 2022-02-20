@@ -21,7 +21,6 @@ SAS0401 = Class(ASeaUnit) {
             FxChargeMuzzleFlash = {
                 '/effects/emitters/oblivion_cannon_flash_01_emit.bp',
                 '/effects/emitters/oblivion_cannon_flash_02_emit.bp',
-                --'/effects/emitters/oblivion_cannon_flash_03_emit.bp',
             },
         },
         Salvation = Class(AIFQuanticArtillery) {},

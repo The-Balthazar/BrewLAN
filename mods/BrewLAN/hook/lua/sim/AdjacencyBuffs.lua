@@ -361,8 +361,8 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.EnergyBuildBuffRemove,
     Affects = {
         EnergyActive = {
-            Add = -1,
-            Mult = 1.0,
+            Add = -0,
+            Mult = 0.1,
         },
     },
 }
@@ -398,7 +398,7 @@ BuffBlueprint {
     Affects = {
         EnergyWeapon = {
             Add = 0,
-            Mult = .1,
+            Mult = 0.1,
         },
     },
 }
@@ -416,7 +416,7 @@ BuffBlueprint {
     Affects = {
         RateOfFire = {
             Add = 0,
-            Mult = .65,
+            Mult = 0.65,
         },
     },
 }
@@ -433,8 +433,8 @@ BuffBlueprint {
     OnBuffRemove = AdjBuffFuncs.MassBuildBuffRemove,
     Affects = {
         MassActive = {
-            Add = -1,
-            Mult = 1.0,
+            Add = 0,
+            Mult = 0.1,
         },
     },
 }

@@ -219,7 +219,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 90,
-            ProjectileId = '/mods/BrewLAN/projectiles/CAAMobileDissidentAntiNuke01/CAAMobileDissidentAntiNuke01_proj.bp',
+            ProjectileId = '/mods/BrewLAN/projectiles/AIMMobileSaintAntiNuke01/AIMMobileSaintAntiNuke01_proj.bp',
             ProjectilesPerOnFire = 1,
             RackBones = {
                 {

@@ -1429,3 +1429,10 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ## 2022-02-13
 
   * New mod: *Swiss Cheese*: Damage causes craters.
+
+  ## 2022-02-19
+
+  * SIO: Made "real Lua" for the wiki generator.
+  * Fixed the Scarab using the Cybran anti-nuke projectile.
+  * Replaced the icons for the Custodian, Wally, and Iyadesu drone.
+  * Nerfed the Paragon adjacency build bonus from -100% to *0.1 to prevent an assist crash.

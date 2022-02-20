@@ -14,11 +14,14 @@ function ModBlueprints(all_blueprints)
     --UpdateForBrewLANTechIcons(all_blueprints)
 end
 
+function WikiBlueprints(all_blueprints)
+    BrewLANTechIconOverhaul(all_blueprints, true)
+end
 --------------------------------------------------------------------------------
 -- Utils
 --------------------------------------------------------------------------------
 local function arrayfindSubstring(tab, str)
-    for i, v in tab do
+    for i, v in ipairs(tab) do
         local s = string.find(v, str)
         if s then
             return s
@@ -32,7 +35,7 @@ local function unitHasWallCat(bp)
         SHIELDWALL = true,
     }
     if bp.Categories then
-        for i, cat in bp.Categories do
+        for i, cat in ipairs(bp.Categories) do
             if t[cat] then
                 return true
             end
@@ -48,7 +51,7 @@ local function isUnarmed(bp)
     if not bp.Weapon then
         return true
     else
-        for i, wep in bp.Weapon do
+        for i, wep in ipairs(bp.Weapon) do
             if not isDeathWep(wep) then
                 return false
             end
@@ -94,10 +97,7 @@ local function biasedDPS(weapon)
 end
 
 local function NeoDPS(weapon)
-
     local projectiles, interval, damage = 0,0,0
-
-
 
     if weapon.RackBones and table.getn(weapon.RackBones) > 1 then
         interval = interval + weapon.RackReloadTimeout
@@ -112,8 +112,10 @@ end
 -- Can't identify if it should coult as a sniper, since that requites global stats.
 -- Returns [type string], [multiplier number or nil]
 --------------------------------------------------------------------------------
-local function getWeaponType(bp, weapon, projectiles)
-
+local function getWeaponType(bp, weapon, projectile)
+    if weapon.ProjectileId and not projectile then
+        WARN("Can't find projectile ", weapon.ProjectileId)
+    end
     if weapon.TargetType == 'RULEWTT_Projectile' then
         --Get the anti-projectile stuff out of the way first
         -- We don't specifically care about anti-torpedo, so just group it in with anti-navy
@@ -136,15 +138,16 @@ local function getWeaponType(bp, weapon, projectiles)
 
         --If the weapons projectile can be stopped by a TMD or SMD
         if weapon.ProjectileId then
-            weapon.ProjectileId = string.lower(weapon.ProjectileId)
-            if projectiles[weapon.ProjectileId]
-            and projectiles[weapon.ProjectileId].Categories
-            and table.find(projectiles[weapon.ProjectileId].Categories, 'MISSILE')
+            local proj = string.lower(weapon.ProjectileId)
+
+            if projectile
+            and projectile.Categories
+            and table.find(projectile.Categories, 'MISSILE')
             then
-                if table.find(projectiles[weapon.ProjectileId].Categories, 'STRATEGIC') then
+                if table.find(projectile.Categories, 'STRATEGIC') then
                     --If an SMD could stop it, it's a nuke, use range as a multiplier
                     return 'nuke', math.max(1, weapon.MaxRadius / 100)
-                elseif table.find(projectiles[weapon.ProjectileId].Categories, 'TACTICAL') then
+                elseif table.find(projectile.Categories, 'TACTICAL') then
                     --If a TMD could stop it, it's a 'missile', use range as a multiplier
                     return 'missile', math.max(1, weapon.MaxRadius / 100)
                 end
@@ -167,7 +170,7 @@ local function getWeaponType(bp, weapon, projectiles)
                 layerCaps = weapon.FireTargetLayerCapsTable.Water
 
             else
-                for fromlayer, targetlayers in weapon.FireTargetLayerCapsTable do
+                for fromlayer, targetlayers in pairs(weapon.FireTargetLayerCapsTable) do
                     -- This assumes that the longest target layer caps list is the one that has all the target
                     if string.len(targetlayers or '') > string.len(layerCaps) then
                         layerCaps = targetlayers
@@ -201,12 +204,12 @@ local function getWeaponType(bp, weapon, projectiles)
             Kamikaze = true,
         }
 
-        if layerCapsTable.LAND or weapon.AboveWaterTargetsOnly or (weapon.ProjectileId and projectiles[weapon.ProjectileId].Physics.DestroyOnWater) then
+        if layerCapsTable.LAND or weapon.AboveWaterTargetsOnly or (weapon.ProjectileId and projectile.Physics.DestroyOnWater) then
             if weapon.ArtilleryShieldBlocks then
                 return 'artillery', math.max(1, weapon.MaxRadius / 100)
             end
 
-            local ShieldDamMult = (weapon.DamageToShields or weapon.ShieldDamage) and (weapon.DamageToShields or weapon.ShieldDamage) / weapon.Damage
+            local ShieldDamMult = (weapon.DamageToShields or weapon.ShieldDamage) and (weapon.DamageToShields or weapon.ShieldDamage) / weapon.Damage or 1
             or weapon.DamageType and type(weapon.DamageType) == 'string' and string.sub(weapon.DamageType, 1, 10) == 'ShieldMult' and tonumber(string.sub(weapon.DamageType, 11, -1))
 
             if (ShieldDamMult >= 2) then
@@ -257,7 +260,7 @@ local function getDesiredBackground(bp, all_bps)
         icon = 'structure'
     elseif bp.Physics.MotionType == 'RULEUMT_Air' then
 
-        if bp.Physics.Evelation > 50 or table.find(bp.Categories, 'SATELLITE') then
+        if (bp.Physics.Evelation and bp.Physics.Evelation > 50) or table.find(bp.Categories, 'SATELLITE') then
             icon = 'satellite'
 
         elseif bp.Air and bp.Air.Winged then
@@ -325,7 +328,7 @@ local function getDesiredIcon(bp, all_bps)
         if table.find(bp.Categories, 'SHIELDWALL') then
             return 'shieldwall'
         else
-            return 'wall' -- Wall is is only a possible subtype
+            return 'wall' -- Wall is only a possible subtype
         end
     elseif table.find(bp.Categories, 'COMMAND') or table.find(bp.Categories, 'SUBCOMMANDER') then
         return 'generic'
@@ -380,9 +383,9 @@ local function getDesiredIcon(bp, all_bps)
                 (bp.Intel.OmniRadius or 0) * 2
             ) or 0,
         }
-        for i, weapon in bp.Weapon do
+        for i, weapon in ipairs(bp.Weapon) do
             if not isDeathWep(weapon) then
-                local weaponlayer, mult = getWeaponType(bp, weapon, all_bps.Projectile)
+                local weaponlayer, mult = getWeaponType(bp, weapon, all_bps.Projectile[string.lower(weapon.ProjectileId or 'nil')])
                 bp.Weapon[i].BLType = weaponlayer
                 if layer[weaponlayer] then
                     layer[weaponlayer] = layer[weaponlayer] + (biasedDPS(weapon) * (mult or 1))
@@ -391,7 +394,7 @@ local function getDesiredIcon(bp, all_bps)
         end
 
         local best = {0, 'directfire'}
-        for l, data in layer do
+        for l, data in pairs(layer) do
             if data > best[1] then
                 best[1] = data
                 best[2] = l
@@ -418,8 +421,8 @@ local function getDesiredIcon(bp, all_bps)
         }
         local bits = {'0','0','0'}
         if bp.Economy.BuildableCategory and type(bp.Economy.BuildableCategory[1]) == "string" then
-            for i, layer in buildlayers do
-                for _, buildcat in bp.Economy.BuildableCategory do
+            for i, layer in ipairs(buildlayers) do
+                for _, buildcat in ipairs(bp.Economy.BuildableCategory) do
                     --Count it if it's a generic category that matches
                     if string.find(buildcat, layer)
                     -- as long as it's not a construction specific category
@@ -443,7 +446,7 @@ local function getDesiredIcon(bp, all_bps)
         if sbits == '000' then
             --If we got nothing from the build cats at all, check unit cats
             --It's easier than trying to parse custom categories, which wouldn't work for the Gantries anyway.
-            for i, layer in buildlayers do
+            for i, layer in ipairs(buildlayers) do
                 bits[i] = table.find(bp.Categories, layer) and '1' or '0'
             end
             sbits = table.concat(bits)
@@ -468,7 +471,7 @@ end
 -- Modifies the strategic icon shape, but not the icon overlay.
 --------------------------------------------------------------------------------
 function UpdateForBrewLANTechIcons(all_bps)
-    for id, bp in all_bps.Unit do
+    for id, bp in pairs(all_bps.Unit) do
         if bp.StrategicIconName and bp.Categories and bp.Physics and bp.Physics.MotionType and bp.Economy then
 
             local iconShapeStart = 5 -- eg: '_land~~', to skip passed the fixed 'icon'
@@ -542,9 +545,9 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
     local sniperdata = {}
     local data = {}
 
-    for id, bp in all_bps.Unit do
-        if bp.StrategicIconName == 'icon_strategic_ferrypoint' then continue end
-        if bp.StrategicIconName and bp.Categories and bp.Physics and bp.Physics.MotionType and bp.Economy then
+    for id, bp in pairs(all_bps.Unit) do
+        if bp.StrategicIconName and bp.StrategicIconName ~= 'icon_strategic_ferrypoint'
+        and bp.Categories and bp.Physics and bp.Physics.MotionType and bp.Economy then
             local bgN = getDesiredBackground(bp, all_bps)
             local icon = getDesiredIcon(bp, all_bps)
 
@@ -578,7 +581,7 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
 
                     if (icon == 'directfire') then
                         local range = 0
-                        for i, wep in bp.Weapon do
+                        for i, wep in ipairs(bp.Weapon) do
                             if wep.BLType == 'directfire' and wep.MaxRadius > range and not wep.NeedToComputeBombDrop then
                                 range = wep.MaxRadius
                             end
@@ -601,18 +604,13 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
         end
     end
 
-    --WARN(repr(sniperdata))
     local sniperavgs = {}
-    for k, v in sniperdata do
+    for k, v in pairs(sniperdata) do
         sniperavgs[k] = v.val / v.total
     end
-    --WARN(repr(sniperavgs))
 
-    --WARN("Sniper Range table")
-    --WARN("Group, unit, range average mult")
-    for i, id in sniperrev do
+    for i, id in pairs(sniperrev) do
         local bp = all_bps.Unit[id]
-        --WARN(group[bp.StrategicBG]..bp.StrategicLevel..", "..(bp.General.UnitName or 'nil') .. ", " .. bp.StrategicTestRange / sniperavgs[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ])
         if bp.StrategicTestRange > sniperavgs[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ] * 1.3 then
             --------------------------------------------------------------------
             if doLogChanges then
@@ -621,7 +619,6 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
             --------------------------------------------------------------------
             -- Do the thing
             bp.StrategicIconName = 'icon_'..bp.StrategicBG..bp.StrategicLevel..'_sniper'
-            --WARN(bp.StrategicIconName .. " : " ..(bp.General.UnitName or 'nil') .. " is cool enough to get the sniper icon ")
 
             -- Remove from directfire averages data
             data[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ].total = data[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ].total - 1
@@ -635,14 +632,12 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
         end
     end
 
-    --WARN(repr(data))
     local avgs = {}
-    for k, v in data do
+    for k, v in pairs(data) do
         avgs[k] = v.val / v.total
     end
-    --WARN(repr(avgs))
 
-    for i, id in revisit do
+    for i, id in ipairs(revisit) do
         local bp = all_bps.Unit[id]
         if bp.StrategicIcon--[[skip things that are now sniper]] and bp.Economy.BuildCostEnergy >= avgs[ group[bp.StrategicBG]..bp.StrategicLevel..bp.StrategicIcon ] then
             --------------------------------------------------------------------
@@ -652,8 +647,6 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
             --------------------------------------------------------------------
             -- Do the thing
             bp.StrategicIconName = bp.StrategicIconName .. '2'
-            --WARN(bp.StrategicIconName .. " : " ..(bp.General.UnitName or 'nil') .. " is cool enough to get the better icon ")
-
             -- Cleanup
             bp.StrategicTestRange = nil
             bp.StrategicBG = nil
@@ -663,14 +656,13 @@ function BrewLANTechIconOverhaul(all_bps, doLogChanges)
     end
 
     if doLogChanges then
-        LOG('BrewLAN strategic icon changes. Units processed: '..table.getsize(changes))
-        LOG('ID, Original strategic icon, Calculated name')
-        for id, icons in changes do
+        SPEW('BrewLAN strategic icon changes. Units processed: '..table.getsize(changes))
+        SPEW('ID, Original strategic icon, Calculated name')
+        for id, icons in pairs(changes) do
             if icons[1] ~= icons[2] then
-                LOG(id..', '..icons[1]..', '..icons[2])
+                SPEW(id..', '..icons[1]..', '..icons[2])
             end
         end
-        --LOG(repr(changes))
     end
 end
 
