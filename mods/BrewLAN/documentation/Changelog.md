@@ -1436,3 +1436,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed the Scarab using the Cybran anti-nuke projectile.
   * Replaced the icons for the Custodian, Wally, and Iyadesu drone.
   * Nerfed the Paragon adjacency build bonus from -100% to *0.1 to prevent an assist crash.
+
+  ## 2022-02-22
+
+  * Fixed Seraphim T3 transport having attach points that would kill the Seraphim T3 heavy assault bot.
+  * SIO: Minor script tweaks.

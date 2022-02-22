@@ -119,12 +119,12 @@ local function getWeaponType(bp, weapon, projectile)
     if weapon.TargetType == 'RULEWTT_Projectile' then
         --Get the anti-projectile stuff out of the way first
         -- We don't specifically care about anti-torpedo, so just group it in with anti-navy
-        if (weapon.TargetRestrictOnlyAllow == 'TORPEDO' or string.find(weapon.TargetRestrictOnlyAllow, 'TORPEDO')) then
+        if (weapon.TargetRestrictOnlyAllow == 'TORPEDO' or string.find(weapon.TargetRestrictOnlyAllow or '', 'TORPEDO')) then
             return 'antinavy'
         end
 
         -- we only distinguish between SMD and TMD for the multiplier bonus
-        if (weapon.TargetRestrictOnlyAllow == 'MISSILE' or string.find(weapon.TargetRestrictOnlyAllow, 'MISSILE')) then
+        if (weapon.TargetRestrictOnlyAllow == 'MISSILE' or string.find(weapon.TargetRestrictOnlyAllow or '', 'MISSILE')) then
             return 'antimissile', (string.find(weapon.TargetRestrictOnlyAllow, 'STRATEGIC') and 1000 or string.find(weapon.TargetRestrictOnlyAllow, 'TACTICAL') and 100)
         end
 
@@ -137,20 +137,16 @@ local function getWeaponType(bp, weapon, projectile)
     else --weapon.TargetType == 'RULEWTT_Unit' then --Default value, generally not defined.
 
         --If the weapons projectile can be stopped by a TMD or SMD
-        if weapon.ProjectileId then
-            local proj = string.lower(weapon.ProjectileId)
-
-            if projectile
-            and projectile.Categories
-            and table.find(projectile.Categories, 'MISSILE')
-            then
-                if table.find(projectile.Categories, 'STRATEGIC') then
-                    --If an SMD could stop it, it's a nuke, use range as a multiplier
-                    return 'nuke', math.max(1, weapon.MaxRadius / 100)
-                elseif table.find(projectile.Categories, 'TACTICAL') then
-                    --If a TMD could stop it, it's a 'missile', use range as a multiplier
-                    return 'missile', math.max(1, weapon.MaxRadius / 100)
-                end
+        if projectile
+        and projectile.Categories
+        and table.find(projectile.Categories, 'MISSILE')
+        then
+            if table.find(projectile.Categories, 'STRATEGIC') then
+                --If an SMD could stop it, it's a nuke, use range as a multiplier
+                return 'nuke', math.max(1, weapon.MaxRadius / 100)
+            elseif table.find(projectile.Categories, 'TACTICAL') then
+                --If a TMD could stop it, it's a 'missile', use range as a multiplier
+                return 'missile', math.max(1, weapon.MaxRadius / 100)
             end
         end
 
@@ -204,23 +200,21 @@ local function getWeaponType(bp, weapon, projectile)
             Kamikaze = true,
         }
 
-        if layerCapsTable.LAND or weapon.AboveWaterTargetsOnly or (weapon.ProjectileId and projectile.Physics.DestroyOnWater) then
-            if weapon.ArtilleryShieldBlocks then
-                return 'artillery', math.max(1, weapon.MaxRadius / 100)
-            end
+        if weapon.ArtilleryShieldBlocks then
+            return 'artillery', math.max(1, weapon.MaxRadius / 100)
+        end
 
-            local ShieldDamMult = (weapon.DamageToShields or weapon.ShieldDamage) and (weapon.DamageToShields or weapon.ShieldDamage) / weapon.Damage or 1
-            or weapon.DamageType and type(weapon.DamageType) == 'string' and string.sub(weapon.DamageType, 1, 10) == 'ShieldMult' and tonumber(string.sub(weapon.DamageType, 11, -1))
+        local ShieldDamMult = (weapon.DamageToShields or weapon.ShieldDamage) and (weapon.DamageToShields or weapon.ShieldDamage) / (weapon.Damage or 1)
+        or type(weapon.DamageType) == 'string' and string.sub(weapon.DamageType, 1, 10) == 'ShieldMult' and tonumber(string.sub(weapon.DamageType, 11, -1)) or 0
 
-            if (ShieldDamMult >= 2) then
-                return 'antishield', ShieldDamMult
+        if (ShieldDamMult >= 2) then
+            return 'antishield', ShieldDamMult
 
-            elseif (weapon.FireOnSelfDestruct or KYS[weapon.WeaponCategory] or KYS[weapon.Label] or KYS[weapon.DisplayName]) and not weapon.NeedToComputeBombDrop then
-                return 'bomb'
+        elseif (weapon.FireOnSelfDestruct or KYS[weapon.WeaponCategory] or KYS[weapon.Label] or KYS[weapon.DisplayName]) and not weapon.NeedToComputeBombDrop then
+            return 'bomb'
 
-            else
-                return 'directfire'
-            end
+        elseif layerCapsTable.LAND or weapon.AboveWaterTargetsOnly or projectile.Physics.DestroyOnWater then
+            return 'directfire'
         end
     end
 
