@@ -64,7 +64,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   ### 2020-06-25
 
-  * R&D: Added the Seraphim Pentration Fighter.
+  * R&D: Added the Seraphim Penetration Fighter.
 
   ### 2020-07-07
 
@@ -208,7 +208,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Ivan no longer uses the dummy unit storage method and now fakes it locally.
   * Ivan now has a deploy button for ejecting units from the base.
     * The target location isn't respected.
-  * Units fired from Ivan no longer have visio of the ground below the drop pod.
+  * Units fired from Ivan no longer have vision of the ground below the drop pod.
 
   ### 2020-10-20
 
@@ -408,7 +408,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   * Fixed wall tarmacs being applied at the wrong time.
   * Bubble Tea: Fixed Aeon shield on FAF.
   * Bubble Tea: Moved the projected shield size calculations to the projectee.
-  * Bubble Tea: Projected shield position not takes into account Y collision offset.
+  * Bubble Tea: Projected shield position now takes into account Y collision offset.
   * Cityscapes: Created icon for wide residential structure.
   * Caffe Corretto: Created icon for factory nodes.
   * Caffe Corretto: Fixed factory stealth node having the wrong description.
@@ -680,9 +680,9 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
   * Penetrators: Cleaned up the blueprints.
   * Bletchley Park: Set the footprint of the UEF T4 mobile sensor to 6x6 so it gets the `IgnoreStructures` flag.
-  * Fixed the Independance Engine having the 'LAND' category instead of 'AIR'.
+  * Fixed the Independence Engine having the 'LAND' category instead of 'AIR'.
   * Gave the Gantry the AIR and NAVAL categories to account for it being able to do those.
-  * Did some work on the updated auto-icon-selection scripts that supercede EIO.
+  * Did some work on the updated auto-icon-selection scripts that supersede EIO.
 
   ### 2021-03-21
 
@@ -825,7 +825,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-05-30
 
   * Unified comment headers on some unit scripts.
-  * Removed the removed the legacy check document dependency for the the Aeon Heavy Transport.
+  * Removed the removed the legacy check document dependency for the Aeon Heavy Transport.
 
   ### 2021-05-31
 
@@ -877,7 +877,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
       * AI building the Tempest from the Independence Engine.
       * Players building Atlantis from-, and players and AI building Tempest from the Seraphim Naval Factory.
         * AI is restricted from building the Atlantis because they don't use it.
-  * Fixed the DPA calc in the Strategic Icon selector and debug tools mod not treating MuzzleSalvoDelay and RackFireTogether correctly.
+  * Fixed the DPS calc in the Strategic Icon selector and debug tools mod not treating MuzzleSalvoDelay and RackFireTogether correctly.
 
   ### 2021-06-16
 
@@ -919,7 +919,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
   ### 2021-07-01
 
   * The unguided satellite function now actually deals enough damage to bypass regen.
-  * Refactored satellite code so shared code is in a parent class, and so its unpack stages are initiated by the satellite not the station.
+  * Refactored satellite code so shared code is in a parent class, so unpack stages are initiated by the satellite not the station.
   * Changed the ID of the UEF observation satellite from `sea0002` to `sea3301`. The 000 number IDs have been bugging me, and they're going.
   * Changed the ID of the UEF counterintel satellite from `sea0003` to `sea4301`.
   * Changed the ID of the UEF ASF jammer dummy unit from `sea0004` to `sea4302`.

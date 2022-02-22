@@ -10,7 +10,7 @@ enabled = true
 exclusive = false
 ui_only = false
 requiresNames = {
-    ['25D57D85-7D84-27HT-A501-BR3WL4N0000891'] = "BrewLAN",
+    ['25D57D85-7D84-27HT-A501-BR3WL4N0000899'] = "BrewLAN",
 }
 conflicts = { }
 before = {  }

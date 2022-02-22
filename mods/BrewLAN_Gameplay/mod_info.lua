@@ -1,7 +1,7 @@
 name = "BrewLAN: Gameplay mods"
-uid = "190261d0-4bb0-11e2-bcSC-BLGAMEPLAY01"
-version = 1
-copyright = "© 2009–2018 Sean Wheeldon"
+uid = "190261d0-4bb0-11e2-bcSC-BLGAMEPLAY02"
+version = 2
+copyright = "© 2009–2022 Sean Wheeldon"
 description = "Container for the BrewLAN gameplay sub-mods, including Corrisive Ocean, Anti-mass, Crystal Hill, Metal World, Paragon Game, TeaD, and Waterlag."
 author = "Balthazar"
 icon = "/mods/BrewLAN_Gameplay/folder.png"

@@ -1,7 +1,7 @@
 name = "BrewLAN: Additional unit mods"
-uid = "190261d0-4bb0-11e2-bcSC-BLNEWUNITS01"
-version = 1
-copyright = "© 2009–2018 Sean Wheeldon"
+uid = "190261d0-4bb0-11e2-bcSC-BLNEWUNITS02"
+version = 2
+copyright = "© 2009–2022 Sean Wheeldon"
 description = "Container for the BrewLAN extra unit sub-mods; Bubble Tea, Caffe Corretto, and Research and Daiquiris."
 author = "Balthazar"
 icon = "/mods/BrewLAN_Units/folder.png"

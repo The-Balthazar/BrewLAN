@@ -1,7 +1,7 @@
 name = "BrewLAN"
-uid = "25D57D85-7D84-27HT-A501-BR3WL4N0000891" -- this is UID hard coded in the brew_AI mod_info.lua
-version = 0.891
-copyright = "© 2009–2021 Sean Wheeldon"
+uid = "25D57D85-7D84-27HT-A501-BR3WL4N0000899" -- this is UID hard coded in the brew_AI mod_info.lua
+version = 0.899
+copyright = "© 2009–2022 Sean Wheeldon"
 description = "Adds a large number of units and changes a number of existing units."
 author = "Balthazar"
 icon = "/mods/BrewLAN/documentation/brewlan.png"
@@ -67,6 +67,7 @@ conflicts = {
     "25D57D85-7D84-27HT-A501-BR3WL4N000083", --0.8.3 public release
     "25D57D85-7D84-27HT-A501-BR3WL4N000084", --FAF 84
     "25D57D85-7D84-27HT-A501-BR3WL4N0000841",--0.8.4.1 git beta
+    "25D57D85-7D84-27HT-A501-BR3WL4N0000891",--0.8.9.1 git beta
 }
 before = { "25D57D85-9JA7-D842-BREW-RESEARCH00007" }
 after = {  }
