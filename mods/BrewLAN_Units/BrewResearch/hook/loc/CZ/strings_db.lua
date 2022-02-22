@@ -3,11 +3,11 @@
 
 --Výzkumná centra
 seb9301_desc="Výzkumné centrum"
---UEF
+--Uef.
 seb9101_name="Campus Tyson"
 seb9201_name="Campus Sagan"
 seb9301_name="Campus Hawking"
---Cybran
+--Cybrán.
 srb9101_name="Zařízení Einstein"
 srb9201_name="Zařízení Schrodinger"
 srb9301_name="Zařízení Heisenberg"
@@ -15,10 +15,10 @@ srb9301_name="Zařízení Heisenberg"
 sab9101_name="Porozumění"
 sab9201_name="Vedení"
 sab9301_name="Osvícení"
---Seraphim
-ssb9101_name="Iyathlabistle"
-ssb9201_name="Iyathlab"
-ssb9301_name="Iyathluub"
+--Seraphim.
+ssb9101_name="Iyathlabistle."
+ssb9201_name="Iyathlab."
+ssb9301_name="Iyathluub."
 
 Unit_Description_RND_005="Základní výzkumné zařízení. Poskytuj přístup k novým jednotkám a vyšším technologickým úrovním."
 Unit_Description_RND_006="Středně pokročilé výzkumné zařízení. Poskytuje rychlejší výzkum a více bodů zdraví."
@@ -27,97 +27,97 @@ Unit_Description_RND_007="Vysoce pokročilé výzkumné zařízení. Poskytuje r
 --Centra Vědy
 seb9302_desc="Centrum Vědy"
 
-seb9202_name="TBD"
-seb9302_name="TBD"
+seb9202_name="Tbd."
+seb9302_name="Tbd."
 
-srb9202_name="TBD"
-srb9302_name="TBD"
+srb9202_name="Tbd."
+srb9302_name="Tbd."
 
-sab9202_name="TBD"
-sab9302_name="TBD"
+sab9202_name="Tbd."
+sab9302_name="Tbd."
 
-ssb9202_name="TBD"
-ssb9302_name="TBD"
+ssb9202_name="Tbd."
+ssb9302_name="Tbd."
 
-sb9302_desc="Poskytuje sousedů bonusy výzkumných center, snižuje čas na výzkum."
-sb9303_desc="Poskytuje sousedů bonusy výzkumných center, snižování nákladů na výzkum."
+sb9302_desc="Poskytuje přilehlost bonusy do výzkumných center, klesající čas výzkumu."
+sb9303_desc="Poskytuje přilehlost bonusy do výzkumných center, snižují náklady na výzkum."
 
---Informace o položky výzkum
-ability_rnd_unlock="Výzkum Unlock"
-ability_rnd_command="Postavený řídící jednotkou"
-ability_rnd_engineer="Postavený inženýr"
-ability_rnd_field="Postavený pole inženýr"
-ability_rnd_factory="Postavený továrně"
-ability_rnd_gantry="Postavený experimentální továrny"
-ability_rnd_wall="Postaven na zeď"
-ability_rnd_upgrade="Postaven jako upgradem"
+--Informace o výzkumu
+ability_rnd_unlock="Výzkum odemknout"
+ability_rnd_command="Postavený velitelskou jednotkou"
+ability_rnd_engineer="Postavený inženýrem"
+ability_rnd_field="Postavený terénním inženýrem"
+ability_rnd_factory="Postavený továrnou"
+ability_rnd_gantry="Postavený experimentální továrnou"
+ability_rnd_wall="Postavený na zeď"
+ability_rnd_upgrade="Postavený jako upgrade"
 
---kategorie výzkumných
-srnd9100_desc="Tech Research Level"
-srnd9200_desc="Tech Research Level"
-srnd9300_desc="Tech Research Level"
-srnd9400_desc="Experimentální Tech Research Level"
+--Kategorie výzkumu
+srnd9100_desc="Výzkum technologie"
+srnd9200_desc="Výzkum technologie"
+srnd9300_desc="Výzkum technologie"
+srnd9400_desc="Výzkum experimentálního tech"
 
-Unit_Description_RND_001="Odemkne další tech 1 jednotky a jednotky výzkumu."
-Unit_Description_RND_002="Odemkne tech 2 jednotek a jednotek výzkumu."
-Unit_Description_RND_003="Odemkne tech 3 jednotek a jednotek výzkumu."
-Unit_Description_RND_004="Odemkne experimentální jednotky a jednotky výzkumu."
+Unit_Description_RND_001="Odemkne další technologie Tech 1 a výzkum jednotek."
+Unit_Description_RND_002="Odemkne Tech 2 jednotky a jednotkový výzkum."
+Unit_Description_RND_003="Odemkne Tech 3 jednotky a jednotkový výzkum."
+Unit_Description_RND_004="Odemkne experimentální jednotky a jednotkový výzkum."
 
 
---odemknout továrny výzkumné
-sb0105_desc="vznášedlo Factory"
+--Výzkum odemknout továrny
+sb0105_desc="Továrna vznášedla"
 Unit_Description_RND_013="Produkuje obojživelné jednotky."
---Konkrétně jen povrchové amphib a vznášet se. Zahrnuje Ekranoplanu.
-sb0106_desc="ponorka Factory"
-Unit_Description_RND_014="Produkuje ponorných jednotek."
---Ponorky a možná mořského dna obojživelná
-sb0106_desc="hydroplán Factory"
-Unit_Description_RND_015="produkuje hydroplány"
---nemusí dostat také hydroplánem z továrny.
+--Konkrétně jen povrchový amfib a vznášet se. Zahrnuje ekranoplans.
+sb0106_desc="Ponorka továrna"
+Unit_Description_RND_014="Produkuje ponorné jednotky."
+--Ponorky a možná obojživelné mořské dno
+sb0106_desc="Továrna na hydroplán"
+Unit_Description_RND_015="Produkuje Seallanes."
+--Továrna s hydroplánem se nemohla dostat.
 
 ----------------------------------------
--- Tech 1
+-- Tech 1.
 ----------------------------------------
 
 --Větrné turbíny
-sb1101_desc="větrné generátory"
+sb1101_desc="Větrný generátor"
 seb1101_name="Turbína"
 sab1101_name="Svítilna"
-ssb1101_name="Uyalai"
-srb1101_name="W.A.T"
---Větrná turbína Asistovaná
-Unit_Description_RND_011="Generuje kolísající množství energie."
+ssb1101_name="Uyalai."
+srb1101_name="W.a.t."
+--Turbína podporovaná větrem
+Unit_Description_RND_011="Generuje kolísavé množství energie."
 
---přílivové generátory
-sb1102_desc="přílivový generátor"
-seb1102_name="Tide Pod"
+--Přílivové generátory
+sb1102_desc="Přílivový generátor"
+seb1102_name="Příliv pod."
 sab1102_name="Tok"
 ssb1102_name="Uyaluos"
-srb1102_name="Red Lagoon"
-Unit_Description_RND_017="Generuje zvlněný množství energie. Efektivnější s velkými vodními plochami."
+srb1102_name="Červená laguna"
+Unit_Description_RND_017="Generuje zvlněné množství energie. Efektivnější s velkými těly vody."
 
 ----------------------------------------
---Tech 2
+--Tech 2.
 ----------------------------------------
 
---Generátory (250 výstupů)
---Serafové nerotačních energie gens jsou tzv Uya-Iya
---Cybran a Aeon tech 2 mají žádné jméno
-seb1201_name="EG-100 fúzního reaktoru"
-Unit_Description_RND_018="Od nejnižšího k elektrickým generátorem střední úrovni. Postavit vedle jiných staveb přilehlosti bonus."
+--Elektrické generátory (250 výstupu)
+--Seraphim ne-rotační výkonové gens jsou všechny zvané UYA-IYA
+--Cybrán a Aeon Tech 2 nemají žádné jméno
+seb1201_name="EG-100 fúzní reaktor"
+Unit_Description_RND_018="Nízký generátor střední úrovně. Konstruovat vedle dalších struktur pro sousední bonus."
 
 
 ----------------------------------------
---Tech 3
+--Tech 3.
 ----------------------------------------
 
 
 --Ekranoplan transporty
-ss0326_desc="Heavy GEV Transport"
-ses0326_name="КМ66 Seamonster"
-srs0326_name="Deltawing"
+ss0326_desc="Heavy Gev Transport."
+ses0326_name="Км66 Seamonster."
+srs0326_name="Deltawing."
 sas0326_name="Lun Mallard"
-sss0326_name="Vishwiseyen"
+sss0326_name="VishWiseyen."
 
 
 

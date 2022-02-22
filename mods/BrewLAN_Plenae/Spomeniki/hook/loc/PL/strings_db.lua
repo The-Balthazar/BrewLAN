@@ -1,19 +1,19 @@
 --ISO_639-1_code=PL
 --Translator: 
-ssb23sn_desc="Ciężki punkt obrony"
-ssb23sn_name="Ytho"
-Unit_Description__Spomeniki_001="Średniego zasięgu wieżyczkę obronną. Wystrzeliwuje powolny potężną broń energetyczną, która zadaje ogromne obrażenia."
+ssb23sn_desc="Ciężka obrona"
+ssb23sn_name="Y."
+Unit_Description__Spomeniki_001="Średni wieżyczka obronna. Ogrzewa wolną potężną broń energetyczną, która zajmuje się ogromnymi uszkodzeniami."
 
-snlmes1_desc="Pathfinder Rover"
-snlmes1_name="MESUR Sojourner"
-.."Nieuzbrojony nauki i eksploracji rover."
+snlmes1_desc="Pathfinder Rover."
+snlmes1_name="Mezur Sojourner."
+.."Nieuzbrojona nauka i poszukiwania łazienki."
 
-snlmer1_desc="Experloration Rover"
-snlmer1_name="Szansa MER-1"
-snlmer2_name="MER-2 Spirit"
-Unit_Description__Spomeniki_002="Nieuzbrojony nauki i eksploracji rover Drone. Zasilany energią słoneczną. Zaprojektowany, aby trwać przez 90 okresów obrotowych."
-Unit_Description__Spomeniki_003="Nieuzbrojony nauki i eksploracji rover Drone. Zasilany energią słoneczną. Zaprojektowany, aby trwać przez 90 okresów obrotowych. Ma problem pyłu."
+snlmer1_desc="Poszukiwanie ROVER."
+snlmer1_name="Mer-1 szansa"
+snlmer2_name="Duch Mer-2"
+Unit_Description__Spomeniki_002="Nieuzbrojona nauka i eksploracja Rover Drone. Zasilany energią słoneczną. Zaprojektowany, aby trwać 90 okresów obrotowych."
+Unit_Description__Spomeniki_003="Nieuzbrojona nauka i eksploracja Rover Drone. Zasilany energią słoneczną. Zaprojektowany, aby trwać 90 okresów obrotowych. Ma problem z pyłu."
 
-snlmsl1_desc="Science Laboratory rover"
-snlmsl1_name="MSL Curiosity"
-.."Nieuzbrojony nauki i eksploracji rover pojazdu. Zasilany reaktora rozszczepieniowego. Niesie wystarczającą ilość materiału rozszczepialnego do funkcji dla 55 okresów orbitalnych."
+snlmsl1_desc="Rover laboratorium naukowego"
+snlmsl1_name="Ciekawość MSL."
+.."Nieuzbrojony pojazd Rover naukowy i eksploracji. Zasilany przez reaktora rozszczepiania. Niesie wystarczającą ilość materiału Fissile, aby funkcjonować dla 55 okresów orbitalnych."

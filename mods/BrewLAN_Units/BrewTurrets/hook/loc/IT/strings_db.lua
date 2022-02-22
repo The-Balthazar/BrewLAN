@@ -3,54 +3,54 @@
 
 
 --Translated by: Google
-srb5380_name="Deadshot"
-srb5380_desc="Precisione Boost Nodo"
-Unit_Description_BrewLAN_Turrets_0001="Adiacente armi spesa statica più puntando, con conseguente maggiore precisione. più nodi impilano."
+srb5380_name="Deadshot."
+srb5380_desc="Precisione Boost nodo."
+Unit_Description_BrewLAN_Turrets_0001="Le armi statiche adiacenti spendono più a lungo, con conseguente maggiore precisione. Pila di nodi multipli."
 
-seb5381_name="superhot"
-seb5381_desc="Danni Boost Nodo"
-Unit_Description_BrewLAN_Turrets_0002="affare armamento statico adiacente incrementato il danno. Questo aumenta notevolmente il consumo di energia per il colpo."
+seb5381_name="Superhot."
+seb5381_desc="Danni Boost Node."
+Unit_Description_BrewLAN_Turrets_0002="Accordo armi armi statici adiacenti aumentato. Ciò aumenta notevolmente il consumo di energia per colpo."
 
-seb5382_name="Benson"
-seb5382_desc="Fabbrica Salute Nodo"
-Unit_Description_BrewLAN_Turrets_0010="Adiacenza nodo buff. Unità costruite da strutture di fabbrica adiacenti avranno sanitaria supplementare."
+seb5382_name="Benson."
+seb5382_desc="Nodo della salute della fabbrica"
+Unit_Description_BrewLAN_Turrets_0010="Nodo buff adiacenza. Le unità costruite da strutture di fabbrica adiacenti avranno una salute aggiuntiva."
 
 srb5383_name="Lo smarrito"
-srb5383_desc="Azione furtiva della fabbrica Toggle Nodo"
-Unit_Description_BrewLAN_Turrets_0011="Adiacenza nodo buff. Unità costruite da strutture di fabbrica adiacenti avranno alcuna abilità furtive impostati attivo o non attivo al posto del loro stato di default."
+srb5383_desc="Nodo a commutazione invisibile di fabbrica"
+Unit_Description_BrewLAN_Turrets_0011="Nodo buff adiacenza. Le unità costruite da strutture di fabbrica adiacenti avranno eventuali abilità Stealth impostate attive o inattive invece del loro stato predefinito."
 
-tooltipbrewturrets0002="accumulo azione furtiva della fabbrica a ginocchiera"
-tooltipbrewturrets0003="unità Fascicolazione dalle fabbriche adiacenti di avere Stealth abilitato."
-tooltipbrewturrets0004="Fabbrica di costruzione mantello ginocchiera"
-tooltipbrewturrets0005="unità Fascicolazione dalle fabbriche adiacenti di aver abilitato il mantello."
+tooltipbrewturrets0002="Compagnia costruisci la furtività"
+tooltipbrewturrets0003="Imposta le unità costruite da fabbriche adiacenti per avere abilitato furtività."
+tooltipbrewturrets0004="Passa a mantello della fabbrica"
+tooltipbrewturrets0005="Imposta le unità costruite da fabbriche adiacenti per avere abilitato il mantello."
 
-seb2320_name="Hiro"
+seb2320_name="Hiro."
 seb2320_desc="Punto di difesa pesante"
-Unit_Description_BrewLAN_Turrets_0003="Pesante torre difensiva. Armato con un fascio di plasma."
+Unit_Description_BrewLAN_Turrets_0003="Torre difensiva pesante. Armato con un raggio plasmatico."
 
-seb2211_name="Stouty"
-sbui2311_desc="Anti-Armatura Point Difesa"
-Unit_Description_BrewLAN_Turrets_0004="torre difensiva. Armato con un cannone al plasma distruttore grado."
+seb2211_name="Stouty."
+sbui2311_desc="Difesa del punto anti-armatura"
+Unit_Description_BrewLAN_Turrets_0004="Torre difensiva. Armato con un cannone al plasma di grado di distruttore."
 
 seb2111_name="piccoletto"
-Unit_Description_BrewLAN_Turrets_0005="Luce torre difensiva. Armato con un cannone al plasma fregata-grade."
+Unit_Description_BrewLAN_Turrets_0005="Torre difensiva leggera. Armato con un cannone plasmatico di grado di fregata."
 
-srb2402_name="neolith"
-seb2401_desc="Sperimentale Point Difesa"
-Unit_Description_BrewLAN_Turrets_0006="torretta difensiva. Armato di un enorme cannone protone."
+srb2402_name="Neolith."
+seb2401_desc="Difesa Punto sperimentale"
+Unit_Description_BrewLAN_Turrets_0006="Torretta difensiva. Armato con un massiccio cannone protonale."
 
 srb2391_name="Bobina di Tesla"
 srb2391_desc="Punto di difesa pesante"
-Unit_Description_BrewLAN_Turrets_0007="Potente, a corto raggio, torretta difensiva. Memorizza gradualmente tutto energia e scariche per ogni scatto. Più efficace contro grandi bersagli quando dato il tempo di carica. Altamente inefficace a fuoco sostenuto."
+Unit_Description_BrewLAN_Turrets_0007="Torretta potente, corta, torretta difensiva. Memorizza gradualmente l'energia e scarica tutto con ogni colpo. Più efficace contro grandi bersagli quando viene dato il tempo di caricare. Altamente inefficace al fuoco sostenuto."
 
 --Questo è usato dalla bobina di Tesla
-tooltipbrewturrets0000="Toggle potere arma"
-tooltipbrewturrets0001="Attiva o disattiva il potere arma principale."
+tooltipbrewturrets0000="Toggle Weapon Power."
+tooltipbrewturrets0001="Abilita o disabilita il potere dell'arma principale."
 
 seb2402_name="Vortice"
-seb2402_desc="Sperimentale anti-Air Defense"
-Unit_Description_BrewLAN_Turrets_0008="Defensive arma anti-air. Fornisce devastanti danni a corto raggio. Consuma il potere con ogni colpo."
+seb2402_desc="Difesa anti-air sperimentale"
+Unit_Description_BrewLAN_Turrets_0008="Arma anti-aria difensiva. Fornisce un devastante danno a corto raggio. Consuma potere con ogni colpo."
 
 srb2403_name="Tartaro"
-srb2403_desc="Sperimentale Point Difesa"
---"torretta difensiva. Armato con un laser a microonde ad alta intensità."
+srb2403_desc="Difesa Punto sperimentale"
+--"Torretta difensiva. Armato con un laser a microonde ad alta intensità."

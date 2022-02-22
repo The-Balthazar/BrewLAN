@@ -8,7 +8,7 @@ snlmes1_desc="Pathfinder Rover"
 snlmes1_name="MESUR Sojourner"
 .."Unarmed science and exploration rover."
 
-snlmer1_desc="Experloration Rover"
+snlmer1_desc="Exploration Rover"
 snlmer1_name="MER-1 Opportunity"
 snlmer2_name="MER-2 Spirit"
 Unit_Description__Spomeniki_002="Unarmed science and exploration rover drone. Powered by solar energy. Designed to last for 90 rotation periods."

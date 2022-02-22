@@ -1,16 +1,16 @@
 --ISO_639-1_code=IT
 --Translated by: Google
-sab4401="Proiettore Scudo Sperimentale"
-sab4401_name="Pilastro di rilievo"
-Unit_Description__BubbleTea_A4_01="impianto di proiezione scudo Sperimentale. Genera bolle di protezione attorno ad ogni singola struttura nel suo raggio operativo."
+sab4401="Proiettore sperimentale sperimentale."
+sab4401_name="Pilastro di prominenza"
+Unit_Description__BubbleTea_A4_01="Struttura sperimentale di proiezione dello scudo. Genera bolle protettive attorno a ciascuna struttura individuale all'interno del raggio operativo."
 
-srb4401="Shield Generator Sperimentale"
-seb4401_name="BFS - Stalwart"
-Unit_Description__BubbleTea_A4_02="Genera uno scudo pesante intorno unità e strutture nel suo raggio operativo."
+srb4401="Generatore sperimentale sperimentale."
+seb4401_name="BFS - Stalwart."
+Unit_Description__BubbleTea_A4_02="Genera uno scudo pesante attorno alle unità e alle strutture nel suo raggio operativo."
 
-ssb4401_desc="Sperimentale Shield Lattice"
-ssb4401_name="Iaathan"
-ssb4401_drone_desc="Sperimentale Shield Drone"
-ssb4401_large_name="Iaathanah"
-ssb4401_small_name="Iaathanahee"
-Unit_Description__BubbleTea_A4_03="impianto sperimentale scudo. Genera un reticolo di scudo bolle che aumento della forza verso il centro. droni Lattice orbitano la possibilità di distribuire i danni."
+ssb4401_desc="Reticolo sperimentale dello scudo"
+ssb4401_name="Iaahan."
+ssb4401_drone_desc="Scudo sperimentale Drone."
+ssb4401_large_name="Iaahanah."
+ssb4401_small_name="Iaahanahee."
+Unit_Description__BubbleTea_A4_03="Struttura sperimentale sperimentale. Genera un reticolo di bolle di scudo che aumentano di forza verso il centro. Greentice Drones Orbit La struttura per distribuire danni."

@@ -1,19 +1,19 @@
 --ISO_639-1_code=DE
---Translator: 
+--Translator: Binary
 ssb23sn_desc="Schwere Punktverteidigung"
 ssb23sn_name="Ytho"
-Unit_Description__Spomeniki_001="Mittelstrecken defensiven Turm. Feuert eine langsame mächtige Energie Waffe, die massiven Schaden zufügt."
+Unit_Description__Spomeniki_001="Defensiver Turm mittlerer Reichweite. Feuert eine langsame, mächtige Energiewaffe die massive Schäden verursacht."
 
 snlmes1_desc="Pathfinder Rover"
-snlmes1_name="mesur Sojourner"
-.."Unbewaffnet Wissenschaft und Exploration Rover."
+snlmes1_name="MESUR Sojourner"
+.."Unbewaffnetes Wissenschafts- und Erkundungsfahrzeug."
 
-snlmer1_desc="Experloration Rover"
-snlmer1_name="MER-1 Gelegenheit"
+snlmer1_desc="Erkundungsfahrzeug"
+snlmer1_name="MER-1 Opportunity"
 snlmer2_name="MER-2 Spirit"
-Unit_Description__Spomeniki_002="Unbewaffnet Wissenschaft und Exploration Rover Drohne. Angetrieben durch Sonnenenergie. Ausgelegt für 90 Rotationsperioden dauern."
-Unit_Description__Spomeniki_003="Unbewaffnet Wissenschaft und Exploration Rover Drohne. Angetrieben durch Sonnenenergie. Ausgelegt für 90 Rotationsperioden dauern. Hat ein Staub Problem."
+Unit_Description__Spomeniki_002="Unbewaffnete Wissenschafts- und Erkundungsdrohne. Wird von Solarenergie angetrieben. Entwickelt um 90 Rotationszeiten zu überdauern."
+Unit_Description__Spomeniki_003="Unbewaffnete Wissenschafts- und Erkundungsdrohne. Wird von Solarenergie angetrieben. Entwickelt um 90 Rotationszeiten zu überdauern. Hat aber ein Problem mit Staub *sigh*."
 
-snlmsl1_desc="Science Laboratory Rover"
+snlmsl1_desc="Wissenschaftslaborfahrzeug"
 snlmsl1_name="MSL Curiosity"
-.."Unbewaffnet Wissenschaft und Exploration Rover Fahrzeug. Angetrieben durch Spaltungsreaktor. Trägt genug spaltbares Material zur Funktion für 55 Umlaufzeiten."
+.."Unbewaffnetes Wissenschafts- und Erkundungsfahrzeug. Von Spaltreaktor angetrieben. Trägt ausreichend spaltbares Material um für 55 Orbitalperioden zu funktionieren."

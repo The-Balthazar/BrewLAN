@@ -3,54 +3,54 @@
 
 
 --Translated by: Google
-srb5380_name="Deadshot"
-srb5380_desc="Dokładność Rozbudowa węzła"
-Unit_Description_BrewLAN_Turrets_0001="Przylegające statyczne broni wydatki mające już, co skutkuje większą dokładnością. Wiele węzłów stos."
+srb5380_name="Deadshot."
+srb5380_desc="Węzeł do pobierania dokładności"
+Unit_Description_BrewLAN_Turrets_0001="Obrzeżna statyczna broń spędza dłuższy cel, co powoduje wyższą dokładność. Stos wielu węzłów."
 
 seb5381_name="Super gorące"
-seb5381_desc="Obrażenia Rozbudowa węzła"
-Unit_Description_BrewLAN_Turrets_0002="Przylegające statyczny sprawa broni zwiększono obrażenia. To znacznie zwiększa zużycie energii na strzał."
+seb5381_desc="Uszkodzić węzeł doładowania"
+Unit_Description_BrewLAN_Turrets_0002="Obrzeżna broń statyczna zwiększona obrażenia. To znacznie zwiększa zużycie energii na strzał."
 
-seb5382_name="Benson"
-seb5382_desc="Fabryka Zdrowia Node"
-Unit_Description_BrewLAN_Turrets_0010="Adjacency węzeł buff. Zbudowany przez sąsiednich struktur fabrycznych będzie miał dodatkowe zdrowie."
+seb5382_name="Benson."
+seb5382_desc="Węzeł zdrowia fabryki"
+Unit_Description_BrewLAN_Turrets_0010="Węzeł BFF w sąsiedztwie. Jednostki zbudowane przez sąsiednie struktury fabryczne będą miały dodatkowe zdrowie."
 
 srb5383_name="Zagubiony"
-srb5383_desc="Fabryka Stealth Przegubowe Node"
-Unit_Description_BrewLAN_Turrets_0011="Adjacency węzeł buff. Zbudowany przez sąsiednich struktur fabrycznych będzie miał żadnych zdolności ukrywania ustawiony aktywne lub nieaktywne zamiast domyślnego stanu."
+srb5383_desc="Węzeł przełączania stealth"
+Unit_Description_BrewLAN_Turrets_0011="Węzeł BFF w sąsiedztwie. Jednostki zbudowane przez sąsiednie struktury fabryczne będą miały jakiekolwiek umiejętności ukrywania aktywnych lub nieaktywnych zamiast ich stanu domyślnego."
 
-tooltipbrewturrets0002="zbuduje fabrykę Stealth przełączania"
-tooltipbrewturrets0003="Zestawy jednostki budowane przez sąsiednich fabryk mieć włączony Stealth."
-tooltipbrewturrets0004="Fabryka build płaszcz przełączania"
-tooltipbrewturrets0005="Zestawy jednostki budowane przez sąsiednich fabryk, że płaszcz włączona."
+tooltipbrewturrets0002="Zbuduj przełącznik stealth"
+tooltipbrewturrets0003="Ustawia jednostki budowane przez sąsiednie fabryki, które mają włączyć ukrywanie."
+tooltipbrewturrets0004="Buduj przełącznik płaszcza"
+tooltipbrewturrets0005="Ustawia jednostki budować przez sąsiednie fabryki, aby mieć włączony płaszcz."
 
-seb2320_name="Hiro"
+seb2320_name="Hiro."
 seb2320_desc="Ciężka obrona punktowa"
-Unit_Description_BrewLAN_Turrets_0003="Ciężki wieża obronna. Uzbrojony w wiązki plazmy."
+Unit_Description_BrewLAN_Turrets_0003="Ciężka wieża obronna. Uzbrojony w wiązkę plazmy."
 
-seb2211_name="Stouty"
-sbui2311_desc="Anti-Armor punkt obrony"
-Unit_Description_BrewLAN_Turrets_0004="Wieża obronna. Uzbrojony w działko klasy niszczyciel plazmy."
+seb2211_name="Stłumiony"
+sbui2311_desc="Obrona przeciwrobacza"
+Unit_Description_BrewLAN_Turrets_0004="Wieża obronna. Uzbrojony w armatę plazmy niszczyciela."
 
 seb2111_name="krótki"
-Unit_Description_BrewLAN_Turrets_0005="Światło wieża obronna. Uzbrojony w działko fregata klasy plazmy."
+Unit_Description_BrewLAN_Turrets_0005="Lekka wieża obronna. Uzbrojony w armatę plazmową klasą fregaty."
 
-srb2402_name="Neolit"
-seb2401_desc="Eksperymentalny punkt obrony"
-Unit_Description_BrewLAN_Turrets_0006="Wieżyczka obronna. Uzbrojony w masywnej protonów armaty."
+srb2402_name="Neolith."
+seb2401_desc="Obrona eksperymentalna"
+Unit_Description_BrewLAN_Turrets_0006="Obronna wieżyczka. Uzbrojony w masywną armatę protonową."
 
 srb2391_name="Cewka Tesli"
 srb2391_desc="Ciężka obrona punktowa"
-Unit_Description_BrewLAN_Turrets_0007="Mocny, krótki zasięg, wieżyczka obronna. Stopniowo magazynuje energię i zrzutów wszystko z każdym strzale. Najbardziej skuteczne wobec wielkich celów, gdy dany czas ładowania. Wysoce nieskuteczne przy długotrwałym ognia."
+Unit_Description_BrewLAN_Turrets_0007="Potężna, krótka gama, obronna wieżyczka. Stopniowo przechowuje energię i rozładuje wszystko z każdym strzałem. Większość skuteczna wobec dużych celów po upływie czasu na ładowanie. Bardzo nieskuteczny w utrzymanym ogniu."
 
---Jest to wykorzystywane przez Tesla Coil
-tooltipbrewturrets0000="moc broń Przegubowe"
-tooltipbrewturrets0001="Włącza lub wyłącza zasilanie broni."
+--Jest to używane przez cewkę Tesli
+tooltipbrewturrets0000="Przełącz moc broni"
+tooltipbrewturrets0001="Włącza lub wyłącza główną moc broni."
 
 seb2402_name="Wir"
-seb2402_desc="Eksperymentalna Anti-Air Defence"
-Unit_Description_BrewLAN_Turrets_0008="Obronna broń anty-powietrze. Zapewnia katastrofalne szkody krótkiego zasięgu. Zużywa moc przy każdym zdjęciu."
+seb2402_desc="Eksperymentalna obrona przeciwlotnicza"
+Unit_Description_BrewLAN_Turrets_0008="Broń anty-powietrzna. Zapewnia niszczycielskie uszkodzenia krótkiego zakresu. Zużywa moc z każdym strzałem."
 
-srb2403_name="Tartar"
-srb2403_desc="Eksperymentalny punkt obrony"
---"Wieżyczka obronna. Uzbrojony w mikrofalowego lasera o wysokiej intensywności."
+srb2403_name="Tartarus."
+srb2403_desc="Obrona eksperymentalna"
+--"Obronna wieżyczka. Uzbrojony w laser mikrofalowy o wysokiej intensywności."

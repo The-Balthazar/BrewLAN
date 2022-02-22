@@ -1,16 +1,16 @@
 --ISO_639-1_code=ZH
---Translated by: Google
+--Translated by: YuchenJimmy
 
-srl0402_desc="实验攻城坦克"
+srl0402_desc="實驗性攻城坦克"
 srl0402_name="小男孩"
---与Retributor取代
+--以重建者取代
 
-srl0403_desc="实验自行火炮"
-srl0403_name="Retributor"
-Unit_Description_RND_016="大型移动重炮。必须是固定和陆地火炮兵。消耗大量的每次发射的能量"
+srl0403_desc="實驗性機動砲兵"
+srl0403_name="重建者"
+Unit_Description_RND_016="實驗性機動砲兵。「重建者」射擊時無法移動。每次射擊會消耗大量能源。"
 
-tooltipbrewlanRND0000="切换大炮"
-tooltipbrewlanRND0001="启用或禁用主炮。从潜在的取消订单移动禁用防止火炮。"
+tooltipbrewlanRND0000="切換主砲"
+tooltipbrewlanRND0001="啟用或停用主砲。停用以避免自行取消移動指令。"
 
 
 

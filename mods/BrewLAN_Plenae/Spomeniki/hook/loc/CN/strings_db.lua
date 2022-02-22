@@ -1,19 +1,19 @@
 --ISO_639-1_code=ZH
---Translator: 
-ssb23sn_desc="重点防御"
-ssb23sn_name="Ytho"
-Unit_Description__Spomeniki_001="中程防御炮塔。火灾缓慢强大的能量武器交易造成巨大的伤害。"
+--Translator: YuchenJimmy
+ssb23sn_desc="重型點防禦"
+ssb23sn_name="伊索"
+Unit_Description__Spomeniki_001="中程點防禦。「伊索」使用一種威力強大的能量武器消滅入侵的敵人。"
 
-snlmes1_desc="路虎探路"
-snlmes1_name="MESUR旅居者"
-.."徒手科学和探索月球车。"
+snlmes1_desc="拓荒者"
+snlmes1_name="旅居者"
+.."非武裝的科學探測車"
 
-snlmer1_desc="Experloration罗孚"
-snlmer1_name="MER-1机遇"
-snlmer2_name="MER-2幽灵"
-Unit_Description__Spomeniki_002="徒手科学与探索漫游者无人机。由太阳能供电。设计寿命为90周伐期。"
-Unit_Description__Spomeniki_003="徒手科学与探索漫游者无人机。由太阳能供电。设计寿命为90周伐期。有灰尘的问题。"
+snlmer1_desc="冒險者"
+snlmer1_name="MER-1 機會"
+snlmer2_name="MER-2 精靈"
+Unit_Description__Spomeniki_002="非武裝尋路無人機。「MER-1 機會」使用太陽能作為動力來源。可以運作90個週期。"
+Unit_Description__Spomeniki_003="非武裝尋路無人機。「MER-2 精靈」使用太陽能作為動力來源。可以運作90個週期。"
 
-snlmsl1_desc="科学实验室罗孚"
-snlmsl1_name="MSL好奇心"
-.."徒手科学和探索月球车车辆。技术裂变反应堆。携带足够的可裂变材料，功能55个的轨道周期。"
+snlmsl1_desc="科學探測車"
+snlmsl1_name="MSL 好奇號"
+.."非武裝的科學探測車。「MSL 好奇號」使用裂變反應堆作為動力來源。它攜帶了足夠的燃料，因此可以運作55個週期。"

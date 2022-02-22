@@ -207,7 +207,7 @@ Unit_Description_BrewLAN_T2S002="Tech 2 amphibische Bau- , Reparatur- , Übernah
 
 ses0204_desc="Angriffsunterstützung angreifen"
 ses0204_name="Kochran."
-Unit_Description_BrewLAN_T2S003="Untergetauchter Anti-Naval-Einheit. Mit einem Torpedo-Rohr, Anti-Torpedo-Anklagen und einer Flak-Artillerie bewaffnet."
+Unit_Description_BrewLAN_T2S003="Untergetauchter Anti-Naval-Einheit. Bewaffnet mit einem Torpedo-Röhrchen, Anti-Torpedogebühren und einer Flak-Artillerie."
 
 sea0201_desc="Spionageflugzeug"
 sea0201_name="UX Dragonlady"
@@ -448,7 +448,7 @@ Unit_Description_BrewLAN_T3L011="Mobiler Mehrfach-Raketenwerfer. Lange Nachladez
 
 srl0312_desc="Raketenbehälter"
 srl0312_name="Toxotai"
-Unit_Description_BrewLAN_T3L024="Stealth-Tank. Bewaffnet mit Twin-Protonenkanonen, einem Dual-Zweck-Raketen-Launcher und torpedo-Abwehrkräften."
+Unit_Description_BrewLAN_T3L024="Stealth-Tank. Bewaffnet mit Zwillings-Protonenkanonen, einem Dual-Zweck-Raketen-Launcher und Torpedo-Abwehrkräften."
 
 ss0319_desc="Kampftechniker Schiff"
 ses0319_name="Patch-Klasse"
@@ -492,6 +492,7 @@ ssl0403_desc="Experimenteller Rekonstruktionstechniker "
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimentelle amphibische Bau- , Reparatur- , Übernahme- , Zurückgewinnungs- , und Minnenleger-Einheit. Ausgestattet mit mittlerer Bewaffnung und Verteidigung. Kann Spezialsusrüstung bauen."
 ssa00001_desc="Drohne"
+ssa0001_desc="Rekonstruktionsdrohne."
 
 sea0401_desc="Experimentelles Luftabwehr Kanonenboot"
 sea0401_name="AC-500 Centurion"

@@ -323,7 +323,7 @@ srl0321_name="Hedgehog"
 sal0321_name="Scarab"
 ssl0321_name="Ythhu"
 Unit_Description_BrewLAN_T3L004="Mobile strategic missile defense. Build costs include first missile, however the vehicle lacks a fabrication suite to produce additional missiles unassisted."
-Unit_Description_BrewLAN_T3L008="Mobile strategic missile defense. Fires a salvo of three missiles at each target. Build costs include first salvo."
+Unit_Description_BrewLAN_T3L008="Mobile strategic missile defense. Fires a salvo of two missiles at each target. Build costs include first salvo."
 
 --Seraphim T3 sonar platform
 sss0305_desc="Sonar Platform"
@@ -418,7 +418,7 @@ Unit_Description_BrewLAN_T3L022="Amphibious mobile shield generator."
 --Mobile anti-air
 sal0320_desc="Mobile Anti-Air Defense"
 sal0320_name="Armillary"
-Unit_Description_BrewLAN_T3L012="Hovering mobile anti-air defence system. Consumes power with each shot."
+Unit_Description_BrewLAN_T3L012="Hovering mobile anti-air defense system. Consumes power with each shot."
 
 sel0324_desc="Mobile SAM Launcher"
 sel0324_name="NG3 Longbow"
@@ -492,6 +492,7 @@ ssl0403_desc="Experimental Reconstruction Engineer"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them. Can only store 8 blueprints at a time."
 ssa00001_desc="Drone"
+ssa0001_desc="Reconstruction Drone"
 
 sea0401_desc="Experimental AA Gunship"
 sea0401_name="AC-500 Centurion"

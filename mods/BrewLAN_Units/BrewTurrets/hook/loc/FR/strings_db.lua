@@ -43,7 +43,7 @@ srb2391_name="Bobine Tesla"
 srb2391_desc="Pointe de Défense Lourde"
 Unit_Description_BrewLAN_Turrets_0007="Tourelle puissante mais avec une courte portée. Elle stocke de l'énergie et décharge tout dans chaque tirs. Plus efficace contre les grandes cibles quand on donne à la tesla le temps de se charger."
 
---Il est utilisé par la bobine de Tesla
+--Ceci est utilisé par la bobine Tesla
 tooltipbrewturrets0000="Basculer l'alimentation de l'arme"
 tooltipbrewturrets0001="Activer/Désactiver l'alimentation de la tesla"
 

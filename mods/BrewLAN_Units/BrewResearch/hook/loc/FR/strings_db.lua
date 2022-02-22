@@ -3,7 +3,7 @@
 
 --Centres de recherche
 seb9301_desc="Centre de Recherche"
---UEF
+--Uef
 seb9101_name="Campus Tyson"
 seb9201_name="Campus Sagan"
 seb9301_name="Campus Hawking"
@@ -15,7 +15,7 @@ srb9301_name="Établissement Heisenberg"
 sab9101_name="Aperçu"
 sab9201_name="Guidance"
 sab9301_name="Éclaircissement"
---Seraphim
+--Séraphine
 ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab"
 ssb9301_name="Iyathluub"
@@ -24,25 +24,25 @@ Unit_Description_RND_005="Centre de recherche fondamentale. Donne accès à de n
 Unit_Description_RND_006="Centre de recherche intermédiaire. A une vitesse de recherche augmentée et une meilleure durabilité."
 Unit_Description_RND_007="Centre de recherche avancé. A une vitesse de recherche augmentée et une meilleure durabilité."
 
---centres de sciences
+--Centres de sciences
 seb9302_desc="Centre scientifique"
 
-seb9202_name="À déterminer"
-seb9302_name="À déterminer"
+seb9202_name="Tbd"
+seb9302_name="Tbd"
 
-srb9202_name="À déterminer"
-srb9302_name="À déterminer"
+srb9202_name="Tbd"
+srb9302_name="Tbd"
 
-sab9202_name="À déterminer"
-sab9302_name="À déterminer"
+sab9202_name="Tbd"
+sab9302_name="Tbd"
 
-ssb9202_name="À déterminer"
-ssb9302_name="À déterminer"
+ssb9202_name="Tbd"
+ssb9302_name="Tbd"
 
 sb9302_desc="Fournit des bonus de contiguïté aux centres de recherche, et réduit le temps de recherche."
 sb9303_desc="Fournit des bonus de contiguïté aux centres de recherche, en réduisant les coûts de recherche."
 
---informations sur l'élément de recherche
+--Informations sur l'article de recherche
 ability_rnd_unlock="Débloquage de la recherche"
 ability_rnd_command="Construit par l'UBC et les UBCs"
 ability_rnd_engineer="Construit par les ingénieurs"
@@ -85,10 +85,10 @@ seb1101_name="Turbine"
 sab1101_name="Lampe"
 ssb1101_name="Uyalai"
 srb1101_name="W.A.T"
---Wind Turbine assistée
+--Turbine assistée par le vent
 Unit_Description_RND_011="Génère une quantité fluctuante d'énergie."
 
---hydroliennes
+--Générateurs de marée
 sb1102_desc="Hydrolienne"
 seb1102_name="Marée Basse"
 sab1102_name="Courant"
@@ -112,7 +112,7 @@ Unit_Description_RND_018="Générateur d'énergie de bas a moyen niveau. Constru
 ----------------------------------------
 
 
---transports ekranoplan
+--Ekranoplan Transports
 ss0326_desc="Transport lourd GEV"
 ses0326_name="КМ66 Monstre des Mers"
 srs0326_name="Aile Delta"

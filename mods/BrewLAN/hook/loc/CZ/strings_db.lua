@@ -5,9 +5,9 @@
 --¦████████████¦--¦   Translator: Oaks
 --+------------+--+-------------------------------------------------------------
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 -- Popisky
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 -- Popisky pro Gantry
 tooltipbrewlan0000="Zapnout/vypnout výrobu leteckých jednotek"
@@ -73,19 +73,19 @@ tooltipbrewlan0033="Upravit [Array]"
 
 --Zmara vysoký režim přepínat
 tooltipbrewlan0035="Overextend přepínat"
-tooltipbrewlan0036="Zvyšuje rozsahy přímých požárních zbraní, ale obětuje rychlost pohybu a náklady na energii při aktivní."
+tooltipbrewlan0036="Zvyšuje rozsahy přímé požární zbraně, ale obětuje rychlost pohybu a náklady na energii při aktivní."
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 -- Vylepšení Podpůrného Velitele
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Přidává stavitelské schopnosti polního technika do SACU"
 brewlan_enhancements_1="Souprava Polního Technika"
 brewlan_enhancements_2="Odebrat Soupravu Polního Technika"
 
---------------------------------------------------------------------------------
--- Tech 1
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+-- Tech 1.
+----------------------------------------------------------------------------------
 
 sair0105="Lehký Bitevník"
 saa0105_name="Respirer"
@@ -139,9 +139,9 @@ ses0119_name="Třída Mendy"
 srs0119_name="Třída Franklin"
 Unit_Description_BrewLAN_T1S001="Tech 1 obojživelná konstrukční, opravovací, zajímací, reklamační a mino-pokládací jednotka"
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 -- Tech 2
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 saa0211_name="Nabodávač"
 saa0211_desc="Taktický Bombardér"
@@ -206,8 +206,8 @@ Unit_Description_BrewLAN_T2S001="Tech 2 námořní konstrukční, opravovací, z
 Unit_Description_BrewLAN_T2S002="Tech 2 námořní konstrukční, opravovací, zajímací, reklamační a mino-pokládací jednotka"
 
 ses0204_desc="Útoku ponorky"
-ses0204_name="Kochrán"
-Unit_Description_BrewLAN_T2S003="Ponořené anti-námořní jednotka. Ozbrojené torpédové trubice, anti-torpédové poplatky a artillery flak."
+ses0204_name="Cochrane."
+Unit_Description_BrewLAN_T2S003="Ponořené anti-námořní jednotka. Vyzbrojen torpédovou trubkou, anti-torpédovými poplatky a flakem dělostřelectvem."
 
 sea0201_desc="Průzkumný letoun"
 sea0201_name="UX Dračí dáma"
@@ -234,9 +234,9 @@ Unit_Description_BrewLAN_T2D006=" Automaticky opravuje, recykluje, asistuje nebo
 Unit_Description_BrewLAN_T2D007=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním dosahu. "
 Unit_Description_BrewLAN_T2D008=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním dosahu. "
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 -- Tech 3.
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 sair0305="Těžký Bitevník"
 ssa0305_name="Vulthuum"
@@ -302,8 +302,8 @@ sea3301_name="Hořící Hvězda"
 Unit_Description_BrewLAN_T3A012="Družicový pozorovací systém. Poskytuje vizuální satelitních snímkky z oběžné dráhy. Vyžaduje satelitní uplink pro příjem dat z něj."
 
 sea4301_desc="Kontrainteligence satelit"
-sea4301_name="Vaxis"
-Unit_Description_BrewLAN_T3A013="Satelitní kontrainální systém. Způsobuje velké množství falešných radarových signálů s letovými vlastnostmi bojovníků letecké nadřazenosti v tvorbě stráže, aby se objevily pod ním. Nemá schopnost shromažďování inteligence."
+sea4301_name="Vaxis."
+Unit_Description_BrewLAN_T3A013="Satelitní kontrainální systém. Způsobuje velké množství falešných radarových signálů s letovými charakteristikami leteckých nadřazených bojovníků v tvorbě stráže, aby se objevily pod ním. Nemá kapacitu pro shromažďování inteligence."
 --Ty jsou viděny pouze na cheat menu a wiki
 sea4302_desc="Falešný radarový signál"
 sea4302_name="Asfaux."
@@ -448,7 +448,7 @@ Unit_Description_BrewLAN_T3L011="Mobilní raketomet. Dlouhý čas nabíjení. Na
 
 srl0312_desc="Raketová nádrž"
 srl0312_name="Toxotai."
-Unit_Description_BrewLAN_T3L024="Stealth Tank. Ozbrojený s dvojitým protonovým kanónem, duálním účelem raketového odpalovače a torpédové obrany."
+Unit_Description_BrewLAN_T3L024="Stealth Tank. Ozbrojené s dvojitým protonovým kanónem, dvojím účelem raketový odpalovač a torpédové obrany."
 
 ss0319_desc="Loď Polní Techniky"
 ses0319_name="Třída Patch"
@@ -475,23 +475,24 @@ Unit_Description_BrewLAN_T3L017="Mobilní protinámořní vozidlo"
 Unit_Description_BrewLAN_T3L018="Mobilní protinámořní vznášedlo"
 
 ssb4317_desc="Radarová Rušička"
-ssb4317_name="Yathesel"
+ssb4317_name="Yathesel."
 Unit_Description_BrewLAN_T3B0029="Zařízení radarové rušičky. Vytváří velký počet falešných radarových signálů v rámci své působnosti, což způsobuje rozptýlení a narušuje zaměřění nepřítelem."
 ssa00002_desc="Hologram"
 
-sl0326_desc="Mobilní stagingová platforma"
+sl0326_desc="Platforma pro mobilní vzduch"
 sel0326_name="Ptačí hnízdo"
 Unit_Description_BrewLAN_T3L023="Mobilní platforma pro doplňování a opravy letadel. Air hlídky automaticky používají platformu."
 
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 --Experimentalní jednotky
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 ssl0403_desc="Experminentální Rekonstrukční Technik"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimentální obojživelné opravovací, zajímací,reklamační a rekonstrukční jednotka. Získává schémata jednotek a vraků jejich reklamací. Může mít pouze 8 schémat najednou."
 ssa00001_desc="Dron"
+ssa0001_desc=#VALUE!
 
 sea0401_desc="Experimentální Protiletecká Helikoptéra"
 sea0401_name="AC-500 Centurion"
@@ -547,15 +548,15 @@ seb3404_name="Panoptikum"
 Unit_Description_BrewLAN_T4B008="Experimentální senzorová síť. Poskytuje viditelnost nepřátelských jednotek ve svém operačním dosahu. Údržba vyžaduje více energie pro každou další sledovanou jednotku. Mobilní a velké jednotky vyžadují více energie ke sledování."
 
 Panopticon_array_slot="Array."
-Unit_Description_BrewLAN_T4B008_sre="Zvyšuje poloměr radaru."
-Unit_Description_BrewLAN_T4B008_sresre="Zvyšuje radar a OMNI poloměr."
+Unit_Description_BrewLAN_T4B008_sre="Zvyšuje radarový poloměr."
+Unit_Description_BrewLAN_T4B008_sresre="Zvyšuje poloměr radaru a omni."
 Unit_Description_BrewLAN_T4B008_xbndl="Odhaluje radarové blíby."
 brewlan_panopticon_small_001="Aktivujte radarovou misku"
 brewlan_panopticon_small_002="Aktivujte misku Marcin"
 brewlan_panopticon_small_003="Aktivujte misku Gebauer"
 brewlan_panopticon_small_004="Aktivujte radarovou misku"
 brewlan_panopticon_med_001="Aktivovat Chapeau Dish"
-brewlan_panopticon_med_002="Aktivujte misku Pankow"
+brewlan_panopticon_med_002="Aktivujte Pankow misku"
 brewlan_panopticon_med_003="Aktivujte mogwai jídlo"
 brewlan_panopticon_med_004="Aktivujte neutrální misku"
 brewlan_panopticon_xbl_001="Aktivujte saxonovou misku"
@@ -567,7 +568,7 @@ brewlan_panopticon_med_001r="Deaktivujte chapeau"
 brewlan_panopticon_med_002r="Deaktivujte misku Pankow"
 brewlan_panopticon_med_003r="Deaktivujte mogwai jídlo"
 brewlan_panopticon_med_004r="Deaktivujte neutrální jídlo"
-brewlan_panopticon_xbl_001r="Deaktivujte saské jídlo"
+brewlan_panopticon_xbl_001r="Deaktivujte Saxon jídlo"
 
 sab0401="Experimentální Letecká Továrna"
 sab0401_name="Stroj Nezávislosti"
@@ -589,6 +590,6 @@ ssl0404_desc="Experimentální Sniper Bot."
 ssl0404_name="Sisha-Ah."
 Unit_Description_BrewLAN_T4L004="Experimentální mobilní sniper bot. Viditelné pouze pro omni, zatímco statické a ne palby."
 
-ssl0405_desc="Experimentální těžký robot Artropod"
+ssl0405_desc="Experimentální těžký člen Arthropod robot"
 ssl0405_name="Suedath-Zmara."
-Unit_Description_BrewLAN_T4L005="Masivní experimentální bot. Vybaven předními cefalickými thau děla, nadřízenými hřbetními Sinn Unthe Cannons, ventrální Uall Cavitační torpédo zbraně a carapace namontované olaris Anti-Air Cannons. Uvádí možnost rozšířit vertikálně pro zvýšení rozsahu zbraně a plavat, aby se zapojila povrchové námořní plavidlo, s výkonem ukončit téměř jakýkoliv cíl."
+Unit_Description_BrewLAN_T4L005="Masivní experimentální bot. Vybaven předními cefalickými thau děla, Superior Dorsal Sinn Untthe Cannons, ventrální Uall Cavitační torpédové zbraně a carapace namontované olaris Anti-Air Cannons. Uvaduje se schopnost rozšířit vertikálně pro zvýšení rozsahu zbraně a plavat, aby se zapojila povrchové námořní plavidlo, s výkonem ukončit téměř jakýkoliv cíl."

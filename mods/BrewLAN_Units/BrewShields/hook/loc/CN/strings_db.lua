@@ -1,16 +1,16 @@
 --ISO_639-1_code=ZH
---Translated by: Google
-sab4401="实验盾投影机"
-sab4401_name="日珥的支柱"
-Unit_Description__BubbleTea_A4_01="实验屏蔽投影设施。产生它的操作半径内围绕每个单独的结构保护气泡。"
+--Translated by: YuchenJimmy
+sab4401="實驗性護盾產生器"
+sab4401_name="日珥"
+Unit_Description__BubbleTea_A4_01="實驗性護盾產生器，在其作用範圍內的建築將會產生一道個人防護罩。"
 
-srb4401="实验盾发生器"
-seb4401_name="BFS斯塔尔瓦特"
-Unit_Description__BubbleTea_A4_02="产生它的操作半径内围绕单元和结构重屏蔽。"
+srb4401="實驗性護盾產生器"
+seb4401_name="BFS - 堅韌"
+Unit_Description__BubbleTea_A4_02="產生能保護它半徑內周圍單位和建築的重型保護罩。"
 
-ssb4401_desc="实验盾牌格"
-ssb4401_name="Iaathan"
-ssb4401_drone_desc="实验盾无人机"
-ssb4401_large_name="Iaathanah"
-ssb4401_small_name="Iaathanahee"
-Unit_Description__BubbleTea_A4_03="实验屏蔽设施。产生屏蔽的晶格气泡向中心是增加强度。格无人机轨道设施分发的损害。"
+ssb4401_desc="實驗性護盾產生器"
+ssb4401_name="亞桑"
+ssb4401_drone_desc="實驗性浮游護盾產生器"
+ssb4401_large_name="伊阿薩那"
+ssb4401_small_name="伊阿薩依"
+Unit_Description__BubbleTea_A4_03="實驗性護盾產生器。周圍的實驗性浮游護盾產生器能增強保護罩中心強度，並分散傷害。"

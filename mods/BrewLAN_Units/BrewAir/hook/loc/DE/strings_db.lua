@@ -1,61 +1,61 @@
 --ISO_639-1_code=DE
---Translator: Google
-----------------------------------------
--- Tech 2
-----------------------------------------
+--Translator: Binary
+------------------------------------------
+-- Tech 2.
+------------------------------------------
 sa0212_desc="Kampfjäger"
-sea0212_name="Raubvogel"
-sra0212_name="Dioskuren"
+sea0212_name="Raptor"
+sra0212_name="Dioscuri"
 ssa0212_name="Iayath"
-Unit_Description_BrewPen_001="Kampfflieger mittlerer Stufe. Ausgezeichnete Flugabwehr. Wirkungsvoll gegen feindliche Flieger und Bomber."
+Unit_Description_BrewPen_001="Kampfflieger mittlerer Klasse. Ausgezeichnete Flugabwehrfähigkeiten. Wirkungsvoll gegen feindliche Kanonenboote und Bomber."
 
 sa0213_desc="Jagdbomber"
-saa0213_name="Klarheit"
-Unit_Description_BrewPen_002="Kombination Kämpfer / Bomber entwickelt, um sowohl Land und Lufteinheiten zu engagieren."
+saa0213_name="Lucidity"
+Unit_Description_BrewPen_002="Kombination aus Kampfflugzeug und Bomber, der sowohl Land- als auch Lufteinheiten angreift."
 
---Dedicated Tactical Bombers
+--Dedizierte taktische Bomber
 saa0211_desc="Taktischer Bomber"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
-sra0211_name="Kondor"
-Unit_Description_BrewPen_003="Zwischen Bomber."
+sra0211_name="Condor"
+Unit_Description_BrewPen_003="Mittelschwerer Bomber"
 
-----------------------------------------
--- Tech 3
-----------------------------------------
---T3.5 Erweiterte Bomber
+------------------------------------------
+-- Tech 3.
+------------------------------------------
+--T3.5 Fortgeschrittene Bomber.
 --sa0314_desc="Penetrator"
-sa0314_desc="Penetrator Bomber"
-sea0314_name="Ulan"
-saa0314_name="Schrei"
-sra0314_name="Sanguine Tyrant"
+sa0314_desc="Penetrations-Bomber"
+sea0314_name="Lancer"
+saa0314_name="Shrieker"
+sra0314_name="Sanguiner Tyrann"
 ssa0314_name="Sinnaino"
-Unit_Description_BrewPen_004="Top-End-Langstrecken-Stealth-strategische Bomber. Ausgerüstet mit Bomben, Luft-Boden-Abstandsraketen, Torpedos und hinten montierten Raketen Flares."
+Unit_Description_BrewPen_004="Strategischer Hochleitungs Langstreckenbomber mit Tarnfeld. Ausgestattet mit Bomben, Luft-Bodenraketen, Torpedos und am Heck montierten Flugabwehrraketen."
 
---anti-SAM und anti-AAM Flares
-ability_missiledef="Raketenabwehr"
+--Anti-Sam- und Anti-AAM-Abwehr
+ability_missiledef="Raketenverteidigung"
 
---T3.5 für Fortgeschrittene
-sa0313_desc="Penetration-Kämpfer"
-sea0313_name="Kater"
+--T3.5 Fortgeschrittene Kämpfer
+sa0313_desc="Penetrations-Kampfflugzeug"
+sea0313_name="Tomcat"
 saa0313_name="Helios"
-sra0313_name="twilight-Patron"
+sra0313_name="Zwielicht Patron"
 ssa0313_name="Ialosaare"
-Unit_Description_BrewPen_005="Top-End-Bereich lange Stealth-Kämpfer. Ausgestattet mit zwei Burst-Schrauben Railguns, Luft-Luft-Raketen und Anti-Raketen-Fackeln."
-Unit_Description_BrewPen_006="Top-End-Bereich lange Stealth-Kämpfer. Ausgestattet mit zwei konzentriert phasonischen Laserwaffen, Ameise Anti-Raketen-faltes."
-Unit_Description_BrewPen_007="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit schweren Teilchen Kanonen und Raketen Fackeln. Fähig zu Spionageflugzeuge jagen."
-Unit_Description_BrewPen_008="Top-End-Langstrecken-Stealth-Kämpfer. Ausgestattet mit einem Losaare Autokanone, eine phasonischen Waffe und Anti-Raketen-Fackeln."
+Unit_Description_BrewPen_005="Hochleistungs Langstreckenkampfflugzeug mit Tarnfeld. Ausgestattet mit helikalen Doppelfeuerstoß Railguns , Flugabwehrraketen und Raketenabwehrdüppeln."
+Unit_Description_BrewPen_006="Hochleistungs Langstreckenkampfflugzeug. Ausgestattet mit Doppelfukossierten Phasenlasern und Raketenabwehrdüppeln."
+Unit_Description_BrewPen_007="Hochleistungs Langstreckenkampfflugzeug. Ausgestattet mit schweren Partikelkanonen und Raketenabwehr. Fähig, sogar Spionageflugzeuge zu jagen."
+Unit_Description_BrewPen_008="Hochleistungs Langstreckenkampfflugzeug. Ausgestattet mit einer Losaare-Autokanone, einem Phasonlaser und Raketenabwehrdüppeln."
 
-sra0315_desc="interdiction Gunship"
+sra0315_desc="Interdiction Gunship"
 sra0315_name="Xiphos"
-Unit_Description_BrewPen_009="Schwere Untersagung und close-Luft-Unterstützung Angriff Handwerk. Ausgerüstet mit mehreren Luft-Boden-Laser-Waffen und Anti-Raketen-Fackeln."
+Unit_Description_BrewPen_009="Schweres-Interdiction und Nah-Luft-Support Angriffsflugzeug. Mit mehreren Luft-zu-Boden-Laserwaffen und Anti-Raketen Abwehr bewaffnet."
 
-sra0401_desc="Experimental Aircraft Carrier"
+sra0401_desc="Experimenteller Flugzeugträger"
 sra0401_name="Simurgh"
-Unit_Description_BrewPen_010="Massiver Luftflugzeugträger. Kann schaffen, den Transport und eine große Anzahl von Kämpfer / Bomber Handwerk einzusetzen."
+Unit_Description_BrewPen_010="Massiver fliegender Flugzeugträger. Kann große Anzahl von Kampfflugzeugen und Bombern erstellen, transportieren und einsetzen."
 
---dra0202_desc="Kämpfer / Bomber"
-sra0402_name="Kralle"
-Unit_Description_BrewPen_011="Kombination Kämpfer / Bomber entworfen, um sowohl Luft und Oberflächeneinheiten in Eingriff zu bringen."
+--dra0202_desc="Kampfflugzeug / Bomber"
+sra0402_name="Talon"
+Unit_Description_BrewPen_011="Kombination aus Kampfflugzeug und Bomber, welcher sowohl Luft- als auch Bodeneinheiten angreifen kann."
 
 

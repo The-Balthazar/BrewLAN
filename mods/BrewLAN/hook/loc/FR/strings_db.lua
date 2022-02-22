@@ -68,10 +68,10 @@ tooltipbrewlan0030="Bien que active, cette unité réduira dynamiquement son ray
 tooltipbrewlan0031="Changer la priorité des armes"
 tooltipbrewlan0032="Basculer la priorité sur les cibles anti-aérienne ou sur les missiles tactiques."
 
---Onglet Amélioration panoptique
+--Onglet d'amélioration panoptique
 tooltipbrewlan0033="Personnaliser [Tableau]"
 
---Bascule en mode Tall Zmara
+--Mode Talk Zmara bascule
 tooltipbrewlan0035="Surexploiter"
 tooltipbrewlan0036="Augmente les gammes d'armes de feu directes mais sacrifie la vitesse du mouvement et coûte de l'énergie pendant une activité active."
 
@@ -207,7 +207,7 @@ Unit_Description_BrewLAN_T2S002="Construction Navale de Tech 2, réparation, cap
 
 ses0204_desc="Sous-marin d'attaque"
 ses0204_name="Cochrane"
-Unit_Description_BrewLAN_T2S003="Unité anti-marine submergée. Armé d'une tube torpille, des charges anti-torpilles et d'une artillerie flak."
+Unit_Description_BrewLAN_T2S003="Unité anti-marine submergée. Armé d'un tube torpille, des charges anti-torpille et d'une artillerie de flak."
 
 sea0201_desc="Avion de reconnaissance"
 sea0201_name="UX Dragonlady"
@@ -304,10 +304,10 @@ Unit_Description_BrewLAN_T3A012="Système d'observation par satellite. Rapporte 
 sea4301_desc="Satellite de contre-espionnage"
 sea4301_name="Vaxis"
 Unit_Description_BrewLAN_T3A013="Système de contre-espionnage par satellite. Produit un grand nombre de faux signaux représentant des escadrons de chasseurs de supériorité aérienne sous sa position. N'a aucune capacité de collecte de données."
---Ceux-ci ne sont vus que sur le menu de triche et le wiki
+--Celles-ci ne sont vues que sur le menu de triche et le wiki
 sea4302_desc="Faux signal radar"
 sea4302_name="Asfaux"
---Ceci n'est vu que sur le wiki
+--Ceci est vu uniquement sur le wiki
 Unit_Description_BrewLAN_T3A014="Faux signaux radar avec caractéristiques de vol des combattants de la supériorité aérienne. Apparaît sous forme de six blips sur radar et une blip aux capteurs Omni."
 
 --Sniper Alternatives
@@ -351,7 +351,7 @@ seb1311_name="Réacteur Bessemer"
 srb1311_name="Réacteur Faraday"
 ssb1311_name="Uya-iyathan"
 Unit_Description_BrewLAN_T3B009="Générateur d'énergie lourd. Capacité de furtivité en consommant de l'énergie."
-Unit_Description_BrewLAN_T3B0012="Générateur d'énergie lourd. Peut réparer les structures avoisinantes. Construit automatiquement des défenses quand endommagé.."
+Unit_Description_BrewLAN_T3B0012="Générateur d'énergie lourd. Peut réparer les structures avoisinantes. Construit automatiquement des défenses quand endommagé."
 Unit_Description_BrewLAN_T3B0014="Générateur d'énergie lourd. Possède un puissant bouclier en consommant de l'énergie."
 Unit_Description_BrewLAN_T3B0016="Générateur d'énergie lourd. Possède un blindage supérieur et peut s'auto-réparer."
 
@@ -492,6 +492,7 @@ ssl0403_desc="Ingénieur expérimental"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Unité amphibie expérimentale, reconstruit, répare et capture. Possède des capacités d'attaque et de défenses moyennes."
 ssa00001_desc="Drone"
+ssa0001_desc="Drone de reconstruction"
 
 sea0401_desc="Vaisseau de combat anti-aérien expérimental"
 sea0401_name="AC-500 Centurion"
@@ -565,7 +566,7 @@ brewlan_panopticon_small_003r="Désactiver le plat Gebauer"
 brewlan_panopticon_small_004r="Désactiver le plat radar"
 brewlan_panopticon_med_001r="Désactiver le plat Chapeau"
 brewlan_panopticon_med_002r="Désactiver le plat Pankow"
-brewlan_panopticon_med_003r="Désactiver le plat mogwai"
+brewlan_panopticon_med_003r="Désactiver le plat de mogwai"
 brewlan_panopticon_med_004r="Désactiver le plat neutre"
 brewlan_panopticon_xbl_001r="Désactiver le plat saxon"
 

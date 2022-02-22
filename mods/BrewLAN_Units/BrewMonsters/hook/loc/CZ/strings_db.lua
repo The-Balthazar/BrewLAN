@@ -1,16 +1,16 @@
 --ISO_639-1_code=CS
 --Translated by: Oaks
 
-srl0402_desc="Experimentální Siege Tank"
+srl0402_desc="Experimentální obléhající tank"
 srl0402_name="Mužíček"
---Nahrazen Retributor
+--Nahrazen odvrátitelem
 
 srl0403_desc="Experimentální mobilní dělostřelectvo"
 srl0403_name="Retributor"
-Unit_Description_RND_016="Velký mobilní těžké dělostřelectvo. Musí být v klidu a na zemi ke střelbě dělostřelectvo. Spotřebuje velké množství energie na výstřel"
+Unit_Description_RND_016="Velký mobilní těžký dělostřelectvo. Musí být stacionární a na půdě, aby vystřelili dělostřelectvo. Spotřebovává velké množství energie na záběr"
 
-tooltipbrewlanRND0000="toggle dělostřelectvo"
-tooltipbrewlanRND0001="Zapíná nebo vypíná hlavní dělostřelectvo. Deaktivace brání dělostřelectvo před potenciálně zrušení přesunu objednávky."
+tooltipbrewlanRND0000="Přepnout dělostřelectvo"
+tooltipbrewlanRND0001="Umožňuje nebo zakáže hlavní dělostřelectvo. Zakázání zabraňuje dělostřelectvu z potenciálně zrušení objednávek."
 
 
 

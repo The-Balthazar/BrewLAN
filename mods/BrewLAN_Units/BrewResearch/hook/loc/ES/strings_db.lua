@@ -1,79 +1,79 @@
 --ISO_639-1_code=ES
 --Translator: 
 
---Los centros de investigación
+--Centros de investigación
 seb9301_desc="Centro de Investigación"
---UEF
-seb9101_name="Campus Tyson"
+--Uef
+seb9101_name="Tyson Campus"
 seb9201_name="Campus Sagan"
-seb9301_name="Campus de la venta ambulante"
+seb9301_name="Campus Hawking"
 --Cybran
-srb9101_name="Instalación Einstein"
-srb9201_name="Instalación Schrodinger"
-srb9301_name="Facilidad de Heisenberg"
+srb9101_name="Facilidad Einstein"
+srb9201_name="Facilidad Schrodinger"
+srb9301_name="Facilidad Heisenberg"
 --Eón
 sab9101_name="Visión"
 sab9201_name="Guia"
 sab9301_name="Iluminación"
 --Serafines
-ssb9101_name="Iyathlabistle"
-ssb9201_name="Iyathlab"
-ssb9301_name="Iyathluub"
+ssb9101_name="Iyatlabistle"
+ssb9201_name="Iyatllab"
+ssb9301_name="Iyatluub"
 
-Unit_Description_RND_005="centro de investigación básica. Permite el acceso a las nuevas unidades y niveles más altos de tecnología."
-Unit_Description_RND_006="centro de investigación intermedio. Ha aumentado la velocidad de la investigación y la durabilidad."
-Unit_Description_RND_007="centro de investigación avanzada. Ha aumentado la velocidad de la investigación y la durabilidad."
+Unit_Description_RND_005="Instalación de investigación básica. Suba acceso a nuevas unidades y niveles de tecnología superior."
+Unit_Description_RND_006="Instalación de investigación intermedia. Ha aumentado la velocidad de la investigación y la durabilidad."
+Unit_Description_RND_007="Instalación avanzada de investigación. Ha aumentado la velocidad de la investigación y la durabilidad."
 
---Centros de Ciencia
+--Centros de ciencias
 seb9302_desc="Centro de ciencia"
 
-seb9202_name="TBD"
-seb9302_name="TBD"
+seb9202_name="Tbd"
+seb9302_name="Tbd"
 
-srb9202_name="TBD"
-srb9302_name="TBD"
+srb9202_name="Tbd"
+srb9302_name="Tbd"
 
-sab9202_name="TBD"
-sab9302_name="TBD"
+sab9202_name="Tbd"
+sab9302_name="Tbd"
 
-ssb9202_name="TBD"
-ssb9302_name="TBD"
+ssb9202_name="Tbd"
+ssb9302_name="Tbd"
 
-sb9302_desc="Proporciona bonos de adyacencia a los centros de investigación, disminuyendo el tiempo de investigación."
-sb9303_desc="Proporciona bonos de adyacencia a los centros de investigación, la disminución de los costos de investigación."
+sb9302_desc="Proporciona bonificaciones de adyacencia a centros de investigación, disminuyendo el tiempo de investigación."
+sb9303_desc="Proporciona bonificaciones de adyacencia a centros de investigación, disminuyendo los costos de investigación."
 
---información sobre el elemento de Investigación
-ability_rnd_unlock="Desbloquear la investigación"
-ability_rnd_command="Construido por unidad de mando"
-ability_rnd_engineer="Construido por el ingeniero"
+--Información de artículo de investigación
+ability_rnd_unlock="Desbloqueo de investigación"
+ability_rnd_command="Construido por unidad de comando"
+ability_rnd_engineer="Construido por ingeniero"
 ability_rnd_field="Construido por el ingeniero de campo"
-ability_rnd_factory="Construido por la fábrica"
-ability_rnd_gantry="Construido por la fábrica experimental"
+ability_rnd_factory="Construido por fábrica"
+ability_rnd_gantry="Construido por fábrica experimental."
 ability_rnd_wall="Construido en la pared"
 ability_rnd_upgrade="Construido como actualización"
 
---categorías de investigación
-srnd9100_desc="Nivel de Tecnología de Investigación"
-srnd9200_desc="Nivel de Tecnología de Investigación"
-srnd9300_desc="Nivel de Tecnología de Investigación"
-srnd9400_desc="Nivel de Tecnología de Investigación Experimental"
+--Categorías de investigación
+srnd9100_desc="Investigación de nivel de tecnología"
+srnd9200_desc="Investigación de nivel de tecnología"
+srnd9300_desc="Investigación de nivel de tecnología"
+srnd9400_desc="Investigación de nivel de tecnología experimental"
 
-Unit_Description_RND_001="1 desbloquea unidades adicionales tecnología e investigaciones unidad."
-Unit_Description_RND_002="Desbloquea tecnología 2 unidades e investigaciones unidad."
-Unit_Description_RND_003="Desbloquea Tech 3 unidades e investigaciones unidad."
-Unit_Description_RND_004="Desbloquea unidades experimentales e investigaciones unidad."
+Unit_Description_RND_001="Desbloquea unidades de tecnología y investigación adicionales."
+Unit_Description_RND_002="Desbloquea las unidades Tech 2 y la investigación de la unidad."
+Unit_Description_RND_003="Desbloquea la tecnología Tech 3 y la investigación de la unidad."
+Unit_Description_RND_004="Desbloquea unidades experimentales y la investigación de la unidad."
 
 
---fábricas de desbloqueo de investigación
-sb0105_desc="aerodeslizador fábrica"
+--Desbloqueo de la investigación Fábricas
+sb0105_desc="Fábrica de aerodeslizadores"
 Unit_Description_RND_013="Produce unidades anfibias."
---Específicamente simplemente amphib, y libración superficie. Incluye ekranoplans.
-sb0106_desc="fábrica submarino"
+--Específicamente solo en la superficie de anfibe, y flotan. Incluye Ekranoplans.
+sb0106_desc="Fábrica submarina"
 Unit_Description_RND_014="Produce unidades sumergibles."
---Los submarinos y anfibios quizá lecho marino
-sb0106_desc="hidroavión fábrica"
-Unit_Description_RND_015="produce hidroaviones"
---fábrica de hidroaviones no puede ser que consiga hecho.
+--Submarinos y tal vez anfibios del fondo marino.
+sb0106_desc="Fábrica de hidroaviones"
+Unit_Description_RND_015="Produce hidroaviones"
+--La fábrica de hidroaviones podría no hacerse.
 
 ----------------------------------------
 -- Tech 1
@@ -83,28 +83,28 @@ Unit_Description_RND_015="produce hidroaviones"
 sb1101_desc="Generador de viento"
 seb1101_name="Turbina"
 sab1101_name="Lámpara"
-ssb1101_name="Uyalai"
+ssb1101_name="Uyai"
 srb1101_name="W.A.T"
---Aerogenerador Asistida
+--Turbina asistida por viento
 Unit_Description_RND_011="Genera una cantidad fluctuante de energía."
 
---generadores de marea
-sb1102_desc="Generador de marea"
-seb1102_name="Pod marea"
+--Generadores de mareas
+sb1102_desc="Generador de mareas"
+seb1102_name="Vaina"
 sab1102_name="Flujo"
-ssb1102_name="Uyaluos"
-srb1102_name="Laguna Colorada"
-Unit_Description_RND_017="Genera una cantidad ondulante de energía. Más eficaz con grandes masas de agua."
+ssb1102_name="UYALUOS"
+srb1102_name="Laguna roja"
+Unit_Description_RND_017="Genera una cantidad ondulada de energía. Más efectivo con grandes cuerpos de agua."
 
 ----------------------------------------
 --Tech 2
 ----------------------------------------
 
---Los generadores de energía (250 de salida)
---gens de energía que no rotan serafines son todos llamados Uya-iya
---Cybran y Aeon tecnología de 2 no tienen nombre
-seb1201_name="EG-100 Fusion Reactor"
-Unit_Description_RND_018="Menor a generador de energía de nivel medio. Construir junto a otras estructuras para la bonificación de adyacencia."
+--Generadores de energía (250 resultados)
+--Los gens de poder no rotativos serafines se llaman Uya-IYA
+--Cybran y Aeon Tech 2 no tienen nombre
+seb1201_name="EG-100 Reactor de fusión"
+Unit_Description_RND_018="Generador de energía de bajo a mediano nivel. Construir junto a otras estructuras para la bonificación de adyacencia."
 
 
 ----------------------------------------
@@ -112,12 +112,12 @@ Unit_Description_RND_018="Menor a generador de energía de nivel medio. Construi
 ----------------------------------------
 
 
---transportes ekranoplan
+--Ekranoplan Transports
 ss0326_desc="Transporte pesado GEV"
-ses0326_name="КМ66 Seamonster"
-srs0326_name="alas delta"
-sas0326_name="Lun Mallard"
-sss0326_name="Vishwiseyen"
+ses0326_name="Км66 seasonster"
+srs0326_name="Deligno"
+sas0326_name="Mallard LUN"
+sss0326_name="Vishweryen"
 
 
 

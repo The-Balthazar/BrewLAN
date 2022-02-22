@@ -2,8 +2,8 @@
 --Translated by: Google
 crystal_0001=" contrôle le cristal."
 crystal_0002=" et leurs alliés gagnent avec le cristal."
-crystal_0003=" et leur allié gagner avec le cristal."
-crystal_0004=" remporte avec le cristal."
+crystal_0003=" et leur allié gagne avec le cristal."
+crystal_0004=" gagne avec le cristal."
 
 crystal_0005="10 minutes restantes."
 crystal_0006="2:30 minutes restantes"

@@ -1,16 +1,16 @@
 --ISO_639-1_code=ES
 --Translated by: Google
 
-srl0402_desc="Experimental Tanque de asedio"
+srl0402_desc="Tanque de asedio experimental"
 srl0402_name="Hombrecito"
---Reemplazado por el Retributor
+--Reemplazado con el retribuidor
 
-srl0403_desc="Experimental móvil Artillería"
-srl0403_name="Retributor"
-Unit_Description_RND_016="Ampliación de la artillería pesada móvil. Deberá permanecer inmóvil y en tierra para disparar la artillería. Consume grandes cantidades de energía por disparo"
+srl0403_desc="Artillería móvil experimental"
+srl0403_name="Retribución"
+Unit_Description_RND_016="Grandes artillería pesada móvil. Debe ser estacionario y en tierra para disparar la artillería. Consume grandes cantidades de energía por disparo"
 
-tooltipbrewlanRND0000="artillería de palanca"
-tooltipbrewlanRND0001="Activa o desactiva la artillería principal. La desactivación evita que la artillería desde potencialmente cancelación de órdenes de movimiento."
+tooltipbrewlanRND0000="Artillería de palanca"
+tooltipbrewlanRND0001="Permite o deshabilita la artillería principal. La desactivación evita que la artillería pueda cancelar las órdenes de movimiento."
 
 
 

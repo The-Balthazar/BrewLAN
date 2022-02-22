@@ -1,9 +1,9 @@
 --ISO_639-1_code=FR
 --Translator: Google, Markty_07
-----------------------------------------
+---------------------------------------------
 -- Tech 2
-----------------------------------------
-sa0212_desc="Chasseur de combat"
+---------------------------------------------
+sa0212_desc="Chasseur"
 sea0212_name="Raptor"
 sra0212_name="Dioscures"
 ssa0212_name="Iayath"
@@ -13,49 +13,49 @@ sa0213_desc="Chasseur-bombardier"
 saa0213_name="Lucidité"
 Unit_Description_BrewPen_002="Chasseur Bombardier conçu pour engager à la fois les cibles au sol et dans les airs."
 
---Bombers tactiques dédiés
+--Bombardiers tactiques dédiés
 saa0211_desc="Bombardier Tactique"
 sea0211_name="Tornade"
 ssa0211_name="Sinn"
 sra0211_name="Condor"
-Unit_Description_BrewPen_003="avions bombardier intermédiaire."
+Unit_Description_BrewPen_003="Bombardier Intermédiaire"
 
-----------------------------------------
+---------------------------------------------
 -- Tech 3
-----------------------------------------
---T3.5 bombardiers avancés
---sa0314_desc="pénétrateur"
-sa0314_desc="pénétrateur Bomber"
+---------------------------------------------
+--Bombardiers avancés T3.5
+--sa0314_desc="Pénétrateur"
+sa0314_desc="Bombardier de pénétrateur"
 sea0314_name="Lancier"
-saa0314_name="Cri"
-sra0314_name="sanguine Tyran"
+saa0314_name="Hurlement"
+sra0314_name="Tyran Sanguinaire"
 ssa0314_name="Sinnaino"
-Unit_Description_BrewPen_004="Haut de gamme de bombardier stratégique à long terme. Équipement avec des bombes, des missiles d'écartement air-sol, torpilles, et montée à l'arrière des fusées anti-missiles."
+Unit_Description_BrewPen_004="Bombardier stratégique furtif de haut gamme de haut niveau. Equipé de bombes, de missiles AIR-SOL, de torpilles et de leurres anti-missiles montés à l'arrière."
 
---anti-SAM et des fusées éclairantes anti-AAM
-ability_missiledef="missile Defense"
+--Anti-Sam et Flares anti-AAM
+ability_missiledef="Défense anti-missiles"
 
---T3.5 combattants avancé
-sa0313_desc="pénétration Fighter"
+--T3.5 combattants avancés
+sa0313_desc="Combattant de pénétration"
 sea0313_name="Matou"
-saa0313_name="Helios"
-sra0313_name="Patron de twilight"
+saa0313_name="Hélios"
+sra0313_name="Modèle Crépusculaire"
 ssa0313_name="Ialosaare"
-Unit_Description_BrewPen_005="haut de gamme à long portée des chasseurs furtifs. Equipé de railguns hélicoïdales salves doubles, missiles air-air, et les fusées anti-missiles."
-Unit_Description_BrewPen_006="haut de gamme à long portée des chasseurs furtifs. Équipé de deux armes laser focalisé phason, fourmi faltes anti-missiles."
-Unit_Description_BrewPen_007="Haut de gamme à longue portée chasseur furtif. Equipé de canons à particules lourdes et des fusées anti-missiles. Capable d'avions d'espionnage de chasse."
-Unit_Description_BrewPen_008="Haut de gamme à longue portée chasseur furtif. Equipé d'un canon automatique Losaare, une arme de phason et des fusées anti-missiles."
+Unit_Description_BrewPen_005="Combattant furtif de haute technologie. Equipé de double fusils à rafale, de missiles air-air et de leurres anti-missiles."
+Unit_Description_BrewPen_006="Fauteur furtif de longue portée de haut niveau. Équipé d'armes à laser de phason ciblées à deux twin et de flares anti-missiles."
+Unit_Description_BrewPen_007="Chasseur furtif à longue portée de haut gamme. Équipé de canons de particules lourdes et de flares anti-missiles. Capable de chasser des avions d'espionnage."
+Unit_Description_BrewPen_008="Chasseur furtif à longue portée de haut gamme. Equipé d'un Autocannon Losaare, d'une arme de phason et de fusées éclairantes anti-missiles."
 
-sra0315_desc="Gunship interdiction"
-sra0315_name="xiphos"
-Unit_Description_BrewPen_009="interdiction lourde et gros soutien aérien des appareils d'attaque. Armé de plusieurs armes à laser air-sol, et des fusées éclairantes anti-missiles."
+sra0315_desc="Onglets d'interdiction"
+sra0315_name="Xiphos"
+Unit_Description_BrewPen_009="L'interdiction lourde et l'embarcation d'attaque de soutien étroit-air. Armé de multiples armes laser air-terre et de fusées éclairantes anti-missiles."
 
-sra0401_desc="Porte-avions expérimental"
-sra0401_name="Simurgh"
-Unit_Description_BrewPen_010="Massive porte-avions en vol. Peut créer, le transport, et de déployer un grand nombre d'embarcations chasseur / bombardier."
+sra0401_desc="Transporteur d'aéronefs expérimental"
+sra0401_name="Simurbh"
+Unit_Description_BrewPen_010="Porte-avions volumineux. Peut créer, transporter et déployer un grand nombre de camps de chasse / bombardier."
 
---dra0202_desc="Fighter / Bomber"
+--dra0202_desc="Chasseur / bombardier"
 sra0402_name="Talon"
-Unit_Description_BrewPen_011="avion de chasse / bombardier combinaison conçu pour engager les deux unités d'air et de surface."
+Unit_Description_BrewPen_011="Combinaison / avion bombardier conçu pour engager des unités d'air et de surface."
 
 
