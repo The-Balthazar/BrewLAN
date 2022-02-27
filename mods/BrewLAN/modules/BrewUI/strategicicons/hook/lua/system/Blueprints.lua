@@ -60,6 +60,43 @@ local function isUnarmed(bp)
     end
 end
 
+local function effectiveLayerCaps(weapon)
+    local layerCaps = '' -- Will be replaced with somethling like `Air|Land|Water`
+    if weapon.FireTargetLayerCapsTable then
+        if bp.Physics.MotionType == 'RULEUMT_Air'
+        and weapon.FireTargetLayerCapsTable.Air then
+            layerCaps = weapon.FireTargetLayerCapsTable.Air
+
+        elseif (bp.Physics.MotionType == 'RULEUMT_Biped'
+        or bp.Physics.MotionType == 'RULEUMT_Land')
+        and weapon.FireTargetLayerCapsTable.Land then
+            layerCaps = weapon.FireTargetLayerCapsTable.Land
+
+        elseif bp.Physics.MotionType == 'RULEUMT_Water'
+        and weapon.FireTargetLayerCapsTable.Water then
+            layerCaps = weapon.FireTargetLayerCapsTable.Water
+
+        else
+            for fromlayer, targetlayers in pairs(weapon.FireTargetLayerCapsTable) do
+                -- This assumes that the longest target layer caps list is the one that has all the target
+                if string.len(targetlayers or '') > string.len(layerCaps) then
+                    layerCaps = targetlayers
+                end
+            end
+        end
+    end
+
+    local layerCapsTable = {
+        AIR = string.find(layerCaps, 'Air'),
+        LAND = string.find(layerCaps, 'Land'),
+        --ORBIT = string.find(layerCaps, 'Orbit'),
+        SEABED = string.find(layerCaps, 'Seabed'),
+        SUB = string.find(layerCaps, 'Sub'),
+        WATER = string.find(layerCaps, 'Water'),
+    }
+    return layerCaps, layerCapsTable
+end
+
 --------------------------------------------------------------------------------
 -- Damage per second calculation, biased towards high damage
 --------------------------------------------------------------------------------
@@ -128,6 +165,15 @@ local function getWeaponType(bp, weapon, projectile)
             return 'antimissile', (string.find(weapon.TargetRestrictOnlyAllow, 'STRATEGIC') and 1000 or string.find(weapon.TargetRestrictOnlyAllow, 'TACTICAL') and 100)
         end
 
+        local layerCaps, layerCapsTable = effectiveLayerCaps(weapon)
+
+        if (layerCapsTable.SEABED or layerCapsTable.SUB or layerCapsTable.WATER) and not layerCapsTable.AIR then
+            return 'antinavy'
+        elseif layerCapsTable.AIR then
+            WARN((bp.General and bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." has a vaguely identified anti-projectile weapon.")
+            return 'antimissile', 1000
+        end
+
         -- fallback error
         return 'antiprojectile', WARN((bp.General and bp.General.UnitName or 'unnamed unit')..' '..(weapon.Label or 'nil').." identifies that it can target projectiles, but we can't identify which.")
 
@@ -150,39 +196,7 @@ local function getWeaponType(bp, weapon, projectile)
             end
         end
 
-        local layerCaps = '' -- Will be replaced with somethling like `Air|Land|Water`
-        if weapon.FireTargetLayerCapsTable then
-            if bp.Physics.MotionType == 'RULEUMT_Air'
-            and weapon.FireTargetLayerCapsTable.Air then
-                layerCaps = weapon.FireTargetLayerCapsTable.Air
-
-            elseif (bp.Physics.MotionType == 'RULEUMT_Biped'
-            or bp.Physics.MotionType == 'RULEUMT_Land')
-            and weapon.FireTargetLayerCapsTable.Land then
-                layerCaps = weapon.FireTargetLayerCapsTable.Land
-
-            elseif bp.Physics.MotionType == 'RULEUMT_Water'
-            and weapon.FireTargetLayerCapsTable.Water then
-                layerCaps = weapon.FireTargetLayerCapsTable.Water
-
-            else
-                for fromlayer, targetlayers in pairs(weapon.FireTargetLayerCapsTable) do
-                    -- This assumes that the longest target layer caps list is the one that has all the target
-                    if string.len(targetlayers or '') > string.len(layerCaps) then
-                        layerCaps = targetlayers
-                    end
-                end
-            end
-        end
-
-        layerCapsTable = {
-            AIR = string.find(layerCaps, 'Air'),
-            LAND = string.find(layerCaps, 'Land'),
-            --ORBIT = string.find(layerCaps, 'Orbit'),
-            SEABED = string.find(layerCaps, 'Seabed'),
-            SUB = string.find(layerCaps, 'Sub'),
-            WATER = string.find(layerCaps, 'Water'),
-        }
+        local layerCaps, layerCapsTable = effectiveLayerCaps(weapon)
 
         if layerCaps == 'Air'
         or weapon.TargetRestrictOnlyAllow == 'AIR'

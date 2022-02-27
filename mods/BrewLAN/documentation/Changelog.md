@@ -11,3 +11,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-02-25
 
 * "New" mod *Meteor Showers*. By new I mean I started it in 2015 and only just finished it.
+
+### 2022-02-27
+
+* SIO: Added additional fall back for anti-projectile weapons that don't limit target by categories.
