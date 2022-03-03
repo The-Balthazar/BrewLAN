@@ -60,7 +60,7 @@ local function isUnarmed(bp)
     end
 end
 
-local function effectiveLayerCaps(weapon)
+local function effectiveLayerCaps(bp, weapon)
     local layerCaps = '' -- Will be replaced with somethling like `Air|Land|Water`
     if weapon.FireTargetLayerCapsTable then
         if bp.Physics.MotionType == 'RULEUMT_Air'
@@ -165,7 +165,7 @@ local function getWeaponType(bp, weapon, projectile)
             return 'antimissile', (string.find(weapon.TargetRestrictOnlyAllow, 'STRATEGIC') and 1000 or string.find(weapon.TargetRestrictOnlyAllow, 'TACTICAL') and 100)
         end
 
-        local layerCaps, layerCapsTable = effectiveLayerCaps(weapon)
+        local layerCaps, layerCapsTable = effectiveLayerCaps(bp, weapon)
 
         if (layerCapsTable.SEABED or layerCapsTable.SUB or layerCapsTable.WATER) and not layerCapsTable.AIR then
             return 'antinavy'
@@ -196,7 +196,7 @@ local function getWeaponType(bp, weapon, projectile)
             end
         end
 
-        local layerCaps, layerCapsTable = effectiveLayerCaps(weapon)
+        local layerCaps, layerCapsTable = effectiveLayerCaps(bp, weapon)
 
         if layerCaps == 'Air'
         or weapon.TargetRestrictOnlyAllow == 'AIR'

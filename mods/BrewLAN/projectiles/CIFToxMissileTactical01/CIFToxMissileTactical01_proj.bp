@@ -39,6 +39,7 @@ ProjectileBlueprint {
     General = {
         Category = 'Missile',
         Faction = 'Cybran',
+        Weapon = 'Toxotes Loa Tactical Missile',
     },
     Physics = {
         Acceleration = 3,

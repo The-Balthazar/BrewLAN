@@ -1,6 +1,6 @@
 local AirUnit = import('/lua/defaultunits.lua').AirUnit
 local DefaultProjectileWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
-
+local R, Ceil = Random, math.ceil
 MET3012 = Class(AirUnit) {
     Weapons = {
         MeteorSmall01 = Class(DefaultProjectileWeapon){},
@@ -13,9 +13,9 @@ MET3012 = Class(AirUnit) {
                 self.AimingNode = CreateRotator(self, 0, 'x', 90, 10000, 10000, 1000)
                 WaitFor(self.AimingNode)
                 while true do
-                    local num = math.ceil((math.random()+math.random()+math.random()+math.random()+math.random()+math.random()+math.random()+math.random()+math.random()+math.random()+math.random())*math.random(1,10))
+                    local num = Ceil((R()+R()+R()+R()+R()+R()+R()+R()+R()+R()+R())*R(1,10))
                     coroutine.yield(num)
-                    self:GetWeaponByLabel('MeteorSmall01'):FireWeapon()
+                    self:GetWeaponByLabel'MeteorSmall01':FireWeapon()
                 end
             end
         )

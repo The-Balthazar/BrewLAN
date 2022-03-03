@@ -435,7 +435,7 @@ end
 
 function BrewLANGantryBuildList(id, bp, Gantries)
     --This section is entirely because, as usual for a FAF function being over zealous, FAF support factories get fucking everywhere.
-    if (not bp.Categories) or bp.Physics.MotionType == 'RULEUMT_None' then return end
+    if (not bp.Categories) or (bp.Physics.MotionType or 'RULEUMT_None') == 'RULEUMT_None' then return end
     if HasFactoryBuildCat(bp) then
         table.insert(bp.Categories, 'BUILTBYEXPERIMENTALFACTORY')
     end
@@ -484,7 +484,7 @@ end
 
 function BrewLANNavalEngineersBuildList(id, bp)
     local caps = bp.Physics and bp.Physics.BuildOnLayerCaps
-    local mt = bp.Physics and bp.Physics.MotionType
+    local mt = bp.Physics and bp.Physics.MotionType or 'RULEUMT_None'
     local tech = GetTechLevel(bp)
 
     if bp.Categories and tech and HasBuildCat(bp)
@@ -509,7 +509,7 @@ function BrewLANHeavyWallBuildList(id, bp)
     if bp.Categories then
         --Check its not hard coded to be buildable.
         if not HasCat(bp, 'BUILTBYTIER3WALL')
-        and bp.Physics.MotionType == 'RULEUMT_None'
+        and (bp.Physics.MotionType or 'RULEUMT_None') == 'RULEUMT_None'
         and (
             not bp.Physics.BuildRestriction -- default usually isn't written in
             or bp.Physics.BuildRestriction == 'RULEUBR_None'
@@ -1388,7 +1388,7 @@ function BrewLANGenerateFootprintDummyUnits(all_units)
     local NewDummies = {}
 
     for id, bp in all_units do
-        if bp.Physics.MotionType == 'RULEUMT_None' then
+        if (bp.Physics.MotionType or 'RULEUMT_None') == 'RULEUMT_None' then
             local X = math.ceil(bp.Footprint.SizeX or bp.SizeX or 1)
             local Z = math.ceil(bp.Footprint.SizeZ or bp.SizeZ or 1)
             local SOX = bp.Physics.SkirtOffsetX or 0

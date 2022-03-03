@@ -592,7 +592,4 @@ Unit_Description_BrewLAN_T4L004="Experimenteller Scharfschützen-Bot. Im Stillst
 
 ssl0405_desc="Experimenteller schwerer Gliederfüssler"
 ssl0405_name="Suedath-Zmara"
-Unit_Description_BrewLAN_T4L005="Massiver experimenteller Bot.
-Ausgestattet mit frontal angebrachten Thau Kanonen, am Rücken angebrachten Sinn-Uall Kavitationstorpedos und am Panzer montierten Olaris Flugabwehrgeschützen. 
-Hat sowohl die Fähigkeit sich erhöhte Schussposition zu begeben um die Waffenreichweite zu erhöhen, so als auch zu schwimmen.
-Bekämpfung von Seeeinheiten mit der Stärke nahezu jedes Ziel zu eliminieren."
+Unit_Description_BrewLAN_T4L005="Massiver experimenteller Bot.\nAusgestattet mit frontal angebrachten Thau Kanonen, am Rücken angebrachten Sinn-Uall Kavitationstorpedos und am Panzer montierten Olaris Flugabwehrgeschützen.\nHat sowohl die Fähigkeit sich erhöhte Schussposition zu begeben um die Waffenreichweite zu erhöhen, so als auch zu schwimmen.\nBekämpfung von Seeeinheiten mit der Stärke nahezu jedes Ziel zu eliminieren."

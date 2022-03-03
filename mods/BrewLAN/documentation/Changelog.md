@@ -15,3 +15,19 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-02-27
 
 * SIO: Added additional fall back for anti-projectile weapons that don't limit target by categories.
+
+### 2022-03-01
+
+* SIO: Fixed `effectiveLayerCaps` not getting `bp`.
+* `string.gmatch` now redirects to `string.gfind` instead of re-implementing it.
+* Toxotai missile now has a name.
+* Meteor Showers: Removed some unneeded data.
+
+### 2022-03-02
+
+* Mild optimisation to Iyadesu.
+
+### 2022-03-03
+
+* Fixed DE language strings having line breaks bricking things.
+* Fixed some missing default values in blueprints.lua.

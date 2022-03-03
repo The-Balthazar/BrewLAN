@@ -168,12 +168,8 @@ SAS0401 = Class(ASeaUnit) {
             --------------------------------------------------------------------
             local army = self:GetArmy()
             local Entity = import('/lua/sim/Entity.lua').Entity
-            --local OffsetLength = Util.GetVectorLength(vector)
             local ImpactMesh = Entity { Owner = self.Owner }
-            --local beams = {}
-            --for i, Pillar in self.Owner.Projectors do
-            --    beams[i] = AttachBeamEntityToEntity(self, 0, Pillar, 'Gem', self:GetArmy(), Pillar:GetBlueprint().Defense.Shield.ShieldTargetBeam)
-            --end
+
             Warp( ImpactMesh, self:GetPosition())
             ImpactMesh:AttachBoneTo(-1,self,-1)
             if impactmeshbp ~= '' then
@@ -184,11 +180,8 @@ SAS0401 = Class(ASeaUnit) {
             for k, v in self.ImpactEffects do
                 CreateEmitterAtBone( ImpactMesh, -1, army, v )--:OffsetEmitter(0,0,OffsetLength)
             end
-            WaitTicks(5)
-            --for i, v in beams do
-            --    v:Destroy()
-            --end
-            WaitTicks(45)
+
+            coroutine.yield(51)
             ImpactMesh:Destroy()
         end
     end,
