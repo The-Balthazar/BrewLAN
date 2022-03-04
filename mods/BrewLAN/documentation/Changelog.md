@@ -31,3 +31,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Fixed DE language strings having line breaks bricking things.
 * Fixed some missing default values in blueprints.lua.
+
+### 2022-03-04
+
+* Penetration: Added a UEF T3 Strike Fighter.

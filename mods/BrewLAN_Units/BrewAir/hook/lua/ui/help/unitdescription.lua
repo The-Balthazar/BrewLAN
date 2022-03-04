@@ -2,12 +2,17 @@
 Description['sea0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 Description['sra0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 Description['ssa0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
+
 --Tech 2 fighter/bomber
 Description['saa0213'] = "<LOC Unit_Description_BrewPen_002>Combination fighter/bomber designed to engage both land and aerial units."
+
 --Tech 2 tactical bombers
 Description['sea0211'] = "<LOC Unit_Description_BrewPen_003>Intermediate bomber aircraft."
 Description['ssa0211'] = "<LOC Unit_Description_BrewPen_003>Intermediate bomber aircraft."
 Description['sra0211'] = "<LOC Unit_Description_BrewPen_003>Intermediate bomber aircraft."
+
+-- Tech 3
+Description['sea0312'] = "<LOC Unit_Description_BrewPen_012>High-end multirole fighter. Equipped with missiles. Performs best against light armored targets such as aircraft."
 
 --Tech 3 penetrator bombers
 Description['sra0314'] = "<LOC Unit_Description_BrewPen_004>Top-end long-range stealth strategic bomber. Equipped with bombs, air-to-surface standoff missiles, torpedoes, and anti-missile flares."

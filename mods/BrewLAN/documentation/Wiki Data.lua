@@ -141,6 +141,15 @@ UnitData = {
             {YouTube = 'K_fPIx_Lt-M', 'Time-lapse'},
         },
     },
+    SEA0312 = {
+        Videos = {
+            {YouTube = 'fTF0EcyNmtus', 'Time-lapse'},
+        },
+        Trivia = {
+            '"Fulcrum" was a commissioned unit.',
+            'The model and name are based on the Mikoyan MiG-29, and its NATO reporting name.',
+        },
+    },
     SEA0313 = {
         Trivia = '"Tomcat" is based on the Grumman F-14 Tomcat, which appeared in the 1986 film *Top Gun*.',
     },
