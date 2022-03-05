@@ -194,7 +194,7 @@ UnitBlueprint {
         BuildCostEnergy = 8400,
         BuildCostMass = 420,
         BuildTime = 2400,
-        ResearchMultTime = 0.5,
+        ResearchMultEnergy = 0.5,
     },
     Footprint = {
         MaxSlope = 0.25,

@@ -40,3 +40,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Penetration: Updated threat values and replaced the UEF aircraft icons.
 * R&D: Fixed potentially not making a research item for research locked units.
+* R&D: Reduced the energy cost of researching non-penetrator aircraft.

@@ -371,19 +371,6 @@ function RNDGiveUniqueMeshBlueprints(all_bps, newid, ref)
     }
 end
 
---This isn't nessessary for its original purpose, but it doesn't hurt to keep it around
---It's also a mess for cleanup, since it leaves table floating nowhere. Possible memory leak?
-function CleanupDuplicateArrayKeys(array)
-    local original = array
-    local new = {}
-    for i, v in array do
-        if v and not table.find(new, v) then
-            table.insert(new, v)
-        end
-    end
-    return new
-end
-
 function CategoryArrayRemoveTierN(all_bps, table)
     if type(table) == "table" and table[1] and TableFindSubstrings(table, 'BUILTBY', 'TIER') then
         for i, cat in table do
@@ -398,7 +385,7 @@ end
 function DumpOldBuiltByCategories(all_bps, cat)
     --This dumping of old categories is so that they remain valid categories, but categories that do nothing when other mods affect and reference them.
     if not all_bps.zzz6969 then all_bps.zzz6969 = {BlueprintId = 'zzz6969',Categories = {'NOTHINGIMPORTANT', 'UNSPAWNABLE'}} end
-    if all_bps.zzz6969 and not table.find(all_bps.zzz6969.Categories, cat) then
+    if not table.find(all_bps.zzz6969.Categories, cat) then
         table.insert(all_bps.zzz6969.Categories, cat)
     end
 end
