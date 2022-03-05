@@ -7,12 +7,18 @@ do
 
 local OldModBlueprints = ModBlueprints
 
+local ResearchBps = {}
+
 function ModBlueprints(all_blueprints)
     OldModBlueprints(all_blueprints)
     RNDPrepareScript(all_blueprints.Unit)
     RestrictExistingBlueprints(all_blueprints.Unit)
     RNDDefineNewFactoryBuildCategories(all_blueprints.Unit)
     GenerateResearchItemBPs(all_blueprints.Unit)
+
+    for id, bp in pairs(ResearchBps) do
+        all_blueprints.Unit[id] = bp
+    end
 end
 
 function WikiBlueprints(all_blueprints)
@@ -195,8 +201,8 @@ function GenerateResearchItemBPs(all_bps)
                 bp.General.FactionName = faction
                 RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
                 RNDGiveCategoriesAndDefineCosts(all_bps, newid, bp)
-                all_bps[newid].Display.BuildMeshBlueprint = '/mods/brewlan_units/brewresearch/meshes/tech'..bp.techid..'_mesh'
-                all_bps[newid].Display.MeshBlueprint = '/mods/brewlan_units/brewresearch/meshes/tech'..bp.techid..'_mesh'
+                ResearchBps[newid].Display.BuildMeshBlueprint = '/mods/brewlan_units/brewresearch/meshes/tech'..bp.techid..'_mesh'
+                ResearchBps[newid].Display.MeshBlueprint = '/mods/brewlan_units/brewresearch/meshes/tech'..bp.techid..'_mesh'
                 --LOG(repr(all_bps[newid]))
             end
         end
@@ -205,7 +211,8 @@ end
 
 function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
     local sizescale = math.max( ((bp.Physics.SkirtSizeX or bp.SizeX or 4) / 2), ((bp.Physics.SkirtSizeZ or bp.SizeZ or 4) / 2) )
-    all_bps[newid] = {
+    SPEW("Creating research item for "..newid)
+    ResearchBps[newid] = {
         BlueprintId = newid,
         ResearchId = id,
         BuildIconSortPriority = bp.BuildIconSortPriority or 5,
@@ -273,7 +280,7 @@ function RNDGenerateBaseResearchItemBlueprint(all_bps, newid, id, bp)
 end
 
 function RNDGiveCategoriesAndDefineCosts(all_bps, newid, ref)
-    local bp = all_bps[newid]
+    local bp = ResearchBps[newid]
     for i, v in {'TECH1','TECH2','TECH3','EXPERIMENTAL', 'UEF', 'CYBRAN', 'SERAPHIM', 'AEON', 'SORTSTRATEGIC', 'SORTCONSTRUCTION', 'SORTDEFENSE', 'SORTECONOMY', 'SORTINTEL', 'CONSTRUCTIONSORTDOWN', 'RESEARCHLOCKEDTECH1', 'AIR', 'LAND', 'NAVAL'} do
         if table.find(ref.Categories, v) then
             --If the source has the cat, the research item also needs it.
@@ -302,7 +309,7 @@ function RNDGiveCategoriesAndDefineCosts(all_bps, newid, ref)
 end
 
 function RNDGiveIndicativeAbilities(all_bps, newid, ref)
-    local bp = all_bps[newid]
+    local bp = ResearchBps[newid]
     local TFS = TableFindSubstrings
     local TF = table.find
     local CATs = ref.Categories
@@ -343,7 +350,7 @@ end
 
 --Making unique mesh, so it can be a glowy hologram
 function RNDGiveUniqueMeshBlueprints(all_bps, newid, ref)
-    local bp = all_bps[newid]
+    local bp = ResearchBps[newid]
     for i, mesh in {'BuildMeshBlueprint', 'MeshBlueprint'} do
         local refid = ref.Display[mesh]
         local meshbp = original_blueprints.Mesh[refid]

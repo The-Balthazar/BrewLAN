@@ -39,3 +39,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-03-05
 
 * Penetration: Updated threat values and replaced the UEF aircraft icons.
+* R&D: Fixed potentially not making a research item for research locked units.
