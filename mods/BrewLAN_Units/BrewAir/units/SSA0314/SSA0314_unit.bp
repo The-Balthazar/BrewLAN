@@ -112,7 +112,6 @@ UnitBlueprint {
             AttachBone = 'Missile_Defence',
         },
         ArmorType = 'Light',
-        EconomyThreatLevel = 3,
         Health = 7550,
         MaxHealth = 7550,
         RegenRate = 5,

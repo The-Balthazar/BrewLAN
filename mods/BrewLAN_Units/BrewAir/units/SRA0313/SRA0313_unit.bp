@@ -108,12 +108,12 @@ UnitBlueprint {
         MissileDetector = {
             AttachBone = 'MissileDetector',
         },
-        AirThreatLevel = 20,
+        AirThreatLevel = 100,
+        EconomyThreatLevel = 250,
         ArmorType = 'Light',
         Health = 4775,
         MaxHealth = 4775,
         RegenRate = 5,
-        SurfaceThreatLevel = 5,
     },
     Description = '<LOC sa0313_desc>Penetration Fighter',
     Display = {

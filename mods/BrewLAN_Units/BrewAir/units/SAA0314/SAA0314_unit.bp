@@ -112,7 +112,6 @@ UnitBlueprint {
             AttachBone = 'Detector',
         },
         ArmorType = 'Light',
-        EconomyThreatLevel = 3,
         Health = 7400,
         MaxHealth = 7400,
         RegenRate = 5,

@@ -107,11 +107,11 @@ UnitBlueprint {
         'OVERLAYRADAR',
     },
     Defense = {
-        AirThreatLevel = 6,
+        AirThreatLevel = 15,
         ArmorType = 'Light',
         Health = 740,
         MaxHealth = 740,
-        SurfaceThreatLevel = 4,
+        SurfaceThreatLevel = 6,
     },
     Description = '<LOC dra0202_desc>Fighter/Bomber',
     Display = {

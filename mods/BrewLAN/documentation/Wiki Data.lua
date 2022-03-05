@@ -143,7 +143,7 @@ UnitData = {
     },
     SEA0312 = {
         Videos = {
-            {YouTube = 'fTF0EcyNmtus', 'Time-lapse'},
+            {YouTube = 'TF0EcyNmtus', 'Time-lapse'},
         },
         Trivia = {
             '"Fulcrum" was a commissioned unit.',

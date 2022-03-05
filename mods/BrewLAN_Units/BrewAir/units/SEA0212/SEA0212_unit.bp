@@ -105,7 +105,7 @@ UnitBlueprint {
         'RESEARCHLOCKED',
     },
     Defense = {
-        AirThreatLevel = 4,
+        AirThreatLevel = 13,
         ArmorType = 'Light',
         Health = 800,
         MaxHealth = 800,

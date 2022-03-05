@@ -35,3 +35,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-03-04
 
 * Penetration: Added a UEF T3 Strike Fighter.
+
+### 2022-03-05
+
+* Penetration: Updated threat values and replaced the UEF aircraft icons.

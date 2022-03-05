@@ -276,7 +276,6 @@ UnitBlueprint {
                 'AIR',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            --TargetRestrictOnlyAllow = 'AIR, STRUCTURE',
             TrackingRadius = 1.4,
             Turreted = false,
             WeaponCategory = 'Anti Air',

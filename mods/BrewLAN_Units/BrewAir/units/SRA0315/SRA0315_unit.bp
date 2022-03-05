@@ -63,12 +63,11 @@ UnitBlueprint {
         MissileDetector = {
             AttachBone = 'MissileDetector',
         },
-        AirThreatLevel = 2,
         ArmorType = 'Light',
         Health = 8260,
         MaxHealth = 8260,
         RegenRate = 5,
-        SurfaceThreatLevel = 51,
+        SurfaceThreatLevel = 275,
     },
     Description = '<LOC sra0315_desc>Interdiction Gunship',
     Display = {
