@@ -77,6 +77,8 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
         'GATE',
     },
+    CollisionOffsetY = -13,
+    CollisionShape = 'Sphere',
     Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 2091,
@@ -268,10 +270,7 @@ UnitBlueprint {
     SelectionSizeX = 15,
     SelectionSizeZ = 15,
     SelectionThickness = 0.1,
-    SizeX = 27,
-    SizeY = 10,
-    SizeZ = 27,
-    SizeSphere = 13,
+    SizeX = 26,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 210,
     Wreckage = {

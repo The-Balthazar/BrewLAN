@@ -14,14 +14,6 @@ SAB0401 = Class(BrewLANExperimentalFactoryUnit) {
     OnCreate = function(self)
         self.BLFactoryAirMode = true
         BrewLANExperimentalFactoryUnit.OnCreate(self)
-        local bp = __blueprints.sab0401
-        self:SetCollisionShape(
-            'Sphere',
-            bp.CollisionSphereOffsetX or 0,
-            bp.CollisionSphereOffsetY or 0,
-            bp.CollisionSphereOffsetZ or 0,
-            bp.SizeSphere
-        )
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
