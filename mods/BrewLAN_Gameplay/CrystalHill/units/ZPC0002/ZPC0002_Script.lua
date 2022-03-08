@@ -68,7 +68,7 @@ ZPC0002 = Class(SStructureUnit) {
                             break
                         end
                     end
-                    if v:GetEntityId() ~= self:GetEntityId() and not civilian then
+                    if v.Sync.id ~= self.Sync.id and not civilian then
                         pos = self:GetPosition()
                         CreateUnitHPR('ZPC0001',v:GetArmy(), pos[1],pos[2],pos[3],0,0,0)
                         self:Destroy()

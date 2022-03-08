@@ -8,7 +8,7 @@ do
             if not bp.BlueprintId == 'ura0001' then
                 local pos = self:GetPosition()
                 local ori = self:GetOrientation()
-                LOG("['UNIT_" .. self:GetEntityId() .. "'] = {" )
+                LOG("['UNIT_" .. self.Sync.id .. "'] = {" )
                 LOG("    type = '" .. bp.BlueprintId .. "',")
                 LOG("    orders = '',")
                 LOG("    platoon = '',")

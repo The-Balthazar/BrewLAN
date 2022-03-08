@@ -67,7 +67,7 @@ SEB3404 = Class(TStructureUnit) {
             local VDist2Sq = VDist2Sq
             for i, v in LocalUnits do
                 local vpos = v.CachePosition or v:GetPosition()
-                local uniqueDistanceKey = mathfloor(VDist2Sq(vpos[1], vpos[3], pos[1], pos[3]) ) .. "." .. v:GetEntityId()
+                local uniqueDistanceKey = mathfloor(VDist2Sq(vpos[1], vpos[3], pos[1], pos[3]) ) .. "." .. v.Sync.id
                 DistanceSortedLocalUnits[uniqueDistanceKey] = v
                 v = nil
             end

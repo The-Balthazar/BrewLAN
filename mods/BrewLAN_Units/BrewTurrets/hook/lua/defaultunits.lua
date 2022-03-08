@@ -53,12 +53,12 @@ FactoryAdjacentNode = Class(StructureUnit) {
                     end
                 end
                 --Keep track of each nodes function, so we can remove them easily
-                adjacentUnit.NodeOnStopBuildFunctions[self:GetEntityId()] = self.AdjacentFactoryOnStopBuild
+                adjacentUnit.NodeOnStopBuildFunctions[self.Sync.id] = self.AdjacentFactoryOnStopBuild
 
             elseif adjacentUnit and adjacentUnit.NodeOnStopBuildFunctions then
                 --Remove this nodes function. If this is the last one, there's no harm in
                 --leaving the factory's hooked function the same for future possible nodes
-                adjacentUnit.NodeOnStopBuildFunctions[self:GetEntityId()] = nil
+                adjacentUnit.NodeOnStopBuildFunctions[self.Sync.id] = nil
             end
 
             return true

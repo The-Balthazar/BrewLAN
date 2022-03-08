@@ -167,7 +167,7 @@ ZPC0001 = Class(SStructureUnit) {
                 return false
             end
 
-            if v:GetEntityId() ~= self:GetEntityId() and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) and not CivTest(v) then
+            if v.Sync.id ~= self.Sync.id and not v:IsDead() and not EntityCategoryContains( categories.WALL + categories.SATELLITE + categories.UNTARGETABLE, v ) and EntityCategoryContains(categories.SELECTABLE, v) and not CivTest(v) then
                 count = count + 1
             end
         end

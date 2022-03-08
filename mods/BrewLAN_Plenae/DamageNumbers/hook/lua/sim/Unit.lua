@@ -15,7 +15,7 @@ do
             Entity.OnCreate(self)
             LOG('DamageMarker OnCreate')
             Warp(self, self.Position)
-            FloatingEntityText(self:GetEntityId(),string.rep(' ', math.random(0,5)) .. tostring(self.Number) .. string.rep(' ', math.random(0,5)))
+            FloatingEntityText(self.Sync.id,string.rep(' ', math.random(0,5)) .. tostring(self.Number) .. string.rep(' ', math.random(0,5)))
             if self.LifeTime > 0 then
                 self.LifeTimeThread = ForkThread(self.VisibleLifeTimeThread, self)
             end
@@ -53,10 +53,10 @@ do
             --DamageMarker(spec)
 
             if instigator and not instigator.Dead then
-                FloatingEntityText(instigator:GetEntityId(),string.rep(' ', math.random(0,5)) .. tostring(amount) .. string.rep(' ', math.random(0,5)))
+                FloatingEntityText(instigator.Sync.id, string.rep(' ', math.random(0,5)) .. tostring(amount) .. string.rep(' ', math.random(0,5)))
             end
             if self and not self.Dead then
-                FloatingEntityText(self:GetEntityId(),string.rep(' ', math.random(0,5)) .. tostring(amount) .. string.rep(' ', math.random(0,5)))
+                FloatingEntityText(self.Sync.id, string.rep(' ', math.random(0,5)) .. tostring(amount) .. string.rep(' ', math.random(0,5)))
             end
             UnitOld.DoTakeDamage(self, instigator, amount, vector, damageType)
         end,

@@ -721,7 +721,7 @@ do
             0, 0, 0
         )
         if text and false then --Currently disabled
-            FloatingEntityText(Unit:GetEntityId(), text)
+            FloatingEntityText(Unit.Sync.id, text)
         end
     end
 

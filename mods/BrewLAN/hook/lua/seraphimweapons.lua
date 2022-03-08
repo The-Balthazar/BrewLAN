@@ -234,20 +234,10 @@ InvisibleCollisionBeam = Class(moho.CollisionBeamEntity) {
         end
 
         -- Do Damage
-        if targetEntity and IsUnit(targetEntity) then
-            --LOG(" damagee?")
-            local tentID = targetEntity:GetEntityId()
-            if self.Weapon[self.DamageTracker] and not self.Weapon[self.DamageTracker][tentID] then
-                -- Buffs (Stun, etc)
-                self:DoUnitImpactBuffs(targetEntity)
-
-                local damageData = self.DamageTable
-
-                self.Weapon[self.DamageTracker][tentID] = true
-                self:DoDamage( instigator, damageData, targetEntity)
-            --else
-            --    LOG("target ".. tentID .." hit multiple times")
-            end
+        if targetEntity and IsUnit(targetEntity) and self.Weapon[self.DamageTracker] and not self.Weapon[self.DamageTracker][targetEntity.Sync.id] then
+            self:DoUnitImpactBuffs(targetEntity)
+            self.Weapon[self.DamageTracker][targetEntity.Sync.id] = true
+            self:DoDamage( instigator, self.DamageTable, targetEntity)
         end
         --local ImpactEffects = {}
         --local ImpactEffectScale = 1

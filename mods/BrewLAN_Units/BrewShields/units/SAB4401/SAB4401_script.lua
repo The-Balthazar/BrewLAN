@@ -83,8 +83,8 @@ SAB4401 = Class(AShieldStructureUnit) {
             target.Projectors = {}
         end
 
-        if not target.Projectors[self.EntityId] then
-            target.Projectors[self.EntityId] = self
+        if not target.Projectors[self.Sync.id] then
+            target.Projectors[self.Sync.id] = self
         end
 
         if not target.MyShield then
@@ -103,7 +103,7 @@ SAB4401 = Class(AShieldStructureUnit) {
 
         for i, unit in self:GetAIBrain():GetUnitsAroundPoint(categories.STRUCTURE, self.CachePosition, __blueprints.sab4401.Defense.Shield.ShieldProjectionRadius or 60 ) do
             if unit.Projectors and unit.MyShield and unit.MyShield.ClearProjection then
-                unit.Projectors[self.EntityId] = nil
+                unit.Projectors[self.Sync.id] = nil
                 local keepshield = false
                 for index, pillar in unit.Projectors do
                     if pillar then

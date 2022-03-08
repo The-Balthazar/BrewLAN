@@ -67,6 +67,6 @@ DPSTestUnit = Class(Unit) {
         end
         _ALERT(unpack(dataline()))
 
-        pcall(FloatingEntityText, instigator and instigator:GetEntityId() or self and self:GetEntityId(), spacedString(amount) )
+        pcall(FloatingEntityText, instigator.Sync.id or self.Sync.id, spacedString(amount) )
     end,
 }

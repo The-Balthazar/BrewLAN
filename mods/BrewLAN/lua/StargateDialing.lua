@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 -- Summary  :  Stargate Dialing Script
 -- Author   :  Balthazar
+-- TODO     :  Rework to use teleport order instead
 --------------------------------------------------------------------------------
 local explosion = import('/lua/defaultexplosions.lua')
 
@@ -70,7 +71,7 @@ function StargateDialing(SuperClass)
                 WormholeThread = nil,
                 --DisableCounter = 0,
                 DialingSequence = self:DialingSequence(self),
-                DialingHome = math.mod(self:GetEntityId() or 1, 9),
+                DialingHome = math.mod(self.Sync.id or 1, 9),
                 CurrentPosition = 9,
             }
         end,
@@ -154,7 +155,7 @@ function StargateDialing(SuperClass)
         -- Event Horizon functions
         ------------------------------------------------------------------------
         OpenWormhole = function(self, other, primary)
-            --FloatingEntityText(self:GetEntityId(),tostring(primary) )
+            --FloatingEntityText(self.Sync.id,tostring(primary) )
             if other and not other:IsDead() then
                 if primary then
                     other:OpenWormhole(self, not primary)
@@ -272,7 +273,7 @@ function StargateDialing(SuperClass)
             --------------------------------------------------------------------
             if not target then target = self end
             if not target.DialingData.DialingSequence then target.DialingData.DialingSequence = self:DialingSequence(target) end
-            if not self.DialingData.DialingHome then self.DialingData.DialingHome = math.mod(self:GetEntityId() or 1, 9) end
+            if not self.DialingData.DialingHome then self.DialingData.DialingHome = math.mod(self.Sync.id or 1, 9) end
             --------------------------------------------------------------------
             -- First time triggers
             --------------------------------------------------------------------

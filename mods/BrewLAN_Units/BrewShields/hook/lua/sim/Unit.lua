@@ -3,12 +3,6 @@ do
     local ProjectedShield = import('/lua/shield.lua').ProjectedShield
 
     Unit = Class(oldUnit) {
-
-        OnPreCreate = function(self)
-            oldUnit.OnPreCreate(self)
-            self.EntityId = self:GetEntityId()
-        end,
-
         CreateProjectedShield = function(self, shieldSpec)
             shieldSpec = shieldSpec or __blueprints.sab4401.Defense.Shield
 
