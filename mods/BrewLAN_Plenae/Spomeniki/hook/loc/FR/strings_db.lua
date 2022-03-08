@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Drone de science et d'exploration sans armes. P
 snlmsl1_desc="Science Laboratory Rover"
 snlmsl1_name="Curiosité de la MSL"
 .."Véhicule de science et d'exploration non armé. Alimenté par le réacteur de fission. Porte assez de matériau fissile pour fonctionner pour 55 périodes orbitales."
+

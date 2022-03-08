@@ -2,8 +2,7 @@
 --Translated by: Oaks
 CrateDrop_LOB_Hats="Bedny: Pouze Klobouky"
 CrateDrop_LOB_Hats_T="Bedny: Režim pouze klobouky"
-CrateDrop_LOB_Hats_D="Pokud je zapnut, bedny poskytují pouze klobouky.
-Upozornění: Ne všechny jednotky mohou nosit klobouky."
+CrateDrop_LOB_Hats_D="Pokud je zapnut, bedny poskytují pouze klobouky.\nUpozornění: Ne všechny jednotky mohou nosit klobouky."
 CrateDrop_LOB_Hats_false="Vypnuto"
 CrateDrop_LOB_Hats_falseT="Režim pouze klobouky vypnut"
 CrateDrop_LOB_Hats_falseD="Bedny poskytují klobouky normálně"

@@ -20,7 +20,7 @@ ssb9101_name="Iyathlabistle."
 ssb9201_name="Iyathlab."
 ssb9301_name="Iyathlub."
 
-Unit_Description_RND_005="Facilità di ricerca di base. Gente l'accesso a nuove unità e livelli tecnologici più elevati."
+Unit_Description_RND_005="Facilità di ricerca di base. Gente l'accesso a nuove unità e livelli di tecnologia più elevati."
 Unit_Description_RND_006="Facilità di ricerca intermedia. Ha aumentato la velocità di ricerca e la durata."
 Unit_Description_RND_007="Facilità di ricerca avanzata. Ha aumentato la velocità di ricerca e la durata."
 
@@ -47,7 +47,7 @@ ability_rnd_unlock="Sblocco di ricerca"
 ability_rnd_command="Costruito dall'unità di comando"
 ability_rnd_engineer="Costruito da ingegnere"
 ability_rnd_field="Costruito da un ingegnere sul campo"
-ability_rnd_factory="Costruito dalla fabbrica"
+ability_rnd_factory="Costruito dalla fabbrica."
 ability_rnd_gantry="Costruito dalla fabbrica sperimentale"
 ability_rnd_wall="Costruito sul muro"
 ability_rnd_upgrade="Costruito come upgrade."
@@ -118,6 +118,7 @@ ses0326_name="Км66 Seamonster."
 srs0326_name="Deltawing."
 sas0326_name="Lun Mallard."
 sss0326_name="Vishwiseyen."
+
 
 
 

@@ -75,25 +75,25 @@ tooltipbrewlan0033="Dostosuj [Array]"
 tooltipbrewlan0035="Przełącznik overextend."
 tooltipbrewlan0036="Zwiększa bezpośrednie zakresy broni pożarowej, ale poświęcenia prędkości ruchu i kosztów energii podczas aktywności."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Wspieraj ulepszenia dowódcy
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Dodaje możliwości budowy inżyniera pola do SACU."
 brewlan_enhancements_1="Suite Engineering Teren."
 brewlan_enhancements_2="Usuń apartament inżynierii polowej"
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 1.
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 sair0105="Lekki strój"
 saa0105_name="Respirator."
 sea0105_name="Gołąb"
 ssa0105_name="Vulesel."
-Unit_Description_BrewLAN_T1A001="Lekki strzał. Podstawową rolą jest obrona podstawowa. Skuteczne przeciwko niskiej jednostkom naziemnym."
+Unit_Description_BrewLAN_T1A001="Lekki strzał. Podstawową rolą jest obrona podstawy. Skuteczne przeciwko niskiej jednostkom naziemnym."
 Unit_Description_BrewLAN_T1A002="Lekki strzał. Skuteczne przeciwko niskiej jednostkom naziemnym. Wyposażony w lekki hak transportowy."
-Unit_Description_BrewLAN_T1A003="Lekki strzał. Podstawową rolą jest obrona podstawowa. Skuteczne przeciwko niskiej jednostkom naziemnym."
+Unit_Description_BrewLAN_T1A003="Lekki strzał. Podstawową rolą jest obrona podstawy. Skuteczne przeciwko niskiej jednostkom naziemnym."
 
 sair0106="Lekki Bombowiec Torpedo."
 saa0106_name="Saksinokka."
@@ -139,12 +139,12 @@ ses0119_name="Klasa Mendy"
 srs0119_name="Klasa Franklin"
 Unit_Description_BrewLAN_T1S001="TECH 1 Budowa, naprawa, przechwytywanie, rekultywacja i jednostka warstwy kopalnianej."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 2.
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 saa0211_name="Impalizujący"
-saa0211_desc="Bombowiec taktyczny."
+saa0211_desc="Bombowiec taktyczny"
 Unit_Description_BrewLAN_T2A001="Bombowiec taktyczny na poziomie. Wyposażony w lekką bombę i radar."
 
 --Inżynierowie pola
@@ -234,9 +234,9 @@ Unit_Description_BrewLAN_T2D006=" Automatycznie naprawia, odzyskuje, pomaga i za
 Unit_Description_BrewLAN_T2D007=" Automatycznie naprawia, odzyskuje, pomaga i zajmuje każdą jednostkę w swoim zasięgu."
 Unit_Description_BrewLAN_T2D008=" Automatycznie naprawia, odzyskuje, pomaga i zajmuje każdą jednostkę w swoim zasięgu."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 3.
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 sair0305="Ciężki śmigłowiec bojowy"
 ssa0305_name="Vulthuum."
@@ -345,7 +345,7 @@ Unit_Description_BrewLAN_T3L007="Tech 3 amfibii konstrukcja, naprawa, przechwyty
 srb1311_desc="Camouflowany generator mocy"
 seb1311_desc="Engineering Power Generator."
 sab1311_desc="Ekranowany generator mocy"
-ssb1311_desc="Generator mocy pancernej."
+ssb1311_desc="Generator mocy pancernej"
 sab1311_name="Von Mayer Reactor."
 seb1311_name="Reaktor Bessuer."
 srb1311_name="Reaktor Faraday."
@@ -383,7 +383,7 @@ ssb5301_name="Atahaas."
 sab5301_name="Egida"
 Unit_Description_BrewLAN_T3B0018="Ogranicza ruch jednostek wroga. Projekty mała kopuła Tarcza nad samym sobą, aby zapewnić dodatkową ochronę przed ogniem wroga."
 
-srb5310_desc="Sekcja ścianki pancernej."
+srb5310_desc="Sekcja ścianki pancernej"
 srb5310_name="Procyon Defiance."
 seb5310_name="Cytadela"
 Unit_Description_BrewLAN_T3B0019="Ogranicza ruch jednostek wroga. Może utrzymać ekstremalne ilości uszkodzenia. Łączy się z innymi sąsiednimi sekcjami ścianek pancernych."
@@ -507,7 +507,7 @@ srb4401="Eksperymentalny generator tarczy"
 srb4401_name="Żelazna Kurtyna"
 Unit_Description_BrewLAN_T4B003="Eksperymentalny generator tarczy. Chroni duży obszar."
 
-srs0401="Battleship eksperymentalny"
+srs0401="Battleship eksperymentalny."
 srs0401_name="Prześladowca OBSSSAL."
 Unit_Description_BrewLAN_T4S001="Eksperymentalny pancernik amfibiijny."
 

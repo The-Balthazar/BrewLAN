@@ -62,3 +62,4 @@ Unit_Description_BrewPen_010="Masivní letadlová doprava letadla. Může vytvá
 --dra0202_desc="Fighter / Bomber."
 sra0402_name="Dráp"
 Unit_Description_BrewPen_011="Kombinované stíhací / bombardovací letadlo navrženo tak, aby se zapojilo jak vzduch, tak pro povrchové jednotky."
+

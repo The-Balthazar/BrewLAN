@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Unarmed science and exploration rover drone. Po
 snlmsl1_desc="Science Laboratory Rover"
 snlmsl1_name="MSL Curiosity"
 .."Unarmed science and exploration rover vehicle. Powered by fission reactor. Carries enough fissile material to function for 55 orbital periods."
+

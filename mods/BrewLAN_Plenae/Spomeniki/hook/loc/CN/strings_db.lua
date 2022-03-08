@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="非武裝尋路無人機。「MER-2 精靈」�
 snlmsl1_desc="科學探測車"
 snlmsl1_name="MSL 好奇號"
 .."非武裝的科學探測車。「MSL 好奇號」使用裂變反應堆作為動力來源。它攜帶了足夠的燃料，因此可以運作55個週期。"
+

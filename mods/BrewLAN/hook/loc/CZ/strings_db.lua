@@ -75,17 +75,17 @@ tooltipbrewlan0033="Upravit [Array]"
 tooltipbrewlan0035="Overextend přepínat"
 tooltipbrewlan0036="Zvyšuje rozsahy přímé požární zbraně, ale obětuje rychlost pohybu a náklady na energii při aktivní."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Vylepšení Podpůrného Velitele
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Přidává stavitelské schopnosti polního technika do SACU"
 brewlan_enhancements_1="Souprava Polního Technika"
 brewlan_enhancements_2="Odebrat Soupravu Polního Technika"
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 1.
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 sair0105="Lehký Bitevník"
 saa0105_name="Respirer"
@@ -139,9 +139,9 @@ ses0119_name="Třída Mendy"
 srs0119_name="Třída Franklin"
 Unit_Description_BrewLAN_T1S001="Tech 1 obojživelná konstrukční, opravovací, zajímací, reklamační a mino-pokládací jednotka"
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 2
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 saa0211_name="Nabodávač"
 saa0211_desc="Taktický Bombardér"
@@ -234,9 +234,9 @@ Unit_Description_BrewLAN_T2D006=" Automaticky opravuje, recykluje, asistuje nebo
 Unit_Description_BrewLAN_T2D007=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním dosahu. "
 Unit_Description_BrewLAN_T2D008=" Automaticky opravuje, recykluje, asistuje nebo zajímá všechny jednotky ve svém operačním dosahu. "
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 3.
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 sair0305="Těžký Bitevník"
 ssa0305_name="Vulthuum"
@@ -285,7 +285,7 @@ Unit_Description_BrewLAN_T3B007="Velmi těžká obranná věž. Útočí na poze
 Unit_Description_BrewLAN_T3B008="Velmi těžká obranná věž. Útočí na pozemní a námořní jednotky výkonným dělem."
 
 seb3303_desc="Středisko Pozorovací Družice"
-seb3303b_desc="Komplex Vypouštění Družic""
+seb3303b_desc="Komplex Vypouštění Družic"
 Unit_Description_BrewLAN_T3B002="Vyrábí a vystřeluje družice."
 
 ability_satellite_uplink="Satelitní Uplink"
@@ -475,7 +475,7 @@ Unit_Description_BrewLAN_T3L017="Mobilní protinámořní vozidlo"
 Unit_Description_BrewLAN_T3L018="Mobilní protinámořní vznášedlo"
 
 ssb4317_desc="Radarová Rušička"
-ssb4317_name="Yathesel."
+ssb4317_name="Yathesel"
 Unit_Description_BrewLAN_T3B0029="Zařízení radarové rušičky. Vytváří velký počet falešných radarových signálů v rámci své působnosti, což způsobuje rozptýlení a narušuje zaměřění nepřítelem."
 ssa00002_desc="Hologram"
 

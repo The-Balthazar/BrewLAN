@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Drone de ciencia y exploración desarmados. Imp
 snlmsl1_desc="Ciencia Laboratorio Rover"
 snlmsl1_name="MSL curiosidad"
 .."Ciencia desarmada y vehículo móvil de exploración. Impulsado por el reactor de fisión. Lleva suficiente material fisial para funcionar para 55 períodos orbitales."
+

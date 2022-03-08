@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Neozbrojený věda a průzkum Rover Drone. Poh�
 snlmsl1_desc="Science Laboratory Rover."
 snlmsl1_name="MSL zvědavost"
 .."Neozbrojené vědy a průzkumné vozidlo. Poháněn štěpením reaktoru. Má dostatek štěpného materiálu pro funkci 55 orbitálních období."
+

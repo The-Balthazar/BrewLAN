@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Scienza disarmata e esplorazione Rover Drone. A
 snlmsl1_desc="Rover di laboratorio scientifico"
 snlmsl1_name="Curiosità MSL."
 .."Veicolo scientifico e esplorazione disarmato. Alimentato dal reattore di fissione. Trasporta abbastanza materiale fissile per funzionare per 55 periodi orbitali."
+

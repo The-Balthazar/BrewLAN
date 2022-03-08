@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Unbewaffnete Wissenschafts- und Erkundungsdrohn
 snlmsl1_desc="Wissenschaftslaborfahrzeug"
 snlmsl1_name="MSL Curiosity"
 .."Unbewaffnetes Wissenschafts- und Erkundungsfahrzeug. Von Spaltreaktor angetrieben. Trägt ausreichend spaltbares Material um für 55 Orbitalperioden zu funktionieren."
+

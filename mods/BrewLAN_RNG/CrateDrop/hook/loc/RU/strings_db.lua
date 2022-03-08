@@ -1,7 +1,7 @@
 --ISO_639-1_code=RU
 --Translated by: Ajay
 CrateDrop_LOB_Hats="Ящики: только шляпы"
-CrateDrop_LOB_Hats_T="Ящики: только шляпы""
+CrateDrop_LOB_Hats_T="Ящики: только шляпы"
 CrateDrop_LOB_Hats_D="Когда включено, из ящиков будут выпадать только шляпы. Внимание: не все единицы могут носить шляпы."
 CrateDrop_LOB_Hats_false="Отключено"
 CrateDrop_LOB_Hats_falseT="Режим \"только шляпы\" отключен"

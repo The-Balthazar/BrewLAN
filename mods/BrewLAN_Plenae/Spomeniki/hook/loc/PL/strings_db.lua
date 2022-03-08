@@ -17,3 +17,4 @@ Unit_Description__Spomeniki_003="Nieuzbrojona nauka i eksploracja Rover Drone. Z
 snlmsl1_desc="Rover laboratorium naukowego"
 snlmsl1_name="Ciekawość MSL."
 .."Nieuzbrojony pojazd Rover naukowy i eksploracji. Zasilany przez reaktora rozszczepiania. Niesie wystarczającą ilość materiału Fissile, aby funkcjonować dla 55 okresów orbitalnych."
+

@@ -75,17 +75,17 @@ tooltipbrewlan0033="Personalizar [Array]"
 tooltipbrewlan0035="Sobreextender alternar"
 tooltipbrewlan0036="Aumenta los rangos de armas de fuego directo, pero sacrifica la velocidad de movimiento y cuesta energía mientras está activa."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Apoyar las mejoras del comandante
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Unit_Description_BrewLAN_E001="Agrega capacidades de construcción de ingeniero de campo a la SACU."
 brewlan_enhancements_1="Suite de Ingeniería de Campo"
 brewlan_enhancements_2="Eliminar suite de ingeniería de campo"
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 1
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 sair0105="Cansancio ligero"
 saa0105_name="Respirador"
@@ -139,9 +139,9 @@ ses0119_name="Clase de mendy"
 srs0119_name="Clase de Franklin"
 Unit_Description_BrewLAN_T1S001="Tech 1 Construcción, Reparación, Captura, Reclamación y Mina Unidad de Capa."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 2
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 saa0211_name="Impalor"
 saa0211_desc="Bombardero táctico"
@@ -234,9 +234,9 @@ Unit_Description_BrewLAN_T2D006="Repara, recupera, ayuda o captura automáticame
 Unit_Description_BrewLAN_T2D007="Repara, recupera, ayuda o captura automáticamente cualquier unidad dentro de su radio de acción."
 Unit_Description_BrewLAN_T2D008="Repara, recupera, ayuda o captura automáticamente cualquier unidad ubicada en su radio de operación."
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tech 3
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 sair0305="Cañonera pesada"
 ssa0305_name="Vultreo"
@@ -465,7 +465,7 @@ srl0324_desc="Arreglo de sensores móviles"
 srl0324_name="Adramelech"
 sal0324_name="Metrón"
 ssl0324_name="Yenesel"
-Unit_Description_BrewLAN_T3L016="Sistema de inteligencia móvil de alta gama. Mientras estacionario es visible solo para Omni, y proporciona una extensa cobertura de radar y Omni."
+Unit_Description_BrewLAN_T3L016="Sistema de inteligencia móvil de alta gama. Mientras estacionario es visible solo para Omni, y proporciona una extensa cobertura de radar y OMNI."
 Unit_Description_BrewLAN_T3L019="Arreglo de sensor de flotante. Consume grandes cantidades de poder para funcionar."
 
 sl0325_desc="Lanzador de torpedo móvil"

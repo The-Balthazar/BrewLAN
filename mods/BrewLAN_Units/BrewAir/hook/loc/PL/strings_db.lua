@@ -14,7 +14,7 @@ saa0213_name="Jasność"
 Unit_Description_BrewPen_002="Kombinowany myśliwiec / bombowiec przeznaczony do angażowania zarówno jednostek lądowych, jak i lotniczych."
 
 --Dedykowane bombowce taktyczne
-saa0211_desc="Bombowiec taktyczny."
+saa0211_desc="Bombowiec taktyczny"
 sea0211_name="Tornado"
 ssa0211_name="Sinn."
 sra0211_name="Kondor"
@@ -62,3 +62,4 @@ Unit_Description_BrewPen_010="Masywny samolot lotniczy. Może tworzyć, transpor
 --dra0202_desc="Myśliwiec / bombowiec."
 sra0402_name="Talon"
 Unit_Description_BrewPen_011="Połączony samolot myśliwski / bombowiec zaprojektowany do angażowania jednostek powietrza i powierzchni."
+

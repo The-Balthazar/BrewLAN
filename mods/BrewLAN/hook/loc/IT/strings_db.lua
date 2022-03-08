@@ -87,7 +87,7 @@ brewlan_enhancements_2="Rimuovere la suite di ingegneria del campo"
 -- Tech 1.
 --------------------------------------------------------------------------------
 
-sair0105="Gunship leggero"
+sair0105="Gunship leggero."
 saa0105_name="Respiro"
 sea0105_name="Piccione"
 ssa0105_name="Vulcesel."

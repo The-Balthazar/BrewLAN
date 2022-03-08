@@ -62,3 +62,4 @@ Unit_Description_BrewPen_010="實驗性空中航母。可以建造，運輸和�
 --dra0202_desc="戰機/轟炸機"
 sra0402_name="鉤爪"
 Unit_Description_BrewPen_011="「鉤爪」是一種結合戰鬥機/轟炸機的多功能載具，它能消滅來犯的地面和空中單位。"
+

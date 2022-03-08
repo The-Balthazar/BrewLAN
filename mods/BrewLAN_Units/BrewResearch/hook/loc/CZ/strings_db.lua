@@ -16,7 +16,7 @@ sab9101_name="Porozumění"
 sab9201_name="Vedení"
 sab9301_name="Osvícení"
 --Seraphim.
-ssb9101_name="Iyathlabistle."
+ssb9101_name="Iyathlabistle"
 ssb9201_name="Iyathlab."
 ssb9301_name="Iyathluub."
 
@@ -58,7 +58,7 @@ srnd9200_desc="Výzkum technologie"
 srnd9300_desc="Výzkum technologie"
 srnd9400_desc="Výzkum experimentálního tech"
 
-Unit_Description_RND_001="Odemkne další technologie Tech 1 a výzkum jednotek."
+Unit_Description_RND_001="Odemkne další technologie Tech 1 a výzkum jednotky."
 Unit_Description_RND_002="Odemkne Tech 2 jednotky a jednotkový výzkum."
 Unit_Description_RND_003="Odemkne Tech 3 jednotky a jednotkový výzkum."
 Unit_Description_RND_004="Odemkne experimentální jednotky a jednotkový výzkum."
@@ -118,6 +118,7 @@ ses0326_name="Км66 Seamonster."
 srs0326_name="Deltawing."
 sas0326_name="Lun Mallard"
 sss0326_name="VishWiseyen."
+
 
 
 

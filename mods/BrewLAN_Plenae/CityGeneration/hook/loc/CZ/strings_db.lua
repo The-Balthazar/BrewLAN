@@ -11,7 +11,7 @@ CityscapesSpawn_LOB_OccupiedSlotsD="Města mohou potěšit kolem hráčů."
 CityscapesSpawn_LOB_false="Žádné sloty"
 CityscapesSpawn_LOB_falseD="Města nebudou spawn na hráče Chowwn Location."
 
-CityscapesTeam_LOB="Městské scenérie: Hráč slot tým"
+CityscapesTeam_LOB="Městské scenérie: Hráč slot Team"
 CityscapesTeam_LOB_D="Definuje majitele měst plodených v obsazených slotech, pokud existují."
 CityscapesTeam_LOB_Civilian="Civilní"
 CityscapesTeam_LOB_CivilianD="Města v obsazených slotech jsou civilní."
