@@ -35,6 +35,6 @@ CityscapesLargeExpansion_LOB_DisabledD="Żadne miast na dużych markerach rozsze
 CityscapesObjective_LOB="Pejzaż miejscy: Obiektywne znaczniki"
 CityscapesObjective_LOB_D="Określa, czy miasta pojawiają się na dowolnych obiektywnych markerach."
 CityscapesObjective_LOB_Enabled="Włączony"
-CityscapesObjective_LOB_EnabledD="Cywilne miasta pojawiają się na obiektywnych markerach."
+CityscapesObjective_LOB_EnabledD="Cywilne miasta pojawiają się w obiektywnych markerach."
 CityscapesObjective_LOB_Disabled="Wyłączone"
 CityscapesObjective_LOB_DisabledD="Żadne miasta pojawiają się w obiektywnych markerach."

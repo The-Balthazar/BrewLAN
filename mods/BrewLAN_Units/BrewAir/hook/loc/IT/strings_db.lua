@@ -23,6 +23,11 @@ Unit_Description_BrewPen_003="Aeromobile bombardiere intermedio."
 ----------------------------------------
 -- Tech 3.
 ----------------------------------------
+
+sea0312_desc="Strike Fighter."
+sea0312_name="Fulcro"
+Unit_Description_BrewPen_012="Combattente multistrato di fascia alta. Dotato di missili. Esegue meglio contro obiettivi blindati leggeri come gli aeromobili."
+
 --T3.5 Bombardieri avanzati
 --sa0314_desc="Penetratore"
 sa0314_desc="Bomber del penetratore."
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Massiccio portaerei aeronautico. Può creare, tras
 --dra0202_desc="Combattente / bombardiere"
 sra0402_name="Talone"
 Unit_Description_BrewPen_011="Compace da combattente / aereo bomber progettato per coinvolgere sia unità di aria che di superficie."
-
-

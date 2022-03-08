@@ -14,7 +14,7 @@ saa0213_name="Jasność"
 Unit_Description_BrewPen_002="Kombinowany myśliwiec / bombowiec przeznaczony do angażowania zarówno jednostek lądowych, jak i lotniczych."
 
 --Dedykowane bombowce taktyczne
-saa0211_desc="Bombowiec taktyczny"
+saa0211_desc="Bombowiec taktyczny."
 sea0211_name="Tornado"
 ssa0211_name="Sinn."
 sra0211_name="Kondor"
@@ -23,8 +23,13 @@ Unit_Description_BrewPen_003="Pośredni samolot bombowiec."
 ----------------------------------------
 -- Tech 3.
 ----------------------------------------
+
+sea0312_desc="Strajk"
+sea0312_name="Punkt podparcia"
+Unit_Description_BrewPen_012="High-end Multirole Fighter. Wyposażony w pociski. Występuje najlepiej przed lekkimi celami pancernymi, takimi jak samolot."
+
 --T3.5 Zaawansowane bombowce.
---sa0314_desc="Penetator"
+--sa0314_desc="Penetator."
 sa0314_desc="Penetra bombowiec."
 sea0314_name="Ułan"
 saa0314_name="Wrzask"
@@ -38,7 +43,7 @@ ability_missiledef="Obrona rakietowa"
 --T3.5 Zaawansowani wojownicy
 sa0313_desc="Penetracja Fighter."
 sea0313_name="Kocur"
-saa0313_name="Helios"
+saa0313_name="Helios."
 sra0313_name="Twilight Patron."
 ssa0313_name="Ialosaare."
 Unit_Description_BrewPen_005="Top-end długi zasięg Stealth Fighter. Wyposażony w bliźniacze surowe railguns, pociski powietrza do powietrza i flary antyrakiatyczne."
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Masywny samolot lotniczy. Może tworzyć, transpor
 --dra0202_desc="Myśliwiec / bombowiec."
 sra0402_name="Talon"
 Unit_Description_BrewPen_011="Połączony samolot myśliwski / bombowiec zaprojektowany do angażowania jednostek powietrza i powierzchni."
-
-

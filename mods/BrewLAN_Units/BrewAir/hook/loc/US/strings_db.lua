@@ -23,6 +23,11 @@ Unit_Description_BrewPen_003="Intermediate bomber aircraft."
 ----------------------------------------
 -- Tech 3
 ----------------------------------------
+
+sea0312_desc="Strike Fighter"
+sea0312_name="Fulcrum"
+Unit_Description_BrewPen_012="High-end multirole fighter. Equipped with missiles. Performs best against light armored targets such as aircraft."
+
 --T3.5 Advanced bombers
 --sa0314_desc="Penetrator"
 sa0314_desc="Penetrator Bomber"
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Massive airborne aircraft carrier. Can create, tra
 --dra0202_desc="Fighter/Bomber"
 sra0402_name="Talon"
 Unit_Description_BrewPen_011="Combination fighter/bomber aircraft designed to engage both air and surface units."
-
-

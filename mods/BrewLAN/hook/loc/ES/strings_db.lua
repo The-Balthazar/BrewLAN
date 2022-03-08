@@ -5,9 +5,9 @@
 --¦▒▒▒▒▒▒▒▒▒▒▒▒¦--¦   Translator: Google
 --+------------+--+-------------------------------------------------------------
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Tooltips
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 --Tooltips para el pórtico
 tooltipbrewlan0000="Alternar la producción de aire"
@@ -42,10 +42,10 @@ tooltipbrewlan0016="Interrupción pulso palanca"
 tooltipbrewlan0017="Alternar el pulso de interrupción Omni ON o OFF."
 
 --Tooltips para el comando rez / reclamación.
---tooltipbrewlan0018=#ERROR!
+--tooltipbrewlan0018="Reclamar"
 tooltipbrewlan0019="Recupera una unidad o reseña y aprende su plan."
 
-#ERROR!
+--Tooltips para el stargate
 tooltipbrewlan0020="Gateway de marcación"
 tooltipbrewlan0021="Selecciona una puerta de enlace Quantum de destino con la que para crear un enlace de transporte de un solo sentido."
 tooltipbrewlan0022="Habilitar o deshabilitar el escudo que evita el acceso dentro o fuera de la puerta de enlace."
@@ -342,7 +342,7 @@ Unit_Description_BrewLAN_T3L005="Tech 3 construcción anfibia, reparación, capt
 Unit_Description_BrewLAN_T3L006="Tech 3 construcción anfibia, reparación, captura, reclamación y unidad de la capa de la mina. Está equipado con armamento menor, tiene Sonar Shealth, y puede construir defensas especializadas."
 Unit_Description_BrewLAN_T3L007="Tech 3 construcción anfibia, reparación, captura, reclamación y unidad de la capa de la mina. Está equipado con un escudo personal y puede construir defensas especializadas."
 
-srb1311_desc=#ERROR!
+srb1311_desc="Generador de energía camuflado"
 seb1311_desc="Generador de energía de ingeniería"
 sab1311_desc="Generador de energía blindada"
 ssb1311_desc="Generador de energía blindada"
@@ -357,7 +357,7 @@ Unit_Description_BrewLAN_T3B0016="Gran estructura generadora de energía. Posee 
 
 sab1312_desc="Extractor de masa blindada"
 seb1312_desc="Extractor de masa de ingeniería"
-srb1312_desc=#ERROR!
+srb1312_desc="Extractor de masa camuflada"
 ssb1312_desc="Extractor de masa blindada"
 seb1312_name="Bomba masiva 3e"
 Unit_Description_BrewLAN_T3B0021="Extractor de masa de alta gama. Debe construirse en depósitos de masa. Genera una cúpula de escudo lo suficientemente grande como para cubrirse y 4 pequeños almacenes."
@@ -365,7 +365,7 @@ Unit_Description_BrewLAN_T3B0022="Extractor de masa de alta gama. Debe construir
 Unit_Description_BrewLAN_T3B0023="Extractor de masa de alta gama. Debe construirse en depósitos de masa. Visible solo a Omni."
 Unit_Description_BrewLAN_T3B0024="Extractor de masa de alta gama. Debe construirse en depósitos de masa. Posee una armadura superior y tiene capacidades auto regenerativas."
 
-srb1313_desc=#ERROR!
+srb1313_desc="Fabricante de masa camuflada"
 seb1313_desc="Fabricante de masa de ingeniería"
 sab1313_desc="Fabricante de masa blindada"
 ssb1313_desc="Fabricante de masa blindada"
@@ -521,7 +521,7 @@ Unit_Description_BrewLAN_T4B004="Fábrica experimental multiusos. Cambia dinámi
 
 sal0401="Tanque de asedio experimental"
 sal0401_name="Absolución"
-Unit_Description_BrewLAN_T4L002="Tanque de asalto de asedio de flotación experimental. Equipado con un poderoso olvido de los cañones y las defensas de misiles tácticos."
+Unit_Description_BrewLAN_T4L002="Tanque de asalto de asedio de flotación experimental. Equipado con un poderoso olvido de los cañones y las defensas de misiles tácticas."
 
 seb2404="Artillería experimental de caída."
 seb2404_name="Ivan"
@@ -541,11 +541,11 @@ srl0002_desc=srl0000_desc .. " (Ingeniero de campo)"
 srl0003_desc=srl0000_desc .. " (Sigilo)"
 srl0004_desc=srl0000_desc .. " (Anti aire)"
 srl0005_desc=srl0000_desc .. " (" .. srl0321_name .. ")"
-srl0006_desc=#ERROR!
+srl0006_desc=srl0000_desc .. " (Mrl)"
 
 seb3404_desc="Arreglo experimental del sensor"
 seb3404_name="Panóptico"
-Unit_Description_BrewLAN_T4B008=#ERROR!
+Unit_Description_BrewLAN_T4B008="Arreglo experimental del sensor. Cuando está completamente activado, proporciona línea de visión para las unidades enemigas dentro de su radio operativo que son visibles para los sensores disponibles, como el radar. Costos de mantenimiento POR UNIDAD ADICIONAL POR UNIDAD EN SER SPIEJA. Las unidades móviles y las unidades grandes cuestan más para espiar."
 
 Panopticon_array_slot="Formación"
 Unit_Description_BrewLAN_T4B008_sre="Aumenta el radio del radar."

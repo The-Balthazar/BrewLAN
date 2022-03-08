@@ -23,6 +23,11 @@ Unit_Description_BrewPen_003="Bombardier Intermédiaire"
 ---------------------------------------------
 -- Tech 3
 ---------------------------------------------
+
+sea0312_desc="Combattant"
+sea0312_name="Pivot"
+Unit_Description_BrewPen_012="Combattant multirôle haut de gamme. Équipé de missiles. Effectue la meilleure des cibles blindées légères telles que des aéronefs."
+
 --Bombardiers avancés T3.5
 --sa0314_desc="Pénétrateur"
 sa0314_desc="Bombardier de pénétrateur"
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Porte-avions volumineux. Peut créer, transporter 
 --dra0202_desc="Chasseur / bombardier"
 sra0402_name="Talon"
 Unit_Description_BrewPen_011="Combinaison / avion bombardier conçu pour engager des unités d'air et de surface."
-
-

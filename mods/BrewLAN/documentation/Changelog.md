@@ -45,3 +45,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-03-07
 
 * Moved the Independence Engine size values into the blueprint proper.
+
+### 2022-03-08
+
+* Fixed numerous translation export issues.

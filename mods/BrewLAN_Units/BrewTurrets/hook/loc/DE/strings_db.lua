@@ -41,8 +41,7 @@ Unit_Description_BrewLAN_Turrets_0006="Punktverteidigungsturm. Mit einer massive
 
 srb2391_name="Tesla-Spule"
 srb2391_desc="Schwere Punktverteidigung"
-Unit_Description_BrewLAN_Turrets_0007="Leistungsstarker Defensivturm mit kurzer Reichweite. Energie wird allmählich aufgeladen und entlädt sich beim Abfeuern vollständig.
-Am effektivsten gegen große Einzelziele, wenn voll aufgeladen. Sehr ineffektiv bei anhaltendem Feuer."
+Unit_Description_BrewLAN_Turrets_0007="Leistungsstarker Defensivturm mit kurzer Reichweite. Energie wird allmählich aufgeladen und entlädt sich beim Abfeuern vollständig.\nAm effektivsten gegen große Einzelziele, wenn voll aufgeladen. Sehr ineffektiv bei anhaltendem Feuer."
 
 --Dies wird von der Tesla-Spule verwendet
 tooltipbrewturrets0000="Waffenaufladung Umschalten"

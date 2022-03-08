@@ -23,6 +23,11 @@ Unit_Description_BrewPen_003="Mezilehlé bombardovací letadlo."
 ----------------------------------------
 -- Tech 3.
 ----------------------------------------
+
+sea0312_desc="Strike bojovník"
+sea0312_name="Fulcrum."
+Unit_Description_BrewPen_012="High-end multirolový bojovník. Vybavené raketami. Provádí nejlépe proti světelným obrněným cílům, jako je letadlo."
+
 --T3.5 Pokročilé bombardéry
 --sa0314_desc="Penetrátor"
 sa0314_desc="Průnikový Bombardér"
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Masivní letadlová doprava letadla. Může vytvá
 --dra0202_desc="Fighter / Bomber."
 sra0402_name="Dráp"
 Unit_Description_BrewPen_011="Kombinované stíhací / bombardovací letadlo navrženo tak, aby se zapojilo jak vzduch, tak pro povrchové jednotky."
-
-

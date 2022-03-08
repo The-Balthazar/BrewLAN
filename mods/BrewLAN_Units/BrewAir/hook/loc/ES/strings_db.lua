@@ -23,6 +23,11 @@ Unit_Description_BrewPen_003="Aviones de bombardero intermedio."
 ----------------------------------------
 -- Tech 3
 ----------------------------------------
+
+sea0312_desc="Luchador"
+sea0312_name="Fulcro"
+Unit_Description_BrewPen_012="Luchador de múltiples finales de alta gama. Equipado con misiles. Realiza mejor contra objetivos blindados ligeros, como aeronaves."
+
 --T3.5 bombarderos avanzados
 --sa0314_desc="Penetrador"
 sa0314_desc="Bombardero penetrador"
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Portador de aviones masivos aerotransportados. Pue
 --dra0202_desc="Luchador / bombardero"
 sra0402_name="Garra"
 Unit_Description_BrewPen_011="Combinación de luchador / aeronave bombardero diseñado para enganchar tanto las unidades de aire como en la superficie."
-
-

@@ -5,9 +5,9 @@
 --¦████████████¦--¦   Translator: Google
 --+------------+--+-------------------------------------------------------------
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Nakłady
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 --Nakłady na bramę
 tooltipbrewlan0000="Przełącz produkcję powietrza"
@@ -144,7 +144,7 @@ Unit_Description_BrewLAN_T1S001="TECH 1 Budowa, naprawa, przechwytywanie, rekult
 ----------------------------------------------------------------------------------
 
 saa0211_name="Impalizujący"
-saa0211_desc="Bombowiec taktyczny"
+saa0211_desc="Bombowiec taktyczny."
 Unit_Description_BrewLAN_T2A001="Bombowiec taktyczny na poziomie. Wyposażony w lekką bombę i radar."
 
 --Inżynierowie pola
@@ -342,10 +342,10 @@ Unit_Description_BrewLAN_T3L005="Tech 3 amfibii konstrukcja, naprawa, przechwyty
 Unit_Description_BrewLAN_T3L006="Tech 3 amfibii konstrukcja, naprawa, przechwytywanie, rekultywacja i jednostka warstwy kopalnianej. Jest wyposażony w mniejszą broń, ma Sonar Stealth i może zbudować specjalistyczne obrony."
 Unit_Description_BrewLAN_T3L007="Tech 3 amfibii konstrukcja, naprawa, przechwytywanie, rekultywacja i jednostka warstwy kopalnianej. Jest wyposażony w osobistą tarczę i może zbudować specjalistyczne obrony."
 
-srb1311_desc=#ERROR!
+srb1311_desc="Camouflowany generator mocy"
 seb1311_desc="Engineering Power Generator."
 sab1311_desc="Ekranowany generator mocy"
-ssb1311_desc="Generator mocy pancernej"
+ssb1311_desc="Generator mocy pancernej."
 sab1311_name="Von Mayer Reactor."
 seb1311_name="Reaktor Bessuer."
 srb1311_name="Reaktor Faraday."
@@ -357,15 +357,15 @@ Unit_Description_BrewLAN_T3B0016="Duża struktura wytwarzania energii. Posiada l
 
 sab1312_desc="Ekranowany ekstraktor masowy"
 seb1312_desc="Extractor Mass Engineering."
-srb1312_desc=#ERROR!
-ssb1312_desc="Rozciągnik masy pancernej."
+srb1312_desc="Zakamuflowany ekstraktor masowy"
+ssb1312_desc="Rozciągnik masowy pancerny."
 seb1312_name="Pompa masowa 3e."
 Unit_Description_BrewLAN_T3B0021="Wysokiej klasy ekstraktor masowy. Musi być skonstruowany na masowych osadach. Generuje duża kopuła tarcza wystarczająco duża, aby pokryć się i 4 małe magazyny."
 Unit_Description_BrewLAN_T3B0022="Wysokiej klasy ekstraktor masowy. Musi być skonstruowany na masowych osadach. Posiada zdolność do naprawy pobliskich budynków. Automatycznie buduje obronę po uszkodzeniu."
 Unit_Description_BrewLAN_T3B0023="Wysokiej klasy ekstraktor masowy. Musi być skonstruowany na masowych osadach. Widoczne tylko do Omni."
 Unit_Description_BrewLAN_T3B0024="Wysokiej klasy ekstraktor masowy. Musi być skonstruowany na masowych osadach. Posiada lepszą zbroję i ma możliwości samodzielne regeneracyjne."
 
-srb1313_desc=#ERROR!
+srb1313_desc="Zakamuflowany materiał masy"
 seb1313_desc="Inżynieria Mass Fabinator."
 sab1313_desc="Ekranowany masowy producent."
 ssb1313_desc="Opancerzony producent masy"
@@ -451,7 +451,7 @@ srl0312_name="Toksotai."
 Unit_Description_BrewLAN_T3L024="Zbiornik stealth. Uzbrojony z bliźniaczymi armatami protonowymi, podwójnym wyrzutnią rakietową i obroną torped."
 
 ss0319_desc="Statek inżynierii polowej"
-ses0319_name="Klasa łatek"
+ses0319_name="Klasa patch"
 srs0319_name="Stillson Class."
 Unit_Description_BrewLAN_T3S002="Tech 3 konstrukcja morska, naprawa, przechwytywanie i rekultywacja. Wyposażony w zatokę torpedową, obronę anty-torpedową i pojedynczą bronią AA."
 Unit_Description_BrewLAN_T3S003="Tech 3 konstrukcja morska, naprawa, przechwytywanie, ponowne obliczanie i jednostka warstwy kopalnianej."
@@ -570,7 +570,7 @@ brewlan_panopticon_med_003r="Dezaktywuj danie Mogwai"
 brewlan_panopticon_med_004r="Dezaktywuj neutralne naczynie"
 brewlan_panopticon_xbl_001r="Dezaktywuj danie saksońskie"
 
-sab0401="Eksperymentalna fabryka lotnicza."
+sab0401="Eksperymentalna fabryka lotnicza"
 sab0401_name="Silnik niezależności"
 Unit_Description_BrewLAN_T4B009="Konstruuje jednostki powietrzne."
 

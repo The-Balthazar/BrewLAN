@@ -13,7 +13,7 @@ sa0213_desc="Jagdbomber"
 saa0213_name="Lucidity"
 Unit_Description_BrewPen_002="Kombination aus Kampfflugzeug und Bomber, der sowohl Land- als auch Lufteinheiten angreift."
 
---Dedizierte taktische Bomber
+--Dedizierte taktische Bomber.
 saa0211_desc="Taktischer Bomber"
 sea0211_name="Tornado"
 ssa0211_name="Sinn"
@@ -23,6 +23,11 @@ Unit_Description_BrewPen_003="Mittelschwerer Bomber"
 ------------------------------------------
 -- Tech 3.
 ------------------------------------------
+
+sea0312_desc="Schlagkämpfer"
+sea0312_name="Drehpunkt"
+Unit_Description_BrewPen_012="High-End-Multirole-Kämpfer. Ausgestattet mit Raketen. Führt am besten gegen leichte gepanzerte Ziele wie Flugzeuge aus."
+
 --T3.5 Fortgeschrittene Bomber.
 --sa0314_desc="Penetrator"
 sa0314_desc="Penetrations-Bomber"
@@ -57,5 +62,3 @@ Unit_Description_BrewPen_010="Massiver fliegender Flugzeugträger. Kann große A
 --dra0202_desc="Kampfflugzeug / Bomber"
 sra0402_name="Talon"
 Unit_Description_BrewPen_011="Kombination aus Kampfflugzeug und Bomber, welcher sowohl Luft- als auch Bodeneinheiten angreifen kann."
-
-

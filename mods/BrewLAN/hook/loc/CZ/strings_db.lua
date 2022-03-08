@@ -5,15 +5,15 @@
 --¦████████████¦--¦   Translator: Oaks
 --+------------+--+-------------------------------------------------------------
 
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Popisky
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 -- Popisky pro Gantry
 tooltipbrewlan0000="Zapnout/vypnout výrobu leteckých jednotek"
 tooltipbrewlan0001="Zapíná nebo vypíná produkci leteckých jednotek"
 
-"Popisky pro T3 návnadové letouny"
+--Popisky pro T3 návnadové letouny
 tooltipbrewlan0002="Přepnout vzdušnou rychlost"
 tooltipbrewlan0003="Přepíná imitaci jednotky letecké převahy nebo CZAR"
 tooltipbrewlan0004="Přepíná imitaci jednotky letecké převahy nebo Soul Ripper"
@@ -28,7 +28,7 @@ tooltipbrewlan0008="Ihned odpálit nálož"
 tooltipbrewlan0009="Vyčistit stavební plochu"
 tooltipbrewlan0010="Odstraní všechny budovy nebo zbytky ze stavební plochy"
 
-"Popisky pro Serafimské sledovací zařízení"
+--Popisky pro Serafimské sledovací zařízení
 tooltipbrewlan0011="Předpovídání"
 tooltipbrewlan0012="Vyberte jednotku pro sledování"
 
@@ -492,7 +492,7 @@ ssl0403_desc="Experminentální Rekonstrukční Technik"
 ssl0403_name="Iyadesu"
 Unit_Description_BrewLAN_T4L001="Experimentální obojživelné opravovací, zajímací,reklamační a rekonstrukční jednotka. Získává schémata jednotek a vraků jejich reklamací. Může mít pouze 8 schémat najednou."
 ssa00001_desc="Dron"
-ssa0001_desc=#VALUE!
+ssa0001_desc="Rekonstrukce drone."
 
 sea0401_desc="Experimentální Protiletecká Helikoptéra"
 sea0401_name="AC-500 Centurion"

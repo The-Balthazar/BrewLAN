@@ -87,7 +87,7 @@ brewlan_enhancements_2="Rimuovere la suite di ingegneria del campo"
 -- Tech 1.
 --------------------------------------------------------------------------------
 
-sair0105="Gunship leggero."
+sair0105="Gunship leggero"
 saa0105_name="Respiro"
 sea0105_name="Piccione"
 ssa0105_name="Vulcesel."
@@ -342,7 +342,7 @@ Unit_Description_BrewLAN_T3L005="Tech 3 Costruzione anfibio, riparazione, cattur
 Unit_Description_BrewLAN_T3L006="Tech 3 Costruzione anfibio, riparazione, cattura, bonifica, bonifica e unità del layer. È dotato di armi minori, ha Sonar Stealth e può costruire difese specialistiche."
 Unit_Description_BrewLAN_T3L007="Tech 3 Costruzione anfibio, riparazione, cattura, bonifica, bonifica e unità del layer. È dotato di uno scudo personale e può costruire difese specialistiche."
 
-srb1311_desc=#ERROR!
+srb1311_desc="Generatore di energia mimetica"
 seb1311_desc="Generatore di energia ingegneristico."
 sab1311_desc="Generatore di energia schermata"
 ssb1311_desc="Generatore di energia corazzata"
@@ -357,7 +357,7 @@ Unit_Description_BrewLAN_T3B0016="Grande struttura di generazione di energia. Po
 
 sab1312_desc="Estrattore di massa schermato"
 seb1312_desc="Estrattore di massa di ingegneria"
-srb1312_desc=#ERROR!
+srb1312_desc="Estrattore di massa mimetizzato"
 ssb1312_desc="Estrattore di massa blindata"
 seb1312_name="Pompa di massa 3E."
 Unit_Description_BrewLAN_T3B0021="Estrattore di massa di fascia alta. Deve essere costruito sui depositi di massa. Genera una cupola di scudo abbastanza grande da coprire se stessa e 4 piccoli depositi."
@@ -365,7 +365,7 @@ Unit_Description_BrewLAN_T3B0022="Estrattore di massa di fascia alta. Deve esser
 Unit_Description_BrewLAN_T3B0023="Estrattore di massa di fascia alta. Deve essere costruito sui depositi di massa. Visibile solo a Omni."
 Unit_Description_BrewLAN_T3B0024="Estrattore di massa di fascia alta. Deve essere costruito sui depositi di massa. Possiede un'armatura superiore e ha capacità auto rigenerative."
 
-srb1313_desc=#ERROR!
+srb1313_desc="Fabbricatore di massa mimetica"
 seb1313_desc="Fabbricazione di massa di ingegneria."
 sab1313_desc="Fabbricatore di massa schermata"
 ssb1313_desc="Fabbricatore di massa blindata"
@@ -507,7 +507,7 @@ srb4401="Generatore sperimentale sperimentale."
 srb4401_name="Cortina di ferro"
 Unit_Description_BrewLAN_T4B003="Generatore di scudo sperimentale. Protegge una vasta area."
 
-srs0401="Battleship sperimentale."
+srs0401="Battleship sperimentale"
 srs0401_name="Persecutore abissalo"
 Unit_Description_BrewLAN_T4S001="Battleship anfibio sperimentale."
 
