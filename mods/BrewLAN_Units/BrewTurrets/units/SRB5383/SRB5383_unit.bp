@@ -8,8 +8,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
-        --'BUILTBYTIER3NODEENGINEER',
         'CYBRAN',
+        'NODE',
         'STRUCTURE',
         'TECH3',
         'DRAGBUILD',

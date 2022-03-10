@@ -10,6 +10,7 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'UEF',
+        'NODE',
         'STRUCTURE',
         'TECH3',
         'DRAGBUILD',
