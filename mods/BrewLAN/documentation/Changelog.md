@@ -51,6 +51,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 * Fixed numerous translation export issues.
 * Purged `:GetEntityId()`
 
+### 2022-03-09
+
+* Minted some phat coins.
+
 ### 2022-03-10
 
 * Gave node structures the node category to make sure they get the node icon.
+* Finished basic coin infrastructure. (New mod)
