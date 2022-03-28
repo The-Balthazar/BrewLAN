@@ -32,3 +32,6 @@ Description['sra0315'] = "<LOC Unit_Description_BrewPen_009>Heavy interdiction a
 --Experimental
 Description['sra0401'] = "<LOC Unit_Description_BrewPen_010>Massive airborne aircraft carrier. Can create, transport, and deploy large numbers of fighter/bomber craft."
 Description['sra0402'] = "<LOC Unit_Description_BrewPen_011>Combination fighter/bomber aircraft designed to engage both air and surface units."
+
+-- Carpet bombers
+Description['sra0308'] = "<LOC Unit_Description_BrewPen_012>Obliteration bomber. Inflicts large damage over a large area."

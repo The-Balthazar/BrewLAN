@@ -59,3 +59,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Gave node structures the node category to make sure they get the node icon.
 * Finished basic coin infrastructure. (New mod)
+
+### 2022-03-28
+
+* Penetration: New (unfinished) Cybran carpet bomber.
+
+### 2022-03-30
+
+* Penetration: Finished the Cybran T3 Carpet Bomber.

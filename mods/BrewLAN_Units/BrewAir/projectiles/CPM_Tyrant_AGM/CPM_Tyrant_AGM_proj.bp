@@ -36,10 +36,9 @@ ProjectileBlueprint {
             LODs = {
                 {
                     LODCutoff = 150,
-                    --MeshName = '/projectiles/CDFRocketIridium01/CDFRocketIridium01_lod0.scm',
-                    AlbedoName = '/mods/brewlan_units/brewair/units/sra0314/sra0314_albedo.dds',
-                    NormalsName = '/mods/brewlan_units/brewair/units/sra0314/sra0314_normalsts.dds',
-                    SpecularName = '/mods/brewlan_units/brewair/units/sra0314/sra0314_specteam.dds',
+                    AlbedoName = '../../units/sra0314/sra0314_albedo.dds',
+                    NormalsName = '../../units/sra0314/sra0314_normalsts.dds',
+                    SpecularName = '../../units/sra0314/sra0314_specteam.dds',
                     ShaderName = 'TMeshAlpha',
                 },
             },
