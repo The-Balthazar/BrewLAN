@@ -303,6 +303,13 @@ UnitData = {
     SRA0307 = {
         Trivia = '"Zenith" was the first unit added to *BrewLAN* with an almost completely custom model.',
     },
+    SRA0308 = {
+        Trivia = {
+            '"Diespiter" was a commissioned unit.',
+            'The name "Diespiter" is a pre-Roman Italic equivalent of the Roman god Jupiter.',
+            'The design is loosely based on old unused GPG concept art.',
+        },
+    },
     SRA0313 = {
         Videos = {
             {YouTube = 'QIBbM6kEPnc', 'Time-lapse'},

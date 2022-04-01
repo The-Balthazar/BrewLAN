@@ -6,6 +6,8 @@ do
     local CurrencyStyle = {
         { name='Brewcoin', colour='00bfff' },
         { name='Teatherium', colour='45af55' },
+        { name='Sprouter', colour='bbea70' },
+        { name='Dosh', colour='d8c70f' },
     }
 
     local oldCreateUI = CreateUI
@@ -52,7 +54,17 @@ do
         oldBeatFunction()
         local army = GetFocusArmy()
         for i, coindata in ipairs(CurrencyStyle) do
-            GUI.crypto[coindata.name..'rate']:SetText(Currency[coindata.name].BrainTotals[army] or 0)
+            local val = Currency[coindata.name].BrainTotals[army] or 0
+            if val > 999 and val < 100000 then
+                val = string.format('%0.1fk', val/1000)
+            elseif val > 99999 and val < 1000000 then
+                val = string.format('%0.0fk', val/1000)
+            elseif val > 999999 then
+                val = string.format('%0.2fM', val/1000000)
+            end
+            GUI.crypto[coindata.name..'rate']:SetText(val)
         end
     end
 end
+
+print()
