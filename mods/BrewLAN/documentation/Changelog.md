@@ -71,3 +71,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-03-31
 
 * NFTea: Stuff.
+
+### 2022-05-10
+
+* Penetration: New (untextured) tech 1 Cybran carpet bomber.
