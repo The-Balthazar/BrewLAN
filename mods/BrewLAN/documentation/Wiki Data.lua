@@ -303,10 +303,17 @@ UnitData = {
     SRA0307 = {
         Trivia = '"Zenith" was the first unit added to *BrewLAN* with an almost completely custom model.',
     },
+    SRA0108 = {
+        Trivia = {
+            '"Tinia" was a commissioned unit.',
+            'The name "Tinia" is from the Etruscan god of the sky, equivalent to Zeus and Jupiter.',
+            'The design is loosely based on old unused GPG concept art.',
+        },
+    },
     SRA0308 = {
         Trivia = {
             '"Diespiter" was a commissioned unit.',
-            'The name "Diespiter" is a pre-Roman Italic equivalent of the Roman god Jupiter.',
+            'The name "Diespiter" is from a pre-Roman Italic equivalent of the Roman god Jupiter.',
             'The design is loosely based on old unused GPG concept art.',
         },
     },

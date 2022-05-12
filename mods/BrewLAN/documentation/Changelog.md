@@ -75,3 +75,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-05-10
 
 * Penetration: New (untextured) tech 1 Cybran carpet bomber.
+
+### 2022-05-12
+
+* Penetration: Finished the Cybran T1 Carpet Bomber.

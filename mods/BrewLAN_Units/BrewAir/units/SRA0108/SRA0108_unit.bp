@@ -51,7 +51,7 @@ UnitBlueprint {
             Level5 = 5,
         },
     },
-    BuildIconSortPriority = 40,
+    BuildIconSortPriority = 41,
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER1FACTORY',
@@ -100,8 +100,8 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 { LODCutoff = 128, ShaderName = 'Insect'},
-                --{ LODCutoff = 256, ShaderName = 'Insect'},
-                --{ LODCutoff = 512, ShaderName = 'Insect'},
+                { LODCutoff = 256, ShaderName = 'Insect'},
+                { LODCutoff = 512, ShaderName = 'Insect'},
             },
         },
         MovementEffects = {
@@ -232,7 +232,7 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 2,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'Neutron Carpet Bomb',
             FireTargetLayerCapsTable = {
@@ -244,7 +244,7 @@ UnitBlueprint {
             Label = 'Bomb',
             MaxRadius = 90,
             MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 3,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 0,
             NeedToComputeBombDrop = true,
             ProjectileId = '/mods/BrewLAN_Units/BrewAir/projectiles/CIFNeutronCarpetBomb/CIFNeutronCarpetBomb_proj.bp',
@@ -254,18 +254,32 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Bomb_A_001',
                         'Bomb_B_001',
-                        'Bomb_C_001',
                     },
-                    RackBone = 'Bomb_C_001',
+                    RackBone = 'Bomb_B_001',
                 },
                 {
                     HideMuzzle = true,
                     MuzzleBones = {
                         'Bomb_A_002',
                         'Bomb_B_002',
-                        'Bomb_C_002',
                     },
-                    RackBone = 'Bomb_C_002',
+                    RackBone = 'Bomb_B_002',
+                },
+                {
+                    HideMuzzle = true,
+                    MuzzleBones = {
+                        'Bomb_A_003',
+                        'Bomb_B_003',
+                    },
+                    RackBone = 'Bomb_B_003',
+                },
+                {
+                    HideMuzzle = true,
+                    MuzzleBones = {
+                        'Bomb_A_004',
+                        'Bomb_B_004',
+                    },
+                    RackBone = 'Bomb_B_004',
                 },
             },
             RackFireTogether = true,
@@ -273,7 +287,7 @@ UnitBlueprint {
             RackReloadTimeout = 0.1,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 2,
+            RackSalvoSize = 4,
             RackSlavedToTurret = false,
             RateOfFire = 0.2,
             TargetCheckInterval = 2.5,

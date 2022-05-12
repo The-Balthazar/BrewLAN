@@ -1,6 +1,6 @@
 name = "BrewLAN: Penetration"
-uid = "25D57D85-9JA7-D842-BREW-AIR00000000022"
-version = 2.2
+uid = "25D57D85-9JA7-D842-BREW-AIR00000000023"
+version = 2.3
 copyright = "© 2018–2022 Sean Wheeldon"
 description = "Adds extended aircraft options."
 author = "Balthazar"
