@@ -1,4 +1,4 @@
-pcall(function() --pcall so this doesn't crash without the required game enabled
+if rawget(_G, 'CityData') then
     table.insert(CityData,
         {   --Aeon
             BlueprintId = 'Aeon_SquareBlockCity',
@@ -63,4 +63,4 @@ pcall(function() --pcall so this doesn't crash without the required game enabled
             },
         }
     )
-end)
+end

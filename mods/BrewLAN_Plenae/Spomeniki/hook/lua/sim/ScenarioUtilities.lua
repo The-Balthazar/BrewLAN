@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- For inserting spom's into cities
-pcall(function()
+if rawget(_G, 'CityData') then
     for i, citybp in CityData do
         if citybp.BlueprintId == 'UEF_SquareBlockCity' then
             for j, s7data in citybp.Structures7x7 do
@@ -25,9 +25,7 @@ pcall(function()
             break
         end
     end
-end)
-
-
+end
 
 
 --Vanilla spom code.

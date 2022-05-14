@@ -1,5 +1,5 @@
 do
-    if not pcall(function() return UncursedLOC end) then
+    if not rawget(_G, 'UncursedLOC') then
         UncursedLOC = LOC
         CursedFunctions = {}
 

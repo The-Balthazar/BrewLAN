@@ -1,4 +1,4 @@
-pcall(function() --pcall so this doesn't crash without the required game enabled
+if rawget(_G, 'CityData') then
     table.insert(CityData,
         {   --Cybran
             BlueprintId = 'Cybran_SquareBlockCity',
@@ -64,4 +64,4 @@ pcall(function() --pcall so this doesn't crash without the required game enabled
             }
         }
     )
-end)
+end
