@@ -2,424 +2,109 @@
 -- TIER 1 POWER GEN BUFF TABLE
 ------------------------------------------------------------------
 
-T3WeaponBoosterAccuracyAdjacencyBuffs = {
-    'T3WeaponBoosterAccuracyBonusSize4',
-    'T3WeaponBoosterAccuracyBonusSize8',
-    'T3WeaponBoosterAccuracyBonusSize12',
-    'T3WeaponBoosterAccuracyBonusSize16',
-    'T3WeaponBoosterAccuracyBonusSize20',
-    'T3WeaponBoosterRateOfFireTradeOffSize4',
-    'T3WeaponBoosterRateOfFireTradeOffSize8',
-    'T3WeaponBoosterRateOfFireTradeOffSize12',
-    'T3WeaponBoosterRateOfFireTradeOffSize16',
-    'T3WeaponBoosterRateOfFireTradeOffSize20',
-}
+T3WeaponBoosterAccuracyAdjacencyBuffs = {}
+T3WeaponBoosterDamageAdjacencyBuffs = {}
 
-T3WeaponBoosterDamageAdjacencyBuffs = {
-    --'T3WeaponBoosterDamageBonusSize4',
-    --'T3WeaponBoosterDamageBonusSize8',
-    --'T3WeaponBoosterDamageBonusSize12',
-    --'T3WeaponBoosterDamageBonusSize16',
-    --'T3WeaponBoosterDamageBonusSize20',
-    'T3WeaponBoosterEnergyWeaponTradeOffSize4',
-    'T3WeaponBoosterEnergyWeaponTradeOffSize8',
-    'T3WeaponBoosterEnergyWeaponTradeOffSize12',
-    'T3WeaponBoosterEnergyWeaponTradeOffSize16',
-    'T3WeaponBoosterEnergyWeaponTradeOffSize20',
-}
+do
+    local AccuracyMult = 5     -- 10% max, multiplied by
+    local EnergyMaintMult = 40
 
-------------------------------------------------------------------
--- Accuracy boosts
-------------------------------------------------------------------
-local AccuracyMult = 5     -- 10% max, multiplied by
-BuffBlueprint {
-    Name = 'T3WeaponBoosterAccuracyBonusSize4',
-    DisplayName = 'T3WeaponBoosterAccuracyBonus',
-    BuffType = 'ACCURACYBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE4',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        FiringRandomness = {
-            Add = -0.025 * AccuracyMult,
-            Mult = 1.0,
+    local buffs = {
+        T3WeaponBoosterAccuracyBonus = {
+            SizeData = {
+                [4] = -0.025 * AccuracyMult,
+                [8] = -0.0125 * AccuracyMult,
+                [12] = -0.008333 * AccuracyMult,
+                [16] = -0.00625 * AccuracyMult,
+                [20] = -0.005 * AccuracyMult,
+            },
+            BuffType = 'ACCURACYBONUS',
+            Affects = 'FiringRandomness',
+            BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
+            OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
+            OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
+            IncludeIn = {
+                T3WeaponBoosterAccuracyAdjacencyBuffs,
+            },
         },
-    },
-}
+        T3WeaponBoosterRateOfFireTradeOff = {
+            SizeData = {
+                [4] = 0.025 * AccuracyMult,
+                [8] = 0.0125 * AccuracyMult,
+                [12] = 0.008333 * AccuracyMult,
+                [16] = 0.00625 * AccuracyMult,
+                [20] = 0.005 * AccuracyMult,
+            },
+            BuffType = 'RATEOFFIREADJACENCY',
+            Affects = 'RateOfFire',
+            BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
+            OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
+            OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
+            IncludeIn = {
+                T3WeaponBoosterAccuracyAdjacencyBuffs,
+            },
+        },
 
-BuffBlueprint {
-    Name = 'T3WeaponBoosterAccuracyBonusSize8',
-    DisplayName = 'T3WeaponBoosterAccuracyBonus',
-    BuffType = 'ACCURACYBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE8',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        FiringRandomness = {
-            Add = -0.0125 * AccuracyMult,
-            Mult = 1.0,
+        T3WeaponBoosterEnergyWeaponTradeOff = {
+            SizeData = {
+                [4] = 0.025 * EnergyMaintMult,
+                [8] = 0.0125 * EnergyMaintMult,
+                [12] = 0.008333 * EnergyMaintMult,
+                [16] = 0.00625 * EnergyMaintMult,
+                [20] = 0.005 * EnergyMaintMult,
+            },
+            BuffType = 'DAMAGEBONUS',
+            Affects = 'EnergyWeapon',
+            BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
+            OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
+            OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
+            IncludeIn = {
+                T3WeaponBoosterDamageAdjacencyBuffs,
+            },
         },
-    },
-}
+        T3WeaponBoosterEnergyMaintTradeOff = {
+            SizeData = {
+                [4] = 0.025 * EnergyMaintMult,
+                [8] = 0.0125 * EnergyMaintMult,
+                [12] = 0.008333 * EnergyMaintMult,
+                [16] = 0.00625 * EnergyMaintMult,
+                [20] = 0.005 * EnergyMaintMult,
+            },
+            BuffType = 'DAMAGEBONUS',
+            Affects = 'EnergyMaintenance',
+            BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
+            OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
+            OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
+            IncludeIn = {
+                T3WeaponBoosterDamageAdjacencyBuffs,
+            },
+        },
+    }
 
-BuffBlueprint {
-    Name = 'T3WeaponBoosterAccuracyBonusSize12',
-    DisplayName = 'T3WeaponBoosterAccuracyBonus',
-    BuffType = 'ACCURACYBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE12',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        FiringRandomness = {
-            Add = -0.008333 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterAccuracyBonusSize16',
-    DisplayName = 'T3WeaponBoosterAccuracyBonus',
-    BuffType = 'ACCURACYBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE16',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        FiringRandomness = {
-            Add = -0.00625 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterAccuracyBonusSize20',
-    DisplayName = 'T3WeaponBoosterAccuracyBonus',
-    BuffType = 'ACCURACYBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE20',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        FiringRandomness = {
-            Add = -0.005 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-------------------------------------------------------------------
--- RATE OF FIRE NERFS
-------------------------------------------------------------------
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterRateOfFireTradeOffSize4',
-    DisplayName = 'T3WeaponBoosterRateOfFireTradeOff',
-    BuffType = 'RATEOFFIREADJACENCY',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE4',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        RateOfFire = {
-            Add = 0.025 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterRateOfFireTradeOffSize8',
-    DisplayName = 'T3WeaponBoosterRateOfFireTradeOff',
-    BuffType = 'RATEOFFIREADJACENCY',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE8',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        RateOfFire = {
-            Add = 0.0125 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterRateOfFireTradeOffSize12',
-    DisplayName = 'T3WeaponBoosterRateOfFireTradeOff',
-    BuffType = 'RATEOFFIREADJACENCY',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE12',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        RateOfFire = {
-            Add = 0.008333 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterRateOfFireTradeOffSize16',
-    DisplayName = 'T3WeaponBoosterRateOfFireTradeOff',
-    BuffType = 'RATEOFFIREADJACENCY',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE16',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        RateOfFire = {
-            Add = 0.00625 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterRateOfFireTradeOffSize20',
-    DisplayName = 'T3WeaponBoosterRateOfFireTradeOff',
-    BuffType = 'RATEOFFIREADJACENCY',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE20',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        RateOfFire = {
-            Add = 0.005 * AccuracyMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-------------------------------------------------------------------
--- Energy cost increases
-------------------------------------------------------------------
-local EnergyDamageMult = 40     -- 10% max, multiplied by
-local EnergyMaintMult = 40
-BuffBlueprint {
-    Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize4',
-    DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
-    BuffType = 'ENERGYWEAPONBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE4',
-    BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
-    Affects = {
-        EnergyWeapon = {
-            Add = 0.025 * EnergyDamageMult,
-            Mult = 1.0,
-        },
-        EnergyMaintenance = {
-            Add = 0.025 * EnergyMaintMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize8',
-    DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
-    BuffType = 'ENERGYWEAPONBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE8',
-    BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
-    Affects = {
-        EnergyWeapon = {
-            Add = 0.0125 * EnergyDamageMult,
-            Mult = 1.0,
-        },
-        EnergyMaintenance = {
-            Add = 0.0125 * EnergyMaintMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize12',
-    DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
-    BuffType = 'ENERGYWEAPONBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE12',
-    BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
-    Affects = {
-        EnergyWeapon = {
-            Add = 0.008333 * EnergyDamageMult,
-            Mult = 1.0,
-        },
-        EnergyMaintenance = {
-            Add = 0.008333 * EnergyMaintMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize16',
-    DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
-    BuffType = 'ENERGYWEAPONBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE16',
-    BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
-    Affects = {
-        EnergyWeapon = {
-            Add = 0.00625 * EnergyDamageMult,
-            Mult = 1.0,
-        },
-        EnergyMaintenance = {
-            Add = 0.00625 * EnergyMaintMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterEnergyWeaponTradeOffSize20',
-    DisplayName = 'T3WeaponBoosterEnergyWeaponTradeOff',
-    BuffType = 'ENERGYWEAPONBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE20',
-    BuffCheckFunction = AdjBuffFuncs.EnergyWeaponBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.EnergyWeaponBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.EnergyWeaponBuffRemove,
-    Affects = {
-        EnergyWeapon = {
-            Add = 0.005 * EnergyDamageMult,
-            Mult = 1.0,
-        },
-        EnergyMaintenance = {
-            Add = 0.005 * EnergyMaintMult,
-            Mult = 1.0,
-        },
-    },
-}
-------------------------------------------------------------------
--- Damage boosts -- WARNING TO OTHERS, THESE DON'T WORK
-------------------------------------------------------------------
-local DamageMult = 40     -- 10% max, multiplied by
-BuffBlueprint {
-    Name = 'T3WeaponBoosterDamageBonusSize4',
-    DisplayName = 'T3WeaponBoosterDamageBonus',
-    BuffType = 'DAMAGEBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE4',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        Damage = {
-            Add = 0.025 * DamageMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterDamageBonusSize8',
-    DisplayName = 'T3WeaponBoosterDamageBonus',
-    BuffType = 'DAMAGEBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE8',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        Damage = {
-            Add = 0.0125 * DamageMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterDamageBonusSize12',
-    DisplayName = 'T3WeaponBoosterDamageBonus',
-    BuffType = 'DAMAGEBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE12',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        Damage = {
-            Add = 0.008333 * DamageMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterDamageBonusSize16',
-    DisplayName = 'T3WeaponBoosterDamageBonus',
-    BuffType = 'DAMAGEBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE16',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        Damage = {
-            Add = 0.00625 * DamageMult,
-            Mult = 1.0,
-        },
-    },
-}
-
-BuffBlueprint {
-    Name = 'T3WeaponBoosterDamageBonusSize20',
-    DisplayName = 'T3WeaponBoosterDamageBonus',
-    BuffType = 'DAMAGEBONUS',
-    Stacks = 'ALWAYS',
-    Duration = -1,
-    EntityCategory = 'STRUCTURE SIZE20',
-    BuffCheckFunction = AdjBuffFuncs.RateOfFireBuffCheck,
-    OnBuffAffect = AdjBuffFuncs.RateOfFireBuffAffect,
-    OnBuffRemove = AdjBuffFuncs.RateOfFireBuffRemove,
-    Affects = {
-        Damage = {
-            Add = 0.005 * DamageMult,
-            Mult = 1.0,
-        },
-    },
-}
+    for buff, data in pairs(buffs) do
+        for size, val in pairs(data.SizeData) do
+            local name = buff .. "Size" .. size
+            local cat = 'STRUCTURE SIZE' .. tostring(size)
+            BuffBlueprint({
+                Name = name,
+                DisplayName = buff,
+                BuffType = data.BuffType,
+                Stacks = 'ALWAYS',
+                Duration = -1,
+                EntityCategory = cat,
+                BuffCheckFunction = data.BuffCheckFunction,
+                OnBuffAffect = data.OnBuffAffect,
+                OnBuffRemove = data.OnBuffRemove,
+                Affects = {
+                    [data.Affects] = {
+                        Add = val,
+                        Mult = 1.0,
+                    },
+                },
+            })
+            for i, v in pairs(data.IncludeIn) do
+                table.insert(v,name)
+            end
+        end
+    end
+end
