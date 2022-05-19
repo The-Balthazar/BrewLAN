@@ -79,3 +79,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-05-12
 
 * Penetration: Finished the Cybran T1 Carpet Bomber.
+
+### 2022-05-19
+
+* Caffee Corretto: Created models for Aeon Engineering, Regen, and Shield Regen nodes.
