@@ -83,3 +83,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-05-19
 
 * Caffee Corretto: Created models for Aeon Engineering, Regen, and Shield Regen nodes.
+
+### 2022-05-21
+
+* Caffee Corretto: Created buff effects for the coming Aeon nodes.
