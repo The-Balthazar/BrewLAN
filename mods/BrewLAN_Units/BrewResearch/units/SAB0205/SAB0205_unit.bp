@@ -61,7 +61,7 @@ UnitBlueprint {
     CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
-        EconomyThreatLevel = 11,
+        EconomyThreatLevel = 244,
         Health = 8200,
         MaxHealth = 8200,
     },
