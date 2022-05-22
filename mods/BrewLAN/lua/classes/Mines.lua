@@ -80,9 +80,9 @@ MineStructureUnit = Class(StructureUnit) {
     OnCreate = function(self,builder,layer)
         StructureUnit.OnCreate(self)
         --enable cloaking and stealth
-        self:EnableIntel('Cloak')
-        self:EnableIntel('RadarStealth')
-        self:EnableIntel('SonarStealth')
+        self:EnableIntel'Cloak'
+        self:EnableIntel'RadarStealth'
+        self:EnableIntel'SonarStealth'
         if not self.CachePosition then
             self.CachePosition = {moho.entity_methods.GetPositionXYZ(self)}
         end
@@ -123,7 +123,7 @@ MineStructureUnit = Class(StructureUnit) {
     OnScriptBitSet = function(self, bit)
         StructureUnit.OnScriptBitSet(self, bit)
         if bit == 1 then
-            self:GetWeaponByLabel('Suicide'):FireWeapon()
+            self:GetWeaponByLabel'Suicide':FireWeapon()
         end
     end,
 

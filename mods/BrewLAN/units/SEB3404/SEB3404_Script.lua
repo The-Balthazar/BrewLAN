@@ -1,12 +1,12 @@
 --------------------------------------------------------------------------------
 --   Author:  Sean 'Balthazar' Wheeldon
 --------------------------------------------------------------------------------
-local TStructureUnit = import('/lua/terranunits.lua').TStructureUnit
-local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
-local AIUtils = import('/lua/ai/aiutilities.lua')
-local AnimationThread = import('/lua/effectutilities.lua').IntelDishAnimationThread
+local TStructureUnit = import'/lua/terranunits.lua'.TStructureUnit
+local VizMarker = import'/lua/sim/VizMarker.lua'.VizMarker
+local AIUtils = import'/lua/ai/aiutilities.lua'
+local AnimationThread = import'/lua/effectutilities.lua'.IntelDishAnimationThread
 --------------------------------------------------------------------------------
-local BrewLANPath = import( '/lua/game.lua' ).BrewLANPath
+local BrewLANPath = import'/lua/game.lua'.BrewLANPath
 local Buff = import(BrewLANPath .. '/lua/legacy/VersionCheck.lua').Buff
 --------------------------------------------------------------------------------
 SEB3404 = Class(TStructureUnit) {
@@ -19,14 +19,14 @@ SEB3404 = Class(TStructureUnit) {
         self:SetMaintenanceConsumptionActive()
 
         for i, v in {Panopticon = 'Domes', Large_Dish = 'Dish_Scaffolds'} do
-            local entity = import('/lua/sim/Entity.lua').Entity({Owner = self})
+            local entity = import'/lua/sim/Entity.lua'.Entity{Owner = self}
             entity:AttachBoneTo( -1, self, i )
             entity:SetMesh(BrewLANPath .. '/units/SEB3404/SEB3404_' .. v .. '_mesh')
             entity:SetDrawScale(bpD.UniformScale)
-            entity:SetVizToFocusPlayer('Always')
-            entity:SetVizToAllies('Intel')
-            entity:SetVizToNeutrals('Intel')
-            entity:SetVizToEnemies('Intel')
+            entity:SetVizToFocusPlayer'Always'
+            entity:SetVizToAllies'Intel'
+            entity:SetVizToNeutrals'Intel'
+            entity:SetVizToEnemies'Intel'
             self.Trash:Add(entity)
         end
     end,
@@ -46,7 +46,7 @@ SEB3404 = Class(TStructureUnit) {
             local tableinsert = table.insert
             local Ftable = {}
             for i, unit in aiBrain:GetUnitsAroundPoint(category, (self.CachePosition or self:GetPosition()), range, 'Enemy' ) do
-                if cloakcheck and unit:IsIntelEnabled('Cloak') then
+                if cloakcheck and unit:IsIntelEnabled'Cloak' then
                     --LOG("Counterintel guy")
                 else
                     tableinsert(Ftable, unit)
@@ -55,7 +55,7 @@ SEB3404 = Class(TStructureUnit) {
             return Ftable
         end
         -- Find visible things to attach vis entities to
-        local LocalUnits = FindAllUnits(aiBrain, categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.SHIELDWALL - categories.MINE, self:GetIntelRadius('radar'), true)
+        local LocalUnits = FindAllUnits(aiBrain, categories.SELECTABLE - categories.COMMAND - categories.SUBCOMMANDER - categories.WALL - categories.SHIELDWALL - categories.MINE, self:GetIntelRadius'radar', true)
         ------------------------------------------------------------------------
         -- IF self.ActiveConsumptionRestriction Sort the table by distance
         ------------------------------------------------------------------------
@@ -67,7 +67,7 @@ SEB3404 = Class(TStructureUnit) {
             local VDist2Sq = VDist2Sq
             for i, v in LocalUnits do
                 local vpos = v.CachePosition or v:GetPosition()
-                local uniqueDistanceKey = mathfloor(VDist2Sq(vpos[1], vpos[3], pos[1], pos[3]) ) .. "." .. v.Sync.id
+                local uniqueDistanceKey = mathfloor(VDist2Sq(vpos[1], vpos[3], pos[1], pos[3])).."."..v.Sync.id
                 DistanceSortedLocalUnits[uniqueDistanceKey] = v
                 v = nil
             end
@@ -78,7 +78,7 @@ SEB3404 = Class(TStructureUnit) {
         ------------------------------------------------------------------------
         local NewUpkeep = bp.Economy.MaintenanceConsumptionPerSecondEnergy
         local Eco = bp.Economy.MaintenanceConcumptionVision
-        local SpareEnergy = aiBrain:GetEconomyIncome( 'ENERGY' ) - aiBrain:GetEconomyRequested('ENERGY') + self.PanopticonUpkeep
+        local SpareEnergy = aiBrain:GetEconomyIncome'ENERGY' - aiBrain:GetEconomyRequested'ENERGY' + self.PanopticonUpkeep
         local SpyBlipRadius = bp.Intel.SpyBlipRadius or 2 --2 is the smallest that works.
         for i, v in LocalUnits do
 
@@ -130,7 +130,7 @@ SEB3404 = Class(TStructureUnit) {
             -- Final upgrade
             --------------------------------------------------------------------
             if enh == 'Xband_Dish' then
-                self:AddToggleCap('RULEUTC_WeaponToggle')
+                self:AddToggleCap'RULEUTC_WeaponToggle'
                 self:SetScriptBit('RULEUTC_WeaponToggle', true)
 
                 local bp = self:GetBlueprint()
@@ -176,7 +176,7 @@ SEB3404 = Class(TStructureUnit) {
             --------------------------------------------------------------------
             if enh == 'Xband_DishRemove' then
                 --Remove active consumption button
-                self:RemoveToggleCap('RULEUTC_WeaponToggle')
+                self:RemoveToggleCap'RULEUTC_WeaponToggle'
                 --Kill the thread
                 KillThread(self.IntelSearchThread)
                 --Reset the consumption
@@ -226,18 +226,6 @@ SEB3404 = Class(TStructureUnit) {
     OnIntelEnabled = function(self)
         TStructureUnit.OnIntelEnabled(self)
         self.Intel = true
-    end,
-
-    OnKilled = function(self, instigator, type, overkillRatio)
-        TStructureUnit.OnKilled(self, instigator, type, overkillRatio)
-    end,
-
-    OnDestroy = function(self)
-        TStructureUnit.OnDestroy(self)
-    end,
-
-    OnCaptured = function(self, captor)
-        TStructureUnit.OnCaptured(self, captor)
     end,
 }
 

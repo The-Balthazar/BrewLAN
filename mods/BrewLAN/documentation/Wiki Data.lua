@@ -267,7 +267,7 @@ UnitData = {
         Trivia = {
             '"Teatut" is named after the mathematician and WWII codebreaker William T. Tutte, who worked at Bletchley Park.',
             'The front radar dish is based on the AN/SPS-49.',
-            'The rear radar dish is based on the AN/FPS-6',
+            'The rear radar dish is based on the AN/FPS-6.',
         },
         Videos = {
             {YouTube = 'I63oGNkngaE', 'Time-lapse'},

@@ -12,48 +12,14 @@ UnitBlueprint {
         },
     },
     Audio = {
-        ActiveLoop = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB0304_Active',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DeathExplosion = Sound {
-            Bank = 'XSL_Destroy',
-            Cue = 'XSB_Destroy_Lrg_PreDestroy',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'XSL_Destroy',
-            Cue = 'XSB_Destroy_Huge',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        DoneBeingBuilt = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB0304_Activate',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ShieldOff = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB4301_On_Off',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ShieldOn = Sound {
-            Bank = 'XSB',
-            Cue = 'XSB4301_On_Off',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        ShieldImpact = Sound {
-            --Bank = 'AmbientTest',
-            --Cue = 'Gen_Fire_Start',
-            Bank = 'Impacts',
-            Cue = 'X_Impact_Land_Gen_Seraphim',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'SeraphimSelect',
-            Cue = 'Seraphim_Select_Structure',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+        ActiveLoop     = Sound { Bank = 'XSB',            Cue = 'XSB0304_Active',             LodCutoff = 'UnitMove_LodCutoff' },
+        DeathExplosion = Sound { Bank = 'XSL_Destroy',    Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed      = Sound { Bank = 'XSL_Destroy',    Cue = 'XSB_Destroy_Huge',           LodCutoff = 'UnitMove_LodCutoff' },
+        DoneBeingBuilt = Sound { Bank = 'XSB',            Cue = 'XSB0304_Activate',           LodCutoff = 'UnitMove_LodCutoff' },
+        ShieldOff      = Sound { Bank = 'XSB',            Cue = 'XSB4301_On_Off',             LodCutoff = 'UnitMove_LodCutoff' },
+        ShieldOn       = Sound { Bank = 'XSB',            Cue = 'XSB4301_On_Off',             LodCutoff = 'UnitMove_LodCutoff' },
+        ShieldImpact   = Sound { Bank = 'Impacts',        Cue = 'X_Impact_Land_Gen_Seraphim', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection    = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Structure',  LodCutoff = 'UnitMove_LodCutoff' },
     },
     Buffs = {
         Regen = {
@@ -105,84 +71,30 @@ UnitBlueprint {
     Description = '<LOC ssb5401_desc>Experimental Quantum Gateway',
     Display = {
         BlinkingLights = {
-            {
-                BLBone = 'Light04',
-                BLOffsetZ = 0.05,
-                BLScale = 1,
-            },
-            {
-                BLBone = 'Light05',
-                BLOffsetZ = 0.05,
-                BLScale = 1,
-            },
-            {
-                BLBone = 'Light06',
-                BLOffsetZ = 0.05,
-                BLScale = 1,
-            },
-            {
-                BLBone = 'Light07',
-                BLOffsetZ = 0.05,
-                BLScale = 1,
-            },
+            { BLBone = 'Light04', BLOffsetZ = 0.05, BLScale = 1 },
+            { BLBone = 'Light05', BLOffsetZ = 0.05, BLScale = 1 },
+            { BLBone = 'Light06', BLOffsetZ = 0.05, BLScale = 1 },
+            { BLBone = 'Light07', BLOffsetZ = 0.05, BLScale = 1 },
         },
         BlinkingLightsFx = {
-            Green = '/effects/emitters/light_green_03_emit.bp',
-            Red = '/effects/emitters/light_red_03_emit.bp',
+            Green  = '/effects/emitters/light_green_03_emit.bp',
+            Red    = '/effects/emitters/light_red_03_emit.bp',
             Yellow = '/effects/emitters/light_yellow_02_emit.bp',
         },
         BuildAttachBone = 'Attachpoint',
         DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 0.75,
-                OffsetY = 0,
-                OffsetZ = 2.75,
-            },
-            {
-                Bone = 0,
-                OffsetX = 0.75,
-                OffsetY = 0,
-                OffsetZ = -2.75,
-            },
-            {
-                Bone = 0,
-                OffsetX = -0.75,
-                OffsetY = 0,
-                OffsetZ = 2.75,
-            },
-            {
-                Bone = 0,
-                OffsetX = -0.75,
-                OffsetY = 0,
-                OffsetZ = -2.75,
-            },
-            {
-                Bone = 0,
-                OffsetX = 1.5,
-                OffsetY = 2,
-                OffsetZ = 0,
-            },
-            {
-                Bone = 0,
-                OffsetX = -1.5,
-                OffsetY = 2,
-                OffsetZ = 0,
-            },
+            { Bone = 0, OffsetX =  0.75, OffsetY = 0, OffsetZ =  2.75 },
+            { Bone = 0, OffsetX =  0.75, OffsetY = 0, OffsetZ = -2.75 },
+            { Bone = 0, OffsetX = -0.75, OffsetY = 0, OffsetZ =  2.75 },
+            { Bone = 0, OffsetX = -0.75, OffsetY = 0, OffsetZ = -2.75 },
+            { Bone = 0, OffsetX =  1.5,  OffsetY = 2, OffsetZ =  0 },
+            { Bone = 0, OffsetX = -1.5,  OffsetY = 2, OffsetZ =  0 },
         },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
-                {
-                    LODCutoff = 250,
-                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    ShaderName = 'Seraphim',
-                },
-                {
-                    LODCutoff = 500,
-                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    ShaderName = 'Seraphim',
-                },
+                { LODCutoff = 250, LookupName = '/textures/environment/Falloff_seraphim_lookup.dds', ShaderName = 'Seraphim' },
+                { LODCutoff = 500, LookupName = '/textures/environment/Falloff_seraphim_lookup.dds', ShaderName = 'Seraphim' },
             },
         },
         Tarmacs = {
