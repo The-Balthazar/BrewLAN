@@ -50,10 +50,10 @@ UnitBlueprint {
     CollisionOffsetY = -0.375,
     Defense = {
         ArmorType = 'Structure',
-        EconomyThreatLevel = 102,
+        EconomyThreatLevel = 117,
         Health = 8625,
         MaxHealth = 8625,
-        SurfaceThreatLevel = 17,
+        SurfaceThreatLevel = 20,
     },
     Description = '<LOC seb2320_desc>Heavy Point Defense',
     Display = {

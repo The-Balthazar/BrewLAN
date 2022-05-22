@@ -48,7 +48,7 @@ UnitBlueprint {
         EconomyThreatLevel = 23,
         Health = 2500,
         MaxHealth = 2500,
-        SurfaceThreatLevel = 11,
+        SurfaceThreatLevel = 12,
     },
     Description = '<LOC sbui2311_desc>Anti-Armor Point Defense',
     Display = {
