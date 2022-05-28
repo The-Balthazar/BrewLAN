@@ -9,13 +9,46 @@ local BLCCBuffTypes = {
     end,
 
     ShieldRegeneration = function(unit, buffName)
-        if unit.MyShield then
-            local val = BuffCalculate(unit, buffName, 'ShieldRegeneration', 1)
-            local regenrate = unit:GetBlueprint().Defense.Shield.ShieldRegenRate or 1
+        if not unit.MyShield then return end
 
-            unit.MyShield:SetShieldRegenRate(val * regenrate)
+        unit.MyShield:SetShieldRegenRate(
+            BuffCalculate(unit, buffName, 'ShieldRegeneration', 1) *
+            (unit:GetBlueprint().Defense.Shield.ShieldRegenRate or 1)
+        )
+    end,
+
+	ShieldSize = function(unit, buffName)
+        if not unit.MyShield then return end
+
+        unit.MyShield:SetSize(
+            BuffCalculate(unit, buffName, 'ShieldSize', 1) *
+            (unit:GetBlueprint().Defense.Shield.ShieldSize or 1)
+        )
+
+        if unit.MyShield:IsOn() then
+            unit.MyShield:RemoveShield()
+            unit.MyShield:CreateShieldMesh()
         end
     end,
+
+    ShieldHealth = function(unit, buffName)
+        local shield = unit.MyShield
+        if not shield then return end
+
+        SetMaxHealth( shield,
+            BuffCalculate(unit, buffName, 'ShieldHealth', 1) *
+            (unit:GetBlueprint().Defense.Shield.ShieldMaxHealth or 1)
+        )
+        SetShieldRatio( shield.Owner, shield:GetHealth() / shield:GetMaxHealth() )
+
+        if shield.RegenThread then
+            KillThread(shield.RegenThread)
+        end
+        shield.RegenThread = shield:ForkThread( shield.RegenStartThread )
+        TrashAdd( shield.Owner.Trash, shield.RegenThread )
+        --shield.Owner is probably the same as unit, but not nessessarily
+    end,
+
 }
 
 do

@@ -9,3 +9,6 @@ Description['seb2402'] = "<LOC Unit_Description_BrewLAN_Turrets_0008>Defensive a
 Description['srb2403'] = "<LOC Unit_Description_BrewLAN_Turrets_0009>Defensive turret. Armed with a high intensity microwave laser."
 Description['seb5382'] = "<LOC Unit_Description_BrewLAN_Turrets_0010>Adjacency buff node. Units built by adjacent factory structures will have additional health."
 Description['srb5383'] = "<LOC Unit_Description_BrewLAN_Turrets_0011>Adjacency buff node. Units built by adjacent factory structures will have any stealth abilities set active or inactive instead of their default state."
+Description['sab5384'] = "<LOC Unit_Description_BrewLAN_Turrets_0012>Adjacency buff node. Adjacent structures regenerate shields faster, at the cost of higher maintenance."
+Description['sab5385'] = "<LOC Unit_Description_BrewLAN_Turrets_0013>Adjacency buff node. Adjacent structures build faster."
+Description['sab5386'] = "<LOC Unit_Description_BrewLAN_Turrets_0014>Adjacency buff node. Adjacent structures regenerate health faster."
