@@ -91,3 +91,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-05-28
 
 * Caffe Corretto: Finished initial balance for Aeon nodes.
+
+### 2022-05-30
+
+* Added an Aeon T3 mobile TML.
+
+### 2022-05-31
+
+* Added an attach and hat points, death animations, distance models, and text strings for the Aeon T3 mobile TML.

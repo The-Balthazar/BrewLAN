@@ -79,6 +79,12 @@ UnitData = {
     SAL0311 = {
         Trivia = '"Moldavite" is named after a glassy green rock.',
     },
+    SAL0312 = {
+        Trivia = {
+            '"Cygnus X-1" takes its name from the Rush song, which takes its name from a black hole in the constellation of Cygnus.',
+            'The model is part of the Torrent Class slightly reshaped and fully retextured.',
+        },
+    },
     SAL0319 = {
         Trivia = '"Bilmon" is named after an early contributor and tester of the mod.',
     },
@@ -285,6 +291,13 @@ UnitData = {
             {YouTube = '1mC5LPhyQvA', 'Time-lapse'},
         },
     },
+    SRA0108 = {
+        Trivia = {
+            '"Tinia" was a commissioned unit.',
+            'The name "Tinia" is from the Etruscan god of the sky, equivalent to Zeus and Jupiter.',
+            'The design is loosely based on old unused GPG concept art.',
+        },
+    },
     SRA0201 = {
         Videos = {
             {YouTube = 'KAE96SoBsjE', 'Time-lapse'},
@@ -302,13 +315,6 @@ UnitData = {
     },
     SRA0307 = {
         Trivia = '"Zenith" was the first unit added to *BrewLAN* with an almost completely custom model.',
-    },
-    SRA0108 = {
-        Trivia = {
-            '"Tinia" was a commissioned unit.',
-            'The name "Tinia" is from the Etruscan god of the sky, equivalent to Zeus and Jupiter.',
-            'The design is loosely based on old unused GPG concept art.',
-        },
     },
     SRA0308 = {
         Trivia = {
