@@ -37,8 +37,8 @@ do
                 for entid, v in projectors do
                     noreturn[entid] = v
                 end
-
-                projectors[self.Owner.EntityId] = nil
+                
+                projectors[self.Owner.Sync.id] = nil
                 pCount = pCount - 1
             end
 

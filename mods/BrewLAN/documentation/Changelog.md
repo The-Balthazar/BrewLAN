@@ -99,3 +99,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-05-31
 
 * Added an attach and hat points, death animations, distance models, and text strings for the Aeon T3 mobile TML.
+
+### 2022-06-20
+
+* Fixed the Pillar of Prominence.
