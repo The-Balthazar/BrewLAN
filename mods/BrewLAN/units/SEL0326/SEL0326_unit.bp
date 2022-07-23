@@ -59,7 +59,7 @@ UnitBlueprint {
         Health = 1000,
         MaxHealth = 1000,
     },
-    Description = '<LOC sel0326_desc>Mobile Air Staging Platform',
+    Description = '<LOC sl0326_desc>Mobile Air Staging Platform',
     Display = {
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
