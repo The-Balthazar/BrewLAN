@@ -103,3 +103,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-06-20
 
 * Fixed the Pillar of Prominence.
+
+### 2022-07-23
+
+* Fixed the description of the mobile air staging.
+
+### 2022-08-07
+
+* Engineering ships can pause now. Cybran T3 engineering ship now shows queue.
