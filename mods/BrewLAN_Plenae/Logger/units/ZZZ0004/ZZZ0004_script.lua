@@ -155,7 +155,7 @@ ZZZ0004 = Class(Unit) {
         local function outsideCorner(x,z) return 2 == truecount(PlayRect.x1>x, PlayRect.z1>z, PlayRect.x2<x, PlayRect.z2<z) end
 
         local function canPathSlope(x,z) local a,b,c,d = GTH(x-1,z-1),GTH(x-1,z),GTH(x,z),GTH(x,z-1) return max(abs(a-b), abs(b-c), abs(c-d), abs(d-a)) <= markerType.MaxSlope end
-        local function canPathTerrain(x,z) local t = GetTerrainType(x,z) return t ~= 'Dirt09' and t ~= 'Lava01' end
+        local function canPathTerrain(x,z) return not GetTerrainType(x,z).Blocking end
         local function canAmphPathWater(surface,terrain) return terrain + (markerType.MaxWaterDepth or 0) > surface end
         local function canNavalPathWater(surface,terrain) return surface - (markerType.MinWaterDepth or 0) > terrain end
 

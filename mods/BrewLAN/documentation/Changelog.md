@@ -111,3 +111,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-08-07
 
 * Engineering ships can pause now. Cybran T3 engineering ship now shows queue.
+
+### 2022-08-17
+
+* Fixed the `canPathTerrain` function in path marker generator.
