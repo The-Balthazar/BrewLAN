@@ -35,5 +35,5 @@ Description['sra0402'] = "<LOC Unit_Description_BrewPen_011>Combination fighter/
 
 -- Carpet bombers
 Description['sra0108'] = "<LOC Unit_Description_BrewPen_013>Carpet bomber. Inflicts light damage over a large area."
-Description['saa0308'] = "<LOC Unit_Description_BrewPen_012>Obliteration bomber. Inflicts large damage over a large area."
-Description['sra0308'] = "<LOC Unit_Description_BrewPen_012>Obliteration bomber. Inflicts large damage over a large area."
+Description['saa0308'] = "<LOC Unit_Description_BrewPen_014>Obliteration bomber. Inflicts large damage over a large area."
+Description['sra0308'] = "<LOC Unit_Description_BrewPen_014>Obliteration bomber. Inflicts large damage over a large area."
