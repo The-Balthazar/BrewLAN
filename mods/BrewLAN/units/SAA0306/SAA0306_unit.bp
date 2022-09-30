@@ -188,6 +188,8 @@ UnitBlueprint {
         Class3AttachSize = 4,
         TransportClass = 10,
         Class1Capacity = 72,
+        Class2Capacity = 36,
+        Class2Capacity = 12,
     },
     Veteran = {
         Level1 = 3,

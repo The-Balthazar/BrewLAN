@@ -115,3 +115,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-08-17
 
 * Fixed the `canPathTerrain` function in path marker generator.
+
+### 2022-09-29
+
+* Finished the visuals for the Aeon T3 carpet bomber.
+
+### 2022-09-30
+
+* Finished the Aeon T3 carpet bomber.

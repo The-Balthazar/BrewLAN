@@ -203,7 +203,7 @@ Description['sab0401'] = "<LOC Unit_Description_BrewLAN_T4B009>Constructs air un
 Description['srb0401'] = "<LOC Unit_Description_BrewLAN_T4B010>Constructs land units."
 Description['ssb0401'] = "<LOC Unit_Description_BrewLAN_T4B011>Constructs naval units."
 Description['seb2401'] = "<LOC Unit_Description_BrewLAN_T4B012>Experimental defensive building. Consumes large amounts of power with each shot."
-Description['sab5401'] = "<LOC Unit_Description_BrewLAN_T4B013>Experimental teleportation device. Teleports itself and each mobile unit and structure within its operational radius to targeted locations for a great energy cost. Has a cooldown period after use."
+Description['sab5401'] = "<LOC Unit_Description_BrewLAN_T4B013>Experimental teleportation device. Teleports itself and each mobile unit and structure within its operational radius to targeted location for a great energy cost. Has a cooldown period after use."
 
 --Experimental land units
 Description['ssl0403'] = "<LOC Unit_Description_BrewLAN_T4L001>Experimental amphibious repair, capture, and reclamation unit. Gains the blueprints of units and wreckages by reclaiming them."
