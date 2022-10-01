@@ -30,6 +30,12 @@ UnitData = {
             {YouTube = 'BxmnEIWuX1s', 'Time-lapse'},
         },
     },
+    SAA0308 = {
+        Trivia = {
+            '"Ishtar" is named after the Assyrian goddess of love, war, and fertility. Equivalent to the Greco-Roman goddesses Aphrodite and Venus.',
+            'Delevopment on what would become "Ishtar" started at the start of June 2022, but wasn\'t resumed until the end of the following September, because the first design was bad and looked like a sliced pear.',
+        },
+    },
     SAB0401 = {
         Trivia = 'The design of the "Independance Engine" was inspired by a gas holder near the childhood home of the creator. The name is a reference to the 1996 film *Independence Day*.',
     },
@@ -322,6 +328,9 @@ UnitData = {
             'The name "Diespiter" is from a pre-Roman Italic equivalent of the Roman god Jupiter.',
             'The design is loosely based on old unused GPG concept art.',
         },
+        Videos = {
+            {YouTube = '7flXjlfUZ6g', 'Time-lapse'},
+        }
     },
     SRA0313 = {
         Videos = {

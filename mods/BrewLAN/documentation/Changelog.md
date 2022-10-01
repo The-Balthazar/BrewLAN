@@ -123,3 +123,4 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-09-30
 
 * Finished the Aeon T3 carpet bomber.
+* Fixed T3 carpet bomber description clashing with UEF Strike fighter description.
