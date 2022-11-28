@@ -79,6 +79,22 @@ UnitData = {
             {YouTube = 'Dknhw6LYyDs', 'Time-lapse'},
         },
     },
+    SAB5384 = {
+        Videos = {
+            {YouTube = 'HCm5kqcGCAU', 'Time-lapse'},
+        },
+    },
+    SAB5385 = {
+        Videos = {
+            {YouTube = 'HCm5kqcGCAU', 'Time-lapse'},
+        },
+    },
+    SAB5386 = {
+        Videos = {
+            {YouTube = 'HCm5kqcGCAU', 'Time-lapse'},
+        },
+    },
+
     SAL0209 = {
         Trivia = '"Butler" is named after two of the first testers of the mod.',
     },
@@ -303,6 +319,9 @@ UnitData = {
             'The name "Tinia" is from the Etruscan god of the sky, equivalent to Zeus and Jupiter.',
             'The design is loosely based on old unused GPG concept art.',
         },
+        Videos = {
+            {YouTube = '8r3Ta7WY1lc', 'Time-lapse'},
+        }
     },
     SRA0201 = {
         Videos = {
