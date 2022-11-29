@@ -40,6 +40,8 @@ UnitBlueprint {
         'FAVORSWATER',
         'OVERLAYMISC',
         'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'OVERLAYOMNI',
         'RESEARCHLOCKED',
     },
     CollisionOffsetY = 1.5,

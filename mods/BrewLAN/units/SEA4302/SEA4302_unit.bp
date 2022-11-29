@@ -33,6 +33,7 @@ UnitBlueprint {
         'INSIGNIFICANTUNIT',
         'UNSELECTABLE',
         'UNTARGETABLE',
+        'OVERLAYCOUNTERINTEL',
     },
     Defense = {
         ArmorType = 'Light',

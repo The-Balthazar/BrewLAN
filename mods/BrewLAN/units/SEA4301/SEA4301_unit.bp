@@ -57,7 +57,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'UNTARGETABLE',
         'SORTINTEL',
-        'OVERLAYCOUNTERINTEL',
         'TARGETCHASER',
         'CANNOTUSEAIRSTAGING',
     },

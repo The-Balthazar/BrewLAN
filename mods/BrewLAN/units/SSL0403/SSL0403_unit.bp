@@ -100,7 +100,8 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'REBUILDER',
-        'MOBILEBUILDERONLY'
+        'MOBILEBUILDERONLY',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Experimental',

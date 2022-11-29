@@ -96,7 +96,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-        'OVERLAYRADAR',
     },
     CollisionOffsetY = -0.25,
     Defense = {

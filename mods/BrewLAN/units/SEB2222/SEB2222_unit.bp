@@ -22,6 +22,7 @@ UnitBlueprint {
         'SELECTABLE',
         'BUILTBYTIER3FIELD',
         'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'OVERLAYMISC',
         'UEF',
         'STRUCTURE',

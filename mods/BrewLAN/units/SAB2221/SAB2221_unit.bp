@@ -17,6 +17,7 @@ UnitBlueprint {
         'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
         'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'AEON',
         'STRUCTURE',
         'TECH2',

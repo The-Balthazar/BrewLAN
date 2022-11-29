@@ -22,6 +22,7 @@ UnitBlueprint {
         'BUILTBYTIER2FIELD',
         'BUILTBYTIER3FIELD',
         'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'CYBRAN',
         'STRUCTURE',
         'TECH2',

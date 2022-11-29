@@ -124,3 +124,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Finished the Aeon T3 carpet bomber.
 * Fixed T3 carpet bomber description clashing with UEF Strike fighter description.
+
+### 2022-10-16
+
+* Added new icon variants large-classic, medium, and medium-classic.
+
+### 2022-11-39
+
+* Overlay category fixes to match reality on 23 units.
