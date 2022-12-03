@@ -13,9 +13,6 @@ local options = import('/lua/user/prefs.lua').GetFromCurrentProfile('options')
 
 local DialogMode = 'units' --or 'props'
 local currentArmy = GetFocusArmy()
-local tarmacsEnabled = true
-local meshOnly = false
-local UnitIconCameraMode = false
 
 local ssub, gsub, upper, lower, find, slen, format = string.sub, string.gsub, string.upper, string.lower, string.find, string.len, string.format
 local mmin, mmax, floor = math.min, math.max, math.floor
@@ -786,16 +783,18 @@ function CreateDialog(x, y)
             return btn
         end
 
-        local tarmacBtn = CreateToggleButton('Tarmacs', tarmacsEnabled, function()
-            tarmacsEnabled = not tarmacsEnabled
-            return tarmacsEnabled
+        local tarmacBtn = CreateToggleButton('Tarmacs', options.spawn_menu_tarmacs_enabled, function()
+            options.spawn_menu_tarmacs_enabled = not options.spawn_menu_tarmacs_enabled
+            import('/lua/user/prefs.lua').SetToCurrentProfile('options', options)
+            return options.spawn_menu_tarmacs_enabled
         end)
         LayoutHelpers.Above(tarmacBtn, dialog.inputCount, 0)
         LayoutHelpers.AtLeftIn(tarmacBtn, dialog, 0)
 
-        local meshOnlyBtn = CreateToggleButton('Mesh only', meshOnly, function()
-            meshOnly = not meshOnly
-            return meshOnly
+        local meshOnlyBtn = CreateToggleButton('Mesh only', options.spawn_menu_mesh_only, function()
+            options.spawn_menu_mesh_only = not options.spawn_menu_mesh_only
+            import('/lua/user/prefs.lua').SetToCurrentProfile('options', options)
+            return options.spawn_menu_mesh_only
         end)
         LayoutHelpers.RightOf(meshOnlyBtn, tarmacBtn, 2)
 
@@ -805,9 +804,10 @@ function CreateDialog(x, y)
         end
         LayoutHelpers.RightOf(meshYeetBtn, meshOnlyBtn, -10)
 
-        local cameraBtn = CreateToggleButton('Icon Camera', UnitIconCameraMode, function()
-            UnitIconCameraMode = not UnitIconCameraMode
-            return UnitIconCameraMode
+        local cameraBtn = CreateToggleButton('Icon Camera', options.spawn_menu_unit_icon_camera, function()
+            options.spawn_menu_unit_icon_camera = not options.spawn_menu_unit_icon_camera
+            import('/lua/user/prefs.lua').SetToCurrentProfile('options', options)
+            return options.spawn_menu_unit_icon_camera
         end)
         LayoutHelpers.RightOf(cameraBtn, meshYeetBtn, 6)
 
@@ -835,9 +835,9 @@ function CreateDialog(x, y)
                     pos = GetMouseWorldPos(),
                     veterancy = vet,
                     yaw = yaw,
-                    CreateTarmac = tarmacsEnabled,
-                    MeshOnly = meshOnly,
-                    UnitIconCameraMode = UnitIconCameraMode,
+                    CreateTarmac = options.spawn_menu_tarmacs_enabled,
+                    MeshOnly = options.spawn_menu_mesh_only,
+                    UnitIconCameraMode = options.spawn_menu_unit_icon_camera,
                 }
             }
         end
