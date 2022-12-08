@@ -5,7 +5,7 @@ UnitBlueprint {
     Abilities = {
         TargetLocation = {
             bitmapId = 'skry-target',
-            helpText = 'scry_spy_target',
+            helpText = 'scanarea',
         },
     },
     SpecialAbilities = { --For FAF Nomads compatibility
@@ -182,9 +182,9 @@ UnitBlueprint {
         MaxSpeed = 2.25,
         MaxSpeedReverse = 1.75,
         MaxSteerForce = 2.5,
-        MeshExtentsX = 1,
-        MeshExtentsY = 1.5,
-        MeshExtentsZ = 1.25,
+        MeshExtentsX = 2.4,
+        MeshExtentsY = 3,
+        MeshExtentsZ = 4.2,
         MotionType = 'RULEUMT_AmphibiousFloating',
         TurnRate = 60,
         DishTurnSpeed = 10,

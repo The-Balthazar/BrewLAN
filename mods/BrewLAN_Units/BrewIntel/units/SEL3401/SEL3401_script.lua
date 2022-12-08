@@ -1,6 +1,7 @@
 local TLandUnit = import('/lua/terranunits.lua').TLandUnit
 local VizMarker = import('/lua/sim/VizMarker.lua').VizMarker
 local CleanupEffectBag = import('/lua/EffectUtilities.lua').CleanupEffectBag
+local CreateBuildCubeThread = import('/lua/EffectUtilities.lua').CreateBuildCubeThread
 
 SEL3401 = Class(TLandUnit) {
 
@@ -116,6 +117,12 @@ SEL3401 = Class(TLandUnit) {
                 end
             end
         end, target)
+    end,
+
+    StartBeingBuiltEffects = function(self, builder, layer)
+        TLandUnit.StartBeingBuiltEffects(self, builder, layer)
+		self:HideBone(0, true)
+        self.OnBeingBuiltEffectsBag:Add( self:ForkThread( CreateBuildCubeThread, builder, self.OnBeingBuiltEffectsBag ))
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
