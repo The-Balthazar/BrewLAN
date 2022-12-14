@@ -109,3 +109,11 @@ UnitBlueprint {
 	BlueprintId="xra0105",
     BuildIconSortPriority = 45,
 }
+--------------------------------------------------------------------------------
+-- Cybran T2 Sparky
+--------------------------------------------------------------------------------
+UnitBlueprint {
+	Merge = true,
+	BlueprintId="xel0209",
+    BuildIconSortPriority = 11,
+}

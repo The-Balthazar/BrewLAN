@@ -74,7 +74,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    BuildIconSortPriority = 14,
+    BuildIconSortPriority = 11,
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER2FACTORY',

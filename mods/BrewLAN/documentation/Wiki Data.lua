@@ -373,6 +373,12 @@ UnitData = {
         },
         Trivia = '"Simurgh" was a commissioned unit based on the Arsenal Bird from *Ace Combat 7*.',
     },
+    SRA4212 = {
+        Trivia = {
+            '"Orlok" was a commissioned unit.',
+            'The name is taken from the name of the count from the 1922 film *Nosferatu: A Symphony of Horror*; Count Orlok.',
+        }
+    },
     SRB0401 = {
         Videos = {
             {YouTube = 'N3NnvM1SPHw', 'Time-lapse'},

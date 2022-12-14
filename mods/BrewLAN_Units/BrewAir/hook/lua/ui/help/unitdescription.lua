@@ -3,6 +3,8 @@ Description['sea0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighte
 Description['sra0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 Description['ssa0212'] = "<LOC Unit_Description_BrewPen_001>Mid-level air fighter. Excellent AA capabilities. Effective against enemy gunships and bombers."
 
+Description['sra4212'] = "<LOC Unit_Description_BrewPen_015>Short range mid-level ambush fighter. Must be landed to activate cloak, and must decloak to fire. Has large burst damage capabilities."
+
 --Tech 2 fighter/bomber
 Description['saa0213'] = "<LOC Unit_Description_BrewPen_002>Combination fighter/bomber designed to engage both land and aerial units."
 

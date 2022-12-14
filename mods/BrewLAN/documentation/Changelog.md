@@ -129,6 +129,26 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Added new icon variants large-classic, medium, and medium-classic.
 
-### 2022-11-39
+### 2022-11-29
 
 * Overlay category fixes to match reality on 23 units.
+
+### 2022-12-03
+
+* Set spawn menu buttons to use prefs.
+
+### 2022-12-07
+
+* Created a War Table unit.
+
+### 2022-12-08
+
+* Fixed UEF T4 mobile sensor build effects and ability tooltip.
+
+### 2022-12-08
+
+* Created the model and textures for `SRA4212`.
+
+### 2022-12-14
+
+* Finished `SRA4212`; Orlok.
