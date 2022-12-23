@@ -152,3 +152,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-12-14
 
 * Finished `SRA4212`; Orlok.
+
+### 2022-12-23
+
+* Potential fix for Craters mod breaking at map edges.

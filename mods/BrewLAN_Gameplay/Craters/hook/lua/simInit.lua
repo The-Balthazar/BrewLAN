@@ -8,7 +8,9 @@ do
             local eX, eZ = math.ceil(pos[1]+rad), math.ceil(pos[3]+rad)
 
             for x=sX, eX do
+                if x<0 or x>ScenarioInfo.size[1] then continue end
                 for z=sZ, eZ do
+                    if z<0 or z>ScenarioInfo.size[2] then continue end
                     local dSq = VDist2Sq(x, z, pos[1], pos[3])
                     if dSq <= rad*rad then
                         local relD = sin(1-(sqrt(dSq)/rad))
