@@ -36,6 +36,7 @@ Description['sra0401'] = "<LOC Unit_Description_BrewPen_010>Massive airborne air
 Description['sra0402'] = "<LOC Unit_Description_BrewPen_011>Combination fighter/bomber aircraft designed to engage both air and surface units."
 
 -- Carpet bombers
+Description['saa0108'] = "<LOC Unit_Description_BrewPen_013>Carpet bomber. Inflicts light damage over a large area."
 Description['sra0108'] = "<LOC Unit_Description_BrewPen_013>Carpet bomber. Inflicts light damage over a large area."
 Description['saa0308'] = "<LOC Unit_Description_BrewPen_014>Obliteration bomber. Inflicts large damage over a large area."
 Description['sra0308'] = "<LOC Unit_Description_BrewPen_014>Obliteration bomber. Inflicts large damage over a large area."

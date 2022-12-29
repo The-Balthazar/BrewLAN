@@ -156,3 +156,11 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-12-23
 
 * Potential fix for Craters mod breaking at map edges.
+
+### 2022-12-27
+
+* Started the Aeon T1 Carpet Bomber.
+
+### 2022-12-29
+
+* Finished the appearance of the Aeon T1 Carpet Bomber.
