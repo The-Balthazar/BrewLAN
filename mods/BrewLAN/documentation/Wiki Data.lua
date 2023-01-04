@@ -102,6 +102,9 @@ UnitData = {
         Trivia = '"Moldavite" is named after a glassy green rock.',
     },
     SAL0312 = {
+        Videos = {
+            {YouTube = 'kRziOEdrLYo', 'Time-lapse'},
+        },
         Trivia = {
             '"Cygnus X-1" takes its name from the Rush song, which takes its name from a black hole in the constellation of Cygnus.',
             'The model is part of the Torrent Class slightly reshaped and fully retextured.',
