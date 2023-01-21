@@ -37,7 +37,10 @@ UnitData = {
         },
     },
     SAB0401 = {
-        Trivia = 'The design of the "Independance Engine" was inspired by a gas holder near the childhood home of the creator. The name is a reference to the 1996 film *Independence Day*.',
+        Trivia = {
+            'The design of the "Independance Engine" was inspired by a gas holder near the childhood home of the creator.',
+            'The name is a reference to the 1996 film *Independence Day*; building the CZAR, which is also a reference to that film.',
+        },
     },
     SAB1102 = {
         Videos = {
@@ -136,7 +139,7 @@ UnitData = {
         Trivia = {
             '"Deluge Class" was a commissioned unit.',
             'The weapon layout of the Deluge Class is asymmetrical, the orientation of said weapons alternating with each one built.',
-            "The first two built in any given name will have the unique names 'Scylla' and 'Charybdis'.",
+            "The first two built in any given game will have the unique names 'Scylla' and 'Charybdis'.",
             "If 69 Deluge Class ships are built in a given game, the 69th will be naked and have the unique name 'Indulge Class'.",
         },
     },
@@ -243,7 +246,7 @@ UnitData = {
         },
     },
     SEB4303 = {
-        Trivia = "This is a recreation of an Xbox 360 exclusive unit.\n\n<blockquote>To get good reference images, I bought a copy only to find that the disk drive no longer worked on my Xbox. The reference images used were photographs of a screen taken by a friend I borrowed the game to.\n\n—Balthazar</blockquote>",
+        Trivia = "This is a recreation of an Xbox 360 exclusive unit.\n\n<blockquote>To get good reference images, I bought a copy only to find that the disk drive no longer worked on my Xbox. The reference images used were photographs of a screen taken by a friend I borrowed the game to.\n\n—Balthazar</blockquote>\n\nThe reference images in question are [here](https://imgur.com/a/9tbXY).",
         Videos = {
             {YouTube = 'NnJHxvF0nqM', 'Time-lapse'},
         },
