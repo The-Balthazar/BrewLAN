@@ -515,7 +515,6 @@ T3 Battleship
 
 ## Errors and ideas; stuff to do
 * The Atlantis ignores its rolloff orders from the Gantry.
-* Wilson lacks treadmarks for its front tracks.
 * Zenith has unused bones.
 * The Absolution can't hover over units.
   * Other experimentals walk through armored walls.

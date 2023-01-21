@@ -164,3 +164,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2022-12-29
 
 * Finished the appearance of the Aeon T1 Carpet Bomber.
+
+### 2023-01-21
+
+* Added treadmarks for Wilsons front treads.
