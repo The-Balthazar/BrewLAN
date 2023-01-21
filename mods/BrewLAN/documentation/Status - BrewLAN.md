@@ -513,47 +513,42 @@ T3 Battleship
 * Nuke launcher disabled when nukes are disabled.
   * ToDo: Remove its useless nuke buttons during this time.
 
-## Errors and ideas; stuff to do
-* The Atlantis ignores its rolloff orders from the Gantry.
-* Zenith has unused bones.
-* The Absolution can't hover over units.
-  * Other experimentals walk through armored walls.
-  * Engine related bug; possibly can't fix.
-* Megalith built eggs bug out when at the pop cap. (vanilla bug)
-* The Cybran T3 Cloakable Fab pauses its production when the cloak is disabled.
+## Vague ideas
 * Add unit orders to the blips of the Aeon Decoy plane, if possible.
   * IssueGuard could be used if the Jammer is replaced with dummy units.
-* Nuke mines should have the option to auto explode, but be set to manual from the off.
-  * The commands for altering stance aren't accessible from sim.
-* Armored walls (and probably other walls) need to be repaired slower.
 * New prettier wall script involving a rotator, a slider, and position detection, for diagonals.
 * Tech 1 mobile shield generators? (Ella, Parashield, Umbra)
-* Find a way to increase static shield radius and maintenance cost increases when built on water.
+* Increase static shield radius and maintenance cost when built on water.
 * Give the Seraphim T3 Gunship a more interesting weapon than the same as the T2.
   * Beam shotgun?
-* Create a UI for the contents of the Ivan.
-* TeaD: Do something about civi's blocking the teacup.
-* UAL0207.
 * Landspeeder.
 * Hero last stand mode.
 * Anti-naval gunship.
 * More ways to deploy mines.
   * Field engineer boats and other.
-* Aircraft barrel roll.
-* Random asteroid showers.
 * Have cloaked/stealthed units able to detect when they are detected.
   * Might be easier to implement the other way round; have the omni check on detecting them.
+* Aircraft barrel roll.
+* Freeze mines.
+* Component tower ship.
+* UAL0207.
 * Team colored lasers.
 * Cybran T1 Spy Submarine.
   * https://imgur.com/a/EcghD
 * Cybran stealth field sub.
 * Aeon T1 Mortar Station.
   * https://imgur.com/a/TKCvF
-* Possibly make the ADG look more like the original.
-  * https://imgur.com/a/9tbXY
-* Turrets.
-* Freeze mines.
-* Component tower ship.
+
+## Errors & Issues
+* Factory-built experimental submarines get trapped until they dive.
+  * Engine issue, can't fully solve.
+    * Work-around has them force dive.
+* Experimental units walk *through* armoured walls.
+  * Can make them walk *over* without too much effort. Can't make them path around *just* them.
+* Megalith eggs don't wait for population cap to be available or otherwise gracefully handle it.
+* The Cybran Cloakable Fabricator is all or nothing on both buttons.
+* Armoured walls are repaired too fast.
+* TeaD: Do something about civi's blocking the teacup.
 
 ## Kris' notes on my ideas for further experimental buildings
 * My notes on his notes.
@@ -580,7 +575,7 @@ Experimental Engineering Station - Probably not a good idea now that they've bee
 
 ## Blackrobe ideas:
 * Walls with personal shields
-* A land version of the air repair pad, like of tibsun.
+* A land version of the air repair pad, like off Tiberian Sun.
 * T1-3 Jammers
 * T1 stealth field gen for Cybran.
 
