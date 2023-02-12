@@ -168,3 +168,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2023-01-21
 
 * Added treadmarks for Cybran field engineer front treads.
+
+### 2023-02-12
+
+* Fixed a potential crash with Tea Party if a unit has a non-personal shield without a shield radius.

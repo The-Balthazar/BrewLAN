@@ -24,7 +24,7 @@ end
 function BrewLANPersonalShieldCategory(all_bps)
     for id, bp in pairs(all_bps) do
         if bp.Categories and bp.Defense and bp.Defense.Shield then
-            if (bp.Defense.Shield.PersonalShield or math.max(bp.Defense.Shield.ShieldSize, bp.Defense.Shield.ShieldProjectionRadius or 0) < math.max(bp.SizeX or 1, bp.SizeY or 1, bp.SizeZ or 1) + 3) and table.find(bp.Categories, 'SHIELD') then
+            if (bp.Defense.Shield.PersonalShield or math.max(bp.Defense.Shield.ShieldSize or 0, bp.Defense.Shield.ShieldProjectionRadius or 0) < math.max(bp.SizeX or 1, bp.SizeY or 1, bp.SizeZ or 1) + 3) and table.find(bp.Categories, 'SHIELD') then
                 table.removeByValue(bp.Categories, 'SHIELD')
             end
             if not table.find(bp.Categories, 'SHIELD') and not table.find(bp.Categories, 'PERSONALSHIELD') then
