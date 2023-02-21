@@ -172,3 +172,7 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2023-02-12
 
 * Fixed a potential crash with Tea Party if a unit has a non-personal shield without a shield radius.
+
+### 2023-02-21
+
+* Fixed Simurgh being able to assist with constructions, and also prevented it from teleporting structures onto itself if something allows it to again.

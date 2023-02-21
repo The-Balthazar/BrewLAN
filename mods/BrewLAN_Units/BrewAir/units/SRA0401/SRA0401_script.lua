@@ -14,7 +14,10 @@ URA0401 = Class(CAirUnit) {
 
     OnStartBuild = function(self, unitBuilding, order)
         CAirUnit.OnStartBuild(self, unitBuilding, order)
-        unitBuilding:AttachTo(self, 0)
+        local ubp = unitBuilding:GetBlueprint()
+        if ubp.Physics.MotionType == 'RULEUMT_Air' and ubp.Transport.TransportClass == 5 then
+            unitBuilding:AttachTo(self, 0)
+        end
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
