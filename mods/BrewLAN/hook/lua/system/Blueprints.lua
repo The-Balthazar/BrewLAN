@@ -1044,8 +1044,8 @@ function BrewLANMatchBalancing(all_bps)
 
     for unitid, data in pairs(UnitsList) do
         if _VERSION ~= "Lua 5.0.1" and all_bps[unitid] then
-            all_bps[unitid].WikiInfoboxNote = '<LOC wiki_infobox_stats_note>Note: This unit has its stats redefined<br />at the start of the game.'
-            all_bps[unitid].WikiBalance = {
+            getmetatable(all_bps[unitid]).WikiInfoboxNote = '<LOC wiki_infobox_stats_note>Note: This unit has its stats redefined<br />at the start of the game.'
+            getmetatable(all_bps[unitid]).WikiBalance = {
                 ReferenceIDs = {
                     data.TargetID and data.TargetID[1] or data.TargetID or data,
                     data.TargetID and data.TargetID[2] or nil
@@ -1393,11 +1393,11 @@ function BrewLANGenerateFootprintDummyUnits(all_units)
             local Z = math.ceil(bp.Footprint.SizeZ or bp.SizeZ or 1)
             local SOX = bp.Physics.SkirtOffsetX or 0
             local SOZ = bp.Physics.SkirtOffsetZ or 0
-            local SSX = bp.Physics.SkirtSizeX or 1
-            local SSZ = bp.Physics.SkirtSizeZ or 1
+            local SSX = math.max(bp.Physics.SkirtSizeX or 1, X)
+            local SSZ = math.max(bp.Physics.SkirtSizeZ or 1, Z)
             local OR = bp.Physics.OccupyRects
 
-            local dummyID = 'ZZZFD'..X..Z..SOX..SOZ..SSX..SSZ
+            local dummyID = 'zzzfd'..X..Z..SOX..SOZ..SSX..SSZ
 
             if OR then
                 for i, v in OR do

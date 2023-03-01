@@ -12,10 +12,11 @@ local function SpawnUnitMesh(id, x, y, z, pitch, yaw, roll)
         entity:SetPosition(Vector(x,y,z), true)
         entity:SetMesh(bpD.MeshBlueprint)
         entity:SetDrawScale(bpD.UniformScale)
-        entity:SetVizToAllies('Intel')
-        entity:SetVizToNeutrals('Intel')
-        entity:SetVizToEnemies('Intel')
+        entity:SetVizToAllies'Intel'
+        entity:SetVizToNeutrals'Intel'
+        entity:SetVizToEnemies'Intel'
         table.insert(SpawnedMeshes, entity)
+        return entity
     else
         SPEW("Can\' spawn mesh of "..id.." no mesh found")
     end
@@ -23,13 +24,16 @@ end
 
 local function SetWorldCameraToUnitIconAngle(location, zoom)
     local sx = 1/6
+    local th = 1 + (location[2] - GetSurfaceHeight(location[1], location[3]))
+    --_ALERT(location[2], GetSurfaceHeight(location[1], location[3]), th)
+    --_ALERT(zoom, th)
     table.insert( Sync.CameraRequests, {
         Name = 'WorldCamera',
         Type = 'CAMERA_UNIT_SPIN',
         Marker = {
             orientation = VECTOR3(math.pi*(1+sx), math.pi*sx, 0),
             position = location,
-            zoom = FLOAT(zoom),
+            zoom = FLOAT(zoom*th),
         },
         HeadingRate = 0,
         Callback = {
@@ -46,8 +50,9 @@ Callbacks.ClearSpawneMeshes = function()
     SpawnedMeshes = {}
 end
 
-Callbacks.BoxFormationSpawn = function(data)
+--[[Callbacks.BoxFormationSpawn = function(data)
     if not CheatsEnabled() then return end
+    if data.army < 0 then return end
     local unitbp = __blueprints[data.bpId]
 
     local function FootprintSize(axe)
@@ -67,8 +72,8 @@ Callbacks.BoxFormationSpawn = function(data)
     local offsetZ = unitbp.SizeZ or 1
 
     if unitbp.Physics.MotionType == 'RULEUMT_None' then
-        offsetX = math.ceil(unitbp.Physics.SkirtSizeX or FootprintSize('x'))
-        offsetZ = math.ceil(unitbp.Physics.SkirtSizeZ or FootprintSize('y'))
+        offsetX = math.ceil(unitbp.Physics.SkirtSizeX or FootprintSize'x')
+        offsetZ = math.ceil(unitbp.Physics.SkirtSizeZ or FootprintSize'y')
     end
 
     local squareX = math.ceil(math.sqrt(data.count))
@@ -88,7 +93,82 @@ Callbacks.BoxFormationSpawn = function(data)
         if data.CreateTarmac and unit.CreateTarmac and unitbp.Display and unitbp.Display.Tarmacs then
             unit:CreateTarmac(true,true,true,false,false)
         end
-        if data.count == 1 and data.UnitIconCameraMode then
+        if data.count == 1 and data.UnitIconCameraMode and unit then
+            local size = math.max(
+                (unitbp.SizeX or 1),
+                (unitbp.SizeY or 1) * 3,
+                (unitbp.SizeZ or 1),
+                (unitbp.Physics.SkirtSizeX or 1),
+                (unitbp.Physics.SkirtSizeZ or 1)
+            ) + math.abs(unitbp.CollisionOffsetY or 0)
+            local dist = size / math.tan(60 --[=[* (9/16)]=] * 0.5 * ((math.pi*2)/360))
+            SetWorldCameraToUnitIconAngle(unit:GetPosition(), dist)
+        end
+    end
+end]]
+
+Callbacks.BoxFormationProp = function(data)
+    if not CheatsEnabled() then return end
+
+    local offsetX = data.bpId.SizeX or 1
+    local offsetZ = data.bpId.SizeZ or 1
+
+    local squareX = math.ceil(math.sqrt(data.count or 1))
+    local squareZ = math.ceil((data.count or 1)/squareX)
+
+    local startOffsetX = (squareX-1) * 0.5 * offsetX
+    local startOffsetZ = (squareZ-1) * 0.5 * offsetZ
+
+    for i = 1, (data.count or 1) do
+        local x = data.pos[1] - startOffsetX + math.mod(i,squareX) * offsetX
+        local z = data.pos[3] - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ
+        if data.rand and data.rand ~= 0 then
+            x = (x - data.rand*0.5) + data.rand*Random()
+            z = (z - data.rand*0.5) + data.rand*Random()
+            if math.mod(data.yaw or 0, 360) == 0 then
+                data.yaw = 360*Random()
+            end
+        end
+        CreatePropHPR(data.bpId, x, GetTerrainHeight(x,z), z, data.yaw or 0, 0, 0)--blueprint, x, y, z, heading, pitch, roll
+    end
+end
+
+--[[local function TemplateAxisOffset(unitbp, axe)
+    return (math.mod(math.ceil(unitbp.Footprint and unitbp.Footprint[axe] or unitbp[axe] or 1), 2) == 1 and 0 or 0.5)
+end]]
+
+--[[Callbacks.CheatSpawnTemplate = function(data)
+    local templateData = data.bpId.templateData
+    local basePos = data.pos
+    --_ALERT(repr(basePos))
+    local firstbp = __blueprints[ templateData[3][1] ]
+
+    --This is the same offset added by the save script, because what fixes the build command mode, breaks this.
+    local offsetX, offsetZ = TemplateAxisOffset(firstbp, 'SizeX'), TemplateAxisOffset(firstbp, 'SizeZ')
+    for i = 3, table.getn(templateData) do
+        local id = templateData[i][1]
+        local x, z = basePos[1] + templateData[i][3] - offsetX, basePos[3] + templateData[i][4] - offsetZ
+
+        local unit = CreateUnitHPR(id, data.army, x, GetTerrainHeight(x,z), z, 0, 0, 0)
+
+        local unitbp = __blueprints[id]
+        if data.CreateTarmac and unit.CreateTarmac and unitbp.Display and unitbp.Display.Tarmacs then
+            unit:CreateTarmac(true,true,true,false,false)
+        end
+    end
+end]]
+
+Callbacks.CheatSpawnUnit = function(data)
+    local pos = data.pos
+    if data.MeshOnly then
+        SpawnUnitMesh(data.bpId, pos[1], pos[2], pos[3], 0, data.yaw, 0)
+    else
+        local unit = CreateUnitHPR(data.bpId, data.army, pos[1], pos[2], pos[3], 0, data.yaw, 0)
+        local unitbp = __blueprints[data.bpId]
+        if data.CreateTarmac and unit.CreateTarmac and unitbp.Display and unitbp.Display.Tarmacs then
+            unit:CreateTarmac(true,true,true,false,false)
+        end
+        if data.UnitIconCameraMode then
             local size = math.max(
                 (unitbp.SizeX or 1),
                 (unitbp.SizeY or 1) * 3,
@@ -97,26 +177,10 @@ Callbacks.BoxFormationSpawn = function(data)
                 (unitbp.Physics.SkirtSizeZ or 1)
             ) + math.abs(unitbp.CollisionOffsetY or 0)
             local dist = size / math.tan(60 --[[* (9/16)]] * 0.5 * ((math.pi*2)/360))
-            SetWorldCameraToUnitIconAngle({x, GetTerrainHeight(x,z), z}, dist)
+            SetWorldCameraToUnitIconAngle(pos, dist)
         end
-    end
-end
-
-Callbacks.BoxFormationProp = function(data)
-    if not CheatsEnabled() then return end
-
-    local offsetX = data.bpId.SizeX or 1
-    local offsetZ = data.bpId.SizeZ or 1
-
-    local squareX = math.ceil(math.sqrt(data.count))
-    local squareZ = math.ceil(data.count/squareX)
-
-    local startOffsetX = (squareX-1) * 0.5 * offsetX
-    local startOffsetZ = (squareZ-1) * 0.5 * offsetZ
-
-    for i = 1, data.count do
-        local x = data.pos[1] - startOffsetX + math.mod(i,squareX) * offsetX
-        local z = data.pos[3] - startOffsetZ + math.mod(math.floor(i/squareX), squareZ) * offsetZ
-        CreatePropHPR(data.bpId, x, GetTerrainHeight(x,z), z, data.yaw or 0, 0, 0)--blueprint, x, y, z, heading, pitch, roll
+        if data.veterancy and data.veterancy ~= 0 and unit.SetVeterancy then
+            unit:SetVeterancy(data.veterancy)
+        end
     end
 end

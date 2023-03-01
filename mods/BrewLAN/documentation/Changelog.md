@@ -176,3 +176,8 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 ### 2023-02-21
 
 * Fixed Simurgh being able to assist with constructions, and also prevented it from teleporting structures onto itself if something allows it to again.
+
+### 2013-03-01
+
+* Overhauled the cheat spawn menu.
+* Footprint dummy units now use lowercase IDs.
