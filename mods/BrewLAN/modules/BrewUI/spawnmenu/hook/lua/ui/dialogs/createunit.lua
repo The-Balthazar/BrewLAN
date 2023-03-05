@@ -1952,7 +1952,6 @@ end
 ]]
 local Templates = import('/lua/ui/game/build_templates.lua')
 local CreateSubMenu = import('/lua/ui/game/construction.lua').CreateSubMenu
-local CreateMenuBorder = import('/lua/ui/game/construction.lua').CreateMenuBorder
 local ProcessKeybinding = import('/lua/ui/game/construction.lua').ProcessKeybinding
 local BuildMode = import('/lua/ui/game/buildmode.lua')
 
@@ -2115,8 +2114,6 @@ function CreateTemplateOptionsMenu(button)
         Templates.RenameTemplate(button.Data.template.templateID, text)
         RefreshUI()
     end
-
-    local bg = CreateMenuBorder(group)
 
     group.HandleEvent = function(self, event)
         return true
