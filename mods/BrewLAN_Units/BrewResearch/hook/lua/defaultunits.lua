@@ -4,10 +4,11 @@
 local Game = import('/lua/game.lua')
 local VersionIsFAF = string.sub(GetVersion(),1,3) == '1.5' and tonumber(string.sub(GetVersion(),5)) > 3603
 --------------------------------------------------------------------------------
-ResearchItem = Class(DummyUnit) {
+
+ResearchItem = Class(Unit) {
     OnCreate = function(self)
         local bp = self.BpId and __blueprints[self.BpId] or self:GetBlueprint()
-        DummyUnit.OnCreate(self)
+        Unit.OnCreate(self)
         --Restrict me, the RND item, to one being built at a time.
         AddBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
     end,
@@ -41,8 +42,7 @@ ResearchItem = Class(DummyUnit) {
             AIBrain.BrewRND.MarkResearchComplete(AIBrain, bp.BlueprintId)
         end
 
-        --Before the rest, because the rest is Destroy(self)
-        DummyUnit.OnStopBeingBuilt(self,builder,layer)
+        self:Destroy()
     end,
 
     CheckBuildRestrictionsAllow = function(self, WorkID)
@@ -101,7 +101,7 @@ ResearchItem = Class(DummyUnit) {
         if self:GetFractionComplete() < 1 then
             RemoveBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
         end
-        DummyUnit.OnKilled(self, instigator, type, overKillRatio)
+        Unit.OnKilled(self, instigator, type, overKillRatio)
     end,
 
     OnDestroy = function(self)
@@ -110,7 +110,7 @@ ResearchItem = Class(DummyUnit) {
         if self:GetFractionComplete() < 1 then
             RemoveBuildRestriction(self:GetArmy(), categories[bp.BlueprintId] )
         end
-        DummyUnit.OnDestroy(self)
+        Unit.OnDestroy(self)
     end,
 }
 

@@ -177,7 +177,20 @@ All changes by Sean Wheeldon (Balthazar) unless otherwise stated.
 
 * Fixed Simurgh being able to assist with constructions, and also prevented it from teleporting structures onto itself if something allows it to again.
 
-### 2013-03-01
+### 2023-03-01
 
 * Overhauled the cheat spawn menu.
 * Footprint dummy units now use lowercase IDs.
+* Fixed a potential non-issue when skirt is smaller than size for footprint dummies.
+
+### 2023-03-05
+
+* Removed some unused stuff from createunit.
+
+### 2023-03-14
+
+* Fixed the cheat spawn callback not checking if cheating is enabled.
+
+### 2023-05-02
+
+* Research dummy units no longer use the dummy class so they don't crash on FAF.
