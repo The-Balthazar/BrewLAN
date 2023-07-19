@@ -5,6 +5,20 @@ UnitData = {
             [["Respirer" had it's model replaced in July 2018, nearly 9 years after its creation.]],
         },
     },
+    SAA0108 = {
+        Videos = {
+            {YouTube = 'cgTr02vdE8A', 'Time-lapse'},
+        },
+    },
+    SAA0308 = {
+        Trivia = {
+            '"Ishtar" is named after the Assyrian goddess of love, war, and fertility. Equivalent to the Greco-Roman goddesses Aphrodite and Venus.',
+            'Delevopment on what would become "Ishtar" started at the start of June 2022, but wasn\'t resumed until the end of the following September, because the first design was bad and looked like a sliced pear.',
+        },
+        Videos = {
+            {YouTube = 'D_IJsj-8G6k', 'Time-lapse'},
+        },
+    },
     SAA0313 = {
         Videos = {
             {YouTube = 'CAVRJWb_acI', 'Time-lapse'},
@@ -28,12 +42,6 @@ UnitData = {
     SAB0305 = {
         Videos = {
             {YouTube = 'BxmnEIWuX1s', 'Time-lapse'},
-        },
-    },
-    SAA0308 = {
-        Trivia = {
-            '"Ishtar" is named after the Assyrian goddess of love, war, and fertility. Equivalent to the Greco-Roman goddesses Aphrodite and Venus.',
-            'Delevopment on what would become "Ishtar" started at the start of June 2022, but wasn\'t resumed until the end of the following September, because the first design was bad and looked like a sliced pear.',
         },
     },
     SAB0401 = {
