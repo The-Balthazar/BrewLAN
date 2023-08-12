@@ -268,6 +268,11 @@ UnitData = {
     SEB5210 = {
         Trivia = "The appearance of this unit is loosely based on the GDI walls from Tiberian Sun. The name **G**eneral **D**estruction **I**mpasse is a nod to this.",
     },
+    SEB5401 = {
+        Videos = {
+            {YouTube = 'uisoyHoAbHg', 'Time-lapse'},
+        },
+    },
     SEB9101 = {
         Trivia = '"Tyson Campus" is named after the astrophysicist Neil deGrasse Tyson.',
     },
