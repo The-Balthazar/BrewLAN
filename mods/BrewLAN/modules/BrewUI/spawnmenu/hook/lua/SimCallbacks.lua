@@ -22,6 +22,29 @@ local function SpawnUnitMesh(id, x, y, z, pitch, yaw, roll)
     end
 end
 
+local function ShowRaisedPlatforms(self)
+    local plats = self:GetBlueprint().Physics.RaisedPlatforms
+    if not plats then return end
+    local pos = self:GetPosition()
+    local entities = {}
+    for i=1, (table.getn(plats)/12) do
+        entities[i]={}
+        for b=1,4 do
+            entities[i][b] = import('/lua/sim/Entity.lua').Entity{Owner = self}
+            self.Trash:Add(entities[i][b])
+            entities[i][b]:SetPosition(Vector(
+                pos[1]+plats[((i-1)*12)+(b*3)-2],
+                pos[2]+plats[((i-1)*12)+(b*3)],
+                pos[3]+plats[((i-1)*12)+(b*3)-1]
+            ), true)
+        end
+        self.Trash:Add(AttachBeamEntityToEntity(entities[i][1], -2, entities[i][2], -2, self:GetArmy(), '/effects/emitters/build_beam_01_emit.bp'))
+        self.Trash:Add(AttachBeamEntityToEntity(entities[i][1], -2, entities[i][3], -2, self:GetArmy(), '/effects/emitters/build_beam_01_emit.bp'))
+        self.Trash:Add(AttachBeamEntityToEntity(entities[i][4], -2, entities[i][2], -2, self:GetArmy(), '/effects/emitters/build_beam_01_emit.bp'))
+        self.Trash:Add(AttachBeamEntityToEntity(entities[i][4], -2, entities[i][3], -2, self:GetArmy(), '/effects/emitters/build_beam_01_emit.bp'))
+    end
+end
+
 local function SetWorldCameraToUnitIconAngle(location, zoom)
     local sx = 1/6
     local th = 1 + (location[2] - GetSurfaceHeight(location[1], location[3]))
@@ -160,7 +183,7 @@ end]]
 
 Callbacks.CheatSpawnUnit = function(data)
     if not CheatsEnabled() then return end
-    
+
     local pos = data.pos
     if data.MeshOnly then
         SpawnUnitMesh(data.bpId, pos[1], pos[2], pos[3], 0, data.yaw, 0)
@@ -183,6 +206,9 @@ Callbacks.CheatSpawnUnit = function(data)
         end
         if data.veterancy and data.veterancy ~= 0 and unit.SetVeterancy then
             unit:SetVeterancy(data.veterancy)
+        end
+        if data.ShowRaisedPlatforms then
+            ShowRaisedPlatforms(unit)
         end
     end
 end

@@ -1082,6 +1082,7 @@ function CreateDialog()
             rand = dialogData.inputRand and dialogData.inputRand:GetValue() or 0,
             CreateTarmac = options.spawn_menu_tarmacs_enabled,
             MeshOnly = options.spawn_menu_mesh_only,
+            ShowRaisedPlatforms = options.spawn_menu_show_raised_platforms,
             UnitIconCameraMode = options.spawn_menu_unit_icon_camera,
 
             selection = selection,
@@ -1859,6 +1860,7 @@ function CreateDebugConfig()
         {style = 'toggle',       name = 'Clear spawned entity meshes', activate = function() SimCallback{Func = 'ClearSpawneMeshes'} end },
         {style = 'configtoggle', name = 'Position camera for build icon on spawn',    prefid = 'spawn_menu_unit_icon_camera' },
         {style = 'configtoggle', name = 'Ignore terrain blocking (disables preview)', prefid = 'spawn_menu_force_dummy_spawn'},
+        {style = 'configtoggle', name = 'Show raised platforms',                      prefid = 'spawn_menu_show_raised_platforms', },
 
         {style = 'title',        name = 'Unit spawn filter settings:' },
         {style = 'configtoggle', name = 'Split core game source filter', refresh = true, prefid = 'spawn_menu_split_sources', },
